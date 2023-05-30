@@ -1,0 +1,21 @@
+//
+//  MediaModel.swift
+//  Productivity Pro
+//
+//  Created by Till Brügmann on 10.02.23.
+//
+
+import SwiftUI
+
+struct MediaModel: Codable, Hashable {
+    
+    var media: Data
+    
+    var showStroke: Bool = false
+    var strokeColor: Data = Color.accentColor.toCodable()
+    var strokeWidth: Double = 5
+    var strokeStyle: StrokeStyle = .line
+    
+    var cornerRadius: Double = 0
+    
+}
