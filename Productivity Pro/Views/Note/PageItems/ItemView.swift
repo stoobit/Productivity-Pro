@@ -56,8 +56,12 @@ struct ItemView: View {
                 )
             )
             .onAppear {
-                editItemModel.position = CGPoint(x: item.x, y: item.y)
-                editItemModel.size = CGSize(width: item.width, height: item.height)
+                editItemModel.position = CGPoint(
+                    x: item.x, y: item.y
+                )
+                editItemModel.size = CGSize(
+                    width: item.width, height: item.height
+                )
             }
             .onChange(of: item.x) { x in
                 editItemModel.position.x = x
