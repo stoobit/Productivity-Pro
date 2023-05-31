@@ -35,6 +35,9 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         canvasView.showsVerticalScrollIndicator = false
         canvasView.showsHorizontalScrollIndicator = false
         
+        toolPicker.showsDrawingPolicyControls = false
+        canvasView.drawingPolicy = .pencilOnly
+        
         adoptScale()
         
         try? canvasView.drawing = PKDrawing(data: page.canvas)
