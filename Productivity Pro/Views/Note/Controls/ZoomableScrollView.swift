@@ -87,7 +87,13 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         }
         
         if toolManager.zoomScale != uiView.zoomScale && toolManager.isEditorVisible {
-            uiView.setZoomScale(toolManager.zoomScale, animated: false)
+            
+            uiView.setZoomScale(
+                toolManager.zoomScale,
+                animated: toolManager.animatedZoom
+            )
+            
+            toolManager.animatedZoom = false
         }
         
         context.coordinator.hostingController.rootView = content()

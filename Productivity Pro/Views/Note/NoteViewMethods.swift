@@ -33,6 +33,7 @@ extension NoteView {
         toolManager.selectedPage = 0
         toolManager.selectedTab = UUID()
         toolManager.showProgress = false
+        toolManager.animatedZoom = true
     }
     
     func fixScrollViewBug() {

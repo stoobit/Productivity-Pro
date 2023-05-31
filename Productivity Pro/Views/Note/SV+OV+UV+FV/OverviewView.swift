@@ -30,19 +30,15 @@ struct OverviewView: View {
                     
                     Overview(type: .all, size: proxy.size)
                         .tag(OverviewListType.all)
-#if !targetEnvironment(macCatalyst)
                         .tabItem {
                             Label("All", systemImage: "list.bullet")
                         }
-#endif
                     
                     Overview(type: .bookmark, size: proxy.size)
                         .tag(OverviewListType.bookmark)
-#if !targetEnvironment(macCatalyst)
                         .tabItem {
                             Label("Bookmarked", systemImage: "bookmark.fill")
                         }
-#endif
                     
                 }
                 .toolbar {
@@ -50,7 +46,7 @@ struct OverviewView: View {
                         Button("Done") { subviewManager.overviewSheet.toggle() }
                     }
                     
-    #if targetEnvironment(macCatalyst)
+#if targetEnvironment(macCatalyst)
                     ToolbarItemGroup(placement: .bottomBar) {
                         HStack {
                             Button(action: {
@@ -74,7 +70,7 @@ struct OverviewView: View {
                             .frame(width: proxy.size.width / 2)
                         }
                     }
-    #endif
+#endif
                 }
                 
             }
@@ -96,7 +92,9 @@ struct OverviewView: View {
         let filteredPages: [Page] = document.document.note.pages.filter( { $0.isBookmarked == true })
         
         if filteredPages.isEmpty && type == .bookmark {
-            Text("No pages have been bookmarked yet.")
+            Image(systemName: "bookmark.slash.fill")
+                .font(.system(size: 75))
+                .foregroundColor(.secondary)
         } else {
             ScrollView(showsIndicators: false) {
                 ScrollViewReader { reader in
@@ -126,7 +124,14 @@ struct OverviewView: View {
                                             
                                             Spacer()
                                             
-                                            Text("\(index + 1)")
+                                            Menu(content: {
+                                                Button(role: .destructive, action: {}) {
+                                                    Label("Delete Page", systemImage: "trash")
+                                                }
+                                            }) {
+                                                Label("\(index + 1)", systemImage: "chevron.down")
+                                            }
+                                            .foregroundColor(.primary)
                                         }
                                         .padding(.horizontal, 10)
                                         .frame(width: size.width / 4)
@@ -134,9 +139,6 @@ struct OverviewView: View {
                                         .padding(.bottom, 3)
                                         
                                     }
-    #if targetEnvironment(macCatalyst)
-                                    .padding((index == 0 || index == 1 || index == 2) ? 15 : 0)
-    #endif
                                     .padding()
                                     .modifier(
                                         DragAndDropPage(
@@ -185,9 +187,6 @@ struct OverviewView: View {
                                         .padding(.bottom, 3)
                                         
                                     }
-    #if targetEnvironment(macCatalyst)
-                                    .padding((index == 0 || index == 1 || index == 2) ? 15 : 0)
-    #endif
                                     .padding()
                                     .id(document.document.note.pages.firstIndex(of: page))
                                     
@@ -282,7 +281,10 @@ struct OverviewIcon: View {
                 .disabled(true)
             
             RoundedRectangle(cornerRadius: 5)
-                .stroke(Color.accentColor, lineWidth: 2)
+                .stroke(
+                    page.id == toolManager.selectedTab ? Color.accentColor : Color.secondary,
+                    lineWidth: 2
+                )
                 .frame(
                     width: size.width / 4,
                     height: (size.width / 4 / getFrame(page: page).width) * getFrame(page: page).height

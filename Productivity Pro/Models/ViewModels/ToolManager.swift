@@ -22,6 +22,7 @@ class ToolManager: ObservableObject {
     @Published var firstZoom: Bool = true
     
     @Published var zoomScale: CGFloat = 1
+    @Published var animatedZoom: Bool = true
     
     @Published var scrollOffset: CGPoint = .zero
     
