@@ -26,9 +26,7 @@ struct CalculatorContainerView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
-                        dismiss()
-                    }
+                    Button("Done") { dismiss() }
                 }
                 
                 ToolbarItem(placement: .navigation) {
