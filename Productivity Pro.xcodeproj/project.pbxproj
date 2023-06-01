@@ -118,7 +118,7 @@
 		BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */; };
 		BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAE29A1A97000EF297A /* EditMediaItemView.swift */; };
 		BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */; };
-		BBDABD3F29D257410038CFC2 /* PDFKitRepresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3E29D257410038CFC2 /* PDFKitRepresentedView.swift */; };
+		BBDABD3F29D257410038CFC2 /* PagePDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3E29D257410038CFC2 /* PagePDFView.swift */; };
 		BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC62712905EED800364B57 /* IndicatorText.swift */; };
 		BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */; };
 		BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D9299E9506004C99AE /* Hexagon.swift */; };
@@ -245,7 +245,7 @@
 		BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAE29A1A97000EF297A /* EditMediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMediaItemView.swift; sourceTree = "<group>"; };
 		BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPDFPageHelper.swift; sourceTree = "<group>"; };
-		BBDABD3E29D257410038CFC2 /* PDFKitRepresentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitRepresentedView.swift; sourceTree = "<group>"; };
+		BBDABD3E29D257410038CFC2 /* PagePDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePDFView.swift; sourceTree = "<group>"; };
 		BBDC62712905EED800364B57 /* IndicatorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorText.swift; sourceTree = "<group>"; };
 		BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeItemView.swift; sourceTree = "<group>"; };
 		BBDCF5D9299E9506004C99AE /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
@@ -305,6 +305,7 @@
 				BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */,
 				BB73324F2A294D440001FD6A /* PageBackgroundView.swift */,
 				BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */,
+				BBDABD3E29D257410038CFC2 /* PagePDFView.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -637,7 +638,6 @@
 				BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */,
 				BB074BE929D0429500504C9D /* ProgressViewStyle.swift */,
 				BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */,
-				BBDABD3E29D257410038CFC2 /* PDFKitRepresentedView.swift */,
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
 			);
@@ -883,7 +883,7 @@
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
-				BBDABD3F29D257410038CFC2 /* PDFKitRepresentedView.swift in Sources */,
+				BBDABD3F29D257410038CFC2 /* PagePDFView.swift in Sources */,
 				BBCCE50028D54233001DBD8A /* NoteBackgroundIcons.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BBD9411C299195440085151B /* PPTabView.swift in Sources */,
