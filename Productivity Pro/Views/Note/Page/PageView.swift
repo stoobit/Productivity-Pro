@@ -53,15 +53,18 @@ struct PageView: View {
                         )
                         
                         if page.type == .pdf {
-                           
+                            PagePDFView(
+                                page: $page,
+                                toolManager: toolManager
+                            )
                         } else if page.type == .image {
                             PageBackgroundScan(
                                 page: $page,
                                 toolManager: toolManager
                             )
                         }
+                        
                     }
-                    
                 }
                 .onTapGesture { onBackgroundTap() }
                 

@@ -8,34 +8,11 @@
 import SwiftUI
 import PDFKit
 
-struct PagePDFView: View {
-    
+struct PDFKitRepresentedView: UIViewRepresentable {
+
     @Binding var page: Page
     @StateObject var toolManager: ToolManager
     
-    var body: some View {
-        PDFKitRepresentedView(
-            toolManager: toolManager,
-            backgroundData: page.backgroundMedia
-        )
-    }
-    
-    func getFrame() -> CGSize {
-        var frame: CGSize = .zero
-        
-        if page.isPortrait {
-            frame = CGSize(width: shortSide, height: longSide)
-        } else {
-            frame = CGSize(width: longSide, height: shortSide)
-        }
-        
-        return frame
-    }
-}
-
-struct PDFKitRepresentedView: UIViewRepresentable {
-
-    @StateObject var toolManager: ToolManager
     let backgroundData: Data?
     
     func makeUIView(context: Context) -> PDFView {
@@ -54,12 +31,54 @@ struct PDFKitRepresentedView: UIViewRepresentable {
         pdfView.displayMode = .singlePage
         pdfView.isOpaque = false
         
-//        pdfView.bounds.size = CGSize(
+        pdfView.autoScales = true
             
         return pdfView
     }
 
     func updateUIView(_ uiView: PDFView, context: Context) {
-        uiView.scaleFactor = 2.6 * toolManager.zoomScale
+        
+    }
+    
+    func getFrame() -> CGSize {
+        var frame: CGSize = .zero
+        
+        if page.isPortrait {
+            frame = CGSize(width: shortSide, height: longSide)
+        } else {
+            frame = CGSize(width: longSide, height: shortSide)
+        }
+        
+        return frame
+    }
+}
+
+struct PagePDFView: View {
+    
+    @Binding var page: Page
+    @StateObject var toolManager: ToolManager
+    
+    var body: some View {
+        PDFKitRepresentedView(
+            page: $page,
+            toolManager: toolManager,
+            backgroundData: page.backgroundMedia
+        )
+        .frame(
+            width: getFrame().width,
+            height: getFrame().height
+        )
+    }
+    
+    func getFrame() -> CGSize {
+        var frame: CGSize = .zero
+        
+        if page.isPortrait {
+            frame = CGSize(width: shortSide, height: longSide)
+        } else {
+            frame = CGSize(width: longSide, height: shortSide)
+        }
+        
+        return frame
     }
 }
