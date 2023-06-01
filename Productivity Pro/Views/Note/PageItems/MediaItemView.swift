@@ -20,22 +20,26 @@ struct MediaItemView: View {
         
             Image(uiImage: image)
                 .resizable()
-                .cornerRadius(item.media!.cornerRadius)
+                .cornerRadius(
+                    item.media!.cornerRadius * toolManager.zoomScale
+                )
                 .frame(
                     width: editItem.size.width * toolManager.zoomScale,
                     height: editItem.size.height * toolManager.zoomScale
                 )
                 .overlay {
                     if item.media!.showStroke {
-                        RoundedRectangle(cornerRadius: item.media!.cornerRadius)
-                            .stroke(
-                                Color(codable: item.media!.strokeColor)!,
-                                lineWidth: item.media!.strokeWidth * toolManager.zoomScale
-                            )
-                            .frame(
-                                width: (editItem.size.width + item.media!.strokeWidth) * toolManager.zoomScale,
-                                height: (editItem.size.height + item.media!.strokeWidth) * toolManager.zoomScale
-                            )
+                        RoundedRectangle(
+                            cornerRadius: item.media!.cornerRadius * toolManager.zoomScale
+                        )
+                        .stroke(
+                            Color(codable: item.media!.strokeColor)!,
+                            lineWidth: item.media!.strokeWidth * toolManager.zoomScale
+                        )
+                        .frame(
+                            width: (editItem.size.width + item.media!.strokeWidth) * toolManager.zoomScale,
+                            height: (editItem.size.height + item.media!.strokeWidth) * toolManager.zoomScale
+                        )
 
                     }
                 }

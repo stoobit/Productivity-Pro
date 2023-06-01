@@ -119,12 +119,12 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
             
         }
         
-        ToolbarItem(id: "calc", placement: .secondaryAction) {
-            Button(action: { openWindow(id: "calculator") }) {
-                Label("Calculator", systemImage: "x.squareroot")
-                    .foregroundColor(.primary)
-            }
-        }
+//        ToolbarItem(id: "calc", placement: .secondaryAction) {
+//            Button(action: { openWindow(id: "calculator") }) {
+//                Label("Calculator", systemImage: "x.squareroot")
+//                    .foregroundColor(.primary)
+//            }
+//        }
         
     }
 }
