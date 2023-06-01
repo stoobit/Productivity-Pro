@@ -16,23 +16,29 @@ struct PageItemView: View {
     @StateObject var subviewManager: SubviewManager
     
     var body: some View {
-            ForEach($page.items) { $item in
-                
-                ItemView(
-                    document: $document,
-                    page: $page,
-                    item: $item,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-                .onTapGesture {
-                    tap(item: item)
-                }
-                .zIndex(
-                    Double(page.items.firstIndex(where: { $0.id == item.id })!)
-                )
-                
+        ForEach($page.items) { $item in
+            
+            ItemView(
+                document: $document,
+                page: $page,
+                item: $item,
+                toolManager: toolManager,
+                subviewManager: subviewManager
+            )
+            .onTapGesture {
+                tap(item: item)
             }
+            .zIndex(
+                Double(page.items.firstIndex(where: { $0.id == item.id })!)
+            )
+            
+        }
+        .frame(
+            width: toolManager.zoomScale * getFrame().width,
+            height: toolManager.zoomScale * getFrame().height
+        )
+        .clipShape(Rectangle())
+        .scaleEffect(1/toolManager.zoomScale)
     }
     
     func tap(item: ItemModel) {
@@ -49,5 +55,17 @@ struct PageItemView: View {
         } else {
             toolManager.selectedItem = item
         }
+    }
+    
+    func getFrame() -> CGSize {
+        var frame: CGSize = .zero
+        
+        if page.isPortrait {
+            frame = CGSize(width: shortSide, height: longSide)
+        } else {
+            frame = CGSize(width: longSide, height: shortSide)
+        }
+        
+        return frame
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension BackgroundView {
+extension BackgroundTemplateView {
     
     @ViewBuilder func SquaredViewPortrait() -> some View {
         Path { path in

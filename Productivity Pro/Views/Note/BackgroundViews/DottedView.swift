@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension BackgroundView {
+extension BackgroundTemplateView {
     
     @ViewBuilder func DottedViewPortrait() -> some View {
         Path { path in

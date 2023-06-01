@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB0504212926CB2600DAECA6 /* SheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0504202926CB2600DAECA6 /* SheetHelper.swift */; };
-		BB05042B2928472D00DAECA6 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundView.swift */; };
+		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
 		BB074BEA29D0429500504C9D /* ProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB074BE929D0429500504C9D /* ProgressViewStyle.swift */; };
 		BB09FFF429E72BBF00FEAA5D /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */; };
@@ -58,6 +58,8 @@
 		BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */; };
 		BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */; };
 		BB72A28E29760327000E9753 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72A28D29760327000E9753 /* ToolView.swift */; };
+		BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73324F2A294D440001FD6A /* PageBackgroundView.swift */; };
+		BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */; };
 		BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73F053297F278F00ED23CC /* BundleExtension.swift */; };
 		BB7692A829C7C4BE00675A2B /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BB7692A729C7C4BE00675A2B /* OnPasteboardChange */; };
 		BB7692AE29C7C4DD00675A2B /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = BB7692AD29C7C4DD00675A2B /* Splash */; };
@@ -134,7 +136,7 @@
 
 /* Begin PBXFileReference section */
 		BB0504202926CB2600DAECA6 /* SheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHelper.swift; sourceTree = "<group>"; };
-		BB05042A2928472D00DAECA6 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
 		BB074BE929D0429500504C9D /* ProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewStyle.swift; sourceTree = "<group>"; };
 		BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,8 @@
 		BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewManager.swift; sourceTree = "<group>"; };
 		BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolManager.swift; sourceTree = "<group>"; };
 		BB72A28D29760327000E9753 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		BB73324F2A294D440001FD6A /* PageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundView.swift; sourceTree = "<group>"; };
+		BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundScan.swift; sourceTree = "<group>"; };
 		BB73F053297F278F00ED23CC /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		BB8B2EDD29436E1400ED95CB /* SCBU.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SCBU.md; sourceTree = "<group>"; };
@@ -276,7 +280,7 @@
 		BB0504292928471400DAECA6 /* BackgroundViews */ = {
 			isa = PBXGroup;
 			children = (
-				BB05042A2928472D00DAECA6 /* BackgroundView.swift */,
+				BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */,
 				BBCDFDE22947BF84000C545D /* SquaredView.swift */,
 				BBCDFDE42947C877000C545D /* DottedView.swift */,
 				BBCDFDE62947CC9C000C545D /* RuledView.swift */,
@@ -299,6 +303,8 @@
 			children = (
 				BBF22ACB2933EFE300109848 /* PageView.swift */,
 				BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */,
+				BB73324F2A294D440001FD6A /* PageBackgroundView.swift */,
+				BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -806,7 +812,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB05042B2928472D00DAECA6 /* BackgroundView.swift in Sources */,
+				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BB9DF5B228E0666000AC988D /* TaskListView.swift in Sources */,
 				BB4CDD4328D3C668009A409F /* Productivity_ProDocument.swift in Sources */,
 				BBCCE4FB28D540B2001DBD8A /* WhiteboardSettings.swift in Sources */,
@@ -850,6 +856,7 @@
 				BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */,
 				BBCCE4FD28D540BC001DBD8A /* TaskListSettings.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
+				BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */,
 				BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */,
 				BBC7B97B2A19896A00D496CB /* ToolViewMethods.swift in Sources */,
 				BB53D5B029C4F79F008130F2 /* EditTextView.swift in Sources */,
@@ -897,6 +904,7 @@
 				BBCCE4EF28D5276B001DBD8A /* TaskList.swift in Sources */,
 				BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */,
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
+				BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */,
 				BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */,
 				BBE9196728F221C6001EF750 /* OverviewListType.swift in Sources */,
 				BB0504212926CB2600DAECA6 /* SheetHelper.swift in Sources */,

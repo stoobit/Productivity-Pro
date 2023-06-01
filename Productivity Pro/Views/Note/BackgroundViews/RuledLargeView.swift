@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension BackgroundView {
+extension BackgroundTemplateView {
     
     @ViewBuilder func RuledLargeViewPortrait() -> some View {
         Path { path in

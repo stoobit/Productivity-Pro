@@ -35,44 +35,62 @@ struct DrawingView: View {
             drawingChanged: $drawingChanged
         )
         .onChange(of: drawingChanged) { value in
-            undoManager?.disableUndoRegistration()
-            page.canvas = pkCanvasView.drawing.dataRepresentation()
-            drawingChanged = false
-            undoManager?.enableUndoRegistration()
+            didDrawingChange(value)
         }
         .onChange(of: toolManager.selectedPage) { _ in
+            didSelectedPageChange()
+        }
+        .onChange(of: toolManager.isCanvasEnabled) { isEnabled in
+            didCanvasAvailabilityChange(isEnabled)
+        }
+        .frame(
+            width: toolManager.zoomScale * getFrame().width,
+            height: toolManager.zoomScale * getFrame().height
+        )
+        .scaleEffect(1/toolManager.zoomScale)
+        .allowsHitTesting(toolManager.isCanvasEnabled)
+        .zIndex(Double(page.items.count + 20))
+    }
+    
+    func didDrawingChange(_ value: Bool) {
+        undoManager?.disableUndoRegistration()
+        page.canvas = pkCanvasView.drawing.dataRepresentation()
+        drawingChanged = false
+        undoManager?.enableUndoRegistration()
+    }
+    
+    func didSelectedPageChange() {
+        pkCanvasView.isRulerActive = false
+        pkToolPicker.setVisible(
+            false, forFirstResponder: pkCanvasView
+        )
+        
+        pkToolPicker.removeObserver(pkCanvasView)
+        pkCanvasView.resignFirstResponder()
+        
+        toolManager.isLocked = false
+        toolManager.isCanvasEnabled = false
+    }
+    
+    func didCanvasAvailabilityChange(_ isEnabled: Bool) {
+        if isEnabled {
+            pkToolPicker.setVisible(
+                true, forFirstResponder: pkCanvasView
+            )
+            
+            pkToolPicker.addObserver(pkCanvasView)
+            pkCanvasView.becomeFirstResponder()
+            
+        } else {
             pkCanvasView.isRulerActive = false
+            toolManager.isLocked = false
+            
             pkToolPicker.setVisible(
                 false, forFirstResponder: pkCanvasView
             )
             
             pkToolPicker.removeObserver(pkCanvasView)
             pkCanvasView.resignFirstResponder()
-            
-            toolManager.isLocked = false
-            toolManager.isCanvasEnabled = false
-            
-        }
-        .onChange(of: toolManager.isCanvasEnabled) { isEnabled in
-            if isEnabled {
-                pkToolPicker.setVisible(
-                    true, forFirstResponder: pkCanvasView
-                )
-                
-                pkToolPicker.addObserver(pkCanvasView)
-                pkCanvasView.becomeFirstResponder()
-                
-            } else {
-                pkCanvasView.isRulerActive = false
-                toolManager.isLocked = false
-                
-                pkToolPicker.setVisible(
-                    false, forFirstResponder: pkCanvasView
-                )
-                
-                pkToolPicker.removeObserver(pkCanvasView)
-                pkCanvasView.resignFirstResponder()
-            }
         }
     }
     

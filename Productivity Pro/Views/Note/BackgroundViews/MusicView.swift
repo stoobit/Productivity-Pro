@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension BackgroundView {
+extension BackgroundTemplateView {
     
     @ViewBuilder func MusicViewPortrait() -> some View {
         Path { path in

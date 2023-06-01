@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BackgroundView: View {
+struct BackgroundTemplateView: View {
     
     var page: Page
     var scale: CGFloat
@@ -51,6 +51,11 @@ struct BackgroundView: View {
             
         }
         .colorScheme(colorScheme())
+        .frame(
+            width: scale * getFrame().width,
+            height: scale * getFrame().height
+        )
+        .scaleEffect(1/scale)
     }
     
     func colorScheme() -> ColorScheme {
@@ -62,6 +67,19 @@ struct BackgroundView: View {
         
         return cs
     }
+    
+    func getFrame() -> CGSize {
+        var frame: CGSize = .zero
+        
+        if page.isPortrait {
+            frame = CGSize(width: shortSide, height: longSide)
+        } else {
+            frame = CGSize(width: longSide, height: shortSide)
+        }
+        
+        return frame
+    }
+    
     
 }
 

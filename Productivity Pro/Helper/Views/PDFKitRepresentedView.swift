@@ -28,7 +28,7 @@ struct PDFKitRepresentedView: UIViewRepresentable {
         pdfView.displayMode = .singlePage
         pdfView.isOpaque = false
         
-        pdfView.scaleFactor = 2.6 * toolManager.zoomScale
+//        pdfView.bounds.size = CGSize(
             
         return pdfView
     }
