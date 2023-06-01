@@ -124,14 +124,7 @@ struct OverviewView: View {
                                             
                                             Spacer()
                                             
-                                            Menu(content: {
-                                                Button(role: .destructive, action: {}) {
-                                                    Label("Delete Page", systemImage: "trash")
-                                                }
-                                            }) {
-                                                Label("\(index + 1)", systemImage: "chevron.down")
-                                            }
-                                            .foregroundColor(.primary)
+                                            Text("\(index + 1)")
                                         }
                                         .padding(.horizontal, 10)
                                         .frame(width: size.width / 4)
@@ -204,9 +197,7 @@ struct OverviewView: View {
     
     func goToPage(page: Page) {
         withAnimation {
-            toolManager.selectedPage = document.document.note.pages.firstIndex(
-                of: page
-            ) ?? toolManager.selectedPage
+            toolManager.selectedTab = page.id
             subviewManager.overviewSheet.toggle()
         }
     }
