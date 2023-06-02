@@ -19,11 +19,8 @@ class ToolManager: ObservableObject {
     
     @Published var didZoom: Bool = false
     @Published var didScroll: Bool = false
-    @Published var firstZoom: Bool = true
     
     @Published var zoomScale: CGFloat = 1
-    @Published var animatedZoom: Bool = true
-    
     @Published var scrollOffset: CGPoint = .zero
     
     @Published var isCanvasEnabled: Bool = false

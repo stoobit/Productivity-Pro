@@ -19,10 +19,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     var content: () -> Content
     
     func makeUIView(context: Context) -> UIScrollView {
-        if toolManager.firstZoom {
-            toolManager.zoomScale = getScale()
-            toolManager.firstZoom = false
-        }
+        toolManager.zoomScale = getScale()
         
         let scrollView = UIScrollView()
         scrollView.delegate = context.coordinator
@@ -59,7 +56,6 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         return Coordinator(
             hostingController: UIHostingController(rootView: self.content()),
             didZoom: $toolManager.didZoom,
-            firstZoom: $toolManager.firstZoom,
             scale: $toolManager.zoomScale,
             offset: $toolManager.scrollOffset,
             isEditorVisible: $toolManager.isEditorVisible,
@@ -81,20 +77,21 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         if toolManager.isLocked {
             uiView.isScrollEnabled = false
             uiView.pinchGestureRecognizer?.isEnabled = false
+            uiView.decelerationRate = .init(rawValue: -10)
         } else {
             uiView.isScrollEnabled = true
             uiView.pinchGestureRecognizer?.isEnabled = true
+            uiView.decelerationRate = .normal
         }
-//
-//        if toolManager.zoomScale != uiView.zoomScale && toolManager.isEditorVisible {
-//
-//            uiView.setZoomScale(
-//                toolManager.zoomScale,
-//                animated: toolManager.animatedZoom
-//            )
-//
-//            toolManager.animatedZoom = false
-//        }
+        
+        if toolManager.selectedTab != page.id {
+            uiView.setZoomScale(
+                uiView.minimumZoomScale,
+                animated: true
+            )
+            
+            uiView.setContentOffset(.zero, animated: true)
+        }
         
         context.coordinator.hostingController.rootView = content()
         assert(context.coordinator.hostingController.view.superview == uiView)
@@ -106,7 +103,6 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         
         var hostingController: UIHostingController<Content>
         @Binding var didZoom: Bool
-        @Binding var firstZoom: Bool
         @Binding var scale: CGFloat
         @Binding var offset: CGPoint
         
@@ -118,7 +114,6 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         init(
             hostingController: UIHostingController<Content>,
             didZoom: Binding<Bool>,
-            firstZoom: Binding<Bool>,
             scale: Binding<CGFloat>,
             offset: Binding<CGPoint>,
             isEditorVisible: Binding<Bool>,
@@ -127,7 +122,6 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         ) {
             self.hostingController = hostingController
             _didZoom = didZoom
-            _firstZoom = firstZoom
             _scale = scale
             _offset = offset
             _isEditorVisible = isEditorVisible
@@ -197,5 +191,4 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         
         return scale
     }
-    
 }

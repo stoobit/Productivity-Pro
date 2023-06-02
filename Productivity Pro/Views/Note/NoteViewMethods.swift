@@ -27,13 +27,11 @@ extension NoteView {
         toolManager.selectedItem = nil
         toolManager.isCanvasEnabled = false
         toolManager.isLocked = false
-        toolManager.firstZoom = true
         toolManager.zoomScale = 1
         toolManager.scrollOffset = .zero
         toolManager.selectedPage = 0
         toolManager.selectedTab = UUID()
         toolManager.showProgress = false
-        toolManager.animatedZoom = true
     }
     
     func fixScrollViewBug() {
