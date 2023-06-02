@@ -10,13 +10,13 @@ import PDFKit
 
 struct PDFKitRepresentedView: UIViewRepresentable {
 
+    @Binding var pdfView: PDFView
     @Binding var page: Page
     @StateObject var toolManager: ToolManager
     
     let backgroundData: Data?
     
     func makeUIView(context: Context) -> PDFView {
-        let pdfView = PDFView()
         
         if let data = backgroundData {
             pdfView.document = PDFDocument(data: data)
@@ -26,18 +26,18 @@ struct PDFKitRepresentedView: UIViewRepresentable {
         pdfView.isUserInteractionEnabled = false
         pdfView.pageShadowsEnabled = false
         pdfView.backgroundColor = .white
-        pdfView.autoScales = false
         pdfView.motionEffects = []
         pdfView.displayMode = .singlePage
         pdfView.isOpaque = false
+        pdfView.autoScales = false
         
-        pdfView.autoScales = true
+        setScale()
             
         return pdfView
     }
 
     func updateUIView(_ uiView: PDFView, context: Context) {
-        
+        setScale()
     }
     
     func getFrame() -> CGSize {
@@ -51,15 +51,31 @@ struct PDFKitRepresentedView: UIViewRepresentable {
         
         return frame
     }
+    
+    func setScale() {
+        let bounds: CGRect = (pdfView.document?.page(
+            at: 0
+        )?.bounds(for: .mediaBox)) ?? .zero
+        
+        if page.isPortrait {
+            pdfView.scaleFactor = longSide / bounds.height
+        } else {
+            pdfView.scaleFactor = longSide / bounds.width
+        }
+    }
+    
 }
 
 struct PagePDFView: View {
+    
+    @State var pdfView: PDFView = PDFView()
     
     @Binding var page: Page
     @StateObject var toolManager: ToolManager
     
     var body: some View {
         PDFKitRepresentedView(
+            pdfView: $pdfView,
             page: $page,
             toolManager: toolManager,
             backgroundData: page.backgroundMedia
