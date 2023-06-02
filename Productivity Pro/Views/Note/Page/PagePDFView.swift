@@ -31,7 +31,6 @@ struct PDFKitRepresentedView: UIViewRepresentable {
         pdfView.displayMode = .singlePage
         pdfView.isOpaque = false
         pdfView.autoScales = false
-        pdfView.isUserInteractionEnabled = false
         
         setScale()
             
