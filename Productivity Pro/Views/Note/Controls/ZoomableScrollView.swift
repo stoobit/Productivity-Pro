@@ -72,7 +72,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         
         if uiView.minimumZoomScale != getScale() {
             uiView.minimumZoomScale = getScale()
-            
+
             if uiView.zoomScale < getScale() {
                 uiView.setZoomScale(getScale(), animated: true)
             }
@@ -85,16 +85,16 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             uiView.isScrollEnabled = true
             uiView.pinchGestureRecognizer?.isEnabled = true
         }
-        
-        if toolManager.zoomScale != uiView.zoomScale && toolManager.isEditorVisible {
-            
-            uiView.setZoomScale(
-                toolManager.zoomScale,
-                animated: toolManager.animatedZoom
-            )
-            
-            toolManager.animatedZoom = false
-        }
+//
+//        if toolManager.zoomScale != uiView.zoomScale && toolManager.isEditorVisible {
+//
+//            uiView.setZoomScale(
+//                toolManager.zoomScale,
+//                animated: toolManager.animatedZoom
+//            )
+//
+//            toolManager.animatedZoom = false
+//        }
         
         context.coordinator.hostingController.rootView = content()
         assert(context.coordinator.hostingController.view.superview == uiView)

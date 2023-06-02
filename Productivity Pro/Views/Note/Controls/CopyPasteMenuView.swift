@@ -13,9 +13,13 @@ struct CopyPasteMenuView: View {
     @Binding var document: Productivity_ProDocument
     @State var pasteDisabled: Bool = false
     
-    @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
-    @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
-    @AppStorage("CPPosition") var isCPLeft: Bool = true
+    @AppStorage("defaultFont")
+    var defaultFont: String = "Avenir Next"
+    @AppStorage("defaultFontSize")
+    var defaultFontSize: Double = 12
+    @AppStorage("CPPosition")
+    var isCPLeft: Bool = true
+    
     @StateObject var toolManager: ToolManager
     
     var body: some View {
