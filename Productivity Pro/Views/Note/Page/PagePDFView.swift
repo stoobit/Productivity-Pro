@@ -12,7 +12,9 @@ struct PDFKitRepresentedView: UIViewRepresentable {
 
     @Binding var pdfView: PDFView
     @Binding var page: Page
+    
     @StateObject var toolManager: ToolManager
+    @State var oldScale: CGFloat = 0
     
     let backgroundData: Data?
     
@@ -32,12 +34,16 @@ struct PDFKitRepresentedView: UIViewRepresentable {
         pdfView.autoScales = false
         
         setScale()
+        oldScale = toolManager.zoomScale
             
         return pdfView
     }
 
     func updateUIView(_ uiView: PDFView, context: Context) {
-        setScale()
+        if oldScale != toolManager.zoomScale {
+            setScale()
+            oldScale = toolManager.zoomScale
+        }
     }
     
     func getFrame() -> CGSize {
