@@ -194,7 +194,6 @@
 		BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundScan.swift; sourceTree = "<group>"; };
 		BB73F053297F278F00ED23CC /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
-		BB8B2EDD29436E1400ED95CB /* SCBU.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SCBU.md; sourceTree = "<group>"; };
 		BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewMethods.swift; sourceTree = "<group>"; };
 		BB91B74D29DF7D9D00B82047 /* DebuggingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSheet.swift; sourceTree = "<group>"; };
 		BB929B7F28E5076D00DA4538 /* NoteSideActionToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionToolbar.swift; sourceTree = "<group>"; };
@@ -346,7 +345,6 @@
 				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
 				BB527C3129AACA8000CDE2A9 /* MenuCommands.swift */,
-				BB8B2EDD29436E1400ED95CB /* SCBU.md */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,

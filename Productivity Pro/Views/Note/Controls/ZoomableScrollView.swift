@@ -50,8 +50,8 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIScrollView, context: Context) {
-        if uiView.minimumZoomScale != 0.4 {
-            uiView.minimumZoomScale = 0.4
+        if uiView.minimumZoomScale != getScale() {
+            uiView.minimumZoomScale = getScale()
             uiView.setZoomScale(getScale(), animated: true)
         }
         
@@ -115,11 +115,11 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             _isPagingEnabled = isPagingEnabled
         }
         
-        func scrollViewDidZoom(_ scrollView: UIScrollView) {
-            let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
-            let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
-            scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
-        }
+//        func scrollViewDidZoom(_ scrollView: UIScrollView) {
+//            let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+//            let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+//            scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
+//        }
         
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {
             return hostingController.view
