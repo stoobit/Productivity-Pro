@@ -26,7 +26,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         scrollView.delegate = context.coordinator
         
         scrollView.minimumZoomScale = 1
-        scrollView.maximumZoomScale = 2
+        scrollView.maximumZoomScale = 3
         
         scrollView.bouncesZoom = false
         scrollView.isScrollEnabled = true
@@ -52,6 +52,14 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     func updateUIView(_ uiView: UIScrollView, context: Context) {
         if uiView.minimumZoomScale != getScale() {
             uiView.minimumZoomScale = getScale()
+            
+            if getScale() > uiView.zoomScale {
+                uiView.setZoomScale(getScale(), animated: true)
+            }
+        }
+        
+        if uiView.maximumZoomScale != 2 {
+            uiView.maximumZoomScale = 2
             uiView.setZoomScale(getScale(), animated: true)
         }
         

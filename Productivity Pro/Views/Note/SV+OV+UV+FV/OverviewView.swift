@@ -45,43 +45,13 @@ struct OverviewView: View {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Done") { subviewManager.overviewSheet.toggle() }
                     }
-                    
-#if targetEnvironment(macCatalyst)
-                    ToolbarItemGroup(placement: .bottomBar) {
-                        HStack {
-                            Button(action: {
-                                selectedTab = .all
-                            }) {
-                                Label("All", systemImage: "list.bullet")
-                                    .foregroundColor(
-                                        selectedTab == .all ? .accentColor : .secondary
-                                    )
-                            }
-                            .frame(width: proxy.size.width / 2)
-                            
-                            Button(action: {
-                                selectedTab = .bookmark
-                            }) {
-                                Label("Bookmarked", systemImage: "bookmark.fill")
-                                    .foregroundColor(
-                                        selectedTab == .bookmark ? .accentColor : .secondary
-                                    )
-                            }
-                            .frame(width: proxy.size.width / 2)
-                        }
-                    }
-#endif
                 }
                 
             }
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.browser)
-#if !targetEnvironment(macCatalyst)
             .toolbarBackground(.visible, for: .tabBar)
-#else
-            .tabViewStyle(.page(indexDisplayMode: .never))
-#endif
             .toolbarBackground(.visible, for: .navigationBar)
         }
     }
@@ -124,7 +94,23 @@ struct OverviewView: View {
                                             
                                             Spacer()
                                             
-                                            Text("\(index + 1)")
+                                            Menu(content: {
+                                                Button(
+                                                    role: .destructive,
+                                                    action: { delete(page) })
+                                                {
+                                                   Label(
+                                                    "Delete Page",
+                                                    systemImage: "trash"
+                                                   )
+                                                }
+                                            }) {
+                                                Label(
+                                                    "\(index + 1)",
+                                                    systemImage: "chevron.down"
+                                                )
+                                                .foregroundColor(.primary)
+                                            }
                                         }
                                         .padding(.horizontal, 10)
                                         .frame(width: size.width / 4)
@@ -172,7 +158,23 @@ struct OverviewView: View {
                                             
                                             Spacer()
                                             
-                                            Text("\(index + 1)")
+                                            Menu(content: {
+                                                Button(
+                                                    role: .destructive,
+                                                    action: { delete(page) })
+                                                {
+                                                   Label(
+                                                    "Delete Page",
+                                                    systemImage: "trash"
+                                                   )
+                                                }
+                                            }) {
+                                                Label(
+                                                    "\(index + 1)",
+                                                    systemImage: "chevron.down"
+                                                )
+                                                .foregroundColor(.primary)
+                                            }
                                         }
                                         .padding(.horizontal, 10)
                                         .frame(width: size.width / 4)
@@ -206,6 +208,10 @@ struct OverviewView: View {
         document.document.note.pages[
             document.document.note.pages.firstIndex(of: page)!
         ].isBookmarked.toggle()
+    }
+    
+    func delete(_ page: Page) {
+        
     }
     
 }
