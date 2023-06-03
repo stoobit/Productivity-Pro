@@ -52,7 +52,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     func updateUIView(_ uiView: UIScrollView, context: Context) {
         if uiView.minimumZoomScale != 0.4 {
             uiView.minimumZoomScale = 0.4
-            uiView.setZoomScale(getScale(), animated: false)
+            uiView.setZoomScale(getScale(), animated: true)
         }
         
         if toolManager.isLocked {
@@ -64,7 +64,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         }
         
         if toolManager.selectedTab != page.id {
-            uiView.setZoomScale(getScale(), animated: false)
+            uiView.setZoomScale(getScale(), animated: true)
             uiView.setContentOffset(.zero, animated: true)
         }
         

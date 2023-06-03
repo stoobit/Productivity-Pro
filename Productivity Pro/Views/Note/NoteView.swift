@@ -67,6 +67,7 @@ struct NoteView: View {
                         $0.id == tab
                     }) ?? 0
                     
+                    toolManager.selectedItem = nil
                     toolManager.scrollOffset = .zero
                     toolManager.zoomScale = getScale(
                         toolManager.selectedPage, size: proxy.size
