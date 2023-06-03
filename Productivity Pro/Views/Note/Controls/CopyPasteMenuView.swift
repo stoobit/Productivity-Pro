@@ -24,9 +24,7 @@ struct CopyPasteMenuView: View {
     
     var body: some View {
         Group {
-            
-            HStack {
-                
+            HStack { 
                 Group {
                     
                     Button(action: pasteItem) {

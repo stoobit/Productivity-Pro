@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+@MainActor
 struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     
     var size: CGSize
     
+    @Binding var document: Productivity_ProDocument
     @Binding var page: Page
     
     @StateObject var toolManager: ToolManager
@@ -19,13 +21,12 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     var content: () -> Content
     
     func makeUIView(context: Context) -> UIScrollView {
-        toolManager.zoomScale = getScale()
         
         let scrollView = UIScrollView()
         scrollView.delegate = context.coordinator
         
+        scrollView.minimumZoomScale = 1
         scrollView.maximumZoomScale = 2
-        scrollView.minimumZoomScale = getScale()
         
         scrollView.bouncesZoom = false
         scrollView.isScrollEnabled = true
@@ -45,11 +46,30 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
         
-        scrollView.setZoomScale(
-            toolManager.zoomScale, animated: true
-        )
-        
         return scrollView
+    }
+    
+    func updateUIView(_ uiView: UIScrollView, context: Context) {
+        if uiView.minimumZoomScale != 0.4 {
+            uiView.minimumZoomScale = 0.4
+            uiView.setZoomScale(getScale(), animated: false)
+        }
+        
+        if toolManager.isLocked {
+            uiView.isScrollEnabled = false
+            uiView.pinchGestureRecognizer?.isEnabled = false
+        } else {
+            uiView.isScrollEnabled = true
+            uiView.pinchGestureRecognizer?.isEnabled = true
+        }
+        
+        if toolManager.selectedTab != page.id {
+            uiView.setZoomScale(getScale(), animated: false)
+            uiView.setContentOffset(.zero, animated: true)
+        }
+        
+        context.coordinator.hostingController.rootView = content()
+        assert(context.coordinator.hostingController.view.superview == uiView)
     }
     
     func makeCoordinator() -> Coordinator {
@@ -64,41 +84,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         )
     }
     
-    func updateUIView(_ uiView: UIScrollView, context: Context) {
-        
-        if uiView.minimumZoomScale != getScale() {
-            uiView.minimumZoomScale = getScale()
-
-            if uiView.zoomScale < getScale() {
-                uiView.setZoomScale(getScale(), animated: true)
-            }
-        }
-        
-        if toolManager.isLocked {
-            uiView.isScrollEnabled = false
-            uiView.pinchGestureRecognizer?.isEnabled = false
-            uiView.decelerationRate = .init(rawValue: -10)
-        } else {
-            uiView.isScrollEnabled = true
-            uiView.pinchGestureRecognizer?.isEnabled = true
-            uiView.decelerationRate = .normal
-        }
-        
-        if toolManager.selectedTab != page.id {
-            uiView.setZoomScale(
-                uiView.minimumZoomScale,
-                animated: true
-            )
-            
-            uiView.setContentOffset(.zero, animated: true)
-        }
-        
-        context.coordinator.hostingController.rootView = content()
-        assert(context.coordinator.hostingController.view.superview == uiView)
-    }
-    
-    // MARK: - Coordinator
-    
+    @MainActor
     class Coordinator: NSObject, UIScrollViewDelegate {
         
         var hostingController: UIHostingController<Content>
@@ -127,6 +113,12 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             _isEditorVisible = isEditorVisible
             _showFrame = showFrame
             _isPagingEnabled = isPagingEnabled
+        }
+        
+        func scrollViewDidZoom(_ scrollView: UIScrollView) {
+            let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+            let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+            scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
         }
         
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {

@@ -39,6 +39,7 @@ struct NoteView: View {
                     ForEach($document.document.note.pages) { $page in
                         ZoomableScrollView(
                             size: proxy.size,
+                            document: $document,
                             page: $page,
                             toolManager: toolManager,
                             subviewManager: subviewManager
@@ -65,6 +66,11 @@ struct NoteView: View {
                     toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
                         $0.id == tab
                     }) ?? 0
+                    
+                    toolManager.scrollOffset = .zero
+                    toolManager.zoomScale = getScale(
+                        toolManager.selectedPage, size: proxy.size
+                    )
                 }
                 .onChange(of: toolManager.selectedPage) { page in
                     toolManager.selectedTab = document.document.note.pages[page].id

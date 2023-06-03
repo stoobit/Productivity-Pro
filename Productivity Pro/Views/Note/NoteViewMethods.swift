@@ -152,4 +152,18 @@ extension NoteView {
         return frame
     }
     
+    func getScale(_ index: Int, size: CGSize) -> CGFloat {
+        var scale: CGFloat = 0
+        
+        let page = document.document.note.pages[index]
+        
+        if page.isPortrait {
+            scale = size.width / shortSide
+        } else {
+            scale = size.width / longSide
+        }
+        
+        return scale
+    }
+    
 }
