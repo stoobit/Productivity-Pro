@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OverviewView: View {
     
+    @Environment(\.undoManager) var undoManager
     @Environment(\.horizontalSizeClass) var hsc
     @Environment(\.colorScheme) var cs
     
@@ -18,7 +19,6 @@ struct OverviewView: View {
     @StateObject var subviewManager: SubviewManager
     
     @State var isDeleteAlert: Bool = false
-    @State var renderedPages: [OverviewModel] = []
     @State var current: Page?
     
     @State var selectedTab: OverviewListType = .all
@@ -94,22 +94,8 @@ struct OverviewView: View {
                                             
                                             Spacer()
                                             
-                                            Menu(content: {
-                                                Button(
-                                                    role: .destructive,
-                                                    action: { delete(page) })
-                                                {
-                                                   Label(
-                                                    "Delete Page",
-                                                    systemImage: "trash"
-                                                   )
-                                                }
-                                            }) {
-                                                Label(
-                                                    "\(index + 1)",
-                                                    systemImage: "chevron.down"
-                                                )
-                                                .foregroundColor(.primary)
+                                            OverviewPageIndicator(document: document, index: index) {
+                                                delete(page)
                                             }
                                         }
                                         .padding(.horizontal, 10)
@@ -158,22 +144,8 @@ struct OverviewView: View {
                                             
                                             Spacer()
                                             
-                                            Menu(content: {
-                                                Button(
-                                                    role: .destructive,
-                                                    action: { delete(page) })
-                                                {
-                                                   Label(
-                                                    "Delete Page",
-                                                    systemImage: "trash"
-                                                   )
-                                                }
-                                            }) {
-                                                Label(
-                                                    "\(index + 1)",
-                                                    systemImage: "chevron.down"
-                                                )
-                                                .foregroundColor(.primary)
+                                            OverviewPageIndicator(document: document, index: index) {
+                                                delete(page)
                                             }
                                         }
                                         .padding(.horizontal, 10)
@@ -197,129 +169,4 @@ struct OverviewView: View {
         }
     }
     
-    func goToPage(page: Page) {
-        withAnimation {
-            toolManager.selectedTab = page.id
-            subviewManager.overviewSheet.toggle()
-        }
-    }
-    
-    func toggleBookmark(page: Page) {
-        document.document.note.pages[
-            document.document.note.pages.firstIndex(of: page)!
-        ].isBookmarked.toggle()
-    }
-    
-    func delete(_ page: Page) {
-        
-    }
-    
 }
-
-struct DragAndDropPage: ViewModifier {
-    
-    @Binding var document: Productivity_ProDocument
-    
-    let page: Page
-    let type: OverviewListType
-    
-    @Binding var current: Page?
-    @StateObject var toolManager: ToolManager
-    
-    func body(content: Content) -> some View {
-        if type == .all {
-            content
-                .onDrag({
-                    current = page
-                    return NSItemProvider(contentsOf: URL(string: "\(page.id)")!)!
-                })
-                .onDrop(of: [.url],
-                        delegate:
-                            DragRelocateDelegate(
-                                item: page,
-                                listData: $document.document.note.pages,
-                                current: $current, toolManager: toolManager
-                            )
-                )
-            
-        } else {
-            content
-        }
-    }
-}
-
-struct OverviewModel {
-    var pageID: UUID
-    var image: UIImage
-}
-
-struct OverviewIcon: View {
-    
-    @State var pageView: PageView?
-    
-    @Binding var document: Productivity_ProDocument
-    let page: Page
-    
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
-    
-    let size: CGSize
-    
-    var body: some View {
-        ZStack {
-            pageView
-                .scaleEffect(size.width / 4 / getFrame(page: page).width)
-                .frame(
-                    width: size.width / 4,
-                    height: (size.width / 4 / getFrame(page: page).width) * getFrame(page: page).height
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 5))
-                .allowsHitTesting(false)
-                .disabled(true)
-            
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(
-                    page.id == toolManager.selectedTab ? Color.accentColor : Color.secondary,
-                    lineWidth: 2
-                )
-                .frame(
-                    width: size.width / 4,
-                    height: (size.width / 4 / getFrame(page: page).width) * getFrame(page: page).height
-                )
-        }
-        .onAppear {
-            let tm = ToolManager()
-            tm.zoomScale = 1
-            
-            pageView = PageView(
-                document: $document,
-                page: .constant(page),
-                toolManager: tm,
-                subviewManager: subviewManager,
-                showBackground: true,
-                showToolView: true,
-                showShadow: false,
-                isOverview: true,
-                size:
-                    CGSize(
-                        width: size.width / 4,
-                        height: (size.width / 4 / getFrame(page: page).width) * getFrame(page: page).height
-                    )
-            )
-        }
-    }
-    
-    func getFrame(page: Page) -> CGSize {
-        var frame: CGSize = .zero
-        
-        if page.isPortrait {
-            frame = CGSize(width: shortSide, height: longSide)
-        } else {
-            frame = CGSize(width: longSide, height: shortSide)
-        }
-        
-        return frame
-    }
-    
-}
-

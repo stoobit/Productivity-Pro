@@ -175,7 +175,9 @@ struct NoteView: View {
         }
         .onDisappear { resetControls() }
         .onChange(of: toolManager.selectedPage) { _ in pageIndicator() }
-        .onChange(of: document.document.note.pages.count) { _ in pageIndicator() }
+        .onChange(of: document.document.note.pages.count) { _ in pageIndicator()
+            undoManager?.removeAllActions()
+        }
         .task { pageIndicator() }
         .alert("Delete this Page", isPresented: $subviewManager.isDeletePageAlert, actions: {
                 Button("Delete Page", role: .destructive) { removePage() }

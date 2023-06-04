@@ -29,6 +29,10 @@
 		BB3208A82981DFFF0014F602 /* CameraHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraHelperView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB3525B32908673800D35790 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3525B22908673800D35790 /* Array.swift */; };
+		BB37AD8A2A2C0AF2006DB94D /* OverviewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD892A2C0AF2006DB94D /* OverviewMethods.swift */; };
+		BB37AD8C2A2C0B38006DB94D /* OverviewDragHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8B2A2C0B38006DB94D /* OverviewDragHelper.swift */; };
+		BB37AD8E2A2C0B58006DB94D /* OverviewIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8D2A2C0B58006DB94D /* OverviewIcon.swift */; };
+		BB37AD922A2C0BDD006DB94D /* OverviewPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD912A2C0BDD006DB94D /* OverviewPageIndicator.swift */; };
 		BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F2FCD29129562001B7067 /* Orientation.swift */; };
 		BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F02996CE6200C0F140 /* ItemModel.swift */; };
 		BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F22996D06200C0F140 /* ShapeModel.swift */; };
@@ -160,6 +164,10 @@
 		BB3208A72981DFFF0014F602 /* CameraHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelperView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		BB37AD892A2C0AF2006DB94D /* OverviewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewMethods.swift; sourceTree = "<group>"; };
+		BB37AD8B2A2C0B38006DB94D /* OverviewDragHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDragHelper.swift; sourceTree = "<group>"; };
+		BB37AD8D2A2C0B58006DB94D /* OverviewIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewIcon.swift; sourceTree = "<group>"; };
+		BB37AD912A2C0BDD006DB94D /* OverviewPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPageIndicator.swift; sourceTree = "<group>"; };
 		BB3F2FCD29129562001B7067 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		BB3F75F02996CE6200C0F140 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		BB3F75F22996D06200C0F140 /* ShapeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeModel.swift; sourceTree = "<group>"; };
@@ -322,6 +330,18 @@
 			path = MarkdownInfo;
 			sourceTree = "<group>";
 		};
+		BB37AD882A2C0A12006DB94D /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				BB27FED728EA419300459334 /* OverviewView.swift */,
+				BB37AD892A2C0AF2006DB94D /* OverviewMethods.swift */,
+				BB37AD8D2A2C0B58006DB94D /* OverviewIcon.swift */,
+				BB37AD912A2C0BDD006DB94D /* OverviewPageIndicator.swift */,
+				BB37AD8B2A2C0B38006DB94D /* OverviewDragHelper.swift */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
 		BB4CDD3428D3C668009A409F = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +436,6 @@
 			isa = PBXGroup;
 			children = (
 				BB27FED528EA1EF900459334 /* SettingsView.swift */,
-				BB27FED728EA419300459334 /* OverviewView.swift */,
 				BBB0B4DD29AE9E2900BC4729 /* UnlockAppView.swift */,
 				BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */,
 			);
@@ -510,6 +529,7 @@
 				BB6BFA2229048C5E002D09FD /* TemplateSheets */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
 				BB30E2A82A09B22E0022B29E /* MarkdownInfo */,
+				BB37AD882A2C0A12006DB94D /* Overview */,
 				BB9CC946293FD4450094446A /* Share+Collaborate */,
 				BB6BFA2129048BBE002D09FD /* SV+OV+UV+FV */,
 			);
@@ -826,8 +846,10 @@
 				BB30E2AC2A09B22E0022B29E /* MarkdownInfoView.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BBCCE4ED28D5275E001DBD8A /* WhiteboardModel.swift in Sources */,
+				BB37AD922A2C0BDD006DB94D /* OverviewPageIndicator.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
 				BBBB7E082A2693FD00155C8A /* CompactCalculatorUI.swift in Sources */,
+				BB37AD8C2A2C0B38006DB94D /* OverviewDragHelper.swift in Sources */,
 				BBBCACB42A25461900C23B2C /* OldCalculatorView.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
@@ -845,6 +867,7 @@
 				BBCCE4F228D52934001DBD8A /* NewDocumentView.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSideActionToolbar.swift in Sources */,
+				BB37AD8A2A2C0AF2006DB94D /* OverviewMethods.swift in Sources */,
 				BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */,
@@ -899,6 +922,7 @@
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,
 				BB72A28E29760327000E9753 /* ToolView.swift in Sources */,
 				BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */,
+				BB37AD8E2A2C0B58006DB94D /* OverviewIcon.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBCCE4F928D540AA001DBD8A /* NoteSettings.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
