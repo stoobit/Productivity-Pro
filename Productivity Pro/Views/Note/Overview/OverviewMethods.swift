@@ -16,7 +16,6 @@ extension OverviewView {
                 toolManager.selectedPage
             ].items = []
             
-            
             if page == document.document.note.pages.last! {
                 
                 if toolManager.selectedTab == page.id {
@@ -30,26 +29,21 @@ extension OverviewView {
                 })
                 
             } else {
+                let pageIndex: Int = document.document.note.pages.firstIndex(of: page)!
                 
-                
-                if page.id == toolManager.selectedTab {
-                    let index = document.document.note.pages
-                        .firstIndex(of: page)!
+                if pageIndex < toolManager.selectedPage {
                     
-                    let indexAdd: Int = toolManager.selectedTab == document.document.note.pages.last?.id ? -1 : 1
                     
+                    
+                } else if pageIndex == toolManager.selectedPage {
                     toolManager.selectedTab = document.document.note.pages[
-                        toolManager.selectedPage + indexAdd
+                        toolManager.selectedPage + 1
                     ].id
+                    
+                    document.document.note.pages.removeAll(where: { $0 == page })
+                } else if pageIndex > toolManager.selectedPage {
+                    document.document.note.pages.removeAll(where: { $0 == page })
                 }
-                
-                let new = toolManager.selectedTab
-                
-                document.document.note.pages.removeAll(where: {
-                    $0.id == page.id
-                })
-                
-                toolManager.selectedTab = new
                 
             }
         }
