@@ -48,16 +48,10 @@ struct ImportMediaHelper: ViewModifier {
                         }
                     }
                 }
-#if targetEnvironment(macCatalyst)
-                .sheet(isPresented: $subviewManager.showCameraView) {
-                    CameraHelperView(selectedImage: $toolManager.pickedImage, showProgress: $toolManager.showProgress, sourceType: .camera)
-                }
-#else
                 .fullScreenCover(isPresented: $subviewManager.showCameraView) {
                     CameraHelperView(selectedImage: $toolManager.pickedImage, showProgress: $toolManager.showProgress, sourceType: .camera)
                         .edgesIgnoringSafeArea(.bottom)
                 }
-#endif
                 .photosPicker(
                     isPresented: $subviewManager.showImportPhoto,
                     selection: $toolManager.photoPickerItem, matching: .images

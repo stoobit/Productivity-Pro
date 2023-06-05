@@ -132,14 +132,10 @@ extension PageView {
     }
     
     func getNIColor() -> Data {
-        
-#if targetEnvironment(macCatalyst)
-        var color: Color = Color(.displayP3, red: 2/255, green: 2/255, blue: 2/255)
-#else
         var color: Color = .black
-#endif
-        
-        let page = document.document.note.pages[toolManager.selectedPage]
+        let page = document.document.note.pages[
+            toolManager.selectedPage
+        ]
         
         if page.backgroundColor == "black" || page.backgroundColor == "gray" {
             color = .white

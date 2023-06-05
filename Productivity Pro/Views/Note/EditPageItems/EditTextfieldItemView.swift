@@ -165,9 +165,6 @@ struct EditTextfieldItemView: View {
             }
             
         }
-#if targetEnvironment(macCatalyst)
-        .scrollContentBackground(.hidden)
-#endif
         .onChange(of: editTextFieldModel) { _ in
             
             if let index = itemIndex {

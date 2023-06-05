@@ -174,9 +174,6 @@ struct EditShapeItemView: View {
             
         }
         .formStyle(.grouped)
-#if targetEnvironment(macCatalyst)
-        .scrollContentBackground(.hidden)
-#endif
         .onChange(of: editShapeModel) { _ in
             onEditModelChange(itemIndex: itemIndex)
         }

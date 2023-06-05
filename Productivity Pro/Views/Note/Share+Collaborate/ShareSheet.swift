@@ -71,12 +71,8 @@ struct ShareSheet: View {
                 .resizable()
                 .scaledToFit()
                 .shadow(color: .primary, radius: 2)
-#if targetEnvironment(macCatalyst)
-                .onDrag({
-                    return NSItemProvider(contentsOf: document.document.url!)!
-                })
-#endif
                 .frame(width: 200, height: 200)
+            
             Spacer()
             
             ShareLink(item: document.document.url!) { ShareIcon(size: size) }
@@ -94,15 +90,6 @@ struct ShareSheet: View {
                 .resizable()
                 .scaledToFit()
                 .shadow(color: .primary, radius: 2)
-#if targetEnvironment(macCatalyst)
-                .onDrag({
-                    if let url = toolManager.pdfRendering {
-                        return NSItemProvider(contentsOf: url) ?? NSItemProvider()
-                    } else {
-                        return NSItemProvider()
-                    }
-                })
-#endif
                 .frame(width: 200, height: 200)
             
             Spacer()

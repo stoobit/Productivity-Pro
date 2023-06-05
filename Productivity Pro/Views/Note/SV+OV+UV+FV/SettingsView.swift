@@ -9,13 +9,16 @@ import SwiftUI
 
 struct SettingsView: View {
     
-#if !targetEnvironment(macCatalyst)
     @Binding var isPresented: Bool
-#endif
     
-    @AppStorage("defaultFont") private var defaultFont: String = "Avenir Next"
-    @AppStorage("defaultFontSize") private var defaultFontSize: Double = 12
-    @AppStorage("CPPosition") private var isCPLeft: Bool = true
+    @AppStorage("defaultFont")
+    private var defaultFont: String = "Avenir Next"
+    
+    @AppStorage("defaultFontSize")
+    private var defaultFontSize: Double = 12
+    
+    @AppStorage("CPPosition")
+    private var isCPLeft: Bool = true
     
     @State private var fontSetter: String = "Avenir Next"
     @State private var sizeSetter: Double = 12
@@ -89,11 +92,9 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-#if !targetEnvironment(macCatalyst)
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { isPresented.toggle() }
                 }
-#endif
             }
         }
     }

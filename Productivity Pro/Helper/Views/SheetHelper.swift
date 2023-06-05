@@ -19,11 +19,9 @@ struct SheetHelper: ViewModifier {
     let save: () -> Void
     func body(content: Content) -> some View {
         content
-#if !targetEnvironment(macCatalyst)
             .sheet(isPresented: $subviewManager.settingsSheet) {
                 SettingsView(isPresented: $subviewManager.settingsSheet)
             }
-#endif
             .sheet(isPresented: $subviewManager.feedbackView) {
                 FeedbackView(subviewManager: subviewManager)
             }

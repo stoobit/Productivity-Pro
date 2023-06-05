@@ -248,12 +248,8 @@ struct Icon<Content: View>: View {
 
 struct NoteIcon: ViewModifier {
     func body(content: Content) -> some View {
-        #if targetEnvironment(macCatalyst)
         content
-            .scaleEffect(0.6).frame(width: 210 * 0.6, height: 300 * 0.6)
-        #else
-        content
-            .scaleEffect(0.45).frame(width: 210 * 0.45, height: 300 * 0.45)
-        #endif
+            .scaleEffect(0.45)
+            .frame(width: 210 * 0.45, height: 300 * 0.45)
     }
 }
