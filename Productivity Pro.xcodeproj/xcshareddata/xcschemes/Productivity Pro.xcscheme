@@ -49,6 +49,9 @@
             ReferencedContainer = "container:Productivity Pro.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <StoreKitConfigurationFileReference
+         identifier = "../../Productivity Pro/Views/Note/UnlockView/UnlockStoreKitConfig.storekit">
+      </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

@@ -13,6 +13,8 @@ struct UnlockAppView: View {
     @Environment(\.horizontalSizeClass) var hsc
     @StateObject var subviewManager: SubviewManager
     
+    @State private var unlockProduct: Product?
+    
     @AppStorage("fullAppUnlocked")
     var isFullAppUnlocked: Bool = false
     
@@ -68,7 +70,7 @@ struct UnlockAppView: View {
     }
     
     @ViewBuilder func UnlockButton(size: CGSize) -> some View {
-        Text("Unlock for $5.99")
+        Text("Unlock for \(unlockProduct?.displayPrice ?? "")")
             .font(.title2.bold())
             .foregroundColor(.white)
             .frame(
@@ -77,6 +79,11 @@ struct UnlockAppView: View {
             )
             .background(Color.accentColor)
             .cornerRadius(16)
+            .task {
+                try? await unlockProduct = Product.products(for: [
+                    "com.stoobit.ProductivityPro.unlock"
+                ]).first
+            }
     }
     
     func buttonSize(size: CGSize) -> CGFloat {
@@ -94,10 +101,9 @@ struct UnlockAppView: View {
 
 struct UnlockAppView_Previews: PreviewProvider {
     static var previews: some View {
-        Text("pedo")
+        Text("")
             .sheet(isPresented: .constant(true)) {
                 UnlockAppView(subviewManager: SubviewManager())
-                //                    .environment(\.horizontalSizeClass, .compact)
             }
     }
 }

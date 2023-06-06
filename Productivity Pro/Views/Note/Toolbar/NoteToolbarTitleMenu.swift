@@ -78,16 +78,16 @@ struct NoteToolbarTitleMenu: View {
             }
         }
         
-//        if !isFullAppUnlocked {
-//            Section {
-//                Button(action: {
-//                    toolManager.isCanvasEnabled = false
-//                    subviewManager.showUnlockView = true
-//                }) {
-//                    Label("Unlock Full Version", systemImage: "cart")
-//                }
-//            }
-//        }
+        if !isFullAppUnlocked {
+            Section {
+                Button(action: {
+                    toolManager.isCanvasEnabled = false
+                    subviewManager.showUnlockView = true
+                }) {
+                    Label("Unlock Full Version", systemImage: "cart")
+                }
+            }
+        }
         
     }
     
