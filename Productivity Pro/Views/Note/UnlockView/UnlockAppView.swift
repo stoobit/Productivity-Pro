@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct UnlockAppView: View {
     
     @Environment(\.horizontalSizeClass) var hsc
-    
-   @AppStorage("fullAppUnlocked") var isFullAppUnlocked: Bool = false
     @StateObject var subviewManager: SubviewManager
+    
+    @AppStorage("fullAppUnlocked")
+    var isFullAppUnlocked: Bool = false
     
     var body: some View {
         GeometryReader { proxy in

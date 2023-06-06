@@ -29,24 +29,15 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
                 toolManager.isLocked = false
                 
             }) {
-                Label("Markup", systemImage: "pencil.tip")
-                    .foregroundColor(toolManager.isCanvasEnabled ? .accentColor : .primary)
+                Label(
+                    "Markup",
+                    systemImage: toolManager.isCanvasEnabled ? "pencil.tip.crop.circle.fill" : "pencil.tip.crop.circle"
+                )
             }
         }
         
         ToolbarItem(id: "shapes", placement: .secondaryAction) {
             Menu(content: {
-                
-                //                Section {
-                //                    Button(action: {  }) {
-                //                        Label("Arrow", systemImage: "line.diagonal.arrow")
-                //                    }
-                //
-                //                    Button(action: {  }) {
-                //                        Label("Line", systemImage: "line.diagonal")
-                //                    }
-                //                }
-                //
                 Section {
                     Button(action: { addShape(type: .rectangle) }) {
                         Label("Rectangle", systemImage: "rectangle")
@@ -67,7 +58,6 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
                 
             }) {
                 Label("Shape", systemImage: "square.on.circle")
-                    .foregroundColor(.primary)
             }
             
         }
@@ -75,7 +65,6 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
         ToolbarItem(id: "textbox", placement: .secondaryAction) {
             Button(action: { addTextField() }) {
                 Label("Text Box", systemImage: "character.textbox")
-                    .foregroundColor(.primary)
             }
         }
         
@@ -107,7 +96,6 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
                 
             }) {
                 Label("Media", systemImage: "photo")
-                    .foregroundColor(.primary)
             }
             .modifier(
                 ImportMediaHelper(
@@ -122,7 +110,6 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
 //        ToolbarItem(id: "calc", placement: .secondaryAction) {
 //            Button(action: { openWindow(id: "calculator") }) {
 //                Label("Calculator", systemImage: "x.squareroot")
-//                    .foregroundColor(.primary)
 //            }
 //        }
         
