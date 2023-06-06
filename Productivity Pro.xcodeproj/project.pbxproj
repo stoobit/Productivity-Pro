@@ -80,7 +80,6 @@
 		BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9F70EA28E7A57C007DF951 /* AddPageView.swift */; };
 		BBA14EB32994541B007CB38A /* PencilKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA14EB22994541B007CB38A /* PencilKitView.swift */; };
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
-		BBAB910F2A01CEC000CF18B5 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAB910E2A01CEC000CF18B5 /* UIBarButtonItem.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
 		BBB0B4DE29AE9E2900BC4729 /* UnlockAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0B4DD29AE9E2900BC4729 /* UnlockAppView.swift */; };
 		BBBB7E082A2693FD00155C8A /* CompactCalculatorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */; };
@@ -217,7 +216,6 @@
 		BB9F70EA28E7A57C007DF951 /* AddPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPageView.swift; sourceTree = "<group>"; };
 		BBA14EB22994541B007CB38A /* PencilKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitView.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
-		BBAB910E2A01CEC000CF18B5 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BBB0B4DD29AE9E2900BC4729 /* UnlockAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockAppView.swift; sourceTree = "<group>"; };
 		BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactCalculatorUI.swift; sourceTree = "<group>"; };
@@ -623,7 +621,6 @@
 				BB6BFA262904907F002D09FD /* Color.swift */,
 				BB68082A29FDD2A90026FDDF /* NSAttributedString.swift */,
 				BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */,
-				BBAB910E2A01CEC000CF18B5 /* UIBarButtonItem.swift */,
 				BB27FED128EA09A200459334 /* TouchType.swift */,
 				BBE9196628F221C6001EF750 /* OverviewListType.swift */,
 				BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */,
@@ -786,7 +783,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					BB4CDD3C28D3C668009A409F = {
@@ -841,7 +838,6 @@
 				BB4CDD4328D3C668009A409F /* Productivity_ProDocument.swift in Sources */,
 				BBCCE4FB28D540B2001DBD8A /* WhiteboardSettings.swift in Sources */,
 				BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */,
-				BBAB910F2A01CEC000CF18B5 /* UIBarButtonItem.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
 				BB30E2AC2A09B22E0022B29E /* MarkdownInfoView.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
@@ -999,6 +995,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1060,6 +1057,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
