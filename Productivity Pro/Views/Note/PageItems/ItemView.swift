@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemView: View {
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     @Binding var page: Page
     @Binding var item: ItemModel

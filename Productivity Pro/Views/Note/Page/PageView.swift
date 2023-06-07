@@ -19,7 +19,7 @@ struct PageView: View {
     @AppStorage("defaultFontSize")
     var defaultFontSize: Double = 12
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     @Binding var page: Page
     
     @StateObject var toolManager: ToolManager

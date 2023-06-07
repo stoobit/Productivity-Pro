@@ -21,6 +21,16 @@ final class UnlockModel: ObservableObject {
             await self?.retrieveProducts()
         }
     }
+    
+    func purchase(_ item: Product) async {
+        do {
+            
+            let result = try await item.purchase()
+            
+        } catch {
+            print(error)
+        }
+    }
 }
 
 extension UnlockModel {
@@ -37,6 +47,10 @@ extension UnlockModel {
         } catch {
             print(error)
         }
+    }
+    
+    func handlePurchase(from result: Product.PurchaseResult) async throws {
+        
     }
     
 }

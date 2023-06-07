@@ -14,7 +14,7 @@ extension UTType {
     }
 }
 
-struct Productivity_ProDocument: FileDocument {
+struct ProductivityProDocument: FileDocument {
     var document: Document
     
     init(document: Document = Document()) {

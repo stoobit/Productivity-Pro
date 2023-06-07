@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PageItemView: View {
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     @Binding var page: Page
     
     @StateObject var toolManager: ToolManager

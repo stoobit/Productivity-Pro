@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DragAndDropPage: ViewModifier {
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     let page: Page
     let type: OverviewListType

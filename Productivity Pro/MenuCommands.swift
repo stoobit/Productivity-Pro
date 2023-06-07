@@ -16,11 +16,6 @@ struct MenuCommands: Commands {
     
     var body: some Commands {
         
-        CommandGroup(replacing: .help) {
-            Link("Help & Contact", destination: URL(string: link)!)
-                .keyboardShortcut("?", modifiers: [.command])
-        }
-        
         CommandGroup(replacing: .appSettings) {
             Button("Settings") {
                 if subviewManager.isSettingsActivated == false {

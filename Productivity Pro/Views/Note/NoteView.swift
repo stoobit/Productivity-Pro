@@ -15,7 +15,7 @@ struct NoteView: View {
    @AppStorage("fullAppUnlocked") var isFullAppUnlocked: Bool = false
     @AppStorage("startDate") var startDate: String = ""
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
@@ -198,7 +198,7 @@ struct NoteView: View {
 
 struct ToolbarTitleMenuVisibility: ViewModifier {
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager

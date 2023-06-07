@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddPageView: View {
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     @Binding var isPresented: Bool
     
     @State var backgroundColor: String = "white"

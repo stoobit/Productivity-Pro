@@ -10,7 +10,7 @@ import OnPasteboardChange
 
 struct CopyPasteMenuView: View {
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     @State var pasteDisabled: Bool = false
     
     @AppStorage("defaultFont")

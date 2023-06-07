@@ -41,7 +41,7 @@
 		BB3F75FB2997F38100C0F140 /* StrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FA2997F38100C0F140 /* StrokeStyle.swift */; };
 		BB3F75FD2997F81600C0F140 /* NoteMainToolToolbarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */; };
 		BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */; };
-		BB4CDD4328D3C668009A409F /* Productivity_ProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* Productivity_ProDocument.swift */; };
+		BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */; };
 		BB4CDD4528D3C668009A409F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4428D3C668009A409F /* ContentView.swift */; };
 		BB4CDD4728D3C66A009A409F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4CDD4628D3C66A009A409F /* Assets.xcassets */; };
 		BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4CDD4928D3C66A009A409F /* Preview Assets.xcassets */; };
@@ -180,7 +180,7 @@
 		BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMainToolToolbarMethods.swift; sourceTree = "<group>"; };
 		BB4CDD3D28D3C668009A409F /* Productivity Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_ProApp.swift; sourceTree = "<group>"; };
-		BB4CDD4228D3C668009A409F /* Productivity_ProDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_ProDocument.swift; sourceTree = "<group>"; };
+		BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityProDocument.swift; sourceTree = "<group>"; };
 		BB4CDD4428D3C668009A409F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB4CDD4628D3C66A009A409F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB4CDD4928D3C66A009A409F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -566,7 +566,7 @@
 		BB9DF5B328E067D600AC988D /* DocumentModels */ = {
 			isa = PBXGroup;
 			children = (
-				BB4CDD4228D3C668009A409F /* Productivity_ProDocument.swift */,
+				BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */,
 				BB4CDD5528D3D518009A409F /* DocumentModel.swift */,
 			);
 			path = DocumentModels;
@@ -859,7 +859,7 @@
 				BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BB9DF5B228E0666000AC988D /* TaskListView.swift in Sources */,
-				BB4CDD4328D3C668009A409F /* Productivity_ProDocument.swift in Sources */,
+				BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */,
 				BBCCE4FB28D540B2001DBD8A /* WhiteboardSettings.swift in Sources */,
 				BBCFF43A2A3069E600EAC5F5 /* MarkupLabel.swift in Sources */,
 				BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */,

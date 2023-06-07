@@ -13,7 +13,7 @@ struct EditTextView: View {
     @Environment(\.horizontalSizeClass) var hsc
     @FocusState var isFocused: Bool
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

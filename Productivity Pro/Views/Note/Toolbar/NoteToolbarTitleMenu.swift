@@ -15,7 +15,7 @@ struct NoteToolbarTitleMenu: View {
     @AppStorage("fullAppUnlocked") var isFullAppUnlocked: Bool = false
     
     @Environment(\.horizontalSizeClass) var hsc
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager

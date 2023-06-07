@@ -14,7 +14,7 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
     @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
     @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

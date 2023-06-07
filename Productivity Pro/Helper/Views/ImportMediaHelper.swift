@@ -13,7 +13,7 @@ struct ImportMediaHelper: ViewModifier {
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     func body(content: Content) -> some View {
         

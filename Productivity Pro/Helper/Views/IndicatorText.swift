@@ -10,7 +10,7 @@ import SwiftUI
 
 struct IndicatorText: View {
     
-    let document: Productivity_ProDocument
+    let document: ProductivityProDocument
     @StateObject var toolManager: ToolManager
     
     var body: some View {

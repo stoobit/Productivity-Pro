@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BottomPadding: ViewModifier {
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     @Binding var page: Page
     
     func body(content: Content) -> some View {

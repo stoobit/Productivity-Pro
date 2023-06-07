@@ -11,7 +11,7 @@ import VisionKit
 
 struct AddPDFPageHelper: ViewModifier {
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

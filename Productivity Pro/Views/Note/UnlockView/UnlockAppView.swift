@@ -11,10 +11,9 @@ import StoreKit
 struct UnlockAppView: View {
     
     @Environment(\.horizontalSizeClass) var hsc
+    @EnvironmentObject private var model: UnlockModel
     
     @StateObject var subviewManager: SubviewManager
-    @StateObject private var model: UnlockModel = UnlockModel()
-    
     @AppStorage("fullAppUnlocked")
     var isFullAppUnlocked: Bool = false
     
@@ -70,7 +69,7 @@ struct UnlockAppView: View {
     }
     
     @ViewBuilder func UnlockButton(size: CGSize) -> some View {
-        Text("Unlock for \(unlockProduct?.displayPrice ?? "")")
+        Text("Unlock for \(model.items.first?.displayPrice ?? "")")
             .font(.title2.bold())
             .foregroundColor(.white)
             .frame(
@@ -91,14 +90,5 @@ struct UnlockAppView: View {
         }
         
         return width
-    }
-}
-
-struct UnlockAppView_Previews: PreviewProvider {
-    static var previews: some View {
-        Text("")
-            .sheet(isPresented: .constant(true)) {
-                UnlockAppView(subviewManager: SubviewManager())
-            }
     }
 }

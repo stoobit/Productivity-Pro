@@ -11,7 +11,7 @@ struct OverviewIcon: View {
     
     @State var pageView: PageView?
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     let page: Page
     
     @StateObject var toolManager: ToolManager

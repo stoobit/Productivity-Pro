@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChangePageTemplateView: View {
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     @Binding var isPresented: Bool
     
     @StateObject var toolManager: ToolManager

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OverviewPageIndicator: View {
     
-    let document: Productivity_ProDocument
+    let document: ProductivityProDocument
     
     let index: Int
     let action: () -> Void

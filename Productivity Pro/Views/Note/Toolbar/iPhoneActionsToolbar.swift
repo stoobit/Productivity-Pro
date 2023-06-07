@@ -12,7 +12,7 @@ struct iPhoneActionsToolbar: ToolbarContent {
     @Environment(\.undoManager) var undoManager
     @Environment(\.horizontalSizeClass) var hsc
     
-    @Binding var document: Productivity_ProDocument
+    @Binding var document: ProductivityProDocument
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

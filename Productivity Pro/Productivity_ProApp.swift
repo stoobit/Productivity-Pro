@@ -7,21 +7,28 @@
 
 import SwiftUI
 
-let freeTrialDays = 600
-let link: String = "https://www.stoobit.com/productivity-pro/productivity-pro.html"
+let freeTrialDays = 3
 
 @main
 struct Productivity_ProApp: App {
     
-    @AppStorage("startDate") var startDate: String = ""
-    @AppStorage("firstOpened") var firstOpened: Bool = true
-    @AppStorage("fullAppUnlocked") var isFullAppUnlocked: Bool = false
+    @AppStorage("startDate")
+    private var startDate: String = ""
     
-    @StateObject var subviewManager: SubviewManager = SubviewManager()
-    @StateObject var toolManager: ToolManager = ToolManager()
+    @AppStorage("firstOpened")
+    private var firstOpened: Bool = true
+    
+    @AppStorage("fullAppUnlocked")
+    private var isFullAppUnlocked: Bool = false
+    
+    @StateObject
+    private var subviewManager: SubviewManager = SubviewManager()
+    
+    @StateObject
+    private var toolManager: ToolManager = ToolManager()
     
     var body: some Scene {
-        DocumentGroup(newDocument: Productivity_ProDocument()) { file in
+        DocumentGroup(newDocument: ProductivityProDocument()) { file in
             ContentView(
                 document: file.$document,
                 subviewManager: subviewManager,
