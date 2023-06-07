@@ -64,7 +64,7 @@ struct ContentView: View {
                 }
             },
             message: {
-                Text("By purchasing Productivity Pro you are helping us to improve the app and add more features allowing you to be even more productive.")
+                Text("By purchasing Productivity Pro, you help us improve the app and add more features, enabling you to be even more productive.")
             }
         )
         
