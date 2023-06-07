@@ -111,6 +111,8 @@
 		BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE62947CC9C000C545D /* RuledView.swift */; };
 		BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE82947DB2D000C545D /* RuledLargeView.swift */; };
 		BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDEA2947DC62000C545D /* MusicView.swift */; };
+		BBCFF43A2A3069E600EAC5F5 /* MarkupLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF4392A3069E600EAC5F5 /* MarkupLabel.swift */; };
+		BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBD9411C299195440085151B /* PPTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9411B299195440085151B /* PPTabView.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
@@ -249,6 +251,8 @@
 		BBCDFDE62947CC9C000C545D /* RuledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledView.swift; sourceTree = "<group>"; };
 		BBCDFDE82947DB2D000C545D /* RuledLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledLargeView.swift; sourceTree = "<group>"; };
 		BBCDFDEA2947DC62000C545D /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
+		BBCFF4392A3069E600EAC5F5 /* MarkupLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupLabel.swift; sourceTree = "<group>"; };
+		BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleShareButton.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBD9411B299195440085151B /* PPTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTabView.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
@@ -426,9 +430,11 @@
 			isa = PBXGroup;
 			children = (
 				BB929B8328E5087200DA4538 /* NoteMainToolToolbar.swift */,
+				BBCFF4392A3069E600EAC5F5 /* MarkupLabel.swift */,
 				BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */,
 				BB929B7F28E5076D00DA4538 /* NoteSideActionToolbar.swift */,
 				BB929B8128E5077800DA4538 /* NoteToolbarTitleMenu.swift */,
+				BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */,
 				BBDCF5DE299EBAB1004C99AE /* iPhoneActionsToolbar.swift */,
 			);
 			path = Toolbar;
@@ -847,10 +853,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BB9DF5B228E0666000AC988D /* TaskListView.swift in Sources */,
 				BB4CDD4328D3C668009A409F /* Productivity_ProDocument.swift in Sources */,
 				BBCCE4FB28D540B2001DBD8A /* WhiteboardSettings.swift in Sources */,
+				BBCFF43A2A3069E600EAC5F5 /* MarkupLabel.swift in Sources */,
 				BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
 				BB30E2AC2A09B22E0022B29E /* MarkdownInfoView.swift in Sources */,

@@ -29,10 +29,11 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
                 toolManager.isLocked = false
                 
             }) {
-                Label(
-                    "Markup",
-                    systemImage: toolManager.isCanvasEnabled ? "pencil.tip.crop.circle.fill" : "pencil.tip.crop.circle"
-                )
+                if #available(iOS 17, *) {
+                    iOS17Label(toolManager: toolManager)
+                } else {
+                    iOS16Label(toolManager: toolManager)
+                }
             }
         }
         

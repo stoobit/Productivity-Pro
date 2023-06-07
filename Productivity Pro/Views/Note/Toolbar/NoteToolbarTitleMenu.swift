@@ -25,19 +25,11 @@ struct NoteToolbarTitleMenu: View {
         
         Section {
             
-            Menu(content: {
-                
-                Button("Productivity Pro") {
-                    toolManager.isCanvasEnabled = false
-                    subviewManager.sharePPSheet = true
-                }
-                Button("PDF") {
-                    toolManager.isCanvasEnabled = false
-                    sharePDF()
-                }
-            }) {
-                Label("Share", systemImage: "square.and.arrow.up.on.square")
-            }
+            TitleShareButton(
+                toolManager: toolManager,
+                subviewManager: subviewManager,
+                sharePDF: { sharePDF() }
+            )
             
             Button(action: {
                 toolManager.isCanvasEnabled = false
@@ -45,10 +37,6 @@ struct NoteToolbarTitleMenu: View {
             }) {
                 Label("Print", systemImage: "printer")
             }
-            
-            //            Button(action: {  subviewManager.collaborationSheet.toggle() }) {
-            //                Label("Collaborate", systemImage: "person.2.fill")
-            //            }
             
         }
         
