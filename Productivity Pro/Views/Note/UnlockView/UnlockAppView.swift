@@ -51,7 +51,11 @@ struct UnlockAppView: View {
                     Spacer()
                     
                     Button(action: {
-                        
+                        if let item = model.items.first {
+                            Task {
+                                await model.purchase(item)
+                            }
+                        }
                     }) {
                         UnlockButton(size: proxy.size)
                     }

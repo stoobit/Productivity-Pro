@@ -8,6 +8,12 @@
 import SwiftUI
 import StoreKit
 
+typealias PurchaseResult = Product.PurchaseResult
+
+enum UnlockError: Error {
+    case failedVerification
+}
+
 let purchaseIDs: [String] = [
     "com.stoobit.ProductivityPro.unlock"
 ]
@@ -26,6 +32,7 @@ final class UnlockModel: ObservableObject {
         do {
             
             let result = try await item.purchase()
+            try await handlePurchase(from: result)
             
         } catch {
             print(error)
@@ -49,8 +56,33 @@ extension UnlockModel {
         }
     }
     
-    func handlePurchase(from result: Product.PurchaseResult) async throws {
-        
+    func handlePurchase(from result: PurchaseResult) async throws {
+        switch result {
+        case .success(let verification):
+            let transaction = try checkVerified(verification)
+            // TODO: Unlock App -> Transaction successful
+            
+            //
+            await transaction.finish()
+            
+        case .pending:
+            print("Pending")
+            
+        case .userCancelled:
+            print("Cancelled")
+            
+        default:
+            break
+        }
+    }
+    
+    func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+        switch result {
+        case .unverified:
+            throw UnlockError.failedVerification
+        case .verified(let safe):
+            return safe
+        }
     }
     
 }
