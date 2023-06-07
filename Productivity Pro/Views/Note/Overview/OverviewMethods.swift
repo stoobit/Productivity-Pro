@@ -33,7 +33,17 @@ extension OverviewView {
                 
                 if pageIndex < toolManager.selectedPage {
                     
+                    let selection = document.document.note.pages[
+                        toolManager.selectedPage
+                    ].id
                     
+                    document.document.note.pages.removeAll(where: {
+                        $0 == page
+                    })
+                    
+                    toolManager.selectedTab = selection
+                    toolManager.selectedPage = document.document.note.pages.firstIndex(
+                        where: { $0.id == selection }) ?? 0
                     
                 } else if pageIndex == toolManager.selectedPage {
                     toolManager.selectedTab = document.document.note.pages[
