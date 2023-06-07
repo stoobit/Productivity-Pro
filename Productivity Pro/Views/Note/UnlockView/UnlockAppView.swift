@@ -11,9 +11,9 @@ import StoreKit
 struct UnlockAppView: View {
     
     @Environment(\.horizontalSizeClass) var hsc
-    @StateObject var subviewManager: SubviewManager
     
-    @State private var unlockProduct: Product?
+    @StateObject var subviewManager: SubviewManager
+    @StateObject private var model: UnlockModel = UnlockModel()
     
     @AppStorage("fullAppUnlocked")
     var isFullAppUnlocked: Bool = false
@@ -79,11 +79,6 @@ struct UnlockAppView: View {
             )
             .background(Color.accentColor)
             .cornerRadius(16)
-            .task {
-                try? await unlockProduct = Product.products(for: [
-                    "com.stoobit.ProductivityPro.unlock"
-                ]).first
-            }
     }
     
     func buttonSize(size: CGSize) -> CGFloat {
