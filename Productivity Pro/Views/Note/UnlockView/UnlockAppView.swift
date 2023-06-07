@@ -70,6 +70,18 @@ struct UnlockAppView: View {
                 y: proxy.size.height / 2
             )
         }
+        .onChange(of: model.action) { action in
+            if action == .successful {
+                isFullAppUnlocked = true
+                
+                subviewManager.isPresentationMode = false
+                subviewManager.showUnlockView = false
+            }
+        }
+        .alert(
+            isPresented: $model.hasError,
+            error: model.error
+        ) {}
     }
     
     @ViewBuilder func UnlockButton(size: CGSize) -> some View {

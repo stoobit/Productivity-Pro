@@ -22,6 +22,9 @@ struct Productivity_ProApp: App {
     private var isFullAppUnlocked: Bool = false
     
     @StateObject
+    private var unlockModel: UnlockModel = UnlockModel()
+    
+    @StateObject
     private var subviewManager: SubviewManager = SubviewManager()
     
     @StateObject
@@ -34,6 +37,7 @@ struct Productivity_ProApp: App {
                 subviewManager: subviewManager,
                 toolManager: toolManager
             )
+            .environmentObject(unlockModel)
             .onAppear {
                 file.document.document.url = file.fileURL
                 

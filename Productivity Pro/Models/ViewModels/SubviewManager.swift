@@ -12,7 +12,9 @@ class SubviewManager: ObservableObject {
     @Published var isSettingsActivated: Bool = false
     
     @Published var isChooseDocType: Bool = false
+    
     @Published var showUnlockView: Bool = false
+    @Published var showThanksView: Bool = false
     
     @Published var showPrinterView: Bool = false
     

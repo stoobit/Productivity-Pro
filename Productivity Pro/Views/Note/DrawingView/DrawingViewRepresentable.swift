@@ -12,8 +12,6 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     
     var size: CGSize
     
-    @Environment(\.undoManager) var undoManager
-    
     @Binding var page: Page
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

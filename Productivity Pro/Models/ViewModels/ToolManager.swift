@@ -10,6 +10,7 @@ import PencilKit
 import PhotosUI
 import PDFKit
 
+@MainActor
 class ToolManager: ObservableObject {
     
     @Published var selectedPage: Int = 0

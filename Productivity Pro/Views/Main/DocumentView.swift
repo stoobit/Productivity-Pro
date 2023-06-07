@@ -9,12 +9,6 @@ import SwiftUI
 
 struct DocumentView: View {
     
-    @AppStorage("fullAppUnlocked")
-    var isFullAppUnlocked: Bool = false
-    
-    @StateObject
-    private var unlockModel: UnlockModel = UnlockModel()
-    
     @Binding var document: ProductivityProDocument
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
@@ -44,10 +38,6 @@ struct DocumentView: View {
         .toolbarRole(.editor)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .sheet(isPresented: $subviewManager.showUnlockView) {
-            UnlockAppView(subviewManager: subviewManager)
-                .environmentObject(unlockModel)
-        }
     }
     
     @ViewBuilder func CreateDoc() -> some View {

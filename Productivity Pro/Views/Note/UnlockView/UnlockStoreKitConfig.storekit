@@ -21,9 +21,11 @@
     }
   ],
   "settings" : {
+    "_billingIssuesEnabled" : false,
     "_failTransactionsEnabled" : false,
     "_locale" : "en_US",
     "_storefront" : "USA",
+    "_storeKitError" : 0,
     "_storeKitErrors" : [
       {
         "current" : {
@@ -34,7 +36,10 @@
         "name" : "Load Products"
       },
       {
-        "current" : null,
+        "current" : {
+          "index" : 0,
+          "type" : "generic"
+        },
         "enabled" : false,
         "name" : "Purchase"
       },
@@ -57,7 +62,10 @@
         "name" : "Subscription Status"
       },
       {
-        "current" : null,
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
         "enabled" : false,
         "name" : "App Transaction"
       },
