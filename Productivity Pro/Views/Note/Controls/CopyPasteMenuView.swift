@@ -29,12 +29,7 @@ struct CopyPasteMenuView: View {
                 Group {
                     
                     Button(action: pasteItem) {
-                        ZStack {
-                            Text("Paste")
-                                .frame(width: 0, height: 0)
-                            
-                            Image(systemName: "doc.on.clipboard")
-                        }
+                        Image(systemName: "doc.on.clipboard")
                     }
                     .buttonStyle(.bordered)
                     .hoverEffect(.lift)
@@ -50,12 +45,7 @@ struct CopyPasteMenuView: View {
                     }
                     
                     Button(action: copyItem) {
-                        ZStack {
-                            Text("Copy")
-                                .frame(width: 0, height: 0)
-                            
-                            Image(systemName: "doc.on.doc")
-                        }
+                        Image(systemName: "doc.on.doc")
                     }
                     .disabled(toolManager.selectedItem == nil)
                     .buttonStyle(.bordered)
@@ -66,12 +56,7 @@ struct CopyPasteMenuView: View {
                     
                 Group {
                     Button(action: duplicateItem) {
-                        ZStack {
-                            Text("Duplicate")
-                                .frame(width: 0, height: 0)
-                            
-                            Image(systemName: "doc.on.doc.fill")
-                        }
+                        Image(systemName: "doc.on.doc.fill")
                     }
                     .buttonStyle(.bordered)
                     .keyboardShortcut("d", modifiers: [.command])
@@ -79,24 +64,14 @@ struct CopyPasteMenuView: View {
                     .padding(.trailing, 10)
                     
                     Button(role: .destructive, action: cutItem) {
-                        ZStack {
-                            Text("Cut")
-                                .frame(width: 0, height: 0)
-                            
-                            Image(systemName: "scissors")
-                        }
+                        Image(systemName: "scissors")
                     }
                     .buttonStyle(.bordered)
                     .keyboardShortcut("x", modifiers: [.command])
                     .hoverEffect(.lift)
                     
                     Button(role: .destructive, action: deleteItem) {
-                        ZStack {
-                            Text("Delete")
-                                .frame(width: 0, height: 0)
-                            
-                            Image(systemName: "trash")
-                        }
+                        Image(systemName: "trash")
                     }
                     .buttonStyle(.bordered)
                     .keyboardShortcut(.delete, modifiers: [])
