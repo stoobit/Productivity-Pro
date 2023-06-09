@@ -36,11 +36,16 @@ struct ToolView: View {
                                     height: editItemModel.size.height * toolManager.zoomScale
                                 )
                                 .foregroundColor(.clear)
-                                .border(Color.accentColor, width: 1)
+                                .border(
+                                    toolManager.selectedItem?.isLocked == true ? Color.secondary : Color.accentColor,
+                                    width: 1
+                                )
                         }
                 }
                 
-                if toolManager.isEditorVisible {
+                if toolManager.isEditorVisible &&
+                    toolManager.selectedItem?.isLocked != true
+                {
                     if (toolManager.dragType == .none || toolManager.dragType == .size) && toolManager.selectedItem?.type != .textField {
                         Group {
                             Circle()
@@ -78,7 +83,7 @@ struct ToolView: View {
                                 .gesture(
                                     DragGesture(minimumDistance: 0)
                                         .onChanged { value in
-                                           changeWidth(value: value)
+                                            changeWidth(value: value)
                                         }
                                         .onEnded { _ in
                                             item.width = editItemModel.size.width

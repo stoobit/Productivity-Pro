@@ -18,7 +18,9 @@ struct DragItemModifier: ViewModifier {
     @StateObject var editItemModel: EditItemModel
     
     func body(content: Content) -> some View {
-        if item.id == toolManager.selectedItem?.id {
+        if item.id == toolManager.selectedItem?.id &&
+            item.isLocked != true
+        {
             
             content
                 .gesture(

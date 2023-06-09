@@ -160,6 +160,16 @@ struct EditTextfieldItemView: View {
                             )
                         }
                         .buttonStyle(.bordered)
+                        
+                        Button(action: {
+                            editTextFieldModel.isLocked.toggle()
+                        }) {
+                            Image(
+                                systemName: editTextFieldModel.isLocked ? "lock.fill" : "lock"
+                            )
+                        }
+                        .disabled(disableLock())
+                        .buttonStyle(.bordered)
                     }
                 }
             }
@@ -201,6 +211,10 @@ struct EditTextfieldItemView: View {
                     toolManager.selectedPage
                 ].items[index].textField?.fontColor = editTextFieldModel.fontColor.toCodable()
                 
+                document.document.note.pages[
+                    toolManager.selectedPage
+                ].items[index].isLocked = editTextFieldModel.isLocked
+                
                 toolManager.selectedItem = document.document.note.pages[
                     toolManager.selectedPage
                 ].items[index]
@@ -224,7 +238,8 @@ struct EditTextfieldItemView: View {
                         strokeWidth: textField.strokeWidth,
                         font: textField.font,
                         fontColor: Color(codable: textField.fontColor)!,
-                        fontSize: textField.fontSize
+                        fontSize: textField.fontSize,
+                        isLocked: item.isLocked ?? false
                     )
                 }
             }
@@ -263,10 +278,23 @@ struct EditTextfieldItemView: View {
             toolManager.selectedItem = document.document.note.pages[
                 toolManager.selectedPage
             ].items.first(where: { $0.id == id })
-            
-            subviewManager.showStylePopover = false   
         }
         
+    }
+    
+    func disableLock() -> Bool {
+        var isLockDisabled: Bool = true
+        let item: ItemModel = toolManager.selectedItem!
+        
+        if item.x == getFrame().width / 2 &&
+            item.y == getFrame().height / 2 &&
+            item.width == getFrame().width - 100 &&
+            item.height == getFrame().height - 100
+        {
+            isLockDisabled = false
+        }
+        
+        return isLockDisabled
     }
     
     func getFrame() -> CGSize {
@@ -364,5 +392,7 @@ struct EditTextFieldModel: Equatable {
     var font: String = "Avenir Next"
     var fontColor: Color = .black
     var fontSize: Double = 12
+    
+    var isLocked: Bool = false
     
 }

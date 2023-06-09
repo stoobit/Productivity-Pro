@@ -26,7 +26,9 @@ struct PageItemView: View {
                 subviewManager: subviewManager
             )
             .onTapGesture {
-                tap(item: item)
+                if subviewManager.showStylePopover == false {
+                    tap(item: item)
+                }
             }
             .zIndex(
                 Double(page.items.firstIndex(where: { $0.id == item.id })!)

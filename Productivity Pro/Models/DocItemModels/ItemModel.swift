@@ -23,6 +23,8 @@ struct ItemModel: Codable, Identifiable, Hashable, Equatable {
     var shape: ShapeModel?
     var textField: TextFieldModel?
     var media: MediaModel?
+    
+    var isLocked: Bool?
 
 }
 
