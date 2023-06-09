@@ -1,5 +1,5 @@
 //
-//  SheetHelper.swift
+//  NoteSheetHelper.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 17.11.22.
@@ -9,13 +9,15 @@ import SwiftUI
 import PencilKit
 import PDFKit
 
-struct SheetHelper: ViewModifier {
+struct NoteSheetHelper: ViewModifier {
     
+    @Environment(\.undoManager) var undoManager
     @Binding var document: ProductivityProDocument
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
+    let proxy: GeometryProxy
     let save: () -> Void
     func body(content: Content) -> some View {
         content
@@ -25,21 +27,12 @@ struct SheetHelper: ViewModifier {
             .sheet(isPresented: $subviewManager.feedbackView) {
                 FeedbackView(subviewManager: subviewManager)
             }
-            .sheet(isPresented: $subviewManager.isChangePageTemplateSheet) {
+            .sheet(isPresented: $subviewManager.changeTemplate) {
                 ChangePageTemplateView(
                     document: $document,
-                    isPresented: $subviewManager.isChangePageTemplateSheet,
+                    isPresented: $subviewManager.changeTemplate,
                     toolManager: toolManager
                 ) { save() }
-            }
-            .sheet(isPresented: $subviewManager.overviewSheet, onDismiss: {
-                UITabBar.appearance().isHidden = true
-            }) {
-                OverviewView(
-                    document: $document,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
             }
             .sheet(isPresented: $subviewManager.sharePPSheet) {
                 ShareSheet(
@@ -50,8 +43,30 @@ struct SheetHelper: ViewModifier {
                     type: .productivity_pro
                 )
             }
-            .sheet(isPresented: $subviewManager.collaborationSheet) {
-                
+            .sheet(isPresented: $subviewManager.showTextEditor) {
+                EditTextView(
+                    document: $document,
+                    toolManager: toolManager,
+                    subviewManager: subviewManager,
+                    size: proxy.size
+                )
+                .edgesIgnoringSafeArea(.all)
+            }
+            .sheet(
+                isPresented: $subviewManager.addPageSettingsSheet,
+                onDismiss: { undoManager?.removeAllActions() }) {
+                AddPageView(
+                    document: $document, isPresented: $subviewManager.addPageSettingsSheet, toolManager: toolManager
+                )
+            }
+            .sheet(isPresented: $subviewManager.overviewSheet, onDismiss: {
+                UITabBar.appearance().isHidden = true
+            }) {
+                OverviewView(
+                    document: $document,
+                    toolManager: toolManager,
+                    subviewManager: subviewManager
+                )
             }
             .background {
                 if subviewManager.showPrinterView {
@@ -64,6 +79,5 @@ struct SheetHelper: ViewModifier {
                     }
                 }
             }
-        
     }
 }

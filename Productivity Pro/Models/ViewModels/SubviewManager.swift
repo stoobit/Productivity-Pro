@@ -30,7 +30,7 @@ class SubviewManager: ObservableObject {
     
     @Published var isPresentationMode: Bool = false
     @Published var addPageSettingsSheet: Bool = false
-    @Published var isChangePageTemplateSheet: Bool = false
+    @Published var changeTemplate: Bool = false
     @Published var isDeletePageAlert: Bool = false
     
     @Published var markdownHelp: Bool = false

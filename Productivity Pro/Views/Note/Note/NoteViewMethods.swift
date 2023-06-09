@@ -11,6 +11,44 @@ import PDFKit
 
 extension NoteView {
     
+    func pickedImageDidChange() {
+        if let image = toolManager.pickedImage { addImage(image) }
+        toolManager.pickedImage = nil
+    }
+    
+    func noteDidAppear() {
+        UITabBar.appearance().isHidden = true
+        checkLockStatus()
+        
+        toolManager.selectedPage = 0
+        
+        toolManager.selectedTab = document.document.note.pages[
+            toolManager.selectedPage
+        ].id
+        
+        fixScrollViewBug()
+    }
+    
+    func selectedPageDidChange(index page: Int) {
+        toolManager.selectedTab = document.document.note.pages[
+            page
+        ].id
+    }
+    
+    func selectedTabDidChange(_ tab: UUID, size: CGSize) {
+        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
+            $0.id == tab
+        }) ?? 0
+        
+        toolManager.selectedItem = nil
+        toolManager.scrollOffset = .zero
+        toolManager.zoomScale = getScale(
+            toolManager.selectedPage, size: size
+        )
+        
+        pageIndicator()
+    }
+    
     func checkLockStatus() {
         let dateTrialEnd = Calendar.current.date(
             byAdding: .day,

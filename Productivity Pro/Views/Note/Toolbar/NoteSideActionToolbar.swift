@@ -72,7 +72,7 @@ struct NoteSideActionToolbar: ToolbarContent {
                         
                         Button(action: {
                             toolManager.isCanvasEnabled = false
-                            subviewManager.isChangePageTemplateSheet.toggle()
+                            subviewManager.changeTemplate.toggle()
                         }) {
                             Label("Change Page Template", systemImage: "doc.badge.gearshape")
                         }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB0504212926CB2600DAECA6 /* SheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0504202926CB2600DAECA6 /* SheetHelper.swift */; };
+		BB0504212926CB2600DAECA6 /* NoteSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0504202926CB2600DAECA6 /* NoteSheetHelper.swift */; };
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
 		BB074BEA29D0429500504C9D /* ProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB074BE929D0429500504C9D /* ProgressViewStyle.swift */; };
@@ -33,6 +33,9 @@
 		BB37AD8C2A2C0B38006DB94D /* OverviewDragHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8B2A2C0B38006DB94D /* OverviewDragHelper.swift */; };
 		BB37AD8E2A2C0B58006DB94D /* OverviewIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8D2A2C0B58006DB94D /* OverviewIcon.swift */; };
 		BB37AD922A2C0BDD006DB94D /* OverviewPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD912A2C0BDD006DB94D /* OverviewPageIndicator.swift */; };
+		BB3E9AA02A33A0FD006045E1 /* NoteNextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9A9F2A33A0FD006045E1 /* NoteNextPage.swift */; };
+		BB3E9AA42A33A2D3006045E1 /* NoteToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */; };
+		BB3E9AA62A33A5FE006045E1 /* NoteOverlayControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */; };
 		BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F2FCD29129562001B7067 /* Orientation.swift */; };
 		BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F02996CE6200C0F140 /* ItemModel.swift */; };
 		BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F22996D06200C0F140 /* ShapeModel.swift */; };
@@ -144,7 +147,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB0504202926CB2600DAECA6 /* SheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetHelper.swift; sourceTree = "<group>"; };
+		BB0504202926CB2600DAECA6 /* NoteSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSheetHelper.swift; sourceTree = "<group>"; };
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
 		BB074BE929D0429500504C9D /* ProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewStyle.swift; sourceTree = "<group>"; };
@@ -171,6 +174,9 @@
 		BB37AD8B2A2C0B38006DB94D /* OverviewDragHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDragHelper.swift; sourceTree = "<group>"; };
 		BB37AD8D2A2C0B58006DB94D /* OverviewIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewIcon.swift; sourceTree = "<group>"; };
 		BB37AD912A2C0BDD006DB94D /* OverviewPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPageIndicator.swift; sourceTree = "<group>"; };
+		BB3E9A9F2A33A0FD006045E1 /* NoteNextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNextPage.swift; sourceTree = "<group>"; };
+		BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbarModifier.swift; sourceTree = "<group>"; };
+		BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOverlayControlView.swift; sourceTree = "<group>"; };
 		BB3F2FCD29129562001B7067 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		BB3F75F02996CE6200C0F140 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		BB3F75F22996D06200C0F140 /* ShapeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeModel.swift; sourceTree = "<group>"; };
@@ -350,6 +356,19 @@
 			path = Overview;
 			sourceTree = "<group>";
 		};
+		BB3E9AA72A33AC27006045E1 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
+				BB3E9A9F2A33A0FD006045E1 /* NoteNextPage.swift */,
+				BB0504202926CB2600DAECA6 /* NoteSheetHelper.swift */,
+				BB6ABB8029CD0BA5008B58E3 /* NoteViewMethods.swift */,
+				BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */,
+				BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
 		BB4CDD3428D3C668009A409F = {
 			isa = PBXGroup;
 			children = (
@@ -527,8 +546,7 @@
 		BB9DF5A828DFA25600AC988D /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
-				BB6ABB8029CD0BA5008B58E3 /* NoteViewMethods.swift */,
+				BB3E9AA72A33AC27006045E1 /* Note */,
 				BB7A200129A278F300D2B466 /* Controls */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,
@@ -659,7 +677,6 @@
 				BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */,
 				BBDC62712905EED800364B57 /* IndicatorText.swift */,
 				BB0BE2062925A7C200F4004A /* BottomOffset.swift */,
-				BB0504202926CB2600DAECA6 /* SheetHelper.swift */,
 				BBCB2AEC294E800D00C68B72 /* DragHelper.swift */,
 				BBB02B582962537C001DCB04 /* Triangle.swift */,
 				BBDCF5D9299E9506004C99AE /* Hexagon.swift */,
@@ -915,6 +932,7 @@
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
 				BB68082D29FDDF2B0026FDDF /* TextfieldItemView.swift in Sources */,
 				BBCDFDE52947C877000C545D /* DottedView.swift in Sources */,
+				BB3E9AA62A33A5FE006045E1 /* NoteOverlayControlView.swift in Sources */,
 				BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */,
 				BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */,
 				BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */,
@@ -955,15 +973,17 @@
 				BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */,
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
 				BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */,
+				BB3E9AA02A33A0FD006045E1 /* NoteNextPage.swift in Sources */,
 				BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */,
 				BBE9196728F221C6001EF750 /* OverviewListType.swift in Sources */,
-				BB0504212926CB2600DAECA6 /* SheetHelper.swift in Sources */,
+				BB0504212926CB2600DAECA6 /* NoteSheetHelper.swift in Sources */,
 				BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */,
 				BBE11B1A294934E500E6F504 /* Task.swift in Sources */,
 				BB3208A82981DFFF0014F602 /* CameraHelperView.swift in Sources */,
 				BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */,
 				BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */,
 				BB30E2AB2A09B22E0022B29E /* MarkdownInfoDetailView.swift in Sources */,
+				BB3E9AA42A33A2D3006045E1 /* NoteToolbarModifier.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
 				BB27FED628EA1EF900459334 /* SettingsView.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
