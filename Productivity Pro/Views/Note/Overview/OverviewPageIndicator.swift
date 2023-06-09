@@ -25,12 +25,12 @@ struct OverviewPageIndicator: View {
                 
             }) {
                 Label("\(index + 1)", systemImage: "chevron.down")
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.primary)
             }
             
         } else {
-            Label("\(index + 1)", systemImage: "chevron.down")
-            .foregroundColor(.secondary)
+            Text("\(index + 1)")
+            .foregroundColor(.primary)
         }
         
     }
