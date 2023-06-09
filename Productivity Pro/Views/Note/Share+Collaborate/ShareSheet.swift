@@ -46,6 +46,7 @@ struct ShareSheet: View {
                             subviewManager.sharePPSheet = false
                             subviewManager.sharePDFSheet = false
                         }
+                        .keyboardShortcut(.return, modifiers: [])
                     }
                 }
                 .disabled(showProgress)

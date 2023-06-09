@@ -52,6 +52,9 @@ struct EditTextView: View {
                         Button("Done") {
                             subviewManager.showTextEditor.toggle()
                         }
+                        .keyboardShortcut(
+                            .return, modifiers: [.command]
+                        )
                     }
                     
                     ToolbarItem(placement: .cancellationAction) {

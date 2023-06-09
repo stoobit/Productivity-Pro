@@ -11,8 +11,11 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
     @Environment(\.undoManager) var undoManager
     @Environment(\.openWindow) var openWindow
     
-    @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
-    @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
+    @AppStorage("defaultFont")
+    var defaultFont: String = "Avenir Next"
+    
+    @AppStorage("defaultFontSize")
+    var defaultFontSize: Double = 12
     
     @Binding var document: ProductivityProDocument
     

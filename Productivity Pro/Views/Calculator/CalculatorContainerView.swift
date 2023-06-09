@@ -27,6 +27,9 @@ struct CalculatorContainerView: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
+                        .keyboardShortcut(
+                            .return, modifiers: [.command]
+                        )
                 }
                 
                 ToolbarItem(placement: .navigation) {

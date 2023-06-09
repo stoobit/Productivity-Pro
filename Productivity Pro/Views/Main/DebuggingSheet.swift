@@ -37,7 +37,10 @@ struct DebuggingSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { subviewManager.showDebuggingSheet.toggle() }
+                    Button("Done") {
+                        subviewManager.showDebuggingSheet.toggle()
+                    }
+                    .keyboardShortcut(.return, modifiers: [])
                 }
             }
             

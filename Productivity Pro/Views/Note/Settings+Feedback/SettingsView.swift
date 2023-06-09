@@ -93,7 +93,10 @@ struct SettingsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { isPresented.toggle() }
+                    Button("Done") {
+                        isPresented.toggle()
+                    }
+                    .keyboardShortcut(.return, modifiers: [])
                 }
             }
         }

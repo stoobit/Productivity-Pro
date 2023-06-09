@@ -45,10 +45,14 @@ struct ChangePageTemplateView: View {
                         Image(systemName: "doc.badge.gearshape")
                             .fontWeight(.regular)
                     }
+                    .keyboardShortcut(.return, modifiers: [])
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { isPresented.toggle() }
+                    Button("Cancel") {
+                        isPresented.toggle()
+                    }
+                    .keyboardShortcut(.escape, modifiers: [])
                 }
             }
             .onAppear {

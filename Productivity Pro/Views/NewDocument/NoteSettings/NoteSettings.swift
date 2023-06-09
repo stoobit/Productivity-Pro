@@ -37,7 +37,9 @@ struct NoteSettings: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .confirmationAction) { Button("Create") { create() } }
+            ToolbarItem(placement: .confirmationAction) { Button("Create") { create() }
+                    .keyboardShortcut(.return, modifiers: [])
+            }
         }
     }
     
@@ -56,7 +58,10 @@ struct NoteSettings: View {
     @ViewBuilder func BackgroundValueView() -> some View {
         VStack {
             Button(action: { isPortrait.toggle() }) {
-                Text("Layout")
+                Text("Toggle Orientation")
+                    .frame(width: 0, height: 0)
+                
+                Text("Orientation")
                     .font(.body)
                     .foregroundColor(.primary)
 
@@ -65,6 +70,8 @@ struct NoteSettings: View {
                     .rotationEffect(Angle(degrees: isPortrait ? 0 : 90))
                     .animation(.easeInOut, value: isPortrait)
             }
+            .accessibilityHint("Toggle Orientation")
+            .keyboardShortcut("o", modifiers: [.command])
             .padding(.vertical, 5)
 
             Divider()
@@ -77,10 +84,10 @@ struct NoteSettings: View {
                 
                 Spacer()
                 
-                ColorCircle("white")
-                ColorCircle("yellow")
-                ColorCircle("gray")
-                ColorCircle("black")
+                ColorCircle("white", key: "1")
+                ColorCircle("yellow", key: "2")
+                ColorCircle("gray", key: "3")
+                ColorCircle("black", key: "4")
                 
             }
             .padding(.top)
@@ -89,7 +96,7 @@ struct NoteSettings: View {
         .padding()
     }
     
-    @ViewBuilder func ColorCircle(_ value: String) -> some View {
+    @ViewBuilder func ColorCircle(_ value: String, key: KeyEquivalent) -> some View {
         Button(action: { withAnimation { backgroundColor = value } }) {
             Circle()
                 .fill(Color(value))
@@ -103,6 +110,7 @@ struct NoteSettings: View {
                     }
                 }
         }
+        .keyboardShortcut(key, modifiers: [.command])
     }
     
     func create() {

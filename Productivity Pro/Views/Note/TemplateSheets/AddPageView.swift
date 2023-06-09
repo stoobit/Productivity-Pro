@@ -50,10 +50,12 @@ struct AddPageView: View {
                         Image(systemName: "doc.badge.plus")
                             .fontWeight(.regular)
                     }
+                    .keyboardShortcut(.return, modifiers: [])
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { isPresented.toggle() }
+                        .keyboardShortcut(.escape, modifiers: [])
                 }
             }
         }

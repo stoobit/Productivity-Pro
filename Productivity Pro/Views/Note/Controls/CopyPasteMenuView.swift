@@ -21,6 +21,7 @@ struct CopyPasteMenuView: View {
     var isCPLeft: Bool = true
     
     @StateObject var toolManager: ToolManager
+    @StateObject var subviewManager: SubviewManager
     
     var body: some View {
         Group {
@@ -28,12 +29,18 @@ struct CopyPasteMenuView: View {
                 Group {
                     
                     Button(action: pasteItem) {
-                        Label("Paste", systemImage: "doc.on.clipboard")
-                            .labelStyle(.iconOnly)
+                        ZStack {
+                            Text("Paste")
+                                .frame(width: 0, height: 0)
+                            
+                            Image(systemName: "doc.on.clipboard")
+                        }
                     }
                     .buttonStyle(.bordered)
                     .hoverEffect(.lift)
                     .disabled(pasteDisabled)
+                    .disabled(subviewManager.isPresentationMode)
+                    .disabled(toolManager.isCanvasEnabled)
                     .keyboardShortcut("v", modifiers: [.command])
                     .onPasteboardChange(for: UIPasteboard.general) {
                         disablePasteboard()
@@ -43,8 +50,12 @@ struct CopyPasteMenuView: View {
                     }
                     
                     Button(action: copyItem) {
-                        Label("Copy", systemImage: "doc.on.doc")
-                            .labelStyle(.iconOnly)
+                        ZStack {
+                            Text("Copy")
+                                .frame(width: 0, height: 0)
+                            
+                            Image(systemName: "doc.on.doc")
+                        }
                     }
                     .disabled(toolManager.selectedItem == nil)
                     .buttonStyle(.bordered)
@@ -55,8 +66,12 @@ struct CopyPasteMenuView: View {
                     
                 Group {
                     Button(action: duplicateItem) {
-                        Label("Duplicate", systemImage: "doc.on.doc.fill")
-                            .labelStyle(.iconOnly)
+                        ZStack {
+                            Text("Duplicate")
+                                .frame(width: 0, height: 0)
+                            
+                            Image(systemName: "doc.on.doc.fill")
+                        }
                     }
                     .buttonStyle(.bordered)
                     .keyboardShortcut("d", modifiers: [.command])
@@ -64,16 +79,24 @@ struct CopyPasteMenuView: View {
                     .padding(.trailing, 10)
                     
                     Button(role: .destructive, action: cutItem) {
-                        Label("Cut", systemImage: "scissors")
-                            .labelStyle(.iconOnly)
+                        ZStack {
+                            Text("Cut")
+                                .frame(width: 0, height: 0)
+                            
+                            Image(systemName: "scissors")
+                        }
                     }
                     .buttonStyle(.bordered)
                     .keyboardShortcut("x", modifiers: [.command])
                     .hoverEffect(.lift)
                     
                     Button(role: .destructive, action: deleteItem) {
-                        Label("Delete", systemImage: "trash")
-                            .labelStyle(.iconOnly)
+                        ZStack {
+                            Text("Delete")
+                                .frame(width: 0, height: 0)
+                            
+                            Image(systemName: "trash")
+                        }
                     }
                     .buttonStyle(.bordered)
                     .keyboardShortcut(.delete, modifiers: [])

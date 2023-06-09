@@ -128,9 +128,17 @@ struct NoteSideActionToolbar: ToolbarContent {
                 tapPresentationButton()
                 
             }) {
-                Image(systemName: subviewManager.isPresentationMode ? "pencil.and.outline" : "pencil.slash")
+                ZStack {
+                    Text(subviewManager.isPresentationMode ? "Edit Mode" : "Presentation Mode")
+                        .frame(width: 0, height: 0)
+                    
+                    Image(
+                        systemName: subviewManager.isPresentationMode ? "pencil.and.outline" : "pencil.slash"
+                    )
                     .frame(width: 30)
+                }
             }
+            .keyboardShortcut("p", modifiers: [.command, .option])
             
             if hsc == .regular {
                 Button(action: {
@@ -138,8 +146,14 @@ struct NoteSideActionToolbar: ToolbarContent {
                     UITabBar.appearance().isHidden = false
                     subviewManager.overviewSheet.toggle()
                 }) {
-                    Label("Overview", systemImage: "square.grid.2x2")
+                    ZStack {
+                        Text("Overview")
+                            .frame(width: 0, height: 0)
+                        
+                        Image(systemName: "square.grid.2x2")
+                    }
                 }
+                .keyboardShortcut("o", modifiers: [.command])
             }
         }
         
@@ -187,9 +201,14 @@ struct NoteSideActionToolbar: ToolbarContent {
                 ].items.first(where: { $0.id == toolManager.selectedItem?.id })
                 subviewManager.showStylePopover.toggle()
             }) {
-                Label("Edit", systemImage: "paintbrush")
+                ZStack {
+                    Text("Show Editor")
+                        .frame(width: 0, height: 0)
+                    
+                    Image(systemName: "paintbrush")
+                }
             }
-            .keyboardShortcut("i", modifiers: [.command])
+            .keyboardShortcut("e", modifiers: [.command])
             .disabled(toolManager.selectedItem == nil)
             .popover(isPresented: $subviewManager.showStylePopover) {
                 EditPageItemView(

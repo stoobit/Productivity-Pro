@@ -117,6 +117,7 @@ struct MarkdownInfoView: View {
                     Button("Close") {
                         isPresented.toggle()
                     }
+                    .keyboardShortcut(.return, modifiers: [])
                 }
             }
             

@@ -35,6 +35,20 @@ struct NoteView: View {
                     .all, edges: .all
                 )
                 
+                Group {
+                    Button("Next Page") {
+                        toolManager.selectedPage += 1
+                    }
+                    .disabled(!document.document.note.pages.indices.contains(toolManager.selectedPage + 1))
+                    .keyboardShortcut(.rightArrow)
+                    
+                    Button("Previous Page") {
+                        toolManager.selectedPage -= 1
+                    }
+                    .disabled(!document.document.note.pages.indices.contains(toolManager.selectedPage - 1))
+                    .keyboardShortcut(.leftArrow)
+                }
+                
                 TabView(selection: $toolManager.selectedTab) {
                     ForEach($document.document.note.pages) { $page in
                         ZoomableScrollView(
@@ -101,7 +115,11 @@ struct NoteView: View {
                     }
                     
                     if UIDevice.current.userInterfaceIdiom != .phone {
-                        CopyPasteMenuView(document: $document, toolManager: toolManager)
+                        CopyPasteMenuView(
+                            document: $document,
+                            toolManager: toolManager,
+                            subviewManager: subviewManager
+                        )
                             .offset(y: isCPMenuHidden ? 100 : 0)
                             .animation(
                                 .easeInOut(duration: 0.2),
