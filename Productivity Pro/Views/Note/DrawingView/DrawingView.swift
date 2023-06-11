@@ -49,7 +49,7 @@ struct DrawingView: View {
         )
         .scaleEffect(1/toolManager.zoomScale)
         .allowsHitTesting(toolManager.isCanvasEnabled)
-        .zIndex(Double(page.items.count + 20))
+        .zIndex(Double(page.items.count + 10))
     }
     
     func didDrawingChange(_ value: Bool) {

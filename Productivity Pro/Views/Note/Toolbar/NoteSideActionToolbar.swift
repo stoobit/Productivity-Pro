@@ -37,7 +37,7 @@ struct NoteSideActionToolbar: ToolbarContent {
             
             if subviewManager.isPresentationMode {
                 Button(action: {
-                    document.document.note.pages[toolManager.selectedPage].isBookmarked.toggle()
+                   toggleBookmark()
                 }) {
                     Image(systemName: document.document.note.pages[toolManager.selectedPage].isBookmarked ? "bookmark.fill" : "bookmark")
                         .foregroundColor(Color("red"))
@@ -52,7 +52,7 @@ struct NoteSideActionToolbar: ToolbarContent {
                         ].isBookmarked
                         
                         Button(action: {
-                            document.document.note.pages[toolManager.selectedPage].isBookmarked.toggle()
+                           toggleBookmark()
                         }) {
                             Label(
                                 isBookmarked ? "Remove Bookmark" : "Add Bookmark",
@@ -251,6 +251,16 @@ struct NoteSideActionToolbar: ToolbarContent {
     
     func redo() {
         undoManager?.redo()
+    }
+    
+    func toggleBookmark() {
+        undoManager?.disableUndoRegistration()
+        
+        document.document.note.pages[
+            toolManager.selectedPage
+        ].isBookmarked.toggle()
+        
+        undoManager?.enableUndoRegistration()
     }
     
 }

@@ -89,7 +89,7 @@ struct ItemView: View {
                 editItemModel: editItemModel
             )
             .scaleEffect(toolManager.zoomScale)
-            .zIndex(Double(page.items.count + 10))
+            .zIndex(Double(page.items.count + 20))
         
     }
 }

@@ -67,9 +67,13 @@ extension OverviewView {
     }
     
     func toggleBookmark(page: Page) {
+        undoManager?.disableUndoRegistration()
+        
         document.document.note.pages[
             document.document.note.pages.firstIndex(of: page)!
         ].isBookmarked.toggle()
+        
+        undoManager?.enableUndoRegistration()
     }
     
 }

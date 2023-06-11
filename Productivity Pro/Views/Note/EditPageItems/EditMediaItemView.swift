@@ -125,11 +125,13 @@ struct EditMediaItemView: View {
                             Image(systemName: "square.2.stack.3d.top.filled")
                         }
                         .buttonStyle(.bordered)
+                    .hoverEffect(.lift)
                         
                         Button(action: { moveDown() }) {
                             Image(systemName: "square.2.stack.3d.bottom.filled")
                         }
                         .buttonStyle(.bordered)
+                    .hoverEffect(.lift)
                         
                         Spacer()
                         Divider().frame(height: 30)
@@ -139,11 +141,13 @@ struct EditMediaItemView: View {
                             Image(systemName: "square.3.stack.3d.top.filled")
                         }
                         .buttonStyle(.bordered)
+                    .hoverEffect(.lift)
                         
                         Button(action: { moveLowest() }) {
                             Image(systemName: "square.3.stack.3d.bottom.filled")
                         }
                         .buttonStyle(.bordered)
+                    .hoverEffect(.lift)
                     }
                 }
             }

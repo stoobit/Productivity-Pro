@@ -9,8 +9,8 @@ import SwiftUI
 
 struct OverviewView: View {
     
-    @Environment(\.undoManager) var undoManager
     @Environment(\.horizontalSizeClass) var hsc
+    @Environment(\.undoManager) var undoManager
     @Environment(\.colorScheme) var cs
     
     @Binding var document: ProductivityProDocument
