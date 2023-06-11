@@ -46,21 +46,10 @@ struct ShapeItemView: View {
         form: some Shape, stroke: some Shape, shape: ShapeModel
     ) -> some View {
         ZStack {
+            
             if shape.showFill {
                 form
-                    .foregroundColor(Color(codable: shape.fillColor)!)
-                    .frame(
-                        width: editItem.size.width * toolManager.zoomScale,
-                        height: editItem.size.height * toolManager.zoomScale
-                    )
-                
-            } else {
-                Color.clear
-                    .contentShape(form)
-                    .frame(
-                        width: editItem.size.width * toolManager.zoomScale,
-                        height: editItem.size.height * toolManager.zoomScale
-                    )
+                    .fill(Color(codable: shape.fillColor)!)
             }
             
             if shape.showStroke {
@@ -69,14 +58,14 @@ struct ShapeItemView: View {
                         Color(codable: shape.strokeColor)!,
                         lineWidth: shape.strokeWidth * toolManager.zoomScale
                     )
-                    .frame(
-                        width: (editItem.size.width + shape.strokeWidth) * toolManager.zoomScale,
-                        height: (editItem.size.height + shape.strokeWidth) * toolManager.zoomScale,
-                        alignment: .topLeading
-                    )
+                    .contentShape(stroke)
             }
             
         }
+        .frame(
+            width: editItem.size.width * toolManager.zoomScale,
+            height: editItem.size.height * toolManager.zoomScale
+        )
         
     }
 }
