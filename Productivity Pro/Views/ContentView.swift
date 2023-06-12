@@ -12,11 +12,17 @@ struct ContentView: View {
     @AppStorage("fullAppUnlocked")
     var isFullAppUnlocked: Bool = false
     
-    @EnvironmentObject private var unlockModel: UnlockModel
+    @AppStorage("startDate")
+    private var startDate: String = ""
     
+    @EnvironmentObject private var unlockModel: UnlockModel
     @Binding var document: ProductivityProDocument
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var toolManager: ToolManager
+    
+    @StateObject
+    private var subviewManager: SubviewManager = SubviewManager()
+    
+    @StateObject
+    private var toolManager: ToolManager = ToolManager()
     
     var body: some View {
         DocumentView(
@@ -25,6 +31,7 @@ struct ContentView: View {
             toolManager: toolManager
         )
         .disabled(toolManager.showProgress)
+        .onAppear { onAppear() }
         .overlay {
             if toolManager.showProgress {
                 ProgressView("Processing...")
@@ -68,5 +75,19 @@ struct ContentView: View {
             }
         )
         
+    }
+    
+    func onAppear() {
+        let dateTrialEnd = Calendar.current.date(
+            byAdding: .day,
+            value: freeTrialDays,
+            to: Date(rawValue: startDate)!
+        )
+        
+        if !isFullAppUnlocked && dateTrialEnd! < Date() {
+            subviewManager.isPresentationMode = true
+        } else {
+            subviewManager.isPresentationMode = false
+        }
     }
 }
