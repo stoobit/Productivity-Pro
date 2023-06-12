@@ -11,6 +11,9 @@ struct SettingsView: View {
     
     @Binding var isPresented: Bool
     
+    @AppStorage("automaticallyDeselectEraser")
+    private var automaticallyDeselectEraser: Bool = false
+    
     @AppStorage("defaultFont")
     private var defaultFont: String = "Avenir Next"
     
@@ -37,6 +40,15 @@ struct SettingsView: View {
                     }
                     .onChange(of: CPPositionSetter) { value in
                         isCPLeft = value
+                    }
+                }
+                
+                Section("Markup") {
+                    FormSpacer {
+                        Toggle(
+                            "Automatically deselect the eraser",
+                            isOn: $automaticallyDeselectEraser
+                        )
                     }
                 }
                 

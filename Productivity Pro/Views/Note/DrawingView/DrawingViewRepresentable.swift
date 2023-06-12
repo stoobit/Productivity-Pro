@@ -10,6 +10,11 @@ import PencilKit
 
 struct DrawingViewRepresentable: UIViewRepresentable {
     
+    @AppStorage("automaticallyDeselectEraser")
+    private var automaticallyDeselectEraser: Bool = false
+    
+    @State var oldTool: PKTool?
+    
     var size: CGSize
     
     @Binding var page: Page
@@ -75,18 +80,48 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator($drawingChanged)
+        Coordinator(
+            drawingChanged: $drawingChanged,
+            toolPicker: $toolPicker,
+            oldTool: oldTool,
+            isAutoDeselect: automaticallyDeselectEraser
+        )
     }
     
     class Coordinator: NSObject, PKCanvasViewDelegate {
         @Binding var drawingChanged: Bool
+        @Binding var toolPicker: PKToolPicker
         
-        init(_ drawingChanged: Binding<Bool>) {
+        var oldTool: PKTool?
+        var isAutoDeselect: Bool
+        
+        init(
+            drawingChanged: Binding<Bool>,
+            toolPicker: Binding<PKToolPicker>,
+            
+            oldTool: PKTool?,
+            isAutoDeselect: Bool
+        ) {
             _drawingChanged = drawingChanged
+            _toolPicker = toolPicker
+            
+            self.oldTool = oldTool
+            self.isAutoDeselect = isAutoDeselect
         }
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             drawingChanged = true
+        }
+        
+        func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
+            if type(of: canvasView.tool) == PKEraserTool.self &&
+                oldTool != nil &&
+                isAutoDeselect == true
+            {
+                toolPicker.selectedTool = oldTool! as PKTool
+            }
+            
+            oldTool = toolPicker.selectedTool
         }
     }
     
