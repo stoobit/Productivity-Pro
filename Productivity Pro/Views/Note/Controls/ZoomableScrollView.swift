@@ -50,11 +50,11 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIScrollView, context: Context) {
-        if uiView.minimumZoomScale != getScale() {
-            uiView.minimumZoomScale = getScale()
+        if uiView.minimumZoomScale != getScale() / 2 {
+            uiView.minimumZoomScale = getScale() / 2
             
-            if getScale() > uiView.zoomScale {
-                uiView.setZoomScale(getScale(), animated: true)
+            if getScale() / 2 > uiView.zoomScale {
+                uiView.setZoomScale(getScale() / 2, animated: true)
             }
         }
         
@@ -72,8 +72,10 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         }
         
         if toolManager.selectedTab != page.id {
-            uiView.setZoomScale(getScale(), animated: true)
-            uiView.setContentOffset(.zero, animated: true)
+            Task(priority: .userInitiated) {
+                uiView.setZoomScale(getScale(), animated: true)
+                uiView.setContentOffset(.zero, animated: true)
+            }
         }
         
         context.coordinator.hostingController.rootView = content()
@@ -123,11 +125,11 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             _isPagingEnabled = isPagingEnabled
         }
         
-//        func scrollViewDidZoom(_ scrollView: UIScrollView) {
-//            let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
-//            let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
-//            scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
-//        }
+        func scrollViewDidZoom(_ scrollView: UIScrollView) {
+            let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+            let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+            scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
+        }
         
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {
             return hostingController.view
