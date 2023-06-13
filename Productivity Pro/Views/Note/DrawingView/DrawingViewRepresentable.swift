@@ -112,17 +112,6 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             drawingChanged = true
         }
-        
-        func canvasViewDidEndUsingTool(_ canvasView: PKCanvasView) {
-            if type(of: canvasView.tool) == PKEraserTool.self &&
-                oldTool != nil &&
-                isAutoDeselect == true
-            {
-                toolPicker.selectedTool = oldTool! as PKTool
-            }
-            
-            oldTool = toolPicker.selectedTool
-        }
     }
     
     func getFrame() -> CGSize {

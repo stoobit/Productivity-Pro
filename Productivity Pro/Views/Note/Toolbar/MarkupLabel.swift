@@ -24,7 +24,7 @@ struct iOS16Label: View {
     @StateObject var toolManager: ToolManager
     
     var body: some View {
-        Label("Markup", systemImage: "pencil.tip.crop.circle")
+        Label("Markup", systemImage: "pencil.tip")
             .foregroundStyle(
                 toolManager.isCanvasEnabled ? Color.accentColor : Color.primary
             )

@@ -43,14 +43,14 @@ struct SettingsView: View {
                     }
                 }
                 
-                Section("Markup") {
-                    FormSpacer {
-                        Toggle(
-                            "Automatically deselect the eraser",
-                            isOn: $automaticallyDeselectEraser
-                        )
-                    }
-                }
+//                Section("Markup") {
+//                    FormSpacer {
+//                        Toggle(
+//                            "Automatically deselect the eraser",
+//                            isOn: $automaticallyDeselectEraser
+//                        )
+//                    }
+//                }
                 
                 Section("Default Text Style") {
                     FormSpacer {
