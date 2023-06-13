@@ -73,7 +73,7 @@ struct NoteView: View {
                 }
                 .background(Color(UIColor.secondarySystemBackground))
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                .ignoresSafeArea(.all)
+                .ignoresSafeArea(edges: .bottom)
                 
             }
             .position(

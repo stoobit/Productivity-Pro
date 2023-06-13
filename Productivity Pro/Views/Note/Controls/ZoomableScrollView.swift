@@ -46,15 +46,19 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
         
+        scrollView.addTapGestureRecognizer {
+            scrollView.setZoomScale(getScale(), animated: true)
+        }
+        
         return scrollView
     }
     
     func updateUIView(_ uiView: UIScrollView, context: Context) {
-        if uiView.minimumZoomScale != getScale() / 2 {
-            uiView.minimumZoomScale = getScale() / 2
+        if uiView.minimumZoomScale != getScale() {
+            uiView.minimumZoomScale = getScale()
             
-            if getScale() / 2 > uiView.zoomScale {
-                uiView.setZoomScale(getScale() / 2, animated: true)
+            if getScale() > uiView.zoomScale {
+                uiView.setZoomScale(getScale(), animated: true)
             }
         }
         
@@ -71,7 +75,10 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             uiView.pinchGestureRecognizer?.isEnabled = true
         }
         
-        if toolManager.selectedTab != page.id {
+        if toolManager.selectedTab != page.id ||
+            subviewManager.showScanDoc ||
+            subviewManager.showImportFile
+        {
             Task(priority: .userInitiated) {
                 uiView.setZoomScale(getScale(), animated: true)
                 uiView.setContentOffset(.zero, animated: true)
