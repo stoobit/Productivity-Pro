@@ -21,7 +21,6 @@ extension NoteView {
         checkLockStatus()
         
         toolManager.selectedPage = 0
-        
         toolManager.selectedTab = document.document.note.pages[
             toolManager.selectedPage
         ].id

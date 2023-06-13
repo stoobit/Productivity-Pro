@@ -62,15 +62,18 @@ struct NoteView: View {
                                 size: proxy.size
                             )
                         }
+                        .ignoresSafeArea(edges: .bottom)
                         .modifier(
-                            OrientationUpdater(isPortrait: $page.isPortrait)
+                            OrientationUpdater(
+                                isPortrait: $page.isPortrait
+                            )
                         )
                         .id(page.id)
                     }
                 }
+                .background(Color(UIColor.secondarySystemBackground))
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(height: proxy.size.height + 30)
-                .offset(y: 30/4)
+                .ignoresSafeArea(.all)
                 
             }
             .position(
