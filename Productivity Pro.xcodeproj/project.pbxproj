@@ -86,6 +86,9 @@
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
 		BBB0B4DE29AE9E2900BC4729 /* UnlockAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0B4DD29AE9E2900BC4729 /* UnlockAppView.swift */; };
+		BBB763B02A3A64CC00273182 /* EditShapeItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763AF2A3A64CC00273182 /* EditShapeItemMethods.swift */; };
+		BBB763B22A3A70DD00273182 /* EditTextfieldItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763B12A3A70DD00273182 /* EditTextfieldItemMethods.swift */; };
+		BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */; };
 		BBBB7E082A2693FD00155C8A /* CompactCalculatorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */; };
 		BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */; };
 		BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB02A25461900C23B2C /* UIElements.swift */; };
@@ -230,6 +233,9 @@
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BBB0B4DD29AE9E2900BC4729 /* UnlockAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockAppView.swift; sourceTree = "<group>"; };
+		BBB763AF2A3A64CC00273182 /* EditShapeItemMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemMethods.swift; sourceTree = "<group>"; };
+		BBB763B12A3A70DD00273182 /* EditTextfieldItemMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemMethods.swift; sourceTree = "<group>"; };
+		BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMediaItemMethods.swift; sourceTree = "<group>"; };
 		BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactCalculatorUI.swift; sourceTree = "<group>"; };
 		BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactCalculatorView.swift; sourceTree = "<group>"; };
 		BBBCACB02A25461900C23B2C /* UIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
@@ -782,9 +788,12 @@
 			children = (
 				BBDCF5DC299EB6AC004C99AE /* EditPageItemView.swift */,
 				BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */,
+				BBB763AF2A3A64CC00273182 /* EditShapeItemMethods.swift */,
 				BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */,
+				BBB763B12A3A70DD00273182 /* EditTextfieldItemMethods.swift */,
 				BB53D5AF29C4F79F008130F2 /* EditTextView.swift */,
 				BBDA2CAE29A1A97000EF297A /* EditMediaItemView.swift */,
+				BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */,
 			);
 			path = EditPageItems;
 			sourceTree = "<group>";
@@ -900,6 +909,7 @@
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
 				BBB0B4DE29AE9E2900BC4729 /* UnlockAppView.swift in Sources */,
+				BBB763B22A3A70DD00273182 /* EditTextfieldItemMethods.swift in Sources */,
 				BB91B74E29DF7D9D00B82047 /* DebuggingSheet.swift in Sources */,
 				BB4CDD5628D3D518009A409F /* DocumentModel.swift in Sources */,
 				BBCDFDE32947BF84000C545D /* SquaredView.swift in Sources */,
@@ -967,6 +977,7 @@
 				BB72A28E29760327000E9753 /* ToolView.swift in Sources */,
 				BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */,
 				BB37AD8E2A2C0B58006DB94D /* OverviewIcon.swift in Sources */,
+				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBCCE4F928D540AA001DBD8A /* NoteSettings.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
@@ -986,6 +997,7 @@
 				BB3208A82981DFFF0014F602 /* CameraHelperView.swift in Sources */,
 				BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */,
 				BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */,
+				BBB763B02A3A64CC00273182 /* EditShapeItemMethods.swift in Sources */,
 				BB30E2AB2A09B22E0022B29E /* MarkdownInfoDetailView.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteToolbarModifier.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,

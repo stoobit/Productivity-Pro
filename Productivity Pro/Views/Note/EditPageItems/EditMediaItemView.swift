@@ -14,15 +14,46 @@ struct EditMediaItemView: View {
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
-    @State var editMediaModel: EditMediaModel = EditMediaModel()
+    @State var editMediaModel = EditMediaModel()
+    @State var isStyleView: Bool = true
+    
+    var itemIndex: Int? {
+        document.document.note.pages[
+            toolManager.selectedPage
+        ].items.firstIndex(where: {
+            $0.id == toolManager.selectedItem?.id
+        })
+    }
     
     var body: some View {
-        let itemIndex = document.document.note.pages[
-            toolManager.selectedPage
-        ].items.firstIndex(where: { $0.id == toolManager.selectedItem?.id })
-        
-        Form {
+        VStack(spacing: 0.0) {
+            Picker("", selection: $isStyleView) {
+                Text("Style").tag(true)
+                Text("Arrange").tag(false)
+            }
+            .labelsHidden()
+            .pickerStyle(.segmented)
+            .padding()
             
+            TabView(selection: $isStyleView) {
+                StyleView()
+                    .tag(true)
+                
+                ArrangeView()
+                    .tag(false)
+            }
+            .tabViewStyle(.page(indexDisplayMode: .never))
+        }
+        .background(Color(UIColor.systemBackground))
+        .onChange(of: editMediaModel) { _ in
+            onEditModelChange()
+        }
+        .onAppear { onAppear() }
+        
+    }
+    
+    @ViewBuilder func StyleView() -> some View {
+        Form {
             Section("Border Style") {
                 FormSpacer {
                     Toggle("Show Border", isOn: $editMediaModel.showStroke.animation())
@@ -62,6 +93,7 @@ struct EditMediaItemView: View {
                     }
                 }
             }
+            
             Section("Corner Radius") {
                 FormSpacer {
                     HStack {
@@ -90,11 +122,16 @@ struct EditMediaItemView: View {
                     }
                 }
             }
-            Section("Arrange") {
+        }
+    }
+    
+    @ViewBuilder func ArrangeView() -> some View {
+        Form {
+            Section("Rotation") {
                 FormSpacer {
                     HStack {
                         TextField(
-                            "Rotation", value: $editMediaModel.rotation, format: .number
+                            "Degrees", value: $editMediaModel.rotation, format: .number
                         )
                         .keyboardType(.decimalPad)
                         .frame(width: 85)
@@ -118,20 +155,22 @@ struct EditMediaItemView: View {
                         }
                     }
                 }
-                
+            }
+            
+            Section("Position") {
                 FormSpacer {
                     HStack {
                         Button(action: { moveUp() }) {
                             Image(systemName: "square.2.stack.3d.top.filled")
                         }
                         .buttonStyle(.bordered)
-                    .hoverEffect(.lift)
+                        .hoverEffect(.lift)
                         
                         Button(action: { moveDown() }) {
                             Image(systemName: "square.2.stack.3d.bottom.filled")
                         }
                         .buttonStyle(.bordered)
-                    .hoverEffect(.lift)
+                        .hoverEffect(.lift)
                         
                         Spacer()
                         Divider().frame(height: 30)
@@ -141,137 +180,16 @@ struct EditMediaItemView: View {
                             Image(systemName: "square.3.stack.3d.top.filled")
                         }
                         .buttonStyle(.bordered)
-                    .hoverEffect(.lift)
+                        .hoverEffect(.lift)
                         
                         Button(action: { moveLowest() }) {
                             Image(systemName: "square.3.stack.3d.bottom.filled")
                         }
                         .buttonStyle(.bordered)
-                    .hoverEffect(.lift)
+                        .hoverEffect(.lift)
                     }
                 }
-            }
-            
-        }
-        .onChange(of: editMediaModel) { _ in
-            
-            if let index = itemIndex {
-                
-                document.document.note.pages[
-                    toolManager.selectedPage
-                ].items[index].media?.showStroke = editMediaModel.showStroke
-                
-                document.document.note.pages[
-                    toolManager.selectedPage
-                ].items[index].media?.strokeColor = editMediaModel.strokeColor.toCodable()
-                
-                document.document.note.pages[
-                    toolManager.selectedPage
-                ].items[index].media?.strokeWidth = editMediaModel.strokeWidth
-                
-                document.document.note.pages[
-                    toolManager.selectedPage
-                ].items[index].media?.cornerRadius = editMediaModel.cornerRadius
-                
-                document.document.note.pages[
-                    toolManager.selectedPage
-                ].items[index].rotation = editMediaModel.rotation
-                
-                toolManager.selectedItem = document.document.note.pages[
-                    toolManager.selectedPage
-                ].items[index]
-            }
-        }
-        .onAppear {
-            
-            let selectedItem = document.document.note.pages[
-                toolManager.selectedPage
-            ].items.first(where: { $0.id == toolManager.selectedItem?.id })
-            
-            if let item = selectedItem {
-                if let media = item.media {
-                    editMediaModel = EditMediaModel(
-                        rotation: item.rotation,
-                        showStroke: media.showStroke,
-                        strokeColor: Color(codable: media.strokeColor)!,
-                        strokeWidth: media.strokeWidth,
-                        cornerRadius: media.cornerRadius
-                    )
-                }
-            }
+            } 
         }
     }
-    
-    func moveUp() {
-        
-        let index = document.document.note.pages[
-            toolManager.selectedPage
-        ].items.firstIndex(
-            where: { $0.id == toolManager.selectedItem?.id }
-        )!
-        
-        if index + 1 != document.document.note.pages[
-            toolManager.selectedPage
-        ].items.count {
-            document.document.note.pages[
-                toolManager.selectedPage
-            ].items.move(toolManager.selectedItem!, to: index + 1)
-        }
-    }
-    
-    func moveDown() {
-        
-        let index = document.document.note.pages[
-            toolManager.selectedPage
-        ].items.firstIndex(
-            where: { $0.id == toolManager.selectedItem?.id }
-        )!
-        
-        if index != 0 {
-            document.document.note.pages[
-                toolManager.selectedPage
-            ].items.move(toolManager.selectedItem!, to: index - 1)
-        }
-    }
-    
-    func moveHighest() {
-        
-        let lastIndex = document.document.note.pages[
-            toolManager.selectedPage
-        ].items.firstIndex(
-            where: { $0.id == document.document.note.pages[
-                toolManager.selectedPage
-            ].items.last!.id }
-        )!
-        
-        document.document.note.pages[
-            toolManager.selectedPage
-        ].items.move(toolManager.selectedItem!, to: lastIndex)
-    }
-    
-    func moveLowest() {
-        
-        let firstIndex = document.document.note.pages[
-            toolManager.selectedPage
-        ].items.firstIndex(
-            where: { $0.id == document.document.note.pages[
-                toolManager.selectedPage
-            ].items.first!.id }
-        )!
-        
-        document.document.note.pages[
-            toolManager.selectedPage
-        ].items.move(toolManager.selectedItem!, to: firstIndex)
-    }
-    
-}
-
-struct EditMediaModel: Equatable {
-    var rotation: Double = 0
-    
-    var showStroke: Bool = false
-    var strokeColor: Color = .accentColor
-    
-    var strokeWidth: Double = 5
-    var cornerRadius: Double = 10
 }

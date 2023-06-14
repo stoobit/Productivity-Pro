@@ -104,7 +104,7 @@ struct AddPDFPageHelper: ViewModifier {
         
         Task {
             try? await Task.sleep(nanoseconds: 1000000000)
-            toolManager.selectedPage += count - 1
+            toolManager.selectedPage += 1
             toolManager.showProgress = false
         }
         
@@ -136,7 +136,7 @@ struct AddPDFPageHelper: ViewModifier {
         
         Task {
             try? await Task.sleep(nanoseconds: 1000000000)
-            toolManager.selectedPage += count - 1
+            toolManager.selectedPage += 1
             toolManager.showProgress = false
         }
         
