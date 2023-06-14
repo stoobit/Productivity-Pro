@@ -9,10 +9,7 @@ import SwiftUI
 import PencilKit
 
 struct DrawingViewRepresentable: UIViewRepresentable {
-    
-    @AppStorage("automaticallyDeselectEraser")
-    private var automaticallyDeselectEraser: Bool = false
-    
+   
     @State var oldTool: PKTool?
     
     var size: CGSize
@@ -38,13 +35,8 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         canvasView.showsHorizontalScrollIndicator = false
         
         toolPicker.showsDrawingPolicyControls = false
-        
-#if DEBUG
-        canvasView.drawingPolicy = .anyInput
-#else
         canvasView.drawingPolicy = .pencilOnly
-#endif
-        
+
         adoptScale()
         
         try? canvasView.drawing = PKDrawing(data: page.canvas)
@@ -83,8 +75,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         Coordinator(
             drawingChanged: $drawingChanged,
             toolPicker: $toolPicker,
-            oldTool: oldTool,
-            isAutoDeselect: automaticallyDeselectEraser
+            oldTool: oldTool
         )
     }
     
@@ -93,20 +84,17 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         @Binding var toolPicker: PKToolPicker
         
         var oldTool: PKTool?
-        var isAutoDeselect: Bool
         
         init(
             drawingChanged: Binding<Bool>,
             toolPicker: Binding<PKToolPicker>,
             
-            oldTool: PKTool?,
-            isAutoDeselect: Bool
+            oldTool: PKTool?
         ) {
             _drawingChanged = drawingChanged
             _toolPicker = toolPicker
             
             self.oldTool = oldTool
-            self.isAutoDeselect = isAutoDeselect
         }
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {

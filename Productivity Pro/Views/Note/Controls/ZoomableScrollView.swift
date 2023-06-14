@@ -34,8 +34,6 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         
-        scrollView.contentInsetAdjustmentBehavior = .never
-        
         let hostedView = context.coordinator.hostingController.view!
         hostedView.frame =  CGRect(
             x: 0,

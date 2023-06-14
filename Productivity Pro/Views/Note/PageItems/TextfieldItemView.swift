@@ -43,17 +43,26 @@ struct TextFieldItemView: View {
             .disabled(true)
             .markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
             .markdownTextStyle {
-                FontSize(
-                    item.textField!.fontSize * toolManager.zoomScale * 2.5
-                )
-                ForegroundColor(Color(codable: item.textField!.fontColor))
-                FontFamily(.custom(item.textField!.font))
+                if let field = item.textField {
+                    
+                    FontSize(
+                        field.fontSize * toolManager.zoomScale * 2.5
+                    )
+                    
+                    ForegroundColor(Color(codable: field.fontColor))
+                    FontFamily(.custom(field.font))
+                    
+//                    MarkdownUI.TextTracking()
+                    
+                }
             }
             .markdownTextStyle(\.link) {
                 ForegroundColor(Color.accentColor)
             }
             .markdownTextStyle(\.strikethrough) {
-                StrikethroughStyle(.init(pattern: .solid, color: .red))
+                StrikethroughStyle(
+                    .init(pattern: .solid, color: .red)
+                )
             }
             .markdownTextStyle(\.code) {
                 FontWeight(.bold)
