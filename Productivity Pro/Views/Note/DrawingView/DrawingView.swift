@@ -39,6 +39,7 @@ struct DrawingView: View {
         }
         .onChange(of: toolManager.selectedPage) { _ in
             didSelectedPageChange()
+            disableCanvasAvailability()
         }
         .onChange(of: toolManager.isCanvasEnabled) { isEnabled in
             didCanvasAvailabilityChange(isEnabled)
@@ -57,6 +58,9 @@ struct DrawingView: View {
         page.canvas = pkCanvasView.drawing.dataRepresentation()
         drawingChanged = false
         undoManager?.enableUndoRegistration()
+        
+        pkToolPicker.addObserver(pkCanvasView)
+        pkCanvasView.becomeFirstResponder()
     }
     
     func didSelectedPageChange() {
@@ -82,16 +86,20 @@ struct DrawingView: View {
             pkCanvasView.becomeFirstResponder()
             
         } else {
-            pkCanvasView.isRulerActive = false
-            toolManager.isLocked = false
-            
-            pkToolPicker.setVisible(
-                false, forFirstResponder: pkCanvasView
-            )
-            
-            pkToolPicker.removeObserver(pkCanvasView)
-            pkCanvasView.resignFirstResponder()
+            disableCanvasAvailability()
         }
+    }
+    
+    func disableCanvasAvailability() {
+        pkCanvasView.isRulerActive = false
+        toolManager.isLocked = false
+        
+        pkToolPicker.setVisible(
+            false, forFirstResponder: pkCanvasView
+        )
+        
+        pkToolPicker.removeObserver(pkCanvasView)
+        pkCanvasView.resignFirstResponder()
     }
     
     func getFrame() -> CGSize {
