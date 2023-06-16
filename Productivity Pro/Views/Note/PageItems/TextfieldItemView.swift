@@ -37,48 +37,19 @@ struct TextFieldItemView: View {
                     alignment: .topLeading
                 )
             
-            Markdown {
-                item.textField?.text == "" ? "Markdown..." : item.textField!.text
-            }
-            .disabled(true)
-            .markdownCodeSyntaxHighlighter(.splash(theme: self.theme))
-            .markdownTextStyle {
-                if let field = item.textField {
-                    
-                    FontSize(
-                        field.fontSize * toolManager.zoomScale * 2.5
-                    )
-                    
-                    ForegroundColor(Color(codable: field.fontColor))
-                    FontFamily(.custom(field.font))
-                    
-//                    MarkdownUI.TextTracking()
-                    
-                }
-            }
-            .markdownTextStyle(\.link) {
-                ForegroundColor(Color.accentColor)
-            }
-            .markdownTextStyle(\.strikethrough) {
-                StrikethroughStyle(
-                    .init(pattern: .solid, color: .red)
+            if let tf = item.textField {
+                MarkdownParserView(
+                    toolManager: toolManager,
+                    text: tf
                 )
-            }
-            .markdownTextStyle(\.code) {
-                FontWeight(.bold)
-                FontFamilyVariant(.monospaced)
-                ForegroundColor(Color("codecolor"))
-                FontSize(
-                    item.textField!.fontSize * toolManager.zoomScale * 2.5
+                .padding([.top, .leading], 7 * toolManager.zoomScale)
+                .frame(
+                    width: editItem.size.width * toolManager.zoomScale,
+                    height: editItem.size.height * toolManager.zoomScale,
+                    alignment: .topLeading
                 )
+                .clipShape(Rectangle())
             }
-            .padding([.top, .leading], 5 * toolManager.zoomScale)
-            .frame(
-                width: editItem.size.width * toolManager.zoomScale,
-                height: editItem.size.height * toolManager.zoomScale,
-                alignment: .topLeading
-            )
-            .clipShape(Rectangle())
             
         }
         .onChange(of: editTextFieldModel) { model in
