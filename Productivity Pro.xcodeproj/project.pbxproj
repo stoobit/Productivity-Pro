@@ -33,7 +33,6 @@
 		BB37AD8C2A2C0B38006DB94D /* OverviewDragHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8B2A2C0B38006DB94D /* OverviewDragHelper.swift */; };
 		BB37AD8E2A2C0B58006DB94D /* OverviewIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8D2A2C0B58006DB94D /* OverviewIcon.swift */; };
 		BB37AD922A2C0BDD006DB94D /* OverviewPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD912A2C0BDD006DB94D /* OverviewPageIndicator.swift */; };
-		BB3990E72A391AB700091601 /* DoubleTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3990E62A391AB700091601 /* DoubleTapGestureRecognizer.swift */; };
 		BB3E9AA02A33A0FD006045E1 /* NoteNextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9A9F2A33A0FD006045E1 /* NoteNextPage.swift */; };
 		BB3E9AA42A33A2D3006045E1 /* NoteToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */; };
 		BB3E9AA62A33A5FE006045E1 /* NoteOverlayControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */; };
@@ -178,7 +177,6 @@
 		BB37AD8B2A2C0B38006DB94D /* OverviewDragHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDragHelper.swift; sourceTree = "<group>"; };
 		BB37AD8D2A2C0B58006DB94D /* OverviewIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewIcon.swift; sourceTree = "<group>"; };
 		BB37AD912A2C0BDD006DB94D /* OverviewPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPageIndicator.swift; sourceTree = "<group>"; };
-		BB3990E62A391AB700091601 /* DoubleTapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		BB3E9A9F2A33A0FD006045E1 /* NoteNextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNextPage.swift; sourceTree = "<group>"; };
 		BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbarModifier.swift; sourceTree = "<group>"; };
 		BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOverlayControlView.swift; sourceTree = "<group>"; };
@@ -673,7 +671,6 @@
 				BBD94119299195260085151B /* NoteSize.swift */,
 				BB3F75FA2997F38100C0F140 /* StrokeStyle.swift */,
 				BB5069E929CE294E001330AE /* ImageUIImage.swift */,
-				BB3990E62A391AB700091601 /* DoubleTapGestureRecognizer.swift */,
 			);
 			path = TypeModifier;
 			sourceTree = "<group>";
@@ -929,7 +926,6 @@
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BB4CDD4528D3C668009A409F /* ContentView.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
-				BB3990E72A391AB700091601 /* DoubleTapGestureRecognizer.swift in Sources */,
 				BB4CDD5828D3D532009A409F /* DocumentView.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */,

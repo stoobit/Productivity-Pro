@@ -18,6 +18,20 @@ struct MediaItemView: View {
     @State var image: UIImage = UIImage()
     var body: some View {
         ZStack {
+            
+            if item.media!.showStroke {
+                RoundedRectangle(
+                    cornerRadius: item.media!.cornerRadius * toolManager.zoomScale
+                )
+                .foregroundColor(
+                    Color(codable: item.media!.strokeColor)!
+                )
+                .frame(
+                    width: (editItem.size.width + item.media!.strokeWidth) * toolManager.zoomScale,
+                    height: (editItem.size.height + item.media!.strokeWidth) * toolManager.zoomScale
+                )
+            }
+            
             Image(uiImage: image)
                 .resizable()
                 .frame(
@@ -27,20 +41,6 @@ struct MediaItemView: View {
                 .clipShape(RoundedRectangle(
                     cornerRadius: item.media!.cornerRadius * toolManager.zoomScale
                 ))
-            
-            if item.media!.showStroke {
-                RoundedRectangle(
-                    cornerRadius: item.media!.cornerRadius * toolManager.zoomScale
-                )
-                .stroke(
-                    Color(codable: item.media!.strokeColor)!,
-                    lineWidth: item.media!.strokeWidth * toolManager.zoomScale
-                )
-                .frame(
-                    width: (editItem.size.width + item.media!.strokeWidth) * toolManager.zoomScale,
-                    height: (editItem.size.height + item.media!.strokeWidth) * toolManager.zoomScale
-                )
-            }
         }
         .onAppear {
             image = UIImage(data: item.media?.media ?? Data()) ?? UIImage()

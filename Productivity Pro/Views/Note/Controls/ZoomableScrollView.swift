@@ -41,12 +41,9 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             width: getFrame().width,
             height: getFrame().height
         )
+        
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
-        
-        scrollView.addTapGestureRecognizer {
-            scrollView.setZoomScale(getScale(), animated: true)
-        }
         
         return scrollView
     }

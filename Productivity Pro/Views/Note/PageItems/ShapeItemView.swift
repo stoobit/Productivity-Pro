@@ -50,6 +50,10 @@ struct ShapeItemView: View {
             if shape.showFill {
                 form
                     .fill(Color(codable: shape.fillColor)!)
+                    .frame(
+                        width: editItem.size.width * toolManager.zoomScale,
+                        height: editItem.size.height * toolManager.zoomScale
+                    )
             }
             
             if shape.showStroke {
@@ -59,13 +63,14 @@ struct ShapeItemView: View {
                         lineWidth: shape.strokeWidth * toolManager.zoomScale
                     )
                     .contentShape(stroke)
+                    .frame(
+                        width: (editItem.size.width + item.shape!.strokeWidth) * toolManager.zoomScale,
+                        height: (editItem.size.height + item.shape!.strokeWidth) * toolManager.zoomScale,
+                        alignment: .topLeading
+                    )
             }
             
         }
-        .frame(
-            width: editItem.size.width * toolManager.zoomScale,
-            height: editItem.size.height * toolManager.zoomScale
-        )
         
     }
 }
