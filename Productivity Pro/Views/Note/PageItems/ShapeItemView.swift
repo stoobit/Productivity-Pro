@@ -21,13 +21,15 @@ struct ShapeItemView: View {
                     ShapeTypeView(
                         form: Rectangle(),
                         stroke: RoundedRectangle(
-                            cornerRadius: shape.cornerRadius * toolManager.zoomScale
+                            cornerRadius: shape.cornerRadius * toolManager.zoomScale,
+                            style: .circular
                         ),
                         shape: shape
                     )
                     .clipShape(
                         RoundedRectangle(
-                            cornerRadius: shape.cornerRadius * toolManager.zoomScale
+                            cornerRadius: shape.cornerRadius * toolManager.zoomScale,
+                            style: .circular
                         )
                     )
                     

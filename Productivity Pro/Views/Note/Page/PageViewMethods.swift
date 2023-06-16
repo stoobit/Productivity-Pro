@@ -74,7 +74,7 @@ extension PageView {
     }
     
     func onBackgroundTap() {
-        if toolManager.dragType == .none {
+        if toolManager.dragType == .none && subviewManager.showStylePopover {
             toolManager.selectedItem = nil
             toolManager.dragType = .none
             toolManager.isEditorVisible = true

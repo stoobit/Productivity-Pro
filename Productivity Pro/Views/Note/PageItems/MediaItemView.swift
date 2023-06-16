@@ -19,29 +19,33 @@ struct MediaItemView: View {
     var body: some View {
         ZStack {
             
-            if item.media!.showStroke {
-                RoundedRectangle(
-                    cornerRadius: item.media!.cornerRadius * toolManager.zoomScale
-                )
-                .foregroundColor(
-                    Color(codable: item.media!.strokeColor)!
-                )
-                .frame(
-                    width: (editItem.size.width + item.media!.strokeWidth) * toolManager.zoomScale,
-                    height: (editItem.size.height + item.media!.strokeWidth) * toolManager.zoomScale
-                )
-            }
-            
             Image(uiImage: image)
                 .resizable()
                 .frame(
                     width: editItem.size.width * toolManager.zoomScale,
                     height: editItem.size.height * toolManager.zoomScale
                 )
-                .clipShape(RoundedRectangle(
-                    cornerRadius: item.media!.cornerRadius * toolManager.zoomScale
-                ))
+            
+            if item.media!.showStroke {
+                RoundedRectangle(
+                    cornerRadius: item.media!.cornerRadius * toolManager.zoomScale,
+                    style: .circular
+                )
+                .stroke(
+                    Color(codable: item.media!.strokeColor)!,
+                    lineWidth:  item.media!.strokeWidth * toolManager.zoomScale
+                )
+                .frame(
+                    width: (editItem.size.width + item.media!.strokeWidth) * toolManager.zoomScale,
+                    height: (editItem.size.height + item.media!.strokeWidth) * toolManager.zoomScale,
+                    alignment: .topLeading
+                )
+            }
         }
+        .clipShape(RoundedRectangle(
+            cornerRadius: item.media!.cornerRadius * toolManager.zoomScale,
+            style: .circular
+        ))
         .onAppear {
             image = UIImage(data: item.media?.media ?? Data()) ?? UIImage()
         }
