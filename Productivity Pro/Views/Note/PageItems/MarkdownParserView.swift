@@ -12,9 +12,13 @@ struct MarkdownParserView: View {
     @StateObject var toolManager: ToolManager
     var text: TextFieldModel
     
+    var lines: [String] {
+        return text.text.components(separatedBy: .newlines).map {
+            $0.replacing("\u{0009}", with: "    ")
+        }
+    }
+    
     var body: some View {
-        let lines = text.text.components(separatedBy: .newlines)
-        
         VStack(alignment: .leading) {
             ForEach(lines, id: \.self) { line in
                 if text.text == "" {

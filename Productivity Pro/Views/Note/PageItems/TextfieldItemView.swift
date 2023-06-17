@@ -42,6 +42,10 @@ struct TextFieldItemView: View {
                     toolManager: toolManager,
                     text: tf
                 )
+                .allowsTightening(false)
+                .fixedSize()
+                .tracking(1.0)
+                .foregroundStyle(Color(codable: tf.fontColor) ?? .red)
                 .padding([.top, .leading], 7 * toolManager.zoomScale)
                 .frame(
                     width: editItem.size.width * toolManager.zoomScale,
