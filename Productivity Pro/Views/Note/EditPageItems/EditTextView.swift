@@ -56,12 +56,6 @@ struct EditTextView: View {
                             .return, modifiers: [.command]
                         )
                     }
-                    
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button(action: { subviewManager.markdownHelp.toggle() }) {
-                            Image(systemName: "info.circle")
-                        }
-                    }
                 }
                 .sheet(isPresented: $subviewManager.markdownHelp) {
                     MarkdownInfoView(isPresented: $subviewManager.markdownHelp)
