@@ -121,6 +121,11 @@ struct OverviewView: View {
                                 }
                                 .onAppear { reader.scrollTo(toolManager.selectedPage) }
                             }
+                            .animation(
+                                .default,
+                                value: document.document.note.pages.count
+                            )
+                            
                         } else {
                             LazyVGrid(columns: columns) {
                                 ForEach(filteredPages) { page in

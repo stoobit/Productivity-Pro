@@ -45,7 +45,7 @@ struct EditShapeItemView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
-        .background(Color(UIColor.systemBackground))
+        .background(Color("PopoverColor"))
         .onChange(of: editShapeModel) { _ in
             onEditModelChange(itemIndex: itemIndex)
         }

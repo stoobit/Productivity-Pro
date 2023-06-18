@@ -15,48 +15,46 @@ extension OverviewView {
             toolManager.selectedPage
         ].items = []
         
-        withAnimation {
+        if page == document.document.note.pages.last! {
             
-            if page == document.document.note.pages.last! {
+            if toolManager.selectedTab == page.id {
+                toolManager.selectedPage = document.document.note.pages.firstIndex(
+                    of: page
+                )! - 1
+            }
+            
+            document.document.note.pages.removeAll(where: {
+                $0.id == page.id
+            })
+            
+        } else {
+            let pageIndex: Int = document.document.note.pages.firstIndex(of: page)!
+            
+            if pageIndex < toolManager.selectedPage {
                 
-                if toolManager.selectedTab == page.id {
-                    toolManager.selectedPage = document.document.note.pages.firstIndex(
-                        of: document.document.note.pages.last!
-                    )! - 1
-                }
+                let selection = document.document.note.pages[
+                    toolManager.selectedPage
+                ].id
                 
                 document.document.note.pages.removeAll(where: {
-                    $0.id == document.document.note.pages.last!.id
+                    $0 == page
                 })
                 
-            } else {
-                let pageIndex: Int = document.document.note.pages.firstIndex(of: page)!
+                toolManager.selectedTab = selection
+                toolManager.selectedPage = document.document.note.pages.firstIndex(
+                    where: { $0.id == selection }) ?? 0
                 
-                if pageIndex < toolManager.selectedPage {
-                    
-                    let selection = document.document.note.pages[
-                        toolManager.selectedPage
-                    ].id
-                    
-                    document.document.note.pages.removeAll(where: {
-                        $0 == page
-                    })
-                    
-                    toolManager.selectedTab = selection
-                    toolManager.selectedPage = document.document.note.pages.firstIndex(
-                        where: { $0.id == selection }) ?? 0
-                    
-                } else if pageIndex == toolManager.selectedPage {
-                    toolManager.selectedTab = document.document.note.pages[
-                        toolManager.selectedPage + 1
-                    ].id
-                    
-                    document.document.note.pages.removeAll(where: { $0 == page })
-                } else if pageIndex > toolManager.selectedPage {
-                    document.document.note.pages.removeAll(where: { $0 == page })
-                }
+            } else if pageIndex == toolManager.selectedPage {
+                toolManager.selectedTab = document.document.note.pages[
+                    toolManager.selectedPage + 1
+                ].id
                 
+                document.document.note.pages.removeAll(where: { $0 == page })
+                
+            } else if pageIndex > toolManager.selectedPage {
+                document.document.note.pages.removeAll(where: { $0 == page })
             }
+            
         }
     }
     

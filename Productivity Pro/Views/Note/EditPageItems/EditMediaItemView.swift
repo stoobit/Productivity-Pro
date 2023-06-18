@@ -44,7 +44,7 @@ struct EditMediaItemView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
-        .background(Color(UIColor.systemBackground))
+        .background(Color("PopoverColor"))
         .onChange(of: editMediaModel) { _ in
             onEditModelChange()
         }

@@ -44,7 +44,7 @@ struct EditTextfieldItemView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
-        .background(Color(UIColor.systemBackground))
+        .background(Color("PopoverColor"))
         .onChange(of: editTextFieldModel) { _ in
             onEditModelChange()
         }
