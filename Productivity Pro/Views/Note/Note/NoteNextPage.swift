@@ -17,6 +17,7 @@ struct NoteNextPage: View {
             Button("Next Page") {
                 toolManager.selectedPage += 1
             }
+            .foregroundStyle(Color(UIColor.secondarySystemBackground))
             .keyboardShortcut(.rightArrow)
             .frame(width: 0, height: 0)
             .disabled(
@@ -26,6 +27,7 @@ struct NoteNextPage: View {
             Button("Previous Page") {
                 toolManager.selectedPage -= 1
             }
+            .foregroundStyle(Color(UIColor.secondarySystemBackground))
             .keyboardShortcut(.leftArrow)
             .frame(width: 0, height: 0)
             .disabled(

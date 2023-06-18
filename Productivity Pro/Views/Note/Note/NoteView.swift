@@ -113,7 +113,7 @@ struct NoteView: View {
                 "Delete this Page",
                 isPresented: $subviewManager.isDeletePageAlert,
                 actions: {
-                    Button("Delete Page", role: .destructive) { removePage() }
+                    Button("Delete Page", role: .destructive) { deletePage() }
                     Button("Cancel", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
                     }
                     

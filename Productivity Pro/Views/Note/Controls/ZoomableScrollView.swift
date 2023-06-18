@@ -74,10 +74,8 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             subviewManager.showScanDoc ||
             subviewManager.showImportFile
         {
-            Task(priority: .userInitiated) {
-                uiView.setZoomScale(getScale(), animated: true)
-                uiView.setContentOffset(.zero, animated: true)
-            }
+            uiView.setZoomScale(getScale(), animated: true)
+            uiView.setContentOffset(.zero, animated: true)
         }
         
         context.coordinator.hostingController.rootView = content()

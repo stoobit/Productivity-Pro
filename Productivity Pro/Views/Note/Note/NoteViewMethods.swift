@@ -107,51 +107,49 @@ extension NoteView {
         toolManager.showProgress = false
     }
     
-    func removePage() {
+    func deletePage() {
         toolManager.selectedItem = nil
         
         document.document.note.pages[
             toolManager.selectedPage
         ].items = []
         
-        
-        let page = document.document.note.pages.first(where: {
-            $0.id == toolManager.selectedTab
-        })
-        
-        if page == document.document.note.pages.last! {
-            
-            toolManager.selectedPage = document.document.note.pages.firstIndex(
-                of: document.document.note.pages.last!
-            )! - 1
-        
-            document.document.note.pages.removeAll(where: {
-                $0.id == document.document.note.pages.last!.id
-            })
-            
-        } else {
-            
-            toolManager.selectedTab = document.document.note.pages[
-                toolManager.selectedPage + 1
-            ].id
-            
-            let new = toolManager.selectedTab
-            
-            toolManager.selectedPage = document.document.note.pages.firstIndex(
-                where: { $0.id == toolManager.selectedTab }
-            ) ?? 0
-            
-            document.document.note.pages.remove(at: toolManager.selectedPage - 1)
-            toolManager.selectedTab = new
-            if let page = document.document.note.pages.firstIndex(where: {
-                $0.id == toolManager.selectedTab
-            }) {
-                toolManager.selectedPage = page
+        withAnimation {
+            if toolManager.selectedTab == document.document.note.pages.last!.id {
+                
+                removePage(next: -1)
+            } else {
+                removePage(next: 1)
             }
-            
         }
         
         undoManager?.removeAllActions() 
+    }
+    
+    func removePage(next: Int) {
+        toolManager.selectedTab = document.document.note.pages[
+            document.document.note.pages.firstIndex(where: {
+                $0.id == toolManager.selectedTab
+            })! + next
+        ].id
+        
+        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
+            $0.id == toolManager.selectedTab
+        })!
+        
+        let toRemove = document.document.note.pages[
+            document.document.note.pages.firstIndex(where: {
+                $0.id == toolManager.selectedTab
+            })! - next
+        ].id
+        
+        document.document.note.pages.removeAll(where: {
+            $0.id == toRemove
+        })
+        
+        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
+            $0.id == toolManager.selectedTab
+        })!
     }
     
     func pageIndicator() {
