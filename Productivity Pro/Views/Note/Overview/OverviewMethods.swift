@@ -10,11 +10,12 @@ import SwiftUI
 extension OverviewView {
     
     func delete(_ page: Page) {
+        toolManager.selectedItem = nil
+        document.document.note.pages[
+            toolManager.selectedPage
+        ].items = []
+        
         withAnimation {
-            toolManager.selectedItem = nil
-            document.document.note.pages[
-                toolManager.selectedPage
-            ].items = []
             
             if page == document.document.note.pages.last! {
                 

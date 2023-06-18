@@ -18,9 +18,13 @@ struct AddPDFPageHelper: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .fullScreenCover(isPresented: $subviewManager.showScanDoc) {
+            .fullScreenCover(
+                isPresented: $subviewManager.showScanDoc
+            ) {
                 ScannerHelperView(cancelAction: {
-                    subviewManager.showScanDoc.toggle()
+                    
+                    subviewManager.showScanDoc = false
+                    
                 }, resultAction: { result in
                     
                     switch result {
@@ -36,7 +40,7 @@ struct AddPDFPageHelper: ViewModifier {
                         print(error)
                     }
                     
-                    subviewManager.showScanDoc.toggle()
+                    subviewManager.showScanDoc = false
                 })
                 .edgesIgnoringSafeArea(.bottom)
             }
