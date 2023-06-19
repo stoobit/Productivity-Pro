@@ -22,6 +22,7 @@ struct OverviewView: View {
     @State var current: Page?
     
     @State var selectedTab: OverviewListType = .all
+    @State var pageToDelete: Page!
     
     var body: some View {
         NavigationStack {
@@ -48,7 +49,19 @@ struct OverviewView: View {
                         .keyboardShortcut(.return, modifiers: [])
                     }
                 }
-                
+                .alert(
+                    "Delete this Page",
+                    isPresented: $subviewManager.isDeletePageAlert,
+                    actions: {
+                        Button("Delete Page", role: .destructive) {
+                            delete(pageToDelete)
+                        }
+                        
+                        Button("Cancel", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
+                        }
+                    }) {
+                        Text("You cannot undo this action.")
+                    }
             }
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)
@@ -96,8 +109,11 @@ struct OverviewView: View {
                                             
                                             Spacer()
                                             
-                                            OverviewPageIndicator(document: document, index: index) {
-                                                delete(page)
+                                            OverviewPageIndicator(
+                                                document: document, index: index
+                                            ) {
+                                                pageToDelete = page
+                                                subviewManager.isDeletePageAlert = true
                                             }
                                         }
                                         .padding(.horizontal, 10)
@@ -151,8 +167,11 @@ struct OverviewView: View {
                                             
                                             Spacer()
                                             
-                                            OverviewPageIndicator(document: document, index: index) {
-                                                delete(page)
+                                            OverviewPageIndicator(
+                                                document: document, index: index
+                                            ) {
+                                                pageToDelete = page
+                                                subviewManager.isDeletePageAlert = true
                                             }
                                         }
                                         .padding(.horizontal, 10)
