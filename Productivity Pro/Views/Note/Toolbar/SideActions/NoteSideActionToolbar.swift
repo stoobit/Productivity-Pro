@@ -21,16 +21,10 @@ struct NoteSideActionToolbar: ToolbarContent {
     @StateObject var subviewManager: SubviewManager
     
     var body: some ToolbarContent {
-        
         ToolbarItemGroup(placement: .primaryAction) {
             
             if toolManager.isCanvasEnabled && !subviewManager.isPresentationMode {
-                Button(action: { toolManager.isLocked.toggle() }) {
-                    Label(
-                        "Lock Scroll",
-                        systemImage: toolManager.isLocked ? "lock.fill" : "lock"
-                    )
-                }
+                DrawingModeEnabled()
             } else {
                 DrawingModeDisabled()
             }
@@ -117,7 +111,6 @@ struct NoteSideActionToolbar: ToolbarContent {
                 )
             }
         }
-        
         ToolbarItemGroup(placement: .navigationBarLeading) {
             Button(action: {
                 
@@ -156,111 +149,6 @@ struct NoteSideActionToolbar: ToolbarContent {
                 .keyboardShortcut("o", modifiers: [.command])
             }
         }
-        
-    }
-    
-    @ViewBuilder func DrawingModeDisabled() -> some View {
-        if subviewManager.isPresentationMode == false {
-            
-            if hsc == .regular {
-                
-                Button(action: { undo() }) {
-                    Label("Undo", systemImage: "arrow.uturn.backward")
-                }
-                .disabled(!(undoManager?.canUndo ?? false))
-                
-                Button(action: { redo() }) {
-                    Label("Redo", systemImage: "arrow.uturn.forward")
-                }
-                .disabled(!(undoManager?.canRedo ?? false))
-                
-            } else {
-                Menu(content: {
-                    
-                    Button(action: { undo() }) {
-                        Label("Undo", systemImage: "arrow.uturn.backward")
-                    }
-                    .disabled(!(undoManager?.canUndo ?? false))
-                    
-                    Button(action: { redo() }) {
-                        Label("Redo", systemImage: "arrow.uturn.forward")
-                    }
-                    .disabled(!(undoManager?.canRedo ?? false))
-                    
-                }) {
-                    Label("Undo/Redo", systemImage: "arrow.uturn.backward")
-                }
-                .disabled(
-                    !(undoManager?.canUndo ?? false) && !(undoManager?.canRedo ?? false)
-                )
-            }
-            
-            Button(action: {
-                toolManager.selectedItem = document.document.note.pages[
-                    toolManager.selectedPage
-                ].items.first(where: { $0.id == toolManager.selectedItem?.id })
-                subviewManager.showStylePopover.toggle()
-            }) {
-                ZStack {
-                    Text("Show Editor")
-                        .frame(width: 0, height: 0)
-                    
-                    Image(systemName: "paintbrush")
-                }
-            }
-            .keyboardShortcut("e", modifiers: [.command])
-            .disabled(toolManager.selectedItem == nil)
-            .popover(isPresented: $subviewManager.showStylePopover) {
-                EditPageItemView(
-                    hsc: hsc,
-                    document: $document,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-                .presentationCompactAdaptation(.popover)
-                .presentationBackgroundInteraction(.enabled)
-            }
-            
-        }
-    }
-    
-    func tapPresentationButton() {
-        let dateTrialEnd = Calendar.current.date(
-            byAdding: .day,
-            value: freeTrialDays,
-            to: Date(rawValue: startDate)!
-        )
-        
-        if !isFullAppUnlocked && dateTrialEnd! < Date() {
-            subviewManager.showUnlockView = true
-        } else {
-            subviewManager.isPresentationMode.toggle()
-            
-            if subviewManager.isPresentationMode == false {
-                Task {
-                    try? await Task.sleep(nanoseconds: 50000)
-                    undoManager?.removeAllActions()
-                }
-            }
-        }
-    }
-    
-    func undo() {
-        undoManager?.undo()
-    }
-    
-    func redo() {
-        undoManager?.redo()
-    }
-    
-    func toggleBookmark() {
-        undoManager?.disableUndoRegistration()
-        
-        document.document.note.pages[
-            toolManager.selectedPage
-        ].isBookmarked.toggle()
-        
-        undoManager?.enableUndoRegistration()
     }
     
 }

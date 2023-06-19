@@ -119,9 +119,10 @@ struct NoteSettings: View {
             document.documentType = .note
             
             var note = Note()
-            let firstPage: Page = Page(backgroundColor: backgroundColor,
-                                       backgroundTemplate: backgroundTemplate,
-                                       isPortrait: isPortrait
+            let firstPage: Page = Page(
+                backgroundColor: backgroundColor,
+                backgroundTemplate: backgroundTemplate,
+                isPortrait: isPortrait
             )
             
             note.pages.append(firstPage)

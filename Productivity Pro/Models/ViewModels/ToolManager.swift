@@ -26,7 +26,7 @@ class ToolManager: ObservableObject {
     @Published var firstZoom: Bool = true
     
     @Published var isCanvasEnabled: Bool = false
-    @Published var isPagingEnabled: Bool = true
+    @Published var isLockEnabled: Bool = true
     
     @Published var selectedItem: ItemModel?
     @Published var pageGotCleared: Bool = false

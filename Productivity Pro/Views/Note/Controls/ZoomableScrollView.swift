@@ -90,7 +90,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             offset: $toolManager.scrollOffset,
             isEditorVisible: $toolManager.isEditorVisible,
             showFrame: $toolManager.showFrame,
-            isPagingEnabled: $toolManager.isPagingEnabled
+            isLockEnabled: $toolManager.isLockEnabled
         )
     }
     
@@ -105,7 +105,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         @Binding var isEditorVisible: Bool
         @Binding var showFrame: Bool
         
-        @Binding var isPagingEnabled: Bool
+        @Binding var isLockEnabled: Bool
         
         init(
             hostingController: UIHostingController<Content>,
@@ -114,7 +114,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             offset: Binding<CGPoint>,
             isEditorVisible: Binding<Bool>,
             showFrame: Binding<Bool>,
-            isPagingEnabled: Binding<Bool>
+            isLockEnabled: Binding<Bool>
         ) {
             self.hostingController = hostingController
             _didZoom = didZoom
@@ -122,7 +122,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             _offset = offset
             _isEditorVisible = isEditorVisible
             _showFrame = showFrame
-            _isPagingEnabled = isPagingEnabled
+            _isLockEnabled = isLockEnabled
         }
         
         func scrollViewDidZoom(_ scrollView: UIScrollView) {
@@ -150,21 +150,24 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         }
         
         func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-            self.isPagingEnabled = false
+            self.isLockEnabled = false
         }
         
         func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
             if decelerate == false {
                 self.offset = scrollView.contentOffset
-                self.isPagingEnabled = true
+                self.isLockEnabled = true
             }
         }
         
         func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
             self.offset = scrollView.contentOffset
-            self.isPagingEnabled = true
+            self.isLockEnabled = true
         }
 
+        func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+            self.offset = scrollView.contentOffset
+        }
     }
     
     func getFrame() -> CGSize {

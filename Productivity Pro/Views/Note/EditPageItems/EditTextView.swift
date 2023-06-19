@@ -43,7 +43,7 @@ struct EditTextView: View {
                     ].items[index].textField!.text = value
                     
                 }
-                .toolbarRole(.navigationStack)
+                .toolbarRole(.browser)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .navigationTitle("Markdown")
                 .navigationBarTitleDisplayMode(.inline)

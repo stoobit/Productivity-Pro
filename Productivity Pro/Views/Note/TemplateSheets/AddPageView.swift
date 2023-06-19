@@ -116,9 +116,10 @@ struct AddPageView: View {
     
     func addPage() {
         
-        let newPage = Page(backgroundColor: backgroundColor,
-                           backgroundTemplate: backgroundTemplate,
-                           isPortrait: isPortrait
+        let newPage = Page(
+            backgroundColor: backgroundColor,
+            backgroundTemplate: backgroundTemplate,
+            isPortrait: isPortrait
         )
             
         document.document.note.pages.insert(
