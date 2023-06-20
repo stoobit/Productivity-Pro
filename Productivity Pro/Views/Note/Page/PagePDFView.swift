@@ -8,84 +8,35 @@
 import SwiftUI
 import PDFKit
 
-struct PDFKitRepresentedView: UIViewRepresentable {
-
-    @Binding var pdfView: PDFView
-    @Binding var page: Page
-    
-    @StateObject var toolManager: ToolManager
-    
-    let backgroundData: Data?
-    
-    func makeUIView(context: Context) -> PDFView {
-        
-        if let data = backgroundData {
-            pdfView.document = PDFDocument(data: data)
-        }
-        
-        pdfView.displayMode = .singlePage
-        pdfView.isUserInteractionEnabled = false
-        pdfView.pageShadowsEnabled = false
-        pdfView.backgroundColor = .white
-        pdfView.motionEffects = []
-        pdfView.displayMode = .singlePage
-        pdfView.isOpaque = false
-        pdfView.autoScales = false
-        
-        setScale()
-            
-        return pdfView
-    }
-
-    func updateUIView(_ uiView: PDFView, context: Context) {
-        pdfView.autoScales = false
-    }
-    
-    func getFrame() -> CGSize {
-        var frame: CGSize = .zero
-        
-        if page.isPortrait {
-            frame = CGSize(width: shortSide, height: longSide)
-        } else {
-            frame = CGSize(width: longSide, height: shortSide)
-        }
-        
-        return frame
-    }
-    
-    func setScale() {
-        let bounds: CGRect = (pdfView.document?.page(
-            at: 0
-        )?.bounds(for: .mediaBox)) ?? .zero
-        
-        if page.isPortrait {
-            pdfView.scaleFactor = longSide / bounds.height
-        } else {
-            pdfView.scaleFactor = longSide / bounds.width
-        }
-    }
-    
-}
-
 struct PagePDFView: View {
     
-    @State var pdfView: PDFView = PDFView()
-    
     @Binding var page: Page
     @StateObject var toolManager: ToolManager
     
+    @State var image: UIImage? = nil
+    
     var body: some View {
-        PDFKitRepresentedView(
-            pdfView: $pdfView,
-            page: $page,
-            toolManager: toolManager,
-            backgroundData: page.backgroundMedia
-        )
-        .allowsHitTesting(false)
-        .frame(
-            width: getFrame().width,
-            height: getFrame().height
-        )
+        Image(uiImage: image ?? UIImage())
+            .resizable()
+            .scaledToFit()
+            .frame(
+                width: toolManager.zoomScale * getFrame().width,
+                height: toolManager.zoomScale * getFrame().height
+            )
+            .scaleEffect(1/toolManager.zoomScale)
+            .allowsHitTesting(false)
+            .onAppear() { onAppear() }
+            .onChange(of: toolManager.zoomScale) { _ in
+                if page.id == toolManager.selectedTab {
+                    renderPage()
+                }
+            }
+            .onChange(of: toolManager.selectedTab) { _ in
+                if page.id == toolManager.selectedTab {
+                    renderPage()
+                }
+            }
+            
     }
     
     func getFrame() -> CGSize {
@@ -98,5 +49,39 @@ struct PagePDFView: View {
         }
         
         return frame
+    }
+    
+    func onAppear() {
+        if let media = page.backgroundMedia {
+            if let pdf = PDFDocument(data: media)?.page(at: 0) {
+                Task(priority: .userInitiated) {
+                    
+                    let size: CGSize = pdf.bounds(
+                        for: .mediaBox
+                    ).size
+                    
+                    image = pdf.thumbnail(
+                        of: size, for: .mediaBox
+                    )
+                }
+            }
+        }
+    }
+    
+    func renderPage() {
+        if let media = page.backgroundMedia {
+            if let pdf = PDFDocument(data: media)?.page(at: 0) {
+                Task(priority: .userInitiated) {
+                    
+                    let size: CGSize = pdf.bounds(
+                        for: .mediaBox
+                    ).size * toolManager.zoomScale * 6
+                    
+                    image = pdf.thumbnail(
+                        of: size, for: .mediaBox
+                    )
+                }
+            }
+        }
     }
 }
