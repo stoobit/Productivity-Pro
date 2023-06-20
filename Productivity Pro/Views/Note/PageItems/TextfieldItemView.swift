@@ -1,6 +1,4 @@
 import SwiftUI
-import MarkdownUI
-import Splash
 
 struct TextFieldItemView: View {
     
@@ -10,7 +8,7 @@ struct TextFieldItemView: View {
     @StateObject var toolManager: ToolManager
     @StateObject var editItem: EditItemModel
     
-    @State var editTextFieldModel: EditTextFieldModel = EditTextFieldModel()
+    @State var editTextFieldModel = EditTextFieldModel()
     
     var body: some View {
         ZStack {
@@ -43,10 +41,12 @@ struct TextFieldItemView: View {
                     text: tf
                 )
                 .allowsTightening(false)
-                .fixedSize()
-                .tracking(1.0)
-                .foregroundStyle(Color(codable: tf.fontColor) ?? .red)
-                .padding([.top, .leading], 7 * toolManager.zoomScale)
+                .foregroundStyle(
+                    Color(codable: tf.fontColor) ?? .red
+                )
+                .padding(
+                    [.top, .leading], 7 * toolManager.zoomScale
+                )
                 .frame(
                     width: editItem.size.width * toolManager.zoomScale,
                     height: editItem.size.height * toolManager.zoomScale,
@@ -71,14 +71,4 @@ struct TextFieldItemView: View {
         
         return cs
     }
-    
-    private var theme: Splash.Theme {
-        switch colorScheme() {
-        case .dark:
-            return .wwdc17(withFont: .init(size: 16))
-        default:
-            return .presentation(withFont: .init(size: 16))
-        }
-    }
-    
 }

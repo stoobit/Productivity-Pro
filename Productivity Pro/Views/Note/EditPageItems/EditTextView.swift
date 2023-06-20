@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import MarkdownUI
 
 struct EditTextView: View {
     
@@ -56,9 +55,6 @@ struct EditTextView: View {
                             .return, modifiers: [.command]
                         )
                     }
-                }
-                .sheet(isPresented: $subviewManager.markdownHelp) {
-                    MarkdownInfoView(isPresented: $subviewManager.markdownHelp)
                 }
         }
     }

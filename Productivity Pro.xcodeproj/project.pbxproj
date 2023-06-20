@@ -23,9 +23,6 @@
 		BB27FED428EA192D00459334 /* ChangePageTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED328EA192D00459334 /* ChangePageTemplateView.swift */; };
 		BB27FED628EA1EF900459334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED528EA1EF900459334 /* SettingsView.swift */; };
 		BB27FED828EA419300459334 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED728EA419300459334 /* OverviewView.swift */; };
-		BB30E2AB2A09B22E0022B29E /* MarkdownInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30E2A92A09B22E0022B29E /* MarkdownInfoDetailView.swift */; };
-		BB30E2AC2A09B22E0022B29E /* MarkdownInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30E2AA2A09B22E0022B29E /* MarkdownInfoView.swift */; };
-		BB30E2AE2A09B2590022B29E /* SyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30E2AD2A09B2580022B29E /* SyntaxHighlighter.swift */; };
 		BB3208A82981DFFF0014F602 /* CameraHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraHelperView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB3525B32908673800D35790 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3525B22908673800D35790 /* Array.swift */; };
@@ -82,7 +79,6 @@
 		BB9DF5B228E0666000AC988D /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B128E0666000AC988D /* TaskListView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9F70EA28E7A57C007DF951 /* AddPageView.swift */; };
-		BBA14EB32994541B007CB38A /* PencilKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA14EB22994541B007CB38A /* PencilKitView.swift */; };
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
 		BBB0B4DE29AE9E2900BC4729 /* UnlockAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0B4DD29AE9E2900BC4729 /* UnlockAppView.swift */; };
@@ -145,12 +141,6 @@
 		BBEFC9532A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9522A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift */; };
 		BBF22ACC2933EFE300109848 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF22ACB2933EFE300109848 /* PageView.swift */; };
 		BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */; };
-		BBFD49EC2A2A0E8F00917E88 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD49EB2A2A0E8F00917E88 /* MarkdownUI */; };
-		BBFD49EF2A2A0EAD00917E88 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD49EE2A2A0EAD00917E88 /* Splash */; };
-		BBFD49F12A2A0EAD00917E88 /* SplashHTMLGen in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD49F02A2A0EAD00917E88 /* SplashHTMLGen */; };
-		BBFD49F32A2A0EAD00917E88 /* SplashImageGen in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD49F22A2A0EAD00917E88 /* SplashImageGen */; };
-		BBFD49F52A2A0EAD00917E88 /* SplashMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD49F42A2A0EAD00917E88 /* SplashMarkdown */; };
-		BBFD49F72A2A0EAD00917E88 /* SplashTokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD49F62A2A0EAD00917E88 /* SplashTokenizer */; };
 		BBFD49FA2A2A0EB900917E88 /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD49F92A2A0EB900917E88 /* OnPasteboardChange */; };
 /* End PBXBuildFile section */
 
@@ -172,9 +162,6 @@
 		BB27FED328EA192D00459334 /* ChangePageTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePageTemplateView.swift; sourceTree = "<group>"; };
 		BB27FED528EA1EF900459334 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BB27FED728EA419300459334 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
-		BB30E2A92A09B22E0022B29E /* MarkdownInfoDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownInfoDetailView.swift; sourceTree = "<group>"; };
-		BB30E2AA2A09B22E0022B29E /* MarkdownInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownInfoView.swift; sourceTree = "<group>"; };
-		BB30E2AD2A09B2580022B29E /* SyntaxHighlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighter.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelperView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -233,7 +220,6 @@
 		BB9DF5B128E0666000AC988D /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BB9F70EA28E7A57C007DF951 /* AddPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPageView.swift; sourceTree = "<group>"; };
-		BBA14EB22994541B007CB38A /* PencilKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitView.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BBB0B4DD29AE9E2900BC4729 /* UnlockAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockAppView.swift; sourceTree = "<group>"; };
@@ -304,14 +290,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBFD49F52A2A0EAD00917E88 /* SplashMarkdown in Frameworks */,
-				BBFD49F12A2A0EAD00917E88 /* SplashHTMLGen in Frameworks */,
-				BBFD49EC2A2A0E8F00917E88 /* MarkdownUI in Frameworks */,
 				BBBF53882A2FEAA8006DD011 /* StoreKit.framework in Frameworks */,
 				BBFD49FA2A2A0EB900917E88 /* OnPasteboardChange in Frameworks */,
-				BBFD49F72A2A0EAD00917E88 /* SplashTokenizer in Frameworks */,
-				BBFD49F32A2A0EAD00917E88 /* SplashImageGen in Frameworks */,
-				BBFD49EF2A2A0EAD00917E88 /* Splash in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,15 +329,6 @@
 				BBDABD3E29D257410038CFC2 /* PagePDFView.swift */,
 			);
 			path = Page;
-			sourceTree = "<group>";
-		};
-		BB30E2A82A09B22E0022B29E /* MarkdownInfo */ = {
-			isa = PBXGroup;
-			children = (
-				BB30E2A92A09B22E0022B29E /* MarkdownInfoDetailView.swift */,
-				BB30E2AA2A09B22E0022B29E /* MarkdownInfoView.swift */,
-			);
-			path = MarkdownInfo;
 			sourceTree = "<group>";
 		};
 		BB37AD882A2C0A12006DB94D /* Overview */ = {
@@ -569,7 +540,6 @@
 				BB0504292928471400DAECA6 /* BackgroundViews */,
 				BB6BFA2229048C5E002D09FD /* TemplateSheets */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
-				BB30E2A82A09B22E0022B29E /* MarkdownInfo */,
 				BB37AD882A2C0A12006DB94D /* Overview */,
 				BBBF53842A2FE04E006DD011 /* UnlockView */,
 				BB9CC946293FD4450094446A /* Share+Collaborate */,
@@ -687,8 +657,6 @@
 		BBBD13E9290EA4D6001145A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BB30E2AD2A09B2580022B29E /* SyntaxHighlighter.swift */,
-				BBA14EB22994541B007CB38A /* PencilKitView.swift */,
 				BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */,
 				BBDC62712905EED800364B57 /* IndicatorText.swift */,
 				BB0BE2062925A7C200F4004A /* BottomOffset.swift */,
@@ -843,12 +811,6 @@
 			);
 			name = "Productivity Pro";
 			packageProductDependencies = (
-				BBFD49EB2A2A0E8F00917E88 /* MarkdownUI */,
-				BBFD49EE2A2A0EAD00917E88 /* Splash */,
-				BBFD49F02A2A0EAD00917E88 /* SplashHTMLGen */,
-				BBFD49F22A2A0EAD00917E88 /* SplashImageGen */,
-				BBFD49F42A2A0EAD00917E88 /* SplashMarkdown */,
-				BBFD49F62A2A0EAD00917E88 /* SplashTokenizer */,
 				BBFD49F92A2A0EB900917E88 /* OnPasteboardChange */,
 			);
 			productName = "Productivity Pro";
@@ -882,8 +844,6 @@
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
-				BBFD49EA2A2A0E8F00917E88 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
-				BBFD49ED2A2A0EAD00917E88 /* XCRemoteSwiftPackageReference "Splash" */,
 				BBFD49F82A2A0EB900917E88 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
@@ -921,7 +881,6 @@
 				BBCFF43A2A3069E600EAC5F5 /* MarkupLabel.swift in Sources */,
 				BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
-				BB30E2AC2A09B22E0022B29E /* MarkdownInfoView.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BBCCE4ED28D5275E001DBD8A /* WhiteboardModel.swift in Sources */,
 				BB37AD922A2C0BDD006DB94D /* OverviewPageIndicator.swift in Sources */,
@@ -968,7 +927,6 @@
 				BBC7B97B2A19896A00D496CB /* ToolViewMethods.swift in Sources */,
 				BB53D5B029C4F79F008130F2 /* EditTextView.swift in Sources */,
 				BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */,
-				BB30E2AE2A09B2590022B29E /* SyntaxHighlighter.swift in Sources */,
 				BBEEDD4128E8F4B20000BE44 /* RectangleRotationIcon.swift in Sources */,
 				BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */,
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
@@ -999,7 +957,6 @@
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BBD9411C299195440085151B /* PPTabView.swift in Sources */,
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
-				BBA14EB32994541B007CB38A /* PencilKitView.swift in Sources */,
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* DrawingViewRepresentable.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
@@ -1028,7 +985,6 @@
 				BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */,
 				BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */,
 				BBB763B02A3A64CC00273182 /* EditShapeItemMethods.swift in Sources */,
-				BB30E2AB2A09B22E0022B29E /* MarkdownInfoDetailView.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteToolbarModifier.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
 				BB27FED628EA1EF900459334 /* SettingsView.swift in Sources */,
@@ -1282,22 +1238,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BBFD49EA2A2A0E8F00917E88 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		BBFD49ED2A2A0EAD00917E88 /* XCRemoteSwiftPackageReference "Splash" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JohnSundell/Splash";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.16.0;
-			};
-		};
 		BBFD49F82A2A0EB900917E88 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
@@ -1309,36 +1249,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BBFD49EB2A2A0E8F00917E88 /* MarkdownUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBFD49EA2A2A0E8F00917E88 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
-		};
-		BBFD49EE2A2A0EAD00917E88 /* Splash */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBFD49ED2A2A0EAD00917E88 /* XCRemoteSwiftPackageReference "Splash" */;
-			productName = Splash;
-		};
-		BBFD49F02A2A0EAD00917E88 /* SplashHTMLGen */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBFD49ED2A2A0EAD00917E88 /* XCRemoteSwiftPackageReference "Splash" */;
-			productName = SplashHTMLGen;
-		};
-		BBFD49F22A2A0EAD00917E88 /* SplashImageGen */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBFD49ED2A2A0EAD00917E88 /* XCRemoteSwiftPackageReference "Splash" */;
-			productName = SplashImageGen;
-		};
-		BBFD49F42A2A0EAD00917E88 /* SplashMarkdown */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBFD49ED2A2A0EAD00917E88 /* XCRemoteSwiftPackageReference "Splash" */;
-			productName = SplashMarkdown;
-		};
-		BBFD49F62A2A0EAD00917E88 /* SplashTokenizer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBFD49ED2A2A0EAD00917E88 /* XCRemoteSwiftPackageReference "Splash" */;
-			productName = SplashTokenizer;
-		};
 		BBFD49F92A2A0EB900917E88 /* OnPasteboardChange */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBFD49F82A2A0EB900917E88 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
