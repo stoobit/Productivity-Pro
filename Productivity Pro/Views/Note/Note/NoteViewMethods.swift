@@ -60,17 +60,6 @@ extension NoteView {
         }
     }
     
-    func resetControls() {
-        toolManager.selectedItem = nil
-        toolManager.isCanvasEnabled = false
-        toolManager.isLocked = false
-        toolManager.zoomScale = 1
-        toolManager.scrollOffset = .zero
-        toolManager.selectedPage = 0
-        toolManager.selectedTab = UUID()
-        toolManager.showProgress = false
-    }
-    
     func fixScrollViewBug() {
         Task {
             document.document.note.pages.append(Page(backgroundColor: "white", backgroundTemplate: "blank", isPortrait: true))

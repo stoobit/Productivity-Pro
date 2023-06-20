@@ -129,7 +129,6 @@ struct NoteView: View {
         }
         .task { pageIndicator() }
         .onAppear { noteDidAppear() }
-        .onDisappear { resetControls() }
         
     }
     
