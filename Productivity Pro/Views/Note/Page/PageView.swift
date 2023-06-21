@@ -40,18 +40,18 @@ struct PageView: View {
         LazyVStack {
             ZStack {
                 ZStack {
+                    PageBackgroundView(
+                        page: $page,
+                        toolManager: toolManager,
+                        showShadow: showShadow
+                    )
+                    
+                    BackgroundTemplateView(
+                        page: page,
+                        scale: toolManager.zoomScale
+                    )
+                    
                     if showBackground {
-                        PageBackgroundView(
-                            page: $page,
-                            toolManager: toolManager,
-                            showShadow: showShadow
-                        )
-                        
-                        BackgroundTemplateView(
-                            page: page,
-                            scale: toolManager.zoomScale
-                        )
-                        
                         if page.type == .pdf {
                             PagePDFView(
                                 page: $page,
@@ -63,8 +63,8 @@ struct PageView: View {
                                 toolManager: toolManager
                             )
                         }
-                        
                     }
+                    
                 }
                 .onTapGesture { onBackgroundTap() }
                 
@@ -87,7 +87,7 @@ struct PageView: View {
                 SnapItemView(toolManager: toolManager, page: $page)
                     .scaleEffect(1/toolManager.zoomScale)
                     .allowsHitTesting(false)
-            
+                
             }
             .dropDestination(for: Data.self) { items, location in
                 onDrop(items: items)

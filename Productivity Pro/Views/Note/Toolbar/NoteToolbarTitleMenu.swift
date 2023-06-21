@@ -90,7 +90,6 @@ struct NoteToolbarTitleMenu: View {
             subviewManager.sharePDFSheet.toggle()
         }
     }
-    
     func print() {
         toolManager.showProgress = true
         Task(priority: .userInitiated) {
@@ -105,8 +104,12 @@ struct NoteToolbarTitleMenu: View {
     
     @MainActor func renderPDF() -> URL {
         
-        let name: String = document.document.url!.deletingPathExtension().lastPathComponent
-        let url = URL.documentsDirectory.appending(path: "\(name).pdf")
+        let name: String = document.document.url!
+            .deletingPathExtension().lastPathComponent
+        
+        let url = URL.documentsDirectory.appending(
+            path: "\(name).pdf"
+        )
         
         guard let pdf = CGContext(url as CFURL, mediaBox: nil, nil) else {
             return url
@@ -114,7 +117,12 @@ struct NoteToolbarTitleMenu: View {
         
         for page in document.document.note.pages {
             
-            var box = CGRect(x: 0, y: 0, width: getFrame(page: page).width, height: getFrame(page: page).height - 15)
+            var box = CGRect(
+                x: 0,
+                y: 0,
+                width: getFrame(page: page).width,
+                height: getFrame(page: page).height - 15
+            )
             
             pdf.beginPage(mediaBox: &box)
             
@@ -124,14 +132,6 @@ struct NoteToolbarTitleMenu: View {
             
             var view: some View {
                 ZStack {
-                    
-                    Rectangle()
-                        .foregroundColor(Color(page.backgroundColor))
-                        .frame(
-                            width: tm.zoomScale * getFrame(page: page).width,
-                            height: tm.zoomScale * getFrame(page: page).height
-                        )
-                        .scaleEffect(1/tm.zoomScale)
                     
                     if page.type == .pdf {
                         
