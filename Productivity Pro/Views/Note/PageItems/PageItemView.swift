@@ -31,7 +31,11 @@ struct PageItemView: View {
                 }
             }
             .zIndex(
-                Double(page.items.firstIndex(where: { $0.id == item.id })!)
+                Double(
+                    page.items.firstIndex(where: {
+                        $0.id == item.id
+                    })!
+                )
             )
             
         }

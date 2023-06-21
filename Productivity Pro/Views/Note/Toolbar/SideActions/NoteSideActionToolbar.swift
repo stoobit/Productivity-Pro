@@ -147,6 +147,7 @@ struct NoteSideActionToolbar: ToolbarContent {
                     }
                 }
                 .keyboardShortcut("o", modifiers: [.command])
+                .allowsHitTesting(!subviewManager.showStylePopover)
             }
         }
     }

@@ -37,70 +37,68 @@ struct PageView: View {
     let size: CGSize
     
     var body: some View {
-        LazyVStack {
+        ZStack {
             ZStack {
-                ZStack {
-                    PageBackgroundView(
-                        page: $page,
-                        toolManager: toolManager,
-                        showShadow: showShadow
-                    )
-                    
-                    BackgroundTemplateView(
-                        page: page,
-                        scale: toolManager.zoomScale
-                    )
-                    
-                    if showBackground {
-                        if page.type == .pdf {
-                            PagePDFView(
-                                page: $page,
-                                toolManager: toolManager
-                            )
-                        } else if page.type == .image {
-                            PageBackgroundScan(
-                                page: $page,
-                                toolManager: toolManager
-                            )
-                        }
-                    }
-                    
-                }
-                .onTapGesture { onBackgroundTap() }
+                PageBackgroundView(
+                    page: $page,
+                    toolManager: toolManager,
+                    showShadow: showShadow
+                )
                 
-                PageItemView(
-                    document: $document,
+                BackgroundTemplateView(
+                    page: page,
+                    scale: toolManager.zoomScale
+                )
+                
+                if showBackground {
+                    if page.type == .pdf {
+                        PagePDFView(
+                            page: $page,
+                            toolManager: toolManager
+                        )
+                    } else if page.type == .image {
+                        PageBackgroundScan(
+                            page: $page,
+                            toolManager: toolManager
+                        )
+                    }
+                }
+                
+            }
+            .onTapGesture { onBackgroundTap() }
+            
+            PageItemView(
+                document: $document,
+                page: $page,
+                toolManager: toolManager,
+                subviewManager: subviewManager
+            )
+            
+            if showCanvas {
+                DrawingView(
+                    size: size,
                     page: $page,
                     toolManager: toolManager,
                     subviewManager: subviewManager
                 )
-                
-                if showCanvas {
-                    DrawingView(
-                        size: size,
-                        page: $page,
-                        toolManager: toolManager,
-                        subviewManager: subviewManager
-                    )
-                }
-                
-                SnapItemView(toolManager: toolManager, page: $page)
-                    .scaleEffect(1/toolManager.zoomScale)
-                    .allowsHitTesting(false)
-                
             }
-            .dropDestination(for: Data.self) { items, location in
-                onDrop(items: items)
-                return true
-            }
-            .disabled(subviewManager.isPresentationMode)
-            .allowsHitTesting(!subviewManager.isPresentationMode)
-            .modifier(iPhoneInteraction())
-            .frame(
-                width: getFrame().width * toolManager.zoomScale,
-                height: getFrame().height * toolManager.zoomScale
-            )
+            
+            SnapItemView(toolManager: toolManager, page: $page)
+                .scaleEffect(1/toolManager.zoomScale)
+                .allowsHitTesting(false)
             
         }
+        .dropDestination(for: Data.self) { items, location in
+            onDrop(items: items)
+            return true
+        }
+        .disabled(subviewManager.isPresentationMode)
+        .allowsHitTesting(!subviewManager.isPresentationMode)
+        .modifier(iPhoneInteraction())
+        .frame(
+            width: getFrame().width * toolManager.zoomScale,
+            height: getFrame().height * toolManager.zoomScale
+        )
+            
     }
 }
