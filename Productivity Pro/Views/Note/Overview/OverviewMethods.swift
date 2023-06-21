@@ -15,12 +15,20 @@ extension OverviewView {
             toolManager.selectedPage
         ].items = []
         
+        let pages = document.document.note.pages
+        
         if page == document.document.note.pages.last! {
             
             if toolManager.selectedTab == page.id {
-                toolManager.selectedPage = document.document.note.pages.firstIndex(
-                    of: page
-                )! - 1
+                if page.id == pages.first?.id {
+                    toolManager.selectedPage = document.document.note.pages.firstIndex(
+                        of: page
+                    )! + 1
+                } else {
+                    toolManager.selectedPage = document.document.note.pages.firstIndex(
+                        of: page
+                    )! - 1
+                }
             }
             
             document.document.note.pages.removeAll(where: {

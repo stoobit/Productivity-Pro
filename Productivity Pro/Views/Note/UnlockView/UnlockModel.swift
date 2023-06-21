@@ -96,6 +96,14 @@ final class UnlockModel: ObservableObject {
             print(error)
         }
     }
+    
+    func restore() async {
+        do {
+            try await AppStore.sync()
+        } catch {
+            
+        }
+    }
 }
 
 private extension UnlockModel {
