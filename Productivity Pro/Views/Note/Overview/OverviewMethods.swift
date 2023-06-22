@@ -12,7 +12,7 @@ extension OverviewView {
     func delete(_ page: Page) {
         toolManager.selectedItem = nil
         document.document.note.pages[
-            toolManager.selectedPage
+            document.document.note.pages.firstIndex(of: page)!
         ].items = []
         
         let pages = document.document.note.pages

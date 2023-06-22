@@ -91,7 +91,6 @@
 		BBBCACB42A25461900C23B2C /* OldCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB12A25461900C23B2C /* OldCalculatorView.swift */; };
 		BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB22A25461900C23B2C /* Calculator.swift */; };
 		BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */; };
-		BBBF325628EB37AC00D6B038 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBBF325528EB37AC00D6B038 /* Launch Screen.storyboard */; };
 		BBBF53882A2FEAA8006DD011 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBF53872A2FEAA8006DD011 /* StoreKit.framework */; };
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
@@ -132,6 +131,7 @@
 		BBDD3AE02A3D18AF00741452 /* MarkdownParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDD3ADF2A3D18AF00741452 /* MarkdownParserView.swift */; };
 		BBE11B1A294934E500E6F504 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE11B19294934E500E6F504 /* Task.swift */; };
 		BBE11B1C294937EB00E6F504 /* TaskToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE11B1B294937EB00E6F504 /* TaskToolbar.swift */; };
+		BBE6E79E2A43AD5300A672BB /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBE6E79D2A43AD5300A672BB /* OnPasteboardChange */; };
 		BBE9196728F221C6001EF750 /* OverviewListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196628F221C6001EF750 /* OverviewListType.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */; };
@@ -141,7 +141,6 @@
 		BBEFC9532A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9522A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift */; };
 		BBF22ACC2933EFE300109848 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF22ACB2933EFE300109848 /* PageView.swift */; };
 		BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */; };
-		BBFD49FA2A2A0EB900917E88 /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD49F92A2A0EB900917E88 /* OnPasteboardChange */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -232,7 +231,6 @@
 		BBBCACB12A25461900C23B2C /* OldCalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldCalculatorView.swift; sourceTree = "<group>"; };
 		BBBCACB22A25461900C23B2C /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
-		BBBF325528EB37AC00D6B038 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BBBF53872A2FEAA8006DD011 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BBBF53892A2FEB6B006DD011 /* UnlockStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnlockStoreKitConfig.storekit; sourceTree = "<group>"; };
 		BBBFB834299FB75400FA236F /* DragItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragItemModifier.swift; sourceTree = "<group>"; };
@@ -290,8 +288,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE6E79E2A43AD5300A672BB /* OnPasteboardChange in Frameworks */,
 				BBBF53882A2FEAA8006DD011 /* StoreKit.framework in Frameworks */,
-				BBFD49FA2A2A0EB900917E88 /* OnPasteboardChange in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +383,6 @@
 				BB4CDD4828D3C66A009A409F /* Preview Content */,
 				BB1DDA28296715590038FE16 /* Fonts */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
-				BBBF325528EB37AC00D6B038 /* Launch Screen.storyboard */,
 			);
 			path = "Productivity Pro";
 			sourceTree = "<group>";
@@ -811,7 +808,7 @@
 			);
 			name = "Productivity Pro";
 			packageProductDependencies = (
-				BBFD49F92A2A0EB900917E88 /* OnPasteboardChange */,
+				BBE6E79D2A43AD5300A672BB /* OnPasteboardChange */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -844,7 +841,7 @@
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
-				BBFD49F82A2A0EB900917E88 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
+				BBE6E79C2A43AD5200A672BB /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -861,7 +858,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */,
-				BBBF325628EB37AC00D6B038 /* Launch Screen.storyboard in Resources */,
 				BB4CDD4728D3C66A009A409F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1161,7 +1157,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.ProductivityPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1206,7 +1202,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.ProductivityPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1240,7 +1236,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BBFD49F82A2A0EB900917E88 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
+		BBE6E79C2A43AD5200A672BB /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
 			requirement = {
@@ -1251,9 +1247,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BBFD49F92A2A0EB900917E88 /* OnPasteboardChange */ = {
+		BBE6E79D2A43AD5300A672BB /* OnPasteboardChange */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BBFD49F82A2A0EB900917E88 /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
+			package = BBE6E79C2A43AD5200A672BB /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
 		};
 /* End XCSwiftPackageProductDependency section */
