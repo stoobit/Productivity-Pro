@@ -90,14 +90,15 @@ struct NoteSideActionToolbar: ToolbarContent {
                         }
                     }
                     
-                    if document.document.note.pages.count != 1 {
-                        Button(role: .destructive, action: {
-                            toolManager.isCanvasEnabled = false
-                            subviewManager.isDeletePageAlert.toggle()
-                        }) {
-                            Label("Delete Page", systemImage: "trash")
-                        }
+                    Button(role: .destructive, action: {
+                        toolManager.isCanvasEnabled = false
+                        subviewManager.isDeletePageAlert.toggle()
+                    }) {
+                        Label("Delete Page", systemImage: "trash")
                     }
+                    .disabled(
+                        document.document.note.pages.count == 1
+                    )
                     
                 }) {
                     Label("Page Actions", systemImage: "doc.badge.ellipsis")
