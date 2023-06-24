@@ -37,22 +37,9 @@ struct TextFieldItemView: View {
             
             if let tf = item.textField {
                 MarkdownParserView(
-                    toolManager: toolManager,
-                    text: tf
+                    editItem: editItem,
+                    textField: tf
                 )
-                .allowsTightening(false)
-                .foregroundStyle(
-                    Color(codable: tf.fontColor) ?? .red
-                )
-                .padding(
-                    [.top, .leading], 7 * toolManager.zoomScale
-                )
-                .frame(
-                    width: editItem.size.width * toolManager.zoomScale,
-                    height: editItem.size.height * toolManager.zoomScale,
-                    alignment: .topLeading
-                )
-                .clipShape(Rectangle())
             }
             
         }

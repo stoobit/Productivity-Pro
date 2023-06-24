@@ -9,11 +9,11 @@ import SwiftUI
 
 struct MarkdownParserView: View {
     
-    @StateObject var toolManager: ToolManager
-    var text: TextFieldModel
+    var editItem: EditItemModel
+    var textField: TextFieldModel
     
     var lines: [String] {
-        return text.text.components(separatedBy: .newlines).map {
+        return textField.text.components(separatedBy: .newlines).map {
             $0.replacing("\u{0009}", with: "    ")
         }
     }
@@ -21,10 +21,10 @@ struct MarkdownParserView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ForEach(lines, id: \.self) { line in
-                if text.text == "" {
+                if textField.text == "" {
                     Text("Markdown")
                         .font(.custom(
-                            text.font,
+                            textField.font,
                             size: fontSize(add: 0)
                         ))
                     
@@ -32,7 +32,7 @@ struct MarkdownParserView: View {
                     Text(line.dropFirst(2))
                         .fontWeight(.black)
                         .font(.custom(
-                            text.font,
+                            textField.font,
                             size: fontSize(add: 20)
                         ))
                     
@@ -40,7 +40,7 @@ struct MarkdownParserView: View {
                     Text(line.dropFirst(3))
                         .fontWeight(.heavy)
                         .font(.custom(
-                            text.font,
+                            textField.font,
                             size: fontSize(add: 15)
                         ))
                     
@@ -48,7 +48,7 @@ struct MarkdownParserView: View {
                     Text(line.dropFirst(4))
                         .fontWeight(.bold)
                         .font(.custom(
-                            text.font,
+                            textField.font,
                             size: fontSize(add: 10)
                         ))
                     
@@ -56,7 +56,7 @@ struct MarkdownParserView: View {
                     Text(line.dropFirst(5))
                         .fontWeight(.medium)
                         .font(.custom(
-                            text.font,
+                            textField.font,
                             size: fontSize(add: 5)
                         ))
                     
@@ -65,7 +65,7 @@ struct MarkdownParserView: View {
                     
                     try? Text(AttributedString(markdown: string))
                         .font(.custom(
-                            text.font,
+                            textField.font,
                             size: fontSize(add: 0)
                         ))
                     
@@ -74,12 +74,24 @@ struct MarkdownParserView: View {
                 } else {
                     Text(.init(line))
                         .font(.custom(
-                            text.font,
+                            textField.font,
                             size: fontSize(add: 0)
                         ))
                 }
             }
         }
+        .foregroundStyle(
+            Color(codable: textField.fontColor) ?? .red
+        )
+        .padding(
+            [.top, .leading], 7
+        )
+        .frame(
+            width: editItem.size.width,
+            height: editItem.size.height,
+            alignment: .topLeading
+        )
+        .clipShape(Rectangle())
     }
     
     @ViewBuilder func OrderedList(for line: String) -> some View {
@@ -90,7 +102,7 @@ struct MarkdownParserView: View {
         
         try? Text(AttributedString(markdown: string))
             .font(.custom(
-                text.font,
+                textField.font,
                 size: fontSize(add: 0)
             ))
     }
@@ -108,7 +120,7 @@ struct MarkdownParserView: View {
     }
     
     func fontSize(add value: CGFloat) -> CGFloat {
-        return toolManager.zoomScale * 2 * (text.fontSize + value)
+        return  2 * (textField.fontSize + value)
     }
     
 }
