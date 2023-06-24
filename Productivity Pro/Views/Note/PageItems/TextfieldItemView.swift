@@ -8,7 +8,7 @@ struct TextFieldItemView: View {
     @StateObject var toolManager: ToolManager
     @StateObject var editItem: EditItemModel
     
-    @State var editTextFieldModel = EditTextFieldModel()
+    @State var renderedImage: UIImage = UIImage()
     
     var body: some View {
         ZStack {
@@ -25,7 +25,7 @@ struct TextFieldItemView: View {
                         alignment: .topLeading
                     )
             }
-
+            
             let clear = Color.clear.toCodable()
             Color(codable: item.textField!.showFill ? item.textField!.fillColor : clear)
                 .contentShape(Rectangle())
@@ -35,18 +35,56 @@ struct TextFieldItemView: View {
                     alignment: .topLeading
                 )
             
-            if let tf = item.textField {
-                MarkdownParserView(
-                    editItem: editItem,
-                    textField: tf
+            Image(uiImage: renderedImage)
+                .resizable()
+                .scaledToFit()
+                .frame(
+                    width: editItem.size.width * toolManager.zoomScale,
+                    height: editItem.size.height * toolManager.zoomScale,
+                    alignment: .topLeading
                 )
-            }
             
         }
-        .onChange(of: editTextFieldModel) { model in
-            item.textField?.text = model.text
+        .task (priority: .userInitiated) {
+            renderedImage = renderTextField()
+        }
+        .onChange(of: editItem.size.width, perform: { value in
+            renderedImage = renderTextField()
+        })
+        .onChange(of: item, perform: { value in
+            renderedImage = renderTextField()
+        })
+        .onChange(of: toolManager.zoomScale, perform: { value in
+            renderedImage = renderTextField()
+        })
+    }
+    
+    @MainActor
+    func renderTextField() -> UIImage {
+        var image: UIImage = UIImage(named: "Icon")!
+        
+        guard let textField = item.textField else {
+            return image
         }
         
+        var view: some View {
+            MarkdownParserView(
+                editItem: editItem,
+                textField: textField,
+                page: page
+            )
+        }
+        
+        let renderer = ImageRenderer(content: view)
+        renderer.isOpaque = false
+        
+        renderer.scale = 2 * toolManager.zoomScale
+        
+        if let rendering = renderer.uiImage {
+            image = rendering
+        }
+        
+        return image
     }
     
     func colorScheme() -> ColorScheme {

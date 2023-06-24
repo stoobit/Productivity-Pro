@@ -36,7 +36,8 @@ extension OverviewView {
             })
             
         } else {
-            let pageIndex: Int = document.document.note.pages.firstIndex(of: page)!
+            guard let pageIndex: Int = document.document.note.pages
+                .firstIndex(of: page) else { return }
             
             if pageIndex < toolManager.selectedPage {
                 
