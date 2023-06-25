@@ -97,11 +97,21 @@ final class UnlockModel: ObservableObject {
         }
     }
     
-    func restore() async {
-        do {
-            try await AppStore.sync()
-        } catch {
+    func restorePurchase() {
+        Task {
+            guard let product = items.first else { return }
+            guard let state = await product.currentEntitlement else {
+                return
+            }
             
+            switch state {
+            case .verified(_):
+                DispatchQueue.main.async {
+                    self.action = .successful
+                }
+            case .unverified(_, _):
+                break
+            }
         }
     }
 }
