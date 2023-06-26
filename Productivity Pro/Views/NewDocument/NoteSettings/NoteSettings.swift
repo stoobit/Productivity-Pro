@@ -13,7 +13,7 @@ struct NoteSettings: View {
     @Binding var document: Document
     let dismiss: () -> Void
     
-    @State var backgroundColor: String = "white"
+    @State var backgroundColor: String = "pagewhite"
     @State var isPortrait: Bool = true
     @State var backgroundTemplate: String = "blank"
     
@@ -84,10 +84,10 @@ struct NoteSettings: View {
                 
                 Spacer()
                 
-                ColorCircle("white", key: "1")
-                ColorCircle("yellow", key: "2")
-                ColorCircle("gray", key: "3")
-                ColorCircle("black", key: "4")
+                ColorCircle("pagewhite", key: "1")
+                ColorCircle("pageyellow", key: "2")
+                ColorCircle("pagegray", key: "3")
+                ColorCircle("pageblack", key: "4")
                 
             }
             .padding(.top)

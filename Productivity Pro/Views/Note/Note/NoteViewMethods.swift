@@ -63,7 +63,7 @@ extension NoteView {
     
     func fixScrollViewBug() {
         Task {
-            document.document.note.pages.append(Page(backgroundColor: "white", backgroundTemplate: "blank", isPortrait: true))
+            document.document.note.pages.append(Page(backgroundColor: "pagewhite", backgroundTemplate: "blank", isPortrait: true))
             try? await Task.sleep(nanoseconds: 50000)
             document.document.note.pages.removeLast()
             try? await Task.sleep(nanoseconds: 50000)
@@ -155,7 +155,7 @@ extension NoteView {
     func colorScheme(page: Page) -> ColorScheme {
         var cs: ColorScheme = .dark
         
-        if page.backgroundColor == "yellow" || page.backgroundColor == "white" {
+        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
             cs = .light
         }
         

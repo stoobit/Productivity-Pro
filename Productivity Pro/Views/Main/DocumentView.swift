@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DocumentView: View {
     
+    @AppStorage("afterUpdate0.2") var firstOpenAU: Bool = true
+    @State var whatIsNew: Bool = false
+    
     @Binding var document: ProductivityProDocument
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
@@ -19,6 +22,7 @@ struct DocumentView: View {
             Color(UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
             
             if document.document.documentType == .note {
+                
                 NoteView(
                     document: $document,
                     subviewManager: subviewManager,
@@ -26,10 +30,6 @@ struct DocumentView: View {
                 )
                 .edgesIgnoringSafeArea(.bottom)
                 
-            } else if document.document.documentType == .whiteboard {
-                WhiteboardView(whiteboard: $document.document.whiteboard)
-            } else if document.document.documentType == .taskList {
-                TaskListView(taskList: $document.document.taskList)
             } else {
                 CreateDoc()
             }
@@ -38,11 +38,25 @@ struct DocumentView: View {
         .toolbarRole(.editor)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
+        .sheet(isPresented: $whatIsNew) {
+            WhatIsNew(isPresented: $whatIsNew)
+        }
+        .onAppear {
+            if firstOpenAU && document.document.documentType != .none {
+                whatIsNew = true
+                firstOpenAU = false
+            }
+        }
     }
     
     @ViewBuilder func CreateDoc() -> some View {
         Spacer()
-            .sheet(isPresented: $subviewManager.isChooseDocType) {
+            .sheet(isPresented: $subviewManager.isChooseDocType, onDismiss: {
+                if firstOpenAU {
+                    whatIsNew = true
+                    firstOpenAU = false
+                }
+            }) {
                 NewDocumentView(
                     document: $document.document, subviewManager: subviewManager
                 )

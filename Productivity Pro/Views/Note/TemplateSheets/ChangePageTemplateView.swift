@@ -14,7 +14,7 @@ struct ChangePageTemplateView: View {
     
     @StateObject var toolManager: ToolManager
     
-    @State var backgroundColor: String = "white"
+    @State var backgroundColor: String = "pagewhite"
     @State var isPortrait: Bool = true
     @State var backgroundTemplate: String = "blank"
     
@@ -95,10 +95,10 @@ struct ChangePageTemplateView: View {
                 
                 Spacer()
                 
-                ColorCircle("white")
-                ColorCircle("yellow")
-                ColorCircle("gray")
-                ColorCircle("black")
+                ColorCircle("pagewhite")
+                ColorCircle("pageyellow")
+                ColorCircle("pagegray")
+                ColorCircle("pageblack")
                 
             }
             .padding(.top)

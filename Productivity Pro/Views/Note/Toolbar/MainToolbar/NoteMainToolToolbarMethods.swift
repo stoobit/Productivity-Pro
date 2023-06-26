@@ -69,7 +69,7 @@ extension NoteMainToolToolbar {
             toolManager.selectedPage
         ]
         
-        if page.backgroundColor == "black" || page.backgroundColor == "gray" {
+        if page.backgroundColor == "pageblack" || page.backgroundColor == "pagegray" {
             color = .white
         }
         

@@ -12,7 +12,7 @@ struct WhiteboardSettings: View {
     @Binding var document: Document
     let dismiss: () -> Void
     
-    @State var backgroundColor: String = "white"
+    @State var backgroundColor: String = "pagewhite"
     @State var backgroundTemplate: String = "blank"
     
     var body: some View {
@@ -122,10 +122,10 @@ struct WhiteboardSettings: View {
                 
                 Spacer()
                 
-                ColorCircle("white")
-                ColorCircle("yellow")
-                ColorCircle("gray")
-                ColorCircle("black")
+                ColorCircle("pagewhite")
+                ColorCircle("pageyellow")
+                ColorCircle("pagegray")
+                ColorCircle("pageblack")
                 
             }
             .padding(.vertical, 5)
@@ -167,7 +167,7 @@ struct WhiteboardSettings: View {
     func colorScheme() -> ColorScheme {
         var cs: ColorScheme = .dark
         
-        if backgroundColor == "white" || backgroundColor == "yellow" {
+        if backgroundColor == "pagewhite" || backgroundColor == "pageyellow" {
             cs = .light
         }
         

@@ -18,6 +18,6 @@ struct WhiteboardView: View {
 
 struct WhiteboardView_Previews: PreviewProvider {
     static var previews: some View {
-        WhiteboardView(whiteboard: .constant(Whiteboard(backgroundColor: "white", backgroundTemplate: "ruled")))
+        WhiteboardView(whiteboard: .constant(Whiteboard(backgroundColor: "pagewhite", backgroundTemplate: "ruled")))
     }
 }

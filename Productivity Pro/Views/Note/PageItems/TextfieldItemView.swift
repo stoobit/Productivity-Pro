@@ -90,7 +90,7 @@ struct TextFieldItemView: View {
     func colorScheme() -> ColorScheme {
         var cs: ColorScheme = .dark
         
-        if page.backgroundColor == "yellow" || page.backgroundColor == "white" {
+        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
             cs = .light
         }
         

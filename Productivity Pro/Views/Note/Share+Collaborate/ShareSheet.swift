@@ -98,7 +98,7 @@ struct ShareSheet: View {
             ShareLink(item: toolManager.pdfRendering ?? URL(filePath: "")) {
                 ShareIcon(size: size)
             }
-                .padding(.bottom)
+            .padding(.bottom)
         }
         .padding()
     }

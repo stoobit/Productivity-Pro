@@ -93,7 +93,7 @@ struct AddPDFPageHelper: ViewModifier {
             let newPage = Page(
                 type: .image,
                 backgroundMedia: page.pngData(),
-                backgroundColor: "white",
+                backgroundColor: "pagewhite",
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height
             )
@@ -125,7 +125,7 @@ struct AddPDFPageHelper: ViewModifier {
             let newPage = Page(
                 type: .pdf,
                 backgroundMedia: page?.dataRepresentation,
-                backgroundColor: "white",
+                backgroundColor: "pagewhite",
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height
             )

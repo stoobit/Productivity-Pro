@@ -250,7 +250,7 @@ struct NoteToolbarTitleMenu: View {
     func colorScheme(page: Page) -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if page.backgroundColor == "yellow" || page.backgroundColor == "white" {
+        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
             cs = .light
         }
         

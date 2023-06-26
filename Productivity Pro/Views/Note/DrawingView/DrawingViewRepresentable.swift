@@ -120,7 +120,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if page.backgroundColor == "yellow" || page.backgroundColor == "white" {
+        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
             cs = .light
         }
         
