@@ -71,7 +71,7 @@ struct NoteBackgroundIcons: View {
                 Music().modifier(NoteIcon())
                 Spacer()
             }
-           
+            
             Spacer()
         }
     }
