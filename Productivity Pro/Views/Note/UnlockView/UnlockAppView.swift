@@ -11,9 +11,10 @@ import StoreKit
 struct UnlockAppView: View {
     
     @Environment(\.horizontalSizeClass) var hsc
-    @EnvironmentObject private var model: UnlockModel
     
+    @StateObject var model: UnlockModel
     @StateObject var subviewManager: SubviewManager
+    
     @AppStorage("fullAppUnlocked")
     var isFullAppUnlocked: Bool = false
     
@@ -59,7 +60,19 @@ struct UnlockAppView: View {
                     }) {
                         UnlockButton(size: proxy.size)
                     }
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 10)
+                    
+                    Button(action: {
+                        model.restorePurchase()
+                        subviewManager.wasRestored = true
+                    }) {
+                        Label(
+                            "Restore Purchase",
+                            systemImage: "purchased"
+                        )
+                        .foregroundStyle(Color.accentColor)
+                    }
+                    .padding(.bottom, 15)
                 }
                 .multilineTextAlignment(.center)
                 
@@ -106,5 +119,14 @@ struct UnlockAppView: View {
         }
         
         return width
+    }
+}
+
+struct Unlock_Previews: PreviewProvider {
+    static var previews: some View {
+        Spacer()
+            .sheet(isPresented: .constant(true)) {
+                UnlockAppView(model: UnlockModel(), subviewManager: SubviewManager())
+            }
     }
 }

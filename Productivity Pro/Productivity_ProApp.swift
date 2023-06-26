@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let freeTrialDays = 300
+let freeTrialDays = 0
 
 @main
 struct Productivity_ProApp: App {
@@ -18,24 +18,41 @@ struct Productivity_ProApp: App {
     @AppStorage("firstOpened")
     private var firstOpened: Bool = true
     
+    @AppStorage("fullAppUnlocked")
+    var isFullAppUnlocked: Bool = false
+    
     @StateObject
     private var unlockModel: UnlockModel = UnlockModel()
+    
+    @StateObject
+    private var subviewManager: SubviewManager = SubviewManager()
     
     var body: some Scene {
         DocumentGroup(
             newDocument: ProductivityProDocument()
         ) { file in
             
-            ContentView(document: file.$document)
-                .environmentObject(unlockModel)
-                .onAppear {
-                    file.document.document.url = file.fileURL
-                    
-                    if firstOpened {
-                        startDate = Date().rawValue
-                        firstOpened = false
-                    }
+            ContentView(
+                document: file.$document,
+                subviewManager: subviewManager,
+                unlockModel: unlockModel
+            )
+            .onAppear {
+                file.document.document.url = file.fileURL
+                
+                if firstOpened {
+                    startDate = Date().rawValue
+                    firstOpened = false
                 }
+                
+                unlockModel.restorePurchase()
+            }
+            .onChange(of: unlockModel.action) { action in
+                if action == .successful {
+                    isFullAppUnlocked = true
+                    subviewManager.isPresentationMode = false
+                }
+            }
             
         }
         

@@ -15,6 +15,7 @@ class SubviewManager: ObservableObject {
     
     @Published var showUnlockView: Bool = false
     @Published var showThanksView: Bool = false
+    @Published var wasRestored: Bool = false
     
     @Published var showPrinterView: Bool = false
     

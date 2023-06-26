@@ -49,7 +49,6 @@
 		BB4CDD5828D3D532009A409F /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD5728D3D532009A409F /* DocumentView.swift */; };
 		BB5034192993172800913B3A /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5034182993172800913B3A /* PageItemView.swift */; };
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
-		BB527C3229AACA8000CDE2A9 /* MenuCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB527C3129AACA8000CDE2A9 /* MenuCommands.swift */; };
 		BB53D5B029C4F79F008130F2 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53D5AF29C4F79F008130F2 /* EditTextView.swift */; };
 		BB58477D29A18BF900C21B17 /* CopyPasteMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58477C29A18BF900C21B17 /* CopyPasteMenuView.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
@@ -196,7 +195,6 @@
 		BB4CDD5728D3D532009A409F /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		BB5034182993172800913B3A /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
-		BB527C3129AACA8000CDE2A9 /* MenuCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommands.swift; sourceTree = "<group>"; };
 		BB53D5AF29C4F79F008130F2 /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		BB58477C29A18BF900C21B17 /* CopyPasteMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPasteMenuView.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
@@ -390,7 +388,6 @@
 			children = (
 				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
-				BB527C3129AACA8000CDE2A9 /* MenuCommands.swift */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
@@ -930,7 +927,6 @@
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
-				BB527C3229AACA8000CDE2A9 /* MenuCommands.swift in Sources */,
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBE11B1C294937EB00E6F504 /* TaskToolbar.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,

@@ -15,14 +15,13 @@ struct ContentView: View {
     @AppStorage("startDate")
     private var startDate: String = ""
     
-    @EnvironmentObject private var unlockModel: UnlockModel
     @Binding var document: ProductivityProDocument
     
     @StateObject
-    private var subviewManager: SubviewManager = SubviewManager()
-    
-    @StateObject
     private var toolManager: ToolManager = ToolManager()
+    
+    @StateObject var subviewManager: SubviewManager
+    @StateObject var unlockModel: UnlockModel
     
     var body: some View {
         DocumentView(
@@ -54,13 +53,15 @@ struct ContentView: View {
         .sheet(
             isPresented: $subviewManager.showUnlockView,
             onDismiss: {
-                if isFullAppUnlocked {
+                if isFullAppUnlocked && !subviewManager.wasRestored {
                     subviewManager.showThanksView = true
                 }
             }
         ) {
-            UnlockAppView(subviewManager: subviewManager)
-                .environmentObject(unlockModel)
+            UnlockAppView(
+                model: unlockModel,
+                subviewManager: subviewManager
+            )
         }
         .alert(
             "Thank You 💕",
