@@ -29,7 +29,42 @@ struct PageBackgroundScan: View {
                     data: page.backgroundMedia ?? Data()
                 )
             }
+            .onAppear {
+                renderPreview()
+            }
+            .onDisappear {
+                destroyScan()
+            }
+            .onChange(of: toolManager.selectedTab) { _ in
+                renderScan()
+            }
         
+    }
+    
+    func renderPreview() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            guard let media = page.backgroundMedia else { return }
+            let uiImage = UIImage(data: media, scale: 0.3)
+            
+            renderedBackground = uiImage
+        }
+    }
+    
+    func renderScan() {
+        if page.id == toolManager.selectedTab {
+            DispatchQueue.global(qos: .userInitiated).async {
+                guard let media = page.backgroundMedia else { return }
+                let uiImage = UIImage(data: media)
+                
+                renderedBackground = uiImage
+            }
+        }
+    }
+    
+    func destroyScan() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            renderedBackground = nil
+        }
     }
     
     func getFrame() -> CGSize {

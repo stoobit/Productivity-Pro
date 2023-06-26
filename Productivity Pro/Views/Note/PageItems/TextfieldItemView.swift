@@ -76,9 +76,15 @@ struct TextFieldItemView: View {
         }
         
         let renderer = ImageRenderer(content: view)
+        let scale = 2 * toolManager.zoomScale
+        
         renderer.isOpaque = false
         
-        renderer.scale = 2 * toolManager.zoomScale
+        if scale < 1 {
+            renderer.scale = 1
+        } else {
+            renderer.scale = scale
+        }
         
         if let rendering = renderer.uiImage {
             image = rendering

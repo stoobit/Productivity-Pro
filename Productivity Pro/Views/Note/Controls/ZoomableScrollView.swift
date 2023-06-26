@@ -126,9 +126,9 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         }
         
         func scrollViewDidZoom(_ scrollView: UIScrollView) {
-            let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
-            let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
-            scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
+//            let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+//            let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+//            scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
         }
         
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {
