@@ -22,38 +22,43 @@ struct WhatIsNew: View {
                             Color.accentColor
                         )
                 }
+                .multilineTextAlignment(.center)
                 .font(.largeTitle.bold())
                 .padding(.top)
                 
                 Spacer()
-                
-                NewItem(
-                    icon: "app.gift",
-                    iconColor: Color.accentColor,
-                    header: "Everything",
-                    text: "This is the first release of Productivity Pro, so basically everything is new."
-                )
-                
-                NewItem(
-                    icon: "app.gift",
-                    iconColor: Color.accentColor,
-                    header: "Everything",
-                    text: "This is the first release of Productivity Pro, so basically everything is new."
-                )
-                
-                NewItem(
-                    icon: "app.gift",
-                    iconColor: Color.accentColor,
-                    header: "Everything",
-                    text: "This is the first release of Productivity Pro, so basically everything is new."
-                )
-                
-                NewItem(
-                    icon: "app.gift",
-                    iconColor: Color.accentColor,
-                    header: "Everything",
-                    text: "This is the first release of Productivity Pro, so basically everything is new."
-                )
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .leading) {
+                        NewItem(
+                            icon: "pencil.tip",
+                            color: Color.accentColor,
+                            header: "Apple Pencil",
+                            text: "Use your Apple Pencil with the tools you know from other apps to capture your thoughts and highlight important information."
+                        )
+                        
+                        NewItem(
+                            icon: "square.on.circle.fill",
+                            color: Color.green,
+                            header: "Shapes",
+                            text: "Enhance your note taking experience by adding shapes to visually represent and structure your notes."
+                        )
+                        
+                        NewItem(
+                            icon: "character.textbox",
+                            color: .orange,
+                            header: "Markdown",
+                            text: "Use Markdown to easily write text and add style on the go without interrupting your typing flow."
+                        )
+                        
+                        NewItem(
+                            icon: "ellipsis.circle",
+                            color: .black,
+                            header: "And much more...",
+                            text: "Just get started and discover what else Productivity Pro has to offer."
+                        )
+                        
+                    }
+                }
                 
                 Spacer()
                 
@@ -68,7 +73,7 @@ struct WhatIsNew: View {
                         .background(Color.accentColor)
                         .cornerRadius(16)
                 }
-                .padding(.bottom)
+                .padding(.vertical)
             }
             .padding()
             .position(
@@ -80,16 +85,17 @@ struct WhatIsNew: View {
     
     @ViewBuilder func NewItem(
         icon: String,
-        iconColor: Color,
+        color: Color,
         header: String,
         text: String
     ) -> some View {
         
-        
         HStack {
             Image(systemName: icon)
-                .foregroundStyle(iconColor)
-                .font(.system(size: 60))
+                .foregroundStyle(color)
+                .font(.system(size: 50))
+                .frame(width: 80, alignment: .center)
+                .padding(.trailing, 20)
             
             VStack(alignment: .leading) {
                 Text(header)
@@ -100,11 +106,9 @@ struct WhatIsNew: View {
                     .font(.body)
                     .foregroundStyle(Color.secondary)
             }
-            .padding(.leading, 7)
-            
         }
         .padding()
-        
+        .padding(.vertical, 10)
     }
     
     func buttonSize(size: CGSize) -> CGFloat {

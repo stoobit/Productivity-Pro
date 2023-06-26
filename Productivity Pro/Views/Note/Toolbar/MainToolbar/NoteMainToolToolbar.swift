@@ -87,7 +87,7 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
                         toolManager.isCanvasEnabled = false
                         subviewManager.showImportPhoto.toggle()
                     }) {
-                        Label("Photos", systemImage: "photo.on.rectangle")
+                        Label("Photos", systemImage: "photo.on.rectangle.angled")
                     }
                 }
                 

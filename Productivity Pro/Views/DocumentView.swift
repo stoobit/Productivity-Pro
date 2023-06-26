@@ -9,7 +9,9 @@ import SwiftUI
 
 struct DocumentView: View {
     
-    @AppStorage("afterUpdate0.2") var firstOpenAU: Bool = true
+    @AppStorage("afterUpdate 0.2.0")
+    private var firstOpenAU: Bool = true
+    
     @State var whatIsNew: Bool = false
     
     @Binding var document: ProductivityProDocument
