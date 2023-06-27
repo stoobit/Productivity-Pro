@@ -341,7 +341,7 @@
 			path = Overview;
 			sourceTree = "<group>";
 		};
-		BB3E9AA72A33AC27006045E1 /* Note */ = {
+		BB3E9AA72A33AC27006045E1 /* NoteView */ = {
 			isa = PBXGroup;
 			children = (
 				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
@@ -351,7 +351,7 @@
 				BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */,
 				BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */,
 			);
-			path = Note;
+			path = NoteView;
 			sourceTree = "<group>";
 		};
 		BB4CDD3428D3C668009A409F = {
@@ -518,7 +518,7 @@
 		BB9DF5A828DFA25600AC988D /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				BB3E9AA72A33AC27006045E1 /* Note */,
+				BB3E9AA72A33AC27006045E1 /* NoteView */,
 				BB7A200129A278F300D2B466 /* Controls */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,

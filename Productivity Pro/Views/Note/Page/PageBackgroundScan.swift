@@ -24,19 +24,21 @@ struct PageBackgroundScan: View {
             )
             .scaleEffect(1/toolManager.zoomScale)
             .allowsHitTesting(false)
-            .task(priority: .userInitiated) {
-                renderedBackground = UIImage(
-                    data: page.backgroundMedia ?? Data()
-                )
-            }
             .onAppear {
+                if toolManager.selectedTab == page.id {
+                    renderScan()
+                } else {
+                    renderPreview()
+                }
                 renderPreview()
             }
             .onDisappear {
                 destroyScan()
             }
             .onChange(of: toolManager.selectedTab) { _ in
-                renderScan()
+                if toolManager.selectedTab == page.id {
+                    renderScan()
+                }
             }
         
     }
@@ -44,9 +46,14 @@ struct PageBackgroundScan: View {
     func renderPreview() {
         DispatchQueue.global(qos: .userInitiated).async {
             guard let media = page.backgroundMedia else { return }
-            let uiImage = UIImage(data: media, scale: 0.3)
+            guard let uiImage = UIImage(data: media) else { return }
             
-            renderedBackground = uiImage
+            renderedBackground = resize(
+                uiImage, to: CGSize(
+                    width: uiImage.size.width * 0.1,
+                    height: uiImage.size.height * 0.1
+                )
+            )
         }
     }
     
@@ -62,9 +69,7 @@ struct PageBackgroundScan: View {
     }
     
     func destroyScan() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            renderedBackground = nil
-        }
+        renderedBackground = nil
     }
     
     func getFrame() -> CGSize {
