@@ -37,7 +37,7 @@ struct ToolView: View {
                                 )
                                 .foregroundColor(.clear)
                                 .border(
-                                    toolManager.selectedItem?.isLocked == true ? Color.green : Color.accentColor,
+                                    toolManager.selectedItem?.isLocked == true ? Color.orange : Color.accentColor,
                                     width: 1
                                 )
                         }

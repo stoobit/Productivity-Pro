@@ -10,7 +10,6 @@
 		BB0504212926CB2600DAECA6 /* NoteSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0504202926CB2600DAECA6 /* NoteSheetHelper.swift */; };
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
-		BB074BEA29D0429500504C9D /* ProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB074BE929D0429500504C9D /* ProgressViewStyle.swift */; };
 		BB09FFF429E72BBF00FEAA5D /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
 		BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2062925A7C200F4004A /* BottomOffset.swift */; };
@@ -147,7 +146,6 @@
 		BB0504202926CB2600DAECA6 /* NoteSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSheetHelper.swift; sourceTree = "<group>"; };
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
-		BB074BE929D0429500504C9D /* ProgressViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewStyle.swift; sourceTree = "<group>"; };
 		BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		BB0BE2062925A7C200F4004A /* BottomOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOffset.swift; sourceTree = "<group>"; };
@@ -637,7 +635,6 @@
 				BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */,
 				BBD9411B299195440085151B /* PPTabView.swift */,
 				BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */,
-				BB074BE929D0429500504C9D /* ProgressViewStyle.swift */,
 				BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */,
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
@@ -940,7 +937,6 @@
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
 				BBDD3AE02A3D18AF00741452 /* MarkdownParserView.swift in Sources */,
-				BB074BEA29D0429500504C9D /* ProgressViewStyle.swift in Sources */,
 				BB3F75FD2997F81600C0F140 /* NoteMainToolToolbarMethods.swift in Sources */,
 				BB67D2BA2A47ABD7001DFBA5 /* SyntaxHighlighter.swift in Sources */,
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,

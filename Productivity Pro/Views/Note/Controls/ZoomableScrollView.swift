@@ -57,8 +57,10 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             }
         }
         
-        if uiView.maximumZoomScale != 2 {
-            uiView.maximumZoomScale = 2
+        // Triggers View Update
+        // Seems unnecessary, but DO NOT remove
+        if uiView.maximumZoomScale != 2.2 {
+            uiView.maximumZoomScale = 2.2
             uiView.setZoomScale(getScale(), animated: true)
         }
         

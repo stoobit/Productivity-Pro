@@ -30,7 +30,6 @@ struct PageBackgroundScan: View {
                 } else {
                     renderPreview()
                 }
-                renderPreview()
             }
             .onDisappear {
                 destroyScan()

@@ -45,13 +45,13 @@ struct TextFieldItemView: View {
                 )
             
         }
-        .task (priority: .userInitiated) {
+        .onAppear() {
             renderedImage = renderTextField()
         }
-        .onChange(of: editItem.size.width, perform: { value in
+        .onChange(of: editItem.size, perform: { value in
             renderedImage = renderTextField()
         })
-        .onChange(of: item, perform: { value in
+        .onChange(of: item.textField, perform: { value in
             renderedImage = renderTextField()
         })
         .onChange(of: toolManager.zoomScale, perform: { value in
@@ -61,7 +61,7 @@ struct TextFieldItemView: View {
     
     @MainActor
     func renderTextField() -> UIImage {
-        var image: UIImage = UIImage(named: "Icon")!
+        var image: UIImage = renderedImage
         
         guard let textField = item.textField else {
             return image

@@ -26,10 +26,6 @@ struct PageBackgroundView: View {
                 color: Color.primary.opacity(showShadow ? 0.8 : 0),
                 radius: 2
             )
-            .frame(
-                width: getFrame().width * toolManager.zoomScale,
-                height: getFrame().height * toolManager.zoomScale
-            )
     }
     
     func getFrame() -> CGSize {

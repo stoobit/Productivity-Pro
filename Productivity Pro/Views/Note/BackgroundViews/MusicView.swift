@@ -18,7 +18,7 @@ extension BackgroundTemplateView {
                     path.addRect(
                         CGRect(
                             x: 0,
-                            y: scale * (Double(line) * 25 + Double(group) * longSide/15),
+                            y: scale * (Double(line) * 20 + Double(group) * longSide/15),
                             width: shortSide * scale,
                             height: 1 * scale
                         )
@@ -29,7 +29,7 @@ extension BackgroundTemplateView {
             
         }
         .fill(Color.secondary.opacity(0.4))
-        .offset(y: ((-25 * 3)) * scale)
+        .offset(y: -60 * scale)
     }
     
     @ViewBuilder func MusicViewLandscape() -> some View {

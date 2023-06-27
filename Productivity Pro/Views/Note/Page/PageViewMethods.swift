@@ -29,28 +29,6 @@ extension PageView {
         }
     }
     
-//    func renderPDF() {
-//
-//        let selection = toolManager.selectedPage
-//        let index = document.document.note.pages.firstIndex(
-//            of: page
-//        )
-//
-//        if index == selection || index == selection + 1 || index == selection - 1 {
-//            let page: PDFPage = (PDFDocument(
-//                data: page.backgroundMedia ?? Data()
-//            )?.page(at: 0)) ?? PDFPage()
-//
-//            let factor = isOverview ? 0.5 : toolManager.zoomScale * 5
-//            let image: UIImage = page.thumbnail(
-//                of: page.bounds(for: .mediaBox).size * factor,
-//                for: .mediaBox
-//            )
-//
-//            renderedBackground = image
-//        }
-//    }
-    
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
