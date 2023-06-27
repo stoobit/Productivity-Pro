@@ -48,10 +48,10 @@ struct OverviewIcon: View {
             pageView = PageView(
                 document: $document,
                 page: .constant(page),
+                offset: .constant(0),
                 toolManager: tm,
                 subviewManager: subviewManager,
                 showBackground: true,
-                showToolView: true,
                 showShadow: false,
                 isOverview: true,
                 size:

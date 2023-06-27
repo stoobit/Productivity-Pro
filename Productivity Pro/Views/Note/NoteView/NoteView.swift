@@ -44,28 +44,16 @@ struct NoteView: View {
                 
                 TabView(selection: $toolManager.selectedTab) {
                     ForEach($document.document.note.pages) { $page in
-                        ZoomableScrollView(
+                       
+                        ScrollViewWrapper(
                             size: proxy.size,
                             document: $document,
                             page: $page,
                             toolManager: toolManager,
                             subviewManager: subviewManager
-                        ) {
-                            PageView(
-                                document: $document,
-                                page: $page,
-                                toolManager: toolManager,
-                                subviewManager: subviewManager,
-                                showBackground: true,
-                                showToolView: false,
-                                showShadow: true,
-                                size: proxy.size
-                            )
-                        }
-                        .modifier(
-                            OrientationUpdater(isPortrait: $page.isPortrait)
                         )
                         .id(page.id)
+                    
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))

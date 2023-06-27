@@ -160,10 +160,10 @@ struct NoteToolbarTitleMenu: View {
                     PageView(
                         document: $document,
                         page: .constant(page),
+                        offset: .constant(0),
                         toolManager: tm,
                         subviewManager: subviewManager,
                         showBackground: false,
-                        showToolView: false,
                         showCanvas: false,
                         size: getFrame(page: page)
                     )

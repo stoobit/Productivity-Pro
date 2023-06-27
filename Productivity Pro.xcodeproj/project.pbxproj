@@ -94,6 +94,8 @@
 		BBBCACB42A25461900C23B2C /* OldCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB12A25461900C23B2C /* OldCalculatorView.swift */; };
 		BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB22A25461900C23B2C /* Calculator.swift */; };
 		BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */; };
+		BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */; };
+		BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */; };
 		BBBF53882A2FEAA8006DD011 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBF53872A2FEAA8006DD011 /* StoreKit.framework */; };
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
@@ -227,6 +229,8 @@
 		BBBCACB12A25461900C23B2C /* OldCalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldCalculatorView.swift; sourceTree = "<group>"; };
 		BBBCACB22A25461900C23B2C /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
+		BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProxy.swift; sourceTree = "<group>"; };
+		BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWrapper.swift; sourceTree = "<group>"; };
 		BBBF53872A2FEAA8006DD011 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BBBF53892A2FEB6B006DD011 /* UnlockStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnlockStoreKitConfig.storekit; sourceTree = "<group>"; };
 		BBBFB834299FB75400FA236F /* DragItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragItemModifier.swift; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 			children = (
 				BB4CDD4428D3C668009A409F /* ContentView.swift */,
 				BB4CDD5728D3D532009A409F /* DocumentView.swift */,
+				BB58477C29A18BF900C21B17 /* CopyPasteMenuView.swift */,
 				BBAF57FD2A49E5D7008DEA98 /* WhatIsNew.swift */,
 				BBCCE4F028D52911001DBD8A /* NewDocument */,
 				BB9DF5A828DFA25600AC988D /* Note */,
@@ -460,13 +465,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		BB7A200129A278F300D2B466 /* Controls */ = {
+		BB7A200129A278F300D2B466 /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */,
 				BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */,
-				BB58477C29A18BF900C21B17 /* CopyPasteMenuView.swift */,
 			);
-			path = Controls;
+			path = ScrollView;
 			sourceTree = "<group>";
 		};
 		BB84E5D429354F5800E0535C /* DocItemModels */ = {
@@ -517,7 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3E9AA72A33AC27006045E1 /* NoteView */,
-				BB7A200129A278F300D2B466 /* Controls */,
+				BB7A200129A278F300D2B466 /* ScrollView */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
@@ -639,6 +644,7 @@
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
 				BB67D2B92A47ABD7001DFBA5 /* SyntaxHighlighter.swift */,
+				BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -858,6 +864,7 @@
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BB4CDD4528D3C668009A409F /* ContentView.swift in Sources */,
+				BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
 				BB4CDD5828D3D532009A409F /* DocumentView.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
@@ -889,6 +896,7 @@
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BBDCF5DD299EB6AC004C99AE /* EditPageItemView.swift in Sources */,
 				BBAF57FE2A49E5D7008DEA98 /* WhatIsNew.swift in Sources */,
+				BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,

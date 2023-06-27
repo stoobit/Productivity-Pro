@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PageBackgroundScan: View {
-    @State var renderedBackground: UIImage?
+    @State private var renderedBackground: UIImage?
     
     @Binding var page: Page
     @StateObject var toolManager: ToolManager
@@ -39,7 +39,6 @@ struct PageBackgroundScan: View {
                     renderScan()
                 }
             }
-        
     }
     
     func renderPreview() {

@@ -22,13 +22,14 @@ struct PageView: View {
     @Binding var document: ProductivityProDocument
     @Binding var page: Page
     
+    @Binding var offset: CGFloat
+    
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
     @State var isTargeted: Bool = true
     
     var showBackground: Bool = true
-    var showToolView: Bool
     var showShadow: Bool = true
     
     var isOverview: Bool = false
@@ -54,6 +55,7 @@ struct PageView: View {
                     if page.type == .pdf {
                         PagePDFView(
                             page: $page,
+                            offset: $offset,
                             toolManager: toolManager
                         )
                     } else if page.type == .image {

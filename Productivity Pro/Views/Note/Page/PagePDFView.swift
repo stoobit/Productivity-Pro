@@ -11,12 +11,15 @@ import PDFKit
 struct PagePDFView: View {
     
     @Binding var page: Page
-    @StateObject var toolManager: ToolManager
+    @Binding var offset: CGFloat 
     
-    @State var image: UIImage? = nil
+    @StateObject
+    var toolManager: ToolManager
+    
+    @State private var renderedBackground: UIImage? = nil
     
     var body: some View {
-        Image(uiImage: image ?? UIImage())
+        Image(uiImage: renderedBackground ?? UIImage())
             .resizable()
             .scaledToFit()
             .frame(
@@ -24,15 +27,21 @@ struct PagePDFView: View {
                 height: toolManager.zoomScale * getFrame().height
             )
             .scaleEffect(1/toolManager.zoomScale)
-            .allowsHitTesting(false)
-            .onAppear() { onAppear() }
+            .onAppear() {
+                if renderedBackground == nil {
+                    renderPage()
+                }
+            }
             .onChange(of: toolManager.zoomScale) { _ in
                 if page.id == toolManager.selectedTab {
                     renderPage()
                 }
             }
-            .onChange(of: toolManager.selectedTab) { _ in
-                if page.id == toolManager.selectedTab {
+            .onDisappear {
+                renderPreview()
+            }
+            .onChange(of: offset) { _ in
+                if toolManager.selectedTab == page.id && offset == 0 {
                     renderPage()
                 }
             }
@@ -51,37 +60,42 @@ struct PagePDFView: View {
         return frame
     }
     
-    func onAppear() {
-        if let media = page.backgroundMedia {
-            if let pdf = PDFDocument(data: media)?.page(at: 0) {
-                Task(priority: .userInitiated) {
-                    
-                    let size: CGSize = pdf.bounds(
-                        for: .mediaBox
-                    ).size
-                    
-                    image = pdf.thumbnail(
-                        of: size, for: .mediaBox
-                    )
+    func renderPreview() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let media = page.backgroundMedia {
+                if let pdf = PDFDocument(data: media)?.page(at: 0) {
+                    Task(priority: .userInitiated) {
+                        
+                        let size: CGSize = pdf.bounds(
+                            for: .mediaBox
+                        ).size * 0.7
+                        
+                        renderedBackground = pdf.thumbnail(
+                            of: size, for: .mediaBox
+                        )
+                    }
                 }
             }
         }
     }
     
     func renderPage() {
-        if let media = page.backgroundMedia {
-            if let pdf = PDFDocument(data: media)?.page(at: 0) {
-                Task(priority: .userInitiated) {
-                    
-                    let size: CGSize = pdf.bounds(
-                        for: .mediaBox
-                    ).size * toolManager.zoomScale * 6
-                    
-                    image = pdf.thumbnail(
-                        of: size, for: .mediaBox
-                    )
+        DispatchQueue.global(qos: .userInitiated).async {
+            if let media = page.backgroundMedia {
+                if let pdf = PDFDocument(data: media)?.page(at: 0) {
+                    Task(priority: .userInitiated) {
+                        
+                        let size: CGSize = pdf.bounds(
+                            for: .mediaBox
+                        ).size * toolManager.zoomScale * 6
+                        
+                        renderedBackground = pdf.thumbnail(
+                            of: size, for: .mediaBox
+                        )
+                    }
                 }
             }
         }
     }
+    
 }
