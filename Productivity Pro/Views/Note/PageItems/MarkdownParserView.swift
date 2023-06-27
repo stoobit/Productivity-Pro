@@ -7,7 +7,6 @@
 
 import SwiftUI
 import MarkdownUI
-import Splash
 
 struct MarkdownParserView: View {
     
@@ -21,7 +20,6 @@ struct MarkdownParserView: View {
             textField.text == "" ? "Markdown..." : textField.text
         }
         .disabled(true)
-        .markdownCodeSyntaxHighlighter(.splash(theme: theme))
         .markdownTextStyle {
             FontSize(textField.fontSize * 2.5)
             ForegroundColor(Color(codable: textField.fontColor))
@@ -52,22 +50,13 @@ struct MarkdownParserView: View {
     }
     
     func colorScheme() -> ColorScheme {
-            var cs: ColorScheme = .dark
-            
-            if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
-                cs = .light
-            }
-            
-            return cs
+        var cs: ColorScheme = .dark
+        
+        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
+            cs = .light
         }
         
-        private var theme: Splash.Theme {
-            switch colorScheme() {
-            case .dark:
-                return .wwdc17(withFont: .init(size: 16))
-            default:
-                return .presentation(withFont: .init(size: 16))
-            }
-        }
+        return cs
+    }
     
 }
