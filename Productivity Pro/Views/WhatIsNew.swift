@@ -52,7 +52,7 @@ struct WhatIsNew: View {
                         
                         NewItem(
                             icon: "ellipsis.circle",
-                            color: .black,
+                            color: .primary,
                             header: "And much more...",
                             text: "Just get started and discover what else Productivity Pro has to offer."
                         )
