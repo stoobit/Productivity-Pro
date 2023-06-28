@@ -14,31 +14,31 @@ struct PageBackgroundScan: View {
     @StateObject var toolManager: ToolManager
     
     var body: some View {
-        
-        Image(uiImage: renderedBackground ?? UIImage())
-            .resizable()
-            .scaledToFit()
-            .frame(
-                width: toolManager.zoomScale * getFrame().width,
-                height: toolManager.zoomScale * getFrame().height
-            )
-            .scaleEffect(1/toolManager.zoomScale)
-            .allowsHitTesting(false)
-            .onAppear {
-                if toolManager.selectedTab == page.id {
-                    renderScan()
-                } else {
-                    renderPreview()
-                }
-            }
-            .onDisappear {
-                destroyScan()
-            }
-            .onChange(of: toolManager.selectedTab) { _ in
-                if toolManager.selectedTab == page.id {
-                    renderScan()
-                }
-            }
+        Text("bug")
+//        Image(uiImage: renderedBackground ?? UIImage())
+//            .resizable()
+//            .scaledToFit()
+//            .frame(
+//                width: toolManager.zoomScale * getFrame().width,
+//                height: toolManager.zoomScale * getFrame().height
+//            )
+//            .scaleEffect(1/toolManager.zoomScale)
+//            .allowsHitTesting(false)
+//            .onAppear {
+//                if toolManager.selectedTab == page.id {
+//                    renderScan()
+//                } else {
+//                    renderPreview()
+//                }
+//            }
+//            .onDisappear {
+//                destroyScan()
+//            }
+//            .onChange(of: toolManager.selectedTab) { _ in
+//                if toolManager.selectedTab == page.id {
+//                    renderScan()
+//                }
+//            }
     }
     
     func renderPreview() {

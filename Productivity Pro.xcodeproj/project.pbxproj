@@ -136,6 +136,7 @@
 		BBEFC9532A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9522A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift */; };
 		BBF22ACC2933EFE300109848 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF22ACB2933EFE300109848 /* PageView.swift */; };
 		BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */; };
+		BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFD97C92A4CE13300771252 /* LazyLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +271,7 @@
 		BBEFC9522A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionDrawingModeEnabled.swift; sourceTree = "<group>"; };
 		BBF22ACB2933EFE300109848 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneInteraction.swift; sourceTree = "<group>"; };
+		BBFD97C92A4CE13300771252 /* LazyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -632,6 +634,7 @@
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
 				BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */,
+				BBFD97C92A4CE13300771252 /* LazyLoader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
+				BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PagePDFView.swift in Sources */,
 				BBCFF43E2A30711400EAC5F5 /* UnlockModel.swift in Sources */,

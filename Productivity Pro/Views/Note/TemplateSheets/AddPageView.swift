@@ -121,6 +121,10 @@ struct AddPageView: View {
             backgroundTemplate: backgroundTemplate,
             isPortrait: isPortrait
         )
+        
+        toolManager.baseRenderings.insert(
+            nil, at: toolManager.selectedPage + 1
+        )
             
         document.document.note.pages.insert(
             newPage, at: toolManager.selectedPage + 1

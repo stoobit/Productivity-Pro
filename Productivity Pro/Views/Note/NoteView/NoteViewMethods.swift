@@ -18,6 +18,10 @@ extension NoteView {
     
     func noteDidAppear() {
         UITabBar.appearance().isHidden = true
+        toolManager.baseRenderings = [UIImage?](
+            repeating: nil, count: document.document.note.pages.count
+        )
+        
         checkLockStatus()
         
         toolManager.selectedTab = document.document.note.pages.last!.id

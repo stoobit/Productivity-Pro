@@ -45,12 +45,14 @@ struct NoteView: View {
                 TabView(selection: $toolManager.selectedTab) {
                     ForEach($document.document.note.pages) { $page in
                        
-                        ScrollViewWrapper(
-                            size: proxy.size,
-                            document: $document,
-                            page: $page,
-                            toolManager: toolManager,
-                            subviewManager: subviewManager
+                        LazyView(
+                            ScrollViewWrapper(
+                                size: proxy.size,
+                                document: $document,
+                                page: $page,
+                                toolManager: toolManager,
+                                subviewManager: subviewManager
+                            )
                         )
                         .id(page.id)
                     

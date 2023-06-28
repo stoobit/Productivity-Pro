@@ -53,11 +53,14 @@ struct PageView: View {
                 
                 if showBackground {
                     if page.type == .pdf {
+                        
                         PagePDFView(
+                            note: $document.document.note,
                             page: $page,
                             offset: $offset,
                             toolManager: toolManager
-                        )
+                        ).equatable()
+                        
                     } else if page.type == .image {
                         PageBackgroundScan(
                             page: $page,

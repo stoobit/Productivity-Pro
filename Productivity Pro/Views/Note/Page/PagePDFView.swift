@@ -8,15 +8,25 @@
 import SwiftUI
 import PDFKit
 
-struct PagePDFView: View {
+struct PagePDFView: View, Equatable {
     
+    @Binding var note: Note
     @Binding var page: Page
-    @Binding var offset: CGFloat 
+    @Binding var offset: CGFloat
     
     @StateObject
     var toolManager: ToolManager
     
-    @State private var renderedBackground: UIImage? = nil
+    @State
+    private var renderedBackground: UIImage? = nil
+    
+    var savedRendering: UIImage? {
+        guard let index = note.pages.firstIndex(of: page) else {
+            return nil
+        }
+        
+        return toolManager.baseRenderings[index]
+    }
     
     var body: some View {
         Image(uiImage: renderedBackground ?? UIImage())
@@ -28,24 +38,24 @@ struct PagePDFView: View {
             )
             .scaleEffect(1/toolManager.zoomScale)
             .onAppear() {
-                if renderedBackground == nil {
-                    renderPage()
+                if savedRendering == nil {
+                    
+                    renderSaving()
+                    renderedBackground = savedRendering
+                    
+                } else if renderedBackground == nil {
+                    renderedBackground = savedRendering
                 }
             }
             .onChange(of: toolManager.zoomScale) { _ in
                 if page.id == toolManager.selectedTab {
-                    renderPage()
+                    renderBackground()
                 }
             }
             .onDisappear {
-                renderPreview()
+                renderedBackground = nil
             }
-            .onChange(of: offset) { _ in
-                if toolManager.selectedTab == page.id && offset == 0 {
-                    renderPage()
-                }
-            }
-            
+        
     }
     
     func getFrame() -> CGSize {
@@ -60,42 +70,46 @@ struct PagePDFView: View {
         return frame
     }
     
-    func renderPreview() {
+    func renderBackground() {
         DispatchQueue.global(qos: .userInitiated).async {
             if let media = page.backgroundMedia {
                 if let pdf = PDFDocument(data: media)?.page(at: 0) {
-                    Task(priority: .userInitiated) {
-                        
-                        let size: CGSize = pdf.bounds(
-                            for: .mediaBox
-                        ).size * 0.7
-                        
-                        renderedBackground = pdf.thumbnail(
-                            of: size, for: .mediaBox
-                        )
-                    }
+                    
+                    let size: CGSize = CGSize(
+                        width: getFrame().width * 2 * toolManager.zoomScale,
+                        height: getFrame().height * 2 * toolManager.zoomScale
+                    )
+                    
+                    renderedBackground = pdf.thumbnail(
+                        of: size, for: .mediaBox
+                    )
+                    
                 }
             }
         }
     }
     
-    func renderPage() {
+    func renderSaving() {
         DispatchQueue.global(qos: .userInitiated).async {
             if let media = page.backgroundMedia {
                 if let pdf = PDFDocument(data: media)?.page(at: 0) {
-                    Task(priority: .userInitiated) {
-                        
-                        let size: CGSize = pdf.bounds(
-                            for: .mediaBox
-                        ).size * toolManager.zoomScale * 6
-                        
-                        renderedBackground = pdf.thumbnail(
-                            of: size, for: .mediaBox
-                        )
-                    }
+                    
+                    let size: CGSize = CGSize(
+                        width: getFrame().width * 2 * toolManager.zoomScale,
+                        height: getFrame().height * 2 * toolManager.zoomScale
+                    )
+                    
+                    guard let index = note.pages.firstIndex(of: page) else { return }
+                    toolManager.baseRenderings[index] = pdf.thumbnail(
+                        of: size, for: .mediaBox
+                    )
+                    
                 }
             }
         }
     }
     
+    static func == (lhs: PagePDFView, rhs: PagePDFView) -> Bool {
+        lhs.renderedBackground == rhs.renderedBackground
+    }
 }
