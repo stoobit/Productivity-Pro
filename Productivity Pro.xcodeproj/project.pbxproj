@@ -51,7 +51,6 @@
 		BB53D5B029C4F79F008130F2 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53D5AF29C4F79F008130F2 /* EditTextView.swift */; };
 		BB58477D29A18BF900C21B17 /* CopyPasteMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58477C29A18BF900C21B17 /* CopyPasteMenuView.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
-		BB67D2B52A47AB1C001DFBA5 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = BB67D2B42A47AB1C001DFBA5 /* MarkdownUI */; };
 		BB68082B29FDD2A90026FDDF /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68082A29FDD2A90026FDDF /* NSAttributedString.swift */; };
 		BB68082D29FDDF2B0026FDDF /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68082C29FDDF2B0026FDDF /* TextfieldItemView.swift */; };
 		BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */; };
@@ -78,6 +77,8 @@
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBAF57FE2A49E5D7008DEA98 /* WhatIsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF57FD2A49E5D7008DEA98 /* WhatIsNew.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
+		BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBB090802A4BA35100A6F60A /* OnPasteboardChange */; };
+		BBB090842A4BA36000A6F60A /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = BBB090832A4BA36000A6F60A /* MarkdownUI */; };
 		BBB0B4DE29AE9E2900BC4729 /* UnlockAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB0B4DD29AE9E2900BC4729 /* UnlockAppView.swift */; };
 		BBB763B02A3A64CC00273182 /* EditShapeItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763AF2A3A64CC00273182 /* EditShapeItemMethods.swift */; };
 		BBB763B22A3A70DD00273182 /* EditTextfieldItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763B12A3A70DD00273182 /* EditTextfieldItemMethods.swift */; };
@@ -126,7 +127,6 @@
 		BBDCF5DF299EBAB1004C99AE /* iPhoneActionsToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5DE299EBAB1004C99AE /* iPhoneActionsToolbar.swift */; };
 		BBDD3AE02A3D18AF00741452 /* MarkdownParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDD3ADF2A3D18AF00741452 /* MarkdownParserView.swift */; };
 		BBE11B1A294934E500E6F504 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE11B19294934E500E6F504 /* Task.swift */; };
-		BBE6E79E2A43AD5300A672BB /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBE6E79D2A43AD5300A672BB /* OnPasteboardChange */; };
 		BBE9196728F221C6001EF750 /* OverviewListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196628F221C6001EF750 /* OverviewListType.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */; };
@@ -277,8 +277,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB67D2B52A47AB1C001DFBA5 /* MarkdownUI in Frameworks */,
-				BBE6E79E2A43AD5300A672BB /* OnPasteboardChange in Frameworks */,
+				BBB090842A4BA36000A6F60A /* MarkdownUI in Frameworks */,
+				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BBBF53882A2FEAA8006DD011 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,8 +744,8 @@
 			);
 			name = "Productivity Pro";
 			packageProductDependencies = (
-				BBE6E79D2A43AD5300A672BB /* OnPasteboardChange */,
-				BB67D2B42A47AB1C001DFBA5 /* MarkdownUI */,
+				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
+				BBB090832A4BA36000A6F60A /* MarkdownUI */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -778,8 +778,8 @@
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
-				BBE6E79C2A43AD5200A672BB /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
-				BB67D2B32A47AB1C001DFBA5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
+				BBB090822A4BA36000A6F60A /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1170,15 +1170,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BB67D2B32A47AB1C001DFBA5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.0;
-			};
-		};
-		BBE6E79C2A43AD5200A672BB /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
+		BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
 			requirement = {
@@ -1186,18 +1178,26 @@
 				kind = branch;
 			};
 		};
+		BBB090822A4BA36000A6F60A /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BB67D2B42A47AB1C001DFBA5 /* MarkdownUI */ = {
+		BBB090802A4BA35100A6F60A /* OnPasteboardChange */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BB67D2B32A47AB1C001DFBA5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
-		};
-		BBE6E79D2A43AD5300A672BB /* OnPasteboardChange */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBE6E79C2A43AD5200A672BB /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
+			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
+		};
+		BBB090832A4BA36000A6F60A /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBB090822A4BA36000A6F60A /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
