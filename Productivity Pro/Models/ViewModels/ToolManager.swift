@@ -47,8 +47,5 @@ class ToolManager: ObservableObject {
     @Published var pdfRendering: URL?
     
     @Published var isPageNumberVisible: Bool = true
-        
-    @Published
-    var baseRenderings: [UIImage?] = []
     
 }

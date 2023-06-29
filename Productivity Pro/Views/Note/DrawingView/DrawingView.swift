@@ -44,6 +44,11 @@ struct DrawingView: View {
         .onChange(of: toolManager.isCanvasEnabled) { isEnabled in
             didCanvasAvailabilityChange(isEnabled)
         }
+        .onChange(of: scenePhase) { value in
+            if value == .active {
+                becameForeground()
+            }
+        }
         .frame(
             width: toolManager.zoomScale * getFrame().width,
             height: toolManager.zoomScale * getFrame().height
@@ -51,70 +56,6 @@ struct DrawingView: View {
         .scaleEffect(1/toolManager.zoomScale)
         .allowsHitTesting(toolManager.isCanvasEnabled)
         .zIndex(Double(page.items.count + 10))
-    }
-    
-    func didDrawingChange(_ value: Bool) {
-        undoManager?.disableUndoRegistration()
-        page.canvas = pkCanvasView.drawing.dataRepresentation()
-        drawingChanged = false
-        undoManager?.enableUndoRegistration()
-        
-        pkToolPicker.addObserver(pkCanvasView)
-        pkCanvasView.becomeFirstResponder()
-    }
-    
-    func didSelectedPageChange() {
-        pkCanvasView.isRulerActive = false
-        pkToolPicker.setVisible(
-            false, forFirstResponder: pkCanvasView
-        )
-        
-        pkToolPicker.removeObserver(pkCanvasView)
-        pkCanvasView.resignFirstResponder()
-        
-        toolManager.isLocked = false
-        toolManager.isCanvasEnabled = false
-    }
-    
-    func didCanvasAvailabilityChange(_ isEnabled: Bool) {
-        if isEnabled {
-            pkToolPicker.setVisible(
-                true, forFirstResponder: pkCanvasView
-            )
-            
-            pkToolPicker.addObserver(pkCanvasView)
-            pkCanvasView.becomeFirstResponder()
-            
-        } else {
-            disableCanvasAvailability()
-        }
-    }
-    
-    func disableCanvasAvailability() {
-        pkCanvasView.isRulerActive = false
-        toolManager.isLocked = false
-        
-        pkToolPicker.setVisible(
-            false, forFirstResponder: pkCanvasView
-        )
-        
-        pkToolPicker.removeObserver(pkCanvasView)
-        pkCanvasView.resignFirstResponder()
-    }
-    
-    func getFrame() -> CGSize {
-        var frame: CGSize = .zero
-        
-        if page.isPortrait {
-            frame = CGSize(
-                width: shortSide,
-                height: longSide
-            )
-        } else {
-            frame = CGSize(width: longSide, height: shortSide)
-        }
-        
-        return frame
     }
     
 }

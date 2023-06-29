@@ -9,8 +9,6 @@ import SwiftUI
 import PencilKit
 
 struct DrawingViewRepresentable: UIViewRepresentable {
-   
-    @State var oldTool: PKTool?
     
     var size: CGSize
     
@@ -74,8 +72,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(
             drawingChanged: $drawingChanged,
-            toolPicker: $toolPicker,
-            oldTool: oldTool
+            toolPicker: $toolPicker
         )
     }
     
@@ -83,23 +80,18 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         @Binding var drawingChanged: Bool
         @Binding var toolPicker: PKToolPicker
         
-        var oldTool: PKTool?
-        
         init(
             drawingChanged: Binding<Bool>,
-            toolPicker: Binding<PKToolPicker>,
-            
-            oldTool: PKTool?
+            toolPicker: Binding<PKToolPicker>
         ) {
             _drawingChanged = drawingChanged
             _toolPicker = toolPicker
-            
-            self.oldTool = oldTool
         }
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             drawingChanged = true
         }
+
     }
     
     func getFrame() -> CGSize {

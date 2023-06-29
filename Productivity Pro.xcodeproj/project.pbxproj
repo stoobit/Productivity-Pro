@@ -10,6 +10,7 @@
 		BB0504212926CB2600DAECA6 /* NoteSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0504202926CB2600DAECA6 /* NoteSheetHelper.swift */; };
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
+		BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */; };
 		BB09FFF429E72BBF00FEAA5D /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
 		BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2062925A7C200F4004A /* BottomOffset.swift */; };
@@ -74,6 +75,7 @@
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9F70EA28E7A57C007DF951 /* AddPageView.swift */; };
+		BBA4B29D2A4DA6DE006544D4 /* PDFRepresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4B29C2A4DA6DE006544D4 /* PDFRepresentationView.swift */; };
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBAF57FE2A49E5D7008DEA98 /* WhatIsNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF57FD2A49E5D7008DEA98 /* WhatIsNew.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
@@ -114,7 +116,6 @@
 		BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */; };
 		BBCFF43E2A30711400EAC5F5 /* UnlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF43D2A30711400EAC5F5 /* UnlockModel.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
-		BBD9411C299195440085151B /* PPTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD9411B299195440085151B /* PPTabView.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
 		BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */; };
 		BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAE29A1A97000EF297A /* EditMediaItemView.swift */; };
@@ -143,6 +144,7 @@
 		BB0504202926CB2600DAECA6 /* NoteSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSheetHelper.swift; sourceTree = "<group>"; };
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
+		BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewMethods.swift; sourceTree = "<group>"; };
 		BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		BB0BE2062925A7C200F4004A /* BottomOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOffset.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BB9F70EA28E7A57C007DF951 /* AddPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPageView.swift; sourceTree = "<group>"; };
+		BBA4B29C2A4DA6DE006544D4 /* PDFRepresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRepresentationView.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
 		BBAF57FD2A49E5D7008DEA98 /* WhatIsNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatIsNew.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
@@ -249,7 +252,6 @@
 		BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleShareButton.swift; sourceTree = "<group>"; };
 		BBCFF43D2A30711400EAC5F5 /* UnlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockModel.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
-		BBD9411B299195440085151B /* PPTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPTabView.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAE29A1A97000EF297A /* EditMediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMediaItemView.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				BB73324F2A294D440001FD6A /* PageBackgroundView.swift */,
 				BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */,
 				BBDABD3E29D257410038CFC2 /* PagePDFView.swift */,
+				BBA4B29C2A4DA6DE006544D4 /* PDFRepresentationView.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				BB24E83229EB1FD40082AE98 /* DrawingView.swift */,
+				BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */,
 				BB24E84829EB6FE70082AE98 /* DrawingViewRepresentable.swift */,
 			);
 			path = DrawingView;
@@ -628,7 +632,6 @@
 				BB3208A72981DFFF0014F602 /* CameraHelperView.swift */,
 				BB3208A92981E8E90014F602 /* ScannerHelper.swift */,
 				BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */,
-				BBD9411B299195440085151B /* PPTabView.swift */,
 				BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */,
 				BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */,
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
@@ -849,6 +852,7 @@
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BB4CDD4528D3C668009A409F /* ContentView.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */,
+				BBA4B29D2A4DA6DE006544D4 /* PDFRepresentationView.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
 				BB4CDD5828D3D532009A409F /* DocumentView.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
@@ -889,11 +893,11 @@
 				BBCFF43E2A30711400EAC5F5 /* UnlockModel.swift in Sources */,
 				BBCCE50028D54233001DBD8A /* NoteBackgroundIcons.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
-				BBD9411C299195440085151B /* PPTabView.swift in Sources */,
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* DrawingViewRepresentable.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
+				BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,
 				BB72A28E29760327000E9753 /* ToolView.swift in Sources */,
 				BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */,

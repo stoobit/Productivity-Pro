@@ -55,9 +55,7 @@ struct PageView: View {
                     if page.type == .pdf {
                         
                         PagePDFView(
-                            note: $document.document.note,
                             page: $page,
-                            offset: $offset,
                             toolManager: toolManager
                         ).equatable()
                         
