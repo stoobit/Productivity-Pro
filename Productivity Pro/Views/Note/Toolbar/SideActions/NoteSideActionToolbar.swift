@@ -34,7 +34,7 @@ struct NoteSideActionToolbar: ToolbarContent {
                    toggleBookmark()
                 }) {
                     Image(systemName: document.document.note.pages[toolManager.selectedPage].isBookmarked ? "bookmark.fill" : "bookmark")
-                        .foregroundColor(Color("red"))
+                        .foregroundStyle(Color.red)
                 }
             }
             
