@@ -92,7 +92,7 @@ struct AddPDFPageHelper: ViewModifier {
             
             let newPage = Page(
                 type: .image,
-                backgroundMedia: page.pngData(),
+                backgroundMedia: page.jpegData(compressionQuality: 0.9),
                 backgroundColor: "pagewhite",
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height
@@ -122,7 +122,7 @@ struct AddPDFPageHelper: ViewModifier {
             let page = pdf.page(at: index)
             let size = page!.bounds(for: .mediaBox).size
             
-            var newPage = Page(
+            let newPage = Page(
                 type: .pdf,
                 backgroundMedia: page?.dataRepresentation,
                 backgroundColor: "pagewhite",

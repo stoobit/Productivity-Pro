@@ -62,8 +62,10 @@ struct PageView: View {
                     } else if page.type == .image {
                         PageBackgroundScan(
                             page: $page,
+                            offset: $offset,
                             toolManager: toolManager
-                        )
+                        ).equatable()
+                        
                     }
                 }
                 

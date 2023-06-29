@@ -11,6 +11,22 @@ import PDFKit
 
 extension NoteView {
     
+    func isViewVisible(page: Page) -> Bool {
+        var isVisible: Bool = false
+        
+        let index = document.document.note.pages.firstIndex(of: page)!
+        
+        if toolManager.selectedPage == index {
+            isVisible = true
+        } else if toolManager.selectedPage - 1 == index {
+            isVisible = true
+        } else if toolManager.selectedPage + 1 == index {
+            isVisible = true
+        }
+        
+        return isVisible
+    }
+    
     func pickedImageDidChange() {
         if let image = toolManager.pickedImage { addImage(image) }
         toolManager.pickedImage = nil

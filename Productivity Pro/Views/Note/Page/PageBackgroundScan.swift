@@ -7,67 +7,48 @@
 
 import SwiftUI
 
-struct PageBackgroundScan: View {
+struct PageBackgroundScan: View, Equatable {
     @State private var renderedBackground: UIImage?
     
     @Binding var page: Page
+    @Binding var offset: CGFloat
+    
     @StateObject var toolManager: ToolManager
     
     var body: some View {
-        Text("bug")
-//        Image(uiImage: renderedBackground ?? UIImage())
-//            .resizable()
-//            .scaledToFit()
-//            .frame(
-//                width: toolManager.zoomScale * getFrame().width,
-//                height: toolManager.zoomScale * getFrame().height
-//            )
-//            .scaleEffect(1/toolManager.zoomScale)
-//            .allowsHitTesting(false)
-//            .onAppear {
-//                if toolManager.selectedTab == page.id {
-//                    renderScan()
-//                } else {
-//                    renderPreview()
-//                }
-//            }
-//            .onDisappear {
-//                destroyScan()
-//            }
-//            .onChange(of: toolManager.selectedTab) { _ in
-//                if toolManager.selectedTab == page.id {
-//                    renderScan()
-//                }
-//            }
-    }
-    
-    func renderPreview() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            guard let media = page.backgroundMedia else { return }
-            guard let uiImage = UIImage(data: media) else { return }
-            
-            renderedBackground = resize(
-                uiImage, to: CGSize(
-                    width: uiImage.size.width * 0.1,
-                    height: uiImage.size.height * 0.1
-                )
+        Image(uiImage: renderedBackground ?? UIImage())
+            .resizable()
+            .scaledToFit()
+            .frame(
+                width: toolManager.zoomScale * getFrame().width,
+                height: toolManager.zoomScale * getFrame().height
             )
-        }
-    }
-    
-    func renderScan() {
-        if page.id == toolManager.selectedTab {
-            DispatchQueue.global(qos: .userInitiated).async {
-                guard let media = page.backgroundMedia else { return }
-                let uiImage = UIImage(data: media)
-                
-                renderedBackground = uiImage
+            .scaleEffect(1/toolManager.zoomScale)
+            .allowsHitTesting(false)
+            .onAppear {
+                if renderedBackground == nil {
+                    guard let media = page.backgroundMedia else { return }
+                    let image = UIImage(data: media) ?? UIImage()
+                    let resized = resize(image, to: CGSize(
+                        width: getFrame().width * 0.1,
+                        height: getFrame().height * 0.1)
+                    )
+                    
+                    renderedBackground = resized
+                }
             }
-        }
-    }
-    
-    func destroyScan() {
-        renderedBackground = nil
+            .onChange(of: offset) { value in
+                if offset == 0 {
+                    guard let media = page.backgroundMedia else { return }
+                    let image = UIImage(data: media) ?? UIImage()
+                    let resized = resize(image, to: getFrame())
+                    
+                    renderedBackground = resized
+                }
+            }
+            .onDisappear {
+                renderedBackground = nil
+            }
     }
     
     func getFrame() -> CGSize {
@@ -81,4 +62,12 @@ struct PageBackgroundScan: View {
         
         return frame
     }
+    
+    static func == (
+        lhs: PageBackgroundScan,
+        rhs: PageBackgroundScan
+    ) -> Bool {
+        true
+    }
+    
 }

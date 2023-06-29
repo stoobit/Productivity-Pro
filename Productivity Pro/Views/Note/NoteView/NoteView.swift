@@ -44,18 +44,20 @@ struct NoteView: View {
                 
                 TabView(selection: $toolManager.selectedTab) {
                     ForEach($document.document.note.pages) { $page in
-                       
-                        LazyView(
-                            ScrollViewWrapper(
-                                size: proxy.size,
-                                document: $document,
-                                page: $page,
-                                toolManager: toolManager,
-                                subviewManager: subviewManager
-                            )
-                        )
+                        ZStack {
+                            Text("")
+                            
+                            if isViewVisible(page: page) {
+                                ScrollViewWrapper(
+                                    size: proxy.size,
+                                    document: $document,
+                                    page: $page,
+                                    toolManager: toolManager,
+                                    subviewManager: subviewManager
+                                )
+                            }
+                        }
                         .id(page.id)
-                    
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
