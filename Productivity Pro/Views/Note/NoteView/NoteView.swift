@@ -61,7 +61,7 @@ struct NoteView: View {
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(height: proxy.size.height + 30)
+                .frame(height: proxy.size.height)
                 .offset(y: 30/4)
                 
             }

@@ -16,26 +16,38 @@ struct PageBackgroundScan: View, Equatable {
     @StateObject var toolManager: ToolManager
     
     var body: some View {
-        Image(uiImage: renderedBackground ?? UIImage())
-            .resizable()
-            .scaledToFit()
-            .frame(
-                width: toolManager.zoomScale * getFrame().width,
-                height: toolManager.zoomScale * getFrame().height
-            )
-            .scaleEffect(1/toolManager.zoomScale)
-            .allowsHitTesting(false)
-            .onAppear {
+        ZStack {
+            
+            if let rendering = renderedBackground {
+                Image(uiImage: rendering)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(
+                        width: toolManager.zoomScale * getFrame().width,
+                        height: toolManager.zoomScale * getFrame().height
+                    )
+                    .scaleEffect(1/toolManager.zoomScale)
+                
+            } else {
+               LoadingView()
+            }
+        }
+        .allowsHitTesting(false)
+        .onAppear {
+            if toolManager.selectedTab == page.id {
+                render()
+            } else {
                 renderPreview()
             }
-            .onChange(of: offset) { value in
-                if offset == 0 {
-                    render()
-                }
+        }
+        .onChange(of: offset) { value in
+            if offset == 0 && toolManager.selectedTab == page.id {
+                render()
             }
-            .onDisappear {
-                renderedBackground = nil
-            }
+        }
+        .onDisappear {
+            renderedBackground = nil
+        }
     }
     
     func getFrame() -> CGSize {
@@ -76,6 +88,16 @@ struct PageBackgroundScan: View, Equatable {
         let resized = resize(image, to: getFrame())
         
         renderedBackground = resized
+    }
+    
+    @ViewBuilder func LoadingView() -> some View {
+        Text("Loading...")
+            .font(.system(size: 20 * toolManager.zoomScale))
+            .frame(
+                width: toolManager.zoomScale * getFrame().width,
+                height: toolManager.zoomScale * getFrame().height
+            )
+            .scaleEffect(1/toolManager.zoomScale)
     }
     
 }
