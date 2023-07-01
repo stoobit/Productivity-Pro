@@ -21,7 +21,8 @@ struct DocumentView: View {
     var body: some View {
         ZStack {
             
-            Color(UIColor.secondarySystemBackground).edgesIgnoringSafeArea(.all)
+            Color(UIColor.secondarySystemBackground)
+                .ignoresSafeArea(edges: .bottom)
             
             if document.document.documentType == .note {
                 

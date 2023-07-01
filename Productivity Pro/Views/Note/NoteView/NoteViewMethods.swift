@@ -36,7 +36,7 @@ extension NoteView {
         UITabBar.appearance().isHidden = true
         checkLockStatus()
         
-        toolManager.selectedTab = document.document.note.pages.last!.id
+        toolManager.selectedTab = document.document.note.pages.first!.id
         
         toolManager.selectedPage = document.document.note.pages.firstIndex(
             where: { $0.id == toolManager.selectedTab }

@@ -45,8 +45,6 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
         
-        scrollView.insetsLayoutMarginsFromSafeArea = true
-        
         return scrollView
     }
     

@@ -33,9 +33,7 @@ struct NoteView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                Color(UIColor.secondarySystemBackground).ignoresSafeArea(
-                    .all, edges: .all
-                )
+                Color(UIColor.secondarySystemBackground).ignoresSafeArea(edges: .bottom)
                 
                 NoteNextPage(
                     pages: $document.document.note.pages,
@@ -44,23 +42,19 @@ struct NoteView: View {
                 
                 TabView(selection: $toolManager.selectedTab) {
                     ForEach($document.document.note.pages) { $page in
-                        ZStack {
-                            Text("")
-                            
-                            if isViewVisible(page: page) {
-                                ScrollViewWrapper(
-                                    size: proxy.size,
-                                    document: $document,
-                                    page: $page,
-                                    toolManager: toolManager,
-                                    subviewManager: subviewManager
-                                )
-                            }
-                        }
+                        ScrollViewWrapper(
+                            size: proxy.size,
+                            document: $document,
+                            page: $page,
+                            toolManager: toolManager,
+                            subviewManager: subviewManager
+                        )
                         .id(page.id)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
+                .frame(height: proxy.size.height + 30)
+                .offset(y: 30/4)
                 
             }
             .position(
