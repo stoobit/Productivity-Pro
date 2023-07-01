@@ -92,7 +92,9 @@ struct AddPDFPageHelper: ViewModifier {
             
             let newPage = Page(
                 type: .image,
-                backgroundMedia: page.jpegData(compressionQuality: 0.9),
+                backgroundMedia: page.jpegData(
+                    compressionQuality: 0.8
+                ),
                 backgroundColor: "pagewhite",
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height

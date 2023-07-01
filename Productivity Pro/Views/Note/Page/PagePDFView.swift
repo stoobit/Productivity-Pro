@@ -14,18 +14,17 @@ struct PagePDFView: View, Equatable {
     @StateObject var toolManager: ToolManager
     
     var body: some View {
-//        PDFRepresentationView(
-//            encodedPDF: page.backgroundMedia,
-//            isPortrait: page.isPortrait
-//        )
-//        .equatable()
-//        .frame(
-//            width: getFrame().width,
-//            height: getFrame().height
-//        )
-//        .scaleEffect(3)
+        PDFRepresentationView(
+            encodedPDF: page.backgroundMedia,
+            isPortrait: page.isPortrait
+        )
+        .equatable()
+        .frame(
+            width: getFrame().width,
+            height: getFrame().height
+        )
+        .scaleEffect(3)
         
-        Text("Bug")
     }
     
     func getFrame() -> CGSize {

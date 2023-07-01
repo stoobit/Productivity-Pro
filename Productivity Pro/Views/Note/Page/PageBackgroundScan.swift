@@ -26,24 +26,16 @@ struct PageBackgroundScan: View, Equatable {
             .scaleEffect(1/toolManager.zoomScale)
             .allowsHitTesting(false)
             .onAppear {
-                if renderedBackground == nil {
-                    guard let media = page.backgroundMedia else { return }
-                    let image = UIImage(data: media) ?? UIImage()
-                    let resized = resize(image, to: CGSize(
-                        width: getFrame().width * 0.1,
-                        height: getFrame().height * 0.1)
-                    )
-                    
-                    renderedBackground = resized
+                if toolManager.firstRender == true {
+                    render()
+                    toolManager.firstRender = false
+                } else {
+                    renderPreview()
                 }
             }
             .onChange(of: offset) { value in
                 if offset == 0 {
-                    guard let media = page.backgroundMedia else { return }
-                    let image = UIImage(data: media) ?? UIImage()
-                    let resized = resize(image, to: getFrame())
-                    
-                    renderedBackground = resized
+                    render()
                 }
             }
             .onDisappear {
@@ -68,6 +60,27 @@ struct PageBackgroundScan: View, Equatable {
         rhs: PageBackgroundScan
     ) -> Bool {
         true
+    }
+    
+    func renderPreview() {
+        if renderedBackground == nil {
+            guard let media = page.backgroundMedia else { return }
+            let image = UIImage(data: media) ?? UIImage()
+            let resized = resize(image, to: CGSize(
+                width: getFrame().width * 0.1,
+                height: getFrame().height * 0.1)
+            )
+            
+            renderedBackground = resized
+        }
+    }
+    
+    func render() {
+        guard let media = page.backgroundMedia else { return }
+        let image = UIImage(data: media) ?? UIImage()
+        let resized = resize(image, to: getFrame())
+        
+        renderedBackground = resized
     }
     
 }
