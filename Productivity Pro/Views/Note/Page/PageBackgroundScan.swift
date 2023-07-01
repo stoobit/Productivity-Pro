@@ -15,6 +15,7 @@ struct PageBackgroundScan: View, Equatable {
     
     @StateObject var toolManager: ToolManager
     
+    var isOverview: Bool
     var body: some View {
         ZStack {
             
@@ -36,12 +37,17 @@ struct PageBackgroundScan: View, Equatable {
         .onAppear {
             if toolManager.selectedTab == page.id {
                 render()
+            } else if isOverview == true {
+                renderOverview()
             } else {
                 renderPreview()
             }
         }
         .onChange(of: offset) { value in
-            if offset == 0 && toolManager.selectedTab == page.id {
+            if offset == 0 &&
+                toolManager.selectedTab == page.id &&
+                isOverview == false
+            {
                 render()
             }
         }
@@ -76,6 +82,19 @@ struct PageBackgroundScan: View, Equatable {
             let resized = resize(image, to: CGSize(
                 width: getFrame().width * 0.1,
                 height: getFrame().height * 0.1)
+            )
+            
+            renderedBackground = resized
+        }
+    }
+    
+    func renderOverview() {
+        if renderedBackground == nil {
+            guard let media = page.backgroundMedia else { return }
+            let image = UIImage(data: media) ?? UIImage()
+            let resized = resize(image, to: CGSize(
+                width: getFrame().width * 0.05,
+                height: getFrame().height * 0.05)
             )
             
             renderedBackground = resized

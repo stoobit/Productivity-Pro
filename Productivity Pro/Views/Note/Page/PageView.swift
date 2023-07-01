@@ -63,7 +63,8 @@ struct PageView: View {
                         PageBackgroundScan(
                             page: $page,
                             offset: $offset,
-                            toolManager: toolManager
+                            toolManager: toolManager,
+                            isOverview: isOverview
                         ).equatable()
                         
                     }

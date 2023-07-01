@@ -22,10 +22,10 @@ struct OverviewIcon: View {
     var body: some View {
         ZStack {
             pageView
-                .scaleEffect(size.width / 4 / getFrame(page: page).width)
+                .scaleEffect(size.width / 5 / getFrame(page: page).width)
                 .frame(
-                    width: size.width / 4,
-                    height: (size.width / 4 / getFrame(page: page).width) * getFrame(page: page).height
+                    width: size.width / 5,
+                    height: (size.width / 5 / getFrame(page: page).width) * getFrame(page: page).height
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .allowsHitTesting(false)
@@ -37,8 +37,8 @@ struct OverviewIcon: View {
                     lineWidth: 2
                 )
                 .frame(
-                    width: size.width / 4,
-                    height: (size.width / 4 / getFrame(page: page).width) * getFrame(page: page).height
+                    width: size.width / 5,
+                    height: (size.width / 5 / getFrame(page: page).width) * getFrame(page: page).height
                 )
         }
         .onAppear {
@@ -56,8 +56,8 @@ struct OverviewIcon: View {
                 isOverview: true,
                 size:
                     CGSize(
-                        width: size.width / 4,
-                        height: (size.width / 4 / getFrame(page: page).width) * getFrame(page: page).height
+                        width: size.width / 5,
+                        height: (size.width / 5 / getFrame(page: page).width) * getFrame(page: page).height
                     )
             )
         }

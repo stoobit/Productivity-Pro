@@ -73,7 +73,7 @@ struct OverviewView: View {
     
     @ViewBuilder func Overview(type: OverviewListType, size: CGSize) -> some View {
         
-        let columns: [GridItem] = Array(repeating: GridItem(), count: 3)
+        let columns: [GridItem] = Array(repeating: GridItem(), count: 4)
         let filteredPages: [Page] = document.document.note.pages.filter( { $0.isBookmarked == true })
         
         if filteredPages.isEmpty && type == .bookmark {
@@ -164,8 +164,10 @@ struct OverviewView: View {
                                                 Image(systemName: page.isBookmarked ? "bookmark.fill" : "bookmark")
                                             }
                                             .foregroundColor(.red)
-                                            
-                                            Spacer()
+                                            .frame(
+                                                height: size.width / 10,
+                                                alignment: .leading
+                                            )
                                             
                                             OverviewPageIndicator(
                                                 document: document, index: index
@@ -173,9 +175,12 @@ struct OverviewView: View {
                                                 pageToDelete = page
                                                 subviewManager.isDeletePageAlert = true
                                             }
+                                            .frame(
+                                                height: size.width / 10,
+                                                alignment: .trailing
+                                            )
                                         }
-                                        .padding(.horizontal, 10)
-                                        .frame(width: size.width / 4)
+                                        .frame(width: size.width / 5 - 50)
                                         .padding(.top, 10)
                                         .padding(.bottom, 3)
                                         
