@@ -26,12 +26,7 @@ struct PageBackgroundScan: View, Equatable {
             .scaleEffect(1/toolManager.zoomScale)
             .allowsHitTesting(false)
             .onAppear {
-                if toolManager.firstRender == true {
-                    render()
-                    toolManager.firstRender = false
-                } else {
-                    renderPreview()
-                }
+                renderPreview()
             }
             .onChange(of: offset) { value in
                 if offset == 0 {
