@@ -33,8 +33,6 @@ struct ScrollViewWrapper: View {
                 offset: $offset,
                 toolManager: toolManager,
                 subviewManager: subviewManager,
-                showBackground: true,
-                showShadow: true,
                 size: size
             )
         }

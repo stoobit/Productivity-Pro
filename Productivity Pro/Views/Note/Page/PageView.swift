@@ -29,11 +29,8 @@ struct PageView: View {
     
     @State var isTargeted: Bool = true
     
-    var showBackground: Bool = true
-    var showShadow: Bool = true
     
     var isOverview: Bool = false
-    var showCanvas: Bool = true
     
     let size: CGSize
     
@@ -43,7 +40,7 @@ struct PageView: View {
                 PageBackgroundView(
                     page: $page,
                     toolManager: toolManager,
-                    showShadow: showShadow
+                    showShadow: true
                 )
                 
                 BackgroundTemplateView(
@@ -51,23 +48,21 @@ struct PageView: View {
                     scale: toolManager.zoomScale
                 )
                 
-                if showBackground {
-                    if page.type == .pdf {
-                        
-                        PagePDFView(
-                            page: $page,
-                            toolManager: toolManager
-                        ).equatable()
-                        
-                    } else if page.type == .image {
-                        PageBackgroundScan(
-                            page: $page,
-                            offset: $offset,
-                            toolManager: toolManager,
-                            isOverview: isOverview
-                        ).equatable()
-                        
-                    }
+                if page.type == .pdf {
+                    
+                    PagePDFView(
+                        page: $page,
+                        toolManager: toolManager
+                    ).equatable()
+                    
+                } else if page.type == .image {
+                    PageBackgroundScan(
+                        page: $page,
+                        offset: $offset,
+                        toolManager: toolManager,
+                        isOverview: isOverview
+                    ).equatable()
+                    
                 }
                 
             }
@@ -80,14 +75,12 @@ struct PageView: View {
                 subviewManager: subviewManager
             )
             
-            if showCanvas {
-                DrawingView(
-                    size: size,
-                    page: $page,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-            }
+            DrawingView(
+                size: size,
+                page: $page,
+                toolManager: toolManager,
+                subviewManager: subviewManager
+            )
             
             SnapItemView(toolManager: toolManager, page: $page)
                 .scaleEffect(1/toolManager.zoomScale)

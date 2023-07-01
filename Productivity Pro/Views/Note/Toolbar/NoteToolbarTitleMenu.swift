@@ -107,7 +107,7 @@ struct NoteToolbarTitleMenu: View {
         let name: String = document.document.url!
             .deletingPathExtension().lastPathComponent
         
-        let url = URL.documentsDirectory.appending(
+        let url = URL.applicationSupportDirectory.appending(
             path: "\(name).pdf"
         )
         
@@ -163,8 +163,6 @@ struct NoteToolbarTitleMenu: View {
                         offset: .constant(0),
                         toolManager: tm,
                         subviewManager: subviewManager,
-                        showBackground: false,
-                        showCanvas: false,
                         size: getFrame(page: page)
                     )
                     

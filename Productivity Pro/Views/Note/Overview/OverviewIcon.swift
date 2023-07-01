@@ -51,8 +51,6 @@ struct OverviewIcon: View {
                 offset: .constant(0),
                 toolManager: tm,
                 subviewManager: subviewManager,
-                showBackground: true,
-                showShadow: false,
                 isOverview: true,
                 size:
                     CGSize(
