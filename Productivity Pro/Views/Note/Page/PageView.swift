@@ -29,9 +29,7 @@ struct PageView: View {
     
     @State var isTargeted: Bool = true
     
-    
     var isOverview: Bool = false
-    
     let size: CGSize
     
     var body: some View {
