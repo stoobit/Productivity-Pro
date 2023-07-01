@@ -107,7 +107,7 @@ struct NoteToolbarTitleMenu: View {
         let name: String = document.document.url!
             .deletingPathExtension().lastPathComponent
         
-        let url = URL.applicationSupportDirectory.appending(
+        let url = URL.cachesDirectory.appending(
             path: "\(name).pdf"
         )
         

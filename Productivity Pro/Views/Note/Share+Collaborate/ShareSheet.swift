@@ -76,8 +76,10 @@ struct ShareSheet: View {
             
             Spacer()
             
-            ShareLink(item: document.document.url!) { ShareIcon(size: size) }
-                .padding(.bottom)
+            if subviewManager.sharePPSheet {
+                ShareLink(item: document.document.url!) { ShareIcon(size: size) }
+                    .padding(.bottom)
+            }
             
         }
         .allowsHitTesting(document.document.url != nil)
@@ -95,10 +97,12 @@ struct ShareSheet: View {
             
             Spacer()
 
-            ShareLink(item: toolManager.pdfRendering ?? URL(filePath: "")) {
-                ShareIcon(size: size)
+            if subviewManager.sharePDFSheet {
+                ShareLink(item: toolManager.pdfRendering ?? URL(filePath: "")) {
+                    ShareIcon(size: size)
+                }
+                .padding(.bottom)
             }
-            .padding(.bottom)
         }
         .padding()
     }
