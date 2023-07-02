@@ -25,178 +25,73 @@ struct OverviewView: View {
     @State var pageToDelete: Page!
     
     var body: some View {
+        let filteredPages: [Page] = document.document.note.pages.filter({
+            $0.isBookmarked == true
+        })
+        
         NavigationStack {
-            GeometryReader { proxy in
-                TabView(selection: $selectedTab) {
-                    
-                    Overview(type: .all, size: proxy.size)
-                        .tag(OverviewListType.all)
-                        .tabItem {
-                            Label("All", systemImage: "list.bullet")
-                        }
-                    
-                    Overview(type: .bookmark, size: proxy.size)
-                        .tag(OverviewListType.bookmark)
-                        .tabItem {
-                            Label("Bookmarked", systemImage: "bookmark.fill")
-                        }
-                    
-                }
-                .toolbar {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Done") { subviewManager.overviewSheet.toggle()
-                        }
-                        .keyboardShortcut(.return, modifiers: [])
+            TabView(selection: $selectedTab) {
+                
+                Overview(document.document.note.pages)
+                    .tag(OverviewListType.all)
+                    .tabItem {
+                        Label("All", systemImage: "list.bullet")
                     }
-                }
-                .alert(
-                    "Delete this Page",
-                    isPresented: $subviewManager.isDeletePageAlert,
-                    actions: {
-                        Button("Delete Page", role: .destructive) {
-                            delete(pageToDelete)
-                        }
-                        
-                        Button("Cancel", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
-                        }
-                    }) {
-                        Text("You cannot undo this action.")
+                
+                Overview(filteredPages)
+                    .tag(OverviewListType.bookmark)
+                    .tabItem {
+                        Label("Bookmarked", systemImage: "bookmark.fill")
                     }
+                
             }
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.browser)
             .toolbarBackground(.visible, for: .tabBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { subviewManager.overviewSheet.toggle()
+                    }
+                    .keyboardShortcut(.return, modifiers: [])
+                }
+            }
+            .alert(
+                "Delete this Page",
+                isPresented: $subviewManager.isDeletePageAlert,
+                actions: {
+                    Button("Delete Page", role: .destructive) {
+                        delete(pageToDelete)
+                    }
+                    
+                    Button("Cancel", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
+                    }
+                }) {
+                    Text("You cannot undo this action.")
+                }
         }
     }
     
-    @ViewBuilder func Overview(type: OverviewListType, size: CGSize) -> some View {
-        
-        let columns: [GridItem] = Array(repeating: GridItem(), count: 4)
-        let filteredPages: [Page] = document.document.note.pages.filter( { $0.isBookmarked == true })
-        
-        if filteredPages.isEmpty && type == .bookmark {
+    @ViewBuilder func Overview(_ pages: [Page]) -> some View {
+        if pages.isEmpty {
+            
             Image(systemName: "bookmark.slash.fill")
                 .font(.system(size: 75))
                 .foregroundColor(.secondary)
+            
         } else {
-            ScrollView(showsIndicators: false) {
-                ScrollViewReader { reader in
-                    LazyVStack {
-                        if type == .all {
-                            LazyVGrid(columns: columns) {
-                                ForEach($document.document.note.pages) { $page in
-                                    
-                                    let index = document.document.note.pages.firstIndex(of: page) ?? 0
-                                    
-                                    VStack {
-                                        Button(action: { goToPage(page: page) }) {
-                                            OverviewIcon(
-                                                document: $document,
-                                                page: page,
-                                                toolManager: toolManager,
-                                                subviewManager: subviewManager,
-                                                size: size
-                                            )
-                                        }
-                                        
-                                        HStack {
-                                            Button(action: { toggleBookmark(page: page) }) {
-                                                Image(systemName: page.isBookmarked ? "bookmark.fill" : "bookmark")
-                                            }
-                                            .foregroundColor(.red)
-                                            
-                                            Spacer()
-                                            
-                                            OverviewPageIndicator(
-                                                document: document, index: index
-                                            ) {
-                                                pageToDelete = page
-                                                subviewManager.isDeletePageAlert = true
-                                            }
-                                        }
-                                        .padding(.horizontal, 10)
-                                        .frame(width: size.width / 4)
-                                        .padding(.top, 10)
-                                        .padding(.bottom, 3)
-                                        
-                                    }
-                                    .padding()
-                                    .modifier(
-                                        DragAndDropPage(
-                                            document: $document,
-                                            page: page,
-                                            type: type,
-                                            current: $current,
-                                            toolManager: toolManager
-                                        )
-                                    )
-                                    .id(document.document.note.pages.firstIndex(of: page))
-                                    
-                                }
-                                .onAppear { reader.scrollTo(toolManager.selectedPage) }
-                            }
-                            .animation(
-                                .default,
-                                value: document.document.note.pages.count
-                            )
-                            
-                        } else {
-                            LazyVGrid(columns: columns) {
-                                ForEach(filteredPages) { page in
-                                    
-                                    let index = document.document.note.pages.firstIndex(of: page) ?? 0
-                                    
-                                    VStack {
-                                        Button(action: { goToPage(page: page) }) {
-                                            OverviewIcon(
-                                                document: $document,
-                                                page: page,
-                                                toolManager: toolManager,
-                                                subviewManager: subviewManager,
-                                                size: size
-                                            )
-                                        }
-                                        
-                                        HStack {
-                                            Button(action: { toggleBookmark(page: page) }) {
-                                                Image(systemName: page.isBookmarked ? "bookmark.fill" : "bookmark")
-                                            }
-                                            .foregroundColor(.red)
-                                            .frame(
-                                                height: size.width / 10,
-                                                alignment: .leading
-                                            )
-                                            
-                                            OverviewPageIndicator(
-                                                document: document, index: index
-                                            ) {
-                                                pageToDelete = page
-                                                subviewManager.isDeletePageAlert = true
-                                            }
-                                            .frame(
-                                                height: size.width / 10,
-                                                alignment: .trailing
-                                            )
-                                        }
-                                        .frame(width: size.width / 5 - 50)
-                                        .padding(.top, 10)
-                                        .padding(.bottom, 3)
-                                        
-                                    }
-                                    .padding()
-                                    .id(document.document.note.pages.firstIndex(of: page))
-                                    
-                                }
-                                .onAppear { reader.scrollTo(toolManager.selectedPage) }
-                            }
-                            .animation(.default, value: filteredPages.count)
-                        }
-                    }
-                }
-                
+            List(pages) { page in
+                OverviewRow(
+                    document: $document,
+                    toolManager: toolManager,
+                    subviewManager: subviewManager,
+                    page: page
+                )
+                .listRowInsets(.none)
+                .listRowSeparator(.hidden, edges: .all)
             }
+            .listStyle(.plain)
         }
     }
     

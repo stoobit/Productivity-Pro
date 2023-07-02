@@ -67,21 +67,4 @@ extension OverviewView {
         }
     }
     
-    func goToPage(page: Page) {
-        withAnimation {
-            toolManager.selectedTab = page.id
-            subviewManager.overviewSheet.toggle()
-        }
-    }
-    
-    func toggleBookmark(page: Page) {
-        undoManager?.disableUndoRegistration()
-        
-        document.document.note.pages[
-            document.document.note.pages.firstIndex(of: page)!
-        ].isBookmarked.toggle()
-        
-        undoManager?.enableUndoRegistration()
-    }
-    
 }

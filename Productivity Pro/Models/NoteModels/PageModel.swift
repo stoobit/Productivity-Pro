@@ -13,6 +13,8 @@ struct Page: Codable, Identifiable, Hashable {
     var id: UUID = UUID()
     var type: PageType = .template
     
+    var date: Date? = Date()
+    
     var backgroundMedia: Data?
     
     var backgroundColor: String
