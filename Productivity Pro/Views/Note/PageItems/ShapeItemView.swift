@@ -50,12 +50,11 @@ struct ShapeItemView: View {
                         width: editItem.size.width * toolManager.zoomScale,
                         height: editItem.size.height * toolManager.zoomScale
                     )
-                    .clipShape(
-                        RoundedRectangle(
-                            cornerRadius: shape.cornerRadius * toolManager.zoomScale,
-                            style: .circular
-                        )
-                    )
+                    .modifier(CornerModifier(
+                        editItem: editItem,
+                        toolManager: toolManager,
+                        item: $item
+                    ))
             }
             
             if shape.showStroke {
@@ -73,5 +72,34 @@ struct ShapeItemView: View {
             
         }
         
+    }
+}
+
+struct CornerModifier: ViewModifier {
+    
+    @StateObject var editItem: EditItemModel
+    @StateObject var toolManager: ToolManager
+    
+    @Binding var item: ItemModel
+    
+    func body(content: Content) -> some View {
+        
+        if item.shape!.showStroke {
+            content
+                .frame(
+                    width: (editItem.size.width + item.shape!.strokeWidth) * toolManager.zoomScale,
+                    height: (editItem.size.height + item.shape!.strokeWidth) * toolManager.zoomScale
+                )
+                .clipShape(
+                    RoundedRectangle(
+                        cornerRadius: item.shape!.cornerRadius * toolManager.zoomScale,
+                        style: .circular
+                    )
+                )
+            
+            
+        } else {
+            content
+        }
     }
 }
