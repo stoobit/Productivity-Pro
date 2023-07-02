@@ -26,12 +26,6 @@ struct ShapeItemView: View {
                         ),
                         shape: shape
                     )
-                    .clipShape(
-                        RoundedRectangle(
-                            cornerRadius: shape.cornerRadius * toolManager.zoomScale,
-                            style: .circular
-                        )
-                    )
                     
                 } else if shape.type == .circle {
                     ShapeTypeView(form: Ellipse(), stroke: Ellipse(), shape: shape)
@@ -56,6 +50,12 @@ struct ShapeItemView: View {
                         width: editItem.size.width * toolManager.zoomScale,
                         height: editItem.size.height * toolManager.zoomScale
                     )
+                    .clipShape(
+                        RoundedRectangle(
+                            cornerRadius: shape.cornerRadius * toolManager.zoomScale,
+                            style: .circular
+                        )
+                    )
             }
             
             if shape.showStroke {
@@ -64,12 +64,11 @@ struct ShapeItemView: View {
                         Color(codable: shape.strokeColor)!,
                         lineWidth: shape.strokeWidth * toolManager.zoomScale
                     )
-                    .contentShape(stroke)
                     .frame(
                         width: (editItem.size.width + item.shape!.strokeWidth) * toolManager.zoomScale,
-                        height: (editItem.size.height + item.shape!.strokeWidth) * toolManager.zoomScale,
-                        alignment: .topLeading
+                        height: (editItem.size.height + item.shape!.strokeWidth) * toolManager.zoomScale
                     )
+                    .contentShape(stroke)
             }
             
         }

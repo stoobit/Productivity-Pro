@@ -13,58 +13,21 @@ struct PagePDFView: View, Equatable {
     @Binding var page: Page
     @StateObject var toolManager: ToolManager
     
+    @State var document: PDFDocument?
+    
     var body: some View {
-        //        PDFRepresentationView(
-        //            encodedPDF: page.backgroundScan,
-        //            isPortrait: page.isPortrait
-        //        )
-        //        .equatable()
-        Image(
-            uiImage: drawPDFFromURL(
-                data: page.backgroundMedia!
-            )!
+        PDFRepresentationView(
+            isPortrait: page.isPortrait, document: $document
         )
-        .resizable()
-        .scaledToFit()
-//        CGPDFViewRepresentable(page: $page)
-//        PDFRepresentationView(
-//            encodedPDF: page.backgroundMedia,
-//            isPortrait: page.isPortrait
-//        )
-//        BackgroundRepresentationView(data: page.backgroundMedia!)
         .frame(
             width: getFrame().width,
             height: getFrame().height
         )
-//        .border(Color.red, width: 20)
-    }
-    
-    func drawPDFFromURL(data: Data) -> UIImage? {
-        guard let document = CGPDFDocument(
-            CGDataProvider(data: data as CFData)!
-        ) else { return nil }
-        
-        guard let page = document.page(at: 1) else { return nil }
-        
-        let dpi: CGFloat = 1
-        
-        let pageRect = page.getBoxRect(.mediaBox)
-        let renderer = UIGraphicsImageRenderer(size: CGSize(
-            width: pageRect.width * dpi,
-            height: pageRect.height * dpi)
-        )
-        
-        let img = renderer.image { ctx in
-            UIColor.white.set()
-            ctx.fill(pageRect)
-            
-            ctx.cgContext.translateBy(x: 0.0, y: pageRect.height * dpi)
-            ctx.cgContext.scaleBy(x: 1.0 * dpi, y: -1.0 * dpi)
-            
-            ctx.cgContext.drawPDFPage(page)
+        .onAppear {
+            if let data = page.backgroundMedia {
+                document = PDFDocument(data: data)
+            }
         }
-        
-        return img
     }
     
     func getFrame() -> CGSize {
