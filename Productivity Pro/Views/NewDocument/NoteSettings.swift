@@ -58,22 +58,17 @@ struct NoteSettings: View {
     @ViewBuilder func BackgroundValueView() -> some View {
         VStack {
             Button(action: { isPortrait.toggle() }) {
-                Text("Toggle Orientation")
-                    .frame(width: 0, height: 0)
-                
-                Text("Orientation")
+                Text("Layout")
                     .font(.body)
                     .foregroundColor(.primary)
-
+                
                 Spacer()
                 RectangleRotationIcon()
                     .rotationEffect(Angle(degrees: isPortrait ? 0 : 90))
                     .animation(.easeInOut, value: isPortrait)
             }
-            .accessibilityHint("Toggle Orientation")
-            .keyboardShortcut("o", modifiers: [.command])
             .padding(.vertical, 5)
-
+            
             Divider()
                 .padding(.vertical, 5)
             
@@ -84,10 +79,10 @@ struct NoteSettings: View {
                 
                 Spacer()
                 
-                ColorCircle("pagewhite", key: "1")
-                ColorCircle("pageyellow", key: "2")
-                ColorCircle("pagegray", key: "3")
-                ColorCircle("pageblack", key: "4")
+                ColorCircle("pagewhite")
+                ColorCircle("pageyellow")
+                ColorCircle("pagegray")
+                ColorCircle("pageblack")
                 
             }
             .padding(.top)
@@ -96,7 +91,7 @@ struct NoteSettings: View {
         .padding()
     }
     
-    @ViewBuilder func ColorCircle(_ value: String, key: KeyEquivalent) -> some View {
+    @ViewBuilder func ColorCircle(_ value: String) -> some View {
         Button(action: { withAnimation { backgroundColor = value } }) {
             Circle()
                 .fill(Color(value))
@@ -110,7 +105,6 @@ struct NoteSettings: View {
                     }
                 }
         }
-        .keyboardShortcut(key, modifiers: [.command])
     }
     
     func create() {
