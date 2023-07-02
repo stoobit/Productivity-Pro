@@ -121,12 +121,12 @@ struct AddPDFPageHelper: ViewModifier {
         
         for index in 0...pdf.pageCount - 1 {
             
-            let page = pdf.page(at: index)
-            let size = page!.bounds(for: .mediaBox).size
+            guard let page = pdf.page(at: index) else { return }
+            let size = page.bounds(for: .mediaBox).size
             
             let newPage = Page(
                 type: .pdf,
-                backgroundMedia: page?.dataRepresentation,
+                backgroundMedia: page.dataRepresentation,
                 backgroundColor: "pagewhite",
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height

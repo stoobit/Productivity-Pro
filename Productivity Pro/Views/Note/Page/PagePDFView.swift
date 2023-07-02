@@ -26,11 +26,17 @@ struct PagePDFView: View, Equatable {
         )
         .resizable()
         .scaledToFit()
+//        CGPDFViewRepresentable(page: $page)
+//        PDFRepresentationView(
+//            encodedPDF: page.backgroundMedia,
+//            isPortrait: page.isPortrait
+//        )
+//        BackgroundRepresentationView(data: page.backgroundMedia!)
         .frame(
-            width: getFrame().width * toolManager.zoomScale,
-            height: getFrame().height * toolManager.zoomScale
+            width: getFrame().width,
+            height: getFrame().height
         )
-        .scaleEffect(1/toolManager.zoomScale)
+//        .border(Color.red, width: 20)
     }
     
     func drawPDFFromURL(data: Data) -> UIImage? {
@@ -44,15 +50,15 @@ struct PagePDFView: View, Equatable {
         
         let pageRect = page.getBoxRect(.mediaBox)
         let renderer = UIGraphicsImageRenderer(size: CGSize(
-            width: getFrame().width * dpi,
-            height: getFrame().height * dpi)
+            width: pageRect.width * dpi,
+            height: pageRect.height * dpi)
         )
         
         let img = renderer.image { ctx in
             UIColor.white.set()
             ctx.fill(pageRect)
             
-            ctx.cgContext.translateBy(x: 0.0, y: getFrame().height * dpi)
+            ctx.cgContext.translateBy(x: 0.0, y: pageRect.height * dpi)
             ctx.cgContext.scaleBy(x: 1.0 * dpi, y: -1.0 * dpi)
             
             ctx.cgContext.drawPDFPage(page)
