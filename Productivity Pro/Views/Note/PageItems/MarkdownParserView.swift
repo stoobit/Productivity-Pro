@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MarkdownUI
+import SwiftyMarkdown
 
 struct MarkdownParserView: View {
     
@@ -16,37 +16,14 @@ struct MarkdownParserView: View {
     var page: Page
     
     var body: some View {
-        Markdown {
-            textField.text == "" ? "Markdown..." : textField.text
-        }
-        .disabled(true)
-        .markdownTextStyle {
-            FontSize(textField.fontSize * 2.5)
-            ForegroundColor(Color(codable: textField.fontColor))
-            FontFamily(.custom(textField.font))
-        }
-        .markdownTextStyle(\.link) {
-            ForegroundColor(Color.accentColor)
-        }
-        .markdownTextStyle(\.strikethrough) {
-            StrikethroughStyle(.init(pattern: .solid, color: .red))
-        }
-        .markdownTextStyle(\.code) {
-            FontWeight(.bold)
-            FontFamilyVariant(.monospaced)
-            ForegroundColor(Color("codecolor"))
-            FontSize(
-                textField.fontSize * 2.5
+        Text(markdown())
+            .padding([.top, .leading], 14)
+            .frame(
+                width: editItem.size.width,
+                height: editItem.size.height,
+                alignment: .topLeading
             )
-        }
-        .padding(.top, 7)
-        .padding(.leading, 14)
-        .frame(
-            width: editItem.size.width,
-            height: editItem.size.height,
-            alignment: .topLeading
-        )
-        .clipShape(Rectangle())
+            .clipShape(Rectangle())
     }
     
     func colorScheme() -> ColorScheme {
@@ -57,6 +34,38 @@ struct MarkdownParserView: View {
         }
         
         return cs
+    }
+    
+    func markdown() -> AttributedString {
+        let md = SwiftyMarkdown(string: textField.text)
+        
+        md.setFontNameForAllStyles(with: textField.font)
+        md.setFontSizeForAllStyles(with: textField.fontSize * 2)
+        
+        md.code.color = UIColor(Color("codecolor"))
+        md.code.fontStyle = .bold
+        
+        md.strikethrough.color = .red
+        
+        md.h6.fontSize = textField.fontSize * 2 + 5
+        md.h6.fontStyle = .bold
+        
+        md.h5.fontSize = textField.fontSize * 2 + 10
+        md.h5.fontStyle = .bold
+        
+        md.h4.fontSize = textField.fontSize * 2 + 15
+        md.h4.fontStyle = .bold
+        
+        md.h3.fontSize = textField.fontSize * 2 + 20
+        md.h3.fontStyle = .bold
+        
+        md.h2.fontSize = textField.fontSize * 2 + 25
+        md.h2.fontStyle = .bold
+        
+        md.h1.fontSize = textField.fontSize * 2 + 30
+        md.h1.fontStyle = .bold
+        
+        return AttributedString(md.attributedString())
     }
     
 }

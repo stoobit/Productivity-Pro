@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "swift-markdown-ui",
+      "identity" : "swiftymarkdown",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gonzalezreal/swift-markdown-ui",
+      "location" : "https://github.com/simonfairbairn/SwiftyMarkdown.git",
       "state" : {
-        "revision" : "12b351a75201a8124c2f2e1f9fc6ef5cd812c0b9",
-        "version" : "2.1.0"
+        "revision" : "dde451ab4ed9b77b328e21baa471fdfa0cf61369",
+        "version" : "1.2.4"
       }
     }
   ],
