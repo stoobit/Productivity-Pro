@@ -48,9 +48,11 @@ struct PageView: View {
                 
                 if page.type == .pdf {
                     
-                    PagePDFView(
+                    PageBackgroundPDF(
                         page: $page,
-                        toolManager: toolManager
+                        offset: $offset,
+                        toolManager: toolManager,
+                        isOverview: isOverview
                     ).equatable()
                     
                 } else if page.type == .image {

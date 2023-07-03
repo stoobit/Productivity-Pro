@@ -75,7 +75,6 @@
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9F70EA28E7A57C007DF951 /* AddPageView.swift */; };
-		BBA4B29D2A4DA6DE006544D4 /* PDFRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4B29C2A4DA6DE006544D4 /* PDFRepresentableView.swift */; };
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* MarkdownParserView.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
@@ -123,7 +122,7 @@
 		BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */; };
 		BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAE29A1A97000EF297A /* EditMediaItemView.swift */; };
 		BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */; };
-		BBDABD3F29D257410038CFC2 /* PagePDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3E29D257410038CFC2 /* PagePDFView.swift */; };
+		BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */; };
 		BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC62712905EED800364B57 /* IndicatorText.swift */; };
 		BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */; };
 		BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D9299E9506004C99AE /* Hexagon.swift */; };
@@ -213,7 +212,6 @@
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BB9F70EA28E7A57C007DF951 /* AddPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPageView.swift; sourceTree = "<group>"; };
-		BBA4B29C2A4DA6DE006544D4 /* PDFRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFRepresentableView.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
 		BBADD1362A5102620075B825 /* MarkdownParserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownParserView.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
@@ -261,7 +259,7 @@
 		BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAE29A1A97000EF297A /* EditMediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMediaItemView.swift; sourceTree = "<group>"; };
 		BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPDFPageHelper.swift; sourceTree = "<group>"; };
-		BBDABD3E29D257410038CFC2 /* PagePDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePDFView.swift; sourceTree = "<group>"; };
+		BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundPDF.swift; sourceTree = "<group>"; };
 		BBDC62712905EED800364B57 /* IndicatorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorText.swift; sourceTree = "<group>"; };
 		BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeItemView.swift; sourceTree = "<group>"; };
 		BBDCF5D9299E9506004C99AE /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
@@ -322,8 +320,7 @@
 				BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */,
 				BB73324F2A294D440001FD6A /* PageBackgroundView.swift */,
 				BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */,
-				BBDABD3E29D257410038CFC2 /* PagePDFView.swift */,
-				BBA4B29C2A4DA6DE006544D4 /* PDFRepresentableView.swift */,
+				BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -868,7 +865,6 @@
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BB4CDD4528D3C668009A409F /* ContentView.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */,
-				BBA4B29D2A4DA6DE006544D4 /* PDFRepresentableView.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
 				BB4CDD5828D3D532009A409F /* DocumentView.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
@@ -906,7 +902,7 @@
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
-				BBDABD3F29D257410038CFC2 /* PagePDFView.swift in Sources */,
+				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBCFF43E2A30711400EAC5F5 /* UnlockModel.swift in Sources */,
 				BBCCE50028D54233001DBD8A /* NoteBackgroundIcons.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
