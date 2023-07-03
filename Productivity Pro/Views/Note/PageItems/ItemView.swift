@@ -10,6 +10,7 @@ import SwiftUI
 struct ItemView: View {
     
     @Binding var document: ProductivityProDocument
+    @Binding var offset: CGFloat
     
     @Binding var page: Page
     @Binding var item: ItemModel
@@ -31,7 +32,8 @@ struct ItemView: View {
                         item: $item,
                         page: $page,
                         toolManager: toolManager,
-                        editItem: editItemModel
+                        editItem: editItemModel,
+                        offset: $offset
                     )
                 } else if item.type == .media {
                     MediaItemView(

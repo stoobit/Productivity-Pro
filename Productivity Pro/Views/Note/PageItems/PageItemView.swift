@@ -11,6 +11,7 @@ struct PageItemView: View {
     
     @Binding var document: ProductivityProDocument
     @Binding var page: Page
+    @Binding var offset: CGFloat
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
@@ -20,6 +21,7 @@ struct PageItemView: View {
             
             ItemView(
                 document: $document,
+                offset: $offset,
                 page: $page,
                 item: $item,
                 toolManager: toolManager,

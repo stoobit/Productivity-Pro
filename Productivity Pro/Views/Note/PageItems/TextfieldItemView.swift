@@ -8,7 +8,10 @@ struct TextFieldItemView: View {
     @StateObject var toolManager: ToolManager
     @StateObject var editItem: EditItemModel
     
-    @State var renderedImage: UIImage = UIImage()
+    @State var renderedImage: UIImage?
+    @Binding var offset: CGFloat
+    
+    
     
     var body: some View {
         ZStack {
@@ -35,36 +38,58 @@ struct TextFieldItemView: View {
                     alignment: .topLeading
                 )
             
-            Image(uiImage: renderedImage)
-                .resizable()
-                .scaledToFit()
-                .frame(
-                    width: editItem.size.width * toolManager.zoomScale,
-                    height: editItem.size.height * toolManager.zoomScale,
-                    alignment: .topLeading
-                )
-            
+            if let image = renderedImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(
+                        width: editItem.size.width * toolManager.zoomScale,
+                        height: editItem.size.height * toolManager.zoomScale,
+                        alignment: .topLeading
+                    )
+                    .onChange(of: editItem.size, perform: { _ in
+                        if toolManager.selectedTab == page.id {
+                            renderTextField()
+                        }
+                    })
+                    .onChange(of: item.textField, perform: { _ in
+                        if toolManager.selectedTab == page.id {
+                            renderTextField()
+                        }
+                    })
+                    .onChange(of: toolManager.zoomScale, perform: { value in
+                        if toolManager.selectedTab == page.id {
+                            renderTextField()
+                        }
+                    })
+                    .onChange(of: offset) { _ in
+                        if offset == 0 && toolManager.selectedTab == page.id {
+                            renderTextField()
+                        }
+                    }
+            }
         }
-        .onAppear() {
-            renderedImage = renderTextField()
+        .onAppear {
+            Task {
+                try? await Task.sleep(nanoseconds: 50000)
+                if toolManager.selectedTab != page.id {
+                    renderPreview()
+                } else {
+                    renderTextField()
+                }
+            }
         }
-        .onChange(of: editItem.size, perform: { value in
-            renderedImage = renderTextField()
-        })
-        .onChange(of: item.textField, perform: { value in
-            renderedImage = renderTextField()
-        })
-        .onChange(of: toolManager.zoomScale, perform: { value in
-            renderedImage = renderTextField()
-        })
+        .onDisappear {
+            renderedImage = nil
+        }
     }
     
     @MainActor
-    func renderTextField() -> UIImage {
-        var image: UIImage = renderedImage
+    func renderTextField() {
+        var image: UIImage = renderedImage ?? UIImage()
         
         guard let textField = item.textField else {
-            return image
+            return
         }
         
         var view: some View {
@@ -90,7 +115,34 @@ struct TextFieldItemView: View {
             image = rendering
         }
         
-        return image
+        renderedImage = image
+    }
+    
+    @MainActor
+    func renderPreview() {
+        
+        guard let textField = item.textField else {
+            return
+        }
+        
+        var view: some View {
+            MarkdownParserView(
+                editItem: editItem,
+                textField: textField,
+                page: page
+            )
+            .frame(
+                width: editItem.size.width * 0.2,
+                height: editItem.size.height * 0.2
+            )
+            .scaleEffect(0.2)
+        }
+        
+        let renderer = ImageRenderer(content: view)
+        renderer.isOpaque = false
+        renderer.scale = 1
+        
+        renderedImage = renderer.uiImage
     }
     
     func colorScheme() -> ColorScheme {

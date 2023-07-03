@@ -17,7 +17,8 @@ struct MarkdownParserView: View {
     
     var body: some View {
         Text(markdown())
-            .padding([.top, .leading], 14)
+            .padding(.leading, 14)
+            .padding(.top, 7)
             .frame(
                 width: editItem.size.width,
                 height: editItem.size.height,
@@ -37,10 +38,17 @@ struct MarkdownParserView: View {
     }
     
     func markdown() -> AttributedString {
-        let md = SwiftyMarkdown(string: textField.text)
+        var md = SwiftyMarkdown(string: textField.text)
+        
+        if textField.text == "" {
+            md = SwiftyMarkdown(string: "Markdown...")
+        }
         
         md.setFontNameForAllStyles(with: textField.font)
         md.setFontSizeForAllStyles(with: textField.fontSize * 2)
+        md.setFontColorForAllStyles(
+            with: UIColor(Color(codable: textField.fontColor)!)
+        )
         
         md.code.color = UIColor(Color("codecolor"))
         md.code.fontStyle = .bold

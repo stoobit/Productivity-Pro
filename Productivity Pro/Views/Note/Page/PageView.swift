@@ -69,6 +69,7 @@ struct PageView: View {
             PageItemView(
                 document: $document,
                 page: $page,
+                offset: $offset,
                 toolManager: toolManager,
                 subviewManager: subviewManager
             )
