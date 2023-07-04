@@ -124,9 +124,19 @@ struct AddPDFPageHelper: ViewModifier {
             guard let page = pdf.page(at: index) else { return }
             let size = page.bounds(for: .mediaBox).size
             
+            var data: Data?
+            var type: PageType = .pdf
+            
+            if page.string == nil || page.string?.trimmingCharacters(in: .whitespaces) == "" {
+                data = renderPDF(page, size: size)
+                type = .image
+            } else {
+                data = page.dataRepresentation
+            }
+            
             let newPage = Page(
-                type: .pdf,
-                backgroundMedia: page.dataRepresentation,
+                type: type,
+                backgroundMedia: data,
                 backgroundColor: "pagewhite",
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height
@@ -145,6 +155,12 @@ struct AddPDFPageHelper: ViewModifier {
             toolManager.showProgress = false
         }
         
+    }
+    
+    func renderPDF(_ pdf: PDFPage, size: CGSize) -> Data? {
+        var image: UIImage?
+        image = pdf.thumbnail(of: size, for: .mediaBox)
+        return image?.jpegData(compressionQuality: 0.7)
     }
     
 }
