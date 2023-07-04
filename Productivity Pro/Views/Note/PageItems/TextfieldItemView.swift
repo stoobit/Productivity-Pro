@@ -47,19 +47,20 @@ struct TextFieldItemView: View {
                     )
                     .onChange(of: editItem.size) { _ in renderTextField() }
                     .onChange(of: item.textField) { _ in renderTextField() }
-                    .onChange(of: offset) { _ in
-                        if offset == 0 { renderTextField() }
-                    }
             }
         }
         .onChange(of: toolManager.zoomScale) { _ in renderTextField() }
+        .onChange(of: offset) { _ in
+            if offset == 0 {
+                renderTextField()
+            } else if toolManager.selectedTab != page.id && renderedImage == nil {
+                renderPreview()
+            }
+        }
         .onDisappear {
             if toolManager.selectedTab != page.id {
                 renderedImage = nil
             }
-        }
-        .onAppear {
-            renderPreview()
         }
         
     }
