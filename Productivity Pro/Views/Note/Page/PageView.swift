@@ -57,6 +57,7 @@ struct PageView: View {
                     
                 } else if page.type == .image {
                     PageBackgroundScan(
+                        document: $document,
                         page: $page,
                         offset: $offset,
                         toolManager: toolManager,

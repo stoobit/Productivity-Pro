@@ -8,6 +8,7 @@
 import SwiftUI
 import PencilKit
 
+@MainActor
 struct DrawingViewRepresentable: UIViewRepresentable {
     
     var size: CGSize
@@ -112,7 +113,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
+        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
             cs = .light
         }
         

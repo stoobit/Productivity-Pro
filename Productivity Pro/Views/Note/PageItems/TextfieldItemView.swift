@@ -11,8 +11,6 @@ struct TextFieldItemView: View {
     @State var renderedImage: UIImage?
     @Binding var offset: CGFloat
     
-    
-    
     var body: some View {
         ZStack {
             
@@ -47,75 +45,59 @@ struct TextFieldItemView: View {
                         height: editItem.size.height * toolManager.zoomScale,
                         alignment: .topLeading
                     )
-                    .onChange(of: editItem.size, perform: { _ in
-                        if toolManager.selectedTab == page.id {
-                            renderTextField()
-                        }
-                    })
-                    .onChange(of: item.textField, perform: { _ in
-                        if toolManager.selectedTab == page.id {
-                            renderTextField()
-                        }
-                    })
-                    .onChange(of: toolManager.zoomScale, perform: { value in
-                        if toolManager.selectedTab == page.id {
-                            renderTextField()
-                        }
-                    })
+                    .onChange(of: editItem.size) { _ in renderTextField() }
+                    .onChange(of: item.textField) { _ in renderTextField() }
                     .onChange(of: offset) { _ in
-                        if offset == 0 && toolManager.selectedTab == page.id {
-                            renderTextField()
-                        }
+                        if offset == 0 { renderTextField() }
                     }
             }
         }
-        .onAppear {
-            Task {
-                try? await Task.sleep(nanoseconds: 50000)
-                if toolManager.selectedTab != page.id {
-                    renderPreview()
-                } else {
-                    renderTextField()
-                }
+        .onChange(of: toolManager.zoomScale) { _ in renderTextField() }
+        .onDisappear {
+            if toolManager.selectedTab != page.id {
+                renderedImage = nil
             }
         }
-        .onDisappear {
-            renderedImage = nil
+        .onAppear {
+            renderPreview()
         }
+        
     }
     
     @MainActor
     func renderTextField() {
-        var image: UIImage = renderedImage ?? UIImage()
-        
-        guard let textField = item.textField else {
-            return
+        if toolManager.selectedTab == page.id && offset == 0{
+            var image: UIImage = renderedImage ?? UIImage()
+            
+            guard let textField = item.textField else {
+                return
+            }
+            
+            var view: some View {
+                MarkdownParserView(
+                    editItem: editItem,
+                    textField: textField,
+                    page: page
+                )
+            }
+            
+            let renderer = ImageRenderer(content: view)
+            let scale = 2 * toolManager.zoomScale
+            
+            renderer.isOpaque = false
+            
+            if scale < 1 {
+                renderer.scale = 1
+            } else {
+                renderer.scale = scale
+            }
+            
+            if let rendering = renderer.uiImage {
+                image = rendering
+            }
+            
+            renderedImage = image
         }
-        
-        var view: some View {
-            MarkdownParserView(
-                editItem: editItem,
-                textField: textField,
-                page: page
-            )
-        }
-        
-        let renderer = ImageRenderer(content: view)
-        let scale = 2 * toolManager.zoomScale
-        
-        renderer.isOpaque = false
-        
-        if scale < 1 {
-            renderer.scale = 1
-        } else {
-            renderer.scale = scale
-        }
-        
-        if let rendering = renderer.uiImage {
-            image = rendering
-        }
-        
-        renderedImage = image
     }
     
     @MainActor
@@ -131,11 +113,11 @@ struct TextFieldItemView: View {
                 textField: textField,
                 page: page
             )
+            .scaleEffect(0.2)
             .frame(
                 width: editItem.size.width * 0.2,
                 height: editItem.size.height * 0.2
             )
-            .scaleEffect(0.2)
         }
         
         let renderer = ImageRenderer(content: view)
@@ -148,7 +130,7 @@ struct TextFieldItemView: View {
     func colorScheme() -> ColorScheme {
         var cs: ColorScheme = .dark
         
-        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
+        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
             cs = .light
         }
         

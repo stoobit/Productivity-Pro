@@ -27,16 +27,6 @@ struct MarkdownParserView: View {
             .clipShape(Rectangle())
     }
     
-    func colorScheme() -> ColorScheme {
-        var cs: ColorScheme = .dark
-        
-        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
-            cs = .light
-        }
-        
-        return cs
-    }
-    
     func markdown() -> AttributedString {
         var md = SwiftyMarkdown(string: textField.text)
         

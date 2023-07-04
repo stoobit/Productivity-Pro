@@ -171,7 +171,7 @@ extension NoteView {
     func colorScheme(page: Page) -> ColorScheme {
         var cs: ColorScheme = .dark
         
-        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
+        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
             cs = .light
         }
         

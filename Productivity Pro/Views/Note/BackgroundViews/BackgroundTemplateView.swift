@@ -61,7 +61,7 @@ struct BackgroundTemplateView: View {
     func colorScheme() -> ColorScheme {
         var cs: ColorScheme = .dark
         
-        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
+        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
             cs = .light
         }
         

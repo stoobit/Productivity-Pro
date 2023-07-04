@@ -238,7 +238,7 @@ struct Icon<Content: View>: View {
     func colorScheme() -> ColorScheme {
         var cs: ColorScheme = .dark
         
-        if backgroundColor == "pagewhite" || backgroundColor == "pageyellow" {
+        if backgroundColor == "pagewhite" || backgroundColor == "white" || backgroundColor == "pageyellow" || backgroundColor == "yellow"{
             cs = .light
         }
         

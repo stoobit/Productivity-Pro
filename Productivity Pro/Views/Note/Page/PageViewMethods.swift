@@ -32,7 +32,7 @@ extension PageView {
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if page.backgroundColor == "pageyellow" || page.backgroundColor == "pagewhite" {
+        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
             cs = .light
         }
         
