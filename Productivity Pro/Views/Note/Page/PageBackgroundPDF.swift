@@ -10,9 +10,7 @@ import PDFKit
 
 struct PageBackgroundPDF: View, Equatable {
     
-    @State private var renderedPreview: UIImage?
     @State private var renderedBackground: UIImage?
-    @State private var pdfDocument: PDFDocument?
     
     @Binding var page: Page
     @Binding var offset: CGFloat
@@ -23,8 +21,8 @@ struct PageBackgroundPDF: View, Equatable {
     var body: some View {
         ZStack {
             
-            if let rendering = renderedBackground, let preview = renderedPreview {
-                Image(uiImage: offset == 0 ? rendering : preview)
+            if let rendering = renderedBackground {
+                Image(uiImage: rendering)
                     .resizable()
                     .scaledToFit()
                     .frame(
@@ -33,7 +31,7 @@ struct PageBackgroundPDF: View, Equatable {
                     )
                     .scaleEffect(1/toolManager.zoomScale)
                     .onChange(of: toolManager.zoomScale) { _ in
-                        if toolManager.selectedTab == page.id{
+                        if toolManager.selectedTab == page.id {
                             render()
                         }
                     }
@@ -44,12 +42,6 @@ struct PageBackgroundPDF: View, Equatable {
         }
         .allowsHitTesting(false)
         .onAppear {
-            if pdfDocument == nil {
-                if let media = page.backgroundMedia {
-                    pdfDocument = PDFDocument(data: media)
-                }
-            }
-            
             if toolManager.selectedTab == page.id {
                 render()
             } else if isOverview == true {
@@ -91,14 +83,15 @@ struct PageBackgroundPDF: View, Equatable {
     }
     
     func renderPreview() {
-        if renderedBackground == nil {
-            let thumbnail = pdfDocument?.page(at: 0)?.thumbnail(of: CGSize(
-                width: getFrame().width * 0.2,
-                height: getFrame().width * 0.2
-            ), for: .mediaBox)
-            
-            renderedBackground = thumbnail
-            renderedPreview = thumbnail
+        if let media = page.backgroundMedia {
+            if renderedBackground == nil {
+                let thumbnail = PDFDocument(data: media)?.page(at: 0)?.thumbnail(of: CGSize(
+                    width: getFrame().width * 0.2,
+                    height: getFrame().width * 0.2
+                ), for: .mediaBox)
+                
+                renderedBackground = thumbnail
+            }
         }
     }
     
@@ -107,12 +100,14 @@ struct PageBackgroundPDF: View, Equatable {
     }
     
     func render() {
-        let thumbnail = pdfDocument?.page(at: 0)?.thumbnail(of: CGSize(
-            width: getFrame().width * 2.5 * toolManager.zoomScale,
-            height: getFrame().width * 2.5 * toolManager.zoomScale
-        ), for: .mediaBox)
-        
-        renderedBackground = thumbnail
+        if let media = page.backgroundMedia {
+            let thumbnail = PDFDocument(data: media)?.page(at: 0)?.thumbnail(of: CGSize(
+                width: getFrame().width * 2.5 * toolManager.zoomScale,
+                height: getFrame().width * 2.5 * toolManager.zoomScale
+            ), for: .mediaBox)
+            
+            renderedBackground = thumbnail
+        }
     }
     
     @ViewBuilder func LoadingView() -> some View {
