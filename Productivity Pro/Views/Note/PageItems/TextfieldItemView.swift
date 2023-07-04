@@ -47,32 +47,33 @@ struct TextFieldItemView: View {
                     )
             }
         }
-        .onChange(of: editItem.size) { _ in renderTextField() }
-        .onChange(of: item.textField) { _ in renderTextField() }
-        .onChange(of: toolManager.zoomScale) { _ in renderTextField() }
-        .onChange(of: offset) { _ in
-            if offset == 0 {
-                renderTextField()
-            } else if toolManager.selectedTab != page.id && renderedImage == nil {
+        .onChange(of: editItem.size) { _ in render() }
+        .onChange(of: item.textField) { _ in render() }
+        .onChange(of: toolManager.zoomScale) { _ in
+            render()
+            renderPreview()
+        }
+        .onChange(of: offset) { value in
+            if offset == 0 && toolManager.selectedTab == page.id {
+                render()
+            }
+        }
+        .onAppear {
+            if toolManager.selectedTab == page.id {
+                render()
+            } else {
                 renderPreview()
             }
         }
         .onDisappear {
-            if toolManager.selectedTab != page.id {
-                renderedImage = nil
-            }
-        }
-        .onAppear {
-            if toolManager.selectedTab == page.id && offset == 0 {
-                renderTextField()
-            }
+            renderedImage = nil
         }
         
     }
     
     @MainActor
-    func renderTextField() {
-        if toolManager.selectedTab == page.id && offset == 0{
+    func render() {
+        if toolManager.selectedTab == page.id && offset == 0 {
             var image: UIImage = renderedImage ?? UIImage()
             
             guard let textField = item.textField else {
@@ -108,29 +109,30 @@ struct TextFieldItemView: View {
     
     @MainActor
     func renderPreview() {
-        
-        guard let textField = item.textField else {
-            return
+        if renderedImage == nil {
+            guard let textField = item.textField else {
+                return
+            }
+            
+            var view: some View {
+                MarkdownParserView(
+                    editItem: editItem,
+                    textField: textField,
+                    page: page
+                )
+                .scaleEffect(0.2)
+                .frame(
+                    width: editItem.size.width * 0.2,
+                    height: editItem.size.height * 0.2
+                )
+            }
+            
+            let renderer = ImageRenderer(content: view)
+            renderer.isOpaque = false
+            renderer.scale = 1
+            
+            renderedImage = renderer.uiImage
         }
-        
-        var view: some View {
-            MarkdownParserView(
-                editItem: editItem,
-                textField: textField,
-                page: page
-            )
-            .scaleEffect(0.2)
-            .frame(
-                width: editItem.size.width * 0.2,
-                height: editItem.size.height * 0.2
-            )
-        }
-        
-        let renderer = ImageRenderer(content: view)
-        renderer.isOpaque = false
-        renderer.scale = 1
-        
-        renderedImage = renderer.uiImage
     }
     
     func colorScheme() -> ColorScheme {
