@@ -68,20 +68,6 @@ struct AddPDFPageHelper: ViewModifier {
             }
     }
     
-    func convert(scan: VNDocumentCameraScan) -> PDFDocument {
-        let pdfDocument = PDFDocument()
-        for pageIndex in 0..<scan.pageCount {
-            let pageImage = scan.imageOfPage(at: pageIndex)
-            let pdfPage = PDFPage(image: pageImage)
-            
-            if let page = pdfPage {
-                pdfDocument.insert(page, at: pageIndex)
-            }
-        }
-        
-        return pdfDocument
-    }
-    
     func add(scan: VNDocumentCameraScan) {
         var count = 1
         
@@ -110,8 +96,10 @@ struct AddPDFPageHelper: ViewModifier {
         
         Task {
             try? await Task.sleep(nanoseconds: 1000000000)
-            toolManager.selectedPage += 1
-            toolManager.showProgress = false
+            await MainActor.run {
+                toolManager.selectedPage += 1
+                toolManager.showProgress = false
+            }
         }
         
     }
@@ -151,8 +139,10 @@ struct AddPDFPageHelper: ViewModifier {
         
         Task {
             try? await Task.sleep(nanoseconds: 1000000000)
-            toolManager.selectedPage += 1
-            toolManager.showProgress = false
+            await MainActor.run {
+                toolManager.selectedPage += 1
+                toolManager.showProgress = false
+            }
         }
         
     }

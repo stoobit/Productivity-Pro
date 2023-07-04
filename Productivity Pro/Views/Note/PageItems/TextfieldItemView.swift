@@ -45,10 +45,10 @@ struct TextFieldItemView: View {
                         height: editItem.size.height * toolManager.zoomScale,
                         alignment: .topLeading
                     )
-                    .onChange(of: editItem.size) { _ in renderTextField() }
-                    .onChange(of: item.textField) { _ in renderTextField() }
             }
         }
+        .onChange(of: editItem.size) { _ in renderTextField() }
+        .onChange(of: item.textField) { _ in renderTextField() }
         .onChange(of: toolManager.zoomScale) { _ in renderTextField() }
         .onChange(of: offset) { _ in
             if offset == 0 {
@@ -60,6 +60,11 @@ struct TextFieldItemView: View {
         .onDisappear {
             if toolManager.selectedTab != page.id {
                 renderedImage = nil
+            }
+        }
+        .onAppear {
+            if toolManager.selectedTab == page.id && offset == 0 {
+                renderTextField()
             }
         }
         

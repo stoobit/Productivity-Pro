@@ -152,6 +152,8 @@ struct CopyPasteMenuView: View {
                             
                             pasteItem.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + pasteItem.height/2 + 40
                             
+                            pasteItem.isLocked = false
+                            
                             document.document.note.pages[
                                 toolManager.selectedPage
                             ].items.append(pasteItem)
