@@ -19,7 +19,6 @@ struct ScrollViewWrapper: View {
     @StateObject var subviewManager: SubviewManager
     
     var body: some View {
-        
         ZoomableScrollView(
             size: size,
             document: $document,

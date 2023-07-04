@@ -8,7 +8,6 @@
 import SwiftUI
 import PencilKit
 
-@MainActor
 struct DrawingViewRepresentable: UIViewRepresentable {
     
     var size: CGSize

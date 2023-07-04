@@ -36,7 +36,7 @@ struct PageBackgroundScan: View, Equatable {
         }
         .allowsHitTesting(false)
         .onAppear {
-            if toolManager.selectedTab == page.id {
+            if page.id == toolManager.selectedTab {
                 render()
             } else if isOverview == true {
                 renderOverview()

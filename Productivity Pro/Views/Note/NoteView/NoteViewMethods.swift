@@ -86,7 +86,7 @@ extension NoteView {
             undoManager?.removeAllActions()
         }
     }
-
+    
     func addImage(_ img: UIImage) {
         let image = resize(img, to: CGSize(width: 1024, height: 1024))
         
@@ -122,14 +122,13 @@ extension NoteView {
         
         withAnimation {
             if toolManager.selectedTab == document.document.note.pages.last!.id {
-                
                 removePage(next: -1)
             } else {
                 removePage(next: 1)
             }
         }
         
-        undoManager?.removeAllActions() 
+        undoManager?.removeAllActions()
     }
     
     func removePage(next: Int) {
@@ -149,13 +148,20 @@ extension NoteView {
             })! - next
         ].id
         
-        document.document.note.pages.removeAll(where: {
-            $0.id == toRemove
-        })
-        
-        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
-            $0.id == toolManager.selectedTab
-        })!
+        Task {
+            try await Task.sleep(nanoseconds: 50000)
+            document.document.note.pages[
+                toolManager.selectedPage + next
+            ].type = .template
+            
+            document.document.note.pages.removeAll(where: {
+                $0.id == toRemove
+            })
+            
+            toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
+                $0.id == toolManager.selectedTab
+            })!
+        }
     }
     
     func pageIndicator() {
