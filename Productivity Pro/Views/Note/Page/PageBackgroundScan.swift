@@ -35,7 +35,26 @@ struct PageBackgroundScan: View, Equatable {
             }
         }
         .allowsHitTesting(false)
-        
+        .onAppear {
+            if toolManager.selectedTab == page.id {
+                render()
+            } else if isOverview == true {
+                renderOverview()
+            } else {
+                renderPreview()
+            }
+        }
+        .onChange(of: offset) { value in
+            if offset == 0 &&
+                toolManager.selectedTab == page.id &&
+                isOverview == false
+            {
+                render()
+            }
+        }
+        .onDisappear {
+            renderedBackground = nil
+        }
     }
     
     func getFrame() -> CGSize {
