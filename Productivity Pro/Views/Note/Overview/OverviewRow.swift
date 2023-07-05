@@ -20,53 +20,40 @@ struct OverviewRow: View {
     
     var body: some View {
         Button(action: { openPage() }) {
-            HStack {
-                VStack(alignment: .leading) {
+                HStack {
                     
-                    if header() != "" {
-                        Text(header())
-                            .font(.title.bold())
-                            .lineLimit(1)
-                    }
-                    
-                    if let date = page.date {
-                        Text(date, format: .dateTime)
-                    } else {
-                        Text("Date not available.")
-                    }
-                    
-                    Text(pageNumber())
-                        .foregroundStyle(Color.secondary)
-                        .font(.caption)
+                    Text("")
+                        .overlay { PageOverview() }
+                        .frame(width: 150, height: 150)
                     
                     Spacer()
+                    
+                    VStack(alignment: .trailing) {
+                        
+                        if header() != "" {
+                            Text(header())
+                                .font(.title3.bold())
+                                .lineLimit(1)
+                        }
+                        
+                        if let date = page.date {
+                            Text(date, format: .dateTime)
+                        } else {
+                            Text("Date not available.")
+                        }
+                        
+                        Spacer()
+                        
+                        Text(pageNumber())
+                            .foregroundStyle(Color.secondary)
+                            .font(.caption)
+                    }
+                    .padding(.leading, 30)
+                    
                 }
-                .padding(.trailing)
-                
-                Spacer()
-                
-                Text("")
-//                    .overlay { PageOverview() }
-                    .frame(width: 150, height: 150)
-                
-            }
         }
         .frame(maxWidth: .infinity, minHeight: 200)
         .padding(.vertical)
-        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            Button(action: { toggleBookmark(page: page) }) {
-                Image(systemName: bookmarkState())
-            }
-            .tint(.accentColor)
-        }
-        .swipeActions(edge: .leading, allowsFullSwipe: true) {
-            Button(action: {
-                subviewManager.isDeletePageAlert = true
-            }) {
-                Image(systemName: "trash")
-            }
-            .tint(.red)
-        }
         
     }
     

@@ -31,18 +31,32 @@ struct OverviewView: View {
         
         NavigationStack {
             TabView(selection: $selectedTab) {
-                
-                Overview(document.document.note.pages)
-                    .tag(OverviewListType.all)
-                    .tabItem {
-                        Label("All", systemImage: "list.bullet")
+                List {
+                    ForEach(document.document.note.pages) { page in
+                        OverviewRow(
+                            document: $document,
+                            toolManager: toolManager,
+                            subviewManager: subviewManager,
+                            page: page
+                        )
+                        .deleteDisabled(
+                            document.document.note.pages.count < 2
+                        )
                     }
+                    .onMove(perform: move)
+                    .onDelete(perform: delete)
+                }
+                .listStyle(.plain)
+                .tag(OverviewListType.all)
+                .tabItem {
+                    Label("All", systemImage: "list.bullet")
+                }
                 
-                Overview(filteredPages)
-                    .tag(OverviewListType.bookmark)
-                    .tabItem {
-                        Label("Bookmarked", systemImage: "bookmark.fill")
-                    }
+//                Overview(filteredPages)
+//                    .tag(OverviewListType.bookmark)
+//                    .tabItem {
+//                        Label("Bookmarked", systemImage: "bookmark.fill")
+//                    }
                 
             }
             .navigationTitle("Overview")
@@ -73,27 +87,18 @@ struct OverviewView: View {
         }
     }
     
-    @ViewBuilder func Overview(_ pages: [Page]) -> some View {
-        if pages.isEmpty {
-            
-            Image(systemName: "bookmark.slash.fill")
-                .font(.system(size: 75))
-                .foregroundColor(.secondary)
-            
-        } else {
-            List(pages) { page in
-                OverviewRow(
-                    document: $document,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager,
-                    page: page
-                )
-                .listRowInsets(.none)
-                .listRowSeparator(.hidden, edges: .all)
-            }
-            .animation(.default, value: pages.count)
-            .listStyle(.plain)
-        }
+    func move(from source: IndexSet, to destination: Int) {
+        document.document.note.pages.move(fromOffsets: source, toOffset: destination)
+        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
+            $0.id == toolManager.selectedTab
+        })!
+    }
+    
+    func delete(at offsets: IndexSet) {
+        document.document.note.pages[offsets.first!].items = []
+        document.document.note.pages[offsets.first!].type = .template
+        
+        document.document.note.pages.remove(atOffsets: offsets)
     }
     
 }
