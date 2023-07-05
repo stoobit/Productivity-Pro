@@ -114,17 +114,23 @@ struct AddPDFPageHelper: ViewModifier {
             
             var data: Data?
             var type: PageType = .pdf
+            var header: String?
             
             if page.string == nil || page.string?.trimmingCharacters(in: .whitespaces) == "" {
+                
                 data = renderPDF(page, size: size)
                 type = .image
+                
             } else {
                 data = page.dataRepresentation
+                header = page.string?.components(separatedBy: .newlines).first
+                header = header?.trimmingCharacters(in: .whitespacesAndNewlines)
             }
             
             let newPage = Page(
                 type: type,
                 backgroundMedia: data,
+                header: header,
                 backgroundColor: "pagewhite",
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height

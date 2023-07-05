@@ -16,6 +16,7 @@ struct Page: Codable, Identifiable, Hashable {
     var date: Date? = Date()
     
     var backgroundMedia: Data?
+    var header: String?
     
     var backgroundColor: String
     var backgroundTemplate: String

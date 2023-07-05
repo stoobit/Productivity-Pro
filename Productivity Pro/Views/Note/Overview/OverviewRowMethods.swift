@@ -6,8 +6,39 @@
 //
 
 import SwiftUI
+import PDFKit
+import SwiftyMarkdown
 
 extension OverviewRow {
+    
+    func pageNumber() -> String {
+        let index = document.document.note.pages.firstIndex(of: page) ?? -1
+        return "Page \(index + 1)"
+    }
+    
+    func header() -> String {
+        var text: String = ""
+        
+        if page.type == .pdf {
+            
+            if let header = page.header {
+                text = header
+            }
+            
+        } else {
+            let textFields = page.items.filter(
+                { $0.type == .textField && $0.isLocked == true }
+            )
+            
+            if let string = textFields.first?.textField?.text {
+                text = SwiftyMarkdown(
+                    string: string
+                ).attributedString().string
+            }
+        }
+        return text
+    }
+
     
     func openPage() {
         withAnimation {

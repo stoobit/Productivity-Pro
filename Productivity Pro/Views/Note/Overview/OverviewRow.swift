@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import PDFKit
 
 struct OverviewRow: View {
     
@@ -23,13 +22,12 @@ struct OverviewRow: View {
         Button(action: { openPage() }) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(header().0)
-                        .font(.title.bold())
-                        .lineLimit(1)
                     
-                    Text(header().1)
-                        .lineLimit(1)
-                    Spacer()
+                    if header() != "" {
+                        Text(header())
+                            .font(.title.bold())
+                            .lineLimit(1)
+                    }
                     
                     if let date = page.date {
                         Text(date, format: .dateTime)
@@ -40,13 +38,15 @@ struct OverviewRow: View {
                     Text(pageNumber())
                         .foregroundStyle(Color.secondary)
                         .font(.caption)
+                    
+                    Spacer()
                 }
                 .padding(.trailing)
                 
                 Spacer()
                 
                 Text("")
-                    .overlay { PageOverview() }
+//                    .overlay { PageOverview() }
                     .frame(width: 150, height: 150)
                 
             }
@@ -99,32 +99,4 @@ struct OverviewRow: View {
             
         }
     }
-    
-    func pageNumber() -> String {
-        let index = document.document.note.pages.firstIndex(of: page) ?? -1
-        return "Page \(index + 1)"
-    }
-    
-    func header() -> (String, String) {
-        var text: String = ""
-        
-        if page.type == .pdf {
-            if let document = PDFDocument(data: page.backgroundMedia!) {
-                text = document.page(at: 0)?.string ?? ""
-            }
-            
-        } else {
-            
-        }
-        
-        let title = text.components(separatedBy: .newlines).first ?? ""
-        var subtitle: String = ""
-        
-        if text.components(separatedBy: .newlines).indices.contains(1) {
-            subtitle = text.components(separatedBy: .newlines)[1]
-        }
-        
-        return (title, subtitle)
-    }
-
 }
