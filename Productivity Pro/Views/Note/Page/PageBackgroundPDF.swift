@@ -84,8 +84,8 @@ struct PageBackgroundPDF: View, Equatable {
         if let media = page.backgroundMedia {
             if renderedBackground == nil {
                 let thumbnail = PDFDocument(data: media)?.page(at: 0)?.thumbnail(of: CGSize(
-                    width: getFrame().width * 0.1,
-                    height: getFrame().width * 0.1
+                    width: getFrame().width * 0.2,
+                    height: getFrame().width * 0.2
                 ), for: .mediaBox)
                 
                 renderedBackground = thumbnail
