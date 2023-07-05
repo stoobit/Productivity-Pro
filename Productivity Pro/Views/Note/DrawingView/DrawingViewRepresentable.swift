@@ -53,6 +53,11 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
         
+        if toolManager.isEditorVisible == false {
+            toolPicker.isRulerActive = false
+            canvasView.isRulerActive = false
+        }
+        
         if canvasView.zoomScale != toolManager.zoomScale {
             canvasView.setZoomScale(toolManager.zoomScale, animated: false)
         }
