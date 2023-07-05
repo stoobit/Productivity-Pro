@@ -29,33 +29,8 @@ struct NoteSideActionToolbar: ToolbarContent {
                 DrawingModeDisabled()
             }
             
-            if subviewManager.isPresentationMode {
-                Button(action: {
-                   toggleBookmark()
-                }) {
-                    Image(systemName: document.document.note.pages[toolManager.selectedPage].isBookmarked ? "bookmark.fill" : "bookmark")
-                        .foregroundStyle(Color.red)
-                }
-            }
-            
             if subviewManager.isPresentationMode == false {
                 Menu(content: {
-                    Section {
-                        let isBookmarked = document.document.note.pages[
-                            toolManager.selectedPage
-                        ].isBookmarked
-                        
-                        Button(action: {
-                           toggleBookmark()
-                        }) {
-                            Label(
-                                isBookmarked ? "Remove Bookmark" : "Add Bookmark",
-                                systemImage:
-                                    isBookmarked ? "bookmark.fill" : "bookmark"
-                            )
-                        }
-                    }
-                    
                     Section {
                         Button(action: {
                             toolManager.isCanvasEnabled = false

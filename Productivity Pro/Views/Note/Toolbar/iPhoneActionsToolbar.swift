@@ -45,12 +45,6 @@ struct iPhoneActionsToolbar: ToolbarContent {
                 Label("Overview", systemImage: "square.grid.2x2")
             }
             
-            Button(action: {
-                document.document.note.pages[toolManager.selectedPage].isBookmarked.toggle()
-            }) {
-                Image(systemName: document.document.note.pages[toolManager.selectedPage].isBookmarked ? "bookmark.fill" : "bookmark")
-                    .foregroundColor(Color("red"))
-            }
         }
         
     }

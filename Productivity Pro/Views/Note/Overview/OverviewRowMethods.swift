@@ -43,18 +43,8 @@ extension OverviewRow {
     func openPage() {
         withAnimation {
             toolManager.selectedTab = page.id
-            subviewManager.overviewSheet.toggle()
         }
-    }
-    
-    func bookmarkState() -> String {
-        var icon: String = "bookmark"
-        
-        if page.isBookmarked {
-            icon = "bookmark.slash"
-        }
-        
-        return icon
+        subviewManager.overviewSheet.toggle()
     }
     
     func getFrame() -> CGSize {
@@ -67,15 +57,5 @@ extension OverviewRow {
         }
         
         return frame
-    }
-    
-    func toggleBookmark(page: Page) {
-        undoManager?.disableUndoRegistration()
-        
-        document.document.note.pages[
-            document.document.note.pages.firstIndex(of: page)!
-        ].isBookmarked.toggle()
-        
-        undoManager?.enableUndoRegistration()
     }
 }

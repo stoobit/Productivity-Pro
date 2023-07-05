@@ -21,69 +21,27 @@ struct OverviewView: View {
     @State var isDeleteAlert: Bool = false
     @State var current: Page?
     
-    @State var selectedTab: OverviewListType = .all
     @State var pageToDelete: Page!
     
     var body: some View {
-        let filteredPages: [Page] = document.document.note.pages.filter({
-            $0.isBookmarked == true
-        })
-        
+    
         NavigationStack {
-            TabView(selection: $selectedTab) {
-                List {
-                    ForEach($document.document.note.pages) { $page in
-                        OverviewRow(
-                            document: $document,
-                            toolManager: toolManager,
-                            subviewManager: subviewManager,
-                            page: page
-                        )
-                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                            Button(action: {
-                                
-                            }) {
-                                Image(systemName: page.isBookmarked ? "bookmark.slash" : "bookmark")
-                            }
-                            .tint(Color.accentColor)
-                        }
-                        .deleteDisabled(
-                            document.document.note.pages.count < 2
-                        )
-                    }
-                    .onMove(perform: move)
-                    .onDelete(perform: delete)
+            List {
+                ForEach($document.document.note.pages) { $page in
+                    OverviewRow(
+                        document: $document,
+                        toolManager: toolManager,
+                        subviewManager: subviewManager,
+                        page: page
+                    )
+                    .moveDisabled(document.document.note.pages.count == 1)
                 }
-                .listStyle(.plain)
-                .tag(OverviewListType.all)
-                .tabItem {
-                    Label("All", systemImage: "list.bullet")
-                }
-                
-                List {
-                    ForEach(filteredPages) { page in
-                        OverviewRow(
-                            document: $document,
-                            toolManager: toolManager,
-                            subviewManager: subviewManager,
-                            page: page
-                        )
-                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                            Button(action: {
-                               
-                            }) {
-                                Image(systemName: page.isBookmarked ? "bookmark.slash" : "bookmark")
-                            }
-                            .tint(Color.accentColor)
-                        }
-                    }
-                }
-                .listStyle(.plain)
-                .tag(OverviewListType.bookmark)
-                .tabItem {
-                    Label("Bookmarked", systemImage: "bookmark.fill")
-                }
-                
+                .onMove(perform: move)
+                .onDelete(perform: delete)
+            }
+            .listStyle(.plain)
+            .tabItem {
+                Label("All", systemImage: "list.bullet")
             }
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)

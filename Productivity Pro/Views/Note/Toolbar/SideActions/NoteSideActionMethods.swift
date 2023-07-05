@@ -38,14 +38,4 @@ extension NoteSideActionToolbar {
         undoManager?.redo()
     }
     
-    func toggleBookmark() {
-        undoManager?.disableUndoRegistration()
-        
-        document.document.note.pages[
-            toolManager.selectedPage
-        ].isBookmarked.toggle()
-        
-        undoManager?.enableUndoRegistration()
-    }
-    
 }
