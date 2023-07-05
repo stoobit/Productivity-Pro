@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PDFKit
 
 struct OverviewRow: View {
     
@@ -16,31 +17,41 @@ struct OverviewRow: View {
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
-    let page: Page
+    var page: Page
     
     var body: some View {
-        Button(action: { goToPage(page: page) }) {
+        Button(action: { openPage() }) {
             HStack {
-                RoundedRectangle(cornerRadius: 9)
-                    .foregroundStyle(.secondary)
-                    .frame(width: 105, height: 148.5)
-                    .frame(width: 148.5, height: 148.5)
+                VStack(alignment: .leading) {
+                    Text(header().0)
+                        .font(.title.bold())
+                        .lineLimit(1)
+                    
+                    Text(header().1)
+                        .lineLimit(1)
+                    Spacer()
+                    
+                    if let date = page.date {
+                        Text(date, format: .dateTime)
+                    } else {
+                        Text("Date not available.")
+                    }
+                    
+                    Text(pageNumber())
+                        .foregroundStyle(Color.secondary)
+                        .font(.caption)
+                }
+                .padding(.trailing)
                 
                 Spacer()
                 
-                OverviewRowInformation(
-                    document: $document.document,
-                    page: page
-                )
+                Text("")
+                    .overlay { PageOverview() }
+                    .frame(width: 150, height: 150)
                 
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-                    .foregroundStyle(Color.accentColor)
-                    .font(.title.bold())
-                    .padding(.trailing, 5)
             }
         }
+        .frame(maxWidth: .infinity, minHeight: 200)
         .padding(.vertical)
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(action: { toggleBookmark(page: page) }) {
@@ -59,4 +70,61 @@ struct OverviewRow: View {
         
     }
     
+    @ViewBuilder func PageOverview() -> some View {
+        ZStack {
+            PageView(
+                document: $document,
+                page: .constant(page),
+                offset: .constant(0),
+                toolManager: ToolManager(),
+                subviewManager: subviewManager,
+                showShadow: true,
+                isOverview: true,
+                size: .zero
+            )
+            .scaleEffect(150 / getFrame().width)
+            .frame(
+                width: 150,
+                height: (150 / getFrame().width) * getFrame().height
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 9))
+            .allowsHitTesting(false)
+            
+            RoundedRectangle(cornerRadius: 9)
+                .stroke(Color.secondary, lineWidth: 2.0)
+                .frame(
+                    width: 150,
+                    height: (150 / getFrame().width) * getFrame().height
+                )
+            
+        }
+    }
+    
+    func pageNumber() -> String {
+        let index = document.document.note.pages.firstIndex(of: page) ?? -1
+        return "Page \(index + 1)"
+    }
+    
+    func header() -> (String, String) {
+        var text: String = ""
+        
+        if page.type == .pdf {
+            if let document = PDFDocument(data: page.backgroundMedia!) {
+                text = document.page(at: 0)?.string ?? ""
+            }
+            
+        } else {
+            
+        }
+        
+        let title = text.components(separatedBy: .newlines).first ?? ""
+        var subtitle: String = ""
+        
+        if text.components(separatedBy: .newlines).indices.contains(1) {
+            subtitle = text.components(separatedBy: .newlines)[1]
+        }
+        
+        return (title, subtitle)
+    }
+
 }

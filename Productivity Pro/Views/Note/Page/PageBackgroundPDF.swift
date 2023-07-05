@@ -44,8 +44,6 @@ struct PageBackgroundPDF: View, Equatable {
         .onAppear {
             if toolManager.selectedTab == page.id {
                 render()
-            } else if isOverview == true {
-                renderOverview()
             } else {
                 renderPreview()
             }
@@ -86,17 +84,13 @@ struct PageBackgroundPDF: View, Equatable {
         if let media = page.backgroundMedia {
             if renderedBackground == nil {
                 let thumbnail = PDFDocument(data: media)?.page(at: 0)?.thumbnail(of: CGSize(
-                    width: getFrame().width * 0.2,
-                    height: getFrame().width * 0.2
+                    width: getFrame().width * 0.1,
+                    height: getFrame().width * 0.1
                 ), for: .mediaBox)
                 
                 renderedBackground = thumbnail
             }
         }
-    }
-    
-    func renderOverview() {
-        
     }
     
     func render() {

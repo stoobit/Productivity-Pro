@@ -29,7 +29,9 @@ struct PageView: View {
     
     @State var isTargeted: Bool = true
     
+    var showShadow: Bool = true
     var isOverview: Bool = false
+    
     let size: CGSize
     
     var body: some View {
@@ -38,7 +40,7 @@ struct PageView: View {
                 PageBackgroundView(
                     page: $page,
                     toolManager: toolManager,
-                    showShadow: true
+                    showShadow: showShadow
                 )
                 
                 BackgroundTemplateView(

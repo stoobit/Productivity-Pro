@@ -91,6 +91,7 @@ struct OverviewView: View {
                 .listRowInsets(.none)
                 .listRowSeparator(.hidden, edges: .all)
             }
+            .animation(.default, value: pages.count)
             .listStyle(.plain)
         }
     }

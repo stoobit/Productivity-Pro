@@ -9,7 +9,7 @@ import SwiftUI
 
 extension OverviewRow {
     
-    func goToPage(page: Page) {
+    func openPage() {
         withAnimation {
             toolManager.selectedTab = page.id
             subviewManager.overviewSheet.toggle()
@@ -26,7 +26,7 @@ extension OverviewRow {
         return icon
     }
     
-    func getFrame(page: Page) -> CGSize {
+    func getFrame() -> CGSize {
         var frame: CGSize = .zero
         
         if page.isPortrait {

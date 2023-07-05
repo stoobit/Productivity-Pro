@@ -117,6 +117,7 @@
 		BBCFF43A2A3069E600EAC5F5 /* MarkupLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF4392A3069E600EAC5F5 /* MarkupLabel.swift */; };
 		BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */; };
 		BBCFF43E2A30711400EAC5F5 /* UnlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF43D2A30711400EAC5F5 /* UnlockModel.swift */; };
+		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
 		BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */; };
@@ -254,6 +255,7 @@
 		BBCFF4392A3069E600EAC5F5 /* MarkupLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupLabel.swift; sourceTree = "<group>"; };
 		BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleShareButton.swift; sourceTree = "<group>"; };
 		BBCFF43D2A30711400EAC5F5 /* UnlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockModel.swift; sourceTree = "<group>"; };
+		BBD3C4202A54DA46002BFFCF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemView.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 			isa = PBXGroup;
 			children = (
 				BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */,
+				BBD3C4202A54DA46002BFFCF /* View.swift */,
 				BBDC62712905EED800364B57 /* IndicatorText.swift */,
 				BB0BE2062925A7C200F4004A /* BottomOffset.swift */,
 				BBCB2AEC294E800D00C68B72 /* DragHelper.swift */,
@@ -824,6 +827,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
 				BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */,
