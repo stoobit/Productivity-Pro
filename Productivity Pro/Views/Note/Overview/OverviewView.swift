@@ -32,13 +32,21 @@ struct OverviewView: View {
         NavigationStack {
             TabView(selection: $selectedTab) {
                 List {
-                    ForEach(document.document.note.pages) { page in
+                    ForEach($document.document.note.pages) { $page in
                         OverviewRow(
                             document: $document,
                             toolManager: toolManager,
                             subviewManager: subviewManager,
                             page: page
                         )
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            Button(action: {
+                                
+                            }) {
+                                Image(systemName: page.isBookmarked ? "bookmark.slash" : "bookmark")
+                            }
+                            .tint(Color.accentColor)
+                        }
                         .deleteDisabled(
                             document.document.note.pages.count < 2
                         )
@@ -52,11 +60,29 @@ struct OverviewView: View {
                     Label("All", systemImage: "list.bullet")
                 }
                 
-//                Overview(filteredPages)
-//                    .tag(OverviewListType.bookmark)
-//                    .tabItem {
-//                        Label("Bookmarked", systemImage: "bookmark.fill")
-//                    }
+                List {
+                    ForEach(filteredPages) { page in
+                        OverviewRow(
+                            document: $document,
+                            toolManager: toolManager,
+                            subviewManager: subviewManager,
+                            page: page
+                        )
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            Button(action: {
+                               
+                            }) {
+                                Image(systemName: page.isBookmarked ? "bookmark.slash" : "bookmark")
+                            }
+                            .tint(Color.accentColor)
+                        }
+                    }
+                }
+                .listStyle(.plain)
+                .tag(OverviewListType.bookmark)
+                .tabItem {
+                    Label("Bookmarked", systemImage: "bookmark.fill")
+                }
                 
             }
             .navigationTitle("Overview")
@@ -85,20 +111,6 @@ struct OverviewView: View {
                     Text("You cannot undo this action.")
                 }
         }
-    }
-    
-    func move(from source: IndexSet, to destination: Int) {
-        document.document.note.pages.move(fromOffsets: source, toOffset: destination)
-        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
-            $0.id == toolManager.selectedTab
-        })!
-    }
-    
-    func delete(at offsets: IndexSet) {
-        document.document.note.pages[offsets.first!].items = []
-        document.document.note.pages[offsets.first!].type = .template
-        
-        document.document.note.pages.remove(atOffsets: offsets)
     }
     
 }
