@@ -35,7 +35,11 @@ extension OverviewRow {
                     string: string
                 ).attributedString().string
             }
+            
+            text = text.components(separatedBy: .newlines).first ?? ""
+            text = text.trimmingCharacters(in: .whitespacesAndNewlines)
         }
+        
         return text
     }
 

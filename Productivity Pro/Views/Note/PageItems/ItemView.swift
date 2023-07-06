@@ -19,6 +19,7 @@ struct ItemView: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var editItemModel: EditItemModel = EditItemModel()
     
+    var highRes: Bool
     var body: some View {
             Group {
                 if item.type == .shape {
@@ -33,7 +34,8 @@ struct ItemView: View {
                         page: $page,
                         toolManager: toolManager,
                         editItem: editItemModel,
-                        offset: $offset
+                        offset: $offset,
+                        highRes: highRes
                     )
                 } else if item.type == .media {
                     MediaItemView(

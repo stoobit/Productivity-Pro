@@ -16,6 +16,7 @@ struct PageItemView: View {
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
+    var highRes: Bool
     var body: some View {
         ForEach($page.items) { $item in
             
@@ -25,7 +26,8 @@ struct PageItemView: View {
                 page: $page,
                 item: $item,
                 toolManager: toolManager,
-                subviewManager: subviewManager
+                subviewManager: subviewManager,
+                highRes: highRes
             )
             .onTapGesture {
                 if subviewManager.showStylePopover == false {

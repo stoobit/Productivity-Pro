@@ -10,8 +10,8 @@ import SwiftyMarkdown
 
 struct MarkdownParserView: View {
     
-    var editItem: EditItemModel
-    var textField: TextFieldModel
+    @StateObject var editItem: EditItemModel
+    @Binding var itemModel: ItemModel
     
     var page: Page
     
@@ -28,6 +28,10 @@ struct MarkdownParserView: View {
     }
     
     func markdown() -> AttributedString {
+        guard let textField = itemModel.textField else {
+            return AttributedString("Error")
+        }
+        
         var md = SwiftyMarkdown(string: textField.text)
         
         if textField.text == "" {

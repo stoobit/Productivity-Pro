@@ -198,14 +198,15 @@ struct CopyPasteMenuView: View {
     
     func deleteItem() {
         
-        if let item = toolManager.selectedItem?.id {
+        let selectedItem = toolManager.selectedItem
+        if let item = selectedItem?.id {
+            
             document.document.note.pages[
                 toolManager.selectedPage
             ].items.removeAll(where: { $0.id == item })
         }
-        
+    
         toolManager.copyPastePasser = .none
-        toolManager.selectedItem = nil
     }
     
     func disablePasteboard() {

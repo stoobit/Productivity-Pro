@@ -30,7 +30,7 @@ struct PageView: View {
     @State var isTargeted: Bool = true
     
     var showShadow: Bool = true
-    var isOverview: Bool = false
+    var highRes: Bool = false
     
     let size: CGSize
     
@@ -54,7 +54,7 @@ struct PageView: View {
                         page: $page,
                         offset: $offset,
                         toolManager: toolManager,
-                        isOverview: isOverview
+                        isOverview: highRes
                     ).equatable()
                     
                 } else if page.type == .image {
@@ -63,7 +63,7 @@ struct PageView: View {
                         page: $page,
                         offset: $offset,
                         toolManager: toolManager,
-                        isOverview: isOverview
+                        isOverview: highRes
                     ).equatable()
                     
                 }
@@ -76,7 +76,8 @@ struct PageView: View {
                 page: $page,
                 offset: $offset,
                 toolManager: toolManager,
-                subviewManager: subviewManager
+                subviewManager: subviewManager,
+                highRes: highRes
             )
             
             DrawingView(

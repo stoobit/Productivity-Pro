@@ -63,10 +63,10 @@ struct OverviewRow: View {
                 document: $document,
                 page: .constant(page),
                 offset: .constant(0),
-                toolManager: ToolManager(),
+                toolManager: tm(),
                 subviewManager: subviewManager,
                 showShadow: true,
-                isOverview: true,
+                highRes: true,
                 size: .zero
             )
             .scaleEffect(150 / getFrame().width)
@@ -85,5 +85,12 @@ struct OverviewRow: View {
                 )
             
         }
+    }
+    
+    func tm() -> ToolManager {
+        let tm = ToolManager()
+        tm.zoomScale = 1
+        
+        return tm
     }
 }

@@ -11,6 +11,7 @@ struct TextFieldItemView: View {
     @State var renderedImage: UIImage?
     @Binding var offset: CGFloat
     
+    var highRes: Bool
     var body: some View {
         ZStack {
             
@@ -36,54 +37,58 @@ struct TextFieldItemView: View {
                     alignment: .topLeading
                 )
             
-            if let image = renderedImage {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(
-                        width: editItem.size.width * toolManager.zoomScale,
-                        height: editItem.size.height * toolManager.zoomScale,
-                        alignment: .topLeading
-                    )
+            if highRes == false {
+                if let image = renderedImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(
+                            width: editItem.size.width * toolManager.zoomScale,
+                            height: editItem.size.height * toolManager.zoomScale,
+                            alignment: .topLeading
+                        )
+                }
+                
+            } else {
+                MarkdownParserView(
+                    editItem: editItem,
+                    itemModel: $item,
+                    page: page
+                )
+                .frame(
+                    width: editItem.size.width * toolManager.zoomScale,
+                    height: editItem.size.height * toolManager.zoomScale,
+                    alignment: .topLeading
+                )
+                .onAppear {
+                    print("Döner")
+                }
             }
         }
         .onChange(of: editItem.size) { _ in render() }
         .onChange(of: item.textField) { _ in render() }
+        .onChange(of: offset) { value in render() }
         .onChange(of: toolManager.zoomScale) { _ in
             render()
             renderPreview()
         }
-        .onChange(of: offset) { value in
-            if offset == 0 && toolManager.selectedTab == page.id {
-                render()
-            }
-        }
         .onAppear {
-            if toolManager.selectedTab == page.id {
-                render()
-            } else {
-                renderPreview()
-            }
+            render()
+            renderPreview()
         }
-        .onDisappear {
-            renderedImage = nil
-        }
+        .onDisappear { renderedImage = nil }
         
     }
     
     @MainActor
     func render() {
-        if toolManager.selectedTab == page.id && offset == 0 {
+        if toolManager.selectedTab == page.id && offset == 0 && highRes == false {
             var image: UIImage = renderedImage ?? UIImage()
-            
-            guard let textField = item.textField else {
-                return
-            }
             
             var view: some View {
                 MarkdownParserView(
                     editItem: editItem,
-                    textField: textField,
+                    itemModel: $item,
                     page: page
                 )
             }
@@ -109,15 +114,12 @@ struct TextFieldItemView: View {
     
     @MainActor
     func renderPreview() {
-        if renderedImage == nil {
-            guard let textField = item.textField else {
-                return
-            }
+        if renderedImage == nil && highRes == false {
             
             var view: some View {
                 MarkdownParserView(
                     editItem: editItem,
-                    textField: textField,
+                    itemModel: $item,
                     page: page
                 )
                 .scaleEffect(0.2)
