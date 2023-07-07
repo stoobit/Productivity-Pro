@@ -17,9 +17,10 @@ struct PageBackgroundScan: View, Equatable {
     @StateObject var toolManager: ToolManager
     
     var isOverview: Bool
+    var pdfRendering: Bool
+    
     var body: some View {
         ZStack {
-            
             if let rendering = renderedBackground {
                 Image(uiImage: rendering)
                     .resizable()
@@ -30,13 +31,13 @@ struct PageBackgroundScan: View, Equatable {
                     )
                     .scaleEffect(1/toolManager.zoomScale)
                 
-            } else {
-               LoadingView()
             }
         }
         .allowsHitTesting(false)
         .onAppear {
-            if page.id == toolManager.selectedTab {
+            if pdfRendering {
+                renderPDFQuality()
+            } else if page.id == toolManager.selectedTab {
                 render()
             } else {
                 renderPreview()
@@ -45,7 +46,7 @@ struct PageBackgroundScan: View, Equatable {
         .onChange(of: offset) { value in
             if offset == 0 &&
                 toolManager.selectedTab == page.id &&
-                isOverview == false
+                isOverview == false && pdfRendering == false
             {
                 render()
             }
@@ -65,13 +66,6 @@ struct PageBackgroundScan: View, Equatable {
         }
         
         return frame
-    }
-    
-    static func == (
-        lhs: PageBackgroundScan,
-        rhs: PageBackgroundScan
-    ) -> Bool {
-        true
     }
     
     func renderPreview() {
@@ -95,14 +89,17 @@ struct PageBackgroundScan: View, Equatable {
         renderedBackground = resized
     }
     
-    @ViewBuilder func LoadingView() -> some View {
-        Text("Loading...")
-            .font(.system(size: 20 * toolManager.zoomScale))
-            .frame(
-                width: toolManager.zoomScale * getFrame().width,
-                height: toolManager.zoomScale * getFrame().height
-            )
-            .scaleEffect(1/toolManager.zoomScale)
+    func renderPDFQuality() {
+        guard let media = page.backgroundMedia else { return }
+        let image = UIImage(data: media) ?? UIImage()
+        
+        renderedBackground = image
     }
     
+    static func == (
+        lhs: PageBackgroundScan,
+        rhs: PageBackgroundScan
+    ) -> Bool {
+        true
+    }
 }

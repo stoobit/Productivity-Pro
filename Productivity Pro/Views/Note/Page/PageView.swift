@@ -56,16 +56,19 @@ struct PageView: View {
                         page: $page,
                         offset: $offset,
                         toolManager: toolManager,
-                        isOverview: highRes
+                        isOverview: highRes,
+                        pdfRendering: pdfRendering
                     ).equatable()
                     
                 } else if page.type == .image {
+                    
                     PageBackgroundScan(
                         document: $document,
                         page: $page,
                         offset: $offset,
                         toolManager: toolManager,
-                        isOverview: highRes
+                        isOverview: highRes,
+                        pdfRendering: pdfRendering
                     ).equatable()
                     
                 }

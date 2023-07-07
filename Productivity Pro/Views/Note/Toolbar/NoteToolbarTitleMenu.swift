@@ -134,30 +134,6 @@ struct NoteToolbarTitleMenu: View {
             var view: some View {
                 ZStack {
                     
-                    if page.type == .pdf {
-                        
-                        Image(uiImage: renderPDF(tm, page: page))
-                            .resizable()
-                            .scaledToFit()
-                            .frame(
-                                width: tm.zoomScale * getFrame(page: page).width,
-                                height: tm.zoomScale * getFrame(page: page).height
-                            )
-                            .scaleEffect(1/tm.zoomScale)
-                        
-                    } else if page.type == .image {
-                        
-                        Image(uiImage: UIImage(data: page.backgroundMedia!) ?? UIImage())
-                            .resizable()
-                            .scaledToFit()
-                            .frame(
-                                width: tm.zoomScale * getFrame(page: page).width,
-                                height: tm.zoomScale * getFrame(page: page).height
-                            )
-                            .scaleEffect(1/tm.zoomScale)
-                        
-                    } else if page.type == .template {}
-                    
                     PageView(
                         document: $document,
                         page: .constant(page),
@@ -198,20 +174,6 @@ struct NoteToolbarTitleMenu: View {
         
         
         return url
-    }
-    
-    func renderPDF(_ toolManager: ToolManager, page: Page) -> UIImage {
-        let page: PDFPage = (PDFDocument(
-            data: page.backgroundMedia!
-        )?.page(at: 0))!
-        
-        let factor = toolManager.zoomScale * 6
-        let image: UIImage = page.thumbnail(
-            of: page.bounds(for: .mediaBox).size * factor,
-            for: .mediaBox
-        )
-        
-        return image
     }
     
     func renderCanvas(page: Page) -> UIImage {

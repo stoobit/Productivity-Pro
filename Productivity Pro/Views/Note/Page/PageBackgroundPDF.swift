@@ -18,9 +18,10 @@ struct PageBackgroundPDF: View, Equatable {
     @StateObject var toolManager: ToolManager
     
     var isOverview: Bool
+    var pdfRendering: Bool
+    
     var body: some View {
         ZStack {
-            
             if let rendering = renderedBackground {
                 Image(uiImage: rendering)
                     .resizable()
@@ -36,13 +37,13 @@ struct PageBackgroundPDF: View, Equatable {
                         }
                     }
                 
-            } else {
-               LoadingView()
             }
         }
         .allowsHitTesting(false)
         .onAppear {
-            if toolManager.selectedTab == page.id {
+            if pdfRendering {
+                renderPDFQuality()
+            } else if toolManager.selectedTab == page.id {
                 render()
             } else {
                 renderPreview()
@@ -73,13 +74,6 @@ struct PageBackgroundPDF: View, Equatable {
         return frame
     }
     
-    static func == (
-        lhs: PageBackgroundPDF,
-        rhs: PageBackgroundPDF
-    ) -> Bool {
-        true
-    }
-    
     func renderPreview() {
         if let media = page.backgroundMedia {
             if renderedBackground == nil {
@@ -104,14 +98,22 @@ struct PageBackgroundPDF: View, Equatable {
         }
     }
     
-    @ViewBuilder func LoadingView() -> some View {
-        Text("Loading...")
-            .font(.system(size: 20 * toolManager.zoomScale))
-            .frame(
-                width: toolManager.zoomScale * getFrame().width,
-                height: toolManager.zoomScale * getFrame().height
-            )
-            .scaleEffect(1/toolManager.zoomScale)
+    func renderPDFQuality() {
+        if let media = page.backgroundMedia {
+            let thumbnail = PDFDocument(data: media)?.page(at: 0)?.thumbnail(of: CGSize(
+                width: getFrame().width * 7,
+                height: getFrame().width * 7
+            ), for: .mediaBox)
+            
+            renderedBackground = thumbnail
+        }
+    }
+    
+    static func == (
+        lhs: PageBackgroundPDF,
+        rhs: PageBackgroundPDF
+    ) -> Bool {
+        true
     }
     
 }
