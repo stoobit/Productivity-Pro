@@ -115,8 +115,13 @@ struct NoteToolbarTitleMenu: View {
             return url
         }
         
+        let tm = ToolManager()
+        tm.scrollOffset = CGPoint(x: 0, y: 0)
+        tm.zoomScale = 1
+        
         for page in document.document.note.pages {
             
+            let renderedCanvas = renderCanvas(page: page)
             var box = CGRect(
                 x: 0,
                 y: 0,
@@ -125,10 +130,6 @@ struct NoteToolbarTitleMenu: View {
             )
             
             pdf.beginPage(mediaBox: &box)
-            
-            let tm = ToolManager()
-            tm.scrollOffset = CGPoint(x: 0, y: 0)
-            tm.zoomScale = 1
             
             var view: some View {
                 ZStack {
@@ -168,14 +169,13 @@ struct NoteToolbarTitleMenu: View {
                         size: getFrame(page: page)
                     )
                     
-                    Image(uiImage: renderCanvas(page: page))
+                    Image(uiImage: renderedCanvas)
                         .resizable()
                         .scaledToFit()
                         .frame(
-                            width: tm.zoomScale * getFrame(page: page).width,
-                            height: tm.zoomScale * getFrame(page: page).height
+                            width: getFrame(page: page).width,
+                            height: getFrame(page: page).height
                         )
-                        .scaleEffect(1/tm.zoomScale)
                     
                 }
                 .frame(
