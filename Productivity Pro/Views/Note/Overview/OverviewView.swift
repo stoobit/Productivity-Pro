@@ -26,22 +26,25 @@ struct OverviewView: View {
     var body: some View {
     
         NavigationStack {
-            List {
-                ForEach($document.document.note.pages) { $page in
-                    OverviewRow(
-                        document: $document,
-                        toolManager: toolManager,
-                        subviewManager: subviewManager,
-                        page: page
-                    )
-                    .moveDisabled(document.document.note.pages.count == 1)
+            ScrollViewReader { proxy in
+                List {
+                    ForEach($document.document.note.pages) { $page in
+                        OverviewRow(
+                            document: $document,
+                            toolManager: toolManager,
+                            subviewManager: subviewManager,
+                            page: page
+                        )
+                        .moveDisabled(document.document.note.pages.count == 1)
+                        .id(page.id)
+                    }
+                    .onMove(perform: move)
+                    .onDelete(perform: delete)
                 }
-                .onMove(perform: move)
-                .onDelete(perform: delete)
-            }
-            .listStyle(.plain)
-            .tabItem {
-                Label("All", systemImage: "list.bullet")
+                .listStyle(.plain)
+                .onAppear {
+                    proxy.scrollTo(toolManager.selectedTab)
+                }
             }
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)
