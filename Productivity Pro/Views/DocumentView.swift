@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DocumentView: View {
     
-    @AppStorage("afterUpdate 0.2.0")
+    @AppStorage("afterUpdate 0.4.2")
     private var firstOpenAU: Bool = true
     
     @State var whatIsNew: Bool = false
