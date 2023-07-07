@@ -30,6 +30,8 @@ struct PageView: View {
     @State var isTargeted: Bool = true
     
     var showShadow: Bool = true
+    
+    var pdfRendering: Bool = false
     var highRes: Bool = false
     
     let size: CGSize
@@ -80,12 +82,14 @@ struct PageView: View {
                 highRes: highRes
             )
             
-            DrawingView(
-                size: size,
-                page: $page,
-                toolManager: toolManager,
-                subviewManager: subviewManager
-            )
+            if pdfRendering == false {
+                DrawingView(
+                    size: size,
+                    page: $page,
+                    toolManager: toolManager,
+                    subviewManager: subviewManager
+                )
+            }
             
             SnapItemView(toolManager: toolManager, page: $page)
                 .scaleEffect(1/toolManager.zoomScale)

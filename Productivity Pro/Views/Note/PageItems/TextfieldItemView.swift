@@ -53,16 +53,14 @@ struct TextFieldItemView: View {
                 MarkdownParserView(
                     editItem: editItem,
                     itemModel: $item,
-                    page: page
+                    page: $page,
+                    highRes: true
                 )
                 .frame(
                     width: editItem.size.width * toolManager.zoomScale,
                     height: editItem.size.height * toolManager.zoomScale,
                     alignment: .topLeading
                 )
-                .onAppear {
-                    print("Döner")
-                }
             }
         }
         .onChange(of: editItem.size) { _ in render() }
@@ -89,7 +87,8 @@ struct TextFieldItemView: View {
                 MarkdownParserView(
                     editItem: editItem,
                     itemModel: $item,
-                    page: page
+                    page: $page,
+                    highRes: false
                 )
             }
             
@@ -120,7 +119,8 @@ struct TextFieldItemView: View {
                 MarkdownParserView(
                     editItem: editItem,
                     itemModel: $item,
-                    page: page
+                    page: $page,
+                    highRes: false
                 )
                 .scaleEffect(0.2)
                 .frame(

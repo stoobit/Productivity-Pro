@@ -121,7 +121,7 @@ struct NoteToolbarTitleMenu: View {
                 x: 0,
                 y: 0,
                 width: getFrame(page: page).width,
-                height: getFrame(page: page).height - 15
+                height: getFrame(page: page).height
             )
             
             pdf.beginPage(mediaBox: &box)
@@ -163,6 +163,7 @@ struct NoteToolbarTitleMenu: View {
                         offset: .constant(0),
                         toolManager: tm,
                         subviewManager: subviewManager,
+                        pdfRendering: true,
                         size: getFrame(page: page)
                     )
                     

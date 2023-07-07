@@ -56,7 +56,9 @@ struct NoteSheetHelper: ViewModifier {
                 isPresented: $subviewManager.addPageSettingsSheet,
                 onDismiss: { undoManager?.removeAllActions() }) {
                 AddPageView(
-                    document: $document, isPresented: $subviewManager.addPageSettingsSheet, toolManager: toolManager
+                    document: $document,
+                    isPresented: $subviewManager.addPageSettingsSheet,
+                    toolManager: toolManager
                 )
             }
             .sheet(isPresented: $subviewManager.overviewSheet, onDismiss: {

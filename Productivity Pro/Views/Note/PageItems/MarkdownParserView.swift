@@ -13,8 +13,9 @@ struct MarkdownParserView: View {
     @StateObject var editItem: EditItemModel
     @Binding var itemModel: ItemModel
     
-    var page: Page
+    @Binding var page: Page
     
+    var highRes: Bool
     var body: some View {
         Text(markdown())
             .padding(.leading, 14)
