@@ -11,7 +11,7 @@ import SwiftyMarkdown
 struct MarkdownParserView: View {
     
     @StateObject var editItem: EditItemModel
-    @Binding var itemModel: ItemModel
+    var itemModel: ItemModel
     
     @Binding var page: Page
     
@@ -35,7 +35,7 @@ struct MarkdownParserView: View {
         
         var md = SwiftyMarkdown(string: textField.text)
         
-        if textField.text == "" {
+        if textField.text == "" && highRes == false {
             md = SwiftyMarkdown(string: "Markdown...")
         }
         

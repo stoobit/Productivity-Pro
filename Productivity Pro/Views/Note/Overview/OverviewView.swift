@@ -40,11 +40,9 @@ struct OverviewView: View {
                     }
                     .onMove(perform: move)
                     .onDelete(perform: delete)
+
                 }
                 .listStyle(.plain)
-                .onAppear {
-                    proxy.scrollTo(toolManager.selectedTab)
-                }
             }
             .navigationTitle("Overview")
             .navigationBarTitleDisplayMode(.inline)

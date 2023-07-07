@@ -52,7 +52,7 @@ struct TextFieldItemView: View {
             } else {
                 MarkdownParserView(
                     editItem: editItem,
-                    itemModel: $item,
+                    itemModel: item,
                     page: $page,
                     highRes: true
                 )
@@ -86,7 +86,7 @@ struct TextFieldItemView: View {
             var view: some View {
                 MarkdownParserView(
                     editItem: editItem,
-                    itemModel: $item,
+                    itemModel: item,
                     page: $page,
                     highRes: false
                 )
@@ -118,7 +118,7 @@ struct TextFieldItemView: View {
             var view: some View {
                 MarkdownParserView(
                     editItem: editItem,
-                    itemModel: $item,
+                    itemModel: item,
                     page: $page,
                     highRes: false
                 )

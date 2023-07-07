@@ -79,7 +79,8 @@ struct PageView: View {
                 offset: $offset,
                 toolManager: toolManager,
                 subviewManager: subviewManager,
-                highRes: highRes
+                highRes: highRes,
+                pdfRendering: pdfRendering
             )
             
             if pdfRendering == false {

@@ -20,8 +20,17 @@ struct ItemView: View {
     @StateObject var editItemModel: EditItemModel = EditItemModel()
     
     var highRes: Bool
+    var pdfRendering: Bool
+    
     var body: some View {
+        
+        if pdfRendering {
+            self.setEditModel()
+        }
+        
+        return Group {
             Group {
+                
                 if item.type == .shape {
                     ShapeItemView(
                         item: $item,
@@ -60,12 +69,7 @@ struct ItemView: View {
                 )
             )
             .onAppear {
-                editItemModel.position = CGPoint(
-                    x: item.x, y: item.y
-                )
-                editItemModel.size = CGSize(
-                    width: item.width, height: item.height
-                )
+                setEditModel()
             }
             .onChange(of: item.x) { x in
                 editItemModel.position.x = x
@@ -88,6 +92,16 @@ struct ItemView: View {
             )
             .scaleEffect(toolManager.zoomScale)
             .zIndex(Double(page.items.count + 20))
+        }
         
+    }
+    
+    func setEditModel() {
+        editItemModel.position = CGPoint(
+            x: item.x, y: item.y
+        )
+        editItemModel.size = CGSize(
+            width: item.width, height: item.height
+        )
     }
 }

@@ -128,7 +128,7 @@ struct NoteToolbarTitleMenu: View {
             
             let tm = ToolManager()
             tm.scrollOffset = CGPoint(x: 0, y: 0)
-            tm.zoomScale = 1.2
+            tm.zoomScale = 1
             
             var view: some View {
                 ZStack {
@@ -164,6 +164,7 @@ struct NoteToolbarTitleMenu: View {
                         toolManager: tm,
                         subviewManager: subviewManager,
                         pdfRendering: true,
+                        highRes: true,
                         size: getFrame(page: page)
                     )
                     
