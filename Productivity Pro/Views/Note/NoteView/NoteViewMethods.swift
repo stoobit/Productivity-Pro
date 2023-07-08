@@ -120,13 +120,11 @@ extension NoteView {
             toolManager.selectedPage
         ].items = []
         
-//        withAnimation {
-//            if toolManager.selectedTab == document.document.note.pages.last!.id {
-//                removePage(next: -1)
-//            } else {
-//                removePage(next: 1)
-//            }
-//        }
+        if toolManager.selectedTab == document.document.note.pages.last?.id {
+            toolManager.selectedPage -= 1
+        } else {
+            toolManager.selectedPage += 1
+        }
         
         undoManager?.removeAllActions()
     }
@@ -142,21 +140,13 @@ extension NoteView {
             $0.id == toolManager.selectedTab
         })!
         
-        let toRemove = document.document.note.pages[
-            document.document.note.pages.firstIndex(where: {
-                $0.id == toolManager.selectedTab
-            })! - next
-        ].id
+        let toRemove = document.document.note.pages.firstIndex(where: {
+            $0.id == toolManager.selectedTab
+        })! - next
         
         Task {
             try await Task.sleep(nanoseconds: 50000)
-            document.document.note.pages[
-                toolManager.selectedPage + next
-            ].type = .template
-            
-            document.document.note.pages.removeAll(where: {
-                $0.id == toRemove
-            })
+            document.document.note.pages.remove(at: toRemove)
             
             toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
                 $0.id == toolManager.selectedTab

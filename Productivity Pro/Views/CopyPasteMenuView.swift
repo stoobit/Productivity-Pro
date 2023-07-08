@@ -10,6 +10,8 @@ import OnPasteboardChange
 
 struct CopyPasteMenuView: View {
     
+    @Environment(\.undoManager) private var undoManager
+    
     @Binding var document: ProductivityProDocument
     @State var pasteDisabled: Bool = false
     
@@ -180,7 +182,7 @@ struct CopyPasteMenuView: View {
             newItem.x += 50
             newItem.y += 50
             
-            newItem.isLocked = false 
+            newItem.isLocked = false
             
             document.document.note.pages[
                 toolManager.selectedPage
@@ -200,17 +202,18 @@ struct CopyPasteMenuView: View {
     
     func deleteItem() {
         
-        let selectedItem = toolManager.selectedItem
-        toolManager.selectedItem = nil
+        let index = document.document.note.pages[
+            toolManager.selectedPage
+        ].items.firstIndex(where: {
+            $0.id == toolManager.selectedItem?.id
+        })!
         
-        if let item = selectedItem?.id {
-            
-            document.document.note.pages[
-                toolManager.selectedPage
-            ].items.removeAll(where: { $0.id == item })
-        }
+        document.document.note.pages[
+            toolManager.selectedPage
+        ].items.remove(at: index)
     
         toolManager.copyPastePasser = .none
+        toolManager.selectedItem = nil
     }
     
     func disablePasteboard() {
