@@ -120,13 +120,13 @@ extension NoteView {
             toolManager.selectedPage
         ].items = []
         
-        withAnimation {
-            if toolManager.selectedTab == document.document.note.pages.last!.id {
-                removePage(next: -1)
-            } else {
-                removePage(next: 1)
-            }
-        }
+//        withAnimation {
+//            if toolManager.selectedTab == document.document.note.pages.last!.id {
+//                removePage(next: -1)
+//            } else {
+//                removePage(next: 1)
+//            }
+//        }
         
         undoManager?.removeAllActions()
     }

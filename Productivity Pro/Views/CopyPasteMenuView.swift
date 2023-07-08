@@ -180,6 +180,8 @@ struct CopyPasteMenuView: View {
             newItem.x += 50
             newItem.y += 50
             
+            newItem.isLocked = false 
+            
             document.document.note.pages[
                 toolManager.selectedPage
             ].items.append(newItem)
@@ -199,6 +201,8 @@ struct CopyPasteMenuView: View {
     func deleteItem() {
         
         let selectedItem = toolManager.selectedItem
+        toolManager.selectedItem = nil
+        
         if let item = selectedItem?.id {
             
             document.document.note.pages[
