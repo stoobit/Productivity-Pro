@@ -64,7 +64,7 @@ struct PageView: View {
                     
                     PageBackgroundScan(
                         document: $document,
-                        page: $page,
+                        page: page,
                         offset: $offset,
                         toolManager: toolManager,
                         isOverview: highRes,

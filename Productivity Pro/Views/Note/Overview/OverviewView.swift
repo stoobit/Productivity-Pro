@@ -36,6 +36,7 @@ struct OverviewView: View {
                             page: page
                         )
                         .moveDisabled(document.document.note.pages.count == 1)
+                        .deleteDisabled(document.document.note.pages.count == 1)
                         .id(page.id)
                     }
                     .onMove(perform: move)

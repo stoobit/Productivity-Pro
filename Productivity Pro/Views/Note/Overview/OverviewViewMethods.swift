@@ -18,10 +18,28 @@ extension OverviewView {
     
     func delete(at offsets: IndexSet) {
         document.document.note.pages[offsets.first!].items = []
-        document.document.note.pages[offsets.first!].type = .template
-        
-        document.document.note.pages.remove(atOffsets: offsets)
-    }
+            
+            document.document.note.pages[offsets.first!].type = .template
+            
+            if toolManager.selectedTab == document.document.note.pages.last?.id {
+                
+                let newSelection = document.document.note.pages[offsets.first! - 1].id
+                document.document.note.pages.remove(at: offsets.first!)
+                
+                toolManager.selectedTab = newSelection
+                
+            } else {
+                
+                let newSelection = document.document.note.pages[offsets.first! + 1].id
+                document.document.note.pages.remove(at: offsets.first!)
+                
+                toolManager.selectedTab = newSelection
+                
+            }
+            
+            undoManager?.removeAllActions()
+            toolManager.selectedItem = nil
+        }
     
     func delete(_ page: Page) {
         toolManager.selectedItem = nil

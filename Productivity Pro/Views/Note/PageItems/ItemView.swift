@@ -39,6 +39,7 @@ struct ItemView: View {
                     )
                 } else if item.type == .textField {
                     TextFieldItemView(
+                        document: $document,
                         item: $item,
                         page: $page,
                         toolManager: toolManager,

@@ -45,6 +45,8 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
         
+        toolManager.zoomScale = getScale()
+        
         return scrollView
     }
     

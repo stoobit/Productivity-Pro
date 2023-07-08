@@ -114,7 +114,6 @@ extension NoteView {
     }
     
     func deletePage() {
-        toolManager.selectedItem = nil
         
         document.document.note.pages[
             toolManager.selectedPage
@@ -141,31 +140,7 @@ extension NoteView {
         }
         
         undoManager?.removeAllActions()
-    }
-    
-    func removePage(next: Int) {
-        toolManager.selectedTab = document.document.note.pages[
-            document.document.note.pages.firstIndex(where: {
-                $0.id == toolManager.selectedTab
-            })! + next
-        ].id
-        
-        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
-            $0.id == toolManager.selectedTab
-        })!
-        
-        let toRemove = document.document.note.pages.firstIndex(where: {
-            $0.id == toolManager.selectedTab
-        })! - next
-        
-        Task {
-            try await Task.sleep(nanoseconds: 50000)
-            document.document.note.pages.remove(at: toRemove)
-            
-            toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
-                $0.id == toolManager.selectedTab
-            })!
-        }
+        toolManager.selectedItem = nil
     }
     
     func pageIndicator() {

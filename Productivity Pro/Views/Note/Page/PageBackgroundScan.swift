@@ -11,7 +11,7 @@ struct PageBackgroundScan: View, Equatable {
     @State private var renderedBackground: UIImage?
     
     @Binding var document: ProductivityProDocument
-    @Binding var page: Page
+    var page: Page
     @Binding var offset: CGFloat
     
     @StateObject var toolManager: ToolManager

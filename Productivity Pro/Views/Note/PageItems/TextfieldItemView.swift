@@ -2,6 +2,8 @@ import SwiftUI
 
 struct TextFieldItemView: View {
     
+    @Binding var document: ProductivityProDocument
+    
     @Binding var item: ItemModel
     @Binding var page: Page
     
