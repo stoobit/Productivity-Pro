@@ -12,7 +12,7 @@ struct PageBackgroundPDF: View, Equatable {
     
     @State private var renderedBackground: UIImage?
     
-    @Binding var page: Page
+    var page: Page
     @Binding var offset: CGFloat
     
     @StateObject var toolManager: ToolManager

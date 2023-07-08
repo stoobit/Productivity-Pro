@@ -53,7 +53,7 @@ struct PageView: View {
                 if page.type == .pdf {
                     
                     PageBackgroundPDF(
-                        page: $page,
+                        page: page,
                         offset: $offset,
                         toolManager: toolManager,
                         isOverview: highRes,

@@ -45,7 +45,7 @@ struct NoteSideActionToolbar: ToolbarContent {
                         }) {
                             Label("Change Page Template", systemImage: "doc.badge.gearshape")
                         }
-                        .disabled(document.document.note.pages[toolManager.selectedPage].type != .template)
+                        .disabled(templateChangeDisabled())
                         
                     }
                     
@@ -127,6 +127,6 @@ struct NoteSideActionToolbar: ToolbarContent {
             }
         }
     }
-    
+   
 }
 

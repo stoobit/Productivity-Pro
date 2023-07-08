@@ -9,6 +9,18 @@ import Foundation
 
 extension NoteSideActionToolbar {
     
+    func templateChangeDisabled() -> Bool {
+        var isDisabled: Bool = true
+        
+        if document.document.note.pages.indices.contains(toolManager.selectedPage) {
+            if document.document.note.pages[toolManager.selectedPage].type == .template {
+                isDisabled = false
+            }
+        }
+        
+        return isDisabled
+    }
+    
     func tapPresentationButton() {
         let dateTrialEnd = Calendar.current.date(
             byAdding: .day,

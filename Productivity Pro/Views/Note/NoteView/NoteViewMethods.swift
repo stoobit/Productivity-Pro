@@ -120,10 +120,24 @@ extension NoteView {
             toolManager.selectedPage
         ].items = []
         
+        document.document.note.pages[
+            toolManager.selectedPage
+        ].type = .template
+        
         if toolManager.selectedTab == document.document.note.pages.last?.id {
-            toolManager.selectedPage -= 1
+            
+            let newSelection = document.document.note.pages[toolManager.selectedPage - 1].id
+            document.document.note.pages.remove(at: toolManager.selectedPage)
+            
+            toolManager.selectedTab = newSelection
+            
         } else {
-            toolManager.selectedPage += 1
+            
+            let newSelection = document.document.note.pages[toolManager.selectedPage + 1].id
+            document.document.note.pages.remove(at: toolManager.selectedPage)
+            
+            toolManager.selectedTab = newSelection
+            
         }
         
         undoManager?.removeAllActions()
