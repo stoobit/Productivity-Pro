@@ -57,19 +57,6 @@ struct OverviewView: View {
                     .keyboardShortcut(.return, modifiers: [])
                 }
             }
-            .alert(
-                "Delete this Page",
-                isPresented: $subviewManager.isDeletePageAlert,
-                actions: {
-                    Button("Delete Page", role: .destructive) {
-                        delete(pageToDelete)
-                    }
-                    
-                    Button("Cancel", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
-                    }
-                }) {
-                    Text("You cannot undo this action.")
-                }
         }
     }
     

@@ -45,8 +45,6 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
         
-        toolManager.zoomScale = getScale()
-        
         return scrollView
     }
     
@@ -57,13 +55,14 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
             if getScale() > uiView.zoomScale {
                 uiView.setZoomScale(getScale(), animated: true)
             }
+
         }
         
         // Triggers View Update
         // Seems unnecessary, but DO NOT remove
         if uiView.maximumZoomScale != 2.2 {
             uiView.maximumZoomScale = 2.2
-            uiView.setZoomScale(getScale(), animated: false)
+            uiView.setZoomScale(getScale(), animated: true)
         }
         
         if toolManager.isLocked {
