@@ -107,15 +107,16 @@ struct CopyPasteMenuView: View {
     
     
     func copyItem() {
-        let jsonData = try? JSONEncoder().encode(toolManager.selectedItem!)
+        toolManager.selectedItem = document.document.note.pages[
+            toolManager.selectedPage
+        ].items.first(where: { $0.id == toolManager.selectedItem?.id })
         
+        let jsonData = try? JSONEncoder().encode(toolManager.selectedItem!)
         if let data = jsonData {
             UIPasteboard.general.setData(
                 data, forPasteboardType: "productivity pro"
             )
         }
-        
-        print("🔥: Copy Succeed!")
     }
     
     func pasteItem() {
@@ -174,6 +175,10 @@ struct CopyPasteMenuView: View {
     
     func duplicateItem() {
         toolManager.copyPastePasser = .none
+        
+        toolManager.selectedItem = document.document.note.pages[
+            toolManager.selectedPage
+        ].items.first(where: { $0.id == toolManager.selectedItem?.id })
         
         if let item = toolManager.selectedItem {
             var newItem = item

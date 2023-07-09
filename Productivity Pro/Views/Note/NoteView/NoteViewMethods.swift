@@ -114,33 +114,35 @@ extension NoteView {
     }
     
     func deletePage() {
-        
-        document.document.note.pages[
-            toolManager.selectedPage
-        ].items = []
-        
-        document.document.note.pages[
-            toolManager.selectedPage
-        ].type = .template
-        
-        if toolManager.selectedTab == document.document.note.pages.last?.id {
+        withAnimation {
+            document.document.note.pages[
+                toolManager.selectedPage
+            ].items = []
             
-            let newSelection = document.document.note.pages[toolManager.selectedPage - 1].id
-            document.document.note.pages.remove(at: toolManager.selectedPage)
+            document.document.note.pages[
+                toolManager.selectedPage
+            ].type = .template
             
-            toolManager.selectedTab = newSelection
+            if toolManager.selectedTab == document.document.note.pages.last?.id {
+                
+                let newSelection = document.document.note.pages[toolManager.selectedPage - 1].id
+                document.document.note.pages.remove(at: toolManager.selectedPage)
+                
+                toolManager.selectedTab = newSelection
+                
+            } else {
+                
+                let newSelection = document.document.note.pages[toolManager.selectedPage + 1].id
+                document.document.note.pages.remove(at: toolManager.selectedPage)
+                
+                toolManager.selectedTab = newSelection
+                
+            }
             
-        } else {
-            
-            let newSelection = document.document.note.pages[toolManager.selectedPage + 1].id
-            document.document.note.pages.remove(at: toolManager.selectedPage)
-            
-            toolManager.selectedTab = newSelection
+            undoManager?.removeAllActions()
+            toolManager.selectedItem = nil
             
         }
-        
-        undoManager?.removeAllActions()
-        toolManager.selectedItem = nil
     }
     
     func pageIndicator() {
