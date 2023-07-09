@@ -114,6 +114,8 @@ extension NoteView {
     }
     
     func deletePage() {
+        toolManager.isDeleting = true
+        
         withAnimation {
             document.document.note.pages[
                 toolManager.selectedPage

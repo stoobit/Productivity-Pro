@@ -43,6 +43,7 @@ struct ScrollViewWrapper: View {
         )
         .onPreferenceChange(OffsetKey.self) { offset in
             self.offset = offset
+            toolManager.isDeleting = false
         }
         
     }
