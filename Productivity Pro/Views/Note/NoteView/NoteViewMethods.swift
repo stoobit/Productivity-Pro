@@ -144,11 +144,13 @@ extension NoteView {
     }
     
     func pageIndicator() {
-        toolManager.isPageNumberVisible = true
-        Task {
-            try? await Task.sleep(nanoseconds: 3_000_000_000)
-            withAnimation {
-                toolManager.isPageNumberVisible = false
+        if subviewManager.overviewSheet == false {
+            toolManager.isPageNumberVisible = true
+            Task {
+                try? await Task.sleep(nanoseconds: 3_000_000_000)
+                withAnimation {
+                    toolManager.isPageNumberVisible = false
+                }
             }
         }
     }

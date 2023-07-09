@@ -43,6 +43,7 @@ struct ItemView: View {
                         item: $item,
                         page: $page,
                         toolManager: toolManager,
+                        subviewManager: subviewManager,
                         editItem: editItemModel,
                         offset: $offset,
                         highRes: highRes

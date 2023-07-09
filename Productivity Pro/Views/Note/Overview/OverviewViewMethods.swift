@@ -18,28 +18,50 @@ extension OverviewView {
     
     func delete(at offsets: IndexSet) {
         document.document.note.pages[offsets.first!].items = []
+        document.document.note.pages[offsets.first!].type = .template
+        
+        let page = document.document.note.pages[offsets.first!]
+        
+        if page.id == document.document.note.pages.last?.id {
             
-            document.document.note.pages[offsets.first!].type = .template
+            var newSelection: UUID = UUID()
             
-            if toolManager.selectedTab == document.document.note.pages.last?.id {
-                
-                let newSelection = document.document.note.pages[offsets.first! - 1].id
-                document.document.note.pages.remove(at: offsets.first!)
-                
-                toolManager.selectedTab = newSelection
-                
+            if toolManager.selectedTab == page.id {
+                newSelection = document.document.note.pages[offsets.first! - 1].id
             } else {
+                newSelection = toolManager.selectedTab
+            }
+            
+            document.document.note.pages.remove(at: offsets.first!)
+            toolManager.selectedTab = newSelection
+            
+        } else {
+            
+            var newSelection: UUID = UUID()
+            let index = document.document.note.pages.firstIndex(of: page)!
+            
+            if index < toolManager.selectedPage {
                 
-                let newSelection = document.document.note.pages[offsets.first! + 1].id
-                document.document.note.pages.remove(at: offsets.first!)
+                newSelection = toolManager.selectedTab
                 
-                toolManager.selectedTab = newSelection
+            } else if index < toolManager.selectedPage {
+                
+                newSelection = toolManager.selectedTab
+                
+            } else if index == toolManager.selectedPage {
+                
+                newSelection = document.document.note.pages[offsets.first! + 1].id
                 
             }
             
-            undoManager?.removeAllActions()
-            toolManager.selectedItem = nil
+            document.document.note.pages.remove(at: offsets.first!)
+            toolManager.selectedTab = newSelection
+            
         }
+        
+        undoManager?.removeAllActions()
+        toolManager.selectedItem = nil
+    }
     
     func delete(_ page: Page) {
         toolManager.selectedItem = nil

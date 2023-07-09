@@ -8,6 +8,7 @@ struct TextFieldItemView: View {
     @Binding var page: Page
     
     @StateObject var toolManager: ToolManager
+    @StateObject var subviewManager: SubviewManager
     @StateObject var editItem: EditItemModel
     
     @State var renderedImage: UIImage?
@@ -76,7 +77,9 @@ struct TextFieldItemView: View {
             render()
             renderPreview()
         }
-        .onDisappear { renderedImage = nil }
+        .onDisappear {
+            renderedImage = nil
+        }
         
     }
     
