@@ -155,8 +155,8 @@ struct AddPDFPageHelper: ViewModifier {
     
     func renderPDF(_ pdf: PDFPage, size: CGSize) -> Data? {
         var image: UIImage?
-        image = pdf.thumbnail(of: size, for: .mediaBox)
-        return image?.jpegData(compressionQuality: 0.7)
+        image = pdf.thumbnail(of: size * 3, for: .mediaBox)
+        return image?.jpegData(compressionQuality: 1)
     }
     
 }
