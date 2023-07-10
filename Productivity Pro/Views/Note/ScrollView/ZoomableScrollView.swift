@@ -18,11 +18,11 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
+    var scrollView: UIScrollView
     var content: () -> Content
     
     func makeUIView(context: Context) -> UIScrollView {
         
-        let scrollView = UIScrollView()
         scrollView.delegate = context.coordinator
         
         scrollView.minimumZoomScale = 1

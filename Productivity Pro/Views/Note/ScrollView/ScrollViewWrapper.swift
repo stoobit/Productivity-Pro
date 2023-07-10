@@ -18,13 +18,16 @@ struct ScrollViewWrapper: View {
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
+    var scrollView: UIScrollView = UIScrollView()
+    
     var body: some View {
         ZoomableScrollView(
             size: size,
             document: $document,
             page: $page,
             toolManager: toolManager,
-            subviewManager: subviewManager
+            subviewManager: subviewManager,
+            scrollView: scrollView
         ) {
             PageView(
                 document: $document,
