@@ -18,9 +18,7 @@ struct OverviewView: View {
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
-    @State var isDeleteAlert: Bool = false
     @State var current: Page?
-    
     @State var pageToDelete: Page!
     
     var body: some View {

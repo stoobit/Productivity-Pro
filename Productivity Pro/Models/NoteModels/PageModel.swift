@@ -22,8 +22,6 @@ struct Page: Codable, Identifiable, Hashable {
     var backgroundTemplate: String
     var isPortrait: Bool
     
-//    var isBookmarked: Bool = false
-    
     var canvas: Data = Data()
     var items: [ItemModel] = []
     

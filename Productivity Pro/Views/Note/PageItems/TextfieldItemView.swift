@@ -85,43 +85,40 @@ struct TextFieldItemView: View {
     
     @MainActor
     func render() {
-        if toolManager.isDeleting == false {
-            if toolManager.selectedTab == page.id && offset == 0 && highRes == false {
-                var image: UIImage = renderedImage ?? UIImage()
-                
-                var view: some View {
-                    MarkdownParserView(
-                        editItem: editItem,
-                        itemModel: item,
-                        page: $page,
-                        highRes: false
-                    )
-                }
-                
-                let renderer = ImageRenderer(content: view)
-                let scale = 2 * toolManager.zoomScale
-                
-                renderer.isOpaque = false
-                
-                if scale < 1 {
-                    renderer.scale = 1
-                } else {
-                    renderer.scale = scale
-                }
-                
-                if let rendering = renderer.uiImage {
-                    image = rendering
-                }
-                
-                renderedImage = image
+        if toolManager.selectedTab == page.id && offset == 0 && highRes == false {
+            var image: UIImage = renderedImage ?? UIImage()
+            
+            var view: some View {
+                MarkdownParserView(
+                    editItem: editItem,
+                    itemModel: item,
+                    page: $page,
+                    highRes: false
+                )
             }
+            
+            let renderer = ImageRenderer(content: view)
+            let scale = 2 * toolManager.zoomScale
+            
+            renderer.isOpaque = false
+            
+            if scale < 1 {
+                renderer.scale = 1
+            } else {
+                renderer.scale = scale
+            }
+            
+            if let rendering = renderer.uiImage {
+                image = rendering
+            }
+            
+            renderedImage = image
         }
     }
     
     @MainActor
     func renderPreview() {
-        if toolManager.isDeleting == false {
-            if renderedImage == nil && highRes == false {
+        if renderedImage == nil && highRes == false {
                 
                 var view: some View {
                     MarkdownParserView(
@@ -143,7 +140,6 @@ struct TextFieldItemView: View {
                 
                 renderedImage = renderer.uiImage
             }
-        }
     }
     
     func colorScheme() -> ColorScheme {

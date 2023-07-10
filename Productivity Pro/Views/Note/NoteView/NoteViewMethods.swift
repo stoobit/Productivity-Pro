@@ -79,7 +79,14 @@ extension NoteView {
     
     func fixScrollViewBug() {
         Task {
-            document.document.note.pages.append(Page(backgroundColor: "pagewhite", backgroundTemplate: "blank", isPortrait: true))
+            document.document.note.pages.append(
+                Page(
+                    backgroundColor: "pagewhite",
+                    backgroundTemplate: "blank",
+                    isPortrait: true
+                )
+            )
+            
             try? await Task.sleep(nanoseconds: 50000)
             document.document.note.pages.removeLast()
             try? await Task.sleep(nanoseconds: 50000)
@@ -114,36 +121,38 @@ extension NoteView {
     }
     
     func deletePage() {
-        toolManager.isDeleting = true
-        
         withAnimation {
-            document.document.note.pages[
-                toolManager.selectedPage
-            ].items = []
             
             document.document.note.pages[
                 toolManager.selectedPage
-            ].type = .template
+            ].items.removeAll()
             
-            if toolManager.selectedTab == document.document.note.pages.last?.id {
+            let seconds = 0.3
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                document.document.note.pages[
+                    toolManager.selectedPage
+                ].type = .template
                 
-                let newSelection = document.document.note.pages[toolManager.selectedPage - 1].id
-                document.document.note.pages.remove(at: toolManager.selectedPage)
+                if toolManager.selectedTab == document.document.note.pages.last?.id {
+                    
+                    let newSelection = document.document.note.pages[toolManager.selectedPage - 1].id
+                    document.document.note.pages.remove(at: toolManager.selectedPage)
+                    
+                    toolManager.selectedTab = newSelection
+                    
+                } else {
+                    
+                    let newSelection = document.document.note.pages[toolManager.selectedPage + 1].id
+                    document.document.note.pages.remove(at: toolManager.selectedPage)
+                    
+                    toolManager.selectedTab = newSelection
+                    
+                }
                 
-                toolManager.selectedTab = newSelection
-                
-            } else {
-                
-                let newSelection = document.document.note.pages[toolManager.selectedPage + 1].id
-                document.document.note.pages.remove(at: toolManager.selectedPage)
-                
-                toolManager.selectedTab = newSelection
+                undoManager?.removeAllActions()
+                toolManager.selectedItem = nil
                 
             }
-            
-            undoManager?.removeAllActions()
-            toolManager.selectedItem = nil
-            
         }
     }
     
