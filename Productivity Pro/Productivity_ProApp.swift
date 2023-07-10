@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let freeTrialDays = 0
+let freeTrialDays = 3
 
 @main
 struct Productivity_ProApp: App {
