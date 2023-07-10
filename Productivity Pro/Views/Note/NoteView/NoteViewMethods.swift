@@ -127,11 +127,12 @@ extension NoteView {
                 toolManager.selectedPage
             ].items.removeAll()
             
-            let seconds = 0.3
+            document.document.note.pages[
+                toolManager.selectedPage
+            ].type = .template
+            
+            let seconds = 0.1
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                document.document.note.pages[
-                    toolManager.selectedPage
-                ].type = .template
                 
                 if toolManager.selectedTab == document.document.note.pages.last?.id {
                     

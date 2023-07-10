@@ -24,7 +24,7 @@ extension OverviewView {
             
             let page = document.document.note.pages[offsets.first!]
             
-            let seconds = 0.3
+            let seconds = 0.1
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 if page.id == document.document.note.pages.last?.id {
                     
