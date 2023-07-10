@@ -10,8 +10,8 @@ import Foundation
 // MARK: - !IMPORTANT! -
 // MARK: CANVAS SIZE
 
-let longSide: CGFloat = 2970 / 1.3 // Change to 1.5
-let shortSide: CGFloat = 2100 / 1.3 // Change to 1.5
+let longSide: CGFloat = 2970 / 1.5 // Change to 1.5
+let shortSide: CGFloat = 2100 / 1.5 // Change to 1.5
 
 // MARK: CANVAS SIZE
 // MARK: - !IMPORTANT! -

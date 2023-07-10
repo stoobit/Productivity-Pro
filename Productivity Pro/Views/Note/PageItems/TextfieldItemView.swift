@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TextFieldItemView: View {
     
+    @Environment(\.scenePhase) private var scenePhase
     @Binding var document: ProductivityProDocument
     
     @Binding var item: ItemModel
@@ -79,6 +80,9 @@ struct TextFieldItemView: View {
         }
         .onDisappear {
             renderedImage = nil
+        }
+        .onChange(of: scenePhase) { value in
+            render()
         }
         
     }
