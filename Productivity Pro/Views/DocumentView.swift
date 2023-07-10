@@ -9,6 +9,12 @@ import SwiftUI
 
 struct DocumentView: View {
     
+    @AppStorage("fullAppUnlocked")
+    var isFullAppUnlocked: Bool = false
+    
+    @AppStorage("startDate")
+    private var startDate: String = ""
+    
     @AppStorage("afterUpdate 0.4.2")
     private var firstOpenAU: Bool = true
     
@@ -41,7 +47,9 @@ struct DocumentView: View {
         .toolbarRole(.editor)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .sheet(isPresented: $whatIsNew) {
+        .sheet(isPresented: $whatIsNew, onDismiss: {
+           checkLockStatus()
+        }) {
             WhatIsNew(isPresented: $whatIsNew)
         }
         .onAppear {
@@ -50,6 +58,7 @@ struct DocumentView: View {
                 firstOpenAU = false
             }
         }
+        
     }
     
     @ViewBuilder func CreateDoc() -> some View {
@@ -68,4 +77,19 @@ struct DocumentView: View {
                 subviewManager.isChooseDocType = true
             }
     }
+    
+    func checkLockStatus() {
+        let dateTrialEnd = Calendar.current.date(
+            byAdding: .day,
+            value: freeTrialDays,
+            to: Date(rawValue: startDate)!
+        )
+        
+        if !isFullAppUnlocked && dateTrialEnd! < Date() {
+            subviewManager.isPresentationMode = true
+        } else {
+            subviewManager.isPresentationMode = false
+        }
+    }
+    
 }
