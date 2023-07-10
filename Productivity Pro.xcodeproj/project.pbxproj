@@ -11,7 +11,6 @@
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
 		BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */; };
-		BB09FFF429E72BBF00FEAA5D /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
 		BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2062925A7C200F4004A /* BottomOffset.swift */; };
 		BB1321EA2985EA87006AD59D /* DragType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321E92985EA87006AD59D /* DragType.swift */; };
@@ -158,7 +157,6 @@
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
 		BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewMethods.swift; sourceTree = "<group>"; };
-		BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		BB0BE2062925A7C200F4004A /* BottomOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOffset.swift; sourceTree = "<group>"; };
 		BB1321E92985EA87006AD59D /* DragType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragType.swift; sourceTree = "<group>"; };
@@ -413,7 +411,7 @@
 				BBCCE4F028D52911001DBD8A /* NewDocument */,
 				BB9DF5A828DFA25600AC988D /* Note */,
 				BBBCACAF2A253BC000C23B2C /* Calculator */,
-				BB6BFA2129048BBE002D09FD /* Settings+Feedback */,
+				BB6BFA2129048BBE002D09FD /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -443,13 +441,12 @@
 			path = Toolbar;
 			sourceTree = "<group>";
 		};
-		BB6BFA2129048BBE002D09FD /* Settings+Feedback */ = {
+		BB6BFA2129048BBE002D09FD /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				BB27FED528EA1EF900459334 /* SettingsView.swift */,
-				BB09FFF329E72BBF00FEAA5D /* FeedbackView.swift */,
 			);
-			path = "Settings+Feedback";
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		BB6BFA2229048C5E002D09FD /* TemplateSheets */ = {
@@ -956,7 +953,6 @@
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
 				BB3F75FB2997F38100C0F140 /* StrokeStyle.swift in Sources */,
 				BBEFC9532A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift in Sources */,
-				BB09FFF429E72BBF00FEAA5D /* FeedbackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1112,7 +1108,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.ProductivityPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1156,7 +1152,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.ProductivityPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

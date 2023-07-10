@@ -60,9 +60,9 @@ struct NoteToolbarTitleMenu: View {
             
             Button(action: {
                 toolManager.isCanvasEnabled = false
-                subviewManager.feedbackView.toggle()
+                feedback()
             }) {
-                Label("Feedback", systemImage: "star")
+                Label("Help", systemImage: "questionmark.circle")
             }
         }
         
@@ -77,6 +77,14 @@ struct NoteToolbarTitleMenu: View {
             }
         }
         
+    }
+    
+    func feedback() {
+        let url = "imessage://contact.stoobit@aol.com"
+        
+        if UIApplication.shared.canOpenURL(URL(string: url)!) {
+             UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
+        }
     }
     
     func sharePDF() {

@@ -25,7 +25,6 @@ class SubviewManager: ObservableObject {
     @Published var collaborationSheet: Bool = false
     @Published var overviewSheet: Bool = false
     @Published var settingsSheet: Bool = false
-    @Published var feedbackView: Bool = false
     
     @Published var showDebuggingSheet: Bool = false
     

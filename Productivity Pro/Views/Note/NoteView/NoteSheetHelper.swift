@@ -24,9 +24,6 @@ struct NoteSheetHelper: ViewModifier {
             .sheet(isPresented: $subviewManager.settingsSheet) {
                 SettingsView(isPresented: $subviewManager.settingsSheet)
             }
-            .sheet(isPresented: $subviewManager.feedbackView) {
-                FeedbackView(subviewManager: subviewManager)
-            }
             .sheet(isPresented: $subviewManager.changeTemplate) {
                 ChangePageTemplateView(
                     document: $document,
