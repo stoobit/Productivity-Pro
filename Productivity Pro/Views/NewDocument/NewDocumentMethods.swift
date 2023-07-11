@@ -39,16 +39,17 @@ extension NewDocumentView {
             document.note.pages.append(newPage)
         }
         
-        
-        Task {
-            try? await Task.sleep(nanoseconds: 1000000000)
-            await MainActor.run {
-                toolManager.showProgress = false
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            toolManager.showProgress = false
         }
     }
     
     func add(scan: VNDocumentCameraScan) {
+        toolManager.showProgress = true
+        
+        subviewManager.newDocScan = false
+        subviewManager.createDocument = false
+        
         document.note = Note()
         document.documentType = .note
         
@@ -70,11 +71,8 @@ extension NewDocumentView {
             document.note.pages.append(newPage)
         }
         
-        Task {
-            try? await Task.sleep(nanoseconds: 1000000000)
-            await MainActor.run {
-                toolManager.showProgress = false
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            toolManager.showProgress = false
         }
     }
     

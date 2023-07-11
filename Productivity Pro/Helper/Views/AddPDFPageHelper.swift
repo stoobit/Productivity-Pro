@@ -29,12 +29,7 @@ struct AddPDFPageHelper: ViewModifier {
                     
                     switch result {
                     case .success(let scan):
-                        toolManager.showProgress = true
-                        Task(priority: .userInitiated) {
-                            await MainActor.run {
-                                add(scan: scan)
-                            }
-                        }
+                        add(scan: scan)
                         
                     case .failure(let error):
                         print(error)
@@ -69,6 +64,7 @@ struct AddPDFPageHelper: ViewModifier {
     }
     
     func add(scan: VNDocumentCameraScan) {
+        toolManager.showProgress = true
         var count = 1
         
         for index in 0...scan.pageCount - 1 {
@@ -94,14 +90,10 @@ struct AddPDFPageHelper: ViewModifier {
             count += 1
         }
         
-        Task {
-            try? await Task.sleep(nanoseconds: 1000000000)
-            await MainActor.run {
-                toolManager.selectedPage += 1
-                toolManager.showProgress = false
-            }
-        }
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            toolManager.selectedPage += 1
+            toolManager.showProgress = false
+        } 
     }
     
     func add(pdf: PDFDocument) {
@@ -135,12 +127,9 @@ struct AddPDFPageHelper: ViewModifier {
             count += 1
         }
         
-        Task {
-            try? await Task.sleep(nanoseconds: 1000000000)
-            await MainActor.run {
-                toolManager.selectedPage += 1
-                toolManager.showProgress = false
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            toolManager.selectedPage += 1
+            toolManager.showProgress = false
         }
     }
     

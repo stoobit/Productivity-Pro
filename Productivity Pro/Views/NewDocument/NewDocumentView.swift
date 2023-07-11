@@ -70,17 +70,7 @@ struct NewDocumentView: View {
                     
                     switch result {
                     case .success(let scan):
-                        
-                        toolManager.showProgress = true
-                        
-                        subviewManager.newDocScan = false
-                        subviewManager.createDocument = false
-                        
-                        Task(priority: .userInitiated) {
-                            await MainActor.run {
-                                add(scan: scan)
-                            }
-                        }
+                        add(scan: scan)
                         
                     case .failure(let error):
                         print(error)
