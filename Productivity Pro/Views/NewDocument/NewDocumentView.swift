@@ -6,44 +6,129 @@
 //
 
 import SwiftUI
+import PDFKit
 
 struct NewDocumentView: View {
     
     @Environment(\.presentationMode) var presentationMode
     @Binding var document: Document
+    
     @StateObject var subviewManager: SubviewManager
+    @StateObject var toolManager: ToolManager
     
     var body: some View {
-        GeometryReader { reader in
-            NavigationStack {
-                VStack {
-                    NoteSettings(
-                        subviewManager: subviewManager, document: $document
-                    ) {
-                        close()
-                    }
-                }
-                .navigationTitle("Create Note")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarRole(.browser)
-                .toolbarBackground(.visible, for: .navigationBar)
-                
+        ViewThatFits(in: .horizontal) {
+            HStack {
+                Grid()
             }
-            .interactiveDismissDisabled()
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                Grid()
+            }
+        }
+        .padding()
+    }
+    
+    @ViewBuilder func Grid() -> some View {
+        VStack {
+            ButtonView(icon: "rectangle.portrait", text: "Blank") {
+                createBlank()
+            }
+            
+            ButtonView(icon: "grid", text: "Select Template") {
+                subviewManager.newDocTemplate = true
+            }
+            .sheet(isPresented: $subviewManager.newDocTemplate) {
+                NoteSettings(
+                    subviewManager: subviewManager, document: $document
+                ) {
+                    subviewManager.newDocTemplate = false
+                    subviewManager.isChooseDocType = false
+                }
+            }
+        }
+        
+        VStack {
+            ButtonView(icon: "doc.viewfinder", text: "Scan Document") {
+                subviewManager.newDocScan = true
+            }
+            .fullScreenCover(isPresented: $subviewManager.newDocScan, onDismiss: {
+                subviewManager.isChooseDocType = true
+            }) {
+                ScannerHelperView(cancelAction: {
+                    subviewManager.newDocScan = false
+                }, resultAction: { result in
+                    
+                    switch result {
+                    case .success(let scan):
+                        toolManager.showProgress = true
+                        Task(priority: .userInitiated) {
+                            await MainActor.run {
+                                add(scan: scan)
+                            }
+                        }
+                        
+                    case .failure(let error):
+                        print(error)
+                    }
+                    
+                    subviewManager.newDocPDF = false
+                    subviewManager.isChooseDocType = false
+                })
+                .edgesIgnoringSafeArea(.bottom)
+            }
+            
+            ButtonView(icon: "folder", text: "Import PDF") {
+                subviewManager.newDocPDF = true
+            }
+            .fileImporter(
+                isPresented: $subviewManager.newDocPDF,
+                allowedContentTypes: [.pdf],
+                allowsMultipleSelection: false
+            ) { result in
+                do {
+                    toolManager.showProgress = true
+                    
+                    guard let selectedFile: URL = try result.get().first else { return }
+                    if selectedFile.startAccessingSecurityScopedResource() {
+                        guard let input = PDFDocument(data: try Data(contentsOf: selectedFile)) else { return }
+                        defer { selectedFile.stopAccessingSecurityScopedResource() }
+                        
+                        add(pdf: input)
+                    } else {
+                        toolManager.showProgress = false
+                    }
+                    
+                } catch {
+                    toolManager.showProgress = false
+                }
+            }
+           
         }
     }
     
-    func close() {
-        presentationMode.wrappedValue.dismiss()
-    }
-    
-}
-
-struct ChooseTypeView_Previews: PreviewProvider {
-    static var previews: some View {
-        Spacer()
-            .sheet(isPresented: .constant(true)) {
+    @ViewBuilder func ButtonView(icon: String, text: String, action: @escaping () -> Void) -> some View {
+        
+        Button(action: action) {
+            VStack {
+                Image(systemName: icon)
+                    .font(.largeTitle)
+                    .foregroundStyle(Color.accentColor)
+                    .frame(width: 50, height: 50)
                 
+                Text(text)
+                    .foregroundColor(Color.secondary)
+                    .font(.title3.bold())
+                    .padding(.top, 5)
             }
+            .frame(width: 200, height: 150)
+            .overlay {
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .stroke(Color.accentColor, lineWidth: 4)
+            }
+            .frame(width: 225, height: 175)
+        }
+        
     }
+
 }

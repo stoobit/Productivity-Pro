@@ -70,7 +70,9 @@ struct DocumentView: View {
                 }
             }) {
                 NewDocumentView(
-                    document: $document.document, subviewManager: subviewManager
+                    document: $document.document,
+                    subviewManager: subviewManager,
+                    toolManager: toolManager
                 )
             }
             .onAppear {

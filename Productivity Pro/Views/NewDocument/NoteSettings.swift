@@ -18,27 +18,39 @@ struct NoteSettings: View {
     @State var backgroundTemplate: String = "blank"
     
     var body: some View {
-        VStack(alignment: .leading) {
-            ViewThatFits {
-                VStack {
-                    BackgroundValueView()
-                    NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).LargeView()
+        NavigationStack {
+            VStack(alignment: .leading) {
+                ViewThatFits {
+                    VStack {
+                        BackgroundValueView()
+                        NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).LargeView()
+                        
+                        iOSEditingWarning()
+                    }
                     
-                    iOSEditingWarning()
-                }
-                
-                VStack {
-                    BackgroundValueView()
-                    NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).SmallView()
-                    
-                    iOSEditingWarning()
-                    
+                    VStack {
+                        BackgroundValueView()
+                        NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).SmallView()
+                        
+                        iOSEditingWarning()
+                        
+                    }
                 }
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .confirmationAction) { Button("Create") { create() }
+            .navigationTitle("Select Template")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarRole(.navigationStack)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) { Button("Create") { create() }
+                        .keyboardShortcut(.return, modifiers: [])
+                }
+                
+                ToolbarItem(placement: .cancellationAction) { Button("Cancel") {
+                        subviewManager.newDocTemplate = false
+                    }
                     .keyboardShortcut(.return, modifiers: [])
+                }
             }
         }
     }

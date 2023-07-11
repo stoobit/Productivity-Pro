@@ -44,5 +44,9 @@ class SubviewManager: ObservableObject {
     @Published var showImportMedia: Bool = false
     
     @Published var showImportFile: Bool = false
+    
+    @Published var newDocTemplate: Bool = false
+    @Published var newDocPDF: Bool = false
+    @Published var newDocScan: Bool = false
    
 }

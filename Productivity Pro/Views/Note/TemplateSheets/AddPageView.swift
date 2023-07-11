@@ -40,7 +40,7 @@ struct AddPageView: View {
                 isPortrait = page.isPortrait
                 backgroundTemplate = page.backgroundTemplate
             }
-            .navigationTitle("Add Page")
+            .navigationTitle("Select Template")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.navigationStack)
             .toolbarBackground(.visible, for: .navigationBar)

@@ -57,7 +57,7 @@ struct AddPDFPageHelper: ViewModifier {
                         guard let input = PDFDocument(data: try Data(contentsOf: selectedFile)) else { return }
                         defer { selectedFile.stopAccessingSecurityScopedResource() }
                         
-                        addPDFs(pdf: input)
+                        add(pdf: input)
                     } else {
                         toolManager.showProgress = false
                     }
@@ -104,7 +104,7 @@ struct AddPDFPageHelper: ViewModifier {
         
     }
     
-    func addPDFs(pdf: PDFDocument) {
+    func add(pdf: PDFDocument) {
         var count = 1
         
         for index in 0...pdf.pageCount - 1 {
@@ -113,22 +113,14 @@ struct AddPDFPageHelper: ViewModifier {
             let size = page.bounds(for: .mediaBox).size
             
             var data: Data?
-            var type: PageType = .pdf
             var header: String?
             
-            if page.string == nil || page.string?.trimmingCharacters(in: .whitespaces) == "" {
-                
-                data = renderPDF(page, size: size)
-                type = .image
-                
-            } else {
-                data = page.dataRepresentation
-                header = page.string?.components(separatedBy: .newlines).first
-                header = header?.trimmingCharacters(in: .whitespacesAndNewlines)
-            }
+            data = page.dataRepresentation
+            header = page.string?.components(separatedBy: .newlines).first
+            header = header?.trimmingCharacters(in: .whitespacesAndNewlines)
             
             let newPage = Page(
-                type: type,
+                type: .pdf,
                 backgroundMedia: data,
                 header: header,
                 backgroundColor: "pagewhite",
@@ -150,13 +142,6 @@ struct AddPDFPageHelper: ViewModifier {
                 toolManager.showProgress = false
             }
         }
-        
-    }
-    
-    func renderPDF(_ pdf: PDFPage, size: CGSize) -> Data? {
-        var image: UIImage?
-        image = pdf.thumbnail(of: size * 3, for: .mediaBox)
-        return image?.jpegData(compressionQuality: 1)
     }
     
 }

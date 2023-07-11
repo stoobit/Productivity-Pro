@@ -93,6 +93,7 @@
 		BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */; };
 		BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */; };
 		BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */; };
+		BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */; };
 		BBBF53882A2FEAA8006DD011 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBF53872A2FEAA8006DD011 /* StoreKit.framework */; };
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
@@ -241,6 +242,7 @@
 		BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
 		BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProxy.swift; sourceTree = "<group>"; };
 		BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWrapper.swift; sourceTree = "<group>"; };
+		BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDocumentMethods.swift; sourceTree = "<group>"; };
 		BBBF53872A2FEAA8006DD011 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BBBF53892A2FEB6B006DD011 /* UnlockStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnlockStoreKitConfig.storekit; sourceTree = "<group>"; };
 		BBBFB834299FB75400FA236F /* DragItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragItemModifier.swift; sourceTree = "<group>"; };
@@ -679,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				BBCCE4F128D52934001DBD8A /* NewDocumentView.swift */,
+				BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */,
 				BBCCE4F828D540AA001DBD8A /* NoteSettings.swift */,
 				BBCCE4FF28D54233001DBD8A /* NoteBackgroundIcons.swift */,
 			);
@@ -894,6 +897,7 @@
 				BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */,
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
+				BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */,
 				BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */,
 				BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
