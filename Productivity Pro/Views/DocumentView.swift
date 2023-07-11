@@ -74,6 +74,7 @@ struct DocumentView: View {
                     subviewManager: subviewManager,
                     toolManager: toolManager
                 )
+                .interactiveDismissDisabled()
             }
             .onAppear {
                 subviewManager.createDocument = true
