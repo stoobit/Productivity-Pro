@@ -49,8 +49,8 @@ extension NewDocumentView {
     }
     
     func add(scan: VNDocumentCameraScan) {
-        var count = 1
-        var note = Note()
+        document.note = Note()
+        document.documentType = .note
         
         for index in 0...scan.pageCount - 1 {
             
@@ -67,12 +67,15 @@ extension NewDocumentView {
                 isPortrait: size.width < size.height
             )
             
-            note.pages.append(newPage)
-            count += 1
+            document.note.pages.append(newPage)
         }
         
-        document.note = note
-        subviewManager.newDocTemplate = false
+        Task {
+            try? await Task.sleep(nanoseconds: 1000000000)
+            await MainActor.run {
+                toolManager.showProgress = false
+            }
+        }
     }
     
     func createBlank() {

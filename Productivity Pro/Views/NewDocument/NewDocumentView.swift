@@ -43,7 +43,7 @@ struct NewDocumentView: View {
                     subviewManager: subviewManager, document: $document
                 ) {
                     subviewManager.newDocTemplate = false
-                    subviewManager.isChooseDocType = false
+                    subviewManager.createDocument = false
                 }
             }
         }
@@ -52,16 +52,19 @@ struct NewDocumentView: View {
             ButtonView(icon: "doc.viewfinder", text: "Scan Document") {
                 subviewManager.newDocScan = true
             }
-            .fullScreenCover(isPresented: $subviewManager.newDocScan, onDismiss: {
-                subviewManager.isChooseDocType = true
-            }) {
+            .fullScreenCover(isPresented: $subviewManager.newDocScan) {
                 ScannerHelperView(cancelAction: {
                     subviewManager.newDocScan = false
                 }, resultAction: { result in
                     
                     switch result {
                     case .success(let scan):
+                        
                         toolManager.showProgress = true
+                        
+                        subviewManager.newDocScan = false
+                        subviewManager.createDocument = false
+                        
                         Task(priority: .userInitiated) {
                             await MainActor.run {
                                 add(scan: scan)
@@ -71,9 +74,6 @@ struct NewDocumentView: View {
                     case .failure(let error):
                         print(error)
                     }
-                    
-                    subviewManager.newDocPDF = false
-                    subviewManager.isChooseDocType = false
                 })
                 .edgesIgnoringSafeArea(.bottom)
             }
@@ -91,7 +91,10 @@ struct NewDocumentView: View {
                     
                     guard let selectedFile: URL = try result.get().first else { return }
                     if selectedFile.startAccessingSecurityScopedResource() {
-                        guard let input = PDFDocument(data: try Data(contentsOf: selectedFile)) else { return }
+                        guard let input = PDFDocument(
+                            data: try Data(contentsOf: selectedFile)
+                        ) else { return }
+                        
                         defer { selectedFile.stopAccessingSecurityScopedResource() }
                         
                         add(pdf: input)
@@ -107,7 +110,9 @@ struct NewDocumentView: View {
         }
     }
     
-    @ViewBuilder func ButtonView(icon: String, text: String, action: @escaping () -> Void) -> some View {
+    @ViewBuilder func ButtonView(
+        icon: String, text: String, action: @escaping () -> Void
+    ) -> some View {
         
         Button(action: action) {
             VStack {

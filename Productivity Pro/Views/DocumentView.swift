@@ -63,7 +63,7 @@ struct DocumentView: View {
     
     @ViewBuilder func CreateDoc() -> some View {
         Spacer()
-            .sheet(isPresented: $subviewManager.isChooseDocType, onDismiss: {
+            .sheet(isPresented: $subviewManager.createDocument, onDismiss: {
                 if firstOpenAU {
                     whatIsNew = true
                     firstOpenAU = false
@@ -76,7 +76,7 @@ struct DocumentView: View {
                 )
             }
             .onAppear {
-                subviewManager.isChooseDocType = true
+                subviewManager.createDocument = true
             }
     }
     
