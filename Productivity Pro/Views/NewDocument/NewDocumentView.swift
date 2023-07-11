@@ -17,14 +17,25 @@ struct NewDocumentView: View {
     @StateObject var toolManager: ToolManager
     
     var body: some View {
-        ViewThatFits(in: .horizontal) {
-            HStack {
-                Grid()
+        VStack {
+            Text("Create Document")
+                .font(.largeTitle.bold())
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+            
+            Spacer()
+            
+            ViewThatFits(in: .horizontal) {
+                HStack {
+                    Grid()
+                }
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    Grid()
+                }
             }
             
-            ScrollView(.vertical, showsIndicators: false) {
-                Grid()
-            }
+            Spacer()
         }
         .padding()
     }
