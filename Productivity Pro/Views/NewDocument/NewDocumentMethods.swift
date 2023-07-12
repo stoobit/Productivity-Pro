@@ -11,6 +11,18 @@ import PDFKit
 
 extension NewDocumentView {
     
+    func getDate() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+
+        // Set Date/Time Style
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+
+       
+        return dateFormatter.string(from: date) 
+    }
+    
     func add(pdf: PDFDocument) {
         document.note = Note()
         document.documentType = .note

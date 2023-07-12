@@ -6,135 +6,79 @@
 //
 
 import SwiftUI
-import PDFKit
 
 struct NewDocumentView: View {
     
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     @Binding var document: Document
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
+    
+    @State var title: String = ""
     
     var body: some View {
         VStack {
             Text("Create Document")
                 .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
+                .padding(.top, 25)
+                .padding(.leading, 30)
             
-            Spacer()
-            
-            ViewThatFits(in: .horizontal) {
-                HStack {
-                    Grid()
-                }
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    Grid()
-                }
-            }
-            
-            Spacer()
-        }
-        .padding()
-    }
-    
-    @ViewBuilder func Grid() -> some View {
-        VStack {
-            ButtonView(icon: "rectangle.portrait", text: "Blank") {
-                createBlank()
-            }
-            
-            ButtonView(icon: "grid", text: "Select Template") {
-                subviewManager.newDocTemplate = true
-            }
-            .sheet(isPresented: $subviewManager.newDocTemplate) {
-                NoteSettings(
-                    subviewManager: subviewManager, document: $document
-                ) {
-                    subviewManager.newDocTemplate = false
-                    subviewManager.createDocument = false
-                }
-            }
-        }
-        
-        VStack {
-            ButtonView(icon: "doc.viewfinder", text: "Scan Document") {
-                subviewManager.newDocScan = true
-            }
-            .fullScreenCover(isPresented: $subviewManager.newDocScan) {
-                ScannerHelperView(cancelAction: {
-                    subviewManager.newDocScan = false
-                }, resultAction: { result in
+            ScrollView(.vertical, showsIndicators: false) {
+                ViewThatFits(in: .horizontal) {
                     
-                    switch result {
-                    case .success(let scan):
-                        add(scan: scan)
+                    VStack {
+                        TextField("Untitled", text: $title)
+                            .frame(width: 400, height: 40)
+                            .background {
+                                Color(UIColor.separator).opacity(0.5)
+                                    .frame(width: 420, height: 40)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                            }
+                            .padding(.top, 50)
                         
-                    case .failure(let error):
-                        print(error)
-                    }
-                })
-                .edgesIgnoringSafeArea(.bottom)
-            }
-            
-            ButtonView(icon: "folder", text: "Import PDF") {
-                subviewManager.newDocPDF = true
-            }
-            .fileImporter(
-                isPresented: $subviewManager.newDocPDF,
-                allowedContentTypes: [.pdf],
-                allowsMultipleSelection: false
-            ) { result in
-                do {
-                    toolManager.showProgress = true
-                    
-                    guard let selectedFile: URL = try result.get().first else { return }
-                    if selectedFile.startAccessingSecurityScopedResource() {
-                        guard let input = PDFDocument(
-                            data: try Data(contentsOf: selectedFile)
-                        ) else { return }
+                        Label("File Name", systemImage: "pencil")
+                            .font(.callout.bold())
+                            .padding(.bottom, 50)
+                            .foregroundStyle(
+                                Color(UIColor.separator)
+                            )
                         
-                        defer { selectedFile.stopAccessingSecurityScopedResource() }
-                        
-                        add(pdf: input)
-                    } else {
-                        toolManager.showProgress = false
+                        HStack {
+                            Grid()
+                        }
                     }
                     
-                } catch {
-                    toolManager.showProgress = false
+                    VStack {
+                        TextField("Untitled", text: $title)
+                            .frame(width: 170, height: 40)
+                            .background {
+                                Color(UIColor.separator).opacity(0.5)
+                                    .frame(width: 190, height: 40)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                            }
+                            .padding(.vertical, 30)
+                        
+                        Grid()
+                    }
+                    
                 }
             }
-           
-        }
-    }
-    
-    @ViewBuilder func ButtonView(
-        icon: String, text: String, action: @escaping () -> Void
-    ) -> some View {
-        
-        Button(action: action) {
-            VStack {
-                Image(systemName: icon)
-                    .font(.largeTitle)
-                    .foregroundStyle(Color.accentColor)
-                    .frame(width: 50, height: 50)
-                
-                Text(text)
-                    .foregroundColor(Color.secondary)
-                    .font(.title3.bold())
-                    .padding(.top, 5)
-            }
-            .frame(width: 200, height: 150)
-            .overlay {
-                RoundedRectangle(cornerRadius: 25, style: .continuous)
-                    .stroke(Color.accentColor, lineWidth: 4)
-            }
-            .frame(width: 225, height: 175)
         }
         
     }
+}
 
+struct NewDoc_Previews: PreviewProvider {
+    static var previews: some View {
+        Text("hello")
+            .sheet(isPresented: .constant(true), content: {
+                NewDocumentView(
+                    document: .constant(Document()),
+                    subviewManager: SubviewManager(),
+                    toolManager: ToolManager()
+                )
+            })
+    }
 }
