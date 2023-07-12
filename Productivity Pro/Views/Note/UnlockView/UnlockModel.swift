@@ -108,8 +108,10 @@ final class UnlockModel: ObservableObject {
             case .verified(_):
                 DispatchQueue.main.async {
                     self.action = .successful
+                    print("success")
                 }
             case .unverified(_, _):
+                print("error")
                 break
             }
         }

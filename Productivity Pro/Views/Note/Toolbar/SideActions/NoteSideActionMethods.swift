@@ -21,27 +21,6 @@ extension NoteSideActionToolbar {
         return isDisabled
     }
     
-    func tapPresentationButton() {
-        let dateTrialEnd = Calendar.current.date(
-            byAdding: .day,
-            value: freeTrialDays,
-            to: Date(rawValue: startDate)!
-        )
-        
-        if !isFullAppUnlocked && dateTrialEnd! < Date() {
-            subviewManager.showUnlockView = true
-        } else {
-            subviewManager.isPresentationMode.toggle()
-            
-            if subviewManager.isPresentationMode == false {
-                Task {
-                    try? await Task.sleep(nanoseconds: 50000)
-                    undoManager?.removeAllActions()
-                }
-            }
-        }
-    }
-    
     func undo() {
         undoManager?.undo()
     }

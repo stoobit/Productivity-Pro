@@ -10,14 +10,9 @@ import PencilKit
 import PDFKit
 
 struct NoteView: View {
+    
     @Environment(\.undoManager) var undoManager
     @Binding var document: ProductivityProDocument
-    
-    @AppStorage("fullAppUnlocked")
-    var isFullAppUnlocked: Bool = false
-    
-    @AppStorage("startDate")
-    var startDate: String = ""
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager

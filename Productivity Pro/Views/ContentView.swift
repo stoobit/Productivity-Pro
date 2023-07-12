@@ -9,19 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage("fullAppUnlocked")
-    var isFullAppUnlocked: Bool = false
-    
-    @AppStorage("startDate")
-    private var startDate: String = ""
-    
     @Binding var document: ProductivityProDocument
     
     @StateObject
     private var toolManager: ToolManager = ToolManager()
     
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var unlockModel: UnlockModel
+    @StateObject
+    private var subviewManager: SubviewManager = SubviewManager()
     
     var body: some View {
         DocumentView(
@@ -50,45 +44,6 @@ struct ContentView: View {
                 type: .pdf
             )
         }
-        .sheet(
-            isPresented: $subviewManager.showUnlockView,
-            onDismiss: {
-                if isFullAppUnlocked && !subviewManager.wasRestored {
-                    subviewManager.showThanksView = true
-                }
-            }
-        ) {
-            UnlockAppView(
-                model: unlockModel,
-                subviewManager: subviewManager
-            )
-        }
-        .alert(
-            "Thank You 💕",
-            isPresented: $subviewManager.showThanksView,
-            actions: {
-                Button("Close", role: .cancel) {
-                    subviewManager.showThanksView = false
-                }
-            },
-            message: {
-                Text("By purchasing Productivity Pro, you help us improve the app and add more features, enabling you to be even more productive.")
-            }
-        )
         
-    }
-    
-    func onAppear() {
-        let dateTrialEnd = Calendar.current.date(
-            byAdding: .day,
-            value: freeTrialDays,
-            to: Date(rawValue: startDate)!
-        )
-        
-        if !isFullAppUnlocked && dateTrialEnd! < Date() {
-            subviewManager.isPresentationMode = true
-        } else {
-            subviewManager.isPresentationMode = false
-        }
     }
 }

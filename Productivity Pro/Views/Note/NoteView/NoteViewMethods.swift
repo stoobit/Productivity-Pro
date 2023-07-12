@@ -34,10 +34,8 @@ extension NoteView {
     
     func noteDidAppear() {
         UITabBar.appearance().isHidden = true
-        checkLockStatus()
         
         toolManager.selectedTab = document.document.note.pages.first!.id
-        
         toolManager.selectedPage = document.document.note.pages.firstIndex(
             where: { $0.id == toolManager.selectedTab }
         )!
@@ -63,18 +61,6 @@ extension NoteView {
         )
         
         pageIndicator()
-    }
-    
-    func checkLockStatus() {
-        let dateTrialEnd = Calendar.current.date(
-            byAdding: .day,
-            value: freeTrialDays,
-            to: Date(rawValue: startDate)!
-        )
-        
-        if !isFullAppUnlocked && dateTrialEnd! < Date() {
-            subviewManager.isPresentationMode = true
-        }
     }
     
     func fixScrollViewBug() {

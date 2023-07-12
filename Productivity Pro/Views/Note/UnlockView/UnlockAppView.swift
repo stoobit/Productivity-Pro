@@ -15,9 +15,6 @@ struct UnlockAppView: View {
     @StateObject var model: UnlockModel
     @StateObject var subviewManager: SubviewManager
     
-    @AppStorage("fullAppUnlocked")
-    var isFullAppUnlocked: Bool = false
-    
     var body: some View {
         GeometryReader { proxy in
             
@@ -64,7 +61,6 @@ struct UnlockAppView: View {
                     
                     Button(action: {
                         model.restorePurchase()
-                        subviewManager.wasRestored = true
                     }) {
                         Label(
                             "Restore Purchase",
@@ -85,10 +81,8 @@ struct UnlockAppView: View {
         }
         .onChange(of: model.action) { action in
             if action == .successful {
-                isFullAppUnlocked = true
                 
                 subviewManager.isPresentationMode = false
-                subviewManager.showUnlockView = false
             }
         }
         .alert(

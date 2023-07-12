@@ -11,9 +11,6 @@ import PencilKit
 
 struct NoteToolbarTitleMenu: View {
     
-    @AppStorage("startDate") var startDate: String = ""
-    @AppStorage("fullAppUnlocked") var isFullAppUnlocked: Bool = false
-    
     @Environment(\.horizontalSizeClass) var hsc
     @Binding var document: ProductivityProDocument
     
@@ -63,17 +60,6 @@ struct NoteToolbarTitleMenu: View {
                 feedback()
             }) {
                 Label("Help", systemImage: "questionmark.circle")
-            }
-        }
-        
-        if !isFullAppUnlocked {
-            Section {
-                Button(action: {
-                    toolManager.isCanvasEnabled = false
-                    subviewManager.showUnlockView = true
-                }) {
-                    Label("Unlock Full Version", systemImage: "cart")
-                }
             }
         }
         

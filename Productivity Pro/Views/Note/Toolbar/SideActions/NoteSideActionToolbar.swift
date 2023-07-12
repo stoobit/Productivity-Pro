@@ -9,9 +9,6 @@ import SwiftUI
 
 struct NoteSideActionToolbar: ToolbarContent {
     
-    @AppStorage("startDate") var startDate: String = ""
-    @AppStorage("fullAppUnlocked") var isFullAppUnlocked: Bool = false
-    
     @Environment(\.undoManager) var undoManager
     @Environment(\.horizontalSizeClass) var hsc
     
@@ -94,7 +91,7 @@ struct NoteSideActionToolbar: ToolbarContent {
                 toolManager.isLocked = false
                 toolManager.isCanvasEnabled = false
                 
-                tapPresentationButton()
+                subviewManager.isPresentationMode.toggle()
                 
             }) {
                 ZStack {
