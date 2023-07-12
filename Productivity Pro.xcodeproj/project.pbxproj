@@ -1099,7 +1099,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Productivity Pro/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Productivity Pro needs access to your camera to take photos.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Productivity Pro needs access to your camera to take photos and scan documents.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Productivity Pro needs access to your photo library to import photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1143,7 +1143,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Productivity Pro/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Productivity Pro needs access to your camera to take photos.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Productivity Pro needs access to your camera to take photos and scan documents.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Productivity Pro needs access to your photo library to import photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
