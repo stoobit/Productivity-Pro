@@ -37,6 +37,7 @@ struct NewDocumentView: View {
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                             }
                             .padding(.top, 50)
+                            .onSubmit { changeTitle() }
                         
                         Label("File Name", systemImage: "pencil")
                             .font(.callout.bold())
@@ -58,7 +59,15 @@ struct NewDocumentView: View {
                                     .frame(width: 190, height: 40)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                             }
-                            .padding(.vertical, 30)
+                            .padding(.top, 30)
+                            .onSubmit { changeTitle() }
+                        
+                        Label("File Name", systemImage: "pencil")
+                            .font(.callout.bold())
+                            .padding(.bottom, 30)
+                            .foregroundStyle(
+                                Color(UIColor.separator)
+                            )
                         
                         Grid()
                     }
@@ -66,6 +75,10 @@ struct NewDocumentView: View {
                 }
             }
         }
+        
+    }
+    
+    func changeTitle() {
         
     }
 }
