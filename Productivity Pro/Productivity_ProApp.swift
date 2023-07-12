@@ -38,7 +38,7 @@ struct Productivity_ProApp: App {
                 unlockModel: unlockModel
             )
             .onAppear {
-                file.document.document.url = file.fileURL
+                file.document.document.url = file.fileURL ?? .applicationDirectory
                 
                 if firstOpened {
                     startDate = Date().rawValue

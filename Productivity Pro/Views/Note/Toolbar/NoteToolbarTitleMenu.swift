@@ -112,7 +112,7 @@ struct NoteToolbarTitleMenu: View {
     
     @MainActor func renderPDF() -> URL {
         
-        let name: String = document.document.url!
+        let name: String = document.document.url
             .deletingPathExtension().lastPathComponent
         
         let url = URL.cachesDirectory.appending(

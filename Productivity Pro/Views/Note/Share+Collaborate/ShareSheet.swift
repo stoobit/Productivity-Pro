@@ -77,12 +77,11 @@ struct ShareSheet: View {
             Spacer()
             
             if subviewManager.sharePPSheet {
-                ShareLink(item: document.document.url!) { ShareIcon(size: size) }
+                ShareLink(item: document.document.url) { ShareIcon(size: size) }
                     .padding(.bottom)
             }
             
         }
-        .allowsHitTesting(document.document.url != nil)
         .padding()
     }
     
