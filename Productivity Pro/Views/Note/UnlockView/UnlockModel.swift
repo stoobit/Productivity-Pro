@@ -42,7 +42,7 @@ enum UnlockAction: Equatable {
 }
 
 let purchaseIDs: [String] = [
-    "com.stoobit.ProductivityPro.unlock"
+    "com.stoobit.ProductivityPro.unlockPro"
 ]
 
 @MainActor
