@@ -95,7 +95,6 @@
 		BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */; };
 		BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */; };
 		BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */; };
-		BBBF53882A2FEAA8006DD011 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBF53872A2FEAA8006DD011 /* StoreKit.framework */; };
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
 		BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9732A18F09100D496CB /* ItemView.swift */; };
@@ -245,7 +244,6 @@
 		BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProxy.swift; sourceTree = "<group>"; };
 		BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWrapper.swift; sourceTree = "<group>"; };
 		BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDocumentMethods.swift; sourceTree = "<group>"; };
-		BBBF53872A2FEAA8006DD011 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BBBF53892A2FEB6B006DD011 /* UnlockStoreKitConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnlockStoreKitConfig.storekit; sourceTree = "<group>"; };
 		BBBFB834299FB75400FA236F /* DragItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragItemModifier.swift; sourceTree = "<group>"; };
 		BBC2C90629C5CFB40044B201 /* SnapItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapItemView.swift; sourceTree = "<group>"; };
@@ -298,7 +296,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
-				BBBF53882A2FEAA8006DD011 /* StoreKit.framework in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
 			);
@@ -593,7 +590,6 @@
 		BBBCACAC2A2539E100C23B2C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BBBF53872A2FEAA8006DD011 /* StoreKit.framework */,
 				BB9D73F32A56256E0054940A /* QuickLook.framework */,
 				BB9D740B2A56277B0054940A /* QuickLookThumbnailing.framework */,
 			);
