@@ -94,6 +94,8 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     }
     
     class Coordinator: NSObject, PKCanvasViewDelegate {
+        var update: Bool = true
+        
         @Binding var drawingChanged: Bool
         @Binding var toolPicker: PKToolPicker
         
@@ -113,13 +115,17 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         }
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-            drawingChanged = true
-            
-            if objectRecognitionEnabled && strokeCount < canvasView.drawing.strokes.count {
-                recognizeObject(canvasView)
+            if update {
+                update = false
+                drawingChanged = true
+                
+                if objectRecognitionEnabled && strokeCount < canvasView.drawing.strokes.count {
+                    recognizeObject(canvasView)
+                }
+                
+                strokeCount = canvasView.drawing.strokes.count
+                update = true
             }
-            
-            strokeCount = canvasView.drawing.strokes.count
         }
         
         @objc func recognizeObject(_ gestureRecognizer: UIGestureRecognizer) {
@@ -147,17 +153,151 @@ struct DrawingViewRepresentable: UIViewRepresentable {
                 let handler = VNImageRequestHandler(cgImage: cgImage)
                 
                 try handler.perform([request])
-                UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
+                guard let results = request.results else { return }
                 
-                if let result = request.results?.first {
-                    print("ML: \(result.description)")
+                let detections = results as! [VNClassificationObservation]
+                if let shape = detections.first?.identifier {
+                    print("ML: \(shape)")
+                    replace(shape, in: canvasView)
                 }
                 
             } catch {
                 print("ML: There was an error.")
             }
         }
-
+        
+        func replace(_ shape: String, in canvasView: PKCanvasView) {
+            guard let userDrawing = canvasView.drawing.strokes.last else { return }
+            
+            if shape == "rect" {
+                var newStroke = userDrawing
+                newStroke.ink = userDrawing.ink
+               
+                var points: [PKStrokePoint] = [
+                    PKStrokePoint(
+                        location: CGPoint(
+                            x: userDrawing.renderBounds.minX,
+                            y: userDrawing.renderBounds.minY
+                        ),
+                        timeOffset: 0,
+                        size: CGSize(width: 5, height: 5),
+                        opacity: 1,
+                        force: 1,
+                        azimuth: 0,
+                        altitude: 0
+                    ),
+                    PKStrokePoint(
+                        location: CGPoint(
+                            x: userDrawing.renderBounds.minX,
+                            y: userDrawing.renderBounds.maxY
+                        ),
+                        timeOffset: 0,
+                        size: CGSize(width: 5, height: 5),
+                        opacity: 1,
+                        force: 1,
+                        azimuth: 0,
+                        altitude: 0
+                    ),
+                ]
+                
+                newStroke.path = PKStrokePath(controlPoints: points, creationDate: Date())
+                canvasView.drawing.strokes.append(newStroke)
+                
+               points = [
+                    PKStrokePoint(
+                        location: CGPoint(
+                            x: userDrawing.renderBounds.minX,
+                            y: userDrawing.renderBounds.maxY
+                        ),
+                        timeOffset: 0,
+                        size: CGSize(width: 5, height: 5),
+                        opacity: 1,
+                        force: 1,
+                        azimuth: 0,
+                        altitude: 0
+                    ),
+                    PKStrokePoint(
+                        location: CGPoint(
+                            x: userDrawing.renderBounds.maxX,
+                            y: userDrawing.renderBounds.maxY
+                        ),
+                        timeOffset: 0,
+                        size: CGSize(width: 5, height: 5),
+                        opacity: 1,
+                        force: 1,
+                        azimuth: 0,
+                        altitude: 0
+                    ),
+                ]
+                
+                newStroke.path = PKStrokePath(controlPoints: points, creationDate: Date())
+                canvasView.drawing.strokes.append(newStroke)
+                
+                points = [
+                    PKStrokePoint(
+                        location: CGPoint(
+                            x: userDrawing.renderBounds.maxX,
+                            y: userDrawing.renderBounds.maxY
+                        ),
+                        timeOffset: 0,
+                        size: CGSize(width: 5, height: 5),
+                        opacity: 1,
+                        force: 1,
+                        azimuth: 0,
+                        altitude: 0
+                    ),
+                    PKStrokePoint(
+                        location: CGPoint(
+                            x: userDrawing.renderBounds.maxX,
+                            y: userDrawing.renderBounds.minY
+                        ),
+                        timeOffset: 0,
+                        size: CGSize(width: 5, height: 5),
+                        opacity: 1,
+                        force: 1,
+                        azimuth: 0,
+                        altitude: 0
+                    ),
+                ]
+                
+                newStroke.path = PKStrokePath(controlPoints: points, creationDate: Date())
+                canvasView.drawing.strokes.append(newStroke)
+                
+                points = [
+                    PKStrokePoint(
+                        location: CGPoint(
+                            x: userDrawing.renderBounds.maxX,
+                            y: userDrawing.renderBounds.minY
+                        ),
+                        timeOffset: 0,
+                        size: CGSize(width: 5, height: 5),
+                        opacity: 1,
+                        force: 1,
+                        azimuth: 0,
+                        altitude: 0
+                    ),
+                    PKStrokePoint(
+                        location: CGPoint(
+                            x: userDrawing.renderBounds.minX,
+                            y: userDrawing.renderBounds.minY
+                        ),
+                        timeOffset: 0,
+                        size: CGSize(width: 5, height: 5),
+                        opacity: 1,
+                        force: 1,
+                        azimuth: 0,
+                        altitude: 0
+                    ),
+                ]
+                
+                newStroke.path = PKStrokePath(controlPoints: points, creationDate: Date())
+                canvasView.drawing.strokes.append(newStroke)
+                
+                canvasView.drawing.strokes.remove(at: canvasView.drawing.strokes.count - 5)
+            }
+            
+        }
+        
     }
     
     func getFrame() -> CGSize {
