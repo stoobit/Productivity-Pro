@@ -22,6 +22,7 @@ struct DrawingView: View {
     @State var pkToolPicker = PKToolPicker()
     
     @State var drawingChanged: Bool = false
+    @State var strokeCount: Int = 0
     
     var body: some View {
         
@@ -32,7 +33,8 @@ struct DrawingView: View {
             subviewManager: subviewManager,
             canvasView: $pkCanvasView,
             toolPicker: $pkToolPicker,
-            drawingChanged: $drawingChanged
+            drawingChanged: $drawingChanged,
+            strokeCount: $strokeCount
         )
         .onChange(of: drawingChanged) { value in
             didDrawingChange(value)

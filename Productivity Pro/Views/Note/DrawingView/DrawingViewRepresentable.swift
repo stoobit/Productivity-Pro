@@ -20,6 +20,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     @Binding var toolPicker: PKToolPicker
     
     @Binding var drawingChanged: Bool
+    @Binding var strokeCount: Int
     
     func makeUIView(context: Context) -> PKCanvasView {
         
@@ -59,6 +60,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         )
         
         canvasView.addGestureRecognizer(longPressed)
+        strokeCount = canvasView.drawing.strokes.count
         
         return canvasView
     }
@@ -89,7 +91,9 @@ struct DrawingViewRepresentable: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(
             drawingChanged: $drawingChanged,
-            toolPicker: $toolPicker
+            toolPicker: $toolPicker,
+            objectRecognitionEnabled: $toolManager.objectRecognitionEnabled,
+            strokeCount: $strokeCount
         )
     }
     
@@ -97,20 +101,37 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         @Binding var drawingChanged: Bool
         @Binding var toolPicker: PKToolPicker
         
+        @Binding var objectRecognitionEnabled: Bool
+        @Binding var strokeCount: Int
+        
         init(
             drawingChanged: Binding<Bool>,
-            toolPicker: Binding<PKToolPicker>
+            toolPicker: Binding<PKToolPicker>,
+            objectRecognitionEnabled: Binding<Bool>,
+            strokeCount: Binding<Int>
         ) {
             _drawingChanged = drawingChanged
             _toolPicker = toolPicker
+            _objectRecognitionEnabled = objectRecognitionEnabled
+            _strokeCount = strokeCount
         }
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             drawingChanged = true
+            
+            if objectRecognitionEnabled && strokeCount < canvasView.drawing.strokes.count {
+                recognizeObject()
+            }
+            
+            strokeCount = canvasView.drawing.strokes.count
         }
         
         @objc func recognizeObject(_ gestureRecognizer: UIGestureRecognizer) {
             print("recognition")
+        }
+        
+        func recognizeObject() {
+            
         }
 
     }
