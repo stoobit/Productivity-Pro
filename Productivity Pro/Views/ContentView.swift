@@ -24,7 +24,6 @@ struct ContentView: View {
             toolManager: toolManager
         )
         .disabled(toolManager.showProgress)
-        .onAppear { onAppear() }
         .overlay {
             if toolManager.showProgress {
                 ProgressView("Processing...")

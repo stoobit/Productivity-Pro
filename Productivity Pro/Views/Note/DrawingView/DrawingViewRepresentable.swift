@@ -53,6 +53,13 @@ struct DrawingViewRepresentable: UIViewRepresentable {
             height: getFrame().height * toolManager.zoomScale
         )
         
+        let longPressed = UILongPressGestureRecognizer(
+            target: context.coordinator,
+            action: #selector(context.coordinator.recognizeObject(_:))
+        )
+        
+        canvasView.addGestureRecognizer(longPressed)
+        
         return canvasView
     }
     
@@ -100,6 +107,10 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             drawingChanged = true
+        }
+        
+        @objc func recognizeObject(_ gestureRecognizer: UIGestureRecognizer) {
+            print("recognition")
         }
 
     }

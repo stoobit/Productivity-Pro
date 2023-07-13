@@ -11,6 +11,15 @@ extension NoteSideActionToolbar {
     
     @ViewBuilder func DrawingModeEnabled() -> some View {
         Button(action: {
+            toolManager.objectRecognitionEnabled.toggle()
+        }) {
+            Label(
+                "",
+                systemImage: !toolManager.objectRecognitionEnabled ? "wand.and.stars" : "scribble.variable"
+            )
+        }
+        
+        Button(action: {
             toolManager.isLocked.toggle()
         }) {
             Label(
