@@ -7,6 +7,9 @@
 
 import SwiftUI
 import PencilKit
+import CoreML
+import Vision
+import ImageIO
 
 struct DrawingViewRepresentable: UIViewRepresentable {
     
@@ -54,14 +57,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
             height: getFrame().height * toolManager.zoomScale
         )
         
-        let longPressed = UILongPressGestureRecognizer(
-            target: context.coordinator,
-            action: #selector(context.coordinator.recognizeObject(_:))
-        )
-        
-        canvasView.addGestureRecognizer(longPressed)
         strokeCount = canvasView.drawing.strokes.count
-        
         return canvasView
     }
     
@@ -120,7 +116,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
             drawingChanged = true
             
             if objectRecognitionEnabled && strokeCount < canvasView.drawing.strokes.count {
-                recognizeObject()
+                recognizeObject(canvasView)
             }
             
             strokeCount = canvasView.drawing.strokes.count
@@ -130,8 +126,36 @@ struct DrawingViewRepresentable: UIViewRepresentable {
             print("recognition")
         }
         
-        func recognizeObject() {
-            
+        func recognizeObject(_ canvasView: PKCanvasView) {
+            do {
+                
+                guard let bounds = canvasView.drawing.strokes.last?.renderBounds else {
+                    return
+                }
+                
+                let canvasCopy = PKCanvasView()
+                canvasCopy.drawing.strokes = [canvasView.drawing.strokes.last!]
+                
+                let uiImage = canvasCopy.drawing.image(from: bounds, scale: 1)
+                guard let cgImage = uiImage.cgImage else { return }
+                
+                let model = try VNCoreMLModel(
+                    for: ObjectRecognition(configuration: MLModelConfiguration()).model
+                )
+                
+                let request = VNCoreMLRequest(model: model)
+                let handler = VNImageRequestHandler(cgImage: cgImage)
+                
+                try handler.perform([request])
+                UIImageWriteToSavedPhotosAlbum(uiImage, nil, nil, nil)
+                
+                if let result = request.results?.first {
+                    print("ML: \(result.description)")
+                }
+                
+            } catch {
+                print("ML: There was an error.")
+            }
         }
 
     }
