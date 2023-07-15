@@ -22,7 +22,9 @@ extension NewDocumentView {
             }
             .sheet(isPresented: $subviewManager.newDocTemplate) {
                 NoteSettings(
-                    subviewManager: subviewManager, document: $document
+                    toolManager: toolManager,
+                    subviewManager: subviewManager,
+                    document: $document
                 ) {
                     subviewManager.newDocTemplate = false
                     subviewManager.createDocument = false

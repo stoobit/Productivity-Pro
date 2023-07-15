@@ -83,16 +83,18 @@ struct PageBackgroundPDF: View, Equatable {
                 return
             }
             
-            guard let pdf = toolManager.preloadedMedia[index] else {
-                return
+            if toolManager.preloadedMedia.indices.contains(index) {
+                guard let pdf = toolManager.preloadedMedia[index] else {
+                    return
+                }
+            
+                let thumbnail = pdf.page(at: 0)?.thumbnail(of: CGSize(
+                    width: getFrame().width * 0.2,
+                    height: getFrame().width * 0.2
+                ), for: .mediaBox)
+                
+                renderedBackground = thumbnail
             }
-            
-            let thumbnail = pdf.page(at: 0)?.thumbnail(of: CGSize(
-                width: getFrame().width * 0.2,
-                height: getFrame().width * 0.2
-            ), for: .mediaBox)
-            
-            renderedBackground = thumbnail
         }
     }
     
@@ -101,16 +103,18 @@ struct PageBackgroundPDF: View, Equatable {
             return
         }
         
-        guard let pdf = toolManager.preloadedMedia[index] else {
-            return
+        if toolManager.preloadedMedia.indices.contains(index) {
+            guard let pdf = toolManager.preloadedMedia[index] else {
+                return
+            }
+            
+            let thumbnail = pdf.page(at: 0)?.thumbnail(of: CGSize(
+                width: getFrame().width * 2.5 * toolManager.zoomScale,
+                height: getFrame().width * 2.5 * toolManager.zoomScale
+            ), for: .mediaBox)
+            
+            renderedBackground = thumbnail
         }
-        
-        let thumbnail = pdf.page(at: 0)?.thumbnail(of: CGSize(
-            width: getFrame().width * 2.5 * toolManager.zoomScale,
-            height: getFrame().width * 2.5 * toolManager.zoomScale
-        ), for: .mediaBox)
-        
-        renderedBackground = thumbnail
     }
     
     func renderPDFQuality() {

@@ -36,6 +36,12 @@ extension NewDocumentView {
                 isPortrait: size.width < size.height
             )
            
+            if let data = page.dataRepresentation {
+                toolManager.preloadedMedia.append(PDFDocument(data: data))
+            } else {
+                toolManager.preloadedMedia.append(nil)
+            }
+            
             document.note.pages.append(newPage)
         }
         
@@ -68,6 +74,7 @@ extension NewDocumentView {
                 isPortrait: size.width < size.height
             )
             
+            toolManager.preloadedMedia.append(nil)
             document.note.pages.append(newPage)
         }
         
@@ -86,6 +93,7 @@ extension NewDocumentView {
             isPortrait: true
         )
         
+        toolManager.preloadedMedia.append(nil)
         note.pages.append(firstPage)
         document.note = note
         

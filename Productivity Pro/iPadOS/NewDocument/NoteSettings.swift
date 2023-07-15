@@ -9,7 +9,9 @@ import SwiftUI
 
 struct NoteSettings: View {
     
+    @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
+    
     @Binding var document: Document
     let dismiss: () -> Void
     
@@ -131,6 +133,7 @@ struct NoteSettings: View {
                 isPortrait: isPortrait
             )
             
+            toolManager.preloadedMedia.append(nil)
             note.pages.append(firstPage)
             document.note = note
             
