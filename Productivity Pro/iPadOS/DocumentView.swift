@@ -32,6 +32,11 @@ struct DocumentView: View {
                     toolManager: toolManager
                 )
                 .edgesIgnoringSafeArea(.bottom)
+                .sheet(isPresented: $whatIsNew) {
+                    WhatIsNew(isPresented: $whatIsNew)
+                }
+                
+            } else if document.document.documentType == .realityNote {
                 
             } else {
                 CreateDoc()
@@ -41,9 +46,6 @@ struct DocumentView: View {
         .toolbarRole(.editor)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .sheet(isPresented: $whatIsNew) {
-            WhatIsNew(isPresented: $whatIsNew)
-        }
         .onAppear {
             if firstOpenAU && document.document.documentType != .none {
                 whatIsNew = true

@@ -9,18 +9,15 @@ import Foundation
 
 struct Document: Codable {
     var url: URL = .applicationDirectory
-    
     var documentType: DocumentType = .none
     
     var note: Note!
-    var whiteboard: Whiteboard!
-    var taskList: TaskList!
-    
+    var realityNote: RealityNote!
 }
 
 enum DocumentType: Codable {
     case none
+    
     case note
-    case whiteboard
-    case taskList
+    case realityNote
 }
