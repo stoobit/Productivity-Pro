@@ -16,6 +16,8 @@ class ToolManager: ObservableObject {
     @Published var selectedPage: Int = 0
     @Published var selectedTab: UUID = UUID()
     
+    @Published var preloadedMedia: [PDFDocument?] = []
+    
     @Published var copyPastePasser: CopyPastePasser?
     
     @Published var didZoom: Bool = false

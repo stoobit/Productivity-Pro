@@ -106,8 +106,11 @@ struct NoteView: View {
         .onChange(of: document.document.note.pages.count) { _ in pageIndicator()
             undoManager?.removeAllActions()
         }
-        .task { pageIndicator() }
         .onAppear { noteDidAppear() }
+        .task {
+            pageIndicator()
+            loadMedia()
+        }
         
     }
     

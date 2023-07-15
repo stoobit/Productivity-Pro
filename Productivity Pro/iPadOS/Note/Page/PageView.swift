@@ -54,6 +54,7 @@ struct PageView: View {
                     
                     PageBackgroundPDF(
                         page: page,
+                        document: $document.document,
                         offset: $offset,
                         toolManager: toolManager,
                         isOverview: highRes,

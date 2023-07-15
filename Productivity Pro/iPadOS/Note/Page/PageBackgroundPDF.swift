@@ -13,6 +13,8 @@ struct PageBackgroundPDF: View, Equatable {
     @State private var renderedBackground: UIImage?
     
     var page: Page
+    
+    @Binding var document: Document
     @Binding var offset: CGFloat
     
     @StateObject var toolManager: ToolManager
@@ -75,27 +77,40 @@ struct PageBackgroundPDF: View, Equatable {
     }
     
     func renderPreview() {
-        if let media = page.backgroundMedia {
-            if renderedBackground == nil {
-                let thumbnail = PDFDocument(data: media)?.page(at: 0)?.thumbnail(of: CGSize(
-                    width: getFrame().width * 0.2,
-                    height: getFrame().width * 0.2
-                ), for: .mediaBox)
-                
-                renderedBackground = thumbnail
+        if renderedBackground == nil {
+            
+            guard let index = document.note.pages.firstIndex(of: page) else {
+                return
             }
-        }
-    }
-    
-    func render() {
-        if let media = page.backgroundMedia {
-            let thumbnail = PDFDocument(data: media)?.page(at: 0)?.thumbnail(of: CGSize(
-                width: getFrame().width * 2.5 * toolManager.zoomScale,
-                height: getFrame().width * 2.5 * toolManager.zoomScale
+            
+            guard let pdf = toolManager.preloadedMedia[index] else {
+                return
+            }
+            
+            let thumbnail = pdf.page(at: 0)?.thumbnail(of: CGSize(
+                width: getFrame().width * 0.2,
+                height: getFrame().width * 0.2
             ), for: .mediaBox)
             
             renderedBackground = thumbnail
         }
+    }
+    
+    func render() {
+        guard let index = document.note.pages.firstIndex(of: page) else {
+            return
+        }
+        
+        guard let pdf = toolManager.preloadedMedia[index] else {
+            return
+        }
+        
+        let thumbnail = pdf.page(at: 0)?.thumbnail(of: CGSize(
+            width: getFrame().width * 2.5 * toolManager.zoomScale,
+            height: getFrame().width * 2.5 * toolManager.zoomScale
+        ), for: .mediaBox)
+        
+        renderedBackground = thumbnail
     }
     
     func renderPDFQuality() {

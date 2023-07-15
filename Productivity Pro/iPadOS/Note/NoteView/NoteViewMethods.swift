@@ -11,6 +11,28 @@ import PDFKit
 
 extension NoteView {
     
+    func loadMedia() {
+        for page in document.document.note.pages {
+            if page.type == .pdf {
+                
+                guard let data = page.backgroundMedia else {
+                    toolManager.preloadedMedia.append(nil)
+                    continue
+                }
+                
+                guard let pdf = PDFDocument(data: data) else {
+                    toolManager.preloadedMedia.append(nil)
+                    continue
+                }
+                
+                toolManager.preloadedMedia.append(pdf)
+                
+            } else {
+                toolManager.preloadedMedia.append(nil)
+            }
+        }
+    }
+    
     func isViewVisible(page: Page) -> Bool {
         var isVisible: Bool = false
         
