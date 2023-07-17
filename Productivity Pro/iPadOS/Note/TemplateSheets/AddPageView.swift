@@ -122,6 +122,10 @@ struct AddPageView: View {
             isPortrait: isPortrait
         )
         
+        toolManager.preloadedMedia.insert(
+            nil, at: toolManager.selectedPage + 1
+        )
+        
         document.document.note.pages.insert(
             newPage, at: toolManager.selectedPage + 1
         )

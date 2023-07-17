@@ -82,10 +82,13 @@ struct AddPDFPageHelper: ViewModifier {
                 isPortrait: size.width < size.height
             )
             
+            toolManager.preloadedMedia.insert(
+                nil, at: toolManager.selectedPage + count
+            )
+            
             document.document.note.pages.insert(
                 newPage, at: toolManager.selectedPage + count
             )
-            
             
             count += 1
         }
@@ -119,6 +122,16 @@ struct AddPDFPageHelper: ViewModifier {
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height
             )
+            
+            if let data = page.dataRepresentation {
+                toolManager.preloadedMedia.insert(
+                    PDFDocument(data: data), at: toolManager.selectedPage + count
+                )
+            } else {
+                toolManager.preloadedMedia.insert(
+                    nil, at: toolManager.selectedPage + count
+                )
+            }
            
             document.document.note.pages.insert(
                 newPage, at: toolManager.selectedPage + count

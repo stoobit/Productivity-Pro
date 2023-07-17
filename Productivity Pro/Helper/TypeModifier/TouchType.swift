@@ -40,17 +40,3 @@ struct TouchTypeModifier: ViewModifier {
 
     }
 }
-
-
-struct TouchModifier: ViewModifier {
-    @Binding var touchType: UITouch.TouchType
-
-    let isOverview: Bool
-    func body(content: Content) -> some View {
-        if isOverview {
-            content
-        } else {
-            content.modifier(TouchTypeModifier(touchType: $touchType))
-        }
-    }
-}
