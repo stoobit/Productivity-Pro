@@ -23,6 +23,7 @@ extension OverviewView {
             document.document.note.pages[offsets.first!].type = .template
             
             let page = document.document.note.pages[offsets.first!]
+            toolManager.preloadedMedia.remove(at: offsets.first!)
             
             let seconds = 0.1
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {

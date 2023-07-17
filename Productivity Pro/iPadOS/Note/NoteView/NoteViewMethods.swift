@@ -139,6 +139,8 @@ extension NoteView {
                 toolManager.selectedPage
             ].type = .template
             
+            toolManager.preloadedMedia.remove(at: toolManager.selectedPage)
+            
             let seconds = 0.1
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 
