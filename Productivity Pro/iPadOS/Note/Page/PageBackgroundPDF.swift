@@ -34,7 +34,7 @@ struct PageBackgroundPDF: View, Equatable {
                     )
                     .scaleEffect(1/toolManager.zoomScale)
                     .onChange(of: toolManager.zoomScale) { _ in
-                        if toolManager.selectedTab == page.id {
+                        if toolManager.selectedTab == page.id && offset == 0 {
                             render()
                         }
                     }

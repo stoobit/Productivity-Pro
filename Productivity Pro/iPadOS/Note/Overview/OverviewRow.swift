@@ -90,6 +90,7 @@ struct OverviewRow: View {
     func tm() -> ToolManager {
         let tm = ToolManager()
         tm.zoomScale = 1
+        tm.preloadedMedia = toolManager.preloadedMedia
         
         return tm
     }
