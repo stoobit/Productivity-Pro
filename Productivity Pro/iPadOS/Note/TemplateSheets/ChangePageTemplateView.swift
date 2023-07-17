@@ -34,8 +34,12 @@ struct ChangePageTemplateView: View {
                         NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).SmallView()
                     }
                 }
+                .animation(
+                    isPresented == false ? .linear(duration: 0) : .linear(duration: 0.2),
+                    value: backgroundColor
+                )
             }
-            .navigationTitle("Change Page Template")
+            .navigationTitle("Change Template")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.navigationStack)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -73,18 +77,17 @@ struct ChangePageTemplateView: View {
     
     @ViewBuilder func BackgroundValueView() -> some View {
         VStack {
-            Button(action: { isPortrait.toggle() }) {
+            Button(action: { withAnimation { isPortrait.toggle() } }) {
                 Text("Layout")
                     .font(.body)
                     .foregroundColor(.primary)
-
+                
                 Spacer()
                 RectangleRotationIcon()
                     .rotationEffect(Angle(degrees: isPortrait ? 0 : 90))
-                    .animation(.easeInOut, value: isPortrait)
             }
             .padding(.vertical, 5)
-
+            
             Divider()
                 .padding(.vertical, 5)
             
@@ -108,17 +111,18 @@ struct ChangePageTemplateView: View {
     }
     
     @ViewBuilder func ColorCircle(_ value: String) -> some View {
-        Button(action: { withAnimation { backgroundColor = value } }) {
+        Button(action: { backgroundColor = value }) {
             Circle()
                 .fill(Color(value))
-                .shadow(color: backgroundColor == value ? .clear : .primary, radius: 2)
                 .frame(width: 30, height: 30)
                 .padding(.horizontal, 10)
                 .overlay {
-                    if backgroundColor == value {
-                        Circle()
-                            .stroke(Color.accentColor, lineWidth: 3)
-                    }
+                    Circle()
+                        .stroke(
+                            backgroundColor == value ?
+                            Color.accentColor : Color.secondary,
+                            lineWidth: 3
+                        )
                 }
         }
     }

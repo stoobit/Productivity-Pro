@@ -105,19 +105,25 @@ struct NoteBackgroundIcons: View {
         Icon(selection: $backgroundSelection, backgroundColor: backgroundColor, value: "squared") {
             Path { path in
                 for i in 1...16 {
-                    path.addRect(CGRect(x: 0,
-                                        y: CGFloat(i) * 14,
-                                        width: 210 * 0.8,
-                                        height: 1
-                                       ))
+                    path.addRect(
+                        CGRect(
+                            x: 0,
+                            y: CGFloat(i) * 14,
+                            width: 210 * 0.8,
+                            height: 1
+                        )
+                    )
                 }
                 
                 for i in 1...11 {
-                    path.addRect(CGRect(x: CGFloat(i) * 14,
-                                        y: 0,
-                                        width: 1,
-                                        height: 300 * 0.8
-                                       ))
+                    path.addRect(
+                        CGRect(
+                            x: CGFloat(i) * 14,
+                            y: 0,
+                            width: 1,
+                            height: 300 * 0.8
+                        )
+                    )
                 }
             }
             .fill(Color.secondary)
@@ -170,11 +176,14 @@ struct NoteBackgroundIcons: View {
                 for group in 0...groups {
                     for line in 1...5 {
                         
-                        path.addRect(CGRect(x: 0,
-                                            y: CGFloat(line * 4) + CGFloat(group * 40),
-                                            width: width,
-                                            height: 1
-                                           ))
+                        path.addRect(
+                            CGRect(
+                                x: 0,
+                                y: CGFloat(line * 4) + CGFloat(group * 40),
+                                width: width,
+                                height: 1
+                            )
+                        )
                         
                     }
                 }
@@ -208,11 +217,11 @@ struct Icon<Content: View>: View {
     
     var body: some View {
         VStack {
-            Button(action: { withAnimation { selection = value } }) {
+            Button(action: { selection = value }) {
                 ZStack {
                     Rectangle()
                         .foregroundColor(Color(backgroundColor))
-                        .shadow(color: Color.primary, radius: 1.2)
+                        .clipShape(RoundedRectangle(cornerRadius: 9))
                     
                     content()
                         .colorScheme(colorScheme())
@@ -222,9 +231,13 @@ struct Icon<Content: View>: View {
                             .foregroundColor(.accentColor)
                             .font(.largeTitle.bold())
                     }
+                      
+                    RoundedRectangle(cornerRadius: 9)
+                        .stroke(Color.secondary, lineWidth: 2.0)
                 }
-                .frame(width: 210 * 0.8,
-                       height: 300 * 0.8
+                .frame(
+                    width: 210 * 0.8,
+                    height: 300 * 0.8
                 )
                 .padding()
             }

@@ -40,7 +40,7 @@ struct NoteSideActionToolbar: ToolbarContent {
                             toolManager.isCanvasEnabled = false
                             subviewManager.changeTemplate.toggle()
                         }) {
-                            Label("Change Page Template", systemImage: "doc.badge.gearshape")
+                            Label("Change Template", systemImage: "doc.badge.gearshape")
                         }
                         .disabled(templateChangeDisabled())
                         

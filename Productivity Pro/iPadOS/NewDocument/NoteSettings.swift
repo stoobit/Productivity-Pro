@@ -38,6 +38,10 @@ struct NoteSettings: View {
                         
                     }
                 }
+                .animation(
+                    subviewManager.newDocTemplate == false ? .linear(duration: 0) : .linear(duration: 0.2),
+                    value: backgroundColor
+                )
             }
             .navigationTitle("Select Template")
             .navigationBarTitleDisplayMode(.inline)
@@ -71,7 +75,7 @@ struct NoteSettings: View {
     
     @ViewBuilder func BackgroundValueView() -> some View {
         VStack {
-            Button(action: { isPortrait.toggle() }) {
+            Button(action: { withAnimation { isPortrait.toggle() } }) {
                 Text("Layout")
                     .font(.body)
                     .foregroundColor(.primary)
@@ -79,7 +83,6 @@ struct NoteSettings: View {
                 Spacer()
                 RectangleRotationIcon()
                     .rotationEffect(Angle(degrees: isPortrait ? 0 : 90))
-                    .animation(.easeInOut, value: isPortrait)
             }
             .padding(.vertical, 5)
             
@@ -106,17 +109,18 @@ struct NoteSettings: View {
     }
     
     @ViewBuilder func ColorCircle(_ value: String) -> some View {
-        Button(action: { withAnimation { backgroundColor = value } }) {
+        Button(action: { backgroundColor = value }) {
             Circle()
                 .fill(Color(value))
-                .shadow(color: backgroundColor == value ? .clear : .primary, radius: 2)
                 .frame(width: 30, height: 30)
                 .padding(.horizontal, 10)
                 .overlay {
-                    if backgroundColor == value {
-                        Circle()
-                            .stroke(Color.accentColor, lineWidth: 3)
-                    }
+                    Circle()
+                        .stroke(
+                            backgroundColor == value ?
+                            Color.accentColor : Color.secondary,
+                            lineWidth: 3
+                        )
                 }
         }
     }
