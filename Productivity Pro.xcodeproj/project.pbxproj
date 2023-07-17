@@ -25,6 +25,7 @@
 		BB27FED828EA419300459334 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED728EA419300459334 /* OverviewView.swift */; };
 		BB28B2382A62DDAF0099330E /* RealityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB28B2372A62DDAF0099330E /* RealityContentView.swift */; };
 		BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */; };
+		BB2CFBA12A65F080009774BB /* LaserpointerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFBA02A65F080009774BB /* LaserpointerView.swift */; };
 		BB3208A82981DFFF0014F602 /* CameraHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraHelperView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */; };
@@ -173,6 +174,7 @@
 		BB27FED728EA419300459334 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		BB28B2372A62DDAF0099330E /* RealityContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityContentView.swift; sourceTree = "<group>"; };
 		BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectRecognition.mlmodel; sourceTree = "<group>"; };
+		BB2CFBA02A65F080009774BB /* LaserpointerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaserpointerView.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelperView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				BB6ABB8029CD0BA5008B58E3 /* NoteViewMethods.swift */,
 				BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */,
 				BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */,
+				BB2CFBA02A65F080009774BB /* LaserpointerView.swift */,
 			);
 			path = NoteView;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
 				BB4CDD5828D3D532009A409F /* DocumentView.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
+				BB2CFBA12A65F080009774BB /* LaserpointerView.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
 				BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */,
