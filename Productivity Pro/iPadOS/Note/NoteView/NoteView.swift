@@ -77,9 +77,7 @@ struct NoteView: View {
                     subviewManager: subviewManager,
                     toolManager: toolManager,
                     proxy: proxy
-                ) {
-                    
-                }
+                )
             )
             .modifier(
                 NoteToolbarModifier(

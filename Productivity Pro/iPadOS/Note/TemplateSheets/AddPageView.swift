@@ -9,6 +9,15 @@ import SwiftUI
 
 struct AddPageView: View {
     
+    @AppStorage("savedBackgroundColor")
+    var savedBackgroundColor: String = "pagewhite"
+    
+    @AppStorage("savedIsPortrait")
+    var savedIsPortrait: Bool = true
+    
+    @AppStorage("savedBackgroundTemplate")
+    var savedBackgroundTemplate: String = "blank"
+    
     @Binding var document: ProductivityProDocument
     @Binding var isPresented: Bool
     
@@ -118,6 +127,10 @@ struct AddPageView: View {
     }
     
     func addPage() {
+        
+        savedBackgroundColor = backgroundColor
+        savedBackgroundTemplate = backgroundTemplate
+        savedIsPortrait = isPortrait
         
         let newPage = Page(
             backgroundColor: backgroundColor,

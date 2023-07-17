@@ -9,6 +9,15 @@ import SwiftUI
 
 struct NewDocumentView: View {
     
+    @AppStorage("savedBackgroundColor")
+    var savedBackgroundColor: String = "pagewhite"
+    
+    @AppStorage("savedIsPortrait")
+    var savedIsPortrait: Bool = true
+    
+    @AppStorage("savedBackgroundTemplate")
+    var savedBackgroundTemplate: String = "blank"
+    
     @Environment(\.dismiss) var dismiss
     @Binding var document: Document
     

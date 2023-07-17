@@ -18,7 +18,7 @@ struct NoteSheetHelper: ViewModifier {
     @StateObject var toolManager: ToolManager
     
     let proxy: GeometryProxy
-    let save: () -> Void
+    
     func body(content: Content) -> some View {
         content
             .sheet(isPresented: $subviewManager.settingsSheet) {
@@ -29,7 +29,7 @@ struct NoteSheetHelper: ViewModifier {
                     document: $document,
                     isPresented: $subviewManager.changeTemplate,
                     toolManager: toolManager
-                ) { save() }
+                )
             }
             .sheet(isPresented: $subviewManager.sharePPSheet) {
                 ShareSheet(

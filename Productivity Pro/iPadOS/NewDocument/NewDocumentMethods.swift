@@ -83,14 +83,14 @@ extension NewDocumentView {
         }
     }
     
-    func createBlank() {
+    func createFromLastSelection() {
         document.documentType = .note
         
         var note = Note()
         let firstPage: Page = Page(
-            backgroundColor: "pagewhite",
-            backgroundTemplate: "blank",
-            isPortrait: true
+            backgroundColor: savedBackgroundColor,
+            backgroundTemplate: savedBackgroundTemplate,
+            isPortrait: savedIsPortrait
         )
         
         toolManager.preloadedMedia.append(nil)

@@ -9,6 +9,15 @@ import SwiftUI
 
 struct ChangePageTemplateView: View {
     
+    @AppStorage("savedBackgroundColor")
+    var savedBackgroundColor: String = "pagewhite"
+    
+    @AppStorage("savedIsPortrait")
+    var savedIsPortrait: Bool = true
+    
+    @AppStorage("savedBackgroundTemplate")
+    var savedBackgroundTemplate: String = "blank"
+    
     @Binding var document: ProductivityProDocument
     @Binding var isPresented: Bool
     
@@ -17,8 +26,6 @@ struct ChangePageTemplateView: View {
     @State var backgroundColor: String = "pagewhite"
     @State var isPortrait: Bool = true
     @State var backgroundTemplate: String = "blank"
-    
-    let save: () -> Void
     
     var body: some View {
         NavigationStack {
@@ -128,8 +135,12 @@ struct ChangePageTemplateView: View {
     }
     
     func changeTemplate() {
-        save()
         var index = 0
+        
+        savedBackgroundColor = backgroundColor
+        savedBackgroundTemplate = backgroundTemplate
+        savedIsPortrait = isPortrait
+        
         
         if document.document.note.pages.count == 1 {
             index = document.document.note.pages.firstIndex(of: document.document.note.pages.first!)!

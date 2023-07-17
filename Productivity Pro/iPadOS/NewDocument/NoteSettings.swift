@@ -9,6 +9,15 @@ import SwiftUI
 
 struct NoteSettings: View {
     
+    @AppStorage("savedBackgroundColor")
+    var savedBackgroundColor: String = "pagewhite"
+    
+    @AppStorage("savedIsPortrait")
+    var savedIsPortrait: Bool = true
+    
+    @AppStorage("savedBackgroundTemplate")
+    var savedBackgroundTemplate: String = "blank"
+    
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
@@ -140,6 +149,10 @@ struct NoteSettings: View {
             toolManager.preloadedMedia.append(nil)
             note.pages.append(firstPage)
             document.note = note
+            
+            savedBackgroundColor = backgroundColor
+            savedBackgroundTemplate = backgroundTemplate
+            savedIsPortrait = isPortrait
             
             dismiss()
         }

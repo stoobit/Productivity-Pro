@@ -13,8 +13,8 @@ extension NewDocumentView {
     @ViewBuilder func Grid() -> some View {
         
         VStack {
-            ButtonView(icon: "rectangle.portrait", text: "Blank") {
-                createBlank()
+            ButtonView(icon: "clock.arrow.circlepath", text: "Last Template") {
+                createFromLastSelection()
             }
             
             ButtonView(icon: "grid", text: "Select Template") {
