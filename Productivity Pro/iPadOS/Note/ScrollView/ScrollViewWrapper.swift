@@ -10,6 +10,7 @@ import SwiftUI
 struct ScrollViewWrapper: View {
     var size: CGSize
     
+    @Environment(\.scenePhase) var scenePhase
     @State private var offset: CGFloat = .zero
     
     @Binding var document: ProductivityProDocument

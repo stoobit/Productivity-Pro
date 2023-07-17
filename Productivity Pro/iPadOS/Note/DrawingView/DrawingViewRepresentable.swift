@@ -37,12 +37,7 @@ struct DrawingViewRepresentable: UIViewRepresentable {
         canvasView.showsHorizontalScrollIndicator = false
         
         toolPicker.showsDrawingPolicyControls = false
-        
-        #if DEBUG
-        canvasView.drawingPolicy = .anyInput
-        #else
         canvasView.drawingPolicy = .pencilOnly
-        #endif
 
         adoptScale()
         
