@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct NoteMainToolToolbar: CustomizableToolbarContent {
+    @Environment(\.requestReview) var requestReview
     @Environment(\.undoManager) var undoManager
     @Environment(\.openWindow) var openWindow
     
@@ -16,6 +18,9 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
     
     @AppStorage("defaultFontSize")
     var defaultFontSize: Double = 12
+    
+    @AppStorage("createdNotes")
+    var createdNotes: Int = 0
     
     @Binding var document: ProductivityProDocument
     
@@ -30,6 +35,10 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
                 toolManager.isCanvasEnabled.toggle()
                 toolManager.selectedItem = nil
                 toolManager.isLocked = false
+                
+                if toolManager.isCanvasEnabled == false && createdNotes == 7 {
+                    requestReview()
+                }
                 
             }) {
                 if #available(iOS 17, *) {

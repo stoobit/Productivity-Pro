@@ -9,6 +9,9 @@ import SwiftUI
 
 struct NewDocumentView: View {
     
+    @AppStorage("createdNotes")
+    var createdNotes: Int = 0
+    
     @AppStorage("savedBackgroundColor")
     var savedBackgroundColor: String = "pagewhite"
     
@@ -51,5 +54,8 @@ struct NewDocumentView: View {
             
         }
         .ignoresSafeArea(edges: .bottom)
+        .onAppear {
+            createdNotes += 1
+        }
     }
 }
