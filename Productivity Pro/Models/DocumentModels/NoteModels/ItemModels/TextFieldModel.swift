@@ -21,6 +21,6 @@ struct TextFieldModel: Codable, Hashable {
     var showStroke: Bool = false
     var strokeColor: Data = Color.accentColor.toCodable()
     var strokeWidth: Double = 5
-    var strokeStyle: StrokeStyle = .line
+    var strokeStyle: BorderStrokeStyle = .line
     
 }

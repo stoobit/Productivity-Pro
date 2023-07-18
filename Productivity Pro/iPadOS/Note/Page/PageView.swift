@@ -28,8 +28,6 @@ struct PageView: View {
     
     @State var isTargeted: Bool = true
     
-    var showShadow: Bool = true
-    
     var pdfRendering: Bool = false
     var highRes: Bool = false
     
@@ -38,11 +36,7 @@ struct PageView: View {
     var body: some View {
         ZStack {
             ZStack {
-                PageBackgroundView(
-                    page: $page,
-                    toolManager: toolManager,
-                    showShadow: showShadow
-                )
+                PageBackgroundView(page: $page, toolManager: toolManager)
                 
                 BackgroundTemplateView(
                     page: page,
@@ -86,14 +80,13 @@ struct PageView: View {
                 pdfRendering: pdfRendering
             )
             
-            if pdfRendering == false {
-                PencilKitViewWrapper(
-                    size: size,
-                    page: $page,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-            }
+            DrawingView(
+                page: $page,
+                toolManager: toolManager,
+                subviewManager: subviewManager,
+                pdfRendering: pdfRendering,
+                size: size
+            )
             
             SnapItemView(toolManager: toolManager, page: $page)
                 .scaleEffect(1/toolManager.zoomScale)

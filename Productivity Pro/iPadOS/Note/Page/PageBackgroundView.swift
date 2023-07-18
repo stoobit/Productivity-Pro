@@ -12,8 +12,6 @@ struct PageBackgroundView: View {
     @Binding var page: Page
     @StateObject var toolManager: ToolManager
     
-    let showShadow: Bool
-    
     var body: some View {
         Rectangle()
             .foregroundColor(Color(page.backgroundColor))
@@ -22,10 +20,6 @@ struct PageBackgroundView: View {
                 height: toolManager.zoomScale * getFrame().height
             )
             .scaleEffect(1/toolManager.zoomScale)
-            .shadow(
-                color: Color.primary.opacity(showShadow ? 0.8 : 0),
-                radius: 2
-            )
     }
     
     func getFrame() -> CGSize {

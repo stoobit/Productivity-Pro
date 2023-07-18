@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Color {
-    init?(data: Data) {
+    init(data: Data) {
         var color: UIColor = .red
         
         do {

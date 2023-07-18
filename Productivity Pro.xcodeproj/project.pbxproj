@@ -42,7 +42,7 @@
 		BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F22996D06200C0F140 /* ShapeModel.swift */; };
 		BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F52996D07800C0F140 /* TextFieldModel.swift */; };
 		BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F72996D08300C0F140 /* MediaModel.swift */; };
-		BB3F75FB2997F38100C0F140 /* StrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FA2997F38100C0F140 /* StrokeStyle.swift */; };
+		BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */; };
 		BB3F75FD2997F81600C0F140 /* NoteMainToolToolbarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */; };
 		BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */; };
 		BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */; };
@@ -132,12 +132,19 @@
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */; };
 		BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC301D2A670EF80021C7E6 /* DrawingView.swift */; };
+		BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */; };
+		BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */; };
+		BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */; };
 		BBEEDD4128E8F4B20000BE44 /* RectangleRotationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */; };
 		BBEFC94F2A41035C00960C8D /* NoteSideActionMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC94E2A41035C00960C8D /* NoteSideActionMethods.swift */; };
 		BBEFC9512A41038F00960C8D /* NoteSideActionDrawingModeDisabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9502A41038F00960C8D /* NoteSideActionDrawingModeDisabled.swift */; };
 		BBEFC9532A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9522A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift */; };
 		BBF22ACC2933EFE300109848 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF22ACB2933EFE300109848 /* PageView.swift */; };
 		BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */; };
+		BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */; };
+		BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930702A67428C00AD3958 /* PPDrawingTool.swift */; };
+		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
+		BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */; };
 		BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFD97C92A4CE13300771252 /* LazyLoader.swift */; };
 /* End PBXBuildFile section */
 
@@ -189,7 +196,7 @@
 		BB3F75F22996D06200C0F140 /* ShapeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeModel.swift; sourceTree = "<group>"; };
 		BB3F75F52996D07800C0F140 /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		BB3F75F72996D08300C0F140 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
-		BB3F75FA2997F38100C0F140 /* StrokeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeStyle.swift; sourceTree = "<group>"; };
+		BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderStrokeStyle.swift; sourceTree = "<group>"; };
 		BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMainToolToolbarMethods.swift; sourceTree = "<group>"; };
 		BB4CDD3D28D3C668009A409F /* Productivity Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_ProApp.swift; sourceTree = "<group>"; };
@@ -282,12 +289,19 @@
 		BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDropDelegate.swift; sourceTree = "<group>"; };
 		BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
 		BBEC301D2A670EF80021C7E6 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingView.swift; sourceTree = "<group>"; };
+		BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPathCalculator.swift; sourceTree = "<group>"; };
+		BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLineModel.swift; sourceTree = "<group>"; };
 		BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleRotationIcon.swift; sourceTree = "<group>"; };
 		BBEFC94E2A41035C00960C8D /* NoteSideActionMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionMethods.swift; sourceTree = "<group>"; };
 		BBEFC9502A41038F00960C8D /* NoteSideActionDrawingModeDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionDrawingModeDisabled.swift; sourceTree = "<group>"; };
 		BBEFC9522A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionDrawingModeEnabled.swift; sourceTree = "<group>"; };
 		BBF22ACB2933EFE300109848 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneInteraction.swift; sourceTree = "<group>"; };
+		BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingModel.swift; sourceTree = "<group>"; };
+		BBF930702A67428C00AD3958 /* PPDrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingTool.swift; sourceTree = "<group>"; };
+		BBF930722A67437900AD3958 /* PPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColor.swift; sourceTree = "<group>"; };
+		BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingViewMethods.swift; sourceTree = "<group>"; };
 		BBFD97C92A4CE13300771252 /* LazyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -637,7 +651,7 @@
 				BB1321E92985EA87006AD59D /* DragType.swift */,
 				BB1321EF2985F547006AD59D /* MediaType.swift */,
 				BBD94119299195260085151B /* NoteSize.swift */,
-				BB3F75FA2997F38100C0F140 /* StrokeStyle.swift */,
+				BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */,
 				BB5069E929CE294E001330AE /* ImageUIImage.swift */,
 				BB7C2C7A2A3D258100C730D3 /* String.swift */,
 			);
@@ -732,6 +746,10 @@
 		BBEC301C2A670EA60021C7E6 /* PPDrawingView */ = {
 			isa = PBXGroup;
 			children = (
+				BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */,
+				BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */,
+				BBF930752A6744E100AD3958 /* ViewModels */,
+				BBF930742A6744BE00AD3958 /* Models */,
 			);
 			path = PPDrawingView;
 			sourceTree = "<group>";
@@ -755,6 +773,25 @@
 				BBEFC9522A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift */,
 			);
 			path = SideActions;
+			sourceTree = "<group>";
+		};
+		BBF930742A6744BE00AD3958 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBF930722A67437900AD3958 /* PPColor.swift */,
+				BBF930702A67428C00AD3958 /* PPDrawingTool.swift */,
+				BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */,
+				BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BBF930752A6744E100AD3958 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -840,6 +877,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */,
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
 				BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
@@ -854,8 +892,10 @@
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteToolbarTitleMenu.swift in Sources */,
+				BBF930732A67437900AD3958 /* PPColor.swift in Sources */,
 				BBDCF5DF299EBAB1004C99AE /* iPhoneActionsToolbar.swift in Sources */,
 				BB929B8428E5087200DA4538 /* NoteMainToolToolbar.swift in Sources */,
+				BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */,
 				BB2CFBA62A660F77009774BB /* EditMarkdownToolbar.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
@@ -874,7 +914,9 @@
 				BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
+				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
+				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BB4CDD4528D3C668009A409F /* ContentView.swift in Sources */,
@@ -903,6 +945,7 @@
 				BB68082B29FDD2A90026FDDF /* NSAttributedString.swift in Sources */,
 				BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */,
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
+				BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
 				BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */,
 				BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */,
@@ -961,10 +1004,11 @@
 				BBB02B592962537C001DCB04 /* Triangle.swift in Sources */,
 				BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */,
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,
+				BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
 				BB3F75FD2997F81600C0F140 /* NoteMainToolToolbarMethods.swift in Sources */,
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
-				BB3F75FB2997F38100C0F140 /* StrokeStyle.swift in Sources */,
+				BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */,
 				BBEFC9532A4103B800960C8D /* NoteSideActionDrawingModeEnabled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

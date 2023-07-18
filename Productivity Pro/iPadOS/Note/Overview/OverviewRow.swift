@@ -65,7 +65,6 @@ struct OverviewRow: View {
                 offset: .constant(0),
                 toolManager: tm(),
                 subviewManager: subviewManager,
-                showShadow: true,
                 highRes: true,
                 size: .zero
             )

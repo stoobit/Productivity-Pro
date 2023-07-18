@@ -9,8 +9,8 @@ import SwiftUI
 
 class PPDrawingModel: ObservableObject {
     
-    @Published var lines: [Line] = []
-    @Published var selectedLines: [Line] = []
+    @Published var lines: [PPLine] = []
+    @Published var selectedLines: [PPLine] = []
     
     @Published var selectedColor: Color = .black
     @Published var lineWidth: CGFloat = 5
