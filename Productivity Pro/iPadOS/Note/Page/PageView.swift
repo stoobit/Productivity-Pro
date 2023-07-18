@@ -88,7 +88,7 @@ struct PageView: View {
             )
             
             if pdfRendering == false {
-                DrawingView(
+                PencilKitViewWrapper(
                     size: size,
                     page: $page,
                     toolManager: toolManager,
