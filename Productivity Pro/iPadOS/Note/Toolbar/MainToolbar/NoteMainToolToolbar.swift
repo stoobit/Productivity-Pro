@@ -22,6 +22,9 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
     @AppStorage("createdNotes")
     var createdNotes: Int = 0
     
+    @AppStorage("requestWasDone")
+    var requestWasDone: Bool = false
+    
     @Binding var document: ProductivityProDocument
     
     @StateObject var toolManager: ToolManager
@@ -36,8 +39,9 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
                 toolManager.selectedItem = nil
                 toolManager.isLocked = false
                 
-                if toolManager.isCanvasEnabled == false && createdNotes == 7 {
+                if toolManager.isCanvasEnabled == false && createdNotes >= 7 && !requestWasDone {
                     requestReview()
+                    requestWasDone = true
                 }
                 
             }) {
