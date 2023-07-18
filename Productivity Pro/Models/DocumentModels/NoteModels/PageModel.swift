@@ -13,6 +13,12 @@ struct Page: Codable, Identifiable, Hashable {
     var id: UUID = UUID()
     var type: PageType = .template
     
+#if DEBUG
+    var canvasType: CanvasType? = .ppDrawingKit
+#else
+    var canvasType: CanvasType? = .pencilKit
+#endif
+    
     var date: Date? = Date()
     
     var backgroundMedia: Data?
@@ -31,4 +37,9 @@ enum PageType: Codable {
     case template
     case pdf
     case image
+}
+
+enum CanvasType: Codable {
+    case pencilKit
+    case ppDrawingKit
 }

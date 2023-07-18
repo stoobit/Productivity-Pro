@@ -72,8 +72,15 @@ struct AddPDFPageHelper: ViewModifier {
             let page = scan.imageOfPage(at: index)
             let size = page.size
             
+#if DEBUG
+            let canvasType: CanvasType = .ppDrawingKit
+#else
+            let canvasType: CanvasType = .pencilKit
+#endif
+            
             let newPage = Page(
                 type: .image,
+                canvasType: canvasType,
                 backgroundMedia: page.jpegData(
                     compressionQuality: 0.8
                 ),
@@ -96,7 +103,7 @@ struct AddPDFPageHelper: ViewModifier {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             toolManager.selectedPage += 1
             toolManager.showProgress = false
-        } 
+        }
     }
     
     func add(pdf: PDFDocument) {
@@ -114,8 +121,15 @@ struct AddPDFPageHelper: ViewModifier {
             header = page.string?.components(separatedBy: .newlines).first
             header = header?.trimmingCharacters(in: .whitespacesAndNewlines)
             
+#if DEBUG
+            let canvasType: CanvasType = .ppDrawingKit
+#else
+            let canvasType: CanvasType = .pencilKit
+#endif
+            
             let newPage = Page(
                 type: .pdf,
+                canvasType: canvasType,
                 backgroundMedia: data,
                 header: header,
                 backgroundColor: "pagewhite",
@@ -132,7 +146,7 @@ struct AddPDFPageHelper: ViewModifier {
                     nil, at: toolManager.selectedPage + count
                 )
             }
-           
+            
             document.document.note.pages.insert(
                 newPage, at: toolManager.selectedPage + count
             )

@@ -133,7 +133,7 @@
 		BBDCF5DF299EBAB1004C99AE /* iPhoneActionsToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5DE299EBAB1004C99AE /* iPhoneActionsToolbar.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */; };
-		BBEC301B2A66FE750021C7E6 /* PPDrawingKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBEC301A2A66FE750021C7E6 /* PPDrawingKit */; };
+		BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC301D2A670EF80021C7E6 /* DrawingView.swift */; };
 		BBEEDD4128E8F4B20000BE44 /* RectangleRotationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */; };
 		BBEFC94F2A41035C00960C8D /* NoteSideActionMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC94E2A41035C00960C8D /* NoteSideActionMethods.swift */; };
 		BBEFC9512A41038F00960C8D /* NoteSideActionDrawingModeDisabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9502A41038F00960C8D /* NoteSideActionDrawingModeDisabled.swift */; };
@@ -286,6 +286,7 @@
 		BBDCF5DE299EBAB1004C99AE /* iPhoneActionsToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneActionsToolbar.swift; sourceTree = "<group>"; };
 		BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDropDelegate.swift; sourceTree = "<group>"; };
 		BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
+		BBEC301D2A670EF80021C7E6 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleRotationIcon.swift; sourceTree = "<group>"; };
 		BBEFC94E2A41035C00960C8D /* NoteSideActionMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionMethods.swift; sourceTree = "<group>"; };
 		BBEFC9502A41038F00960C8D /* NoteSideActionDrawingModeDisabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionDrawingModeDisabled.swift; sourceTree = "<group>"; };
@@ -300,7 +301,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBEC301B2A66FE750021C7E6 /* PPDrawingKit in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
@@ -339,6 +339,7 @@
 				BB73324F2A294D440001FD6A /* PageBackgroundView.swift */,
 				BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */,
 				BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */,
+				BBEC301D2A670EF80021C7E6 /* DrawingView.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -562,6 +563,7 @@
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
+				BBEC301C2A670EA60021C7E6 /* PPDrawingView */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
 				BB0504292928471400DAECA6 /* BackgroundViews */,
 				BB6BFA2229048C5E002D09FD /* TemplateSheets */,
@@ -743,6 +745,13 @@
 			path = EditPageItems;
 			sourceTree = "<group>";
 		};
+		BBEC301C2A670EA60021C7E6 /* PPDrawingView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PPDrawingView;
+			sourceTree = "<group>";
+		};
 		BBEFC94C2A41033000960C8D /* MainToolbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,7 +794,6 @@
 				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
 				BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */,
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
-				BBEC301A2A66FE750021C7E6 /* PPDrawingKit */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -820,8 +828,6 @@
 			packageReferences = (
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
-				BB33B6B62A56EFF1003C5C14 /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
-				BBEC30192A66FE750021C7E6 /* XCRemoteSwiftPackageReference "PPDrawingKit" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -933,6 +939,7 @@
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBCFF43E2A30711400EAC5F5 /* UnlockModel.swift in Sources */,
+				BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */,
 				BBCCE50028D54233001DBD8A /* NoteBackgroundIcons.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
@@ -1214,14 +1221,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BB33B6B62A56EFF1003C5C14 /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/simonfairbairn/SwiftyMarkdown.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.4;
-			};
-		};
 		BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/simonfairbairn/SwiftyMarkdown.git";
@@ -1233,14 +1232,6 @@
 		BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		BBEC30192A66FE750021C7E6 /* XCRemoteSwiftPackageReference "PPDrawingKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sudo-till/PPDrawingKit.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -1263,11 +1254,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
-		};
-		BBEC301A2A66FE750021C7E6 /* PPDrawingKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBEC30192A66FE750021C7E6 /* XCRemoteSwiftPackageReference "PPDrawingKit" */;
-			productName = PPDrawingKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

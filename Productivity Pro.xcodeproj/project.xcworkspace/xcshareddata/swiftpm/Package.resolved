@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "ppdrawingkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/sudo-till/PPDrawingKit.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "f43efba404c88c37c90f24895a93dd41bd98aacc"
-      }
-    },
-    {
       "identity" : "swiftymarkdown",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/simonfairbairn/SwiftyMarkdown.git",
