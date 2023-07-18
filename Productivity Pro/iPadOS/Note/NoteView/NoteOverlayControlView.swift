@@ -19,11 +19,7 @@ struct NoteOverlayControlView: View {
     
     var body: some View {
         ZStack {
-            
-            if subviewManager.isPresentationMode {
-                LaserpointerView()
-            }
-            
+           
             if toolManager.isPageNumberVisible {
                 IndicatorText(
                     document: document, toolManager: toolManager

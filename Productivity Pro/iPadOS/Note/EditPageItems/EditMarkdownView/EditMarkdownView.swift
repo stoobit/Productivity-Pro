@@ -22,47 +22,40 @@ struct EditMarkdownView: View {
     let size: CGSize
     
     var body: some View {
-        let layout = hsc == .regular ? AnyLayout(HStackLayout()) : AnyLayout(VStackLayout())
-        
         NavigationStack {
-            layout {
-                
-                TextEditor(text: $text)
-                    .focused($isFocused)
-                    .textInputAutocapitalization(.never)
-                    .onAppear { viewDidAppear() }
-                    .onChange(of: text) { value in
-                        textDidChange(value)
-                    }
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: .infinity,
-                        alignment: .topLeading
-                    )
-                    .padding(.leading, 2)
-                
-                Divider()
-                
-                ScrollView([.horizontal, .vertical], showsIndicators: false) {
+            TextEditor(text: $text)
+                .focused($isFocused)
+                .textInputAutocapitalization(.never)
+                .onAppear {
+                    text = toolManager.selectedItem?.textField?.text ?? ""
+                    isFocused = true
+                }
+                .onChange(of: text) { value in
+                    let index = document.document.note.pages[
+                        toolManager.selectedPage
+                    ].items.firstIndex(where: {
+                        $0.id == toolManager.selectedItem!.id
+                    })!
+                    
+                    document.document.note.pages[
+                        toolManager.selectedPage
+                    ].items[index].textField!.text = value
                     
                 }
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity,
-                    alignment: .topLeading
-                )
-                
-            }
-            .toolbarRole(.browser)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                EditMarkdownToolbar(
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-            }
-            
+                .toolbarRole(.browser)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .navigationTitle("Markdown")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done") {
+                            subviewManager.showTextEditor.toggle()
+                        }
+                        .keyboardShortcut(
+                            .return, modifiers: [.command]
+                        )
+                    }
+                }
         }
     }
 }

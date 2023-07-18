@@ -40,7 +40,7 @@ struct NoteSheetHelper: ViewModifier {
                     type: .productivity_pro
                 )
             }
-            .fullScreenCover(isPresented: $subviewManager.showTextEditor) {
+            .sheet(isPresented: $subviewManager.showTextEditor) {
                 EditMarkdownView(
                     document: $document,
                     toolManager: toolManager,
