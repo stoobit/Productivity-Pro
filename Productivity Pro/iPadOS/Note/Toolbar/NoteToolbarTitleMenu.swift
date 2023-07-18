@@ -75,6 +75,8 @@ struct NoteToolbarTitleMenu: View {
     
     func sharePDF() {
         toolManager.showProgress = true
+        toolManager.selectedItem = nil
+        
         Task(priority: .userInitiated) {
             await MainActor.run {
                 toolManager.pdfRendering = renderPDF()
@@ -84,8 +86,11 @@ struct NoteToolbarTitleMenu: View {
             subviewManager.sharePDFSheet.toggle()
         }
     }
+    
     func print() {
         toolManager.showProgress = true
+        toolManager.selectedItem = nil
+        
         Task(priority: .userInitiated) {
             await MainActor.run {
                 toolManager.pdfRendering = renderPDF()

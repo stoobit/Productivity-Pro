@@ -10,10 +10,17 @@ import SwiftUI
 extension OverviewView {
     
     func move(from source: IndexSet, to destination: Int) {
-        document.document.note.pages.move(fromOffsets: source, toOffset: destination)
-        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
-            $0.id == toolManager.selectedTab
-        })!
+        document.document.note.pages.move(
+            fromOffsets: source, toOffset: destination
+        )
+        
+        toolManager.preloadedMedia.move(
+            fromOffsets: source, toOffset: destination
+        )
+        
+        toolManager.selectedPage = document.document.note.pages.firstIndex(
+            where: { $0.id == toolManager.selectedTab }
+        )!
     }
     
     func delete(at offsets: IndexSet) {

@@ -11,8 +11,29 @@ import PDFKit
 
 extension NoteView {
     
+    func loadFirst() {
+        guard let page = document.document.note.pages.first else { return }
+        if page.type == .pdf {
+            
+            guard let data = page.backgroundMedia else {
+                toolManager.preloadedMedia.append(nil)
+                return
+            }
+            
+            guard let pdf = PDFDocument(data: data) else {
+                toolManager.preloadedMedia.append(nil)
+                return
+            }
+            
+            toolManager.preloadedMedia.append(pdf)
+            
+        } else {
+            toolManager.preloadedMedia.append(nil)
+        }
+    }
+    
     func loadMedia() {
-        for page in document.document.note.pages {
+        for page in Array(document.document.note.pages.dropFirst()) {
             if page.type == .pdf {
                 
                 guard let data = page.backgroundMedia else {
@@ -56,6 +77,7 @@ extension NoteView {
     
     func noteDidAppear() {
         UITabBar.appearance().isHidden = true
+        loadFirst()
         
         toolManager.selectedTab = document.document.note.pages.first!.id
         toolManager.selectedPage = document.document.note.pages.firstIndex(
