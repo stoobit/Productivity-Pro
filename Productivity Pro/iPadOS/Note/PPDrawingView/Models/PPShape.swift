@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct PPShape: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct DrawingShape: Shape {
+    let scale: CGFloat
+    let points: [CGPoint]
+    
+    var calculator: PPPathCalculator {
+        return PPPathCalculator(scale: scale)
     }
-}
-
-#Preview {
-    PPShape()
+    
+    func path(in rect: CGRect) -> Path {
+        calculator.calculatePath(for: points)
+    }
 }

@@ -145,6 +145,7 @@
 		BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930702A67428C00AD3958 /* PPDrawingTool.swift */; };
 		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
 		BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */; };
+		BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930792A674C9600AD3958 /* PPShape.swift */; };
 		BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFD97C92A4CE13300771252 /* LazyLoader.swift */; };
 /* End PBXBuildFile section */
 
@@ -302,6 +303,7 @@
 		BBF930702A67428C00AD3958 /* PPDrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingTool.swift; sourceTree = "<group>"; };
 		BBF930722A67437900AD3958 /* PPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColor.swift; sourceTree = "<group>"; };
 		BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingViewMethods.swift; sourceTree = "<group>"; };
+		BBF930792A674C9600AD3958 /* PPShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPShape.swift; sourceTree = "<group>"; };
 		BBFD97C92A4CE13300771252 /* LazyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -572,6 +574,7 @@
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
+				BBF930782A674C0700AD3958 /* DrawingSidebar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingView */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
 				BB0504292928471400DAECA6 /* BackgroundViews */,
@@ -779,6 +782,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF930722A67437900AD3958 /* PPColor.swift */,
+				BBF930792A674C9600AD3958 /* PPShape.swift */,
 				BBF930702A67428C00AD3958 /* PPDrawingTool.swift */,
 				BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */,
 				BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */,
@@ -792,6 +796,13 @@
 				BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BBF930782A674C0700AD3958 /* DrawingSidebar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DrawingSidebar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -970,6 +981,7 @@
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
+				BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
 				BB07E7BA2A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,

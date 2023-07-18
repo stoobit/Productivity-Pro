@@ -13,25 +13,20 @@ struct PPDrawingView: View {
     var scale: CGFloat = 1
     var frame: CGSize
     
-    var pathCalculator: PPPathCalculator {
-        return PPPathCalculator(scale: scale)
-    }
-    
     var body: some View {
-        Canvas { context, size in
-            for line in drawingModel.lines {
-                
-                let path = pathCalculator.calculatePath(for: line.points)
-                context.stroke(
-                    path,
-                    with: .color(Color(data: line.color)),
-                    style: StrokeStyle(
-                        lineWidth: line.lineWidth * scale,
-                        lineCap: .round,
-                        lineJoin: .round
+        ZStack {
+            Color.clear.contentShape(Rectangle())
+            
+            ForEach(drawingModel.lines) { line in
+                DrawingShape(scale: scale, points: line.points)
+                    .stroke(
+                        Color(data: line.color),
+                        style: StrokeStyle(
+                            lineWidth: line.lineWidth * scale,
+                            lineCap: .round,
+                            lineJoin: .round
+                        )
                     )
-                )
-                
             }
         }
         .gesture(
