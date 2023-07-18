@@ -10,13 +10,13 @@ import SwiftUI
 struct NoteSettings: View {
     
     @AppStorage("savedBackgroundColor")
-    var savedBackgroundColor: String = "pagewhite"
+    var savedBackgroundColor: String = ""
     
     @AppStorage("savedIsPortrait")
     var savedIsPortrait: Bool = true
     
     @AppStorage("savedBackgroundTemplate")
-    var savedBackgroundTemplate: String = "blank"
+    var savedBackgroundTemplate: String = ""
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

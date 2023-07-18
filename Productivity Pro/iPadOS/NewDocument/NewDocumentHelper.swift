@@ -16,6 +16,9 @@ extension NewDocumentView {
             ButtonView(icon: "clock.arrow.circlepath", text: "Last Template") {
                 createFromLastSelection()
             }
+            .disabled(
+                savedBackgroundColor == "" && savedBackgroundTemplate == ""
+            )
             
             ButtonView(icon: "grid", text: "Select Template") {
                 subviewManager.newDocTemplate = true
