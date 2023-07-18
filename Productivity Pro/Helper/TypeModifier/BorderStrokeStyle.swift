@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum StrokeStyle: Codable {
+enum BorderStrokeStyle: Codable {
     case line
     case dashed
     case dotted
