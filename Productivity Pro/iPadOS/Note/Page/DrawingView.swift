@@ -33,6 +33,8 @@ struct DrawingView: View {
                 scale: toolManager.zoomScale,
                 frame: getFrame()
             )
+            .disabled(!toolManager.isCanvasEnabled)
+            .allowsHitTesting(toolManager.isCanvasEnabled)
         }
     }
     
