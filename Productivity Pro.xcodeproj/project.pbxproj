@@ -133,6 +133,7 @@
 		BBDCF5DF299EBAB1004C99AE /* iPhoneActionsToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5DE299EBAB1004C99AE /* iPhoneActionsToolbar.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */; };
+		BBEC301B2A66FE750021C7E6 /* PPDrawingKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBEC301A2A66FE750021C7E6 /* PPDrawingKit */; };
 		BBEEDD4128E8F4B20000BE44 /* RectangleRotationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */; };
 		BBEFC94F2A41035C00960C8D /* NoteSideActionMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC94E2A41035C00960C8D /* NoteSideActionMethods.swift */; };
 		BBEFC9512A41038F00960C8D /* NoteSideActionDrawingModeDisabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9502A41038F00960C8D /* NoteSideActionDrawingModeDisabled.swift */; };
@@ -299,6 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBEC301B2A66FE750021C7E6 /* PPDrawingKit in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
@@ -783,6 +785,7 @@
 				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
 				BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */,
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
+				BBEC301A2A66FE750021C7E6 /* PPDrawingKit */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -818,6 +821,7 @@
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
 				BB33B6B62A56EFF1003C5C14 /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
+				BBEC30192A66FE750021C7E6 /* XCRemoteSwiftPackageReference "PPDrawingKit" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1234,6 +1238,14 @@
 				kind = branch;
 			};
 		};
+		BBEC30192A66FE750021C7E6 /* XCRemoteSwiftPackageReference "PPDrawingKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sudo-till/PPDrawingKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1251,6 +1263,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
+		};
+		BBEC301A2A66FE750021C7E6 /* PPDrawingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBEC30192A66FE750021C7E6 /* XCRemoteSwiftPackageReference "PPDrawingKit" */;
+			productName = PPDrawingKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
