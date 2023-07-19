@@ -10,7 +10,12 @@ import SwiftUI
 enum PPDrawingTool: String, Codable {
     case pen = "pen"
     case highlighter = "highlighter"
-    
-    case pointEraser = "pixelEraser"
-    case strokeEraser = "strokeEraser"
+    case eraser = "eraser"
+    case lasso = "lasso"
+    case magicwand = "magicwand"
+}
+
+enum PPEraserType: String, Codable {
+    case pixel = "pixel"
+    case point = "point"
 }

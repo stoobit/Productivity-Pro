@@ -16,6 +16,10 @@
 		BB1321EA2985EA87006AD59D /* DragType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321E92985EA87006AD59D /* DragType.swift */; };
 		BB1321F02985F547006AD59D /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321EF2985F547006AD59D /* MediaType.swift */; };
 		BB174F552A1051B400F753F6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB174F542A1051B400F753F6 /* Date.swift */; };
+		BB1DF6042A686D14006F85CE /* PPToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6032A686D14006F85CE /* PPToolButton.swift */; };
+		BB1DF6062A686D59006F85CE /* PPDrawingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6052A686D59006F85CE /* PPDrawingBar.swift */; };
+		BB1DF6082A686D65006F85CE /* PPToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6072A686D65006F85CE /* PPToolbar.swift */; };
+		BB1DF60A2A687DB8006F85CE /* PPColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6092A687DB8006F85CE /* PPColorButton.swift */; };
 		BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */; };
 		BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */; };
 		BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27BB512A62C30700392E1E /* RealityNoteModel.swift */; };
@@ -54,7 +58,7 @@
 		BB5034192993172800913B3A /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5034182993172800913B3A /* PageItemView.swift */; };
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
 		BB53D5B029C4F79F008130F2 /* EditMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */; };
-		BB58477D29A18BF900C21B17 /* CopyPasteMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58477C29A18BF900C21B17 /* CopyPasteMenuView.swift */; };
+		BB58477D29A18BF900C21B17 /* PPControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58477C29A18BF900C21B17 /* PPControlBar.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB68082B29FDD2A90026FDDF /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68082A29FDD2A90026FDDF /* NSAttributedString.swift */; };
 		BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */; };
@@ -173,6 +177,10 @@
 		BB1321EF2985F547006AD59D /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		BB174F542A1051B400F753F6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		BB1DF6032A686D14006F85CE /* PPToolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToolButton.swift; sourceTree = "<group>"; };
+		BB1DF6052A686D59006F85CE /* PPDrawingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingBar.swift; sourceTree = "<group>"; };
+		BB1DF6072A686D65006F85CE /* PPToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToolbar.swift; sourceTree = "<group>"; };
+		BB1DF6092A687DB8006F85CE /* PPColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColorButton.swift; sourceTree = "<group>"; };
 		BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapper.swift; sourceTree = "<group>"; };
 		BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewRepresentable.swift; sourceTree = "<group>"; };
 		BB27BB512A62C30700392E1E /* RealityNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityNoteModel.swift; sourceTree = "<group>"; };
@@ -211,7 +219,7 @@
 		BB5034182993172800913B3A /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
 		BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownView.swift; sourceTree = "<group>"; };
-		BB58477C29A18BF900C21B17 /* CopyPasteMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPasteMenuView.swift; sourceTree = "<group>"; };
+		BB58477C29A18BF900C21B17 /* PPControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPControlBar.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB68082A29FDD2A90026FDDF /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemView.swift; sourceTree = "<group>"; };
@@ -453,7 +461,6 @@
 			children = (
 				BB4CDD4428D3C668009A409F /* ContentView.swift */,
 				BB4CDD5728D3D532009A409F /* DocumentView.swift */,
-				BB58477C29A18BF900C21B17 /* CopyPasteMenuView.swift */,
 				BBAF57FD2A49E5D7008DEA98 /* WhatIsNew.swift */,
 				BBCCE4F028D52911001DBD8A /* NewDocument */,
 				BB9DF5A828DFA25600AC988D /* Note */,
@@ -574,7 +581,7 @@
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
-				BBF930782A674C0700AD3958 /* DrawingSidebar */,
+				BBF930782A674C0700AD3958 /* PPToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingView */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
 				BB0504292928471400DAECA6 /* BackgroundViews */,
@@ -798,11 +805,16 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		BBF930782A674C0700AD3958 /* DrawingSidebar */ = {
+		BBF930782A674C0700AD3958 /* PPToolbar */ = {
 			isa = PBXGroup;
 			children = (
+				BB1DF6072A686D65006F85CE /* PPToolbar.swift */,
+				BB58477C29A18BF900C21B17 /* PPControlBar.swift */,
+				BB1DF6052A686D59006F85CE /* PPDrawingBar.swift */,
+				BB1DF6032A686D14006F85CE /* PPToolButton.swift */,
+				BB1DF6092A687DB8006F85CE /* PPColorButton.swift */,
 			);
-			path = DrawingSidebar;
+			path = PPToolbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -902,6 +914,7 @@
 				BBBCACB42A25461900C23B2C /* OldCalculatorView.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
+				BB1DF6062A686D59006F85CE /* PPDrawingBar.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteToolbarTitleMenu.swift in Sources */,
 				BBF930732A67437900AD3958 /* PPColor.swift in Sources */,
 				BBDCF5DF299EBAB1004C99AE /* iPhoneActionsToolbar.swift in Sources */,
@@ -910,6 +923,7 @@
 				BB2CFBA62A660F77009774BB /* EditMarkdownToolbar.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
+				BB1DF60A2A687DB8006F85CE /* PPColorButton.swift in Sources */,
 				BB7423F72A5ED7140031176A /* NewDocumentHelper.swift in Sources */,
 				BBEFC94F2A41035C00960C8D /* NoteSideActionMethods.swift in Sources */,
 				BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */,
@@ -917,7 +931,7 @@
 				BB4CDD5628D3D518009A409F /* DocumentModel.swift in Sources */,
 				BBCDFDE32947BF84000C545D /* SquaredView.swift in Sources */,
 				BBCCE4EB28D52743001DBD8A /* NoteModel.swift in Sources */,
-				BB58477D29A18BF900C21B17 /* CopyPasteMenuView.swift in Sources */,
+				BB58477D29A18BF900C21B17 /* PPControlBar.swift in Sources */,
 				BBCCE4F228D52934001DBD8A /* NewDocumentView.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSideActionToolbar.swift in Sources */,
@@ -982,6 +996,7 @@
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
 				BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */,
+				BB1DF6042A686D14006F85CE /* PPToolButton.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
 				BB07E7BA2A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,
@@ -1018,6 +1033,7 @@
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,
 				BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
+				BB1DF6082A686D65006F85CE /* PPToolbar.swift in Sources */,
 				BB3F75FD2997F81600C0F140 /* NoteMainToolToolbarMethods.swift in Sources */,
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
 				BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */,

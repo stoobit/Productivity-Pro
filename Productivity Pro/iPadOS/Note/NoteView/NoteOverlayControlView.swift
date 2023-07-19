@@ -13,6 +13,7 @@ struct NoteOverlayControlView: View {
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
+    @StateObject var drawingModel: PPDrawingModel 
     
     var size: CGSize
     var isCPMenuHidden: Bool
@@ -26,15 +27,11 @@ struct NoteOverlayControlView: View {
                 )
             }
             
-            CopyPasteMenuView(
+            PPToolbar(
                 document: $document,
                 toolManager: toolManager,
-                subviewManager: subviewManager
-            )
-            .offset(y: isCPMenuHidden ? 100 : 0)
-            .animation(
-                .easeInOut(duration: 0.2),
-                value: isCPMenuHidden
+                subviewManager: subviewManager,
+                drawingModel: drawingModel
             )
             
         }

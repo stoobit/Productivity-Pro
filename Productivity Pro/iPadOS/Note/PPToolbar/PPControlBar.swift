@@ -8,7 +8,7 @@
 import SwiftUI
 import OnPasteboardChange
 
-struct CopyPasteMenuView: View {
+struct PPControlBar: View {
     
     @Environment(\.undoManager) private var undoManager
     
@@ -60,7 +60,6 @@ struct CopyPasteMenuView: View {
                     Button(action: duplicateItem) {
                         Image(systemName: "doc.on.doc.fill")
                     }
-                    .buttonStyle(.bordered)
                     .keyboardShortcut("d", modifiers: [.command])
                     .hoverEffect(.lift)
                     .padding(.trailing, 10)
@@ -87,11 +86,6 @@ struct CopyPasteMenuView: View {
         .background(.ultraThinMaterial)
         .cornerRadius(15, antialiased: true)
         .padding()
-        .frame(
-            maxWidth: .infinity,
-            maxHeight: .infinity,
-            alignment: isCPLeft ? .bottomLeading : .bottomTrailing
-        )
         .animation(.easeInOut(duration: 0.2), value: isCPLeft)
         .onChange(of: toolManager.copyPastePasser) { value in
             switch value {

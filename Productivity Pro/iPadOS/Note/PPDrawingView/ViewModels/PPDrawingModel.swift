@@ -14,6 +14,8 @@ class PPDrawingModel: ObservableObject {
     
     @Published var selectedColor: Color = .black
     @Published var lineWidth: CGFloat = 5
+    
     @Published var selectedTool: PPDrawingTool = .pen
+    @Published var eraserType: PPEraserType = .point
     
 }

@@ -17,6 +17,8 @@ struct NoteView: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
+    @StateObject var drawingModel: PPDrawingModel = PPDrawingModel()
+    
     var isCPMenuHidden: Bool {
         if subviewManager.isPresentationMode || toolManager.isCanvasEnabled {
             return true
@@ -61,6 +63,7 @@ struct NoteView: View {
                     document: $document,
                     toolManager: toolManager,
                     subviewManager: subviewManager,
+                    drawingModel: drawingModel,
                     size: proxy.size,
                     isCPMenuHidden: isCPMenuHidden
                 )
