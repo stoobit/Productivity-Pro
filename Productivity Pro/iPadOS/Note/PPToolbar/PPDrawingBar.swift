@@ -18,8 +18,8 @@ struct PPDrawingBar: View {
     @AppStorage("drawingColor3") var thirdColor: Color = Color.red
     
     @AppStorage("widthSelection") var selectedWidth: Int = 0
-    @AppStorage("drawingWidth1") var firstWidth: Double = 4
-    @AppStorage("drawingWidth2") var secondWidth: Double = 10
+    @AppStorage("drawingWidth1") var firstWidth: Double = 3
+    @AppStorage("drawingWidth2") var secondWidth: Double = 9
     
     var hsc: UserInterfaceSizeClass?
     var size: CGSize

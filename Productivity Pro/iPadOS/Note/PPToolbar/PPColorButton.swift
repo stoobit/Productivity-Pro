@@ -40,14 +40,11 @@ struct PPColorButton: View {
             .clipShape(RoundedRectangle(cornerRadius: 9))
             
         }
-        .popover(isPresented: $showPicker) {
-            PPColorPicker(
-                color: $color,
-                isPresented: $showPicker,
-                hsc: hsc,
-                size: size
-            )
-        }
+        .colorPickerSheet(
+            isPresented: $showPicker,
+            selection: $color,
+            supportsAlpha: true
+        )
         .onChange(of: color) { color in
             selectedColor = color
         }
