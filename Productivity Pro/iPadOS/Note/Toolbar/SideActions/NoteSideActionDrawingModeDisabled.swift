@@ -8,7 +8,7 @@
 import SwiftUI
  
 extension NoteSideActionToolbar {
-    @ViewBuilder func DrawingModeDisabled() -> some View {
+    @ViewBuilder func EditingToolbar() -> some View {
         if subviewManager.isPresentationMode == false {
             
             if hsc == .regular {

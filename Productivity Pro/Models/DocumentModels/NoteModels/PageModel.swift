@@ -13,11 +13,7 @@ struct Page: Codable, Identifiable, Hashable {
     var id: UUID = UUID()
     var type: PageType = .template
     
-#if DEBUG
-    var canvasType: CanvasType? = .ppDrawingKit
-#else
-    var canvasType: CanvasType? = .pencilKit
-#endif
+    var canvasType: CanvasType?
     
     var date: Date? = Date()
     
@@ -30,7 +26,7 @@ struct Page: Codable, Identifiable, Hashable {
     
     var canvas: Data = Data()
     
-    var lines: [PPLine]? = []
+    var lines: [PPLine]? = [PPLine]()
     var items: [ItemModel] = []
     
 }

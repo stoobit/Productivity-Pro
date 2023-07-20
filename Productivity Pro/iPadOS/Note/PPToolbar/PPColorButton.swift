@@ -37,7 +37,12 @@ struct PPColorButton: View {
             
         }
         .popover(isPresented: $showPicker) {
-            PPColorPicker(color: $color, hsc: hsc, size: size)
+            PPColorPicker(
+                color: $color,
+                isPresented: $showPicker,
+                hsc: hsc,
+                size: size
+            )
         }
         .onChange(of: color) { color in
             selectedColor = color

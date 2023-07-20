@@ -20,9 +20,7 @@ struct NoteSideActionToolbar: ToolbarContent {
     var body: some ToolbarContent {
         ToolbarItemGroup(placement: .primaryAction) {
             
-            if toolManager.isCanvasEnabled == false {
-                DrawingModeDisabled()
-            }
+            EditingToolbar()
             
             if subviewManager.isPresentationMode == false {
                 Menu(content: {

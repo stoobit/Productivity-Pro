@@ -29,6 +29,7 @@ struct PPDrawingView: View {
                         )
                     )
             }
+            
         }
         .gesture(
             DragGesture(minimumDistance: 0, coordinateSpace: .local)

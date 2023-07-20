@@ -10,21 +10,36 @@ import SwiftUI
 struct PPColorPicker: View {
     
     @Binding var color: Color
+    @Binding var isPresented: Bool
     
     var hsc: UserInterfaceSizeClass?
     var size: CGSize
     
     var body: some View {
         ZStack {
-            Text("")
             PPColorPickerRepresentable(color: $color)
+            
+            if hsc == .compact {
+                Button(action: { isPresented = false }) {
+                    ExitButtonView()
+                }
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .topTrailing
+                )
+                .padding(.trailing)
+                .padding(.top, 12)
+            }
+            
         }
         .frame(
-            minWidth: hsc == .regular ? 400 : size.width - 20,
-            maxWidth: hsc == .regular ? 400 : size.width - 20,
+            minWidth: hsc == .regular ? 400 : size.width,
+            maxWidth: hsc == .regular ? 400 : size.width,
             minHeight: 630,
             maxHeight: hsc == .regular ? 630 : .infinity
         )
+        .ignoresSafeArea(edges: .all)
     }
 }
 

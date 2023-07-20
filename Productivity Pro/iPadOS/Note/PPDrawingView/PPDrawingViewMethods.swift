@@ -20,7 +20,7 @@ extension PPDrawingView {
             
             lines?.append(
                 PPLine(
-                    points: [PPPoint(x: point.x, y: point.y)],
+                    points: [point],
                     color: drawingModel.selectedColor.rawValue,
                     lineWidth: drawingModel.selectedWidth,
                     lineStyle: style
@@ -32,7 +32,7 @@ extension PPDrawingView {
             guard var index = lines?.count else { return }
             index -= 1
             
-            lines?[index].points.append(PPPoint(x: point.x, y: point.y))
+            lines?[index].points.append(point)
             
         }
         

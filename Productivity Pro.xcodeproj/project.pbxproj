@@ -16,6 +16,7 @@
 		BB1321EA2985EA87006AD59D /* DragType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321E92985EA87006AD59D /* DragType.swift */; };
 		BB1321F02985F547006AD59D /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321EF2985F547006AD59D /* MediaType.swift */; };
 		BB15F2212A6968E400223C92 /* PPColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2202A6968E400223C92 /* PPColorPicker.swift */; };
+		BB15F2232A69964200223C92 /* ExitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2222A69964200223C92 /* ExitButtonView.swift */; };
 		BB174F552A1051B400F753F6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB174F542A1051B400F753F6 /* Date.swift */; };
 		BB1DF6042A686D14006F85CE /* PPToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6032A686D14006F85CE /* PPToolButton.swift */; };
 		BB1DF6062A686D59006F85CE /* PPDrawingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6052A686D59006F85CE /* PPDrawingBar.swift */; };
@@ -178,6 +179,7 @@
 		BB1321E92985EA87006AD59D /* DragType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragType.swift; sourceTree = "<group>"; };
 		BB1321EF2985F547006AD59D /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		BB15F2202A6968E400223C92 /* PPColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColorPicker.swift; sourceTree = "<group>"; };
+		BB15F2222A69964200223C92 /* ExitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButtonView.swift; sourceTree = "<group>"; };
 		BB174F542A1051B400F753F6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		BB1DF6032A686D14006F85CE /* PPToolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToolButton.swift; sourceTree = "<group>"; };
@@ -651,7 +653,6 @@
 			isa = PBXGroup;
 			children = (
 				BB3525B22908673800D35790 /* Array.swift */,
-				BB15F2202A6968E400223C92 /* PPColorPicker.swift */,
 				BB174F542A1051B400F753F6 /* Date.swift */,
 				BB6BFA262904907F002D09FD /* Color.swift */,
 				BB68082A29FDD2A90026FDDF /* NSAttributedString.swift */,
@@ -676,6 +677,8 @@
 		BBBD13E9290EA4D6001145A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB15F2222A69964200223C92 /* ExitButtonView.swift */,
+				BB15F2202A6968E400223C92 /* PPColorPicker.swift */,
 				BBEEDD4028E8F4B20000BE44 /* RectangleRotationIcon.swift */,
 				BBD3C4202A54DA46002BFFCF /* View.swift */,
 				BBDC62712905EED800364B57 /* IndicatorText.swift */,
@@ -944,6 +947,7 @@
 				BB929B8028E5076D00DA4538 /* NoteSideActionToolbar.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
 				BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */,
+				BB15F2232A69964200223C92 /* ExitButtonView.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
 				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,

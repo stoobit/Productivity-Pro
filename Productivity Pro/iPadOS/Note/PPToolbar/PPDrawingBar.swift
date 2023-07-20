@@ -19,6 +19,21 @@ struct PPDrawingBar: View {
     var size: CGSize
     
     var body: some View {
+        ViewThatFits(in: .horizontal) {
+            DrawingBar(0)
+                .padding(10)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                DrawingBar(10)
+            }
+            .padding(.vertical, 10)
+        }
+        .background(.ultraThickMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 19))
+        .padding(.horizontal, 10)
+    }
+    
+    @ViewBuilder func DrawingBar(_ outerPadding: CGFloat) -> some View {
         HStack {
             Group {
                 PPToolButton(
@@ -28,6 +43,7 @@ struct PPDrawingBar: View {
                     drawingModel.selectedTool = .pen
                 }
                 .padding(.trailing, 2.5)
+                .padding(.leading, outerPadding)
                 
                 PPToolButton(
                     icon: "highlighter",
@@ -126,10 +142,8 @@ struct PPDrawingBar: View {
             
             PPMenuView()
                 .padding(.horizontal, 2.5)
+                .padding(.trailing, outerPadding)
 
         }
-        .padding(10)
-        .background(.ultraThickMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 19))
     }
 }

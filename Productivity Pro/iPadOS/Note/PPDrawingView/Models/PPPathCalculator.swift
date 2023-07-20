@@ -14,26 +14,23 @@ class PPPathCalculator {
         self.scale = scale
     }
     
-    func calculatePath(for points: [PPPoint]) -> Path {
+    func calculatePath(for points: [CGPoint]) -> Path {
         var path = Path()
         
         if let firstPoint = points.first {
-            path.move(to: CGPoint(x: firstPoint.x, y: firstPoint.y) * scale)
+            path.move(to: firstPoint * scale)
         }
         
         for index in 1..<points.count {
             let mid = getMidPoint(
-                CGPoint(x: points[index - 1].x, y: points[index - 1].x) * scale,
-                CGPoint(x: points[index].x, y: points[index].x) * scale
+                points[index - 1] * scale, points[index] * scale
             )
             
-            path.addQuadCurve(
-                to: mid,
-                control: CGPoint(x: points[index - 1].x, y: points[index - 1].x) * scale)
+            path.addQuadCurve(to: mid, control: points[index - 1] * scale)
         }
         
         if let last = points.last {
-            path.addLine(to: CGPoint(x: last.x, y: last.y) * scale)
+            path.addLine(to: last * scale)
         }
         
         return path
