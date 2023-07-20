@@ -350,6 +350,15 @@
 			path = BackgroundViews;
 			sourceTree = "<group>";
 		};
+		BB15F2262A69B3C200223C92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */,
+				BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BB1DDA28296715590038FE16 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,7 +599,7 @@
 				BBDCF5D6299E699C004C99AE /* PageItems */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
 				BBF930782A674C0700AD3958 /* PPToolbar */,
-				BBEC301C2A670EA60021C7E6 /* PPDrawingView */,
+				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
 				BB0504292928471400DAECA6 /* BackgroundViews */,
 				BB6BFA2229048C5E002D09FD /* TemplateSheets */,
@@ -763,15 +772,14 @@
 			path = EditPageItems;
 			sourceTree = "<group>";
 		};
-		BBEC301C2A670EA60021C7E6 /* PPDrawingView */ = {
+		BBEC301C2A670EA60021C7E6 /* PPDrawingKit */ = {
 			isa = PBXGroup;
 			children = (
-				BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */,
-				BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */,
+				BB15F2262A69B3C200223C92 /* Views */,
 				BBF930752A6744E100AD3958 /* ViewModels */,
 				BBF930742A6744BE00AD3958 /* Models */,
 			);
-			path = PPDrawingView;
+			path = PPDrawingKit;
 			sourceTree = "<group>";
 		};
 		BBEFC94C2A41033000960C8D /* MainToolbar */ = {

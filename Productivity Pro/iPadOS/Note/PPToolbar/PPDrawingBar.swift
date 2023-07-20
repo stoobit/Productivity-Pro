@@ -13,10 +13,13 @@ struct PPDrawingBar: View {
     @StateObject var toolManager: ToolManager
     
     @AppStorage("colorSelection") var selectedColor: Int = 0
+    @AppStorage("drawingColor1") var firstColor: Color = Color.black
+    @AppStorage("drawingColor2") var secondColor: Color = Color.blue
+    @AppStorage("drawingColor3") var thirdColor: Color = Color.red
     
-    @AppStorage("drawingcolor1") var firstColor: Color = Color.black
-    @AppStorage("drawingcolor2") var secondColor: Color = Color.red
-    @AppStorage("drawingcolor3") var thirdColor: Color = Color.blue
+    @AppStorage("widthSelection") var selectedWidth: Int = 0
+    @AppStorage("drawingWidth1") var firstWidth: Double = 4
+    @AppStorage("drawingWidth2") var secondWidth: Double = 10
     
     var hsc: UserInterfaceSizeClass?
     var size: CGSize
@@ -42,6 +45,14 @@ struct PPDrawingBar: View {
             default:
                 break
             }
+            
+            switch selectedWidth {
+            case 0: drawingModel.selectedWidth = firstWidth
+            case 1: drawingModel.selectedWidth = secondWidth
+            default:
+                break
+            }
+            
         }
     }
     
@@ -154,14 +165,18 @@ struct PPDrawingBar: View {
             
             Group {
                 PPSizeButton(
-                    width: .constant(15),
-                    selectedWidth: $drawingModel.selectedWidth
+                    width: $firstWidth,
+                    selectedWidth: $drawingModel.selectedWidth,
+                    selectedValue: $selectedWidth,
+                    value: 0
                 )
                 .padding(.horizontal, 2.5)
                 
                 PPSizeButton(
-                    width: .constant(10),
-                    selectedWidth: $drawingModel.selectedWidth
+                    width: $secondWidth,
+                    selectedWidth: $drawingModel.selectedWidth,
+                    selectedValue: $selectedWidth,
+                    value: 1
                 )
                 .padding(.horizontal, 2.5)
             }

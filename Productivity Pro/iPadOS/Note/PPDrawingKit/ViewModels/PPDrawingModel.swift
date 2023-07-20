@@ -12,7 +12,7 @@ class PPDrawingModel: ObservableObject {
     @Published var selectedLines: [PPLine] = []
     
     @Published var selectedColor: Color = .red
-    @Published var selectedWidth: CGFloat = 5
+    @Published var selectedWidth: Double = 5
     
     @Published var selectedTool: PPDrawingTool = .pen
     @Published var eraserType: PPEraserType = .point

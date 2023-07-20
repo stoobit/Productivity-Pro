@@ -17,8 +17,10 @@ struct PPControlBar: View {
     
     @AppStorage("defaultFont")
     var defaultFont: String = "Avenir Next"
+    
     @AppStorage("defaultFontSize")
     var defaultFontSize: Double = 12
+    
     @AppStorage("CPPosition")
     var isCPLeft: Bool = true
     
