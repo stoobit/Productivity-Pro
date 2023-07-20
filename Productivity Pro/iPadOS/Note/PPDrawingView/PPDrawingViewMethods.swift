@@ -18,9 +18,9 @@ extension PPDrawingView {
                 return
             }
             
-            drawingModel.lines.append(
+            lines?.append(
                 PPLine(
-                    points: [point],
+                    points: [PPPoint(x: point.x, y: point.y)],
                     color: drawingModel.selectedColor.rawValue,
                     lineWidth: drawingModel.selectedWidth,
                     lineStyle: style
@@ -29,16 +29,18 @@ extension PPDrawingView {
             
         } else {
             
-            let index = drawingModel.lines.count - 1
-            drawingModel.lines[index].points.append(point)
+            guard var index = lines?.count else { return }
+            index -= 1
+            
+            lines?[index].points.append(PPPoint(x: point.x, y: point.y))
             
         }
         
     }
     
     func dragDidEnd(value: DragGesture.Value) {
-        if let last = drawingModel.lines.last?.points, last.isEmpty {
-            drawingModel.lines.removeLast()
+        if let last = lines?.last?.points, last.isEmpty {
+            lines?.removeLast()
         }
     }
     

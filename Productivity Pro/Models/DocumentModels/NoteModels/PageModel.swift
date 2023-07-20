@@ -29,6 +29,8 @@ struct Page: Codable, Identifiable, Hashable {
     var isPortrait: Bool
     
     var canvas: Data = Data()
+    
+    var lines: [PPLine]? = []
     var items: [ItemModel] = []
     
 }

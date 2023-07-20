@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DrawingShape: Shape {
     let scale: CGFloat
-    let points: [CGPoint]
+    let points: [PPPoint]
     
     var calculator: PPPathCalculator {
         return PPPathCalculator(scale: scale)

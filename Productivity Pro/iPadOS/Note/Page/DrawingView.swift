@@ -30,6 +30,7 @@ struct DrawingView: View {
         } else {
             PPDrawingView(
                 drawingModel: drawingModel,
+                lines: $page.lines,
                 scale: toolManager.zoomScale,
                 frame: getFrame()
             )

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PPDrawingView: View {
     @StateObject var drawingModel: PPDrawingModel
+    @Binding var lines: [PPLine]?
     
     var scale: CGFloat = 1
     var frame: CGSize
@@ -17,7 +18,7 @@ struct PPDrawingView: View {
         ZStack {
             Color.clear.contentShape(Rectangle())
             
-            ForEach(drawingModel.lines) { line in
+            ForEach(lines ?? [PPLine]()) { line in
                 DrawingShape(scale: scale, points: line.points)
                     .stroke(
                         Color(rawValue: line.color),

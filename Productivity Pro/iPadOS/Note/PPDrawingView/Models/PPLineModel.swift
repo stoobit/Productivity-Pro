@@ -7,15 +7,22 @@
 
 import SwiftUI
 
-struct PPLine: Identifiable, Codable {
+struct PPLine: Identifiable, Codable, Hashable {
     var id = UUID()
     
-    var points: [CGPoint]
+    var points: [PPPoint]
     
     var color: String
     var lineWidth: CGFloat
     var lineStyle: PPLineStyle
 
+}
+
+struct PPPoint: Identifiable, Codable, Hashable {
+    var id = UUID()
+    
+    var x: Double
+    var y: Double
 }
 
 enum PPLineStyle: String, Codable {

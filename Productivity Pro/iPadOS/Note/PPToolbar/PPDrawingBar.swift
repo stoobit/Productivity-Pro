@@ -11,9 +11,9 @@ struct PPDrawingBar: View {
     
     @StateObject var drawingModel: PPDrawingModel
     
-    @AppStorage("color1") var firstColor: Color = Color.black
-    @AppStorage("color2") var secondColor: Color = Color.red
-    @AppStorage("color2") var thirdColor: Color = Color.blue
+    @AppStorage("drawingcolor1") var firstColor: Color = Color.black
+    @AppStorage("drawingcolor2") var secondColor: Color = Color.red
+    @AppStorage("drawingcolor3") var thirdColor: Color = Color.blue
     
     var hsc: UserInterfaceSizeClass?
     var size: CGSize

@@ -7,7 +7,10 @@
 
 import SwiftUI
 
-extension Color: RawRepresentable {
+extension Color: RawRepresentable, Identifiable {
+    public var id: UUID {
+        return UUID()
+    }
     
     public init(rawValue: String) {
         
