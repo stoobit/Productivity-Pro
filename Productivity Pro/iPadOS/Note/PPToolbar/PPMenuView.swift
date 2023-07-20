@@ -9,11 +9,13 @@ import SwiftUI
 
 struct PPMenuView: View {
     
+    @StateObject var toolManager: ToolManager
+    
     var body: some View {
         Menu(content: {
             
-            Button(action: {  }) {
-                Toggle(isOn: .constant(true), label: {
+            Button(action: { toolManager.isLocked.toggle() }) {
+                Toggle(isOn: $toolManager.isLocked, label: {
                     Label("Scrolling Disabled", systemImage: "hand.draw")
                 })
             }

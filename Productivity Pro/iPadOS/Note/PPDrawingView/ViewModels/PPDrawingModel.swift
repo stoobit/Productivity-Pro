@@ -17,6 +17,6 @@ class PPDrawingModel: ObservableObject {
     @Published var selectedTool: PPDrawingTool = .pen
     @Published var eraserType: PPEraserType = .point
     
-    @Published var objectDetectionEnabled: Bool = false
+    @Published var objectRecognitionTool: PPRecognitionTool = .none
     
 }

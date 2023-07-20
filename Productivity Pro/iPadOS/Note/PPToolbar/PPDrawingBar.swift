@@ -10,6 +10,7 @@ import SwiftUI
 struct PPDrawingBar: View {
     
     @StateObject var drawingModel: PPDrawingModel
+    @StateObject var toolManager: ToolManager
     
     @AppStorage("colorSelection") var selectedColor: Int = 0
     
@@ -78,24 +79,42 @@ struct PPDrawingBar: View {
                 ) {
                     drawingModel.selectedTool = .lasso
                 }
-                .padding(.leading, 2.5)
+                .padding(.horizontal, 2.5)
             }
             
             Divider()
                 .frame(height: 35)
-                .padding(.horizontal, 5)
+                .padding(.horizontal, 2.5)
             
-            PPToolButton(
-                icon: "wand.and.rays",
-                isTinted: drawingModel.objectDetectionEnabled == true
-            ) {
-                drawingModel.objectDetectionEnabled.toggle()
+            Group {
+                PPToolButton(
+                    icon: "wand.and.rays",
+                    isTinted: drawingModel.objectRecognitionTool == .objectRecognition
+                ) {
+                    if drawingModel.objectRecognitionTool == .objectRecognition {
+                        drawingModel.objectRecognitionTool = .none
+                    } else {
+                        drawingModel.objectRecognitionTool = .objectRecognition
+                    }
+                }
+                .padding(.horizontal, 2.5)
+                
+                PPToolButton(
+                    icon: "ruler",
+                    isTinted: drawingModel.objectRecognitionTool == .ruler
+                ) {
+                    if drawingModel.objectRecognitionTool == .ruler {
+                        drawingModel.objectRecognitionTool = .none
+                    } else {
+                        drawingModel.objectRecognitionTool = .ruler
+                    }
+                }
+                .padding(.horizontal, 2.5)
             }
-            .padding(.horizontal, 2.5)
             
             Divider()
                 .frame(height: 35)
-                .padding(.horizontal, 5)
+                .padding(.horizontal, 2.5)
             
             Group {
                 PPColorButton(
@@ -126,12 +145,12 @@ struct PPDrawingBar: View {
                     hsc: hsc,
                     size: size
                 )
-                .padding(.leading, 2.5)
+                .padding(.horizontal, 2.5)
             }
             
             Divider()
                 .frame(height: 35)
-                .padding(.horizontal, 5)
+                .padding(.horizontal, 2.5)
             
             Group {
                 PPSizeButton(
@@ -145,20 +164,14 @@ struct PPDrawingBar: View {
                     selectedWidth: $drawingModel.selectedWidth
                 )
                 .padding(.horizontal, 2.5)
-                
-                PPSizeButton(
-                    width: .constant(5),
-                    selectedWidth: $drawingModel.selectedWidth
-                )
-                .padding(.leading, 2.5)
             }
             
             Divider()
                 .frame(height: 35)
                 .padding(.horizontal, 5)
             
-            PPMenuView()
-                .padding(.horizontal, 2.5)
+            PPMenuView(toolManager: toolManager)
+                .padding(.leading, 2.5)
                 .padding(.trailing, outerPadding)
 
         }

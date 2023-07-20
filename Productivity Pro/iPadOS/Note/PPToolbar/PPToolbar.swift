@@ -22,7 +22,11 @@ struct PPToolbar: View {
     var body: some View {
         Group {
             
-            PPDrawingBar(drawingModel: drawingModel, hsc: hsc, size: size)
+            PPDrawingBar(
+                drawingModel: drawingModel,
+                toolManager: toolManager,
+                hsc: hsc, size: size
+            )
             
 //            PPControlBar(
 //                document: $document,

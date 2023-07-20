@@ -17,6 +17,7 @@
 		BB1321F02985F547006AD59D /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321EF2985F547006AD59D /* MediaType.swift */; };
 		BB15F2212A6968E400223C92 /* PPColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2202A6968E400223C92 /* PPColorPicker.swift */; };
 		BB15F2232A69964200223C92 /* ExitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2222A69964200223C92 /* ExitButtonView.swift */; };
+		BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */; };
 		BB174F552A1051B400F753F6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB174F542A1051B400F753F6 /* Date.swift */; };
 		BB1DF6042A686D14006F85CE /* PPToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6032A686D14006F85CE /* PPToolButton.swift */; };
 		BB1DF6062A686D59006F85CE /* PPDrawingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6052A686D59006F85CE /* PPDrawingBar.swift */; };
@@ -180,6 +181,7 @@
 		BB1321EF2985F547006AD59D /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		BB15F2202A6968E400223C92 /* PPColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColorPicker.swift; sourceTree = "<group>"; };
 		BB15F2222A69964200223C92 /* ExitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButtonView.swift; sourceTree = "<group>"; };
+		BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPRecognitionTool.swift; sourceTree = "<group>"; };
 		BB174F542A1051B400F753F6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		BB1DF6032A686D14006F85CE /* PPToolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToolButton.swift; sourceTree = "<group>"; };
@@ -798,6 +800,7 @@
 				BBF930722A67437900AD3958 /* PPColor.swift */,
 				BBF930792A674C9600AD3958 /* PPShape.swift */,
 				BBF930702A67428C00AD3958 /* PPDrawingTool.swift */,
+				BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */,
 				BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */,
 				BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */,
 			);
@@ -1018,6 +1021,7 @@
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBCCE4F928D540AA001DBD8A /* NoteSettings.swift in Sources */,
+				BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */,
 				BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */,

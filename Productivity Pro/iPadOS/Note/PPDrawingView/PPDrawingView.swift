@@ -40,6 +40,7 @@ struct PPDrawingView: View {
             width: scale * frame.width,
             height: scale * frame.height
         )
+        .clipShape(Rectangle())
         .scaleEffect(1/scale)
     }
 }
