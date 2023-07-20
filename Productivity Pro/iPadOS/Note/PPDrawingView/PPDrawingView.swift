@@ -20,7 +20,7 @@ struct PPDrawingView: View {
             ForEach(drawingModel.lines) { line in
                 DrawingShape(scale: scale, points: line.points)
                     .stroke(
-                        Color(data: line.color),
+                        Color(rawValue: line.color),
                         style: StrokeStyle(
                             lineWidth: line.lineWidth * scale,
                             lineCap: .round,

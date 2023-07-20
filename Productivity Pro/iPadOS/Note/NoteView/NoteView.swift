@@ -44,7 +44,8 @@ struct NoteView: View {
                             document: $document,
                             page: $page,
                             toolManager: toolManager,
-                            subviewManager: subviewManager
+                            subviewManager: subviewManager,
+                            drawingModel: drawingModel
                         )
                         .id(page.id)
                     }

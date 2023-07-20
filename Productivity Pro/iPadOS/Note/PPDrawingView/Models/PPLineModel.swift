@@ -12,7 +12,7 @@ struct PPLine: Identifiable, Codable {
     
     var points: [CGPoint]
     
-    var color: Data
+    var color: String
     var lineWidth: CGFloat
     var lineStyle: PPLineStyle
 

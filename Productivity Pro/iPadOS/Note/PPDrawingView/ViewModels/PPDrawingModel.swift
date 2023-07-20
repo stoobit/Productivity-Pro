@@ -12,7 +12,7 @@ class PPDrawingModel: ObservableObject {
     @Published var lines: [PPLine] = []
     @Published var selectedLines: [PPLine] = []
     
-    @Published var selectedColor: Color = .black
+    @Published var selectedColor: Color = .red
     @Published var selectedWidth: CGFloat = 5
     
     @Published var selectedTool: PPDrawingTool = .pen

@@ -139,6 +139,7 @@ struct NoteToolbarTitleMenu: View {
                         offset: .constant(0),
                         toolManager: tm,
                         subviewManager: subviewManager,
+                        drawingModel: PPDrawingModel(),
                         pdfRendering: true,
                         highRes: true,
                         size: getFrame(page: page)

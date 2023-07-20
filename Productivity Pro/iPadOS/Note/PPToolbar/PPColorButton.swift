@@ -12,8 +12,19 @@ struct PPColorButton: View {
     @Binding var color: Color
     @Binding var selectedColor: Color
     
+    @State var showPicker: Bool = false
+    
+    var hsc: UserInterfaceSizeClass?
+    var size: CGSize
+    
     var body: some View {
-        Button(action: { selectedColor = color }) {
+        Button(action: {
+            if selectedColor != color {
+                selectedColor = color
+            } else {
+                showPicker = true
+            }
+        }) {
                 
             Image(
                 systemName: color == selectedColor ? "square.fill" : "square"
@@ -25,15 +36,12 @@ struct PPColorButton: View {
             .clipShape(RoundedRectangle(cornerRadius: 9))
             
         }
+        .popover(isPresented: $showPicker) {
+            PPColorPicker(color: $color, hsc: hsc, size: size)
+        }
+        .onChange(of: color) { color in
+            selectedColor = color
+        }
+
     }
 }
-
-struct ColorButton_Preview: PreviewProvider {
-    static var previews: some View {
-        PPColorButton(
-            color: .constant(.accentColor),
-            selectedColor: .constant(.accentColor)
-        )
-    }
-}
-

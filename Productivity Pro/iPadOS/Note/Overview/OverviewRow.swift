@@ -65,6 +65,7 @@ struct OverviewRow: View {
                 offset: .constant(0),
                 toolManager: tm(),
                 subviewManager: subviewManager,
+                drawingModel: PPDrawingModel(),
                 highRes: true,
                 size: .zero
             )

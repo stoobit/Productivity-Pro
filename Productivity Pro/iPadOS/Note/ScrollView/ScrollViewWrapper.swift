@@ -18,6 +18,8 @@ struct ScrollViewWrapper: View {
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
+    @StateObject var drawingModel: PPDrawingModel
+
     
     var scrollView: UIScrollView = UIScrollView()
     
@@ -36,6 +38,7 @@ struct ScrollViewWrapper: View {
                 offset: $offset,
                 toolManager: toolManager,
                 subviewManager: subviewManager,
+                drawingModel: drawingModel,
                 size: size
             )
         }

@@ -11,6 +11,13 @@ struct PPDrawingBar: View {
     
     @StateObject var drawingModel: PPDrawingModel
     
+    @AppStorage("color1") var firstColor: Color = Color.black
+    @AppStorage("color2") var secondColor: Color = Color.red
+    @AppStorage("color2") var thirdColor: Color = Color.blue
+    
+    var hsc: UserInterfaceSizeClass?
+    var size: CGSize
+    
     var body: some View {
         HStack {
             Group {
@@ -65,20 +72,26 @@ struct PPDrawingBar: View {
             
             Group {
                 PPColorButton(
-                    color: .constant(.black),
-                    selectedColor: $drawingModel.selectedColor
+                    color: $firstColor,
+                    selectedColor: $drawingModel.selectedColor,
+                    hsc: hsc,
+                    size: size
                 )
                 .padding(.horizontal, 2.5)
                 
                 PPColorButton(
-                    color: .constant(.accentColor),
-                    selectedColor: $drawingModel.selectedColor
+                    color: $secondColor,
+                    selectedColor: $drawingModel.selectedColor,
+                    hsc: hsc,
+                    size: size
                 )
                 .padding(.horizontal, 2.5)
                 
                 PPColorButton(
-                    color: .constant(.pink),
-                    selectedColor: $drawingModel.selectedColor
+                    color: $thirdColor,
+                    selectedColor: $drawingModel.selectedColor,
+                    hsc: hsc,
+                    size: size
                 )
                 .padding(.leading, 2.5)
             }
@@ -120,10 +133,3 @@ struct PPDrawingBar: View {
         .clipShape(RoundedRectangle(cornerRadius: 19))
     }
 }
-
-struct DrawingBar_Preview: PreviewProvider {
-    static var previews: some View {
-        PPDrawingBar(drawingModel: PPDrawingModel())
-    }
-}
-

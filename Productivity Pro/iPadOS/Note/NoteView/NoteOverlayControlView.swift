@@ -31,7 +31,8 @@ struct NoteOverlayControlView: View {
                 document: $document,
                 toolManager: toolManager,
                 subviewManager: subviewManager,
-                drawingModel: drawingModel
+                drawingModel: drawingModel,
+                size: size
             )
             
         }

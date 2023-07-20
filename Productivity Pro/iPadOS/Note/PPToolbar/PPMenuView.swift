@@ -43,7 +43,7 @@ struct PPMenuView: View {
         }) {
             
             Image(systemName: "ellipsis")
-                .foregroundStyle(.accent)
+                .foregroundStyle(Color.accentColor)
                 .font(.title3)
                 .frame(width: 40, height: 40)
                 .background(Color.secondary)

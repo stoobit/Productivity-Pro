@@ -7,37 +7,46 @@
 
 import SwiftUI
 
-extension Color {
-    init(data: Data) {
-        var color: UIColor = .red
+extension Color: RawRepresentable {
+    
+    public init(rawValue: String) {
         
-        do {
+        guard let data = Data(base64Encoded: rawValue) else{
+            self = .black
+            return
+        }
+        
+        do{
             
-            color = try NSKeyedUnarchiver.unarchivedObject(
+            if let color = try NSKeyedUnarchiver.unarchivedObject(
                 ofClass: UIColor.self, from: data
-            )!
+            ) {
+                self = Color(color)
+            } else {
+                self = .black
+            }
             
-        } catch {
-            print(error)
+            
+        }catch{
+            self = .black
         }
         
-        self.init(color)
-    }
-
-    func getData() -> Data {
-        var data: Data = Data()
-        
-        do {
-            
-            try data = NSKeyedArchiver.archivedData(
-                withRootObject: UIColor(self), requiringSecureCoding: false
-            )
-            
-        } catch {
-            print(error)
-        }
-        
-        return data
     }
     
+    public var rawValue: String {
+        
+        do{
+            let data = try NSKeyedArchiver.archivedData(
+                withRootObject: UIColor(self), requiringSecureCoding: false
+            ) as Data
+            
+            return data.base64EncodedString()
+            
+        } catch{
+            
+            return ""
+            
+        }
+        
+    }
 }

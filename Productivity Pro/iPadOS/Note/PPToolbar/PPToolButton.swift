@@ -32,10 +32,3 @@ struct PPToolButton: View {
         return cs == .dark ? .white : .black
     }
 }
-
-struct PPButton_Preview: PreviewProvider {
-    static var previews: some View {
-       PPDrawingBar(drawingModel: PPDrawingModel())
-    }
-}
-

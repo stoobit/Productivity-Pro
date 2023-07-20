@@ -21,7 +21,7 @@ extension PPDrawingView {
             drawingModel.lines.append(
                 PPLine(
                     points: [point],
-                    color: drawingModel.selectedColor.getData(),
+                    color: drawingModel.selectedColor.rawValue,
                     lineWidth: drawingModel.selectedWidth,
                     lineStyle: style
                 )

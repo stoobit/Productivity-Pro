@@ -25,6 +25,7 @@ struct PageView: View {
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
+    @StateObject var drawingModel: PPDrawingModel
     
     @State var isTargeted: Bool = true
     
@@ -84,6 +85,7 @@ struct PageView: View {
                 page: $page,
                 toolManager: toolManager,
                 subviewManager: subviewManager,
+                drawingModel: drawingModel,
                 pdfRendering: pdfRendering,
                 size: size
             )

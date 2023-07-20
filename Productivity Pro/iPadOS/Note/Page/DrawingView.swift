@@ -10,10 +10,10 @@ import SwiftUI
 struct DrawingView: View {
     
     @Binding var page: Page
+    
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
-    
-    @StateObject var drawingModel: PPDrawingModel = PPDrawingModel()
+    @StateObject var drawingModel: PPDrawingModel
     
     var pdfRendering: Bool
     var size: CGSize

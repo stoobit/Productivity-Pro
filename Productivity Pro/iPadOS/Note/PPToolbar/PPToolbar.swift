@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PPToolbar: View {
+    @Environment(\.horizontalSizeClass) var hsc
     
     @Binding var document: ProductivityProDocument
     @State var pasteDisabled: Bool = false
@@ -16,10 +17,12 @@ struct PPToolbar: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var drawingModel: PPDrawingModel
     
+    var size: CGSize
+    
     var body: some View {
         Group {
             
-            PPDrawingBar(drawingModel: drawingModel)
+            PPDrawingBar(drawingModel: drawingModel, hsc: hsc, size: size)
             
 //            PPControlBar(
 //                document: $document,
