@@ -33,7 +33,7 @@ struct PPToolbar: View {
             maxHeight: .infinity,
             alignment: .bottom
         )
-        .padding(.bottom, 10)
+        .padding(.bottom, 20)
         
     }
 }

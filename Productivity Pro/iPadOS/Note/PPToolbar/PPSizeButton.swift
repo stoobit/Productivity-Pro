@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct PPSizeButton: View {
+    @Environment(\.colorScheme) var cs
+    
+    @Binding var width: CGFloat
+    @Binding var selectedWidth: CGFloat 
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Button(action: { selectedWidth = width }) {
+            Circle()
+                .frame(width: width, height: width)
+                .foregroundStyle(
+                    width == selectedWidth ? Color.accentColor : deselectedColor()
+                )
+                .font(.title3)
+                .frame(width: 40, height: 40)
+                .background(Color.secondary)
+                .clipShape(RoundedRectangle(cornerRadius: 9))
+        }
     }
-}
-
-#Preview {
-    PPSizeButton()
+    
+    func deselectedColor() -> Color {
+        return cs == .dark ? .white : .black
+    }
 }

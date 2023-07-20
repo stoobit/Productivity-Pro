@@ -12,7 +12,6 @@ enum PPDrawingTool: String, Codable {
     case highlighter = "highlighter"
     case eraser = "eraser"
     case lasso = "lasso"
-    case magicwand = "magicwand"
 }
 
 enum PPEraserType: String, Codable {

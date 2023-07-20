@@ -22,7 +22,7 @@ extension PPDrawingView {
                 PPLine(
                     points: [point],
                     color: drawingModel.selectedColor.getData(),
-                    lineWidth: drawingModel.lineWidth,
+                    lineWidth: drawingModel.selectedWidth,
                     lineStyle: style
                 )
             )

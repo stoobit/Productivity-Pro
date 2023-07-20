@@ -31,14 +31,6 @@ struct PPDrawingBar: View {
                 .padding(.horizontal, 2.5)
                 
                 PPToolButton(
-                    icon: "wand.and.rays",
-                    isTinted: drawingModel.selectedTool == .magicwand
-                ) {
-                    drawingModel.selectedTool = .magicwand
-                }
-                .padding(.horizontal, 2.5)
-                
-                PPToolButton(
                     icon: "eraser",
                     isTinted: drawingModel.selectedTool == .eraser
                 ) {
@@ -59,21 +51,33 @@ struct PPDrawingBar: View {
                 .frame(height: 35)
                 .padding(.horizontal, 5)
             
+            PPToolButton(
+                icon: "wand.and.rays",
+                isTinted: drawingModel.objectDetectionEnabled == true
+            ) {
+                drawingModel.objectDetectionEnabled.toggle()
+            }
+            .padding(.horizontal, 2.5)
+            
+            Divider()
+                .frame(height: 35)
+                .padding(.horizontal, 5)
+            
             Group {
                 PPColorButton(
-                    color: .black,
+                    color: .constant(.black),
                     selectedColor: $drawingModel.selectedColor
                 )
                 .padding(.horizontal, 2.5)
                 
                 PPColorButton(
-                    color: .accentColor,
+                    color: .constant(.accentColor),
                     selectedColor: $drawingModel.selectedColor
                 )
                 .padding(.horizontal, 2.5)
                 
                 PPColorButton(
-                    color: .pink,
+                    color: .constant(.pink),
                     selectedColor: $drawingModel.selectedColor
                 )
                 .padding(.leading, 2.5)
@@ -82,6 +86,33 @@ struct PPDrawingBar: View {
             Divider()
                 .frame(height: 35)
                 .padding(.horizontal, 5)
+            
+            Group {
+                PPSizeButton(
+                    width: .constant(15),
+                    selectedWidth: $drawingModel.selectedWidth
+                )
+                .padding(.horizontal, 2.5)
+                
+                PPSizeButton(
+                    width: .constant(10),
+                    selectedWidth: $drawingModel.selectedWidth
+                )
+                .padding(.horizontal, 2.5)
+                
+                PPSizeButton(
+                    width: .constant(5),
+                    selectedWidth: $drawingModel.selectedWidth
+                )
+                .padding(.leading, 2.5)
+            }
+            
+            Divider()
+                .frame(height: 35)
+                .padding(.horizontal, 5)
+            
+            PPMenuView()
+                .padding(.horizontal, 2.5)
 
         }
         .padding(10)

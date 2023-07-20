@@ -16,7 +16,6 @@ struct Productivity_ProApp: App {
         ) { file in
             
             ContentView(document: file.$document)
-                .persistentSystemOverlays(.hidden)
                 .onAppear {
                     file.document.document.url = file.fileURL ?? .applicationDirectory
                 }

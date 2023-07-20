@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PPToolButton: View {
+    @Environment(\.colorScheme) var cs
     
     var icon: String
     var isTinted: Bool
@@ -18,13 +19,17 @@ struct PPToolButton: View {
         Button(action: action) {
             
             Image(systemName: icon)
-                .foregroundStyle(isTinted ? Color.white : Color.black)
+                .foregroundStyle(isTinted ? Color.white : deselectedColor())
                 .font(.title3)
                 .frame(width: 40, height: 40)
                 .background(isTinted ? Color.accentColor : Color.secondary)
                 .clipShape(RoundedRectangle(cornerRadius: 9))
             
         }
+    }
+    
+    func deselectedColor() -> Color {
+        return cs == .dark ? .white : .black
     }
 }
 

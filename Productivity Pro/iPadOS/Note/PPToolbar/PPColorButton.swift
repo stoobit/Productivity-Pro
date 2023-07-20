@@ -9,24 +9,20 @@ import SwiftUI
 
 struct PPColorButton: View {
     
-    var color: Color
+    @Binding var color: Color
     @Binding var selectedColor: Color
     
     var body: some View {
         Button(action: { selectedColor = color }) {
                 
-            if color == selectedColor {
-                RoundedRectangle(cornerRadius: 9)
-                    .foregroundStyle(color)
-                    .frame(width: 40, height: 40)
-            } else {
-                RoundedRectangle(cornerRadius: 9)
-                    .strokeBorder(
-                        lineWidth: 6, antialiased: true
-                    )
-                    .foregroundStyle(color)
-                    .frame(width: 40, height: 40)
-            }
+            Image(
+                systemName: color == selectedColor ? "square.fill" : "square"
+            )
+            .foregroundStyle(color)
+            .font(.title3)
+            .frame(width: 40, height: 40)
+            .background(Color.secondary)
+            .clipShape(RoundedRectangle(cornerRadius: 9))
             
         }
     }
@@ -34,7 +30,10 @@ struct PPColorButton: View {
 
 struct ColorButton_Preview: PreviewProvider {
     static var previews: some View {
-        PPColorButton(color: .accentColor, selectedColor: .constant(.accentColor))
+        PPColorButton(
+            color: .constant(.accentColor),
+            selectedColor: .constant(.accentColor)
+        )
     }
 }
 
