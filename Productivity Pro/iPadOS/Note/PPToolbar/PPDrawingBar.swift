@@ -11,6 +11,8 @@ struct PPDrawingBar: View {
     
     @StateObject var drawingModel: PPDrawingModel
     
+    @AppStorage("colorSelection") var selectedColor: Int = 0
+    
     @AppStorage("drawingcolor1") var firstColor: Color = Color.black
     @AppStorage("drawingcolor2") var secondColor: Color = Color.red
     @AppStorage("drawingcolor3") var thirdColor: Color = Color.blue
@@ -31,6 +33,15 @@ struct PPDrawingBar: View {
         .background(.ultraThickMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 19))
         .padding(.horizontal, 10)
+        .onAppear {
+            switch selectedColor {
+            case 0: drawingModel.selectedColor = firstColor
+            case 1: drawingModel.selectedColor = secondColor
+            case 2: drawingModel.selectedColor = thirdColor
+            default:
+                break
+            }
+        }
     }
     
     @ViewBuilder func DrawingBar(_ outerPadding: CGFloat) -> some View {
@@ -90,6 +101,8 @@ struct PPDrawingBar: View {
                 PPColorButton(
                     color: $firstColor,
                     selectedColor: $drawingModel.selectedColor,
+                    selectedValue: $selectedColor,
+                    value: 0,
                     hsc: hsc,
                     size: size
                 )
@@ -98,6 +111,8 @@ struct PPDrawingBar: View {
                 PPColorButton(
                     color: $secondColor,
                     selectedColor: $drawingModel.selectedColor,
+                    selectedValue: $selectedColor,
+                    value: 1,
                     hsc: hsc,
                     size: size
                 )
@@ -106,6 +121,8 @@ struct PPDrawingBar: View {
                 PPColorButton(
                     color: $thirdColor,
                     selectedColor: $drawingModel.selectedColor,
+                    selectedValue: $selectedColor,
+                    value: 2,
                     hsc: hsc,
                     size: size
                 )

@@ -19,24 +19,27 @@ struct DrawingView: View {
     var size: CGSize
     
     var body: some View {
-        if page.canvasType == .pencilKit && pdfRendering == false {
-            PencilKitViewWrapper(
-                size: size,
-                page: $page,
-                toolManager: toolManager,
-                subviewManager: subviewManager
-            )
-            
-        } else {
-            PPDrawingView(
-                drawingModel: drawingModel,
-                lines: $page.lines,
-                scale: toolManager.zoomScale,
-                frame: getFrame()
-            )
-            .disabled(!toolManager.isCanvasEnabled)
-            .allowsHitTesting(toolManager.isCanvasEnabled)
+        Group {
+            if page.canvasType == .pencilKit && pdfRendering == false {
+                PencilKitViewWrapper(
+                    size: size,
+                    page: $page,
+                    toolManager: toolManager,
+                    subviewManager: subviewManager
+                )
+                
+            } else {
+                PPDrawingView(
+                    drawingModel: drawingModel,
+                    lines: $page.lines,
+                    scale: toolManager.zoomScale,
+                    frame: getFrame()
+                )
+                .disabled(!toolManager.isCanvasEnabled)
+                .allowsHitTesting(toolManager.isCanvasEnabled)
+            }
         }
+        .zIndex(Double(page.items.count + 10))
     }
     
     func getFrame() -> CGSize {

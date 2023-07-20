@@ -57,7 +57,6 @@ struct PencilKitViewWrapper: View {
         )
         .scaleEffect(1/toolManager.zoomScale)
         .allowsHitTesting(toolManager.isCanvasEnabled)
-        .zIndex(Double(page.items.count + 10))
     }
     
 }

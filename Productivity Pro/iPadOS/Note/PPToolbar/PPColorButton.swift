@@ -12,6 +12,9 @@ struct PPColorButton: View {
     @Binding var color: Color
     @Binding var selectedColor: Color
     
+    @Binding var selectedValue: Int
+    var value: Int
+    
     @State var showPicker: Bool = false
     
     var hsc: UserInterfaceSizeClass?
@@ -19,15 +22,16 @@ struct PPColorButton: View {
     
     var body: some View {
         Button(action: {
-            if selectedColor != color {
-                selectedColor = color
-            } else {
+            if selectedColor == color && selectedValue == value {
                 showPicker = true
+            } else {
+                selectedColor = color
+                selectedValue = value
             }
         }) {
                 
             Image(
-                systemName: color == selectedColor ? "square.fill" : "square"
+                systemName: isSelected() ? "square.fill" : "square"
             )
             .foregroundStyle(color)
             .font(.title3)
@@ -48,5 +52,9 @@ struct PPColorButton: View {
             selectedColor = color
         }
 
+    }
+    
+    func isSelected() -> Bool {
+        return color == selectedColor && selectedValue == value
     }
 }
