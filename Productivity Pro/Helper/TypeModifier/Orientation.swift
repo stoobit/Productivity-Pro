@@ -12,12 +12,15 @@ struct DetectOrientation: ViewModifier {
     @Binding var orientation: UIDeviceOrientation
     
     func body(content: Content) -> some View {
+#if !os(xrOS)
         content
             .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
                 orientation = UIDevice.current.orientation
             }
+#endif
     }
 }
+
 
 extension View {
     func detectOrientation(_ orientation: Binding<UIDeviceOrientation>) -> some View {

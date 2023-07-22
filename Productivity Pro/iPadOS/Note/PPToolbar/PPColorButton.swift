@@ -38,13 +38,13 @@ struct PPColorButton: View {
             .frame(width: 40, height: 40)
             .background(Color.secondary)
             .clipShape(RoundedRectangle(cornerRadius: 9))
+            .colorPickerSheet(
+                isPresented: $showPicker,
+                selection: $color,
+                supportsAlpha: true
+            )
             
         }
-        .colorPickerSheet(
-            isPresented: $showPicker,
-            selection: $color,
-            supportsAlpha: true
-        )
         .onChange(of: color) { color in
             selectedColor = color
         }

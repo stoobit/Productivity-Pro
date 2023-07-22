@@ -22,11 +22,17 @@ struct PPToolbar: View {
     var body: some View {
         Group {
             
-            PPDrawingBar(
-                drawingModel: drawingModel,
-                toolManager: toolManager,
-                hsc: hsc, size: size
-            )
+            if document.document.note.pages[
+                toolManager.selectedPage
+            ].canvasType == .ppDrawingKit {
+                
+                PPDrawingBar(
+                    drawingModel: drawingModel,
+                    toolManager: toolManager,
+                    hsc: hsc, size: size
+                )
+                
+            }
             
 //            PPControlBar(
 //                document: $document,
