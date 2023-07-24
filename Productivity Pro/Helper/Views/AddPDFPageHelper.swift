@@ -72,11 +72,7 @@ struct AddPDFPageHelper: ViewModifier {
             let page = scan.imageOfPage(at: index)
             let size = page.size
             
-#if DEBUG
-            let canvasType: CanvasType = .ppDrawingKit
-#else
-            let canvasType: CanvasType = .pencilKit
-#endif
+let canvasType: CanvasType = .pencilKit
             
             let newPage = Page(
                 type: .image,
@@ -121,11 +117,7 @@ struct AddPDFPageHelper: ViewModifier {
             header = page.string?.components(separatedBy: .newlines).first
             header = header?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-#if DEBUG
-            let canvasType: CanvasType = .ppDrawingKit
-#else
-            let canvasType: CanvasType = .pencilKit
-#endif
+let canvasType: CanvasType = .pencilKit
             
             let newPage = Page(
                 type: .pdf,

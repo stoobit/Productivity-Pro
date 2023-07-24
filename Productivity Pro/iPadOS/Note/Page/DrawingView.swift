@@ -29,7 +29,7 @@ struct DrawingView: View {
                 )
                 .disabled(!toolManager.isCanvasEnabled)
                 .allowsHitTesting(toolManager.isCanvasEnabled)
-            } else {
+            } else if pdfRendering == false {
                 PencilKitViewWrapper(
                     size: size,
                     page: $page,

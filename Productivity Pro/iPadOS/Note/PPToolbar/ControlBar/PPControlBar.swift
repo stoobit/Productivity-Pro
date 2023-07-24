@@ -21,9 +21,6 @@ struct PPControlBar: View {
     @AppStorage("defaultFontSize")
     var defaultFontSize: Double = 12
     
-    @AppStorage("CPPosition")
-    var isCPLeft: Bool = true
-    
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     

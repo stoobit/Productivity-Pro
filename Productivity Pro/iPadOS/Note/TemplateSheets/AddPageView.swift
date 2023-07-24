@@ -132,11 +132,7 @@ struct AddPageView: View {
         savedBackgroundTemplate = backgroundTemplate
         savedIsPortrait = isPortrait
         
-#if DEBUG
-        let canvasType: CanvasType = .ppDrawingKit
-#else
         let canvasType: CanvasType = .pencilKit
-#endif
         
         let newPage = Page(
             canvasType: canvasType,

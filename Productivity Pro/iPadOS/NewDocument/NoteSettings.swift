@@ -139,11 +139,7 @@ struct NoteSettings: View {
             
             document.documentType = .note
             
-#if DEBUG
-            let canvasType: CanvasType = .ppDrawingKit
-#else
-            let canvasType: CanvasType = .pencilKit
-#endif
+let canvasType: CanvasType = .pencilKit
             
             var note = Note()
             let firstPage: Page = Page(

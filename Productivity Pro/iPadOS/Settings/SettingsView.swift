@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
+    @Environment(\.horizontalSizeClass) var hsc
     @Binding var isPresented: Bool
     
     @AppStorage("automaticallyDeselectEraser")
@@ -20,30 +21,35 @@ struct SettingsView: View {
     @AppStorage("defaultFontSize")
     private var defaultFontSize: Double = 12
     
-    @AppStorage("CPPosition")
-    private var CBPosition: Int = 1
+    @AppStorage("CBPosition")
+    private var CBPosition: Int = 0
     
     @State private var fontSetter: String = "Avenir Next"
     @State private var sizeSetter: Double = 12
+    @State private var cbSetter: Int = 0
     
     var body: some View {
         NavigationStack {
             Form {
                 
-                Section("General") {
-                    FormSpacer {
-                       PositionPicker()
+                Section("Editing Menu Position") {
+                    if hsc == .regular {
+                        FormSpacer {
+                            PositionPicker()
+                        }
+                    } else {
+                        FormSpacer {
+                            Picker("Position", selection: $cbSetter) {
+                                Text("Bottom Left").tag(0)
+                                Text("Bottom Center").tag(1)
+                                Text("Bottom Right").tag(2)
+                            }
+                            .onChange(of: cbSetter) { value in
+                                CBPosition = value
+                            }
+                        }
                     }
                 }
-                
-//                Section("Markup") {
-//                    FormSpacer {
-//                        Toggle(
-//                            "Automatically deselect the eraser",
-//                            isOn: $automaticallyDeselectEraser
-//                        )
-//                    }
-//                }
                 
                 Section("Default Text Style") {
                     FormSpacer {
@@ -67,9 +73,11 @@ struct SettingsView: View {
                                 .frame(width: 85)
                                 .textFieldStyle(.roundedBorder)
                             
-                            Stepper("", value: $sizeSetter, in: 1...1000, step: 1)
-                                .labelsHidden()
-                                .padding(.leading)
+                            if hsc == .regular {
+                                Stepper("", value: $sizeSetter, in: 1...1000, step: 1)
+                                    .labelsHidden()
+                                    .padding(.leading)
+                            }
                         }
                         .onChange(of: sizeSetter) { _ in
                             if sizeSetter < 1 {
@@ -88,6 +96,7 @@ struct SettingsView: View {
                 .onAppear {
                     fontSetter = defaultFont
                     sizeSetter = defaultFontSize
+                    cbSetter = CBPosition
                 }
                 
             }

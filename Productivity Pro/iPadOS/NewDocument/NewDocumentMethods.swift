@@ -27,11 +27,7 @@ extension NewDocumentView {
             header = page.string?.components(separatedBy: .newlines).first
             header = header?.trimmingCharacters(in: .whitespacesAndNewlines)
             
-#if DEBUG
-            let canvasType: CanvasType = .ppDrawingKit
-#else
             let canvasType: CanvasType = .pencilKit
-#endif
             
             let newPage = Page(
                 type: .pdf,
@@ -71,11 +67,7 @@ extension NewDocumentView {
             let page = scan.imageOfPage(at: index)
             let size = page.size
             
-#if DEBUG
-            let canvasType: CanvasType = .ppDrawingKit
-#else
-            let canvasType: CanvasType = .pencilKit
-#endif
+let canvasType: CanvasType = .pencilKit
             
             let newPage = Page(
                 type: .image,
@@ -100,11 +92,7 @@ extension NewDocumentView {
     func createFromLastSelection() {
         document.documentType = .note
         
-#if DEBUG
-        let canvasType: CanvasType = .ppDrawingKit
-#else
         let canvasType: CanvasType = .pencilKit
-#endif
         
         var note = Note()
         let firstPage: Page = Page(
