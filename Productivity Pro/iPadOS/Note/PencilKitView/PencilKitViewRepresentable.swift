@@ -11,7 +11,7 @@ import CoreML
 import Vision
 import ImageIO
 
-struct DrawingViewRepresentable: UIViewRepresentable {
+struct PencilKitViewRepresentable: UIViewRepresentable {
     
     var size: CGSize
     

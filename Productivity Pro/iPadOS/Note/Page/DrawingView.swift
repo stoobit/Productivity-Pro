@@ -20,15 +20,7 @@ struct DrawingView: View {
     
     var body: some View {
         Group {
-            if page.canvasType == .pencilKit && pdfRendering == false {
-                PencilKitViewWrapper(
-                    size: size,
-                    page: $page,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-                
-            } else {
+            if page.canvasType == .ppDrawingKit {
                 PPDrawingView(
                     drawingModel: drawingModel,
                     lines: $page.lines,
@@ -37,6 +29,13 @@ struct DrawingView: View {
                 )
                 .disabled(!toolManager.isCanvasEnabled)
                 .allowsHitTesting(toolManager.isCanvasEnabled)
+            } else {
+                PencilKitViewWrapper(
+                    size: size,
+                    page: $page,
+                    toolManager: toolManager,
+                    subviewManager: subviewManager
+                )
             }
         }
         .zIndex(Double(page.items.count + 10))

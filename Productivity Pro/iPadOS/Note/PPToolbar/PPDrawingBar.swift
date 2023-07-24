@@ -186,8 +186,6 @@ struct PPDrawingBar: View {
                 .padding(.horizontal, 5)
             
             PPMenuView(toolManager: toolManager)
-                .padding(.leading, 2.5)
-                .padding(.trailing, outerPadding)
 
         }
     }

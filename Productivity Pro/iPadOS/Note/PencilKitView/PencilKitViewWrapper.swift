@@ -26,7 +26,7 @@ struct PencilKitViewWrapper: View {
     
     var body: some View {
         
-        DrawingViewRepresentable(
+        PencilKitViewRepresentable(
             size: size,
             page: $page,
             toolManager: toolManager,
