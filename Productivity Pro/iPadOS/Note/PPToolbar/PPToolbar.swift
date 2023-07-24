@@ -17,6 +17,8 @@ struct PPToolbar: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var drawingModel: PPDrawingModel
     
+    @State var menu: Bool = false
+    
     var size: CGSize
     
     var showControls: Bool {
@@ -45,7 +47,7 @@ struct PPToolbar: View {
             PPDrawingBar(
                 drawingModel: drawingModel,
                 toolManager: toolManager,
-                hsc: hsc, size: size
+                hsc: hsc, size: size, menu: $menu
             )
             .offset(x: 0, y: ppDrawingOffset)
             
@@ -57,13 +59,21 @@ struct PPToolbar: View {
             .offset(x: 0, y: showControls ? 0 : 200)
         
         }
-        .animation(.spring(), value: showControls)
+        .animation(.easeInOut(duration: 0.3), value: showControls)
         .frame(
             maxWidth: .infinity,
             maxHeight: .infinity,
             alignment: .bottom
         )
-        .padding(.bottom, 20)
+        .padding(10)
+        .onChange(of: showControls) { value in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                menu.toggle()
+            }
+        }
+        .onChange(of: hsc) { _ in
+            toolManager.isCanvasEnabled = false
+        }
         
     }
 }

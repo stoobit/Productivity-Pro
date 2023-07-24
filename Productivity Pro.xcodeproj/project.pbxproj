@@ -34,6 +34,8 @@
 		BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */; };
 		BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFBA32A660F4F009774BB /* EditMarkdownViewMethods.swift */; };
 		BB2CFBA62A660F77009774BB /* EditMarkdownToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFBA52A660F77009774BB /* EditMarkdownToolbar.swift */; };
+		BB2CFEFD2A6EB3470035511A /* PPControlBarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFEFC2A6EB3470035511A /* PPControlBarMethods.swift */; };
+		BB2CFEFF2A6EB3C40035511A /* PPControlButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFEFE2A6EB3C40035511A /* PPControlButtonStyle.swift */; };
 		BB3208A82981DFFF0014F602 /* CameraHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraHelperView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */; };
@@ -199,6 +201,8 @@
 		BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectRecognition.mlmodel; sourceTree = "<group>"; };
 		BB2CFBA32A660F4F009774BB /* EditMarkdownViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownViewMethods.swift; sourceTree = "<group>"; };
 		BB2CFBA52A660F77009774BB /* EditMarkdownToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownToolbar.swift; sourceTree = "<group>"; };
+		BB2CFEFC2A6EB3470035511A /* PPControlBarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPControlBarMethods.swift; sourceTree = "<group>"; };
+		BB2CFEFE2A6EB3C40035511A /* PPControlButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPControlButtonStyle.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelperView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -404,6 +408,16 @@
 				BB2CFBA52A660F77009774BB /* EditMarkdownToolbar.swift */,
 			);
 			path = EditMarkdownView;
+			sourceTree = "<group>";
+		};
+		BB2CFEFB2A6EB32C0035511A /* ControlBar */ = {
+			isa = PBXGroup;
+			children = (
+				BB58477C29A18BF900C21B17 /* PPControlBar.swift */,
+				BB2CFEFC2A6EB3470035511A /* PPControlBarMethods.swift */,
+				BB2CFEFE2A6EB3C40035511A /* PPControlButtonStyle.swift */,
+			);
+			path = ControlBar;
 			sourceTree = "<group>";
 		};
 		BB37AD882A2C0A12006DB94D /* Overview */ = {
@@ -827,7 +841,7 @@
 			isa = PBXGroup;
 			children = (
 				BB1DF6072A686D65006F85CE /* PPToolbar.swift */,
-				BB58477C29A18BF900C21B17 /* PPControlBar.swift */,
+				BB2CFEFB2A6EB32C0035511A /* ControlBar */,
 				BB1DF6052A686D59006F85CE /* PPDrawingBar.swift */,
 				BBDD126F2A694EC7005E99C5 /* PPMenuView.swift */,
 				BBDD126D2A694A4A005E99C5 /* PPSizeButton.swift */,
@@ -955,6 +969,7 @@
 				BB58477D29A18BF900C21B17 /* PPControlBar.swift in Sources */,
 				BBCCE4F228D52934001DBD8A /* NewDocumentView.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
+				BB2CFEFF2A6EB3C40035511A /* PPControlButtonStyle.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSideActionToolbar.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
 				BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */,
@@ -992,6 +1007,7 @@
 				BB68082B29FDD2A90026FDDF /* NSAttributedString.swift in Sources */,
 				BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */,
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
+				BB2CFEFD2A6EB3470035511A /* PPControlBarMethods.swift in Sources */,
 				BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
 				BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */,

@@ -1,106 +1,13 @@
 //
-//  CopyPasteMenuPosition.swift
+//  PPControlBarMethods.swift
 //  Productivity Pro
 //
-//  Created by Till Brügmann on 18.02.23.
+//  Created by Till Brügmann on 24.07.23.
 //
 
 import SwiftUI
-import OnPasteboardChange
 
-struct PPControlBar: View {
-    
-    @Environment(\.undoManager) private var undoManager
-    
-    @Binding var document: ProductivityProDocument
-    @State var pasteDisabled: Bool = false
-    
-    @AppStorage("defaultFont")
-    var defaultFont: String = "Avenir Next"
-    
-    @AppStorage("defaultFontSize")
-    var defaultFontSize: Double = 12
-    
-    @AppStorage("CPPosition")
-    var isCPLeft: Bool = true
-    
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
-    
-    var body: some View {
-        Group {
-            HStack { 
-                Group {
-                    
-                    Button(action: pasteItem) {
-                        Image(systemName: "doc.on.clipboard")
-                    }
-                    .buttonStyle(.bordered)
-                    .hoverEffect(.lift)
-                    .disabled(pasteDisabled)
-                    .disabled(subviewManager.isPresentationMode)
-                    .disabled(toolManager.isCanvasEnabled)
-                    .keyboardShortcut("v", modifiers: [.command])
-                    .onPasteboardChange(for: UIPasteboard.general) {
-                        disablePasteboard()
-                    }
-                    .onAppear {
-                        disablePasteboard()
-                    }
-                    
-                    Button(action: copyItem) {
-                        Image(systemName: "doc.on.doc")
-                    }
-                    .disabled(toolManager.selectedItem == nil)
-                    .buttonStyle(.bordered)
-                    .keyboardShortcut("c", modifiers: [.command])
-                    .hoverEffect(.lift)
-                    .padding(.trailing, 10)
-                }
-                    
-                Group {
-                    Button(action: duplicateItem) {
-                        Image(systemName: "doc.on.doc.fill")
-                    }
-                    .keyboardShortcut("d", modifiers: [.command])
-                    .hoverEffect(.lift)
-                    .padding(.trailing, 10)
-                    
-                    Button(role: .destructive, action: cutItem) {
-                        Image(systemName: "scissors")
-                    }
-                    .buttonStyle(.bordered)
-                    .keyboardShortcut("x", modifiers: [.command])
-                    .hoverEffect(.lift)
-                    
-                    Button(role: .destructive, action: deleteItem) {
-                        Image(systemName: "trash")
-                    }
-                    .buttonStyle(.bordered)
-                    .keyboardShortcut(.delete, modifiers: [])
-                    .hoverEffect(.lift)
-                }
-                .disabled(toolManager.selectedItem == nil)
-                
-            }
-            .padding(9)
-        }
-        .background(.ultraThinMaterial)
-        .cornerRadius(15, antialiased: true)
-        .padding()
-        .animation(.easeInOut(duration: 0.2), value: isCPLeft)
-        .onChange(of: toolManager.copyPastePasser) { value in
-            switch value {
-            case .copy: copyItem()
-            case .duplicate: duplicateItem()
-            case .paste: pasteItem()
-            case .cut: cutItem()
-            case .delete: deleteItem()
-            case .none: break
-            }
-        }
-    }
-    
+extension PPControlBar {
     
     func copyItem() {
         toolManager.selectedItem = document.document.note.pages[
@@ -295,12 +202,4 @@ struct PPControlBar: View {
         return color.toCodable()
     }
     
-}
-
-enum CopyPastePasser: Equatable {
-    case copy
-    case duplicate
-    case paste
-    case cut
-    case delete
 }

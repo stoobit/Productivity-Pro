@@ -24,6 +24,8 @@ struct PPDrawingBar: View {
     var hsc: UserInterfaceSizeClass?
     var size: CGSize
     
+    @Binding var menu: Bool
+    
     var body: some View {
         ViewThatFits(in: .horizontal) {
             DrawingBar(0)
@@ -34,9 +36,9 @@ struct PPDrawingBar: View {
             }
             .padding(.vertical, 10)
         }
-        .background(.ultraThickMaterial)
+        .background(.thinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 19))
-        .padding(.horizontal, 10)
+        .padding(.vertical, 10)
         .onAppear {
             switch selectedColor {
             case 0: drawingModel.selectedColor = firstColor
@@ -185,7 +187,22 @@ struct PPDrawingBar: View {
                 .frame(height: 35)
                 .padding(.horizontal, 5)
             
-            PPMenuView(toolManager: toolManager)
+            Group {
+                if menu {
+                    PPMenuView(toolManager: toolManager)
+                } else {
+                    
+                    Image(systemName: "ellipsis")
+                        .foregroundStyle(Color.accentColor)
+                        .font(.title3)
+                        .frame(width: 40, height: 40)
+                        .background(Color.secondary)
+                        .clipShape(RoundedRectangle(cornerRadius: 9))
+                    
+                }
+            }
+            .padding(.leading, 2.5)
+            .padding(.trailing, outerPadding)
 
         }
     }
