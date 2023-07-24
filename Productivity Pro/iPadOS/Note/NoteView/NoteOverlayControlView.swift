@@ -36,6 +36,6 @@ struct NoteOverlayControlView: View {
             )
             
         }
-        .frame(height: size.height)
+        .frame(width: size.width, height: size.height)
     }
 }

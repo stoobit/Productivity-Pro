@@ -38,7 +38,6 @@ struct PPDrawingBar: View {
         }
         .background(.thinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 19))
-        .padding(.vertical, 10)
         .onAppear {
             switch selectedColor {
             case 0: drawingModel.selectedColor = firstColor

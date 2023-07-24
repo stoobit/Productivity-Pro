@@ -19,6 +19,9 @@ struct PPToolbar: View {
     
     @State var menu: Bool = false
     
+    @AppStorage("CPPosition")
+    private var CBPosition: Int = 1
+    
     var size: CGSize
     
     var showControls: Bool {
@@ -42,7 +45,7 @@ struct PPToolbar: View {
     }
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: alignment()) {
             
             PPDrawingBar(
                 drawingModel: drawingModel,
@@ -60,12 +63,13 @@ struct PPToolbar: View {
         
         }
         .animation(.easeInOut(duration: 0.3), value: showControls)
+        .animation(.easeInOut(duration: 0.3), value: CBPosition)
         .frame(
             maxWidth: .infinity,
             maxHeight: .infinity,
-            alignment: .bottom
+            alignment: alignment()
         )
-        .padding(10)
+        .padding(20)
         .onChange(of: showControls) { value in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 menu.toggle()
@@ -75,5 +79,19 @@ struct PPToolbar: View {
             toolManager.isCanvasEnabled = false
         }
         
+    }
+    
+    func alignment() -> Alignment {
+        var alignment: Alignment = .bottom
+        
+        if CBPosition == 0 {
+            alignment = .bottomLeading
+        } else if CBPosition == 1 {
+            alignment = .bottom
+        } else if CBPosition == 2 {
+            alignment = .bottomTrailing
+        }
+        
+        return alignment
     }
 }

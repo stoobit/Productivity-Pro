@@ -21,11 +21,10 @@ struct SettingsView: View {
     private var defaultFontSize: Double = 12
     
     @AppStorage("CPPosition")
-    private var isCPLeft: Bool = true
+    private var CBPosition: Int = 1
     
     @State private var fontSetter: String = "Avenir Next"
     @State private var sizeSetter: Double = 12
-    @State private var CPPositionSetter: Bool = true
     
     var body: some View {
         NavigationStack {
@@ -33,13 +32,7 @@ struct SettingsView: View {
                 
                 Section("General") {
                     FormSpacer {
-                        Picker("Copy & Paste Menu Position", selection: $CPPositionSetter) {
-                            Text("Left").tag(true)
-                            Text("Right").tag(false)
-                        }
-                    }
-                    .onChange(of: CPPositionSetter) { value in
-                        isCPLeft = value
+                       PositionPicker()
                     }
                 }
                 
@@ -95,7 +88,6 @@ struct SettingsView: View {
                 .onAppear {
                     fontSetter = defaultFont
                     sizeSetter = defaultFontSize
-                    CPPositionSetter = isCPLeft
                 }
                 
             }
@@ -114,4 +106,51 @@ struct SettingsView: View {
         }
     }
     
+    @ViewBuilder func PositionPicker() -> some View {
+        HStack {
+            
+            PositionItem(.bottomLeading, value: 0)
+            Spacer()
+            PositionItem(.bottom, value: 1)
+            Spacer()
+            PositionItem(.bottomTrailing, value: 2)
+            
+        }
+    }
+    
+    @ViewBuilder func PositionItem(_ align: Alignment, value: Int) -> some View {
+        
+        VStack {
+            ZStack {
+                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                    .frame(width: 160, height: 100)
+                    .foregroundStyle(.thickMaterial)
+                
+                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    .frame(width: 40, height: 10)
+                    .foregroundStyle(.secondary)
+                    .padding(7)
+                    .frame(
+                        width: 160, height: 100, alignment: align
+                    )
+            }
+            
+            Image(systemName: CBPosition == value ? "checkmark.circle.fill" : "checkmark.circle")
+                .padding(.top, 10)
+                .font(.title3)
+                .foregroundStyle(
+                    CBPosition == value ? Color.accentColor : Color.secondary
+                )
+        }
+        .onTapGesture {
+            CBPosition = value
+        }
+    }
+    
+}
+
+struct Settings_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView(isPresented: .constant(true))
+    }
 }

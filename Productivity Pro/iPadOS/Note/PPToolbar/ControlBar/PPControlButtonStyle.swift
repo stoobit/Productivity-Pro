@@ -16,8 +16,3 @@ struct PPControlButtonStyle: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: 9))
     }
 }
-
-#Preview {
-    Text("Hello, world!")
-        .modifier(PPControlButtonStyle())
-}
