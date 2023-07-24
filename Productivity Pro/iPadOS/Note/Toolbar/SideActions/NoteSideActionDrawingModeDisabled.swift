@@ -66,7 +66,7 @@ extension NoteSideActionToolbar {
                     toolManager: toolManager,
                     subviewManager: subviewManager
                 )
-                .presentationCompactAdaptation(.popover)
+                .presentationDetents([.medium, .large])
                 .presentationBackgroundInteraction(.enabled)
             }
             

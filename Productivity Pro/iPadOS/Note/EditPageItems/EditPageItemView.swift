@@ -42,6 +42,8 @@ struct EditPageItemView: View {
                     .foregroundColor(.secondary)
             }
         }
-        .frame(minWidth: hsc == .regular ? 390 : 340, minHeight: 530)
+        .frame(minWidth: hsc == .regular ? 390 : 0, minHeight: 530)
+        .padding(.top, 5)
+        .background(Color("PopoverColor"))
     }
 }
