@@ -20,7 +20,7 @@ struct PPToolbar: View {
     @State var menu: Bool = false
     
     @AppStorage("CBPosition")
-    private var CBPosition: Int = 1
+    private var CBPosition: Int = 0
     
     var size: CGSize
     

@@ -93,7 +93,7 @@ struct WhatIsNew: View {
         HStack {
             Image(systemName: icon)
                 .foregroundStyle(color)
-                .font(.system(size: 50))
+                .font(.system(size: 40))
                 .frame(width: 80, alignment: .center)
                 .padding(.trailing, 20)
             
