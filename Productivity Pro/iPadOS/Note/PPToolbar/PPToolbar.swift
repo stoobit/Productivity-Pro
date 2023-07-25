@@ -33,15 +33,19 @@ struct PPToolbar: View {
     }
     
     var ppDrawingOffset: CGFloat {
-        let type = document.document.note.pages[
-            toolManager.selectedPage
-        ].canvasType
-        
-        if showControls == false && type == .ppDrawingKit {
-            return 0
-        } else {
-            return 200
+        if document.document.note.pages.indices.contains(toolManager.selectedPage) {
+            let type = document.document.note.pages[
+                toolManager.selectedPage
+            ].canvasType
+            
+            if showControls == false && type == .ppDrawingKit {
+                return 0
+            } else {
+                return 200
+            }
         }
+        
+        return 0
     }
     
     var body: some View {

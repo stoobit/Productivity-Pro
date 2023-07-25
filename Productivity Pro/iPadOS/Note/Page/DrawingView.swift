@@ -21,6 +21,7 @@ struct DrawingView: View {
     var body: some View {
         Group {
             if page.canvasType == .ppDrawingKit {
+                
                 PPDrawingView(
                     drawingModel: drawingModel,
                     lines: $page.lines,
@@ -29,6 +30,7 @@ struct DrawingView: View {
                 )
                 .disabled(!toolManager.isCanvasEnabled)
                 .allowsHitTesting(toolManager.isCanvasEnabled)
+                
             } else if pdfRendering == false {
                 PencilKitViewWrapper(
                     size: size,
