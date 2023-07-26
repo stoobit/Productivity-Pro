@@ -31,15 +31,6 @@ struct NoteSheetHelper: ViewModifier {
                     toolManager: toolManager
                 )
             }
-            .sheet(isPresented: $subviewManager.sharePPSheet) {
-                ShareSheet(
-                    showProgress: $toolManager.showProgress,
-                    subviewManager: subviewManager,
-                    toolManager: toolManager,
-                    document: $document,
-                    type: .productivity_pro
-                )
-            }
             .sheet(isPresented: $subviewManager.showTextEditor) {
                 EditMarkdownView(
                     document: $document,

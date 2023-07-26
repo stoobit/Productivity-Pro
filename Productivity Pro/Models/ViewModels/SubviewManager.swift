@@ -14,7 +14,6 @@ class SubviewManager: ObservableObject {
     @Published var createDocument: Bool = false
     @Published var showPrinterView: Bool = false
     
-    @Published var sharePPSheet: Bool = false
     @Published var sharePDFSheet: Bool = false
     
     @Published var collaborationSheet: Bool = false

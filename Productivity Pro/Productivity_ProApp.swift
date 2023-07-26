@@ -15,10 +15,11 @@ struct Productivity_ProApp: App {
             newDocument: ProductivityProDocument()
         ) { file in
             
-            ContentView(document: file.$document)
-                .onAppear {
-                    file.document.document.url = file.fileURL ?? .applicationDirectory
-                }
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                ContentView(document: file.$document)
+            } else if UIDevice.current.userInterfaceIdiom == .phone {
+                
+            }
             
         }
         

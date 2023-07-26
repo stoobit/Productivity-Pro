@@ -23,7 +23,6 @@ struct iPhoneActionsToolbar: ToolbarContent {
             
             Menu(content: {
                 
-                Button("Productivity Pro") { subviewManager.sharePPSheet = true }
                 Button("PDF") { subviewManager.sharePDFSheet = true }
                 
             }) {

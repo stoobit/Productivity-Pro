@@ -30,6 +30,7 @@
 		BB27FED428EA192D00459334 /* ChangePageTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED328EA192D00459334 /* ChangePageTemplateView.swift */; };
 		BB27FED628EA1EF900459334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED528EA1EF900459334 /* SettingsView.swift */; };
 		BB27FED828EA419300459334 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED728EA419300459334 /* OverviewView.swift */; };
+		BB286E862A71997200A893FA /* iPhoneContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB286E852A71997200A893FA /* iPhoneContentView.swift */; };
 		BB28B2382A62DDAF0099330E /* RealityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB28B2372A62DDAF0099330E /* RealityContentView.swift */; };
 		BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */; };
 		BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFBA32A660F4F009774BB /* EditMarkdownViewMethods.swift */; };
@@ -196,6 +197,7 @@
 		BB27FED328EA192D00459334 /* ChangePageTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePageTemplateView.swift; sourceTree = "<group>"; };
 		BB27FED528EA1EF900459334 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BB27FED728EA419300459334 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		BB286E852A71997200A893FA /* iPhoneContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneContentView.swift; sourceTree = "<group>"; };
 		BB28B2372A62DDAF0099330E /* RealityContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityContentView.swift; sourceTree = "<group>"; };
 		BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectRecognition.mlmodel; sourceTree = "<group>"; };
 		BB2CFBA32A660F4F009774BB /* EditMarkdownViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownViewMethods.swift; sourceTree = "<group>"; };
@@ -390,6 +392,14 @@
 			path = RealityNoteModels;
 			sourceTree = "<group>";
 		};
+		BB286E872A71998700A893FA /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				BB286E852A71997200A893FA /* iPhoneContentView.swift */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
 		BB28B2362A62DD910099330E /* visionOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,7 +477,8 @@
 				BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */,
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
-				BB4CDD5228D3D4D0009A409F /* iPadOS */,
+				BB4CDD5228D3D4D0009A409F /* Main */,
+				BB286E872A71998700A893FA /* iPhone */,
 				BB28B2362A62DD910099330E /* visionOS */,
 				BB4CDD5B28D3D564009A409F /* Models */,
 				BB4CDD4828D3C66A009A409F /* Preview Content */,
@@ -485,7 +496,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BB4CDD5228D3D4D0009A409F /* iPadOS */ = {
+		BB4CDD5228D3D4D0009A409F /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				BB4CDD4428D3C668009A409F /* ContentView.swift */,
@@ -496,7 +507,7 @@
 				BBBCACAF2A253BC000C23B2C /* Calculator */,
 				BB6BFA2129048BBE002D09FD /* Settings */,
 			);
-			path = iPadOS;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		BB4CDD5B28D3D564009A409F /* Models */ = {
@@ -1030,6 +1041,7 @@
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
 				BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */,
+				BB286E862A71997200A893FA /* iPhoneContentView.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */,

@@ -8,7 +8,6 @@
 import Foundation
 
 struct Document: Codable {
-    var url: URL = .applicationDirectory
     var documentType: DocumentType = .none
     
     var note: Note!
