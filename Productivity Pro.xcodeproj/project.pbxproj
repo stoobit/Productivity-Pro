@@ -125,7 +125,6 @@
 		BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE82947DB2D000C545D /* RuledLargeView.swift */; };
 		BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDEA2947DC62000C545D /* MusicView.swift */; };
 		BBCFF43A2A3069E600EAC5F5 /* MarkupLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF4392A3069E600EAC5F5 /* MarkupLabel.swift */; };
-		BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */; };
 		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
@@ -293,7 +292,6 @@
 		BBCDFDE82947DB2D000C545D /* RuledLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledLargeView.swift; sourceTree = "<group>"; };
 		BBCDFDEA2947DC62000C545D /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		BBCFF4392A3069E600EAC5F5 /* MarkupLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupLabel.swift; sourceTree = "<group>"; };
-		BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleShareButton.swift; sourceTree = "<group>"; };
 		BBD3C4202A54DA46002BFFCF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
@@ -516,7 +514,6 @@
 				BBEFC94C2A41033000960C8D /* MainToolbar */,
 				BBEFC94D2A41034600960C8D /* SideActions */,
 				BB929B8128E5077800DA4538 /* NoteToolbarTitleMenu.swift */,
-				BBCFF43B2A306D4A00EAC5F5 /* TitleShareButton.swift */,
 				BBDCF5DE299EBAB1004C99AE /* iPhoneActionsToolbar.swift */,
 				BBB2512F2A7071A3006BC807 /* Pixabay */,
 			);
@@ -944,7 +941,6 @@
 			files = (
 				BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */,
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
-				BBCFF43C2A306D4B00EAC5F5 /* TitleShareButton.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */,
 				BBCFF43A2A3069E600EAC5F5 /* MarkupLabel.swift in Sources */,

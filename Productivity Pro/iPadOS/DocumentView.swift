@@ -44,6 +44,7 @@ struct DocumentView: View {
             
         }
         .toolbarRole(.editor)
+        .navigationDocument(document.document.url)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
         .onAppear {

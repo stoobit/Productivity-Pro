@@ -17,16 +17,18 @@ struct NoteToolbarTitleMenu: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
-    
     var body: some View {
         
         Section {
             
-            TitleShareButton(
-                toolManager: toolManager,
-                subviewManager: subviewManager,
-                sharePDF: { sharePDF() }
-            )
+            Button(action: {
+                toolManager.isCanvasEnabled = false
+                sharePDF()
+            }) {
+                
+                Label("Export as PDF", systemImage: "doc")
+                
+            }
             
             Button(action: {
                 toolManager.isCanvasEnabled = false
