@@ -52,7 +52,7 @@
 		BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F52996D07800C0F140 /* TextFieldModel.swift */; };
 		BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F72996D08300C0F140 /* MediaModel.swift */; };
 		BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */; };
-		BB3F75FD2997F81600C0F140 /* NoteMainToolbarButtonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FC2997F81600C0F140 /* NoteMainToolbarButtonMethods.swift */; };
+		BB3F75FD2997F81600C0F140 /* NoteMainToolToolbarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */; };
 		BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */; };
 		BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */; };
 		BB4CDD4528D3C668009A409F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4428D3C668009A409F /* ContentView.swift */; };
@@ -216,7 +216,7 @@
 		BB3F75F52996D07800C0F140 /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		BB3F75F72996D08300C0F140 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderStrokeStyle.swift; sourceTree = "<group>"; };
-		BB3F75FC2997F81600C0F140 /* NoteMainToolbarButtonMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMainToolbarButtonMethods.swift; sourceTree = "<group>"; };
+		BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMainToolToolbarMethods.swift; sourceTree = "<group>"; };
 		BB4CDD3D28D3C668009A409F /* Productivity Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_ProApp.swift; sourceTree = "<group>"; };
 		BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityProDocument.swift; sourceTree = "<group>"; };
@@ -805,7 +805,7 @@
 			isa = PBXGroup;
 			children = (
 				BB929B8328E5087200DA4538 /* NoteMainToolToolbar.swift */,
-				BB3F75FC2997F81600C0F140 /* NoteMainToolbarButtonMethods.swift */,
+				BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */,
 				BBCFF4392A3069E600EAC5F5 /* MarkupLabel.swift */,
 			);
 			path = MainToolbar;
@@ -1079,7 +1079,7 @@
 				BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
 				BB1DF6082A686D65006F85CE /* PPToolbar.swift in Sources */,
-				BB3F75FD2997F81600C0F140 /* NoteMainToolbarButtonMethods.swift in Sources */,
+				BB3F75FD2997F81600C0F140 /* NoteMainToolToolbarMethods.swift in Sources */,
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
 				BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */,
 			);

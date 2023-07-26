@@ -37,40 +37,25 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
     
     var body: some CustomizableToolbarContent {
         
-        if hsc == .regular {
-            ToolbarItem(id: "markup", placement: placement) {
-                MarkupButton()
-            }
-            
-            ToolbarItem(id: "shapes", placement: placement) {
-                ShapesButton()
-            }
-            
-            ToolbarItem(id: "textbox", placement: placement) {
-                MarkdownButton()
-            }
-            
-            ToolbarItem(id: "media", placement: placement) {
-                MediaButton()
-            }
-            
-//            ToolbarItem(id: "calc", placement: placement) {
-//                CalculatorButton()
-//            }
-        } else {
-            
-            ToolbarItem(id: "bottom", placement: .bottomBar) {
-                HStack {
-                    MarkupButton()
-                    ShapesButton()
-                    MarkdownButton()
-                    MediaButton()
-//                    CalculatorButton()
-                }
-            }
-                
-            
+        ToolbarItem(id: "markup", placement: .secondaryAction) {
+            MarkupButton()
         }
+        
+        ToolbarItem(id: "shapes", placement: .secondaryAction) {
+            ShapesButton()
+        }
+        
+        ToolbarItem(id: "textbox", placement: .secondaryAction) {
+            MarkdownButton()
+        }
+        
+        ToolbarItem(id: "media", placement: .secondaryAction) {
+            MediaButton()
+        }
+        
+        //            ToolbarItem(id: "calc", placement: .secondaryAction) {
+        //                CalculatorButton()
+        //            }
         
     }
     
