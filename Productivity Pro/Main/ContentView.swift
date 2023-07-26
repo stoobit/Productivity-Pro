@@ -17,11 +17,13 @@ struct ContentView: View {
     @StateObject
     private var subviewManager: SubviewManager = SubviewManager()
     
+    var url: URL
     var body: some View {
         DocumentView(
             document: $document,
             subviewManager: subviewManager,
-            toolManager: toolManager
+            toolManager: toolManager,
+            url: url
         )
         .disabled(toolManager.showProgress)
         .overlay {

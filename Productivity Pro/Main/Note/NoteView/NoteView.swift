@@ -19,6 +19,7 @@ struct NoteView: View {
     
     @StateObject var drawingModel: PPDrawingModel = PPDrawingModel()
     
+    var url: URL
     var isCPMenuHidden: Bool {
         if subviewManager.isPresentationMode || toolManager.isCanvasEnabled {
             return true
@@ -87,7 +88,8 @@ struct NoteView: View {
                 NoteToolbarModifier(
                     document: $document,
                     toolManager: toolManager,
-                    subviewManager: subviewManager
+                    subviewManager: subviewManager,
+                    url: url
                 )
             )
             .alert(

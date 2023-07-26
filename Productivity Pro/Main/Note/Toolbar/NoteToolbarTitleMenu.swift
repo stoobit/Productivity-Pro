@@ -17,6 +17,8 @@ struct NoteToolbarTitleMenu: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
+    var url: URL
+    
     var body: some View {
         
         Section {
@@ -105,8 +107,7 @@ struct NoteToolbarTitleMenu: View {
     
     @MainActor func renderPDF() -> URL {
         
-        let name: String = document.document.url
-            .deletingPathExtension().lastPathComponent
+        let name: String = url.deletingPathExtension().lastPathComponent
         
         let url = URL.documentsDirectory.appending(
             path: "\(name).pdf"

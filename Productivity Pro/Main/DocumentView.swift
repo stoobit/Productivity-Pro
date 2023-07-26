@@ -18,6 +18,8 @@ struct DocumentView: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
+    var url: URL
+    
     var body: some View {
         ZStack {
             
@@ -29,7 +31,7 @@ struct DocumentView: View {
                 NoteView(
                     document: $document,
                     subviewManager: subviewManager,
-                    toolManager: toolManager
+                    toolManager: toolManager, url: url
                 )
                 .edgesIgnoringSafeArea(.bottom)
                 .sheet(isPresented: $whatIsNew) {
@@ -44,7 +46,6 @@ struct DocumentView: View {
             
         }
         .toolbarRole(.editor)
-        .navigationDocument(document.document.url)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
         .onAppear {

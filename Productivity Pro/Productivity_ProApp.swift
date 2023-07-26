@@ -16,7 +16,11 @@ struct Productivity_ProApp: App {
         ) { file in
             
             if UIDevice.current.userInterfaceIdiom == .pad {
-                ContentView(document: file.$document)
+                ContentView(document: file.$document, url: file.fileURL!)
+                    .navigationDocument(
+                        file.fileURL ?? .applicationDirectory
+                    )
+                
             } else if UIDevice.current.userInterfaceIdiom == .phone {
                 
             }

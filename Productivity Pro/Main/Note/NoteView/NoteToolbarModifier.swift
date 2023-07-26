@@ -14,13 +14,16 @@ struct NoteToolbarModifier: ViewModifier {
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
     
+    var url: URL
+    
     func body(content: Content) -> some View {
         content
             .toolbarTitleMenu {
                 NoteToolbarTitleMenu(
                     document: $document,
                     subviewManager: subviewManager,
-                    toolManager: toolManager
+                    toolManager: toolManager,
+                    url: url
                 )
             }
             .toolbar(id: "main") {
