@@ -43,6 +43,7 @@ struct TemplateView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarRole(.navigationStack)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { isPresented = false }

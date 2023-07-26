@@ -12,13 +12,13 @@ extension TemplateView {
     @ViewBuilder func OrientationView() -> some View {
         FormSpacer {
             Button(action: {
-                withAnimation(.easeInOut(duration: 0.2)) {
+                withAnimation(.spring()) {
                     isPortrait.toggle()
                 }
             }) {
                 HStack {
                     Text("Orientation")
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                     Spacer()
                     
                     RectangleRotationIcon(isPortrait: isPortrait)
