@@ -32,13 +32,24 @@ extension NewDocumentView {
                 subviewManager.newDocTemplate = true
             }
             .sheet(isPresented: $subviewManager.newDocTemplate) {
-                NoteSettings(
-                    toolManager: toolManager,
-                    subviewManager: subviewManager,
-                    document: $document
+//                NoteSettings(
+//                    toolManager: toolManager,
+//                    subviewManager: subviewManager,
+//                    document: $document
+//                ) {
+//                    subviewManager.newDocTemplate = false
+//                    subviewManager.createDocument = false
+//                }
+                
+                TemplateView(
+                    isPresented: $subviewManager.newDocTemplate,
+                    isPortrait: $isPortrait,
+                    selectedColor: $selectedColor,
+                    selectedTemplate: $selectedTemplate,
+                    viewType: .create,
+                    title: "Select Template"
                 ) {
-                    subviewManager.newDocTemplate = false
-                    subviewManager.createDocument = false
+                    
                 }
             }
         }

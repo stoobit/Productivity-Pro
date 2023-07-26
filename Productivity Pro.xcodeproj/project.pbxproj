@@ -23,6 +23,8 @@
 		BB1DF6062A686D59006F85CE /* PPDrawingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6052A686D59006F85CE /* PPDrawingBar.swift */; };
 		BB1DF6082A686D65006F85CE /* PPToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6072A686D65006F85CE /* PPToolbar.swift */; };
 		BB1DF60A2A687DB8006F85CE /* PPColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6092A687DB8006F85CE /* PPColorButton.swift */; };
+		BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E693F2A71CE01008E0C5F /* TemplateView.swift */; };
+		BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */; };
 		BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */; };
 		BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */; };
 		BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27BB512A62C30700392E1E /* RealityNoteModel.swift */; };
@@ -118,7 +120,6 @@
 		BBCCE4EB28D52743001DBD8A /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCCE4EA28D52743001DBD8A /* NoteModel.swift */; };
 		BBCCE4F228D52934001DBD8A /* NewDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCCE4F128D52934001DBD8A /* NewDocumentView.swift */; };
 		BBCCE4F928D540AA001DBD8A /* NoteSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCCE4F828D540AA001DBD8A /* NoteSettings.swift */; };
-		BBCCE50028D54233001DBD8A /* NoteBackgroundIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCCE4FF28D54233001DBD8A /* NoteBackgroundIcons.swift */; };
 		BBCDFDE32947BF84000C545D /* SquaredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE22947BF84000C545D /* SquaredView.swift */; };
 		BBCDFDE52947C877000C545D /* DottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE42947C877000C545D /* DottedView.swift */; };
 		BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE62947CC9C000C545D /* RuledView.swift */; };
@@ -189,6 +190,8 @@
 		BB1DF6052A686D59006F85CE /* PPDrawingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingBar.swift; sourceTree = "<group>"; };
 		BB1DF6072A686D65006F85CE /* PPToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPToolbar.swift; sourceTree = "<group>"; };
 		BB1DF6092A687DB8006F85CE /* PPColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColorButton.swift; sourceTree = "<group>"; };
+		BB1E693F2A71CE01008E0C5F /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
+		BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewHelper.swift; sourceTree = "<group>"; };
 		BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapper.swift; sourceTree = "<group>"; };
 		BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewRepresentable.swift; sourceTree = "<group>"; };
 		BB27BB512A62C30700392E1E /* RealityNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityNoteModel.swift; sourceTree = "<group>"; };
@@ -285,7 +288,6 @@
 		BBCCE4EA28D52743001DBD8A /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		BBCCE4F128D52934001DBD8A /* NewDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDocumentView.swift; sourceTree = "<group>"; };
 		BBCCE4F828D540AA001DBD8A /* NoteSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSettings.swift; sourceTree = "<group>"; };
-		BBCCE4FF28D54233001DBD8A /* NoteBackgroundIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBackgroundIcons.swift; sourceTree = "<group>"; };
 		BBCDFDE22947BF84000C545D /* SquaredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquaredView.swift; sourceTree = "<group>"; };
 		BBCDFDE42947C877000C545D /* DottedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedView.swift; sourceTree = "<group>"; };
 		BBCDFDE62947CC9C000C545D /* RuledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledView.swift; sourceTree = "<group>"; };
@@ -528,13 +530,16 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		BB6BFA2229048C5E002D09FD /* TemplateSheets */ = {
+		BB6BFA2229048C5E002D09FD /* TemplateView */ = {
 			isa = PBXGroup;
 			children = (
+				BB1E693F2A71CE01008E0C5F /* TemplateView.swift */,
+				BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */,
 				BB9F70EA28E7A57C007DF951 /* AddPageView.swift */,
 				BB27FED328EA192D00459334 /* ChangePageTemplateView.swift */,
+				BB0504292928471400DAECA6 /* BackgroundViews */,
 			);
-			path = TemplateSheets;
+			path = TemplateView;
 			sourceTree = "<group>";
 		};
 		BB6F3DD2291B0E6B005BDDEB /* ViewModels */ = {
@@ -613,8 +618,7 @@
 				BBF930782A674C0700AD3958 /* PPToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
-				BB0504292928471400DAECA6 /* BackgroundViews */,
-				BB6BFA2229048C5E002D09FD /* TemplateSheets */,
+				BB6BFA2229048C5E002D09FD /* TemplateView */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
 				BB37AD882A2C0A12006DB94D /* Overview */,
 				BB9CC946293FD4450094446A /* Share+Collaborate */,
@@ -746,7 +750,6 @@
 				BB7423F62A5ED7140031176A /* NewDocumentHelper.swift */,
 				BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */,
 				BBCCE4F828D540AA001DBD8A /* NoteSettings.swift */,
-				BBCCE4FF28D54233001DBD8A /* NoteBackgroundIcons.swift */,
 			);
 			path = NewDocument;
 			sourceTree = "<group>";
@@ -1007,6 +1010,7 @@
 				BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */,
 				BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */,
 				BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */,
+				BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */,
 				BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */,
 				BB68082B29FDD2A90026FDDF /* NSAttributedString.swift in Sources */,
 				BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */,
@@ -1033,7 +1037,7 @@
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */,
-				BBCCE50028D54233001DBD8A /* NoteBackgroundIcons.swift in Sources */,
+				BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,

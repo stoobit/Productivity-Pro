@@ -9,10 +9,12 @@ import SwiftUI
 
 struct RectangleRotationIcon: View {
     
+    var isPortrait: Bool = true
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 4, style: .continuous)
-            .foregroundColor(.accentColor)
-            .frame(width: 21, height: 27)
+            .frame(width: isPortrait ? 21 : 27, height: isPortrait ? 27 : 21)
+            .frame(height: 27)
     }
 }
 

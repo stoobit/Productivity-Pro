@@ -27,7 +27,9 @@ struct NewDocumentView: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
-    @State var title: String = ""
+    @State var isPortrait: Bool = true
+    @State var selectedColor: String = "pagewhite"
+    @State var selectedTemplate: String = "blank"
     
     var body: some View {
         NavigationStack {

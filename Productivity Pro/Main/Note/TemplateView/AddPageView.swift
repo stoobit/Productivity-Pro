@@ -33,12 +33,12 @@ struct AddPageView: View {
                 ViewThatFits {
                     VStack {
                         BackgroundValueView()
-                        NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).LargeView()
+//                        NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).LargeView()
                     }
                     
                     VStack {
                         BackgroundValueView()
-                        NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).SmallView()
+//                        NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).SmallView()
                     }
                 }
                 .animation(
