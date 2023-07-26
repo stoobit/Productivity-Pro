@@ -67,6 +67,7 @@ struct PPToolbar: View {
         
         }
         .animation(.easeInOut(duration: 0.3), value: showControls)
+        .animation(.easeInOut(duration: 0.3), value: subviewManager.isPresentationMode)
         .animation(.easeInOut(duration: 0.3), value: CBPosition)
         .frame(
             maxWidth: .infinity,
