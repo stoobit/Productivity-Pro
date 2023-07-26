@@ -63,7 +63,7 @@ struct PPToolbar: View {
                 toolManager: toolManager,
                 subviewManager: subviewManager
             )
-            .offset(x: 0, y: showControls ? 0 : 200)
+            .offset(x: 0, y: (showControls && !subviewManager.isPresentationMode) ? 0 : 200)
         
         }
         .animation(.easeInOut(duration: 0.3), value: showControls)
