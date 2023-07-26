@@ -30,32 +30,34 @@ struct NewDocumentView: View {
     @State var title: String = ""
     
     var body: some View {
-        VStack {
-            Text("Create Document")
-                .font(.largeTitle.bold())
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 25)
-                .padding(.bottom, 25)
-                .padding(.leading, 30)
-            
-            Spacer()
+        NavigationStack {
             
             ViewThatFits(in: .horizontal) {
                 HStack {
-                    Grid()
+                    Grid(showIcon: true)
                 }
                 
-                ScrollView(.vertical, showsIndicators: false) {
-                    Grid()
+                ViewThatFits(in: .vertical) {
+                    VStack {
+                        Grid(showIcon: true)
+                    }
+                    
+                    VStack {
+                        Grid(showIcon: false)
+                    }
                 }
             }
-            
-            Spacer()
+            .navigationTitle("Create Document")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarRole(.navigationStack)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .padding(5)
             
         }
-        .ignoresSafeArea(edges: .bottom)
+        .edgesIgnoringSafeArea(.bottom)
         .onAppear {
             createdNotes += 1
         }
+        
     }
 }

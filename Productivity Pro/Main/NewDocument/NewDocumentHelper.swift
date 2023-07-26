@@ -10,17 +10,25 @@ import PDFKit
 
 extension NewDocumentView {
     
-    @ViewBuilder func Grid() -> some View {
+    @ViewBuilder func Grid(showIcon: Bool) -> some View {
         
         VStack {
-            ButtonView(icon: "clock.arrow.circlepath", text: "Last Template") {
+            ButtonView(
+                icon: "clock.arrow.circlepath",
+                text: "Last Template",
+                showIcon: showIcon
+            ) {
                 createFromLastSelection()
             }
             .disabled(
                 savedBackgroundColor == "" && savedBackgroundTemplate == ""
             )
             
-            ButtonView(icon: "grid", text: "Select Template") {
+            ButtonView(
+                icon: "grid",
+                text: "Select Template",
+                showIcon: showIcon
+            ) {
                 subviewManager.newDocTemplate = true
             }
             .sheet(isPresented: $subviewManager.newDocTemplate) {
@@ -36,7 +44,11 @@ extension NewDocumentView {
         }
         
         VStack {
-            ButtonView(icon: "doc.viewfinder", text: "Scan Document") {
+            ButtonView(
+                icon: "doc.viewfinder",
+                text: "Scan Document",
+                showIcon: showIcon
+            ) {
                 subviewManager.newDocScan = true
             }
             .fullScreenCover(isPresented: $subviewManager.newDocScan) {
@@ -55,7 +67,11 @@ extension NewDocumentView {
                 .edgesIgnoringSafeArea(.bottom)
             }
             
-            ButtonView(icon: "folder", text: "Import PDF") {
+            ButtonView(
+                icon: "folder",
+                text: "Import PDF",
+                showIcon: showIcon
+            ) {
                 subviewManager.newDocPDF = true
             }
             .fileImporter(
@@ -88,27 +104,32 @@ extension NewDocumentView {
     }
     
     @ViewBuilder func ButtonView(
-        icon: String, text: String, action: @escaping () -> Void
+        icon: String,
+        text: String,
+        showIcon: Bool,
+        action: @escaping () -> Void
     ) -> some View {
         
         Button(action: action) {
             VStack {
-                Image(systemName: icon)
-                    .font(.largeTitle)
-                    .foregroundStyle(Color.accentColor)
-                    .frame(width: 50, height: 50)
+                if showIcon {
+                    Image(systemName: icon)
+                        .font(.largeTitle)
+                        .foregroundStyle(Color.accentColor)
+                        .frame(width: 50, height: 50)
+                }
                 
                 Text(text)
                     .foregroundColor(Color.secondary)
                     .font(.title3.bold())
-                    .padding(.top, 5)
+                    .padding(.top, showIcon ? 5 : 0)
             }
-            .frame(width: 200, height: 150)
+            .frame(width: 200, height: showIcon ? 150 : 70)
             .overlay {
-                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .stroke(Color.accentColor, lineWidth: 4)
             }
-            .frame(width: 225, height: 175)
+            .frame(width: 225, height: showIcon ? 175 : 95)
         }
         
     }

@@ -35,16 +35,11 @@ struct NoteSettings: View {
                     VStack {
                         BackgroundValueView()
                         NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).LargeView()
-                        
-                        iOSEditingWarning()
                     }
                     
                     VStack {
                         BackgroundValueView()
                         NoteBackgroundIcons(backgroundSelection: $backgroundTemplate, backgroundColor: $backgroundColor).SmallView()
-                        
-                        iOSEditingWarning()
-                        
                     }
                 }
                 .animation(
@@ -67,18 +62,6 @@ struct NoteSettings: View {
                     .keyboardShortcut(.return, modifiers: [])
                 }
             }
-        }
-    }
-    
-    @ViewBuilder func iOSEditingWarning() -> some View {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            Spacer()
-            Text("Document editing is currently not available on iOS.\nPlease install Productivity Pro on Your iPad or Mac to edit documents.")
-                .foregroundColor(.secondary)
-                .font(.caption)
-                .multilineTextAlignment(.center)
-            
-            Spacer()
         }
     }
     
