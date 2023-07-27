@@ -14,16 +14,15 @@ struct BackgroundViews: View {
     
     @ViewBuilder func Blank() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 6)
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .stroke(Color.secondary, lineWidth: 3)
                 .frame(width: 100, height: 100)
         }
-        .padding(.vertical, 6.5)
     }
     
     @ViewBuilder func Squared() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 6)
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .stroke(Color.secondary, lineWidth: 3)
                 .frame(width: 100, height: 100)
             
@@ -52,14 +51,13 @@ struct BackgroundViews: View {
             }
             .fill(.secondary)
             .frame(width: 97, height: 97)
-            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
-        .padding(.vertical, 6.5)
     }
     
     @ViewBuilder func Dotted() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 6)
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .stroke(Color.secondary, lineWidth: 3)
                 .frame(width: 100, height: 100)
             
@@ -79,14 +77,13 @@ struct BackgroundViews: View {
             }
             .fill(.secondary)
             .frame(width: 97, height: 97)
-            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
-        .padding(.vertical, 6.5)
     }
     
     @ViewBuilder func Ruled() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 6)
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .stroke(Color.secondary, lineWidth: 3)
                 .frame(width: 100, height: 100)
             
@@ -104,14 +101,13 @@ struct BackgroundViews: View {
             }
             .fill(.secondary)
             .frame(width: 97, height: 97)
-            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
-        .padding(.vertical, 6.5)
     }
     
     @ViewBuilder func RuledLarge() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 6)
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .stroke(Color.secondary, lineWidth: 3)
                 .frame(width: 100, height: 100)
 
@@ -129,14 +125,13 @@ struct BackgroundViews: View {
             }
             .fill(.secondary)
             .frame(width: 97, height: 97)
-            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
-        .padding(.vertical, 6.5)
     }
     
     @ViewBuilder func Music() -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 6)
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .stroke(Color.secondary, lineWidth: 3)
                 .frame(width: 100, height: 100)
 
@@ -145,9 +140,8 @@ struct BackgroundViews: View {
             }
             .fill(.secondary)
             .frame(width: 100, height: 100)
-            .clipShape(RoundedRectangle(cornerRadius: 6))
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
-        .padding(.vertical, 6.5)
     }
     
 }

@@ -27,79 +27,92 @@ extension TemplateView {
         }
     }
     
-    @ViewBuilder func ColorView() -> some View {
-        Picker("", selection: $selectedColor) {
-            Circle()
-                .frame(width: 25, height: 28)
-                .foregroundColor(Color("pagewhite"))
-                .tag("pagewhite")
-                .padding(.vertical, 5)
-                .overlay {
-                    Circle()
-                        .stroke(
-                            Color.secondary,
-                            lineWidth: 3
-                        )
-                }
+    @ViewBuilder func ColorsView() -> some View {
+        ViewThatFits(in: .horizontal) {
+            HStack {
+                Text("Color")
+                Spacer()
+                
+                ColorView("pagewhite")
+                ColorView("pageyellow")
+                ColorView("pagegray")
+                ColorView("pageblack")
+                
+            }
             
-            Circle()
-                .frame(width: 25, height: 28)
-                .foregroundColor(Color("pageyellow"))
-                .tag("pageyellow")
-                .padding(.vertical, 5)
-                .overlay {
-                    Circle()
-                        .stroke(
-                            Color.secondary,
-                            lineWidth: 3
-                        )
-                }
-            
-            Circle()
-                .frame(width: 25, height: 28)
-                .foregroundColor(Color("pagegray"))
-                .tag("pagegray")
-                .padding(.vertical, 5)
-                .overlay {
-                    Circle()
-                        .stroke(
-                            Color.secondary,
-                            lineWidth: 3
-                        )
-                }
-            
-            Circle()
-                .frame(width: 25, height: 28)
-                .foregroundColor(Color("pageblack"))
-                .tag("pageblack")
-                .padding(.vertical, 5)
-                .overlay {
-                    Circle()
-                        .stroke(
-                            Color.secondary,
-                            lineWidth: 3
-                        )
-                }
+            HStack {
+                ColorView("pagewhite")
+                ColorView("pageyellow")
+                ColorView("pagegray")
+                ColorView("pageblack")
+            }
         }
-        .pickerStyle(.inline)
-        .labelsHidden()
+        .padding(.top, 5)
     }
     
-    @ViewBuilder func TemplateView(size: CGSize) -> some View {
-        let columns = [
-            GridItem(.adaptive(minimum: 100))
-        ]
-        
-        LazyVGrid(columns: columns, spacing: columns.first?.spacing) {
-            BackgroundViews().Blank()
-            BackgroundViews().Squared()
-            BackgroundViews().Dotted()
-            BackgroundViews().Ruled()
-            BackgroundViews().RuledLarge()
-            BackgroundViews().Music()
+    @ViewBuilder func ColorView(_ color: String) -> some View {
+        VStack {
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                    .stroke(Color.secondary, lineWidth: 5)
+                    .frame(width: 50, height: 50)
+                
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                    .foregroundStyle(Color(color))
+                    .frame(width: 50, height: 50)
+            }
+            
+            
+            Image(systemName: selectedColor == color ? "checkmark.circle.fill" : "checkmark.circle"
+            )
+            .font(.title3)
+            .foregroundStyle(
+                selectedColor == color ? Color.accentColor : Color.secondary
+            )
+            .padding(.top, 10)
+            
         }
-        .frame(minHeight: size.width < 330 ? 360 : 0)
-        .padding(5)
+        .onTapGesture {
+            selectedColor = color
+        }
+        .padding(.horizontal, 10)
+    }
+    
+    @ViewBuilder func TemplateView() -> some View {
+        ScrollView(.horizontal, showsIndicators: true) {
+            HStack {
+                
+                TemplatePicker("blank", view: BackgroundViews().Blank())
+                TemplatePicker("squared", view: BackgroundViews().Squared())
+                TemplatePicker("dotted", view: BackgroundViews().Dotted())
+                TemplatePicker("ruled", view: BackgroundViews().Ruled())
+                TemplatePicker("ruled.large", view: BackgroundViews().RuledLarge())
+                TemplatePicker("music", view: BackgroundViews().Music())
+                
+            }
+        }
+    }
+    
+    @ViewBuilder func TemplatePicker(_ value: String, view: some View) -> some View {
+        VStack {
+            
+            view
+            
+            Image(systemName: selectedTemplate == value ? "checkmark.circle.fill" : "checkmark.circle"
+            )
+            .font(.title3)
+            .foregroundStyle(
+                selectedTemplate == value ? Color.accentColor : Color.secondary
+            )
+            .padding(.top, 10)
+            
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            selectedTemplate = value
+        }
+        .padding(10)
     }
     
 }
