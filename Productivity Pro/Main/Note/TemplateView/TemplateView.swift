@@ -24,43 +24,46 @@ struct TemplateView: View {
     var action: () -> Void
     
     var body: some View {
-        NavigationStack {
-            Form {
-                
-                Section {
-                    OrientationView()
+        GeometryReader { proxy in
+            NavigationStack {
+                Form {
+                    
+                    Section {
+                        OrientationView()
+                    }
+                    
+                    Section {
+                        ColorView()
+                    }
+                    
+                    Section {
+                        TemplateView(size: proxy.size)
+                    }
+                    
                 }
-                
-                Section {
-                    ColorView()
-                }
-                
-                Section {
-                    TemplateView()
-                }
-                
-            }
-            .toolbarBackground(.visible, for: .navigationBar)
-            .navigationTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarRole(.navigationStack)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { isPresented = false }
-                }
-                
-                ToolbarItem(placement: .confirmationAction) {
-                    Button(action: action) {
-                        Image(
-                            systemName: viewType == .create ? "doc.badge.plus" : "doc.badge.gearshape"
-                        )
+                .scrollIndicators(.hidden)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .navigationTitle(title)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbarRole(.navigationStack)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") { isPresented = false }
+                    }
+                    
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button(action: action) {
+                            Image(
+                                systemName: viewType == .create ? "doc.badge.plus" : "doc.badge.gearshape"
+                            )
+                        }
                     }
                 }
+                
             }
-            
+            .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
         }
         .onAppear { viewDidAppear() }
-        
     }
     
     func viewDidAppear() {

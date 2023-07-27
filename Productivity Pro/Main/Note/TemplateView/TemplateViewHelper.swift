@@ -85,8 +85,21 @@ extension TemplateView {
         .labelsHidden()
     }
     
-    @ViewBuilder func TemplateView() -> some View {
+    @ViewBuilder func TemplateView(size: CGSize) -> some View {
+        let columns = [
+            GridItem(.adaptive(minimum: 100))
+        ]
         
+        LazyVGrid(columns: columns, spacing: columns.first?.spacing) {
+            BackgroundViews().Blank()
+            BackgroundViews().Squared()
+            BackgroundViews().Dotted()
+            BackgroundViews().Ruled()
+            BackgroundViews().RuledLarge()
+            BackgroundViews().Music()
+        }
+        .frame(minHeight: size.width < 330 ? 360 : 0)
+        .padding(5)
     }
     
 }
