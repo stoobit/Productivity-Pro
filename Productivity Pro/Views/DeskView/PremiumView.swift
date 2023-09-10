@@ -12,11 +12,9 @@ struct PremiumView: View {
     var body: some View {
         SubscriptionStoreView(
             productIDs: [
-                "com.stoobit.productivitypro.monthly",
-                "com.stoobit.productivitypro.yearly"
+                "com.stoobit.pro.premium"
             ]
         )
-        .storeButton(.visible, for: .restorePurchases, .redeemCode)
         .storeButton(.hidden, for: .cancellation)
         .subscriptionStoreControlStyle(.prominentPicker)
         

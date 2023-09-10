@@ -42,7 +42,7 @@ struct ContentView: View {
                     Label("Hausaufgaben", systemImage: "house")
                 }
             
-            Text("")
+            LibraryView()
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(4)
                 .tabItem {

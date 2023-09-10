@@ -156,6 +156,7 @@
 		BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */; };
 		BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */; };
 		BBF5FDF12AAE131D0081C4FE /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */; };
+		BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */; };
 		BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */; };
 		BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930702A67428C00AD3958 /* PPDrawingTool.swift */; };
 		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
@@ -330,6 +331,7 @@
 		BBF5FDED2AAE05750081C4FE /* StoreKit.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreKit.storekit; sourceTree = "<group>"; };
 		BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
 		BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
+		BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingModel.swift; sourceTree = "<group>"; };
 		BBF930702A67428C00AD3958 /* PPDrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingTool.swift; sourceTree = "<group>"; };
 		BBF930722A67437900AD3958 /* PPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColor.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 				BB6701572AADEFA7001F468A /* ContentView.swift */,
 				BB6BFA2129048BBE002D09FD /* DeskView */,
 				BBF5FDF22AAE14070081C4FE /* DocumentPickerView */,
+				BBF5FDF32AAE25CA0081C4FE /* LibraryView */,
 				BB6701562AADEF46001F468A /* DocumentView */,
 				BB9DF5A828DFA25600AC988D /* Note */,
 				BBBCACAF2A253BC000C23B2C /* Calculator */,
@@ -849,6 +852,14 @@
 			path = DocumentPickerView;
 			sourceTree = "<group>";
 		};
+		BBF5FDF32AAE25CA0081C4FE /* LibraryView */ = {
+			isa = PBXGroup;
+			children = (
+				BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */,
+			);
+			path = LibraryView;
+			sourceTree = "<group>";
+		};
 		BBF930742A6744BE00AD3958 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -1055,6 +1066,7 @@
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BBDCF5DD299EB6AC004C99AE /* EditPageItemView.swift in Sources */,
 				BBAF57FE2A49E5D7008DEA98 /* WhatIsNew.swift in Sources */,
+				BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */,
 				BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */,
 				BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
