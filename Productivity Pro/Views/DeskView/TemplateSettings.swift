@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct TemplateSettings: View {
+    
+    @State var isTutorialPresented: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Form {
+                Section {
+                    Button(action: { isTutorialPresented.toggle() }) {
+                        HStack {
+                            Text("Erstelle deine eigenen Vorlagen.")
+                            Spacer()
+                            Image(systemName: "info.circle")
+                        }
+                        .foregroundStyle(.blue)
+                    }
+                }
+                .listRowBackground(Color.blue.opacity(0.13))
+                .padding(.vertical, 8)
+            }
+            .navigationTitle("Vorlagen")
+        }
     }
 }
 
