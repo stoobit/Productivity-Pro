@@ -11,18 +11,23 @@ import SwiftUI
 struct Productivity_ProApp: App {
     
     var body: some Scene {
-        DocumentGroup(newDocument: ProductivityProDocument()) { file in
-            
-            ContentView(document: file.$document, url: file.fileURL!)
-                .navigationDocument(
-                    file.fileURL ?? .applicationDirectory
-                )
-            
+        
+        WindowGroup {
+            ContentView()
         }
         
-        WindowGroup("Turtle Maths", id: "calculator") {
-            CalculatorContainerView()
-        }
+//        DocumentGroup(newDocument: ProductivityProDocument()) { file in
+//
+//            DocumentView(document: file.$document, url: file.fileURL!)
+//                .navigationDocument(
+//                    file.fileURL ?? .applicationDirectory
+//                )
+//
+//        }
+//
+//        WindowGroup("Turtle Maths", id: "calculator") {
+//            CalculatorContainerView()
+//        }
         
     }
 }

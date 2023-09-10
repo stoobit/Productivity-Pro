@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DocumentView: View {
+struct DocumentTypeContainerView: View {
     
     @AppStorage("afterUpdate 0.4.2")
     private var firstOpenAU: Bool = true

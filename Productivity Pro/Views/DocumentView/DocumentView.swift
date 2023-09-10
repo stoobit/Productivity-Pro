@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DocumentView: View {
     
     @Binding var document: ProductivityProDocument
     
@@ -19,7 +19,7 @@ struct ContentView: View {
     
     var url: URL
     var body: some View {
-        DocumentView(
+        DocumentTypeContainerView(
             document: $document,
             subviewManager: subviewManager,
             toolManager: toolManager,

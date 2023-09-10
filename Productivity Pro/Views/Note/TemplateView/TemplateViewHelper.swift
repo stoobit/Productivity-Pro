@@ -28,55 +28,27 @@ extension TemplateView {
     }
     
     @ViewBuilder func ColorsView() -> some View {
-        ViewThatFits(in: .horizontal) {
+        FormSpacer {
             HStack {
+                
                 Text("Color")
+                
                 Spacer()
                 
-                ColorView("pagewhite")
-                ColorView("pageyellow")
-                ColorView("pagegray")
-                ColorView("pageblack")
+                Toggle("White", isOn: .constant(true))
+                    .toggleStyle(.button)
+                
+                Toggle("Yellow", isOn: .constant(true))
+                    .toggleStyle(.button)
+                
+                Toggle("Grey", isOn: .constant(true))
+                    .toggleStyle(.button)
+                
+                Toggle("Black", isOn: .constant(true))
+                    .toggleStyle(.button)
                 
             }
-            
-            HStack {
-                ColorView("pagewhite")
-                ColorView("pageyellow")
-                ColorView("pagegray")
-                ColorView("pageblack")
-            }
         }
-        .padding(.top, 5)
-    }
-    
-    @ViewBuilder func ColorView(_ color: String) -> some View {
-        VStack {
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 6, style: .continuous)
-                    .stroke(Color.secondary, lineWidth: 5)
-                    .frame(width: 50, height: 50)
-                
-                RoundedRectangle(cornerRadius: 6, style: .continuous)
-                    .foregroundStyle(Color(color))
-                    .frame(width: 50, height: 50)
-            }
-            
-            
-            Image(systemName: selectedColor == color ? "checkmark.circle.fill" : "checkmark.circle"
-            )
-            .font(.title3)
-            .foregroundStyle(
-                selectedColor == color ? Color.accentColor : Color.secondary
-            )
-            .padding(.top, 10)
-            
-        }
-        .onTapGesture {
-            selectedColor = color
-        }
-        .padding(.horizontal, 10)
     }
     
     @ViewBuilder func TemplateView() -> some View {
