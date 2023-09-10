@@ -19,6 +19,7 @@ struct PremiumView: View {
         .storeButton(.visible, for: .restorePurchases, .redeemCode)
         .storeButton(.hidden, for: .cancellation)
         .subscriptionStoreControlStyle(.prominentPicker)
+        
     }
 }
 

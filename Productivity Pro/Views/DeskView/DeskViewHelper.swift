@@ -70,7 +70,7 @@ extension DeskView {
                 string: "https://twitter.com/stoobitofficial"
             )!) {
                 Label("X", systemImage: "x.square.fill")
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color.primary)
             }
             .padding(.vertical, 8)
         }
