@@ -161,6 +161,7 @@
 		BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */; };
 		BBF5FDFC2AAE2BD80081C4FE /* TemplateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */; };
 		BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */; };
+		BBF5FE002AAE41710081C4FE /* TemplateSettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */; };
 		BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */; };
 		BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930702A67428C00AD3958 /* PPDrawingTool.swift */; };
 		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
@@ -340,6 +341,7 @@
 		BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
 		BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSettings.swift; sourceTree = "<group>"; };
 		BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettings.swift; sourceTree = "<group>"; };
+		BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSettingsHelper.swift; sourceTree = "<group>"; };
 		BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingModel.swift; sourceTree = "<group>"; };
 		BBF930702A67428C00AD3958 /* PPDrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingTool.swift; sourceTree = "<group>"; };
 		BBF930722A67437900AD3958 /* PPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColor.swift; sourceTree = "<group>"; };
@@ -555,6 +557,7 @@
 				BBF5FDF72AAE2BC40081C4FE /* GenerellSettings.swift */,
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
 				BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */,
+				BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */,
 				BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */,
 				BB27FED528EA1EF900459334 /* SettingsView.swift */,
 			);
@@ -1038,6 +1041,7 @@
 				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
 				BBF5FDF12AAE131D0081C4FE /* DocumentPickerView.swift in Sources */,
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
+				BBF5FE002AAE41710081C4FE /* TemplateSettingsHelper.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BB4CDD4528D3C668009A409F /* DocumentView.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */,
@@ -1273,7 +1277,7 @@
 		BB4CDD4F28D3C66A009A409F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppLight BetaIcon BetaLight";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppLight BetaIcon BetaLight AppDark";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
@@ -1319,7 +1323,7 @@
 		BB4CDD5028D3C66A009A409F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppLight BetaIcon BetaLight";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppLight BetaIcon BetaLight AppDark";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;

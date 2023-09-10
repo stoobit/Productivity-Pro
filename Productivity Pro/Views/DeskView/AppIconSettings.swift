@@ -16,16 +16,16 @@ struct AppIconSettings: View {
             Form {
                 Picker("App Icon", selection: $selection) {
                     
-                    Icon("RoundedIcon", label: "standard, dunkel")
-                        .tag("AppIcon")
+                    Icon("RoundedIcon")
+                        .tag("AppDark")
                     
-                    Icon("RoundedLight", label: "standard, hell")
+                    Icon("RoundedLight")
                         .tag("AppLight")
                     
-                    Icon("RoundedBeta", label: "beta, dunkel")
+                    Icon("RoundedBeta")
                         .tag("BetaIcon")
                     
-                    Icon("RoundedBetaLight", label: "beta, hell")
+                    Icon("RoundedBetaLight")
                         .tag("BetaLight")
                 }
                 .pickerStyle(.inline)
@@ -33,20 +33,15 @@ struct AppIconSettings: View {
             }
             .navigationTitle("App Icon")
         }
-        .onChange(of: selection) { old, new in
-            UIApplication.shared.setAlternateIconName(new)
+        .onChange(of: selection) {
+            UIApplication.shared.setAlternateIconName(selection)
         }
     }
     
-    @ViewBuilder func Icon(_ image: String, label: String) -> some View {
-        HStack {
-            Image(image)
-                .resizable()
-                .frame(width: 100, height: 100)
-            
-            Text(label)
-            
-        }
+    @ViewBuilder func Icon(_ image: String) -> some View {
+        Image(image)
+            .resizable()
+            .frame(width: 100, height: 100)
     }
     
 }
