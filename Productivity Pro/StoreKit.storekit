@@ -8,6 +8,7 @@
   ],
   "settings" : {
     "_failTransactionsEnabled" : false,
+    "_locale" : "de",
     "_storeKitErrors" : [
       {
         "current" : null,
