@@ -1,0 +1,128 @@
+{
+  "identifier" : "F9EC398C",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "BE768D4B",
+      "localizations" : [
+
+      ],
+      "name" : "Productivity Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "294CB692",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Abonniere Productivity Pro Premium monatlich.",
+              "displayName" : "Monatliches Abonnement",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "com.stoobit.productivitypro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monatlich abonnieren",
+          "subscriptionGroupID" : "BE768D4B",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "24.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "942AC854",
+          "introductoryOffer" : {
+            "internalID" : "3C91DC60",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1M"
+          },
+          "localizations" : [
+            {
+              "description" : "Abonniere Productivity Pro Premium jährlich.",
+              "displayName" : "Jährliches Abonnement",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "com.stoobit.productivitypro.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Jährliches Abonnement",
+          "subscriptionGroupID" : "BE768D4B",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

@@ -67,10 +67,10 @@ struct TextFieldItemView: View {
                 )
             }
         }
-        .onChange(of: editItem.size) { _ in render() }
-        .onChange(of: item.textField) { _ in render() }
-        .onChange(of: offset) { value in render() }
-        .onChange(of: toolManager.zoomScale) { _ in
+        .onChange(of: editItem.size) { render() }
+        .onChange(of: item.textField) { render() }
+        .onChange(of: offset) { render() }
+        .onChange(of: toolManager.zoomScale) {
             render()
             renderPreview()
         }

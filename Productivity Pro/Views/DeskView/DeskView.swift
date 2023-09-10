@@ -12,7 +12,13 @@ struct DeskView: View {
         NavigationStack {
             Form {
                 
-                Design()
+                NavigationLink(destination: {
+                    PremiumView()
+                }) {
+                    Label("Premium", systemImage: "crown.fill")
+                }
+                .padding(.vertical, 8)
+                
                 Settings()
                 LinkView()
                 
