@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TemplateSettings: View {
     
+    @AppStorage("importedTemplates") var importedTemplates: [Data] = [Data]()
+    
     @State var isTutorialPresented: Bool = false
     @State var isImporterPresented: Bool = false
     
@@ -49,7 +51,9 @@ struct TemplateSettings: View {
                 ) { result in importSVGFiles(result: result) }
                 
                 Section {
-                    
+                    List(importedTemplates, id: \.self) { template in
+                        
+                    }
                 }
             }
             .navigationTitle("Vorlagen")

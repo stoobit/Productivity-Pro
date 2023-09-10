@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppIconSettings: View {
     
-    @AppStorage("appicon selection") var selection: String = "AppIcon"
+    @AppStorage("appicon selection") var selection: String = "AppDark"
     
     var body: some View {
         NavigationStack {

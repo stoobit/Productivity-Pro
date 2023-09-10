@@ -17,11 +17,8 @@ extension TemplateSettings {
                 guard let selectedFile: URL = try result.get().first else { return }
                 if selectedFile.startAccessingSecurityScopedResource() {
                     
-                    let path = URL.documentsDirectory
-                        .appendingPathComponent("\(Date())", conformingTo: .svg)
-                    
-                    try FileManager().createFile(
-                        atPath: path.absoluteString, contents: Data(contentsOf: selectedFile)
+                    try importedTemplates.append(
+                        Data(contentsOf: selectedFile)
                     )
                     
                     defer { selectedFile.stopAccessingSecurityScopedResource() }

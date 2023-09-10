@@ -162,6 +162,8 @@
 		BBF5FDFC2AAE2BD80081C4FE /* TemplateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */; };
 		BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */; };
 		BBF5FE002AAE41710081C4FE /* TemplateSettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */; };
+		BBF5FE032AAE61E20081C4FE /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FE022AAE61E20081C4FE /* Subject.swift */; };
+		BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FE042AAE66D30081C4FE /* AddSubject.swift */; };
 		BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */; };
 		BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930702A67428C00AD3958 /* PPDrawingTool.swift */; };
 		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
@@ -342,6 +344,8 @@
 		BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSettings.swift; sourceTree = "<group>"; };
 		BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettings.swift; sourceTree = "<group>"; };
 		BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSettingsHelper.swift; sourceTree = "<group>"; };
+		BBF5FE022AAE61E20081C4FE /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		BBF5FE042AAE66D30081C4FE /* AddSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubject.swift; sourceTree = "<group>"; };
 		BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingModel.swift; sourceTree = "<group>"; };
 		BBF930702A67428C00AD3958 /* PPDrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingTool.swift; sourceTree = "<group>"; };
 		BBF930722A67437900AD3958 /* PPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColor.swift; sourceTree = "<group>"; };
@@ -559,6 +563,7 @@
 				BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */,
 				BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */,
 				BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */,
+				BBF5FE042AAE66D30081C4FE /* AddSubject.swift */,
 				BB27FED528EA1EF900459334 /* SettingsView.swift */,
 			);
 			path = DeskView;
@@ -721,6 +726,7 @@
 		BBBD13E8290EA46C001145A4 /* TypeModifier */ = {
 			isa = PBXGroup;
 			children = (
+				BBF5FE022AAE61E20081C4FE /* Subject.swift */,
 				BB3525B22908673800D35790 /* Array.swift */,
 				BB174F542A1051B400F753F6 /* Date.swift */,
 				BB6BFA262904907F002D09FD /* Color.swift */,
@@ -1033,6 +1039,7 @@
 				BB929B8028E5076D00DA4538 /* NoteSideActionToolbar.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
 				BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */,
+				BBF5FE032AAE61E20081C4FE /* Subject.swift in Sources */,
 				BB15F2232A69964200223C92 /* ExitButtonView.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
@@ -1143,6 +1150,7 @@
 				BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */,
 				BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
+				BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */,
 				BBF5FDFC2AAE2BD80081C4FE /* TemplateSettings.swift in Sources */,
 				BB1DF6082A686D65006F85CE /* PPToolbar.swift in Sources */,
 				BB3F75FD2997F81600C0F140 /* NoteMainToolToolbarMethods.swift in Sources */,
