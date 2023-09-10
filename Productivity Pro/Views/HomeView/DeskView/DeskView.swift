@@ -12,6 +12,7 @@ struct DeskView: View {
         NavigationStack {
             Form {
                 
+                Design()
                 Settings()
                 LinkView()
                 

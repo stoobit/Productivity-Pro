@@ -9,6 +9,42 @@ import SwiftUI
 
 extension DeskView {
     
+    @ViewBuilder func Design() -> some View {
+        Section("Design") {
+            NavigationLink(destination: {
+                
+            }) {
+                Label("App Icon", systemImage: "app.gift")
+            }
+            .padding(.vertical, 8)
+        }
+    }
+    
+    @ViewBuilder func Settings() -> some View {
+        Section("Einstellungen") {
+            NavigationLink(destination: {
+                
+            }) {
+                Label("Allgemein", systemImage: "gearshape")
+            }
+            .padding(.vertical, 8)
+            
+            NavigationLink(destination: {
+                
+            }) {
+                Label("Vorlagen", systemImage: "grid")
+            }
+            .padding(.vertical, 8)
+            
+            NavigationLink(destination: {
+                
+            }) {
+                Label("Fächer", systemImage: "tray.2")
+            }
+            .padding(.vertical, 8)
+        }
+    }
+    
     @ViewBuilder func LinkView() -> some View {
         Section("Social Media & Kontakt") {
             
@@ -61,10 +97,7 @@ extension DeskView {
             .padding(.vertical, 8)
         }
     }
-    
-    @ViewBuilder func Settings() -> some View {
-        
-    }
+
 }
 
 
