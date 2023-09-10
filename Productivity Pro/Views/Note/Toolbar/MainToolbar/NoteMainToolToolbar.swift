@@ -10,8 +10,6 @@ import StoreKit
 
 struct NoteMainToolToolbar: CustomizableToolbarContent {
     @Environment(\.horizontalSizeClass) var hsc
-    @Environment(\.requestReview) var requestReview
-    @Environment(\.undoManager) var undoManager
     @Environment(\.openWindow) var openWindow
     
     @AppStorage("defaultFont")
@@ -65,11 +63,6 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
             toolManager.isCanvasEnabled.toggle()
             toolManager.selectedItem = nil
             toolManager.isLocked = false
-            
-            if toolManager.isCanvasEnabled == false && createdNotes >= 7 && !requestWasDone {
-                requestReview()
-                requestWasDone = true
-            }
             
         }) {
             if #available(iOS 17, *) {

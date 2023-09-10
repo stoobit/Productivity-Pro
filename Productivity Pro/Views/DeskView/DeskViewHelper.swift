@@ -12,28 +12,28 @@ extension DeskView {
     @ViewBuilder func Settings() -> some View {
         Section("Einstellungen") {
             NavigationLink(destination: {
-                
+                GenerellSettings()
             }) {
                 Label("Allgemein", systemImage: "gearshape")
             }
             .padding(.vertical, 8)
             
             NavigationLink(destination: {
-                
+                AppIconSettings()
             }) {
                 Label("App Icon", systemImage: "app.gift")
             }
             .padding(.vertical, 8)
             
             NavigationLink(destination: {
-                
+                TemplateSettings()
             }) {
                 Label("Vorlagen", systemImage: "grid")
             }
             .padding(.vertical, 8)
             
             NavigationLink(destination: {
-                
+                SubjectSettings()
             }) {
                 Label("Fächer", systemImage: "tray.2")
             }
