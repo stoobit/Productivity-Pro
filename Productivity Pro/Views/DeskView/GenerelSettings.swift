@@ -50,7 +50,7 @@ struct GenerelSettings: View {
                     }
                 }
                 
-                Section("Standardeinstellungen von Textfeldern") {
+                Section("Standardeinstellung von Textfeldern") {
                     FormSpacer {
                         HStack {
                             
