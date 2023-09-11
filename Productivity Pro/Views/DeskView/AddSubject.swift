@@ -9,34 +9,88 @@ import SwiftUI
 
 struct AddSubject: View {
     
-    @AppStorage("ppsubjects") var subjects: [Subject] = []
+    @AppStorage("ppsubjects")
+    var subjects: CodableWrapper<Array<Subject>> =
+        .init(value: .init())
+    
     @Binding var addSubject: Bool
     
     @State var subject: Subject = Subject()
+    @State var color: Color = .blue
+    
+    let columns = [GridItem(.adaptive(minimum: 80))]
+    private var symbols: [String] {
+        SFSymbols.shared.allSymbols
+    }
+    
+    private static var gridDimension: CGFloat {
+        return 64
+    }
+    
+    private static var symbolSize: CGFloat {
+        return 24
+    }
+    
+    private static var symbolCornerRadius: CGFloat {
+        return 8
+    }
+    
+    private static var unselectedItemBackgroundColor: Color {
+        return Color(UIColor.systemBackground)
+    }
+
+    private static var selectedItemBackgroundColor: Color {
+        return Color.accentColor
+    }
+
+    private static var backgroundColor: Color {
+        return Color(UIColor.systemGroupedBackground)
+    }
     
     var body: some View {
         NavigationStack {
             GeometryReader { proxy in
                 Form {
-                    TextField("Titel", text: $subject.title)
+                    Section {
+                        TextField("z.B. Mathe", text: $subject.title)
+                            .padding(.vertical, 8)
+                        
+                        ColorPicker(
+                            "Farbe",
+                            selection: $color,
+                            supportsOpacity: false
+                        )
                         .padding(.vertical, 8)
+                        .onChange(of: color, initial: true) {
+                            subject.color = color.rawValue
+                        }
+                    }
                     
                     Section {
-                        HStack {
-                            
-                            ColorItem(.red, size: proxy.size)
-                            ColorItem(.yellow, size: proxy.size)
-                            ColorItem(.orange, size: proxy.size)
-                            ColorItem(.blue, size: proxy.size)
-                            ColorItem(.green, size: proxy.size)
-                            ColorItem(.teal, size: proxy.size)
-                            ColorItem(.mint, size: proxy.size)
-                            ColorItem(.pink, size: proxy.size)
-                            ColorItem(.purple, size: proxy.size)
-                            ColorItem(.brown, size: proxy.size)
-                            ColorItem(.gray, size: proxy.size)
-                            
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: Self.gridDimension, maximum: Self.gridDimension))]) {
+                            ForEach(symbols, id: \.self) { thisSymbol in
+                                Button(action: { subject.icon = thisSymbol }) {
+                                    if thisSymbol == subject.icon {
+                                        Image(systemName: thisSymbol)
+                                            .font(.system(size: Self.symbolSize))
+                                            .frame(maxWidth: .infinity, minHeight: Self.gridDimension)
+                                            .background(Self.selectedItemBackgroundColor)
+                                            .cornerRadius(Self.symbolCornerRadius)
+                                            .foregroundColor(.white)
+                                    } else {
+                                        Image(systemName: thisSymbol)
+                                            .font(.system(size: Self.symbolSize))
+                                            .frame(maxWidth: .infinity, minHeight: Self.gridDimension)
+                                            .background(Self.unselectedItemBackgroundColor)
+                                            .cornerRadius(Self.symbolCornerRadius)
+                                            .foregroundColor(.primary)
+                                    }
+                                }
+                                .buttonStyle(.plain)
+                                .hoverEffect(.lift)
+                            }
                         }
+                        .padding(.horizontal)
                     }
                     
                 }
@@ -52,6 +106,11 @@ struct AddSubject: View {
                         Button("Hinzufügen") {
                             add()
                         }
+                        .disabled(
+                            subject.title.trimmingCharacters(
+                                in: .whitespaces
+                            ) == ""
+                        )
                     }
                 }
                 .position(
@@ -62,35 +121,11 @@ struct AddSubject: View {
         }
     }
     
-    @ViewBuilder func ColorItem(_ color: Color, size: CGSize) -> some View {
-        Button(action: { subject.color = color.toCodable() }) {
-            ZStack {
-                
-                Circle()
-                    .foregroundStyle(color)
-                    .frame(
-                        width: size.width / 15, height: size.width / 15
-                    )
-                    .frame(maxWidth: .infinity)
-                
-                Circle()
-                    .stroke(
-                        color.toCodable() == subject.color
-                        ? .white : color, lineWidth: 3
-                    )
-                    .foregroundStyle(color)
-                    .frame(
-                        width: size.width / 20, height: size.width / 20
-                    )
-                    .frame(maxWidth: .infinity)
-                
-                
-            }
-        }
-    }
-    
     func add() {
-        subjects.append(subject)
+        withAnimation {
+            subjects.value.append(subject)
+        }
+        
         addSubject.toggle()
     }
 }

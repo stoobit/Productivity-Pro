@@ -22,6 +22,7 @@ struct LibraryView: View {
                     .multilineTextAlignment(.center)
             }
             .foregroundStyle(.blue.secondary)
+            .navigationTitle("Bibliothek")
             
         }
     }
