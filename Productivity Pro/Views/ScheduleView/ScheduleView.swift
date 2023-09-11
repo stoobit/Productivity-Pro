@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ScheduleView: View {
     
+    @Binding var isEditing: Bool
+    
     var size: CGSize
     var width: CGFloat {
         if size.width > size.height {
@@ -19,7 +21,32 @@ struct ScheduleView: View {
     }
     
     var body: some View {
-        Text("\(width)")
+        ZStack {
+            Color(UIColor.systemGroupedBackground)
+                .ignoresSafeArea(.all)
+            
+            ScrollView(.vertical) {
+                HStack {
+                    ScheduleColumn(
+                        isEditing: $isEditing, day: exampleDay
+                    )
+                    ScheduleColumn(
+                        isEditing: $isEditing, day: exampleDay
+                    )
+                    ScheduleColumn(
+                        isEditing: $isEditing, day: exampleDay
+                    )
+                    ScheduleColumn(
+                        isEditing: $isEditing, day: exampleDay
+                    )
+                    ScheduleColumn(
+                        isEditing: $isEditing, day: exampleDay
+                    )
+                }
+            }
+            .frame(width: size.width)
+            
+        }
     }
 }
 

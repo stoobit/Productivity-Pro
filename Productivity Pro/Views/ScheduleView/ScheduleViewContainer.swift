@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct ScheduleViewContainer: View {
+    
+    @State var isEditing: Bool = false
+    
     var body: some View {
         GeometryReader { proxy in
-            ScheduleView(size: proxy.size)
-                .position(
-                    x: proxy.size.width / 2,
-                    y: proxy.size.height / 2
+            NavigationStack {
+                ScheduleView(
+                    isEditing: $isEditing, size: proxy.size
                 )
+                .navigationTitle("Stundenplan")
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("", systemImage: "pencil") {
+                            withAnimation {
+                                isEditing.toggle()
+                            }
+                        }
+                    }
+                }
+            }
+            .position(
+                x: proxy.size.width / 2,
+                y: proxy.size.height / 2
+            )
         }
     }
 }
