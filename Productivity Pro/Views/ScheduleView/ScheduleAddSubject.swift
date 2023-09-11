@@ -15,25 +15,34 @@ struct ScheduleAddSubject: View {
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
-    @State var selection: Subject = Subject(color: "ööä§$")
+    let isAdd: Bool
+    @Binding var oldSubject: Subject
     
     var body: some View {
         NavigationStack {
             Form {
-                Picker("Fächer", selection: $selection) {
+                List {
                     ForEach(subjects.value) { subject in
-                        HStack {
-                            Image(systemName: subject.icon)
-                                .foregroundStyle(.white)
-                                .background {
-                                    Circle()
-                                        .frame(width: 40, height: 40)
-                                        .foregroundStyle(Color(rawValue: subject.color))
-                                }
-                                .frame(width: 40, height: 40)
-                            
-                            Text(subject.title)
-                                .padding(.leading, 7)
+                        Button(action: { 
+                            if isAdd {
+                                add(subject)
+                            } else {
+                                edit(subject)
+                            }
+                        }) {
+                            HStack {
+                                Image(systemName: subject.icon)
+                                    .foregroundStyle(.white)
+                                    .background {
+                                        Circle()
+                                            .frame(width: 40, height: 40)
+                                            .foregroundStyle(Color(rawValue: subject.color))
+                                    }
+                                    .frame(width: 40, height: 40)
+                                
+                                Text(subject.title)
+                                    .padding(.leading, 7)
+                            }
                         }
                         .tag(subject)
                     }
@@ -47,21 +56,24 @@ struct ScheduleAddSubject: View {
                         isPresented.toggle()
                     }
                 }
-                
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Hinzufügen") {
-                        selection.id = UUID().uuidString
-                        
-                        day.subjects.append(selection)
-                        isPresented.toggle()
-                    }
-                    .disabled(selection.color == "ööä§$")
-                }
             }
         }
     }
-}
-
-#Preview {
-    ScheduleAddSubject(isPresented: .constant(true), day: .constant(ScheduleDay(id: "", subjects: [])))
+    
+    func add(_ subject: Subject) {
+        withAnimation(.bouncy) {
+            var s = subject
+            s.id = UUID().uuidString
+            
+            day.subjects.append(s)
+            isPresented.toggle()
+        }
+    }
+    
+    func edit(_ subject: Subject) {
+        let index = day.subjects.firstIndex(of: oldSubject)!
+        day.subjects[index] = subject
+        
+        isPresented.toggle()
+    }
 }

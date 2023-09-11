@@ -10,9 +10,12 @@ import SwiftUI
 struct ScheduleColumn: View {
     
     @State var addSubject: Bool = false
+    @State var editSubject: Bool = false
     
     @Binding var isEditing: Bool
     @Binding var day: ScheduleDay
+    
+    @State var oldSubject: Subject = Subject()
     
     var body: some View {
         LazyVStack(alignment: .leading) {
@@ -22,9 +25,7 @@ struct ScheduleColumn: View {
                 .padding(.vertical, 10)
             
             ForEach(day.subjects) { subject in
-                Button(action: {  }) {
-                    Icon(for: subject)
-                }
+                Icon(for: subject)
             }
             
             if isEditing {
@@ -35,12 +36,24 @@ struct ScheduleColumn: View {
                         color: Color.secondary.rawValue
                     ))
                 }
+                .transition(.scale)
             }
             
         }
+        .animation(.spring, value: isEditing)
+        .animation(.spring, value: day.subjects.count)
         .frame(maxWidth: .infinity)
         .sheet(isPresented: $addSubject) {
-            ScheduleAddSubject(isPresented: $addSubject, day: $day)
+            ScheduleAddSubject(
+                isPresented: $addSubject,
+                day: $day, isAdd: true, oldSubject: .constant(Subject())
+            )
+        }
+        .sheet(isPresented: $editSubject) {
+            ScheduleAddSubject(
+                isPresented: $editSubject,
+                day: $day, isAdd: false, oldSubject: $oldSubject
+            )
         }
     }
     
@@ -64,6 +77,31 @@ struct ScheduleColumn: View {
                     alignment: .leading
                 )
                 .padding(.leading, 7)
+            
+            Spacer()
+            
+            if subject.icon != "plus" && isEditing {
+                Menu(content: {
+                    Button("Ändern", systemImage: "pencil") {
+                        oldSubject = subject
+                        editSubject.toggle()
+                    }
+                    
+                    Button("Entfernen", systemImage: "trash", role: .destructive) {
+                        day.subjects.removeAll(where: {
+                            $0.id == subject.id
+                        })
+                    }
+                }) {
+                    Image(systemName: "ellipsis.circle.fill")
+                        .font(.title3)
+                        .foregroundStyle(
+                            Color.accentColor.tertiary
+                        )
+                }
+                .transition(.scale)
+                
+            }
         }
         .padding(.vertical, 12)
         .padding(.horizontal, 12)

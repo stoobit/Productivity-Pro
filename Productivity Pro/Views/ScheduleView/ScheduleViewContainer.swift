@@ -21,9 +21,7 @@ struct ScheduleViewContainer: View {
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
-                            withAnimation {
-                                isEditing.toggle()
-                            }
+                            isEditing.toggle()
                         }
                     }
                 }
