@@ -59,6 +59,8 @@
 		BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */; };
 		BB4A93D02AAF21FE00C3AED6 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A93CF2AAF21FE00C3AED6 /* SVGKit */; };
 		BB4A93D22AAF21FE00C3AED6 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A93D12AAF21FE00C3AED6 /* SVGKitSwift */; };
+		BB4A93D42AAF3BDB00C3AED6 /* TemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93D32AAF3BDB00C3AED6 /* TemplateModel.swift */; };
+		BB4A93D72AAF435900C3AED6 /* TemplatePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93D62AAF435900C3AED6 /* TemplatePreview.swift */; };
 		BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */; };
 		BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */; };
 		BB4CDD4528D3C668009A409F /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4428D3C668009A409F /* DocumentView.swift */; };
@@ -166,7 +168,7 @@
 		BBF5FDFC2AAE2BD80081C4FE /* TemplateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */; };
 		BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */; };
 		BBF5FE002AAE41710081C4FE /* TemplateSettingsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */; };
-		BBF5FE032AAE61E20081C4FE /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FE022AAE61E20081C4FE /* Subject.swift */; };
+		BBF5FE032AAE61E20081C4FE /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */; };
 		BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FE042AAE66D30081C4FE /* AddSubject.swift */; };
 		BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */; };
 		BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930702A67428C00AD3958 /* PPDrawingTool.swift */; };
@@ -238,6 +240,8 @@
 		BB3F75FC2997F81600C0F140 /* NoteMainToolToolbarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMainToolToolbarMethods.swift; sourceTree = "<group>"; };
 		BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWrapper.swift; sourceTree = "<group>"; };
 		BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
+		BB4A93D32AAF3BDB00C3AED6 /* TemplateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateModel.swift; sourceTree = "<group>"; };
+		BB4A93D62AAF435900C3AED6 /* TemplatePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePreview.swift; sourceTree = "<group>"; };
 		BB4CDD3D28D3C668009A409F /* Productivity Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_ProApp.swift; sourceTree = "<group>"; };
 		BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityProDocument.swift; sourceTree = "<group>"; };
@@ -349,7 +353,7 @@
 		BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSettings.swift; sourceTree = "<group>"; };
 		BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettings.swift; sourceTree = "<group>"; };
 		BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSettingsHelper.swift; sourceTree = "<group>"; };
-		BBF5FE022AAE61E20081C4FE /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		BBF5FE042AAE66D30081C4FE /* AddSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubject.swift; sourceTree = "<group>"; };
 		BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingModel.swift; sourceTree = "<group>"; };
 		BBF930702A67428C00AD3958 /* PPDrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingTool.swift; sourceTree = "<group>"; };
@@ -475,6 +479,7 @@
 			children = (
 				BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */,
 				BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */,
+				BB4A93D62AAF435900C3AED6 /* TemplatePreview.swift */,
 			);
 			path = TemplateSettings;
 			sourceTree = "<group>";
@@ -486,6 +491,15 @@
 				BBF5FE042AAE66D30081C4FE /* AddSubject.swift */,
 			);
 			path = SubjectSettings;
+			sourceTree = "<group>";
+		};
+		BB4A93D52AAF3BED00C3AED6 /* AppStorageModels */ = {
+			isa = PBXGroup;
+			children = (
+				BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */,
+				BB4A93D32AAF3BDB00C3AED6 /* TemplateModel.swift */,
+			);
+			path = AppStorageModels;
 			sourceTree = "<group>";
 		};
 		BB4CDD3428D3C668009A409F = {
@@ -550,6 +564,7 @@
 			children = (
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
 				BB9DF5B328E067D600AC988D /* DocumentModels */,
+				BB4A93D52AAF3BED00C3AED6 /* AppStorageModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -748,7 +763,6 @@
 		BBBD13E8290EA46C001145A4 /* TypeModifier */ = {
 			isa = PBXGroup;
 			children = (
-				BBF5FE022AAE61E20081C4FE /* Subject.swift */,
 				BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */,
 				BB3525B22908673800D35790 /* Array.swift */,
 				BB174F542A1051B400F753F6 /* Date.swift */,
@@ -1067,12 +1081,13 @@
 				BB929B8028E5076D00DA4538 /* NoteSideActionToolbar.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
 				BB9F70EB28E7A57C007DF951 /* AddPageView.swift in Sources */,
-				BBF5FE032AAE61E20081C4FE /* Subject.swift in Sources */,
+				BBF5FE032AAE61E20081C4FE /* SubjectModel.swift in Sources */,
 				BB15F2232A69964200223C92 /* ExitButtonView.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
 				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
+				BB4A93D72AAF435900C3AED6 /* TemplatePreview.swift in Sources */,
 				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
 				BBF5FDF12AAE131D0081C4FE /* DocumentPickerView.swift in Sources */,
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
@@ -1177,6 +1192,7 @@
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,
 				BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */,
 				BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */,
+				BB4A93D42AAF3BDB00C3AED6 /* TemplateModel.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
 				BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */,
 				BBF5FDFC2AAE2BD80081C4FE /* TemplateSettings.swift in Sources */,

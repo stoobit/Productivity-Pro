@@ -10,7 +10,7 @@ import SVGKit
 
 struct TemplateSettings: View {
     
-    @AppStorage("importedTemplates") var importedTemplates: [Data] = [Data]()
+    @AppStorage("pptemplates") var importedTemplates: CodableWrapper<Array<TemplateModel>> = .init(value: .init())
     
     @State var isTutorialPresented: Bool = false
     @State var isImporterPresented: Bool = false
@@ -22,8 +22,13 @@ struct TemplateSettings: View {
             Form {
                 
                 Section {
-                    List(importedTemplates, id: \.self) { template in
-                        let svgImage = SVGKImage(data: template)
+                    List(importedTemplates.value, id: \.self) { template in
+                        
+                        SVGKFastImageViewSUI(
+                            data: template.data,
+                            size: CGSize(width: 140, height: 198)
+                        )
+                        
                     }
                 }
                 
@@ -51,8 +56,8 @@ struct TemplateSettings: View {
         }
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
-                Button(action: { isImporterPresented.toggle() }) {
-                    Image(systemName: "plus")
+                Button("", systemImage: "plus") { 
+                    isImporterPresented.toggle()
                 }
             }
         }

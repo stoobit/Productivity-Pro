@@ -5,8 +5,7 @@
 //  Created by Till Brügmann on 10.09.23.
 //
 
-import SwiftUI
-import Combine
+import Foundation
 
 struct Subject: Identifiable, Codable {
     var id = UUID().uuidString

@@ -14,14 +14,23 @@ extension TemplateSettings {
         case .success:
             do {
                 
-                guard let selectedFile: URL = try result.get().first else { return }
+                guard let selectedFile: URL = try result.get().first else {
+                    return
+                }
+                
                 if selectedFile.startAccessingSecurityScopedResource() {
                     
-                    try importedTemplates.append(
-                        Data(contentsOf: selectedFile)
+                    try importedTemplates.value.append(
+                        TemplateModel(
+                            title: "",
+                            data: Data(contentsOf: selectedFile)
+                        )
                     )
                     
-                    defer { selectedFile.stopAccessingSecurityScopedResource() }
+                    defer { 
+                        selectedFile.stopAccessingSecurityScopedResource()
+                    }
+                    
                     print("Success")
                 }
                 

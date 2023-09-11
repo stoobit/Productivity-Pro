@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SubjectSettings: View {
     
-    @AppStorage("ppsubjects") var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    @AppStorage("ppsubjects") 
+    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
     @State var addSubject: Bool = false
     
@@ -45,9 +46,9 @@ struct SubjectSettings: View {
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(action: { addSubject.toggle() }) {
-                        Image(systemName: "plus")
-                    }
+                    Button("", systemImage: "plus") {
+                        addSubject.toggle()
+                    }.fontWeight(.bold)
                 }
             }
             .overlay {
