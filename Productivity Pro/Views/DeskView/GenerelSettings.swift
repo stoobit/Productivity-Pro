@@ -31,7 +31,7 @@ struct GenerelSettings: View {
         NavigationStack {
             Form {
                 
-                Section("Editing Menu Position") {
+                Section("Position des Bearbeitungsmenüs") {
                     if hsc == .regular {
                         FormSpacer {
                             PositionPicker()
@@ -43,14 +43,14 @@ struct GenerelSettings: View {
                                 Text("Bottom Center").tag(1)
                                 Text("Bottom Right").tag(2)
                             }
-                            .onChange(of: cbSetter) { value in
-                                CBPosition = value
+                            .onChange(of: cbSetter) {
+                                CBPosition = cbSetter
                             }
                         }
                     }
                 }
                 
-                Section("Default Text Style") {
+                Section("Standardeinstellungen von Textfeldern") {
                     FormSpacer {
                         HStack {
                             
@@ -61,15 +61,15 @@ struct GenerelSettings: View {
                                 }
                             }
                             .labelsHidden()
-                            .onChange(of: fontSetter) { value in
-                                defaultFont = value
+                            .onChange(of: fontSetter) {
+                                defaultFont = fontSetter
                             }
 
                             Spacer()
                             
-                            TextField("Size", value: $sizeSetter, format: .number)
+                            TextField("Schriftgröße", value: $sizeSetter, format: .number)
                                 .keyboardType(.decimalPad)
-                                .frame(width: 85)
+                                .frame(width: 120)
                                 .textFieldStyle(.roundedBorder)
                             
                             if hsc == .regular {
@@ -78,7 +78,7 @@ struct GenerelSettings: View {
                                     .padding(.leading)
                             }
                         }
-                        .onChange(of: sizeSetter) { _ in
+                        .onChange(of: sizeSetter) {
                             if sizeSetter < 1 {
                                 sizeSetter = 1
                                 defaultFontSize = sizeSetter
@@ -99,10 +99,8 @@ struct GenerelSettings: View {
                 }
                 
             }
-            .toolbarRole(.browser)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Allgemein")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
     
