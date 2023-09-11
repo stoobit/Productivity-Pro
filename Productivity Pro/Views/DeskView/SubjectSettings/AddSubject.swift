@@ -81,6 +81,7 @@ struct AddSubject: View {
                     }
                     
                 }
+                .navigationBarTitleDisplayMode(.large)
                 .navigationTitle("Fach")
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {

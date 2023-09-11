@@ -468,6 +468,24 @@
 			path = NoteView;
 			sourceTree = "<group>";
 		};
+		BB4A93CC2AAF159500C3AED6 /* TemplateSettings */ = {
+			isa = PBXGroup;
+			children = (
+				BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */,
+				BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */,
+			);
+			path = TemplateSettings;
+			sourceTree = "<group>";
+		};
+		BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */ = {
+			isa = PBXGroup;
+			children = (
+				BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */,
+				BBF5FE042AAE66D30081C4FE /* AddSubject.swift */,
+			);
+			path = SubjectSettings;
+			sourceTree = "<group>";
+		};
 		BB4CDD3428D3C668009A409F = {
 			isa = PBXGroup;
 			children = (
@@ -565,10 +583,8 @@
 				BBAF57FD2A49E5D7008DEA98 /* WhatIsNew.swift */,
 				BBF5FDF72AAE2BC40081C4FE /* GenerellSettings.swift */,
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
-				BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */,
-				BBF5FDFF2AAE41710081C4FE /* TemplateSettingsHelper.swift */,
-				BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */,
-				BBF5FE042AAE66D30081C4FE /* AddSubject.swift */,
+				BB4A93CC2AAF159500C3AED6 /* TemplateSettings */,
+				BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */,
 				BB27FED528EA1EF900459334 /* SettingsView.swift */,
 			);
 			path = DeskView;

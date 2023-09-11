@@ -52,17 +52,22 @@ struct SubjectSettings: View {
             }
             .overlay {
                 if subjects.value.isEmpty {
-                    VStack {
-                        Image(systemName: "tray.2")
-                            .font(.system(size: 100))
+                    ZStack {
+                        Color(UIColor.systemGroupedBackground)
+                            .ignoresSafeArea(.all)
                         
-                        Text("Du hast noch keine Fächer hinzugefügt.")
-                            .font(.title.bold())
-                            .padding(.top)
-                            .padding(.horizontal)
-                            .multilineTextAlignment(.center)
+                        VStack {
+                            Image(systemName: "tray.2")
+                                .font(.system(size: 100))
+                            
+                            Text("Du hast noch keine Fächer hinzugefügt.")
+                                .font(.title.bold())
+                                .padding(.top)
+                                .padding(.horizontal)
+                                .multilineTextAlignment(.center)
+                        }
+                        .foregroundStyle(.blue.secondary)
                     }
-                    .foregroundStyle(.blue.secondary)
                 }
             }
         }
