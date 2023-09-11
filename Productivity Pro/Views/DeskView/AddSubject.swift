@@ -10,42 +10,29 @@ import SwiftUI
 struct AddSubject: View {
     
     @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> =
-        .init(value: .init())
+    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
+    @Environment(\.colorScheme) var cs
     @Binding var addSubject: Bool
     
-    @State var subject: Subject = Subject()
+    @State var subject: Subject = Subject(icon: "x.squareroot")
     @State var color: Color = .blue
     
     let columns = [GridItem(.adaptive(minimum: 80))]
-    private var symbols: [String] {
-        SFSymbols.shared.allSymbols
+    
+    var bgcolor: Color {
+        if cs == .light {
+            return Color(UIColor.secondarySystemBackground)
+        } else {
+            return Color(UIColor.tertiarySystemBackground)
+        }
     }
     
-    private static var gridDimension: CGFloat {
-        return 64
-    }
+    let gridDimension: CGFloat = 64
+    let symbolSize: CGFloat = 24
+    let symbolCornerRadius: CGFloat = 8
     
-    private static var symbolSize: CGFloat {
-        return 24
-    }
-    
-    private static var symbolCornerRadius: CGFloat {
-        return 8
-    }
-    
-    private static var unselectedItemBackgroundColor: Color {
-        return Color(UIColor.systemBackground)
-    }
-
-    private static var selectedItemBackgroundColor: Color {
-        return Color.accentColor
-    }
-
-    private static var backgroundColor: Color {
-        return Color(UIColor.systemGroupedBackground)
-    }
+    let selectedItemBackgroundColor: Color = .accentColor
     
     var body: some View {
         NavigationStack {
@@ -66,31 +53,31 @@ struct AddSubject: View {
                         }
                     }
                     
+                    let gridItem = GridItem(
+                        .adaptive(minimum: gridDimension, maximum: gridDimension)
+                    )
+                    
                     Section {
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: Self.gridDimension, maximum: Self.gridDimension))]) {
+                        LazyVGrid(columns: [gridItem]) {
                             ForEach(symbols, id: \.self) { thisSymbol in
                                 Button(action: { subject.icon = thisSymbol }) {
-                                    if thisSymbol == subject.icon {
-                                        Image(systemName: thisSymbol)
-                                            .font(.system(size: Self.symbolSize))
-                                            .frame(maxWidth: .infinity, minHeight: Self.gridDimension)
-                                            .background(Self.selectedItemBackgroundColor)
-                                            .cornerRadius(Self.symbolCornerRadius)
-                                            .foregroundColor(.white)
-                                    } else {
-                                        Image(systemName: thisSymbol)
-                                            .font(.system(size: Self.symbolSize))
-                                            .frame(maxWidth: .infinity, minHeight: Self.gridDimension)
-                                            .background(Self.unselectedItemBackgroundColor)
-                                            .cornerRadius(Self.symbolCornerRadius)
-                                            .foregroundColor(.primary)
-                                    }
+                                    
+                                    Image(systemName: thisSymbol)
+                                        .font(.system(size: symbolSize))
+                                        .frame(maxWidth: .infinity, minHeight: gridDimension)
+                                        .background(
+                                            thisSymbol == subject.icon ? .accentColor : bgcolor
+                                        )
+                                        .cornerRadius(symbolCornerRadius)
+                                        .foregroundColor(
+                                            thisSymbol == subject.icon ? .white : .primary
+                                        )
+                                    
                                 }
                                 .buttonStyle(.plain)
-                                .hoverEffect(.lift)
                             }
                         }
-                        .padding(.horizontal)
+                        .padding(.vertical, 5)
                     }
                     
                 }
