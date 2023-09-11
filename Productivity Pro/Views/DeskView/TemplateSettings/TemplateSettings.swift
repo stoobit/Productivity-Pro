@@ -19,6 +19,13 @@ struct TemplateSettings: View {
     var body: some View {
         NavigationStack {
             Form {
+                
+                Section {
+                    List(importedTemplates, id: \.self) { template in
+                        
+                    }
+                }
+                
                 Section {
                     Button(action: { isTutorialPresented.toggle() }) {
                         HStack {
@@ -31,30 +38,7 @@ struct TemplateSettings: View {
                 }
                 .listRowBackground(Color.blue.opacity(0.13))
                 .padding(.vertical, 8)
-                
-                Section {
-                    Button(action: { isImporterPresented.toggle() }) {
-                        HStack {
-                            Text("Vorlagen importieren")
-                                .foregroundStyle(Color.primary)
-                            Spacer()
-                            Image(systemName: "plus")
-                                .fontWeight(.bold)
-                        }
-                    }
-                }
-                .padding(.vertical, 8)
-                .fileImporter(
-                    isPresented: $isImporterPresented,
-                    allowedContentTypes: [.svg],
-                    allowsMultipleSelection: false
-                ) { result in importSVGFiles(result: result) }
-                
-                Section {
-                    List(importedTemplates, id: \.self) { template in
-                        
-                    }
-                }
+
             }
             .navigationTitle("Vorlagen")
         }
@@ -64,6 +48,18 @@ struct TemplateSettings: View {
         .alert("Import fehlgeschlagen.", isPresented: $failedImport) {
             Button("Ok", role: .cancel) { failedImport = false }
         }
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
+                Button(action: { isImporterPresented.toggle() }) {
+                    Image(systemName: "plus")
+                }
+            }
+        }
+        .fileImporter(
+            isPresented: $isImporterPresented,
+            allowedContentTypes: [.svg],
+            allowsMultipleSelection: false
+        ) { result in importSVGFiles(result: result) }
     }
 }
 

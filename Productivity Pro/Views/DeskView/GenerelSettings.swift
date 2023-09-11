@@ -1,16 +1,15 @@
 //
-//  SettingsView.swift
+//  GenerellSettings.swift
 //  Productivity Pro
 //
-//  Created by Till Brügmann on 02.10.22.
+//  Created by Till Brügmann on 10.09.23.
 //
 
 import SwiftUI
 
-struct SettingsView: View {
+struct GenerelSettings: View {
     
     @Environment(\.horizontalSizeClass) var hsc
-    @Binding var isPresented: Bool
     
     @AppStorage("automaticallyDeselectEraser")
     private var automaticallyDeselectEraser: Bool = false
@@ -104,14 +103,6 @@ struct SettingsView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
-                        isPresented.toggle()
-                    }
-                    .keyboardShortcut(.return, modifiers: [])
-                }
-            }
         }
     }
     
@@ -157,9 +148,6 @@ struct SettingsView: View {
     }
     
 }
-
-struct Settings_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView(isPresented: .constant(true))
-    }
+#Preview {
+    GenerelSettings()
 }

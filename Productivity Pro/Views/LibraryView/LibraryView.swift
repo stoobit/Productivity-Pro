@@ -11,18 +11,23 @@ struct LibraryView: View {
     var body: some View {
         NavigationStack {
             
-            VStack {
-                Image(systemName: "books.vertical.fill")
-                    .font(.system(size: 100))
+            ZStack {
+                Color(UIColor.systemGroupedBackground)
+                    .ignoresSafeArea(.all)
                 
-                Text("Noch sind keine Bücher verfügbar.")
-                    .font(.title.bold())
-                    .padding(.top)
-                    .padding(.horizontal)
-                    .multilineTextAlignment(.center)
+                VStack {
+                    Image(systemName: "books.vertical.fill")
+                        .font(.system(size: 100))
+                    
+                    Text("Noch sind keine Bücher verfügbar.")
+                        .font(.title.bold())
+                        .padding(.top)
+                        .padding(.horizontal)
+                        .multilineTextAlignment(.center)
+                }
+                .foregroundStyle(.blue.secondary)
+                .navigationTitle("Bibliothek")
             }
-            .foregroundStyle(.blue.secondary)
-            .navigationTitle("Bibliothek")
             
         }
     }

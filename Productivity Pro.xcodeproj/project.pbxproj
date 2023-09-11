@@ -31,7 +31,6 @@
 		BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27BB512A62C30700392E1E /* RealityNoteModel.swift */; };
 		BB27FED228EA09A200459334 /* TouchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED128EA09A200459334 /* TouchType.swift */; };
 		BB27FED428EA192D00459334 /* ChangePageTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED328EA192D00459334 /* ChangePageTemplateView.swift */; };
-		BB27FED628EA1EF900459334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED528EA1EF900459334 /* SettingsView.swift */; };
 		BB27FED828EA419300459334 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED728EA419300459334 /* OverviewView.swift */; };
 		BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */; };
 		BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFBA32A660F4F009774BB /* EditMarkdownViewMethods.swift */; };
@@ -58,6 +57,8 @@
 		BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */; };
 		BB4A93C92AAEFDCC00C3AED6 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */; };
 		BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */; };
+		BB4A93D02AAF21FE00C3AED6 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A93CF2AAF21FE00C3AED6 /* SVGKit */; };
+		BB4A93D22AAF21FE00C3AED6 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB4A93D12AAF21FE00C3AED6 /* SVGKitSwift */; };
 		BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */; };
 		BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */; };
 		BB4CDD4528D3C668009A409F /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4428D3C668009A409F /* DocumentView.swift */; };
@@ -160,7 +161,7 @@
 		BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */; };
 		BBF5FDF12AAE131D0081C4FE /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */; };
 		BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */; };
-		BBF5FDF82AAE2BC40081C4FE /* GenerellSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF72AAE2BC40081C4FE /* GenerellSettings.swift */; };
+		BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */; };
 		BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */; };
 		BBF5FDFC2AAE2BD80081C4FE /* TemplateSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */; };
 		BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */; };
@@ -214,7 +215,6 @@
 		BB27BB512A62C30700392E1E /* RealityNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityNoteModel.swift; sourceTree = "<group>"; };
 		BB27FED128EA09A200459334 /* TouchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchType.swift; sourceTree = "<group>"; };
 		BB27FED328EA192D00459334 /* ChangePageTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePageTemplateView.swift; sourceTree = "<group>"; };
-		BB27FED528EA1EF900459334 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BB27FED728EA419300459334 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectRecognition.mlmodel; sourceTree = "<group>"; };
 		BB2CFBA32A660F4F009774BB /* EditMarkdownViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownViewMethods.swift; sourceTree = "<group>"; };
@@ -344,7 +344,7 @@
 		BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
 		BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
 		BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
-		BBF5FDF72AAE2BC40081C4FE /* GenerellSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerellSettings.swift; sourceTree = "<group>"; };
+		BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerelSettings.swift; sourceTree = "<group>"; };
 		BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
 		BBF5FDFB2AAE2BD80081C4FE /* TemplateSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSettings.swift; sourceTree = "<group>"; };
 		BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettings.swift; sourceTree = "<group>"; };
@@ -366,6 +366,8 @@
 			files = (
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
+				BB4A93D22AAF21FE00C3AED6 /* SVGKitSwift in Frameworks */,
+				BB4A93D02AAF21FE00C3AED6 /* SVGKit in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,11 +583,10 @@
 				BB67015C2AADF480001F468A /* DeskViewHelper.swift */,
 				BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */,
 				BBAF57FD2A49E5D7008DEA98 /* WhatIsNew.swift */,
-				BBF5FDF72AAE2BC40081C4FE /* GenerellSettings.swift */,
+				BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */,
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
 				BB4A93CC2AAF159500C3AED6 /* TemplateSettings */,
 				BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */,
-				BB27FED528EA1EF900459334 /* SettingsView.swift */,
 			);
 			path = DeskView;
 			sourceTree = "<group>";
@@ -960,6 +961,8 @@
 				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
 				BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */,
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
+				BB4A93CF2AAF21FE00C3AED6 /* SVGKit */,
+				BB4A93D12AAF21FE00C3AED6 /* SVGKitSwift */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -994,6 +997,7 @@
 			packageReferences = (
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
+				BB4A93CE2AAF21FE00C3AED6 /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1109,7 +1113,7 @@
 				BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */,
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
 				BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */,
-				BBF5FDF82AAE2BC40081C4FE /* GenerellSettings.swift in Sources */,
+				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
 				BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
@@ -1161,7 +1165,6 @@
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteToolbarModifier.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
-				BB27FED628EA1EF900459334 /* SettingsView.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
 				BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */,
 				BB1E69442A71EB5B008E0C5F /* BackgroundViews.swift in Sources */,
@@ -1431,6 +1434,14 @@
 				minimumVersion = 1.2.4;
 			};
 		};
+		BB4A93CE2AAF21FE00C3AED6 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
@@ -1451,6 +1462,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */;
 			productName = SwiftyMarkdown;
+		};
+		BB4A93CF2AAF21FE00C3AED6 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB4A93CE2AAF21FE00C3AED6 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		BB4A93D12AAF21FE00C3AED6 /* SVGKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB4A93CE2AAF21FE00C3AED6 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKitSwift;
 		};
 		BBB090802A4BA35100A6F60A /* OnPasteboardChange */ = {
 			isa = XCSwiftPackageProductDependency;

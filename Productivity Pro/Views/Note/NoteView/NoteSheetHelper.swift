@@ -21,9 +21,6 @@ struct NoteSheetHelper: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .sheet(isPresented: $subviewManager.settingsSheet) {
-                SettingsView(isPresented: $subviewManager.settingsSheet)
-            }
             .sheet(isPresented: $subviewManager.changeTemplate) {
                 ChangePageTemplateView(
                     document: $document,
