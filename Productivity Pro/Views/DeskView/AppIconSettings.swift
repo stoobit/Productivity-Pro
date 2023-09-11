@@ -33,7 +33,7 @@ struct AppIconSettings: View {
             }
             .navigationTitle("App Icon")
         }
-        .onChange(of: selection) {
+        .onChange(of: selection, initial: false) {
             UIApplication.shared.setAlternateIconName(selection)
         }
     }

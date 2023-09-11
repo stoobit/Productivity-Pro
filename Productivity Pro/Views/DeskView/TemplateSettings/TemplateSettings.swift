@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SVGKit
 
 struct TemplateSettings: View {
     
@@ -22,7 +23,7 @@ struct TemplateSettings: View {
                 
                 Section {
                     List(importedTemplates, id: \.self) { template in
-                        
+                        let svgImage = SVGKImage(data: template)
                     }
                 }
                 
