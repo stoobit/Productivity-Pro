@@ -46,9 +46,9 @@ struct SubjectSettings: View {
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("", systemImage: "plus") {
-                        addSubject.toggle()
-                    }.fontWeight(.bold)
+                    Button(action: { addSubject.toggle() }) {
+                        Image(systemName: "plus")
+                    }
                 }
             }
             .overlay {

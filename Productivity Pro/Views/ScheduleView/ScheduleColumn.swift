@@ -28,7 +28,7 @@ struct ScheduleColumn: View {
             }
             
             if isEditing {
-                Button(action: {  }) {
+                Button(action: { addSubject.toggle() }) {
                     Icon(for: Subject(
                         title: "Fach",
                         icon: "plus",
@@ -40,7 +40,7 @@ struct ScheduleColumn: View {
         }
         .frame(maxWidth: .infinity)
         .sheet(isPresented: $addSubject) {
-            ScheduleAddSubject(isPresented: $addSubject)
+            ScheduleAddSubject(isPresented: $addSubject, day: $day)
         }
     }
     

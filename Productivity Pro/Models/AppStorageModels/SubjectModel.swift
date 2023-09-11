@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Subject: Identifiable, Codable, Equatable {
+struct Subject: Identifiable, Codable, Equatable, Hashable {
     var id = UUID().uuidString
     
     var title: String = ""
