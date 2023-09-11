@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selectedTab: Int = 1
+    @State var selectedTab: Int = 2
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -28,7 +28,7 @@ struct ContentView: View {
                     Label("Notizen", systemImage: "doc")
                 }
             
-            Text("")
+            ScheduleViewContainer()
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(2)
                 .tabItem {

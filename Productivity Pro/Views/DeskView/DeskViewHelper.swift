@@ -26,13 +26,6 @@ extension DeskView {
             .padding(.vertical, 8)
             
             NavigationLink(destination: {
-                TemplateSettings()
-            }) {
-                Label("Vorlagen", systemImage: "grid")
-            }
-            .padding(.vertical, 8)
-            
-            NavigationLink(destination: {
                 SubjectSettings()
             }) {
                 Label("Fächer", systemImage: "tray.2")
