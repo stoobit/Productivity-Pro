@@ -20,7 +20,7 @@ struct ScheduleViewContainer: View {
                 .navigationTitle("Stundenplan")
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("", systemImage: "pencil") {
+                        Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
                             withAnimation {
                                 isEditing.toggle()
                             }

@@ -9,37 +9,39 @@ import SwiftUI
 
 struct ScheduleColumn: View {
     
-    @Binding var isEditing: Bool
+    @State var addSubject: Bool = false
     
-    var day: ScheduleDay
+    @Binding var isEditing: Bool
+    @Binding var day: ScheduleDay
     
     var body: some View {
-        List {
-            ForEach(day.sections) { section in
-                Section(title(section: section)) {
-                    ForEach(section.subjects) { subject in
-                        Icon(for: subject)
-                    }
-                    
-                    if isEditing {
-                        Button("Hinzufügen", systemImage: "plus") {
-                            
-                        }
-                        .padding(.vertical, 8)
-                    }
+        LazyVStack(alignment: .leading) {
+            Text(day.id)
+                .font(.title3.bold())
+                .padding(.horizontal)
+                .padding(.vertical, 10)
+            
+            ForEach(day.subjects) { subject in
+                Button(action: {  }) {
+                    Icon(for: subject)
                 }
             }
-            .listSectionSpacing(0)
             
             if isEditing {
-                Button("Hinzufügen", systemImage: "plus") {
-                    
+                Button(action: {  }) {
+                    Icon(for: Subject(
+                        title: "Fach",
+                        icon: "plus",
+                        color: Color.secondary.rawValue
+                    ))
                 }
-                .padding(.vertical, 8)
             }
+            
         }
-        .scrollDisabled(true)
-        .frame(minHeight: size())
+        .frame(maxWidth: .infinity)
+        .sheet(isPresented: $addSubject) {
+            ScheduleAddSubject(isPresented: $addSubject)
+        }
     }
     
     @ViewBuilder func Icon(for subject: Subject) -> some View {
@@ -56,57 +58,25 @@ struct ScheduleColumn: View {
                 .frame(width: 40, height: 40)
             
             Text(subject.title)
+                .foregroundStyle(Color.primary)
+                .frame(
+                    maxWidth: .infinity,
+                    alignment: .leading
+                )
                 .padding(.leading, 7)
         }
-    }
-    
-    func title(section: ScheduleSection) -> String {
-        var string = ""
-        
-        if section == day.sections[0] {
-            string = day.id
+        .padding(.vertical, 12)
+        .padding(.horizontal, 12)
+        .background {
+            Color(UIColor.secondarySystemGroupedBackground)
+                .clipShape(
+                    RoundedRectangle(cornerRadius: 10)
+                )
         }
-        
-        return string
-    }
-    
-    func size() -> CGFloat {
-        var size: CGFloat = 0
-        
-        for section in day.sections {
-            for subject in section.subjects {
-                size += 40
-            }
-            size
-        }
-        
-        return size
+        .padding(.horizontal, 10)
     }
 }
 
 #Preview {
     ScheduleViewContainer()
 }
-
-let exampleDay = ScheduleDay(id: "Montag", sections: [
-    ScheduleSection(subjects: [
-        Subject(title: "Deutsch", icon: "book", color: Color.red.rawValue),
-        Subject(title: "Mathe", icon: "x.squareroot", color: Color.blue.rawValue),
-    ]),
-    ScheduleSection(subjects: [
-        Subject(title: "Deutsch", icon: "book", color: Color.red.rawValue),
-        Subject(title: "Mathe", icon: "x.squareroot", color: Color.blue.rawValue),
-    ]),
-    ScheduleSection(subjects: [
-        Subject(title: "Deutsch", icon: "book", color: Color.red.rawValue),
-        Subject(title: "Mathe", icon: "x.squareroot", color: Color.blue.rawValue),
-    ]),
-    ScheduleSection(subjects: [
-        Subject(title: "Deutsch", icon: "book", color: Color.red.rawValue),
-        Subject(title: "Mathe", icon: "x.squareroot", color: Color.blue.rawValue),
-    ]),
-    ScheduleSection(subjects: [
-        Subject(title: "Deutsch", icon: "book", color: Color.red.rawValue),
-        Subject(title: "Mathe", icon: "x.squareroot", color: Color.blue.rawValue),
-    ]),
-])
