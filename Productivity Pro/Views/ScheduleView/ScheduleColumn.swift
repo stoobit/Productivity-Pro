@@ -26,6 +26,7 @@ struct ScheduleColumn: View {
             
             ForEach(day.subjects) { subject in
                 Icon(for: subject)
+                    .transition(.scale)
             }
             
             if isEditing {
