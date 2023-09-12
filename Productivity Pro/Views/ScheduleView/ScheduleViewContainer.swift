@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ScheduleViewContainer: View {
     
+    @Environment(\.horizontalSizeClass) var hsc
     @State var isEditing: Bool = false
     
     var body: some View {
         NavigationStack {
-            ScheduleView(isEditing: $isEditing)
+            ScheduleView(isEditing: $isEditing, hsc: hsc)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {

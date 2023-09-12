@@ -10,6 +10,7 @@ import SwiftUI
 struct ScheduleView: View {
     
     @Binding var isEditing: Bool
+    var hsc: UserInterfaceSizeClass?
     
     @AppStorage("Montag")
     var Montag: CodableWrapper<ScheduleDay> = .init(
@@ -41,9 +42,12 @@ struct ScheduleView: View {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
         
-            ViewThatFits(in: .horizontal) {
-                StaticView()
-                FluidView()
+            Group {
+                if hsc == .regular {
+                    StaticView()
+                } else {
+                    FluidView()
+                }
             }
             .padding(.horizontal, 7)
         }
