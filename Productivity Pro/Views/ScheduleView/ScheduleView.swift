@@ -45,6 +45,7 @@ struct ScheduleView: View {
                 StaticView()
                 FluidView()
             }
+            .padding(.horizontal, 7)
         }
     }
     

@@ -22,7 +22,6 @@ struct ScheduleColumn: View {
             Text(day.id)
                 .fontWeight(.bold)
                 .lineLimit(1)
-                .padding(.horizontal)
                 .padding(.vertical, 10)
             
             ForEach(day.subjects) { subject in
@@ -126,7 +125,7 @@ struct ScheduleColumn: View {
                     RoundedRectangle(cornerRadius: 10)
                 )
         }
-        .padding(.horizontal, 10)
+        
     }
 }
 
