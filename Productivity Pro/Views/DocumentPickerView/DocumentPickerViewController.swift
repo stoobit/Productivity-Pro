@@ -21,7 +21,6 @@ struct DocumentPickerViewController: UIViewControllerRepresentable {
         
         picker.delegate = context.coordinator
         picker.allowsMultipleSelection = false
-        picker.directoryURL = .downloadsDirectory
         
         return picker
     }
@@ -41,10 +40,6 @@ struct DocumentPickerViewController: UIViewControllerRepresentable {
         init(url: Binding<URL?>, dismiss: @escaping () -> Void) {
             _url = url
             self.dismiss = dismiss
-        }
-        
-        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            url = urls.first
         }
         
         func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {

@@ -20,6 +20,7 @@ struct DocumentBrowsingView: View {
             .navigationBarBackButtonHidden()
             .onChange(of: url) {
                 if url != nil { showActionSheet = true }
+                print("change")
             }
             .sheet(isPresented: $showActionSheet) {
                 
