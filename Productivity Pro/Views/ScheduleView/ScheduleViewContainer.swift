@@ -15,6 +15,7 @@ struct ScheduleViewContainer: View {
         NavigationStack {
             ScheduleView(isEditing: $isEditing)
             .navigationTitle("Stundenplan")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
