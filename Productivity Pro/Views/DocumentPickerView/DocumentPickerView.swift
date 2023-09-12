@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct DocumentPickerView: View {
+    
+    @State var url: URL?
+    @State var showNote: Bool = false
+    
     var body: some View {
-        DocumentPickerViewController()
+        DocumentPickerViewController(url: $url)
             .edgesIgnoringSafeArea(.top)
+            .onChange(of: url) {
+                if url != nil { showNote = true }
+            }
+            .fullScreenCover(isPresented: $showNote, onDismiss: { url = nil }) {
+                
+            }
     }
 }
 
 struct DocumentPickerViewController: UIViewControllerRepresentable {
+    
+    @Binding var url: URL?
     
     func makeUIViewController(context: Context) -> some UIDocumentBrowserViewController {
         
@@ -34,10 +46,16 @@ struct DocumentPickerViewController: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> DocumentPickerDelegate {
-        return DocumentPickerDelegate()
+        return DocumentPickerDelegate(url: $url)
     }
     
+    
     class DocumentPickerDelegate: NSObject, UIDocumentBrowserViewControllerDelegate {
+        
+        @Binding var url: URL?
+        init(url: Binding<URL?>) {
+            _url = url
+        }
         
         func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
                
@@ -73,6 +91,11 @@ struct DocumentPickerViewController: UIViewControllerRepresentable {
             }
         }
         
+        func documentBrowser(
+            _ controller: UIDocumentBrowserViewController, didPickDocumentsAt documentURLs: [URL]
+        ) {
+            url = documentURLs.first
+        }
     }
     
 }
