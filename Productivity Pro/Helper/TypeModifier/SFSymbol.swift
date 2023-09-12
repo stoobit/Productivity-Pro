@@ -44,7 +44,7 @@ let symbols: [String] = [
     "brain",
     "banknote",
     "eurosign",
-    "person.3",
+    "person.2",
     "person",
     "arrow.triangle.branch",
     "clock",
