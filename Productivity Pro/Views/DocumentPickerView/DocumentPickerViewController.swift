@@ -12,6 +12,8 @@ struct DocumentPickerViewController: UIViewControllerRepresentable {
     @Binding var url: URL?
     let type: UIDocumentPickerType
     
+    let dismiss: () -> Void
+    
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
         let picker = UIDocumentPickerViewController(
             forOpeningContentTypes: type == .browse ? [.pro] : [.folder]
@@ -29,18 +31,24 @@ struct DocumentPickerViewController: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(url: $url)
+        return Coordinator(url: $url) { dismiss() }
     }
     
     class Coordinator: NSObject, UIDocumentPickerDelegate {
         @Binding var url: URL?
+        var dismiss: () -> Void
         
-        init(url: Binding<URL?>) {
+        init(url: Binding<URL?>, dismiss: @escaping () -> Void) {
             _url = url
+            self.dismiss = dismiss
         }
         
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
             url = urls.first
+        }
+        
+        func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+            dismiss()
         }
     }
     
@@ -49,8 +57,4 @@ struct DocumentPickerViewController: UIViewControllerRepresentable {
 enum UIDocumentPickerType {
     case create
     case browse
-}
-
-#Preview {
-    DocumentPickerViewController(url: .constant(URL(string: "")), type: .browse)
 }

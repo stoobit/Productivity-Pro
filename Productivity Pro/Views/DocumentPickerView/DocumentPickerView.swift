@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct DocumentPickerView: View {
-    
-    @State var url: URL?
-    @State var showNote: Bool = false
-    
     var body: some View {
         NavigationStack {
             List {
+                NavigationLink(destination: {
+                    
+                }) {
+                    Label("Notiz erstellen", systemImage: "plus")
+                        .foregroundStyle(Color.accentColor)
+                }
+                .listRowBackground(
+                    Rectangle()
+                        .foregroundStyle(Color.accentColor.quaternary)
+                )
+                .frame(height: 30)
+                
+                NavigationLink(destination: {
+                    DocumentBrowsingView()
+                }) {
+                    Label("Notizen durchsuchen", systemImage: "magnifyingglass")
+                        .foregroundStyle(Color.accentColor)
+                }
+                .listRowBackground(
+                    Rectangle()
+                        .foregroundStyle(Color.accentColor.quaternary)
+                )
+                .frame(height: 30)
+                
                 Section("Angepinnt") {
                     Label("Hausaufgaben", systemImage: "pin")
                         .frame(height: 30)
