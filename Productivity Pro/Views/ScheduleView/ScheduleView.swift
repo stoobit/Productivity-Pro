@@ -36,43 +36,80 @@ struct ScheduleView: View {
         value: ScheduleDay(id: "Freitag")
     )
     
-    var size: CGSize
-    var width: CGFloat {
-        if size.width > size.height {
-            return size.width
-        } else {
-            return size.height
-        }
-    }
-    
     var body: some View {
         ZStack {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
+        
+            ViewThatFits(in: .horizontal) {
+                StaticView()
+                FluidView()
+            }
+        }
+    }
+    
+    @ViewBuilder func FluidView() -> some View {
+        ScrollView(.vertical) {
             
-            ScrollView {
-                HStack(alignment: .top) {
+            ScrollView(.horizontal) {
+                LazyHStack(alignment: .top, spacing: 0) {
                     ScheduleColumn(
                         isEditing: $isEditing, day: $Montag.value
                     )
+                    .padding(.horizontal)
+                    .containerRelativeFrame(.horizontal)
                     ScheduleColumn(
                         isEditing: $isEditing, day: $Dienstag.value
                     )
+                    .padding(.horizontal)
+                    .containerRelativeFrame(.horizontal)
                     ScheduleColumn(
                         isEditing: $isEditing, day: $Mittwoch.value
                     )
+                    .padding(.horizontal)
+                    .containerRelativeFrame(.horizontal)
                     ScheduleColumn(
                         isEditing: $isEditing, day: $Donnerstag.value
                     )
+                    .padding(.horizontal)
+                    .containerRelativeFrame(.horizontal)
                     ScheduleColumn(
                         isEditing: $isEditing, day: $Freitag.value
                     )
+                    .padding(.horizontal)
+                    .containerRelativeFrame(.horizontal)
                 }
+                .scrollTargetLayout()
             }
-            .padding(.horizontal)
-            .scrollIndicators(.never)
+            .scrollTargetBehavior(.paging)
+            .safeAreaPadding(.horizontal, 0)
             
         }
+        .scrollIndicators(.never)
+    }
+    
+    @ViewBuilder func StaticView() -> some View {
+        ScrollView(.vertical) {
+            HStack(alignment: .top) {
+                ScheduleColumn(
+                    isEditing: $isEditing, day: $Montag.value
+                )
+                ScheduleColumn(
+                    isEditing: $isEditing, day: $Dienstag.value
+                )
+                ScheduleColumn(
+                    isEditing: $isEditing, day: $Mittwoch.value
+                )
+                ScheduleColumn(
+                    isEditing: $isEditing, day: $Donnerstag.value
+                )
+                ScheduleColumn(
+                    isEditing: $isEditing, day: $Freitag.value
+                )
+            }
+        }
+        .padding(.horizontal)
+        .scrollIndicators(.never)
     }
 }
 

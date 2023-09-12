@@ -20,7 +20,8 @@ struct ScheduleColumn: View {
     var body: some View {
         LazyVStack(alignment: .leading) {
             Text(day.id)
-                .font(.title3.bold())
+                .fontWeight(.bold)
+                .lineLimit(1)
                 .padding(.horizontal)
                 .padding(.vertical, 10)
             
@@ -29,16 +30,23 @@ struct ScheduleColumn: View {
                     .transition(.scale)
             }
             
-            if isEditing {
-                Button(action: { addSubject.toggle() }) {
-                    Icon(for: Subject(
-                        title: "Fach",
-                        icon: "plus",
-                        color: Color.secondary.rawValue
-                    ))
+            ZStack {
+                Text("")
+                    .frame(height: 35)
+                    .padding(.vertical, 12)
+                
+                if isEditing {
+                    Button(action: { addSubject.toggle() }) {
+                        Icon(for: Subject(
+                            title: "Fach",
+                            icon: "plus",
+                            color: Color.secondary.rawValue
+                        ))
+                    }
+                    .transition(.scale)
                 }
-                .transition(.scale)
             }
+            .padding(.bottom, 15)
             
         }
         .animation(.spring, value: isEditing)
@@ -60,24 +68,29 @@ struct ScheduleColumn: View {
     
     @ViewBuilder func Icon(for subject: Subject) -> some View {
         HStack {
-            Image(systemName: subject.icon)
-                .foregroundStyle(.white)
-                .background {
-                    Circle()
-                        .frame(width: 40, height: 40)
-                        .foregroundStyle(
-                            Color(rawValue: subject.color)
-                        )
-                }
-                .frame(width: 40, height: 40)
+            if isEditing == false || subject.icon == "plus" {
+                Image(systemName: subject.icon)
+                    .foregroundStyle(.white)
+                    .background {
+                        Circle()
+                            .frame(width: 35, height: 35)
+                            .foregroundStyle(
+                                Color(rawValue: subject.color)
+                            )
+                    }
+                    .frame(width: 35, height: 35)
+                    .transition(.scale(0, anchor: .leading))
+            }
             
             Text(subject.title)
+                .truncationMode(.middle)
+                .allowsTightening(true)
                 .foregroundStyle(Color.primary)
+                .frame(height: 35)
                 .frame(
                     maxWidth: .infinity,
                     alignment: .leading
                 )
-                .padding(.leading, 7)
             
             Spacer()
             
@@ -101,11 +114,12 @@ struct ScheduleColumn: View {
                         )
                 }
                 .transition(.scale)
+                .padding(.trailing, 10)
                 
             }
         }
         .padding(.vertical, 12)
-        .padding(.horizontal, 12)
+        .padding(.leading, 10)
         .background {
             Color(UIColor.secondarySystemGroupedBackground)
                 .clipShape(

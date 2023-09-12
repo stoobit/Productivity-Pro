@@ -42,6 +42,7 @@ struct ScheduleAddSubject: View {
                                 
                                 Text(subject.title)
                                     .padding(.leading, 7)
+                                    .foregroundStyle(Color.primary)
                             }
                         }
                         .tag(subject)

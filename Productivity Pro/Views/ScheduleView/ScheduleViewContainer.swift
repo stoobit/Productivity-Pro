@@ -12,24 +12,16 @@ struct ScheduleViewContainer: View {
     @State var isEditing: Bool = false
     
     var body: some View {
-        GeometryReader { proxy in
-            NavigationStack {
-                ScheduleView(
-                    isEditing: $isEditing, size: proxy.size
-                )
-                .navigationTitle("Stundenplan")
-                .toolbar {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
-                            isEditing.toggle()
-                        }
+        NavigationStack {
+            ScheduleView(isEditing: $isEditing)
+            .navigationTitle("Stundenplan")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
+                        isEditing.toggle()
                     }
                 }
             }
-            .position(
-                x: proxy.size.width / 2,
-                y: proxy.size.height / 2
-            )
         }
     }
 }
