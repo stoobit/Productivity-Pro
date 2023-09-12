@@ -63,6 +63,7 @@
 		BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93E42AAF580800C3AED6 /* ScheduleColumn.swift */; };
 		BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93EB2AAF5F5A00C3AED6 /* ScheduleDayModel.swift */; };
 		BB4A93F02AAF8EB200C3AED6 /* ScheduleAddSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93EF2AAF8EB200C3AED6 /* ScheduleAddSubject.swift */; };
+		BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93F12AB09FFB00C3AED6 /* HomeworkView.swift */; };
 		BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */; };
 		BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */; };
 		BB4CDD4528D3C668009A409F /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4428D3C668009A409F /* DocumentView.swift */; };
@@ -246,6 +247,7 @@
 		BB4A93E42AAF580800C3AED6 /* ScheduleColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColumn.swift; sourceTree = "<group>"; };
 		BB4A93EB2AAF5F5A00C3AED6 /* ScheduleDayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDayModel.swift; sourceTree = "<group>"; };
 		BB4A93EF2AAF8EB200C3AED6 /* ScheduleAddSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddSubject.swift; sourceTree = "<group>"; };
+		BB4A93F12AB09FFB00C3AED6 /* HomeworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkView.swift; sourceTree = "<group>"; };
 		BB4CDD3D28D3C668009A409F /* Productivity Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_ProApp.swift; sourceTree = "<group>"; };
 		BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityProDocument.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 		BB4A93DF2AAF557B00C3AED6 /* HomeworkView */ = {
 			isa = PBXGroup;
 			children = (
+				BB4A93F12AB09FFB00C3AED6 /* HomeworkView.swift */,
 			);
 			path = HomeworkView;
 			sourceTree = "<group>";
@@ -1073,6 +1076,7 @@
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
 				BBDD12702A694EC7005E99C5 /* PPMenuView.swift in Sources */,
 				BB1DF60A2A687DB8006F85CE /* PPColorButton.swift in Sources */,
+				BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */,
 				BB7423F72A5ED7140031176A /* NewDocumentHelper.swift in Sources */,
 				BBEFC94F2A41035C00960C8D /* NoteSideActionMethods.swift in Sources */,
 				BB6701582AADEFA7001F468A /* ContentView.swift in Sources */,
