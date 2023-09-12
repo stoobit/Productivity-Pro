@@ -117,7 +117,7 @@ struct ScheduleColumn: View {
                 
             }
         }
-        .padding(.vertical, 12)
+        .padding(.vertical, 10)
         .padding(.leading, 10)
         .background {
             Color(UIColor.secondarySystemGroupedBackground)

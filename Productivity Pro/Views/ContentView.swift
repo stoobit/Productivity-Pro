@@ -35,7 +35,7 @@ struct ContentView: View {
                     Label("Stundenplan", systemImage: "calendar")
                 }
             
-            Text("")
+            HomeworkView()
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(3)
                 .tabItem {
