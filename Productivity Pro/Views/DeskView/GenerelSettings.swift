@@ -78,6 +78,7 @@ struct GenerelSettings: View {
                                     .padding(.leading)
                             }
                         }
+                        .frame(height: 30)
                         .onChange(of: sizeSetter) {
                             if sizeSetter < 1 {
                                 sizeSetter = 1
@@ -99,6 +100,7 @@ struct GenerelSettings: View {
                 }
                 
             }
+            .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Allgemein")
             .navigationBarTitleDisplayMode(.large)
         }

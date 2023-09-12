@@ -35,12 +35,14 @@ struct ContentView: View {
                     Label("Stundenplan", systemImage: "calendar")
                 }
             
+            /*
             HomeworkView()
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(3)
                 .tabItem {
                     Label("Hausaufgaben", systemImage: "house")
                 }
+             */
             
             LibraryView()
                 .toolbarBackground(.visible, for: .tabBar)

@@ -20,14 +20,14 @@ struct DeskView: View {
                 }) {
                     Label("Premium", systemImage: "crown.fill")
                 }
-                .padding(.vertical, 8)
+                .frame(height: 30)
                 
                 NavigationLink(destination: {
                     
                 }) {
                     Label("Was ist neu?", systemImage: "plus.app.fill")
                 }
-                .padding(.vertical, 8)
+                .frame(height: 30)
                 
                 Settings()
                 LinkView()
@@ -52,9 +52,10 @@ struct DeskView: View {
                     }
                 }
                 .foregroundStyle(.primary)
-                .padding(.vertical, 8)
+                .frame(height: 30)
                 
             }
+            .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Schreibtisch")
         }
     }

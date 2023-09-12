@@ -16,21 +16,21 @@ extension DeskView {
             }) {
                 Label("Allgemein", systemImage: "gearshape")
             }
-            .padding(.vertical, 8)
+            .frame(height: 30)
             
             NavigationLink(destination: {
                 AppIconSettings()
             }) {
                 Label("App Icon", systemImage: "app.gift")
             }
-            .padding(.vertical, 8)
+            .frame(height: 30)
             
             NavigationLink(destination: {
                 SubjectSettings()
             }) {
                 Label("Fächer", systemImage: "tray.2")
             }
-            .padding(.vertical, 8)
+            .frame(height: 30)
         }
     }
     
@@ -43,7 +43,7 @@ extension DeskView {
                 Label("stoobit", systemImage: "globe")
                     .foregroundColor(Color("LogoColor"))
             }
-            .padding(.vertical, 8)
+            .frame(height: 30)
             
             Link(destination: URL(
                 string: "https://www.instagram.com/productivitypro_app/"
@@ -57,7 +57,7 @@ extension DeskView {
                         )
                     )
             }
-            .padding(.vertical, 8)
+            .frame(height: 30)
             
             Link(destination: URL(
                 string: "https://twitter.com/stoobitofficial"
@@ -65,7 +65,7 @@ extension DeskView {
                 Label("X", systemImage: "x.square.fill")
                     .foregroundStyle(Color.primary)
             }
-            .padding(.vertical, 8)
+            .frame(height: 30)
         }
         
         Section {
@@ -75,7 +75,7 @@ extension DeskView {
              
                 Label("Email", systemImage: "envelope")
             }
-            .padding(.vertical, 8)
+            .frame(height: 30)
             
             Link(destination: URL(
                 string: "imessage://contact.stoobit@aol.com"
@@ -83,7 +83,7 @@ extension DeskView {
                 Label("iMessage", systemImage: "message")
                     .foregroundStyle(.green)
             }
-            .padding(.vertical, 8)
+            .frame(height: 30)
         }
     }
 

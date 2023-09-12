@@ -576,8 +576,8 @@
 		BB4CDD5B28D3D564009A409F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
 				BB9DF5B328E067D600AC988D /* DocumentModels */,
+				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
 				BB4A93D52AAF3BED00C3AED6 /* AppStorageModels */,
 			);
 			path = Models;
