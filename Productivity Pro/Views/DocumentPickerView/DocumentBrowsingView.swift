@@ -9,25 +9,25 @@ import SwiftUI
 
 struct DocumentBrowsingView: View {
     
-    @Environment(\.dismiss) var dismiss
-    
     @State var url: URL?
-    @State var showActionSheet: Bool = false
+    @State var showPicker: Bool = false
     
     var body: some View {
-//        DocumentPickerViewController(url: $url, type: .browse) { dismiss() }
-//            .ignoresSafeArea(edges: .all)
-//            .navigationBarBackButtonHidden()
-//            .onChange(of: url) {
-//                if url != nil { showActionSheet = true }
-//                print("change")
-//            }
-//            .sheet(isPresented: $showActionSheet) {
-//                
-//            }
         
-        Text("")
+        Button(action: {
+            showPicker.toggle()
+        }) {
+            Label("Notizen durchsuchen", systemImage: "magnifyingglass")
+                .foregroundStyle(Color.accentColor)
+        }
+        .fileImporter(
+            isPresented: $showPicker,
+            allowedContentTypes: [.pro],
+            allowsMultipleSelection: false
+        ) { result in
             
+        }
+        
     }
 }
 

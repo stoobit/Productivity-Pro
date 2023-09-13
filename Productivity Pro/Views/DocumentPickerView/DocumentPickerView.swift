@@ -11,29 +11,12 @@ struct DocumentPickerView: View {
     var body: some View {
         NavigationStack {
             List {
-                Button(action: {
-                    
-                }) {
-                    Label("Notiz erstellen", systemImage: "plus")
-                        .foregroundStyle(Color.accentColor)
-                }
-                .listRowBackground(
-                    Rectangle()
-                        .foregroundStyle(Color.accentColor.quaternary)
-                )
-                .frame(height: 30)
-                
-                Button(action: {
-                    
-                }) {
-                    Label("Notizen durchsuchen", systemImage: "magnifyingglass")
-                        .foregroundStyle(Color.accentColor)
-                }
-                .listRowBackground(
-                    Rectangle()
-                        .foregroundStyle(Color.accentColor.quaternary)
-                )
-                .frame(height: 30)
+                DocumentBrowsingView()
+                    .listRowBackground(
+                        Rectangle()
+                            .foregroundStyle(Color.accentColor.quaternary)
+                    )
+                    .frame(height: 30)
                 
                 Section("Angepinnt") {
                     Label("Hausaufgaben", systemImage: "pin")
