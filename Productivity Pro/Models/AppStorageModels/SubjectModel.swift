@@ -14,4 +14,5 @@ struct Subject: Identifiable, Codable, Equatable, Hashable {
     var icon: String = ""
     
     var color: String = ""
+    var room: String = ""
 }

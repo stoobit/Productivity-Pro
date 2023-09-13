@@ -18,16 +18,34 @@ struct ScheduleAddSubject: View {
     let isAdd: Bool
     @Binding var oldSubject: Subject
     
+    @State var text: String = ""
+    
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    TextField("Raum", text: $text)
+                        .frame(height: 30)
+                        .onAppear {
+                            if isAdd == false {
+                                text = oldSubject.room
+                            }
+                        }
+                }
+                
                 List {
                     ForEach(subjects.value) { subject in
                         Button(action: { 
                             if isAdd {
-                                add(subject)
+                                var new = subject
+                                new.room = text
+                                
+                                add(new)
                             } else {
-                                edit(subject)
+                                var new = subject
+                                new.room = text
+                                
+                                edit(new)
                             }
                         }) {
                             HStack {
