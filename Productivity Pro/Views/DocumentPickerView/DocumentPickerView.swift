@@ -11,12 +11,14 @@ struct DocumentPickerView: View {
     var body: some View {
         NavigationStack {
             List {
-                DocumentBrowsingView()
-                    .listRowBackground(
-                        Rectangle()
-                            .foregroundStyle(Color.accentColor.quaternary)
-                    )
-                    .frame(height: 30)
+                Section {
+                    DocumentCreationView()
+                    DocumentBrowsingView()
+                }
+                .listRowBackground(
+                    Rectangle()
+                        .foregroundStyle(Color.accentColor.quaternary)
+                )
                 
                 Section("Angepinnt") {
                     Label("Hausaufgaben", systemImage: "pin")

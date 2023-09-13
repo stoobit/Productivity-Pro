@@ -9,26 +9,51 @@ import SwiftUI
 
 struct DocumentBrowsingView: View {
     
-    @State var url: URL?
-    @State var showPicker: Bool = false
+    @State var isBrowsing: Bool = false
+    @State var isDocument: Bool = false
+    @State var isFailure: Bool = false
+    
+    @State var url: URL = URL(string: "https://www.stoobit.com")!
     
     var body: some View {
         
-        Button(action: {
-            showPicker.toggle()
-        }) {
+        Button(action: { isBrowsing.toggle() }) {
             Label("Notizen durchsuchen", systemImage: "magnifyingglass")
                 .foregroundStyle(Color.accentColor)
         }
+        .frame(height: 30)
         .fileImporter(
-            isPresented: $showPicker,
+            isPresented: $isBrowsing,
             allowedContentTypes: [.pro],
             allowsMultipleSelection: false
-        ) { result in
+        ) { 
+            result in importFile(with: result)
+        }
+        .alert("Ein Fehler ist aufgetreten.", isPresented: $isFailure) {
+            Button("Ok", role: .cancel) { isFailure = false }
+        }
+        .fullScreenCover(isPresented: $isDocument) {
             
         }
         
     }
+    
+    func importFile(with result: Result<[URL], any Error>) {
+        switch result {
+        case .success(let urls):
+            
+            if let document = urls.first {
+                url = document
+                isDocument.toggle()
+            } else {
+                isFailure.toggle()
+            }
+            
+        case .failure:
+            isFailure.toggle()
+        }
+    }
+    
 }
 
 #Preview {
