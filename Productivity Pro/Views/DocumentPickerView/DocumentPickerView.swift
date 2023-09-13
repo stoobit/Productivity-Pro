@@ -11,7 +11,7 @@ struct DocumentPickerView: View {
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink(destination: {
+                Button(action: {
                     
                 }) {
                     Label("Notiz erstellen", systemImage: "plus")
@@ -23,8 +23,8 @@ struct DocumentPickerView: View {
                 )
                 .frame(height: 30)
                 
-                NavigationLink(destination: {
-                    DocumentBrowsingView()
+                Button(action: {
+                    
                 }) {
                     Label("Notizen durchsuchen", systemImage: "magnifyingglass")
                         .foregroundStyle(Color.accentColor)

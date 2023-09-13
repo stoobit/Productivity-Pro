@@ -15,16 +15,18 @@ struct DocumentBrowsingView: View {
     @State var showActionSheet: Bool = false
     
     var body: some View {
-        DocumentPickerViewController(url: $url, type: .browse) { dismiss() }
-            .ignoresSafeArea(edges: .all)
-            .navigationBarBackButtonHidden()
-            .onChange(of: url) {
-                if url != nil { showActionSheet = true }
-                print("change")
-            }
-            .sheet(isPresented: $showActionSheet) {
-                
-            }
+//        DocumentPickerViewController(url: $url, type: .browse) { dismiss() }
+//            .ignoresSafeArea(edges: .all)
+//            .navigationBarBackButtonHidden()
+//            .onChange(of: url) {
+//                if url != nil { showActionSheet = true }
+//                print("change")
+//            }
+//            .sheet(isPresented: $showActionSheet) {
+//                
+//            }
+        
+        Text("")
             
     }
 }
