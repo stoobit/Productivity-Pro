@@ -12,7 +12,7 @@ struct PPControlBar: View {
     
     @Environment(\.undoManager) private var undoManager
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @State var pasteDisabled: Bool = false
     
     @AppStorage("defaultFont")

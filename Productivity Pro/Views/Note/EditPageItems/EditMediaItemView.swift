@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditMediaItemView: View {
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
@@ -18,7 +18,7 @@ struct EditMediaItemView: View {
     @State var isStyleView: Bool = true
     
     var itemIndex: Int? {
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(where: {
             $0.id == toolManager.selectedItem?.id

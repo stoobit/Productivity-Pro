@@ -12,7 +12,7 @@ import PDFKit
 struct NoteView: View {
     
     @Environment(\.undoManager) var undoManager
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
@@ -34,12 +34,12 @@ struct NoteView: View {
                 Color(UIColor.secondarySystemBackground).ignoresSafeArea(edges: .bottom)
                 
                 NoteNextPage(
-                    pages: $document.document.note.pages,
+                    pages: $document.note.pages,
                     toolManager: toolManager
                 )
                 
                 TabView(selection: $toolManager.selectedTab) {
-                    ForEach($document.document.note.pages) { $page in
+                    ForEach($document.note.pages) { $page in
                         ScrollViewWrapper(
                             size: proxy.size,
                             document: $document,
@@ -107,7 +107,7 @@ struct NoteView: View {
         .onChange(of: toolManager.pickedImage) { _ in
             pickedImageDidChange()
         }
-        .onChange(of: document.document.note.pages.count) { _ in pageIndicator()
+        .onChange(of: document.note.pages.count) { _ in pageIndicator()
             undoManager?.removeAllActions()
         }
         .onAppear { noteDidAppear() }

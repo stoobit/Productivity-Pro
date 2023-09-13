@@ -12,7 +12,7 @@ struct EditMarkdownView: View {
     @Environment(\.horizontalSizeClass) var hsc
     @FocusState var isFocused: Bool
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
@@ -31,13 +31,13 @@ struct EditMarkdownView: View {
                     isFocused = true
                 }
                 .onChange(of: text) { value in
-                    let index = document.document.note.pages[
+                    let index = document.note.pages[
                         toolManager.selectedPage
                     ].items.firstIndex(where: {
                         $0.id == toolManager.selectedItem!.id
                     })!
                     
-                    document.document.note.pages[
+                    document.note.pages[
                         toolManager.selectedPage
                     ].items[index].textField!.text = value
                     

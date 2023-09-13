@@ -11,7 +11,7 @@ struct OverviewRow: View {
     
     @Environment(\.undoManager) var undoManager
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

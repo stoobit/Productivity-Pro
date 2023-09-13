@@ -45,7 +45,7 @@ extension NoteSideActionToolbar {
             }
             
             Button(action: {
-                toolManager.selectedItem = document.document.note.pages[
+                toolManager.selectedItem = document.note.pages[
                     toolManager.selectedPage
                 ].items.first(where: { $0.id == toolManager.selectedItem?.id })
                 subviewManager.showStylePopover.toggle()

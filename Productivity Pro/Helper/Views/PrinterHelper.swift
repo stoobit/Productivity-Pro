@@ -12,7 +12,7 @@ import PDFKit
 struct PrinterView: UIViewControllerRepresentable
 {
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @StateObject var subviewManager: SubviewManager
     
     var url: URL

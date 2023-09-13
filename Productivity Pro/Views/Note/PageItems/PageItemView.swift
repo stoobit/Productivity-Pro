@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PageItemView: View {
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @Binding var page: Page
     @Binding var offset: CGFloat
     

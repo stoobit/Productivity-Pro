@@ -10,7 +10,7 @@ import SwiftUI
 extension PPControlBar {
     
     func copyItem() {
-        toolManager.selectedItem = document.document.note.pages[
+        toolManager.selectedItem = document.note.pages[
             toolManager.selectedPage
         ].items.first(where: { $0.id == toolManager.selectedItem?.id })
         
@@ -60,7 +60,7 @@ extension PPControlBar {
                             
                             pasteItem.isLocked = false
                             
-                            document.document.note.pages[
+                            document.note.pages[
                                 toolManager.selectedPage
                             ].items.append(pasteItem)
                             
@@ -79,7 +79,7 @@ extension PPControlBar {
     func duplicateItem() {
         toolManager.copyPastePasser = .none
         
-        toolManager.selectedItem = document.document.note.pages[
+        toolManager.selectedItem = document.note.pages[
             toolManager.selectedPage
         ].items.first(where: { $0.id == toolManager.selectedItem?.id })
         
@@ -92,7 +92,7 @@ extension PPControlBar {
             
             newItem.isLocked = false
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items.append(newItem)
             
@@ -110,13 +110,13 @@ extension PPControlBar {
     
     func deleteItem() {
         
-        let index = document.document.note.pages[
+        let index = document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(where: {
             $0.id == toolManager.selectedItem?.id
         })!
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.remove(at: index)
     
@@ -157,7 +157,7 @@ extension PPControlBar {
             
             newItem.textField = textField
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items.append(newItem)
             toolManager.selectedItem = newItem
@@ -183,7 +183,7 @@ extension PPControlBar {
         let media = MediaModel(media: image.pngData() ?? Data())
         newItem.media = media
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.append(newItem)
         toolManager.selectedItem = newItem
@@ -191,7 +191,7 @@ extension PPControlBar {
     
     func getNIColor() -> Data {
         var color: Color = .black
-        let page = document.document.note.pages[
+        let page = document.note.pages[
             toolManager.selectedPage
         ]
         

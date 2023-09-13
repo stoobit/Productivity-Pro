@@ -12,7 +12,7 @@ import PDFKit
 struct NoteSheetHelper: ViewModifier {
     
     @Environment(\.undoManager) var undoManager
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager

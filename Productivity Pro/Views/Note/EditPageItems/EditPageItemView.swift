@@ -10,7 +10,7 @@ import SwiftUI
 struct EditPageItemView: View {
     
     var hsc: UserInterfaceSizeClass?
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

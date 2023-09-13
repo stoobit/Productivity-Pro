@@ -17,7 +17,7 @@ struct ShareSheet: View {
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     let type: ShareType
     
     var body: some View {

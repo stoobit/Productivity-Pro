@@ -79,7 +79,7 @@ extension PageView {
         
         newItem.textField = textField
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.append(newItem)
         toolManager.selectedItem = newItem
@@ -103,7 +103,7 @@ extension PageView {
             let media = MediaModel(media: image.pngData() ?? Data())
             newItem.media = media
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items.append(newItem)
             toolManager.selectedItem = newItem
@@ -111,7 +111,7 @@ extension PageView {
     
     func getNIColor() -> Data {
         var color: Color = .black
-        let page = document.document.note.pages[
+        let page = document.note.pages[
             toolManager.selectedPage
         ]
         

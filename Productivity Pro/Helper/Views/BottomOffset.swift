@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct BottomPadding: ViewModifier {
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @Binding var page: Page
     
     func body(content: Content) -> some View {
-        if document.document.note.pages.last! == page {
+        if document.note.pages.last! == page {
             content
         } else {
             content

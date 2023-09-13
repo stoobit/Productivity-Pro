@@ -10,7 +10,7 @@ import SwiftUI
 struct PPToolbar: View {
     @Environment(\.horizontalSizeClass) var hsc
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @State var pasteDisabled: Bool = false
     
     @StateObject var toolManager: ToolManager
@@ -33,8 +33,8 @@ struct PPToolbar: View {
     }
     
     var ppDrawingOffset: CGFloat {
-        if document.document.note.pages.indices.contains(toolManager.selectedPage) {
-            let type = document.document.note.pages[
+        if document.note.pages.indices.contains(toolManager.selectedPage) {
+            let type = document.note.pages[
                 toolManager.selectedPage
             ].canvasType
             

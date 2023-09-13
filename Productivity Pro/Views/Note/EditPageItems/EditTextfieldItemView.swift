@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditTextfieldItemView: View {
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
@@ -18,7 +18,7 @@ struct EditTextfieldItemView: View {
     @State var isStyleView: Bool = true
     
     var itemIndex: Int? {
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(where: {
             $0.id == toolManager.selectedItem?.id
@@ -196,7 +196,7 @@ struct EditTextfieldItemView: View {
                         Spacer()
                         Button(action: { center() }) {
                             Image(
-                                systemName: document.document.note.pages[
+                                systemName: document.note.pages[
                                     toolManager.selectedPage
                                 ].isPortrait ? "rectangle.portrait.center.inset.filled" : "rectangle.center.inset.filled"
                             )

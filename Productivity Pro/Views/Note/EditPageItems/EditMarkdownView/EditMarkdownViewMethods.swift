@@ -11,13 +11,13 @@ import SwiftyMarkdown
 extension EditMarkdownView {
  
     func textDidChange(_ value: String) {
-        let index = document.document.note.pages[
+        let index = document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(where: {
             $0.id == toolManager.selectedItem!.id
         })!
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items[index].textField!.text = value
     }

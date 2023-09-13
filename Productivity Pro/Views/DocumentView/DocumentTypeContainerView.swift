@@ -9,12 +9,8 @@ import SwiftUI
 
 struct DocumentTypeContainerView: View {
     
-    @AppStorage("afterUpdate 0.4.2")
-    private var firstOpenAU: Bool = true
+    @Binding var document: Document
     
-    @State var whatIsNew: Bool = false
-    
-    @Binding var document: ProductivityProDocument
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
@@ -26,7 +22,7 @@ struct DocumentTypeContainerView: View {
             Color(UIColor.secondarySystemBackground)
                 .ignoresSafeArea(edges: .bottom)
             
-            if document.document.documentType == .note {
+            if document.documentType == .note {
                 
                 NoteView(
                     document: $document,
@@ -34,11 +30,8 @@ struct DocumentTypeContainerView: View {
                     toolManager: toolManager, url: url
                 )
                 .edgesIgnoringSafeArea(.bottom)
-                .sheet(isPresented: $whatIsNew) {
-                    WhatIsNew(isPresented: $whatIsNew)
-                }
                 
-            } else if document.document.documentType == .realityNote {
+            } else if document.documentType == .realityNote {
                 
             } else {
                 CreateDoc()
@@ -48,25 +41,14 @@ struct DocumentTypeContainerView: View {
         .toolbarRole(.editor)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .onAppear {
-            if firstOpenAU && document.document.documentType != .none {
-                whatIsNew = true
-                firstOpenAU = false
-            }
-        }
         
     }
     
     @ViewBuilder func CreateDoc() -> some View {
         Spacer()
-            .sheet(isPresented: $subviewManager.createDocument, onDismiss: {
-                if firstOpenAU {
-                    whatIsNew = true
-                    firstOpenAU = false
-                }
-            }) {
+            .sheet(isPresented: $subviewManager.createDocument) {
                 NewDocumentView(
-                    document: $document.document,
+                    document: $document,
                     subviewManager: subviewManager,
                     toolManager: toolManager
                 )

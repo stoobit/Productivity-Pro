@@ -12,7 +12,7 @@ struct NoteSideActionToolbar: ToolbarContent {
     @Environment(\.undoManager) var undoManager
     @Environment(\.horizontalSizeClass) var hsc
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
@@ -65,7 +65,7 @@ struct NoteSideActionToolbar: ToolbarContent {
                         Label("Delete Page", systemImage: "trash")
                     }
                     .disabled(
-                        document.document.note.pages.count == 1
+                        document.note.pages.count == 1
                     )
                     
                 }) {

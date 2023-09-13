@@ -20,13 +20,5 @@ struct Productivity_ProApp: App {
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(
-        _ app: UIApplication, open inputURL: URL,
-        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
-    ) -> Bool {
-          
-        print(inputURL)
-        return true
-        
-    }
+
 }

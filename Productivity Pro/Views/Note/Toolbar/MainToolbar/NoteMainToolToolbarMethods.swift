@@ -29,7 +29,7 @@ extension NoteMainToolToolbar {
         let shapeModel = ShapeModel(type: type, fillColor: getNIColor())
         newItem.shape = shapeModel
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.append(newItem)
         toolManager.selectedItem = newItem
@@ -57,7 +57,7 @@ extension NoteMainToolToolbar {
         
         newItem.textField = textField
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.append(newItem)
         toolManager.selectedItem = newItem
@@ -65,7 +65,7 @@ extension NoteMainToolToolbar {
     
     func getNIColor() -> Data {
         var color: Color = .black
-        let page = document.document.note.pages[
+        let page = document.note.pages[
             toolManager.selectedPage
         ]
         

@@ -12,7 +12,7 @@ import PDFKit
 extension NoteView {
     
     func loadFirst() {
-        guard let page = document.document.note.pages.first else { return }
+        guard let page = document.note.pages.first else { return }
         if page.type == .pdf {
             
             guard let data = page.backgroundMedia else {
@@ -33,7 +33,7 @@ extension NoteView {
     }
     
     func loadMedia() {
-        for page in Array(document.document.note.pages.dropFirst()) {
+        for page in Array(document.note.pages.dropFirst()) {
             if page.type == .pdf {
                 
                 guard let data = page.backgroundMedia else {
@@ -57,7 +57,7 @@ extension NoteView {
     func isViewVisible(page: Page) -> Bool {
         var isVisible: Bool = false
         
-        let index = document.document.note.pages.firstIndex(of: page)!
+        let index = document.note.pages.firstIndex(of: page)!
         
         if toolManager.selectedPage == index {
             isVisible = true
@@ -79,8 +79,8 @@ extension NoteView {
         UITabBar.appearance().isHidden = true
         loadFirst()
         
-        toolManager.selectedTab = document.document.note.pages.first!.id
-        toolManager.selectedPage = document.document.note.pages.firstIndex(
+        toolManager.selectedTab = document.note.pages.first!.id
+        toolManager.selectedPage = document.note.pages.firstIndex(
             where: { $0.id == toolManager.selectedTab }
         )!
         
@@ -88,13 +88,13 @@ extension NoteView {
     }
     
     func selectedPageDidChange(index page: Int) {
-        toolManager.selectedTab = document.document.note.pages[
+        toolManager.selectedTab = document.note.pages[
             page
         ].id
     }
     
     func selectedTabDidChange(_ tab: UUID, size: CGSize) {
-        toolManager.selectedPage = document.document.note.pages.firstIndex(where: {
+        toolManager.selectedPage = document.note.pages.firstIndex(where: {
             $0.id == tab
         }) ?? 0
         
@@ -109,7 +109,7 @@ extension NoteView {
     
     func fixScrollViewBug() {
         Task {
-            document.document.note.pages.append(
+            document.note.pages.append(
                 Page(
                     backgroundColor: "pagewhite",
                     backgroundTemplate: "blank",
@@ -118,7 +118,7 @@ extension NoteView {
             )
             
             try? await Task.sleep(nanoseconds: 50000)
-            document.document.note.pages.removeLast()
+            document.note.pages.removeLast()
             try? await Task.sleep(nanoseconds: 50000)
             undoManager?.removeAllActions()
         }
@@ -142,7 +142,7 @@ extension NoteView {
         let media = MediaModel(media: image.pngData() ?? Data())
         newItem.media = media
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.append(newItem)
         
@@ -153,11 +153,11 @@ extension NoteView {
     func deletePage() {
         withAnimation {
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items.removeAll()
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].type = .template
             
@@ -166,17 +166,17 @@ extension NoteView {
             let seconds = 0.1
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 
-                if toolManager.selectedTab == document.document.note.pages.last?.id {
+                if toolManager.selectedTab == document.note.pages.last?.id {
                     
-                    let newSelection = document.document.note.pages[toolManager.selectedPage - 1].id
-                    document.document.note.pages.remove(at: toolManager.selectedPage)
+                    let newSelection = document.note.pages[toolManager.selectedPage - 1].id
+                    document.note.pages.remove(at: toolManager.selectedPage)
                     
                     toolManager.selectedTab = newSelection
                     
                 } else {
                     
-                    let newSelection = document.document.note.pages[toolManager.selectedPage + 1].id
-                    document.document.note.pages.remove(at: toolManager.selectedPage)
+                    let newSelection = document.note.pages[toolManager.selectedPage + 1].id
+                    document.note.pages.remove(at: toolManager.selectedPage)
                     
                     toolManager.selectedTab = newSelection
                     
@@ -229,7 +229,7 @@ extension NoteView {
     func getScale(_ index: Int, size: CGSize) -> CGFloat {
         var scale: CGFloat = 0
         
-        let page = document.document.note.pages[index]
+        let page = document.note.pages[index]
         
         if page.isPortrait {
             scale = size.width / shortSide

@@ -12,8 +12,8 @@ extension NoteSideActionToolbar {
     func templateChangeDisabled() -> Bool {
         var isDisabled: Bool = true
         
-        if document.document.note.pages.indices.contains(toolManager.selectedPage) {
-            if document.document.note.pages[toolManager.selectedPage].type == .template {
+        if document.note.pages.indices.contains(toolManager.selectedPage) {
+            if document.note.pages[toolManager.selectedPage].type == .template {
                 isDisabled = false
             }
         }

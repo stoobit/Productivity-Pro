@@ -13,7 +13,7 @@ struct OverviewView: View {
     @Environment(\.undoManager) var undoManager
     @Environment(\.colorScheme) var cs
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
@@ -26,15 +26,15 @@ struct OverviewView: View {
         NavigationStack {
             ScrollViewReader { proxy in
                 List {
-                    ForEach($document.document.note.pages) { $page in
+                    ForEach($document.note.pages) { $page in
                         OverviewRow(
                             document: $document,
                             toolManager: toolManager,
                             subviewManager: subviewManager,
                             page: page
                         )
-                        .moveDisabled(document.document.note.pages.count == 1)
-                        .deleteDisabled(document.document.note.pages.count == 1)
+                        .moveDisabled(document.note.pages.count == 1)
+                        .deleteDisabled(document.note.pages.count == 1)
                         .id(page.id)
                     }
                     .onMove(perform: move)

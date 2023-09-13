@@ -12,7 +12,7 @@ import PencilKit
 struct NoteToolbarTitleMenu: View {
     
     @Environment(\.horizontalSizeClass) var hsc
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
@@ -121,7 +121,7 @@ struct NoteToolbarTitleMenu: View {
         tm.scrollOffset = CGPoint(x: 0, y: 0)
         tm.zoomScale = 1
         
-        for page in document.document.note.pages {
+        for page in document.note.pages {
             
             let renderedCanvas = renderCanvas(page: page)
             var box = CGRect(

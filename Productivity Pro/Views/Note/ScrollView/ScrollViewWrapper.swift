@@ -13,7 +13,7 @@ struct ScrollViewWrapper: View {
     @Environment(\.scenePhase) var scenePhase
     @State private var offset: CGFloat = .zero
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @Binding var page: Page
     
     @StateObject var toolManager: ToolManager

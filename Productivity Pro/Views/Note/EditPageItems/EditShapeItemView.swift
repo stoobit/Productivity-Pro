@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditShapeItemView: View {
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
@@ -18,7 +18,7 @@ struct EditShapeItemView: View {
     @State var isStyleView: Bool = true
     
     var itemIndex: Int? {
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(where: {
             $0.id == toolManager.selectedItem?.id
@@ -112,7 +112,7 @@ struct EditShapeItemView: View {
             }
             
             if let index = itemIndex {
-                if document.document.note.pages[
+                if document.note.pages[
                     toolManager.selectedPage
                 ].items[index].shape?.type == .rectangle {
                     

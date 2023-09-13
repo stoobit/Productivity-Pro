@@ -30,25 +30,25 @@ extension EditTextfieldItemView {
     
     func center() {
         
-        let itemIndex = document.document.note.pages[
+        let itemIndex = document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(
             where: { $0.id == toolManager.selectedItem?.id }
         )
         
         if let index = itemIndex {
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].width = getFrame().width - 100
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].height = getFrame().height - 100
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].x = getFrame().width / 2
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].y = getFrame().height / 2
         }
@@ -56,7 +56,7 @@ extension EditTextfieldItemView {
         if let id = toolManager.selectedItem?.id {
             
             toolManager.selectedItem = nil
-            toolManager.selectedItem = document.document.note.pages[
+            toolManager.selectedItem = document.note.pages[
                 toolManager.selectedPage
             ].items.first(where: { $0.id == id })
         }
@@ -79,7 +79,7 @@ extension EditTextfieldItemView {
     }
     
     func getFrame() -> CGSize {
-        let page = document.document.note.pages[toolManager.selectedPage]
+        let page = document.note.pages[toolManager.selectedPage]
         
         var frame: CGSize = .zero
         
@@ -97,16 +97,16 @@ extension EditTextfieldItemView {
     
     func moveUp() {
         
-        let index = document.document.note.pages[
+        let index = document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(
             where: { $0.id == toolManager.selectedItem?.id }
         )!
         
-        if index + 1 != document.document.note.pages[
+        if index + 1 != document.note.pages[
             toolManager.selectedPage
         ].items.count {
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items.move(toolManager.selectedItem!, to: index + 1)
         }
@@ -114,14 +114,14 @@ extension EditTextfieldItemView {
     
     func moveDown() {
         
-        let index = document.document.note.pages[
+        let index = document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(
             where: { $0.id == toolManager.selectedItem?.id }
         )!
         
         if index != 0 {
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items.move(toolManager.selectedItem!, to: index - 1)
         }
@@ -129,36 +129,36 @@ extension EditTextfieldItemView {
     
     func moveHighest() {
         
-        let lastIndex = document.document.note.pages[
+        let lastIndex = document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(
-            where: { $0.id == document.document.note.pages[
+            where: { $0.id == document.note.pages[
                 toolManager.selectedPage
             ].items.last!.id }
         )!
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.move(toolManager.selectedItem!, to: lastIndex)
     }
     
     func moveLowest() {
         
-        let firstIndex = document.document.note.pages[
+        let firstIndex = document.note.pages[
             toolManager.selectedPage
         ].items.firstIndex(
-            where: { $0.id == document.document.note.pages[
+            where: { $0.id == document.note.pages[
                 toolManager.selectedPage
             ].items.first!.id }
         )!
         
-        document.document.note.pages[
+        document.note.pages[
             toolManager.selectedPage
         ].items.move(toolManager.selectedItem!, to: firstIndex)
     }
     
     func onAppear() {
-        let selectedItem = document.document.note.pages[
+        let selectedItem = document.note.pages[
             toolManager.selectedPage
         ].items.first(where: { $0.id == toolManager.selectedItem?.id })
         
@@ -183,43 +183,43 @@ extension EditTextfieldItemView {
     func onEditModelChange() {
         if let index = itemIndex {
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].textField?.showFill = editTextFieldModel.showFill
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].textField?.fillColor = editTextFieldModel.fillColor.toCodable()
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].textField?.showStroke = editTextFieldModel.showStroke
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].textField?.strokeColor = editTextFieldModel.strokeColor.toCodable()
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].textField?.strokeWidth = editTextFieldModel.strokeWidth
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].textField?.font = editTextFieldModel.font
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].textField?.fontSize = editTextFieldModel.fontSize
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].textField?.fontColor = editTextFieldModel.fontColor.toCodable()
             
-            document.document.note.pages[
+            document.note.pages[
                 toolManager.selectedPage
             ].items[index].isLocked = editTextFieldModel.isLocked
             
-            toolManager.selectedItem = document.document.note.pages[
+            toolManager.selectedItem = document.note.pages[
                 toolManager.selectedPage
             ].items[index]
             

@@ -11,7 +11,7 @@ import VisionKit
 
 struct AddPDFPageHelper: ViewModifier {
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager
@@ -89,7 +89,7 @@ let canvasType: CanvasType = .pencilKit
                 nil, at: toolManager.selectedPage + count
             )
             
-            document.document.note.pages.insert(
+            document.note.pages.insert(
                 newPage, at: toolManager.selectedPage + count
             )
             
@@ -139,7 +139,7 @@ let canvasType: CanvasType = .pencilKit
                 )
             }
             
-            document.document.note.pages.insert(
+            document.note.pages.insert(
                 newPage, at: toolManager.selectedPage + count
             )
             

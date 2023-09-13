@@ -3,7 +3,7 @@ import SwiftUI
 struct TextFieldItemView: View {
     
     @Environment(\.scenePhase) private var scenePhase
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @Binding var item: ItemModel
     @Binding var page: Page

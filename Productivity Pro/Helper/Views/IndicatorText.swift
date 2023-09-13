@@ -10,11 +10,11 @@ import SwiftUI
 
 struct IndicatorText: View {
     
-    let document: ProductivityProDocument
+    let document: Document
     @StateObject var toolManager: ToolManager
     
     var body: some View {
-        let total = document.document.note.pages.count
+        let total = document.note.pages.count
         let number = toolManager.selectedPage + 1
         
         HStack {

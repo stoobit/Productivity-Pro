@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DocumentView: View {
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject
     private var toolManager: ToolManager = ToolManager()

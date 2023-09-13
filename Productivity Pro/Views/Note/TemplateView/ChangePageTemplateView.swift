@@ -18,7 +18,7 @@ struct ChangePageTemplateView: View {
     @AppStorage("savedBackgroundTemplate")
     var savedBackgroundTemplate: String = ""
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @Binding var isPresented: Bool
     
     @StateObject var toolManager: ToolManager
@@ -67,15 +67,15 @@ struct ChangePageTemplateView: View {
                 }
             }
             .onAppear {
-                backgroundColor = document.document.note.pages[
+                backgroundColor = document.note.pages[
                     toolManager.selectedPage
                 ].backgroundColor
                 
-                backgroundTemplate = document.document.note.pages[
+                backgroundTemplate = document.note.pages[
                     toolManager.selectedPage
                 ].backgroundTemplate
                 
-                isPortrait = document.document.note.pages[
+                isPortrait = document.note.pages[
                     toolManager.selectedPage
                 ].isPortrait
             }
@@ -142,15 +142,15 @@ struct ChangePageTemplateView: View {
         savedIsPortrait = isPortrait
         
         
-        if document.document.note.pages.count == 1 {
-            index = document.document.note.pages.firstIndex(of: document.document.note.pages.first!)!
+        if document.note.pages.count == 1 {
+            index = document.note.pages.firstIndex(of: document.note.pages.first!)!
         } else {
             index = toolManager.selectedPage
         }
         
-        document.document.note.pages[index].backgroundColor = backgroundColor
-        document.document.note.pages[index].backgroundTemplate = backgroundTemplate
-        document.document.note.pages[index].isPortrait = isPortrait
+        document.note.pages[index].backgroundColor = backgroundColor
+        document.note.pages[index].backgroundTemplate = backgroundTemplate
+        document.note.pages[index].isPortrait = isPortrait
         
         isPresented = false
     }

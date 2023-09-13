@@ -24,7 +24,7 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
     @AppStorage("requestWasDone")
     var requestWasDone: Bool = false
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

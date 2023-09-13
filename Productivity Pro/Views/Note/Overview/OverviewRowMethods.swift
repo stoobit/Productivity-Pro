@@ -12,7 +12,7 @@ import SwiftyMarkdown
 extension OverviewRow {
     
     func pageNumber() -> String {
-        let index = document.document.note.pages.firstIndex(of: page) ?? -1
+        let index = document.note.pages.firstIndex(of: page) ?? -1
         return "Page \(index + 1)"
     }
     

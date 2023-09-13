@@ -10,7 +10,7 @@ import SwiftUI
 struct PageBackgroundScan: View, Equatable {
     @State private var renderedBackground: UIImage?
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     var page: Page
     @Binding var offset: CGFloat
     

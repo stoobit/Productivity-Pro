@@ -12,7 +12,7 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     
     var size: CGSize
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @Binding var page: Page
     
     @StateObject var toolManager: ToolManager

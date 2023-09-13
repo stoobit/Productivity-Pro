@@ -18,7 +18,7 @@ struct PageView: View {
     @AppStorage("defaultFontSize")
     var defaultFontSize: Double = 12
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @Binding var page: Page
     
     @Binding var offset: CGFloat
@@ -48,7 +48,7 @@ struct PageView: View {
                     
                     PageBackgroundPDF(
                         page: page,
-                        document: $document.document,
+                        document: $document,
                         offset: $offset,
                         toolManager: toolManager,
                         isOverview: highRes,

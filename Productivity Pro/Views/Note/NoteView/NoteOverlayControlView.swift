@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteOverlayControlView: View {
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     
     @StateObject var toolManager: ToolManager
     @StateObject var subviewManager: SubviewManager

@@ -18,7 +18,7 @@ struct AddPageView: View {
     @AppStorage("savedBackgroundTemplate")
     var savedBackgroundTemplate: String = ""
     
-    @Binding var document: ProductivityProDocument
+    @Binding var document: Document
     @Binding var isPresented: Bool
     
     @State var backgroundColor: String = "pagewhite"
@@ -47,7 +47,7 @@ struct AddPageView: View {
                 )
             }
             .onAppear {
-                let page = document.document.note.pages[toolManager.selectedPage]
+                let page = document.note.pages[toolManager.selectedPage]
                 
                 backgroundColor = page.backgroundColor
                 isPortrait = page.isPortrait
@@ -145,7 +145,7 @@ struct AddPageView: View {
             nil, at: toolManager.selectedPage + 1
         )
         
-        document.document.note.pages.insert(
+        document.note.pages.insert(
             newPage, at: toolManager.selectedPage + 1
         )
 
