@@ -9,25 +9,24 @@ import SwiftUI
 
 @main
 struct Productivity_ProApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
-        
         WindowGroup {
             ContentView()
         }
-        
-//        DocumentGroup(newDocument: ProductivityProDocument()) { file in
-//
-//            DocumentView(document: file.$document, url: file.fileURL!)
-//                .navigationDocument(
-//                    file.fileURL ?? .applicationDirectory
-//                )
-//
-//        }
-//
-//        WindowGroup("Turtle Maths", id: "calculator") {
-//            CalculatorContainerView()
-//        }
+    }
+    
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(
+        _ app: UIApplication, open inputURL: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+          
+        print(inputURL)
+        return true
         
     }
 }
