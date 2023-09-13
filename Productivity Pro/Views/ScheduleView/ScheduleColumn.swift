@@ -18,54 +18,50 @@ struct ScheduleColumn: View {
     @State var oldSubject: Subject = Subject()
     
     var body: some View {
-        ZStack {
-            Color.clear.contentShape(Rectangle())
+        LazyVStack(alignment: .leading) {
+            Text(day.id)
+                .fontWeight(.bold)
+                .lineLimit(1)
+                .padding(.vertical, 10)
             
-            LazyVStack(alignment: .leading) {
-                Text(day.id)
-                    .fontWeight(.bold)
-                    .lineLimit(1)
-                    .padding(.vertical, 10)
+            ForEach(day.subjects) { subject in
+                Icon(for: subject)
+                    .transition(.scale)
+            }
+            
+            ZStack {
+                Text("")
+                    .frame(height: 35)
+                    .padding(.vertical, 12)
                 
-                ForEach(day.subjects) { subject in
-                    Icon(for: subject)
-                        .transition(.scale)
-                }
-                
-                ZStack {
-                    Text("")
-                        .frame(height: 35)
-                        .padding(.vertical, 12)
-                    
-                    if isEditing {
-                        Button(action: { addSubject.toggle() }) {
-                            Icon(for: Subject(
-                                title: "Fach",
-                                icon: "plus",
-                                color: Color.secondary.rawValue
-                            ))
-                        }
-                        .transition(.scale)
+                if isEditing {
+                    Button(action: { addSubject.toggle() }) {
+                        Icon(for: Subject(
+                            title: "Fach",
+                            icon: "plus",
+                            color: Color.secondary.rawValue
+                        ))
                     }
+                    .transition(.scale)
                 }
-                .padding(.bottom, 15)
-                
             }
-            .animation(.spring, value: isEditing)
-            .animation(.spring, value: day.subjects.count)
-            .frame(maxWidth: .infinity)
-            .sheet(isPresented: $addSubject) {
-                ScheduleAddSubject(
-                    isPresented: $addSubject,
-                    day: $day, isAdd: true, oldSubject: .constant(Subject())
-                )
-            }
-            .sheet(isPresented: $editSubject) {
-                ScheduleAddSubject(
-                    isPresented: $editSubject,
-                    day: $day, isAdd: false, oldSubject: $oldSubject
-                )
-            }
+            .padding(.bottom, 15)
+            
+        }
+        .animation(.spring, value: isEditing)
+        .animation(.spring, value: day.subjects.count)
+        .frame(maxWidth: .infinity)
+        .sheet(isPresented: $addSubject) {
+            ScheduleAddSubject(
+                isPresented: $addSubject,
+                day: $day, isAdd: true, oldSubject: .constant(Subject())
+            )
+        }
+        .sheet(isPresented: $editSubject) {
+            ScheduleAddSubject(
+                isPresented: $editSubject,
+                day: $day, isAdd: false, oldSubject: $oldSubject
+            )
         }
     }
     
