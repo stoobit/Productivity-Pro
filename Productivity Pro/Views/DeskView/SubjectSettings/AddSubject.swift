@@ -40,14 +40,14 @@ struct AddSubject: View {
                 Form {
                     Section {
                         TextField("z.B. Mathe", text: $subject.title)
-                            .padding(.vertical, 8)
+                            .frame(height: 30)
                         
                         ColorPicker(
                             "Farbe",
                             selection: $color,
                             supportsOpacity: false
                         )
-                        .padding(.vertical, 8)
+                        .frame(height: 30)
                         .onChange(of: color, initial: true) {
                             subject.color = color.rawValue
                         }
@@ -81,6 +81,7 @@ struct AddSubject: View {
                     }
                     
                 }
+                .environment(\.defaultMinListRowHeight, 10)
                 .navigationBarTitleDisplayMode(.large)
                 .navigationTitle("Fach")
                 .toolbar {
