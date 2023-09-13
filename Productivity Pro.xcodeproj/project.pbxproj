@@ -411,6 +411,8 @@
 			isa = PBXGroup;
 			children = (
 				BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */,
+				BBF5FDED2AAE05750081C4FE /* StoreKit.storekit */,
+				BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -541,8 +543,6 @@
 			children = (
 				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
-				BBF5FDED2AAE05750081C4FE /* StoreKit.storekit */,
-				BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
