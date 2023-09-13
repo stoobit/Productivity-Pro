@@ -10,7 +10,7 @@ import SwiftUI
 struct DocumentPickerView: View {
     var body: some View {
         NavigationStack {
-            List {
+            Form {
                 Section {
                     DocumentCreationView()
                     DocumentBrowsingView()
