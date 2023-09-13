@@ -12,6 +12,9 @@ struct ScheduleView: View {
     @Binding var isEditing: Bool
     var hsc: UserInterfaceSizeClass?
     
+    @AppStorage("ppsubjects")
+    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    
     @AppStorage("Montag")
     var Montag: CodableWrapper<ScheduleDay> = .init(
         value: ScheduleDay(id: "Montag")
@@ -42,14 +45,30 @@ struct ScheduleView: View {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
         
-            Group {
-                if hsc == .regular {
-                    StaticView()
-                } else {
-                    FluidView()
+            if subjects.value.isEmpty == false {
+                Group {
+                    if hsc == .regular {
+                        StaticView()
+                    } else {
+                        FluidView()
+                    }
                 }
+                .padding(.horizontal, 7)
+            } else {
+                
+                VStack {
+                    Image(systemName: "tray.2")
+                        .font(.system(size: 100))
+                    
+                    Text("Du hast noch keine Fächer erstellt.")
+                        .font(.title.bold())
+                        .padding(.top)
+                        .padding(.horizontal)
+                        .multilineTextAlignment(.center)
+                }
+                .foregroundStyle(.blue.secondary)
+                
             }
-            .padding(.horizontal, 7)
         }
     }
     

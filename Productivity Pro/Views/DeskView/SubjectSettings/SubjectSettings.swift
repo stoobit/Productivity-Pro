@@ -61,7 +61,7 @@ struct SubjectSettings: View {
                             Image(systemName: "tray.2")
                                 .font(.system(size: 100))
                             
-                            Text("Du hast noch keine Fächer hinzugefügt.")
+                            Text("Du hast noch keine Fächer erstellt.")
                                 .font(.title.bold())
                                 .padding(.top)
                                 .padding(.horizontal)
