@@ -10,6 +10,7 @@ import SwiftUI
 struct DocumentView: View {
     
     @Binding var document: Document
+    @Binding var url: URL
     
     @StateObject
     private var toolManager: ToolManager = ToolManager()
@@ -17,7 +18,6 @@ struct DocumentView: View {
     @StateObject
     private var subviewManager: SubviewManager = SubviewManager()
     
-    var url: URL
     var body: some View {
         NavigationStack {
             DocumentTypeContainerView(

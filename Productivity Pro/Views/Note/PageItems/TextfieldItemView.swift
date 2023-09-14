@@ -81,7 +81,7 @@ struct TextFieldItemView: View {
         .onDisappear {
             renderedImage = nil
         }
-        .onChange(of: scenePhase) { value in
+        .onChange(of: scenePhase) { 
             render()
         }
         

@@ -924,8 +924,8 @@
 			isa = PBXGroup;
 			children = (
 				BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */,
-				BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */,
 				BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */,
+				BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */,
 			);
 			path = DocumentPickerView;
 			sourceTree = "<group>";
