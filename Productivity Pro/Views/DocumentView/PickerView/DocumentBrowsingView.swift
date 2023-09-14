@@ -15,6 +15,9 @@ struct DocumentBrowsingView: View {
         .publish(every: 180, tolerance: 120, on: .main, in: .common)
         .autoconnect()
     
+    @StateObject var toolManger: ToolManager
+    @StateObject var subviewManager: SubviewManager
+    
     @State var isBrowsing: Bool = false
     @State var isDocument: Bool = false
     @State var isFailure: Bool = false
@@ -40,18 +43,25 @@ struct DocumentBrowsingView: View {
             Button("Ok", role: .cancel) { isFailure = false }
         }
         .fullScreenCover(isPresented: $isDocument, onDismiss: { saveDocument() }) {
-            DocumentView(document: $document, url: $url)
-                .onReceive(timer) { input in
-                    saveDocument()
-                }
-                .onReceive(NotificationCenter.default.publisher(
-                    for: UIApplication.willTerminateNotification)
-                ) { output in
-                        saveDocument()
-                }
-                .onChange(of: scenePhase) {
-                    saveDocument()
-                }
+            
+            NoteView(
+                document: $document,
+                url: $url,
+                subviewManager: subviewManager,
+                toolManager: toolManger
+            )
+            .onReceive(timer) { input in
+                saveDocument()
+            }
+            .onReceive(NotificationCenter.default.publisher(
+                for: UIApplication.willTerminateNotification)
+            ) { output in
+                saveDocument()
+            }
+            .onChange(of: scenePhase) {
+                saveDocument()
+            }
+            
         }
         
     }
@@ -108,5 +118,5 @@ struct DocumentBrowsingView: View {
 }
 
 #Preview {
-    DocumentBrowsingView()
+    DocumentBrowsingView(toolManger: ToolManager(), subviewManager: SubviewManager())
 }

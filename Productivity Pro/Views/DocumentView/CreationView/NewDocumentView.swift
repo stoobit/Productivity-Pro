@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct NewDocumentView: View {
-    
-    @AppStorage("createdNotes")
-    var createdNotes: Int = 0
+    @Binding var isPresented: Bool
     
     @AppStorage("savedBackgroundColor")
     var savedBackgroundColor: String = ""
@@ -21,8 +19,7 @@ struct NewDocumentView: View {
     @AppStorage("savedBackgroundTemplate")
     var savedBackgroundTemplate: String = ""
     
-    @Environment(\.dismiss) var dismiss
-    @Binding var document: Document
+    @State var document: Document = Document()
     
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
@@ -49,16 +46,16 @@ struct NewDocumentView: View {
                     }
                 }
             }
-            .navigationTitle("Create Document")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarRole(.navigationStack)
-            .toolbarBackground(.visible, for: .navigationBar)
+            .edgesIgnoringSafeArea(.bottom)
             .padding(5)
             
         }
-        .edgesIgnoringSafeArea(.bottom)
-        .onAppear {
-            createdNotes += 1
+        .toolbar {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Abbrechen") {
+                    isPresented.toggle()
+                }
+            }
         }
         
     }

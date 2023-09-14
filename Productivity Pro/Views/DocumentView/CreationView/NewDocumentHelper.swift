@@ -32,14 +32,14 @@ extension NewDocumentView {
                 subviewManager.newDocTemplate = true
             }
             .sheet(isPresented: $subviewManager.newDocTemplate) {
-//                NoteSettings(
-//                    toolManager: toolManager,
-//                    subviewManager: subviewManager,
-//                    document: $document
-//                ) {
-//                    subviewManager.newDocTemplate = false
-//                    subviewManager.createDocument = false
-//                }
+                NoteSettings(
+                    toolManager: toolManager,
+                    subviewManager: subviewManager,
+                    document: $document
+                ) {
+                    subviewManager.newDocTemplate = false
+                    subviewManager.createDocument = false
+                }
                 
                 TemplateView(
                     isPresented: $subviewManager.newDocTemplate,
@@ -140,7 +140,7 @@ extension NewDocumentView {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .stroke(Color.accentColor, lineWidth: 4)
             }
-            .frame(width: 225, height: showIcon ? 175 : 95)
+            .frame(width: 225, height: showIcon ? 175 : 80)
         }
         
     }

@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct DocumentPickerView: View {
+    
+    @StateObject var toolManager: ToolManager = ToolManager()
+    @StateObject var subviewManager: SubviewManager = SubviewManager()
+    
     var body: some View {
         NavigationStack {
             Form {
                 Section {
+                    DocumentCreationView(
+                        toolManger: toolManager, subviewManager: subviewManager
+                    )
                     
-                    NavigationLink(destination: { DocumentCreationView() }) {
-                        Label("Notiz erstellen", systemImage: "plus")
-                            .foregroundStyle(Color.accentColor)
-                    }
-                    .frame(height: 30)
-                    
-                    DocumentBrowsingView()
+                    DocumentBrowsingView(
+                        toolManger: toolManager, subviewManager: subviewManager
+                    )
                 }
                 
                 Section("Angepinnt") {

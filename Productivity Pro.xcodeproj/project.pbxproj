@@ -68,11 +68,9 @@
 		BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93F12AB09FFB00C3AED6 /* HomeworkView.swift */; };
 		BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */; };
 		BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */; };
-		BB4CDD4528D3C668009A409F /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4428D3C668009A409F /* DocumentView.swift */; };
 		BB4CDD4728D3C66A009A409F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4CDD4628D3C66A009A409F /* Assets.xcassets */; };
 		BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4CDD4928D3C66A009A409F /* Preview Assets.xcassets */; };
 		BB4CDD5628D3D518009A409F /* DocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD5528D3D518009A409F /* DocumentModel.swift */; };
-		BB4CDD5828D3D532009A409F /* DocumentTypeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD5728D3D532009A409F /* DocumentTypeContainerView.swift */; };
 		BB5034192993172800913B3A /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5034182993172800913B3A /* PageItemView.swift */; };
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
 		BB53D5B029C4F79F008130F2 /* EditMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */; };
@@ -255,12 +253,10 @@
 		BB4CDD3D28D3C668009A409F /* Productivity Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_ProApp.swift; sourceTree = "<group>"; };
 		BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityProDocument.swift; sourceTree = "<group>"; };
-		BB4CDD4428D3C668009A409F /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		BB4CDD4628D3C66A009A409F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB4CDD4928D3C66A009A409F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Productivity Pro.entitlements"; sourceTree = "<group>"; };
 		BB4CDD5528D3D518009A409F /* DocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentModel.swift; sourceTree = "<group>"; };
-		BB4CDD5728D3D532009A409F /* DocumentTypeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTypeContainerView.swift; sourceTree = "<group>"; };
 		BB5034182993172800913B3A /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
 		BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownView.swift; sourceTree = "<group>"; };
@@ -566,11 +562,10 @@
 			children = (
 				BB6701572AADEFA7001F468A /* ContentView.swift */,
 				BB6BFA2129048BBE002D09FD /* DeskView */,
-				BBF5FDF22AAE14070081C4FE /* DocumentPickerView */,
+				BBF5FDF22AAE14070081C4FE /* DocumentView */,
 				BB4A93DE2AAF556900C3AED6 /* ScheduleView */,
 				BB4A93DF2AAF557B00C3AED6 /* HomeworkView */,
 				BBF5FDF32AAE25CA0081C4FE /* LibraryView */,
-				BB6701562AADEF46001F468A /* DocumentView */,
 				BB9DF5A828DFA25600AC988D /* Note */,
 				BBBCACAF2A253BC000C23B2C /* Calculator */,
 			);
@@ -585,16 +580,6 @@
 				BB4A93D52AAF3BED00C3AED6 /* AppStorageModels */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		BB6701562AADEF46001F468A /* DocumentView */ = {
-			isa = PBXGroup;
-			children = (
-				BB4CDD4428D3C668009A409F /* DocumentView.swift */,
-				BB4CDD5728D3D532009A409F /* DocumentTypeContainerView.swift */,
-				BBCCE4F028D52911001DBD8A /* NewDocument */,
-			);
-			path = DocumentView;
 			sourceTree = "<group>";
 		};
 		BB6BFA2029048B96002D09FD /* Toolbar */ = {
@@ -741,14 +726,6 @@
 			path = NoteModels;
 			sourceTree = "<group>";
 		};
-		BBA7627A2AB344970046B6A1 /* DocumentCreationView */ = {
-			isa = PBXGroup;
-			children = (
-				BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */,
-			);
-			path = DocumentCreationView;
-			sourceTree = "<group>";
-		};
 		BBB2512F2A7071A3006BC807 /* Pixabay */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,6 +814,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BBBF5EDF2AB3B5D3009520DD /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */,
+				BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		BBC7B9772A1988E800D496CB /* ToolView */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,15 +833,16 @@
 			path = ToolView;
 			sourceTree = "<group>";
 		};
-		BBCCE4F028D52911001DBD8A /* NewDocument */ = {
+		BBCCE4F028D52911001DBD8A /* CreationView */ = {
 			isa = PBXGroup;
 			children = (
+				BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */,
 				BBCCE4F128D52934001DBD8A /* NewDocumentView.swift */,
 				BB7423F62A5ED7140031176A /* NewDocumentHelper.swift */,
 				BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */,
 				BBCCE4F828D540AA001DBD8A /* NoteSettings.swift */,
 			);
-			path = NewDocument;
+			path = CreationView;
 			sourceTree = "<group>";
 		};
 		BBCCE4F528D53DE3001DBD8A /* Helper */ = {
@@ -928,14 +915,13 @@
 			path = SideActions;
 			sourceTree = "<group>";
 		};
-		BBF5FDF22AAE14070081C4FE /* DocumentPickerView */ = {
+		BBF5FDF22AAE14070081C4FE /* DocumentView */ = {
 			isa = PBXGroup;
 			children = (
-				BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */,
-				BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */,
-				BBA7627A2AB344970046B6A1 /* DocumentCreationView */,
+				BBBF5EDF2AB3B5D3009520DD /* PickerView */,
+				BBCCE4F028D52911001DBD8A /* CreationView */,
 			);
-			path = DocumentPickerView;
+			path = DocumentView;
 			sourceTree = "<group>";
 		};
 		BBF5FDF32AAE25CA0081C4FE /* LibraryView */ = {
@@ -1117,10 +1103,8 @@
 				BBF5FDF12AAE131D0081C4FE /* DocumentPickerView.swift in Sources */,
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
-				BB4CDD4528D3C668009A409F /* DocumentView.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
-				BB4CDD5828D3D532009A409F /* DocumentTypeContainerView.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */,

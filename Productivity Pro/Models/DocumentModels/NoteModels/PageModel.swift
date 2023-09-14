@@ -32,6 +32,7 @@ struct Page: Codable, Identifiable, Hashable {
 }
 
 enum PageType: Codable {
+    case recent
     case template
     case pdf
     case image
