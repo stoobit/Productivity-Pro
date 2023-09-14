@@ -7,6 +7,9 @@
 
   ],
   "settings" : {
+    "_compatibilityTimeRate" : {
+      "3" : 6
+    },
     "_failTransactionsEnabled" : false,
     "_locale" : "de",
     "_storefront" : "DEU",
@@ -56,7 +59,8 @@
         "enabled" : false,
         "name" : "Offer Code Redeem Sheet"
       }
-    ]
+    ],
+    "_timeRate" : 15
   },
   "subscriptionGroups" : [
     {
@@ -76,7 +80,7 @@
           "displayPrice" : "2.99",
           "familyShareable" : true,
           "groupNumber" : 1,
-          "internalID" : "8413CBD7",
+          "internalID" : "9024DCA4",
           "introductoryOffer" : null,
           "localizations" : [
             {
@@ -101,9 +105,9 @@
           "displayPrice" : "19.99",
           "familyShareable" : true,
           "groupNumber" : 1,
-          "internalID" : "8A91D03C",
+          "internalID" : "51556497",
           "introductoryOffer" : {
-            "internalID" : "FA810A56",
+            "internalID" : "381B237B",
             "paymentMode" : "free",
             "subscriptionPeriod" : "P1M"
           },
