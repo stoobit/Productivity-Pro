@@ -29,9 +29,6 @@ struct TemplateView: View {
                 
                 Section {
                     OrientationView()
-                }
-                
-                Section {
                     ColorsView()
                 }
                 
@@ -76,20 +73,18 @@ enum TemplateViewType {
     case change
 }
 
-struct TemplateView_Previews: PreviewProvider {
-    static var previews: some View {
-        Text("Hi")
-            .sheet(isPresented: .constant(true)) {
-                TemplateView(
-                    isPresented: .constant(true),
-                    isPortrait: .constant(false),
-                    selectedColor: .constant("pagewhite"),
-                    selectedTemplate: .constant("dotted"),
-                    viewType: .create,
-                    title: "Add Page"
-                ) {
-                    
-                }
+#Preview {
+    Text("Hi")
+        .sheet(isPresented: .constant(true)) {
+            TemplateView(
+                isPresented: .constant(true),
+                isPortrait: .constant(false),
+                selectedColor: .constant("pagewhite"),
+                selectedTemplate: .constant("dotted"),
+                viewType: .create,
+                title: "Add Page"
+            ) {
+                
             }
-    }
+        }
 }

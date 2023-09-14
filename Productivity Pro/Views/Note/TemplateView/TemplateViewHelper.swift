@@ -9,49 +9,60 @@ import SwiftUI
 
 extension TemplateView {
     
-    @ViewBuilder func OrientationView() -> some View {
-        FormSpacer {
-            Button(action: {
-                withAnimation(.spring()) {
-                    isPortrait.toggle()
-                }
-            }) {
-                HStack {
-                    Text("Orientation")
-                        .foregroundColor(.primary)
-                    Spacer()
-                    
-                    RectangleRotationIcon(isPortrait: isPortrait)
-                }
+    @ViewBuilder 
+    func OrientationView() -> some View {
+        Button(action: {
+            withAnimation(.spring()) {
+                isPortrait.toggle()
             }
-        }
-    }
-    
-    @ViewBuilder func ColorsView() -> some View {
-        FormSpacer {
+        }) {
             HStack {
-                
-                Text("Color")
-                
+                Text("Format")
+                    .foregroundColor(.primary)
                 Spacer()
                 
-                Toggle("White", isOn: .constant(true))
-                    .toggleStyle(.button)
-                
-                Toggle("Yellow", isOn: .constant(true))
-                    .toggleStyle(.button)
-                
-                Toggle("Grey", isOn: .constant(true))
-                    .toggleStyle(.button)
-                
-                Toggle("Black", isOn: .constant(true))
-                    .toggleStyle(.button)
-                
+                RectangleRotationIcon(isPortrait: isPortrait)
             }
+        }
+        .frame(height: 30)
+    }
+    
+    @ViewBuilder 
+    func ColorsView() -> some View {
+        HStack {
+            Text("Farbe")
+            Spacer()
+            
+            ColorView(V: "pagewhite", style: Color("pagewhite"))
+            ColorView(V: "pageyellow", style: Color("pageyellow"))
+            ColorView(V: "pagegray", style: Color("pagegray"))
+            ColorView(V: "pageblack", style: Color("pageblack"))
+
+        }
+        .frame(height: 30)
+    }
+    
+    @ViewBuilder 
+    func ColorView(V: String, style: some ShapeStyle) -> some View {
+        ZStack {
+            Circle()
+                .frame(width: 30, height: 30)
+                .foregroundStyle(
+                    selectedColor == V ? Color.accentColor : .secondary
+                )
+            
+            Circle()
+                .frame(width: 25, height: 25)
+                .foregroundStyle(style)
+        }
+        .padding(.horizontal, 5)
+        .onTapGesture {
+            selectedColor = V
         }
     }
     
-    @ViewBuilder func TemplateView() -> some View {
+    @ViewBuilder 
+    func TemplateView() -> some View {
         ScrollView(.horizontal, showsIndicators: true) {
             HStack {
                 
@@ -88,3 +99,20 @@ extension TemplateView {
     }
     
 }
+
+#Preview {
+    Text("Hi")
+        .sheet(isPresented: .constant(true)) {
+            TemplateView(
+                isPresented: .constant(true),
+                isPortrait: .constant(false),
+                selectedColor: .constant("pagewhite"),
+                selectedTemplate: .constant("dotted"),
+                viewType: .create,
+                title: "Add Page"
+            ) {
+                
+            }
+        }
+}
+

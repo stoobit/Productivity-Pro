@@ -93,8 +93,8 @@ struct AddSubject: View {
                     }
                     
                     ToolbarItem(placement: .confirmationAction) {
-                        Button(action: { add() }) {
-                            Image(systemName: "plus")
+                        Button("Hinzufügen") {
+                            add()
                         }
                         .disabled(
                             subject.title.trimmingCharacters(
