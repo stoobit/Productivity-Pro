@@ -410,9 +410,9 @@
 		BB1DDA28296715590038FE16 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */,
 				BBF5FDED2AAE05750081C4FE /* StoreKit.storekit */,
 				BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */,
+				BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

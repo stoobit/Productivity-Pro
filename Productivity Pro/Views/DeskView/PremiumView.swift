@@ -11,9 +11,7 @@ import StoreKit
 struct PremiumView: View {
     var body: some View {
         SubscriptionStoreView(
-            productIDs: [
-                "com.stoobit.pro.premium"
-            ]
+            groupID: "BE768D4B"
         )
         .storeButton(.hidden, for: .cancellation)
         .subscriptionStoreControlStyle(.prominentPicker)

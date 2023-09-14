@@ -9,7 +9,7 @@
   "settings" : {
     "_failTransactionsEnabled" : false,
     "_locale" : "de",
-    "_storefront" : "USA",
+    "_storefront" : "DEU",
     "_storeKitErrors" : [
       {
         "current" : null,
@@ -64,7 +64,7 @@
       "localizations" : [
 
       ],
-      "name" : "Productivity Pro",
+      "name" : "Productivity Premium",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -76,18 +76,47 @@
           "displayPrice" : "2.99",
           "familyShareable" : true,
           "groupNumber" : 1,
-          "internalID" : "56543AC4",
+          "internalID" : "8413CBD7",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Upgrade die App für exklusive Features.",
-              "displayName" : "Productivity Pro Premium",
+              "description" : "Upgrade von Pro zu Premium. Monatlich.",
+              "displayName" : "Monatliches Premium Abonnement",
               "locale" : "de"
             }
           ],
-          "productID" : "com.stoobit.pro.premium",
+          "productID" : "com.productivity_pro.premium.monthly",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Productivity Pro Premium",
+          "referenceName" : "Monatliches Premium Abonnement",
+          "subscriptionGroupID" : "BE768D4B",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "19.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "8A91D03C",
+          "introductoryOffer" : {
+            "internalID" : "FA810A56",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1M"
+          },
+          "localizations" : [
+            {
+              "description" : "Upgrade von Pro zu Premium. Jährlich.",
+              "displayName" : "Jährliches Premium Abonnement",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "com.productivity_pro.premium.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Jährliches Premium Abonnement",
           "subscriptionGroupID" : "BE768D4B",
           "type" : "RecurringSubscription"
         }
