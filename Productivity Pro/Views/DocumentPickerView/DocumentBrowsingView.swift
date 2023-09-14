@@ -25,7 +25,7 @@ struct DocumentBrowsingView: View {
     var body: some View {
         
         Button(action: { isBrowsing.toggle() }) {
-            Label("Notizen durchsuchen", systemImage: "magnifyingglass")
+            Label("Notiz öffnen", systemImage: "doc")
                 .foregroundStyle(Color.accentColor)
         }
         .frame(height: 30)
@@ -72,12 +72,16 @@ struct DocumentBrowsingView: View {
     func getDocument() {
         do {
             
-            let data = try Data(contentsOf: url)
-            let decryptedData = Data(
-                base64Encoded: data, options: .ignoreUnknownCharacters
-            ) ?? Data()
+            if url.startAccessingSecurityScopedResource() {
+                let data = try Data(contentsOf: url)
+                let decryptedData = Data(
+                    base64Encoded: data, options: .ignoreUnknownCharacters
+                ) ?? Data()
+                
+                defer { url.stopAccessingSecurityScopedResource() }
+                document = try JSONDecoder().decode(Document.self, from: decryptedData)
+            }
             
-            document = try JSONDecoder().decode(Document.self, from: decryptedData)
         } catch {
             
         }

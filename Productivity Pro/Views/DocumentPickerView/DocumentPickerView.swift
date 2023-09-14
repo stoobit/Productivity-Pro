@@ -12,13 +12,15 @@ struct DocumentPickerView: View {
         NavigationStack {
             Form {
                 Section {
-                    DocumentCreationView()
+                    
+                    NavigationLink(destination: { DocumentCreationView() }) {
+                        Label("Notiz erstellen", systemImage: "plus")
+                            .foregroundStyle(Color.accentColor)
+                    }
+                    .frame(height: 30)
+                    
                     DocumentBrowsingView()
                 }
-                .listRowBackground(
-                    Rectangle()
-                        .foregroundStyle(Color.accentColor.quaternary)
-                )
                 
                 Section("Angepinnt") {
                     Label("Hausaufgaben", systemImage: "pin")
