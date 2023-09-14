@@ -48,15 +48,14 @@ struct NewDocumentView: View {
             }
             .edgesIgnoringSafeArea(.bottom)
             .padding(5)
-            
-        }
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Abbrechen") {
-                    isPresented.toggle()
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Abbrechen") {
+                        isPresented.toggle()
+                    }
                 }
             }
+            
         }
-        
     }
 }

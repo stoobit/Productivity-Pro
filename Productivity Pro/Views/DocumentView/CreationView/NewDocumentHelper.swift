@@ -15,7 +15,7 @@ extension NewDocumentView {
         VStack {
             ButtonView(
                 icon: "clock.arrow.circlepath",
-                text: "Last Template",
+                text: "Letzte Vorlage",
                 showIcon: showIcon
             ) {
                 createFromLastSelection()
@@ -26,7 +26,7 @@ extension NewDocumentView {
             
             ButtonView(
                 icon: "grid",
-                text: "Select Template",
+                text: "Vorlage auswählen",
                 showIcon: showIcon
             ) {
                 subviewManager.newDocTemplate = true
@@ -47,7 +47,7 @@ extension NewDocumentView {
                     selectedColor: $selectedColor,
                     selectedTemplate: $selectedTemplate,
                     viewType: .create,
-                    title: "Select Template"
+                    title: "Vorlage auswählen"
                 ) {
                     
                 }
@@ -57,7 +57,7 @@ extension NewDocumentView {
         VStack {
             ButtonView(
                 icon: "doc.viewfinder",
-                text: "Scan Document",
+                text: "Dokument scannen",
                 showIcon: showIcon
             ) {
                 subviewManager.newDocScan = true
@@ -80,7 +80,7 @@ extension NewDocumentView {
             
             ButtonView(
                 icon: "folder",
-                text: "Import PDF",
+                text: "PDF importieren",
                 showIcon: showIcon
             ) {
                 subviewManager.newDocPDF = true
@@ -135,12 +135,12 @@ extension NewDocumentView {
                     .font(.title3.bold())
                     .padding(.top, showIcon ? 5 : 0)
             }
-            .frame(width: 200, height: showIcon ? 150 : 70)
+            .frame(width: 215, height: showIcon ? 150 : 70)
             .overlay {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .stroke(Color.accentColor, lineWidth: 4)
             }
-            .frame(width: 225, height: showIcon ? 175 : 80)
+            .frame(width: 240, height: showIcon ? 175 : 80)
         }
         
     }
