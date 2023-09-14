@@ -21,7 +21,7 @@ struct ScheduleViewContainer: View {
                 .navigationTitle("Stundenplan")
                 .toolbar {
                     if subjects.value.isEmpty == false {
-                        ToolbarItem(placement: .confirmationAction) {
+                        ToolbarItem(placement: .topBarTrailing) {
                             Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
                                 isEditing.toggle()
                             }

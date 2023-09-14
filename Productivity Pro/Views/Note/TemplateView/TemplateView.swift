@@ -40,6 +40,7 @@ struct TemplateView: View {
                 }
                 
             }
+            .environment(\.defaultMinListRowHeight, 10)
             .scrollIndicators(.hidden)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationTitle(title)

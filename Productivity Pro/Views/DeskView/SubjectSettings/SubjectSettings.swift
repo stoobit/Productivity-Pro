@@ -45,7 +45,7 @@ struct SubjectSettings: View {
                 AddSubject(addSubject: $addSubject)
             }
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button(action: { addSubject.toggle() }) {
                         Image(systemName: "plus")
                     }

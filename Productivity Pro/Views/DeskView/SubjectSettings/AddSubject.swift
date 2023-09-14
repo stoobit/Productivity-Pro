@@ -81,9 +81,10 @@ struct AddSubject: View {
                     }
                     
                 }
+                .scrollIndicators(.hidden)
+                .toolbarBackground(.visible, for: .navigationBar)
                 .environment(\.defaultMinListRowHeight, 10)
-                .navigationBarTitleDisplayMode(.large)
-                .navigationTitle("Fach")
+                .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Abbrechen") {
@@ -92,8 +93,8 @@ struct AddSubject: View {
                     }
                     
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Hinzufügen") {
-                            add()
+                        Button(action: { add() }) {
+                            Image(systemName: "plus")
                         }
                         .disabled(
                             subject.title.trimmingCharacters(

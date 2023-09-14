@@ -68,7 +68,9 @@ struct ScheduleAddSubject: View {
                 }
                 .pickerStyle(.inline)
             }
-            .navigationTitle("Fach")
+            .scrollIndicators(.hidden)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Abbrechen") {
