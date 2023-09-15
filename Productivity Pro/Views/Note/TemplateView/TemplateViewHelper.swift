@@ -65,17 +65,17 @@ extension TemplateView {
     func TemplateView() -> some View {
         ScrollView(.horizontal) {
             HStack {
-                TemplateItem(title: "Blanko", value: "blank")
+                TemplateItem(title: "Blanko", value: "blank", view: Color.red)
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Kariert", value: "dotted")
+                TemplateItem(title: "Kariert", value: "dotted", view: Color.red)
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Liniert Klein", value: "ruled")
+                TemplateItem(title: "Liniert Klein", value: "ruled", view: Color.red)
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Liniert Groß", value: "ruled.large")
+                TemplateItem(title: "Liniert Groß", value: "ruled.large", view: Color.red)
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Gepunktet", value: "dotted")
+                TemplateItem(title: "Gepunktet", value: "dotted", view: Color.red)
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Notentlinien", value: "music")
+                TemplateItem(title: "Notentlinien", value: "music", view: Color.red)
                     .padding(30)
             }
         }
@@ -84,57 +84,67 @@ extension TemplateView {
 
     @ViewBuilder
     func TemplateItem(
-        title: String, value: String
+        title: String, value: String, view: some View
     ) -> some View {
-        VStack {
-            Spacer()
+        ZStack {
             
-            ZStack {
-                UnevenRoundedRectangle(
-                    topLeadingRadius: 0,
-                    bottomLeadingRadius: 9,
-                    bottomTrailingRadius: 9,
-                    topTrailingRadius: 0,
-                    style: .circular
-                )
-                .foregroundStyle(.thickMaterial)
+            VStack {
+                view
+                    .frame(width: 250, height: 225)
+                Spacer()
+            }
+            .frame(width: 250, height: 350)
+            
+            VStack {
+                Spacer()
                 
-                VStack(alignment: .leading) {
-                    Text(title)
-                        .foregroundStyle(Color.secondary)
-                        .textCase(.uppercase)
-                    
-                    Text("Hoch- & Querformat")
-                        .textCase(.uppercase)
-                        .foregroundStyle(Color.secondary)
-                        .font(.caption2)
-                    
-                    Spacer()
-                    
-                    Text("Productivity Pro")
-                        .foregroundStyle(Color.accentColor.secondary)
-                        .font(.caption)
-                }
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity,
-                    alignment: .topLeading
-                )
-                .padding(10)
-                
-                Image(systemName: "checkmark.circle")
-                    .font(.title3)
-                    .foregroundStyle(
-                        selectedTemplate == value ? .green : .secondary
+                ZStack {
+                    UnevenRoundedRectangle(
+                        topLeadingRadius: 0,
+                        bottomLeadingRadius: 9,
+                        bottomTrailingRadius: 9,
+                        topTrailingRadius: 0,
+                        style: .circular
                     )
+                    .foregroundStyle(.thickMaterial)
+                    
+                    VStack(alignment: .leading) {
+                        Text(title)
+                            .foregroundStyle(Color.secondary)
+                            .textCase(.uppercase)
+                        
+                        Text("Hoch- & Querformat")
+                            .textCase(.uppercase)
+                            .foregroundStyle(Color.secondary)
+                            .font(.caption2)
+                        
+                        Spacer()
+                        
+                        Text("Productivity Pro")
+                            .foregroundStyle(Color.accentColor.secondary)
+                            .font(.caption)
+                    }
                     .frame(
                         maxWidth: .infinity,
                         maxHeight: .infinity,
-                        alignment: .bottomTrailing
+                        alignment: .topLeading
                     )
                     .padding(10)
+                    
+                    Image(systemName: "checkmark.circle")
+                        .font(.title3)
+                        .foregroundStyle(
+                            selectedTemplate == value ? .green : .secondary
+                        )
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity,
+                            alignment: .bottomTrailing
+                        )
+                        .padding(10)
+                }
+                .frame(width: 250, height: 125, alignment: .bottom)
             }
-            .frame(width: 250, height: 125)
         }
         .frame(width: 250, height: 350)
         .overlay {
