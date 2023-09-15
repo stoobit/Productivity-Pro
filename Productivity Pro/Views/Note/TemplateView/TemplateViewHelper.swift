@@ -64,13 +64,28 @@ extension TemplateView {
     @ViewBuilder 
     func TemplateView() -> some View {
         ScrollView(.horizontal) {
-            TemplateItem()
+            HStack {
+                TemplateItem(title: "Blanko", value: "blank")
+                    .padding([.leading, .vertical], 30)
+                TemplateItem(title: "Kariert", value: "dotted")
+                    .padding([.leading, .vertical], 30)
+                TemplateItem(title: "Liniert Klein", value: "ruled")
+                    .padding([.leading, .vertical], 30)
+                TemplateItem(title: "Liniert Groß", value: "ruled.large")
+                    .padding([.leading, .vertical], 30)
+                TemplateItem(title: "Gepunktet", value: "dotted")
+                    .padding([.leading, .vertical], 30)
+                TemplateItem(title: "Notentlinien", value: "music")
+                    .padding(30)
+            }
         }
         .listRowInsets(EdgeInsets())
     }
 
     @ViewBuilder
-    func TemplateItem() -> some View {
+    func TemplateItem(
+        title: String, value: String
+    ) -> some View {
         VStack {
             Spacer()
             
@@ -85,7 +100,7 @@ extension TemplateView {
                 .foregroundStyle(.thickMaterial)
                 
                 VStack(alignment: .leading) {
-                    Text("Kariert")
+                    Text(title)
                         .foregroundStyle(Color.secondary)
                         .textCase(.uppercase)
                     
@@ -109,7 +124,9 @@ extension TemplateView {
                 
                 Image(systemName: "checkmark.circle")
                     .font(.title3)
-                    .foregroundStyle(.green)
+                    .foregroundStyle(
+                        selectedTemplate == value ? .green : .secondary
+                    )
                     .frame(
                         maxWidth: .infinity,
                         maxHeight: .infinity,
@@ -125,7 +142,9 @@ extension TemplateView {
                 .stroke(Color.accentColor, lineWidth: 2)
                 .frame(width: 251, height: 350)
         }
-        .padding(30)
+        .onTapGesture {
+            selectedTemplate = value
+        }
         
     }
     
