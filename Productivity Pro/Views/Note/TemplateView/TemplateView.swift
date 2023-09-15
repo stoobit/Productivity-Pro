@@ -49,11 +49,7 @@ struct TemplateView: View {
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(action: action) {
-                        Image(
-                            systemName: viewType == .create ? "doc.badge.plus" : "doc.badge.gearshape"
-                        )
-                    }
+                    Button(viewType == .create ? "Erstellen" : "Bearbeiten" , action: action)
                 }
             }
             

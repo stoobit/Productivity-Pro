@@ -65,17 +65,17 @@ extension TemplateView {
     func TemplateView() -> some View {
         ScrollView(.horizontal) {
             HStack {
-                TemplateItem(title: "Blanko", value: "blank", view: Color.red)
+                TemplateItem(title: "Blanko", value: "blank", view: BackgroundViews().Blank())
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Kariert", value: "dotted", view: Color.red)
+                TemplateItem(title: "Kariert", value: "dotted", view: BackgroundViews().Squared())
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Liniert Klein", value: "ruled", view: Color.red)
+                TemplateItem(title: "Liniert Klein", value: "ruled", view: BackgroundViews().Ruled())
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Liniert Groß", value: "ruled.large", view: Color.red)
+                TemplateItem(title: "Liniert Groß", value: "ruled.large", view: BackgroundViews().RuledLarge())
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Gepunktet", value: "dotted", view: Color.red)
+                TemplateItem(title: "Gepunktet", value: "dotted", view:BackgroundViews().Dotted())
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Notentlinien", value: "music", view: Color.red)
+                TemplateItem(title: "Notentlinien", value: "music", view:BackgroundViews().Music())
                     .padding(30)
             }
         }
