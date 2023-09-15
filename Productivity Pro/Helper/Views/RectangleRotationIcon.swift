@@ -13,7 +13,7 @@ struct RectangleRotationIcon: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 4, style: .continuous)
-            .frame(width: isPortrait ? 21 : 30, height: isPortrait ? 30 : 21)
+            .frame(width: isPortrait ? 21 : 28, height: isPortrait ? 28 : 21)
             .frame(height: 30)
     }
 }

@@ -11,20 +11,20 @@ extension TemplateView {
     
     @ViewBuilder 
     func OrientationView() -> some View {
-        Button(action: {
-            withAnimation(.spring()) {
+        HStack {
+            Text("Format")
+                .foregroundColor(.primary)
+            Spacer()
+            
+            RectangleRotationIcon(isPortrait: isPortrait)
+        }
+        .foregroundStyle(Color.accentColor)
+        .frame(height: 30)
+        .onTapGesture {
+            withAnimation(.bouncy) {
                 isPortrait.toggle()
             }
-        }) {
-            HStack {
-                Text("Format")
-                    .foregroundColor(.primary)
-                Spacer()
-                
-                RectangleRotationIcon(isPortrait: isPortrait)
-            }
         }
-        .frame(height: 30)
     }
     
     @ViewBuilder 
@@ -55,7 +55,7 @@ extension TemplateView {
                 .frame(width: 25, height: 25)
                 .foregroundStyle(style)
         }
-        .padding(.horizontal, 5)
+        .padding(.leading, 10)
         .onTapGesture {
             selectedColor = V
         }
@@ -63,39 +63,70 @@ extension TemplateView {
     
     @ViewBuilder 
     func TemplateView() -> some View {
-        ScrollView(.horizontal, showsIndicators: true) {
-            HStack {
-                
-                TemplatePicker("blank", view: BackgroundViews().Blank())
-                TemplatePicker("squared", view: BackgroundViews().Squared())
-                TemplatePicker("dotted", view: BackgroundViews().Dotted())
-                TemplatePicker("ruled", view: BackgroundViews().Ruled())
-                TemplatePicker("ruled.large", view: BackgroundViews().RuledLarge())
-                TemplatePicker("music", view: BackgroundViews().Music())
-                
-            }
+        ScrollView(.horizontal) {
+            TemplateItem()
         }
+        .listRowInsets(EdgeInsets())
     }
-    
-    @ViewBuilder func TemplatePicker(_ value: String, view: some View) -> some View {
+
+    @ViewBuilder
+    func TemplateItem() -> some View {
         VStack {
+            Spacer()
             
-            view
-            
-            Image(systemName: selectedTemplate == value ? "checkmark.circle.fill" : "checkmark.circle"
-            )
-            .font(.title3)
-            .foregroundStyle(
-                selectedTemplate == value ? Color.accentColor : Color.secondary
-            )
-            .padding(.top, 10)
-            
+            ZStack {
+                UnevenRoundedRectangle(
+                    topLeadingRadius: 0,
+                    bottomLeadingRadius: 9,
+                    bottomTrailingRadius: 9,
+                    topTrailingRadius: 0,
+                    style: .circular
+                )
+                .foregroundStyle(.thickMaterial)
+                
+                VStack(alignment: .leading) {
+                    Text("Kariert")
+                        .foregroundStyle(Color.secondary)
+                        .textCase(.uppercase)
+                    
+                    Text("Hoch- & Querformat")
+                        .textCase(.uppercase)
+                        .foregroundStyle(Color.secondary)
+                        .font(.caption2)
+                    
+                    Spacer()
+                    
+                    Text("Productivity Pro")
+                        .foregroundStyle(Color.accentColor.secondary)
+                        .font(.caption)
+                }
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .topLeading
+                )
+                .padding(10)
+                
+                Image(systemName: "checkmark.circle")
+                    .font(.title3)
+                    .foregroundStyle(.green)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .bottomTrailing
+                    )
+                    .padding(10)
+            }
+            .frame(width: 250, height: 125)
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            selectedTemplate = value
+        .frame(width: 250, height: 350)
+        .overlay {
+            RoundedRectangle(cornerRadius: 9)
+                .stroke(Color.accentColor, lineWidth: 2)
+                .frame(width: 251, height: 350)
         }
-        .padding(10)
+        .padding(30)
+        
     }
     
 }

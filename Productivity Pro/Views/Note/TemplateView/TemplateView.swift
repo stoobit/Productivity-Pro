@@ -32,7 +32,7 @@ struct TemplateView: View {
                     ColorsView()
                 }
                 
-                Section {
+                Section("Standard") {
                     TemplateView()
                 }
                 
