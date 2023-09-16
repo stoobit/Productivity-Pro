@@ -8,6 +8,7 @@
 import SwiftUI
 import PDFKit
 
+// MARK: OLD
 extension NewDocumentView {
     
     @ViewBuilder func Grid(showIcon: Bool) -> some View {
@@ -23,7 +24,7 @@ extension NewDocumentView {
             .disabled(
                 savedBackgroundColor == "" && savedBackgroundTemplate == ""
             )
-    
+            
             
         }
         
@@ -83,7 +84,7 @@ extension NewDocumentView {
                     toolManager.showProgress = false
                 }
             }
-           
+            
         }
     }
     
@@ -117,6 +118,68 @@ extension NewDocumentView {
         }
         
     }
-
     
+    
+}
+
+// MARK: NEW
+extension NewDocumentView {
+    @ViewBuilder func FormView() -> some View {
+        Form {
+            
+            Section {
+                TextField("Unbenannt", text: $title)
+                    .frame(height: 30)
+                
+                Button(
+                    url == URL(string: "https://www.stoobit.com")! ? "Speicherort auswählen" : url.lastPathComponent.string,
+                    systemImage: "folder"
+                ) {
+                    folderPicker.toggle()
+                }
+                .frame(height: 30)
+            }
+            
+            Toggle(isOn: $isPinned) {
+                Label("Angepinnt", systemImage: "pin")
+            }
+            .tint(.accentColor)
+            .frame(height: 30)
+            
+            Section {
+                Button(
+                    "Letzte Vorlage",
+                    systemImage: "clock.arrow.circlepath"
+                ) {
+                    
+                }
+                .frame(height: 30)
+                
+                Button(
+                    "Vorlage auswählen",
+                    systemImage: "grid"
+                ) {
+                    templatePicker.toggle()
+                }
+                .frame(height: 30)
+                
+                Button(
+                    "Document scannen",
+                    systemImage: "doc.viewfinder"
+                ) {
+                    
+                }
+                .frame(height: 30)
+                
+                Button(
+                    "PDF importieren",
+                    systemImage: "doc.richtext"
+                ) {
+                    
+                }
+                .frame(height: 30)
+            }
+            .disabled(url == URL(string: "https://www.stoobit.com")!)
+        }
+    }
 }

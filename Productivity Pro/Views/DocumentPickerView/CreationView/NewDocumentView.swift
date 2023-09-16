@@ -10,8 +10,10 @@ import SwiftUI
 struct NewDocumentView: View {
     
     @Binding var isPresented: Bool
+    @Binding var showDocument: Bool
+    
     @Binding var document: Document
-    @Binding var url: URL?
+    @Binding var url: URL
     
     @State var title: String = ""
     @State var isPinned: Bool = false
@@ -38,71 +40,16 @@ struct NewDocumentView: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                
-                Section {
-                    TextField("Unbenannt", text: $title)
-                        .frame(height: 30)
-                    
-                    Button(
-                        url == nil ? "Speicherort auswählen" : url!.lastPathComponent.string,
-                        systemImage: "folder"
-                    ) {
-                        folderPicker.toggle()
-                    }
-                    .frame(height: 30)
-                }
-                
-                Toggle(isOn: $isPinned) {
-                    Label("Angepinnt", systemImage: "pin")
-                }
-                .tint(.accentColor)
-                .frame(height: 30)
-                
-                Section {
-                    Button(
-                        "Letzte Vorlage",
-                        systemImage: "clock.arrow.circlepath"
-                    ) {
-                        
-                    }
-                    .frame(height: 30)
-                    
-                    Button(
-                        "Vorlage auswählen",
-                        systemImage: "grid"
-                    ) {
-                        templatePicker.toggle()
-                    }
-                    .frame(height: 30)
-                    
-                    Button(
-                        "Document scannen",
-                        systemImage: "doc.viewfinder"
-                    ) {
-                        
-                    }
-                    .frame(height: 30)
-                    
-                    Button(
-                        "PDF importieren",
-                        systemImage: "doc.richtext"
-                    ) {
-                        
-                    }
-                    .frame(height: 30)
-                }
-                .disabled(url == nil)
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .environment(\.defaultMinListRowHeight, 10)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") {
-                        isPresented.toggle()
+            FormView()
+                .navigationBarTitleDisplayMode(.inline)
+                .environment(\.defaultMinListRowHeight, 10)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Abbrechen") {
+                            isPresented.toggle()
+                        }
                     }
                 }
-            }
         }
         .fileImporter(
             isPresented: $folderPicker,
@@ -121,23 +68,8 @@ struct NewDocumentView: View {
                 selectedColor: $selectedColor,
                 selectedTemplate: $selectedTemplate,
                 viewType: .create
-            ) {
-                folderPicker.toggle()
-            }
+            ) { createTemplate() }
         }
         
     }
-}
-
-#Preview {
-   Text("")
-        .sheet(isPresented: .constant(true)) {
-            NewDocumentView(
-                isPresented: .constant(true),
-                document: .constant(Document()),
-                url: .constant(nil),
-                subviewManager: SubviewManager(),
-                toolManager: ToolManager()
-            )
-        }
 }

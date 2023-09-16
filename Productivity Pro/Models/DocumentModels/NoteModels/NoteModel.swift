@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Note: Codable {
+struct Note: Codable, Equatable {
     var pages: [Page] = []
 }

@@ -42,7 +42,11 @@ struct DocumentBrowsingView: View {
         .alert("Ein Fehler ist aufgetreten.", isPresented: $isFailure) {
             Button("Ok", role: .cancel) { isFailure = false }
         }
-        .fullScreenCover(isPresented: $isDocument, onDismiss: { saveDocument() }) {
+        .fullScreenCover(isPresented: $isDocument, onDismiss: { 
+            saveDocument()
+            document = Document()
+            url = URL(string: "https://www.stoobit.com")!
+        }) {
             
             NoteView(
                 document: $document,
@@ -72,9 +76,7 @@ struct DocumentBrowsingView: View {
             let data = try JSONEncoder().encode(document)
             let encryptedData = data.base64EncodedData()
             
-            try encryptedData.write(
-                to: url, options: Data.WritingOptions.noFileProtection
-            )
+            try encryptedData.write(to: url)
             
         } catch { }
     }

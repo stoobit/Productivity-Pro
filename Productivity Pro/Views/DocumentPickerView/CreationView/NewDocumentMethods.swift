@@ -11,31 +11,48 @@ import PDFKit
 
 extension NewDocumentView {
     
-    func create() {
-        withAnimation {
-            
-            document.documentType = .note
-            
-            let canvasType: CanvasType = .pencilKit
-            
-            var note = Note()
-            let firstPage: Page = Page(
-                canvasType: canvasType,
-                backgroundColor: selectedColor,
-                backgroundTemplate: selectedTemplate,
-                isPortrait: isPortrait
-            )
-            
-            toolManager.preloadedMedia.append(nil)
-            note.pages.append(firstPage)
-            document.note = note
-            
-            savedBackgroundColor = selectedColor
-            savedBackgroundTemplate = selectedTemplate
-            savedIsPortrait = isPortrait
-            
-            isPresented.toggle()
+    func createTemplate() {
+        document.documentType = .note
+        
+        let canvasType: CanvasType = .pencilKit
+        
+        var note = Note()
+        let firstPage: Page = Page(
+            canvasType: canvasType,
+            backgroundColor: selectedColor,
+            backgroundTemplate: selectedTemplate,
+            isPortrait: isPortrait
+        )
+        
+        toolManager.preloadedMedia.append(nil)
+        note.pages.append(firstPage)
+        document.note = note
+        
+        let path = if title == "" {
+            url.appendingPathComponent("Unbenannt", conformingTo: .pro)
+        } else {
+            url.appendingPathComponent("\(title)", conformingTo: .pro)
         }
+        
+        if url.startAccessingSecurityScopedResource() {
+            do {
+                let data = try JSONEncoder().encode(document)
+                let encryptedData = data.base64EncodedData()
+                
+                try encryptedData.write(to: path)
+                
+                url.stopAccessingSecurityScopedResource()
+            } catch {
+                
+            }
+        }
+        
+        savedBackgroundColor = selectedColor
+        savedBackgroundTemplate = selectedTemplate
+        savedIsPortrait = isPortrait
+        
+        templatePicker.toggle()
+        isPresented.toggle()
     }
     
     func add(pdf: PDFDocument) {
