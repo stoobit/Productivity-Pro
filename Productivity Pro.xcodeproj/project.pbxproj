@@ -26,7 +26,7 @@
 		BB1DF60A2A687DB8006F85CE /* PPColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6092A687DB8006F85CE /* PPColorButton.swift */; };
 		BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E693F2A71CE01008E0C5F /* TemplateView.swift */; };
 		BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */; };
-		BB1E69442A71EB5B008E0C5F /* BackgroundViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69432A71EB5B008E0C5F /* BackgroundViews.swift */; };
+		BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */; };
 		BB20E2F12AB1ECC10000E8B5 /* DocumentCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */; };
 		BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */; };
 		BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */; };
@@ -212,7 +212,7 @@
 		BB1DF6092A687DB8006F85CE /* PPColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColorButton.swift; sourceTree = "<group>"; };
 		BB1E693F2A71CE01008E0C5F /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewHelper.swift; sourceTree = "<group>"; };
-		BB1E69432A71EB5B008E0C5F /* BackgroundViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViews.swift; sourceTree = "<group>"; };
+		BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePreviewProvider.swift; sourceTree = "<group>"; };
 		BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCreationView.swift; sourceTree = "<group>"; };
 		BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapper.swift; sourceTree = "<group>"; };
 		BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewRepresentable.swift; sourceTree = "<group>"; };
@@ -420,6 +420,7 @@
 				BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */,
 				BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */,
 				BBEC301D2A670EF80021C7E6 /* DrawingView.swift */,
+				BB0504292928471400DAECA6 /* BackgroundViews */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -611,10 +612,9 @@
 			children = (
 				BB1E693F2A71CE01008E0C5F /* TemplateView.swift */,
 				BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */,
-				BB1E69432A71EB5B008E0C5F /* BackgroundViews.swift */,
+				BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */,
 				BB9F70EA28E7A57C007DF951 /* AddPageView.swift */,
 				BB27FED328EA192D00459334 /* ChangePageTemplateView.swift */,
-				BB0504292928471400DAECA6 /* BackgroundViews */,
 			);
 			path = TemplateView;
 			sourceTree = "<group>";
@@ -695,7 +695,6 @@
 				BBF930782A674C0700AD3958 /* PPToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
-				BB6BFA2229048C5E002D09FD /* TemplateView */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
 				BB37AD882A2C0A12006DB94D /* Overview */,
 				BB9CC946293FD4450094446A /* Share+Collaborate */,
@@ -845,6 +844,7 @@
 		BBCCE4F528D53DE3001DBD8A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				BB6BFA2229048C5E002D09FD /* TemplateView */,
 				BBBD13E8290EA46C001145A4 /* TypeModifier */,
 				BBBD13E9290EA4D6001145A4 /* Views */,
 			);
@@ -1191,7 +1191,7 @@
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
 				BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */,
-				BB1E69442A71EB5B008E0C5F /* BackgroundViews.swift in Sources */,
+				BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */,
 				BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */,
 				BB27FED428EA192D00459334 /* ChangePageTemplateView.swift in Sources */,
 				BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */,

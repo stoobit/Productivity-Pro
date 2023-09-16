@@ -12,6 +12,7 @@ struct DocumentCreationView: View {
     @StateObject var toolManger: ToolManager
     @StateObject var subviewManager: SubviewManager
     
+    @State var document: Document = Document()
     @State var showCreationView: Bool = false
 
     var body: some View {
@@ -23,6 +24,7 @@ struct DocumentCreationView: View {
         .sheet(isPresented: $showCreationView) {
             NewDocumentView(
                 isPresented: $showCreationView,
+                document: $document,
                 subviewManager: subviewManager,
                 toolManager: toolManger
             )

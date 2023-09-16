@@ -56,7 +56,6 @@ struct AddPageView: View {
             .navigationTitle("Select Template")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.navigationStack)
-            
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(action: { addPage() }) {

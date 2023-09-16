@@ -168,8 +168,7 @@ extension TemplateView {
                 isPortrait: .constant(false),
                 selectedColor: .constant("pagewhite"),
                 selectedTemplate: .constant("dotted"),
-                viewType: .create,
-                title: "Add Page"
+                viewType: .create
             ) {
                 
             }

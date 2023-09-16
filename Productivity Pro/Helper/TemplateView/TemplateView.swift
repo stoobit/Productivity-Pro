@@ -15,7 +15,6 @@ struct TemplateView: View {
     @Binding var selectedTemplate: String
     
     let viewType: TemplateViewType
-    let title: String
     
     var preselectedOrientation: Bool = true
     var preselectedColor: String = "pagewhite"
@@ -52,6 +51,7 @@ struct TemplateView: View {
             
         }
         .onAppear { viewDidAppear() }
+        
     }
     
     func viewDidAppear() {
@@ -73,9 +73,9 @@ enum TemplateViewType {
                 isPresented: .constant(true),
                 isPortrait: .constant(false),
                 selectedColor: .constant("pagewhite"),
-                selectedTemplate: .constant("dotted"),
-                viewType: .create,
-                title: "Add Page"
+                selectedTemplate: .constant("dotted"), 
+                url: .constant(nil),
+                viewType: .create
             ) {
                 
             }

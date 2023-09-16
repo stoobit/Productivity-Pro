@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewDocumentView: View {
     @Binding var isPresented: Bool
+    @Binding var document: Document
     
     @AppStorage("savedBackgroundColor")
     var savedBackgroundColor: String = ""
@@ -19,14 +20,14 @@ struct NewDocumentView: View {
     @AppStorage("savedBackgroundTemplate")
     var savedBackgroundTemplate: String = ""
     
-    @State var document: Document = Document()
-    
     @StateObject var subviewManager: SubviewManager
     @StateObject var toolManager: ToolManager
     
     @State var isPortrait: Bool = true
     @State var selectedColor: String = "pagewhite"
     @State var selectedTemplate: String = "blank"
+    
+    @State var url: URL?
     
     var body: some View {
         NavigationStack {

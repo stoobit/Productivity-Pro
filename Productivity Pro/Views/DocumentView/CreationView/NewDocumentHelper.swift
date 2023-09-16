@@ -37,8 +37,8 @@ extension NewDocumentView {
                     isPortrait: $isPortrait,
                     selectedColor: $selectedColor,
                     selectedTemplate: $selectedTemplate,
-                    viewType: .create,
-                    title: "Vorlage auswählen"
+                    url: $url,
+                    viewType: .create
                 ) {
                     
                 }
