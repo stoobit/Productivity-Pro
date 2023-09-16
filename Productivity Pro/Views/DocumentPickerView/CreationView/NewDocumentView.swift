@@ -16,7 +16,6 @@ struct NewDocumentView: View {
     @Binding var url: URL
     
     @State var title: String = ""
-    @State var isPinned: Bool = false
     
     @AppStorage("savedBackgroundColor")
     var savedBackgroundColor: String = ""

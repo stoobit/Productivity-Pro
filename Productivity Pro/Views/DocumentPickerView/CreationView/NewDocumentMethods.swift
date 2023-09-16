@@ -38,23 +38,21 @@ extension NewDocumentView {
                 }
                 
                 url.appendPathComponent("\(title)", conformingTo: .pro)
-                print(url)
                 
-                var index = 1
-                
-                while FileManager().fileExists(atPath: url.absoluteString) {
+                var ver = 1
+                while FileManager.default.fileExists(atPath: url.path) {
                     url.deleteLastPathComponent()
-                    url.appendPathComponent("\(title) \(index)", conformingTo: .pro)
-                    print(url)
+                    url.appendPathComponent("\(title) \(ver)", conformingTo: .pro)
                     
-                    index += 1
+                    ver += 1
                 }
                 
                 try encryptedData.write(to: url, options: .noFileProtection)
                 url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
             }
+            
         } catch {
-            print("error")
+            print(error)
         }
         
         

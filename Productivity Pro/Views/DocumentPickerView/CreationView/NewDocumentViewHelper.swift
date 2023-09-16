@@ -140,12 +140,6 @@ extension NewDocumentView {
                 .frame(height: 30)
             }
             
-            Toggle(isOn: $isPinned) {
-                Label("Angepinnt", systemImage: "pin")
-            }
-            .tint(.accentColor)
-            .frame(height: 30)
-            
             Section {
                 Button(
                     "Letzte Vorlage",
