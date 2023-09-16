@@ -30,24 +30,28 @@ struct NewDocumentView: View {
     
     var body: some View {
         NavigationStack {
-            
-            ViewThatFits(in: .horizontal) {
-                HStack {
-                    Grid(showIcon: true)
-                }
+            ZStack {
+                Color(UIColor.systemGroupedBackground)
+                    .ignoresSafeArea(.all)
                 
-                ViewThatFits(in: .vertical) {
-                    VStack {
+                ViewThatFits(in: .horizontal) {
+                    HStack {
                         Grid(showIcon: true)
                     }
                     
-                    VStack {
-                        Grid(showIcon: false)
+                    ViewThatFits(in: .vertical) {
+                        VStack {
+                            Grid(showIcon: true)
+                        }
+                        
+                        VStack {
+                            Grid(showIcon: false)
+                        }
                     }
                 }
+                .edgesIgnoringSafeArea(.bottom)
+                .padding(5)
             }
-            .edgesIgnoringSafeArea(.bottom)
-            .padding(5)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Abbrechen") {

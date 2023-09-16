@@ -80,6 +80,7 @@ struct BackgroundViews: View {
             }
         }
         .fill(.secondary)
+        .frame(width: 250, height: 225)
     }
     
     @ViewBuilder func RuledLarge() -> some View {
@@ -96,21 +97,26 @@ struct BackgroundViews: View {
             }
         }
         .fill(.secondary)
+        .frame(width: 250, height: 225)
     }
     
     @ViewBuilder func Music() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .stroke(Color.secondary, lineWidth: 3)
-                .frame(width: 100, height: 100)
-
-            Path { path in
+        Path { path in
+            for group in 0...4 {
+                for line in 1...5 {
                     
+                    path.addRect(CGRect(
+                        x: 0,
+                        y: (Double(line) * 5 + Double(group) * 40) + 17.5,
+                        width: 250,
+                        height: 1
+                    ))
+                    
+                }
             }
-            .fill(.secondary)
-            .frame(width: 100, height: 100)
-            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
+        .fill(.secondary)
+        .frame(width: 250, height: 225)
     }
     
 }
