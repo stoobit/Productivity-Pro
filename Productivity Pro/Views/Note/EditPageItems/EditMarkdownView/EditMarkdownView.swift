@@ -43,7 +43,7 @@ struct EditMarkdownView: View {
                     
                 }
                 .toolbarRole(.browser)
-                .toolbarBackground(.visible, for: .navigationBar)
+                
                 .navigationTitle("Markdown")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {

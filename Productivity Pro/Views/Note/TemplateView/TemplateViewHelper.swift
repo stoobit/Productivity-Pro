@@ -11,54 +11,54 @@ extension TemplateView {
     
     @ViewBuilder 
     func OrientationView() -> some View {
-        HStack {
-            Text("Format")
-                .foregroundColor(.primary)
-            Spacer()
-            
-            RectangleRotationIcon(isPortrait: isPortrait)
+        Picker("Format", selection: $isPortrait) {
+            Text("Hochformat").tag(true)
+            Text("Querformat").tag(false)
         }
-        .foregroundStyle(Color.accentColor)
         .frame(height: 30)
-        .onTapGesture {
-            withAnimation(.bouncy) {
-                isPortrait.toggle()
-            }
-        }
     }
     
     @ViewBuilder 
     func ColorsView() -> some View {
-        HStack {
-            Text("Farbe")
-            Spacer()
-            
-            ColorView(V: "pagewhite", style: Color("pagewhite"))
-            ColorView(V: "pageyellow", style: Color("pageyellow"))
-            ColorView(V: "pagegray", style: Color("pagegray"))
-            ColorView(V: "pageblack", style: Color("pageblack"))
-
-        }
-        .frame(height: 30)
-    }
-    
-    @ViewBuilder 
-    func ColorView(V: String, style: some ShapeStyle) -> some View {
-        ZStack {
-            Circle()
+        Picker("Farbe", selection: $selectedColor) {
+            RoundedRectangle(cornerRadius: 6)
                 .frame(width: 30, height: 30)
-                .foregroundStyle(
-                    selectedColor == V ? Color.accentColor : .secondary
-                )
+                .foregroundStyle(Color("pagewhite"))
+                .tag("pagewhite")
+                .overlay {
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.accentColor, lineWidth: 2.0)
+                }
             
-            Circle()
-                .frame(width: 25, height: 25)
-                .foregroundStyle(style)
+            RoundedRectangle(cornerRadius: 6)
+                .frame(width: 30, height: 30)
+                .foregroundStyle(Color("pageyellow"))
+                .tag("pageyellow")
+                .overlay {
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.accentColor, lineWidth: 2.0)
+                }
+            
+            RoundedRectangle(cornerRadius: 6)
+                .frame(width: 30, height: 30)
+                .foregroundStyle(Color("pagegray"))
+                .tag("pagegray")
+                .overlay {
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.accentColor, lineWidth: 2.0)
+                }
+            
+            RoundedRectangle(cornerRadius: 6)
+                .frame(width: 30, height: 30)
+                .foregroundStyle(Color("pageblack"))
+                .tag("pageblack")
+                .overlay {
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(Color.accentColor, lineWidth: 2.0)
+                }
         }
-        .padding(.leading, 10)
-        .onTapGesture {
-            selectedColor = V
-        }
+        .pickerStyle(.navigationLink)
+        .frame(height: 30)
     }
     
     @ViewBuilder 
@@ -67,7 +67,7 @@ extension TemplateView {
             HStack {
                 TemplateItem(title: "Blanko", value: "blank", view: BackgroundViews().Blank())
                     .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Kariert", value: "dotted", view: BackgroundViews().Squared())
+                TemplateItem(title: "Kariert", value: "squared", view: BackgroundViews().Squared())
                     .padding([.leading, .vertical], 30)
                 TemplateItem(title: "Liniert Klein", value: "ruled", view: BackgroundViews().Ruled())
                     .padding([.leading, .vertical], 30)

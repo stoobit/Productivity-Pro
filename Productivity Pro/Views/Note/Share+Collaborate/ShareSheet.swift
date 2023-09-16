@@ -33,7 +33,6 @@ struct ShareSheet: View {
                     .navigationTitle(type == .pdf ? "PDF" : "Productivity Pro")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbarRole(.browser)
-                    .toolbarBackground(.visible, for: .navigationBar)
                     .toolbar {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {

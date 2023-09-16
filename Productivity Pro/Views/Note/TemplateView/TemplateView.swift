@@ -32,20 +32,17 @@ struct TemplateView: View {
                     ColorsView()
                 }
                 
-                Section("Standard") {
-                    TemplateView()
-                }
+                TemplateView()
                 
             }
             .environment(\.defaultMinListRowHeight, 10)
             .scrollIndicators(.hidden)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .navigationTitle(title)
+            
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.navigationStack)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { isPresented = false }
+                    Button("Abbrechen") { isPresented = false }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {

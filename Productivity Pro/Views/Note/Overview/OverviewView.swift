@@ -47,7 +47,7 @@ struct OverviewView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.browser)
             .toolbarBackground(.visible, for: .tabBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+            
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { subviewManager.overviewSheet.toggle()

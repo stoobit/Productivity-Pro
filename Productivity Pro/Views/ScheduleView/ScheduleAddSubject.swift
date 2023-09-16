@@ -69,7 +69,7 @@ struct ScheduleAddSubject: View {
                 .pickerStyle(.inline)
             }
             .scrollIndicators(.hidden)
-            .toolbarBackground(.visible, for: .navigationBar)
+            
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

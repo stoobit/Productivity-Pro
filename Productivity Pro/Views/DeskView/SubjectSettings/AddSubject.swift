@@ -82,7 +82,7 @@ struct AddSubject: View {
                     
                 }
                 .scrollIndicators(.hidden)
-                .toolbarBackground(.visible, for: .navigationBar)
+                
                 .environment(\.defaultMinListRowHeight, 10)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {

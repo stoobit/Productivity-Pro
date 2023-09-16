@@ -49,7 +49,7 @@ struct ChangePageTemplateView: View {
             .navigationTitle("Change Template")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.navigationStack)
-            .toolbarBackground(.visible, for: .navigationBar)
+            
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(action: { changeTemplate() }) {
@@ -90,8 +90,7 @@ struct ChangePageTemplateView: View {
                     .foregroundColor(.primary)
                 
                 Spacer()
-                RectangleRotationIcon()
-                    .rotationEffect(Angle(degrees: isPortrait ? 0 : 90))
+               
             }
             .padding(.vertical, 5)
             

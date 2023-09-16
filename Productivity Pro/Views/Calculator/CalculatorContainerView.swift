@@ -23,7 +23,6 @@ struct CalculatorContainerView: View {
             }
             .toolbarRole(.editor)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }

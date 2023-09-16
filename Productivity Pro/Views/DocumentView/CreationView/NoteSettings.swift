@@ -50,7 +50,6 @@ struct NoteSettings: View {
             .navigationTitle("Select Template")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.navigationStack)
-            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) { Button("Create") { create() }
                         .keyboardShortcut(.return, modifiers: [])
@@ -73,8 +72,7 @@ struct NoteSettings: View {
                     .foregroundColor(.primary)
                 
                 Spacer()
-                RectangleRotationIcon()
-                    .rotationEffect(Angle(degrees: isPortrait ? 0 : 90))
+              
             }
             .padding(.vertical, 5)
             

@@ -48,29 +48,22 @@ struct BackgroundViews: View {
     }
     
     @ViewBuilder func Dotted() -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .stroke(Color.secondary, lineWidth: 3)
-                .frame(width: 100, height: 100)
-            
-            Path { path in
-                for row in 1...9 {
-                    for column in 1...9 {
-                        
-                        path.addEllipse(in: CGRect(
-                            x: 10 * Double(column) - 2.5,
-                            y: 10 * Double(row) - 2.5,
-                            width: 2,
-                            height: 2
-                        ))
-                        
-                    }
+        Path { path in
+            for row in 1...14 {
+                for column in 1...16 {
+                    
+                    path.addEllipse(in: CGRect(
+                        x: 15 * Double(column) - 3,
+                        y: 15 * Double(row),
+                        width: 2,
+                        height: 2
+                    ))
+                    
                 }
             }
-            .fill(.secondary)
-            .frame(width: 97, height: 97)
-            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
+        .fill(.secondary)
+        .frame(width: 250, height: 225)
     }
     
     @ViewBuilder func Ruled() -> some View {
