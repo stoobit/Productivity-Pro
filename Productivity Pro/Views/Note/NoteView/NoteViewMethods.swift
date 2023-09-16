@@ -11,6 +11,20 @@ import PDFKit
 
 extension NoteView {
     
+    func saveDocument() {
+        do {
+            
+            if url.startAccessingSecurityScopedResource() {
+                let data = try JSONEncoder().encode(document)
+                let encryptedData = data.base64EncodedData()
+                
+                try encryptedData.write(to: url)
+            }
+            
+            url.stopAccessingSecurityScopedResource()
+        } catch { print("error") }
+    }
+    
     func loadFirst() {
         guard let page = document.note.pages.first else { return }
         if page.type == .pdf {

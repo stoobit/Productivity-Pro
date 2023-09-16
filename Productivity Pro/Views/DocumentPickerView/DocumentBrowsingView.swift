@@ -9,12 +9,6 @@ import SwiftUI
 
 struct DocumentBrowsingView: View {
     
-    @Environment(\.scenePhase) var scenePhase
-    
-    let timer = Timer
-        .publish(every: 180, tolerance: 120, on: .main, in: .common)
-        .autoconnect()
-    
     @StateObject var toolManger: ToolManager
     @StateObject var subviewManager: SubviewManager
     
@@ -42,43 +36,18 @@ struct DocumentBrowsingView: View {
         .alert("Ein Fehler ist aufgetreten.", isPresented: $isFailure) {
             Button("Ok", role: .cancel) { isFailure = false }
         }
-        .fullScreenCover(isPresented: $isDocument, onDismiss: { 
-            saveDocument()
+        .fullScreenCover(isPresented: $isDocument, onDismiss: {
             document = Document()
             url = URL(string: "https://www.stoobit.com")!
         }) {
-            
             NoteView(
                 document: $document,
                 url: $url,
                 subviewManager: subviewManager,
                 toolManager: toolManger
             )
-            .onReceive(timer) { input in
-                saveDocument()
-            }
-            .onReceive(NotificationCenter.default.publisher(
-                for: UIApplication.willTerminateNotification)
-            ) { output in
-                saveDocument()
-            }
-            .onChange(of: scenePhase) {
-                saveDocument()
-            }
-            
         }
         
-    }
-    
-    func saveDocument() {
-        do {
-            
-            let data = try JSONEncoder().encode(document)
-            let encryptedData = data.base64EncodedData()
-            
-            try encryptedData.write(to: url)
-            
-        } catch { }
     }
     
     func getDocument() {

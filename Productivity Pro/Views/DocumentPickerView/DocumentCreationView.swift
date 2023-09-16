@@ -9,12 +9,6 @@ import SwiftUI
 
 struct DocumentCreationView: View {
     
-    @Environment(\.scenePhase) var scenePhase
-    
-    let timer = Timer
-        .publish(every: 180, tolerance: 120, on: .main, in: .common)
-        .autoconnect()
-    
     @StateObject var toolManger: ToolManager
     @StateObject var subviewManager: SubviewManager
     
@@ -44,7 +38,7 @@ struct DocumentCreationView: View {
                 toolManager: toolManger
             )
         }
-        .fullScreenCover(isPresented: $showDocument, onDismiss: { saveDocument()
+        .fullScreenCover(isPresented: $showDocument, onDismiss: {
             document = Document()
             url = URL(string: "https://www.stoobit.com")!
         }) {
@@ -55,38 +49,10 @@ struct DocumentCreationView: View {
                 subviewManager: subviewManager,
                 toolManager: toolManger
             )
-            .onReceive(timer) { input in
-                saveDocument()
-            }
-            .onReceive(NotificationCenter.default.publisher(
-                for: UIApplication.willTerminateNotification)
-            ) { output in
-                saveDocument()
-            }
-            .onChange(of: scenePhase) {
-                saveDocument()
-            }
             
         }
         
     }
-    
-    func saveDocument() {
-        do {
-            if url.startAccessingSecurityScopedResource() {
-                let data = try JSONEncoder().encode(document)
-                let encryptedData = data.base64EncodedData()
-                
-                try encryptedData.write(
-                    to: url, options: Data.WritingOptions.noFileProtection
-                )
-                
-                url.stopAccessingSecurityScopedResource()
-            }
-            
-        } catch { }
-    }
-    
 }
 
 #Preview {

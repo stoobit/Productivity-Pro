@@ -12,6 +12,11 @@ import PDFKit
 struct NoteView: View {
     
     @Environment(\.undoManager) var undoManager
+    @Environment(\.scenePhase) var scenePhase
+    
+    let timer = Timer
+        .publish(every: 180, tolerance: 120, on: .main, in: .common)
+        .autoconnect()
     
     @Binding var document: Document
     @Binding var url: URL
@@ -137,6 +142,17 @@ struct NoteView: View {
             undoManager?.removeAllActions()
         }
         .onAppear { noteDidAppear() }
+        .onReceive(timer) { input in
+            saveDocument()
+        }
+        .onReceive(NotificationCenter.default.publisher(
+            for: UIApplication.willTerminateNotification)
+        ) { output in
+            saveDocument()
+        }
+        .onChange(of: scenePhase) {
+            saveDocument()
+        }
         .task {
             pageIndicator()
             loadMedia()

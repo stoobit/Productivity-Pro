@@ -18,6 +18,7 @@ struct NoteToolbarModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
+            .toolbarRole(.editor)
             .toolbarTitleMenu {
                 NoteToolbarTitleMenu(
                     document: $document,
