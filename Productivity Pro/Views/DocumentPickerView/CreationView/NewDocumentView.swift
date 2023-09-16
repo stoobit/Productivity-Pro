@@ -32,7 +32,9 @@ struct NewDocumentView: View {
     @State var selectedColor: String = "pagewhite"
     @State var selectedTemplate: String = "blank"
     
+    @State var isFailure: Bool = false
     @State var folderPicker: Bool = false
+    @State var templatePicker: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -53,8 +55,8 @@ struct NewDocumentView: View {
                 
                 Toggle(isOn: $isPinned) {
                     Label("Angepinnt", systemImage: "pin")
-                        .tint(.accentColor)
                 }
+                .tint(.accentColor)
                 .frame(height: 30)
                 
                 Section {
@@ -70,7 +72,7 @@ struct NewDocumentView: View {
                         "Vorlage auswählen",
                         systemImage: "grid"
                     ) {
-                        
+                        templatePicker.toggle()
                     }
                     .frame(height: 30)
                     
@@ -90,6 +92,7 @@ struct NewDocumentView: View {
                     }
                     .frame(height: 30)
                 }
+                .disabled(url == nil)
             }
             .navigationBarTitleDisplayMode(.inline)
             .environment(\.defaultMinListRowHeight, 10)
@@ -100,8 +103,29 @@ struct NewDocumentView: View {
                     }
                 }
             }
-            
         }
+        .fileImporter(
+            isPresented: $folderPicker,
+            allowedContentTypes: [.folder],
+            allowsMultipleSelection: false
+        ) { result in
+            importFolder(with: result)
+        }
+        .alert("Ein Fehler ist aufgetreten.", isPresented: $isFailure) {
+            Button("Ok", role: .cancel) { isFailure = false }
+        }
+        .sheet(isPresented: $templatePicker) {
+            TemplateView(
+                isPresented: $templatePicker,
+                isPortrait: $isPortrait,
+                selectedColor: $selectedColor,
+                selectedTemplate: $selectedTemplate,
+                viewType: .create
+            ) {
+                folderPicker.toggle()
+            }
+        }
+        
     }
 }
 

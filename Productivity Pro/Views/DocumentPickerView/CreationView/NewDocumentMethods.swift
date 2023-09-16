@@ -65,7 +65,7 @@ extension NewDocumentView {
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height
             )
-           
+            
             if let data = page.dataRepresentation {
                 toolManager.preloadedMedia.append(PDFDocument(data: data))
             } else {
@@ -94,7 +94,7 @@ extension NewDocumentView {
             let page = scan.imageOfPage(at: index)
             let size = page.size
             
-let canvasType: CanvasType = .pencilKit
+            let canvasType: CanvasType = .pencilKit
             
             let newPage = Page(
                 type: .image,
@@ -116,6 +116,23 @@ let canvasType: CanvasType = .pencilKit
         }
     }
     
+    func importFolder(with result: Result<[URL], any Error>) {
+        switch result {
+        case .success(let urls):
+            
+            if let document = urls.first {
+                url = document
+                folderPicker.toggle()
+            } else {
+                isFailure.toggle()
+            }
+            
+        case .failure:
+            isFailure.toggle()
+        }
+    }
+    
+    
     func createFromLastSelection() {
         document.documentType = .note
         
@@ -133,7 +150,7 @@ let canvasType: CanvasType = .pencilKit
         note.pages.append(firstPage)
         document.note = note
         
-        subviewManager.newDocTemplate = false
+        templatePicker = false
     }
     
 }

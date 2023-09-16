@@ -23,25 +23,8 @@ extension NewDocumentView {
             .disabled(
                 savedBackgroundColor == "" && savedBackgroundTemplate == ""
             )
+    
             
-            ButtonView(
-                icon: "grid",
-                text: "Vorlage auswählen",
-                showIcon: showIcon
-            ) {
-                subviewManager.newDocTemplate = true
-            }
-            .sheet(isPresented: $subviewManager.newDocTemplate) {
-                TemplateView(
-                    isPresented: $subviewManager.newDocTemplate,
-                    isPortrait: $isPortrait,
-                    selectedColor: $selectedColor,
-                    selectedTemplate: $selectedTemplate,
-                    viewType: .create
-                ) {
-                    folderPicker.toggle()
-                }
-            }
         }
         
         VStack {

@@ -22,7 +22,10 @@ struct DocumentCreationView: View {
                 .foregroundStyle(Color.accentColor)
         }
         .frame(height: 30)
-        .sheet(isPresented: $showCreationView) {
+        .sheet(isPresented: $showCreationView, onDismiss: {
+            document = Document()
+            url = nil
+        }) {
             NewDocumentView(
                 isPresented: $showCreationView,
                 document: $document,

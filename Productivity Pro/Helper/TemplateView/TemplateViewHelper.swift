@@ -11,54 +11,58 @@ extension TemplateView {
     
     @ViewBuilder 
     func OrientationView() -> some View {
-        Picker("Format", selection: $isPortrait) {
-            Text("Hochformat").tag(true)
-            Text("Querformat").tag(false)
+        HStack {
+            Text("Format")
+            Spacer()
+            
+            Menu(isPortrait ? "Hochformat" : "Querformat") {
+                Picker("Format", selection: $isPortrait) {
+                    Text("Hochformat")
+                        .frame(width: 100)
+                        .tag(true)
+                    Text("Querformat").tag(false)
+                        .frame(width: 100)
+                        .tag(true)
+                }
+                
+            }
+            .foregroundStyle(Color.secondary)
         }
         .frame(height: 30)
     }
     
     @ViewBuilder 
     func ColorsView() -> some View {
-        Picker("Farbe", selection: $selectedColor) {
-            RoundedRectangle(cornerRadius: 6)
-                .frame(width: 30, height: 30)
-                .foregroundStyle(Color("pagewhite"))
-                .tag("pagewhite")
-                .overlay {
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.accentColor, lineWidth: 2.0)
-                }
+        HStack {
+            Text("Farbe")
+            Spacer()
             
-            RoundedRectangle(cornerRadius: 6)
-                .frame(width: 30, height: 30)
-                .foregroundStyle(Color("pageyellow"))
-                .tag("pageyellow")
-                .overlay {
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.accentColor, lineWidth: 2.0)
-                }
+           
+            ColorView(value: "pagewhite")
+            ColorView(value: "pageyellow")
+            ColorView(value: "pagegray")
+            ColorView(value: "pageblack")
             
-            RoundedRectangle(cornerRadius: 6)
-                .frame(width: 30, height: 30)
-                .foregroundStyle(Color("pagegray"))
-                .tag("pagegray")
-                .overlay {
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.accentColor, lineWidth: 2.0)
-                }
-            
-            RoundedRectangle(cornerRadius: 6)
-                .frame(width: 30, height: 30)
-                .foregroundStyle(Color("pageblack"))
-                .tag("pageblack")
-                .overlay {
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.accentColor, lineWidth: 2.0)
-                }
         }
-        .pickerStyle(.navigationLink)
         .frame(height: 30)
+    }
+    
+    @ViewBuilder func ColorView(value: String) -> some View {
+        ZStack {
+            Circle()
+                .foregroundStyle(Color(value))
+            
+            Circle()
+                .stroke(
+                    selectedColor == value ? Color.accentColor : .secondary,
+                    lineWidth: 2
+                )
+        }
+        .frame(width: 30, height: 30, alignment: .trailing)
+        .padding(.leading, 5)
+        .onTapGesture {
+            selectedColor = value
+        }
     }
     
     @ViewBuilder 

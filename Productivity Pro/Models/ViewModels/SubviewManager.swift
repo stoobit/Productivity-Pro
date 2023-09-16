@@ -39,7 +39,6 @@ class SubviewManager: ObservableObject {
     
     @Published var showImportFile: Bool = false
     
-    @Published var newDocTemplate: Bool = false
     @Published var newDocPDF: Bool = false
     @Published var newDocScan: Bool = false
    

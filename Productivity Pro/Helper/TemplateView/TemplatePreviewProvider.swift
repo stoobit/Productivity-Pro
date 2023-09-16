@@ -15,6 +15,7 @@ struct BackgroundViews: View {
     @ViewBuilder func Blank() -> some View {
         Rectangle()
             .frame(width: 250, height: 225)
+            .contentShape(Rectangle())
             .foregroundStyle(.clear)
             .contentShape(Rectangle())
     }
@@ -45,6 +46,7 @@ struct BackgroundViews: View {
         }
         .fill(.secondary)
         .frame(width: 250, height: 225)
+        .contentShape(Rectangle())
     }
     
     @ViewBuilder func Dotted() -> some View {
@@ -64,6 +66,7 @@ struct BackgroundViews: View {
         }
         .fill(.secondary)
         .frame(width: 250, height: 225)
+        .contentShape(Rectangle())
     }
     
     @ViewBuilder func Ruled() -> some View {
@@ -81,6 +84,7 @@ struct BackgroundViews: View {
         }
         .fill(.secondary)
         .frame(width: 250, height: 225)
+        .contentShape(Rectangle())
     }
     
     @ViewBuilder func RuledLarge() -> some View {
@@ -98,6 +102,7 @@ struct BackgroundViews: View {
         }
         .fill(.secondary)
         .frame(width: 250, height: 225)
+        .contentShape(Rectangle())
     }
     
     @ViewBuilder func Music() -> some View {
@@ -117,6 +122,7 @@ struct BackgroundViews: View {
         }
         .fill(.secondary)
         .frame(width: 250, height: 225)
+        .contentShape(Rectangle())
     }
     
 }
