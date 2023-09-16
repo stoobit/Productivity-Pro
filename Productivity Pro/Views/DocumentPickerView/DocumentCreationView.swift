@@ -13,6 +13,7 @@ struct DocumentCreationView: View {
     @StateObject var subviewManager: SubviewManager
     
     @State var document: Document = Document()
+    @State var url: URL?
     @State var showCreationView: Bool = false
 
     var body: some View {
@@ -25,6 +26,7 @@ struct DocumentCreationView: View {
             NewDocumentView(
                 isPresented: $showCreationView,
                 document: $document,
+                url: $url,
                 subviewManager: subviewManager,
                 toolManager: toolManger
             )

@@ -11,6 +11,33 @@ import PDFKit
 
 extension NewDocumentView {
     
+    func create() {
+        withAnimation {
+            
+            document.documentType = .note
+            
+            let canvasType: CanvasType = .pencilKit
+            
+            var note = Note()
+            let firstPage: Page = Page(
+                canvasType: canvasType,
+                backgroundColor: selectedColor,
+                backgroundTemplate: selectedTemplate,
+                isPortrait: isPortrait
+            )
+            
+            toolManager.preloadedMedia.append(nil)
+            note.pages.append(firstPage)
+            document.note = note
+            
+            savedBackgroundColor = selectedColor
+            savedBackgroundTemplate = selectedTemplate
+            savedIsPortrait = isPortrait
+            
+            isPresented.toggle()
+        }
+    }
+    
     func add(pdf: PDFDocument) {
         document.note = Note()
         document.documentType = .note

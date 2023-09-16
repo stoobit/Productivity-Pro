@@ -39,7 +39,7 @@ extension NewDocumentView {
                     selectedTemplate: $selectedTemplate,
                     viewType: .create
                 ) {
-                    
+                    folderPicker.toggle()
                 }
             }
         }
