@@ -38,12 +38,7 @@ struct NoteView: View {
         GeometryReader { proxy in
             NavigationStack {
                 ZStack {
-                    Color(UIColor.secondarySystemBackground).ignoresSafeArea(edges: .bottom)
-                    
-                    NoteNextPage(
-                        pages: $document.note.pages,
-                        toolManager: toolManager
-                    )
+                    Color(UIColor.secondarySystemBackground).ignoresSafeArea(edges: .all)
                     
                     TabView(selection: $toolManager.selectedTab) {
                         ForEach($document.note.pages) { $page in
@@ -59,16 +54,10 @@ struct NoteView: View {
                         }
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
-                    .frame(height: proxy.size.height + 30)
-                    .offset(y: 30/4)
                     
                 }
                 .edgesIgnoringSafeArea(.bottom)
                 .disabled(toolManager.showProgress)
-                .position(
-                    x: proxy.size.width / 2,
-                    y: proxy.size.height / 2
-                )
                 .overlay {
                     NoteOverlayControlView(
                         document: $document,
@@ -133,6 +122,10 @@ struct NoteView: View {
                     )
                 }
             }
+            .position(
+                x: proxy.size.width / 2,
+                y: proxy.size.height / 2
+            )
         }
         .onChange(of: toolManager.pickedImage) {
             pickedImageDidChange()
@@ -157,6 +150,7 @@ struct NoteView: View {
             pageIndicator()
             loadMedia()
         }
+        
         
     }
     

@@ -46,7 +46,6 @@
 		BB3525B32908673800D35790 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3525B22908673800D35790 /* Array.swift */; };
 		BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */; };
 		BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */; };
-		BB3E9AA02A33A0FD006045E1 /* NoteNextPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9A9F2A33A0FD006045E1 /* NoteNextPage.swift */; };
 		BB3E9AA42A33A2D3006045E1 /* NoteToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */; };
 		BB3E9AA62A33A5FE006045E1 /* NoteOverlayControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */; };
 		BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F2FCD29129562001B7067 /* Orientation.swift */; };
@@ -229,7 +228,6 @@
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewMethods.swift; sourceTree = "<group>"; };
 		BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRow.swift; sourceTree = "<group>"; };
-		BB3E9A9F2A33A0FD006045E1 /* NoteNextPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNextPage.swift; sourceTree = "<group>"; };
 		BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteToolbarModifier.swift; sourceTree = "<group>"; };
 		BB3E9AA52A33A5FD006045E1 /* NoteOverlayControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOverlayControlView.swift; sourceTree = "<group>"; };
 		BB3F2FCD29129562001B7067 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
@@ -466,7 +464,6 @@
 			isa = PBXGroup;
 			children = (
 				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
-				BB3E9A9F2A33A0FD006045E1 /* NoteNextPage.swift */,
 				BB0504202926CB2600DAECA6 /* NoteSheetHelper.swift */,
 				BB6ABB8029CD0BA5008B58E3 /* NoteViewMethods.swift */,
 				BB3E9AA32A33A2D3006045E1 /* NoteToolbarModifier.swift */,
@@ -1164,7 +1161,6 @@
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
 				BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */,
 				BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */,
-				BB3E9AA02A33A0FD006045E1 /* NoteNextPage.swift in Sources */,
 				BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */,
 				BB0504212926CB2600DAECA6 /* NoteSheetHelper.swift in Sources */,
 				BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */,
