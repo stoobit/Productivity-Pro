@@ -59,7 +59,7 @@ extension TemplateView {
                 )
         }
         .frame(width: 30, height: 30, alignment: .trailing)
-        .padding(.leading, 5)
+        .padding(.leading, 10)
         .onTapGesture {
             selectedColor = value
         }
