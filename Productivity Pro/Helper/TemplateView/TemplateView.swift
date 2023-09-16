@@ -74,7 +74,6 @@ enum TemplateViewType {
                 isPortrait: .constant(false),
                 selectedColor: .constant("pagewhite"),
                 selectedTemplate: .constant("dotted"), 
-                url: .constant(nil),
                 viewType: .create
             ) {
                 
