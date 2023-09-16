@@ -28,24 +28,35 @@ extension NewDocumentView {
         note.pages.append(firstPage)
         document.note = note
         
-        let path = if title == "" {
-            url.appendingPathComponent("Unbenannt", conformingTo: .pro)
-        } else {
-            url.appendingPathComponent("\(title)", conformingTo: .pro)
-        }
-        
-        if url.startAccessingSecurityScopedResource() {
-            do {
+        do {
+            if url.startAccessingSecurityScopedResource() {
                 let data = try JSONEncoder().encode(document)
                 let encryptedData = data.base64EncodedData()
                 
-                try encryptedData.write(to: path)
+                if title == "" {
+                    title = "Unbenannt"
+                }
                 
-                url.stopAccessingSecurityScopedResource()
-            } catch {
+                url.appendPathComponent("\(title)", conformingTo: .pro)
+                print(url)
                 
+                var index = 1
+                
+                while FileManager().fileExists(atPath: url.absoluteString) {
+                    url.deleteLastPathComponent()
+                    url.appendPathComponent("\(title) \(index)", conformingTo: .pro)
+                    print(url)
+                    
+                    index += 1
+                }
+                
+                try encryptedData.write(to: url, options: .noFileProtection)
+                url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
             }
+        } catch {
+            print("error")
         }
+        
         
         savedBackgroundColor = selectedColor
         savedBackgroundTemplate = selectedTemplate

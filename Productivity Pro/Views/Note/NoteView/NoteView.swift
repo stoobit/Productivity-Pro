@@ -11,6 +11,7 @@ import PDFKit
 
 struct NoteView: View {
     
+    @Environment(\.dismiss) var dismiss
     @Environment(\.undoManager) var undoManager
     @Environment(\.scenePhase) var scenePhase
     
@@ -90,6 +91,20 @@ struct NoteView: View {
                         url: url
                     )
                 )
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Fertig") {
+                            saveDocument()
+                            dismiss()
+                        }
+                        .fontWeight(.bold)
+                    }
+                }
+                .navigationBarBackButtonHidden()
+                .navigationTitle(url.lastPathComponent.string.dropLast(4))
+                .toolbarBackground(.visible, for: .navigationBar)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationDocument(url)
                 .alert(
                     "Delete this Page",
                     isPresented: $subviewManager.isDeletePageAlert,
