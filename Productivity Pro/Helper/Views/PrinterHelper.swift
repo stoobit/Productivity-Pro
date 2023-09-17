@@ -13,7 +13,7 @@ struct PrinterView: UIViewControllerRepresentable
 {
     
     @Binding var document: Document
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var subviewManager: SubviewManager
     
     var url: URL
 

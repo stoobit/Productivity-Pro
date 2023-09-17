@@ -10,7 +10,7 @@ import SwiftUI
 struct PageBackgroundView: View {
     
     @Binding var page: Page
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     var body: some View {
         Rectangle()

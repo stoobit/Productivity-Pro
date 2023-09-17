@@ -10,8 +10,8 @@ import PDFKit
 
 struct ImportMediaHelper: ViewModifier {
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     @Binding var document: Document
     

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct iOS17Label: View {
     
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     var body: some View {
         Label(
@@ -21,7 +21,7 @@ struct iOS17Label: View {
 
 struct iOS16Label: View {
     
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     var body: some View {
         Label("Drawing", systemImage: "pencil.tip")

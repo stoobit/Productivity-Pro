@@ -22,10 +22,10 @@ struct NoteView: View {
     @Binding var document: Document
     @Binding var url: URL
     
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
     
-    @StateObject var drawingModel: PPDrawingModel = PPDrawingModel()
+    @State var drawingModel: PPDrawingModel = PPDrawingModel()
     
     var isCPMenuHidden: Bool {
         if subviewManager.isPresentationMode || toolManager.isCanvasEnabled {
@@ -86,25 +86,14 @@ struct NoteView: View {
                 .modifier(
                     NoteToolbarModifier(
                         document: $document,
+                        url: $url,
                         toolManager: toolManager,
-                        subviewManager: subviewManager,
-                        url: url
-                    )
-                )
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Fertig") {
-                            saveDocument()
-                            dismiss()
-                        }
-                        .fontWeight(.bold)
+                        subviewManager: subviewManager
+                    ) {
+                        saveDocument()
+                        dismiss()
                     }
-                }
-                .navigationBarBackButtonHidden()
-                .navigationTitle(url.lastPathComponent.string.dropLast(4))
-                .toolbarBackground(.visible, for: .navigationBar)
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationDocument(url)
+                )
                 .alert(
                     "Delete this Page",
                     isPresented: $subviewManager.isDeletePageAlert,

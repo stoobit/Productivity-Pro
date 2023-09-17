@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PPDrawingBar: View {
     
-    @StateObject var drawingModel: PPDrawingModel
-    @StateObject var toolManager: ToolManager
+    @Bindable var drawingModel: PPDrawingModel
+    @Bindable var toolManager: ToolManager
     
     @AppStorage("colorSelection") var selectedColor: Int = 0
     @AppStorage("drawingColor1") var firstColor: Color = Color.black

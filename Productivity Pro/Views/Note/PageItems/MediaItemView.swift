@@ -12,8 +12,8 @@ struct MediaItemView: View {
     @Binding var item: ItemModel
     @Binding var page: Page
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var editItem: EditItemModel
+    @Bindable var toolManager: ToolManager
+    var editItem: EditItemModel
     
     @State var image: UIImage = UIImage()
     var body: some View {

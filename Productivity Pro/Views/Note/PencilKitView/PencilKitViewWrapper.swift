@@ -15,8 +15,8 @@ struct PencilKitViewWrapper: View {
     var size: CGSize
     
     @Binding var page: Page
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     @State var pkCanvasView: PKCanvasView = PKCanvasView()
     @State var pkToolPicker = PKToolPicker()

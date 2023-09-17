@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PPMenuView: View {
     
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     var body: some View {
         Menu(content: {

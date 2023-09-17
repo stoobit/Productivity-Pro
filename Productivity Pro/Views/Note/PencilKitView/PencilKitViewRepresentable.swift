@@ -16,8 +16,8 @@ struct PencilKitViewRepresentable: UIViewRepresentable {
     var size: CGSize
     
     @Binding var page: Page
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     @Binding var canvasView: PKCanvasView
     @Binding var toolPicker: PKToolPicker

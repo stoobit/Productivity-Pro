@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DocumentPickerView: View {
     
-    @StateObject var toolManager: ToolManager = ToolManager()
-    @StateObject var subviewManager: SubviewManager = SubviewManager()
+    @State var toolManager: ToolManager = ToolManager()
+    @State var subviewManager: SubviewManager = SubviewManager()
     
     var body: some View {
         NavigationStack {

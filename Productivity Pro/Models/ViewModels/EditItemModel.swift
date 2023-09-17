@@ -7,7 +7,7 @@
 
 import Foundation
 
-class EditItemModel: ObservableObject {
-    @Published var position: CGPoint = .zero
-    @Published var size: CGSize = .zero
+@Observable class EditItemModel {
+    var position: CGPoint = .zero
+    var size: CGSize = .zero
 }

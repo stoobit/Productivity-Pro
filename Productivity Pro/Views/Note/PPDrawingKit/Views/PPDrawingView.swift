@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PPDrawingView: View {
-    @StateObject var drawingModel: PPDrawingModel
+    @Bindable var drawingModel: PPDrawingModel
     @Binding var lines: [PPLine]?
     
     var scale: CGFloat = 1

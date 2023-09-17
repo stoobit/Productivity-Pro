@@ -26,8 +26,8 @@ struct NewDocumentView: View {
     @AppStorage("savedBackgroundTemplate")
     var savedBackgroundTemplate: String = ""
     
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
     
     @State var isPortrait: Bool = true
     @State var selectedColor: String = "pagewhite"

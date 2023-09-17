@@ -10,44 +10,43 @@ import PencilKit
 import PhotosUI
 import PDFKit
 
-@MainActor
-class ToolManager: ObservableObject {
+@Observable class ToolManager {
     
-    @Published var selectedPage: Int = 0
-    @Published var selectedTab: UUID = UUID()
+    var selectedPage: Int = 0
+    var selectedTab: UUID = UUID()
     
-    @Published var preloadedMedia: [PDFDocument?] = []
+    var preloadedMedia: [PDFDocument?] = []
     
-    @Published var copyPastePasser: CopyPastePasser?
+    var copyPastePasser: CopyPastePasser?
     
-    @Published var didZoom: Bool = false
-    @Published var didScroll: Bool = false
+    var didZoom: Bool = false
+    var didScroll: Bool = false
     
-    @Published var zoomScale: CGFloat = 1
-    @Published var scrollOffset: CGPoint = .zero
-    @Published var firstZoom: Bool = true
+    var zoomScale: CGFloat = 1
+    var scrollOffset: CGPoint = .zero
+    var firstZoom: Bool = true
     
-    @Published var isCanvasEnabled: Bool = false
-    @Published var isLockEnabled: Bool = true
+    var isCanvasEnabled: Bool = false
+    var isLockEnabled: Bool = true
     
-    @Published var selectedItem: ItemModel?
-    @Published var pageGotCleared: Bool = false
+    var selectedItem: ItemModel?
+    var pageGotCleared: Bool = false
     
-    @Published var showSnapper: [Bool] = [false, false]
-    @Published var showProgress: Bool = false
+    var showSnapper: [Bool] = [false, false]
+    var showProgress: Bool = false
     
-    @Published var dragType: DragType = .none
-    @Published var showFrame: Bool = true
+    var dragType: DragType = .none
+    var showFrame: Bool = true
     
-    @Published var isEditorVisible: Bool = true
-    @Published var isLocked: Bool = false
+    var isEditorVisible: Bool = true
+    var isLocked: Bool = false
     
-    @Published var isDraggingItem: Bool = false
+    var isDraggingItem: Bool = false
     
-    @Published var photoPickerItem: PhotosPickerItem?
-    @Published var pickedImage: UIImage?
-    @Published var pdfRendering: URL?
+    var photoPickerItem: PhotosPickerItem?
+    var pickedImage: UIImage?
+    var pdfRendering: URL?
     
-    @Published var isPageNumberVisible: Bool = true
-    @Published var objectRecognitionEnabled: Bool = false
+    var isPageNumberVisible: Bool = true
+    var objectRecognitionEnabled: Bool = false
 }

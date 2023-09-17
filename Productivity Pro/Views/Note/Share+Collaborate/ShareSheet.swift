@@ -14,8 +14,8 @@ struct ShareSheet: View {
     @Environment(\.horizontalSizeClass) var hsc
     
     @Binding var showProgress: Bool
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
     
     @Binding var document: Document
     let type: ShareType

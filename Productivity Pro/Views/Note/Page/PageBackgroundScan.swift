@@ -14,7 +14,7 @@ struct PageBackgroundScan: View, Equatable {
     var page: Page
     @Binding var offset: CGFloat
     
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     var isOverview: Bool
     var pdfRendering: Bool

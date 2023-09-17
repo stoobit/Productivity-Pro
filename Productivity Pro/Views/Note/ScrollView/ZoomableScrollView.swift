@@ -15,8 +15,8 @@ struct ZoomableScrollView<Content: View>: UIViewRepresentable {
     @Binding var document: Document
     @Binding var page: Page
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     var scrollView: UIScrollView
     var content: () -> Content

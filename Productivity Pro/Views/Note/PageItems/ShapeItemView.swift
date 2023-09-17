@@ -10,8 +10,8 @@ import SwiftUI
 struct ShapeItemView: View {
     
     @Binding var item: ItemModel
-    @StateObject var toolManager: ToolManager
-    @StateObject var editItem: EditItemModel
+    @Bindable var toolManager: ToolManager
+    var editItem: EditItemModel
     
     var body: some View {
         Group {
@@ -77,8 +77,8 @@ struct ShapeItemView: View {
 
 struct CornerModifier: ViewModifier {
     
-    @StateObject var editItem: EditItemModel
-    @StateObject var toolManager: ToolManager
+    var editItem: EditItemModel
+    @Bindable var toolManager: ToolManager
     
     @Binding var item: ItemModel
     

@@ -25,7 +25,7 @@ struct AddPageView: View {
     @State var isPortrait: Bool = true
     @State var backgroundTemplate: String = "blank"
     
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     var body: some View {
         NavigationStack {

@@ -23,9 +23,9 @@ struct PageView: View {
     
     @Binding var offset: CGFloat
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var drawingModel: PPDrawingModel
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    @Bindable var drawingModel: PPDrawingModel
     
     @State var isTargeted: Bool = true
     

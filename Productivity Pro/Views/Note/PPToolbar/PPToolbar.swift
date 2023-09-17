@@ -13,9 +13,9 @@ struct PPToolbar: View {
     @Binding var document: Document
     @State var pasteDisabled: Bool = false
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var drawingModel: PPDrawingModel
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    @Bindable var drawingModel: PPDrawingModel
     
     @State var menu: Bool = false
     

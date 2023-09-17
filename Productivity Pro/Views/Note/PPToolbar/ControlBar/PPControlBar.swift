@@ -21,8 +21,8 @@ struct PPControlBar: View {
     @AppStorage("defaultFontSize")
     var defaultFontSize: Double = 12
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     var body: some View {
         Group {

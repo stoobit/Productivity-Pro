@@ -8,9 +8,9 @@ struct TextFieldItemView: View {
     @Binding var item: ItemModel
     @Binding var page: Page
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var editItem: EditItemModel
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    var editItem: EditItemModel
     
     @State var renderedImage: UIImage?
     @Binding var offset: CGFloat

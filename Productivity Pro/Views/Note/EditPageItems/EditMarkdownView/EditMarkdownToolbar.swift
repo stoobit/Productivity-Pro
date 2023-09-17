@@ -9,8 +9,8 @@ import SwiftUI
 
 struct EditMarkdownToolbar: ToolbarContent {
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     var body: some ToolbarContent {
         ToolbarItem(placement: .confirmationAction) {

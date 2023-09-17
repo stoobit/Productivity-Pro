@@ -15,8 +15,8 @@ struct ToolView: View {
     @GestureState var width: Double? = nil
     @GestureState var height: Double? = nil
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var editItemModel: EditItemModel
+    @Bindable var toolManager: ToolManager
+    @Bindable var editItemModel: EditItemModel
     
     @State var zPositioning: CGSize = .zero
     

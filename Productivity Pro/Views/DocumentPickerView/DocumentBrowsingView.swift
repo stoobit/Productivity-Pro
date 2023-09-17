@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DocumentBrowsingView: View {
     
-    @StateObject var toolManger: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    var toolManger: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     @State var isBrowsing: Bool = false
     @State var isDocument: Bool = false

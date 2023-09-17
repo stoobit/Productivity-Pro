@@ -7,39 +7,39 @@
 
 import Foundation
 
-class SubviewManager: ObservableObject {
+@Observable class SubviewManager {
     
-    @Published var isSettingsActivated: Bool = false
+    var isSettingsActivated: Bool = false
     
-    @Published var createDocument: Bool = false
-    @Published var showPrinterView: Bool = false
+    var createDocument: Bool = false
+    var showPrinterView: Bool = false
     
-    @Published var sharePDFSheet: Bool = false
+    var sharePDFSheet: Bool = false
     
-    @Published var collaborationSheet: Bool = false
-    @Published var overviewSheet: Bool = false
-    @Published var settingsSheet: Bool = false
+    var collaborationSheet: Bool = false
+    var overviewSheet: Bool = false
+    var settingsSheet: Bool = false
     
-    @Published var showDebuggingSheet: Bool = false
+    var showDebuggingSheet: Bool = false
     
-    @Published var isPresentationMode: Bool = false
-    @Published var addPageSettingsSheet: Bool = false
-    @Published var changeTemplate: Bool = false
-    @Published var isDeletePageAlert: Bool = false
+    var isPresentationMode: Bool = false
+    var addPageSettingsSheet: Bool = false
+    var changeTemplate: Bool = false
+    var isDeletePageAlert: Bool = false
     
-    @Published var markdownHelp: Bool = false
+    var markdownHelp: Bool = false
     
-    @Published var showStylePopover: Bool = false
-    @Published var showTextEditor: Bool = false
+    var showStylePopover: Bool = false
+    var showTextEditor: Bool = false
     
-    @Published var showCameraView: Bool = false
-    @Published var showImportPhoto: Bool = false
-    @Published var showScanDoc: Bool = false
-    @Published var showImportMedia: Bool = false
+    var showCameraView: Bool = false
+    var showImportPhoto: Bool = false
+    var showScanDoc: Bool = false
+    var showImportMedia: Bool = false
     
-    @Published var showImportFile: Bool = false
+    var showImportFile: Bool = false
     
-    @Published var newDocPDF: Bool = false
-    @Published var newDocScan: Bool = false
-   
+    var newDocPDF: Bool = false
+    var newDocScan: Bool = false
+    
 }

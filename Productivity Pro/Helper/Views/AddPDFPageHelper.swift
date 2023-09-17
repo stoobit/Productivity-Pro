@@ -13,8 +13,8 @@ struct AddPDFPageHelper: ViewModifier {
     
     @Binding var document: Document
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     func body(content: Content) -> some View {
         content

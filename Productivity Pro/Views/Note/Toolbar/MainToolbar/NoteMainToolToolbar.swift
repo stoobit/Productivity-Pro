@@ -26,8 +26,8 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
     
     @Binding var document: Document
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     var placement: ToolbarItemPlacement {
         hsc == .regular ? .secondaryAction : .bottomBar

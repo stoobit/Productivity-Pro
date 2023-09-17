@@ -14,8 +14,8 @@ struct NoteSheetHelper: ViewModifier {
     @Environment(\.undoManager) var undoManager
     @Binding var document: Document
     
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
     
     let proxy: GeometryProxy
     

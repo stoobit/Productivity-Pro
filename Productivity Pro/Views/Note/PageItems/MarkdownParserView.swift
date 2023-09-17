@@ -10,7 +10,7 @@ import SwiftyMarkdown
 
 struct MarkdownParserView: View {
     
-    @StateObject var editItem: EditItemModel
+    var editItem: EditItemModel
     var itemModel: ItemModel
     
     @Binding var page: Page

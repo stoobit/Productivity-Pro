@@ -13,8 +13,8 @@ struct PageItemView: View {
     @Binding var page: Page
     @Binding var offset: CGFloat
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     var highRes: Bool
     var pdfRendering: Bool

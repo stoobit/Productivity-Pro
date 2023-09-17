@@ -11,7 +11,7 @@ import SwiftUI
 struct IndicatorText: View {
     
     let document: Document
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     var body: some View {
         let total = document.note.pages.count

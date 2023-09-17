@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SnapItemView: View {
     
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     @Binding var page: Page
     
     var body: some View {

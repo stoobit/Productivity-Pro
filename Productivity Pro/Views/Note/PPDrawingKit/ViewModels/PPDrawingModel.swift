@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-class PPDrawingModel: ObservableObject {
+@Observable class PPDrawingModel {
     
-    @Published var selectedLines: [PPLine] = []
+    var selectedLines: [PPLine] = []
     
-    @Published var selectedColor: Color = .red
-    @Published var selectedWidth: Double = 5
+    var selectedColor: Color = .red
+    var selectedWidth: Double = 5
     
-    @Published var selectedTool: PPDrawingTool = .pen
-    @Published var eraserType: PPEraserType = .point
+    var selectedTool: PPDrawingTool = .pen
+    var eraserType: PPEraserType = .point
     
-    @Published var objectRecognitionTool: PPRecognitionTool = .none
+    var objectRecognitionTool: PPRecognitionTool = .none
     
 }

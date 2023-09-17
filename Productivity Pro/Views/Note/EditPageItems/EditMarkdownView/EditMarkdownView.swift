@@ -14,8 +14,8 @@ struct EditMarkdownView: View {
     
     @Binding var document: Document
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     @State var text: String = ""
     

@@ -12,7 +12,7 @@ struct DragRelocateDelegate: DropDelegate {
     @Binding var listData: [Page]
     @Binding var current: Page?
 
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     func dropEntered(info: DropInfo) {
         

@@ -14,8 +14,8 @@ struct DragItemModifier: ViewModifier {
     @Binding var page: Page
     @Binding var item: ItemModel
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var editItemModel: EditItemModel
+    @Bindable var toolManager: ToolManager
+    @Bindable var editItemModel: EditItemModel
     
     func body(content: Content) -> some View {
         if item.id == toolManager.selectedItem?.id &&

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DocumentCreationView: View {
     
-    @StateObject var toolManger: ToolManager
-    @StateObject var subviewManager: SubviewManager
+    var toolManger: ToolManager
+    @Bindable var subviewManager: SubviewManager
     
     @State var document: Document = Document()
     @State var url: URL = URL(string: "https://www.stoobit.com")!

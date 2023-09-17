@@ -15,9 +15,9 @@ struct ItemView: View {
     @Binding var page: Page
     @Binding var item: ItemModel
     
-    @StateObject var toolManager: ToolManager
-    @StateObject var subviewManager: SubviewManager
-    @StateObject var editItemModel: EditItemModel = EditItemModel()
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    @State var editItemModel: EditItemModel = EditItemModel()
     
     var highRes: Bool
     var pdfRendering: Bool

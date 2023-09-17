@@ -21,7 +21,7 @@ struct ChangePageTemplateView: View {
     @Binding var document: Document
     @Binding var isPresented: Bool
     
-    @StateObject var toolManager: ToolManager
+    @Bindable var toolManager: ToolManager
     
     @State var backgroundColor: String = "pagewhite"
     @State var isPortrait: Bool = true
