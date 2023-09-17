@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoteToolbarModifier: ViewModifier {
+struct NoteViewToolbar: ViewModifier {
     
     @Binding var document: Document
     @Binding var url: URL

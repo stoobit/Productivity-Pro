@@ -17,22 +17,21 @@ struct IndicatorText: View {
         let total = document.note.pages.count
         let number = toolManager.selectedPage + 1
         
-        HStack {
-            VStack {
-                Text("\(Text("\(number)").monospacedDigit()) of \(Text("\(total)").monospacedDigit())")
-                    .padding(5)
-                    .fontWeight(.medium)
-                    .foregroundColor(.white.opacity(0.8))
-                    .background(Color.gray.opacity(0.5))
-                    .cornerRadius(6)
-                    .padding()
-                    .colorScheme(.light)
-                
-                Spacer()
-            }
-            
-            Spacer()
+        Group {
+            Text("\(number)") +
+            Text(" von ") +
+            Text("\(total)")
         }
+        .padding(5)
+        .fontWeight(.medium)
+        .foregroundColor(.white.opacity(0.8))
+        .background(Color.gray.opacity(0.5))
+        .cornerRadius(6)
+        .colorScheme(.light)
+        .frame(
+            maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading
+        )
+        .padding()
         
     }
     

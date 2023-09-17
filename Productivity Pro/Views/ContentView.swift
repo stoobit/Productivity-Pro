@@ -42,7 +42,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("Hausaufgaben", systemImage: "house")
                 }
-             */
             
             LibraryView()
                 .toolbarBackground(.visible, for: .tabBar)
@@ -50,6 +49,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Bibliothek", systemImage: "books.vertical")
                 }
+             */
             
         }
         .scrollIndicators(.hidden)

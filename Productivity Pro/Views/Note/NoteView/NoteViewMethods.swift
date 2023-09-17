@@ -13,7 +13,6 @@ extension NoteView {
     
     func saveDocument() {
         do {
-            
             if url.startAccessingSecurityScopedResource() {
                 let data = try JSONEncoder().encode(document)
                 let encryptedData = data.base64EncodedData()
@@ -23,49 +22,6 @@ extension NoteView {
             
             url.stopAccessingSecurityScopedResource()
         } catch { print("error") }
-    }
-    
-    func loadFirst() {
-        guard let page = document.note.pages.first else { return }
-        if page.type == .pdf {
-            
-            guard let data = page.backgroundMedia else {
-                toolManager.preloadedMedia.append(nil)
-                return
-            }
-            
-            guard let pdf = PDFDocument(data: data) else {
-                toolManager.preloadedMedia.append(nil)
-                return
-            }
-            
-            toolManager.preloadedMedia.append(pdf)
-            
-        } else {
-            toolManager.preloadedMedia.append(nil)
-        }
-    }
-    
-    func loadMedia() {
-        for page in Array(document.note.pages.dropFirst()) {
-            if page.type == .pdf {
-                
-                guard let data = page.backgroundMedia else {
-                    toolManager.preloadedMedia.append(nil)
-                    continue
-                }
-                
-                guard let pdf = PDFDocument(data: data) else {
-                    toolManager.preloadedMedia.append(nil)
-                    continue
-                }
-                
-                toolManager.preloadedMedia.append(pdf)
-                
-            } else {
-                toolManager.preloadedMedia.append(nil)
-            }
-        }
     }
     
     func isViewVisible(page: Page) -> Bool {
@@ -89,24 +45,6 @@ extension NoteView {
         toolManager.pickedImage = nil
     }
     
-    func noteDidAppear() {
-        UITabBar.appearance().isHidden = true
-        loadFirst()
-        
-        toolManager.selectedTab = document.note.pages.first!.id
-        toolManager.selectedPage = document.note.pages.firstIndex(
-            where: { $0.id == toolManager.selectedTab }
-        )!
-        
-        fixScrollViewBug()
-    }
-    
-    func selectedPageDidChange(index page: Int) {
-        toolManager.selectedTab = document.note.pages[
-            page
-        ].id
-    }
-    
     func selectedTabDidChange(_ tab: UUID, size: CGSize) {
         toolManager.selectedPage = document.note.pages.firstIndex(where: {
             $0.id == tab
@@ -119,23 +57,6 @@ extension NoteView {
         )
         
         pageIndicator()
-    }
-    
-    func fixScrollViewBug() {
-        Task {
-            document.note.pages.append(
-                Page(
-                    backgroundColor: "pagewhite",
-                    backgroundTemplate: "blank",
-                    isPortrait: true
-                )
-            )
-            
-            try? await Task.sleep(nanoseconds: 50000)
-            document.note.pages.removeLast()
-            try? await Task.sleep(nanoseconds: 50000)
-            undoManager?.removeAllActions()
-        }
     }
     
     func addImage(_ img: UIImage) {

@@ -13,11 +13,6 @@ struct NoteView: View {
     
     @Environment(\.dismiss) var dismiss
     @Environment(\.undoManager) var undoManager
-    @Environment(\.scenePhase) var scenePhase
-    
-    let timer = Timer
-        .publish(every: 180, tolerance: 120, on: .main, in: .common)
-        .autoconnect()
     
     @Binding var document: Document
     @Binding var url: URL
@@ -55,27 +50,19 @@ struct NoteView: View {
                         }
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
+                    .onChange(of: toolManager.selectedTab) { old, tab in
+                        selectedTabDidChange(tab, size: proxy.size)
+                    }
                     
                 }
                 .edgesIgnoringSafeArea(.bottom)
-                .disabled(toolManager.showProgress)
                 .overlay {
-                    NoteOverlayControlView(
-                        document: $document,
-                        toolManager: toolManager,
-                        subviewManager: subviewManager,
-                        drawingModel: drawingModel,
-                        size: proxy.size,
-                        isCPMenuHidden: isCPMenuHidden
-                    )
+                    if toolManager.isPageNumberVisible {
+                        IndicatorText(
+                            document: document, toolManager: toolManager
+                        )
+                    }
                 }
-                .onChange(of: toolManager.selectedTab) { old, tab in
-                    selectedTabDidChange(tab, size: proxy.size)
-                }
-                .onChange(of: toolManager.selectedPage) { old, page in
-                    selectedPageDidChange(index: page)
-                }
-                // MARK: - HELPER MODIFIER (SHEET, ALERT, ON CHANGE) -
                 .modifier(
                     NoteViewSheet(
                         document: $document, subviewManager: subviewManager,
@@ -88,9 +75,16 @@ struct NoteView: View {
                         subviewManager: subviewManager, toolManager: toolManager
                     )
                 )
-                // MARK: - HELPER MODIFIER (SHEET, ALERT, ON CHANGE) -
                 .modifier(
-                    NoteToolbarModifier(
+                    NoteViewOnChange(
+                        document: $document, subviewManager: subviewManager,
+                        toolManager: toolManager, saveDocument: saveDocument,
+                        pageIndicator: pageIndicator,
+                        selectedImageDidChange: pickedImageDidChange
+                    )
+                )
+                .modifier(
+                    NoteViewToolbar(
                         document: $document,
                         url: $url,
                         toolManager: toolManager,
@@ -100,7 +94,6 @@ struct NoteView: View {
                         dismiss()
                     }
                 )
-               
                 .overlay {
                     if toolManager.showProgress {
                         ProgressView("Processing...")
@@ -111,38 +104,14 @@ struct NoteView: View {
                             .cornerRadius(13, antialiased: true)
                     }
                 }
-               
+                
             }
+            .disabled(toolManager.showProgress)
             .position(
                 x: proxy.size.width / 2,
                 y: proxy.size.height / 2
             )
+            
         }
-        .onChange(of: toolManager.pickedImage) {
-            pickedImageDidChange()
-        }
-        .onChange(of: document.note.pages.count) {
-            pageIndicator()
-            undoManager?.removeAllActions()
-        }
-        .onAppear { noteDidAppear() }
-        .onReceive(timer) { input in
-            saveDocument()
-        }
-        .onReceive(NotificationCenter.default.publisher(
-            for: UIApplication.willTerminateNotification)
-        ) { output in
-            saveDocument()
-        }
-        .onChange(of: scenePhase) {
-            saveDocument()
-        }
-        .task {
-            pageIndicator()
-            loadMedia()
-        }
-        
-        
     }
-    
 }
