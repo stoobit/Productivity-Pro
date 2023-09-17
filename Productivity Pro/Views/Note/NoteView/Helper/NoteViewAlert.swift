@@ -39,6 +39,7 @@ struct NoteViewAlert: ViewModifier {
                 }
                 
                 Button("Umbenennen") { rename() }
+                    .disabled(renameTitel == "")
             }
         
     }
@@ -88,7 +89,23 @@ struct NoteViewAlert: ViewModifier {
     }
     
     func rename() {
+        let old: URL = url
         
+        url = url.deletingLastPathComponent().appendingPathComponent(
+            renameTitel, conformingTo: .pro
+        )
+        
+        if url.deletingLastPathComponent().startAccessingSecurityScopedResource() {
+            do {
+                
+                try FileManager.default.moveItem(at: old, to: url)
+                
+            } catch {}
+            
+            url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
+        }
+        
+        renameTitel = ""
     }
     
 }
