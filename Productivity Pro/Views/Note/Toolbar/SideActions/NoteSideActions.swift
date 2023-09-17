@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoteSideActionToolbar: ToolbarContent {
+struct NoteSideActions: ToolbarContent {
     
     @Environment(\.undoManager) var undoManager
     @Environment(\.horizontalSizeClass) var hsc

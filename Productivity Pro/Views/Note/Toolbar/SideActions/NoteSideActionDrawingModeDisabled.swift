@@ -7,7 +7,7 @@
 
 import SwiftUI
  
-extension NoteSideActionToolbar {
+extension NoteSideActions {
     @ViewBuilder func EditingToolbar() -> some View {
         if subviewManager.isPresentationMode == false {
             

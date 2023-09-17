@@ -43,7 +43,7 @@ struct NoteToolbarModifier: ViewModifier {
                 }
             }
             .toolbar {
-                NoteSideActionToolbar(
+                NoteSideActions(
                     document: $document,
                     toolManager: toolManager,
                     subviewManager: subviewManager,

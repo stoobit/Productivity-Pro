@@ -20,7 +20,13 @@ struct NoteTitleMenu: View {
     
     var body: some View {
         
-        Button("Umbenennen", systemImage: "pencil", action: {})
+        Button("Umbenennen", systemImage: "pencil", action: {
+            subviewManager.renameView.toggle()
+        })
+        
+        Button("Bewegen", systemImage: "folder", action: {
+            subviewManager.moveView.toggle()
+        })
         
         Section {
             

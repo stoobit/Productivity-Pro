@@ -9,9 +9,8 @@ import SwiftUI
 import PencilKit
 import PDFKit
 
-struct NoteSheetHelper: ViewModifier {
+struct NoteViewSheet: ViewModifier {
     
-    @Environment(\.undoManager) var undoManager
     @Binding var document: Document
     
     @Bindable var subviewManager: SubviewManager
@@ -53,6 +52,15 @@ struct NoteSheetHelper: ViewModifier {
                     document: $document,
                     toolManager: toolManager,
                     subviewManager: subviewManager
+                )
+            }
+            .sheet(isPresented: $subviewManager.sharePDFSheet) {
+                ShareSheet(
+                    showProgress: $toolManager.showProgress,
+                    subviewManager: subviewManager,
+                    toolManager: toolManager,
+                    document: $document,
+                    type: .pdf
                 )
             }
             .background {

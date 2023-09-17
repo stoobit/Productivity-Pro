@@ -9,7 +9,8 @@ import Foundation
 
 @Observable class SubviewManager {
     
-    var isSettingsActivated: Bool = false
+    var renameView: Bool = false
+    var moveView: Bool = false
     
     var createDocument: Bool = false
     var showPrinterView: Bool = false
@@ -18,7 +19,6 @@ import Foundation
     
     var collaborationSheet: Bool = false
     var overviewSheet: Bool = false
-    var settingsSheet: Bool = false
     
     var showDebuggingSheet: Bool = false
     

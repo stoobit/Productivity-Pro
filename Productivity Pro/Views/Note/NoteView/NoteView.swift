@@ -75,14 +75,20 @@ struct NoteView: View {
                 .onChange(of: toolManager.selectedPage) { old, page in
                     selectedPageDidChange(index: page)
                 }
+                // MARK: - HELPER MODIFIER (SHEET, ALERT, ON CHANGE) -
                 .modifier(
-                    NoteSheetHelper(
-                        document: $document,
-                        subviewManager: subviewManager,
-                        toolManager: toolManager,
-                        proxy: proxy
+                    NoteViewSheet(
+                        document: $document, subviewManager: subviewManager,
+                        toolManager: toolManager, proxy: proxy
                     )
                 )
+                .modifier(
+                    NoteViewAlert(
+                        document: $document, url: $url,
+                        subviewManager: subviewManager, toolManager: toolManager
+                    )
+                )
+                // MARK: - HELPER MODIFIER (SHEET, ALERT, ON CHANGE) -
                 .modifier(
                     NoteToolbarModifier(
                         document: $document,
@@ -94,18 +100,7 @@ struct NoteView: View {
                         dismiss()
                     }
                 )
-                .alert(
-                    "Delete this Page",
-                    isPresented: $subviewManager.isDeletePageAlert,
-                    actions: {
-                        Button("Delete Page", role: .destructive) { deletePage() }
-                        Button("Cancel", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
-                        }
-                        
-                    }
-                ) {
-                    Text("You cannot undo this action.")
-                }
+               
                 .overlay {
                     if toolManager.showProgress {
                         ProgressView("Processing...")
@@ -116,15 +111,7 @@ struct NoteView: View {
                             .cornerRadius(13, antialiased: true)
                     }
                 }
-                .sheet(isPresented: $subviewManager.sharePDFSheet) {
-                    ShareSheet(
-                        showProgress: $toolManager.showProgress,
-                        subviewManager: subviewManager,
-                        toolManager: toolManager,
-                        document: $document,
-                        type: .pdf
-                    )
-                }
+               
             }
             .position(
                 x: proxy.size.width / 2,

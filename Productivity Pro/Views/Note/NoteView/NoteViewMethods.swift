@@ -164,45 +164,6 @@ extension NoteView {
         toolManager.showProgress = false
     }
     
-    func deletePage() {
-        withAnimation {
-            
-            document.note.pages[
-                toolManager.selectedPage
-            ].items.removeAll()
-            
-            document.note.pages[
-                toolManager.selectedPage
-            ].type = .template
-            
-            toolManager.preloadedMedia.remove(at: toolManager.selectedPage)
-            
-            let seconds = 0.1
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                
-                if toolManager.selectedTab == document.note.pages.last?.id {
-                    
-                    let newSelection = document.note.pages[toolManager.selectedPage - 1].id
-                    document.note.pages.remove(at: toolManager.selectedPage)
-                    
-                    toolManager.selectedTab = newSelection
-                    
-                } else {
-                    
-                    let newSelection = document.note.pages[toolManager.selectedPage + 1].id
-                    document.note.pages.remove(at: toolManager.selectedPage)
-                    
-                    toolManager.selectedTab = newSelection
-                    
-                }
-                
-                undoManager?.removeAllActions()
-                toolManager.selectedItem = nil
-                
-            }
-        }
-    }
-    
     func pageIndicator() {
         if subviewManager.overviewSheet == false {
             toolManager.isPageNumberVisible = true

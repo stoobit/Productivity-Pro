@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension NoteSideActionToolbar {
+extension NoteSideActions {
     
     func templateChangeDisabled() -> Bool {
         var isDisabled: Bool = true
