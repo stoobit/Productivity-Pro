@@ -11,6 +11,7 @@ import PDFKit
 
 struct NoteViewSheet: ViewModifier {
     
+    @Environment(\.undoManager) var undoManager
     @Binding var document: Document
     
     @Bindable var subviewManager: SubviewManager

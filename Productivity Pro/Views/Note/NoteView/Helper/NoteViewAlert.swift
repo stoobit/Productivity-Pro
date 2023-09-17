@@ -38,7 +38,7 @@ struct NoteViewAlert: ViewModifier {
                     subviewManager.renameView.toggle()
                 }
                 
-                Button("Umbenennen", role: .cancel) { rename() }
+                Button("Umbenennen") { rename() }
             }
         
     }
