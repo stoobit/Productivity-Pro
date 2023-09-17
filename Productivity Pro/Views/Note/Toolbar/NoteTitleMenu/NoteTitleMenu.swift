@@ -9,7 +9,7 @@ import SwiftUI
 import PDFKit
 import PencilKit
 
-struct NoteToolbarTitleMenu: View {
+struct NoteTitleMenu: View {
     
     @Environment(\.horizontalSizeClass) var hsc
     @Binding var document: Document
@@ -20,6 +20,8 @@ struct NoteToolbarTitleMenu: View {
     var url: URL
     
     var body: some View {
+        
+        Button("", systemImage: "", action: )
         
         Section {
             
@@ -51,30 +53,6 @@ struct NoteToolbarTitleMenu: View {
             }
         }
         
-        Section {
-            Button(action: {
-                toolManager.isCanvasEnabled = false
-                subviewManager.settingsSheet.toggle()
-            }) {
-                Label("Settings", systemImage: "gearshape")
-            }
-            
-            Button(action: {
-                toolManager.isCanvasEnabled = false
-                feedback()
-            }) {
-                Label("Help", systemImage: "questionmark.circle")
-            }
-        }
-        
-    }
-    
-    func feedback() {
-        let url = "imessage://contact.stoobit@aol.com"
-        
-        if UIApplication.shared.canOpenURL(URL(string: url)!) {
-             UIApplication.shared.open(URL(string: url)!, options: [:], completionHandler: nil)
-        }
     }
     
     func sharePDF() {
