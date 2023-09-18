@@ -65,8 +65,10 @@ struct NoteView: View {
                 }
                 .modifier(
                     NoteViewSheet(
-                        document: $document, subviewManager: subviewManager,
-                        toolManager: toolManager, proxy: proxy
+                        document: $document, url: $url,
+                        subviewManager: subviewManager,
+                        toolManager: toolManager, 
+                        proxy: proxy
                     )
                 )
                 .modifier(
