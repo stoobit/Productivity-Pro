@@ -10,6 +10,7 @@ import SwiftUI
 struct DeskView: View {
     
     @Environment(\.requestReview) var requestReview
+    @State var shareView: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -57,6 +58,17 @@ struct DeskView: View {
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Schreibtisch")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("", systemImage: "square.and.arrow.up") {
+                        shareView.toggle()
+                    }
+                }
+            }
+            .fullScreenCover(isPresented: $shareView, content: {
+                ShareView()
+            })
+            
         }
     }
 }

@@ -116,6 +116,7 @@
 		BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */; };
 		BBBB7E082A2693FD00155C8A /* CompactCalculatorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */; };
 		BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */; };
+		BBBBAC4C2AB8E887008CB9DA /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */; };
 		BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB02A25461900C23B2C /* UIElements.swift */; };
 		BBBCACB42A25461900C23B2C /* OldCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB12A25461900C23B2C /* OldCalculatorView.swift */; };
 		BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB22A25461900C23B2C /* Calculator.swift */; };
@@ -300,6 +301,7 @@
 		BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMediaItemMethods.swift; sourceTree = "<group>"; };
 		BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactCalculatorUI.swift; sourceTree = "<group>"; };
 		BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactCalculatorView.swift; sourceTree = "<group>"; };
+		BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		BBBCACB02A25461900C23B2C /* UIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		BBBCACB12A25461900C23B2C /* OldCalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldCalculatorView.swift; sourceTree = "<group>"; };
 		BBBCACB22A25461900C23B2C /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 				BBAF57FD2A49E5D7008DEA98 /* WhatIsNew.swift */,
 				BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */,
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
+				BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */,
 				BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */,
 			);
 			path = DeskView;
@@ -1136,6 +1139,7 @@
 				BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */,
 				BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
+				BBBBAC4C2AB8E887008CB9DA /* ShareView.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
 				BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */,
