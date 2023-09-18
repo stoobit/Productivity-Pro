@@ -10,6 +10,7 @@
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
 		BB0729E22AB10C93000A6A15 /* DocumentBrowsingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */; };
+		BB073A6F2AB8CA4800C80B59 /* NoteSidePageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB073A6E2AB8CA4800C80B59 /* NoteSidePageActions.swift */; };
 		BB07E7BA2A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
 		BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2062925A7C200F4004A /* BottomOffset.swift */; };
@@ -193,6 +194,7 @@
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
 		BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowsingView.swift; sourceTree = "<group>"; };
+		BB073A6E2AB8CA4800C80B59 /* NoteSidePageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSidePageActions.swift; sourceTree = "<group>"; };
 		BB07E7B92A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapperMethods.swift; sourceTree = "<group>"; };
 		BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		BB0BE2062925A7C200F4004A /* BottomOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOffset.swift; sourceTree = "<group>"; };
@@ -909,6 +911,7 @@
 			isa = PBXGroup;
 			children = (
 				BB929B7F28E5076D00DA4538 /* NoteSideActions.swift */,
+				BB073A6E2AB8CA4800C80B59 /* NoteSidePageActions.swift */,
 				BBEFC9502A41038F00960C8D /* NoteSideActionsEditor.swift */,
 				BBEFC94E2A41035C00960C8D /* NoteSideActionMethods.swift */,
 			);
@@ -1183,6 +1186,7 @@
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
 				BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */,
+				BB073A6F2AB8CA4800C80B59 /* NoteSidePageActions.swift in Sources */,
 				BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */,
 				BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */,
 				BB27FED428EA192D00459334 /* OLD ChangePageTemplateView.swift in Sources */,
