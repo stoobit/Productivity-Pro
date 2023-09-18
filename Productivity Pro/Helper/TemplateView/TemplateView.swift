@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct TemplateView: View {
+    
+    @AppStorage("savedBackgroundColor")
+    var savedBackgroundColor: String = ""
+    
+    @AppStorage("savedIsPortrait")
+    var savedIsPortrait: Bool = true
+    
+    @AppStorage("savedBackgroundTemplate")
+    var savedBackgroundTemplate: String = ""
+    
     @Binding var isPresented: Bool
     
     @Binding var isPortrait: Bool
@@ -45,7 +55,13 @@ struct TemplateView: View {
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(buttonTitle , action: action)
+                    Button(buttonTitle) {
+                        action()
+                        
+                        savedIsPortrait = isPortrait
+                        savedBackgroundColor = selectedColor
+                        savedBackgroundTemplate = selectedTemplate
+                    }
                 }
             }
             

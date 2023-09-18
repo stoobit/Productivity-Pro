@@ -57,10 +57,9 @@ struct NoteViewSheet: ViewModifier {
                     buttonTitle: "Hinzufügen", 
                     preselectedOrientation: page.isPortrait,
                     preselectedColor: page.backgroundColor,
-                    preselectedTemplate: page.backgroundTemplate
-                ) {
-                        
-                }
+                    preselectedTemplate: page.backgroundTemplate,
+                    action: addPage
+                )
             }
             .sheet(isPresented: $subviewManager.overviewSheet) {
                 OverviewView(
@@ -99,5 +98,26 @@ struct NoteViewSheet: ViewModifier {
                     
                 }
             }
+    }
+    
+    func addPage() {
+        
+        let newPage = Page(
+            canvasType: .pencilKit,
+            backgroundColor: selectedColor,
+            backgroundTemplate: selectedTemplate,
+            isPortrait: isPortrait
+        )
+        
+        toolManager.preloadedMedia.insert(
+            nil, at: toolManager.selectedPage + 1
+        )
+        
+        document.note.pages.insert(
+            newPage, at: toolManager.selectedPage + 1
+        )
+
+        subviewManager.addPageSettingsSheet = false
+        toolManager.selectedPage += 1
     }
 }

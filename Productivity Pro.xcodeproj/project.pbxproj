@@ -104,7 +104,6 @@
 		BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CC947293FD45E0094446A /* ShareSheet.swift */; };
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
-		BB9F70EB28E7A57C007DF951 /* OLD AddPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9F70EA28E7A57C007DF951 /* OLD AddPageView.swift */; };
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* MarkdownParserView.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
@@ -290,7 +289,6 @@
 		BB9D740B2A56277B0054940A /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = SDKROOT; };
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
-		BB9F70EA28E7A57C007DF951 /* OLD AddPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OLD AddPageView.swift"; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
 		BBADD1362A5102620075B825 /* MarkdownParserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownParserView.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
@@ -626,7 +624,6 @@
 				BB1E693F2A71CE01008E0C5F /* TemplateView.swift */,
 				BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */,
 				BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */,
-				BB9F70EA28E7A57C007DF951 /* OLD AddPageView.swift */,
 				BB27FED328EA192D00459334 /* OLD ChangePageTemplateView.swift */,
 			);
 			path = TemplateView;
@@ -1085,7 +1082,6 @@
 				BB655AFC2AB772E000FB005A /* NoteViewOnChange.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSideActions.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
-				BB9F70EB28E7A57C007DF951 /* OLD AddPageView.swift in Sources */,
 				BBF5FE032AAE61E20081C4FE /* SubjectModel.swift in Sources */,
 				BB15F2232A69964200223C92 /* ExitButtonView.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
