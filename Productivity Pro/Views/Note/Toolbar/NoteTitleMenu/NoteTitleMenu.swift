@@ -10,8 +10,9 @@ import PDFKit
 import PencilKit
 
 struct NoteTitleMenu: View {
-    
     @Environment(\.horizontalSizeClass) var hsc
+    @AppStorage("pinnedurls") var pinned: [URL] = []
+    
     @Binding var document: Document
     @Binding var url: URL
     
@@ -19,7 +20,6 @@ struct NoteTitleMenu: View {
     @Bindable var toolManager: ToolManager
     
     var body: some View {
-        
         Section {
             Button("Umbenennen", systemImage: "pencil", action: {
                 subviewManager.renameView.toggle()
@@ -30,15 +30,19 @@ struct NoteTitleMenu: View {
             })
         }
         
+        Button(action: togglePin) {
+            Label(
+                pinned.contains(url) ? "Pin entfernen" : "Anpinnen",
+                systemImage: pinned.contains(url) ? "pin.fill" : "pin"
+            )
+        }
+        
         Section {
-            
             Button(action: {
                 toolManager.isCanvasEnabled = false
                 sharePDF()
             }) {
-                
                 Label("Als PDF exportieren", systemImage: "doc")
-                
             }
             
             Button(action: {
@@ -47,19 +51,7 @@ struct NoteTitleMenu: View {
             }) {
                 Label("Drucken", systemImage: "printer")
             }
-            
         }
-        
-        if hsc == .compact {
-            Button(action: {
-                toolManager.isCanvasEnabled = false
-                UITabBar.appearance().isHidden = false
-                subviewManager.overviewSheet.toggle()
-            }) {
-                Label("Overview", systemImage: "square.grid.2x2")
-            }
-        }
-        
     }
 }
 

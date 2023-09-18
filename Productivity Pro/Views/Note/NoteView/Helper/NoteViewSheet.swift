@@ -47,9 +47,7 @@ struct NoteViewSheet: ViewModifier {
                     toolManager: toolManager
                 )
             }
-            .sheet(isPresented: $subviewManager.overviewSheet, onDismiss: {
-                UITabBar.appearance().isHidden = true
-            }) {
+            .sheet(isPresented: $subviewManager.overviewSheet) {
                 OverviewView(
                     document: $document,
                     toolManager: toolManager,

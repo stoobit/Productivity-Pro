@@ -13,6 +13,7 @@ struct NoteSideActions: ToolbarContent {
     @Environment(\.horizontalSizeClass) var hsc
     
     @Binding var document: Document
+    @Binding var url: URL
     
     @Bindable var toolManager: ToolManager
     @Bindable var subviewManager: SubviewManager
@@ -23,9 +24,13 @@ struct NoteSideActions: ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarLeading) {
             Button(action: dismissAction) {
-                Image(systemName: "chevron.down")
+                Image(systemName: "xmark")
             }
             .fontWeight(.bold)
+            
+            Button(action: toggleOverview) {
+                Image(systemName: "square.grid.2x2")
+            }
         }
         
 //        ToolbarItemGroup(placement: .primaryAction) {
@@ -90,46 +95,12 @@ struct NoteSideActions: ToolbarContent {
 //                )
 //            }
 //        }
-//        ToolbarItemGroup(placement: .navigationBarLeading) {
-//            Button(action: {
-//                
-//                toolManager.selectedItem = nil
-//                toolManager.isLocked = false
-//                toolManager.isCanvasEnabled = false
-//                
-//                subviewManager.isPresentationMode.toggle()
-//                
-//            }) {
-//                ZStack {
-//                    Text(subviewManager.isPresentationMode ? "Edit Mode" : "Presentation Mode")
-//                        .frame(width: 0, height: 0)
-//                    
-//                    Image(
-//                        systemName: subviewManager.isPresentationMode ? "pencil.and.outline" : "pencil.slash"
-//                    )
-//                    .frame(width: 30)
-//                }
-//            }
-//            .keyboardShortcut("p", modifiers: [.command, .option])
-//            
-//            if hsc == .regular {
-//                Button(action: {
-//                    toolManager.isCanvasEnabled = false
-//                    UITabBar.appearance().isHidden = false
-//                    subviewManager.overviewSheet.toggle()
-//                }) {
-//                    ZStack {
-//                        Text("Overview")
-//                            .frame(width: 0, height: 0)
-//                        
-//                        Image(systemName: "square.grid.2x2")
-//                    }
-//                }
-//                .keyboardShortcut("o", modifiers: [.command])
-//                .allowsHitTesting(!subviewManager.showStylePopover)
-//            }
-//        }
     }
-   
+    
+    func toggleOverview() {
+        toolManager.isCanvasEnabled = false
+        subviewManager.overviewSheet.toggle()
+    }
+    
 }
 

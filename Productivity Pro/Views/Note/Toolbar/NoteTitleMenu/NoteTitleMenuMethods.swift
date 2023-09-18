@@ -10,6 +10,14 @@ import PencilKit
 
 extension NoteTitleMenu {
     
+    func togglePin() {
+        if pinned.contains(url) {
+            pinned.removeAll(where: { $0 == url })
+        } else {
+            pinned.insert(url, at: 0)
+        }
+    }
+    
     func sharePDF() {
         toolManager.showProgress = true
         toolManager.selectedItem = nil
