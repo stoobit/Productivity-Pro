@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DocumentPickerView: View {
     
+    @AppStorage("recenturls") var recents: [URL] = []
+    @AppStorage("pinnedurls") var pinned: [URL] = []
+    
     @State var toolManager: ToolManager = ToolManager()
     @State var subviewManager: SubviewManager = SubviewManager()
     
@@ -26,17 +29,21 @@ struct DocumentPickerView: View {
                 }
                 
                 Section("Angepinnt") {
-                    Label("Hausaufgaben", systemImage: "pin")
-                        .frame(height: 30)
-                    Label("Lernplan Mathe", systemImage: "pin")
-                        .frame(height: 30)
+                    ForEach(pinned, id: \.self) { pin in
+                        let title = pin.lastPathComponent.string.dropLast(4)
+                        
+                        Label(title, systemImage: "pin")
+                            .frame(height: 30)
+                    }
                 }
                 
                 Section("Letzte") {
-                    Label("Buch S. 136 / 4", systemImage: "clock")
-                        .frame(height: 30)
-                    Label("AB 32", systemImage: "clock")
-                        .frame(height: 30)
+                    ForEach(recents, id: \.self) { recent in
+                        let title = recent.lastPathComponent.string.dropLast(4)
+                        
+                        Label(title, systemImage: "clock.arrow.circlepath")
+                            .frame(height: 30)
+                    }
                 }
             }
             .environment(\.defaultMinListRowHeight, 10)

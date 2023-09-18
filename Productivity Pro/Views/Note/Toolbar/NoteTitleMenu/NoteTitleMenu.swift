@@ -20,13 +20,15 @@ struct NoteTitleMenu: View {
     
     var body: some View {
         
-        Button("Umbenennen", systemImage: "pencil", action: {
-            subviewManager.renameView.toggle()
-        })
-        
-        Button("Bewegen", systemImage: "folder", action: {
-            subviewManager.moveView.toggle()
-        })
+        Section {
+            Button("Umbenennen", systemImage: "pencil", action: {
+                subviewManager.renameView.toggle()
+            })
+            
+            Button("Bewegen", systemImage: "folder", action: {
+                subviewManager.moveView.toggle()
+            })
+        }
         
         Section {
             
@@ -35,7 +37,7 @@ struct NoteTitleMenu: View {
                 sharePDF()
             }) {
                 
-                Label("Export as PDF", systemImage: "doc")
+                Label("Als PDF exportieren", systemImage: "doc")
                 
             }
             
@@ -43,7 +45,7 @@ struct NoteTitleMenu: View {
                 toolManager.isCanvasEnabled = false
                 print()
             }) {
-                Label("Print", systemImage: "printer")
+                Label("Drucken", systemImage: "printer")
             }
             
         }
