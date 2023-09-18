@@ -68,19 +68,35 @@ extension TemplateView {
     @ViewBuilder 
     func TemplateView() -> some View {
         ScrollView(.horizontal) {
-            HStack {
-                TemplateItem(title: "Blanko", value: "blank", view: BackgroundViews().Blank())
-                    .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Kariert", value: "squared", view: BackgroundViews().Squared())
-                    .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Liniert Klein", value: "ruled", view: BackgroundViews().Ruled())
-                    .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Liniert Groß", value: "ruled.large", view: BackgroundViews().RuledLarge())
-                    .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Gepunktet", value: "dotted", view:BackgroundViews().Dotted())
-                    .padding([.leading, .vertical], 30)
-                TemplateItem(title: "Notentlinien", value: "music", view:BackgroundViews().Music())
-                    .padding(30)
+            ScrollViewReader { reader in
+                HStack {
+                    TemplateItem(title: "Blanko", value: "blank", view: BackgroundViews().Blank())
+                        .padding([.leading, .vertical], 30)
+                        .id("blank")
+                    
+                    TemplateItem(title: "Kariert", value: "squared", view: BackgroundViews().Squared())
+                        .padding([.leading, .vertical], 30)
+                        .id("squared")
+                    
+                    TemplateItem(title: "Liniert Klein", value: "ruled", view: BackgroundViews().Ruled())
+                        .padding([.leading, .vertical], 30)
+                        .id("ruled")
+                    
+                    TemplateItem(title: "Liniert Groß", value: "ruled.large", view: BackgroundViews().RuledLarge())
+                        .padding([.leading, .vertical], 30)
+                        .id("ruled.large")
+                    
+                    TemplateItem(title: "Gepunktet", value: "dotted", view:BackgroundViews().Dotted())
+                        .padding([.leading, .vertical], 30)
+                        .id("dotted")
+                    
+                    TemplateItem(title: "Notentlinien", value: "music", view:BackgroundViews().Music())
+                        .padding(30)
+                        .id("music")
+                }
+                .onAppear {
+                    reader.scrollTo(preselectedTemplate)
+                }
             }
         }
         .listRowInsets(EdgeInsets())
@@ -163,19 +179,3 @@ extension TemplateView {
     }
     
 }
-
-#Preview {
-    Text("Hi")
-        .sheet(isPresented: .constant(true)) {
-            TemplateView(
-                isPresented: .constant(true),
-                isPortrait: .constant(false),
-                selectedColor: .constant("pagewhite"),
-                selectedTemplate: .constant("dotted"),
-                viewType: .create
-            ) {
-                
-            }
-        }
-}
-

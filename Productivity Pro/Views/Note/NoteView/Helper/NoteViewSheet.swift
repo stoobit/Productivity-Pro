@@ -18,6 +18,10 @@ struct NoteViewSheet: ViewModifier {
     @Bindable var subviewManager: SubviewManager
     @Bindable var toolManager: ToolManager
     
+    @State var isPortrait: Bool = false
+    @State var selectedColor: String = ""
+    @State var selectedTemplate: String = ""
+    
     let proxy: GeometryProxy
     
     func body(content: Content) -> some View {
@@ -40,12 +44,23 @@ struct NoteViewSheet: ViewModifier {
             }
             .sheet(
                 isPresented: $subviewManager.addPageSettingsSheet,
-                onDismiss: { undoManager?.removeAllActions() }) {
-                AddPageView(
-                    document: $document,
-                    isPresented: $subviewManager.addPageSettingsSheet,
-                    toolManager: toolManager
-                )
+                onDismiss: { undoManager?.removeAllActions() }
+            ) {
+                
+                let page = document.note.pages[toolManager.selectedPage]
+                
+                TemplateView(
+                    isPresented: $subviewManager.addPageSettingsSheet, 
+                    isPortrait: $isPortrait,
+                    selectedColor: $selectedColor,
+                    selectedTemplate: $selectedTemplate,
+                    buttonTitle: "Hinzufügen", 
+                    preselectedOrientation: page.isPortrait,
+                    preselectedColor: page.backgroundColor,
+                    preselectedTemplate: page.backgroundTemplate
+                ) {
+                        
+                }
             }
             .sheet(isPresented: $subviewManager.overviewSheet) {
                 OverviewView(
@@ -84,6 +99,5 @@ struct NoteViewSheet: ViewModifier {
                     
                 }
             }
-        
     }
 }

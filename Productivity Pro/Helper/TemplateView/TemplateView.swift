@@ -14,7 +14,7 @@ struct TemplateView: View {
     @Binding var selectedColor: String
     @Binding var selectedTemplate: String
     
-    let viewType: TemplateViewType
+    let buttonTitle: String
     
     var preselectedOrientation: Bool = true
     var preselectedColor: String = "pagewhite"
@@ -45,7 +45,7 @@ struct TemplateView: View {
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(viewType == .create ? "Erstellen" : "Bearbeiten" , action: action)
+                    Button(buttonTitle , action: action)
                 }
             }
             
@@ -59,24 +59,4 @@ struct TemplateView: View {
         selectedColor = preselectedColor
         selectedTemplate = preselectedTemplate
     }
-}
-
-enum TemplateViewType {
-    case create
-    case change
-}
-
-#Preview {
-    Text("Hi")
-        .sheet(isPresented: .constant(true)) {
-            TemplateView(
-                isPresented: .constant(true),
-                isPortrait: .constant(false),
-                selectedColor: .constant("pagewhite"),
-                selectedTemplate: .constant("dotted"), 
-                viewType: .create
-            ) {
-                
-            }
-        }
 }

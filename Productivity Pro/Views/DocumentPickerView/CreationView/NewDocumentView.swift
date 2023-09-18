@@ -66,7 +66,7 @@ struct NewDocumentView: View {
                 isPortrait: $isPortrait,
                 selectedColor: $selectedColor,
                 selectedTemplate: $selectedTemplate,
-                viewType: .create
+                buttonTitle: "Erstellen"
             ) { createTemplate() }
         }
         

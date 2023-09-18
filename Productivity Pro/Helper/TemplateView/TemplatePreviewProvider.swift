@@ -126,18 +126,3 @@ struct BackgroundViews: View {
     }
     
 }
-
-#Preview {
-    Text("Hi")
-        .sheet(isPresented: .constant(true)) {
-            TemplateView(
-                isPresented: .constant(true),
-                isPortrait: .constant(false),
-                selectedColor: .constant("pagewhite"),
-                selectedTemplate: .constant("dotted"),
-                viewType: .create
-            ) {
-                
-            }
-        }
-}
