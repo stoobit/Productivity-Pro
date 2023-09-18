@@ -40,7 +40,7 @@ struct ImportMediaHelper: ViewModifier {
                         toolManager.showProgress = false
                     }
                 }
-                .onChange(of: toolManager.photoPickerItem) { newValue in
+                .onChange(of: toolManager.photoPickerItem) { old, newValue in
                     toolManager.showProgress = true
                     Task {
                         if let imageData = try? await newValue?.loadTransferable(type: Data.self), let image = UIImage(data: imageData) {

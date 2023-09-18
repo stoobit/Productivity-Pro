@@ -45,7 +45,7 @@ struct PPColorButton: View {
             )
             
         }
-        .onChange(of: color) { color in
+        .onChange(of: color) {
             selectedColor = color
         }
 

@@ -225,7 +225,7 @@ struct OldCalculatorView: View {
                                 Text("")
                                     .id(0)
                             }
-                            .onChange(of: display) { _ in
+                            .onChange(of: display) {
                                 if(!display.contains("=")) {
                                     if(display.widthOfString(usingFont: UIFont.systemFont(ofSize: geometry.size.width > 640 ? 75 : 60)) > (geometry.size.width > 640 ? 560 : 270)) {
                                         withAnimation(){
@@ -433,13 +433,13 @@ struct OldCalculatorView: View {
                             .background(powerColor)
                             .cornerRadius(15)
                             .keyboardShortcut("p", modifiers: [])
-                            .onChange(of: powerTrue, perform: { _ in
+                            .onChange(of: powerTrue) {
                                 if(powerTrue){
                                     powerColor = .gray
                                 } else {
                                     powerColor = colorScheme == .dark ? .white : .black
                                 }
-                            })
+                            }
                             MyButton3(symbol: "sin", size: 25){
                                 addDigit(digit: " sin ")
                             }
@@ -539,7 +539,7 @@ struct OldCalculatorView: View {
             .position(x: geometry.size.width/2, y: geometry.size.height/2)
             //.sheet(isPresented: $welcome, content: {WelcomeView()})
         }
-        .onChange(of: colorScheme){ newValue in
+        .onChange(of: colorScheme) {
             powerColor = getColor()
         }
         .onAppear(){

@@ -30,7 +30,7 @@ struct EditMarkdownView: View {
                     text = toolManager.selectedItem?.textField?.text ?? ""
                     isFocused = true
                 }
-                .onChange(of: text) { value in
+                .onChange(of: text) { old, value in
                     let index = document.note.pages[
                         toolManager.selectedPage
                     ].items.firstIndex(where: {
@@ -40,7 +40,6 @@ struct EditMarkdownView: View {
                     document.note.pages[
                         toolManager.selectedPage
                     ].items[index].textField!.text = value
-                    
                 }
                 .toolbarRole(.browser)
                 

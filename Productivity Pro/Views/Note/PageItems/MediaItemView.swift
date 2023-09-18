@@ -49,7 +49,7 @@ struct MediaItemView: View {
         .onAppear {
             image = UIImage(data: item.media?.media ?? Data()) ?? UIImage()
         }
-        .onChange(of: item.media?.media) { _ in
+        .onChange(of: item.media?.media) {
             image = UIImage(data: item.media?.media ?? Data()) ?? UIImage()
         }
     }

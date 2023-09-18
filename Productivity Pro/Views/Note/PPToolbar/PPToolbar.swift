@@ -75,12 +75,12 @@ struct PPToolbar: View {
             alignment: alignment()
         )
         .padding(20)
-        .onChange(of: showControls) { value in
+        .onChange(of: showControls) { 
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 menu.toggle()
             }
         }
-        .onChange(of: hsc) { _ in
+        .onChange(of: hsc) {
             toolManager.isCanvasEnabled = false
         }
         

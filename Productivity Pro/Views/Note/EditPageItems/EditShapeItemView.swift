@@ -46,7 +46,7 @@ struct EditShapeItemView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
         .background(Color("PopoverColor"))
-        .onChange(of: editShapeModel) { _ in
+        .onChange(of: editShapeModel) {
             onEditModelChange(itemIndex: itemIndex)
         }
         .onAppear { onAppear() }
@@ -101,7 +101,7 @@ struct EditShapeItemView: View {
                             .padding(.leading)
                         }
                     }
-                    .onChange(of: editShapeModel.strokeWidth) { _ in
+                    .onChange(of: editShapeModel.strokeWidth) {
                         if editShapeModel.strokeWidth < 1 {
                             editShapeModel.strokeWidth = 1
                         } else if editShapeModel.strokeWidth > 1000 {
@@ -135,13 +135,14 @@ struct EditShapeItemView: View {
                                 )
                                 .labelsHidden()
                             }
-                            .onChange(of: editShapeModel.cornerRadius) { _ in
+                            .onChange(of: editShapeModel.cornerRadius) {
                                 if editShapeModel.rotation < 0 {
                                     editShapeModel.rotation = 0
                                 } else if editShapeModel.rotation > 360 {
                                     editShapeModel.rotation = 360
                                 }
                             }
+                            
                         }
                     }
                 }
@@ -171,7 +172,7 @@ struct EditShapeItemView: View {
                         .labelsHidden()
                         .padding(.leading)
                     }
-                    .onChange(of: editShapeModel.rotation) { _ in
+                    .onChange(of: editShapeModel.rotation) {
                         if editShapeModel.rotation < 0 {
                             editShapeModel.rotation = 0
                         } else if editShapeModel.rotation > 360 {

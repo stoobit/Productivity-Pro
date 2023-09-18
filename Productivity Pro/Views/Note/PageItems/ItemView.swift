@@ -73,17 +73,17 @@ struct ItemView: View {
             .onAppear {
                 setEditModel()
             }
-            .onChange(of: item.x) { x in
-                editItemModel.position.x = x
+            .onChange(of: item.x) {
+                editItemModel.position.x = item.x
             }
-            .onChange(of: item.y) { y in
-                editItemModel.position.y = y
+            .onChange(of: item.y) {
+                editItemModel.position.y = item.y
             }
-            .onChange(of: item.width) { width in
-                editItemModel.size.width = width
+            .onChange(of: item.width) {
+                editItemModel.size.width = item.width
             }
-            .onChange(of: item.height) { height in
-                editItemModel.size.height = height
+            .onChange(of: item.height) {
+                editItemModel.size.height = item.height
             }
             
             ToolView(

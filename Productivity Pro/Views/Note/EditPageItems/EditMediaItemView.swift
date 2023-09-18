@@ -45,9 +45,7 @@ struct EditMediaItemView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
         .background(Color("PopoverColor"))
-        .onChange(of: editMediaModel) { _ in
-            onEditModelChange()
-        }
+        .onChange(of: editMediaModel) { onEditModelChange() }
         .onAppear { onAppear() }
         
     }
@@ -84,7 +82,7 @@ struct EditMediaItemView: View {
                             .padding(.leading)
                         }
                     }
-                    .onChange(of: editMediaModel.strokeWidth) { _ in
+                    .onChange(of: editMediaModel.strokeWidth) {
                         if editMediaModel.strokeWidth < 1 {
                             editMediaModel.strokeWidth = 1
                         } else if editMediaModel.strokeWidth > 1000 {
@@ -113,7 +111,7 @@ struct EditMediaItemView: View {
                         )
                         .labelsHidden()
                     }
-                    .onChange(of: editMediaModel.cornerRadius) { _ in
+                    .onChange(of: editMediaModel.cornerRadius) {
                         if editMediaModel.rotation < 0 {
                             editMediaModel.rotation = 0
                         } else if editMediaModel.rotation > 360 {
@@ -147,7 +145,7 @@ struct EditMediaItemView: View {
                         .labelsHidden()
                         .padding(.leading)
                     }
-                    .onChange(of: editMediaModel.rotation) { _ in
+                    .onChange(of: editMediaModel.rotation) {
                         if editMediaModel.rotation < 0 {
                             editMediaModel.rotation = 0
                         } else if editMediaModel.rotation > 360 {

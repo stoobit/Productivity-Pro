@@ -45,7 +45,7 @@ struct EditTextfieldItemView: View {
             .tabViewStyle(.page(indexDisplayMode: .never))
         }
         .background(Color("PopoverColor"))
-        .onChange(of: editTextFieldModel) { _ in
+        .onChange(of: editTextFieldModel) { 
             onEditModelChange()
         }
         .onAppear { onAppear() }
@@ -87,7 +87,7 @@ struct EditTextfieldItemView: View {
                         .labelsHidden()
                         .padding(.leading)
                     }
-                    .onChange(of: editTextFieldModel.fontSize) { _ in
+                    .onChange(of: editTextFieldModel.fontSize) { 
                         if editTextFieldModel.fontSize < 1 {
                             editTextFieldModel.fontSize = 1
                         } else if editTextFieldModel.fontSize > 1000 {
@@ -141,7 +141,7 @@ struct EditTextfieldItemView: View {
                             .padding(.leading)
                         }
                     }
-                    .onChange(of: editTextFieldModel.strokeWidth) { _ in
+                    .onChange(of: editTextFieldModel.strokeWidth) { 
                         if editTextFieldModel.strokeWidth < 1 {
                             editTextFieldModel.strokeWidth = 1
                         } else if editTextFieldModel.strokeWidth > 1000 {

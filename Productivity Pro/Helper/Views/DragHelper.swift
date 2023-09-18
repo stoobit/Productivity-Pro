@@ -24,7 +24,13 @@ fileprivate struct DelaysTouches: ViewModifier {
         Button(action: action) {
             content
         }
-        .buttonStyle(DelaysTouchesButtonStyle(disabled: $disabled, duration: duration, touchDownDate: $touchDownDate))
+        .buttonStyle(
+            DelaysTouchesButtonStyle(
+                disabled: $disabled,
+                duration: duration,
+                touchDownDate: $touchDownDate
+            )
+        )
         .disabled(disabled)
     }
 }
@@ -36,7 +42,9 @@ fileprivate struct DelaysTouchesButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .onChange(of: configuration.isPressed, perform: handleIsPressed)
+            .onChange(of: configuration.isPressed) {
+                handleIsPressed(isPressed: configuration.isPressed)
+            }
     }
 
     private func handleIsPressed(isPressed: Bool) {

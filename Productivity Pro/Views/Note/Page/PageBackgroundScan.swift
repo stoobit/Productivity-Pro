@@ -43,7 +43,7 @@ struct PageBackgroundScan: View, Equatable {
                 renderPreview()
             }
         }
-        .onChange(of: offset) { value in
+        .onChange(of: offset) {
             if offset == 0 &&
                 toolManager.selectedTab == page.id &&
                 isOverview == false && pdfRendering == false

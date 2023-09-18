@@ -92,8 +92,8 @@ struct PPControlBar: View {
         }
         .background(.thinMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 19))
-        .onChange(of: toolManager.copyPastePasser) { value in
-            switch value {
+        .onChange(of: toolManager.copyPastePasser) {
+            switch toolManager.copyPastePasser {
             case .copy: copyItem()
             case .duplicate: duplicateItem()
             case .paste: pasteItem()
@@ -102,8 +102,8 @@ struct PPControlBar: View {
             case .none: break
             }
         }
+        
     }
-    
 }
 
 enum CopyPastePasser: Equatable {

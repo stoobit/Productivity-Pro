@@ -14,7 +14,11 @@ struct DetectOrientation: ViewModifier {
     func body(content: Content) -> some View {
 #if !os(xrOS)
         content
-            .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            .onReceive(
+                NotificationCenter.default.publisher(
+                    for: UIDevice.orientationDidChangeNotification
+                )
+            ) { _ in
                 orientation = UIDevice.current.orientation
             }
 #endif

@@ -36,17 +36,17 @@ struct PencilKitViewWrapper: View {
             drawingChanged: $drawingChanged,
             strokeCount: $strokeCount
         )
-        .onChange(of: drawingChanged) { value in
+        .onChange(of: drawingChanged) { old, value in
             didDrawingChange(value)
         }
-        .onChange(of: toolManager.selectedPage) { _ in
+        .onChange(of: toolManager.selectedPage) {
             didSelectedPageChange()
             disableCanvasAvailability()
         }
-        .onChange(of: toolManager.isCanvasEnabled) { isEnabled in
+        .onChange(of: toolManager.isCanvasEnabled) { old, isEnabled in
             didCanvasAvailabilityChange(isEnabled)
         }
-        .onChange(of: scenePhase) { value in
+        .onChange(of: scenePhase) { old, value in
             if value == .active {
                 becameForeground()
             }
