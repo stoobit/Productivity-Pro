@@ -12,7 +12,7 @@ extension NoteSideActions {
         
         Menu(content: {
             Section {
-                Button(""action: {
+                Button(action: {
                     toolManager.isCanvasEnabled = false
                     subviewManager.addPageSettingsSheet = true
                 }) {
