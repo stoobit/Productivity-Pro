@@ -43,14 +43,14 @@ struct OverviewView: View {
                 }
                 .listStyle(.plain)
             }
-            .navigationTitle("Overview")
+            .navigationTitle("Übersicht")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.browser)
             .toolbarBackground(.visible, for: .tabBar)
             
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { subviewManager.overviewSheet.toggle()
+                    Button("Fertig") { subviewManager.overviewSheet.toggle()
                     }
                     .keyboardShortcut(.return, modifiers: [])
                 }

@@ -39,7 +39,7 @@ struct OverviewRow: View {
                         if let date = page.date {
                             Text(date, format: .dateTime)
                         } else {
-                            Text("Date not available.")
+                            Text("Datum nicht verfügbar.")
                         }
                         
                         Spacer()

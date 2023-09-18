@@ -13,7 +13,7 @@ extension OverviewRow {
     
     func pageNumber() -> String {
         let index = document.note.pages.firstIndex(of: page) ?? -1
-        return "Page \(index + 1)"
+        return "Seite \(index + 1)"
     }
     
     func header() -> String {

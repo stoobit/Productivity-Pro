@@ -24,7 +24,7 @@ struct NoteSideActions: ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarLeading) {
             Button(action: dismissAction) {
-                Image(systemName: "xmark")
+                Image(systemName: "chevron.down")
             }
             .fontWeight(.bold)
             
