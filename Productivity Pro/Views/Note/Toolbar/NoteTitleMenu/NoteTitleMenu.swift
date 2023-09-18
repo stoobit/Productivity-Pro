@@ -33,7 +33,7 @@ struct NoteTitleMenu: View {
         Button(action: togglePin) {
             Label(
                 pinned.contains(url) ? "Pin entfernen" : "Anpinnen",
-                systemImage: pinned.contains(url) ? "pin.fill" : "pin"
+                systemImage: pinned.contains(url) ? "pin.slash" : "pin"
             )
         }
         

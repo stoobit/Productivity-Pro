@@ -35,10 +35,6 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
     
     var body: some CustomizableToolbarContent {
         
-        ToolbarItem(id: "markup", placement: .secondaryAction) {
-            MarkupButton()
-        }
-        
         ToolbarItem(id: "shapes", placement: .secondaryAction) {
             ShapesButton()
         }
@@ -56,23 +52,7 @@ struct NoteMainToolToolbar: CustomizableToolbarContent {
         //            }
         
     }
-    
-    @ViewBuilder func MarkupButton() -> some View {
-        Button(action: {
-            
-            toolManager.isCanvasEnabled.toggle()
-            toolManager.selectedItem = nil
-            toolManager.isLocked = false
-            
-        }) {
-            if #available(iOS 17, *) {
-                iOS17Label(toolManager: toolManager)
-            } else {
-                iOS16Label(toolManager: toolManager)
-            }
-        }
-    }
-    
+
     @ViewBuilder func ShapesButton() -> some View {
         Menu(content: {
             Section {
