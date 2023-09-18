@@ -33,6 +33,10 @@ struct NoteSideActions: ToolbarContent {
             }
         }
         
+        ToolbarItemGroup(placement: .primaryAction) {
+            Editor()
+        }
+        
 //        ToolbarItemGroup(placement: .primaryAction) {
 //            
 //            EditingToolbar()
@@ -95,11 +99,6 @@ struct NoteSideActions: ToolbarContent {
 //                )
 //            }
 //        }
-    }
-    
-    func toggleOverview() {
-        toolManager.isCanvasEnabled = false
-        subviewManager.overviewSheet.toggle()
     }
     
 }
