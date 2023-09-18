@@ -12,23 +12,23 @@ extension NoteSideActions {
         
         if hsc == .regular {
             
-            Button("Undo", systemImage: "arrow.uturn.backward", action: undo)
+            Button("Widerrufen", systemImage: "arrow.uturn.backward", action: undo)
                 .disabled(!(undoManager?.canUndo ?? false))
             
-            Button("Redo", systemImage: "arrow.uturn.forward", action: redo)
+            Button("Wiederholen", systemImage: "arrow.uturn.forward", action: redo)
                 .disabled(!(undoManager?.canRedo ?? false))
             
         } else {
             Menu(content: {
                 
-                Button("Undo", systemImage: "arrow.uturn.backward", action: undo)
+                Button("Widerrufen", systemImage: "arrow.uturn.backward", action: undo)
                     .disabled(!(undoManager?.canUndo ?? false))
                 
-                Button("Redo", systemImage: "arrow.uturn.forward", action: redo)
+                Button("Wiederholen", systemImage: "arrow.uturn.forward", action: redo)
                     .disabled(!(undoManager?.canRedo ?? false))
                 
             }) {
-                Label("Undo/Redo", systemImage: "arrow.uturn.backward")
+                Label("Widerrufen/Wiederholen", systemImage: "arrow.uturn.backward")
             }
             .disabled(!(undoManager?.canUndo ?? false) && !(undoManager?.canRedo ?? false))
         }
