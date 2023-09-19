@@ -16,7 +16,7 @@ struct NoteViewAlert: ViewModifier {
     @Bindable var subviewManager: SubviewManager
     @Bindable var toolManager: ToolManager
     
-    @State var renameTitel: String = ""
+    @State var renameTitle: String = ""
     
     func body(content: Content) -> some View {
         content
@@ -32,7 +32,7 @@ struct NoteViewAlert: ViewModifier {
                 Text("Diese Aktion kann nicht rückgängig gemacht werde.")
             }
             .alert(getRenameTitle().0, isPresented: $subviewManager.renameView) {
-                TextField(getRenameTitle().1, text: $renameTitel)
+                TextField(getRenameTitle().1, text: $renameTitle)
                 Button("Umbenennen", role: .cancel) { rename() }
             }
         
@@ -83,25 +83,7 @@ struct NoteViewAlert: ViewModifier {
     }
     
     func rename() {
-        if renameTitel != "" {
-            let old: URL = url
-            
-            url = url.deletingLastPathComponent().appendingPathComponent(
-                renameTitel, conformingTo: .pro
-            )
-            
-            if url.deletingLastPathComponent().startAccessingSecurityScopedResource() {
-                do {
-                    
-                    try FileManager.default.moveItem(at: old, to: url)
-                    
-                } catch {}
-                
-                url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
-            }
-            
-            renameTitel = ""
-        }
+        exit(0)
     }
     
 }

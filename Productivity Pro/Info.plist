@@ -5,6 +5,8 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeIconsFiles</key>
+			<array/>
 			<key>CFBundleTypeName</key>
 			<string>Productivity Pro File</string>
 			<key>CFBundleTypeRole</key>
