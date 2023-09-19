@@ -21,25 +21,19 @@ struct NoteViewAlert: ViewModifier {
     func body(content: Content) -> some View {
         content
             .alert(
-                "Delete this Page",
+                "Diese Seite löschen?",
                 isPresented: $subviewManager.isDeletePageAlert,
                 actions: {
-                    Button("Delete Page", role: .destructive) { deletePage() }
-                    Button("Cancel", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
+                    Button("Seite löschen", role: .destructive) { deletePage() }
+                    Button("Abbrechen", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
                     }
-                    
                 }
             ) {
-                Text("You cannot undo this action.")
+                Text("Diese Aktion kann nicht rückgängig gemacht werde.")
             }
             .alert(getRenameTitle().0, isPresented: $subviewManager.renameView) {
                 TextField(getRenameTitle().1, text: $renameTitel)
-                Button("Abbrechen", role: .cancel) {
-                    subviewManager.renameView.toggle()
-                }
-                
-                Button("Umbenennen") { rename() }
-                    .disabled(renameTitel == "")
+                Button("Umbenennen", role: .cancel) { rename() }
             }
         
     }
@@ -89,23 +83,25 @@ struct NoteViewAlert: ViewModifier {
     }
     
     func rename() {
-        let old: URL = url
-        
-        url = url.deletingLastPathComponent().appendingPathComponent(
-            renameTitel, conformingTo: .pro
-        )
-        
-        if url.deletingLastPathComponent().startAccessingSecurityScopedResource() {
-            do {
-                
-                try FileManager.default.moveItem(at: old, to: url)
-                
-            } catch {}
+        if renameTitel != "" {
+            let old: URL = url
             
-            url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
+            url = url.deletingLastPathComponent().appendingPathComponent(
+                renameTitel, conformingTo: .pro
+            )
+            
+            if url.deletingLastPathComponent().startAccessingSecurityScopedResource() {
+                do {
+                    
+                    try FileManager.default.moveItem(at: old, to: url)
+                    
+                } catch {}
+                
+                url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
+            }
+            
+            renameTitel = ""
         }
-        
-        renameTitel = ""
     }
     
 }

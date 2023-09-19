@@ -125,9 +125,7 @@ extension NewDocumentView {
             let newPage = Page(
                 type: .image,
                 canvasType: canvasType,
-                backgroundMedia: page.jpegData(
-                    compressionQuality: 0.8
-                ),
+                backgroundMedia: page.heicData(),
                 backgroundColor: "pagewhite",
                 backgroundTemplate: "blank",
                 isPortrait: size.width < size.height

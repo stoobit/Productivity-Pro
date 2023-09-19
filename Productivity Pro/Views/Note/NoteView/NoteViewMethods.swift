@@ -74,7 +74,7 @@ extension NoteView {
         
         newItem.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + newItem.height/2 + 40
         
-        let media = MediaModel(media: image.pngData() ?? Data())
+        let media = MediaModel(media: image.heicData() ?? Data())
         newItem.media = media
         
         document.note.pages[

@@ -71,6 +71,7 @@ struct ShareView: View {
             }
             
         }
+        .preferredColorScheme(.dark)
     }
 }
 
