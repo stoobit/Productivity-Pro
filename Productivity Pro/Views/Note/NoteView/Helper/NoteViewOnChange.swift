@@ -9,6 +9,8 @@ import SwiftUI
 import PDFKit
 
 struct NoteViewOnChange: ViewModifier {
+    @AppStorage("recenturls") var recents: [URL] = []
+    @AppStorage("recentscount") var rcount: Int = 10
     
     @Environment(\.undoManager) var undoManager
     @Environment(\.scenePhase) var scenePhase
@@ -18,6 +20,7 @@ struct NoteViewOnChange: ViewModifier {
         .autoconnect()
     
     @Binding var document: Document
+    @Binding var url: URL
     
     @Bindable var subviewManager: SubviewManager
     @Bindable var toolManager: ToolManager
@@ -51,6 +54,7 @@ struct NoteViewOnChange: ViewModifier {
             }
             .onAppear { noteDidAppear() }
             .task {
+                addRecent()
                 pageIndicator()
                 loadMedia()
             }
@@ -63,6 +67,17 @@ struct NoteViewOnChange: ViewModifier {
         toolManager.selectedPage = document.note.pages.firstIndex(
             where: { $0.id == toolManager.selectedTab }
         )!
+    }
+    
+    func addRecent() {
+        withAnimation {
+            recents.removeAll(where: { $0 == url })
+            recents.insert(url, at: 0)
+            
+            while recents.count > rcount {
+                recents.removeLast()
+            }
+        }
     }
     
     func loadFirst() {

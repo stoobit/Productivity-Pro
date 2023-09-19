@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DocumentPickerView: View {
     
+    @AppStorage("recentscount") var rcount: Int = 10
     @AppStorage("recenturls") var recents: [URL] = []
     @AppStorage("pinnedurls") var pinned: [URL] = []
     
@@ -40,6 +41,14 @@ struct DocumentPickerView: View {
                             Label(title, systemImage: "pin")
                         }
                         .frame(height: 30)
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            Button("", systemImage: "pin.slash") {
+                                withAnimation {
+                                    pinned.removeAll(where: { $0 == pin })
+                                }
+                            }
+                            .tint(Color.accentColor)
+                        }
                     }
                 }
                 
@@ -51,6 +60,11 @@ struct DocumentPickerView: View {
                             Label(title, systemImage: "clock.arrow.circlepath")
                         }
                         .frame(height: 30)
+                    }
+                }
+                .onAppear {
+                    while recents.count > rcount {
+                        recents.removeLast()
                     }
                 }
             }

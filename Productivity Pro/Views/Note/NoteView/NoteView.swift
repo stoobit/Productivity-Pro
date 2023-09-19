@@ -22,14 +22,6 @@ struct NoteView: View {
     
     @State var drawingModel: PPDrawingModel = PPDrawingModel()
     
-    var isCPMenuHidden: Bool {
-        if subviewManager.isPresentationMode || toolManager.isCanvasEnabled {
-            return true
-        } else {
-            return false
-        }
-    }
-    
     var body: some View {
         GeometryReader { proxy in
             NavigationStack {
@@ -79,9 +71,9 @@ struct NoteView: View {
                 )
                 .modifier(
                     NoteViewOnChange(
-                        document: $document, subviewManager: subviewManager,
-                        toolManager: toolManager, saveDocument: saveDocument,
-                        pageIndicator: pageIndicator,
+                        document: $document, url: $url, 
+                        subviewManager: subviewManager, toolManager: toolManager, 
+                        saveDocument: saveDocument, pageIndicator: pageIndicator,
                         selectedImageDidChange: pickedImageDidChange
                     )
                 )

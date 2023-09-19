@@ -11,22 +11,13 @@ extension TemplateView {
     
     @ViewBuilder 
     func OrientationView() -> some View {
-        HStack {
-            Text("Format")
-            Spacer()
-            
-            Menu(isPortrait ? "Hochformat" : "Querformat") {
-                Picker("Format", selection: $isPortrait) {
-                    Text("Hochformat")
-                        .frame(width: 100)
-                        .tag(true)
-                    Text("Querformat").tag(false)
-                        .frame(width: 100)
-                        .tag(true)
-                }
-                
-            }
-            .foregroundStyle(Color.secondary)
+        Picker("Format", selection: $isPortrait) {
+            Text("Hochformat")
+                .frame(width: 100)
+                .tag(true)
+            Text("Querformat").tag(false)
+                .frame(width: 100)
+                .tag(true)
         }
         .frame(height: 30)
     }

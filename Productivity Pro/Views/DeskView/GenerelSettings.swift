@@ -11,6 +11,8 @@ struct GenerelSettings: View {
     
     @Environment(\.horizontalSizeClass) var hsc
     
+    @AppStorage("recentscount") var rcount: Int = 10
+    
     @AppStorage("automaticallyDeselectEraser")
     private var automaticallyDeselectEraser: Bool = false
     
@@ -20,9 +22,6 @@ struct GenerelSettings: View {
     @AppStorage("defaultFontSize")
     private var defaultFontSize: Double = 12
     
-    @AppStorage("CBPosition")
-    private var CBPosition: Int = 0
-    
     @State private var fontSetter: String = "Avenir Next"
     @State private var sizeSetter: Double = 12
     @State private var cbSetter: Int = 0
@@ -31,23 +30,19 @@ struct GenerelSettings: View {
         NavigationStack {
             Form {
                 
-                Section("Position des Bearbeitungsmenüs") {
-                    if hsc == .regular {
-                        FormSpacer {
-                            PositionPicker()
+                Section("Letzte Notizen") {
+                    HStack {
+                        Text("Angezeigte Anzahl")
+                        Spacer()
+                        Picker("", selection: $rcount) {
+                            Text("5").tag(5)
+                            Text("10").tag(10)
+                            Text("20").tag(20)
+                            Text("50").tag(50)
                         }
-                    } else {
-                        FormSpacer {
-                            Picker("Position", selection: $cbSetter) {
-                                Text("Bottom Left").tag(0)
-                                Text("Bottom Center").tag(1)
-                                Text("Bottom Right").tag(2)
-                            }
-                            .onChange(of: cbSetter) {
-                                CBPosition = cbSetter
-                            }
-                        }
+                        .labelsHidden()
                     }
+                    .frame(height: 30)
                 }
                 
                 Section("Standardeinstellung von Textfeldern") {
@@ -96,54 +91,12 @@ struct GenerelSettings: View {
                 .onAppear {
                     fontSetter = defaultFont
                     sizeSetter = defaultFontSize
-                    cbSetter = CBPosition
                 }
                 
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Allgemein")
             .navigationBarTitleDisplayMode(.large)
-        }
-    }
-    
-    @ViewBuilder func PositionPicker() -> some View {
-        HStack {
-            
-            PositionItem(.bottomLeading, value: 0)
-            Spacer()
-            PositionItem(.bottom, value: 1)
-            Spacer()
-            PositionItem(.bottomTrailing, value: 2)
-            
-        }
-    }
-    
-    @ViewBuilder func PositionItem(_ align: Alignment, value: Int) -> some View {
-        
-        VStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
-                    .frame(width: 160, height: 100)
-                    .foregroundStyle(.thickMaterial)
-                
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .frame(width: 40, height: 10)
-                    .foregroundStyle(.secondary)
-                    .padding(7)
-                    .frame(
-                        width: 160, height: 100, alignment: align
-                    )
-            }
-            
-            Image(systemName: CBPosition == value ? "checkmark.circle.fill" : "checkmark.circle")
-                .padding(.top, 10)
-                .font(.title3)
-                .foregroundStyle(
-                    CBPosition == value ? Color.accentColor : Color.secondary
-                )
-        }
-        .onTapGesture {
-            CBPosition = value
         }
     }
     
