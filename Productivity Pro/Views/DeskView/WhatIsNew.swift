@@ -10,39 +10,37 @@ import SwiftUI
 struct WhatIsNew: View {
     
     var body: some View {
-        ZStack {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading) {
+                
+                NewItem(
+                    icon: "crown.fill",
+                    color: Color.yellow,
+                    header: "Premium",
+                    text: "Erhalte Zugriff auf exklusive Features mit Productivity Premium."
+                )
+                
+                NewItem(
+                    icon: "calendar",
+                    color: Color.accentColor,
+                    header: "Stundenplan",
+                    text: "Erstelle einen Stundenplan und behalte deine Fächer im Überblick."
+                )
+                
+                NewItem(
+                    icon: "speedometer",
+                    color: Color.green,
+                    header: "Performance",
+                    text: "Erlebe Productivity Pro flüssiger und schneller als je zuvor."
+                )
+                
+            }
+        }
+        .padding()
+        .navigationTitle("Was ist neu?")
+        .background {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
-            
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading) {
-                    
-                    NewItem(
-                        icon: "crown.fill",
-                        color: Color.yellow,
-                        header: "Premium",
-                        text: "Erhalte Zugriff auf exklusive Features mit Productivity Premium."
-                    )
-                    
-                    NewItem(
-                        icon: "calendar",
-                        color: Color.accentColor,
-                        header: "Stundenplan",
-                        text: "Erstelle einen Stundenplan und behalte deine Fächer im Überblick."
-                    )
-                    
-                    NewItem(
-                        icon: "speedometer",
-                        color: Color.green,
-                        header: "Performance",
-                        text: "Erlebe Productivity Pro flüssiger und schneller als je zuvor."
-                    )
-                    
-                }
-            }
-            .padding()
-            .navigationTitle("Was ist neu?")
-            
         }
     }
     
