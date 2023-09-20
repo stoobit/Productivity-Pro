@@ -27,6 +27,8 @@ struct DocumentCreationView: View {
         .sheet(isPresented: $showCreationView, onDismiss: {
             if document.documentType != .none {
                 showDocument.toggle()
+            } else {
+                url = URL(string: "https://www.stoobit.com")!
             }
         }) {
             NewDocumentView(

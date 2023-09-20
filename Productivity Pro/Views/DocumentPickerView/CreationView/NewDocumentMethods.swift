@@ -63,6 +63,52 @@ extension NewDocumentView {
         templatePicker.toggle()
         isPresented.toggle()
     }
+    func createFromLastSelection() {
+        document.documentType = .note
+        
+        let canvasType: CanvasType = .pencilKit
+        
+        var note = Note()
+        let firstPage: Page = Page(
+            canvasType: canvasType,
+            backgroundColor: savedBackgroundColor,
+            backgroundTemplate: savedBackgroundTemplate,
+            isPortrait: savedIsPortrait
+        )
+        
+        toolManager.preloadedMedia.append(nil)
+        note.pages.append(firstPage)
+        document.note = note
+        
+        do {
+            if url.startAccessingSecurityScopedResource() {
+                let data = try JSONEncoder().encode(document)
+                let encryptedData = data.base64EncodedData()
+                
+                if title == "" {
+                    title = "Unbenannt"
+                }
+                
+                url.appendPathComponent("\(title)", conformingTo: .pro)
+                
+                var ver = 1
+                while FileManager.default.fileExists(atPath: url.path) {
+                    url.deleteLastPathComponent()
+                    url.appendPathComponent("\(title) \(ver)", conformingTo: .pro)
+                    
+                    ver += 1
+                }
+                
+                try encryptedData.write(to: url, options: .noFileProtection)
+                url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
+            }
+            
+        } catch {
+            print(error)
+        }
+        
+        isPresented.toggle()
+    }
     
     func add(pdf: PDFDocument) {
         document.note = Note()
@@ -154,27 +200,6 @@ extension NewDocumentView {
         case .failure:
             isFailure.toggle()
         }
-    }
-    
-    
-    func createFromLastSelection() {
-        document.documentType = .note
-        
-        let canvasType: CanvasType = .pencilKit
-        
-        var note = Note()
-        let firstPage: Page = Page(
-            canvasType: canvasType,
-            backgroundColor: savedBackgroundColor,
-            backgroundTemplate: savedBackgroundTemplate,
-            isPortrait: savedIsPortrait
-        )
-        
-        toolManager.preloadedMedia.append(nil)
-        note.pages.append(firstPage)
-        document.note = note
-        
-        templatePicker = false
     }
     
 }

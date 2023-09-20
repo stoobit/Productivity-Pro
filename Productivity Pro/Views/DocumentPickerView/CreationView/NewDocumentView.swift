@@ -60,7 +60,11 @@ struct NewDocumentView: View {
         .alert("Ein Fehler ist aufgetreten.", isPresented: $isFailure) {
             Button("Ok", role: .cancel) { isFailure = false }
         }
-        .sheet(isPresented: $templatePicker) {
+        .sheet(isPresented: $templatePicker, onDismiss: {
+            if document.documentType == .none {
+                document = Document()
+            }
+        }) {
             TemplateView(
                 isPresented: $templatePicker,
                 isPortrait: $isPortrait,

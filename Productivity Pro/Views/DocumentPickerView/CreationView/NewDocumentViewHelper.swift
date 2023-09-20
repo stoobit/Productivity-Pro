@@ -145,7 +145,7 @@ extension NewDocumentView {
                     "Letzte Vorlage",
                     systemImage: "clock.arrow.circlepath"
                 ) {
-                    
+                    createFromLastSelection()
                 }
                 .frame(height: 30)
                 
@@ -176,4 +176,5 @@ extension NewDocumentView {
             .disabled(url == URL(string: "https://www.stoobit.com")!)
         }
     }
+    
 }
