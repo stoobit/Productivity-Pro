@@ -39,7 +39,56 @@ struct NewDocumentView: View {
     
     var body: some View {
         NavigationStack {
-            FormView()
+            Form {
+                
+                Section {
+                    TextField("Unbenannt", text: $title)
+                        .frame(height: 30)
+                    
+                    Button(
+                        url == URL(string: "https://www.stoobit.com")! ? "Speicherort auswählen" : url.lastPathComponent.string,
+                        systemImage: "folder"
+                    ) {
+                        folderPicker.toggle()
+                    }
+                    .frame(height: 30)
+                }
+                
+                Section {
+                    Button(
+                        "Letzte Vorlage",
+                        systemImage: "clock.arrow.circlepath"
+                    ) {
+                        createFromLastSelection()
+                    }
+                    .frame(height: 30)
+                    
+                    Button(
+                        "Vorlage auswählen",
+                        systemImage: "grid"
+                    ) {
+                        templatePicker.toggle()
+                    }
+                    .frame(height: 30)
+                    
+                    Button(
+                        "Document scannen",
+                        systemImage: "doc.viewfinder"
+                    ) {
+                        
+                    }
+                    .frame(height: 30)
+                    
+                    Button(
+                        "PDF importieren",
+                        systemImage: "doc.richtext"
+                    ) {
+                        
+                    }
+                    .frame(height: 30)
+                }
+                .disabled(url == URL(string: "https://www.stoobit.com")!)
+            }
                 .navigationBarTitleDisplayMode(.inline)
                 .environment(\.defaultMinListRowHeight, 10)
                 .toolbar {
