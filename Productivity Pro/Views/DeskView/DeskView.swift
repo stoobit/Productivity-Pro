@@ -24,7 +24,7 @@ struct DeskView: View {
                 .frame(height: 30)
                 
                 NavigationLink(destination: {
-                    
+                    WhatIsNew()
                 }) {
                     Label("Was ist neu?", systemImage: "plus.app.fill")
                 }
