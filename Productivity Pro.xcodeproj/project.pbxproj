@@ -555,6 +555,7 @@
 				BB6701572AADEFA7001F468A /* ContentView.swift */,
 				BB6BFA2129048BBE002D09FD /* DeskView */,
 				BBBF5EDF2AB3B5D3009520DD /* DocumentPickerView */,
+				BBCCE4F028D52911001DBD8A /* DocumentCreationView */,
 				BB4A93DE2AAF556900C3AED6 /* ScheduleView */,
 				BB4A93DF2AAF557B00C3AED6 /* HomeworkView */,
 				BBF5FDF32AAE25CA0081C4FE /* LibraryView */,
@@ -819,7 +820,6 @@
 				BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */,
 				BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */,
 				BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */,
-				BBCCE4F028D52911001DBD8A /* CreationView */,
 			);
 			path = DocumentPickerView;
 			sourceTree = "<group>";
@@ -834,14 +834,14 @@
 			path = ToolView;
 			sourceTree = "<group>";
 		};
-		BBCCE4F028D52911001DBD8A /* CreationView */ = {
+		BBCCE4F028D52911001DBD8A /* DocumentCreationView */ = {
 			isa = PBXGroup;
 			children = (
 				BBCCE4F128D52934001DBD8A /* NewDocumentView.swift */,
 				BB7423F62A5ED7140031176A /* NewDocumentViewHelper.swift */,
 				BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */,
 			);
-			path = CreationView;
+			path = DocumentCreationView;
 			sourceTree = "<group>";
 		};
 		BBCCE4F528D53DE3001DBD8A /* Helper */ = {
