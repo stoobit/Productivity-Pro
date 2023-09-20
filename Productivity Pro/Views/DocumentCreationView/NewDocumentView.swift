@@ -70,12 +70,25 @@ struct NewDocumentView: View {
                         templatePicker.toggle()
                     }
                     .frame(height: 30)
+                    .sheet(isPresented: $templatePicker, onDismiss: {
+                        if document.documentType == .none {
+                            document = Document()
+                        }
+                    }) {
+                        TemplateView(
+                            isPresented: $templatePicker,
+                            isPortrait: $isPortrait,
+                            selectedColor: $selectedColor,
+                            selectedTemplate: $selectedTemplate,
+                            buttonTitle: "Erstellen"
+                        ) { createTemplate() }
+                    }
                     
                     Button(
                         "Document scannen",
                         systemImage: "doc.viewfinder"
                     ) {
-                        
+                        subviewManager.newDocScan.toggle()
                     }
                     .frame(height: 30)
                     
@@ -83,9 +96,16 @@ struct NewDocumentView: View {
                         "PDF importieren",
                         systemImage: "doc.richtext"
                     ) {
-                        
+                        subviewManager.newDocPDF.toggle()
                     }
                     .frame(height: 30)
+                    .fileImporter(
+                        isPresented: $subviewManager.newDocPDF,
+                        allowedContentTypes: [.pdf],
+                        allowsMultipleSelection: false
+                    ) { result in
+                       createPDF(with: result)
+                    }
                 }
                 .disabled(url == URL(string: "https://www.stoobit.com")!)
             }
@@ -108,19 +128,6 @@ struct NewDocumentView: View {
         }
         .alert("Ein Fehler ist aufgetreten.", isPresented: $isFailure) {
             Button("Ok", role: .cancel) { isFailure = false }
-        }
-        .sheet(isPresented: $templatePicker, onDismiss: {
-            if document.documentType == .none {
-                document = Document()
-            }
-        }) {
-            TemplateView(
-                isPresented: $templatePicker,
-                isPortrait: $isPortrait,
-                selectedColor: $selectedColor,
-                selectedTemplate: $selectedTemplate,
-                buttonTitle: "Erstellen"
-            ) { createTemplate() }
         }
         
     }

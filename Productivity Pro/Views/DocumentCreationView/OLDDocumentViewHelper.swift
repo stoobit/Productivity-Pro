@@ -75,7 +75,7 @@ extension NewDocumentView {
                         
                         defer { selectedFile.stopAccessingSecurityScopedResource() }
                         
-                        add(pdf: input)
+//                        add(pdf: input)
                     } else {
                         toolManager.showProgress = false
                     }

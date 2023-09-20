@@ -11,6 +11,21 @@ import PDFKit
 
 extension NewDocumentView {
     
+    func importFolder(with result: Result<[URL], any Error>) {
+        switch result {
+        case .success(let urls):
+            
+            if let document = urls.first {
+                url = document
+                folderPicker.toggle()
+            } else {
+                isFailure.toggle()
+            }
+            
+        case .failure:
+            isFailure.toggle()
+        }
+    }
     func createTemplate() {
         document.documentType = .note
         
@@ -109,8 +124,24 @@ extension NewDocumentView {
         
         isPresented.toggle()
     }
-    
-    func add(pdf: PDFDocument) {
+    func createPDF(with result: Result<[URL], any Error>) {
+        var pdf = PDFDocument()
+        
+        switch result {
+        case .success(let urls):
+            
+            if let document = urls.first {
+                if let pdfDocument = PDFDocument(url: document) {
+                    pdf = pdfDocument
+                }
+            } else {
+                isFailure.toggle()
+            }
+            
+        case .failure:
+            isFailure.toggle()
+        }
+        
         document.note = Note()
         document.documentType = .note
         
@@ -147,9 +178,34 @@ extension NewDocumentView {
             document.note.pages.append(newPage)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            toolManager.showProgress = false
+        do {
+            if url.startAccessingSecurityScopedResource() {
+                let data = try JSONEncoder().encode(document)
+                let encryptedData = data.base64EncodedData()
+                
+                if title == "" {
+                    title = "Unbenannt"
+                }
+                
+                url.appendPathComponent("\(title)", conformingTo: .pro)
+                
+                var ver = 1
+                while FileManager.default.fileExists(atPath: url.path) {
+                    url.deleteLastPathComponent()
+                    url.appendPathComponent("\(title) \(ver)", conformingTo: .pro)
+                    
+                    ver += 1
+                }
+                
+                try encryptedData.write(to: url, options: .noFileProtection)
+                url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
+            }
+            
+        } catch {
+            print(error)
         }
+        
+        isPresented.toggle()
     }
     
     func add(scan: VNDocumentCameraScan) {
@@ -183,22 +239,6 @@ extension NewDocumentView {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             toolManager.showProgress = false
-        }
-    }
-    
-    func importFolder(with result: Result<[URL], any Error>) {
-        switch result {
-        case .success(let urls):
-            
-            if let document = urls.first {
-                url = document
-                folderPicker.toggle()
-            } else {
-                isFailure.toggle()
-            }
-            
-        case .failure:
-            isFailure.toggle()
         }
     }
     
