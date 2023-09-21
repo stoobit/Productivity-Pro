@@ -8,8 +8,7 @@
 import SwiftData
 import Foundation
 
-@Model
-class Homework: Identifiable {
+@Model final class Homework: Identifiable {
     
     init() { }
     
@@ -18,7 +17,7 @@ class Homework: Identifiable {
     var title: String = ""
     var homeworkDescription: String = ""
     
-    var subject: Subject?
+    var subject: Subject = Subject()
     var date: Date = Date()
     
     var linkedDocument: UUID? = nil

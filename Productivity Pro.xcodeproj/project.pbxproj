@@ -102,6 +102,8 @@
 		BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */; };
 		BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36492ABCD29700721C56 /* Homework.swift */; };
 		BB9A364C2ABCD5D700721C56 /* AddHomework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364B2ABCD5D700721C56 /* AddHomework.swift */; };
+		BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364D2ABCFA4900721C56 /* HomeworkListMethods.swift */; };
+		BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364F2ABCFD2A00721C56 /* Calendar.swift */; };
 		BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */; };
 		BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CC947293FD45E0094446A /* ShareSheet.swift */; };
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
@@ -287,6 +289,8 @@
 		BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkList.swift; sourceTree = "<group>"; };
 		BB9A36492ABCD29700721C56 /* Homework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
 		BB9A364B2ABCD5D700721C56 /* AddHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHomework.swift; sourceTree = "<group>"; };
+		BB9A364D2ABCFA4900721C56 /* HomeworkListMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkListMethods.swift; sourceTree = "<group>"; };
+		BB9A364F2ABCFD2A00721C56 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorContainerView.swift; sourceTree = "<group>"; };
 		BB9CC947293FD45E0094446A /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
@@ -506,6 +510,7 @@
 			children = (
 				BB4A93F12AB09FFB00C3AED6 /* HomeworkView.swift */,
 				BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */,
+				BB9A364D2ABCFA4900721C56 /* HomeworkListMethods.swift */,
 				BB9A364B2ABCD5D700721C56 /* AddHomework.swift */,
 			);
 			path = HomeworkView;
@@ -788,6 +793,7 @@
 				BB5069E929CE294E001330AE /* ImageUIImage.swift */,
 				BB7C2C7A2A3D258100C730D3 /* String.swift */,
 				BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */,
+				BB9A364F2ABCFD2A00721C56 /* Calendar.swift */,
 			);
 			path = TypeModifier;
 			sourceTree = "<group>";
@@ -1126,6 +1132,7 @@
 				BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
 				BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */,
+				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
 				BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */,
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
 				BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */,
@@ -1182,6 +1189,7 @@
 				BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */,
 				BBB763B02A3A64CC00273182 /* EditShapeItemMethods.swift in Sources */,
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
+				BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddHomework: View {
     
-    @Environment(\.modelContext) var homeworkTasks
+    @Environment(\.modelContext) var context
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
@@ -23,7 +23,7 @@ struct AddHomework: View {
                     TextField("Titel", text: $homework.title)
                         .frame(height: 30)
                     DatePicker(
-                        "Zu erledigen bis",
+                        "Zu erledigen bis zum",
                         selection: $homework.date,
                         in: dateRange,
                         displayedComponents: .date
@@ -33,9 +33,9 @@ struct AddHomework: View {
                 
                 Section {
                     Picker("Fach", selection: $homework.subject) {
-                        ForEach(subjects.value) { subject in
+                        ForEach(subjects.value.sorted(by: { $0.title < $1.title })) { subject in
                             Text(subject.title)
-                                .tag(subject.title)
+                                .tag(subject)
                         }
                     }
                     .frame(height: 30)
@@ -48,18 +48,16 @@ struct AddHomework: View {
                             
                         }
                         .buttonStyle(.bordered)
-                        .foregroundStyle(homework.linkedDocument == nil ? Color.accentColor : Color.secondary
-                        )
+                        .foregroundStyle(Color.primary)
                     }
                     .frame(height: 30)
                 }
                 
                 TextField(
                     "Beschreibung",
-                    text: $homework.homeworkDescription,
-                    axis: .vertical
+                    text: $homework.homeworkDescription, axis: .vertical
                 )
-                .frame(height: 100)
+                .frame(minHeight: 30)
             }
             .environment(\.defaultMinListRowHeight, 10)
             .toolbar {
@@ -74,10 +72,23 @@ struct AddHomework: View {
             }
         }
         .scrollIndicators(.never)
+        .onAppear {
+            homework.date = Calendar.current.date(
+                byAdding: .day, value: 1, to: homework.date
+            )!
+            
+            homework.subject = subjects.value.sorted(by: { $0.title < $1.title }).first!
+        }
     }
     
     func add() {
+        homework.date = Calendar.current.date(
+            bySettingHour: 5, minute: 00, second: 0, of: homework.date
+        )!
         
+        context.insert(homework)
+        try? context.save()
+        isPresented.toggle()
     }
     
     let dateRange: ClosedRange<Date> = {
