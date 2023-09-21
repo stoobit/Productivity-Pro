@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct HomeworkView: View {
+    
+    @AppStorage("ppsubjects")
+    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
-                
-                VStack {
+            
+                if subjects.value.isEmpty == false {
+                    HomeworkList()
+                } else {
+                    
+                    VStack {
+                        Image(systemName: "tray.2")
+                            .font(.system(size: 100))
+                        
+                        Text("Du hast noch keine Fächer erstellt.")
+                            .font(.title.bold())
+                            .padding([.top, .horizontal])
+                            .multilineTextAlignment(.center)
+                        
+                        Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
+                            .foregroundStyle(Color.secondary)
+                    }
+                    .foregroundStyle(.blue.secondary)
                     
                 }
             }

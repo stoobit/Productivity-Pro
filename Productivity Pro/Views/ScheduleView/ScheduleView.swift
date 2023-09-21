@@ -62,9 +62,11 @@ struct ScheduleView: View {
                     
                     Text("Du hast noch keine Fächer erstellt.")
                         .font(.title.bold())
-                        .padding(.top)
-                        .padding(.horizontal)
+                        .padding([.top, .horizontal])
                         .multilineTextAlignment(.center)
+                    
+                    Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
+                        .foregroundStyle(Color.secondary)
                 }
                 .foregroundStyle(.blue.secondary)
                 
