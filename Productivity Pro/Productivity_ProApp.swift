@@ -9,18 +9,9 @@ import SwiftUI
 
 @main
 struct Productivity_ProApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
-    @State var doc = Document()
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
-    
-}
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-
 }

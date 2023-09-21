@@ -20,6 +20,12 @@ struct HomeworkView: View {
             
                 if subjects.value.isEmpty == false {
                     HomeworkList()
+                        .modelContainer(
+                            for: Homework.self,
+                            isAutosaveEnabled: true,
+                            isUndoEnabled: false
+                        )
+                    
                 } else {
                     
                     VStack {

@@ -48,6 +48,7 @@ struct SubjectSettings: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: { addSubject.toggle() }) {
                         Image(systemName: "plus")
+                            .fontWeight(.semibold)
                     }
                 }
             }

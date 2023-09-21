@@ -99,8 +99,9 @@
 		BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB929B8128E5077800DA4538 /* NoteTitleMenu.swift */; };
 		BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB929B8328E5087200DA4538 /* NoteMainToolbar.swift */; };
 		BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */; };
-		BB9A36452ABCCD9100721C56 /* HomeworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36442ABCCD9100721C56 /* HomeworkModel.swift */; };
 		BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */; };
+		BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36492ABCD29700721C56 /* Homework.swift */; };
+		BB9A364C2ABCD5D700721C56 /* AddHomework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364B2ABCD5D700721C56 /* AddHomework.swift */; };
 		BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */; };
 		BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CC947293FD45E0094446A /* ShareSheet.swift */; };
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
@@ -283,12 +284,11 @@
 		BB929B8128E5077800DA4538 /* NoteTitleMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleMenu.swift; sourceTree = "<group>"; };
 		BB929B8328E5087200DA4538 /* NoteMainToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMainToolbar.swift; sourceTree = "<group>"; };
 		BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterHelper.swift; sourceTree = "<group>"; };
-		BB9A36442ABCCD9100721C56 /* HomeworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkModel.swift; sourceTree = "<group>"; };
 		BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkList.swift; sourceTree = "<group>"; };
+		BB9A36492ABCD29700721C56 /* Homework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
+		BB9A364B2ABCD5D700721C56 /* AddHomework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHomework.swift; sourceTree = "<group>"; };
 		BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorContainerView.swift; sourceTree = "<group>"; };
 		BB9CC947293FD45E0094446A /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
-		BB9D73F32A56256E0054940A /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
-		BB9D740B2A56277B0054940A /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = SDKROOT; };
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
@@ -486,7 +486,6 @@
 			children = (
 				BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */,
 				BB4A93EB2AAF5F5A00C3AED6 /* ScheduleDayModel.swift */,
-				BB9A36442ABCCD9100721C56 /* HomeworkModel.swift */,
 			);
 			path = AppStorageModels;
 			sourceTree = "<group>";
@@ -507,6 +506,7 @@
 			children = (
 				BB4A93F12AB09FFB00C3AED6 /* HomeworkView.swift */,
 				BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */,
+				BB9A364B2ABCD5D700721C56 /* AddHomework.swift */,
 			);
 			path = HomeworkView;
 			sourceTree = "<group>";
@@ -517,7 +517,6 @@
 				BB72E1052A59B3B1005A01B9 /* README.md */,
 				BB4CDD3F28D3C668009A409F /* Productivity Pro */,
 				BB4CDD3E28D3C668009A409F /* Products */,
-				BBBCACAC2A2539E100C23B2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -574,6 +573,7 @@
 				BB9DF5B328E067D600AC988D /* DocumentModels */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
 				BB4A93D52AAF3BED00C3AED6 /* AppStorageModels */,
+				BB9A36482ABCD25900721C56 /* SwiftDataModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -674,6 +674,14 @@
 			path = PencilKitView;
 			sourceTree = "<group>";
 		};
+		BB9A36482ABCD25900721C56 /* SwiftDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB9A36492ABCD29700721C56 /* Homework.swift */,
+			);
+			path = SwiftDataModels;
+			sourceTree = "<group>";
+		};
 		BB9CACE52A2687CE001909FD /* Regular */ = {
 			isa = PBXGroup;
 			children = (
@@ -744,15 +752,6 @@
 				BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */,
 			);
 			path = Compact;
-			sourceTree = "<group>";
-		};
-		BBBCACAC2A2539E100C23B2C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BB9D73F32A56256E0054940A /* QuickLook.framework */,
-				BB9D740B2A56277B0054940A /* QuickLookThumbnailing.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BBBCACAF2A253BC000C23B2C /* Calculator */ = {
@@ -1118,6 +1117,7 @@
 				BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */,
 				BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */,
 				BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */,
+				BB9A364C2ABCD5D700721C56 /* AddHomework.swift in Sources */,
 				BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */,
 				BB68082B29FDD2A90026FDDF /* NSAttributedString.swift in Sources */,
 				BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */,
@@ -1148,7 +1148,6 @@
 				BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */,
 				BB655AFE2AB772E900FB005A /* NoteViewAlert.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
-				BB9A36452ABCCD9100721C56 /* HomeworkModel.swift in Sources */,
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
@@ -1168,6 +1167,7 @@
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */,
 				BB4A93E32AAF564C00C3AED6 /* ScheduleViewContainer.swift in Sources */,
+				BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */,
 				BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */,
 				BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */,
 				BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */,

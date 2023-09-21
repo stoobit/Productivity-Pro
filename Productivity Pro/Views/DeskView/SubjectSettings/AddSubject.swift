@@ -39,7 +39,7 @@ struct AddSubject: View {
             GeometryReader { proxy in
                 Form {
                     Section {
-                        TextField("z.B. Mathe", text: $subject.title)
+                        TextField("Titel", text: $subject.title)
                             .frame(height: 30)
                         
                         ColorPicker(

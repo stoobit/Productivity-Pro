@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Document: Codable {
+struct Document: Identifiable, Codable {
+    var id: UUID?
+    
     var documentType: DocumentType = .none
     
     var note: Note!

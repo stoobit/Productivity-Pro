@@ -1,0 +1,28 @@
+//
+//  Homework.swift
+//  Productivity Pro
+//
+//  Created by Till Brügmann on 21.09.23.
+//
+
+import SwiftData
+import Foundation
+
+@Model
+class Homework: Identifiable {
+    
+    init() { }
+    
+    var id: UUID = UUID()
+    
+    var title: String = ""
+    var homeworkDescription: String = ""
+    
+    var subject: Subject?
+    var date: Date = Date()
+    
+    var linkedDocument: UUID? = nil
+    var documentTitle: String = ""
+}
+
+

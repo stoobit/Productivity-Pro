@@ -6,10 +6,33 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeworkList: View {
+    
+    @Environment(\.modelContext) var homeworkTasks
+    
+    @State var presentAdd: Bool = false
+    @State var presentInfo: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Section("") {
+                
+            }
+               
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: { presentAdd.toggle() }) {
+                    Image(systemName: "plus")
+                        .fontWeight(.semibold)
+                }
+            }
+        }
+        .sheet(isPresented: $presentAdd, content: {
+            AddHomework(isPresented: $presentAdd)
+        })
     }
 }
 
