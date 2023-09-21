@@ -130,9 +130,74 @@ extension NewDocumentView {
         switch result {
         case .success(let urls):
             
-            if let document = urls.first {
-                if let pdfDocument = PDFDocument(url: document) {
+            if let pdfURL = urls.first {
+                if let pdfDocument = PDFDocument(url: pdfURL) {
                     pdf = pdfDocument
+                    
+                    document.note = Note()
+                    document.documentType = .note
+                    
+                    for index in 0...pdf.pageCount - 1 {
+                        
+                        guard let page = pdf.page(at: index) else { return }
+                        let size = page.bounds(for: .mediaBox).size
+                        
+                        var data: Data?
+                        var header: String?
+                        
+                        data = page.dataRepresentation
+                        header = page.string?.components(separatedBy: .newlines).first
+                        header = header?.trimmingCharacters(in: .whitespacesAndNewlines)
+                        
+                        let canvasType: CanvasType = .pencilKit
+                        
+                        let newPage = Page(
+                            type: .pdf,
+                            canvasType: canvasType,
+                            backgroundMedia: data,
+                            header: header,
+                            backgroundColor: "pagewhite",
+                            backgroundTemplate: "blank",
+                            isPortrait: size.width < size.height
+                        )
+                        
+                        if let data = page.dataRepresentation {
+                            toolManager.preloadedMedia.append(PDFDocument(data: data))
+                        } else {
+                            toolManager.preloadedMedia.append(nil)
+                        }
+                        
+                        document.note.pages.append(newPage)
+                    }
+                    
+                    do {
+                        if url.startAccessingSecurityScopedResource() {
+                            let data = try JSONEncoder().encode(document)
+                            let encryptedData = data.base64EncodedData()
+                            
+                            if title == "" {
+                                title = "Unbenannt"
+                            }
+                            
+                            url.appendPathComponent("\(title)", conformingTo: .pro)
+                            
+                            var ver = 1
+                            while FileManager.default.fileExists(atPath: url.path) {
+                                url.deleteLastPathComponent()
+                                url.appendPathComponent("\(title) \(ver)", conformingTo: .pro)
+                                
+                                ver += 1
+                            }
+                            
+                            try encryptedData.write(to: url, options: .noFileProtection)
+                            url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
+                        }
+                        
+                    } catch {
+                        print(error)
+                    }
+                    
+                    isPresented.toggle()
                 }
             } else {
                 isFailure.toggle()
@@ -141,71 +206,6 @@ extension NewDocumentView {
         case .failure:
             isFailure.toggle()
         }
-        
-        document.note = Note()
-        document.documentType = .note
-        
-        for index in 0...pdf.pageCount - 1 {
-            
-            guard let page = pdf.page(at: index) else { return }
-            let size = page.bounds(for: .mediaBox).size
-            
-            var data: Data?
-            var header: String?
-            
-            data = page.dataRepresentation
-            header = page.string?.components(separatedBy: .newlines).first
-            header = header?.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            let canvasType: CanvasType = .pencilKit
-            
-            let newPage = Page(
-                type: .pdf,
-                canvasType: canvasType,
-                backgroundMedia: data,
-                header: header,
-                backgroundColor: "pagewhite",
-                backgroundTemplate: "blank",
-                isPortrait: size.width < size.height
-            )
-            
-            if let data = page.dataRepresentation {
-                toolManager.preloadedMedia.append(PDFDocument(data: data))
-            } else {
-                toolManager.preloadedMedia.append(nil)
-            }
-            
-            document.note.pages.append(newPage)
-        }
-        
-        do {
-            if url.startAccessingSecurityScopedResource() {
-                let data = try JSONEncoder().encode(document)
-                let encryptedData = data.base64EncodedData()
-                
-                if title == "" {
-                    title = "Unbenannt"
-                }
-                
-                url.appendPathComponent("\(title)", conformingTo: .pro)
-                
-                var ver = 1
-                while FileManager.default.fileExists(atPath: url.path) {
-                    url.deleteLastPathComponent()
-                    url.appendPathComponent("\(title) \(ver)", conformingTo: .pro)
-                    
-                    ver += 1
-                }
-                
-                try encryptedData.write(to: url, options: .noFileProtection)
-                url.deletingLastPathComponent().stopAccessingSecurityScopedResource()
-            }
-            
-        } catch {
-            print(error)
-        }
-        
-        isPresented.toggle()
     }
     
     func add(scan: VNDocumentCameraScan) {

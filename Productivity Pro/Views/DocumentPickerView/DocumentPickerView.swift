@@ -49,6 +49,7 @@ struct DocumentPickerView: View {
                             }
                             .tint(Color.accentColor)
                         }
+                        .disabled(!FileManager.default.fileExists(atPath: pin.path))
                     }
                 }
                 
@@ -60,6 +61,7 @@ struct DocumentPickerView: View {
                             Label(title, systemImage: "clock.arrow.circlepath")
                         }
                         .frame(height: 30)
+                        .disabled(!FileManager.default.fileExists(atPath: recent.path))
                     }
                 }
                 .onAppear {
