@@ -31,7 +31,7 @@ struct SubjectSettings: View {
                         Text(subject.title)
                             .padding(.leading, 7)
                     }
-                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button("", systemImage: "trash", role: .destructive) {
                             withAnimation {
                                 subjects.value.removeAll(where: { $0.id == subject.id })

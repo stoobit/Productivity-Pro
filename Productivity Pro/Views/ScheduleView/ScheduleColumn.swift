@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ScheduleColumn: View {
+    @AppStorage("ppsubjects")
+    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
     @State var addSubject: Bool = false
     @State var editSubject: Bool = false
@@ -15,7 +17,7 @@ struct ScheduleColumn: View {
     @Binding var isEditing: Bool
     @Binding var day: ScheduleDay
     
-    @State var oldSubject: Subject = Subject()
+    @State var oldSubject: ScheduleSubject = ScheduleSubject()
     
     var body: some View {
         LazyVStack(alignment: .leading) {
@@ -26,7 +28,6 @@ struct ScheduleColumn: View {
             
             ForEach(day.subjects) { subject in
                 Icon(for: subject)
-                    .transition(.scale)
             }
             
             ZStack {
@@ -35,14 +36,8 @@ struct ScheduleColumn: View {
                     .padding(.vertical, 12)
                 
                 if isEditing {
-                    Button(action: { addSubject.toggle() }) {
-                        Icon(for: Subject(
-                            title: "Fach",
-                            icon: "plus",
-                            color: Color.secondary.rawValue
-                        ))
-                    }
-                    .transition(.scale)
+                    PlusButton()
+                        .transition(.scale)
                 }
             }
             .padding(.bottom, 15)
@@ -54,7 +49,7 @@ struct ScheduleColumn: View {
         .sheet(isPresented: $addSubject) {
             ScheduleAddSubject(
                 isPresented: $addSubject,
-                day: $day, isAdd: true, oldSubject: .constant(Subject())
+                day: $day, isAdd: true, oldSubject: $oldSubject
             )
         }
         .sheet(isPresented: $editSubject) {
@@ -65,16 +60,16 @@ struct ScheduleColumn: View {
         }
     }
     
-    @ViewBuilder func Icon(for subject: Subject) -> some View {
+    @ViewBuilder func Icon(for scheduleSubject: ScheduleSubject) -> some View {
         HStack {
-            if isEditing == false || subject.icon == "plus" {
-                Image(systemName: subject.icon)
+            if isEditing == false {
+                Image(systemName: getSubject(from: scheduleSubject).icon)
                     .foregroundStyle(.white)
                     .background {
                         Circle()
                             .frame(width: 35, height: 35)
                             .foregroundStyle(
-                                Color(rawValue: subject.color)
+                                Color(rawValue: getSubject(from: scheduleSubject).color)
                             )
                     }
                     .frame(width: 35, height: 35)
@@ -82,12 +77,12 @@ struct ScheduleColumn: View {
             }
             
             VStack {
-                Text(subject.title)
+                Text(getSubject(from: scheduleSubject).title)
                     .foregroundStyle(Color.primary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                if subject.room != "" {
-                    Text(subject.room)
+                if scheduleSubject.room != "" {
+                    Text(scheduleSubject.room)
                         .foregroundStyle(Color.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.caption)
@@ -98,16 +93,28 @@ struct ScheduleColumn: View {
             
             Spacer()
             
-            if subject.icon != "plus" && isEditing {
+            if isEditing {
                 Menu(content: {
-                    Button("Ändern", systemImage: "pencil") {
-                        oldSubject = subject
-                        editSubject.toggle()
+                    Section {
+                        Button("Fach ändern", systemImage: "tray") {
+                            oldSubject = scheduleSubject
+                            editSubject.toggle()
+                        }
+                        
+                        Button("Freistunde", systemImage: "clock") {
+                            withAnimation {
+                                day.subjects[day.subjects.firstIndex(of: scheduleSubject)!]
+                                    .subject = ""
+                                
+                                day.subjects[day.subjects.firstIndex(of: scheduleSubject)!]
+                                    .room = ""
+                            }
+                        }
                     }
                     
                     Button("Entfernen", systemImage: "trash", role: .destructive) {
                         day.subjects.removeAll(where: {
-                            $0.id == subject.id
+                            $0.id == scheduleSubject.id
                         })
                     }
                 }) {
@@ -126,12 +133,66 @@ struct ScheduleColumn: View {
         .padding(.vertical, 10)
         .padding(.leading, 10)
         .background {
+            if getSubject(from: scheduleSubject).title != "" || isEditing {
+                Color(UIColor.secondarySystemGroupedBackground)
+                    .clipShape(
+                        RoundedRectangle(cornerRadius: 10)
+                    )
+            }
+        }
+        
+    }
+    
+    @ViewBuilder func PlusButton() -> some View {
+        HStack {
+            Menu(content: {
+                Button(action: { addSubject.toggle() }) {
+                   Label("Fach hinzufügen", systemImage: "tray")
+                }
+                
+                Button(action: {
+                    day.subjects.append(ScheduleSubject())
+                }) {
+                    Label("Freistunde", systemImage: "clock")
+                }
+            }) {
+                Image(systemName: "plus")
+                    .foregroundStyle(.white)
+                    .background {
+                        Circle()
+                            .frame(width: 35, height: 35)
+                            .foregroundStyle(Color.secondary)
+                    }
+                    .frame(width: 35, height: 35)
+                    .transition(.scale(0, anchor: .leading))
+            }
+            .transition(.scale)
+            
+            Spacer()
+        }
+        .frame(height: 35)
+        .padding(.vertical, 10)
+        .padding(.leading, 10)
+        .background {
             Color(UIColor.secondarySystemGroupedBackground)
                 .clipShape(
                     RoundedRectangle(cornerRadius: 10)
                 )
         }
+    }
+    
+    func getSubject(from scheduleSubject: ScheduleSubject) -> Subject {
+        var subject: Subject = Subject()
         
+        if let s = subjects.value.first(where: {
+            $0.title == scheduleSubject.subject
+        }) {
+            subject = s
+        } else {
+            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
+        }
+        
+        return subject
     }
 }
 

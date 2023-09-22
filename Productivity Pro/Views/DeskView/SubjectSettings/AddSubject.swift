@@ -99,7 +99,7 @@ struct AddSubject: View {
                         .disabled(
                             subject.title.trimmingCharacters(
                                 in: .whitespaces
-                            ) == ""
+                            ) == "" || exists()
                         )
                     }
                 }
@@ -112,8 +112,15 @@ struct AddSubject: View {
     }
     
     func add() {
-        subjects.value.append(subject)
-        addSubject.toggle()
+        withAnimation {
+            subjects.value.append(subject)
+            addSubject.toggle()
+        }
+    }
+    
+    func exists() -> Bool {
+        let titles = subjects.value.map { $0.title }
+        return titles.contains(subject.title.trimmingCharacters(in: .whitespaces))
     }
 }
 

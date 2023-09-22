@@ -13,6 +13,7 @@ struct HomeworkList: View {
     @Environment(\.modelContext) var context
     @Query(
         FetchDescriptor(
+            predicate: #Predicate<Homework> { $0.isDone == false },
             sortBy: [SortDescriptor(\Homework.title, order: .forward)]
         ),
         animation: .bouncy

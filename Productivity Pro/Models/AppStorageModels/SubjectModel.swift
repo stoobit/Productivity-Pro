@@ -8,11 +8,9 @@
 import Foundation
 
 struct Subject: Identifiable, Codable, Equatable, Hashable {
-    var id = UUID().uuidString
+    var id = UUID()
     
     var title: String = ""
     var icon: String = ""
-    
     var color: String = ""
-    var room: String = ""
 }

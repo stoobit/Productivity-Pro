@@ -34,6 +34,7 @@
 		BB27FED228EA09A200459334 /* TouchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED128EA09A200459334 /* TouchType.swift */; };
 		BB27FED428EA192D00459334 /* OLD ChangePageTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED328EA192D00459334 /* OLD ChangePageTemplateView.swift */; };
 		BB27FED828EA419300459334 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED728EA419300459334 /* OverviewView.swift */; };
+		BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB28336B2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift */; };
 		BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */; };
 		BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFBA32A660F4F009774BB /* EditMarkdownViewMethods.swift */; };
 		BB2CFBA62A660F77009774BB /* EditMarkdownToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFBA52A660F77009774BB /* EditMarkdownToolbar.swift */; };
@@ -222,6 +223,7 @@
 		BB27FED128EA09A200459334 /* TouchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchType.swift; sourceTree = "<group>"; };
 		BB27FED328EA192D00459334 /* OLD ChangePageTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OLD ChangePageTemplateView.swift"; sourceTree = "<group>"; };
 		BB27FED728EA419300459334 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		BB28336B2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSubjectView.swift; sourceTree = "<group>"; };
 		BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectRecognition.mlmodel; sourceTree = "<group>"; };
 		BB2CFBA32A660F4F009774BB /* EditMarkdownViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownViewMethods.swift; sourceTree = "<group>"; };
 		BB2CFBA52A660F77009774BB /* EditMarkdownToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownToolbar.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 			children = (
 				BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */,
 				BB4A93EB2AAF5F5A00C3AED6 /* ScheduleDayModel.swift */,
+				BB28336B2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift */,
 			);
 			path = AppStorageModels;
 			sourceTree = "<group>";
@@ -1161,6 +1164,7 @@
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
 				BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */,
 				BB1DF6042A686D14006F85CE /* PPToolButton.swift in Sources */,
+				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
 				BB07E7BA2A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,

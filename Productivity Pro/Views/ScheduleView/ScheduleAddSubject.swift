@@ -16,7 +16,7 @@ struct ScheduleAddSubject: View {
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
     let isAdd: Bool
-    @Binding var oldSubject: Subject
+    @Binding var oldSubject: ScheduleSubject
     
     @State var text: String = ""
     
@@ -33,43 +33,34 @@ struct ScheduleAddSubject: View {
                         }
                 }
                 
-                List {
-                    ForEach(subjects.value) { subject in
-                        Button(action: { 
-                            if isAdd {
-                                var new = subject
-                                new.room = text
-                                
-                                add(new)
-                            } else {
-                                var new = subject
-                                new.room = text
-                                
-                                edit(new)
-                            }
-                        }) {
-                            HStack {
-                                Image(systemName: subject.icon)
-                                    .foregroundStyle(.white)
-                                    .background {
-                                        Circle()
-                                            .frame(width: 40, height: 40)
-                                            .foregroundStyle(Color(rawValue: subject.color))
-                                    }
-                                    .frame(width: 40, height: 40)
-                                
-                                Text(subject.title)
-                                    .padding(.leading, 7)
-                                    .foregroundStyle(Color.primary)
-                            }
+                ForEach(subjects.value) { subject in
+                    Button(action: {
+                        if isAdd {
+                            add(subject)
+                        } else {
+                            edit(subject)
                         }
-                        .tag(subject)
+                    }) {
+                        HStack {
+                            Image(systemName: subject.icon)
+                                .foregroundStyle(.white)
+                                .background {
+                                    Circle()
+                                        .frame(width: 40, height: 40)
+                                        .foregroundStyle(Color(rawValue: subject.color))
+                                }
+                                .frame(width: 40, height: 40)
+                            
+                            Text(subject.title)
+                                .padding(.leading, 7)
+                                .foregroundStyle(Color.primary)
+                        }
                     }
+                    .tag(subject)
                 }
-                .pickerStyle(.inline)
             }
+            .environment(\.defaultMinListRowHeight, 10)
             .scrollIndicators(.hidden)
-            
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -82,18 +73,19 @@ struct ScheduleAddSubject: View {
     }
     
     func add(_ subject: Subject) {
-        withAnimation(.bouncy) {
-            var s = subject
-            s.id = UUID().uuidString
-            
-            day.subjects.append(s)
-            isPresented.toggle()
-        }
+        let new = ScheduleSubject(
+            subject: subject.title, room: text
+        )
+        
+        day.subjects.append(new)
+        isPresented.toggle()
     }
     
     func edit(_ subject: Subject) {
         let index = day.subjects.firstIndex(of: oldSubject)!
-        day.subjects[index] = subject
+        
+        day.subjects[index].subject = subject.title
+        day.subjects[index].room = text
         
         isPresented.toggle()
     }

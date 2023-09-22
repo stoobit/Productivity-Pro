@@ -22,6 +22,9 @@ import Foundation
     
     var linkedDocument: UUID? = nil
     var documentTitle: String = ""
+    
+    var isDone: Bool = false
+    var doneDate: Date = Date()
 }
 
 

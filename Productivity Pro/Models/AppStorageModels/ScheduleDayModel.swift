@@ -8,7 +8,6 @@
 import Foundation
 
 struct ScheduleDay: Identifiable, Codable, Equatable {
-    
     var id: String
-    var subjects: [Subject] = []
+    var subjects: [ScheduleSubject] = []
 }
