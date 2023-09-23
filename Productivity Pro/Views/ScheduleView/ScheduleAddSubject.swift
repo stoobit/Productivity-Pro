@@ -31,6 +31,10 @@ struct ScheduleAddSubject: View {
                             if isAdd == false {
                                 text = oldSubject.room
                                 subject = oldSubject.subject
+                            } else {
+                                subject = subjects.value.sorted(
+                                    by: { $0.title < $1.title }
+                                )[0].title
                             }
                         }
                         .onChange(of: subject) {
@@ -63,7 +67,9 @@ struct ScheduleAddSubject: View {
                 Picker("", selection: $subject) {
                     Section {
                         ForEach(
-                            subjects.value.sorted(by: { $0.title < $1.title })
+                            subjects.value.sorted(
+                                by: { $0.title < $1.title }
+                            )
                         ) { subject in
                             HStack {
                                 Image(systemName: subject.icon)
