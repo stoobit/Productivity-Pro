@@ -64,7 +64,7 @@ struct HomeworkList: View {
     
     @ViewBuilder func HomeworkItem(for homework: Homework) -> some View {
         HStack {
-            Image(systemName: getSubject(from: homework.title).icon)
+            Image(systemName: getSubject(from: homework.subject).icon)
                 .foregroundStyle(.white)
                 .background {
                     Circle()
@@ -72,7 +72,7 @@ struct HomeworkList: View {
                         .foregroundStyle(
                             Color(
                                 rawValue: getSubject(
-                                    from: homework.title
+                                    from: homework.subject
                                 ).color
                             )
                         )
@@ -85,20 +85,6 @@ struct HomeworkList: View {
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
             
         }
-    }
-    
-    func getSubject(from title: String) -> Subject {
-        var subject: Subject = Subject()
-        
-        if let s = subjects.value.first(where: {
-            $0.title == title
-        }) {
-            subject = s
-        } else {
-            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
-        }
-        
-        return subject
     }
 }
 

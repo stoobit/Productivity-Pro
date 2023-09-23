@@ -5,7 +5,7 @@
 //  Created by Till Brügmann on 22.09.23.
 //
 
-import Foundation
+import SwiftUI
 
 extension HomeworkList {
     
@@ -45,5 +45,18 @@ extension HomeworkList {
         })
     }
         
+    func getSubject(from title: String) -> Subject {
+        var subject: Subject = Subject()
+        
+        if let s = subjects.value.first(where: {
+            $0.title == title
+        }) {
+            subject = s
+        } else {
+            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
+        }
+        
+        return subject
+    }
     
 }
