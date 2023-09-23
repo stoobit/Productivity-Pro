@@ -50,7 +50,8 @@ struct OverviewView: View {
             
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Fertig") { subviewManager.overviewSheet.toggle()
+                    Button("Fertig") { 
+                        subviewManager.overviewSheet.toggle()
                     }
                     .keyboardShortcut(.return, modifiers: [])
                 }

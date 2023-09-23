@@ -40,11 +40,11 @@ struct HomeworkList: View {
         }
         .scrollContentBackground(.hidden)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .confirmationAction) {
                 Button(action: { presentAdd.toggle() }) {
                     Image(systemName: "plus")
-                        .fontWeight(.semibold)
                 }
+                .disabled(subjects.value.isEmpty)
             }
         }
         .sheet(isPresented: $presentAdd, content: {
@@ -64,6 +64,7 @@ struct HomeworkList: View {
     
     @ViewBuilder func HomeworkItem(for homework: Homework) -> some View {
         HStack {
+            
             Image(systemName: getSubject(from: homework.subject).icon)
                 .foregroundStyle(.white)
                 .background {
@@ -91,7 +92,7 @@ struct HomeworkList: View {
             }
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            Button(action: {
+            Button(role: .destructive, action: {
                 homework.isDone = true
                 homework.doneDate = Date()
                 

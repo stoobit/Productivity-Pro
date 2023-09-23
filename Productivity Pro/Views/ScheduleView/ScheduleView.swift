@@ -66,9 +66,9 @@ struct ScheduleView: View {
                         .multilineTextAlignment(.center)
                     
                     Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
-                        .foregroundStyle(Color.secondary)
+                        .foregroundStyle(Color.primary.tertiary)
                 }
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(Color.accentColor.secondary)
                 
             }
         }

@@ -34,7 +34,7 @@ struct ShareSheet: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbarRole(.browser)
                     .toolbar {
-                        ToolbarItem(placement: .confirmationAction) {
+                        ToolbarItem(placement: .topBarLeading) {
                             Button("Done") {
                                 subviewManager.sharePDFSheet = false
                             }

@@ -46,16 +46,16 @@ struct SubjectSettings: View {
                         }
                     }
                 }
+                .animation(.bouncy, value: subjects.value.count)
                 .scrollContentBackground(.hidden)
                 .navigationTitle("Fächer")
                 .sheet(isPresented: $addSubject) {
                     AddSubject(addSubject: $addSubject)
                 }
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItem(placement: .confirmationAction) {
                         Button(action: { addSubject.toggle() }) {
                             Image(systemName: "plus")
-                                .fontWeight(.semibold)
                         }
                     }
                 }

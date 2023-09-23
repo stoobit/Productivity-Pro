@@ -46,7 +46,7 @@ struct EditMarkdownView: View {
                 .navigationTitle("Markdown")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .confirmationAction) {
+                    ToolbarItem(placement: .topBarLeading) {
                         Button("Done") {
                             subviewManager.showTextEditor.toggle()
                         }

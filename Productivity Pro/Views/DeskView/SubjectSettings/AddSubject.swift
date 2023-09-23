@@ -112,10 +112,8 @@ struct AddSubject: View {
     }
     
     func add() {
-        withAnimation {
-            subjects.value.append(subject)
-            addSubject.toggle()
-        }
+        subjects.value.append(subject)
+        addSubject.toggle()
     }
     
     func exists() -> Bool {
