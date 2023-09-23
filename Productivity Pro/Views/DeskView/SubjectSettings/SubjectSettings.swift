@@ -20,7 +20,9 @@ struct SubjectSettings: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
                 
-                List(subjects.value) { subject in
+                List(
+                    subjects.value.sorted(by: { $0.title < $1.title })
+                ) { subject in
                     HStack {
                         Image(systemName: subject.icon)
                             .foregroundStyle(.white)

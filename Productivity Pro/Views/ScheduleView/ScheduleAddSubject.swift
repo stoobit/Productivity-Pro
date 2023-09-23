@@ -26,10 +26,16 @@ struct ScheduleAddSubject: View {
                 Section {
                     TextField("Raum", text: $text)
                         .frame(height: 30)
+                        .disabled(subject == "")
                         .onAppear {
                             if isAdd == false {
                                 text = oldSubject.room
                                 subject = oldSubject.subject
+                            }
+                        }
+                        .onChange(of: subject) {
+                            if subject == "" {
+                                text = ""
                             }
                         }
                 }
@@ -56,7 +62,9 @@ struct ScheduleAddSubject: View {
                 
                 Picker("", selection: $subject) {
                     Section {
-                        ForEach(subjects.value) { subject in
+                        ForEach(
+                            subjects.value.sorted(by: { $0.title < $1.title })
+                        ) { subject in
                             HStack {
                                 Image(systemName: subject.icon)
                                     .foregroundStyle(.white)
@@ -113,6 +121,10 @@ struct ScheduleAddSubject: View {
     
     func edit() {
         let index = day.subjects.firstIndex(of: oldSubject)!
+        
+        if subject == "" {
+            text = ""
+        }
         
         day.subjects[index].subject = subject
         day.subjects[index].room = text
