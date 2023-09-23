@@ -6,8 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SubjectSettings: View {
+    
+    @Environment(\.modelContext) var context
+    @Query(
+        FetchDescriptor(
+            sortBy: [SortDescriptor(\Homework.title, order: .forward)]
+        )
+    ) var homeworkTasks: [Homework]
     
     @AppStorage("ppsubjects") 
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
@@ -32,26 +40,12 @@ struct SubjectSettings: View {
                 List(
                     subjects.value.sorted(by: { $0.title < $1.title })
                 ) { subject in
-                    HStack {
-                        Image(systemName: subject.icon)
-                            .foregroundStyle(.white)
-                            .background {
-                                Circle()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundStyle(Color(rawValue: subject.color))
-                            }
-                            .frame(width: 40, height: 40)
-                        
-                        Text(subject.title)
-                            .padding(.leading, 7)
-                    }
-                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                        Button(role: .destructive, action: {
-                            delete(subject)
-                        }) {
-                            Image(systemName: "trash.fill")
-                        }
-                    }
+                    
+                    SubjectSettingsRow(
+                        subject: subject,
+                        homeworkTasks: homeworkTasks
+                    )
+                    
                 }
                 .animation(.bouncy, value: subjects.value.count)
                 .scrollContentBackground(.hidden)
@@ -66,28 +60,9 @@ struct SubjectSettings: View {
                         }
                     }
                 }
+                
             }
         }
-    }
-    
-    func delete(_ subject: Subject) {
-        
-        for day in schedule.value {
-            for sSubject in day.subjects {
-                if sSubject.subject == subject.title {
-                    
-                    let indexD = schedule.value.firstIndex(of: day)!
-                    let indexS = day.subjects.firstIndex(of: sSubject)!
-                    let schedSubject = ScheduleSubject(subject: "", room: "")
-                    
-                    schedule.value[indexD].subjects[indexS] = schedSubject
-                }
-            }
-        }
-        
-        subjects.value.removeAll(where: {
-            $0.id == subject.id
-        })
     }
 }
 

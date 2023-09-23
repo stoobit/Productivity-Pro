@@ -161,6 +161,7 @@
 		BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */; };
 		BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */; };
 		BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */; };
+		BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */; };
 		BBEFC94F2A41035C00960C8D /* NoteSideActionMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC94E2A41035C00960C8D /* NoteSideActionMethods.swift */; };
 		BBEFC9512A41038F00960C8D /* NoteSideActionsEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9502A41038F00960C8D /* NoteSideActionsEditor.swift */; };
 		BBF22ACC2933EFE300109848 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF22ACB2933EFE300109848 /* PageView.swift */; };
@@ -348,6 +349,7 @@
 		BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingView.swift; sourceTree = "<group>"; };
 		BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPathCalculator.swift; sourceTree = "<group>"; };
 		BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLineModel.swift; sourceTree = "<group>"; };
+		BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettingsRow.swift; sourceTree = "<group>"; };
 		BBEFC94E2A41035C00960C8D /* NoteSideActionMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionMethods.swift; sourceTree = "<group>"; };
 		BBEFC9502A41038F00960C8D /* NoteSideActionsEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActionsEditor.swift; sourceTree = "<group>"; };
 		BBF22ACB2933EFE300109848 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF5FDFD2AAE304B0081C4FE /* SubjectSettings.swift */,
+				BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */,
 				BBF5FE042AAE66D30081C4FE /* AddSubject.swift */,
 			);
 			path = SubjectSettings;
@@ -1159,6 +1162,7 @@
 				BB655AFE2AB772E900FB005A /* NoteViewAlert.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
+				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,

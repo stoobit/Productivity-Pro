@@ -19,12 +19,7 @@ struct HomeworkView: View {
                     .ignoresSafeArea(.all)
             
                 HomeworkList()
-                    .modelContainer(
-                        for: Homework.self,
-                        isAutosaveEnabled: true,
-                        isUndoEnabled: false
-                    )
-                
+
                 if subjects.value.isEmpty {
                     VStack {
                         Image(systemName: "tray.2")
