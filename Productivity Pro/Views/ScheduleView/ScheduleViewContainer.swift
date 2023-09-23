@@ -20,12 +20,11 @@ struct ScheduleViewContainer: View {
             ScheduleView(isEditing: $isEditing, hsc: hsc)
                 .navigationTitle("Stundenplan")
                 .toolbar {
-                    if subjects.value.isEmpty == false {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
-                                isEditing.toggle()
-                            }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
+                            isEditing.toggle()
                         }
+                        .disabled(subjects.value.isEmpty)
                     }
                 }
         }

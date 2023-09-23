@@ -18,31 +18,12 @@ struct HomeworkView: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
             
-                if subjects.value.isEmpty == false {
-                    HomeworkList()
-                        .modelContainer(
-                            for: Homework.self,
-                            isAutosaveEnabled: true,
-                            isUndoEnabled: false
-                        )
-                    
-                } else {
-                    
-                    VStack {
-                        Image(systemName: "tray.2")
-                            .font(.system(size: 100))
-                        
-                        Text("Du hast noch keine Fächer erstellt.")
-                            .font(.title.bold())
-                            .padding([.top, .horizontal])
-                            .multilineTextAlignment(.center)
-                        
-                        Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
-                            .foregroundStyle(Color.secondary)
-                    }
-                    .foregroundStyle(.blue.secondary)
-                    
-                }
+                HomeworkList()
+                    .modelContainer(
+                        for: Homework.self,
+                        isAutosaveEnabled: true,
+                        isUndoEnabled: false
+                    )
             }
             .navigationTitle("Hausaufgaben")
         }

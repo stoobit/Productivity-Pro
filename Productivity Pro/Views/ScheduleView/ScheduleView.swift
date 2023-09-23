@@ -68,7 +68,7 @@ struct ScheduleView: View {
                     Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
                         .foregroundStyle(Color.secondary)
                 }
-                .foregroundStyle(.blue.secondary)
+                .foregroundStyle(Color.accentColor)
                 
             }
         }

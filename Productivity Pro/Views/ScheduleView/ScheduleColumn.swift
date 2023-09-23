@@ -36,7 +36,7 @@ struct ScheduleColumn: View {
                     .padding(.vertical, 12)
                 
                 if isEditing {
-                    Button(action: { editSubject.toggle() }) {
+                    Button(action: { addSubject.toggle() }) {
                         PlusButton()
                     }
                     .transition(.scale)

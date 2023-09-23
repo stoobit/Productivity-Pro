@@ -31,14 +31,14 @@ struct SubjectSettings: View {
                         Text(subject.title)
                             .padding(.leading, 7)
                     }
+                    .animation(.smooth, value: subjects.value.count)
                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button("", systemImage: "trash", role: .destructive) {
-                            withAnimation {
-                                subjects.value.removeAll(where: { $0.id == subject.id })
-                            }
+                            subjects.value.removeAll(where: { $0.id == subject.id })
                         }
                     }
                 }
+                .animation(.smooth, value: subjects.value.count)
             }
             .navigationTitle("Fächer")
             .sheet(isPresented: $addSubject) {
@@ -49,26 +49,6 @@ struct SubjectSettings: View {
                     Button(action: { addSubject.toggle() }) {
                         Image(systemName: "plus")
                             .fontWeight(.semibold)
-                    }
-                }
-            }
-            .overlay {
-                if subjects.value.isEmpty {
-                    ZStack {
-                        Color(UIColor.systemGroupedBackground)
-                            .ignoresSafeArea(.all)
-                        
-                        VStack {
-                            Image(systemName: "tray.2")
-                                .font(.system(size: 100))
-                            
-                            Text("Du hast noch keine Fächer erstellt.")
-                                .font(.title.bold())
-                                .padding(.top)
-                                .padding(.horizontal)
-                                .multilineTextAlignment(.center)
-                        }
-                        .foregroundStyle(.blue.secondary)
                     }
                 }
             }
