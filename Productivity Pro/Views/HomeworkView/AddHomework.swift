@@ -33,9 +33,14 @@ struct AddHomework: View {
                 
                 Section {
                     Picker("Fach", selection: $homework.subject) {
-                        ForEach(subjects.value.sorted(by: { $0.title < $1.title })) { subject in
-                            Text(subject.title)
-                                .tag(subject)
+                        Text("")
+                            .tag("")
+                        
+                        Section {
+                            ForEach(subjects.value.sorted(by: { $0.title < $1.title })) { subject in
+                                Text(subject.title)
+                                    .tag(subject.title)
+                            }
                         }
                     }
                     .frame(height: 30)
@@ -76,8 +81,6 @@ struct AddHomework: View {
             homework.date = Calendar.current.date(
                 byAdding: .day, value: 1, to: homework.date
             )!
-            
-            homework.subject = subjects.value.sorted(by: { $0.title < $1.title }).first!
         }
     }
     

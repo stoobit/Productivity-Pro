@@ -17,7 +17,7 @@ import Foundation
     var title: String = ""
     var homeworkDescription: String = ""
     
-    var subject: Subject = Subject()
+    var subject: String = ""
     var date: Date = Date()
     
     var linkedDocument: UUID? = nil

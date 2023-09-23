@@ -41,7 +41,7 @@ extension HomeworkList {
     func filterTasks(by date: Date) -> [Homework] {
         let filtered = homeworkTasks.filter { $0.date == date }
         return filtered.sorted(by: {
-            $0.subject.title < $1.subject.title
+            $0.subject < $1.subject
         })
     }
         

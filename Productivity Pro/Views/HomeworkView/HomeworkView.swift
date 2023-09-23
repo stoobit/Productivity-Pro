@@ -24,6 +24,7 @@ struct HomeworkView: View {
                         isAutosaveEnabled: true,
                         isUndoEnabled: false
                     )
+                
             }
             .navigationTitle("Hausaufgaben")
         }

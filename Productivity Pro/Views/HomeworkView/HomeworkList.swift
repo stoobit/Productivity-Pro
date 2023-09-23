@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct HomeworkList: View {
-    
     @Environment(\.modelContext) var context
     @Query(
         FetchDescriptor(
@@ -18,6 +17,9 @@ struct HomeworkList: View {
         ),
         animation: .bouncy
     ) var homeworkTasks: [Homework]
+    
+    @AppStorage("ppsubjects")
+    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
     @State var presentAdd: Bool = false
     @State var presentInfo: Bool = false
@@ -62,21 +64,41 @@ struct HomeworkList: View {
     
     @ViewBuilder func HomeworkItem(for homework: Homework) -> some View {
         HStack {
-            Image(systemName: homework.subject.icon)
+            Image(systemName: getSubject(from: homework.title).icon)
                 .foregroundStyle(.white)
                 .background {
                     Circle()
                         .frame(width: 40, height: 40)
-                        .foregroundStyle(Color(rawValue: homework.subject.color))
+                        .foregroundStyle(
+                            Color(
+                                rawValue: getSubject(
+                                    from: homework.title
+                                ).color
+                            )
+                        )
                 }
                 .frame(width: 40, height: 40)
             
-            Text(homework.subject.title)
+            Text(homework.title)
                 .padding(.leading, 7)
         }
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
             
         }
+    }
+    
+    func getSubject(from title: String) -> Subject {
+        var subject: Subject = Subject()
+        
+        if let s = subjects.value.first(where: {
+            $0.title == title
+        }) {
+            subject = s
+        } else {
+            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
+        }
+        
+        return subject
     }
 }
 
