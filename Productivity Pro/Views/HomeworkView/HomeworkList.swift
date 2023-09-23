@@ -47,7 +47,7 @@ struct HomeworkList: View {
             }
         }
         .sheet(isPresented: $presentAdd, content: {
-            AddHomework(isPresented: $presentAdd)
+            HomeworkAddView(isPresented: $presentAdd)
         })
         .onAppear {
             let cal = Calendar.current

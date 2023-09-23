@@ -1,13 +1,13 @@
 //
-//  AddHomework.swift
+//  HomeworkDescriptionView.swift
 //  Productivity Pro
 //
-//  Created by Till Brügmann on 21.09.23.
+//  Created by Till Brügmann on 23.09.23.
 //
 
 import SwiftUI
 
-struct AddHomework: View {
+struct HomeworkEditView: View {
     
     @Environment(\.modelContext) var context
     @AppStorage("ppsubjects")
@@ -15,6 +15,7 @@ struct AddHomework: View {
     
     @Binding var isPresented: Bool
     @State var homework: Homework = Homework()
+    
     
     var body: some View {
         NavigationStack {
@@ -69,17 +70,14 @@ struct AddHomework: View {
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") { isPresented.toggle() }
+                    Button("Schließen") { isPresented.toggle() }
                 }
             }
         }
         .scrollIndicators(.never)
+        .scrollContentBackground(.visible)
         .onAppear {
-            homework.date = Calendar.current.date(
-                byAdding: .day, value: 1, to: homework.date
-            )!
             
-            homework.subject = subjects.value[0].title
         }
     }
     
@@ -108,11 +106,4 @@ struct AddHomework: View {
         
         return tomorrow...max
     }()
-}
-
-#Preview {
-    Text("")
-        .sheet(isPresented: .constant(true)) {
-            AddHomework(isPresented: .constant(true))
-        }
 }

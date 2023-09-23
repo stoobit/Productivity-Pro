@@ -14,6 +14,8 @@ struct HomeworkItem: View {
     
     let delete: () -> Void
     
+    @State var showDescription: Bool = false
+    
     var body: some View {
         HStack {
             Image(systemName: getSubject(from: homework.subject).icon)
@@ -37,14 +39,14 @@ struct HomeworkItem: View {
             
             Spacer()
             
-            Button(action: {}) {
+            Button(action: { showDescription.toggle() }) {
                 Image(systemName: "info")
                     .frame(width: 25, height: 25)
             }
             .buttonStyle(.bordered)
             .padding(.trailing, 5)
             
-            Button(action: {}) {
+            Button(action: {  }) {
                 Image(systemName: "link")
                     .frame(width: 25, height: 25)
             }
@@ -54,13 +56,6 @@ struct HomeworkItem: View {
             Button(role: .destructive, action: delete) {
                 Image(systemName: "trash")
             }
-            
-            Button(action: {
-               
-            }) {
-                Image(systemName: "pencil")
-            }
-            .tint(.accentColor)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive, action: delete) {
@@ -68,6 +63,13 @@ struct HomeworkItem: View {
             }
             .tint(.green)
         }
+        .sheet(isPresented: $showDescription) {
+            HomeworkEditView(
+                isPresented: $showDescription,
+                old: homework
+            )
+        }
+        
     }
     
     func getSubject(from title: String) -> Subject {
