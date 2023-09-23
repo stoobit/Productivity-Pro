@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct HomeworkItem: View {
-    @Environment(\.modelContext) var context
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
-    
     var homework: Homework
+    
+    let delete: () -> Void
+    
     var body: some View {
         HStack {
             Image(systemName: getSubject(from: homework.subject).icon)
@@ -50,10 +51,7 @@ struct HomeworkItem: View {
             .buttonStyle(.bordered)
         }
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
-            Button(role: .destructive, action: {
-                context.delete(homework)
-                try? context.save()
-            }) {
+            Button(role: .destructive, action: delete) {
                 Image(systemName: "trash")
             }
             
@@ -65,10 +63,7 @@ struct HomeworkItem: View {
             .tint(.accentColor)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            Button(role: .destructive, action: {
-                context.delete(homework)
-                try? context.save()
-            }) {
+            Button(role: .destructive, action: delete) {
                 Image(systemName: "checkmark.circle")
             }
             .tint(.green)

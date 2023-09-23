@@ -27,7 +27,12 @@ struct HomeworkList: View {
             ForEach(dates(), id: \.self) { date in
                 Section(formattedString(of: date)) {
                     ForEach(filterTasks(by: date)) { homework in
-                        HomeworkItem(homework: homework)
+                        
+                        HomeworkItem(homework: homework) {
+                            context.delete(homework)
+                            try? context.save()
+                        }
+                        
                     }
                 }
             }
