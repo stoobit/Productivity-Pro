@@ -82,8 +82,20 @@ struct HomeworkList: View {
             Text(homework.title)
                 .padding(.leading, 7)
         }
-        .swipeActions(edge: .leading, allowsFullSwipe: false) {
-            
+        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+            Button(role: .destructive, action: {
+                
+            }) {
+                Image(systemName: "trash")
+            }
+        }
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button(role: .destructive, action: {
+                
+            }) {
+                Image(systemName: "checkmark.circle")
+            }
+            .tint(.green)
         }
     }
 }

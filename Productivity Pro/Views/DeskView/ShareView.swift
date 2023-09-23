@@ -64,9 +64,10 @@ struct ShareView: View {
             .ignoresSafeArea(.all, edges: .all)
             .background(Color.accentColor.gradient)
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
+                ToolbarItem(placement: .topBarTrailing) {
                     Button("Fertig") { dismiss() }
                         .foregroundStyle(Color.white)
+                        .fontWeight(.semibold)
                 }
             }
             
