@@ -36,8 +36,10 @@ struct ScheduleColumn: View {
                     .padding(.vertical, 12)
                 
                 if isEditing {
-                    PlusButton()
-                        .transition(.scale)
+                    Button(action: { editSubject.toggle() }) {
+                        PlusButton()
+                    }
+                    .transition(.scale)
                 }
             }
             .padding(.bottom, 15)
@@ -95,21 +97,9 @@ struct ScheduleColumn: View {
             
             if isEditing {
                 Menu(content: {
-                    Section {
-                        Button("Fach ändern", systemImage: "tray") {
-                            oldSubject = scheduleSubject
-                            editSubject.toggle()
-                        }
-                        
-                        Button("Freistunde", systemImage: "clock") {
-                            withAnimation {
-                                day.subjects[day.subjects.firstIndex(of: scheduleSubject)!]
-                                    .subject = ""
-                                
-                                day.subjects[day.subjects.firstIndex(of: scheduleSubject)!]
-                                    .room = ""
-                            }
-                        }
+                    Button("Bearbeiten", systemImage: "pencil") {
+                        oldSubject = scheduleSubject
+                        editSubject.toggle()
                     }
                     
                     Button("Entfernen", systemImage: "trash", role: .destructive) {
@@ -145,28 +135,21 @@ struct ScheduleColumn: View {
     
     @ViewBuilder func PlusButton() -> some View {
         HStack {
-            Menu(content: {
-                Button(action: { addSubject.toggle() }) {
-                   Label("Fach hinzufügen", systemImage: "tray")
+            Image(systemName: "plus")
+                .foregroundStyle(.white)
+                .background {
+                    Circle()
+                        .frame(width: 35, height: 35)
+                        .foregroundStyle(Color.secondary)
                 }
-                
-                Button(action: {
-                    day.subjects.append(ScheduleSubject())
-                }) {
-                    Label("Freistunde", systemImage: "clock")
-                }
-            }) {
-                Image(systemName: "plus")
-                    .foregroundStyle(.white)
-                    .background {
-                        Circle()
-                            .frame(width: 35, height: 35)
-                            .foregroundStyle(Color.secondary)
-                    }
-                    .frame(width: 35, height: 35)
-                    .transition(.scale(0, anchor: .leading))
-            }
-            .transition(.scale)
+                .frame(width: 35, height: 35)
+                .transition(.scale(0, anchor: .leading))
+            
+            Text("Hinzufügen")
+                .foregroundStyle(Color.primary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .truncationMode(.middle)
+                .allowsTightening(true)
             
             Spacer()
         }

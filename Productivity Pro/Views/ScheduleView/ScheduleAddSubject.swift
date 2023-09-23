@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ScheduleAddSubject: View {
+    @AppStorage("ppsubjects")
+    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
     @Binding var isPresented: Bool
     @Binding var day: ScheduleDay
-    
-    @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
     let isAdd: Bool
     @Binding var oldSubject: ScheduleSubject
     
     @State var text: String = ""
+    @State var subject: String = ""
     
     var body: some View {
         NavigationStack {
@@ -29,40 +29,70 @@ struct ScheduleAddSubject: View {
                         .onAppear {
                             if isAdd == false {
                                 text = oldSubject.room
+                                subject = oldSubject.subject
                             }
                         }
                 }
                 
-                ForEach(subjects.value) { subject in
-                    Button(action: {
-                        if isAdd {
-                            add(subject)
-                        } else {
-                            edit(subject)
-                        }
-                    }) {
-                        HStack {
-                            Image(systemName: subject.icon)
-                                .foregroundStyle(.white)
-                                .background {
-                                    Circle()
-                                        .frame(width: 40, height: 40)
-                                        .foregroundStyle(Color(rawValue: subject.color))
-                                }
-                                .frame(width: 40, height: 40)
-                            
-                            Text(subject.title)
-                                .padding(.leading, 7)
-                                .foregroundStyle(Color.primary)
+                Picker("", selection: $subject) {
+                    HStack {
+                        Image(systemName: "clock")
+                            .foregroundStyle(.primary)
+                            .background {
+                                Circle()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundStyle(.thickMaterial)
+                            }
+                            .frame(width: 40, height: 40)
+                        
+                        Text("Freistunde")
+                            .padding(.leading, 7)
+                            .foregroundStyle(Color.primary)
+                    }
+                    .tag("")
+                }
+                .labelsHidden()
+                .pickerStyle(.inline)
+                
+                Picker("", selection: $subject) {
+                    Section {
+                        ForEach(subjects.value) { subject in
+                            HStack {
+                                Image(systemName: subject.icon)
+                                    .foregroundStyle(.white)
+                                    .background {
+                                        Circle()
+                                            .frame(width: 40, height: 40)
+                                            .foregroundStyle(Color(rawValue: subject.color))
+                                    }
+                                    .frame(width: 40, height: 40)
+                                
+                                Text(subject.title)
+                                    .padding(.leading, 7)
+                                    .foregroundStyle(Color.primary)
+                            }
+                            .tag(subject.title)
                         }
                     }
-                    .tag(subject)
                 }
+                .labelsHidden()
+                .pickerStyle(.inline)
+                
             }
             .environment(\.defaultMinListRowHeight, 10)
             .scrollIndicators(.hidden)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button(isAdd ? "Hinzufügen" : "Bearbeiten") {
+                        if isAdd {
+                            add()
+                        } else {
+                            edit()
+                        }
+                    }
+                }
+                
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Abbrechen") {
                         isPresented.toggle()
@@ -72,19 +102,19 @@ struct ScheduleAddSubject: View {
         }
     }
     
-    func add(_ subject: Subject) {
+    func add() {
         let new = ScheduleSubject(
-            subject: subject.title, room: text
+            subject: subject, room: text
         )
         
         day.subjects.append(new)
         isPresented.toggle()
     }
     
-    func edit(_ subject: Subject) {
+    func edit() {
         let index = day.subjects.firstIndex(of: oldSubject)!
         
-        day.subjects[index].subject = subject.title
+        day.subjects[index].subject = subject
         day.subjects[index].room = text
         
         isPresented.toggle()
