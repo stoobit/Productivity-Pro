@@ -20,30 +20,32 @@ struct SubjectSettings: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
                 
-                Form {
-                    List(subjects.value) { subject in
-                        HStack {
-                            Image(systemName: subject.icon)
-                                .foregroundStyle(.white)
-                                .background {
-                                    Circle()
-                                        .frame(width: 40, height: 40)
-                                        .foregroundStyle(Color(rawValue: subject.color))
-                                }
-                                .frame(width: 40, height: 40)
-                            
-                            Text(subject.title)
-                                .padding(.leading, 7)
-                        }
-                        .animation(.smooth, value: subjects.value.count)
-                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                            Button("", systemImage: "trash", role: .destructive) {
-                                subjects.value.removeAll(where: { $0.id == subject.id })
+                List(subjects.value) { subject in
+                    HStack {
+                        Image(systemName: subject.icon)
+                            .foregroundStyle(.white)
+                            .background {
+                                Circle()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundStyle(Color(rawValue: subject.color))
                             }
+                            .frame(width: 40, height: 40)
+                        
+                        Text(subject.title)
+                            .padding(.leading, 7)
+                    }
+                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                        Button(
+                            "", systemImage: "trash", role: .destructive
+                        ) {
+                            subjects.value.removeAll(where: {
+                                $0.id == subject.id
+                            })
                         }
                     }
-                    .animation(.smooth, value: subjects.value.count)
                 }
+                .scrollContentBackground(.hidden)
+                .animation(.smooth, value: subjects.value.count)
                 .navigationTitle("Fächer")
                 .sheet(isPresented: $addSubject) {
                     AddSubject(addSubject: $addSubject)
