@@ -84,13 +84,14 @@ struct HomeworkList: View {
         }
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
             Button(role: .destructive, action: {
-                
+                context.delete(homework)
+                try? context.save()
             }) {
                 Image(systemName: "trash")
             }
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            Button(role: .destructive, action: {
+            Button(action: {
                 
             }) {
                 Image(systemName: "checkmark.circle")

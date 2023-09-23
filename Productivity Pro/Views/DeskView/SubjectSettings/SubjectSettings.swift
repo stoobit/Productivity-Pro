@@ -35,17 +35,16 @@ struct SubjectSettings: View {
                             .padding(.leading, 7)
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                        Button(
-                            "", systemImage: "trash", role: .destructive
-                        ) {
+                        Button(role: .destructive, action: {
                             subjects.value.removeAll(where: {
                                 $0.id == subject.id
                             })
+                        }) {
+                            Image(systemName: "trash.fill")
                         }
                     }
                 }
                 .scrollContentBackground(.hidden)
-                .animation(.smooth, value: subjects.value.count)
                 .navigationTitle("Fächer")
                 .sheet(isPresented: $addSubject) {
                     AddSubject(addSubject: $addSubject)
