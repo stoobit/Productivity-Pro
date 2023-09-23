@@ -13,11 +13,6 @@ struct Productivity_ProApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(
-            for: Homework.self,
-            isAutosaveEnabled: true,
-            isUndoEnabled: false
-        )
-        
+        .modelContainer(for: Homework.self)
     }
 }

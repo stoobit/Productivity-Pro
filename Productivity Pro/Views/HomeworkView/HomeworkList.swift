@@ -54,7 +54,7 @@ struct HomeworkList: View {
             for homework in homeworkTasks {
                 if cal.numberOfDaysBetween(
                     homework.date, and: Date()
-                ) == -1 {
+                ) == -2 {
                     context.delete(homework)
                 }
             }
