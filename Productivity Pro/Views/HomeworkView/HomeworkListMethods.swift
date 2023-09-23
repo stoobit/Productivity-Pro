@@ -44,19 +44,4 @@ extension HomeworkList {
             $0.subject < $1.subject
         })
     }
-        
-    func getSubject(from title: String) -> Subject {
-        var subject: Subject = Subject()
-        
-        if let s = subjects.value.first(where: {
-            $0.title == title
-        }) {
-            subject = s
-        } else {
-            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
-        }
-        
-        return subject
-    }
-    
 }
