@@ -15,30 +15,14 @@ struct ScheduleView: View {
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
-    @AppStorage("Montag")
-    var Montag: CodableWrapper<ScheduleDay> = .init(
-        value: ScheduleDay(id: "Montag")
-    )
-    
-    @AppStorage("Dienstag")
-    var Dienstag: CodableWrapper<ScheduleDay> = .init(
-        value: ScheduleDay(id: "Dienstag")
-    )
-    
-    @AppStorage("Mittwoch")
-    var Mittwoch: CodableWrapper<ScheduleDay> = .init(
-        value: ScheduleDay(id: "Mittwoch")
-    )
-    
-    @AppStorage("Donnerstag")
-    var Donnerstag: CodableWrapper<ScheduleDay> = .init(
-        value: ScheduleDay(id: "Donnerstag")
-    )
-    
-    @AppStorage("Freitag")
-    var Freitag: CodableWrapper<ScheduleDay> = .init(
-        value: ScheduleDay(id: "Freitag")
-    )
+    @AppStorage("ppschedule")
+    var schedule: CodableWrapper<Array<ScheduleDay>> = .init(value: [
+        ScheduleDay(id: "Montag"),
+        ScheduleDay(id: "Dienstag"),
+        ScheduleDay(id: "Mittwoch"),
+        ScheduleDay(id: "Donnerstag"),
+        ScheduleDay(id: "Freitag")
+    ])
     
     var body: some View {
         ZStack {
@@ -80,27 +64,27 @@ struct ScheduleView: View {
             ScrollView(.horizontal) {
                 LazyHStack(alignment: .top, spacing: 0) {
                     ScheduleColumn(
-                        isEditing: $isEditing, day: $Montag.value
+                        isEditing: $isEditing, day: $schedule.value[0]
                     )
                     .padding(.horizontal)
                     .containerRelativeFrame(.horizontal)
                     ScheduleColumn(
-                        isEditing: $isEditing, day: $Dienstag.value
+                        isEditing: $isEditing, day: $schedule.value[1]
                     )
                     .padding(.horizontal)
                     .containerRelativeFrame(.horizontal)
                     ScheduleColumn(
-                        isEditing: $isEditing, day: $Mittwoch.value
+                        isEditing: $isEditing, day: $schedule.value[2]
                     )
                     .padding(.horizontal)
                     .containerRelativeFrame(.horizontal)
                     ScheduleColumn(
-                        isEditing: $isEditing, day: $Donnerstag.value
+                        isEditing: $isEditing, day: $schedule.value[3]
                     )
                     .padding(.horizontal)
                     .containerRelativeFrame(.horizontal)
                     ScheduleColumn(
-                        isEditing: $isEditing, day: $Freitag.value
+                        isEditing: $isEditing, day: $schedule.value[4]
                     )
                     .padding(.horizontal)
                     .containerRelativeFrame(.horizontal)
@@ -118,19 +102,23 @@ struct ScheduleView: View {
         ScrollView(.vertical) {
             HStack(alignment: .top) {
                 ScheduleColumn(
-                    isEditing: $isEditing, day: $Montag.value
+                    isEditing: $isEditing, day: $schedule.value[0]
                 )
+                
                 ScheduleColumn(
-                    isEditing: $isEditing, day: $Dienstag.value
+                    isEditing: $isEditing, day: $schedule.value[1]
                 )
+               
                 ScheduleColumn(
-                    isEditing: $isEditing, day: $Mittwoch.value
+                    isEditing: $isEditing, day: $schedule.value[2]
                 )
+                
                 ScheduleColumn(
-                    isEditing: $isEditing, day: $Donnerstag.value
+                    isEditing: $isEditing, day: $schedule.value[3]
                 )
+                
                 ScheduleColumn(
-                    isEditing: $isEditing, day: $Freitag.value
+                    isEditing: $isEditing, day: $schedule.value[4]
                 )
             }
         }

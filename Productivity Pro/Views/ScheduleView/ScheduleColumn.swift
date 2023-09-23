@@ -83,7 +83,7 @@ struct ScheduleColumn: View {
                     .foregroundStyle(Color.primary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                if scheduleSubject.room != "" && getSubject(from: scheduleSubject).title != "" {
+                if scheduleSubject.room != "" {
                     Text(scheduleSubject.room)
                         .foregroundStyle(Color.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)

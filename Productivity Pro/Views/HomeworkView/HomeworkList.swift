@@ -29,11 +29,7 @@ struct HomeworkList: View {
             ForEach(dates(), id: \.self) { date in
                 Section(formattedString(of: date)) {
                     ForEach(filterTasks(by: date)) { homework in
-                        Button(action: {
-                            
-                        }) {
-                            HomeworkItem(for: homework)
-                        }
+                        HomeworkItem(for: homework)
                     }
                 }
             }
@@ -81,7 +77,15 @@ struct HomeworkList: View {
                 .frame(width: 40, height: 40)
             
             Text(homework.title)
+                .foregroundStyle(Color.primary)
                 .padding(.leading, 7)
+            
+            Spacer()
+            
+            Button(action: {}) {
+                Image(systemName: "link")
+            }
+            .buttonStyle(.bordered)
         }
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
             Button(role: .destructive, action: {
@@ -90,6 +94,13 @@ struct HomeworkList: View {
             }) {
                 Image(systemName: "trash")
             }
+            
+            Button(action: {
+               
+            }) {
+                Image(systemName: "pencil")
+            }
+            .tint(.accentColor)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive, action: {

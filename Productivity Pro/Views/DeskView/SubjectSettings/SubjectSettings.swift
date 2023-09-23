@@ -12,6 +12,15 @@ struct SubjectSettings: View {
     @AppStorage("ppsubjects") 
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
+    @AppStorage("ppschedule")
+    var schedule: CodableWrapper<Array<ScheduleDay>> = .init(value: [
+        ScheduleDay(id: "Montag"),
+        ScheduleDay(id: "Dienstag"),
+        ScheduleDay(id: "Mittwoch"),
+        ScheduleDay(id: "Donnerstag"),
+        ScheduleDay(id: "Freitag")
+    ])
+    
     @State var addSubject: Bool = false
     
     var body: some View {
@@ -38,9 +47,7 @@ struct SubjectSettings: View {
                     }
                     .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button(role: .destructive, action: {
-                            subjects.value.removeAll(where: {
-                                $0.id == subject.id
-                            })
+                            delete(subject)
                         }) {
                             Image(systemName: "trash.fill")
                         }
@@ -61,6 +68,26 @@ struct SubjectSettings: View {
                 }
             }
         }
+    }
+    
+    func delete(_ subject: Subject) {
+        
+        for day in schedule.value {
+            for sSubject in day.subjects {
+                if sSubject.subject == subject.title {
+                    
+                    let indexD = schedule.value.firstIndex(of: day)!
+                    let indexS = day.subjects.firstIndex(of: sSubject)!
+                    let schedSubject = ScheduleSubject(subject: "", room: "")
+                    
+                    schedule.value[indexD].subjects[indexS] = schedSubject
+                }
+            }
+        }
+        
+        subjects.value.removeAll(where: {
+            $0.id == subject.id
+        })
     }
 }
 
