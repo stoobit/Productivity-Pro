@@ -92,7 +92,10 @@ struct HomeworkList: View {
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(action: {
+                homework.isDone = true
+                homework.doneDate = Date()
                 
+                try? context.save()
             }) {
                 Image(systemName: "checkmark.circle")
             }
