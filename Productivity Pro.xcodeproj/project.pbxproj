@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CDA2AC09A960027409F /* PremiumBadge.swift */; };
 		BB047CDE2AC0C1FF0027409F /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CDD2AC0C1FF0027409F /* DocumentView.swift */; };
-		BB047CE02AC0C2F30027409F /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CDF2AC0C2F30027409F /* Folder.swift */; };
+		BB047CE02AC0C2F30027409F /* TopLevelFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CDF2AC0C2F30027409F /* TopLevelFolder.swift */; };
 		BB047CE22AC0C6790027409F /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CE12AC0C6790027409F /* FolderView.swift */; };
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
@@ -201,7 +201,7 @@
 /* Begin PBXFileReference section */
 		BB047CDA2AC09A960027409F /* PremiumBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBadge.swift; sourceTree = "<group>"; };
 		BB047CDD2AC0C1FF0027409F /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
-		BB047CDF2AC0C2F30027409F /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		BB047CDF2AC0C2F30027409F /* TopLevelFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLevelFolder.swift; sourceTree = "<group>"; };
 		BB047CE12AC0C6790027409F /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
@@ -706,7 +706,7 @@
 			isa = PBXGroup;
 			children = (
 				BB9A36492ABCD29700721C56 /* Homework.swift */,
-				BB047CDF2AC0C2F30027409F /* Folder.swift */,
+				BB047CDF2AC0C2F30027409F /* TopLevelFolder.swift */,
 			);
 			path = SwiftDataModels;
 			sourceTree = "<group>";
@@ -1232,7 +1232,7 @@
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
 				BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */,
 				BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */,
-				BB047CE02AC0C2F30027409F /* Folder.swift in Sources */,
+				BB047CE02AC0C2F30027409F /* TopLevelFolder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
