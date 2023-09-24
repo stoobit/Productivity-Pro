@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CDA2AC09A960027409F /* PremiumBadge.swift */; };
+		BB047CDE2AC0C1FF0027409F /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CDD2AC0C1FF0027409F /* DocumentView.swift */; };
+		BB047CE02AC0C2F30027409F /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CDF2AC0C2F30027409F /* Folder.swift */; };
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
-		BB0729E22AB10C93000A6A15 /* DocumentBrowsingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */; };
 		BB073A6F2AB8CA4800C80B59 /* NoteSidePageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB073A6E2AB8CA4800C80B59 /* NoteSidePageActions.swift */; };
 		BB07E7BA2A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
@@ -28,7 +29,6 @@
 		BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E693F2A71CE01008E0C5F /* TemplateView.swift */; };
 		BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */; };
 		BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */; };
-		BB20E2F12AB1ECC10000E8B5 /* DocumentCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */; };
 		BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */; };
 		BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */; };
 		BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27BB512A62C30700392E1E /* RealityNoteModel.swift */; };
@@ -170,7 +170,6 @@
 		BBF22ACC2933EFE300109848 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF22ACB2933EFE300109848 /* PageView.swift */; };
 		BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */; };
 		BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */; };
-		BBF5FDF12AAE131D0081C4FE /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */; };
 		BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */; };
 		BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */; };
 		BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */; };
@@ -200,9 +199,10 @@
 
 /* Begin PBXFileReference section */
 		BB047CDA2AC09A960027409F /* PremiumBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBadge.swift; sourceTree = "<group>"; };
+		BB047CDD2AC0C1FF0027409F /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
+		BB047CDF2AC0C2F30027409F /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
-		BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowsingView.swift; sourceTree = "<group>"; };
 		BB073A6E2AB8CA4800C80B59 /* NoteSidePageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSidePageActions.swift; sourceTree = "<group>"; };
 		BB07E7B92A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapperMethods.swift; sourceTree = "<group>"; };
 		BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
@@ -221,7 +221,6 @@
 		BB1E693F2A71CE01008E0C5F /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewHelper.swift; sourceTree = "<group>"; };
 		BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePreviewProvider.swift; sourceTree = "<group>"; };
-		BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCreationView.swift; sourceTree = "<group>"; };
 		BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapper.swift; sourceTree = "<group>"; };
 		BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewRepresentable.swift; sourceTree = "<group>"; };
 		BB27BB512A62C30700392E1E /* RealityNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityNoteModel.swift; sourceTree = "<group>"; };
@@ -362,7 +361,6 @@
 		BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneInteraction.swift; sourceTree = "<group>"; };
 		BBF5FDED2AAE05750081C4FE /* StoreKit.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreKit.storekit; sourceTree = "<group>"; };
 		BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
-		BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
 		BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerelSettings.swift; sourceTree = "<group>"; };
 		BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
@@ -391,6 +389,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB047CDC2AC0C1DD0027409F /* DocumentView */ = {
+			isa = PBXGroup;
+			children = (
+				BB047CDD2AC0C1FF0027409F /* DocumentView.swift */,
+			);
+			path = DocumentView;
+			sourceTree = "<group>";
+		};
 		BB0504292928471400DAECA6 /* BackgroundViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,7 +581,7 @@
 			children = (
 				BB6701572AADEFA7001F468A /* ContentView.swift */,
 				BB6BFA2129048BBE002D09FD /* DeskView */,
-				BBBF5EDF2AB3B5D3009520DD /* DocumentPickerView */,
+				BB047CDC2AC0C1DD0027409F /* DocumentView */,
 				BBCCE4F028D52911001DBD8A /* DocumentCreationView */,
 				BB4A93DE2AAF556900C3AED6 /* ScheduleView */,
 				BB4A93DF2AAF557B00C3AED6 /* HomeworkView */,
@@ -697,6 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				BB9A36492ABCD29700721C56 /* Homework.swift */,
+				BB047CDF2AC0C2F30027409F /* Folder.swift */,
 			);
 			path = SwiftDataModels;
 			sourceTree = "<group>";
@@ -835,16 +842,6 @@
 				BB047CDA2AC09A960027409F /* PremiumBadge.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		BBBF5EDF2AB3B5D3009520DD /* DocumentPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				BBF5FDF02AAE131D0081C4FE /* DocumentPickerView.swift */,
-				BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */,
-				BB20E2F02AB1ECC10000E8B5 /* DocumentCreationView.swift */,
-			);
-			path = DocumentPickerView;
 			sourceTree = "<group>";
 		};
 		BBC7B9772A1988E800D496CB /* ToolView */ = {
@@ -1071,7 +1068,6 @@
 				BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */,
 				BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
-				BB20E2F12AB1ECC10000E8B5 /* DocumentCreationView.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
 				BBBB7E082A2693FD00155C8A /* CompactCalculatorUI.swift in Sources */,
@@ -1113,7 +1109,7 @@
 				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
 				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
-				BBF5FDF12AAE131D0081C4FE /* DocumentPickerView.swift in Sources */,
+				BB047CDE2AC0C1FF0027409F /* DocumentView.swift in Sources */,
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */,
@@ -1228,11 +1224,11 @@
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
 				BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */,
 				BB1DF6082A686D65006F85CE /* PPToolbar.swift in Sources */,
-				BB0729E22AB10C93000A6A15 /* DocumentBrowsingView.swift in Sources */,
 				BB3F75FD2997F81600C0F140 /* NoteMainToolbarMethods.swift in Sources */,
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
 				BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */,
 				BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */,
+				BB047CE02AC0C2F30027409F /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

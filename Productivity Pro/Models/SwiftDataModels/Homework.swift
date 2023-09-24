@@ -23,5 +23,3 @@ import Foundation
     var linkedDocument: UUID? = nil
     var documentTitle: String = ""
 }
-
-
