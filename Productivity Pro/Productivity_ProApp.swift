@@ -13,6 +13,6 @@ struct Productivity_ProApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [Homework.self, Folder.self])
+        .modelContainer(for: [Homework.self, TopLevelFolder.self])
     }
 }

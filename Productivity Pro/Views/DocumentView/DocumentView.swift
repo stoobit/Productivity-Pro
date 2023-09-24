@@ -10,6 +10,7 @@ import SwiftData
 
 struct DocumentView: View {
     @Environment(\.modelContext) var context
+    @Environment(\.dismiss) var dismiss
     
     @State var isAddFolder: Bool = false
     @State var folderTitle: String = ""
@@ -17,11 +18,7 @@ struct DocumentView: View {
     @AppStorage("ppsorttype") var sortType: SortType = .title
     @AppStorage("ppisreverse") var isReverse: Bool = false
     
-    @Query(
-        FetchDescriptor(
-            predicate: #Predicate<Folder> { $0.topLevel == true }
-        ), animation: .bouncy
-    ) var folders: [Folder]
+    @Query(animation: .bouncy) var folders: [TopLevelFolder]
     
     var body: some View {
         NavigationStack {
@@ -32,7 +29,7 @@ struct DocumentView: View {
                 List {
                     ForEach(getFolders()) { folder in
                         NavigationLink(destination: {
-                            
+                            FolderView()
                         }) {
                             Label(folder.title, systemImage: "folder.fill")
                                 .frame(height: 30)
@@ -83,14 +80,16 @@ struct DocumentView: View {
     }
     
     func addFolder() {
-        let folder = Folder(title: folderTitle, topLevel: true, date: Date())
-        folderTitle = ""
-        
-        context.insert(folder)
-        try? context.save()
+        withAnimation(.bouncy) {
+            let folder = TopLevelFolder(title: folderTitle, topLevel: true, date: Date())
+            folderTitle = ""
+            
+            context.insert(folder)
+            try? context.save()
+        }
     }
     
-    func getFolders() -> [Folder] {
+    func getFolders() -> [TopLevelFolder] {
         if isReverse == false {
             switch sortType {
             case .created:

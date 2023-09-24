@@ -5,16 +5,10 @@
 //  Created by Till Brügmann on 24.09.23.
 //
 
-import SwiftData
 import Foundation
 
-@Model final class TopLevelFolder {
-    
-    init(title: String, topLevel: Bool, date: Date) {
-        self.title = title
-        self.date = date
-        self.dateChanged = date
-    }
+struct Folder: Identifiable, Codable {
+    var id = UUID()
     
     var title: String
     var date: Date
@@ -22,5 +16,4 @@ import Foundation
     
     var folders: [Folder] = []
     var documents: [Document] = []
-    
 }
