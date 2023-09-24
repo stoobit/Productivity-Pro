@@ -10,6 +10,7 @@ import SwiftData
 
 struct HomeworkList: View {
     @Environment(\.modelContext) var context
+    
     @Query(
         FetchDescriptor(
             sortBy: [SortDescriptor(\Homework.title, order: .forward)]
