@@ -29,6 +29,13 @@ struct HomeworkList: View {
                     ForEach(filterTasks(by: date)) { homework in
                         
                         HomeworkItem(homework: homework) {
+                            UNUserNotificationCenter.current()
+                                .removePendingNotificationRequests(
+                                    withIdentifiers: [
+                                        homework.id.uuidString
+                                    ]
+                                )
+                            
                             context.delete(homework)
                             try? context.save()
                         }

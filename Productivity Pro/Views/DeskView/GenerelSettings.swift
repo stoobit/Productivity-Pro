@@ -35,9 +35,9 @@ struct GenerelSettings: View {
         NavigationStack {
             Form {
                 
-                Section("Letzte Notizen") {
+                Section("Notizen") {
                     HStack {
-                        Text("Angezeigte Anzahl")
+                        Text("Letzte Notizen")
                         Spacer()
                         Picker("", selection: $rcount) {
                             Text("5").tag(5)
@@ -50,34 +50,32 @@ struct GenerelSettings: View {
                     .frame(height: 30)
                 }
                 
-                Section("Standardeinstellung von Textfeldern") {
-                    FormSpacer {
-                        HStack {
-                            
-                            Picker("", selection: $fontSetter) {
-                                ForEach(UIFont.familyNames, id: \.self) { font in
-                                    Text(font)
-                                        .tag(font)
-                                }
-                            }
-                            .labelsHidden()
-                            .onChange(of: fontSetter) {
-                                defaultFont = fontSetter
-                            }
-
-                            Spacer()
-                            
-                            TextField("Schriftgröße", value: $sizeSetter, format: .number)
-                                .keyboardType(.decimalPad)
-                                .frame(width: 120)
-                                .textFieldStyle(.roundedBorder)
-                            
-                            if hsc == .regular {
-                                Stepper("", value: $sizeSetter, in: 1...1000, step: 1)
-                                    .labelsHidden()
-                                    .padding(.leading)
-                            }
+                Section("Hausaufgaben") {
+                    DatePicker(
+                        "Uhrzeit der Benachrichtigung",
+                        selection: $notificationTime,
+                        displayedComponents: .hourAndMinute
+                    )
+                }
+                
+                Section(
+                    "Standardeinstellungen von Textfeldern"
+                ) {
+                    
+                    Picker("Schriftart", selection: $fontSetter) {
+                        ForEach(UIFont.familyNames, id: \.self) { font in
+                            Text(font)
+                                .tag(font)
                         }
+                    }
+                    .frame(height: 30)
+                    .onChange(of: fontSetter) {
+                        defaultFont = fontSetter
+                    }
+                    
+                    
+                    TextField("Schriftgröße", value: $sizeSetter, format: .number)
+                        .keyboardType(.decimalPad)
                         .frame(height: 30)
                         .onChange(of: sizeSetter) {
                             if sizeSetter < 1 {
@@ -90,18 +88,15 @@ struct GenerelSettings: View {
                                 defaultFontSize = sizeSetter
                             }
                         }
-                        
-                    }
-                }
-                .onAppear {
-                    fontSetter = defaultFont
-                    sizeSetter = defaultFontSize
                 }
                 
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Allgemein")
-            .navigationBarTitleDisplayMode(.large)
+            .onAppear {
+                fontSetter = defaultFont
+                sizeSetter = defaultFontSize
+            }
         }
     }
     

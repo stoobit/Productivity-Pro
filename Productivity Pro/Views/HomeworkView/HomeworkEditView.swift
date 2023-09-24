@@ -10,8 +10,14 @@ import SwiftUI
 struct HomeworkEditView: View {
     
     @Environment(\.modelContext) var context
+    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    
+    @AppStorage("notificationTime")
+    var notificationTime: Date = Calendar.current.date(
+        bySettingHour: 15, minute: 30, second: 00, of: Date()
+    )!
     
     @Binding var isPresented: Bool
     
@@ -136,6 +142,13 @@ struct HomeworkEditView: View {
             h.documentTitle = homework.documentTitle
             h.homeworkDescription = homework.homeworkDescription
             
+            UNUserNotificationCenter.current()
+                .removePendingNotificationRequests(
+                    withIdentifiers: [h.id.uuidString]
+                )
+            
+            pushNotification()
+            
             isPresented.toggle()
             try? context.save()
         }
@@ -170,4 +183,35 @@ struct HomeworkEditView: View {
         
         return subject
     }
+    
+    func pushNotification() {
+        
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default
+        content.title = homework.title
+        content.subtitle = "Diese Hausaufgabe ist bis morgen in \(homework.subject) auf."
+
+        let calendar = Calendar.current
+        let date = DateComponents(
+            calendar: calendar,
+            timeZone: .current,
+            year: calendar.component(.year, from: homework.date),
+            month: calendar.component(.month, from: homework.date),
+            day: calendar.component(.day, from: homework.date),
+            hour: calendar.component(.hour, from: notificationTime),
+            minute: calendar.component(.minute, from: notificationTime)
+        )
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: date, repeats: false
+        )
+        
+        let request = UNNotificationRequest(
+            identifier: h.id.uuidString,
+            content: content, trigger: trigger
+        )
+
+        UNUserNotificationCenter.current().add(request)
+    }
+    
 }
