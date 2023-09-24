@@ -14,8 +14,11 @@ struct HomeworkEditView: View {
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
     @Binding var isPresented: Bool
+    
+    @State var isEditing: Bool = false
     @State var homework: Homework = Homework()
     
+    let h: Homework
     
     var body: some View {
         NavigationStack {
@@ -23,6 +26,32 @@ struct HomeworkEditView: View {
                 Section {
                     TextField("Titel", text: $homework.title)
                         .frame(height: 30)
+                    
+                    HStack {
+                        Image(systemName: getSubject(from: homework.subject).icon)
+                            .foregroundStyle(.white)
+                            .background {
+                                Circle()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundStyle(
+                                        Color(
+                                            rawValue: getSubject(
+                                                from: homework.subject
+                                            ).color
+                                        )
+                                    )
+                            }
+                            .frame(width: 40, height: 40)
+                        
+                        Text(homework.title)
+                            .foregroundStyle(Color.primary)
+                            .padding(.leading, 7)
+                        
+                        Spacer()
+                    }
+                }
+                
+                Section {
                     DatePicker(
                         "Zu erledigen bis zum",
                         selection: $homework.date,
@@ -30,28 +59,28 @@ struct HomeworkEditView: View {
                         displayedComponents: .date
                     )
                     .frame(height: 30)
-                }
-                
-                Section {
-                    Picker("Fach", selection: $homework.subject) {
-                        Section {
-                            ForEach(subjects.value.sorted(by: { $0.title < $1.title })) { subject in
-                                Text(subject.title)
-                                    .tag(subject.title)
-                            }
-                        }
-                    }
-                    .frame(height: 30)
                     
                     HStack {
                         Text("Notiz")
                         Spacer()
-                        Button(homework.linkedDocument == nil ? "Auswählen" : homework.documentTitle
-                        ) {
-                            
+                        
+                        if !isEditing {
+                            Button(
+                                homework.linkedDocument == nil ? "-" : homework.documentTitle
+                            ) {
+                                
+                            }
+                            .buttonStyle(.borderless)
+                            .foregroundStyle(Color.primary)
+                        } else {
+                            Button(
+                                homework.linkedDocument == nil ? "Auswählen" : homework.documentTitle
+                            ) {
+                                
+                            }
+                            .buttonStyle(.bordered)
+                            .foregroundStyle(Color.primary)
                         }
-                        .buttonStyle(.bordered)
-                        .foregroundStyle(Color.primary)
                     }
                     .frame(height: 30)
                 }
@@ -62,23 +91,47 @@ struct HomeworkEditView: View {
                 )
                 .frame(minHeight: 30)
             }
+            .animation(.bouncy, value: isEditing)
             .environment(\.defaultMinListRowHeight, 10)
+            .disabled(isEditing == false)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Hinzufügen") { add() }
-                        .disabled(homework.title == "")
+                    Button(isEditing ? "Bearbeiten" : "Schließen") { 
+                        if isEditing {
+                            add()
+                        } else {
+                            isPresented.toggle()
+                        }
+                    }
+                    .disabled(homework.title == "")
                 }
                 
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Schließen") { isPresented.toggle() }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        isEditing.toggle()
+                        set()
+                    }) {
+                        Image(
+                            systemName: isEditing ? "pencil.slash" : "pencil"
+                        )
+                    }
                 }
             }
         }
         .scrollIndicators(.never)
         .scrollContentBackground(.visible)
         .onAppear {
-            
+            set()
         }
+    }
+
+    func set() {
+        homework.title = h.title
+        homework.date = h.date
+        homework.subject = h.subject
+        homework.linkedDocument = h.linkedDocument
+        homework.documentTitle = h.documentTitle
+        homework.homeworkDescription = h.homeworkDescription
     }
     
     func add() {
@@ -106,4 +159,18 @@ struct HomeworkEditView: View {
         
         return tomorrow...max
     }()
+    
+    func getSubject(from title: String) -> Subject {
+        var subject: Subject = Subject()
+        
+        if let s = subjects.value.first(where: {
+            $0.title == title
+        }) {
+            subject = s
+        } else {
+            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
+        }
+        
+        return subject
+    }
 }

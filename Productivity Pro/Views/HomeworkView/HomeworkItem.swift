@@ -65,8 +65,7 @@ struct HomeworkItem: View {
         }
         .sheet(isPresented: $showDescription) {
             HomeworkEditView(
-                isPresented: $showDescription,
-                old: homework
+                isPresented: $showDescription, h: homework
             )
         }
         

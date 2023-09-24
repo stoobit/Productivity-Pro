@@ -22,16 +22,7 @@ struct HomeworkAddView: View {
                 Section {
                     TextField("Titel", text: $homework.title)
                         .frame(height: 30)
-                    DatePicker(
-                        "Zu erledigen bis zum",
-                        selection: $homework.date,
-                        in: dateRange,
-                        displayedComponents: .date
-                    )
-                    .frame(height: 30)
-                }
-                
-                Section {
+                    
                     Picker("Fach", selection: $homework.subject) {
                         Section {
                             ForEach(subjects.value.sorted(by: { $0.title < $1.title })) { subject in
@@ -40,6 +31,16 @@ struct HomeworkAddView: View {
                             }
                         }
                     }
+                    .frame(height: 30)
+                }
+                
+                Section {
+                    DatePicker(
+                        "Zu erledigen bis zum",
+                        selection: $homework.date,
+                        in: dateRange,
+                        displayedComponents: .date
+                    )
                     .frame(height: 30)
                     
                     HStack {
