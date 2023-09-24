@@ -10,8 +10,14 @@ import SwiftUI
 struct HomeworkAddView: View {
     
     @Environment(\.modelContext) var context
+    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    
+    @AppStorage("notificationTime")
+    var notificationTime: Date = Calendar.current.date(
+        bySettingHour: 15, minute: 30, second: 00, of: Date()
+    )!
     
     @Binding var isPresented: Bool
     @State var homework: Homework = Homework()
@@ -88,8 +94,10 @@ struct HomeworkAddView: View {
         homework.date = Calendar.current.date(
             bySettingHour: 5, minute: 00, second: 0, of: homework.date
         )!
-        
+    
         context.insert(homework)
+        pushNotification()
+        
         try? context.save()
         isPresented.toggle()
     }
@@ -109,6 +117,36 @@ struct HomeworkAddView: View {
         
         return tomorrow...max
     }()
+    
+    func pushNotification() {
+        
+        let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default
+        content.title = homework.title
+        content.subtitle = "Diese Hausaufgabe ist bis morgen in \(homework.subject) auf."
+
+        let calendar = Calendar.current
+        let date = DateComponents(
+            calendar: calendar,
+            timeZone: .current,
+            year: calendar.component(.year, from: homework.date),
+            month: calendar.component(.month, from: homework.date),
+            day: calendar.component(.day, from: homework.date),
+            hour: calendar.component(.hour, from: notificationTime),
+            minute: calendar.component(.minute, from: notificationTime)
+        )
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: date, repeats: false
+        )
+        
+        let request = UNNotificationRequest(
+            identifier: homework.id.uuidString,
+            content: content, trigger: trigger
+        )
+
+        UNUserNotificationCenter.current().add(request)
+    }
 }
 
 #Preview {

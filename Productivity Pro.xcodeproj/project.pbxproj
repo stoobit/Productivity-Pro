@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB047CDA2AC09A960027409F /* PremiumBadge.swift */; };
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
 		BB0729E22AB10C93000A6A15 /* DocumentBrowsingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */; };
@@ -198,6 +199,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BB047CDA2AC09A960027409F /* PremiumBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBadge.swift; sourceTree = "<group>"; };
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
 		BB0729E12AB10C93000A6A15 /* DocumentBrowsingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowsingView.swift; sourceTree = "<group>"; };
@@ -830,6 +832,7 @@
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
 				BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */,
 				BBFD97C92A4CE13300771252 /* LazyLoader.swift */,
+				BB047CDA2AC09A960027409F /* PremiumBadge.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1165,6 +1168,7 @@
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */,
+				BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */,
 				BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */,
 				BB655AFE2AB772E900FB005A /* NoteViewAlert.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,

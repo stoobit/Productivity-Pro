@@ -11,6 +11,11 @@ struct GenerelSettings: View {
     
     @Environment(\.horizontalSizeClass) var hsc
     
+    @AppStorage("notificationTime")
+    var notificationTime: Date = Calendar.current.date(
+        bySettingHour: 15, minute: 30, second: 00, of: Date()
+    )!
+    
     @AppStorage("recentscount") var rcount: Int = 10
     
     @AppStorage("automaticallyDeselectEraser")

@@ -18,16 +18,16 @@ struct HomeworkEditView: View {
     @State var isEditing: Bool = false
     @State var homework: Homework = Homework()
     
-    let h: Homework
+    var h: Homework
     
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Titel", text: $homework.title)
-                        .frame(height: 30)
-                    
                     HStack {
+                        TextField("Titel", text: $homework.title)
+                            .frame(height: 30)
+                        
                         Image(systemName: getSubject(from: homework.subject).icon)
                             .foregroundStyle(.white)
                             .background {
@@ -42,12 +42,6 @@ struct HomeworkEditView: View {
                                     )
                             }
                             .frame(width: 40, height: 40)
-                        
-                        Text(homework.title)
-                            .foregroundStyle(Color.primary)
-                            .padding(.leading, 7)
-                        
-                        Spacer()
                     }
                 }
                 
@@ -98,7 +92,7 @@ struct HomeworkEditView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(isEditing ? "Bearbeiten" : "Schließen") { 
                         if isEditing {
-                            add()
+                            edit()
                         } else {
                             isPresented.toggle()
                         }
@@ -134,14 +128,17 @@ struct HomeworkEditView: View {
         homework.homeworkDescription = h.homeworkDescription
     }
     
-    func add() {
-        homework.date = Calendar.current.date(
-            bySettingHour: 5, minute: 00, second: 0, of: homework.date
-        )!
-        
-        context.insert(homework)
-        try? context.save()
-        isPresented.toggle()
+    func edit() {
+        withAnimation(.bouncy) {
+            h.title = homework.title
+            h.date = homework.date
+            h.linkedDocument = homework.linkedDocument
+            h.documentTitle = homework.documentTitle
+            h.homeworkDescription = homework.homeworkDescription
+            
+            isPresented.toggle()
+            try? context.save()
+        }
     }
     
     let dateRange: ClosedRange<Date> = {

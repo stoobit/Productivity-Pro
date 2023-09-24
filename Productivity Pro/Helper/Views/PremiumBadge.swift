@@ -7,12 +7,22 @@
 
 import SwiftUI
 
-struct PremiumBadge: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct PremiumBadge: ViewModifier {
+    @AppStorage("ppisunlocked")
+    var isSubscribed: Bool = false
+    
+    func body(content: Content) -> some View {
+        content
+            .badge(Text("Premium"))
     }
 }
 
 #Preview {
-    PremiumBadge()
+    TabView {
+        Text("hi")
+            .modifier(PremiumBadge())
+            .tabItem {
+                Image(systemName: "house")
+            }
+    }
 }

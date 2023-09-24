@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
     
@@ -29,6 +30,7 @@ struct ContentView: View {
                 }
             
             ScheduleViewContainer()
+                .modifier(PremiumBadge())
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(2)
                 .tabItem {
@@ -36,6 +38,7 @@ struct ContentView: View {
                 }
             
             HomeworkView()
+                .modifier(PremiumBadge())
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(3)
                 .tabItem {
@@ -53,6 +56,19 @@ struct ContentView: View {
             
         }
         .scrollIndicators(.hidden)
+        .onAppear {
+           askNotificationPermission()
+        }
+    }
+    
+    func askNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            if success {
+                print("All set!")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
