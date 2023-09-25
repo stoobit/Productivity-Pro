@@ -13,6 +13,9 @@ struct Productivity_ProApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [Homework.self, TopLevelFolder.self])
+        .modelContainer(
+            for: [Homework.self, File.self],
+            isAutosaveEnabled: true
+        )
     }
 }

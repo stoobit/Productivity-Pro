@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 
 struct Document: Identifiable, Codable {
     var id: UUID?

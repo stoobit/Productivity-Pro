@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 import UserNotifications
 
 struct ContentView: View {
-    
     @State var selectedTab: Int = 1
     
     var body: some View {
@@ -57,7 +57,7 @@ struct ContentView: View {
         }
         .scrollIndicators(.hidden)
         .onAppear {
-           askNotificationPermission()
+            askNotificationPermission()
         }
     }
     
