@@ -12,7 +12,7 @@ struct ContentObjectBackup: Identifiable, Codable {
     
     var title: String
     var type: ContentObjectType
-    var parent: UUID?
+    var parent: String
     
     var created: Date
     var modified: Date
@@ -20,5 +20,5 @@ struct ContentObjectBackup: Identifiable, Codable {
     var grade: Int
     var subject: UUID?
     
-    var document: Document = Document()
+    var document: Document?
 }

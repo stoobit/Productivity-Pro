@@ -18,6 +18,8 @@ struct FolderView: View {
     @AppStorage("ppsorttype") var sortType: SortType = .title
     @AppStorage("ppisreverse") var isReverse: Bool = false
     
+    var parent: String
+    
     var body: some View {
         ZStack {
             Color(UIColor.systemGroupedBackground)

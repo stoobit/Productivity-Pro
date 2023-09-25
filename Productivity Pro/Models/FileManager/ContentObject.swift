@@ -14,11 +14,11 @@ import SwiftData
         id: UUID,
         title: String,
         type: ContentObjectType,
-        parent: UUID?,
+        parent: String,
         created: Date,
         grade: Int,
         subject: UUID? = nil,
-        document: Document
+        document: Document?
     ) {
         self.id = id
         self.title = title
@@ -35,7 +35,7 @@ import SwiftData
     
     var title: String
     var type: ContentObjectType
-    var parent: UUID?
+    var parent: String
     
     var created: Date
     var modified: Date
@@ -43,5 +43,5 @@ import SwiftData
     var grade: Int
     var subject: UUID?
     
-    var document: Document = Document()
+    var document: Document?
 }
