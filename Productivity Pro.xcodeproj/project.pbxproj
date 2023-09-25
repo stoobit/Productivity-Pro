@@ -114,6 +114,9 @@
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBA808552AC1F17500F9DFCA /* ContentObjectBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808542AC1F17500F9DFCA /* ContentObjectBackup.swift */; };
 		BBA808572AC1F1BE00F9DFCA /* ContentObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808562AC1F1BE00F9DFCA /* ContentObjectType.swift */; };
+		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
+		BBA8085B2AC1F84E00F9DFCA /* FolderViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* FolderViewToolbar.swift */; };
+		BBA8085F2AC2056100F9DFCA /* FolderViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085E2AC2056100F9DFCA /* FolderViewMethods.swift */; };
 		BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* MarkdownParserView.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
 		BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */; };
@@ -309,6 +312,9 @@
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
 		BBA808542AC1F17500F9DFCA /* ContentObjectBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObjectBackup.swift; sourceTree = "<group>"; };
 		BBA808562AC1F1BE00F9DFCA /* ContentObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObjectType.swift; sourceTree = "<group>"; };
+		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
+		BBA8085A2AC1F84D00F9DFCA /* FolderViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewToolbar.swift; sourceTree = "<group>"; };
+		BBA8085E2AC2056100F9DFCA /* FolderViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewMethods.swift; sourceTree = "<group>"; };
 		BBADD1362A5102620075B825 /* MarkdownParserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownParserView.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
 		BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRowMethods.swift; sourceTree = "<group>"; };
@@ -401,6 +407,8 @@
 			children = (
 				BB047CDD2AC0C1FF0027409F /* DocumentView.swift */,
 				BB047CE12AC0C6790027409F /* FolderView.swift */,
+				BBA8085E2AC2056100F9DFCA /* FolderViewMethods.swift */,
+				BBA8085A2AC1F84D00F9DFCA /* FolderViewToolbar.swift */,
 			);
 			path = DocumentView;
 			sourceTree = "<group>";
@@ -813,6 +821,7 @@
 		BBBD13E8290EA46C001145A4 /* TypeModifier */ = {
 			isa = PBXGroup;
 			children = (
+				BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */,
 				BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */,
 				BB3525B22908673800D35790 /* Array.swift */,
 				BB174F542A1051B400F753F6 /* Date.swift */,
@@ -1126,6 +1135,7 @@
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
 				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
+				BBA8085B2AC1F84E00F9DFCA /* FolderViewToolbar.swift in Sources */,
 				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
 				BB047CDE2AC0C1FF0027409F /* DocumentView.swift in Sources */,
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
@@ -1138,6 +1148,7 @@
 				BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
 				BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */,
+				BBA8085F2AC2056100F9DFCA /* FolderViewMethods.swift in Sources */,
 				BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */,
 				BB655B002AB772F100FB005A /* NoteViewSheet.swift in Sources */,
 				BBC7B97B2A19896A00D496CB /* ToolViewMethods.swift in Sources */,
@@ -1238,6 +1249,7 @@
 				BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */,
 				BB27FED428EA192D00459334 /* OLD ChangePageTemplateView.swift in Sources */,
 				BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */,
+				BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */,
 				BB5034192993172800913B3A /* PageItemView.swift in Sources */,
 				BBB02B592962537C001DCB04 /* Triangle.swift in Sources */,
 				BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */,

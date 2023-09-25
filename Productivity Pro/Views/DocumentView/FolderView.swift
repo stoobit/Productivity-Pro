@@ -9,17 +9,25 @@ import SwiftUI
 import SwiftData
 
 struct FolderView: View {
+    var parent: String
+    var title: String
     
-    @Query(animation: .bouncy) var contentObjects: [ContentObject]
+    @Environment(\.modelContext) var context
+    
+    @Query(animation: .bouncy)
+    var contentObjects: [ContentObject]
     
     @State var isAddFolder: Bool = false
     @State var folderTitle: String = ""
     
-    @AppStorage("ppsorttype") var sortType: SortType = .title
-    @AppStorage("ppisreverse") var isReverse: Bool = false
+    @AppStorage("ppsorttype") 
+    var sortType: SortingValue = .title
     
-    var parent: String
+    @AppStorage("ppisreverse")
+    var isReverse: Bool = false
     
+    @State var searchText: String = ""
+
     var body: some View {
         ZStack {
             Color(UIColor.systemGroupedBackground)
@@ -36,7 +44,16 @@ struct FolderView: View {
             }
             .scrollContentBackground(.hidden)
             .environment(\.defaultMinListRowHeight, 30)
+            .navigationTitle(title)
+            .toolbarRole(.browser)
+            .navigationBarTitleDisplayMode(
+                parent == "root" ? .large : .inline
+            )
+            .toolbar {
+                FolderViewToolbar(parent: parent)
+            }
         }
+        .edgesIgnoringSafeArea(.all)
         .alert("Ordner hinzufügen", isPresented: $isAddFolder) {
             TextField("Name", text: $folderTitle)
             Button("Erstellen", action: addFolder)
@@ -45,35 +62,6 @@ struct FolderView: View {
                 folderTitle = ""
             })
         }
-        .navigationTitle("Notizen")
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button(action: { isAddFolder.toggle() }) {
-                    Image(systemName: "folder.badge.plus")
-                }
-            }
-            
-            ToolbarItem(placement: .topBarLeading) {
-                Menu(content: {
-                    Picker("", selection: $sortType) {
-                        Text("Name").tag(SortType.title)
-                        Text("Erstellt").tag(SortType.created)
-                        Text("Geändert").tag(SortType.changed)
-                    }
-                    
-                    Button(action: { isReverse.toggle() }) {
-                        Label(
-                            isReverse ? "Absteigend" : "Aufsteigend",
-                            systemImage: isReverse ? "chevron.down" :"chevron.up"
-                        )
-                    }
-                    
-                }) {
-                    Image(systemName: "list.bullet")
-                }
-            }
-        }
-        
     }
     
     func addFolder() {
@@ -106,8 +94,6 @@ struct FolderView: View {
 //    }
 }
 
-enum SortType: String {
-    case created = "created"
-    case title = "title"
-    case changed = "changed"
+#Preview {
+    DocumentView()
 }

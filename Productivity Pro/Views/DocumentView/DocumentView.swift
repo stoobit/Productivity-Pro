@@ -11,7 +11,9 @@ import SwiftData
 struct DocumentView: View {
     var body: some View {
         NavigationStack {
-            FolderView(parent: "root")
+            FolderView(
+                parent: "root", title: "Notizen"
+            )
         }
     }
 }
