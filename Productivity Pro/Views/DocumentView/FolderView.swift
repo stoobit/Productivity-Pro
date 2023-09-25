@@ -9,52 +9,33 @@ import SwiftUI
 import SwiftData
 
 struct FolderView: View {
-    var parent: String
-    var title: String
-    
     @Environment(\.modelContext) var context
     
-    @Query(animation: .bouncy)
+    var parent: String
+    var title: String
     var contentObjects: [ContentObject]
     
     @State var isAddFolder: Bool = false
     @State var folderTitle: String = ""
+    @State var searchText: String = ""
     
     @AppStorage("ppsorttype") 
     var sortType: SortingValue = .title
     
     @AppStorage("ppisreverse")
     var isReverse: Bool = false
-    
-    @State var searchText: String = ""
 
     var body: some View {
         List {
-            Section {
-                Button("Notiz erstellen", systemImage: "doc.fill") {
+            ForEach(contentObjects) { object in
+                if object.type == .folder {
                     
-                }
-                .frame(height: 30)
-                
-                Button("Ordner erstellen", systemImage: "folder.fill") {
-                    
-                }
-                .frame(height: 30)
-            }
-            .listRowBackground(
-                Rectangle()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .foregroundStyle(Color.accentColor.quaternary)
-            )
-            
-            ForEach(contentObjects) { folder in
-                NavigationLink(destination: {
-                   
-                }) {
+                } else if object.type == .file {
                     
                 }
             }
         }
+        .scrollContentBackground(.hidden)
         .environment(\.defaultMinListRowHeight, 30)
         .navigationTitle(title)
         .toolbarRole(.browser)

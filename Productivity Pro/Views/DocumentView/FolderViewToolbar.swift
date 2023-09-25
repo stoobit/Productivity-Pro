@@ -27,6 +27,16 @@ struct FolderViewToolbar: ToolbarContent {
                 }
             }
                 .labelsHidden()
+            
+            Button("Ordner erstellen", systemImage: "folder.badge.plus") {
+                
+            }
+        }
+        
+        ToolbarItem(placement: .confirmationAction) {
+            Button(action: {}) {
+                Image(systemName: "plus")
+            }
         }
         
         ToolbarItemGroup(placement: .topBarLeading) {

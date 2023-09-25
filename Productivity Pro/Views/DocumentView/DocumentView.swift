@@ -9,11 +9,23 @@ import SwiftUI
 import SwiftData
 
 struct DocumentView: View {
+    
+    @Query(animation: .bouncy)
+    var contentObjects: [ContentObject]
+    
     var body: some View {
         NavigationStack {
-            FolderView(
-                parent: "root", title: "Notizen"
-            )
+            ZStack {
+                Color(UIColor.systemGroupedBackground)
+                    .ignoresSafeArea(.all)
+                
+                FolderView(
+                    parent: "root",
+                    title: "Notizen",
+                    contentObjects: contentObjects
+                )
+                .scrollContentBackground(.hidden)
+            }
         }
     }
 }
