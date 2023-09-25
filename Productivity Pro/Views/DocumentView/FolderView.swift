@@ -29,31 +29,41 @@ struct FolderView: View {
     @State var searchText: String = ""
 
     var body: some View {
-        ZStack {
-            Color(UIColor.systemGroupedBackground)
-                .ignoresSafeArea(.all)
+        List {
+            Section {
+                Button("Notiz erstellen", systemImage: "doc.fill") {
+                    
+                }
+                .frame(height: 30)
+                
+                Button("Ordner erstellen", systemImage: "folder.fill") {
+                    
+                }
+                .frame(height: 30)
+            }
+            .listRowBackground(
+                Rectangle()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .foregroundStyle(Color.accentColor.quaternary)
+            )
             
-            List {
-                ForEach(contentObjects) { folder in
-                    NavigationLink(destination: {
-                       
-                    }) {
-                        
-                    }
+            ForEach(contentObjects) { folder in
+                NavigationLink(destination: {
+                   
+                }) {
+                    
                 }
             }
-            .scrollContentBackground(.hidden)
-            .environment(\.defaultMinListRowHeight, 30)
-            .navigationTitle(title)
-            .toolbarRole(.browser)
-            .navigationBarTitleDisplayMode(
-                parent == "root" ? .large : .inline
-            )
-            .toolbar {
-                FolderViewToolbar(parent: parent)
-            }
         }
-        .edgesIgnoringSafeArea(.all)
+        .environment(\.defaultMinListRowHeight, 30)
+        .navigationTitle(title)
+        .toolbarRole(.browser)
+        .navigationBarTitleDisplayMode(
+            parent == "root" ? .large : .inline
+        )
+        .toolbar {
+            FolderViewToolbar(parent: parent)
+        }
         .alert("Ordner hinzufügen", isPresented: $isAddFolder) {
             TextField("Name", text: $folderTitle)
             Button("Erstellen", action: addFolder)
