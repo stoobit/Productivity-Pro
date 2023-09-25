@@ -67,7 +67,6 @@
 		BB4A93F02AAF8EB200C3AED6 /* ScheduleAddSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93EF2AAF8EB200C3AED6 /* ScheduleAddSubject.swift */; };
 		BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93F12AB09FFB00C3AED6 /* HomeworkView.swift */; };
 		BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */; };
-		BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */; };
 		BB4CDD4728D3C66A009A409F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4CDD4628D3C66A009A409F /* Assets.xcassets */; };
 		BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB4CDD4928D3C66A009A409F /* Preview Assets.xcassets */; };
 		BB4CDD5628D3D518009A409F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDD5528D3D518009A409F /* Document.swift */; };
@@ -112,6 +111,7 @@
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F0272AC1B6F30060B111 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0262AC1B6F30060B111 /* File.swift */; };
+		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* MarkdownParserView.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
@@ -259,7 +259,6 @@
 		BB4A93F12AB09FFB00C3AED6 /* HomeworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkView.swift; sourceTree = "<group>"; };
 		BB4CDD3D28D3C668009A409F /* Productivity Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_ProApp.swift; sourceTree = "<group>"; };
-		BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityProDocument.swift; sourceTree = "<group>"; };
 		BB4CDD4628D3C66A009A409F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB4CDD4928D3C66A009A409F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Productivity Pro.entitlements"; sourceTree = "<group>"; };
@@ -305,6 +304,8 @@
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BBA1F0262AC1B6F30060B111 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCoding.swift; sourceTree = "<group>"; };
+		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
 		BBADD1362A5102620075B825 /* MarkdownParserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownParserView.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
@@ -507,14 +508,14 @@
 			path = SubjectSettings;
 			sourceTree = "<group>";
 		};
-		BB4A93D52AAF3BED00C3AED6 /* AppStorageModels */ = {
+		BB4A93D52AAF3BED00C3AED6 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
 				BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */,
 				BB4A93EB2AAF5F5A00C3AED6 /* ScheduleDayModel.swift */,
 				BB28336B2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift */,
 			);
-			path = AppStorageModels;
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		BB4A93DE2AAF556900C3AED6 /* ScheduleView */ = {
@@ -563,6 +564,7 @@
 			children = (
 				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
+				BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
@@ -600,8 +602,9 @@
 		BB4CDD5B28D3D564009A409F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BB9A36492ABCD29700721C56 /* Homework.swift */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
-				BB4A93D52AAF3BED00C3AED6 /* AppStorageModels */,
+				BB4A93D52AAF3BED00C3AED6 /* Schedule */,
 				BB9A36482ABCD25900721C56 /* FileManager */,
 				BB9DF5B328E067D600AC988D /* Document */,
 			);
@@ -707,8 +710,8 @@
 		BB9A36482ABCD25900721C56 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
-				BB9A36492ABCD29700721C56 /* Homework.swift */,
 				BB047CE32AC0DB470027409F /* Folder.swift */,
+				BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */,
 				BBA1F0262AC1B6F30060B111 /* File.swift */,
 			);
 			path = FileManager;
@@ -759,7 +762,6 @@
 		BB9DF5B328E067D600AC988D /* Document */ = {
 			isa = PBXGroup;
 			children = (
-				BB4CDD4228D3C668009A409F /* ProductivityProDocument.swift */,
 				BB4CDD5528D3D518009A409F /* Document.swift */,
 				BB9DF5B428E067E200AC988D /* NoteModels */,
 				BB27BB502A62C2E100392E1E /* RealityNoteModels */,
@@ -1072,7 +1074,6 @@
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */,
-				BB4CDD4328D3C668009A409F /* ProductivityProDocument.swift in Sources */,
 				BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
@@ -1180,6 +1181,7 @@
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
+				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
 				BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */,

@@ -24,9 +24,5 @@ import SwiftData
     var dateChanged: Date
     var grade: Int
     
-    var content: [UUID] = []
-}
-
-struct ContentObject: Codable {
-    
+    var content: [ContentObject] = []
 }
