@@ -8,6 +8,5 @@
 import Foundation
 
 struct ProductivityBackup: Codable {
-    var files: [FileBackup]
-    var folders: [FolderBackup]
+    var contentObjects: [ContentObjectBackup]
 }

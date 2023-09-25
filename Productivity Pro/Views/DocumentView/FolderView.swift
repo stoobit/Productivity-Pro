@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FolderView: View {
     
-    var folders: [Folder]
-    var documents: [Document]
+    @Query(animation: .bouncy) var contentObjects: [ContentObject]
     
     @State var isAddFolder: Bool = false
     @State var folderTitle: String = ""
@@ -24,12 +24,11 @@ struct FolderView: View {
                 .ignoresSafeArea(.all)
             
             List {
-                ForEach(folders) { folder in
+                ForEach(contentObjects) { folder in
                     NavigationLink(destination: {
                        
                     }) {
-                        Label(folder.title, systemImage: "folder.fill")
-                            .frame(height: 30)
+                        
                     }
                 }
             }
@@ -82,27 +81,27 @@ struct FolderView: View {
         }
     }
     
-    func getFolders() -> [Folder] {
-        if isReverse == false {
-            switch sortType {
-            case .created:
-                return folders.sorted(by: { $0.date < $1.date })
-            case .title:
-                return folders.sorted(by: { $0.title < $1.title })
-            case .changed:
-                return folders.sorted(by: { $0.dateChanged < $1.dateChanged })
-            }
-        } else {
-            switch sortType {
-            case .created:
-                return folders.sorted(by: { $0.date > $1.date })
-            case .title:
-                return folders.sorted(by: { $0.title > $1.title })
-            case .changed:
-                return folders.sorted(by: { $0.dateChanged > $1.dateChanged })
-            }
-        }
-    }
+//    func getFolders() -> [Folder] {
+//        if isReverse == false {
+//            switch sortType {
+//            case .created:
+//                return folders.sorted(by: { $0.date < $1.date })
+//            case .title:
+//                return folders.sorted(by: { $0.title < $1.title })
+//            case .changed:
+//                return folders.sorted(by: { $0.dateChanged < $1.dateChanged })
+//            }
+//        } else {
+//            switch sortType {
+//            case .created:
+//                return folders.sorted(by: { $0.date > $1.date })
+//            case .title:
+//                return folders.sorted(by: { $0.title > $1.title })
+//            case .changed:
+//                return folders.sorted(by: { $0.dateChanged > $1.dateChanged })
+//            }
+//        }
+//    }
 }
 
 enum SortType: String {

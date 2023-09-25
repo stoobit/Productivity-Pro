@@ -16,7 +16,7 @@ struct DocumentView: View {
                     .ignoresSafeArea(.all)
                 
                 List {
-                   
+                    
                 }
                 .scrollContentBackground(.hidden)
                 .environment(\.defaultMinListRowHeight, 30)

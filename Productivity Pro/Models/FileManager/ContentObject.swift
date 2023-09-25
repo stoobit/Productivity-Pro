@@ -6,14 +6,42 @@
 //
 
 import Foundation
+import SwiftData
 
-struct ContentObject: Identifiable, Codable {
-    var id: UUID = UUID()
-    var fileType: FileType
-}
-
-enum FileType: Codable {
-    case folder
-    case pro
-    case pdf
+@Model final class ContentObject: Identifiable {
+    
+    init(
+        id: UUID,
+        title: String,
+        type: ContentObjectType,
+        parent: UUID?,
+        created: Date,
+        grade: Int,
+        subject: UUID? = nil,
+        document: Document
+    ) {
+        self.id = id
+        self.title = title
+        self.parent = parent
+        self.type = type
+        self.created = created
+        self.modified = created
+        self.grade = grade
+        self.subject = subject
+        self.document = document
+    }
+    
+    @Attribute(.unique) public var id: UUID
+    
+    var title: String
+    var type: ContentObjectType
+    var parent: UUID?
+    
+    var created: Date
+    var modified: Date
+    
+    var grade: Int
+    var subject: UUID?
+    
+    var document: Document = Document()
 }

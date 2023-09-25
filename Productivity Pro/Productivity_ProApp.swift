@@ -15,7 +15,7 @@ struct Productivity_ProApp: App {
             ContentView()
         }
         .modelContainer(
-            for: [Homework.self, File.self],
+            for: [Homework.self, ContentObject.self],
             isAutosaveEnabled: true
         )
     }
