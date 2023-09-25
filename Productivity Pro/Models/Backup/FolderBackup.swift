@@ -9,6 +9,7 @@ import Foundation
 
 struct FolderBackup: Identifiable, Codable {
     var id: UUID
+    var topLevel: Bool
     var title: String
     var date: Date
     var dateChanged: Date
