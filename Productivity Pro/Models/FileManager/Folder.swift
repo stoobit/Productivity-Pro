@@ -26,3 +26,7 @@ import SwiftData
     
     var content: [UUID] = []
 }
+
+struct ContentObject: Codable {
+    
+}

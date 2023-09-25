@@ -8,11 +8,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-extension UTType {
-    static var pro: UTType {
-        UTType(importedAs: "com.till-bruegmann.Productivity-Pro.pro")
-    }
-}
+
 
 struct ProductivityProDocument: FileDocument {
     var document: Document

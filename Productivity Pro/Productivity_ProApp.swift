@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 @main
 struct Productivity_ProApp: App {
@@ -17,5 +18,11 @@ struct Productivity_ProApp: App {
             for: [Homework.self, File.self],
             isAutosaveEnabled: true
         )
+    }
+}
+
+extension UTType {
+    static var pro: UTType {
+        UTType(importedAs: "com.till-bruegmann.Productivity-Pro.pro")
     }
 }

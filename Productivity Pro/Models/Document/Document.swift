@@ -8,9 +8,7 @@
 import Foundation
 import SwiftData
 
-struct Document: Identifiable, Codable {
-    var id: UUID?
-    
+struct Document: Codable {
     var documentType: DocumentType = .none
     
     var note: Note!
