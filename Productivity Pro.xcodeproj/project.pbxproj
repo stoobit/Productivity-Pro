@@ -94,6 +94,9 @@
 		BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */; };
 		BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73F053297F278F00ED23CC /* BundleExtension.swift */; };
 		BB7423F72A5ED7140031176A /* OLDDocumentViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7423F62A5ED7140031176A /* OLDDocumentViewHelper.swift */; };
+		BB7B09CE2AC1CC640058A6A9 /* FolderBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B09CD2AC1CC640058A6A9 /* FolderBackup.swift */; };
+		BB7B09D02AC1CD2B0058A6A9 /* FileBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B09CF2AC1CD2B0058A6A9 /* FileBackup.swift */; };
+		BB7B09D22AC1CDBB0058A6A9 /* ProductivityBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B09D12AC1CDBB0058A6A9 /* ProductivityBackup.swift */; };
 		BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C2C7A2A3D258100C730D3 /* String.swift */; };
 		BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB854ADF29E06531002EDF7A /* PagingModifier.swift */; };
 		BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */; };
@@ -287,6 +290,9 @@
 		BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundScan.swift; sourceTree = "<group>"; };
 		BB73F053297F278F00ED23CC /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		BB7423F62A5ED7140031176A /* OLDDocumentViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDDocumentViewHelper.swift; sourceTree = "<group>"; };
+		BB7B09CD2AC1CC640058A6A9 /* FolderBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderBackup.swift; sourceTree = "<group>"; };
+		BB7B09CF2AC1CD2B0058A6A9 /* FileBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBackup.swift; sourceTree = "<group>"; };
+		BB7B09D12AC1CDBB0058A6A9 /* ProductivityBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityBackup.swift; sourceTree = "<group>"; };
 		BB7C2C7A2A3D258100C730D3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewMethods.swift; sourceTree = "<group>"; };
@@ -508,14 +514,15 @@
 			path = SubjectSettings;
 			sourceTree = "<group>";
 		};
-		BB4A93D52AAF3BED00C3AED6 /* Schedule */ = {
+		BB4A93D52AAF3BED00C3AED6 /* Subject+Schedule+Homework */ = {
 			isa = PBXGroup;
 			children = (
+				BB9A36492ABCD29700721C56 /* Homework.swift */,
 				BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */,
 				BB4A93EB2AAF5F5A00C3AED6 /* ScheduleDayModel.swift */,
 				BB28336B2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift */,
 			);
-			path = Schedule;
+			path = "Subject+Schedule+Homework";
 			sourceTree = "<group>";
 		};
 		BB4A93DE2AAF556900C3AED6 /* ScheduleView */ = {
@@ -602,10 +609,10 @@
 		BB4CDD5B28D3D564009A409F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BB9A36492ABCD29700721C56 /* Homework.swift */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
-				BB4A93D52AAF3BED00C3AED6 /* Schedule */,
+				BB4A93D52AAF3BED00C3AED6 /* Subject+Schedule+Homework */,
 				BB9A36482ABCD25900721C56 /* FileManager */,
+				BB7B09CC2AC1CC4D0058A6A9 /* Backup */,
 				BB9DF5B328E067D600AC988D /* Document */,
 			);
 			path = Models;
@@ -686,6 +693,16 @@
 			path = ScrollView;
 			sourceTree = "<group>";
 		};
+		BB7B09CC2AC1CC4D0058A6A9 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				BB7B09CF2AC1CD2B0058A6A9 /* FileBackup.swift */,
+				BB7B09CD2AC1CC640058A6A9 /* FolderBackup.swift */,
+				BB7B09D12AC1CDBB0058A6A9 /* ProductivityBackup.swift */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
 		BB84E5D429354F5800E0535C /* ItemModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,9 +727,9 @@
 		BB9A36482ABCD25900721C56 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				BBA1F0262AC1B6F30060B111 /* File.swift */,
 				BB047CE32AC0DB470027409F /* Folder.swift */,
 				BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */,
-				BBA1F0262AC1B6F30060B111 /* File.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -1099,6 +1116,7 @@
 				BBEFC94F2A41035C00960C8D /* NoteSideActionMethods.swift in Sources */,
 				BB6701582AADEFA7001F468A /* ContentView.swift in Sources */,
 				BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */,
+				BB7B09CE2AC1CC640058A6A9 /* FolderBackup.swift in Sources */,
 				BBB763B22A3A70DD00273182 /* EditTextfieldItemMethods.swift in Sources */,
 				BB4CDD5628D3D518009A409F /* Document.swift in Sources */,
 				BBCDFDE32947BF84000C545D /* SquaredView.swift in Sources */,
@@ -1162,6 +1180,7 @@
 				BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
+				BB7B09D22AC1CDBB0058A6A9 /* ProductivityBackup.swift in Sources */,
 				BBDCF5DD299EB6AC004C99AE /* EditPageItemView.swift in Sources */,
 				BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */,
 				BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */,
@@ -1237,6 +1256,7 @@
 				BB1DF6082A686D65006F85CE /* PPToolbar.swift in Sources */,
 				BB3F75FD2997F81600C0F140 /* NoteMainToolbarMethods.swift in Sources */,
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
+				BB7B09D02AC1CD2B0058A6A9 /* FileBackup.swift in Sources */,
 				BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */,
 				BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */,
 			);

@@ -14,6 +14,6 @@ struct ContentObject: Identifiable, Codable {
 
 enum FileType: Codable {
     case folder
-    case ppFile
+    case pro
     case pdf
 }

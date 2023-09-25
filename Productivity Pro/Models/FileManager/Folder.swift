@@ -23,6 +23,7 @@ import SwiftData
     var date: Date
     var dateChanged: Date
     var grade: Int
+    var subject: UUID?
     
     var content: [ContentObject] = []
 }
