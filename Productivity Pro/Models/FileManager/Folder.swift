@@ -11,9 +11,8 @@ import SwiftData
 @Model final class Folder: Identifiable {
     @Attribute(.unique) public var id: UUID
     
-    init(id: UUID, topLevel: Bool, title: String, date: Date, grade: Int) {
+    init(id: UUID, title: String, date: Date, grade: Int) {
         self.id = id
-        self.topLevel = topLevel
         self.title = title
         self.date = date
         self.grade = grade
@@ -21,7 +20,7 @@ import SwiftData
     }
     
     var title: String
-    var topLevel: Bool
+    var topLevel: Bool = false
     var date: Date
     var dateChanged: Date
     var grade: Int
