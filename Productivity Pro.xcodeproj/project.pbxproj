@@ -93,6 +93,7 @@
 		BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */; };
 		BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73F053297F278F00ED23CC /* BundleExtension.swift */; };
 		BB7423F72A5ED7140031176A /* OLDDocumentViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7423F62A5ED7140031176A /* OLDDocumentViewHelper.swift */; };
+		BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984642AC347F900CF3D24 /* BackupSettings.swift */; };
 		BB7B09D22AC1CDBB0058A6A9 /* ProductivityBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B09D12AC1CDBB0058A6A9 /* ProductivityBackup.swift */; };
 		BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C2C7A2A3D258100C730D3 /* String.swift */; };
 		BB844FBE2AC2385F00EE9C93 /* FolderViewObjectLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* FolderViewObjectLink.swift */; };
@@ -291,6 +292,7 @@
 		BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundScan.swift; sourceTree = "<group>"; };
 		BB73F053297F278F00ED23CC /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		BB7423F62A5ED7140031176A /* OLDDocumentViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDDocumentViewHelper.swift; sourceTree = "<group>"; };
+		BB7984642AC347F900CF3D24 /* BackupSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupSettings.swift; sourceTree = "<group>"; };
 		BB7B09D12AC1CDBB0058A6A9 /* ProductivityBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityBackup.swift; sourceTree = "<group>"; };
 		BB7C2C7A2A3D258100C730D3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BB844FBD2AC2385F00EE9C93 /* FolderViewObjectLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewObjectLink.swift; sourceTree = "<group>"; };
@@ -663,6 +665,7 @@
 				BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */,
 				BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */,
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
+				BB7984642AC347F900CF3D24 /* BackupSettings.swift */,
 				BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */,
 				BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */,
 			);
@@ -1162,6 +1165,7 @@
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
 				BB047CE22AC0C6790027409F /* FolderView.swift in Sources */,
 				BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */,
+				BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */,
 				BBEFC9512A41038F00960C8D /* NoteSideActionsEditor.swift in Sources */,
 				BBCDFDE52947C877000C545D /* DottedView.swift in Sources */,
 				BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */,

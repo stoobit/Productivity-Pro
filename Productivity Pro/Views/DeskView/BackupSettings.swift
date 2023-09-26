@@ -9,7 +9,17 @@ import SwiftUI
 
 struct BackupSettings: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section("Export") {
+                
+            }
+            
+            Section("Import") {
+                
+            }
+        }
+        .environment(\.defaultMinListRowHeight, 10)
+        .navigationTitle("Backup")
     }
 }
 

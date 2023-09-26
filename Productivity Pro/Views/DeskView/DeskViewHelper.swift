@@ -37,8 +37,7 @@ extension DeskView {
                
             }) {
                 Label(
-                    "Backup erstellen",
-                    systemImage: "externaldrive.badge.timemachine"
+                    "Backup", systemImage: "externaldrive.badge.timemachine"
                 )
             }
             .frame(height: 30)
