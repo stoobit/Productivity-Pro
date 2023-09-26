@@ -31,7 +31,7 @@ struct BackupSettings: View {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundStyle(Color.yellow)
-                    Text("Das kann einige Minuten dauern.")
+                    Text("Dies kann einige Minuten dauern.")
                 }
             })
             

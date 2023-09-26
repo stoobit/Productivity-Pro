@@ -21,14 +21,13 @@ struct FolderViewToolbar: ToolbarContent {
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarTrailing) {
-            if parent == "root" {
-                Picker("", selection: $grade) {
-                    ForEach(5...13, id: \.self) {
-                        Text("Jgst \($0)")
-                    }
+            Picker("", selection: $grade) {
+                ForEach(5...13, id: \.self) {
+                    Text("Jgst \($0)")
                 }
-                .labelsHidden()
             }
+            .labelsHidden()
+            .disabled(parent != "root")
             
             Menu(content: {
                 Button("Datei importieren", systemImage: "doc") {

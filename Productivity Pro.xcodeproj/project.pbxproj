@@ -94,9 +94,10 @@
 		BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73F053297F278F00ED23CC /* BundleExtension.swift */; };
 		BB7423F72A5ED7140031176A /* OLDDocumentViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7423F62A5ED7140031176A /* OLDDocumentViewHelper.swift */; };
 		BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984642AC347F900CF3D24 /* BackupSettings.swift */; };
+		BB7984682AC37E1E00CF3D24 /* FolderViewFileLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984672AC37E1E00CF3D24 /* FolderViewFileLink.swift */; };
 		BB7B09D22AC1CDBB0058A6A9 /* ProductivityBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B09D12AC1CDBB0058A6A9 /* ProductivityBackup.swift */; };
 		BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C2C7A2A3D258100C730D3 /* String.swift */; };
-		BB844FBE2AC2385F00EE9C93 /* FolderViewObjectLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* FolderViewObjectLink.swift */; };
+		BB844FBE2AC2385F00EE9C93 /* FolderViewFolderLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* FolderViewFolderLink.swift */; };
 		BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB854ADF29E06531002EDF7A /* PagingModifier.swift */; };
 		BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */; };
 		BB929B8028E5076D00DA4538 /* NoteSideActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB929B7F28E5076D00DA4538 /* NoteSideActions.swift */; };
@@ -293,9 +294,10 @@
 		BB73F053297F278F00ED23CC /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		BB7423F62A5ED7140031176A /* OLDDocumentViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDDocumentViewHelper.swift; sourceTree = "<group>"; };
 		BB7984642AC347F900CF3D24 /* BackupSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupSettings.swift; sourceTree = "<group>"; };
+		BB7984672AC37E1E00CF3D24 /* FolderViewFileLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewFileLink.swift; sourceTree = "<group>"; };
 		BB7B09D12AC1CDBB0058A6A9 /* ProductivityBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityBackup.swift; sourceTree = "<group>"; };
 		BB7C2C7A2A3D258100C730D3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		BB844FBD2AC2385F00EE9C93 /* FolderViewObjectLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewObjectLink.swift; sourceTree = "<group>"; };
+		BB844FBD2AC2385F00EE9C93 /* FolderViewFolderLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewFolderLink.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewMethods.swift; sourceTree = "<group>"; };
 		BB929B7F28E5076D00DA4538 /* NoteSideActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSideActions.swift; sourceTree = "<group>"; };
@@ -412,7 +414,8 @@
 				BB047CDD2AC0C1FF0027409F /* DocumentView.swift */,
 				BB047CE12AC0C6790027409F /* FolderView.swift */,
 				BBA8085E2AC2056100F9DFCA /* FolderViewMethods.swift */,
-				BB844FBD2AC2385F00EE9C93 /* FolderViewObjectLink.swift */,
+				BB844FBD2AC2385F00EE9C93 /* FolderViewFolderLink.swift */,
+				BB7984672AC37E1E00CF3D24 /* FolderViewFileLink.swift */,
 				BBA8085A2AC1F84D00F9DFCA /* FolderViewToolbar.swift */,
 			);
 			path = DocumentView;
@@ -1181,7 +1184,7 @@
 				BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
 				BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */,
-				BB844FBE2AC2385F00EE9C93 /* FolderViewObjectLink.swift in Sources */,
+				BB844FBE2AC2385F00EE9C93 /* FolderViewFolderLink.swift in Sources */,
 				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
 				BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */,
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
@@ -1245,6 +1248,7 @@
 				BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */,
 				BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */,
 				BBB763B02A3A64CC00273182 /* EditShapeItemMethods.swift in Sources */,
+				BB7984682AC37E1E00CF3D24 /* FolderViewFileLink.swift in Sources */,
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
 				BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */,
