@@ -10,16 +10,16 @@ import SwiftUI
 extension FolderView {
     
     @ViewBuilder
-    func FolderLink(parent: String, title: String) -> some View {
+    func FolderLink(_ p: String, _ t: String) -> some View {
         NavigationLink(destination: {
             FolderView(
-                parent: parent, title: title,
+                parent: p, title: t,
                 contentObjects: contentObjects,
                 toolManager: toolManager,
                 subviewManager: subviewManager
             )
         }) {
-            Label(title, systemImage: "folder.fill")
+            Label(t, systemImage: "folder.fill")
         }
         .frame(height: 30)
     }

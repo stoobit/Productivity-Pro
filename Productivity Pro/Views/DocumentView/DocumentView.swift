@@ -18,19 +18,13 @@ struct DocumentView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                Color(UIColor.systemGroupedBackground)
-                    .ignoresSafeArea(.all)
-                
-                FolderView(
-                    parent: "root",
-                    title: "Notizen",
-                    contentObjects: contentObjects,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-                .scrollContentBackground(.hidden)
-            }
+            FolderView(
+                parent: "root",
+                title: "Notizen",
+                contentObjects: contentObjects,
+                toolManager: toolManager,
+                subviewManager: subviewManager
+            )
         }
     }
 }

@@ -39,20 +39,17 @@ struct FolderViewToolbar: ToolbarContent {
                     
                 }
             }) {
-                Button("Importieren", systemImage: "square.and.arrow.down") {
-                    
-                }
+                Label("Importieren", systemImage: "square.and.arrow.down")
             }
             
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 
             }
-        }
-        
-        ToolbarItem(placement: .confirmationAction) {
-            Button(action: {}) {
-                Image(systemName: "plus")
-            }
+            
+//            Button(action: {}) {
+//                Image(systemName: "plus")
+//            }
+//            .fontWeight(.semibold)
         }
         
         ToolbarItemGroup(placement: .topBarLeading) {

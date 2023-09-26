@@ -562,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				BB72E1052A59B3B1005A01B9 /* README.md */,
+				BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */,
 				BB4CDD3F28D3C668009A409F /* Productivity Pro */,
 				BB4CDD3E28D3C668009A409F /* Products */,
 			);
@@ -580,7 +581,6 @@
 			children = (
 				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
-				BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
