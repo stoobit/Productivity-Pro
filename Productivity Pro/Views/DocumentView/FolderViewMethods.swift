@@ -9,4 +9,28 @@ import SwiftUI
 
 extension FolderView {
     
+    func getObjects() -> [ContentObject] {
+        let objects = contentObjects.filter({ $0.parent == parent })
+        
+        if isReverse == false {
+            switch sortType {
+            case .title:
+                return objects.sorted(by: { $0.title < $1.title })
+            case .created:
+                return objects.sorted(by: { $0.created < $1.created })
+            case .modified:
+                return objects.sorted(by: { $0.modified < $1.modified })
+            }
+        } else {
+            switch sortType {
+            case .title:
+                return objects.sorted(by: { $0.title > $1.title })
+            case .created:
+                return objects.sorted(by: { $0.created > $1.created })
+            case .modified:
+                return objects.sorted(by: { $0.modified > $1.modified })
+            }
+        }
+    }
+    
 }

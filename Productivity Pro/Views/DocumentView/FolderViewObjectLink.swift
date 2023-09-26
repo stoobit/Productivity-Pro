@@ -9,11 +9,19 @@ import SwiftUI
 
 extension FolderView {
     
-    @ViewBuilder func FolderLink() -> some View {
-        HStack {
-            Image("folder.fill")
-//            TextField("Title", text: <#T##Binding<String>#>)
+    @ViewBuilder
+    func FolderLink(parent: String, title: String) -> some View {
+        NavigationLink(destination: {
+            FolderView(
+                parent: parent, title: title,
+                contentObjects: contentObjects,
+                toolManager: toolManager,
+                subviewManager: subviewManager
+            )
+        }) {
+            Label(title, systemImage: "folder.fill")
         }
+        .frame(height: 30)
     }
     
 }

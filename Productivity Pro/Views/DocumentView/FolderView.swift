@@ -30,62 +30,26 @@ struct FolderView: View {
 
     var body: some View {
         List {
-            ForEach(contentObjects) { object in
+            ForEach(getObjects()) { object in
                 if object.type == .folder {
-                    
+                    FolderLink(parent: object.parent, title: object.title)
                 } else if object.type == .file {
                     
                 }
             }
         }
         .scrollContentBackground(.hidden)
-        .environment(\.defaultMinListRowHeight, 30)
+        .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle(title)
         .toolbarRole(.browser)
-        .navigationBarTitleDisplayMode(
-            parent == "root" ? .large : .inline
-        )
         .toolbar {
             FolderViewToolbar(parent: parent)
         }
-        .alert("Ordner hinzufügen", isPresented: $isAddFolder) {
-            TextField("Name", text: $folderTitle)
-            Button("Erstellen", action: addFolder)
-            Button("Abbrechen", role: .cancel, action: {
-                isAddFolder.toggle()
-                folderTitle = ""
-            })
-        }
+        .navigationBarTitleDisplayMode(
+            parent == "root" ? .large : .inline
+        )
     }
     
-    func addFolder() {
-        withAnimation(.bouncy) {
-         
-            folderTitle = ""
-        }
-    }
-    
-//    func getFolders() -> [Folder] {
-//        if isReverse == false {
-//            switch sortType {
-//            case .created:
-//                return folders.sorted(by: { $0.date < $1.date })
-//            case .title:
-//                return folders.sorted(by: { $0.title < $1.title })
-//            case .changed:
-//                return folders.sorted(by: { $0.dateChanged < $1.dateChanged })
-//            }
-//        } else {
-//            switch sortType {
-//            case .created:
-//                return folders.sorted(by: { $0.date > $1.date })
-//            case .title:
-//                return folders.sorted(by: { $0.title > $1.title })
-//            case .changed:
-//                return folders.sorted(by: { $0.dateChanged > $1.dateChanged })
-//            }
-//        }
-//    }
 }
 
 #Preview {
