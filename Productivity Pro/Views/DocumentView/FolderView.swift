@@ -45,6 +45,7 @@ struct FolderView: View {
             .scrollContentBackground(.hidden)
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle(title)
+            .navigationBarBackButtonHidden()
             .toolbarRole(.browser)
             .toolbar {
                 FolderViewToolbar(parent: parent)

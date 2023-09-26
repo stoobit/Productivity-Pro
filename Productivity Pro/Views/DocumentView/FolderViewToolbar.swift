@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FolderViewToolbar: ToolbarContent {
+    @Environment(\.dismiss) var dismiss
     var parent: String
     
     @AppStorage("ppgrade") var grade: Int = 5
@@ -21,13 +22,13 @@ struct FolderViewToolbar: ToolbarContent {
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarTrailing) {
-            Picker("", selection: $grade) {
-                ForEach(5...13, id: \.self) {
-                    Text("Jgst \($0)")
-                }
-            }
-            .labelsHidden()
-            .disabled(parent != "root")
+//            Picker("", selection: $grade) {
+//                ForEach(5...13, id: \.self) {
+//                    Text("Jgst \($0)")
+//                }
+//            }
+//            .labelsHidden()
+//            .disabled(parent != "root")
             
             Menu(content: {
                 Button("Datei importieren", systemImage: "doc") {
@@ -45,16 +46,20 @@ struct FolderViewToolbar: ToolbarContent {
                 
             }
             
-//            Button(action: {}) {
-//                Image(systemName: "plus")
-//            }
-//            .fontWeight(.semibold)
+            Button("Datei erstellen", systemImage: "plus") {
+                
+            }
         }
         
         ToolbarItemGroup(placement: .topBarLeading) {
             NavigationLink(destination: {
                 
             }) { Image(systemName: "magnifyingglass") }
+            
+            Button(action: { dismiss() }) {
+                Image(systemName: "chevron.left")
+            }
+            .disabled(parent == "root")
             
             Menu(content: {
                 Picker("", selection: $sortType) {
