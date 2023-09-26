@@ -10,7 +10,7 @@ import SwiftUI
 extension FolderView {
     
     @ViewBuilder
-    func FileLink(_ p: String, _ t: String) -> some View {
+    func FileLink(for object: ContentObject) -> some View {
        
     }
     

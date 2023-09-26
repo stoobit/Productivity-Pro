@@ -9,8 +9,12 @@ import SwiftUI
 
 extension FolderView {
     
-    func getObjects() -> [ContentObject] {
-        let objects = contentObjects.filter({ $0.parent == parent })
+    func getObjects(isPinned: Bool) -> [ContentObject] {
+        let objects = contentObjects.filter({
+            $0.parent == parent &&
+            $0.grade == grade &&
+            $0.isPinned == isPinned
+        })
         
         if isReverse == false {
             switch sortType {

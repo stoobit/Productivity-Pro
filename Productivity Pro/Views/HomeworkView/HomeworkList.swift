@@ -47,7 +47,7 @@ struct HomeworkList: View {
         }
         .scrollContentBackground(.hidden)
         .toolbar {
-           ToolbarItem(placement: .confirmationAction) {
+           ToolbarItem(placement: .topBarTrailing) {
                 Button(action: { presentAdd.toggle() }) {
                     Image(systemName: "plus")
                 }

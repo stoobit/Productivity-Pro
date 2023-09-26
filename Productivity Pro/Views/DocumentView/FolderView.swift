@@ -27,6 +27,9 @@ struct FolderView: View {
     
     @AppStorage("ppisreverse")
     var isReverse: Bool = false
+    
+    @AppStorage("ppgrade")
+    var grade: Int = 5
 
     var body: some View {
         ZStack {
@@ -34,14 +37,19 @@ struct FolderView: View {
                 .ignoresSafeArea(.all)
             
             List {
-                ForEach(getObjects()) { object in
-                    if object.type == .folder {
-                        FolderLink(object.id.uuidString, object.title)
-                    } else if object.type == .file {
-                        
+                Section {
+                    ForEach(getObjects(isPinned: true)) { object in
+                        ObjectLink(for: object)
+                    }
+                }
+                
+                Section {
+                    ForEach(getObjects(isPinned: false)) { object in
+                        ObjectLink(for: object)
                     }
                 }
             }
+            .animation(.bouncy, value: grade)
             .scrollContentBackground(.hidden)
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle(title)
@@ -55,6 +63,15 @@ struct FolderView: View {
             )
         }
     }
+    
+    @ViewBuilder func ObjectLink(for object: ContentObject) -> some View {
+        if object.type == .folder {
+            FolderLink(for: object)
+        } else if object.type == .file {
+            FileLink(for: object)
+        }
+    }
+    
 }
 
 #Preview {

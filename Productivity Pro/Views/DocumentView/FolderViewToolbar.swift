@@ -11,8 +11,6 @@ struct FolderViewToolbar: ToolbarContent {
     @Environment(\.dismiss) var dismiss
     var parent: String
     
-    @AppStorage("ppgrade") var grade: Int = 5
-    
     @AppStorage("ppsorttype")
     var sortType: SortingValue = .title
     
@@ -22,14 +20,6 @@ struct FolderViewToolbar: ToolbarContent {
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarTrailing) {
-//            Picker("", selection: $grade) {
-//                ForEach(5...13, id: \.self) {
-//                    Text("Jgst \($0)")
-//                }
-//            }
-//            .labelsHidden()
-//            .disabled(parent != "root")
-            
             Menu(content: {
                 Button("Datei importieren", systemImage: "doc") {
                     

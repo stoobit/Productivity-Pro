@@ -59,9 +59,6 @@ struct ContentView: View {
         .scrollIndicators(.hidden)
         .onAppear {
             askNotificationPermission()
-            
-            let x = ContentObject(id: UUID(), title: "hello", type: .folder, parent: "root", created: Date(), grade: 11, document: nil)
-            context.insert(x)
         }
     }
     

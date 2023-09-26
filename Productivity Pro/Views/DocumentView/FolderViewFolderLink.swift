@@ -10,16 +10,23 @@ import SwiftUI
 extension FolderView {
     
     @ViewBuilder
-    func FolderLink(_ p: String, _ t: String) -> some View {
+    func FolderLink(for object: ContentObject) -> some View {
         NavigationLink(destination: {
             FolderView(
-                parent: p, title: t,
+                parent: object.id.uuidString, title: object.title,
                 contentObjects: contentObjects,
                 toolManager: toolManager,
                 subviewManager: subviewManager
             )
         }) {
-            Label(t, systemImage: "folder.fill")
+            HStack {
+                Label(object.title, systemImage: "folder.fill")
+                Spacer()
+                
+                if object.isPinned {
+                    Image(systemName: "pin")
+                }
+            }
         }
         .frame(height: 30)
     }
