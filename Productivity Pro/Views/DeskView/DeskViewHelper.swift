@@ -34,7 +34,7 @@ extension DeskView {
             .modifier(PremiumBadge())
             
             NavigationLink(destination: {
-               
+               BackupSettings()
             }) {
                 Label(
                     "Backup", systemImage: "externaldrive.badge.timemachine"

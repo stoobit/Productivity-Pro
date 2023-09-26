@@ -8,5 +8,5 @@
 import Foundation
 
 struct ProductivityBackup: Codable {
-    var contentObjects: [ContentObjectBackup]
+    var contentObjects: [ContentObjectBackup] = []
 }
