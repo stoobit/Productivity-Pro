@@ -21,4 +21,5 @@ struct ContentObjectBackup: Identifiable, Codable {
     var subject: UUID?
     
     var document: Document?
+    var isPinned: Bool
 }

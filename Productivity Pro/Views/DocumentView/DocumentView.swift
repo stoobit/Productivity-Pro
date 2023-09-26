@@ -13,6 +13,9 @@ struct DocumentView: View {
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     
+    @State var toolManager: ToolManager = ToolManager()
+    @State var subviewManager: SubviewManager = SubviewManager()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -22,7 +25,9 @@ struct DocumentView: View {
                 FolderView(
                     parent: "root",
                     title: "Notizen",
-                    contentObjects: contentObjects
+                    contentObjects: contentObjects,
+                    toolManager: toolManager,
+                    subviewManager: subviewManager
                 )
                 .scrollContentBackground(.hidden)
             }

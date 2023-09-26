@@ -5,7 +5,7 @@
 //  Created by Till Brügmann on 08.11.22.
 //
 
-import Foundation
+import Observation
 
 @Observable class SubviewManager {
     
@@ -41,5 +41,8 @@ import Foundation
     
     var newDocPDF: Bool = false
     var newDocScan: Bool = false
+    
+    var showAddFolder: Bool = false
+    var showAddFile: Bool = false
     
 }

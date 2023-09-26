@@ -15,6 +15,9 @@ struct FolderView: View {
     var title: String
     var contentObjects: [ContentObject]
     
+    @Bindable var toolManager: ToolManager
+    @Bindable var subviewManager: SubviewManager
+    
     @State var isAddFolder: Bool = false
     @State var folderTitle: String = ""
     @State var searchText: String = ""

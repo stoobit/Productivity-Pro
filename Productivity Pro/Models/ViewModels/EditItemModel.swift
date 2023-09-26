@@ -5,6 +5,7 @@
 //  Created by Till Brügmann on 21.05.23.
 //
 
+import Observation
 import Foundation
 
 @Observable class EditItemModel {

@@ -28,6 +28,10 @@ struct FolderViewToolbar: ToolbarContent {
             }
                 .labelsHidden()
             
+            Button("Datei importieren", systemImage: "square.and.arrow.down") {
+                
+            }
+            
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 
             }

@@ -31,6 +31,18 @@ extension DeskView {
                 Label("Fächer", systemImage: "tray.2")
             }
             .frame(height: 30)
+            .modifier(PremiumBadge())
+            
+            NavigationLink(destination: {
+               
+            }) {
+                Label(
+                    "Backup erstellen",
+                    systemImage: "externaldrive.badge.timemachine"
+                )
+            }
+            .frame(height: 30)
+            .modifier(PremiumBadge())
         }
     }
     

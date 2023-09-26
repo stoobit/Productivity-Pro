@@ -26,3 +26,10 @@ extension UTType {
         UTType(importedAs: "com.till-bruegmann.Productivity-Pro.pro")
     }
 }
+
+extension UTType {
+    static var probackup: UTType {
+        UTType(importedAs: "com.till-bruegmann.Productivity-Pro.probackup")
+    }
+}
+
