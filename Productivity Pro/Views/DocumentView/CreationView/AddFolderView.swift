@@ -19,9 +19,13 @@ struct AddFolderView: ViewModifier {
     func body(content: Content) -> some View {
         content
             .alert("Ordner erstellen", isPresented: $isPresented) {
-                TextField("Titel", text: $title)
+                TextField("Unbenannt", text: $title)
                 
-                Button("Abbrechen", role: .cancel) { isPresented.toggle() }
+                Button("Abbrechen", role: .cancel) {
+                    title = ""
+                    isPresented.toggle()
+                }
+                
                 Button("Hinzufügen") { addFolder() }
             }
     }
@@ -29,7 +33,7 @@ struct AddFolderView: ViewModifier {
     func addFolder() {
         let folder = ContentObject(
             id: UUID(),
-            title: title,
+            title: title.isEmpty ? "Unbenannt" : title,
             type: .folder,
             parent: parent,
             created: Date(),
@@ -38,6 +42,7 @@ struct AddFolderView: ViewModifier {
         )
         
         context.insert(folder)
+        title = ""
     }
     
 }

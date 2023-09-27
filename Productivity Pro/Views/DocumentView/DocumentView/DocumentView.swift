@@ -15,13 +15,6 @@ struct DocumentView: View {
     var title: String
     var contentObjects: [ContentObject]
     
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
-    
-    @State var isAddFolder: Bool = false
-    @State var folderTitle: String = ""
-    @State var searchText: String = ""
-    
     @AppStorage("ppsorttype") 
     var sortType: SortingValue = .title
     
@@ -30,6 +23,9 @@ struct DocumentView: View {
     
     @AppStorage("ppgrade")
     var grade: Int = 5
+    
+    // MARK: Creation Values
+    @State var addFolder: Bool = false
 
     var body: some View {
         ZStack {
@@ -57,7 +53,8 @@ struct DocumentView: View {
             .toolbarRole(.browser)
             .toolbar {
                 FolderViewToolbar(
-                    parent: parent, subviewManager: subviewManager
+                    parent: parent,
+                    addFolder: $addFolder
                 )
             }
             .navigationBarTitleDisplayMode(
@@ -65,10 +62,7 @@ struct DocumentView: View {
             )
         }
         .modifier(
-            AddFolderView(
-                parent: parent,
-                isPresented: $subviewManager.showAddFolder
-            )
+            AddFolderView(parent: parent, isPresented: $addFolder)
         )
         
     }

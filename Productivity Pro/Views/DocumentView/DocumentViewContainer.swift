@@ -15,17 +15,11 @@ struct DocumentViewContainer: View {
     
     @AppStorage("ppgrade") var grade: Int = 5
     
-    @State var toolManager: ToolManager = ToolManager()
-    @State var subviewManager: SubviewManager = SubviewManager()
-    
     var body: some View {
         NavigationStack {
             DocumentView(
-                parent: "root",
-                title: "Notizen",
-                contentObjects: contentObjects,
-                toolManager: toolManager,
-                subviewManager: subviewManager
+                parent: "root",title: "Notizen",
+                contentObjects: contentObjects
             )
             .overlay {
                 Menu(content: {

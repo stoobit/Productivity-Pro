@@ -17,7 +17,7 @@ struct FolderViewToolbar: ToolbarContent {
     @AppStorage("ppisreverse")
     var isReverse: Bool = false
     
-    @Bindable var subviewManager: SubviewManager
+    @Binding var addFolder: Bool
     
     var body: some ToolbarContent {
         
@@ -35,11 +35,11 @@ struct FolderViewToolbar: ToolbarContent {
             }
             
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
-                subviewManager.showAddFolder = true
+                addFolder = true
             }
             
             Button("Datei erstellen", systemImage: "plus") {
-                subviewManager.showAddFile = true
+                
             }
         }
         

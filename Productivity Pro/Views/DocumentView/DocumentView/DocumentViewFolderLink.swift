@@ -14,9 +14,7 @@ extension DocumentView {
         NavigationLink(destination: {
             DocumentView(
                 parent: object.id.uuidString, title: object.title,
-                contentObjects: contentObjects,
-                toolManager: toolManager,
-                subviewManager: subviewManager
+                contentObjects: contentObjects
             )
         }) {
             HStack {
@@ -38,6 +36,15 @@ extension DocumentView {
             }) {
                 Image(systemName: "trash.fill")
             }
+            
+            Button(action: {
+                withAnimation(.bouncy) {
+                    
+                }
+            }) {
+                Image(systemName: "pencil")
+            }
+            .tint(Color.accentColor)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive, action: {
