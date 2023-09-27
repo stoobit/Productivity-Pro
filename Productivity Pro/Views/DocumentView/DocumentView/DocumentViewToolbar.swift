@@ -46,10 +46,15 @@ struct FolderViewToolbar: ToolbarContent {
         ToolbarItemGroup(placement: .topBarLeading) {
             NavigationLink(destination: {
                 
+            }) { Label("Papierkorb", systemImage: "trash") }
+                .tint(Color.red)
+            
+            NavigationLink(destination: {
+                
             }) { Label("Suchen", systemImage: "magnifyingglass") }
             
             Button(action: { dismiss() }) {
-                Image(systemName: "chevron.left")
+                Label("Zurück", systemImage: "chevron.left")
             }
             .disabled(parent == "root")
             
@@ -68,7 +73,7 @@ struct FolderViewToolbar: ToolbarContent {
                 }
                 
             }) {
-                Image(systemName: "list.bullet")
+                Label("Sortieren", systemImage: "list.bullet")
             }
         }
         
