@@ -11,8 +11,13 @@ import SwiftData
 struct BackupSettings: View {
     @Environment(\.modelContext) var context
     
-    @Query(animation: .bouncy)
-    var contentObjects: [ContentObject]
+    @Query(
+        FetchDescriptor(
+            predicate: #Predicate<ContentObject> {
+                $0.inTrash == false
+            }
+        ), animation: .bouncy
+    ) var contentObjects: [ContentObject]
     
     @State var backingUp: Bool = false
     @State var exportetCount: Double = 0
@@ -26,7 +31,7 @@ struct BackupSettings: View {
                     action: createBackup
                 )
                 .frame(height: 30)
-//                .disabled(contentObjects.isEmpty)
+                .disabled(contentObjects.isEmpty)
             }, footer: {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill")
