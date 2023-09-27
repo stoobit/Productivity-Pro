@@ -11,8 +11,6 @@ import Observation
     
     var renameView: Bool = false
     var moveView: Bool = false
-    
-    var createDocument: Bool = false
     var showPrinterView: Bool = false
     
     var sharePDFSheet: Bool = false

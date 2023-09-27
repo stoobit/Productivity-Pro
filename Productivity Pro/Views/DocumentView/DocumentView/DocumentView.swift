@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct FolderView: View {
+struct DocumentView: View {
     @Environment(\.modelContext) var context
     
     var parent: String
@@ -56,24 +56,56 @@ struct FolderView: View {
             .navigationBarBackButtonHidden()
             .toolbarRole(.browser)
             .toolbar {
-                FolderViewToolbar(parent: parent)
+                FolderViewToolbar(
+                    parent: parent, subviewManager: subviewManager
+                )
             }
             .navigationBarTitleDisplayMode(
                 parent == "root" ? .large : .inline
             )
         }
+        .modifier(
+            AddFolderView(
+                parent: parent,
+                isPresented: $subviewManager.showAddFolder
+            )
+        )
+        
     }
     
     @ViewBuilder func ObjectLink(for object: ContentObject) -> some View {
-        if object.type == .folder {
-            FolderLink(for: object)
-        } else if object.type == .file {
-            FileLink(for: object)
+        Group {
+            if object.type == .folder {
+                FolderLink(for: object)
+            } else if object.type == .file {
+                FileLink(for: object)
+            }
         }
+        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+            Button(role: .destructive, action: {
+                withAnimation(.bouncy) {
+                    object.inTrash = true
+                }
+            }) {
+                Image(systemName: "trash.fill")
+            }
+        }
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button(role: .destructive, action: {
+                withAnimation(.bouncy) {
+                    object.isPinned.toggle()
+                }
+            }) {
+                Image(systemName: !object.isPinned ? "pin.fill" : "pin.slash.fill"
+                )
+            }
+            .tint(Color.accentColor)
+        }
+        
     }
     
 }
 
 #Preview {
-    DocumentView()
+    DocumentViewContainer()
 }

@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-extension FolderView {
+extension DocumentView {
     
     @ViewBuilder
     func FolderLink(for object: ContentObject) -> some View {
         NavigationLink(destination: {
-            FolderView(
+            DocumentView(
                 parent: object.id.uuidString, title: object.title,
                 contentObjects: contentObjects,
                 toolManager: toolManager,
@@ -25,6 +25,7 @@ extension FolderView {
                 
                 if object.isPinned {
                     Image(systemName: "pin")
+                        .foregroundStyle(Color.accentColor)
                 }
             }
         }

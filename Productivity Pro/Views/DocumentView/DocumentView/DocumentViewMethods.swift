@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-extension FolderView {
+extension DocumentView {
     
     func getObjects(isPinned: Bool) -> [ContentObject] {
         let objects = contentObjects.filter({
             $0.parent == parent &&
             $0.grade == grade &&
-            $0.isPinned == isPinned
+            $0.isPinned == isPinned &&
+            $0.inTrash == false
         })
         
         if isReverse == false {

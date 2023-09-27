@@ -55,8 +55,8 @@ struct SubjectSettings: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: { addSubject.toggle() }) {
-                            Image(systemName: "plus")
+                        Button("Fach hinzufügen", systemImage: "plus") {
+                            addSubject.toggle()
                         }
                     }
                 }

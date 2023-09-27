@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct DocumentView: View {
+struct DocumentViewContainer: View {
     
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
@@ -20,7 +20,7 @@ struct DocumentView: View {
     
     var body: some View {
         NavigationStack {
-            FolderView(
+            DocumentView(
                 parent: "root",
                 title: "Notizen",
                 contentObjects: contentObjects,

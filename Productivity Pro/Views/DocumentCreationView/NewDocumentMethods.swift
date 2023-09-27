@@ -212,7 +212,7 @@ extension NewDocumentView {
         toolManager.showProgress = true
         
         subviewManager.newDocScan = false
-        subviewManager.createDocument = false
+        subviewManager.showAddFile = false
         
         document.note = Note()
         document.documentType = .note

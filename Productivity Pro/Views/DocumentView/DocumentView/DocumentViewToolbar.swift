@@ -17,6 +17,8 @@ struct FolderViewToolbar: ToolbarContent {
     @AppStorage("ppisreverse")
     var isReverse: Bool = false
     
+    @Bindable var subviewManager: SubviewManager
+    
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarTrailing) {
@@ -33,18 +35,18 @@ struct FolderViewToolbar: ToolbarContent {
             }
             
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
-                
+                subviewManager.showAddFolder = true
             }
             
             Button("Datei erstellen", systemImage: "plus") {
-                
+                subviewManager.showAddFile = true
             }
         }
         
         ToolbarItemGroup(placement: .topBarLeading) {
             NavigationLink(destination: {
                 
-            }) { Image(systemName: "magnifyingglass") }
+            }) { Label("Suchen", systemImage: "magnifyingglass") }
             
             Button(action: { dismiss() }) {
                 Image(systemName: "chevron.left")
@@ -74,5 +76,5 @@ struct FolderViewToolbar: ToolbarContent {
 }
 
 #Preview {
-    DocumentView()
+    DocumentViewContainer()
 }

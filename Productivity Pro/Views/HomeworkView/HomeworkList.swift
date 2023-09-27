@@ -48,9 +48,9 @@ struct HomeworkList: View {
         .scrollContentBackground(.hidden)
         .toolbar {
            ToolbarItem(placement: .topBarTrailing) {
-                Button(action: { presentAdd.toggle() }) {
-                    Image(systemName: "plus")
-                }
+               Button("Fach hinzufügen", systemImage: "plus") {
+                   presentAdd.toggle()
+               }
                 .disabled(subjects.value.isEmpty)
             }
         }
