@@ -50,7 +50,8 @@ extension DocumentView {
         }
         .contextMenu {
             Button("Umbenennen", systemImage: "pencil") {
-                
+                editFolder.toggle()
+                selectedFolder = object
             }
             
             Button("Bewegen", systemImage: "folder") {

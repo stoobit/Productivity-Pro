@@ -29,6 +29,8 @@ struct DocumentView: View {
     
     // MARK: Creation Values
     @State var addFolder: Bool = false
+    @State var editFolder: Bool = false
+    @State var selectedFolder: ContentObject? = nil
 
     var body: some View {
         ZStack {
@@ -86,6 +88,11 @@ struct DocumentView: View {
         }
         .modifier(
             AddFolderView(parent: parent, isPresented: $addFolder)
+        )
+        .modifier(
+            RenameFolderView(
+                folder: selectedFolder, isPresented: $editFolder
+            )
         )
         
     }
