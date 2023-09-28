@@ -36,15 +36,6 @@ extension DocumentView {
             }) {
                 Image(systemName: "trash.fill")
             }
-            
-            Button(action: {
-                withAnimation(.bouncy) {
-                    
-                }
-            }) {
-                Image(systemName: "pencil")
-            }
-            .tint(Color.accentColor)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive, action: {
@@ -56,6 +47,15 @@ extension DocumentView {
                 )
             }
             .tint(Color.accentColor)
+        }
+        .contextMenu {
+            Button("Umbenennen", systemImage: "pencil") {
+                
+            }
+            
+            Button("Bewegen", systemImage: "folder") {
+                
+            }
         }
         
     }

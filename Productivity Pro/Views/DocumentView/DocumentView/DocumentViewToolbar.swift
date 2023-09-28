@@ -17,6 +17,9 @@ struct FolderViewToolbar: ToolbarContent {
     @AppStorage("ppisreverse")
     var isReverse: Bool = false
     
+    @AppStorage("ppsortbytype")
+    var typeSorting: Bool = true
+    
     @Binding var addFolder: Bool
     
     var body: some ToolbarContent {
@@ -70,6 +73,10 @@ struct FolderViewToolbar: ToolbarContent {
                         isReverse ? "Absteigend" : "Aufsteigend",
                         systemImage: isReverse ? "chevron.down" :"chevron.up"
                     )
+                }
+                
+                Section {
+                    Toggle("Gruppieren", isOn: $typeSorting)
                 }
                 
             }) {

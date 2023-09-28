@@ -417,7 +417,7 @@
 			children = (
 				BB047CDD2AC0C1FF0027409F /* DocumentViewContainer.swift */,
 				BB4F66CE2AC4B9CE00C4B34E /* DocumentView */,
-				BB4F66CF2AC4BA1C00C4B34E /* CreationView */,
+				BB4F66CF2AC4BA1C00C4B34E /* FolderView */,
 			);
 			path = DocumentView;
 			sourceTree = "<group>";
@@ -643,12 +643,12 @@
 			path = DocumentView;
 			sourceTree = "<group>";
 		};
-		BB4F66CF2AC4BA1C00C4B34E /* CreationView */ = {
+		BB4F66CF2AC4BA1C00C4B34E /* FolderView */ = {
 			isa = PBXGroup;
 			children = (
 				BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */,
 			);
-			path = CreationView;
+			path = FolderView;
 			sourceTree = "<group>";
 		};
 		BB655AF82AB7674900FB005A /* NoteTitleMenu */ = {

@@ -21,6 +21,9 @@ struct DocumentView: View {
     @AppStorage("ppisreverse")
     var isReverse: Bool = false
     
+    @AppStorage("ppsortbytype")
+    var typeSorting: Bool = true
+    
     @AppStorage("ppgrade")
     var grade: Int = 5
     
@@ -34,14 +37,34 @@ struct DocumentView: View {
             
             List {
                 Section {
-                    ForEach(getObjects(isPinned: true)) { object in
-                        ObjectLink(for: object)
+                    if typeSorting {
+                        ForEach(getObjects(.file, isPinned: true)) { object in
+                            ObjectLink(for: object)
+                        }
+                        
+                        ForEach(getObjects(.folder, isPinned: true)) { object in
+                            ObjectLink(for: object)
+                        }
+                    } else {
+                        ForEach(getObjects(.none, isPinned: true)) { object in
+                            ObjectLink(for: object)
+                        }
                     }
                 }
                 
                 Section {
-                    ForEach(getObjects(isPinned: false)) { object in
-                        ObjectLink(for: object)
+                    if typeSorting {
+                        ForEach(getObjects(.file, isPinned: false)) { object in
+                            ObjectLink(for: object)
+                        }
+                        
+                        ForEach(getObjects(.folder, isPinned: false)) { object in
+                            ObjectLink(for: object)
+                        }
+                    } else {
+                        ForEach(getObjects(.none, isPinned: false)) { object in
+                            ObjectLink(for: object)
+                        }
                     }
                 }
             }

@@ -9,13 +9,17 @@ import SwiftUI
 
 extension DocumentView {
     
-    func getObjects(isPinned: Bool) -> [ContentObject] {
-        let objects = contentObjects.filter({
+    func getObjects(_ type: ContentObjectType?, isPinned: Bool) -> [ContentObject] {
+        var objects = contentObjects.filter({
             $0.parent == parent &&
             $0.grade == grade &&
             $0.isPinned == isPinned &&
             $0.inTrash == false
         })
+            
+        if type != .none {
+            objects = objects.filter({ $0.type == type })
+        }
         
         if isReverse == false {
             switch sortType {
