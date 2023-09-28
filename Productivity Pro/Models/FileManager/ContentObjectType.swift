@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ContentObjectType: Codable {
-    case folder
+enum ContentObjectType: Comparable, Codable {
     case file
+    case folder
 }

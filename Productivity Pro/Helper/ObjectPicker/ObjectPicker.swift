@@ -6,13 +6,35 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ObjectPicker: View {
-    let type: ContentObjectType
+    @Query(
+        filter: #Predicate<ContentObject> {
+            $0.inTrash == false
+        },
+        sort: [
+            SortDescriptor(\ContentObject.title)
+        ],
+        animation: .bouncy
+    ) var contentObjects: [ContentObject]
     
-    @Binding var item: ContentObject?
+    @Binding var isPresented: Bool
+    @Binding var selectedObject: ContentObject?
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ObjectPickerList(
+                contentObjects: contentObjects,
+                selectedObject: $selectedObject,
+                parent: "root",
+                title: "Notizen"
+            )
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Abbrechen") { isPresented.toggle() }
+                }
+            }
+        }
     }
 }

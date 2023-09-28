@@ -141,6 +141,7 @@
 		BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */; };
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC254132AC5E89000B51175 /* RenameFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254122AC5E89000B51175 /* RenameFolderView.swift */; };
+		BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254142AC60D2400B51175 /* ObjectPickerList.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
 		BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9732A18F09100D496CB /* ItemView.swift */; };
 		BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9752A1982F700D496CB /* EditItemModel.swift */; };
@@ -344,6 +345,7 @@
 		BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDocumentMethods.swift; sourceTree = "<group>"; };
 		BBBFB834299FB75400FA236F /* DragItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragItemModifier.swift; sourceTree = "<group>"; };
 		BBC254122AC5E89000B51175 /* RenameFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameFolderView.swift; sourceTree = "<group>"; };
+		BBC254142AC60D2400B51175 /* ObjectPickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPickerList.swift; sourceTree = "<group>"; };
 		BBC2C90629C5CFB40044B201 /* SnapItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapItemView.swift; sourceTree = "<group>"; };
 		BBC7B9732A18F09100D496CB /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		BBC7B9752A1982F700D496CB /* EditItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemModel.swift; sourceTree = "<group>"; };
@@ -1009,6 +1011,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF663F82AC4E71C00FD9813 /* ObjectPicker.swift */,
+				BBC254142AC60D2400B51175 /* ObjectPickerList.swift */,
 			);
 			path = ObjectPicker;
 			sourceTree = "<group>";
@@ -1265,6 +1268,7 @@
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
+				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */,

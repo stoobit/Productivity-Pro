@@ -30,7 +30,8 @@ struct DocumentView: View {
     // MARK: Creation Values
     @State var addFolder: Bool = false
     @State var editFolder: Bool = false
-    @State var selectedFolder: ContentObject? = nil
+    @State var selectedObject: ContentObject? = nil
+    @State var moveContentObject: Bool = false
 
     var body: some View {
         ZStack {
@@ -91,9 +92,15 @@ struct DocumentView: View {
         )
         .modifier(
             RenameFolderView(
-                folder: selectedFolder, isPresented: $editFolder
+                folder: selectedObject, isPresented: $editFolder
             )
         )
+        .sheet(isPresented: $moveContentObject) {
+            ObjectPicker(
+                isPresented: $moveContentObject, 
+                selectedObject: $selectedObject
+            )
+        }
         
     }
     

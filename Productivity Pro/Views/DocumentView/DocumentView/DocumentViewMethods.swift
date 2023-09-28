@@ -9,6 +9,11 @@ import SwiftUI
 
 extension DocumentView {
     
+    func moveObject(_ parent: String) {
+        selectedObject?.parent = parent
+        selectedObject = nil
+    }
+    
     func getObjects(_ type: ContentObjectType?, isPinned: Bool) -> [ContentObject] {
         var objects = contentObjects.filter({
             $0.parent == parent &&

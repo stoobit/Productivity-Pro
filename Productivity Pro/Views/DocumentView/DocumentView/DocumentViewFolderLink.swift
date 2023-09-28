@@ -43,11 +43,12 @@ extension DocumentView {
             Section {
                 Button("Umbenennen", systemImage: "pencil") {
                     editFolder.toggle()
-                    selectedFolder = object
+                    selectedObject = object
                 }
                 
                 Button("Bewegen", systemImage: "folder") {
-                    
+                    selectedObject = object
+                    moveContentObject = true
                 }
             }
             
