@@ -27,11 +27,14 @@ struct DocumentView: View {
     @AppStorage("ppgrade")
     var grade: Int = 5
     
+    @Bindable var toolManager: ToolManager
+    
     // MARK: Creation Values
     @State var addFolder: Bool = false
     @State var editFolder: Bool = false
     @State var selectedObject: ContentObject? = nil
     @State var moveContentObject: Bool = false
+    @State var importFile: Bool = false
 
     var body: some View {
         ZStack {
@@ -54,7 +57,6 @@ struct DocumentView: View {
                         }
                     }
                 }
-                
                 Section {
                     if typeSorting {
                         ForEach(getObjects(.file, isPinned: false)) { object in
@@ -80,7 +82,8 @@ struct DocumentView: View {
             .toolbar {
                 FolderViewToolbar(
                     parent: parent,
-                    addFolder: $addFolder
+                    addFolder: $addFolder,
+                    importFile: $importFile
                 )
             }
             .navigationBarTitleDisplayMode(
@@ -107,6 +110,13 @@ struct DocumentView: View {
                 selectedObject: $selectedObject
             )
         }
+        .fileImporter(
+            isPresented: $importFile,
+            allowedContentTypes: [.pro],
+            allowsMultipleSelection: false
+        ) { result in
+            importFile(result: result)
+        }
         
     }
     
@@ -118,8 +128,4 @@ struct DocumentView: View {
         }
     }
     
-}
-
-#Preview {
-    DocumentViewContainer()
 }

@@ -9,6 +9,53 @@ import SwiftUI
 
 extension DocumentView {
     
+    func importFile(result: Result<[URL], any Error>) {
+        toolManager.showProgress = true
+        
+        switch result {
+        case .success(let urls):
+            for url in urls {
+                if url.startAccessingSecurityScopedResource() {
+                    do {
+                        
+                        let data = try Data(contentsOf: url)
+                        let title: String = String(url.lastPathComponent.dropLast(4))
+                        
+                        defer { url.stopAccessingSecurityScopedResource() }
+                        
+                        guard let decryptedData = Data(
+                            base64Encoded: data, options: .ignoreUnknownCharacters
+                        ) else {
+                            toolManager.showProgress = false
+                            return
+                        }
+                        
+                        let document: Document = try JSONDecoder().decode(
+                            Document.self, from: decryptedData
+                        )
+                        
+                        let file = ContentObject(
+                            id: UUID(),
+                            title: title,
+                            type: .file,
+                            parent: parent,
+                            created: Date(),
+                            grade: grade,
+                            document: document
+                        )
+                        
+                        context.insert(file)
+                        
+                    } catch { }
+                }
+            }
+        case .failure:
+            break
+        }
+        
+//        toolManager.showProgress = false
+    }
+    
     func moveObject(_ parent: String) {
         selectedObject?.parent = parent
         selectedObject = nil

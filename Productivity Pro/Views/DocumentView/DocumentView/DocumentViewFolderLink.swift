@@ -14,7 +14,8 @@ extension DocumentView {
         NavigationLink(destination: {
             DocumentView(
                 parent: object.id.uuidString, title: object.title,
-                contentObjects: contentObjects
+                contentObjects: contentObjects,
+                toolManager: toolManager
             )
         }) {
             HStack {

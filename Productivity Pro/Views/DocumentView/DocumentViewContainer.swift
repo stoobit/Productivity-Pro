@@ -9,9 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct DocumentViewContainer: View {
-    
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
+    
+    @Bindable var toolManager: ToolManager
     
     @AppStorage("ppgrade") var grade: Int = 5
     
@@ -19,7 +20,8 @@ struct DocumentViewContainer: View {
         NavigationStack {
             DocumentView(
                 parent: "root",title: "Notizen",
-                contentObjects: contentObjects
+                contentObjects: contentObjects,
+                toolManager: toolManager
             )
             .overlay {
                 Menu(content: {

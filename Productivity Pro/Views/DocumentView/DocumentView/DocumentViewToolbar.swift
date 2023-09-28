@@ -21,13 +21,14 @@ struct FolderViewToolbar: ToolbarContent {
     var typeSorting: Bool = true
     
     @Binding var addFolder: Bool
+    @Binding var importFile: Bool
     
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarTrailing) {
             Menu(content: {
                 Button("Datei importieren", systemImage: "doc") {
-                    
+                    importFile.toggle()
                 }
                 
                 Button("Backup importieren", systemImage: "externaldrive.badge.timemachine") {
@@ -85,8 +86,4 @@ struct FolderViewToolbar: ToolbarContent {
         }
         
     }
-}
-
-#Preview {
-    DocumentViewContainer()
 }

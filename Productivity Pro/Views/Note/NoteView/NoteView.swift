@@ -88,16 +88,6 @@ struct NoteView: View {
                         dismiss()
                     }
                 )
-                .overlay {
-                    if toolManager.showProgress {
-                        ProgressView("Processing...")
-                            .progressViewStyle(.circular)
-                            .tint(.accentColor)
-                            .frame(width: 175, height: 100)
-                            .background(.thickMaterial)
-                            .cornerRadius(13, antialiased: true)
-                    }
-                }
                 
             }
             .disabled(toolManager.showProgress)
