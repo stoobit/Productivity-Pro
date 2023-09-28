@@ -28,15 +28,6 @@ extension DocumentView {
             }
         }
         .frame(height: 30)
-        .swipeActions(edge: .leading, allowsFullSwipe: true) {
-            Button(role: .destructive, action: {
-                withAnimation(.bouncy) {
-                    deleteFolder(object)
-                }
-            }) {
-                Image(systemName: "trash.fill")
-            }
-        }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive, action: {
                 withAnimation(.bouncy) {
@@ -49,13 +40,23 @@ extension DocumentView {
             .tint(Color.accentColor)
         }
         .contextMenu {
-            Button("Umbenennen", systemImage: "pencil") {
-                editFolder.toggle()
-                selectedFolder = object
+            Section {
+                Button("Umbenennen", systemImage: "pencil") {
+                    editFolder.toggle()
+                    selectedFolder = object
+                }
+                
+                Button("Bewegen", systemImage: "folder") {
+                    
+                }
             }
             
-            Button("Bewegen", systemImage: "folder") {
-                
+            Button(role: .destructive, action: {
+                withAnimation(.bouncy) {
+                    deleteFolder(object)
+                }
+            }) {
+                Label("Löschen", systemImage: "trash")
             }
         }
         

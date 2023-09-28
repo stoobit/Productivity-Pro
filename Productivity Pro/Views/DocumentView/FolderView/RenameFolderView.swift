@@ -30,11 +30,13 @@ struct RenameFolderView: ViewModifier {
     }
     
     func editFolder() {
-        if title.trimmingCharacters(in: .whitespaces) != "" {
-            folder?.title = title
+        withAnimation(.bouncy) {
+            if title.trimmingCharacters(in: .whitespaces) != "" {
+                folder?.title = title
+            }
+            
+            title = ""
         }
-        
-        title = ""
     }
     
 }
