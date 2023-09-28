@@ -14,13 +14,18 @@ struct NoteView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.undoManager) var undoManager
     
-    @Binding var document: Document
-    @Binding var url: URL
-    
-    @Bindable var subviewManager: SubviewManager
-    @Bindable var toolManager: ToolManager
+    @State var subviewManager: SubviewManager = SubviewManager()
+    @State var toolManager: ToolManager = ToolManager()
     
     @State var drawingModel: PPDrawingModel = PPDrawingModel()
+    @State var document: Document = Document()
+    
+    var file: ContentObject
+    
+    init(file: ContentObject) {
+        self.file = file
+        self.document = file.document!
+    }
     
     var body: some View {
         GeometryReader { proxy in
@@ -57,7 +62,7 @@ struct NoteView: View {
                 }
                 .modifier(
                     NoteViewSheet(
-                        document: $document, url: $url,
+                        document: $document,
                         subviewManager: subviewManager,
                         toolManager: toolManager, 
                         proxy: proxy
@@ -65,26 +70,24 @@ struct NoteView: View {
                 )
                 .modifier(
                     NoteViewAlert(
-                        document: $document, url: $url,
+                        document: $document,
                         subviewManager: subviewManager, toolManager: toolManager
                     )
                 )
                 .modifier(
                     NoteViewOnChange(
-                        document: $document, url: $url, 
-                        subviewManager: subviewManager, toolManager: toolManager, 
-                        saveDocument: saveDocument, pageIndicator: pageIndicator,
+                        document: $document,
+                        subviewManager: subviewManager, toolManager: toolManager,
+                         pageIndicator: pageIndicator,
                         selectedImageDidChange: pickedImageDidChange
                     )
                 )
                 .modifier(
                     NoteViewToolbar(
                         document: $document,
-                        url: $url,
                         toolManager: toolManager,
                         subviewManager: subviewManager
                     ) {
-                        saveDocument()
                         dismiss()
                     }
                 )

@@ -20,12 +20,10 @@ struct NoteViewOnChange: ViewModifier {
         .autoconnect()
     
     @Binding var document: Document
-    @Binding var url: URL
     
     @Bindable var subviewManager: SubviewManager
     @Bindable var toolManager: ToolManager
     
-    let saveDocument: () -> Void
     let pageIndicator: () -> Void
     let selectedImageDidChange: () -> Void
     
@@ -38,23 +36,11 @@ struct NoteViewOnChange: ViewModifier {
                 pageIndicator()
                 undoManager?.removeAllActions()
             }
-            .onChange(of: scenePhase) {
-                saveDocument()
-            }
             .onChange(of: toolManager.selectedPage) { old, page in
                 selectedPageDidChange(index: page)
             }
-            .onReceive(timer) { input in
-                saveDocument()
-            }
-            .onReceive(NotificationCenter.default.publisher(
-                for: UIApplication.willTerminateNotification)
-            ) { output in
-                saveDocument()
-            }
             .onAppear { noteDidAppear() }
             .task {
-                addRecent()
                 pageIndicator()
                 loadMedia()
             }
@@ -67,17 +53,6 @@ struct NoteViewOnChange: ViewModifier {
         toolManager.selectedPage = document.note.pages.firstIndex(
             where: { $0.id == toolManager.selectedTab }
         )!
-    }
-    
-    func addRecent() {
-        withAnimation {
-            recents.removeAll(where: { $0 == url })
-            recents.insert(url, at: 0)
-            
-            while recents.count > rcount {
-                recents.removeLast()
-            }
-        }
     }
     
     func loadFirst() {

@@ -13,7 +13,6 @@ struct NoteViewSheet: ViewModifier {
     
     @Environment(\.undoManager) var undoManager
     @Binding var document: Document
-    @Binding var url: URL
     
     @Bindable var subviewManager: SubviewManager
     @Bindable var toolManager: ToolManager
@@ -86,16 +85,6 @@ struct NoteViewSheet: ViewModifier {
                             url: url
                         )
                     }
-                }
-            }
-            .fileMover(isPresented: $subviewManager.moveView, file: url) { result in
-                switch result {
-                case .success(let success):
-                       
-                    url = success
-                    
-                case .failure: break
-                    
                 }
             }
     }

@@ -12,16 +12,13 @@ struct DocumentViewContainer: View {
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     
-    @Bindable var toolManager: ToolManager
-    
     @AppStorage("ppgrade") var grade: Int = 5
     
     var body: some View {
         NavigationStack {
             DocumentView(
                 parent: "root",title: "Notizen",
-                contentObjects: contentObjects,
-                toolManager: toolManager
+                contentObjects: contentObjects
             )
             .overlay {
                 Menu(content: {

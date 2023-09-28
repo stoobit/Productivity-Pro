@@ -10,14 +10,6 @@ import PencilKit
 
 extension NoteTitleMenu {
     
-    func togglePin() {
-        if pinned.contains(url) {
-            pinned.removeAll(where: { $0 == url })
-        } else {
-            pinned.insert(url, at: 0)
-        }
-    }
-    
     func sharePDF() {
         toolManager.showProgress = true
         toolManager.selectedItem = nil
@@ -48,7 +40,7 @@ extension NoteTitleMenu {
     
     @MainActor func renderPDF() -> URL {
         
-        let name: String = url.deletingPathExtension().lastPathComponent
+        let name: String = URL.desktopDirectory.deletingPathExtension().lastPathComponent
         
         let url = URL.documentsDirectory.appending(
             path: "\(name).pdf"

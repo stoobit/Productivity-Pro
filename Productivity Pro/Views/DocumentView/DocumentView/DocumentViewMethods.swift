@@ -10,8 +10,6 @@ import SwiftUI
 extension DocumentView {
     
     func importFile(result: Result<[URL], any Error>) {
-        toolManager.showProgress = true
-        
         switch result {
         case .success(let urls):
             for url in urls {
@@ -26,7 +24,6 @@ extension DocumentView {
                         guard let decryptedData = Data(
                             base64Encoded: data, options: .ignoreUnknownCharacters
                         ) else {
-                            toolManager.showProgress = false
                             return
                         }
                         
@@ -52,8 +49,6 @@ extension DocumentView {
         case .failure:
             break
         }
-        
-//        toolManager.showProgress = false
     }
     
     func moveObject(_ parent: String) {
@@ -68,7 +63,7 @@ extension DocumentView {
             $0.isPinned == isPinned &&
             $0.inTrash == false
         })
-            
+        
         if type != .none {
             objects = objects.filter({ $0.type == type })
         }

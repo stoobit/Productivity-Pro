@@ -10,7 +10,6 @@ import SwiftUI
 struct NoteViewToolbar: ViewModifier {
     
     @Binding var document: Document
-    @Binding var url: URL
     
     @Bindable var toolManager: ToolManager
     @Bindable var subviewManager: SubviewManager
@@ -20,15 +19,13 @@ struct NoteViewToolbar: ViewModifier {
     func body(content: Content) -> some View {
         content
             .navigationBarBackButtonHidden()
-            .navigationTitle(url.lastPathComponent.string.dropLast(4))
+//            .navigationTitle(url.lastPathComponent.string.dropLast(4))
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
-            .navigationDocument(url)
             .toolbarRole(.editor)
             .toolbarTitleMenu {
                 NoteTitleMenu(
                     document: $document,
-                    url: $url,
                     subviewManager: subviewManager,
                     toolManager: toolManager
                 )
@@ -44,7 +41,7 @@ struct NoteViewToolbar: ViewModifier {
             }
             .toolbar {
                 NoteSideActions(
-                    document: $document, url: $url,
+                    document: $document,
                     toolManager: toolManager,
                     subviewManager: subviewManager,
                     dismissAction: action

@@ -19,7 +19,6 @@ struct ScrollViewWrapper: View {
     @Bindable var toolManager: ToolManager
     @Bindable var subviewManager: SubviewManager
     @Bindable var drawingModel: PPDrawingModel
-
     
     var scrollView: UIScrollView = UIScrollView()
     

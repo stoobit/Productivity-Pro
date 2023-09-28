@@ -14,7 +14,6 @@ struct NoteTitleMenu: View {
     @AppStorage("pinnedurls") var pinned: [URL] = []
     
     @Binding var document: Document
-    @Binding var url: URL
     
     @Bindable var subviewManager: SubviewManager
     @Bindable var toolManager: ToolManager
@@ -28,13 +27,6 @@ struct NoteTitleMenu: View {
             Button("Bewegen", systemImage: "folder", action: {
                 subviewManager.moveView.toggle()
             })
-        }
-        
-        Button(action: togglePin) {
-            Label(
-                pinned.contains(url) ? "Pin entfernen" : "Anpinnen",
-                systemImage: pinned.contains(url) ? "pin.slash" : "pin"
-            )
         }
         
         Section {

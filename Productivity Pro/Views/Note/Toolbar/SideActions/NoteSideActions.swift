@@ -13,7 +13,6 @@ struct NoteSideActions: ToolbarContent {
     @Environment(\.horizontalSizeClass) var hsc
     
     @Binding var document: Document
-    @Binding var url: URL
     
     @Bindable var toolManager: ToolManager
     @Bindable var subviewManager: SubviewManager

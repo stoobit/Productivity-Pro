@@ -27,8 +27,6 @@ struct DocumentView: View {
     @AppStorage("ppgrade")
     var grade: Int = 5
     
-    @Bindable var toolManager: ToolManager
-    
     // MARK: Creation Values
     @State var addFolder: Bool = false
     @State var editFolder: Bool = false

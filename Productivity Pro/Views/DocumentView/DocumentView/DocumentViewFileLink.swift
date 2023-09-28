@@ -13,6 +13,8 @@ extension DocumentView {
     func FileLink(for object: ContentObject) -> some View {
         NavigationLink(destination: {
             
+            NoteView(file: object)
+            
         }) {
             HStack {
                 Label(object.title, systemImage: "doc.fill")

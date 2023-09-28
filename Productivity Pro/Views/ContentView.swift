@@ -10,10 +10,7 @@ import SwiftData
 import UserNotifications
 
 struct ContentView: View {
-    @Environment(\.modelContext) var context
     @State var selectedTab: Int = 1
-    
-    @State var toolManager: ToolManager = ToolManager()
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -25,7 +22,7 @@ struct ContentView: View {
                     Label("Schreibtisch", systemImage: "lamp.desk")
                 }
             
-            DocumentViewContainer(toolManager: toolManager)
+            DocumentViewContainer()
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(1)
                 .tabItem {
@@ -61,16 +58,6 @@ struct ContentView: View {
         .scrollIndicators(.hidden)
         .onAppear {
             askNotificationPermission()
-        }
-        .overlay {
-            if toolManager.showProgress {
-                ProgressView("Processing...")
-                    .progressViewStyle(.circular)
-                    .tint(.accentColor)
-                    .frame(width: 175, height: 100)
-                    .background(.thickMaterial)
-                    .cornerRadius(13, antialiased: true)
-            }
         }
     }
     

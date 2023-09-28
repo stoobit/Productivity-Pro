@@ -11,19 +11,6 @@ import PDFKit
 
 extension NoteView {
     
-    func saveDocument() {
-        do {
-            if url.startAccessingSecurityScopedResource() {
-                let data = try JSONEncoder().encode(document)
-                let encryptedData = data.base64EncodedData()
-                
-                try encryptedData.write(to: url)
-            }
-            
-            url.stopAccessingSecurityScopedResource()
-        } catch { print("error") }
-    }
-    
     func isViewVisible(page: Page) -> Bool {
         var isVisible: Bool = false
         

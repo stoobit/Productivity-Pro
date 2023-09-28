@@ -11,7 +11,6 @@ struct NoteViewAlert: ViewModifier {
     @Environment(\.undoManager) var undoManager
     
     @Binding var document: Document
-    @Binding var url: URL
     
     @Bindable var subviewManager: SubviewManager
     @Bindable var toolManager: ToolManager
@@ -31,8 +30,8 @@ struct NoteViewAlert: ViewModifier {
             ) {
                 Text("Diese Aktion kann nicht rückgängig gemacht werde.")
             }
-            .alert(getRenameTitle().0, isPresented: $subviewManager.renameView) {
-                TextField(getRenameTitle().1, text: $renameTitle)
+            .alert("", isPresented: $subviewManager.renameView) {
+                TextField("", text: $renameTitle)
                 Button("Umbenennen", role: .cancel) { rename() }
             }
         
@@ -77,13 +76,8 @@ struct NoteViewAlert: ViewModifier {
         }
     }
     
-    func getRenameTitle() -> (String, String) {
-        let title = url.lastPathComponent.string.dropLast(4)
-        return ("\"\(title)\" umbennenen.", String(title))
-    }
-    
     func rename() {
-        exit(0)
+        
     }
     
 }
