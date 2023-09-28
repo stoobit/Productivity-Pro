@@ -17,8 +17,7 @@ import SwiftData
         parent: String,
         created: Date,
         grade: Int,
-        subject: UUID? = nil,
-        document: Document?
+        subject: UUID? = nil
     ) {
         self.id = id
         self.title = title
@@ -28,7 +27,6 @@ import SwiftData
         self.modified = created
         self.grade = grade
         self.subject = subject
-        self.document = document
     }
     
     @Attribute(.unique) public var id: UUID
@@ -43,7 +41,7 @@ import SwiftData
     var grade: Int
     var subject: UUID?
     
-    var document: Document?
+    var document: Document = Document()
     
     var isPinned: Bool = false
     var inTrash: Bool = false

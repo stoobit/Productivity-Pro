@@ -11,8 +11,8 @@ import SwiftData
 struct Document: Codable {
     var documentType: DocumentType = .none
     
-    var note: Note!
-    var realityNote: RealityNote!
+    var note: Note = Note()
+    var realityNote: RealityNote?
 }
 
 enum DocumentType: Codable {

@@ -38,8 +38,7 @@ struct AddFolderView: ViewModifier {
             type: .folder,
             parent: parent,
             created: Date(),
-            grade: grade,
-            document: nil
+            grade: grade
         )
         
         if title.trimmingCharacters(in: .whitespaces) != "" {

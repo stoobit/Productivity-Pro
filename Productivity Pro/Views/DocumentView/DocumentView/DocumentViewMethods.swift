@@ -37,10 +37,10 @@ extension DocumentView {
                             type: .file,
                             parent: parent,
                             created: Date(),
-                            grade: grade,
-                            document: document
+                            grade: grade
                         )
                         
+                        file.document = document
                         context.insert(file)
                         
                     } catch { }
