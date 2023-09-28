@@ -27,6 +27,7 @@ struct ObjectPicker: View {
             ObjectPickerList(
                 contentObjects: contentObjects,
                 selectedObject: $selectedObject,
+                isPresented: $isPresented,
                 parent: "root",
                 title: "Notizen"
             )

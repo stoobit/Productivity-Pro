@@ -10,6 +10,7 @@ import SwiftUI
 struct RenameFolderView: ViewModifier {
     @Environment(\.modelContext) var context
     
+    var contentObjects: [ContentObject]
     var folder: ContentObject?
     
     @State var title: String = ""
@@ -32,6 +33,19 @@ struct RenameFolderView: ViewModifier {
     func editFolder() {
         withAnimation(.bouncy) {
             if title.trimmingCharacters(in: .whitespaces) != "" {
+                let const: String = title
+                var index: Int = 1
+                
+                
+                while contentObjects
+                    .filter({ $0.type == .folder && $0.inTrash == false })
+                    .map({ $0.title }).contains(title) {
+                    
+                    title = "\(const) \(index)"
+                    index += 1
+                    
+                }
+                
                 folder?.title = title
             }
             

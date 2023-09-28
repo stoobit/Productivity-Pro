@@ -88,11 +88,17 @@ struct DocumentView: View {
             )
         }
         .modifier(
-            AddFolderView(parent: parent, isPresented: $addFolder)
+            AddFolderView(
+                parent: parent,
+                contentObjects: contentObjects, 
+                isPresented: $addFolder
+            )
         )
         .modifier(
             RenameFolderView(
-                folder: selectedObject, isPresented: $editFolder
+                contentObjects: contentObjects, 
+                folder: selectedObject,
+                isPresented: $editFolder
             )
         )
         .sheet(isPresented: $moveContentObject) {

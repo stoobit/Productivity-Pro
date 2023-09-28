@@ -31,30 +31,35 @@ struct ObjectPickerList: View {
             } else {
                 
                 List(objects(with: parent)) { object in
-                    NavigationLink(destination: {
+                    
+                    if object.type == .folder {
                         
-                        ObjectPickerList(
-                            contentObjects: contentObjects,
-                            selectedObject: $selectedObject,
-                            parent: object.id.uuidString,
-                            title: object.title
-                        )
-                        
-                    }) {
-                        if object.type == .folder {
+                        NavigationLink(destination: {
                             
+                            ObjectPickerList(
+                                contentObjects: contentObjects,
+                                selectedObject: $selectedObject,
+                                isPresented: $isPresented,
+                                parent: object.id.uuidString,
+                                title: object.title
+                            )
+                            
+                        }) {
                             Label(object.title, systemImage: "folder.fill")
                                 .frame(height: 30)
-                            
-                        } else if object.type == .file {
-                            
-                            Label(object.title, systemImage: "doc.fill")
-                                .frame(height: 30)
-                                .disabled(true)
-                            
                         }
+                        .disabled(selectedObject?.id == object.id)
+                        .frame(height: 30)
+                        
+                    } else if object.type == .file {
+                        
+                        Button(action: {}) {
+                            Label(object.title, systemImage: "doc.fill")
+                        }
+                        .frame(height: 30)
+                        .disabled(true)
+                        
                     }
-                    .frame(height: 30)
                 }
                 
             }
@@ -89,9 +94,11 @@ struct ObjectPickerList: View {
     }
     
     func move() {
-        selectedObject?.parent = parent
-        selectedObject = nil
-        isPresented = false
+        withAnimation(.bouncy) {
+            selectedObject?.parent = parent
+            selectedObject = nil
+            isPresented = false
+        }
     }
     
 }
