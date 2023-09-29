@@ -10,9 +10,14 @@ import SwiftData
 
 @Model final class PPNoteModel {
     var type: PPNoteType
+    var contentObject: ContentObject
     
-    init(type: PPNoteType = .standard) {
+    init(
+        type: PPNoteType = .standard,
+        contentObject: ContentObject
+    ) {
         self.type = type
+        self.contentObject = contentObject
     }
     
     @Relationship(inverse: \PPPageModel.note)

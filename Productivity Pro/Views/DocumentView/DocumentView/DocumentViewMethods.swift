@@ -40,7 +40,6 @@ extension DocumentView {
                             grade: grade
                         )
                         
-                        file.document = document
                         context.insert(file)
                         
                     } catch { }

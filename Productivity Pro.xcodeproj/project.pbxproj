@@ -121,7 +121,6 @@
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
 		BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */; };
 		BBA808552AC1F17500F9DFCA /* ContentObjectExportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808542AC1F17500F9DFCA /* ContentObjectExportable.swift */; };
-		BBA808572AC1F1BE00F9DFCA /* ContentObjectType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808562AC1F1BE00F9DFCA /* ContentObjectType.swift */; };
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* DocumentViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* DocumentViewToolbar.swift */; };
 		BBA8085F2AC2056100F9DFCA /* DocumentViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085E2AC2056100F9DFCA /* DocumentViewMethods.swift */; };
@@ -330,7 +329,6 @@
 		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* ImportMediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMediaHelper.swift; sourceTree = "<group>"; };
 		BBA808542AC1F17500F9DFCA /* ContentObjectExportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObjectExportable.swift; sourceTree = "<group>"; };
-		BBA808562AC1F1BE00F9DFCA /* ContentObjectType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObjectType.swift; sourceTree = "<group>"; };
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* DocumentViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewToolbar.swift; sourceTree = "<group>"; };
 		BBA8085E2AC2056100F9DFCA /* DocumentViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewMethods.swift; sourceTree = "<group>"; };
@@ -772,7 +770,7 @@
 		BB9A36482ABCD25900721C56 /* DataSystem */ = {
 			isa = PBXGroup;
 			children = (
-				BB9BFB632AC75C4A00255293 /* ContentObject */,
+				BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */,
 				BB9BFB5A2AC7463A00255293 /* PPNote */,
 			);
 			path = DataSystem;
@@ -783,7 +781,7 @@
 			children = (
 				BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */,
 				BB9BFB612AC7576300255293 /* PPPageModel.swift */,
-				BB9BFB672AC7683400255293 /* PPItemModel */,
+				BB9BFB672AC7683400255293 /* PPItemModels */,
 			);
 			path = PPNote;
 			sourceTree = "<group>";
@@ -797,21 +795,12 @@
 			path = BackupContainer;
 			sourceTree = "<group>";
 		};
-		BB9BFB632AC75C4A00255293 /* ContentObject */ = {
-			isa = PBXGroup;
-			children = (
-				BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */,
-				BBA808562AC1F1BE00F9DFCA /* ContentObjectType.swift */,
-			);
-			path = ContentObject;
-			sourceTree = "<group>";
-		};
-		BB9BFB672AC7683400255293 /* PPItemModel */ = {
+		BB9BFB672AC7683400255293 /* PPItemModels */ = {
 			isa = PBXGroup;
 			children = (
 				BB9BFB682AC7684300255293 /* PPItemModel.swift */,
 			);
-			path = PPItemModel;
+			path = PPItemModels;
 			sourceTree = "<group>";
 		};
 		BB9CACE52A2687CE001909FD /* Regular */ = {
@@ -1310,7 +1299,6 @@
 				BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */,
 				BB72A28E29760327000E9753 /* ToolView.swift in Sources */,
 				BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */,
-				BBA808572AC1F1BE00F9DFCA /* ContentObjectType.swift in Sources */,
 				BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */,
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,

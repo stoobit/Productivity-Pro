@@ -98,8 +98,6 @@ struct NoteView: View {
             }
             
         }
-        .onAppear {
-            document = file.document
-        }
+        .onAppear {}
     }
 }

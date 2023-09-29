@@ -41,8 +41,14 @@ import SwiftData
     var grade: Int
     var subject: UUID?
     
-    var document: Document = Document()
-    
     var isPinned: Bool = false
     var inTrash: Bool = false
+    
+    @Relationship(inverse: \PPNoteModel.contentObject)
+    var note: ContentObject?
+}
+
+enum ContentObjectType: Comparable, Codable {
+    case file
+    case folder
 }
