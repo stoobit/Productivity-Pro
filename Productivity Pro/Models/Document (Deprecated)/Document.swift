@@ -11,7 +11,7 @@ import SwiftData
 struct Document: Codable {
     var documentType: DocumentType = .none
     
-    var note: Note = Note()
+    var note: Note!
     var realityNote: RealityNote?
 }
 

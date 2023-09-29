@@ -13,7 +13,9 @@ extension DocumentView {
     func FileLink(for object: ContentObject) -> some View {
         NavigationLink(destination: {
             
-            Text("\(object.document.documentType.hashValue)")
+//            if object.document.documentType == .note {
+//                Text("note")
+//            }
             
         }) {
             HStack {

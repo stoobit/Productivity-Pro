@@ -84,7 +84,7 @@ struct BackupSettings: View {
         var backup = ProductivityBackup()
         
         for contentObject in contentObjects {
-            let objectBackup = ContentObjectBackup(
+            let objectBackup = ContentObjectExportable(
                 id: contentObject.id,
                 title: contentObject.title,
                 type: contentObject.type,

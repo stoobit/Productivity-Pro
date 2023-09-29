@@ -28,8 +28,13 @@ extension UTType {
 }
 
 extension UTType {
+    static var pronote: UTType {
+        UTType(importedAs: "com.till-bruegmann.Productivity-Pro.pronote")
+    }
+}
+
+extension UTType {
     static var probackup: UTType {
         UTType(importedAs: "com.till-bruegmann.Productivity-Pro.probackup")
     }
 }
-

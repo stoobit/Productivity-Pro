@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ContentObjectBackup: Identifiable, Codable {
+struct ContentObjectExportable: Identifiable, Codable {
     var id: UUID
     
     var title: String
@@ -20,6 +20,6 @@ struct ContentObjectBackup: Identifiable, Codable {
     var grade: Int
     var subject: UUID?
     
-    var document: Document?
+//    var note: 
     var isPinned: Bool
 }
