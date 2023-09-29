@@ -112,6 +112,8 @@
 		BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364F2ABCFD2A00721C56 /* Calendar.swift */; };
 		BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */; };
 		BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB612AC7576300255293 /* PPPageModel.swift */; };
+		BB9BFB662AC7672C00255293 /* PPCanvasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB652AC7672C00255293 /* PPCanvasModel.swift */; };
+		BB9BFB692AC7684300255293 /* PPItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB682AC7684300255293 /* PPItemModel.swift */; };
 		BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */; };
 		BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CC947293FD45E0094446A /* ShareSheet.swift */; };
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
@@ -318,6 +320,8 @@
 		BB9A364F2ABCFD2A00721C56 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNoteModel.swift; sourceTree = "<group>"; };
 		BB9BFB612AC7576300255293 /* PPPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPageModel.swift; sourceTree = "<group>"; };
+		BB9BFB652AC7672C00255293 /* PPCanvasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasModel.swift; sourceTree = "<group>"; };
+		BB9BFB682AC7684300255293 /* PPItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPItemModel.swift; sourceTree = "<group>"; };
 		BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorContainerView.swift; sourceTree = "<group>"; };
 		BB9CC947293FD45E0094446A /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
@@ -779,6 +783,7 @@
 			children = (
 				BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */,
 				BB9BFB612AC7576300255293 /* PPPageModel.swift */,
+				BB9BFB672AC7683400255293 /* PPItemModel */,
 			);
 			path = PPNote;
 			sourceTree = "<group>";
@@ -799,6 +804,14 @@
 				BBA808562AC1F1BE00F9DFCA /* ContentObjectType.swift */,
 			);
 			path = ContentObject;
+			sourceTree = "<group>";
+		};
+		BB9BFB672AC7683400255293 /* PPItemModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB9BFB682AC7684300255293 /* PPItemModel.swift */,
+			);
+			path = PPItemModel;
 			sourceTree = "<group>";
 		};
 		BB9CACE52A2687CE001909FD /* Regular */ = {
@@ -1055,6 +1068,7 @@
 				BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */,
 				BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */,
 				BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */,
+				BB9BFB652AC7672C00255293 /* PPCanvasModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1272,6 +1286,7 @@
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
 				BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */,
+				BB9BFB692AC7684300255293 /* PPItemModel.swift in Sources */,
 				BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
@@ -1299,6 +1314,7 @@
 				BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */,
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
+				BB9BFB662AC7672C00255293 /* PPCanvasModel.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */,
