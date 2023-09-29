@@ -56,7 +56,7 @@ struct FolderViewToolbar: ToolbarContent {
                 .tint(Color.red)
             
             NavigationLink(destination: {
-                
+                SearchView()
             }) { Label("Suchen", systemImage: "magnifyingglass") }
             
             Button(action: { dismiss() }) {
