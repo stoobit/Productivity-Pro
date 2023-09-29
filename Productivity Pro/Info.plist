@@ -8,7 +8,7 @@
 			<key>CFBundleTypeIconsFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Notiz</string>
+			<string>Notiz (1.0)</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -69,7 +69,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Notiz</string>
+			<string>Notiz (1.0)</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
@@ -112,7 +112,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Notiz</string>
+			<string>Notiz (1.0)</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
