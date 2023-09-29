@@ -29,9 +29,12 @@ struct DocumentView: View {
     
     // MARK: Creation Values
     @State var addFolder: Bool = false
-    @State var editFolder: Bool = false
+    
     @State var selectedObject: ContentObject? = nil
+    @State var renameContentObject: Bool = false
     @State var moveContentObject: Bool = false
+    
+    @State var createNote: Bool = false
     @State var importFile: Bool = false
 
     var body: some View {
@@ -81,7 +84,8 @@ struct DocumentView: View {
                 FolderViewToolbar(
                     parent: parent,
                     addFolder: $addFolder,
-                    importFile: $importFile
+                    importFile: $importFile, 
+                    createNote: $createNote
                 )
             }
             .navigationBarTitleDisplayMode(
@@ -96,10 +100,10 @@ struct DocumentView: View {
             )
         )
         .modifier(
-            RenameFolderView(
+            RenameContentObjectView(
                 contentObjects: contentObjects, 
-                folder: selectedObject,
-                isPresented: $editFolder
+                object: selectedObject,
+                isPresented: $renameContentObject
             )
         )
         .sheet(isPresented: $moveContentObject) {
@@ -107,6 +111,9 @@ struct DocumentView: View {
                 isPresented: $moveContentObject, 
                 selectedObject: $selectedObject
             )
+        }
+        .sheet(isPresented: $createNote) {
+            
         }
         .fileImporter(
             isPresented: $importFile,

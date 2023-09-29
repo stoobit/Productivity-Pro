@@ -23,6 +23,8 @@ struct FolderViewToolbar: ToolbarContent {
     @Binding var addFolder: Bool
     @Binding var importFile: Bool
     
+    @Binding var createNote: Bool
+    
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarTrailing) {
@@ -42,8 +44,8 @@ struct FolderViewToolbar: ToolbarContent {
                 addFolder = true
             }
             
-            Button("Datei erstellen", systemImage: "plus") {
-                
+            Button("Notiz erstellen", systemImage: "plus") {
+                createNote.toggle()
             }
         }
         

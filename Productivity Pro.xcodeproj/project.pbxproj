@@ -143,7 +143,7 @@
 		BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */; };
 		BBBED81E2A5DDA2B00865210 /* NewDocumentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */; };
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
-		BBC254132AC5E89000B51175 /* RenameFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254122AC5E89000B51175 /* RenameFolderView.swift */; };
+		BBC254132AC5E89000B51175 /* RenameContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254122AC5E89000B51175 /* RenameContentObject.swift */; };
 		BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254142AC60D2400B51175 /* ObjectPickerList.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
 		BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9732A18F09100D496CB /* ItemView.swift */; };
@@ -350,7 +350,7 @@
 		BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWrapper.swift; sourceTree = "<group>"; };
 		BBBED81D2A5DDA2B00865210 /* NewDocumentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDocumentMethods.swift; sourceTree = "<group>"; };
 		BBBFB834299FB75400FA236F /* DragItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragItemModifier.swift; sourceTree = "<group>"; };
-		BBC254122AC5E89000B51175 /* RenameFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameFolderView.swift; sourceTree = "<group>"; };
+		BBC254122AC5E89000B51175 /* RenameContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameContentObject.swift; sourceTree = "<group>"; };
 		BBC254142AC60D2400B51175 /* ObjectPickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPickerList.swift; sourceTree = "<group>"; };
 		BBC2C90629C5CFB40044B201 /* SnapItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapItemView.swift; sourceTree = "<group>"; };
 		BBC7B9732A18F09100D496CB /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
@@ -649,6 +649,7 @@
 				BB844FBD2AC2385F00EE9C93 /* DocumentViewFolderLink.swift */,
 				BB7984672AC37E1E00CF3D24 /* DocumentViewFileLink.swift */,
 				BBA8085A2AC1F84D00F9DFCA /* DocumentViewToolbar.swift */,
+				BBC254122AC5E89000B51175 /* RenameContentObject.swift */,
 			);
 			path = DocumentView;
 			sourceTree = "<group>";
@@ -657,7 +658,6 @@
 			isa = PBXGroup;
 			children = (
 				BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */,
-				BBC254122AC5E89000B51175 /* RenameFolderView.swift */,
 			);
 			path = FolderView;
 			sourceTree = "<group>";
@@ -1179,7 +1179,7 @@
 				BBBCACB42A25461900C23B2C /* OldCalculatorView.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
-				BBC254132AC5E89000B51175 /* RenameFolderView.swift in Sources */,
+				BBC254132AC5E89000B51175 /* RenameContentObject.swift in Sources */,
 				BB1DF6062A686D59006F85CE /* PPDrawingBar.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */,
 				BBF930732A67437900AD3958 /* PPColor.swift in Sources */,

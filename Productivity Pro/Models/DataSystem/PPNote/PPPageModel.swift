@@ -35,8 +35,9 @@ import SwiftData
     var isPortrait: Bool = false
     var media: Data? = nil
     
+    @Relationship(inverse: \PPCanvasModel.page)
+    var ppCanvas: PPCanvasModel?
     var pkCanvas: Data = Data()
-    var ppCanvas: PPCanvasModel = PPCanvasModel()
  
     @Relationship(inverse: \PPItemModel.page)
     var items: [PPItemModel] = []

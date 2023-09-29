@@ -7,19 +7,22 @@
 
 import SwiftUI
 
-struct RenameFolderView: ViewModifier {
+struct RenameContentObjectView: ViewModifier {
     @Environment(\.modelContext) var context
     
     var contentObjects: [ContentObject]
-    var folder: ContentObject?
+    var object: ContentObject?
     
     @State var title: String = ""
     @Binding var isPresented: Bool
     
     func body(content: Content) -> some View {
         content
-            .alert("Ordner bearbeiten", isPresented: $isPresented) {
-                TextField("\(folder?.title ?? "")", text: $title)
+            .alert(
+                "\(object?.type == .folder ? "Ordner" : "Notiz") bearbeiten",
+                isPresented: $isPresented
+            ) {
+                TextField("\(object?.title ?? "")", text: $title)
                 
                 Button("Abbrechen", role: .cancel) {
                     title = ""
@@ -46,7 +49,7 @@ struct RenameFolderView: ViewModifier {
                     
                 }
                 
-                folder?.title = title
+                object?.title = title
             }
             
             title = ""

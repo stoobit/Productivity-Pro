@@ -42,7 +42,7 @@ extension DocumentView {
         .contextMenu {
             Section {
                 Button("Umbenennen", systemImage: "pencil") {
-                    editFolder.toggle()
+                    renameContentObject.toggle()
                     selectedObject = object
                 }
                 
@@ -54,7 +54,7 @@ extension DocumentView {
             
             Button(role: .destructive, action: {
                 withAnimation(.bouncy) {
-                    deleteFolder(object)
+                    deleteObject(object)
                 }
             }) {
                 Label("Löschen", systemImage: "trash")
@@ -62,42 +62,4 @@ extension DocumentView {
         }
         
     }
-    
-    func deleteFolder(_ object: ContentObject) {
-        var isDeleting: Bool = true
-        object.inTrash = true
-        
-        var parents: [[String]] = [[object.id.uuidString]]
-        var index: Int = 0
-        
-        
-        while isDeleting {
-            if index < parents.count {
-                
-                for p in parents[index] {
-                    parents.append([])
-                    
-                    let filteredObjects = contentObjects.filter({
-                        $0.parent == p
-                    })
-                    
-                    for filteredObject in filteredObjects {
-                        filteredObject.inTrash = true
-                        
-                        if parents.indices.contains(index + 1) {
-                            parents[index + 1].append(
-                                filteredObject.id.uuidString
-                            )
-                        }
-                    }
-                }
-                
-                index += 1
-                
-            } else {
-                isDeleting = false
-            }
-        }
-    }
-    
 }

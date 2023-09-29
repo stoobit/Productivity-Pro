@@ -45,7 +45,7 @@ import SwiftData
     var inTrash: Bool = false
     
     @Relationship(inverse: \PPNoteModel.contentObject)
-    var note: ContentObject?
+    var note: PPNoteModel?
 }
 
 enum ContentObjectType: Comparable, Codable {
