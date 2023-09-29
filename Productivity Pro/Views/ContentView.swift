@@ -22,7 +22,7 @@ struct ContentView: View {
                     Label("Schreibtisch", systemImage: "lamp.desk")
                 }
             
-            DocumentViewContainer()
+            FileSystemView()
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(1)
                 .tabItem {

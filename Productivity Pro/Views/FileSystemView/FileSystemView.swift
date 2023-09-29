@@ -1,5 +1,5 @@
 //
-//  DocumentView.swift
+//  FileSystemView.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 24.09.23.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct DocumentViewContainer: View {
+struct FileSystemView: View {
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     

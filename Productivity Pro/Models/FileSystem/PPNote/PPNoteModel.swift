@@ -20,7 +20,7 @@ import SwiftData
         self.contentObject = contentObject
     }
     
-    @Relationship(inverse: \PPPageModel.note)
+    @Relationship(deleteRule: .cascade, inverse: \PPPageModel.note)
     var pages: [PPPageModel] = []
 }
 
