@@ -111,7 +111,7 @@
 		BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364D2ABCFA4900721C56 /* HomeworkListMethods.swift */; };
 		BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364F2ABCFD2A00721C56 /* Calendar.swift */; };
 		BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */; };
-		BB9BFB5E2AC748AB00255293 /* PPNoteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB5D2AC748AB00255293 /* PPNoteType.swift */; };
+		BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB612AC7576300255293 /* PPPageModel.swift */; };
 		BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */; };
 		BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CC947293FD45E0094446A /* ShareSheet.swift */; };
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
@@ -317,7 +317,7 @@
 		BB9A364D2ABCFA4900721C56 /* HomeworkListMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkListMethods.swift; sourceTree = "<group>"; };
 		BB9A364F2ABCFD2A00721C56 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNoteModel.swift; sourceTree = "<group>"; };
-		BB9BFB5D2AC748AB00255293 /* PPNoteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNoteType.swift; sourceTree = "<group>"; };
+		BB9BFB612AC7576300255293 /* PPPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPageModel.swift; sourceTree = "<group>"; };
 		BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorContainerView.swift; sourceTree = "<group>"; };
 		BB9CC947293FD45E0094446A /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
@@ -632,7 +632,7 @@
 			children = (
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels (Intern) */,
 				BB4A93D52AAF3BED00C3AED6 /* OrganizationModels */,
-				BB9A36482ABCD25900721C56 /* ContentObjects */,
+				BB9A36482ABCD25900721C56 /* DataSystem */,
 				BB7B09CC2AC1CC4D0058A6A9 /* ExportableFiles */,
 				BB9DF5B328E067D600AC988D /* Document (Deprecated) */,
 			);
@@ -765,31 +765,22 @@
 			path = PencilKitView;
 			sourceTree = "<group>";
 		};
-		BB9A36482ABCD25900721C56 /* ContentObjects */ = {
+		BB9A36482ABCD25900721C56 /* DataSystem */ = {
 			isa = PBXGroup;
 			children = (
-				BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */,
-				BBA808562AC1F1BE00F9DFCA /* ContentObjectType.swift */,
+				BB9BFB632AC75C4A00255293 /* ContentObject */,
 				BB9BFB5A2AC7463A00255293 /* PPNote */,
-				BB9BFB5F2AC749D000255293 /* PPPage */,
 			);
-			path = ContentObjects;
+			path = DataSystem;
 			sourceTree = "<group>";
 		};
 		BB9BFB5A2AC7463A00255293 /* PPNote */ = {
 			isa = PBXGroup;
 			children = (
 				BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */,
-				BB9BFB5D2AC748AB00255293 /* PPNoteType.swift */,
+				BB9BFB612AC7576300255293 /* PPPageModel.swift */,
 			);
 			path = PPNote;
-			sourceTree = "<group>";
-		};
-		BB9BFB5F2AC749D000255293 /* PPPage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PPPage;
 			sourceTree = "<group>";
 		};
 		BB9BFB602AC74A6900255293 /* BackupContainer */ = {
@@ -799,6 +790,15 @@
 				BBA808542AC1F17500F9DFCA /* ContentObjectExportable.swift */,
 			);
 			path = BackupContainer;
+			sourceTree = "<group>";
+		};
+		BB9BFB632AC75C4A00255293 /* ContentObject */ = {
+			isa = PBXGroup;
+			children = (
+				BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */,
+				BBA808562AC1F1BE00F9DFCA /* ContentObjectType.swift */,
+			);
+			path = ContentObject;
 			sourceTree = "<group>";
 		};
 		BB9CACE52A2687CE001909FD /* Regular */ = {
@@ -1248,6 +1248,7 @@
 				BB68082B29FDD2A90026FDDF /* NSAttributedString.swift in Sources */,
 				BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */,
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
+				BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */,
 				BB2CFEFD2A6EB3470035511A /* PPControlBarMethods.swift in Sources */,
 				BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
@@ -1270,7 +1271,6 @@
 				BBBBAC4C2AB8E887008CB9DA /* ShareView.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
-				BB9BFB5E2AC748AB00255293 /* PPNoteType.swift in Sources */,
 				BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */,
 				BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,

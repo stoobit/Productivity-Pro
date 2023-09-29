@@ -81,20 +81,11 @@ struct BackupSettings: View {
     
     func createBackup() {
         backingUp = true
-        var backup = ProductivityBackup()
+        var backup = DataSystemExportable()
         
         for contentObject in contentObjects {
             let objectBackup = ContentObjectExportable(
-                id: contentObject.id,
-                title: contentObject.title,
-                type: contentObject.type,
-                parent: contentObject.parent,
-                created: contentObject.created,
-                modified: contentObject.modified,
-                grade: contentObject.grade,
-                subject: contentObject.subject,
-                document: contentObject.document,
-                isPinned: contentObject.isPinned
+                id: contentObject.id
             )
             
             backup.contentObjects.append(objectBackup)

@@ -15,5 +15,13 @@ import SwiftData
         self.type = type
     }
     
-    
+    @Relationship(inverse: \PPPageModel.note)
+    var pages: [PPPageModel] = []
+}
+
+enum PPNoteType: Codable {
+    case standard
+    case whiteboard
+    case markdown
+    case reality
 }
