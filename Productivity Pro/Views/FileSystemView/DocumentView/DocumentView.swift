@@ -85,7 +85,8 @@ struct DocumentView: View {
                     parent: parent,
                     addFolder: $addFolder,
                     importFile: $importFile, 
-                    createNote: $createNote
+                    createNote: $createNote,
+                    contentObjects: contentObjects
                 )
             }
             .navigationBarTitleDisplayMode(

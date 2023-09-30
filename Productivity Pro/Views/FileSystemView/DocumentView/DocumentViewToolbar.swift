@@ -25,6 +25,8 @@ struct FolderViewToolbar: ToolbarContent {
     
     @Binding var createNote: Bool
     
+    var contentObjects: [ContentObject]
+    
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarTrailing) {
@@ -56,7 +58,7 @@ struct FolderViewToolbar: ToolbarContent {
                 .tint(Color.red)
             
             NavigationLink(destination: {
-                SearchView()
+                SearchView(contentObjects: contentObjects)
             }) { Label("Suchen", systemImage: "magnifyingglass") }
             
             Button(action: { dismiss() }) {
