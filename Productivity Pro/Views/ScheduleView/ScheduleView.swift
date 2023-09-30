@@ -39,21 +39,11 @@ struct ScheduleView: View {
                 }
                 .padding(.horizontal, 7)
             } else {
-                
-                VStack {
-                    Image(systemName: "tray.2")
-                        .font(.system(size: 100))
-                    
-                    Text("Du hast noch keine Fächer erstellt.")
-                        .font(.title.bold())
-                        .padding([.top, .horizontal])
-                        .multilineTextAlignment(.center)
-                    
-                    Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
-                        .foregroundStyle(Color.primary.tertiary)
-                }
-                .foregroundStyle(Color.accentColor.secondary)
-                
+                ContentUnavailableView(
+                    "Du hast noch keine Fächer erstellt.",
+                    systemImage: "tray.2",
+                    description: Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
+                )
             }
         }
     }
