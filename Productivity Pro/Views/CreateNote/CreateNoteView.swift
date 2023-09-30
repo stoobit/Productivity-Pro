@@ -29,21 +29,29 @@ struct CreateNoteView: View {
     @State var scanDocument: Bool = false
     @State var importPDF: Bool = false
     
+    @State var title: String = ""
+    
     var body: some View {
         NavigationStack {
             ZStack {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
                 
-                ViewThatFits(in: .horizontal) {
-                    ViewThatFits(in: .vertical) {
-                        CNGrid(axis: .horizontal, showIcon: true)
-                        CNGrid(axis: .horizontal, showIcon: false)
-                    }
+                VStack {
+                    TextField("Titel", text: $title, prompt: Text("hello"))
+                        .textFieldStyle(.roundedBorder)
+                        .frame(width: 175)
                     
-                    ViewThatFits(in: .vertical) {
-                        CNGrid(axis: .vertical, showIcon: true)
-                        CNGrid(axis: .vertical, showIcon: false)
+                    ViewThatFits(in: .horizontal) {
+                        ViewThatFits(in: .vertical) {
+                            CNGrid(axis: .horizontal, showIcon: true)
+                            CNGrid(axis: .horizontal, showIcon: false)
+                        }
+                        
+                        ViewThatFits(in: .vertical) {
+                            CNGrid(axis: .vertical, showIcon: true)
+                            CNGrid(axis: .vertical, showIcon: false)
+                        }
                     }
                 }
             }

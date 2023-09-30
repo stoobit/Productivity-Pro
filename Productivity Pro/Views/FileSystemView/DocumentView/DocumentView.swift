@@ -29,11 +29,6 @@ struct DocumentView: View {
     
     // MARK: Creation Values
     @State var addFolder: Bool = false
-    
-    @State var selectedObject: ContentObject? = nil
-    @State var renameContentObject: Bool = false
-    @State var moveContentObject: Bool = false
-    
     @State var createNote: Bool = false
     @State var importFile: Bool = false
 
@@ -44,37 +39,37 @@ struct DocumentView: View {
             
             List {
                 Section {
-                    if typeSorting {
-                        ForEach(getObjects(.file, isPinned: true)) { object in
-                            ObjectLink(for: object)
-                        }
-                        
-                        ForEach(getObjects(.folder, isPinned: true)) { object in
-                            ObjectLink(for: object)
-                        }
-                    } else {
-                        ForEach(getObjects(.none, isPinned: true)) { object in
-                            ObjectLink(for: object)
-                        }
+                    ForEach(
+                        getObjects(typeSorting == true ? .file : .all, isPinned: true)
+                    ) { object in
+                        ObjectLink(for: object)
+                    }
+                    
+                    ForEach(
+                        getObjects(typeSorting == true ? .folder : .none, isPinned: true)
+                    ) { object in
+                        ObjectLink(for: object)
                     }
                 }
+                
                 Section {
-                    if typeSorting {
-                        ForEach(getObjects(.file, isPinned: false)) { object in
-                            ObjectLink(for: object)
-                        }
-                        
-                        ForEach(getObjects(.folder, isPinned: false)) { object in
-                            ObjectLink(for: object)
-                        }
-                    } else {
-                        ForEach(getObjects(.none, isPinned: false)) { object in
-                            ObjectLink(for: object)
-                        }
+                    ForEach(
+                        getObjects(typeSorting == true ? .file : .all, isPinned: false)
+                    ) { object in
+                        ObjectLink(for: object)
+                    }
+                    
+                    ForEach(
+                        getObjects(typeSorting == true ? .folder : .none, isPinned: false)
+                    ) { object in
+                        ObjectLink(for: object)
                     }
                 }
             }
             .animation(.bouncy, value: grade)
+            .animation(.bouncy, value: sortType)
+            .animation(.bouncy, value: typeSorting)
+            .animation(.bouncy, value: isReverse)
             .scrollContentBackground(.hidden)
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle(title)
@@ -100,19 +95,6 @@ struct DocumentView: View {
                 isPresented: $addFolder
             )
         )
-        .modifier(
-            RenameContentObjectView(
-                contentObjects: contentObjects, 
-                object: selectedObject,
-                isPresented: $renameContentObject
-            )
-        )
-        .sheet(isPresented: $moveContentObject) {
-            ObjectPicker(
-                isPresented: $moveContentObject, 
-                selectedObject: $selectedObject
-            )
-        }
         .sheet(isPresented: $createNote) {
             CreateNoteView(isPresented: $createNote, parent: parent)
         }
@@ -128,9 +110,17 @@ struct DocumentView: View {
     
     @ViewBuilder func ObjectLink(for object: ContentObject) -> some View {
         if object.type == .folder {
-            FolderLink(for: object)
+            DocumentViewFolderLink(
+                contentObjects: contentObjects, object: object
+            ) {
+                deleteObject(object)
+            }
         } else if object.type == .file {
-            FileLink(for: object)
+            DocumentViewFileLink(
+                contentObjects: contentObjects, object: object
+            ) {
+                deleteObject(object)
+            }
         }
     }
     

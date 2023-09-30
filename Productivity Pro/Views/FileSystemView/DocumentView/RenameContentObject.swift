@@ -11,18 +11,18 @@ struct RenameContentObjectView: ViewModifier {
     @Environment(\.modelContext) var context
     
     var contentObjects: [ContentObject]
-    var object: ContentObject?
+    var object: ContentObject
     
-    @State var title: String = ""
     @Binding var isPresented: Bool
+    @State var title: String = ""
     
     func body(content: Content) -> some View {
         content
             .alert(
-                "\(object?.type == .folder ? "Ordner" : "Notiz") bearbeiten",
+                "\(object.type == .folder ? "Ordner" : "Notiz") bearbeiten",
                 isPresented: $isPresented
             ) {
-                TextField("\(object?.title ?? "")", text: $title)
+                TextField("\(object.title)", text: $title)
                 
                 Button("Abbrechen", role: .cancel) {
                     title = ""
@@ -39,9 +39,10 @@ struct RenameContentObjectView: ViewModifier {
                 let const: String = title
                 var index: Int = 1
                 
-                
                 while contentObjects
-                    .filter({ $0.type == .folder && $0.inTrash == false })
+                    .filter(
+                        { $0.type == object.type && $0.inTrash == false }
+                    )
                     .map({ $0.title }).contains(title) {
                     
                     title = "\(const) \(index)"
@@ -49,9 +50,10 @@ struct RenameContentObjectView: ViewModifier {
                     
                 }
                 
-                object?.title = title
+                object.title = title
             }
             
+            object.modified = Date()
             title = ""
         }
     }

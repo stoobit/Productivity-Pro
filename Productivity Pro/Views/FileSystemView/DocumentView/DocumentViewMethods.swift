@@ -65,7 +65,7 @@ extension DocumentView {
                             return
                         }
                         
-                        let document: Document = try JSONDecoder().decode(
+                        let _ : Document = try JSONDecoder().decode(
                             Document.self, from: decryptedData
                         )
                         
@@ -88,12 +88,11 @@ extension DocumentView {
         }
     }
     
-    func moveObject(_ parent: String) {
-        selectedObject?.parent = parent
-        selectedObject = nil
-    }
-    
     func getObjects(_ type: ContentObjectType?, isPinned: Bool) -> [ContentObject] {
+        if type == .none {
+            return []
+        }
+        
         var objects = contentObjects.filter({
             $0.parent == parent &&
             $0.grade == grade &&
@@ -101,8 +100,10 @@ extension DocumentView {
             $0.inTrash == false
         })
         
-        if type != .none {
-            objects = objects.filter({ $0.type == type })
+        if type == .file {
+            objects = objects.filter({ $0.type == .file })
+        } else if type == .folder {
+            objects = objects.filter({ $0.type == .folder })
         }
         
         if isReverse == false {

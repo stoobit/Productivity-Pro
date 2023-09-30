@@ -51,4 +51,5 @@ import SwiftData
 enum ContentObjectType: Comparable, Codable {
     case file
     case folder
+    case all
 }

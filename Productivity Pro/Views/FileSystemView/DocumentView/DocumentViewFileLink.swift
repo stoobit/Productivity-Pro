@@ -7,57 +7,66 @@
 
 import SwiftUI
 
-extension DocumentView {
+struct DocumentViewFileLink: View {
+    var contentObjects: [ContentObject]
     
-    @ViewBuilder
-    func FileLink(for object: ContentObject) -> some View {
-            NavigationLink(destination: {
-                
+    var object: ContentObject
+    let delete: () -> Void
+    
+    @State var isMove: Bool = false
+    @State var isRename: Bool = false
+    
+    var body: some View {
+        NavigationLink(destination: {
+            
+        }) {
+            ContentObjectLink(obj: object)
+        }
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button(role: .destructive, action: {
+                withAnimation(.bouncy) {
+                    object.isPinned.toggle()
+                }
             }) {
-                ContentObjectLink(obj: object)
+                Image(systemName: !object.isPinned ? "pin.fill" : "pin.slash.fill"
+                )
             }
-            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                Button(role: .destructive, action: {
-                    withAnimation(.bouncy) {
-                        object.isPinned.toggle()
-                    }
-                }) {
-                    Image(systemName: !object.isPinned ? "pin.fill" : "pin.slash.fill"
-                    )
-                }
-                .tint(Color.accentColor)
-            }
-            .contextMenu {
-                Section {
-                    Button("Umbenennen", systemImage: "pencil") {
-                        renameContentObject.toggle()
-                        selectedObject = object
-                    }
-                    
-                    Button("Bewegen", systemImage: "folder") {
-                        selectedObject = object
-                        moveContentObject = true
-                    }
+            .tint(Color.accentColor)
+        }
+        .contextMenu {
+            Section {
+                Button("Umbenennen", systemImage: "pencil") {
+                    isRename = true
                 }
                 
-                Section {
-                    Button(action: {
-                       
-                    }) {
-                        Label("Teilen", systemImage: "square.and.arrow.up")
-                    }
-                }
-                
-                Button(role: .destructive, action: {
-                    withAnimation(.bouncy) {
-                        deleteObject(object)
-                    }
-                }) {
-                    Label("Löschen", systemImage: "trash")
+                Button("Bewegen", systemImage: "folder") {
+                    isMove = true
                 }
             }
             
+            Section {
+                Button(action: {
+                    
+                }) {
+                    Label("Teilen", systemImage: "square.and.arrow.up")
+                }
+            }
+            
+            Button(role: .destructive, action: {
+                withAnimation(.bouncy) {
+                    delete()
+                }
+            }) {
+                Label("Löschen", systemImage: "trash")
+            }
+        }
+        .modifier(
+            RenameContentObjectView(
+                contentObjects: contentObjects,
+                object: object,
+                isPresented: $isRename
+            )
+        )
         
     }
-    
 }

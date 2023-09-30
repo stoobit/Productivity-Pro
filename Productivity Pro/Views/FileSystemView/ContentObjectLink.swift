@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentObjectLink: View {
+    
     var obj: ContentObject
     
     var body: some View {
@@ -20,10 +21,15 @@ struct ContentObjectLink: View {
             
             VStack(alignment: .leading) {
                 Text(obj.title)
-                Text(obj.created, style: .date)
-                    .environment(\.locale, Locale(identifier: "de"))
-                    .foregroundStyle(Color.secondary)
-                    .font(.caption)
+                
+                Group {
+                    Text(obj.created, style: .date) +
+                    Text(", ") +
+                    Text(obj.created, style: .time)
+                }
+                .environment(\.locale, Locale(identifier: "de"))
+                .foregroundStyle(Color.secondary)
+                .font(.caption)
             }
             .padding(.leading, 5)
             

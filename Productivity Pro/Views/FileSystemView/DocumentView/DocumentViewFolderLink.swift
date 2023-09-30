@@ -7,17 +7,23 @@
 
 import SwiftUI
 
-extension DocumentView {
+struct DocumentViewFolderLink: View {
+    var contentObjects: [ContentObject]
     
-    @ViewBuilder
-    func FolderLink(for object: ContentObject) -> some View {
+    var object: ContentObject
+    let delete: () -> Void
+    
+    @State var isMove: Bool = false
+    @State var isRename: Bool = false
+    
+    var body: some View {
         NavigationLink(destination: {
             DocumentView(
                 parent: object.id.uuidString, title: object.title,
                 contentObjects: contentObjects
             )
         }) {
-           ContentObjectLink(obj: object)
+            ContentObjectLink(obj: object)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive, action: {
@@ -33,24 +39,28 @@ extension DocumentView {
         .contextMenu {
             Section {
                 Button("Umbenennen", systemImage: "pencil") {
-                    renameContentObject.toggle()
-                    selectedObject = object
+                    isRename = true
                 }
                 
                 Button("Bewegen", systemImage: "folder") {
-                    selectedObject = object
-                    moveContentObject = true
+                    isMove = true
                 }
             }
             
             Button(role: .destructive, action: {
                 withAnimation(.bouncy) {
-                    deleteObject(object)
+                    delete()
                 }
             }) {
                 Label("Löschen", systemImage: "trash")
             }
         }
-        
+        .modifier(
+            RenameContentObjectView(
+                contentObjects: contentObjects,
+                object: object,
+                isPresented: $isRename
+            )
+        )
     }
 }
