@@ -18,6 +18,7 @@ struct ContentObjectLink: View {
             )
             .font(.title)
             .foregroundStyle(Color.accentColor)
+            .frame(width: 40)
             
             VStack(alignment: .leading) {
                 Text(obj.title)
