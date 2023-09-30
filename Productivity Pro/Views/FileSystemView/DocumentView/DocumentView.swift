@@ -113,7 +113,7 @@ struct DocumentView: View {
             )
         }
         .sheet(isPresented: $createNote) {
-            
+            CreateNoteView(isPresented: $createNote)
         }
         .fileImporter(
             isPresented: $importFile,
