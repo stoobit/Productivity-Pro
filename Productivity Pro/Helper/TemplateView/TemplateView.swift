@@ -9,20 +9,20 @@ import SwiftUI
 
 struct TemplateView: View {
     
-    @AppStorage("savedBackgroundColor")
-    var savedBackgroundColor: String = ""
-    
     @AppStorage("savedIsPortrait")
     var savedIsPortrait: Bool = true
     
     @AppStorage("savedBackgroundTemplate")
     var savedBackgroundTemplate: String = ""
     
+    @AppStorage("savedBackgroundColor")
+    var savedBackgroundColor: String = ""
+    
     @Binding var isPresented: Bool
     
-    @Binding var isPortrait: Bool
-    @Binding var selectedColor: String
-    @Binding var selectedTemplate: String
+    @State var isPortrait: Bool = true
+    @State var selectedColor: String = "pagewhite"
+    @State var selectedTemplate: String = "blank"
     
     let buttonTitle: String
     
@@ -30,7 +30,7 @@ struct TemplateView: View {
     var preselectedColor: String = "pagewhite"
     var preselectedTemplate: String = "blank"
     
-    var action: () -> Void
+    var action: (Bool, String, String) -> Void
     
     var body: some View {
         NavigationStack {
@@ -56,7 +56,11 @@ struct TemplateView: View {
                 
                 ToolbarItem(placement: .confirmationAction) {
                     Button(buttonTitle) {
-                        action()
+                        action(
+                            isPortrait,
+                            selectedTemplate,
+                            selectedColor
+                        )
                         
                         savedIsPortrait = isPortrait
                         savedBackgroundColor = selectedColor

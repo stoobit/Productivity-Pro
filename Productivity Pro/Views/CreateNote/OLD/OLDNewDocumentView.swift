@@ -75,13 +75,7 @@ struct NewDocumentView: View {
                             document = Document()
                         }
                     }) {
-                        TemplateView(
-                            isPresented: $templatePicker,
-                            isPortrait: $isPortrait,
-                            selectedColor: $selectedColor,
-                            selectedTemplate: $selectedTemplate,
-                            buttonTitle: "Erstellen"
-                        ) { createTemplate() }
+                       
                     }
                     
                     Button(

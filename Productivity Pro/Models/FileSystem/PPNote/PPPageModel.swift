@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import PencilKit
 
 @Model final class PPPageModel: Identifiable {
     @Attribute(.unique) var id: UUID = UUID()
@@ -31,13 +32,13 @@ import SwiftData
     var created: Date
     
     var template: String = ""
-    var color: Data = Color.white.toCodable()
+    var color: String = ""
     var isPortrait: Bool = false
     var media: Data? = nil
     
     @Relationship(deleteRule: .cascade, inverse: \PPCanvasModel.page)
     var ppCanvas: PPCanvasModel?
-    var pkCanvas: Data = Data()
+    var pkCanvas: Data = PKDrawing().dataRepresentation()
  
     @Relationship(deleteRule: .cascade, inverse: \PPItemModel.page)
     var items: [PPItemModel] = []

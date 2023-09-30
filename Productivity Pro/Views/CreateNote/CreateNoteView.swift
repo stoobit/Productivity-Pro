@@ -10,6 +10,20 @@ import SwiftUI
 struct CreateNoteView: View {
     @Binding var isPresented: Bool
     
+    @AppStorage("savedBackgroundColor")
+    var savedBackgroundColor: String = ""
+    
+    @AppStorage("savedIsPortrait")
+    var savedIsPortrait: Bool = true
+    
+    @AppStorage("savedBackgroundTemplate")
+    var savedBackgroundTemplate: String = ""
+    
+    // MARK: Subview Values
+    @State var selectTemplate: Bool = false
+    @State var scanDocument: Bool = false
+    @State var importPDF: Bool = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -33,6 +47,14 @@ struct CreateNoteView: View {
                     Button("Abbrechen", role: .cancel) {
                         isPresented.toggle()
                     }
+                }
+            }
+            .sheet(isPresented: $selectTemplate) {
+                TemplateView(
+                    isPresented: $selectTemplate,
+                    buttonTitle: ""
+                ) { isPortrait, template, color in
+                        
                 }
             }
             

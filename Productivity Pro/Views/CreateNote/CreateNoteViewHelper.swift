@@ -18,21 +18,22 @@ extension CreateNoteView {
         VStack {
             layout {
                 CNButton("Letzte Vorlage", icon: "clock.arrow.circlepath", showIcon: showIcon) {
-                    
+                    lastTemplate()
                 }
+                .disabled(savedBackgroundTemplate == "")
                 
                 CNButton("Vorlage auswählen", icon: "grid", showIcon: showIcon) {
-                    
+                    selectTemplate.toggle()
                 }
             }
             
             layout {
                 CNButton("PDF importieren", icon: "doc.richtext", showIcon: showIcon) {
-                    
+                    importPDF.toggle()
                 }
                 
                 CNButton("Dokument scannen", icon: "doc.viewfinder", showIcon: showIcon) {
-                    
+                    scanDocument.toggle()
                 }
             }
         }

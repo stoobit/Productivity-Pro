@@ -48,17 +48,17 @@ struct NoteViewSheet: ViewModifier {
                 
                 let page = document.note.pages[toolManager.selectedPage]
                 
-                TemplateView(
-                    isPresented: $subviewManager.addPageSettingsSheet, 
-                    isPortrait: $isPortrait,
-                    selectedColor: $selectedColor,
-                    selectedTemplate: $selectedTemplate,
-                    buttonTitle: "Hinzufügen", 
-                    preselectedOrientation: page.isPortrait,
-                    preselectedColor: page.backgroundColor,
-                    preselectedTemplate: page.backgroundTemplate,
-                    action: addPage
-                )
+//                TemplateView(
+//                    isPresented: $subviewManager.addPageSettingsSheet, 
+//                    isPortrait: $isPortrait,
+//                    selectedColor: $selectedColor,
+//                    selectedTemplate: $selectedTemplate,
+//                    buttonTitle: "Hinzufügen", 
+//                    preselectedOrientation: page.isPortrait,
+//                    preselectedColor: page.backgroundColor,
+//                    preselectedTemplate: page.backgroundTemplate,
+//                    action: addPage
+//                )
             }
             .sheet(isPresented: $subviewManager.overviewSheet) {
                 OverviewView(

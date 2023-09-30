@@ -21,9 +21,6 @@ extension NewDocumentView {
             ) {
                 createFromLastSelection()
             }
-            .disabled(
-                savedBackgroundColor == "" && savedBackgroundTemplate == ""
-            )
             
             
         }
