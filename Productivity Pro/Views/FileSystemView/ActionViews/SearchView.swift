@@ -33,7 +33,7 @@ struct SearchView: View {
                 NavigationLink(destination: {
                     
                 }) {
-                    Label(object.title, systemImage: "doc.fill")
+                    ContentObjectLink(obj: object)
                 }
             }
         }

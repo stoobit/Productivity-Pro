@@ -19,7 +19,6 @@
 		BB1321EA2985EA87006AD59D /* DragType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321E92985EA87006AD59D /* DragType.swift */; };
 		BB1321F02985F547006AD59D /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321EF2985F547006AD59D /* MediaType.swift */; };
 		BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2202A6968E400223C92 /* ColorPickerHelper.swift */; };
-		BB15F2232A69964200223C92 /* ExitButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2222A69964200223C92 /* ExitButtonView.swift */; };
 		BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */; };
 		BB174F552A1051B400F753F6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB174F542A1051B400F753F6 /* Date.swift */; };
 		BB1DF6042A686D14006F85CE /* PPToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1DF6032A686D14006F85CE /* PPToolButton.swift */; };
@@ -157,6 +156,7 @@
 		BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB2AEC294E800D00C68B72 /* DragHelper.swift */; };
 		BBCCE4EB28D52743001DBD8A /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCCE4EA28D52743001DBD8A /* NoteModel.swift */; };
 		BBCCE4F228D52934001DBD8A /* OLDNewDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCCE4F128D52934001DBD8A /* OLDNewDocumentView.swift */; };
+		BBCDBFB72AC8A9EF00EF825F /* ContentObjectLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDBFB62AC8A9EF00EF825F /* ContentObjectLink.swift */; };
 		BBCDFDE32947BF84000C545D /* SquaredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE22947BF84000C545D /* SquaredView.swift */; };
 		BBCDFDE52947C877000C545D /* DottedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE42947C877000C545D /* DottedView.swift */; };
 		BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE62947CC9C000C545D /* RuledView.swift */; };
@@ -201,7 +201,6 @@
 		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
 		BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */; };
 		BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930792A674C9600AD3958 /* PPShape.swift */; };
-		BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFD97C92A4CE13300771252 /* LazyLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -230,7 +229,6 @@
 		BB1321E92985EA87006AD59D /* DragType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragType.swift; sourceTree = "<group>"; };
 		BB1321EF2985F547006AD59D /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		BB15F2202A6968E400223C92 /* ColorPickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerHelper.swift; sourceTree = "<group>"; };
-		BB15F2222A69964200223C92 /* ExitButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitButtonView.swift; sourceTree = "<group>"; };
 		BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPRecognitionTool.swift; sourceTree = "<group>"; };
 		BB174F542A1051B400F753F6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
@@ -368,6 +366,7 @@
 		BBCB2AEC294E800D00C68B72 /* DragHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragHelper.swift; sourceTree = "<group>"; };
 		BBCCE4EA28D52743001DBD8A /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		BBCCE4F128D52934001DBD8A /* OLDNewDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDNewDocumentView.swift; sourceTree = "<group>"; };
+		BBCDBFB62AC8A9EF00EF825F /* ContentObjectLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObjectLink.swift; sourceTree = "<group>"; };
 		BBCDFDE22947BF84000C545D /* SquaredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquaredView.swift; sourceTree = "<group>"; };
 		BBCDFDE42947C877000C545D /* DottedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedView.swift; sourceTree = "<group>"; };
 		BBCDFDE62947CC9C000C545D /* RuledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledView.swift; sourceTree = "<group>"; };
@@ -413,7 +412,6 @@
 		BBF930722A67437900AD3958 /* PPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColor.swift; sourceTree = "<group>"; };
 		BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingViewMethods.swift; sourceTree = "<group>"; };
 		BBF930792A674C9600AD3958 /* PPShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPShape.swift; sourceTree = "<group>"; };
-		BBFD97C92A4CE13300771252 /* LazyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -434,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				BB047CDD2AC0C1FF0027409F /* FileSystemView.swift */,
+				BBCDBFB62AC8A9EF00EF825F /* ContentObjectLink.swift */,
 				BB4F66CE2AC4B9CE00C4B34E /* DocumentView */,
 				BB4F66CF2AC4BA1C00C4B34E /* FolderView */,
 				BB9BFB6C2AC780B500255293 /* ActionViews */,
@@ -815,8 +814,8 @@
 		BB9BFB6C2AC780B500255293 /* ActionViews */ = {
 			isa = PBXGroup;
 			children = (
-				BB9BFB6D2AC7819400255293 /* TrashView.swift */,
 				BB9BFB6F2AC7819D00255293 /* SearchView.swift */,
+				BB9BFB6D2AC7819400255293 /* TrashView.swift */,
 			);
 			path = ActionViews;
 			sourceTree = "<group>";
@@ -935,7 +934,6 @@
 		BBBD13E9290EA4D6001145A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BB15F2222A69964200223C92 /* ExitButtonView.swift */,
 				BB15F2202A6968E400223C92 /* ColorPickerHelper.swift */,
 				BBD3C4202A54DA46002BFFCF /* View.swift */,
 				BBDC62712905EED800364B57 /* IndicatorText.swift */,
@@ -951,7 +949,6 @@
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
 				BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */,
-				BBFD97C92A4CE13300771252 /* LazyLoader.swift */,
 				BB047CDA2AC09A960027409F /* PremiumBadge.swift */,
 			);
 			path = Views;
@@ -1217,6 +1214,7 @@
 				BBEFC94F2A41035C00960C8D /* NoteSideActionMethods.swift in Sources */,
 				BB6701582AADEFA7001F468A /* ContentView.swift in Sources */,
 				BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */,
+				BBCDBFB72AC8A9EF00EF825F /* ContentObjectLink.swift in Sources */,
 				BBB763B22A3A70DD00273182 /* EditTextfieldItemMethods.swift in Sources */,
 				BB4CDD5628D3D518009A409F /* Document.swift in Sources */,
 				BBCDFDE32947BF84000C545D /* SquaredView.swift in Sources */,
@@ -1229,7 +1227,6 @@
 				BB929B8028E5076D00DA4538 /* NoteSideActions.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
 				BBF5FE032AAE61E20081C4FE /* SubjectModel.swift in Sources */,
-				BB15F2232A69964200223C92 /* ExitButtonView.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
 				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
@@ -1297,7 +1294,6 @@
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
 				BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */,
 				BB9BFB692AC7684300255293 /* PPItemModel.swift in Sources */,
-				BBFD97CA2A4CE13300771252 /* LazyLoader.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* ImportMediaHelper.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */,

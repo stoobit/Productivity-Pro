@@ -13,20 +13,9 @@ extension DocumentView {
     func FileLink(for object: ContentObject) -> some View {
             NavigationLink(destination: {
                 
-                
-                
             }) {
-                HStack {
-                    Label(object.title, systemImage: "doc.fill")
-                    Spacer()
-                    
-                    if object.isPinned {
-                        Image(systemName: "pin")
-                            .foregroundStyle(Color.accentColor)
-                    }
-                }
+                ContentObjectLink(obj: object)
             }
-            .frame(height: 30)
             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                 Button(role: .destructive, action: {
                     withAnimation(.bouncy) {
