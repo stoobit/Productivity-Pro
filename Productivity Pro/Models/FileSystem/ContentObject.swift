@@ -44,9 +44,8 @@ import SwiftData
     var isPinned: Bool = false
     var inTrash: Bool = false
     
-    @Relationship(
-        deleteRule: .cascade, inverse: \PPNoteModel.contentObject
-    )var note: PPNoteModel?
+    var note: PPNoteModel?
+    
 }
 
 enum ContentObjectType: Comparable, Codable {

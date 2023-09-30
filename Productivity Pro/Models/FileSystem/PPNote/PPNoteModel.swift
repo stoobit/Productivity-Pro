@@ -10,18 +10,13 @@ import SwiftData
 
 @Model final class PPNoteModel {
     var type: PPNoteType
-    var contentObject: ContentObject
     
-    init(
-        type: PPNoteType = .standard,
-        contentObject: ContentObject
-    ) {
+    init(type: PPNoteType = .standard) {
         self.type = type
-        self.contentObject = contentObject
     }
     
-    @Relationship(deleteRule: .cascade, inverse: \PPPageModel.note)
-    var pages: [PPPageModel] = []
+    @Relationship(deleteRule: .cascade)
+    var pages: [PPPageModel]? = []
 }
 
 enum PPNoteType: Codable {

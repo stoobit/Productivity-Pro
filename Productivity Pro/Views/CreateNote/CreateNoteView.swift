@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct CreateNoteView: View {
+    @Environment(\.modelContext) var context
+    
     @Binding var isPresented: Bool
+    let parent: String
     
     @AppStorage("savedBackgroundColor")
     var savedBackgroundColor: String = ""
@@ -18,6 +21,8 @@ struct CreateNoteView: View {
     
     @AppStorage("savedBackgroundTemplate")
     var savedBackgroundTemplate: String = ""
+    
+    @AppStorage("ppgrade") var grade: Int = 5
     
     // MARK: Subview Values
     @State var selectTemplate: Bool = false
@@ -52,21 +57,12 @@ struct CreateNoteView: View {
             .sheet(isPresented: $selectTemplate) {
                 TemplateView(
                     isPresented: $selectTemplate,
-                    buttonTitle: ""
+                    buttonTitle: "Erstellen"
                 ) { isPortrait, template, color in
-                        
+                    selectedTemplate(isPortrait, template, color)
                 }
             }
             
         }
     }
-}
-
-#Preview {
-    Text("")
-        .sheet(
-            isPresented: .constant(true)
-        ) {
-            CreateNoteView(isPresented: .constant(true))
-        }
 }

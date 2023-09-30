@@ -114,7 +114,7 @@ struct DocumentView: View {
             )
         }
         .sheet(isPresented: $createNote) {
-            CreateNoteView(isPresented: $createNote)
+            CreateNoteView(isPresented: $createNote, parent: parent)
         }
         .fileImporter(
             isPresented: $importFile,

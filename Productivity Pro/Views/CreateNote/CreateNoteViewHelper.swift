@@ -65,12 +65,3 @@ extension CreateNoteView {
     }
     
 }
-
-#Preview {
-    Text("")
-        .sheet(
-            isPresented: .constant(true)
-        ) {
-            CreateNoteView(isPresented: .constant(true))
-        }
-}

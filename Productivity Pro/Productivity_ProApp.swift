@@ -17,7 +17,9 @@ struct Productivity_ProApp: App {
         .modelContainer(
             for: [
                 Homework.self,
-                ContentObject.self
+                ContentObject.self,
+                PPNoteModel.self,
+                PPPageModel.self
             ],
             isAutosaveEnabled: true
         )

@@ -11,14 +11,14 @@ import PencilKit
 
 @Model final class PPPageModel: Identifiable {
     @Attribute(.unique) var id: UUID = UUID()
-    var note: PPNoteModel
+    
+    @Relationship(inverse: \PPNoteModel.pages)
+    var note: PPNoteModel?
     
     init(
-        note: PPNoteModel,
         type: PPPageType,
         canvas: PPCanvasType
     ) {
-        self.note = note
         self.type = type
         self.canvas = canvas
         
