@@ -19,7 +19,8 @@ struct Productivity_ProApp: App {
                 Homework.self,
                 ContentObject.self,
                 PPNoteModel.self,
-                PPPageModel.self
+                PPPageModel.self,
+                PPItemModel.self
             ],
             isAutosaveEnabled: true
         )

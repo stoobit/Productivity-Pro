@@ -18,10 +18,3 @@ import SwiftData
     @Relationship(deleteRule: .cascade)
     var pages: [PPPageModel]? = []
 }
-
-enum PPNoteType: Codable {
-    case standard
-    case whiteboard
-    case markdown
-    case reality
-}

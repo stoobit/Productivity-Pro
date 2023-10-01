@@ -10,10 +10,28 @@ import SwiftData
 
 @Model final class PPItemModel: Identifiable {
     @Attribute(.unique) var id: UUID = UUID()
-    var page: PPPageModel
+   
+    @Relationship(inverse: \PPPageModel.items)
+    var page: PPPageModel?
     
-    init(page: PPPageModel) {
-        self.page = page
+    init(type: PPItemType) {
+        self.type = type
+        
+        self.position = PPPosition(x: 0, y: 0)
+        self.size = PPSize(width: 0, height: 0)
     }
     
+    var type: PPItemType
+    var isLocked: Bool = false
+    
+    var position: PPPosition
+    var size: PPSize
+    
+    var shape: PPShapeModel?
+    var media: PPMediaModel?
+    var textField: PPTextFieldModel?
+    var chart: PPChartModel?
+    var table: PPTableModel?
+    var mindmap: PPMindmapModel?
+    var immersiveObject: PPImmersiveObjectModel?
 }

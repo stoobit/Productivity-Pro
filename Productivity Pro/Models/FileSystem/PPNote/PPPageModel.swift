@@ -36,24 +36,9 @@ import PencilKit
     var isPortrait: Bool = false
     var media: Data? = nil
     
-    @Relationship(deleteRule: .cascade, inverse: \PPCanvasModel.page)
     var ppCanvas: PPCanvasModel?
     var pkCanvas: Data = PKDrawing().dataRepresentation()
  
-    @Relationship(deleteRule: .cascade, inverse: \PPItemModel.page)
+    @Relationship(deleteRule: .cascade)
     var items: [PPItemModel] = []
-}
-
-enum PPPageType: Int, Codable {
-    case none = 0
-    
-    case template = 1
-    case pdf = 2
-    case image = 3
-    case mindmap = 4
-}
-
-enum PPCanvasType: Int, Codable {
-    case pkCanvas = 0
-    case ppCanvas = 1
 }

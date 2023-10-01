@@ -38,6 +38,14 @@ struct DocumentView: View {
                 .ignoresSafeArea(.all)
             
             List {
+                Button("tesrt") {
+                    let item = PPItemModel(type: .shape)
+                    item.shape = PPShapeModel(type: .hexagon)
+                    item.shape?.fillColor = Color.red.toCodable()
+                    
+                    context.insert(item)
+                }
+                
                 Section {
                     ForEach(
                         getObjects(typeSorting == true ? .file : .all, isPinned: true)
