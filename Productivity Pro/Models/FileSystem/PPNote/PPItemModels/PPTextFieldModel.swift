@@ -30,6 +30,5 @@ import SwiftData
     var strokeWidth: CGFloat = 5
     var strokeStyle: PPStrokeStyle
     
-    
 }
 
