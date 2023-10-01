@@ -30,6 +30,7 @@ import SwiftData
     var shape: PPShapeModel?
     var media: PPMediaModel?
     var textField: PPTextFieldModel?
+    var link: PPLinkModel?
     var chart: PPChartModel?
     var table: PPTableModel?
     var mindmap: PPMindmapModel?
