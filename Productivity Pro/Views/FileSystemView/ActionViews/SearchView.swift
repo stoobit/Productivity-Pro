@@ -30,19 +30,22 @@ struct SearchView: View {
             .listRowBackground(Color.clear)
             
             ForEach(searchResults) { object in
-                NavigationLink(destination: {
-                    
-                }) {
-                    ContentObjectLink(obj: object)
+                DocumentViewFileLink(
+                    contentObjects: contentObjects,
+                    object: object,
+                    swipeAction: false
+                ) {
+                    object.inTrash = true
                 }
             }
         }
+        .animation(.bouncy, value: searchResults)
         .environment(\.defaultMinListRowHeight, 30)
         .navigationTitle("Suchen")
         .navigationBarTitleDisplayMode(.large)
         .searchable(text: $searchText, placement: .toolbar) {
             ForEach(searchResults, id: \.self) { result in
-                Text("\(result.title)?")
+                Text(result.title)
                     .searchCompletion(result.title)
             }
         }
@@ -51,13 +54,19 @@ struct SearchView: View {
     var searchResults: [ContentObject] {
         if searchText.isEmpty {
             return contentObjects
-                .filter({ $0.type == .file })
+                .filter({ $0.type == .file && $0.inTrash == false })
                 .sorted(by: { $0.title < $1.title })
             
         } else {
             return contentObjects
                 .filter {
-                    $0.type == .file && $0.title.contains(searchText)
+                    $0.type == .file && 
+                    $0.inTrash == false &&
+                    $0.title.lowercased().contains(
+                        searchText
+                            .lowercased()
+                            .trimmingCharacters(in: .whitespaces)
+                    )
                 }
                 .sorted(by: { $0.title < $1.title })
         }

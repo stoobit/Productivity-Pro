@@ -9,8 +9,9 @@ import SwiftUI
 
 struct DocumentViewFileLink: View {
     var contentObjects: [ContentObject]
-    
     var object: ContentObject
+    var swipeAction: Bool = true
+    
     let delete: () -> Void
     
     @State var isMove: Bool = false
@@ -23,15 +24,17 @@ struct DocumentViewFileLink: View {
             ContentObjectLink(obj: object)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            Button(role: .destructive, action: {
-                withAnimation(.bouncy) {
-                    object.isPinned.toggle()
+            if swipeAction {
+                Button(role: .destructive, action: {
+                    withAnimation(.bouncy) {
+                        object.isPinned.toggle()
+                    }
+                }) {
+                    Image(systemName: !object.isPinned ? "pin.fill" : "pin.slash.fill"
+                    )
                 }
-            }) {
-                Image(systemName: !object.isPinned ? "pin.fill" : "pin.slash.fill"
-                )
+                .tint(Color.accentColor)
             }
-            .tint(Color.accentColor)
         }
         .contextMenu {
             Section {
