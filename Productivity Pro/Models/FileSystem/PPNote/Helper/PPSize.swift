@@ -8,6 +8,6 @@
 import Foundation
 
 struct PPSize: Codable {
-    var width: Double
-    var height: Double
+    var width: CGFloat
+    var height: CGFloat
 }
