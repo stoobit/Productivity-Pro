@@ -21,7 +21,7 @@ struct ObjectPickerList: View {
     var body: some View {
         Group {
             if objects(with: parent).isEmpty {
-                
+                #warning("Filter for GRADES")
                 Form {
                     Text("Dieser Ordner ist leer.")
                         .foregroundStyle(Color.secondary)
@@ -89,7 +89,7 @@ struct ObjectPickerList: View {
     
     func objects(with parent: String) -> [ContentObject] {
         return contentObjects.filter {
-            $0.parent == parent
+            $0.parent == parent 
         }
     }
     

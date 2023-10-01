@@ -13,8 +13,12 @@ struct RenameContentObjectView: ViewModifier {
     var contentObjects: [ContentObject]
     var object: ContentObject
     
+    @AppStorage("ppgrade") var grade: Int = 5
+    
     @Binding var isPresented: Bool
     @State var title: String = ""
+    
+    var parent: String
     
     func body(content: Content) -> some View {
         content
@@ -39,11 +43,17 @@ struct RenameContentObjectView: ViewModifier {
                 let const: String = title
                 var index: Int = 1
                 
-                while contentObjects
-                    .filter(
-                        { $0.type == object.type && $0.inTrash == false }
-                    )
-                    .map({ $0.title }).contains(title) {
+                let filteredObjects = contentObjects
+                    .filter({
+                        $0.type == object.type &&
+                        $0.parent == parent &&
+                        $0.grade == grade &&
+                        $0.inTrash == false
+                    })
+                    .map({ $0.title })
+                
+                
+                while filteredObjects.contains(title) {
                     
                     title = "\(const) \(index)"
                     index += 1

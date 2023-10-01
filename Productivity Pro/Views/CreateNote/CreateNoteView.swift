@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CreateNoteView: View {
     @Environment(\.modelContext) var context
+    var contentObjects: [ContentObject]
     
     @Binding var isPresented: Bool
     let parent: String

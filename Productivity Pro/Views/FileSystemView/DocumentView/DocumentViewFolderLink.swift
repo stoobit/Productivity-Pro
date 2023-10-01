@@ -59,7 +59,8 @@ struct DocumentViewFolderLink: View {
             RenameContentObjectView(
                 contentObjects: contentObjects,
                 object: object,
-                isPresented: $isRename
+                isPresented: $isRename,
+                parent: object.parent
             )
         )
     }

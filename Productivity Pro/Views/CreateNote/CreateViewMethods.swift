@@ -12,7 +12,7 @@ extension CreateNoteView {
     func lastTemplate() {
         let object = ContentObject(
             id: UUID(),
-            title: title == "" ? "Unbenannt" : title,
+            title: getTitle(),
             type: .file,
             parent: parent,
             created: Date(),
@@ -30,7 +30,6 @@ extension CreateNoteView {
         page.template = savedBackgroundTemplate
         page.color = savedBackgroundColor
         
-        selectTemplate.toggle()
         isPresented.toggle()
     }
     
@@ -39,7 +38,7 @@ extension CreateNoteView {
     ) {
         let object = ContentObject(
             id: UUID(),
-            title: title == "" ? "Unbenannt" : title,
+            title: getTitle(),
             type: .file,
             parent: parent,
             created: Date(),
@@ -57,7 +56,6 @@ extension CreateNoteView {
         page.template = template
         page.color = color
         
-        selectTemplate.toggle()
         isPresented.toggle()
     }
     
@@ -67,6 +65,35 @@ extension CreateNoteView {
     
     func scannedDocument() {
         
+    }
+    
+    func getTitle() -> String {
+        
+        if title.trimmingCharacters(in: .whitespaces).isEmpty {
+            title = "Unbenannt"
+        }
+        
+        let const: String = title
+        var index: Int = 1
+        
+        let filteredObjects = contentObjects
+            .filter({
+                $0.type == .file &&
+                $0.parent == parent &&
+                $0.grade == grade &&
+                $0.inTrash == false
+            })
+            .map({ $0.title })
+        
+        
+        while filteredObjects.contains(title) {
+            
+            title = "\(const) \(index)"
+            index += 1
+            
+        }
+        
+        return title
     }
     
 }

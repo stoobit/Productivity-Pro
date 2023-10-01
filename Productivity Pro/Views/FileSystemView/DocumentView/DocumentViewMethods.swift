@@ -24,7 +24,7 @@ extension DocumentView {
                         parents.append([])
                         
                         let filteredObjects = contentObjects.filter({
-                            $0.parent == p
+                            $0.parent == p 
                         })
                         
                         for filteredObject in filteredObjects {

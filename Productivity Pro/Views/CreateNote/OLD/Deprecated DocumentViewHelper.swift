@@ -61,25 +61,25 @@ extension NewDocumentView {
                 allowedContentTypes: [.pdf],
                 allowsMultipleSelection: false
             ) { result in
-                do {
-                    toolManager.showProgress = true
+//                do {
+//                    toolManager.showProgress = true
                     
-                    guard let selectedFile: URL = try result.get().first else { return }
-                    if selectedFile.startAccessingSecurityScopedResource() {
-                        guard let input = PDFDocument(
-                            data: try Data(contentsOf: selectedFile)
-                        ) else { return }
-                        
-                        defer { selectedFile.stopAccessingSecurityScopedResource() }
-                        
-//                        add(pdf: input)
-                    } else {
-                        toolManager.showProgress = false
-                    }
+//                    guard let selectedFile: URL = try result.get().first else { return }
+//                    if selectedFile.startAccessingSecurityScopedResource() {
+//                        guard let input = PDFDocument(
+//                            data: try Data(contentsOf: selectedFile)
+//                        ) else { return }
+//                        
+//                        defer { selectedFile.stopAccessingSecurityScopedResource() }
+//                        
+////                        add(pdf: input)
+//                    } else {
+//                        toolManager.showProgress = false
+//                    }
                     
-                } catch {
-                    toolManager.showProgress = false
-                }
+//                } catch {
+//                    toolManager.showProgress = false
+//                }
             }
             
         }
