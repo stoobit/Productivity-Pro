@@ -10,7 +10,28 @@ import SwiftUI
 extension CreateNoteView {
     
     func lastTemplate() {
+        let object = ContentObject(
+            id: UUID(),
+            title: title == "" ? "Unbenannt" : title,
+            type: .file,
+            parent: parent,
+            created: Date(),
+            grade: grade
+        )
+       
+        context.insert(object)
         
+        let note = PPNoteModel(type: .standard)
+        object.note = note
+        
+        let page = PPPageModel(type: .template, canvas: .pkCanvas)
+        page.note = note
+        page.isPortrait = savedIsPortrait
+        page.template = savedBackgroundTemplate
+        page.color = savedBackgroundColor
+        
+        selectTemplate.toggle()
+        isPresented.toggle()
     }
     
     func selectedTemplate(
@@ -18,7 +39,7 @@ extension CreateNoteView {
     ) {
         let object = ContentObject(
             id: UUID(),
-            title: "",
+            title: title == "" ? "Unbenannt" : title,
             type: .file,
             parent: parent,
             created: Date(),

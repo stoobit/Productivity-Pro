@@ -17,10 +17,13 @@ extension CreateNoteView {
         
         VStack {
             layout {
-                CNButton("Letzte Vorlage", icon: "clock.arrow.circlepath", showIcon: showIcon) {
-                    lastTemplate()
+                
+                if showIcon {
+                    CNButton("Letzte Vorlage", icon: "clock.arrow.circlepath", showIcon: showIcon) {
+                        lastTemplate()
+                    }
+                    .disabled(savedBackgroundTemplate == "")
                 }
-                .disabled(savedBackgroundTemplate == "")
                 
                 CNButton("Vorlage auswählen", icon: "grid", showIcon: showIcon) {
                     selectTemplate.toggle()

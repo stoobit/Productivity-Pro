@@ -38,15 +38,22 @@ struct CreateNoteView: View {
                     .ignoresSafeArea(.all)
                 
                 VStack {
-                    TextField("Titel", text: $title, prompt: Text("hello"))
-                        .textFieldStyle(.roundedBorder)
-                        .frame(width: 175)
+                    HStack {
+                        Image(systemName: "pencil")
+                            .foregroundStyle(Color.secondary)
+                            .padding(.trailing, 5)
+                        
+                        TextField("Unbenannt", text: $title)
+                    }
+                    .frame(width: 200)
+                    
+                    Divider()
+                        .frame(width: 230)
+                        .padding(.bottom, 20)
+                        .padding(.top, 5)
                     
                     ViewThatFits(in: .horizontal) {
-                        ViewThatFits(in: .vertical) {
-                            CNGrid(axis: .horizontal, showIcon: true)
-                            CNGrid(axis: .horizontal, showIcon: false)
-                        }
+                        CNGrid(axis: .horizontal, showIcon: true)
                         
                         ViewThatFits(in: .vertical) {
                             CNGrid(axis: .vertical, showIcon: true)
