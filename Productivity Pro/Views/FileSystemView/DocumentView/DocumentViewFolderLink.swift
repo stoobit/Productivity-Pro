@@ -63,5 +63,16 @@ struct DocumentViewFolderLink: View {
                 parent: object.parent
             )
         )
+        .sheet(isPresented: $isMove, content: {
+            ObjectPicker(
+                objects: contentObjects,
+                isPresented: $isMove,
+                type: .folder
+            ) { value in
+                withAnimation(.bouncy) {
+                    object.parent = value
+                }
+            }
+        })
     }
 }

@@ -9,28 +9,35 @@ import SwiftUI
 import SwiftData
 
 struct ObjectPicker: View {
-    @Query(
-        filter: #Predicate<ContentObject> {
-            $0.inTrash == false
-        },
-        sort: [
-            SortDescriptor(\ContentObject.title)
-        ],
-        animation: .bouncy
-    ) var contentObjects: [ContentObject]
+    var objects: [ContentObject]
+    var contentObjects: [ContentObject] {
+        objects.filter({
+            $0.inTrash == false &&
+            $0.grade == grade
+        })
+    }
+    
+    @AppStorage("ppgrade")
+    var grade: Int = 5
     
     @Binding var isPresented: Bool
-    @Binding var selectedObject: ContentObject?
+    var id: UUID?
+    
+    var type: ContentObjectType
+    let action: (String) -> Void
     
     var body: some View {
         NavigationStack {
             ObjectPickerList(
                 contentObjects: contentObjects,
-                selectedObject: $selectedObject,
                 isPresented: $isPresented,
                 parent: "root",
-                title: "Notizen"
-            )
+                title: "Notizen",
+                id: id,
+                type: type
+            ) { value in
+                action(value)
+            }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Abbrechen") { isPresented.toggle() }
