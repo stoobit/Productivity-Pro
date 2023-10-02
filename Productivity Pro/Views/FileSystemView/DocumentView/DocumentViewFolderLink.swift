@@ -13,6 +13,8 @@ struct DocumentViewFolderLink: View {
     var object: ContentObject
     let delete: () -> Void
     
+    @AppStorage("ppgrade") var grade: Int = 5
+    
     @State var isMove: Bool = false
     @State var isRename: Bool = false
     
@@ -69,10 +71,34 @@ struct DocumentViewFolderLink: View {
                 isPresented: $isMove,
                 type: .folder
             ) { value in
-                withAnimation(.bouncy) {
-                    object.parent = value
-                }
+                move(to: value)
             }
         })
+    }
+    
+    func move(to value: String) {
+        let const: String = object.title
+        var index: Int = 1
+        
+        let filteredObjects = contentObjects
+            .filter({
+                $0.type == object.type &&
+                $0.parent == object.parent &&
+                $0.grade == grade &&
+                $0.inTrash == false
+            })
+            .map({ $0.title })
+        
+        
+        while filteredObjects.contains(object.title) {
+            
+            object.title = "\(const) \(index)"
+            index += 1
+            
+        }
+        
+        withAnimation(.bouncy) {
+            object.parent = value
+        }
     }
 }
