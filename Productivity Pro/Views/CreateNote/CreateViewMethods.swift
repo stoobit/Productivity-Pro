@@ -10,53 +10,57 @@ import SwiftUI
 extension CreateNoteView {
     
     func lastTemplate() {
-        let object = ContentObject(
-            id: UUID(),
-            title: getTitle(),
-            type: .file,
-            parent: parent,
-            created: Date(),
-            grade: grade
-        )
-       
-        context.insert(object)
-        
-        let note = PPNoteModel(type: .standard)
-        object.note = note
-        
-        let page = PPPageModel(type: .template, canvas: .pkCanvas)
-        page.note = note
-        page.isPortrait = savedIsPortrait
-        page.template = savedBackgroundTemplate
-        page.color = savedBackgroundColor
-        
-        isPresented.toggle()
+        withAnimation(.bouncy) {
+            let object = ContentObject(
+                id: UUID(),
+                title: getTitle(),
+                type: .file,
+                parent: parent,
+                created: Date(),
+                grade: grade
+            )
+            
+            context.insert(object)
+            
+            let note = PPNoteModel(type: .standard)
+            object.note = note
+            
+            let page = PPPageModel(type: .template, canvas: .pkCanvas)
+            page.note = note
+            page.isPortrait = savedIsPortrait
+            page.template = savedBackgroundTemplate
+            page.color = savedBackgroundColor
+            
+            isPresented.toggle()
+        }
     }
     
     func selectedTemplate(
         _ isPortrait: Bool, _ template: String, _ color: String
     ) {
-        let object = ContentObject(
-            id: UUID(),
-            title: getTitle(),
-            type: .file,
-            parent: parent,
-            created: Date(),
-            grade: grade
-        )
-       
-        context.insert(object)
-        
-        let note = PPNoteModel(type: .standard)
-        object.note = note
-        
-        let page = PPPageModel(type: .template, canvas: .pkCanvas)
-        page.note = note
-        page.isPortrait = isPortrait
-        page.template = template
-        page.color = color
-        
-        isPresented.toggle()
+        withAnimation(.bouncy) {
+            let object = ContentObject(
+                id: UUID(),
+                title: getTitle(),
+                type: .file,
+                parent: parent,
+                created: Date(),
+                grade: grade
+            )
+            
+            context.insert(object)
+            
+            let note = PPNoteModel(type: .standard)
+            object.note = note
+            
+            let page = PPPageModel(type: .template, canvas: .pkCanvas)
+            page.note = note
+            page.isPortrait = isPortrait
+            page.template = template
+            page.color = color
+            
+            isPresented.toggle()
+        }
     }
     
     func importedPDF() {

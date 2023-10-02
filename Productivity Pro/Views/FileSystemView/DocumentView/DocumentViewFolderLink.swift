@@ -17,6 +17,7 @@ struct DocumentViewFolderLink: View {
     
     @State var isMove: Bool = false
     @State var isRename: Bool = false
+    @State var selectedObject: String = ""
     
     var body: some View {
         NavigationLink(destination: {
@@ -65,40 +66,42 @@ struct DocumentViewFolderLink: View {
                 parent: object.parent
             )
         )
-        .sheet(isPresented: $isMove, content: {
+        .sheet(isPresented: $isMove, onDismiss: move) {
             ObjectPicker(
                 objects: contentObjects,
                 isPresented: $isMove,
-                type: .folder
-            ) { value in
-                move(to: value)
-            }
-        })
+                selectedObject: $selectedObject, type: .folder
+            )
+        }
     }
     
-    func move(to value: String) {
-        let const: String = object.title
-        var index: Int = 1
-        
-        let filteredObjects = contentObjects
-            .filter({
-                $0.type == object.type &&
-                $0.parent == object.parent &&
-                $0.grade == grade &&
-                $0.inTrash == false
-            })
-            .map({ $0.title })
-        
-        
-        while filteredObjects.contains(object.title) {
+    func move() {
+        if selectedObject.isEmpty == false {
+            var value: String = object.title
+            var index: Int = 1
             
-            object.title = "\(const) \(index)"
-            index += 1
+            let filteredObjects = contentObjects
+                .filter({
+                    $0.type == object.type &&
+                    $0.parent == selectedObject &&
+                    $0.grade == grade &&
+                    $0.inTrash == false
+                })
+                .map({ $0.title })
             
-        }
-        
-        withAnimation(.bouncy) {
-            object.parent = value
+            
+            while filteredObjects.contains(value) {
+                value = "\(object.title) \(index)"
+                index += 1
+            }
+            
+            withAnimation(.bouncy) {
+                object.parent = selectedObject
+                object.title = value
+            }
+            
+            selectedObject = ""
         }
     }
+    
 }

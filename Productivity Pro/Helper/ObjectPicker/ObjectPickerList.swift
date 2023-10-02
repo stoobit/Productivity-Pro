@@ -81,7 +81,10 @@ struct ObjectPickerList: View {
             
             if type == .folder {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(action: { move() }) {
+                    Button(action: {
+                        selectedObject = parent
+                        isPresented = false
+                    }) {
                         Text("Auswählen")
                     }
                 }
@@ -94,11 +97,6 @@ struct ObjectPickerList: View {
         return contentObjects.filter {
             $0.parent == parent
         }.sorted(by: { $0.title < $1.title })
-    }
-    
-    func move() {
-        selectedObject = parent
-        isPresented = false
     }
     
 }

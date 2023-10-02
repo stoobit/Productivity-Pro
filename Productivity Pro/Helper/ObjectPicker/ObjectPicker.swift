@@ -23,10 +23,8 @@ struct ObjectPicker: View {
     @Binding var isPresented: Bool
     var id: UUID?
     
-    @State var selectedObject: String = ""
-    
+    @Binding var selectedObject: String
     var type: ContentObjectType
-    let action: (String) -> Void
     
     var body: some View {
         NavigationStack {

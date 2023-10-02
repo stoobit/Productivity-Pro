@@ -32,42 +32,44 @@ struct AddFolderView: ViewModifier {
     }
     
     func addFolder() {
-        let folder = ContentObject(
-            id: UUID(),
-            title: "",
-            type: .folder,
-            parent: parent,
-            created: Date(),
-            grade: grade
-        )
-        
-        if title.trimmingCharacters(in: .whitespaces).isEmpty {
-            title = "Unbenannt"
-        }
-        
-        let const: String = title
-        var index: Int = 1
-        
-        let filteredObjects = contentObjects
-            .filter({
-                $0.type == .folder &&
-                $0.parent == parent &&
-                $0.grade == grade &&
-                $0.inTrash == false
-            })
-            .map({ $0.title })
-        
-        while filteredObjects.contains(title) {
+        withAnimation(.bouncy) {
+            let folder = ContentObject(
+                id: UUID(),
+                title: "",
+                type: .folder,
+                parent: parent,
+                created: Date(),
+                grade: grade
+            )
             
-            title = "\(const) \(index)"
-            index += 1
+            if title.trimmingCharacters(in: .whitespaces).isEmpty {
+                title = "Unbenannt"
+            }
             
+            let const: String = title
+            var index: Int = 1
+            
+            let filteredObjects = contentObjects
+                .filter({
+                    $0.type == .folder &&
+                    $0.parent == parent &&
+                    $0.grade == grade &&
+                    $0.inTrash == false
+                })
+                .map({ $0.title })
+            
+            while filteredObjects.contains(title) {
+                
+                title = "\(const) \(index)"
+                index += 1
+                
+            }
+            
+            folder.title = title
+            
+            context.insert(folder)
+            title = ""
         }
-        
-        folder.title = title
-        
-        context.insert(folder)
-        title = ""
     }
     
 }
