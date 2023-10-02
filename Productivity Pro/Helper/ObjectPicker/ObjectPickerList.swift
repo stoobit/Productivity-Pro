@@ -12,42 +12,36 @@ struct ObjectPickerList: View {
     
     var contentObjects: [ContentObject]
     @Binding var isPresented: Bool
+    @Binding var selectedObject: String
     
     var parent: String
     var title: String
-    
     var id: UUID?
     
     var type: ContentObjectType
-    let action: (String) -> Void
 
     var body: some View {
-        Group {
-            if objects(with: parent).isEmpty {
-                Form {
-                    Text("Dieser Ordner ist leer.")
-                        .foregroundStyle(Color.secondary)
-                        .frame(height: 30)
-                }
+        List {
+            if objects.isEmpty {
+                Text("Dieser Ordner ist leer.")
+                    .foregroundStyle(Color.secondary)
+                    .frame(height: 30)
                 
             } else {
                 
-                List(objects(with: parent)) { object in
+                ForEach(objects) { object in
                     if object.type == .folder {
                         
                         NavigationLink(destination: {
-                            
-//                            ObjectPickerList(
-//                                contentObjects: [],
-//                                isPresented: $isPresented,
-//                                parent: object.id.uuidString,
-//                                title: object.title,
-//                                id: id,
-//                                type: type
-//                            ) { value in
-//                                action(value)
-//                            }
-                            
+                            ObjectPickerList(
+                                contentObjects: contentObjects,
+                                isPresented: $isPresented,
+                                selectedObject: $selectedObject, 
+                                parent: object.id.uuidString,
+                                title: object.title,
+                                id: id,
+                                type: type
+                            )
                         }) {
                             Label(object.title, systemImage: "folder.fill")
                                 .frame(height: 30)
@@ -58,7 +52,7 @@ struct ObjectPickerList: View {
                     } else if object.type == .file {
                         
                         Button(action: {
-                            action(object.id.uuidString)
+                            selectedObject = object.id.uuidString
                             isPresented.toggle()
                         }) {
                             Label(object.title, systemImage: "doc.fill")
@@ -96,14 +90,14 @@ struct ObjectPickerList: View {
             
     }
     
-    func objects(with parent: String) -> [ContentObject] {
+    var objects: [ContentObject] {
         return contentObjects.filter {
-            $0.parent == parent 
-        }
+            $0.parent == parent
+        }.sorted(by: { $0.title < $1.title })
     }
     
     func move() {
-        action(parent)
+        selectedObject = parent
         isPresented = false
     }
     

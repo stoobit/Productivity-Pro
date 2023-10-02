@@ -23,20 +23,23 @@ struct ObjectPicker: View {
     @Binding var isPresented: Bool
     var id: UUID?
     
+    @State var selectedObject: String = ""
+    
     var type: ContentObjectType
     let action: (String) -> Void
     
     var body: some View {
         NavigationStack {
-            ObjectPickerList(
-                contentObjects: contentObjects,
-                isPresented: $isPresented,
-                parent: "root",
-                title: "Notizen",
-                id: id,
-                type: type
-            ) { value in
-                action(value)
+            VStack {
+                ObjectPickerList(
+                    contentObjects: contentObjects,
+                    isPresented: $isPresented,
+                    selectedObject: $selectedObject, 
+                    parent: "root",
+                    title: "Notizen",
+                    id: id,
+                    type: type
+                )
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
