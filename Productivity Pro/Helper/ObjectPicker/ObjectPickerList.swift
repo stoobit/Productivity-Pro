@@ -43,11 +43,9 @@ struct ObjectPickerList: View {
                                 type: type
                             )
                         }) {
-                            Label(object.title, systemImage: "folder.fill")
-                                .frame(height: 30)
+                           ContentObjectLink(obj: object)
                         }
                         .disabled(id == object.id)
-                        .frame(height: 30)
                         
                     } else if object.type == .file {
                         
@@ -55,9 +53,8 @@ struct ObjectPickerList: View {
                             selectedObject = object.id.uuidString
                             isPresented.toggle()
                         }) {
-                            Label(object.title, systemImage: "doc.fill")
+                            ContentObjectLink(obj: object)
                         }
-                        .frame(height: 30)
                         .disabled(type == .folder)
                         
                     }
