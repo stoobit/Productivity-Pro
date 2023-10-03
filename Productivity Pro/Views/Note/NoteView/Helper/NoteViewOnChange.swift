@@ -10,7 +10,6 @@ import PDFKit
 
 struct NoteViewOnChange: ViewModifier {
     @AppStorage("recenturls") var recents: [URL] = []
-    @AppStorage("recentscount") var rcount: Int = 10
     
     @Environment(\.undoManager) var undoManager
     @Environment(\.scenePhase) var scenePhase

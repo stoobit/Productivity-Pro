@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BackgroundViews: View {
     var body: some View {
-        Text("BackgroundViews")
+        Spacer()
     }
     
     @ViewBuilder func Blank() -> some View {

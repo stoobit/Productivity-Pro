@@ -18,9 +18,7 @@ struct IndicatorText: View {
         let number = toolManager.selectedPage + 1
         
         Group {
-            Text("\(number)") +
-            Text(" von ") +
-            Text("\(total)")
+            Text("\(number) von \(total)")
         }
         .padding(5)
         .fontWeight(.medium)

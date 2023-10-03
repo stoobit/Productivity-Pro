@@ -48,6 +48,7 @@
 		BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */; };
 		BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */; };
 		BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */; };
+		BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */; };
 		BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F2FCD29129562001B7067 /* Orientation.swift */; };
 		BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F02996CE6200C0F140 /* ItemModel.swift */; };
 		BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F22996D06200C0F140 /* ShapeModel.swift */; };
@@ -275,6 +276,7 @@
 		BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewMethods.swift; sourceTree = "<group>"; };
 		BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRow.swift; sourceTree = "<group>"; };
 		BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewToolbar.swift; sourceTree = "<group>"; };
+		BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		BB3F2FCD29129562001B7067 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		BB3F75F02996CE6200C0F140 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		BB3F75F22996D06200C0F140 /* ShapeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeModel.swift; sourceTree = "<group>"; };
@@ -645,6 +647,7 @@
 				BB4CDD4828D3C66A009A409F /* Preview Content */,
 				BB1DDA28296715590038FE16 /* Resources */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
+				BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */,
 			);
 			path = "Productivity Pro";
 			sourceTree = "<group>";
@@ -1220,6 +1223,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				de,
+				en,
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
@@ -1241,6 +1245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4A93C92AAEFDCC00C3AED6 /* Pacifico-Regular.ttf in Resources */,
+				BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */,
 				BB72E1062A59B3B1005A01B9 /* README.md in Resources */,
 				BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */,
 				BB4CDD4728D3C66A009A409F /* Assets.xcassets in Resources */,

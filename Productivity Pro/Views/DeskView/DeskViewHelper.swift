@@ -46,16 +46,7 @@ extension DeskView {
     }
     
     @ViewBuilder func LinkView() -> some View {
-        Section("Social Media & Kontakt") {
-            
-            Link(destination: URL(
-                string: "https://www.stoobit.com"
-            )!) {
-                Label("stoobit", systemImage: "globe")
-                    .foregroundColor(Color("LogoColor"))
-            }
-            .frame(height: 30)
-            
+        Section("Social Media") {
             Link(destination: URL(
                 string: "https://www.instagram.com/productivitypro_app/"
             )!) {
@@ -81,18 +72,10 @@ extension DeskView {
         
         Section {
             Link(destination: URL(
-                string: "mailto:contact.stoobit@aol.com"
+                string: "https://www.stoobit.com"
             )!) {
-             
-                Label("Email", systemImage: "envelope")
-            }
-            .frame(height: 30)
-            
-            Link(destination: URL(
-                string: "imessage://contact.stoobit@aol.com"
-            )!) {
-                Label("iMessage", systemImage: "message")
-                    .foregroundStyle(.green)
+                Label("stoobit", systemImage: "globe")
+                    .foregroundColor(Color("LogoColor"))
             }
             .frame(height: 30)
         }

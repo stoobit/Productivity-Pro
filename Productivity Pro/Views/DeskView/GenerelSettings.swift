@@ -16,8 +16,6 @@ struct GenerelSettings: View {
         bySettingHour: 15, minute: 30, second: 00, of: Date()
     )!
     
-    @AppStorage("recentscount") var rcount: Int = 10
-    
     @AppStorage("automaticallyDeselectEraser")
     private var automaticallyDeselectEraser: Bool = false
     
@@ -34,21 +32,6 @@ struct GenerelSettings: View {
     var body: some View {
         NavigationStack {
             Form {
-                
-                Section("Notizen") {
-                    HStack {
-                        Text("Letzte Notizen")
-                        Spacer()
-                        Picker("", selection: $rcount) {
-                            Text("5").tag(5)
-                            Text("10").tag(10)
-                            Text("20").tag(20)
-                            Text("50").tag(50)
-                        }
-                        .labelsHidden()
-                    }
-                    .frame(height: 30)
-                }
                 
                 Section("Hausaufgaben") {
                     DatePicker(

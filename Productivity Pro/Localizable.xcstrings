@@ -1,0 +1,817 @@
+{
+  "sourceLanguage" : "de",
+  "strings" : {
+    "" : {
+
+    },
+    "," : {
+
+    },
+    ", " : {
+
+    },
+    "." : {
+
+    },
+    "%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%@ bearbeiten" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit %@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "%lld von %lld" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld von %2$lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1lld of %2lld"
+          }
+        }
+      }
+    },
+    "5" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5"
+          }
+        }
+      }
+    },
+    "Abbrechen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "Absteigend" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descending"
+          }
+        }
+      }
+    },
+    "Allgemein" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        }
+      }
+    },
+    "Als PDF exportieren" : {
+
+    },
+    "App Icon" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Icon"
+          }
+        }
+      }
+    },
+    "Arrange" : {
+
+    },
+    "Aufsteigend" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ascending"
+          }
+        }
+      }
+    },
+    "Auswählen" : {
+
+    },
+    "Backup" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Backup"
+          }
+        }
+      }
+    },
+    "Backup erstellen" : {
+
+    },
+    "Backup importieren" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import Backup"
+          }
+        }
+      }
+    },
+    "Bearbeiten" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit"
+          }
+        }
+      }
+    },
+    "Beschreibung" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        }
+      }
+    },
+    "Bewegen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Move"
+          }
+        }
+      }
+    },
+    "Bewerte Productivity Pro" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate Productivity Pro"
+          }
+        }
+      }
+    },
+    "Bibliothek" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Library"
+          }
+        }
+      }
+    },
+    "Border Style" : {
+
+    },
+    "Browse Files" : {
+
+    },
+    "Calculator" : {
+
+    },
+    "Camera" : {
+
+    },
+    "Cancel" : {
+
+    },
+    "Center" : {
+
+    },
+    "Change Template" : {
+
+    },
+    "Circle" : {
+
+    },
+    "Color" : {
+
+    },
+    "Copy" : {
+
+    },
+    "Corner Radius" : {
+
+    },
+    "Cut" : {
+
+    },
+    "Datei importieren" : {
+
+    },
+    "Datum nicht verfügbar." : {
+
+    },
+    "Degrees" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Dies kann einige Minuten dauern." : {
+
+    },
+    "Diese Aktion kann nicht rückgängig gemacht werde." : {
+
+    },
+    "Diese Seite löschen?" : {
+
+    },
+    "Dieser Ordner ist leer." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This folder is empty."
+          }
+        }
+      }
+    },
+    "Document scannen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan Document"
+          }
+        }
+      }
+    },
+    "Dokument scannen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan Document"
+          }
+        }
+      }
+    },
+    "Done" : {
+
+    },
+    "Drucken" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Print"
+          }
+        }
+      }
+    },
+    "Du hast noch keine Fächer erstellt." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You haven't created any subjects yet."
+          }
+        }
+      }
+    },
+    "Du hast noch keine Notizen erstellt." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You haven't created any notes yet."
+          }
+        }
+      }
+    },
+    "Duplicate" : {
+
+    },
+    "Editing" : {
+
+    },
+    "Ein Fehler ist aufgetreten." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred."
+          }
+        }
+      }
+    },
+    "Einstellungen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "Entfernen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove"
+          }
+        }
+      }
+    },
+    "Erstellt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Created"
+          }
+        }
+      }
+    },
+    "Es wurden keine Notizen gefunden." : {
+
+    },
+    "Fach" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subject"
+          }
+        }
+      }
+    },
+    "Fach hinzufügen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Subject"
+          }
+        }
+      }
+    },
+    "Fächer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subjects"
+          }
+        }
+      }
+    },
+    "Farbe" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        }
+      }
+    },
+    "Fertig" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        }
+      }
+    },
+    "Fill Style" : {
+
+    },
+    "Font" : {
+
+    },
+    "Format" : {
+
+    },
+    "Freistunde" : {
+
+    },
+    "Geändert" : {
+
+    },
+    "Gruppieren" : {
+
+    },
+    "Hausaufgaben" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Homework"
+          }
+        }
+      }
+    },
+    "Hello, World!" : {
+
+    },
+    "Hexagon" : {
+
+    },
+    "Hinzufügen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
+          }
+        }
+      }
+    },
+    "Hoch- & Querformat" : {
+
+    },
+    "Hochformat" : {
+
+    },
+    "iMessage" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iMessage"
+          }
+        }
+      }
+    },
+    "Importieren" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import"
+          }
+        }
+      }
+    },
+    "Instagram" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instagram"
+          }
+        }
+      }
+    },
+    "Jgst %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grade %lld"
+          }
+        }
+      }
+    },
+    "Layout" : {
+
+    },
+    "Letzte Vorlage" : {
+
+    },
+    "Lock" : {
+
+    },
+    "Löschen" : {
+
+    },
+    "Markdown" : {
+
+    },
+    "Media" : {
+
+    },
+    "Möchtest du dieses Fach wirklich löschen?" : {
+
+    },
+    "Name" : {
+
+    },
+    "Noch sind keine Bücher verfügbar." : {
+
+    },
+    "Notiz" : {
+
+    },
+    "Notiz erstellen" : {
+
+    },
+    "Notizen" : {
+
+    },
+    "Ok" : {
+
+    },
+    "Ordner erstellen" : {
+
+    },
+    "Papierkorb" : {
+
+    },
+    "Paste" : {
+
+    },
+    "PDF" : {
+
+    },
+    "PDF importieren" : {
+
+    },
+    "Photos" : {
+
+    },
+    "Position" : {
+
+    },
+    "Powered by " : {
+
+    },
+    "Premium" : {
+
+    },
+    "Processing..." : {
+
+    },
+    "Productivity Pro" : {
+
+    },
+    "Querformat" : {
+
+    },
+    "Radius" : {
+
+    },
+    "Raum" : {
+
+    },
+    "Rectangle" : {
+
+    },
+    "Rotation" : {
+
+    },
+    "Schließen" : {
+
+    },
+    "Schreibtisch" : {
+
+    },
+    "Schreibtisch %@ Fächer" : {
+
+    },
+    "Schriftart" : {
+
+    },
+    "Schriftgröße" : {
+
+    },
+    "Scrolling Disabled" : {
+
+    },
+    "Seite hinzufügen" : {
+
+    },
+    "Seite löschen" : {
+
+    },
+    "Seiten bearbeiten" : {
+
+    },
+    "Select an Object" : {
+
+    },
+    "Shape" : {
+
+    },
+    "Share" : {
+
+    },
+    "Show Border" : {
+
+    },
+    "Show Fill" : {
+
+    },
+    "Size" : {
+
+    },
+    "Social Media" : {
+
+    },
+    "Social Media & Kontakt" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Social Media"
+          }
+        }
+      }
+    },
+    "Sortieren" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort"
+          }
+        }
+      }
+    },
+    "Standardeinstellungen von Textfeldern" : {
+
+    },
+    "stoobit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "stoobit"
+          }
+        }
+      }
+    },
+    "Stundenplan" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schedule"
+          }
+        }
+      }
+    },
+    "Style" : {
+
+    },
+    "Suchen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search"
+          }
+        }
+      }
+    },
+    "Teilen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        }
+      }
+    },
+    "Text Box" : {
+
+    },
+    "Text Style" : {
+
+    },
+    "Titel" : {
+
+    },
+    "Triangle" : {
+
+    },
+    "Turtle Maths" : {
+
+    },
+    "Übersicht" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overview"
+          }
+        }
+      }
+    },
+    "Uhrzeit der Benachrichtigung" : {
+
+    },
+    "Umbenennen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rename"
+          }
+        }
+      }
+    },
+    "Unbenannt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untitled"
+          }
+        }
+      }
+    },
+    "Vorlage ändern" : {
+
+    },
+    "Vorlage auswählen" : {
+
+    },
+    "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Hausaufgaben und Stundenplaneinträge gelöscht." : {
+
+    },
+    "Widerrufen" : {
+
+    },
+    "Widerrufen/Wiederholen" : {
+
+    },
+    "Width" : {
+
+    },
+    "Wiederholen" : {
+
+    },
+    "X" : {
+
+    },
+    "xᵃ" : {
+
+    },
+    "Zu erledigen bis zum" : {
+
+    },
+    "Zurück" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
