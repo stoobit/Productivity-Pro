@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum PPPageType: Int, Codable {
-    case none = 0
+enum PPPageType: Codable {
+    case none
     
-    case template = 1
-    case pdf = 2
-    case image = 3
-    case mindmap = 4
+    case template
+    case pdf
+    case image
+    case mindmap
 }

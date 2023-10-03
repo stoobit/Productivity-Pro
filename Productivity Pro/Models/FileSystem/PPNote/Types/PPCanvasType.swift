@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PPCanvasType: Int, Codable {
-    case pkCanvas = 0
-    case ppCanvas = 1
+enum PPCanvasType: Codable {
+    case pkCanvas
+    case ppCanvas
 }
