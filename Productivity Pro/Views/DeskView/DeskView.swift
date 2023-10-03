@@ -52,8 +52,14 @@ struct DeskView: View {
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Schreibtisch")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("", systemImage: "square.and.arrow.up") {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    Link(destination: URL(
+                        string: "https://www.stoobit.com"
+                    )!) {
+                        Label("stoobit", systemImage: "globe")
+                    }
+                    
+                    Button("Teilen", systemImage: "square.and.arrow.up") {
                         shareView.toggle()
                     }
                 }

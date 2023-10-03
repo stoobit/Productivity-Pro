@@ -69,16 +69,6 @@ extension DeskView {
             }
             .frame(height: 30)
         }
-        
-        Section {
-            Link(destination: URL(
-                string: "https://www.stoobit.com"
-            )!) {
-                Label("stoobit", systemImage: "globe")
-                    .foregroundColor(Color("LogoColor"))
-            }
-            .frame(height: 30)
-        }
     }
 
 }
