@@ -8,5 +8,5 @@
 import Foundation
 
 struct ExportableTextFieldModel: Codable {
-    
+    var nsAttributedString: Data
 }

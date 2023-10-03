@@ -227,6 +227,7 @@
 		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
 		BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */; };
 		BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930792A674C9600AD3958 /* PPShape.swift */; };
+		BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD5B1A2ACCDE210068609A /* RichTextKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -472,6 +473,7 @@
 			files = (
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
+				BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1230,6 +1232,7 @@
 				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
 				BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */,
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
+				BBFD5B1A2ACCDE210068609A /* RichTextKit */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1264,6 +1267,7 @@
 			packageReferences = (
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
+				BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1765,6 +1769,14 @@
 				kind = branch;
 			};
 		};
+		BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1782,6 +1794,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
+		};
+		BBFD5B1A2ACCDE210068609A /* RichTextKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */;
+			productName = RichTextKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

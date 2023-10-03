@@ -16,7 +16,8 @@ import SwiftData
         self.fontColor = fontColor.toCodable()
     }
     
-    var text: String = ""
+    var nsAttributedString: Data = try! NSAttributedString()
+        .data(from: NSRange())
     
     var fontName: String = "Avenir Next"
     var fontSize: CGFloat
