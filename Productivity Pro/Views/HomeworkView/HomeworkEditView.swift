@@ -60,13 +60,26 @@ struct HomeworkEditView: View {
                     )
                     .frame(height: 30)
                     
+                    if isEditing == false && homework.linkedDocument.isEmpty == false {
+                        
+                        NavigationLink(destination: {
+                           
+                        }) {
+                            Text(homework.documentTitle)
+                        }
+                        .frame(height: 30)
+                        
+                    } else {
+                        
+                    }
+                    
                     HStack {
                         Text("Notiz")
                         Spacer()
                         
                         if !isEditing {
                             Button(
-                                homework.linkedDocument == nil ? "-" : homework.documentTitle
+                                homework.linkedDocument.isEmpty ? "-" : homework.documentTitle
                             ) {
                                 
                             }
@@ -74,7 +87,7 @@ struct HomeworkEditView: View {
                             .foregroundStyle(Color.primary)
                         } else {
                             Button(
-                                homework.linkedDocument == nil ? "Auswählen" : homework.documentTitle
+                                homework.linkedDocument.isEmpty ? "Auswählen" : homework.documentTitle
                             ) {
                                 
                             }

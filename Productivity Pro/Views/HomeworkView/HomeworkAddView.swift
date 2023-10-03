@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeworkAddView: View {
-    
     @Environment(\.modelContext) var context
+    @Query(animation: .bouncy) var contentObjects: [ContentObject]
     
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
@@ -19,8 +20,10 @@ struct HomeworkAddView: View {
         bySettingHour: 15, minute: 30, second: 00, of: Date()
     )!
     
-    @Binding var isPresented: Bool
+    @State var notePicker: Bool = false
     @State var homework: Homework = Homework()
+    
+    @Binding var isPresented: Bool
     
     var body: some View {
         NavigationStack {
@@ -52,14 +55,24 @@ struct HomeworkAddView: View {
                     HStack {
                         Text("Notiz")
                         Spacer()
-                        Button(homework.linkedDocument == nil ? "Auswählen" : homework.documentTitle
+                        Button(homework.linkedDocument.isEmpty ? "Auswählen" : homework.documentTitle
                         ) {
-                            
+                            notePicker.toggle()
                         }
                         .buttonStyle(.bordered)
                         .foregroundStyle(Color.primary)
                     }
                     .frame(height: 30)
+                    .sheet(isPresented: $notePicker, onDismiss: {
+                        pickNote()
+                    }) {
+                        ObjectPicker(
+                            objects: contentObjects,
+                            isPresented: $notePicker,
+                            selectedObject: $homework.linkedDocument, 
+                            type: .file
+                        )
+                    }
                 }
                 
                 TextField(
@@ -146,6 +159,14 @@ struct HomeworkAddView: View {
         )
 
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    func pickNote() {
+        if homework.linkedDocument.isEmpty == false {
+            homework.documentTitle = contentObjects.filter({
+                $0.id.uuidString == homework.linkedDocument
+            }).first!.title
+        }
     }
 }
 

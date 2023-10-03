@@ -22,6 +22,7 @@ struct ContentObjectLink: View {
             
             VStack(alignment: .leading) {
                 Text(obj.title)
+                    .foregroundStyle(Color.primary)
                 
                 Group {
                     Text(obj.created, style: .date) +

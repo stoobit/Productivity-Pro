@@ -20,6 +20,6 @@ import Foundation
     var subject: String = ""
     var date: Date = Date()
     
-    var linkedDocument: UUID? = nil
+    var linkedDocument: String = ""
     var documentTitle: String = ""
 }

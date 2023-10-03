@@ -17,45 +17,24 @@ struct HomeworkItem: View {
     @State var showDescription: Bool = false
     
     var body: some View {
-        HStack {
-            Image(systemName: getSubject(from: homework.subject).icon)
-                .foregroundStyle(.white)
-                .background {
-                    Circle()
-                        .frame(width: 40, height: 40)
-                        .foregroundStyle(
-                            Color(
-                                rawValue: getSubject(
-                                    from: homework.subject
-                                ).color
-                            )
-                        )
+        Group {
+            if homework.linkedDocument.isEmpty {
+                Item()
+            } else {
+                NavigationLink(destination: {}) {
+                    Item()
                 }
-                .frame(width: 40, height: 40)
-            
-            Text(homework.title)
-                .foregroundStyle(Color.primary)
-                .padding(.leading, 7)
-            
-            Spacer()
-            
-            Button(action: { showDescription.toggle() }) {
-                Image(systemName: "info")
-                    .frame(width: 25, height: 25)
             }
-            .buttonStyle(.bordered)
-            .padding(.trailing, 5)
-            
-            Button(action: {  }) {
-                Image(systemName: "link")
-                    .frame(width: 25, height: 25)
-            }
-            .buttonStyle(.bordered)
         }
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
             Button(role: .destructive, action: delete) {
                 Image(systemName: "trash")
             }
+            
+            Button(action: { showDescription.toggle() }) {
+                Image(systemName: "pencil")
+            }
+            .tint(.accentColor)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive, action: delete) {
@@ -83,5 +62,28 @@ struct HomeworkItem: View {
         }
         
         return subject
+    }
+    
+    @ViewBuilder func Item() -> some View {
+        HStack {
+            Image(systemName: getSubject(from: homework.subject).icon)
+                .foregroundStyle(.white)
+                .background {
+                    Circle()
+                        .frame(width: 40, height: 40)
+                        .foregroundStyle(
+                            Color(
+                                rawValue: getSubject(
+                                    from: homework.subject
+                                ).color
+                            )
+                        )
+                }
+                .frame(width: 40, height: 40)
+            
+            Text(homework.title)
+                .foregroundStyle(Color.primary)
+                .padding(.leading, 7)
+        }
     }
 }
