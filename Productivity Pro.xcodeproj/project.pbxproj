@@ -117,7 +117,6 @@
 		BB9367732AC9D3AC0096F20E /* PPPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367722AC9D3AC0096F20E /* PPPosition.swift */; };
 		BB9367752AC9D3B30096F20E /* PPSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367742AC9D3B30096F20E /* PPSize.swift */; };
 		BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367762AC9D3C50096F20E /* PPStrokeType.swift */; };
-		BB9367792AC9D3D30096F20E /* PPNoteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367782AC9D3D30096F20E /* PPNoteType.swift */; };
 		BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677A2AC9D3E20096F20E /* PPPageType.swift */; };
 		BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677C2AC9D3F40096F20E /* PPCanvasType.swift */; };
 		BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677E2AC9D40C0096F20E /* PPItemType.swift */; };
@@ -348,7 +347,6 @@
 		BB9367722AC9D3AC0096F20E /* PPPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPosition.swift; sourceTree = "<group>"; };
 		BB9367742AC9D3B30096F20E /* PPSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSize.swift; sourceTree = "<group>"; };
 		BB9367762AC9D3C50096F20E /* PPStrokeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPStrokeType.swift; sourceTree = "<group>"; };
-		BB9367782AC9D3D30096F20E /* PPNoteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNoteType.swift; sourceTree = "<group>"; };
 		BB93677A2AC9D3E20096F20E /* PPPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPageType.swift; sourceTree = "<group>"; };
 		BB93677C2AC9D3F40096F20E /* PPCanvasType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasType.swift; sourceTree = "<group>"; };
 		BB93677E2AC9D40C0096F20E /* PPItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPItemType.swift; sourceTree = "<group>"; };
@@ -812,7 +810,6 @@
 		BB9367712AC9D39B0096F20E /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				BB9367782AC9D3D30096F20E /* PPNoteType.swift */,
 				BB93677A2AC9D3E20096F20E /* PPPageType.swift */,
 				BB93677C2AC9D3F40096F20E /* PPCanvasType.swift */,
 				BB93677E2AC9D40C0096F20E /* PPItemType.swift */,
@@ -1407,7 +1404,6 @@
 				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
-				BB9367792AC9D3D30096F20E /* PPNoteType.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
 				BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */,
 				BB1DF6042A686D14006F85CE /* PPToolButton.swift in Sources */,

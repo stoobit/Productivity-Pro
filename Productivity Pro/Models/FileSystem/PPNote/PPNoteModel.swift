@@ -9,11 +9,7 @@ import Foundation
 import SwiftData
 
 @Model final class PPNoteModel {
-    var type: PPNoteType
-    
-    init(type: PPNoteType = .standard) {
-        self.type = type
-    }
+    init() {}
     
     @Relationship(deleteRule: .cascade)
     var pages: [PPPageModel]? = []
