@@ -53,7 +53,7 @@ struct FolderViewToolbar: ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarLeading) {
             NavigationLink(destination: {
-                
+                TrashView(contentObjects: contentObjects)
             }) { Label("Papierkorb", systemImage: "trash") }
                 .tint(Color.red)
             

@@ -6,13 +6,66 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TrashView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @Environment(\.modelContext) var context
+    @State var emptyTrash: Bool = false
+    
+    var contentObjects: [ContentObject]
+    var filteredObjects: [ContentObject] {
+        contentObjects
+            .filter { $0.inTrash }
+            .sorted(by: {
+                $0.title < $1.title
+            })
+            .sorted(by: {
+                $0.grade < $1.grade
+            })
     }
-}
-
-#Preview {
-    TrashView()
+    
+    var body: some View {
+        List {
+            if filteredObjects.isEmpty {
+                ContentUnavailableView(
+                    "Der Papierkorb ist leer.", systemImage: "trash"
+                )
+                .listRowBackground(Color.clear)
+            }
+            
+            ForEach(filteredObjects) { object in
+                TrashViewItem(
+                    contentObjects: contentObjects, object: object
+                )
+            }
+        }
+        .environment(\.defaultMinListRowHeight, 10)
+        .navigationTitle("Papierkorb")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Entleeren", role: .destructive) {
+                    emptyTrash.toggle()
+                }
+                .tint(Color.red)
+                .disabled(filteredObjects.isEmpty)
+            }
+        }
+        .alert("Papierkorb entleeren", isPresented: $emptyTrash, actions: {
+            Button("Abbrechen", role: .cancel) {
+                emptyTrash = false
+            }
+            
+            Button("Entleeren", role: .destructive) {
+                withAnimation(.bouncy) {
+                    for filteredObject in filteredObjects {
+                        context.delete(filteredObject)
+                    }
+                }
+                
+                emptyTrash = false
+            }
+        }) {
+            Text("Möchtest du den Papierkorb wirklich entleeren?")
+        }
+    }
 }

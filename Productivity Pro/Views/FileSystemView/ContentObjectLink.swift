@@ -36,11 +36,6 @@ struct ContentObjectLink: View {
             .padding(.leading, 5)
             
             Spacer()
-            
-            if obj.isPinned {
-                Image(systemName: "pin")
-                    .foregroundStyle(Color.accentColor)
-            }
         }
         .frame(height: 40)
     }

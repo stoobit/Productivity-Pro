@@ -249,6 +249,9 @@
     "Delete" : {
 
     },
+    "Der Papierkorb ist leer." : {
+
+    },
     "Dies kann einige Minuten dauern." : {
 
     },
@@ -368,6 +371,9 @@
         }
       }
     },
+    "Entleeren" : {
+
+    },
     "Erstellt" : {
       "localizations" : {
         "en" : {
@@ -459,9 +465,6 @@
         }
       }
     },
-    "Hello, World!" : {
-
-    },
     "Hexagon" : {
 
     },
@@ -512,6 +515,9 @@
         }
       }
     },
+    "Jetzt löschen" : {
+
+    },
     "Jgst %lld" : {
       "localizations" : {
         "en" : {
@@ -540,6 +546,9 @@
     "Media" : {
 
     },
+    "Möchtest du den Papierkorb wirklich entleeren?" : {
+
+    },
     "Möchtest du dieses Fach wirklich löschen?" : {
 
     },
@@ -565,6 +574,9 @@
 
     },
     "Papierkorb" : {
+
+    },
+    "Papierkorb entleeren" : {
 
     },
     "Paste" : {
@@ -788,6 +800,9 @@
 
     },
     "Width" : {
+
+    },
+    "Wiederherstellen" : {
 
     },
     "Wiederholen" : {

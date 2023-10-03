@@ -61,13 +61,16 @@ struct SearchView: View {
             return contentObjects
                 .filter {
                     $0.type == .file && 
-                    $0.inTrash == false &&
+                    $0.inTrash == false
+                }
+                .filter({
                     $0.title.lowercased().contains(
                         searchText
                             .lowercased()
                             .trimmingCharacters(in: .whitespaces)
-                    )
-                }
+                    ) ||
+                    searchText.contains("\($0.grade)")
+                })
                 .sorted(by: { $0.title < $1.title })
         }
     }

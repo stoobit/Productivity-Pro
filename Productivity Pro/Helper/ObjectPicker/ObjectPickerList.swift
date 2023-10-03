@@ -23,9 +23,11 @@ struct ObjectPickerList: View {
     var body: some View {
         List {
             if objects.isEmpty {
-                Text("Dieser Ordner ist leer.")
-                    .foregroundStyle(Color.secondary)
-                    .frame(height: 30)
+                ContentUnavailableView(
+                    parent == "root" ? "" : "Dieser Ordner ist leer.",
+                    systemImage: parent == "root" ? "" : "folder"
+                )
+                .listRowBackground(Color.clear)
                 
             } else {
                 
