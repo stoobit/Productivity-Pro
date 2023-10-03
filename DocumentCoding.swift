@@ -7,17 +7,19 @@
 
 import Foundation
 
-func decode() -> Document {
-    let decryptedData = Data(
-        base64Encoded: data, options: .ignoreUnknownCharacters
+func decode(url: URL) throws -> ExportableNoteModel {
+    let encodedData = try Data(contentsOf: url)
+    
+    let data = Data(
+        base64Encoded: encodedData, options: .ignoreUnknownCharacters
     ) ?? Data()
     
-    return try JSONDecoder().decode(Document.self, from: decryptedData)
+    return try JSONDecoder().decode(ExportableNoteModel.self, from: data)
 }
 
-func encode() -> Data {
-    let data = try JSONEncoder().encode(document)
-    let encryptedData = data.base64EncodedData()
+func encode(_ note: ExportableNoteModel, to url: URL) throws {
+    let data = try JSONEncoder().encode(note)
+    let encodedData = data.base64EncodedData()
     
-    return encryptedData
+    try encodedData.write(to: url)
 }

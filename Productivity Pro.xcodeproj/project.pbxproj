@@ -182,6 +182,7 @@
 		BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDEA2947DC62000C545D /* MusicView.swift */; };
 		BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */; };
 		BBD0DC9F2ACCB619004A2C56 /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9E2ACCB619004A2C56 /* ExportableNoteModel.swift */; };
+		BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */; };
 		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
@@ -1421,6 +1422,7 @@
 				BB9BFB662AC7672C00255293 /* PPCanvasModel.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
+				BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */,
 				BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,

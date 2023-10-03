@@ -7,7 +7,6 @@
 
 import Foundation
 
-struct ExportableNoteModel {
-    var type: PPNoteType = .standard
-    var pages: [PPPageModel] = []
+struct ExportableNoteModel: Codable {
+//    var pages: [] = []
 }
