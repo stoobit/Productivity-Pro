@@ -8,10 +8,8 @@
 import SwiftUI
 
 extension Color {
-    
     init?(codable: Data) {
         var color: UIColor = .red
-        
         do {
             
             color = try NSKeyedUnarchiver.unarchivedObject(
@@ -27,7 +25,6 @@ extension Color {
 
     func toCodable() -> Data {
         var data: Data = Data()
-        
         do {
             
             try data = NSKeyedArchiver.archivedData(
