@@ -21,18 +21,20 @@ struct HomeworkItem: View {
             if homework.linkedDocument.isEmpty {
                 Item()
             } else {
-                NavigationLink(destination: {}) {
+                NavigationLink(destination: {
+                    Text(homework.linkedDocument)
+                }) {
                     Item()
                 }
             }
         }
-        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+        .swipeActions(edge: .leading, allowsFullSwipe: false) {
             Button(role: .destructive, action: delete) {
                 Image(systemName: "trash")
             }
             
             Button(action: { showDescription.toggle() }) {
-                Image(systemName: "pencil")
+                Image(systemName: "info.circle")
             }
             .tint(.accentColor)
         }

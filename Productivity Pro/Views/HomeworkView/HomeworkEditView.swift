@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeworkEditView: View {
-    
     @Environment(\.modelContext) var context
+    @Query(animation: .bouncy) var contentObjects: [ContentObject]
     
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
@@ -23,6 +24,7 @@ struct HomeworkEditView: View {
     
     @State var isEditing: Bool = false
     @State var homework: Homework = Homework()
+    @State var notePicker: Bool = false
     
     var h: Homework
     
@@ -60,42 +62,43 @@ struct HomeworkEditView: View {
                     )
                     .frame(height: 30)
                     
-                    if isEditing == false && homework.linkedDocument.isEmpty == false {
-                        
-                        NavigationLink(destination: {
-                           
-                        }) {
-                            Text(homework.documentTitle)
-                        }
-                        .frame(height: 30)
-                        
-                    } else {
-                        
-                    }
-                    
                     HStack {
-                        Text("Notiz")
+                        
+                        if isEditing {
+                            Text(
+                                homework.linkedDocument.isEmpty ? "Notiz" : homework.documentTitle
+                            )
+                        } else {
+                            Text(
+                                homework.linkedDocument.isEmpty ? "-" : homework.documentTitle
+                            )
+                        }
+                        
                         Spacer()
                         
-                        if !isEditing {
-                            Button(
-                                homework.linkedDocument.isEmpty ? "-" : homework.documentTitle
-                            ) {
-                                
-                            }
-                            .buttonStyle(.borderless)
-                            .foregroundStyle(Color.primary)
-                        } else {
-                            Button(
-                                homework.linkedDocument.isEmpty ? "Auswählen" : homework.documentTitle
-                            ) {
-                                
+                        if isEditing {
+                            Button(homework.linkedDocument.isEmpty ? "Auswählen" : "Entfernen") {
+                                if homework.linkedDocument.isEmpty {
+                                    notePicker.toggle()
+                                } else {
+                                    homework.linkedDocument = ""
+                                }
                             }
                             .buttonStyle(.bordered)
                             .foregroundStyle(Color.primary)
                         }
                     }
                     .frame(height: 30)
+                    .sheet(isPresented: $notePicker, onDismiss: {
+                        pickNote()
+                    }) {
+                        ObjectPicker(
+                            objects: contentObjects,
+                            isPresented: $notePicker,
+                            selectedObject: $homework.linkedDocument,
+                            type: .file
+                        )
+                    }
                 }
                 
                 TextField(
@@ -225,6 +228,14 @@ struct HomeworkEditView: View {
         )
 
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    func pickNote() {
+        if homework.linkedDocument.isEmpty == false {
+            homework.documentTitle = contentObjects.filter({
+                $0.id.uuidString == homework.linkedDocument
+            }).first!.title
+        }
     }
     
 }

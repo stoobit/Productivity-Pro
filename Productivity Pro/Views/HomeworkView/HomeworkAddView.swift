@@ -53,11 +53,18 @@ struct HomeworkAddView: View {
                     .frame(height: 30)
                     
                     HStack {
-                        Text("Notiz")
+                        Text(
+                            homework.linkedDocument.isEmpty ? "Notiz" : homework.documentTitle
+                        )
+                        
                         Spacer()
-                        Button(homework.linkedDocument.isEmpty ? "Auswählen" : homework.documentTitle
-                        ) {
-                            notePicker.toggle()
+                        
+                        Button(homework.linkedDocument.isEmpty ? "Auswählen" : "Entfernen") {
+                            if homework.linkedDocument.isEmpty {
+                                notePicker.toggle()
+                            } else {
+                                homework.linkedDocument = ""
+                            }
                         }
                         .buttonStyle(.bordered)
                         .foregroundStyle(Color.primary)
