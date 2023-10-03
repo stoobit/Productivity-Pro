@@ -22,7 +22,7 @@ extension CreateNoteView {
             
             context.insert(object)
             
-            let note = PPNoteModel(type: .standard)
+            let note = PPNoteModel()
             object.note = note
             
             let page = PPPageModel(type: .template, canvas: .pkCanvas)
@@ -50,7 +50,7 @@ extension CreateNoteView {
             
             context.insert(object)
             
-            let note = PPNoteModel(type: .standard)
+            let note = PPNoteModel()
             object.note = note
             
             let page = PPPageModel(type: .template, canvas: .pkCanvas)

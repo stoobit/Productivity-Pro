@@ -183,6 +183,11 @@
 		BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */; };
 		BBD0DC9F2ACCB619004A2C56 /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9E2ACCB619004A2C56 /* ExportableNoteModel.swift */; };
 		BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */; };
+		BBD0DCA22ACCD046004A2C56 /* ExportablePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DCA12ACCD046004A2C56 /* ExportablePageModel.swift */; };
+		BBD0DCA42ACCD350004A2C56 /* ExportableItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DCA32ACCD350004A2C56 /* ExportableItemModel.swift */; };
+		BBD0DCA72ACCD51D004A2C56 /* ExportableShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DCA62ACCD51D004A2C56 /* ExportableShapeModel.swift */; };
+		BBD0DCA92ACCD52A004A2C56 /* ExportableMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DCA82ACCD52A004A2C56 /* ExportableMediaModel.swift */; };
+		BBD0DCAB2ACCD538004A2C56 /* ExportableTextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DCAA2ACCD538004A2C56 /* ExportableTextFieldModel.swift */; };
 		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
@@ -413,6 +418,11 @@
 		BBCDFDEA2947DC62000C545D /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
 		BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewItem.swift; sourceTree = "<group>"; };
 		BBD0DC9E2ACCB619004A2C56 /* ExportableNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableNoteModel.swift; sourceTree = "<group>"; };
+		BBD0DCA12ACCD046004A2C56 /* ExportablePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportablePageModel.swift; sourceTree = "<group>"; };
+		BBD0DCA32ACCD350004A2C56 /* ExportableItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableItemModel.swift; sourceTree = "<group>"; };
+		BBD0DCA62ACCD51D004A2C56 /* ExportableShapeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableShapeModel.swift; sourceTree = "<group>"; };
+		BBD0DCA82ACCD52A004A2C56 /* ExportableMediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableMediaModel.swift; sourceTree = "<group>"; };
+		BBD0DCAA2ACCD538004A2C56 /* ExportableTextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableTextFieldModel.swift; sourceTree = "<group>"; };
 		BBD3C4202A54DA46002BFFCF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
@@ -1068,8 +1078,21 @@
 			isa = PBXGroup;
 			children = (
 				BBD0DC9E2ACCB619004A2C56 /* ExportableNoteModel.swift */,
+				BBD0DCA12ACCD046004A2C56 /* ExportablePageModel.swift */,
+				BBD0DCA32ACCD350004A2C56 /* ExportableItemModel.swift */,
+				BBD0DCA52ACCD508004A2C56 /* ExportableItemModels */,
 			);
 			path = Note;
+			sourceTree = "<group>";
+		};
+		BBD0DCA52ACCD508004A2C56 /* ExportableItemModels */ = {
+			isa = PBXGroup;
+			children = (
+				BBD0DCA62ACCD51D004A2C56 /* ExportableShapeModel.swift */,
+				BBD0DCA82ACCD52A004A2C56 /* ExportableMediaModel.swift */,
+				BBD0DCAA2ACCD538004A2C56 /* ExportableTextFieldModel.swift */,
+			);
+			path = ExportableItemModels;
 			sourceTree = "<group>";
 		};
 		BBDCF5D6299E699C004C99AE /* PageItems */ = {
@@ -1272,6 +1295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */,
+				BBD0DCA92ACCD52A004A2C56 /* ExportableMediaModel.swift in Sources */,
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */,
@@ -1325,6 +1349,7 @@
 				BB047CDE2AC0C1FF0027409F /* FileSystemView.swift in Sources */,
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
+				BBD0DCA42ACCD350004A2C56 /* ExportableItemModel.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
@@ -1343,6 +1368,7 @@
 				BB53D5B029C4F79F008130F2 /* EditMarkdownView.swift in Sources */,
 				BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */,
 				BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */,
+				BBD0DCA22ACCD046004A2C56 /* ExportablePageModel.swift in Sources */,
 				BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */,
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
 				BB93676E2AC9CE500096F20E /* PPMindmapModel.swift in Sources */,
@@ -1353,6 +1379,7 @@
 				BBEFC9512A41038F00960C8D /* NoteSideActionsEditor.swift in Sources */,
 				BBCDFDE52947C877000C545D /* DottedView.swift in Sources */,
 				BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */,
+				BBD0DCAB2ACCD538004A2C56 /* ExportableTextFieldModel.swift in Sources */,
 				BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */,
 				BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */,
 				BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */,
@@ -1462,6 +1489,7 @@
 				BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */,
 				BB27FED428EA192D00459334 /* OLD ChangePageTemplateView.swift in Sources */,
 				BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */,
+				BBD0DCA72ACCD51D004A2C56 /* ExportableShapeModel.swift in Sources */,
 				BB93676A2AC9CE330096F20E /* PPChartModel.swift in Sources */,
 				BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */,
 				BB5034192993172800913B3A /* PageItemView.swift in Sources */,

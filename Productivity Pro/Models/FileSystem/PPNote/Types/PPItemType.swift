@@ -8,7 +8,6 @@
 import Foundation
 
 enum PPItemType: Codable {
-    case none
     case shape
     case media
     case textField

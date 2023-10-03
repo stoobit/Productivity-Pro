@@ -8,5 +8,5 @@
 import Foundation
 
 struct ExportableNoteModel: Codable {
-//    var pages: [] = []
+    var pages: [ExportablePageModel] = []
 }

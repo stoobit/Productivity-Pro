@@ -28,7 +28,7 @@ import PencilKit
     var type: PPPageType
     var canvas: PPCanvasType
     
-    var header: String = ""
+    var title: String = ""
     var created: Date
     
     var template: String = ""
@@ -37,7 +37,7 @@ import PencilKit
     var media: Data? = nil
     
     var ppCanvas: PPCanvasModel?
-    var pkCanvas: Data = PKDrawing().dataRepresentation()
+    var pkCanvas: Data?
  
     @Relationship(deleteRule: .cascade)
     var items: [PPItemModel] = []
