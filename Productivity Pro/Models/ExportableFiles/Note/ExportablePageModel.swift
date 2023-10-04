@@ -10,7 +10,7 @@ import Foundation
 struct ExportablePageModel: Codable {
     var id: UUID
     
-    var type: PPPageType = .none
+    var type: PPPageType
     var canvas: PPCanvasType = .pkCanvas
     
     var title: String
