@@ -820,7 +820,7 @@
 			path = ItemModels;
 			sourceTree = "<group>";
 		};
-		BB9367712AC9D39B0096F20E /* Types */ = {
+		BB9367712AC9D39B0096F20E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				BB93677A2AC9D3E20096F20E /* PPPageType.swift */,
@@ -832,7 +832,7 @@
 				BB9367722AC9D3AC0096F20E /* PPPosition.swift */,
 				BB9367742AC9D3B30096F20E /* PPSize.swift */,
 			);
-			path = Types;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		BB988E6329999F3300762F39 /* PencilKitView */ = {
@@ -861,7 +861,7 @@
 				BB9BFB612AC7576300255293 /* PPPageModel.swift */,
 				BB9BFB682AC7684300255293 /* PPItemModel.swift */,
 				BB9BFB672AC7683400255293 /* PPItemModels */,
-				BB9367712AC9D39B0096F20E /* Types */,
+				BB9367712AC9D39B0096F20E /* Helper */,
 			);
 			path = PPNote;
 			sourceTree = "<group>";

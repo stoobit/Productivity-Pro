@@ -81,16 +81,14 @@ struct BackupSettings: View {
     
     func createBackup() {
         backingUp = true
-        var backup = DataSystemExportable()
+//        var backup = DataSystemExportable()
         
-        for contentObject in contentObjects {
-            let objectBackup = ContentObjectExportable(
-                id: contentObject.id
-            )
-            
-            backup.contentObjects.append(objectBackup)
-            exportetCount += 1
-        }
+//        for contentObject in contentObjects {
+//            let objectBackup = ContentObjectExportable
+//            
+//            backup.contentObjects.append(objectBackup)
+//            exportetCount += 1
+//        }
         
         backingUp = false
     }

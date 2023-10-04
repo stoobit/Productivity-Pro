@@ -9,4 +9,19 @@ import Foundation
 
 struct ContentObjectExportable: Identifiable, Codable {
     var id: UUID
+    
+    var title: String
+    var type: ContentObjectType
+    var parent: String
+    
+    var created: Date
+    var modified: Date
+    
+    var grade: Int
+    var subject: UUID?
+    
+    var isPinned: Bool = false
+    var inTrash: Bool = false
+    
+    var note: ExportableNoteModel?
 }

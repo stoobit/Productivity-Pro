@@ -11,13 +11,12 @@ struct ExportableItemModel: Codable {
     var id: UUID
     
     var type: PPItemType
-    var isLocked: Bool = false
+    var isLocked: Bool
     
-    var position: PPPosition = PPPosition(x: 0, y: 0)
-    var size: PPSize = PPSize(width: 0, height: 0)
+    var position: PPPosition
+    var size: PPSize
     
     var shape: ExportableShapeModel?
     var media: ExportableMediaModel?
     var textField: ExportableTextFieldModel?
-    
 }

@@ -46,7 +46,7 @@ struct NoteViewSheet: ViewModifier {
                 onDismiss: { undoManager?.removeAllActions() }
             ) {
                 
-                let page = document.note.pages[toolManager.selectedPage]
+//                let page = document.note.pages[toolManager.selectedPage]
                 
 //                TemplateView(
 //                    isPresented: $subviewManager.addPageSettingsSheet, 

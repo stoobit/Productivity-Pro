@@ -8,5 +8,13 @@
 import Foundation
 
 struct ExportableMediaModel: Codable {
+    var media: Data
     
+    var stroke: Bool
+    var strokeColor: Data
+    var strokeWidth: CGFloat
+    var strokeStyle: PPStrokeStyle
+    
+    var cornerRadius: CGFloat
+    var rotation: CGFloat
 }

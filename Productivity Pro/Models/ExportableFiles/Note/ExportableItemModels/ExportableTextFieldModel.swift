@@ -9,4 +9,16 @@ import Foundation
 
 struct ExportableTextFieldModel: Codable {
     var nsAttributedString: Data
+    
+    var fontName: String
+    var fontSize: CGFloat
+    var fontColor: Data
+    
+    var fill: Bool
+    var fillColor: Data
+    
+    var stroke: Bool = false
+    var strokeColor: Data
+    var strokeWidth: CGFloat
+    var strokeStyle: PPStrokeStyle
 }

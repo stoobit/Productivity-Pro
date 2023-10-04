@@ -13,13 +13,13 @@ struct ExportablePageModel: Codable {
     var type: PPPageType = .none
     var canvas: PPCanvasType = .pkCanvas
     
-    var title: String = ""
+    var title: String
     var created: Date
     
-    var template: String = ""
-    var color: String = ""
-    var isPortrait: Bool = false
-    var media: Data? = nil
+    var template: String
+    var color: String
+    var isPortrait: Bool
+    var media: Data?
     
 //    var ppCanvas: PPCanvasModel? // MARK: Coming soon
     var pkCanvas: Data?
