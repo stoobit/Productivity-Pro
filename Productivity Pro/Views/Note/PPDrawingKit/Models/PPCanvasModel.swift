@@ -9,11 +9,8 @@ import Foundation
 import SwiftData
 
 @Model final class PPCanvasModel {
-    @Attribute(.unique) public var id: UUID = UUID()
-    var page: PPPageModel
+    init() {}
     
-    init(page: PPPageModel) {
-        self.page = page
-    }
-    
+    @Attribute(.unique)
+    public var id: UUID = UUID()
 }
