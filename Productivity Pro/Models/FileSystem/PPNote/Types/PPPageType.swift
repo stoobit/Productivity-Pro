@@ -8,8 +8,6 @@
 import Foundation
 
 enum PPPageType: Codable {
-    case none
-    
     case template
     case pdf
     case image
