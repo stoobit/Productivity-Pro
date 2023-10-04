@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PPStrokeStyle: Codable {
+enum PPStrokeType: Codable {
     case line
     case dots
     case squares

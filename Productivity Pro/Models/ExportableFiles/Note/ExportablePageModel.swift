@@ -21,7 +21,7 @@ struct ExportablePageModel: Codable {
     var isPortrait: Bool
     var media: Data?
     
-//    var ppCanvas: PPCanvasModel? // MARK: Coming soon
+//    var ppCanvas: ExportablePPCanvasModel? // MARK: Coming soon
     var pkCanvas: Data?
     
     var items: [ExportableItemModel] = []

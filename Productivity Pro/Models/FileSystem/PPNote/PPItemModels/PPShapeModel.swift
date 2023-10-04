@@ -22,7 +22,7 @@ import SwiftData
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.toCodable()
     var strokeWidth: CGFloat = 5
-    var strokeStyle: PPStrokeStyle
+    var strokeStyle: PPStrokeType
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.toCodable()

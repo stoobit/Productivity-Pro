@@ -13,7 +13,10 @@ struct ExportableMediaModel: Codable {
     var stroke: Bool
     var strokeColor: Data
     var strokeWidth: CGFloat
-    var strokeStyle: PPStrokeStyle
+    var strokeStyle: PPStrokeType
+    
+    var shadow: Bool
+    var shadowColor: Data
     
     var cornerRadius: CGFloat
     var rotation: CGFloat
