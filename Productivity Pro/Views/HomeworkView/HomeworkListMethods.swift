@@ -29,7 +29,6 @@ extension HomeworkList {
             return "Bis morgen zu erledigen"
         }else {
             let formatter = DateFormatter()
-            formatter.locale = Locale(identifier: "de")
             let day = formatter.weekdaySymbols[
                 Calendar.current.component(.weekday, from: date) - 1
             ]

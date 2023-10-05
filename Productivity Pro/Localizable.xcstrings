@@ -178,6 +178,7 @@
       }
     },
     "Backup importieren" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -274,6 +275,7 @@
 
     },
     "Datei importieren" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

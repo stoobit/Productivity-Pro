@@ -22,7 +22,6 @@ struct FolderViewToolbar: ToolbarContent {
     
     @Binding var addFolder: Bool
     @Binding var importFile: Bool
-    
     @Binding var createNote: Bool
     
     var contentObjects: [ContentObject]
@@ -30,16 +29,8 @@ struct FolderViewToolbar: ToolbarContent {
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarTrailing) {
-            Menu(content: {
-                Button("Datei importieren", systemImage: "doc") {
-                    importFile.toggle()
-                }
-                
-                Button("Backup importieren", systemImage: "externaldrive.badge.timemachine") {
-                    
-                }
-            }) {
-                Label("Importieren", systemImage: "square.and.arrow.down")
+            Button("Importieren", systemImage: "square.and.arrow.down") {
+                importFile.toggle()
             }
             
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {

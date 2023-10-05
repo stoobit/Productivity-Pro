@@ -17,8 +17,6 @@ struct HomeworkView: View {
             ZStack {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
-            
-                HomeworkList()
 
                 if subjects.value.isEmpty {
                     ContentUnavailableView(
@@ -26,6 +24,8 @@ struct HomeworkView: View {
                         systemImage: "tray.2",
                         description: Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
                     )
+                } else {
+                    HomeworkList()
                 }
                 
             }

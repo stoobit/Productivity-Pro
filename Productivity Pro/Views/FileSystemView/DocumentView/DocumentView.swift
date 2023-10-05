@@ -79,7 +79,7 @@ struct DocumentView: View {
                 FolderViewToolbar(
                     parent: parent,
                     addFolder: $addFolder,
-                    importFile: $importFile, 
+                    importFile: $importFile,
                     createNote: $createNote,
                     contentObjects: contentObjects
                 )
@@ -104,7 +104,7 @@ struct DocumentView: View {
         }
         .fileImporter(
             isPresented: $importFile,
-            allowedContentTypes: [.pro],
+            allowedContentTypes: [.pro, .pronote, .probackup],
             allowsMultipleSelection: false
         ) { result in
             importFile(result: result)

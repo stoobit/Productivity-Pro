@@ -29,7 +29,6 @@ struct ContentObjectLink: View {
                     Text(", ") +
                     Text(obj.created, style: .time)
                 }
-                .environment(\.locale, Locale(identifier: "de"))
                 .foregroundStyle(Color.secondary)
                 .font(.caption)
             }
