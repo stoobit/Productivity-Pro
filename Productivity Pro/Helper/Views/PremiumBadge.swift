@@ -12,8 +12,12 @@ struct PremiumBadge: ViewModifier {
     var isSubscribed: Bool = false
     
     func body(content: Content) -> some View {
-        content
-            .badge(Text("Premium"))
+        if isSubscribed {
+            content
+        } else {
+            content
+                .badge(Text("Premium"))
+        }
     }
 }
 

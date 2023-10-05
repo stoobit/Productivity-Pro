@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DeskView: View {
+    @AppStorage("ppisunlocked")
+    var isSubscribed: Bool = false
     
     @Environment(\.requestReview) var requestReview
     @State var shareView: Bool = false
@@ -15,6 +17,10 @@ struct DeskView: View {
     var body: some View {
         NavigationStack {
             Form {
+                
+                #if DEBUG
+                Toggle("Is subscribed.", isOn: $isSubscribed)
+                #endif
                 
                 NavigationLink(destination: {
                     PremiumView()
