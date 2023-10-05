@@ -8,8 +8,72 @@
 import SwiftUI
 
 extension DocumentView {
-    func importFile(result: Result<[URL], any Error>) {
+    
+    func importPro(url: URL) throws {
+        let encodedData = try Data(contentsOf: url)
+        let data = Data(base64Encoded: encodedData, options: .ignoreUnknownCharacters)
         
+        let document = try JSONDecoder().decode(Document.self, from: data ?? Data())
+        let documentTitle = url.deletingPathExtension().lastPathComponent
+        
+        let contentObject = ContentObject(
+            id: UUID(), title: getTitle(with: documentTitle), type: .file,
+            parent: parent, created: Date(), grade: grade
+        )
+        context.insert(contentObject)
+        
+    }
+    
+    func importProNote(url: URL) throws {
+        
+    }
+    
+    func importProBackup(url: URL) throws {
+        
+    }
+    
+    func getTitle(with original: String) -> String {
+        var title: String = original
+        var index: Int = 1
+        
+        let filteredObjects = contentObjects
+            .filter({
+                $0.type == .file &&
+                $0.parent == parent &&
+                $0.grade == grade &&
+                $0.inTrash == false
+            })
+            .map({ $0.title })
+        
+        
+        while filteredObjects.contains(title) {
+            title = "\(original) \(index)"
+            index += 1
+        }
+        
+        return title
+    }
+    
+    func importFile(result: Result<[URL], any Error>) {
+        do {
+            switch result {
+            case .success(let success):
+                if let url = success.first {
+                    if url.pathExtension == "pro" {
+                        try importPro(url: url)
+                    } else if url.pathExtension == "pronote" {
+                        try importProNote(url: url)
+                    } else if url.pathExtension == "probackup" {
+                        try importProBackup(url: url)
+                    }
+                }
+            case .failure:
+                // MARK: - Disable ProgressView
+                break
+            }
+        } catch {
+            // MARK: - Disable ProgressView
+        }
     }
     
     func deleteObject(_ object: ContentObject) {
