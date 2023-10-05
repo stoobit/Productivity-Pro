@@ -5,13 +5,34 @@
 
     },
     "," : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ","
+          }
+        }
+      }
     },
     ", " : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ","
+          }
+        }
+      }
     },
     "." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "."
+          }
+        }
+      }
     },
     "%@" : {
       "localizations" : {
@@ -45,12 +66,6 @@
     },
     "%lld von %lld" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld von %2$lld"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -100,7 +115,14 @@
       }
     },
     "Als PDF exportieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export as"
+          }
+        }
+      }
     },
     "App Icon" : {
       "localizations" : {
@@ -126,7 +148,14 @@
       }
     },
     "Auswählen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        }
+      }
     },
     "Backup" : {
       "localizations" : {
@@ -139,7 +168,14 @@
       }
     },
     "Backup erstellen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create Backup"
+          }
+        }
+      }
     },
     "Backup importieren" : {
       "localizations" : {
@@ -238,10 +274,24 @@
 
     },
     "Datei importieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import File"
+          }
+        }
+      }
     },
     "Datum nicht verfügbar." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date not available."
+          }
+        }
+      }
     },
     "Degrees" : {
 
@@ -250,16 +300,44 @@
 
     },
     "Der Papierkorb ist leer." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The trash is empty."
+          }
+        }
+      }
     },
     "Dies kann einige Minuten dauern." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This can take a few minutes."
+          }
+        }
+      }
     },
     "Diese Aktion kann nicht rückgängig gemacht werde." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This action cannot be undone."
+          }
+        }
+      }
     },
     "Diese Seite löschen?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you want to delete this page?"
+          }
+        }
+      }
     },
     "Dieser Ordner ist leer." : {
       "localizations" : {
@@ -350,17 +428,6 @@
         }
       }
     },
-    "Email" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Email"
-          }
-        }
-      }
-    },
     "Entfernen" : {
       "localizations" : {
         "en" : {
@@ -372,7 +439,14 @@
       }
     },
     "Entleeren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty"
+          }
+        }
+      }
     },
     "Erstellt" : {
       "localizations" : {
@@ -385,7 +459,14 @@
       }
     },
     "Es wurden keine Notizen gefunden." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No notes were found."
+          }
+        }
+      }
     },
     "Fach" : {
       "localizations" : {
@@ -444,16 +525,44 @@
 
     },
     "Format" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Format"
+          }
+        }
+      }
     },
     "Freistunde" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Free Period"
+          }
+        }
+      }
     },
     "Geändert" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changed"
+          }
+        }
+      }
     },
     "Gruppieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Group"
+          }
+        }
+      }
     },
     "Hausaufgaben" : {
       "localizations" : {
@@ -466,7 +575,14 @@
       }
     },
     "Hexagon" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hexagon"
+          }
+        }
+      }
     },
     "Hinzufügen" : {
       "localizations" : {
@@ -479,18 +595,21 @@
       }
     },
     "Hoch- & Querformat" : {
-
-    },
-    "Hochformat" : {
-
-    },
-    "iMessage" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iMessage"
+            "value" : "Layout"
+          }
+        }
+      }
+    },
+    "Hochformat" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertical"
           }
         }
       }
@@ -516,7 +635,14 @@
       }
     },
     "Jetzt löschen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
     },
     "Jgst %lld" : {
       "localizations" : {
@@ -532,13 +658,27 @@
 
     },
     "Letzte Vorlage" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Template"
+          }
+        }
+      }
     },
     "Lock" : {
 
     },
     "Löschen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        }
+      }
     },
     "Markdown" : {
 
@@ -547,37 +687,107 @@
 
     },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you really want to empty the trash?"
+          }
+        }
+      }
     },
     "Möchtest du dieses Fach wirklich löschen?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete this subject?"
+          }
+        }
+      }
     },
     "Name" : {
 
     },
     "Noch sind keine Bücher verfügbar." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There are no books available yet."
+          }
+        }
+      }
     },
     "Notiz" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Note"
+          }
+        }
+      }
     },
     "Notiz erstellen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create Note"
+          }
+        }
+      }
     },
     "Notizen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notes"
+          }
+        }
+      }
     },
     "Ok" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
     },
     "Ordner erstellen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create Folder"
+          }
+        }
+      }
     },
     "Papierkorb" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trash"
+          }
+        }
+      }
     },
     "Papierkorb entleeren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty Trash"
+          }
+        }
+      }
     },
     "Paste" : {
 
@@ -586,7 +796,14 @@
 
     },
     "PDF importieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import PDF"
+          }
+        }
+      }
     },
     "Photos" : {
 
@@ -595,25 +812,60 @@
 
     },
     "Powered by " : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powered by"
+          }
+        }
+      }
     },
     "Premium" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium"
+          }
+        }
+      }
     },
     "Processing..." : {
 
     },
     "Productivity Pro" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Productivity Pro"
+          }
+        }
+      }
     },
     "Querformat" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal"
+          }
+        }
+      }
     },
     "Radius" : {
 
     },
     "Raum" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Room"
+          }
+        }
+      }
     },
     "Rectangle" : {
 
@@ -622,31 +874,87 @@
 
     },
     "Schließen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
     },
     "Schreibtisch" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop"
+          }
+        }
+      }
     },
     "Schreibtisch %@ Fächer" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desktop %@ Fächer"
+          }
+        }
+      }
     },
     "Schriftart" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Font"
+          }
+        }
+      }
     },
     "Schriftgröße" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Font Size"
+          }
+        }
+      }
     },
     "Scrolling Disabled" : {
 
     },
     "Seite hinzufügen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Page"
+          }
+        }
+      }
     },
     "Seite löschen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete Page"
+          }
+        }
+      }
     },
     "Seiten bearbeiten" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Pages"
+          }
+        }
+      }
     },
     "Select an Object" : {
 
@@ -669,17 +977,6 @@
     "Social Media" : {
 
     },
-    "Social Media & Kontakt" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Social Media"
-          }
-        }
-      }
-    },
     "Sortieren" : {
       "localizations" : {
         "en" : {
@@ -691,7 +988,14 @@
       }
     },
     "Standardeinstellungen von Textfeldern" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default Text Field Settings"
+          }
+        }
+      }
     },
     "stoobit" : {
       "localizations" : {
@@ -743,13 +1047,27 @@
 
     },
     "Titel" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
+          }
+        }
+      }
     },
     "Triangle" : {
 
     },
     "Turtle Maths" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turtle Maths"
+          }
+        }
+      }
     },
     "Übersicht" : {
       "localizations" : {
@@ -762,7 +1080,14 @@
       }
     },
     "Uhrzeit der Benachrichtigung" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time of Notification"
+          }
+        }
+      }
     },
     "Umbenennen" : {
       "localizations" : {
@@ -785,25 +1110,67 @@
       }
     },
     "Vorlage ändern" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change Template"
+          }
+        }
+      }
     },
     "Vorlage auswählen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Template"
+          }
+        }
+      }
     },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Hausaufgaben und Stundenplaneinträge gelöscht." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you delete this subject, the homework and schedule entries associated with this subject will also be deleted."
+          }
+        }
+      }
     },
     "Widerrufen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Undo"
+          }
+        }
+      }
     },
     "Widerrufen/Wiederholen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Undo/Redo"
+          }
+        }
+      }
     },
     "Width" : {
 
     },
     "Wiederherstellen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redo"
+          }
+        }
+      }
     },
     "Wiederholen" : {
 
@@ -815,7 +1182,14 @@
 
     },
     "Zu erledigen bis zum" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Due by"
+          }
+        }
+      }
     },
     "Zurück" : {
       "localizations" : {
