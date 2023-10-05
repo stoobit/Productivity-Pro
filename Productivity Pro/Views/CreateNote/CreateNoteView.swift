@@ -78,6 +78,19 @@ struct CreateNoteView: View {
                     selectedTemplate(isPortrait, template, color)
                 }
             }
+            .fileImporter(
+                isPresented: $importPDF,
+                allowedContentTypes: [.pdf],
+                allowsMultipleSelection: false
+            ) { result in
+                importedPDF(with: result)
+            }
+            .fullScreenCover(isPresented: $scanDocument) {
+                ScannerView(cancelAction: { scanDocument = false }) { result in
+                    scannedDocument(with: result)
+                }
+                .edgesIgnoringSafeArea(.all)
+            }
             
         }
     }

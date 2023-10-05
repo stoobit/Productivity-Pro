@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import VisionKit
 
 extension CreateNoteView {
     
@@ -63,11 +64,11 @@ extension CreateNoteView {
         }
     }
     
-    func importedPDF() {
+    func importedPDF(with result: Result<[URL], any Error>) {
         
     }
     
-    func scannedDocument() {
+    func scannedDocument(with result: Result<VNDocumentCameraScan, any Error>) {
         
     }
     

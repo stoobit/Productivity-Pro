@@ -38,19 +38,19 @@ public struct ScannerHelper: UIViewControllerRepresentable {
 }
 
 @available(iOS 13, *)
-public extension ScannerHelperView {
+public extension ScannerView {
     
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         
         public init(
-            cancelAction: @escaping ScannerHelperView.CancelAction,
-            resultAction: @escaping ScannerHelperView.ResultAction) {
+            cancelAction: @escaping ScannerView.CancelAction,
+            resultAction: @escaping ScannerView.ResultAction) {
             self.cancelAction = cancelAction
             self.resultAction = resultAction
         }
         
-        private let cancelAction: ScannerHelperView.CancelAction
-        private let resultAction: ScannerHelperView.ResultAction
+        private let cancelAction: ScannerView.CancelAction
+        private let resultAction: ScannerView.ResultAction
 
         public func documentCameraViewControllerDidCancel(
             _ controller: VNDocumentCameraViewController) {
@@ -72,7 +72,7 @@ public extension ScannerHelperView {
 }
 
 @available(iOS 13, *)
-public struct ScannerHelperView: UIViewControllerRepresentable {
+public struct ScannerView: UIViewControllerRepresentable {
     
     public init(
         cancelAction: @escaping CancelAction = {},

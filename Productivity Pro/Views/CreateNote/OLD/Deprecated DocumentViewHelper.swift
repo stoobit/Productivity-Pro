@@ -34,7 +34,7 @@ extension NewDocumentView {
                 subviewManager.newDocScan = true
             }
             .fullScreenCover(isPresented: $subviewManager.newDocScan) {
-                ScannerHelperView(cancelAction: {
+                ScannerView(cancelAction: {
                     subviewManager.newDocScan = false
                 }, resultAction: { result in
                     

@@ -21,7 +21,7 @@ struct AddPDFPageHelper: ViewModifier {
             .fullScreenCover(
                 isPresented: $subviewManager.showScanDoc
             ) {
-                ScannerHelperView(cancelAction: {
+                ScannerView(cancelAction: {
                     
                     subviewManager.showScanDoc = false
                     
