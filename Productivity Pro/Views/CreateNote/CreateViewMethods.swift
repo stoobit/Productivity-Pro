@@ -73,12 +73,7 @@ extension CreateNoteView {
     }
     
     func getTitle() -> String {
-        
-        if title.trimmingCharacters(in: .whitespaces).isEmpty {
-            title = "Unbenannt"
-        }
-        
-        let const: String = title
+        var title: String = "Unbenannt"
         var index: Int = 1
         
         let filteredObjects = contentObjects
@@ -93,7 +88,7 @@ extension CreateNoteView {
         
         while filteredObjects.contains(title) {
             
-            title = "\(const) \(index)"
+            title = "Unbenannt \(index)"
             index += 1
             
         }

@@ -30,8 +30,6 @@ struct CreateNoteView: View {
     @State var scanDocument: Bool = false
     @State var importPDF: Bool = false
     
-    @State var title: String = ""
-    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -39,20 +37,6 @@ struct CreateNoteView: View {
                     .ignoresSafeArea(.all)
                 
                 VStack {
-                    HStack {
-                        Image(systemName: "pencil")
-                            .foregroundStyle(Color.secondary)
-                            .padding(.trailing, 5)
-                        
-                        TextField("Unbenannt", text: $title)
-                    }
-                    .frame(width: 200)
-                    
-                    Divider()
-                        .frame(width: 230)
-                        .padding(.bottom, 20)
-                        .padding(.top, 5)
-                    
                     ViewThatFits(in: .horizontal) {
                         CNGrid(axis: .horizontal, showIcon: true)
                         
