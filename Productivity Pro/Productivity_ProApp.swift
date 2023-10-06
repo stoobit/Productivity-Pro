@@ -22,7 +22,8 @@ struct Productivity_ProApp: App {
                 PPPageModel.self,
                 PPItemModel.self
             ],
-            isAutosaveEnabled: true
+            isAutosaveEnabled: true,
+            isUndoEnabled: true
         )
     }
 }

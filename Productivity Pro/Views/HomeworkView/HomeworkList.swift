@@ -17,6 +17,12 @@ struct HomeworkList: View {
         ), animation: .bouncy
     ) var homeworkTasks: [Homework]
     
+    @Query(
+        FetchDescriptor(
+            predicate: #Predicate<ContentObject> { $0.inTrash == false }
+        ), animation: .bouncy
+    ) var contentObjects: [ContentObject]
+    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
@@ -28,8 +34,7 @@ struct HomeworkList: View {
             ForEach(dates(), id: \.self) { date in
                 Section(formattedString(of: date)) {
                     ForEach(filterTasks(by: date)) { homework in
-                        
-                        HomeworkItem(homework: homework) {
+                        HomeworkItem(contentObjects: contentObjects, homework: homework) {
                             UNUserNotificationCenter.current()
                                 .removePendingNotificationRequests(
                                     withIdentifiers: [

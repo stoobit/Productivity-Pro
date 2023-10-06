@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeworkItem: View {
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    
+    var contentObjects: [ContentObject]
     var homework: Homework
     
     let delete: () -> Void
@@ -22,7 +24,11 @@ struct HomeworkItem: View {
                 Item()
             } else {
                 NavigationLink(destination: {
-                    Text(homework.linkedDocument)
+                    let object = contentObjects.first(where: {
+                        $0.id.uuidString == homework.linkedDocument
+                    })
+                    
+                    NoteView(contentObject: object)
                 }) {
                     Item()
                 }
