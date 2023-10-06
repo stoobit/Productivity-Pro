@@ -151,7 +151,7 @@ extension DocumentView {
     }
     
     func markdown(textField: TextFieldModel) -> NSAttributedString {
-        var md = SwiftyMarkdown(string: textField.text)
+        let md = SwiftyMarkdown(string: textField.text)
         
         md.setFontNameForAllStyles(with: textField.font)
         md.setFontSizeForAllStyles(with: textField.fontSize * 2)

@@ -107,7 +107,9 @@ struct DocumentView: View {
             allowedContentTypes: [.pro, .pronote, .probackup],
             allowsMultipleSelection: false
         ) { result in
-            importFile(result: result)
+            withAnimation(.bouncy) {
+                importFile(result: result)
+            }
         }
         
     }
