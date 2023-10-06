@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PencilKit
 
 extension DocumentView {
     
@@ -20,8 +21,50 @@ extension DocumentView {
             id: UUID(), title: getTitle(with: documentTitle), type: .file,
             parent: parent, created: Date(), grade: grade
         )
-        context.insert(contentObject)
         
+        context.insert(contentObject)
+        contentObject.note = PPNoteModel()
+        
+        for page in document.note.pages {
+            let ppPage = PPPageModel(
+                type: transferPageType(type: page.type),
+                canvas: .pkCanvas
+            )
+            
+            ppPage.note = contentObject.note
+            
+            ppPage.title = page.header ?? ""
+            ppPage.created = page.date ?? Date()
+            
+            ppPage.isPortrait = page.isPortrait
+            ppPage.template = page.backgroundTemplate
+            ppPage.color = page.backgroundColor
+            
+            ppPage.pkCanvas = PKDrawing().dataRepresentation()
+            ppPage.items = [PPItemModel]()
+            
+            if page.type == .image || page.type == .pdf {
+                ppPage.media = page.backgroundMedia
+            }
+            
+            for item in page.items {
+                do {
+                    
+                    let ppItem = PPItemModel(
+                        type: try transferItemType(type: item.type)
+                    )
+                    
+                    ppItem.page = ppPage
+                    
+                    ppItem.position = PPPosition(x: item.x, y: item.y)
+                    ppItem.size = PPSize(width: item.width, height: item.height)
+                    ppItem.isLocked = item.isLocked ?? false
+                    
+                } catch {
+                    continue
+                }
+            }
+        }
     }
     
     func importProNote(url: URL) throws {
@@ -30,6 +73,32 @@ extension DocumentView {
     
     func importProBackup(url: URL) throws {
         
+    }
+    
+    func transferPageType(type: PageType) -> PPPageType {
+        switch type {
+        case .recent:
+            return .template
+        case .template:
+            return .template
+        case .pdf:
+            return .pdf
+        case .image:
+            return .image
+        }
+    }
+    
+    func transferItemType(type: ItemType) throws -> PPItemType {
+        switch type {
+        case .shape:
+            return .shape
+        case .textField:
+            return .textField
+        case .media:
+            return .media
+        case .none:
+            throw RuntimeError("none")
+        }
     }
     
     func getTitle(with original: String) -> String {
