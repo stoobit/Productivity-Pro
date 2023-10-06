@@ -9,18 +9,11 @@ import SwiftUI
 import SwiftData
 
 @Model final class PPTextFieldModel {
-    init(fontSize: CGFloat, fontColor: Color) {
+    init() {
         self.strokeStyle = .line
-        
-        self.fontSize = fontSize
-        self.fontColor = fontColor.toCodable()
     }
     
     var nsAttributedString: Data = NSAttributedString().toCodable()
-    
-    var fontName: String = "Avenir Next"
-    var fontSize: CGFloat
-    var fontColor: Data
     
     var fill: Bool = true
     var fillColor: Data = Color.gray.toCodable()

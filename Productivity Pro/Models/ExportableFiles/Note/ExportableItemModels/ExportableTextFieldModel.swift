@@ -10,10 +10,6 @@ import Foundation
 struct ExportableTextFieldModel: Codable {
     var nsAttributedString: Data
     
-    var fontName: String
-    var fontSize: CGFloat
-    var fontColor: Data
-    
     var fill: Bool
     var fillColor: Data
     

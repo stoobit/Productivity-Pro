@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PencilKit
+import SwiftyMarkdown
 
 extension DocumentView {
     
@@ -40,7 +41,7 @@ extension DocumentView {
             ppPage.template = page.backgroundTemplate
             ppPage.color = page.backgroundColor
             
-            ppPage.pkCanvas = PKDrawing().dataRepresentation()
+            ppPage.pkCanvas = page.canvas
             ppPage.items = [PPItemModel]()
             
             if page.type == .image || page.type == .pdf {
@@ -55,11 +56,59 @@ extension DocumentView {
                     )
                     
                     ppItem.page = ppPage
-                    
-                    ppItem.position = PPPosition(x: item.x, y: item.y)
-                    ppItem.size = PPSize(width: item.width, height: item.height)
                     ppItem.isLocked = item.isLocked ?? false
                     
+                    ppItem.size = PPSize(width: item.width, height: item.height)
+                    ppItem.position = PPPosition(x: item.x, y: item.y)
+                    
+                    if item.type == .shape {
+                        guard let shape = item.shape else { continue }
+                        
+                        let ppShape = PPShapeModel(type: transferShapeType(type: shape.type))
+                        ppItem.shape = ppShape
+                        
+                        ppShape.fill = shape.showFill
+                        ppShape.fillColor = shape.fillColor
+                        
+                        ppShape.stroke = shape.showStroke
+                        ppShape.strokeColor = shape.strokeColor
+                        ppShape.strokeWidth = shape.strokeWidth
+                        ppShape.strokeStyle = .line
+                        
+                        ppShape.rotation = item.rotation
+                        ppShape.cornerRadius = shape.cornerRadius
+                        
+                    } else if item.type == .media {
+                        guard let media = item.media else { continue }
+                        
+                        let ppMedia = PPMediaModel(media: media.media)
+                        ppItem.media = ppMedia
+                        
+                        ppMedia.stroke = media.showStroke
+                        ppMedia.strokeColor = media.strokeColor
+                        ppMedia.strokeWidth = media.strokeWidth
+                        ppMedia.strokeStyle = .line
+
+                        ppMedia.rotation = item.rotation
+                        ppMedia.cornerRadius = media.cornerRadius
+                        
+                    } else if item.type == .textField {
+                        guard let textField = item.textField else { continue }
+                        
+                        let ppTextField = PPTextFieldModel()
+                        
+                        ppItem.textField = ppTextField
+                        ppTextField.nsAttributedString = markdown(textField: textField)
+                            .toCodable()
+                        
+                        ppTextField.fill = textField.showFill
+                        ppTextField.fillColor = textField.fillColor
+                        
+                        ppTextField.stroke = textField.showStroke
+                        ppTextField.strokeColor = textField.strokeColor
+                        ppTextField.strokeWidth = textField.strokeWidth
+                        ppTextField.strokeStyle = .line
+                    }
                 } catch {
                     continue
                 }
@@ -98,6 +147,54 @@ extension DocumentView {
             return .media
         case .none:
             throw RuntimeError("none")
+        }
+    }
+    
+    func markdown(textField: TextFieldModel) -> NSAttributedString {
+        var md = SwiftyMarkdown(string: textField.text)
+        
+        md.setFontNameForAllStyles(with: textField.font)
+        md.setFontSizeForAllStyles(with: textField.fontSize * 2)
+        md.setFontColorForAllStyles(
+            with: UIColor(Color(codable: textField.fontColor)!)
+        )
+        
+        md.code.color = UIColor(Color("codecolor"))
+        md.code.fontStyle = .bold
+        
+        md.strikethrough.color = .red
+        
+        md.h6.fontSize = textField.fontSize * 2 + 5
+        md.h6.fontStyle = .bold
+        
+        md.h5.fontSize = textField.fontSize * 2 + 10
+        md.h5.fontStyle = .bold
+        
+        md.h4.fontSize = textField.fontSize * 2 + 15
+        md.h4.fontStyle = .bold
+        
+        md.h3.fontSize = textField.fontSize * 2 + 20
+        md.h3.fontStyle = .bold
+        
+        md.h2.fontSize = textField.fontSize * 2 + 25
+        md.h2.fontStyle = .bold
+        
+        md.h1.fontSize = textField.fontSize * 2 + 30
+        md.h1.fontStyle = .bold
+        
+        return md.attributedString()
+    }
+    
+    func transferShapeType(type: ShapeType) -> PPShapeType {
+        switch type {
+        case .rectangle:
+            return .rectangle
+        case .circle:
+            return .circle
+        case .triangle:
+            return .triangle
+        case .hexagon:
+            return.triangle
         }
     }
     
