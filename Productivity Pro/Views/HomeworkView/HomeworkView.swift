@@ -31,6 +31,7 @@ struct HomeworkView: View {
             }
             .navigationTitle("Hausaufgaben")
         }
+        .modifier(LockScreen())
     }
 }
 

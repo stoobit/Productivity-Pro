@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct DeskView: View {
-    @AppStorage("ppisunlocked")
-    var isSubscribed: Bool = false
+    @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     
     @Environment(\.requestReview) var requestReview
     @State var shareView: Bool = false
@@ -59,13 +58,7 @@ struct DeskView: View {
             .navigationTitle("Schreibtisch")
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
-                    Link(destination: URL(
-                        string: "https://www.stoobit.com"
-                    )!) {
-                        Label("stoobit", systemImage: "globe")
-                    }
-                    
-                    Button("Teilen", systemImage: "square.and.arrow.up") {
+                    Button("QR Code", systemImage: "qrcode") {
                         shareView.toggle()
                     }
                 }

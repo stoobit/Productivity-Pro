@@ -849,6 +849,9 @@
         }
       }
     },
+    "QR Code" : {
+
+    },
     "Querformat" : {
       "localizations" : {
         "en" : {
@@ -1003,6 +1006,7 @@
       }
     },
     "stoobit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
