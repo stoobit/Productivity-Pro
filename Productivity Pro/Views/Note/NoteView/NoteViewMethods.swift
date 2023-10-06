@@ -14,7 +14,7 @@ extension NoteView {
     func isViewVisible(page: Page) -> Bool {
         var isVisible: Bool = false
         
-        let index = document.note.pages.firstIndex(of: page)!
+        let index = contentObject.note?.pages?.count
         
         if toolManager.selectedPage == index {
             isVisible = true
@@ -33,9 +33,9 @@ extension NoteView {
     }
     
     func selectedTabDidChange(_ tab: UUID, size: CGSize) {
-        toolManager.selectedPage = document.note.pages.firstIndex(where: {
-            $0.id == tab
-        }) ?? 0
+//        toolManager.selectedPage = document.note.pages.firstIndex(where: {
+//            $0.id == tab
+//        }) ?? 0
         
         toolManager.selectedItem = nil
         toolManager.scrollOffset = .zero
@@ -64,9 +64,9 @@ extension NoteView {
         let media = MediaModel(media: image.heicData() ?? Data())
         newItem.media = media
         
-        document.note.pages[
-            toolManager.selectedPage
-        ].items.append(newItem)
+//        document.note.pages[
+//            toolManager.selectedPage
+//        ].items.append(newItem)
         
         toolManager.selectedItem = newItem
         toolManager.showProgress = false
@@ -110,17 +110,18 @@ extension NoteView {
     }
     
     func getScale(_ index: Int, size: CGSize) -> CGFloat {
-        var scale: CGFloat = 0
-        
-        let page = document.note.pages[index]
-        
-        if page.isPortrait {
-            scale = size.width / shortSide
-        } else {
-            scale = size.width / longSide
-        }
-        
-        return scale
+//        var scale: CGFloat = 0
+//        
+//        let page = document.note.pages[index]
+//        
+//        if page.isPortrait {
+//            scale = size.width / shortSide
+//        } else {
+//            scale = size.width / longSide
+//        }
+//        
+//        return scale
+        return 10
     }
     
 }
