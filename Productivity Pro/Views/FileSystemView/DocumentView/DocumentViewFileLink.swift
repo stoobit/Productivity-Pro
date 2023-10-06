@@ -22,7 +22,7 @@ struct DocumentViewFileLink: View {
     
     var body: some View {
         NavigationLink(destination: {
-            
+            NoteView(contentObject: object)
         }) {
             ContentObjectLink(obj: object)
         }

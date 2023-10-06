@@ -28,7 +28,7 @@ struct HomeworkItem: View {
                         $0.id.uuidString == homework.linkedDocument
                     })
                     
-                    NoteView(contentObject: object)
+//                    NoteView(contentObject: object)
                 }) {
                     Item()
                 }
