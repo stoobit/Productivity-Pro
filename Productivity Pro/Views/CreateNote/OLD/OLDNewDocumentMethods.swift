@@ -217,25 +217,7 @@ extension NewDocumentView {
         document.note = Note()
         document.documentType = .note
         
-        for index in 0...scan.pageCount - 1 {
-            
-            let page = scan.imageOfPage(at: index)
-            let size = page.size
-            
-            let canvasType: CanvasType = .pencilKit
-            
-            let newPage = Page(
-                type: .image,
-                canvasType: canvasType,
-                backgroundMedia: page.heicData(),
-                backgroundColor: "pagewhite",
-                backgroundTemplate: "blank",
-                isPortrait: size.width < size.height
-            )
-            
-            toolManager.preloadedMedia.append(nil)
-            document.note.pages.append(newPage)
-        }
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             toolManager.showProgress = false

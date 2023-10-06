@@ -69,7 +69,42 @@ extension CreateNoteView {
     }
     
     func scannedDocument(with result: Result<VNDocumentCameraScan, any Error>) {
+        switch result {
+        case .success(let scan):
+            withAnimation(.bouncy) {
+                let object = ContentObject(
+                    id: UUID(),
+                    title: getTitle(),
+                    type: .file,
+                    parent: parent,
+                    created: Date(),
+                    grade: grade
+                )
+                
+                context.insert(object)
+                
+                let note = PPNoteModel()
+                object.note = note
+                
+                for index in 0...scan.pageCount - 1 {
+                    let scanPage = scan.imageOfPage(at: index)
+                    let size = scanPage.size
+                    
+                    let page = PPPageModel(type: .image, canvas: .pkCanvas)
+                    page.note = note
+                    
+                    page.isPortrait = size.width < size.height
+                    page.template = "blank"
+                    page.color = "pagewhite"
+                    
+                    page.media = scanPage.heicData()
+                }
+            }
+        case .failure:
+            break
+        }
         
+        isPresented = false
     }
     
     func getTitle() -> String {
