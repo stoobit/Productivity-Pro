@@ -12,6 +12,8 @@ struct HomeworkEditView: View {
     @Environment(\.modelContext) var context
     @Query(animation: .bouncy) var contentObjects: [ContentObject]
     
+    @Binding var isPresented: Bool
+    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
@@ -20,20 +22,21 @@ struct HomeworkEditView: View {
         bySettingHour: 15, minute: 30, second: 00, of: Date()
     )!
     
-    @Binding var isPresented: Bool
-    
     @State var isEditing: Bool = false
-    @State var homework: Homework = Homework()
     @State var notePicker: Bool = false
     
-    var h: Homework
+    @State var title: String = ""
+    @State var date: Date = Date()
+    @State var pickedNote: String = ""
+    @State var description: String = ""
     
+    var homework: Homework
     var body: some View {
         NavigationStack {
             Form {
                 Section {
                     HStack {
-                        TextField("Titel", text: $homework.title)
+                        TextField("Titel", text: $title)
                             .frame(height: 30)
                         
                         Image(systemName: getSubject(from: homework.subject).icon)
@@ -56,7 +59,7 @@ struct HomeworkEditView: View {
                 Section {
                     DatePicker(
                         "Zu erledigen bis zum",
-                        selection: $homework.date,
+                        selection: $date,
                         in: dateRange,
                         displayedComponents: .date
                     )
@@ -66,36 +69,40 @@ struct HomeworkEditView: View {
                         
                         if isEditing {
                             Text(
-                                homework.linkedDocument.isEmpty ? "Notiz" : homework.documentTitle
+                                pickedNote.isEmpty ? "Notiz" : contentObjects.first(where: {
+                                    $0.id.uuidString == pickedNote
+                                })?.title ?? "Fehler"
                             )
                         } else {
                             Text(
-                                homework.linkedDocument.isEmpty ? "-" : homework.documentTitle
+                                homework.note == nil ? "-" : homework.note!.title
                             )
                         }
                         
                         Spacer()
                         
                         if isEditing {
-                            Button(homework.linkedDocument.isEmpty ? "Auswählen" : "Entfernen") {
-                                if homework.linkedDocument.isEmpty {
+                            Button(pickedNote.isEmpty ? "Auswählen" : "Entfernen") {
+                                if pickedNote.isEmpty {
                                     notePicker.toggle()
                                 } else {
-                                    homework.linkedDocument = ""
+                                    pickedNote = ""
                                 }
                             }
                             .buttonStyle(.bordered)
                             .foregroundStyle(Color.primary)
+                        } else {
+                            Image(systemName: "doc.fill")
+                                .foregroundStyle(Color.blue)
+                                .imageScale(.large)
                         }
                     }
                     .frame(height: 30)
-                    .sheet(isPresented: $notePicker, onDismiss: {
-                        pickNote()
-                    }) {
+                    .sheet(isPresented: $notePicker) {
                         ObjectPicker(
                             objects: contentObjects,
                             isPresented: $notePicker,
-                            selectedObject: $homework.linkedDocument,
+                            selectedObject: $pickedNote,
                             type: .file
                         )
                     }
@@ -103,7 +110,7 @@ struct HomeworkEditView: View {
                 
                 TextField(
                     "Beschreibung",
-                    text: $homework.homeworkDescription, axis: .vertical
+                    text: $description, axis: .vertical
                 )
                 .frame(minHeight: 30)
             }
@@ -142,25 +149,22 @@ struct HomeworkEditView: View {
     }
 
     func set() {
-        homework.title = h.title
-        homework.date = h.date
-        homework.subject = h.subject
-        homework.linkedDocument = h.linkedDocument
-        homework.documentTitle = h.documentTitle
-        homework.homeworkDescription = h.homeworkDescription
+        title = homework.title
+        date = homework.date
+        pickedNote = homework.note?.id.uuidString ?? ""
+        description = homework.homeworkDescription
     }
     
     func edit() {
         withAnimation(.bouncy) {
-            h.title = homework.title
-            h.date = homework.date
-            h.linkedDocument = homework.linkedDocument
-            h.documentTitle = homework.documentTitle
-            h.homeworkDescription = homework.homeworkDescription
+            homework.title = title
+            homework.date = date
+            homework.note = contentObjects.first(where: { $0.id.uuidString == pickedNote })
+            homework.homeworkDescription = description
             
             UNUserNotificationCenter.current()
                 .removePendingNotificationRequests(
-                    withIdentifiers: [h.id.uuidString]
+                    withIdentifiers: [homework.id.uuidString]
                 )
             
             pushNotification()
@@ -223,19 +227,10 @@ struct HomeworkEditView: View {
         )
         
         let request = UNNotificationRequest(
-            identifier: h.id.uuidString,
+            identifier: homework.id.uuidString,
             content: content, trigger: trigger
         )
 
         UNUserNotificationCenter.current().add(request)
     }
-    
-    func pickNote() {
-        if homework.linkedDocument.isEmpty == false {
-            homework.documentTitle = contentObjects.filter({
-                $0.id.uuidString == homework.linkedDocument
-            }).first!.title
-        }
-    }
-    
 }

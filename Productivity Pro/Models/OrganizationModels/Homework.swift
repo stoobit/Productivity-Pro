@@ -20,6 +20,5 @@ import Foundation
     var subject: String = ""
     var date: Date = Date()
     
-    var linkedDocument: String = ""
-    var documentTitle: String = ""
+    var note: ContentObject?
 }

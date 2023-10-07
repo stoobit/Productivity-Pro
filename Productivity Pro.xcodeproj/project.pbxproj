@@ -32,7 +32,6 @@
 		BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */; };
 		BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27BB512A62C30700392E1E /* RealityNoteModel.swift */; };
 		BB27FED228EA09A200459334 /* TouchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED128EA09A200459334 /* TouchType.swift */; };
-		BB27FED428EA192D00459334 /* OLD ChangePageTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED328EA192D00459334 /* OLD ChangePageTemplateView.swift */; };
 		BB27FED828EA419300459334 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED728EA419300459334 /* OverviewView.swift */; };
 		BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB28336B2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift */; };
 		BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */; };
@@ -272,7 +271,6 @@
 		BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewRepresentable.swift; sourceTree = "<group>"; };
 		BB27BB512A62C30700392E1E /* RealityNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityNoteModel.swift; sourceTree = "<group>"; };
 		BB27FED128EA09A200459334 /* TouchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchType.swift; sourceTree = "<group>"; };
-		BB27FED328EA192D00459334 /* OLD ChangePageTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OLD ChangePageTemplateView.swift"; sourceTree = "<group>"; };
 		BB27FED728EA419300459334 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		BB28336B2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSubjectView.swift; sourceTree = "<group>"; };
 		BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectRecognition.mlmodel; sourceTree = "<group>"; };
@@ -779,7 +777,6 @@
 				BB1E693F2A71CE01008E0C5F /* TemplateView.swift */,
 				BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */,
 				BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */,
-				BB27FED328EA192D00459334 /* OLD ChangePageTemplateView.swift */,
 			);
 			path = TemplateView;
 			sourceTree = "<group>";
@@ -1499,7 +1496,6 @@
 				BB073A6F2AB8CA4800C80B59 /* NoteSidePageActions.swift in Sources */,
 				BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */,
 				BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */,
-				BB27FED428EA192D00459334 /* OLD ChangePageTemplateView.swift in Sources */,
 				BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */,
 				BBD0DCA72ACCD51D004A2C56 /* ExportableShapeModel.swift in Sources */,
 				BB93676A2AC9CE330096F20E /* PPChartModel.swift in Sources */,

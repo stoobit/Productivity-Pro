@@ -17,7 +17,7 @@ struct LockScreen: ViewModifier {
         } else {
             content
                 .allowsHitTesting(false)
-                .blur(radius: 5)
+                .blur(radius: 20)
                 .overlay {
                     Label("Premium", systemImage: "crown.fill")
                         .font(.largeTitle.bold())

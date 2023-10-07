@@ -13,11 +13,7 @@ struct NoteView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.undoManager) var undoManager
     
-    @State var subviewManager: SubviewManager = SubviewManager()
-    @State var toolManager: ToolManager = ToolManager()
-    
     var contentObject: ContentObject
-    
     var body: some View {
         GeometryReader { proxy in
 //            NavigationStack {

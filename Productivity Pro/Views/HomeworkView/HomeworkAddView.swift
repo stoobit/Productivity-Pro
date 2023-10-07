@@ -21,6 +21,7 @@ struct HomeworkAddView: View {
     )!
     
     @State var notePicker: Bool = false
+    @State var pickedNote: String = ""
     @State var homework: Homework = Homework()
     
     @Binding var isPresented: Bool
@@ -54,29 +55,29 @@ struct HomeworkAddView: View {
                     
                     HStack {
                         Text(
-                            homework.linkedDocument.isEmpty ? "Notiz" : homework.documentTitle
+                            pickedNote.isEmpty ? "Notiz" : contentObjects.first(where: {
+                                $0.id.uuidString == pickedNote
+                            })?.title ?? "Fehler"
                         )
                         
                         Spacer()
                         
-                        Button(homework.linkedDocument.isEmpty ? "Auswählen" : "Entfernen") {
-                            if homework.linkedDocument.isEmpty {
+                        Button(pickedNote.isEmpty ? "Auswählen" : "Entfernen") {
+                            if pickedNote.isEmpty {
                                 notePicker.toggle()
                             } else {
-                                homework.linkedDocument = ""
+                                pickedNote = ""
                             }
                         }
                         .buttonStyle(.bordered)
                         .foregroundStyle(Color.primary)
                     }
                     .frame(height: 30)
-                    .sheet(isPresented: $notePicker, onDismiss: {
-                        pickNote()
-                    }) {
+                    .sheet(isPresented: $notePicker) {
                         ObjectPicker(
                             objects: contentObjects,
                             isPresented: $notePicker,
-                            selectedObject: $homework.linkedDocument, 
+                            selectedObject: $pickedNote, 
                             type: .file
                         )
                     }
@@ -114,11 +115,12 @@ struct HomeworkAddView: View {
         homework.date = Calendar.current.date(
             bySettingHour: 5, minute: 00, second: 0, of: homework.date
         )!
+        
+        homework.note = contentObjects.first(where: { $0.id.uuidString == pickedNote })
     
         context.insert(homework)
         pushNotification()
         
-        try? context.save()
         isPresented.toggle()
     }
     
@@ -167,19 +169,4 @@ struct HomeworkAddView: View {
 
         UNUserNotificationCenter.current().add(request)
     }
-    
-    func pickNote() {
-        if homework.linkedDocument.isEmpty == false {
-            homework.documentTitle = contentObjects.filter({
-                $0.id.uuidString == homework.linkedDocument
-            }).first!.title
-        }
-    }
-}
-
-#Preview {
-    Text("")
-        .sheet(isPresented: .constant(true)) {
-            HomeworkAddView(isPresented: .constant(true))
-        }
 }

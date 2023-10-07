@@ -20,15 +20,12 @@ struct HomeworkItem: View {
     
     var body: some View {
         Group {
-            if homework.linkedDocument.isEmpty {
+            if homework.note == nil {
                 Item()
             } else {
                 NavigationLink(destination: {
-                    if let object = contentObjects.first(where: {
-                        $0.id.uuidString == homework.linkedDocument &&
-                        $0.inTrash == false
-                    }) {
-                        NoteView(contentObject: object)
+                    if let note = homework.note {
+                        NoteView(contentObject: note)
                     } else {
                         ZStack {
                             Color(UIColor.systemGroupedBackground)
@@ -63,7 +60,7 @@ struct HomeworkItem: View {
         }
         .sheet(isPresented: $showDescription) {
             HomeworkEditView(
-                isPresented: $showDescription, h: homework
+                isPresented: $showDescription, homework: homework
             )
         }
         
