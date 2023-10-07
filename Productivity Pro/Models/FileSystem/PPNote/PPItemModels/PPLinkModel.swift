@@ -11,9 +11,9 @@ import SwiftData
 @Model final class PPLinkModel {
     init(linkedObject: UUID) {
         self.linkedObject = linkedObject
-        self.type = .medium
+        self.type = PPLinkType.medium.rawValue
     }
     
-    var type: PPLinkType
+    var type: PPLinkType.RawValue
     var linkedObject: UUID
 }

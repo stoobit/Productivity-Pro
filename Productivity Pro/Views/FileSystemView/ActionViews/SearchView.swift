@@ -54,13 +54,15 @@ struct SearchView: View {
     var searchResults: [ContentObject] {
         if searchText.isEmpty {
             return contentObjects
-                .filter({ $0.type == .file && $0.inTrash == false })
+                .filter{
+                    $0.type == COType.file.rawValue && $0.inTrash == false
+                }
                 .sorted(by: { $0.title < $1.title })
             
         } else {
             return contentObjects
                 .filter {
-                    $0.type == .file && 
+                    $0.type == COType.file.rawValue && 
                     $0.inTrash == false
                 }
                 .filter({

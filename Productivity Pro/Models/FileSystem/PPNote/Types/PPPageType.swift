@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum PPPageType: Codable {
-    case template
-    case pdf
-    case image
-    case mindmap
+enum PPPageType: String, Codable {
+    case template = "template"
+    case pdf = "pdf"
+    case image = "image"
+    case mindmap = "mindmap"
 }

@@ -10,7 +10,7 @@ import SwiftData
 
 @Model final class PPTextFieldModel {
     init() {
-        self.strokeStyle = .line
+        self.strokeStyle = PPStrokeType.line.rawValue
     }
     
     var nsAttributedString: Data = NSAttributedString().toCodable()
@@ -21,7 +21,7 @@ import SwiftData
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.toCodable()
     var strokeWidth: Double = 5
-    var strokeStyle: PPStrokeType
+    var strokeStyle: PPStrokeType.RawValue
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.toCodable()

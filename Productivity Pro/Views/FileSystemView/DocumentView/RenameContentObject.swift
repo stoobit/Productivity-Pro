@@ -23,7 +23,7 @@ struct RenameContentObjectView: ViewModifier {
     func body(content: Content) -> some View {
         content
             .alert(
-                "\(object.type == .folder ? "Ordner" : "Notiz") bearbeiten",
+                "\(object.type == COType.folder.rawValue ? "Ordner" : "Notiz") bearbeiten",
                 isPresented: $isPresented
             ) {
                 TextField("\(object.title)", text: $title)

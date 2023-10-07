@@ -113,7 +113,7 @@ extension CreateNoteView {
         
         let filteredObjects = contentObjects
             .filter({
-                $0.type == .file &&
+                $0.type == COType.file.rawValue &&
                 $0.parent == parent &&
                 $0.grade == grade &&
                 $0.inTrash == false

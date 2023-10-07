@@ -115,13 +115,13 @@ struct DocumentView: View {
     }
     
     @ViewBuilder func ObjectLink(for object: ContentObject) -> some View {
-        if object.type == .folder {
+        if object.type == COType.folder.rawValue {
             DocumentViewFolderLink(
                 contentObjects: contentObjects, object: object
             ) {
                 deleteObject(object)
             }
-        } else if object.type == .file {
+        } else if object.type == COType.file.rawValue {
             DocumentViewFileLink(
                 contentObjects: contentObjects, object: object
             ) {

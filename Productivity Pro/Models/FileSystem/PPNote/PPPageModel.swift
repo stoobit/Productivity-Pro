@@ -19,14 +19,14 @@ import PencilKit
         type: PPPageType,
         canvas: PPCanvasType
     ) {
-        self.type = type
-        self.canvas = canvas
+        self.type = type.rawValue
+        self.canvas = canvas.rawValue
         
         self.created = Date()
     }
     
-    var type: PPPageType
-    var canvas: PPCanvasType
+    var type: PPPageType.RawValue
+    var canvas: PPCanvasType.RawValue
     
     var title: String = ""
     var created: Date

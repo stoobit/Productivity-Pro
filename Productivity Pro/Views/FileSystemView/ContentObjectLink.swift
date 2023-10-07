@@ -14,7 +14,7 @@ struct ContentObjectLink: View {
     var body: some View {
         HStack {
             Image(
-                systemName: obj.type == .file ? "doc.fill" : "folder.fill"
+                systemName: obj.type == COType.file.rawValue ? "doc.fill" : "folder.fill"
             )
             .font(.title)
             .foregroundStyle(Color.accentColor)

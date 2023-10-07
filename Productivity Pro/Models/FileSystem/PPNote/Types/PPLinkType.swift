@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum PPLinkType: Codable {
-    case small
-    case medium
-    case large
+enum PPLinkType: String, Codable {
+    case small = "small"
+    case medium = "medium"
+    case large = "large"
 }

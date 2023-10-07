@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum PPStrokeType: Codable {
-    case line
-    case dots
-    case squares
+enum PPStrokeType: String, Codable {
+    case line = "line"
+    case dots = "dots"
+    case squares = "squares"
 }

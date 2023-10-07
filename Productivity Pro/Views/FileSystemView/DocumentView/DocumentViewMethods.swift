@@ -73,7 +73,6 @@ extension DocumentView {
                         ppShape.stroke = shape.showStroke
                         ppShape.strokeColor = shape.strokeColor
                         ppShape.strokeWidth = shape.strokeWidth
-                        ppShape.strokeStyle = .line
                         
                         ppShape.rotation = item.rotation
                         ppShape.cornerRadius = shape.cornerRadius
@@ -87,7 +86,6 @@ extension DocumentView {
                         ppMedia.stroke = media.showStroke
                         ppMedia.strokeColor = media.strokeColor
                         ppMedia.strokeWidth = media.strokeWidth
-                        ppMedia.strokeStyle = .line
 
                         ppMedia.rotation = item.rotation
                         ppMedia.cornerRadius = media.cornerRadius
@@ -107,7 +105,6 @@ extension DocumentView {
                         ppTextField.stroke = textField.showStroke
                         ppTextField.strokeColor = textField.strokeColor
                         ppTextField.strokeWidth = textField.strokeWidth
-                        ppTextField.strokeStyle = .line
                     }
                 } catch {
                     continue
@@ -204,7 +201,7 @@ extension DocumentView {
         
         let filteredObjects = contentObjects
             .filter({
-                $0.type == .file &&
+                $0.type == COType.file.rawValue &&
                 $0.parent == parent &&
                 $0.grade == grade &&
                 $0.inTrash == false
@@ -244,7 +241,7 @@ extension DocumentView {
     
     func deleteObject(_ object: ContentObject) {
         object.inTrash = true
-        if object.type == .folder {
+        if object.type == COType.folder.rawValue {
             var isDeleting: Bool = true
             var parents: [[String]] = [[object.id.uuidString]]
             var index: Int = 0
@@ -280,7 +277,7 @@ extension DocumentView {
         }
     }
     
-    func getObjects(_ type: ContentObjectType?, isPinned: Bool) -> [ContentObject] {
+    func getObjects(_ type: COType?, isPinned: Bool) -> [ContentObject] {
         if type == .none {
             return []
         }
@@ -293,9 +290,13 @@ extension DocumentView {
         })
         
         if type == .file {
-            objects = objects.filter({ $0.type == .file })
+            objects = objects.filter {
+                $0.type == COType.file.rawValue
+            }
         } else if type == .folder {
-            objects = objects.filter({ $0.type == .folder })
+            objects = objects.filter {
+                $0.type == COType.folder.rawValue
+            }
         }
         
         if isReverse == false {

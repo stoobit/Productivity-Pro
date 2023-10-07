@@ -15,13 +15,13 @@ import SwiftData
     var page: PPPageModel?
     
     init(type: PPItemType) {
-        self.type = type
+        self.type = type.rawValue
         
         self.position = PPPosition(x: 0, y: 0)
         self.size = PPSize(width: 0, height: 0)
     }
     
-    var type: PPItemType
+    var type: PPItemType.RawValue
     var isLocked: Bool = false
     
     var position: PPPosition

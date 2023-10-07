@@ -10,11 +10,11 @@ import SwiftData
 
 @Model final class PPShapeModel {
     init(type: PPShapeType) {
-        self.type = type
-        self.strokeStyle = .line
+        self.type = type.rawValue
+        self.strokeStyle = PPStrokeType.line.rawValue
     }
     
-    var type: PPShapeType
+    var type: PPShapeType.RawValue
     
     var fill: Bool = true
     var fillColor: Data = Color.gray.toCodable()
@@ -22,7 +22,7 @@ import SwiftData
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.toCodable()
     var strokeWidth: Double = 5
-    var strokeStyle: PPStrokeType
+    var strokeStyle: PPStrokeType.RawValue
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.toCodable()

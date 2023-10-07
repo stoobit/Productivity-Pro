@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum PPShapeType: Codable {
-    case line
-    case arrow
+enum PPShapeType: String, Codable {
+    case line = "line"
+    case arrow = "arrow"
     
-    case rectangle
-    case triangle
-    case circle
-    case hexagon
-    case multigon
+    case rectangle = "rectangle"
+    case triangle = "triangle"
+    case circle = "circle"
+    case hexagon = "hexagon"
+    case multigon = "multigon"
 }

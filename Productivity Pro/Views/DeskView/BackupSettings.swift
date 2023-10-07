@@ -64,11 +64,11 @@ struct BackupSettings: View {
     }
     
     @ViewBuilder
-    func NumberIndicator(type: ContentObjectType) -> some View {
+    func NumberIndicator(type: COType) -> some View {
         let title = type == .file ? "Dateien" : "Ordner"
         let image = type == .file ? "doc" : "folder"
         let count = contentObjects.filter({
-            $0.type == type
+            $0.type == type.rawValue
         }).count
         
         HStack {

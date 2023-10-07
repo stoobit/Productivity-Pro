@@ -13,7 +13,7 @@ import SwiftData
     init(
         id: UUID,
         title: String,
-        type: ContentObjectType,
+        type: COType,
         parent: String,
         created: Date,
         grade: Int,
@@ -22,7 +22,7 @@ import SwiftData
         self.id = id
         self.title = title
         self.parent = parent
-        self.type = type
+        self.type = type.rawValue
         self.created = created
         self.modified = created
         self.grade = grade
@@ -31,7 +31,7 @@ import SwiftData
     
     @Attribute(.unique) public var id: UUID
     
-    var type: ContentObjectType
+    var type: COType.RawValue
     
     var title: String
     var parent: String
@@ -48,8 +48,8 @@ import SwiftData
     var note: PPNoteModel?
 }
 
-enum ContentObjectType: Comparable, Codable {
-    case file
-    case folder
-    case all
+enum COType: String, Codable {
+    case file = "file"
+    case folder = "folder"
+    case all = "all"
 }

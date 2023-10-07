@@ -24,7 +24,7 @@ struct ObjectPicker: View {
     var id: UUID?
     
     @Binding var selectedObject: String
-    var type: ContentObjectType
+    var type: COType
     
     var body: some View {
         NavigationStack {

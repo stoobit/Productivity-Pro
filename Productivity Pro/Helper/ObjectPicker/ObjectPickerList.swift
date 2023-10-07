@@ -18,7 +18,7 @@ struct ObjectPickerList: View {
     var title: String
     var id: UUID?
     
-    var type: ContentObjectType
+    var type: COType
 
     var body: some View {
         List {
@@ -32,7 +32,7 @@ struct ObjectPickerList: View {
             } else {
                 
                 ForEach(objects) { object in
-                    if object.type == .folder {
+                    if object.type == COType.folder.rawValue {
                         
                         NavigationLink(destination: {
                             ObjectPickerList(
@@ -49,7 +49,7 @@ struct ObjectPickerList: View {
                         }
                         .disabled(id == object.id)
                         
-                    } else if object.type == .file {
+                    } else if object.type == COType.file.rawValue {
                         
                         Button(action: {
                             selectedObject = object.id.uuidString

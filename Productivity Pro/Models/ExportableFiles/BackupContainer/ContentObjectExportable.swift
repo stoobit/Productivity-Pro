@@ -11,7 +11,7 @@ struct ContentObjectExportable: Identifiable, Codable {
     var id: UUID
     
     var title: String
-    var type: ContentObjectType
+    var type: COType
     var parent: String
     
     var created: Date

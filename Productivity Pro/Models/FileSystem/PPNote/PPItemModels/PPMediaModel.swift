@@ -11,7 +11,7 @@ import SwiftData
 @Model final class PPMediaModel {
     init(media: Data) {
         self.media = media
-        self.strokeStyle = .line
+        self.strokeStyle = PPStrokeType.line.rawValue
     }
     
     var media: Data
@@ -19,7 +19,7 @@ import SwiftData
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.toCodable()
     var strokeWidth: Double = 5
-    var strokeStyle: PPStrokeType
+    var strokeStyle: PPStrokeType.RawValue
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.toCodable()

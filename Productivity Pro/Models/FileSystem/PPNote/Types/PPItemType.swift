@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum PPItemType: Codable {
-    case shape
-    case media
-    case textField
-    case chart
-    case table
-    case mindmap
-    case immersiveObject
+enum PPItemType: String, Codable {
+    case shape = "shape"
+    case media = "media"
+    case textField = "textField"
+    case chart = "chart"
+    case table = "table"
+    case mindmap = "mindmap"
+    case immersiveObject = "immersiveObject"
 }
