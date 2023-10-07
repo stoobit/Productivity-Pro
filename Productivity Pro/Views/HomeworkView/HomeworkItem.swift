@@ -24,11 +24,22 @@ struct HomeworkItem: View {
                 Item()
             } else {
                 NavigationLink(destination: {
-                    let object = contentObjects.first(where: {
-                        $0.id.uuidString == homework.linkedDocument
-                    })
-                    
-//                    NoteView(contentObject: object)
+                    if let object = contentObjects.first(where: {
+                        $0.id.uuidString == homework.linkedDocument &&
+                        $0.inTrash == false
+                    }) {
+                        NoteView(contentObject: object)
+                    } else {
+                        ZStack {
+                            Color(UIColor.systemGroupedBackground)
+                                .ignoresSafeArea(.all)
+                            
+                            ContentUnavailableView(
+                                "Diese Notiz existiert nicht mehr.",
+                                systemImage: "doc"
+                            )
+                        }
+                    }
                 }) {
                     Item()
                 }
