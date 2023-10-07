@@ -11,8 +11,9 @@ import SwiftData
 @Model final class PPLinkModel {
     init(linkedObject: UUID) {
         self.linkedObject = linkedObject
+        self.type = .medium
     }
     
-    @Transient var type: PPLinkType = .medium
+    var type: PPLinkType
     var linkedObject: UUID
 }

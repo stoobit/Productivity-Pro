@@ -31,7 +31,7 @@ import SwiftData
     
     @Attribute(.unique) public var id: UUID
     
-    @Transient var type: ContentObjectType = .all
+    var type: ContentObjectType
     
     var title: String
     var parent: String
