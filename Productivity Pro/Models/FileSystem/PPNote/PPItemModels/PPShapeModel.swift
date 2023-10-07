@@ -21,13 +21,13 @@ import SwiftData
     
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.toCodable()
-    var strokeWidth: CGFloat = 5
+    var strokeWidth: Double = 5
     var strokeStyle: PPStrokeType
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.toCodable()
     
-    var cornerRadius: CGFloat = 0
-    var rotation: CGFloat = 0
+    var cornerRadius: Double = 0
+    var rotation: Double = 0
     
 }

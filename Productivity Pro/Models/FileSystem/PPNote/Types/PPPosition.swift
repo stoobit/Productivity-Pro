@@ -8,6 +8,6 @@
 import Foundation
 
 struct PPPosition: Codable {
-    var x: CGFloat
-    var y: CGFloat
+    var x: Double
+    var y: Double
 }

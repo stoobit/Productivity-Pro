@@ -15,12 +15,12 @@ struct ExportableShapeModel: Codable {
     
     var stroke: Bool
     var strokeColor: Data
-    var strokeWidth: CGFloat
+    var strokeWidth: Double
     var strokeStyle: PPStrokeType
     
     var shadow: Bool
     var shadowColor: Data
     
-    var cornerRadius: CGFloat
-    var rotation: CGFloat
+    var cornerRadius: Double
+    var rotation: Double
 }
