@@ -45,7 +45,6 @@ import SwiftData
     var inTrash: Bool = false
     
     var note: PPNoteModel?
-    
 }
 
 enum ContentObjectType: Comparable, Codable {

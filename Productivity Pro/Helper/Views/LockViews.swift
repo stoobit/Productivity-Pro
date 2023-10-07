@@ -26,3 +26,17 @@ struct LockScreen: ViewModifier {
         }
     }
 }
+
+struct LockButton: ViewModifier {
+    @AppStorage("ppisunlocked")
+    var isSubscribed: Bool = false
+    
+    func body(content: Content) -> some View {
+        if isSubscribed {
+            content
+        } else {
+            content
+                .disabled(true)
+        }
+    }
+}

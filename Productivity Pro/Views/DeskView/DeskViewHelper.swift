@@ -24,6 +24,8 @@ extension DeskView {
                 Label("App Icon", systemImage: "app.gift")
             }
             .frame(height: 30)
+            .modifier(PremiumBadge())
+            .modifier(LockButton())
             
             NavigationLink(destination: {
                 SubjectSettings()
@@ -32,6 +34,7 @@ extension DeskView {
             }
             .frame(height: 30)
             .modifier(PremiumBadge())
+            .modifier(LockButton())
             
             NavigationLink(destination: {
                BackupSettings()
@@ -42,6 +45,7 @@ extension DeskView {
             }
             .frame(height: 30)
             .modifier(PremiumBadge())
+            .modifier(LockButton())
         }
     }
     
