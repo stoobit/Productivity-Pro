@@ -21,7 +21,7 @@ import SwiftData
         self.size = PPSize(width: 0, height: 0)
     }
     
-    var type: PPItemType
+    @Transient var type: PPItemType = .shape
     var isLocked: Bool = false
     
     var position: PPPosition

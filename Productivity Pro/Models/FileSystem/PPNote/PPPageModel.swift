@@ -25,8 +25,8 @@ import PencilKit
         self.created = Date()
     }
     
-    var type: PPPageType
-    var canvas: PPCanvasType
+    @Transient var type: PPPageType = .template
+    @Transient var canvas: PPCanvasType = .pkCanvas
     
     var title: String = ""
     var created: Date
