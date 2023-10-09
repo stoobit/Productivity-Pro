@@ -11,6 +11,13 @@ import PhotosUI
 import PDFKit
 
 @Observable class ToolManager {
+    var activePage: PPPageModel = PPPageModel()
+    var selectedPages: [PPPageModel] = []
+    
+    var activeItem: PPItemModel?
+    var selectedItems: [PPItemModel] = []
+    
+    // MARK: - UNCHECKED & OLD
     
     var selectedPage: Int = 0
     var selectedTab: UUID = UUID()

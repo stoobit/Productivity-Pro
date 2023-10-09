@@ -9,6 +9,8 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
+    
+    @State var toolManager: ToolManager = ToolManager()
     @State var selectedTab: Int = 1
     
     var body: some View {
@@ -54,6 +56,7 @@ struct ContentView: View {
              */
             
         }
+        .environment(toolManager)
         .scrollIndicators(.hidden)
         .onAppear {
             askNotificationPermission()

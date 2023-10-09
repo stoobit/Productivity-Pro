@@ -10,83 +10,36 @@ import PencilKit
 import PDFKit
 
 struct NoteView: View {
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.undoManager) var undoManager
-    
+    @Environment(ToolManager.self) var toolManager
     var contentObject: ContentObject
+    
+    @State var activePage: PPPageModel?
+    
     var body: some View {
-        if contentObject.note != nil {
+        if contentObject.note?.pages != nil {
             GeometryReader { proxy in
-                //            NavigationStack {
-                //                ZStack {
-                //                    Color(UIColor.secondarySystemBackground).ignoresSafeArea(edges: .all)
-                //
-                //                    TabView(selection: $toolManager.selectedTab) {
-                //                        ForEach($document.note.pages) { $page in
-                //                            ScrollViewWrapper(
-                //                                size: proxy.size,
-                //                                document: $document,
-                //                                page: $page,
-                //                                toolManager: toolManager,
-                //                                subviewManager: subviewManager,
-                //                                drawingModel: drawingModel
-                //                            )
-                //                            .id(page.id)
-                //                        }
-                //                    }
-                //                    .tabViewStyle(.page(indexDisplayMode: .never))
-                //                    .onChange(of: toolManager.selectedTab) { old, tab in
-                //                        selectedTabDidChange(tab, size: proxy.size)
-                //                    }
-                //
-                //                }
-                //                .edgesIgnoringSafeArea(.bottom)
-                //                .overlay {
-                //                    if toolManager.isPageNumberVisible {
-                //                        IndicatorText(
-                //                            document: document, toolManager: toolManager
-                //                        )
-                //                    }
-                //                }
-                //                .modifier(
-                //                    NoteViewSheet(
-                //                        document: $document,
-                //                        subviewManager: subviewManager,
-                //                        toolManager: toolManager,
-                //                        proxy: proxy
-                //                    )
-                //                )
-                //                .modifier(
-                //                    NoteViewAlert(
-                //                        document: $document,
-                //                        subviewManager: subviewManager, toolManager: toolManager
-                //                    )
-                //                )
-                //                .modifier(
-                //                    NoteViewOnChange(
-                //                        document: $document,
-                //                        subviewManager: subviewManager, toolManager: toolManager,
-                //                        pageIndicator: pageIndicator,
-                //                        selectedImageDidChange: pickedImageDidChange
-                //                    )
-                //                )
-                //                .modifier(
-                //                    NoteViewToolbar(
-                //                        document: $document,
-                //                        toolManager: toolManager,
-                //                        subviewManager: subviewManager
-                //                    ) {
-                //                        dismiss()
-                //                    }
-                //                )
-                //
-                //            }
-                //            .disabled(toolManager.showProgress)
-                //            .position(
-                //                x: proxy.size.width / 2,
-                //                y: proxy.size.height / 2
-                //            )
+                ScrollView(.horizontal) {
+                    HStack(spacing: 0) {
+                        ForEach(contentObject.note!.pages!) { page in
+                           
+                        }
+                    }
+                }
+                .scrollIndicators(.hidden)
+                .scrollTargetBehavior(.paging)
+                .scrollPosition(id: $activePage)
+                .onChange(of: activePage, initial: true) { last, active in
+                    if let page = active {
+                        toolManager.activePage = page
+                    }
+                }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .background {
+                Color(UIColor.systemGroupedBackground)
+                    .ignoresSafeArea(.all)
+            }
+            
         } else {
             ContentUnavailableView(
                 "Ein Fehler ist aufgetreten.",
