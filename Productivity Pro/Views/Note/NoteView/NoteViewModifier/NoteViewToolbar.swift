@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct NoteViewToolbar: ViewModifier {
-    
-    @Binding var document: Document
-    
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
-    
+  
     let action: () -> Void
     
     func body(content: Content) -> some View {

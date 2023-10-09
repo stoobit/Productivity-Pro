@@ -739,10 +739,10 @@
 		BB655B012AB772F700FB005A /* NoteViewModifier */ = {
 			isa = PBXGroup;
 			children = (
-				BB655AFF2AB772F100FB005A /* NoteViewSheet.swift */,
+				BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */,
 				BB655AFD2AB772E900FB005A /* NoteViewAlert.swift */,
 				BB655AFB2AB772E000FB005A /* NoteViewOnChange.swift */,
-				BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */,
+				BB655AFF2AB772F100FB005A /* NoteViewSheet.swift */,
 			);
 			path = NoteViewModifier;
 			sourceTree = "<group>";
