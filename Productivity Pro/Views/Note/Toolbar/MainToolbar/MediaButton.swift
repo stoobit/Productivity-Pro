@@ -14,14 +14,14 @@ extension NoteMainToolbar {
             Section {
                 Button(action: {
                     toolManager.isCanvasEnabled = false
-                    subviewManager.showCameraView.toggle()
+                    subviewManager.takeMedia.toggle()
                 }) {
                     Label("Kamera", systemImage: "camera")
                 }
                 
                 Button(action: {
                     toolManager.isCanvasEnabled = false
-                    subviewManager.showImportPhoto.toggle()
+                    subviewManager.pickMedia.toggle()
                 }) {
                     Label("Fotos", systemImage: "photo.on.rectangle.angled")
                 }
@@ -29,7 +29,7 @@ extension NoteMainToolbar {
             
             Button(action: {
                 toolManager.isCanvasEnabled = false
-                subviewManager.showImportMedia.toggle()
+                subviewManager.importMedia.toggle()
             }) {
                 Label("Dateien durchsuchen", systemImage: "folder")
             }
@@ -37,13 +37,7 @@ extension NoteMainToolbar {
         }) {
             Label("Bild", systemImage: "photo")
         }
-        .modifier(
-            ImportMediaHelper(
-                toolManager: toolManager,
-                subviewManager: subviewManager,
-                document: $document
-            )
-        )
+        .modifier(MediaImport(contentObject: contentObject))
         
     }
 }

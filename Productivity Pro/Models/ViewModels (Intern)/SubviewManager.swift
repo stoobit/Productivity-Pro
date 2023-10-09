@@ -9,6 +9,12 @@ import Observation
 
 @Observable class SubviewManager {
     
+    var takeMedia: Bool = false
+    var pickMedia: Bool = false
+    var importMedia: Bool = false
+    
+    // MARK: - UNCHECKED & OLD
+    
     var renameView: Bool = false
     var moveView: Bool = false
     var showPrinterView: Bool = false

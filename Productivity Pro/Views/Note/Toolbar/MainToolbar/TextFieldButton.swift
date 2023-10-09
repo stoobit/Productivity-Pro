@@ -42,6 +42,7 @@ extension NoteMainToolbar {
             $0.id == toolManager.activePage.id
         }) {
             page.items.append(item)
+            toolManager.activeItem = item
         }
     }
     

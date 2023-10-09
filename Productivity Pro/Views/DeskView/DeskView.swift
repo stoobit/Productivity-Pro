@@ -38,15 +38,15 @@ struct DeskView: View {
                         
                         HStack {
                             Image(systemName: "star.fill")
-                                .foregroundStyle(.yellow.opacity(1.0))
-                            Image(systemName: "star.fill")
-                                .foregroundStyle(.yellow.opacity(0.8))
-                            Image(systemName: "star.fill")
-                                .foregroundStyle(.yellow.opacity(0.6))
+                                .foregroundStyle(.yellow.opacity(0.2))
                             Image(systemName: "star.fill")
                                 .foregroundStyle(.yellow.opacity(0.4))
                             Image(systemName: "star.fill")
-                                .foregroundStyle(.yellow.opacity(0.2))
+                                .foregroundStyle(.yellow.opacity(0.6))
+                            Image(systemName: "star.fill")
+                                .foregroundStyle(.yellow.opacity(0.8))
+                            Image(systemName: "star.fill")
+                                .foregroundStyle(.yellow.opacity(1.0))
                         }
                     }
                 }
