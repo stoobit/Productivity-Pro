@@ -29,7 +29,7 @@ struct HomeworkView: View {
                 }
                 
             }
-            .navigationTitle("Hausaufgaben")
+            .navigationTitle("Aufgaben")
         }
         .modifier(LockScreen())
     }

@@ -12,4 +12,6 @@ struct ScheduleSubject: Identifiable, Codable, Equatable {
     
     var subject: String = ""
     var room: String = ""
+    
+    var isMarked: Bool = false
 }

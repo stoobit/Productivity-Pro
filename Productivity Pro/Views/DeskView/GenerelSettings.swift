@@ -33,7 +33,7 @@ struct GenerelSettings: View {
         NavigationStack {
             Form {
                 
-                Section("Hausaufgaben") {
+                Section("Aufgaben") {
                     DatePicker(
                         "Uhrzeit der Benachrichtigung",
                         selection: $notificationTime,

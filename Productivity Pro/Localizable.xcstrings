@@ -137,6 +137,9 @@
     "Arrange" : {
 
     },
+    "Aufgaben" : {
+
+    },
     "Aufsteigend" : {
       "localizations" : {
         "en" : {
@@ -567,6 +570,7 @@
       }
     },
     "Hausaufgaben" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1135,7 +1139,11 @@
         }
       }
     },
+    "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht." : {
+
+    },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Hausaufgaben und Stundenplaneinträge gelöscht." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

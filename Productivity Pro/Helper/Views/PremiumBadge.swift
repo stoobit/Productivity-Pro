@@ -26,7 +26,7 @@ struct PremiumBadge: ViewModifier {
         Text("hi")
             .modifier(PremiumBadge())
             .tabItem {
-                Image(systemName: "house")
+                Image(systemName: "checklist")
             }
     }
 }

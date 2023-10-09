@@ -41,7 +41,7 @@ struct ContentView: View {
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(3)
                 .tabItem {
-                    Label("Hausaufgaben", systemImage: "house")
+                    Label("Aufgaben", systemImage: "checklist")
                 }
             
             /*            

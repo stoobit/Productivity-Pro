@@ -123,11 +123,24 @@ struct ScheduleColumn: View {
         .padding(.vertical, 10)
         .padding(.leading, 10)
         .background {
-            if getSubject(from: scheduleSubject).title != "" || isEditing {
-                Color(UIColor.secondarySystemGroupedBackground)
-                    .clipShape(
+            Group {
+                if getSubject(from: scheduleSubject).title != "" || isEditing {
+                    if scheduleSubject.isMarked && isEditing == false {
                         RoundedRectangle(cornerRadius: 10)
-                    )
+                            .foregroundStyle(Color.accentColor.quaternary)
+                    } else {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundStyle(Color(UIColor.secondarySystemGroupedBackground))
+                    }
+                }
+            }
+            .animation(.bouncy(duration: 0.3), value: scheduleSubject.isMarked)
+        }
+        .onTapGesture(count: 2) {
+            if isEditing == false {
+                if let index = day.subjects.firstIndex(of: scheduleSubject) {
+                    day.subjects[index].isMarked.toggle()
+                }
             }
         }
         

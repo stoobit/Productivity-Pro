@@ -59,7 +59,7 @@ struct SubjectSettingsRow: View {
                 
             }
         ) {
-              Text("Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Hausaufgaben und Stundenplaneinträge gelöscht.")
+              Text("Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht.")
         }
     }
     
