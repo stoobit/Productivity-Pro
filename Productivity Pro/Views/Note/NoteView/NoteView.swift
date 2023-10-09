@@ -42,13 +42,10 @@ struct NoteView: View {
                     }
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
+            .noteViewModifier(with: contentObject)
             .background {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
-            }
-            .overlay {
-                
             }
             
         } else {

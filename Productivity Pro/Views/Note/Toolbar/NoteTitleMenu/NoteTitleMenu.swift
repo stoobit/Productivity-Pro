@@ -10,22 +10,16 @@ import PDFKit
 import PencilKit
 
 struct NoteTitleMenu: View {
-    @Environment(\.horizontalSizeClass) var hsc
-    @AppStorage("pinnedurls") var pinned: [URL] = []
-    
-    @Binding var document: Document
-    
-    @Bindable var subviewManager: SubviewManager
-    @Bindable var toolManager: ToolManager
+    var contentObject: ContentObject
     
     var body: some View {
         Section {
             Button("Umbenennen", systemImage: "pencil", action: {
-                subviewManager.renameView.toggle()
+                
             })
             
             Button("Bewegen", systemImage: "folder", action: {
-                subviewManager.moveView.toggle()
+                
             })
         }
         

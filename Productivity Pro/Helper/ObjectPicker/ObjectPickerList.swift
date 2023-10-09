@@ -24,8 +24,8 @@ struct ObjectPickerList: View {
         List {
             if objects.isEmpty {
                 ContentUnavailableView(
-                    parent == "root" ? "" : "Dieser Ordner ist leer.",
-                    systemImage: parent == "root" ? "" : "folder"
+                    parent == "root" ? "Du hast noch keine Notizen erstellt." : "Dieser Ordner ist leer.",
+                    systemImage: parent == "root" ? "doc" : "folder"
                 )
                 .listRowBackground(Color.clear)
                 

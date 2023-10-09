@@ -55,7 +55,6 @@
 		BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F52996D07800C0F140 /* TextFieldModel.swift */; };
 		BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F72996D08300C0F140 /* MediaModel.swift */; };
 		BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */; };
-		BB3F75FD2997F81600C0F140 /* NoteMainToolbarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FC2997F81600C0F140 /* NoteMainToolbarMethods.swift */; };
 		BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */; };
 		BB4A93C92AAEFDCC00C3AED6 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */; };
 		BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */; };
@@ -86,7 +85,7 @@
 		BB68F0C22ACA1774006C91AE /* PPLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */; };
 		BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C32ACA1789006C91AE /* PPLinkType.swift */; };
 		BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */; };
-		BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6ABB8029CD0BA5008B58E3 /* NoteViewMethods.swift */; };
+		BB6ABB8129CD0BA5008B58E3 /* OLDNoteViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6ABB8029CD0BA5008B58E3 /* OLDNoteViewMethods.swift */; };
 		BB6BFA272904907F002D09FD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6BFA262904907F002D09FD /* Color.swift */; };
 		BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */; };
 		BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */; };
@@ -98,6 +97,11 @@
 		BB7423F72A5ED7140031176A /* Deprecated DocumentViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7423F62A5ED7140031176A /* Deprecated DocumentViewHelper.swift */; };
 		BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984642AC347F900CF3D24 /* BackupSettings.swift */; };
 		BB7984682AC37E1E00CF3D24 /* DocumentViewFileLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984672AC37E1E00CF3D24 /* DocumentViewFileLink.swift */; };
+		BB7987032AD497C1003469E6 /* NoteViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987022AD497C1003469E6 /* NoteViewModifier.swift */; };
+		BB7987052AD49BA1003469E6 /* ShapesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987042AD49BA1003469E6 /* ShapesButton.swift */; };
+		BB7987072AD49BF7003469E6 /* TextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987062AD49BF7003469E6 /* TextFieldButton.swift */; };
+		BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987082AD49BFE003469E6 /* MediaButton.swift */; };
+		BB79870B2AD49C0C003469E6 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB79870A2AD49C0C003469E6 /* CalculatorButton.swift */; };
 		BB7B09D22AC1CDBB0058A6A9 /* DataSystemExportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B09D12AC1CDBB0058A6A9 /* DataSystemExportable.swift */; };
 		BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C2C7A2A3D258100C730D3 /* String.swift */; };
 		BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F3FF82AC8171500083FCA /* CreateNoteViewHelper.swift */; };
@@ -292,7 +296,6 @@
 		BB3F75F52996D07800C0F140 /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
 		BB3F75F72996D08300C0F140 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderStrokeStyle.swift; sourceTree = "<group>"; };
-		BB3F75FC2997F81600C0F140 /* NoteMainToolbarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMainToolbarMethods.swift; sourceTree = "<group>"; };
 		BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWrapper.swift; sourceTree = "<group>"; };
 		BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		BB4A93E02AAF559800C3AED6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -324,7 +327,7 @@
 		BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLinkModel.swift; sourceTree = "<group>"; };
 		BB68F0C32ACA1789006C91AE /* PPLinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLinkType.swift; sourceTree = "<group>"; };
 		BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemView.swift; sourceTree = "<group>"; };
-		BB6ABB8029CD0BA5008B58E3 /* NoteViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewMethods.swift; sourceTree = "<group>"; };
+		BB6ABB8029CD0BA5008B58E3 /* OLDNoteViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDNoteViewMethods.swift; sourceTree = "<group>"; };
 		BB6BFA262904907F002D09FD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewManager.swift; sourceTree = "<group>"; };
 		BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolManager.swift; sourceTree = "<group>"; };
@@ -336,6 +339,11 @@
 		BB7423F62A5ED7140031176A /* Deprecated DocumentViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deprecated DocumentViewHelper.swift"; sourceTree = "<group>"; };
 		BB7984642AC347F900CF3D24 /* BackupSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupSettings.swift; sourceTree = "<group>"; };
 		BB7984672AC37E1E00CF3D24 /* DocumentViewFileLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewFileLink.swift; sourceTree = "<group>"; };
+		BB7987022AD497C1003469E6 /* NoteViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModifier.swift; sourceTree = "<group>"; };
+		BB7987042AD49BA1003469E6 /* ShapesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesButton.swift; sourceTree = "<group>"; };
+		BB7987062AD49BF7003469E6 /* TextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldButton.swift; sourceTree = "<group>"; };
+		BB7987082AD49BFE003469E6 /* MediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaButton.swift; sourceTree = "<group>"; };
+		BB79870A2AD49C0C003469E6 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		BB7B09D12AC1CDBB0058A6A9 /* DataSystemExportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSystemExportable.swift; sourceTree = "<group>"; };
 		BB7C2C7A2A3D258100C730D3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BB7F3FF82AC8171500083FCA /* CreateNoteViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewHelper.swift; sourceTree = "<group>"; };
@@ -584,7 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
-				BB6ABB8029CD0BA5008B58E3 /* NoteViewMethods.swift */,
+				BB6ABB8029CD0BA5008B58E3 /* OLDNoteViewMethods.swift */,
 				BB655B012AB772F700FB005A /* NoteViewModifier */,
 			);
 			path = NoteView;
@@ -739,6 +747,7 @@
 		BB655B012AB772F700FB005A /* NoteViewModifier */ = {
 			isa = PBXGroup;
 			children = (
+				BB7987022AD497C1003469E6 /* NoteViewModifier.swift */,
 				BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */,
 				BB655AFD2AB772E900FB005A /* NoteViewAlert.swift */,
 				BB655AFB2AB772E000FB005A /* NoteViewOnChange.swift */,
@@ -1145,7 +1154,10 @@
 			isa = PBXGroup;
 			children = (
 				BB929B8328E5087200DA4538 /* NoteMainToolbar.swift */,
-				BB3F75FC2997F81600C0F140 /* NoteMainToolbarMethods.swift */,
+				BB7987042AD49BA1003469E6 /* ShapesButton.swift */,
+				BB7987062AD49BF7003469E6 /* TextFieldButton.swift */,
+				BB7987082AD49BFE003469E6 /* MediaButton.swift */,
+				BB79870A2AD49C0C003469E6 /* CalculatorButton.swift */,
 			);
 			path = MainToolbar;
 			sourceTree = "<group>";
@@ -1342,6 +1354,7 @@
 				BBCCE4F228D52934001DBD8A /* OLDNewDocumentView.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB2CFEFF2A6EB3C40035511A /* PPControlButtonStyle.swift in Sources */,
+				BB79870B2AD49C0C003469E6 /* CalculatorButton.swift in Sources */,
 				BB655AFC2AB772E000FB005A /* NoteViewOnChange.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSideActions.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
@@ -1357,6 +1370,7 @@
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BBD0DCA42ACCD350004A2C56 /* ExportableItemModel.swift in Sources */,
+				BB7987052AD49BA1003469E6 /* ShapesButton.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
@@ -1364,6 +1378,7 @@
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
+				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
 				BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */,
 				BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */,
@@ -1391,6 +1406,7 @@
 				BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */,
 				BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */,
 				BB9A364C2ABCD5D700721C56 /* HomeworkAddView.swift in Sources */,
+				BB7987032AD497C1003469E6 /* NoteViewModifier.swift in Sources */,
 				BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */,
 				BB68082B29FDD2A90026FDDF /* NSAttributedStringConverter.swift in Sources */,
 				BB9CACDF2A2676B9001909FD /* CalculatorContainerView.swift in Sources */,
@@ -1436,7 +1452,7 @@
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
-				BB6ABB8129CD0BA5008B58E3 /* NoteViewMethods.swift in Sources */,
+				BB6ABB8129CD0BA5008B58E3 /* OLDNoteViewMethods.swift in Sources */,
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
@@ -1464,6 +1480,7 @@
 				BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */,
 				BB4A93E32AAF564C00C3AED6 /* ScheduleViewContainer.swift in Sources */,
 				BB9367642AC9CDD10096F20E /* PPShapeModel.swift in Sources */,
+				BB7987072AD49BF7003469E6 /* TextFieldButton.swift in Sources */,
 				BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */,
 				BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */,
 				BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */,
@@ -1510,7 +1527,6 @@
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
 				BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */,
 				BB1DF6082A686D65006F85CE /* PPToolbar.swift in Sources */,
-				BB3F75FD2997F81600C0F140 /* NoteMainToolbarMethods.swift in Sources */,
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
 				BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */,
 				BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */,

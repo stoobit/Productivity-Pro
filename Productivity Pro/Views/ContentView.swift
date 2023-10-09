@@ -11,6 +11,8 @@ import UserNotifications
 struct ContentView: View {
     
     @State var toolManager: ToolManager = ToolManager()
+    @State var subviewManager: SubviewManager = SubviewManager()
+    
     @State var selectedTab: Int = 1
     
     var body: some View {
@@ -46,17 +48,19 @@ struct ContentView: View {
                     Label("Aufgaben", systemImage: "checklist")
                 }
             
-            /*            
-            LibraryView()
-                .toolbarBackground(.visible, for: .tabBar)
-                .tag(4)
-                .tabItem {
-                    Label("Bibliothek", systemImage: "books.vertical")
-                }
+            /*
+             LibraryView()
+             .modifier(PremiumBadge())
+             .toolbarBackground(.visible, for: .tabBar)
+             .tag(4)
+             .tabItem {
+             Label("Bibliothek", systemImage: "books.vertical")
+             }
              */
             
         }
         .environment(toolManager)
+        .environment(subviewManager)
         .scrollIndicators(.hidden)
         .onAppear {
             askNotificationPermission()

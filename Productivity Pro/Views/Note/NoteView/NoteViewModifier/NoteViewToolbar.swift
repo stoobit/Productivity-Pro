@@ -8,31 +8,19 @@
 import SwiftUI
 
 struct NoteViewToolbar: ViewModifier {
-  
-    let action: () -> Void
+    var contentObject: ContentObject
     
     func body(content: Content) -> some View {
         content
             .navigationBarBackButtonHidden()
-//            .navigationTitle(url.lastPathComponent.string.dropLast(4))
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
             .toolbarTitleMenu {
-                NoteTitleMenu(
-                    document: $document,
-                    subviewManager: subviewManager,
-                    toolManager: toolManager
-                )
+                NoteTitleMenu(contentObject: contentObject)
             }
             .toolbar(id: "main") {
-                if subviewManager.isPresentationMode == false {
-                    NoteMainToolToolbar(
-                        document: $document,
-                        toolManager: toolManager,
-                        subviewManager: subviewManager
-                    )
-                }
+                NoteMainToolbar(contentObject: contentObject)
             }
             .toolbar {
                 NoteSideActions(
