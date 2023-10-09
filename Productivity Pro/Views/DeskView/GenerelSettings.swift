@@ -11,6 +11,8 @@ struct GenerelSettings: View {
     
     @Environment(\.horizontalSizeClass) var hsc
     
+    @AppStorage("pprole") var role: Role = .student
+    
     @AppStorage("notificationTime")
     var notificationTime: Date = Calendar.current.date(
         bySettingHour: 15, minute: 30, second: 00, of: Date()
@@ -33,6 +35,24 @@ struct GenerelSettings: View {
         NavigationStack {
             Form {
                 
+                Section("Rolle") {
+                    Picker("", selection: $role) {
+                        Text("Schüler")
+                            .frame(height: 30)
+                            .tag(Role.student)
+                        
+                        Text("Lehrer")
+                            .frame(height: 30)
+                            .tag(Role.teacher)
+                        
+                        Text("Individuell")
+                            .frame(height: 30)
+                            .tag(Role.individual)
+                    }
+                    .pickerStyle(.inline)
+                    .labelsHidden()
+                }
+                
                 Section("Aufgaben") {
                     DatePicker(
                         "Uhrzeit der Benachrichtigung",
@@ -41,10 +61,7 @@ struct GenerelSettings: View {
                     )
                 }
                 
-                Section(
-                    "Standardeinstellungen von Textfeldern"
-                ) {
-                    
+                Section("Notizen") {
                     Picker("Schriftart", selection: $fontSetter) {
                         ForEach(UIFont.familyNames, id: \.self) { font in
                             Text(font)
@@ -55,7 +72,6 @@ struct GenerelSettings: View {
                     .onChange(of: fontSetter) {
                         defaultFont = fontSetter
                     }
-                    
                     
                     TextField("Schriftgröße", value: $sizeSetter, format: .number)
                         .keyboardType(.decimalPad)
@@ -84,6 +100,7 @@ struct GenerelSettings: View {
     }
     
 }
+
 #Preview {
     GenerelSettings()
 }

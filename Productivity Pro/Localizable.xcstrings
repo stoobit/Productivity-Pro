@@ -630,6 +630,9 @@
         }
       }
     },
+    "Individuell" : {
+
+    },
     "Instagram" : {
       "localizations" : {
         "en" : {
@@ -662,6 +665,9 @@
           }
         }
       }
+    },
+    "Lehrer" : {
+
     },
     "Letzte Vorlage" : {
       "localizations" : {
@@ -879,6 +885,9 @@
     "Rectangle" : {
 
     },
+    "Rolle" : {
+
+    },
     "Rotation" : {
 
     },
@@ -931,6 +940,9 @@
           }
         }
       }
+    },
+    "Schüler" : {
+
     },
     "Scrolling Disabled" : {
 
@@ -997,6 +1009,7 @@
       }
     },
     "Standardeinstellungen von Textfeldern" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1016,6 +1029,9 @@
           }
         }
       }
+    },
+    "Student" : {
+
     },
     "Stundenplan" : {
       "localizations" : {

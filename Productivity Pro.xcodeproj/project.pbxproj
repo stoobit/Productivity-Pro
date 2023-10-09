@@ -41,6 +41,7 @@
 		BB2CFEFF2A6EB3C40035511A /* PPControlButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2CFEFE2A6EB3C40035511A /* PPControlButtonStyle.swift */; };
 		BB3208A82981DFFF0014F602 /* CameraHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraHelperView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
+		BB339F872AD44E97009DA591 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB339F862AD44E97009DA591 /* Role.swift */; };
 		BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */; };
 		BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */; };
 		BB3525B32908673800D35790 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3525B22908673800D35790 /* Array.swift */; };
@@ -280,6 +281,7 @@
 		BB2CFEFE2A6EB3C40035511A /* PPControlButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPControlButtonStyle.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHelperView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
+		BB339F862AD44E97009DA591 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewMethods.swift; sourceTree = "<group>"; };
 		BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRow.swift; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 				BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */,
 				BB4A93EB2AAF5F5A00C3AED6 /* ScheduleDayModel.swift */,
 				BB28336B2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift */,
+				BB339F862AD44E97009DA591 /* Role.swift */,
 			);
 			path = OrganizationModels;
 			sourceTree = "<group>";
@@ -1492,6 +1495,7 @@
 				BB9367682AC9CE260096F20E /* PPTextFieldModel.swift in Sources */,
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
+				BB339F872AD44E97009DA591 /* Role.swift in Sources */,
 				BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */,
 				BB073A6F2AB8CA4800C80B59 /* NoteSidePageActions.swift in Sources */,
 				BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */,
