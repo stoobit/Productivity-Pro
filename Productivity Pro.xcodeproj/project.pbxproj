@@ -161,8 +161,7 @@
 		BBBCACB42A25461900C23B2C /* OldCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB12A25461900C23B2C /* OldCalculatorView.swift */; };
 		BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB22A25461900C23B2C /* Calculator.swift */; };
 		BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */; };
-		BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */; };
-		BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */; };
+		BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */; };
 		BBBED81E2A5DDA2B00865210 /* OLDNewDocumentMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBED81D2A5DDA2B00865210 /* OLDNewDocumentMethods.swift */; };
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254142AC60D2400B51175 /* ObjectPickerList.swift */; };
@@ -204,7 +203,7 @@
 		BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDD126D2A694A4A005E99C5 /* PPSizeButton.swift */; };
 		BBDD12702A694EC7005E99C5 /* PPMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDD126F2A694EC7005E99C5 /* PPMenuView.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
-		BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */; };
+		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
 		BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC301D2A670EF80021C7E6 /* DrawingView.swift */; };
 		BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */; };
 		BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */; };
@@ -400,8 +399,7 @@
 		BBBCACB12A25461900C23B2C /* OldCalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldCalculatorView.swift; sourceTree = "<group>"; };
 		BBBCACB22A25461900C23B2C /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
-		BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProxy.swift; sourceTree = "<group>"; };
-		BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewWrapper.swift; sourceTree = "<group>"; };
+		BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewContainer.swift; sourceTree = "<group>"; };
 		BBBED81D2A5DDA2B00865210 /* OLDNewDocumentMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDNewDocumentMethods.swift; sourceTree = "<group>"; };
 		BBBFB834299FB75400FA236F /* DragItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragItemModifier.swift; sourceTree = "<group>"; };
 		BBC254142AC60D2400B51175 /* ObjectPickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPickerList.swift; sourceTree = "<group>"; };
@@ -442,7 +440,7 @@
 		BBDD126D2A694A4A005E99C5 /* PPSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSizeButton.swift; sourceTree = "<group>"; };
 		BBDD126F2A694EC7005E99C5 /* PPMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPMenuView.swift; sourceTree = "<group>"; };
 		BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDropDelegate.swift; sourceTree = "<group>"; };
-		BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableScrollView.swift; sourceTree = "<group>"; };
+		BBE9196D28F381FE001EF750 /* PPScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollView.swift; sourceTree = "<group>"; };
 		BBEC301D2A670EF80021C7E6 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingView.swift; sourceTree = "<group>"; };
 		BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPathCalculator.swift; sourceTree = "<group>"; };
@@ -587,7 +585,7 @@
 			children = (
 				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
 				BB6ABB8029CD0BA5008B58E3 /* NoteViewMethods.swift */,
-				BB655B012AB772F700FB005A /* Helper */,
+				BB655B012AB772F700FB005A /* NoteViewModifier */,
 			);
 			path = NoteView;
 			sourceTree = "<group>";
@@ -738,7 +736,7 @@
 			path = NoteTitleMenu;
 			sourceTree = "<group>";
 		};
-		BB655B012AB772F700FB005A /* Helper */ = {
+		BB655B012AB772F700FB005A /* NoteViewModifier */ = {
 			isa = PBXGroup;
 			children = (
 				BB655AFF2AB772F100FB005A /* NoteViewSheet.swift */,
@@ -746,7 +744,7 @@
 				BB655AFB2AB772E000FB005A /* NoteViewOnChange.swift */,
 				BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */,
 			);
-			path = Helper;
+			path = NoteViewModifier;
 			sourceTree = "<group>";
 		};
 		BB6BFA2029048B96002D09FD /* Toolbar */ = {
@@ -795,13 +793,13 @@
 			path = "ViewModels (Intern)";
 			sourceTree = "<group>";
 		};
-		BB7A200129A278F300D2B466 /* ScrollView */ = {
+		BB7A200129A278F300D2B466 /* ScrollViewContainer */ = {
 			isa = PBXGroup;
 			children = (
-				BBBE85F62A4B92B2000A5AB4 /* ScrollViewWrapper.swift */,
-				BBE9196D28F381FE001EF750 /* ZoomableScrollView.swift */,
+				BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */,
+				BBE9196D28F381FE001EF750 /* PPScrollView.swift */,
 			);
-			path = ScrollView;
+			path = ScrollViewContainer;
 			sourceTree = "<group>";
 		};
 		BB7B09CC2AC1CC4D0058A6A9 /* ExportableFiles */ = {
@@ -932,7 +930,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3E9AA72A33AC27006045E1 /* NoteView */,
-				BB7A200129A278F300D2B466 /* ScrollView */,
+				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
@@ -1033,7 +1031,6 @@
 				BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */,
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
-				BBBE85F42A4B9006000A5AB4 /* OffsetProxy.swift */,
 				BB047CDA2AC09A960027409F /* PremiumBadge.swift */,
 				BB8A0AE22AD0B871008B4D27 /* LockViews.swift */,
 			);
@@ -1360,7 +1357,7 @@
 				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BBD0DCA42ACCD350004A2C56 /* ExportableItemModel.swift in Sources */,
-				BBBE85F72A4B92B2000A5AB4 /* ScrollViewWrapper.swift in Sources */,
+				BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
 				BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */,
@@ -1419,7 +1416,6 @@
 				BB7B09D22AC1CDBB0058A6A9 /* DataSystemExportable.swift in Sources */,
 				BBDCF5DD299EB6AC004C99AE /* EditPageItemView.swift in Sources */,
 				BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */,
-				BBBE85F52A4B9006000A5AB4 /* OffsetProxy.swift in Sources */,
 				BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
 				BBBBAC4C2AB8E887008CB9DA /* ShareView.swift in Sources */,
@@ -1453,7 +1449,7 @@
 				BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */,
 				BB72A28E29760327000E9753 /* ToolView.swift in Sources */,
 				BB9367752AC9D3B30096F20E /* PPSize.swift in Sources */,
-				BBE9196E28F381FE001EF750 /* ZoomableScrollView.swift in Sources */,
+				BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */,
 				BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */,
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,

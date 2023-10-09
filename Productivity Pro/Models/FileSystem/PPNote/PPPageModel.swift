@@ -34,6 +34,7 @@ import PencilKit
     
     var title: String = ""
     var created: Date
+    var isBookmarked: Bool = false
     
     var template: String = ""
     var color: String = ""

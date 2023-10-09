@@ -1,5 +1,5 @@
 //
-//  ZoomableScrollView.swift
+//  PPScrollView.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 10.10.22.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-struct ZoomableScrollView<Content: View>: UIViewRepresentable {
+struct PPScrollView<Content: View>: UIViewRepresentable {
     
     var size: CGSize
     

@@ -19,11 +19,19 @@ struct NoteView: View {
         if contentObject.note?.pages != nil {
             GeometryReader { proxy in
                 ScrollView(.horizontal) {
-                    HStack(spacing: 0) {
+                    LazyHStack(spacing: 0) {
                         ForEach(contentObject.note!.pages!) { page in
-                           
+                            ScrollViewContainer(
+                                note: contentObject.note!,
+                                page: page,
+                                size: proxy.size
+                            )
+                            .containerRelativeFrame(
+                                [.horizontal, .vertical]
+                            )
                         }
                     }
+                    .scrollTargetLayout()
                 }
                 .scrollIndicators(.hidden)
                 .scrollTargetBehavior(.paging)
@@ -38,6 +46,9 @@ struct NoteView: View {
             .background {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
+            }
+            .overlay {
+                
             }
             
         } else {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrientationUpdater: ViewModifier {
     
-    @Binding var isPortrait: Bool
+    var isPortrait: Bool
     
     func body(content: Content) -> some View {
         if isPortrait {
