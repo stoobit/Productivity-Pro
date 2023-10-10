@@ -9,14 +9,11 @@ import SwiftUI
 
 @MainActor
 struct PPScrollView<Content: View>: UIViewRepresentable {
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
+    var contentObject: ContentObject
     var size: CGSize
-    
-    @Binding var document: Document
-    @Binding var page: Page
-    
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
     
     var scrollView: UIScrollView
     var content: () -> Content
