@@ -12,6 +12,7 @@ extension NoteMainToolbar {
     @ViewBuilder func CalculatorButton() -> some View {
         Button(action: { openWindow(id: "calculator") }) {
             Label("Rechner", systemImage: "x.squareroot")
+                .modifier(PremiumBadge())
         }
     }
     

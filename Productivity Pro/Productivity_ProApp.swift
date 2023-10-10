@@ -25,6 +25,13 @@ struct Productivity_ProApp: App {
             isAutosaveEnabled: true,
             isUndoEnabled: true
         )
+        
+        WindowGroup(id: "calculator") {
+            ZStack {
+                CalculatorContainerView()
+                    .modifier(LockScreen())
+            }
+        }
     }
 }
 

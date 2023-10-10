@@ -16,6 +16,7 @@ struct NoteViewToolbar: ViewModifier {
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
+            .navigationTitle(contentObject.title)
             .toolbarTitleMenu {
                 NoteTitleMenu(contentObject: contentObject)
             }

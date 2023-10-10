@@ -20,13 +20,3 @@ struct PremiumBadge: ViewModifier {
         }
     }
 }
-
-#Preview {
-    TabView {
-        Text("hi")
-            .modifier(PremiumBadge())
-            .tabItem {
-                Image(systemName: "checklist")
-            }
-    }
-}

@@ -1039,8 +1039,8 @@
 				BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */,
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
-				BB047CDA2AC09A960027409F /* PremiumBadge.swift */,
 				BB8A0AE22AD0B871008B4D27 /* LockViews.swift */,
+				BB047CDA2AC09A960027409F /* PremiumBadge.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
