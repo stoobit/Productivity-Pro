@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct CompactCalculatorView: View {
+struct CompactCalculatorView<Content: View>: View {
     
-    let calculator: Calculator = Calculator()
+    @Bindable var calculator: Calculator
+    let content: (CGSize) -> Content
     
     var body: some View {
         GeometryReader { reader in
             VStack {
+                content(reader.size)
                 
                 Spacer()
                 
@@ -228,20 +230,6 @@ struct CompactCalculatorView: View {
             }
             
             Spacer()
-        }
-    }
-}
-
-
-struct Calc_Previews: PreviewProvider {
-    static var previews: some View {
-        GeometryReader { reader in
-            CompactCalculatorView()
-                .frame(
-                    width: reader.size.width / 2
-                )
-                .border(Color.red)
-                .offset(x: reader.size.width / 4)
         }
     }
 }

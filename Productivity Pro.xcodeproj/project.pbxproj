@@ -85,7 +85,6 @@
 		BB68F0C22ACA1774006C91AE /* PPLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */; };
 		BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C32ACA1789006C91AE /* PPLinkType.swift */; };
 		BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */; };
-		BB6ABB8129CD0BA5008B58E3 /* OLDNoteViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6ABB8029CD0BA5008B58E3 /* OLDNoteViewMethods.swift */; };
 		BB6BFA272904907F002D09FD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6BFA262904907F002D09FD /* Color.swift */; };
 		BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */; };
 		BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */; };
@@ -158,7 +157,7 @@
 		BBB763B02A3A64CC00273182 /* EditShapeItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763AF2A3A64CC00273182 /* EditShapeItemMethods.swift */; };
 		BBB763B22A3A70DD00273182 /* EditTextfieldItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763B12A3A70DD00273182 /* EditTextfieldItemMethods.swift */; };
 		BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */; };
-		BBBB7E082A2693FD00155C8A /* CompactCalculatorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */; };
+		BBBB7E082A2693FD00155C8A /* CompactCalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CompactCalculatorButton.swift */; };
 		BBBB7E092A2693FD00155C8A /* CompactCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */; };
 		BBBBAC4C2AB8E887008CB9DA /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */; };
 		BBBCACB32A25461900C23B2C /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB02A25461900C23B2C /* UIElements.swift */; };
@@ -233,6 +232,8 @@
 		BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */; };
 		BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930792A674C9600AD3958 /* PPShape.swift */; };
 		BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD5B1A2ACCDE210068609A /* RichTextKit */; };
+		BBFFBB612AD5BE130076C9AD /* RegularCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFFBB602AD5BE130076C9AD /* RegularCalculatorView.swift */; };
+		BBFFBB632AD5BF7D0076C9AD /* RegularCalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFFBB622AD5BF7D0076C9AD /* RegularCalculatorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -327,7 +328,6 @@
 		BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLinkModel.swift; sourceTree = "<group>"; };
 		BB68F0C32ACA1789006C91AE /* PPLinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLinkType.swift; sourceTree = "<group>"; };
 		BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemView.swift; sourceTree = "<group>"; };
-		BB6ABB8029CD0BA5008B58E3 /* OLDNoteViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OLDNoteViewMethods.swift; sourceTree = "<group>"; };
 		BB6BFA262904907F002D09FD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewManager.swift; sourceTree = "<group>"; };
 		BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolManager.swift; sourceTree = "<group>"; };
@@ -400,7 +400,7 @@
 		BBB763AF2A3A64CC00273182 /* EditShapeItemMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemMethods.swift; sourceTree = "<group>"; };
 		BBB763B12A3A70DD00273182 /* EditTextfieldItemMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemMethods.swift; sourceTree = "<group>"; };
 		BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMediaItemMethods.swift; sourceTree = "<group>"; };
-		BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactCalculatorUI.swift; sourceTree = "<group>"; };
+		BBBB7E062A2693FD00155C8A /* CompactCalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactCalculatorButton.swift; sourceTree = "<group>"; };
 		BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactCalculatorView.swift; sourceTree = "<group>"; };
 		BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		BBBCACB02A25461900C23B2C /* UIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
@@ -474,6 +474,8 @@
 		BBF930722A67437900AD3958 /* PPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColor.swift; sourceTree = "<group>"; };
 		BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingViewMethods.swift; sourceTree = "<group>"; };
 		BBF930792A674C9600AD3958 /* PPShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPShape.swift; sourceTree = "<group>"; };
+		BBFFBB602AD5BE130076C9AD /* RegularCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularCalculatorView.swift; sourceTree = "<group>"; };
+		BBFFBB622AD5BF7D0076C9AD /* RegularCalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularCalculatorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -592,7 +594,7 @@
 			isa = PBXGroup;
 			children = (
 				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
-				BB6ABB8029CD0BA5008B58E3 /* OLDNoteViewMethods.swift */,
+				BB7987022AD497C1003469E6 /* NoteViewModifier.swift */,
 				BB655B012AB772F700FB005A /* NoteViewModifier */,
 			);
 			path = NoteView;
@@ -747,7 +749,6 @@
 		BB655B012AB772F700FB005A /* NoteViewModifier */ = {
 			isa = PBXGroup;
 			children = (
-				BB7987022AD497C1003469E6 /* NoteViewModifier.swift */,
 				BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */,
 				BB655AFD2AB772E900FB005A /* NoteViewAlert.swift */,
 				BB655AFB2AB772E000FB005A /* NoteViewOnChange.swift */,
@@ -911,13 +912,6 @@
 			path = ActionViews;
 			sourceTree = "<group>";
 		};
-		BB9CACE52A2687CE001909FD /* Regular */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Regular;
-			sourceTree = "<group>";
-		};
 		BB9CACE62A2687DD001909FD /* Old */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,21 +967,14 @@
 			path = NoteModels;
 			sourceTree = "<group>";
 		};
-		BBBB7E052A2693EA00155C8A /* Compact */ = {
-			isa = PBXGroup;
-			children = (
-				BBBB7E062A2693FD00155C8A /* CompactCalculatorUI.swift */,
-				BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */,
-			);
-			path = Compact;
-			sourceTree = "<group>";
-		};
 		BBBCACAF2A253BC000C23B2C /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
 				BB9CACDE2A2676B9001909FD /* CalculatorContainerView.swift */,
-				BB9CACE52A2687CE001909FD /* Regular */,
-				BBBB7E052A2693EA00155C8A /* Compact */,
+				BBFFBB602AD5BE130076C9AD /* RegularCalculatorView.swift */,
+				BBFFBB622AD5BF7D0076C9AD /* RegularCalculatorButton.swift */,
+				BBBB7E072A2693FD00155C8A /* CompactCalculatorView.swift */,
+				BBBB7E062A2693FD00155C8A /* CompactCalculatorButton.swift */,
 				BB9CACE62A2687DD001909FD /* Old */,
 			);
 			path = Calculator;
@@ -1322,7 +1309,7 @@
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
-				BBBB7E082A2693FD00155C8A /* CompactCalculatorUI.swift in Sources */,
+				BBBB7E082A2693FD00155C8A /* CompactCalculatorButton.swift in Sources */,
 				BBBCACB42A25461900C23B2C /* OldCalculatorView.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
@@ -1354,6 +1341,7 @@
 				BBCCE4F228D52934001DBD8A /* OLDNewDocumentView.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB2CFEFF2A6EB3C40035511A /* PPControlButtonStyle.swift in Sources */,
+				BBFFBB612AD5BE130076C9AD /* RegularCalculatorView.swift in Sources */,
 				BB79870B2AD49C0C003469E6 /* CalculatorButton.swift in Sources */,
 				BB655AFC2AB772E000FB005A /* NoteViewOnChange.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSideActions.swift in Sources */,
@@ -1452,7 +1440,6 @@
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
-				BB6ABB8129CD0BA5008B58E3 /* OLDNoteViewMethods.swift in Sources */,
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
@@ -1473,6 +1460,7 @@
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */,
+				BBFFBB632AD5BF7D0076C9AD /* RegularCalculatorButton.swift in Sources */,
 				BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,

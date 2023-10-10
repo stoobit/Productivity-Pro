@@ -12,7 +12,7 @@
 
 import SwiftUI
 
-class Calculator {
+@Observable final class Calculator {
     
     private var pass = false
     private var newOperation = ""
@@ -33,7 +33,7 @@ class Calculator {
     let specialOps: [String] = [",", "×", "sin", "cos", "log","tan","π","\u{221A}","\u{2070}","\u{00B9}","\u{00B2}","\u{00B3}","\u{2074}","\u{2075}","\u{2076}","\u{2077}","\u{2078}","\u{2079}","\u{2080}","\u{2081}","\u{2082}","\u{2083}","\u{2084}","\u{2085}","\u{2086}","\u{2087}","\u{2088}","\u{2089}"]
     let specialOpsRep: [String] = [ ".","*","s","c","l","t","3.14159265358979323","r","0","1","2","3","4","5","6","7","8","9","0","1","2","3","4","5","6","7","8","9"]
     
-    public func math (arg : String) -> Double {
+    public func math(arg : String) -> Double {
         pass = false
         newOperation = ""
         operations = []

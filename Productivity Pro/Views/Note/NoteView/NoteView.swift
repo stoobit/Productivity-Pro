@@ -57,4 +57,16 @@ struct NoteView: View {
             )
         }
     }
+    
+//    func pageIndicator() {
+//            if subviewManager.overviewSheet == false {
+//                toolManager.isPageNumberVisible = true
+//    
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//                    withAnimation {
+//                        toolManager.isPageNumberVisible = false
+//                    }
+//                }
+//            }
+//        }
 }

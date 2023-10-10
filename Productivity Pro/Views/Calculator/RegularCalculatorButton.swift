@@ -1,13 +1,13 @@
 //
-//  CompactCalculatorUI.swift
+//  RegularCalculatorButton.swift
 //  Productivity Pro
 //
-//  Created by Till Brügmann on 30.05.23.
+//  Created by Till Brügmann on 10.10.23.
 //
 
 import SwiftUI
 
-struct CompactCalculatorButton: View {
+struct RegularCalculatorButton: View {
     
     let size: CGSize
     let text: String
@@ -28,19 +28,6 @@ struct CompactCalculatorButton: View {
                     RoundedRectangle(cornerRadius: 12)
                 )
                 .padding(4)
-        }
-    }
-}
-
-struct Calc_Previews2: PreviewProvider {
-    static var previews: some View {
-        GeometryReader { reader in
-            CompactCalculatorView()
-                .frame(
-                    width: reader.size.width / 2
-                )
-                .border(Color.red)
-                .offset(x: reader.size.width / 4)
         }
     }
 }

@@ -12,20 +12,26 @@ struct CalculatorContainerView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var hsc
     
+    @State var calculator = Calculator()
+    
     var body: some View {
         NavigationStack {
             Group {
                 if hsc == .compact {
-                    CompactCalculatorView()
+                    CompactCalculatorView(calculator: calculator) { size in
+                        SolutionView(with: size)
+                    }
                 } else if hsc == .regular {
-                    
+                    RegularCalculatorView(calculator: calculator) { size in
+                        SolutionView(with: size)
+                    }
                 }
             }
             .toolbarRole(.editor)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { dismiss() }
+                    Button("Fertig") { dismiss() }
                         .keyboardShortcut(
                             .return, modifiers: [.command]
                         )
@@ -34,14 +40,19 @@ struct CalculatorContainerView: View {
                 ToolbarItem(placement: .navigation) {
                     Group {
                         Text("Powered by ") +
-                        Text("Turtle Maths")
-                            .foregroundColor(.pink)
+                        Text("Pi")
+                            .foregroundColor(.accentColor)
                     }
                 }
                 
             }
         }
     }
+    
+    @ViewBuilder func SolutionView(with size: CGSize) -> some View {
+        
+    }
+    
 }
 
 struct CalculatorContainerView_Previews: PreviewProvider {

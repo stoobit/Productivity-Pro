@@ -32,6 +32,8 @@ struct Productivity_ProApp: App {
                     .modifier(LockScreen())
             }
         }
+        .windowResizability(.contentSize)
+        .defaultSize(width: 200, height: 400)
     }
 }
 

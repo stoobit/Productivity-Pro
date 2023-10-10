@@ -586,6 +586,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "Hexagon" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -826,6 +829,9 @@
           }
         }
       }
+    },
+    "Pi" : {
+
     },
     "Position" : {
 
@@ -1093,6 +1099,7 @@
       }
     },
     "Turtle Maths" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
