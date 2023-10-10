@@ -11,9 +11,9 @@ import PDFKit
 
 struct NoteView: View {
     @Environment(ToolManager.self) var toolManager
-    var contentObject: ContentObject
-    
     @State var activePage: PPPageModel?
+    
+    var contentObject: ContentObject
     
     var body: some View {
         if contentObject.note?.pages != nil {
@@ -39,6 +39,8 @@ struct NoteView: View {
                 .onChange(of: activePage, initial: true) { last, active in
                     if let page = active {
                         toolManager.activePage = page
+                    } else {
+                        toolManager.activePage = contentObject.note!.pages!.first!
                     }
                 }
             }

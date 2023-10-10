@@ -19,11 +19,12 @@ extension NoteMainToolbar {
         toolManager.isCanvasEnabled = false
         
         let item = PPItemModel(type: .textField)
-        item.size = PPSize(width: 600, height: 300)
+        item.width = 600
+        item.height = 300
         
-        item.position.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.size.width/2 + 40
+        item.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.width/2 + 40
         
-        item.position.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + item.size.height/2 + 40
+        item.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + item.height/2 + 40
         
         let textField = PPTextFieldModel()
         let attributes: [NSAttributedString.Key: Any] = [

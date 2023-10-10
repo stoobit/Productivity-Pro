@@ -38,13 +38,12 @@ extension NoteMainToolbar {
         toolManager.isCanvasEnabled = false
         
         let item = PPItemModel(type: .shape)
-        item.size = PPSize(
-            width: 200, height: type == .hexagon ? 175 : 200
-        )
+        item.width = 200
+        item.height = type == .hexagon ? 175 : 200
         
-        item.position.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.size.width / 2 + 40
+        item.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.width/2 + 40
         
-        item.position.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + item.size.height / 2 + 40
+        item.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + item.height/2 + 40
         
         let shape = PPShapeModel(type: type)
         shape.fill = true

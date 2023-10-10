@@ -61,15 +61,18 @@ struct MediaImport: ViewModifier {
     func addMedia(with imageData: Data) {
         guard let selectedImage = UIImage(data: imageData) else { return }
         
-        let image = resize(selectedImage, to: CGSize(width: 2048, height: 2048))
+        let image = resize(
+            selectedImage, to: CGSize(width: 2048, height: 2048)
+        )
         let ratio = 400/image.size.width
         
         let item = PPItemModel(type: .media)
-        item.size = PPSize(width: image.size.width * ratio, height: image.size.height * ratio)
+        item.width = image.size.width * ratio
+        item.height = image.size.height * ratio
         
-        item.position.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.size.width/2 + 40
+        item.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.width/2 + 40
         
-        item.position.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + item.size.height/2 + 40
+        item.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + item.height/2 + 40
         
         guard let data = image.heicData() else { return }
         let media = PPMediaModel(media: data)

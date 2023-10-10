@@ -58,8 +58,11 @@ extension DocumentView {
                     ppItem.page = ppPage
                     ppItem.isLocked = item.isLocked ?? false
                     
-                    ppItem.size = PPSize(width: item.width, height: item.height)
-                    ppItem.position = PPPosition(x: item.x, y: item.y)
+                    ppItem.width = item.width
+                    ppItem.height = item.height
+                    
+                    ppItem.x = item.x
+                    ppItem.y = item.y
                     
                     if item.type == .shape {
                         guard let shape = item.shape else { continue }

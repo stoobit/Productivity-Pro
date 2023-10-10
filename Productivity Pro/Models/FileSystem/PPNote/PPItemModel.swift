@@ -16,16 +16,16 @@ import SwiftData
     
     init(type: PPItemType) {
         self.type = type.rawValue
-        
-        self.position = PPPosition(x: 0, y: 0)
-        self.size = PPSize(width: 0, height: 0)
     }
     
     var type: PPItemType.RawValue
     var isLocked: Bool = false
     
-    var position: PPPosition
-    var size: PPSize
+    var x: Double = 0
+    var y: Double = 0
+    
+    var width: Double = 0
+    var height: Double = 0
     
     var shape: PPShapeModel?
     var media: PPMediaModel?
