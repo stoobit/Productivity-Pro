@@ -88,7 +88,6 @@ struct ObjectView: View {
                 parent == "root" ? .large : .inline
             )
         }
-        .toolbar(.visible, for: .tabBar)
         .modifier(
             AddFolderView(
                 parent: parent,
@@ -117,13 +116,13 @@ struct ObjectView: View {
     
     @ViewBuilder func ObjectLink(for object: ContentObject) -> some View {
         if object.type == COType.folder.rawValue {
-            DocumentViewFolderLink(
+            ObjectViewFolderLink(
                 contentObjects: contentObjects, object: object
             ) {
                 deleteObject(object)
             }
         } else if object.type == COType.file.rawValue {
-            DocumentViewFileLink(
+            ObjectViewFileLink(
                 contentObjects: contentObjects, object: object
             ) {
                 deleteObject(object)

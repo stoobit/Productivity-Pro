@@ -30,7 +30,7 @@ struct SearchView: View {
             .listRowBackground(Color.clear)
             
             ForEach(searchResults) { object in
-                DocumentViewFileLink(
+                ObjectViewFileLink(
                     contentObjects: contentObjects,
                     object: object,
                     swipeAction: false

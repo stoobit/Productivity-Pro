@@ -44,7 +44,6 @@ struct NoteView: View {
                 }
             }
             .noteViewModifier(with: contentObject)
-            .toolbar(.hidden, for: .tabBar)
             .background {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
