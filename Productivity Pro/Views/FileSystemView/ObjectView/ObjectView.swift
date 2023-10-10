@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct DocumentView: View {
+struct ObjectView: View {
     @Environment(\.modelContext) var context
     
     var parent: String
@@ -88,6 +88,7 @@ struct DocumentView: View {
                 parent == "root" ? .large : .inline
             )
         }
+        .toolbar(.visible, for: .tabBar)
         .modifier(
             AddFolderView(
                 parent: parent,

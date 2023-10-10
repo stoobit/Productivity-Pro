@@ -65,7 +65,7 @@ struct BackupSettings: View {
     
     @ViewBuilder
     func NumberIndicator(type: COType) -> some View {
-        let title = type == .file ? "Dateien" : "Ordner"
+        let title = type == .file ? "Notizen" : "Ordner"
         let image = type == .file ? "doc" : "folder"
         let count = contentObjects.filter({
             $0.type == type.rawValue

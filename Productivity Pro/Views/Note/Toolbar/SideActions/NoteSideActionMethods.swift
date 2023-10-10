@@ -15,21 +15,21 @@ extension NoteSideActions {
     }
     
     func showItemEditor() {
-        toolManager.selectedItem = document.note.pages[
-            toolManager.selectedPage
-        ].items.first(where: { $0.id == toolManager.selectedItem?.id })
-        
-        subviewManager.showStylePopover.toggle()
+//        toolManager.selectedItem = document.note.pages[
+//            toolManager.selectedPage
+//        ].items.first(where: { $0.id == toolManager.selectedItem?.id })
+//        
+//        subviewManager.showStylePopover.toggle()
     }
     
     func templateChangeDisabled() -> Bool {
         var isDisabled: Bool = true
         
-        if document.note.pages.indices.contains(toolManager.selectedPage) {
-            if document.note.pages[toolManager.selectedPage].type == .template {
-                isDisabled = false
-            }
-        }
+//        if document.note.pages.indices.contains(toolManager.selectedPage) {
+//            if document.note.pages[toolManager.selectedPage].type == .template {
+//                isDisabled = false
+//            }
+//        }
         
         return isDisabled
     }

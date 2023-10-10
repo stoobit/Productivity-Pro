@@ -52,7 +52,7 @@ extension NoteMainToolbar {
         item.shape = shape
         
         if let page = contentObject.note!.pages!.first(where: {
-            $0.id == toolManager.activePage.id
+            $0.id == toolManager.activePage?.id
         }) {
             page.items?.append(item)
             toolManager.activeItem = item

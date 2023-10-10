@@ -11,7 +11,7 @@ import PhotosUI
 import PDFKit
 
 @Observable class ToolManager {
-    var activePage: PPPageModel!
+    var activePage: PPPageModel?
     var selectedPages: [PPPageModel] = []
     
     var activeItem: PPItemModel?

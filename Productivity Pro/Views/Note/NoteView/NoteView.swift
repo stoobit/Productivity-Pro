@@ -6,8 +6,7 @@
 //
 
 import SwiftUI
-import PencilKit
-import PDFKit
+import SwiftUIIntrospect
 
 struct NoteView: View {
     @Environment(ToolManager.self) var toolManager
@@ -45,6 +44,7 @@ struct NoteView: View {
                 }
             }
             .noteViewModifier(with: contentObject)
+            .toolbar(.hidden, for: .tabBar)
             .background {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)

@@ -50,20 +50,20 @@ extension NoteSideActions {
             }) {
                 Label("Seite löschen", systemImage: "trash")
             }
-            .disabled(
-                document.note.pages.count == 1
+            .disabled(false
+//                document.note.pages.count == 1
             )
             
         }) {
-            Label("Seiten bearbeiten", systemImage: "doc.badge.ellipsis")
+            Label("Seiten", systemImage: "doc.badge.ellipsis")
         }
-        .modifier(
-            AddPDFPageHelper(
-                document: $document,
-                toolManager: toolManager,
-                subviewManager: subviewManager
-            )
-        )
+//        .modifier(
+//            AddPDFPageHelper(
+//                document: $document,
+//                toolManager: toolManager,
+//                subviewManager: subviewManager
+//            )
+//        )
         
     }
 }

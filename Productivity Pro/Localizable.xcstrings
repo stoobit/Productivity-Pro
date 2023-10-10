@@ -118,6 +118,7 @@
       }
     },
     "Als PDF exportieren" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -126,6 +127,9 @@
           }
         }
       }
+    },
+    "Anpinnen" : {
+
     },
     "App Icon" : {
       "localizations" : {
@@ -833,6 +837,9 @@
     "Pi" : {
 
     },
+    "Pin entfernen" : {
+
+    },
     "Position" : {
 
     },
@@ -986,7 +993,11 @@
         }
       }
     },
+    "Seiten" : {
+
+    },
     "Seiten bearbeiten" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1194,6 +1205,7 @@
       }
     },
     "Widerrufen/Wiederholen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

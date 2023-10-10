@@ -12,7 +12,7 @@ struct NoteViewToolbar: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .navigationBarBackButtonHidden()
+//            .navigationBarBackButtonHidden()
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
@@ -23,13 +23,8 @@ struct NoteViewToolbar: ViewModifier {
             .toolbar(id: "main") {
                 NoteMainToolbar(contentObject: contentObject)
             }
-//            .toolbar {
-//                NoteSideActions(
-//                    document: $document,
-//                    toolManager: toolManager,
-//                    subviewManager: subviewManager,
-//                    dismissAction: action
-//                )
-//            }
+            .toolbar {
+                NoteSideActions(contentObject: contentObject)
+            }
     }
 }

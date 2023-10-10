@@ -9,7 +9,7 @@ import SwiftUI
 import PencilKit
 import SwiftyMarkdown
 
-extension DocumentView {
+extension ObjectView {
     
     func importPro(url: URL) throws {
         let encodedData = try Data(contentsOf: url)

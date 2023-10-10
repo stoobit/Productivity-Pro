@@ -15,6 +15,15 @@ struct NoteTitleMenu: View {
     
     var body: some View {
         Section {
+            Button(action: { contentObject.isPinned.toggle() }) {
+                Label(
+                    contentObject.isPinned ? "Pin entfernen" : "Anpinnen",
+                    systemImage: contentObject.isPinned ? "pin.slash" : "pin"
+                )
+            }
+        }
+        
+        Section {
             Button("Umbenennen", systemImage: "pencil", action: {
                 
             })
@@ -25,11 +34,8 @@ struct NoteTitleMenu: View {
         }
         
         Section {
-            Button(action: {
-                toolManager.isCanvasEnabled = false
-                sharePDF()
-            }) {
-                Label("Als PDF exportieren", systemImage: "doc")
+            Button("Teilen", systemImage: "square.and.arrow.up") {
+                
             }
             
             Button(action: {

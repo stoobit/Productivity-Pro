@@ -1,19 +1,20 @@
 //
-//  FolderViewObjectLink.swift
+//  FolderViewFileLink.swift
 //  Productivity Pro
 //
-//  Created by Till Brügmann on 25.09.23.
+//  Created by Till Brügmann on 26.09.23.
 //
 
 import SwiftUI
 
-struct DocumentViewFolderLink: View {
+struct ObjectViewFileLink: View {
     var contentObjects: [ContentObject]
-    
     var object: ContentObject
-    let delete: () -> Void
+    var swipeAction: Bool = true
     
     @AppStorage("ppgrade") var grade: Int = 5
+    
+    let delete: () -> Void
     
     @State var isMove: Bool = false
     @State var isRename: Bool = false
@@ -21,23 +22,22 @@ struct DocumentViewFolderLink: View {
     
     var body: some View {
         NavigationLink(destination: {
-            DocumentView(
-                parent: object.id.uuidString, title: object.title,
-                contentObjects: contentObjects
-            )
+            NoteView(contentObject: object)
         }) {
             ContentObjectLink(obj: object)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            Button(role: .destructive, action: {
-                withAnimation(.bouncy) {
-                    object.isPinned.toggle()
+            if swipeAction {
+                Button(role: .destructive, action: {
+                    withAnimation(.bouncy) {
+                        object.isPinned.toggle()
+                    }
+                }) {
+                    Image(systemName: !object.isPinned ? "pin.fill" : "pin.slash.fill"
+                    )
                 }
-            }) {
-                Image(systemName: !object.isPinned ? "pin.fill" : "pin.slash.fill"
-                )
+                .tint(Color.accentColor)
             }
-            .tint(Color.accentColor)
         }
         .contextMenu {
             Section {
@@ -47,6 +47,14 @@ struct DocumentViewFolderLink: View {
                 
                 Button("Bewegen", systemImage: "folder") {
                     isMove = true
+                }
+            }
+            
+            Section {
+                Button(action: {
+                    
+                }) {
+                    Label("Teilen", systemImage: "square.and.arrow.up")
                 }
             }
             
@@ -62,7 +70,7 @@ struct DocumentViewFolderLink: View {
             RenameContentObjectView(
                 contentObjects: contentObjects,
                 object: object,
-                isPresented: $isRename,
+                isPresented: $isRename, 
                 parent: object.parent
             )
         )
@@ -73,6 +81,7 @@ struct DocumentViewFolderLink: View {
                 selectedObject: $selectedObject, type: .folder
             )
         }
+        
     }
     
     func move() {

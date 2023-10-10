@@ -16,7 +16,7 @@ struct FileSystemView: View {
     
     var body: some View {
         NavigationStack {
-            DocumentView(
+            ObjectView(
                 parent: "root",title: "Notizen",
                 contentObjects: contentObjects
             )
