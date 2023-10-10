@@ -79,7 +79,7 @@ struct MediaImport: ViewModifier {
         if let page = contentObject.note!.pages!.first(where: {
             $0.id == toolManager.activePage.id
         }) {
-            page.items.append(item)
+            page.items?.append(item)
             toolManager.activeItem = item
         }
     }

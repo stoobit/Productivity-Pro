@@ -25,10 +25,6 @@ import PencilKit
         self.created = Date()
     }
     
-    convenience init() {
-        self.init(type: .template, canvas: .ppCanvas)
-    }
-    
     var type: PPPageType.RawValue
     var canvas: PPCanvasType.RawValue
     
@@ -45,5 +41,5 @@ import PencilKit
     var pkCanvas: Data?
  
     @Relationship(deleteRule: .cascade)
-    var items: [PPItemModel] = []
+    var items: [PPItemModel]? = []
 }
