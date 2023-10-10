@@ -127,9 +127,6 @@
 		BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677E2AC9D40C0096F20E /* PPItemType.swift */; };
 		BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367802AC9D41F0096F20E /* PPShapeType.swift */; };
 		BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */; };
-		BB94F2312AD5E38900ED8433 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = BB94F2302AD5E38900ED8433 /* SwiftUIIntrospect */; };
-		BB94F2332AD5E38900ED8433 /* SwiftUIIntrospect-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BB94F2322AD5E38900ED8433 /* SwiftUIIntrospect-Dynamic */; };
-		BB94F2352AD5E38900ED8433 /* SwiftUIIntrospect-Static in Frameworks */ = {isa = PBXBuildFile; productRef = BB94F2342AD5E38900ED8433 /* SwiftUIIntrospect-Static */; };
 		BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */; };
 		BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36492ABCD29700721C56 /* Homework.swift */; };
 		BB9A364C2ABCD5D700721C56 /* HomeworkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364B2ABCD5D700721C56 /* HomeworkAddView.swift */; };
@@ -488,11 +485,8 @@
 			files = (
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
-				BB94F2352AD5E38900ED8433 /* SwiftUIIntrospect-Static in Frameworks */,
 				BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */,
-				BB94F2312AD5E38900ED8433 /* SwiftUIIntrospect in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
-				BB94F2332AD5E38900ED8433 /* SwiftUIIntrospect-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,9 +1235,6 @@
 				BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */,
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
 				BBFD5B1A2ACCDE210068609A /* RichTextKit */,
-				BB94F2302AD5E38900ED8433 /* SwiftUIIntrospect */,
-				BB94F2322AD5E38900ED8433 /* SwiftUIIntrospect-Dynamic */,
-				BB94F2342AD5E38900ED8433 /* SwiftUIIntrospect-Static */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1279,7 +1270,6 @@
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
 				BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */,
-				BB94F22F2AD5E38900ED8433 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1779,14 +1769,6 @@
 				minimumVersion = 1.2.4;
 			};
 		};
-		BB94F22F2AD5E38900ED8433 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
-			};
-		};
 		BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
@@ -1815,21 +1797,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */;
 			productName = SwiftyMarkdown;
-		};
-		BB94F2302AD5E38900ED8433 /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB94F22F2AD5E38900ED8433 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = SwiftUIIntrospect;
-		};
-		BB94F2322AD5E38900ED8433 /* SwiftUIIntrospect-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB94F22F2AD5E38900ED8433 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = "SwiftUIIntrospect-Dynamic";
-		};
-		BB94F2342AD5E38900ED8433 /* SwiftUIIntrospect-Static */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB94F22F2AD5E38900ED8433 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = "SwiftUIIntrospect-Static";
 		};
 		BBB090802A4BA35100A6F60A /* OnPasteboardChange */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -604,6 +604,9 @@
         }
       }
     },
+    "hi" : {
+
+    },
     "Hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -645,6 +648,9 @@
       }
     },
     "Individuell" : {
+
+    },
+    "Inspektor" : {
 
     },
     "Instagram" : {
@@ -973,6 +979,9 @@
     "Sechseck" : {
 
     },
+    "Seite" : {
+
+    },
     "Seite hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -992,9 +1001,6 @@
           }
         }
       }
-    },
-    "Seiten" : {
-
     },
     "Seiten bearbeiten" : {
       "extractionState" : "stale",
@@ -1195,6 +1201,7 @@
       }
     },
     "Widerrufen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1227,9 +1234,6 @@
           }
         }
       }
-    },
-    "Wiederholen" : {
-
     },
     "X" : {
 

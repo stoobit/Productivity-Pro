@@ -55,7 +55,7 @@ extension NoteSideActions {
             )
             
         }) {
-            Label("Seiten", systemImage: "doc.badge.ellipsis")
+            Label("Seite", systemImage: "doc.badge.ellipsis")
         }
 //        .modifier(
 //            AddPDFPageHelper(

@@ -14,12 +14,12 @@ extension NoteSideActions {
         subviewManager.overviewSheet.toggle()
     }
     
-    func showItemEditor() {
+    func toggleInspector() {
 //        toolManager.selectedItem = document.note.pages[
 //            toolManager.selectedPage
 //        ].items.first(where: { $0.id == toolManager.selectedItem?.id })
 //        
-//        subviewManager.showStylePopover.toggle()
+        subviewManager.showStylePopover.toggle()
     }
     
     func templateChangeDisabled() -> Bool {

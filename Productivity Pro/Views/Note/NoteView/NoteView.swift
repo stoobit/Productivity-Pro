@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
-import SwiftUIIntrospect
 
 struct NoteView: View {
     @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     @State var activePage: PPPageModel?
     
     var contentObject: ContentObject
     
     var body: some View {
         if contentObject.note?.pages != nil {
+            @Bindable var subviewValue = subviewManager
+            
             GeometryReader { proxy in
                 ScrollView(.horizontal) {
                     LazyHStack(spacing: 0) {
@@ -47,6 +49,9 @@ struct NoteView: View {
             .background {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
+            }
+            .inspector(isPresented: $subviewValue.showStylePopover) {
+                Text("hi")
             }
             
         } else {
