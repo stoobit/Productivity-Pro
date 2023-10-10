@@ -1201,7 +1201,6 @@
       }
     },
     "Widerrufen" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1212,7 +1211,6 @@
       }
     },
     "Widerrufen/Wiederholen" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1234,6 +1232,9 @@
           }
         }
       }
+    },
+    "Wiederholen" : {
+
     },
     "X" : {
 

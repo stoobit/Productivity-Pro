@@ -19,7 +19,7 @@ extension NoteSideActions {
 //            toolManager.selectedPage
 //        ].items.first(where: { $0.id == toolManager.selectedItem?.id })
 //        
-        subviewManager.showStylePopover.toggle()
+        subviewManager.showInspector.toggle()
     }
     
     func templateChangeDisabled() -> Bool {

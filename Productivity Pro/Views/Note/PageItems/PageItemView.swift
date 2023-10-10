@@ -33,7 +33,7 @@ struct PageItemView: View {
                 pdfRendering: pdfRendering
             )
             .onTapGesture {
-                if subviewManager.showStylePopover == false {
+                if subviewManager.showInspector == false {
                     tap(item: item)
                 }
             }

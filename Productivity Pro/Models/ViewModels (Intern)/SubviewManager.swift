@@ -13,10 +13,12 @@ import Observation
     var pickMedia: Bool = false
     var importMedia: Bool = false
     
-    // MARK: - UNCHECKED & OLD
+    var showInspector: Bool = false
     
     var renameView: Bool = false
     var moveView: Bool = false
+    
+    // MARK: - UNCHECKED & OLD
     var showPrinterView: Bool = false
     
     var sharePDFSheet: Bool = false
@@ -33,7 +35,6 @@ import Observation
     
     var markdownHelp: Bool = false
     
-    var showStylePopover: Bool = false
     var showTextEditor: Bool = false
     
     var showCameraView: Bool = false

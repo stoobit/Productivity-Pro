@@ -50,7 +50,7 @@ struct NoteView: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
             }
-            .inspector(isPresented: $subviewValue.showStylePopover) {
+            .inspector(isPresented: $subviewValue.showInspector) {
                 Text("hi")
             }
             
