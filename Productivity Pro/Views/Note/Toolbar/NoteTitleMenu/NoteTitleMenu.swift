@@ -10,6 +10,7 @@ import PDFKit
 import PencilKit
 
 struct NoteTitleMenu: View {
+    @Environment(ToolManager.self) var toolManager
     var contentObject: ContentObject
     
     var body: some View {

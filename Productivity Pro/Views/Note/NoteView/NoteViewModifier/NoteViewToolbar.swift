@@ -22,13 +22,13 @@ struct NoteViewToolbar: ViewModifier {
             .toolbar(id: "main") {
                 NoteMainToolbar(contentObject: contentObject)
             }
-            .toolbar {
-                NoteSideActions(
-                    document: $document,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager,
-                    dismissAction: action
-                )
-            }
+//            .toolbar {
+//                NoteSideActions(
+//                    document: $document,
+//                    toolManager: toolManager,
+//                    subviewManager: subviewManager,
+//                    dismissAction: action
+//                )
+//            }
     }
 }

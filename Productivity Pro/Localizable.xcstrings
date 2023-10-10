@@ -244,25 +244,16 @@
         }
       }
     },
+    "Bild" : {
+
+    },
     "Border Style" : {
-
-    },
-    "Browse Files" : {
-
-    },
-    "Calculator" : {
-
-    },
-    "Camera" : {
 
     },
     "Cancel" : {
 
     },
     "Center" : {
-
-    },
-    "Circle" : {
 
     },
     "Color" : {
@@ -287,6 +278,9 @@
           }
         }
       }
+    },
+    "Dateien durchsuchen" : {
+
     },
     "Datum nicht verfügbar." : {
       "localizations" : {
@@ -378,6 +372,9 @@
       }
     },
     "Done" : {
+
+    },
+    "Dreieck" : {
 
     },
     "Drucken" : {
@@ -532,6 +529,9 @@
     "Font" : {
 
     },
+    "Form" : {
+
+    },
     "Format" : {
       "localizations" : {
         "en" : {
@@ -541,6 +541,9 @@
           }
         }
       }
+    },
+    "Fotos" : {
+
     },
     "Freistunde" : {
       "localizations" : {
@@ -584,6 +587,7 @@
       }
     },
     "Hexagon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -669,6 +673,12 @@
         }
       }
     },
+    "Kamera" : {
+
+    },
+    "Kreis" : {
+
+    },
     "Lehrer" : {
 
     },
@@ -696,9 +706,6 @@
       }
     },
     "Markdown" : {
-
-    },
-    "Media" : {
 
     },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
@@ -820,9 +827,6 @@
         }
       }
     },
-    "Photos" : {
-
-    },
     "Position" : {
 
     },
@@ -885,7 +889,10 @@
         }
       }
     },
-    "Rectangle" : {
+    "Rechner" : {
+
+    },
+    "Rechteck" : {
 
     },
     "Rolle" : {
@@ -950,6 +957,9 @@
     "Scrolling Disabled" : {
 
     },
+    "Sechseck" : {
+
+    },
     "Seite hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -981,9 +991,6 @@
       }
     },
     "Select an Object" : {
-
-    },
-    "Shape" : {
 
     },
     "Share" : {
@@ -1069,7 +1076,7 @@
         }
       }
     },
-    "Text Box" : {
+    "Text" : {
 
     },
     "Text Style" : {
@@ -1084,9 +1091,6 @@
           }
         }
       }
-    },
-    "Triangle" : {
-
     },
     "Turtle Maths" : {
       "localizations" : {

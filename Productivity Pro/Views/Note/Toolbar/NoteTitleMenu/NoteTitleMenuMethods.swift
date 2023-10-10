@@ -20,7 +20,7 @@ extension NoteTitleMenu {
             }
             
             toolManager.showProgress = false
-            subviewManager.sharePDFSheet.toggle()
+//            subviewManager.sharePDFSheet.toggle()
         }
     }
     
@@ -34,7 +34,7 @@ extension NoteTitleMenu {
             }
             
             toolManager.showProgress = false
-            subviewManager.showPrinterView.toggle()
+//            subviewManager.showPrinterView.toggle()
         }
     }
     
@@ -54,57 +54,57 @@ extension NoteTitleMenu {
         tm.scrollOffset = CGPoint(x: 0, y: 0)
         tm.zoomScale = 1
         
-        for page in document.note.pages {
-            
-            let renderedCanvas = renderCanvas(page: page)
-            var box = CGRect(
-                x: 0,
-                y: 0,
-                width: getFrame(page: page).width,
-                height: getFrame(page: page).height
-            )
-            
-            pdf.beginPage(mediaBox: &box)
-            
-            var view: some View {
-                ZStack {
-                    
-                    PageView(
-                        document: $document,
-                        page: .constant(page),
-                        offset: .constant(0),
-                        toolManager: tm,
-                        subviewManager: subviewManager,
-                        drawingModel: PPDrawingModel(),
-                        pdfRendering: true,
-                        highRes: true,
-                        size: getFrame(page: page)
-                    )
-                    
-                    Image(uiImage: renderedCanvas)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(
-                            width: getFrame(page: page).width,
-                            height: getFrame(page: page).height
-                        )
-                    
-                }
-                .frame(
-                    width: getFrame(page: page).width,
-                    height: getFrame(page: page).height
-                )
-            }
-            
-            let renderer = ImageRenderer(content: view)
-            
-            renderer.render { size, context in
-                context(pdf)
-            }
-            
-            pdf.endPDFPage()
-            
-        }
+//        for page in document.note.pages {
+//            
+//            let renderedCanvas = renderCanvas(page: page)
+//            var box = CGRect(
+//                x: 0,
+//                y: 0,
+//                width: getFrame(page: page).width,
+//                height: getFrame(page: page).height
+//            )
+//            
+//            pdf.beginPage(mediaBox: &box)
+//            
+//            var view: some View {
+//                ZStack {
+//                    
+//                    PageView(
+//                        document: $document,
+//                        page: .constant(page),
+//                        offset: .constant(0),
+//                        toolManager: tm,
+//                        subviewManager: subviewManager,
+//                        drawingModel: PPDrawingModel(),
+//                        pdfRendering: true,
+//                        highRes: true,
+//                        size: getFrame(page: page)
+//                    )
+//                    
+//                    Image(uiImage: renderedCanvas)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(
+//                            width: getFrame(page: page).width,
+//                            height: getFrame(page: page).height
+//                        )
+//                    
+//                }
+//                .frame(
+//                    width: getFrame(page: page).width,
+//                    height: getFrame(page: page).height
+//                )
+//            }
+//            
+//            let renderer = ImageRenderer(content: view)
+//            
+//            renderer.render { size, context in
+//                context(pdf)
+//            }
+//            
+//            pdf.endPDFPage()
+//            
+//        }
         
         pdf.closePDF()
         

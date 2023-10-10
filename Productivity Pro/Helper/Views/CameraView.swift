@@ -40,7 +40,11 @@ struct CameraView: UIViewControllerRepresentable {
             picker: CameraView,
             dismiss: @escaping () -> Void,
             action: @escaping (Data) -> Void
-        ) { self.picker = picker }
+        ) { 
+            self.picker = picker
+            self.dismiss = dismiss
+            self.action = action
+        }
         
         func imagePickerController(
             _ picker: UIImagePickerController,

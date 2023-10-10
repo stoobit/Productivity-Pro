@@ -64,7 +64,7 @@ struct MediaImport: ViewModifier {
         let image = resize(selectedImage, to: CGSize(width: 2048, height: 2048))
         let ratio = 400/image.size.width
         
-        var item = PPItemModel(type: .media)
+        let item = PPItemModel(type: .media)
         item.size = PPSize(width: image.size.width * ratio, height: image.size.height * ratio)
         
         item.position.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.size.width/2 + 40
