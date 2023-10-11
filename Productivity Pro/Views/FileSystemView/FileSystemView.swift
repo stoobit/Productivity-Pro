@@ -42,6 +42,7 @@ struct FileSystemView: View {
                         style: .continuous
                     )
                 )
+                .ignoresSafeArea(.all)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity,

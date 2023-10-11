@@ -27,10 +27,6 @@ struct NoteTitleMenu: View {
             Button("Umbenennen", systemImage: "pencil", action: {
                 
             })
-            
-            Button("Bewegen", systemImage: "folder", action: {
-                
-            })
         }
         
         Section {

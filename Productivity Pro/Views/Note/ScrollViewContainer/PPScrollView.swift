@@ -70,13 +70,13 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             uiView.pinchGestureRecognizer?.isEnabled = true
         }
         
-        if toolManager.selectedTab != page.id ||
-            subviewManager.showScanDoc ||
-            subviewManager.showImportFile
-        {
-            uiView.setZoomScale(getScale(), animated: true)
-            uiView.setContentOffset(.zero, animated: true)
-        }
+//        if toolManager.selectedTab != page.id ||
+//            subviewManager.showScanDoc ||
+//            subviewManager.showImportFile
+//        {
+//            uiView.setZoomScale(getScale(), animated: true)
+//            uiView.setContentOffset(.zero, animated: true)
+//        }
         
         context.coordinator.hostingController.rootView = content()
         assert(context.coordinator.hostingController.view.superview == uiView)
@@ -84,45 +84,19 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     
     func makeCoordinator() -> Coordinator {
         return Coordinator(
-            hostingController: UIHostingController(rootView: self.content()),
-            didZoom: $toolManager.didZoom,
-            scale: $toolManager.zoomScale,
-            offset: $toolManager.scrollOffset,
-            isEditorVisible: $toolManager.isEditorVisible,
-            showFrame: $toolManager.showFrame,
-            isLockEnabled: $toolManager.isLockEnabled
+            hostingController: UIHostingController(
+                rootView: self.content()
+            )
         )
     }
     
     @MainActor
     class Coordinator: NSObject, UIScrollViewDelegate {
-        
+        @Environment(ToolManager.self) var toolManager
         var hostingController: UIHostingController<Content>
-        @Binding var didZoom: Bool
-        @Binding var scale: CGFloat
-        @Binding var offset: CGPoint
         
-        @Binding var isEditorVisible: Bool
-        @Binding var showFrame: Bool
-        
-        @Binding var isLockEnabled: Bool
-        
-        init(
-            hostingController: UIHostingController<Content>,
-            didZoom: Binding<Bool>,
-            scale: Binding<CGFloat>,
-            offset: Binding<CGPoint>,
-            isEditorVisible: Binding<Bool>,
-            showFrame: Binding<Bool>,
-            isLockEnabled: Binding<Bool>
-        ) {
+        init(hostingController: UIHostingController<Content>) {
             self.hostingController = hostingController
-            _didZoom = didZoom
-            _scale = scale
-            _offset = offset
-            _isEditorVisible = isEditorVisible
-            _showFrame = showFrame
-            _isLockEnabled = isLockEnabled
         }
         
         func scrollViewDidZoom(_ scrollView: UIScrollView) {
@@ -136,51 +110,51 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         }
         
         func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-            isEditorVisible = false
-            showFrame = false
+            toolManager.isEditorVisible = false
+            toolManager.showFrame = false
         }
         
         func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-            didZoom = !(scrollView.zoomScale == scrollView.minimumZoomScale)
+            toolManager.didZoom = !(scrollView.zoomScale == scrollView.minimumZoomScale)
             
-            self.scale = scrollView.zoomScale
-            self.offset = scrollView.contentOffset
-            isEditorVisible = true
-            showFrame = true
+            toolManager.zoomScale = scrollView.zoomScale
+            toolManager.scrollOffset = scrollView.contentOffset
+            toolManager.isEditorVisible = true
+            toolManager.showFrame = true
         }
         
         func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-            self.isLockEnabled = false
+            toolManager.isLockEnabled = false
         }
         
         func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
             if decelerate == false {
-                self.offset = scrollView.contentOffset
-                self.isLockEnabled = true
+                toolManager.scrollOffset = scrollView.contentOffset
+                toolManager.isLockEnabled = true
             }
         }
         
         func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            self.offset = scrollView.contentOffset
-            self.isLockEnabled = true
+            toolManager.scrollOffset = scrollView.contentOffset
+            toolManager.isLockEnabled = true
         }
 
         func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-            self.offset = scrollView.contentOffset
+            toolManager.scrollOffset = scrollView.contentOffset
         }
     }
     
     func getFrame() -> CGSize {
         var frame: CGSize = .zero
         
-        if page.isPortrait {
-            frame = CGSize(
-                width: shortSide,
-                height: longSide
-            )
-        } else {
-            frame = CGSize(width: longSide, height: shortSide)
-        }
+//        if page.isPortrait {
+//            frame = CGSize(
+//                width: shortSide,
+//                height: longSide
+//            )
+//        } else {
+//            frame = CGSize(width: longSide, height: shortSide)
+//        }
         
         return frame
     }
@@ -188,11 +162,11 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     func getScale() -> CGFloat {
         var scale: CGFloat = 0
         
-        if page.isPortrait {
-            scale = size.width / shortSide
-        } else {
-            scale = size.width / longSide
-        }
+//        if page.isPortrait {
+//            scale = size.width / shortSide
+//        } else {
+//            scale = size.width / longSide
+//        }
         
         return scale
     }
