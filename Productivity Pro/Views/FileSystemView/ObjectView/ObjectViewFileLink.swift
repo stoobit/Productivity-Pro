@@ -12,6 +12,7 @@ struct ObjectViewFileLink: View {
     var object: ContentObject
     var swipeAction: Bool = true
     
+    @Environment(SubviewManager.self) var subviewManager
     @AppStorage("ppgrade") var grade: Int = 5
     
     let delete: () -> Void
@@ -22,7 +23,9 @@ struct ObjectViewFileLink: View {
     
     var body: some View {
         NavigationLink(destination: {
-            NoteView(contentObject: object)
+            NoteView(
+                contentObjects: contentObjects, contentObject: object
+            )
         }) {
             ContentObjectLink(obj: object)
         }
@@ -52,7 +55,7 @@ struct ObjectViewFileLink: View {
             
             Section {
                 Button(action: {
-                    
+                    subviewManager.shareView.toggle()
                 }) {
                     Label("Teilen", systemImage: "square.and.arrow.up")
                 }
@@ -70,8 +73,7 @@ struct ObjectViewFileLink: View {
             RenameContentObjectView(
                 contentObjects: contentObjects,
                 object: object,
-                isPresented: $isRename, 
-                parent: object.parent
+                isPresented: $isRename
             )
         )
         .sheet(isPresented: $isMove, onDismiss: move) {

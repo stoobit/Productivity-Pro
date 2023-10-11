@@ -10,8 +10,10 @@ import SwiftUI
 struct NoteView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
+    
     @State var activePage: PPPageModel?
     
+    var contentObjects: [ContentObject]
     var contentObject: ContentObject
     
     var body: some View {
@@ -50,6 +52,13 @@ struct NoteView: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
             }
+            .modifier(
+                RenameContentObjectView(
+                    contentObjects: contentObjects,
+                    object: contentObject,
+                    isPresented: $subviewValue.renameView
+                )
+            )
             .inspector(isPresented: $subviewValue.showInspector) {
                 Text("hi")
             }

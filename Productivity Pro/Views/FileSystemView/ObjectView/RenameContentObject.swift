@@ -18,8 +18,6 @@ struct RenameContentObjectView: ViewModifier {
     @Binding var isPresented: Bool
     @State var title: String = ""
     
-    var parent: String
-    
     func body(content: Content) -> some View {
         content
             .alert(
@@ -46,7 +44,7 @@ struct RenameContentObjectView: ViewModifier {
                 let filteredObjects = contentObjects
                     .filter({
                         $0.type == object.type &&
-                        $0.parent == parent &&
+                        $0.parent == object.parent &&
                         $0.grade == grade &&
                         $0.inTrash == false
                     })

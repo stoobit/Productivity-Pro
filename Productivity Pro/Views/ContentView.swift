@@ -31,6 +31,9 @@ struct ContentView: View {
                 .tabItem {
                     Label("Notizen", systemImage: "doc")
                 }
+                .sheet(isPresented: $subviewManager.shareView) {
+                    
+                }
             
             ScheduleViewContainer()
                 .modifier(PremiumBadge())

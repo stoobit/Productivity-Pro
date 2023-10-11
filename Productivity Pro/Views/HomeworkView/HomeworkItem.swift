@@ -25,7 +25,9 @@ struct HomeworkItem: View {
             } else {
                 NavigationLink(destination: {
                     if let note = homework.note {
-                        NoteView(contentObject: note)
+                        NoteView(
+                            contentObjects: contentObjects, contentObject: note
+                        )
                     } else {
                         ZStack {
                             Color(UIColor.systemGroupedBackground)

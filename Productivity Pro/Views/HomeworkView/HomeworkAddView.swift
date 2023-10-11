@@ -145,7 +145,7 @@ struct HomeworkAddView: View {
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
         content.title = homework.title
-        content.subtitle = "Diese Hausaufgabe ist bis morgen in \(homework.subject) auf."
+        content.body = "Diese Hausaufgabe ist bis morgen in \(homework.subject) auf."
 
         let calendar = Calendar.current
         let date = DateComponents(

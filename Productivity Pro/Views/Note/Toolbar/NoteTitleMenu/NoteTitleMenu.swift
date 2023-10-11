@@ -11,6 +11,8 @@ import PencilKit
 
 struct NoteTitleMenu: View {
     @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
+    
     var contentObject: ContentObject
     
     var body: some View {
@@ -25,13 +27,13 @@ struct NoteTitleMenu: View {
         
         Section {
             Button("Umbenennen", systemImage: "pencil", action: {
-                
+                subviewManager.renameView.toggle()
             })
         }
         
         Section {
             Button("Teilen", systemImage: "square.and.arrow.up") {
-                
+                subviewManager.shareView.toggle()
             }
             
             Button(action: {

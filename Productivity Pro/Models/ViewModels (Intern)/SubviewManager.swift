@@ -14,9 +14,8 @@ import Observation
     var importMedia: Bool = false
     
     var showInspector: Bool = false
-    
     var renameView: Bool = false
-    var moveView: Bool = false
+    var shareView: Bool = false
     
     // MARK: - UNCHECKED & OLD
     var showPrinterView: Bool = false

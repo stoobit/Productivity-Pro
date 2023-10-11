@@ -62,8 +62,7 @@ struct ObjectViewFolderLink: View {
             RenameContentObjectView(
                 contentObjects: contentObjects,
                 object: object,
-                isPresented: $isRename,
-                parent: object.parent
+                isPresented: $isRename
             )
         )
         .sheet(isPresented: $isMove, onDismiss: move) {
