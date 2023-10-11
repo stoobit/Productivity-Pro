@@ -17,6 +17,10 @@ import PDFKit
     var activeItem: PPItemModel?
     var selectedItems: [PPItemModel] = []
     
+    var frameVisible: Bool = true
+    var editorVisible: Bool = true
+    var isLocked: Bool = false
+    
     // MARK: - UNCHECKED & OLD
     
     var selectedPage: Int = 0
@@ -46,7 +50,6 @@ import PDFKit
     var showFrame: Bool = true
     
     var isEditorVisible: Bool = true
-    var isLocked: Bool = false
     
     var isDraggingItem: Bool = false
     

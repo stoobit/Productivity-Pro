@@ -17,6 +17,8 @@ import Observation
     var renameView: Bool = false
     var shareView: Bool = false
     
+    var isPresentationMode: Bool = false
+    
     // MARK: - UNCHECKED & OLD
     var showPrinterView: Bool = false
     
@@ -27,7 +29,6 @@ import Observation
     
     var showDebuggingSheet: Bool = false
     
-    var isPresentationMode: Bool = false
     var addPageSettingsSheet: Bool = false
     var changeTemplate: Bool = false
     var isDeletePageAlert: Bool = false

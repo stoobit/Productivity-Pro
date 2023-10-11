@@ -8,7 +8,7 @@
 import SwiftUI
 import PDFKit
 
-struct PageBackgroundPDF: View, Equatable {
+struct PageBackgroundPDF: View {
     
     @State private var renderedBackground: UIImage?
     

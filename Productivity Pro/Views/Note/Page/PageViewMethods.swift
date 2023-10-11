@@ -32,7 +32,7 @@ extension PageView {
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
+        if  page.color == "pagewhite" ||  page.color == "white" ||  page.color == "pageyellow" ||  page.color == "yellow"{
             cs = .light
         }
         
@@ -79,10 +79,10 @@ extension PageView {
         
         newItem.textField = textField
         
-        document.note.pages[
-            toolManager.selectedPage
-        ].items.append(newItem)
-        toolManager.selectedItem = newItem
+//        document.note.pages[
+//            toolManager.selectedPage
+//        ].items.append(newItem)
+//        toolManager.selectedItem = newItem
     }
     
     func addImage(img: UIImage) {
@@ -103,21 +103,21 @@ extension PageView {
             let media = MediaModel(media: image.heicData() ?? Data())
             newItem.media = media
             
-            document.note.pages[
-                toolManager.selectedPage
-            ].items.append(newItem)
-            toolManager.selectedItem = newItem
+//            document.note.pages[
+//                toolManager.selectedPage
+//            ].items.append(newItem)
+//            toolManager.selectedItem = newItem
     }
     
     func getNIColor() -> Data {
         var color: Color = .black
-        let page = document.note.pages[
-            toolManager.selectedPage
-        ]
-        
-        if page.backgroundColor == "pageblack" || page.backgroundColor == "pagegray" {
-            color = .white
-        }
+//        let page = document.note.pages[
+//            toolManager.selectedPage
+//        ]
+//        
+//        if page.backgroundColor == "pageblack" || page.backgroundColor == "pagegray" {
+//            color = .white
+//        }
         
         return color.toCodable()
     }

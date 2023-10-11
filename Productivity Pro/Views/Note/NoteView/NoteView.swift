@@ -46,6 +46,10 @@ struct NoteView: View {
                         toolManager.activePage = contentObject.note!.pages!.first!
                     }
                 }
+                .onDisappear {
+                    toolManager.activeItem = nil
+                    subviewManager.showInspector = false
+                }
             }
             .noteViewModifier(with: contentObject)
             .background {

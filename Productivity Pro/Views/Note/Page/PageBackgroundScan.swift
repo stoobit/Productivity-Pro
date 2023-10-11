@@ -7,17 +7,11 @@
 
 import SwiftUI
 
-struct PageBackgroundScan: View, Equatable {
-    @State private var renderedBackground: UIImage?
+struct PageBackgroundScan: View {
+    var page: PPPageModel
     
-    @Binding var document: Document
-    var page: Page
-    @Binding var offset: CGFloat
-    
-    @Bindable var toolManager: ToolManager
-    
-    var isOverview: Bool
-    var pdfRendering: Bool
+    @Binding var scale: CGFloat
+    @State var renderedBackground: UIImage?
     
     var body: some View {
         ZStack {
@@ -26,33 +20,20 @@ struct PageBackgroundScan: View, Equatable {
                     .resizable()
                     .scaledToFit()
                     .frame(
-                        width: toolManager.zoomScale * getFrame().width,
-                        height: toolManager.zoomScale * getFrame().height
+                        width: scale * getFrame().width,
+                        height: scale * getFrame().height
                     )
-                    .scaleEffect(1/toolManager.zoomScale)
+                    .scaleEffect(1/scale)
                 
             }
         }
         .allowsHitTesting(false)
         .onAppear {
-            if pdfRendering {
-                renderPDFQuality()
-            } else if page.id == toolManager.selectedTab {
-                render()
-            } else {
-                renderPreview()
+            if renderedBackground == nil {
+                DispatchQueue.global(qos: .userInteractive).async {
+                    render()
+                }
             }
-        }
-        .onChange(of: offset) {
-            if offset == 0 &&
-                toolManager.selectedTab == page.id &&
-                isOverview == false && pdfRendering == false
-            {
-                render()
-            }
-        }
-        .onDisappear {
-            renderedBackground = nil
         }
     }
     
@@ -68,38 +49,11 @@ struct PageBackgroundScan: View, Equatable {
         return frame
     }
     
-    func renderPreview() {
-        if renderedBackground == nil {
-            guard let media = page.backgroundMedia else { return }
-            let image = UIImage(data: media) ?? UIImage()
-            let resized = resize(image, to: CGSize(
-                width: getFrame().width * 0.1,
-                height: getFrame().height * 0.1)
-            )
-            
-            renderedBackground = resized
-        }
-    }
-    
     func render() {
-        guard let media = page.backgroundMedia else { return }
+        guard let media = page.media else { return }
         let image = UIImage(data: media) ?? UIImage()
         let resized = resize(image, to: getFrame())
         
         renderedBackground = resized
-    }
-    
-    func renderPDFQuality() {
-        guard let media = page.backgroundMedia else { return }
-        let image = UIImage(data: media) ?? UIImage()
-        
-        renderedBackground = image
-    }
-    
-    static func == (
-        lhs: PageBackgroundScan,
-        rhs: PageBackgroundScan
-    ) -> Bool {
-        true
     }
 }

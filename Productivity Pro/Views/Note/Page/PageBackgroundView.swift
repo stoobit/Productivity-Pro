@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct PageBackgroundView: View {
-    
-    @Binding var page: Page
-    @Bindable var toolManager: ToolManager
+    @Environment(ToolManager.self) var toolManager
+    var page: PPPageModel
     
     var body: some View {
         Rectangle()
-            .foregroundColor(Color(page.backgroundColor))
+            .foregroundColor(Color(page.color))
             .frame(
                 width: toolManager.zoomScale * getFrame().width,
                 height: toolManager.zoomScale * getFrame().height

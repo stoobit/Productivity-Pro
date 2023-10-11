@@ -23,7 +23,7 @@ struct OverviewRow: View {
                 HStack {
                     
                     Text("")
-                        .overlay { PageOverview() }
+//                        .overlay { PageOverview() }
                         .frame(width: 150, height: 150)
                     
                     Spacer()
@@ -57,35 +57,35 @@ struct OverviewRow: View {
         
     }
     
-    @ViewBuilder func PageOverview() -> some View {
-        ZStack {
-            PageView(
-                document: $document,
-                page: .constant(page),
-                offset: .constant(0),
-                toolManager: tm(),
-                subviewManager: subviewManager,
-                drawingModel: PPDrawingModel(),
-                highRes: true,
-                size: .zero
-            )
-            .scaleEffect(150 / getFrame().width)
-            .frame(
-                width: 150,
-                height: (150 / getFrame().width) * getFrame().height
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 9))
-            .allowsHitTesting(false)
-            
-            RoundedRectangle(cornerRadius: 9)
-                .stroke(Color.secondary, lineWidth: 2.0)
-                .frame(
-                    width: 150,
-                    height: (150 / getFrame().width) * getFrame().height
-                )
-            
-        }
-    }
+//    @ViewBuilder func PageOverview() -> some View {
+//        ZStack {
+//            PageView(
+//                document: $document,
+//                page: .constant(page),
+//                offset: .constant(0),
+//                toolManager: tm(),
+//                subviewManager: subviewManager,
+//                drawingModel: PPDrawingModel(),
+//                highRes: true,
+//                size: .zero
+//            )
+//            .scaleEffect(150 / getFrame().width)
+//            .frame(
+//                width: 150,
+//                height: (150 / getFrame().width) * getFrame().height
+//            )
+//            .clipShape(RoundedRectangle(cornerRadius: 9))
+//            .allowsHitTesting(false)
+//            
+//            RoundedRectangle(cornerRadius: 9)
+//                .stroke(Color.secondary, lineWidth: 2.0)
+//                .frame(
+//                    width: 150,
+//                    height: (150 / getFrame().width) * getFrame().height
+//                )
+//            
+//        }
+//    }
     
     func tm() -> ToolManager {
         let tm = ToolManager()

@@ -8,40 +8,39 @@
 import SwiftUI
 
 struct BackgroundTemplateView: View {
-    
-    var page: Page
-    var scale: CGFloat
+    var page: PPPageModel
+    @Binding var scale: CGFloat
     
     var body: some View {
         Group {
             
-            if page.backgroundTemplate == "blank" {
+            if page.template == "blank" {
                 
-            } else if page.backgroundTemplate == "dotted" {
+            } else if page.template == "dotted" {
                 if page.isPortrait {
                     DottedViewPortrait()
                 } else {
                     DottedViewLandscape()
                 }
-            } else if page.backgroundTemplate == "squared" {
+            } else if page.template == "squared" {
                 if page.isPortrait {
                     SquaredViewPortrait()
                 } else {
                     SquaredViewLandscape()
                 }
-            } else if page.backgroundTemplate == "ruled" {
+            } else if page.template == "ruled" {
                 if page.isPortrait {
                     RuledViewPortrait()
                 } else {
                     RuledViewLandscape()
                 }
-            } else if page.backgroundTemplate == "ruled.large" {
+            } else if page.template == "ruled.large" {
                 if page.isPortrait {
                     RuledLargeViewPortrait()
                 } else {
                     RuledLargeViewLandscape()
                 }
-            } else if page.backgroundTemplate == "music" {
+            } else if page.template == "music" {
                 if page.isPortrait {
                     MusicViewPortrait()
                 } else {
@@ -61,7 +60,7 @@ struct BackgroundTemplateView: View {
     func colorScheme() -> ColorScheme {
         var cs: ColorScheme = .dark
         
-        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
+        if  page.color == "pagewhite" ||  page.color == "white" ||  page.color == "pageyellow" ||  page.color == "yellow"{
             cs = .light
         }
         

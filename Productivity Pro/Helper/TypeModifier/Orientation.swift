@@ -7,27 +7,42 @@
 
 import SwiftUI
 
-struct DetectOrientation: ViewModifier {
-    
-    @Binding var orientation: UIDeviceOrientation
-    
-    func body(content: Content) -> some View {
-#if !os(xrOS)
-        content
-            .onReceive(
-                NotificationCenter.default.publisher(
-                    for: UIDevice.orientationDidChangeNotification
-                )
-            ) { _ in
-                orientation = UIDevice.current.orientation
-            }
-#endif
+final class OrientationInfo: ObservableObject {
+    enum Orientation {
+        case portrait
+        case landscape
     }
-}
-
-
-extension View {
-    func detectOrientation(_ orientation: Binding<UIDeviceOrientation>) -> some View {
-        modifier(DetectOrientation(orientation: orientation))
+    
+    @Published var orientation: Orientation
+    
+    private var _observer: NSObjectProtocol?
+    
+    init() {
+        // fairly arbitrary starting value for 'flat' orientations
+        if UIDevice.current.orientation.isLandscape {
+            self.orientation = .landscape
+        }
+        else {
+            self.orientation = .portrait
+        }
+        
+        // unowned self because we unregister before self becomes invalid
+        _observer = NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: nil) { [unowned self] note in
+            guard let device = note.object as? UIDevice else {
+                return
+            }
+            if device.orientation.isPortrait {
+                self.orientation = .portrait
+            }
+            else if device.orientation.isLandscape {
+                self.orientation = .landscape
+            }
+        }
+    }
+    
+    deinit {
+        if let observer = _observer {
+            NotificationCenter.default.removeObserver(observer)
+        }
     }
 }
