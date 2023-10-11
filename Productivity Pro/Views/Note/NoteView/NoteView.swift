@@ -16,6 +16,11 @@ struct NoteView: View {
     var contentObjects: [ContentObject]
     var contentObject: ContentObject
     
+    var pages: [PPPageModel] {
+        contentObject.note!.pages!
+            .sorted(by: { $0.index < $1.index })
+    }
+    
     var body: some View {
         if contentObject.note?.pages != nil {
             @Bindable var subviewValue = subviewManager
@@ -23,7 +28,7 @@ struct NoteView: View {
             GeometryReader { proxy in
                 ScrollView(.horizontal) {
                     LazyHStack(spacing: 0) {
-                        ForEach(contentObject.note!.pages!) { page in
+                        ForEach(pages) { page in
                             ScrollViewContainer(
                                 note: contentObject.note!,
                                 page: page,

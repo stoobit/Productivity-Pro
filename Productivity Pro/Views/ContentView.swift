@@ -62,7 +62,6 @@ struct ContentView: View {
              */
             
         }
-        .environmentObject(OrientationInfo())
         .environment(toolManager)
         .environment(subviewManager)
         .scrollIndicators(.hidden)
