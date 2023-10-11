@@ -20,35 +20,22 @@ struct FileSystemView: View {
                 parent: "root",title: "Notizen",
                 contentObjects: contentObjects
             )
-            .overlay {
-                Menu(content: {
-                    Picker("", selection: $grade) {
-                        ForEach(5...13, id: \.self) {
-                            Text("Jgst \($0)")
-                        }
-                    }.labelsHidden()
-                }) {
-                    Text("Jgst \(grade)")
-                        .foregroundStyle(.white)
+            .toolbar {
+                ToolbarItem(placement: .bottomBar) {
+                    Menu(content: {
+                        Picker("", selection: $grade) {
+                            ForEach(5...13, id: \.self) {
+                                Text("Jgst \($0)")
+                            }
+                        }.labelsHidden()
+                    }) {
+                        Text("Jgst \(grade)")
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 100, height: 50)
                 }
-                .frame(width: 100, height: 50)
-                .background(Color.accentColor)
-                .clipShape(
-                    UnevenRoundedRectangle(
-                        topLeadingRadius: 16,
-                        bottomLeadingRadius: 0,
-                        bottomTrailingRadius: 0,
-                        topTrailingRadius: 0,
-                        style: .continuous
-                    )
-                )
-                .ignoresSafeArea(.all)
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity,
-                    alignment: .bottomTrailing
-                )
             }
+            
         }
     }
 }
