@@ -9,58 +9,46 @@ import SwiftUI
 import PDFKit
 
 struct PageBackgroundPDF: View {
+    var page: PPPageModel
     
-    @State private var renderedBackground: UIImage?
+    @State var loadedPDF: PDFPage?
+    @State var renderedPDF: UIImage?
     
-    var page: Page
-    
-    @Binding var document: Document
-    @Binding var offset: CGFloat
-    
-    @Bindable var toolManager: ToolManager
-    
-    var isOverview: Bool
-    var pdfRendering: Bool
+    @Binding var scale: CGFloat
     
     var body: some View {
         ZStack {
-            if let rendering = renderedBackground {
+            if let rendering = renderedPDF {
                 Image(uiImage: rendering)
                     .resizable()
                     .scaledToFit()
                     .frame(
-                        width: toolManager.zoomScale * getFrame().width,
-                        height: toolManager.zoomScale * getFrame().height
+                        width: scale * getFrame().width,
+                        height: scale * getFrame().height
                     )
-                    .scaleEffect(1/toolManager.zoomScale)
-                    .onChange(of: toolManager.zoomScale) {
-                        if toolManager.selectedTab == page.id && offset == 0 {
-                            render()
-                        }
-                    }
-                
+                    .scaleEffect(1 / scale)
             }
         }
-        .allowsHitTesting(false)
-        .onAppear {
-            if pdfRendering {
-                renderPDFQuality()
-            } else if toolManager.selectedTab == page.id {
-                render()
-            } else {
-                renderPreview()
-            }
+        .onChange(of: scale, initial: true) {
+            render()
         }
-        .onChange(of: offset) { old, value in
-            if offset == 0 &&
-                toolManager.selectedTab == page.id &&
-                isOverview == false
-            {
-                render()
-            }
+    }
+    
+    func render() {
+        if loadedPDF == nil {
+            guard let data = page.media else { return }
+            let pdfDocument = PDFDocument(data: data)
+            
+            loadedPDF = pdfDocument?.page(at: 0)
         }
-        .onDisappear {
-            renderedBackground = nil
+        
+        if let loaded = loadedPDF {
+            let image = loaded.thumbnail(of: CGSize(
+                width: getFrame().width * 2.5 * scale,
+                height: getFrame().width * 2.5 * scale
+            ), for: .mediaBox)
+            
+            renderedPDF = image
         }
     }
     
@@ -75,64 +63,4 @@ struct PageBackgroundPDF: View {
         
         return frame
     }
-    
-    func renderPreview() {
-        if renderedBackground == nil {
-            
-            guard let index = document.note.pages.firstIndex(of: page) else {
-                return
-            }
-            
-            if toolManager.preloadedMedia.indices.contains(index) {
-                guard let pdf = toolManager.preloadedMedia[index] else {
-                    return
-                }
-            
-                let thumbnail = pdf.page(at: 0)?.thumbnail(of: CGSize(
-                    width: getFrame().width * 0.2,
-                    height: getFrame().width * 0.2
-                ), for: .mediaBox)
-                
-                renderedBackground = thumbnail
-            }
-        }
-    }
-    
-    func render() {
-        guard let index = document.note.pages.firstIndex(of: page) else {
-            return
-        }
-        
-        if toolManager.preloadedMedia.indices.contains(index) {
-            guard let pdf = toolManager.preloadedMedia[index] else {
-                return
-            }
-            
-            let thumbnail = pdf.page(at: 0)?.thumbnail(of: CGSize(
-                width: getFrame().width * 2.5 * toolManager.zoomScale,
-                height: getFrame().width * 2.5 * toolManager.zoomScale
-            ), for: .mediaBox)
-            
-            renderedBackground = thumbnail
-        }
-    }
-    
-    func renderPDFQuality() {
-        if let media = page.backgroundMedia {
-            let thumbnail = PDFDocument(data: media)?.page(at: 0)?.thumbnail(of: CGSize(
-                width: getFrame().width * 7,
-                height: getFrame().width * 7
-            ), for: .mediaBox)
-            
-            renderedBackground = thumbnail
-        }
-    }
-    
-    static func == (
-        lhs: PageBackgroundPDF,
-        rhs: PageBackgroundPDF
-    ) -> Bool {
-        true
-    }
-    
 }

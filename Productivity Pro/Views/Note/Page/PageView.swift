@@ -32,7 +32,7 @@ struct PageView: View {
     @State var isTargeted: Bool = true
     
     var pdfRendering: Bool = false
-    var highRes: Bool = false
+    var highResolution: Bool = false
     
     var body: some View {
         ZStack {
@@ -41,20 +41,10 @@ struct PageView: View {
                 BackgroundTemplateView(page: page, scale: $scale)
                 
                 if page.type == PPPageType.pdf.rawValue {
-                    
-//                    PageBackgroundPDF(
-//                        page: page,
-//                        document: $document,
-//                        offset: $offset,
-//                        toolManager: toolManager,
-//                        isOverview: highRes,
-//                        pdfRendering: pdfRendering
-//                    )
-                    
+                    PageBackgroundPDF(page: page, scale: $scale)
                 } else if page.type == PPPageType.image.rawValue {
                     PageBackgroundScan(page: page, scale: $scale)
-                }
-                
+                } 
             }
             .onTapGesture { onBackgroundTap() }
             

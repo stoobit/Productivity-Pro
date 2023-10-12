@@ -58,7 +58,7 @@ struct NoteView: View {
             }
             .noteViewModifier(with: contentObject)
             .background {
-                Color(UIColor.systemGroupedBackground)
+                Color(UIColor.secondarySystemBackground)
                     .ignoresSafeArea(.all)
             }
             .modifier(

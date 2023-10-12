@@ -16,20 +16,20 @@ extension NoteSideActions {
         }
         .disabled(toolManager.activeItem == nil)
         
-        Menu(content: {
-            
-            Button("Widerrufen", systemImage: "arrow.uturn.backward", action: undo)
-                .disabled(!(undoManager?.canUndo ?? false))
-            
-            Button("Wiederholen", systemImage: "arrow.uturn.forward", action: redo)
-                .disabled(!(undoManager?.canRedo ?? false))
-            
-        }, label: {
-            Label(
-                "Widerrufen/Wiederholen",
-                systemImage: "arrow.uturn.backward.circle.badge.ellipsis"
-            )
-        })
+//        Menu(content: {
+//            
+//            Button("Widerrufen", systemImage: "arrow.uturn.backward", action: undo)
+//                .disabled(!(undoManager?.canUndo ?? false))
+//            
+//            Button("Wiederholen", systemImage: "arrow.uturn.forward", action: redo)
+//                .disabled(!(undoManager?.canRedo ?? false))
+//            
+//        }, label: {
+//            Label(
+//                "Widerrufen/Wiederholen",
+//                systemImage: "arrow.uturn.backward.circle.badge.ellipsis"
+//            )
+//        })
         
     }
 }

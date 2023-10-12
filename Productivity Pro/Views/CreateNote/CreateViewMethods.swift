@@ -26,7 +26,9 @@ extension CreateNoteView {
             let note = PPNoteModel()
             object.note = note
             
-            let page = PPPageModel(type: .template, canvas: .pkCanvas)
+            let page = PPPageModel(
+                type: .template, canvas: .pkCanvas, index: 0
+            )
             page.note = note
             page.isPortrait = savedIsPortrait
             page.template = savedBackgroundTemplate
@@ -54,7 +56,10 @@ extension CreateNoteView {
             let note = PPNoteModel()
             object.note = note
             
-            let page = PPPageModel(type: .template, canvas: .pkCanvas)
+            let page = PPPageModel(
+                type: .template, canvas: .pkCanvas, index: 0
+            )
+            
             page.note = note
             page.isPortrait = isPortrait
             page.template = template
@@ -90,7 +95,11 @@ extension CreateNoteView {
                     let scanPage = scan.imageOfPage(at: index)
                     let size = scanPage.size
                     
-                    let page = PPPageModel(type: .image, canvas: .pkCanvas)
+                    let page = PPPageModel(
+                        type: .image,
+                        canvas: .pkCanvas,
+                        index: note.pages!.count
+                    )
                     page.note = note
                     
                     page.isPortrait = size.width < size.height

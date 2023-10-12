@@ -29,7 +29,8 @@ extension ObjectView {
         for page in document.note.pages {
             let ppPage = PPPageModel(
                 type: transferPageType(type: page.type),
-                canvas: .pkCanvas
+                canvas: .pkCanvas,
+                index: contentObject.note!.pages!.count
             )
             
             ppPage.note = contentObject.note
