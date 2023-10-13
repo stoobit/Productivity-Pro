@@ -11,7 +11,7 @@ struct GenerelSettings: View {
     
     @Environment(\.horizontalSizeClass) var hsc
     
-    @AppStorage("pprole") var role: Role = .student
+    @AppStorage("pprole") var role: Role = .individual
     
     @AppStorage("notificationTime")
     var notificationTime: Date = Calendar.current.date(
@@ -37,6 +37,10 @@ struct GenerelSettings: View {
                 
                 Section("Rolle") {
                     Picker("", selection: $role) {
+                        Text("Individuell")
+                            .frame(height: 30)
+                            .tag(Role.individual)
+                        
                         Text("Schüler")
                             .frame(height: 30)
                             .tag(Role.student)
@@ -44,10 +48,6 @@ struct GenerelSettings: View {
                         Text("Lehrer")
                             .frame(height: 30)
                             .tag(Role.teacher)
-                        
-                        Text("Individuell")
-                            .frame(height: 30)
-                            .tag(Role.individual)
                     }
                     .pickerStyle(.inline)
                     .labelsHidden()
