@@ -44,8 +44,8 @@ struct PageBackgroundPDF: View {
         
         if let loaded = loadedPDF {
             let image = loaded.thumbnail(of: CGSize(
-                width: getFrame().width * 2.5 * scale,
-                height: getFrame().width * 2.5 * scale
+                width: getFrame().width * 2.7 * scale,
+                height: getFrame().width * 2.7 * scale
             ), for: .mediaBox)
             
             renderedPDF = image

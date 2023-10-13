@@ -353,6 +353,7 @@
       }
     },
     "Document scannen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -782,6 +783,7 @@
       }
     },
     "Ok" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
