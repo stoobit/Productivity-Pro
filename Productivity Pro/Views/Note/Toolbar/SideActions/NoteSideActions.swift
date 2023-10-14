@@ -33,8 +33,12 @@ struct NoteSideActions: ToolbarContent {
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
-            Editor()
             PageActions()
+            
+            @Bindable var subviewValue = subviewManager
+            Button("Inspektor", systemImage: "sidebar.trailing") {
+                toggleInspector()
+            }
         }
         
     }

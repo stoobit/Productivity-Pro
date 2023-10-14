@@ -29,9 +29,7 @@ struct PageItemView: View {
                 pdfRendering: pdfRendering
             )
             .onTapGesture {
-                if subviewManager.showInspector == false {
-                    tap(item: item)
-                }
+                tap(item: item)
             }
             .zIndex(Double(item.index))
             
@@ -46,7 +44,6 @@ struct PageItemView: View {
     
     func tap(item: PPItemModel) {
         toolManager.activeItem = item
-        subviewManager.showInspector.toggle()
     }
     
     func getFrame() -> CGSize {

@@ -8,13 +8,7 @@
 import SwiftUI
 
 extension NoteSideActions {
-    @ViewBuilder func Editor() -> some View {
-        @Bindable var subviewValue = subviewManager
-        
-        Button("Inspektor", systemImage: "paintbrush.pointed") { 
-            toggleInspector()
-        }
-        .disabled(toolManager.activeItem == nil)
+    @ViewBuilder func Inspector() -> some View {
         
 //        Menu(content: {
 //            

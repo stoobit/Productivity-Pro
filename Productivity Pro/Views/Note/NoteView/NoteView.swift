@@ -53,7 +53,6 @@ struct NoteView: View {
                 }
                 .onDisappear {
                     toolManager.activeItem = nil
-                    subviewManager.showInspector = false
                 }
             }
             .noteViewModifier(with: contentObject)
