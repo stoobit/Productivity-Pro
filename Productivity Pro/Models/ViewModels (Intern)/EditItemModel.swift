@@ -6,7 +6,7 @@
 //
 
 import Observation
-import Foundation
+import SwiftUI
 
 @Observable class EditItemModel {
     var position: CGPoint = .zero

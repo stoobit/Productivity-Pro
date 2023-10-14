@@ -97,9 +97,9 @@ extension EditShapeItemView {
                 editShapeModel = EditShapeModel(
                     rotation: item.rotation,
                     showFill: shape.showFill,
-                    fillColor: Color(codable: shape.fillColor)!,
+                    fillColor: Color(codable: shape.fillColor),
                     showStroke: shape.showStroke,
-                    strokeColor: Color(codable: shape.strokeColor)!,
+                    strokeColor: Color(codable: shape.strokeColor),
                     strokeWidth: shape.strokeWidth,
                     cornerRadius: shape.cornerRadius
                 )

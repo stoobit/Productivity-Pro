@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension Color {
-    init?(codable: Data) {
+    init(codable: Data) {
         var color: UIColor = .red
         do {
             

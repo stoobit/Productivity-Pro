@@ -22,7 +22,7 @@ struct TextFieldItemView: View {
             if item.textField!.showStroke {
                 Rectangle()
                     .stroke(
-                        Color(codable: item.textField!.strokeColor)!,
+                        Color(codable: item.textField!.strokeColor),
                         lineWidth: item.textField!.strokeWidth * toolManager.zoomScale
                     )
                     .frame(

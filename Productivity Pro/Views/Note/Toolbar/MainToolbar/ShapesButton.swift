@@ -47,7 +47,7 @@ extension NoteMainToolbar {
         
         let shape = PPShapeModel(type: type)
         shape.fill = true
-        shape.fillColor = Color.accentColor.toCodable()
+        shape.fillColor = primaryColor().toCodable()
         
         item.shape = shape
         

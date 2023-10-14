@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ItemView: View {
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
+    
+    @State var editItemModel: EditItemModel = EditItemModel()
+    
     var note: PPNoteModel
     var page: PPPageModel
     var item: PPItemModel
@@ -25,44 +30,43 @@ struct ItemView: View {
         
         return Group {
             Group {
-                
-                if item.type == .shape {
+                if item.type == PPItemType.shape.rawValue {
+                    
                     ShapeItemView(
-                        item: $item,
-                        toolManager: toolManager,
-                        editItem: editItemModel
+                        item: item,
+                        editItem: $editItemModel,
+                        scale: $scale
                     )
-                } else if item.type == .textField {
-                    TextFieldItemView(
-                        document: $document,
-                        item: $item,
-                        page: $page,
-                        toolManager: toolManager,
-                        subviewManager: subviewManager,
-                        editItem: editItemModel,
-                        offset: $offset,
-                        highRes: highRes
-                    )
-                } else if item.type == .media {
-                    MediaItemView(
-                        item: $item,
-                        page: $page,
-                        toolManager: toolManager,
-                        editItem: editItemModel
-                    )
+                    
+                } else if item.type == PPItemType.textField.rawValue {
+//                    TextFieldItemView(
+//                        document: $document,
+//                        item: $item,
+//                        page: $page,
+//                        toolManager: toolManager,
+//                        subviewManager: subviewManager,
+//                        editItem: editItemModel,
+//                        offset: $offset,
+//                        highRes: highRes
+//                    )
+                } else if item.type == PPItemType.media.rawValue {
+//                    MediaItemView(
+//                        item: $item,
+//                        page: $page,
+//                        toolManager: toolManager,
+//                        editItem: editItemModel
+//                    )
                 }
             }
-            .rotationEffect(Angle(degrees: item.rotation))
             .position(
-                x: (editItemModel.position.x) * toolManager.zoomScale,
-                y: (editItemModel.position.y) * toolManager.zoomScale
+                x: (editItemModel.position.x) * scale,
+                y: (editItemModel.position.y) * scale
             )
             .modifier(
                 DragItemModifier(
-                    page: $page,
-                    item: $item,
-                    toolManager: toolManager,
-                    editItemModel: editItemModel
+                    item: item, page: page,
+                    editItemModel: editItemModel,
+                    scale: $scale
                 )
             )
             .onAppear {
@@ -81,14 +85,14 @@ struct ItemView: View {
                 editItemModel.size.height = item.height
             }
             
-            ToolView(
-                page: $page,
-                item: $item,
-                toolManager: toolManager,
-                editItemModel: editItemModel
-            )
-            .scaleEffect(toolManager.zoomScale)
-            .zIndex(Double(page.items.count + 20))
+//            ToolView(
+//                page: $page,
+//                item: $item,
+//                toolManager: toolManager,
+//                editItemModel: editItemModel
+//            )
+//            .scaleEffect(toolManager.zoomScale)
+//            .zIndex(Double(page.items.count + 20))
         }
         
     }

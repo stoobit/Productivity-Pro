@@ -48,7 +48,6 @@ struct PageView: View {
             }
             .onTapGesture { onBackgroundTap() }
             
-
             PageItemView(
                 note: note,
                 page: page,
@@ -76,10 +75,9 @@ struct PageView: View {
             return true
         }
         .disabled(subviewManager.isPresentationMode)
-        .allowsHitTesting(!subviewManager.isPresentationMode)
         .frame(
-            width: getFrame().width * toolManager.zoomScale,
-            height: getFrame().height * toolManager.zoomScale
+            width: getFrame().width * scale,
+            height: getFrame().height * scale
         )
             
     }

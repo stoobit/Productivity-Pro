@@ -9,95 +9,108 @@ import SwiftUI
 
 struct ShapeItemView: View {
     
-    @Binding var item: ItemModel
-    @Bindable var toolManager: ToolManager
-    var editItem: EditItemModel
+    var item: PPItemModel
+    
+    @Binding var editItem: EditItemModel
+    @Binding var scale: CGFloat
     
     var body: some View {
         Group {
             if let shape = item.shape {
-                if shape.type == .rectangle {
+                if shape.type == PPShapeType.rectangle.rawValue {
                     
-                    ShapeTypeView(
-                        form: Rectangle(),
-                        stroke: RoundedRectangle(
-                            cornerRadius: shape.cornerRadius * toolManager.zoomScale,
-                            style: .circular
-                        ),
-                        shape: shape
-                    )
                     
-                } else if shape.type == .circle {
-                    ShapeTypeView(form: Ellipse(), stroke: Ellipse(), shape: shape)
-                } else if shape.type == .triangle {
-                    ShapeTypeView(form: Triangle(), stroke: Triangle(), shape: shape)
-                } else if shape.type == .hexagon {
-                    ShapeTypeView(form: Hexagon(), stroke: Hexagon(), shape: shape)
+                    
+                } else if shape.type == PPShapeType.circle.rawValue {
+                    
+                    StandardShapeView(shape: Ellipse(), model: shape)
+                    
+                } else if shape.type == PPShapeType.triangle.rawValue {
+                    
+                    StandardShapeView(shape: Triangle(), model: shape)
+                    
+                } else if shape.type == PPShapeType.hexagon.rawValue {
+                    
+                    StandardShapeView(shape: Hexagon(), model: shape)
                 }
             }
         }
     }
     
-    @ViewBuilder func ShapeTypeView(
-        form: some Shape, stroke: some Shape, shape: ShapeModel
-    ) -> some View {
+    @ViewBuilder func StandardShapeView(shape: some Shape, model: PPShapeModel) -> some View {
         ZStack {
-            
-            if shape.showFill {
-                form
-                    .fill(Color(codable: shape.fillColor)!)
+            if model.fill {
+                shape
+                    .fill(Color(codable: model.fillColor))
                     .frame(
-                        width: editItem.size.width * toolManager.zoomScale,
-                        height: editItem.size.height * toolManager.zoomScale
+                        width: editItem.size.width * scale,
+                        height: editItem.size.height * scale
                     )
-                    .modifier(CornerModifier(
-                        editItem: editItem,
-                        toolManager: toolManager,
-                        item: $item
-                    ))
             }
-            
-            if shape.showStroke {
-                stroke
+
+            if model.stroke {
+                shape
                     .stroke(
-                        Color(codable: shape.strokeColor)!,
-                        lineWidth: shape.strokeWidth * toolManager.zoomScale
+                        Color(codable: model.strokeColor),
+                        lineWidth: model.strokeWidth * scale
                     )
                     .frame(
-                        width: (editItem.size.width + item.shape!.strokeWidth) * toolManager.zoomScale,
-                        height: (editItem.size.height + item.shape!.strokeWidth) * toolManager.zoomScale
+                        width: (editItem.size.width + model.strokeWidth) * scale,
+                        height: (editItem.size.height + model.strokeWidth) * scale
                     )
-                    .contentShape(stroke)
             }
-            
         }
-        
     }
+    
+    @ViewBuilder func RoundedShapeView(model: PPShapeModel) -> some View {
+        ZStack {
+            if model.fill {
+                Rectangle()
+                    .fill(Color(codable: model.fillColor))
+                    .frame(
+                        width: editItem.size.width * scale,
+                        height: editItem.size.height * scale
+                    )
+            }
+
+            if model.stroke {
+                RoundedRectangle(cornerRadius: model.cornerRadius)
+                    .stroke(
+                        Color(codable: model.strokeColor),
+                        lineWidth: model.strokeWidth * scale
+                    )
+                    .frame(
+                        width: (editItem.size.width + model.strokeWidth) * scale,
+                        height: (editItem.size.height + model.strokeWidth) * scale
+                    )
+            }
+        }
+        .clipShape(RoundedRectangle(cornerRadius: model.cornerRadius))
+    }
+    
 }
 
 struct CornerModifier: ViewModifier {
     
-    var editItem: EditItemModel
-    @Bindable var toolManager: ToolManager
+    var item: PPItemModel
     
-    @Binding var item: ItemModel
+    @Binding var editItem: EditItemModel
+    @Binding var scale: CGFloat
     
     func body(content: Content) -> some View {
         
-        if item.shape!.showStroke {
+        if item.shape!.stroke {
             content
                 .frame(
-                    width: (editItem.size.width + item.shape!.strokeWidth) * toolManager.zoomScale,
-                    height: (editItem.size.height + item.shape!.strokeWidth) * toolManager.zoomScale
+                    width: (editItem.size.width + item.shape!.strokeWidth) * scale,
+                    height: (editItem.size.height + item.shape!.strokeWidth) * scale
                 )
                 .clipShape(
                     RoundedRectangle(
-                        cornerRadius: item.shape!.cornerRadius * toolManager.zoomScale,
+                        cornerRadius: item.shape!.cornerRadius * scale,
                         style: .circular
                     )
                 )
-            
-            
         } else {
             content
         }

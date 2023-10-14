@@ -8,20 +8,17 @@
 import SwiftUI
 
 struct DragItemModifier: ViewModifier {
-    
+    @Environment(ToolManager.self) var toolManager
     @GestureState private var startLocation: CGPoint? = nil
     
-    @Binding var page: Page
-    @Binding var item: ItemModel
+    var item: PPItemModel
+    var page: PPPageModel
     
-    @Bindable var toolManager: ToolManager
     @Bindable var editItemModel: EditItemModel
+    @Binding var scale: CGFloat
     
     func body(content: Content) -> some View {
-        if item.id == toolManager.selectedItem?.id &&
-            item.isLocked != true
-        {
-            
+        if item.id == toolManager.activeItem?.id && !item.isLocked {
             content
                 .gesture(
                     DragGesture()
@@ -31,8 +28,8 @@ struct DragItemModifier: ViewModifier {
                             
                             var newLocation = startLocation ?? editItemModel.position
                             
-                            newLocation.x += (value.translation.width * (1/toolManager.zoomScale))
-                            newLocation.y += (value.translation.height * (1/toolManager.zoomScale))
+                            newLocation.x += (value.translation.width * (1 / scale))
+                            newLocation.y += (value.translation.height * (1 / scale))
                             
                             if newLocation.x > getBorder().width - 20 && newLocation.x < getBorder().width + 20 {
                                 editItemModel.position.x = getBorder().width
@@ -61,7 +58,7 @@ struct DragItemModifier: ViewModifier {
                             toolManager.editorVisible = true
                             toolManager.isDraggingItem = false
                             
-                            toolManager.selectedItem = item
+                            toolManager.activeItem = item
                             toolManager.showSnapper = [false, false]
                         }
                 )

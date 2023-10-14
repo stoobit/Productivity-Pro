@@ -167,12 +167,12 @@ extension EditTextfieldItemView {
                 editTextFieldModel = EditTextFieldModel(
                     text: textField.text,
                     showFill: textField.showFill,
-                    fillColor: Color(codable: textField.fillColor)!,
+                    fillColor: Color(codable: textField.fillColor),
                     showStroke: textField.showStroke,
-                    strokeColor: Color(codable: textField.strokeColor)!,
+                    strokeColor: Color(codable: textField.strokeColor),
                     strokeWidth: textField.strokeWidth,
                     font: textField.font,
-                    fontColor: Color(codable: textField.fontColor)!,
+                    fontColor: Color(codable: textField.fontColor),
                     fontSize: textField.fontSize,
                     isLocked: item.isLocked ?? false
                 )

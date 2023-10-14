@@ -42,7 +42,7 @@ struct MarkdownParserView: View {
         md.setFontNameForAllStyles(with: textField.font)
         md.setFontSizeForAllStyles(with: textField.fontSize * 2)
         md.setFontColorForAllStyles(
-            with: UIColor(Color(codable: textField.fontColor)!)
+            with: UIColor(Color(codable: textField.fontColor))
         )
         
         md.code.color = UIColor(Color("codecolor"))

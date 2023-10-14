@@ -123,7 +123,7 @@ extension EditMediaItemView {
                 editMediaModel = EditMediaModel(
                     rotation: item.rotation,
                     showStroke: media.showStroke,
-                    strokeColor: Color(codable: media.strokeColor)!,
+                    strokeColor: Color(codable: media.strokeColor),
                     strokeWidth: media.strokeWidth,
                     cornerRadius: media.cornerRadius
                 )
