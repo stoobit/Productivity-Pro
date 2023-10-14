@@ -8,7 +8,7 @@
 import SwiftUI
 import StoreKit
 
-struct NoteMainToolbar: CustomizableToolbarContent {
+struct NoteMainToolbar: ToolbarContent {
     @Environment(\.openWindow) var openWindow
     var contentObject: ContentObject
     
@@ -19,7 +19,7 @@ struct NoteMainToolbar: CustomizableToolbarContent {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    var body: some CustomizableToolbarContent {
+    var body: some ToolbarContent {
         
         ToolbarItem(id: "shapes", placement: .secondaryAction) {
             ShapesButton()
@@ -32,12 +32,6 @@ struct NoteMainToolbar: CustomizableToolbarContent {
         ToolbarItem(id: "media", placement: .secondaryAction) {
             MediaButton()
         }
-        
-        ToolbarItem(id: "calc", placement: .secondaryAction) {
-            CalculatorButton()
-                .modifier(PremiumBadge())
-        }
-        
     }
     
     func primaryColor() -> Color {

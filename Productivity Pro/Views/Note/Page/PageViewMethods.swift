@@ -53,9 +53,9 @@ extension PageView {
     
     func onBackgroundTap() {
         if toolManager.dragType == .none && subviewManager.showInspector == false {
-            toolManager.selectedItem = nil
+            toolManager.activeItem = nil
             toolManager.dragType = .none
-            toolManager.isEditorVisible = true
+            toolManager.editorVisible = true
         }
     }
     

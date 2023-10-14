@@ -24,7 +24,7 @@ struct ToolView: View {
         if item.id == toolManager.selectedItem?.id {
             ZStack {
                 
-                if toolManager.showFrame {
+                if toolManager.frameVisible {
                     Color.clear
                         .contentShape(Rectangle())
                         .frame(width: 1, height: 1)
@@ -43,7 +43,7 @@ struct ToolView: View {
                         }
                 }
                 
-                if toolManager.isEditorVisible &&
+                if toolManager.editorVisible &&
                     toolManager.selectedItem?.isLocked != true
                 {
                     if (toolManager.dragType == .none || toolManager.dragType == .size) && toolManager.selectedItem?.type != .textField {

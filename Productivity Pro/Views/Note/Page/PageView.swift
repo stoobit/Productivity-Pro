@@ -48,17 +48,16 @@ struct PageView: View {
             }
             .onTapGesture { onBackgroundTap() }
             
-//
-//            PageItemView(
-//                document: $document,
-//                page: $page,
-//                offset: $offset,
-//                toolManager: toolManager,
-//                subviewManager: subviewManager,
-//                highRes: highRes,
-//                pdfRendering: pdfRendering
-//            )
-//            
+
+            PageItemView(
+                note: note,
+                page: page,
+                scale: $scale,
+                offset: $offset,
+                highRes: highResolution,
+                pdfRendering: pdfRendering
+            )
+            
 //            DrawingView(
 //                page: $page,
 //                toolManager: toolManager,

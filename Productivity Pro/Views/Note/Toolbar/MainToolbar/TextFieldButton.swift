@@ -18,7 +18,7 @@ extension NoteMainToolbar {
     func addTextField() {
         toolManager.isCanvasEnabled = false
         
-        let item = PPItemModel(type: .textField)
+        let item = PPItemModel(index: <#Int#>, type: .textField)
         item.width = 600
         item.height = 300
         
@@ -39,7 +39,7 @@ extension NoteMainToolbar {
         textField.nsAttributedString = string.toCodable()
         item.textField = textField
         
-        if let page = contentObject.note!.pages!.first(where: {
+        if let page = contentObject.note?.pages?.first(where: {
             $0.id == toolManager.activePage?.id
         }) {
             page.items?.append(item)

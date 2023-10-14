@@ -83,8 +83,8 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             ),
             scale: $scale,
             offset: $offset,
-            editorVisible: $toolValue.isEditorVisible,
-            frameVisible: $toolValue.showFrame
+            editorVisible: $toolValue.editorVisible,
+            frameVisible: $toolValue.frameVisible
         )
     }
     

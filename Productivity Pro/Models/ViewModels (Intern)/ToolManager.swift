@@ -19,7 +19,9 @@ import PDFKit
     
     var frameVisible: Bool = true
     var editorVisible: Bool = true
+    
     var isLocked: Bool = false
+    var dragType: DragType = .none
     
     // MARK: - UNCHECKED & OLD
     
@@ -45,11 +47,6 @@ import PDFKit
     
     var showSnapper: [Bool] = [false, false]
     var showProgress: Bool = false
-    
-    var dragType: DragType = .none
-    var showFrame: Bool = true
-    
-    var isEditorVisible: Bool = true
     
     var isDraggingItem: Bool = false
     

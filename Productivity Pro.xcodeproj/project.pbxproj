@@ -931,7 +931,7 @@
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
-				BBF930782A674C0700AD3958 /* PPToolbar */,
+				BBF930782A674C0700AD3958 /* PPDrawingToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
@@ -1182,7 +1182,7 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		BBF930782A674C0700AD3958 /* PPToolbar */ = {
+		BBF930782A674C0700AD3958 /* PPDrawingToolbar */ = {
 			isa = PBXGroup;
 			children = (
 				BB1DF6072A686D65006F85CE /* PPToolbar.swift */,
@@ -1193,7 +1193,7 @@
 				BB1DF6092A687DB8006F85CE /* PPColorButton.swift */,
 				BB1DF6032A686D14006F85CE /* PPToolButton.swift */,
 			);
-			path = PPToolbar;
+			path = PPDrawingToolbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

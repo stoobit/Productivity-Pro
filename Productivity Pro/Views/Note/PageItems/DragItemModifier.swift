@@ -26,7 +26,7 @@ struct DragItemModifier: ViewModifier {
                 .gesture(
                     DragGesture()
                         .onChanged { value in
-                            toolManager.isEditorVisible = false
+                            toolManager.editorVisible = false
                             toolManager.isDraggingItem = true
                             
                             var newLocation = startLocation ?? editItemModel.position
@@ -58,7 +58,7 @@ struct DragItemModifier: ViewModifier {
                             item.x = editItemModel.position.x
                             item.y = editItemModel.position.y
                             
-                            toolManager.isEditorVisible = true
+                            toolManager.editorVisible = true
                             toolManager.isDraggingItem = false
                             
                             toolManager.selectedItem = item

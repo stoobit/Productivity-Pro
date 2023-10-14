@@ -19,11 +19,9 @@ struct NoteViewToolbar: ViewModifier {
             .toolbarTitleMenu {
                 NoteTitleMenu(contentObject: contentObject)
             }
-            .toolbar(id: "main") {
-                NoteMainToolbar(contentObject: contentObject)
-            }
             .toolbar {
                 NoteSideActions(contentObject: contentObject)
+                NoteMainToolbar(contentObject: contentObject)
             }
     }
 }

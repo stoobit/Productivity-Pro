@@ -60,13 +60,14 @@ struct MediaImport: ViewModifier {
     
     func addMedia(with imageData: Data) {
         guard let selectedImage = UIImage(data: imageData) else { return }
+        guard let index = contentObject.note?.pages?.count else { return }
         
         let image = resize(
             selectedImage, to: CGSize(width: 2048, height: 2048)
         )
         let ratio = 400/image.size.width
         
-        let item = PPItemModel(type: .media)
+        let item = PPItemModel(index: index, type: .media)
         item.width = image.size.width * ratio
         item.height = image.size.height * ratio
         

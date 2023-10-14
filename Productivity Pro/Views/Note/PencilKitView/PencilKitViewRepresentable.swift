@@ -58,7 +58,7 @@ struct PencilKitViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
         
-        if toolManager.isEditorVisible == false {
+        if toolManager.editorVisible == false {
             toolPicker.isRulerActive = false
             canvasView.isRulerActive = false
         }

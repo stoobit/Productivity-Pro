@@ -14,11 +14,14 @@ import SwiftData
     @Relationship(inverse: \PPPageModel.items)
     var page: PPPageModel?
     
-    init(type: PPItemType) {
+    init(index: Int, type: PPItemType) {
         self.type = type.rawValue
+        self.index = index
     }
     
+    var index: Int
     var type: PPItemType.RawValue
+    
     var isLocked: Bool = false
     
     var x: Double = 0

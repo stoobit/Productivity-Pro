@@ -8,66 +8,51 @@
 import SwiftUI
 
 struct PageItemView: View {
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
-    @Binding var document: Document
-    @Binding var page: Page
-    @Binding var offset: CGFloat
+    var note: PPNoteModel
+    var page: PPPageModel
     
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
+    @Binding var scale: CGFloat
+    @Binding var offset: CGPoint
     
     var highRes: Bool
     var pdfRendering: Bool
     
     var body: some View {
-        ForEach($page.items) { $item in
+        ForEach(page.items!) { item in
             
-            ItemView(
-                document: $document,
-                offset: $offset,
-                page: $page,
-                item: $item,
-                toolManager: toolManager,
-                subviewManager: subviewManager,
-                highRes: highRes,
-                pdfRendering: pdfRendering
-            )
+//            ItemView(
+//                document: $document,
+//                offset: $offset,
+//                page: $page,
+//                item: $item,
+//                toolManager: toolManager,
+//                subviewManager: subviewManager,
+//                highRes: highRes,
+//                pdfRendering: pdfRendering
+//            )
+            Text("servus")
             .onTapGesture {
                 if subviewManager.showInspector == false {
                     tap(item: item)
                 }
             }
-            .zIndex(
-                Double(
-                    page.items.firstIndex(where: {
-                        $0.id == item.id
-                    })!
-                )
-            )
+            .zIndex(Double(item.index))
             
         }
         .frame(
-            width: toolManager.zoomScale * getFrame().width,
-            height: toolManager.zoomScale * getFrame().height
+            width: scale * getFrame().width,
+            height: scale * getFrame().height
         )
         .clipShape(Rectangle())
-        .scaleEffect(1/toolManager.zoomScale)
+        .scaleEffect(1 / scale)
     }
     
-    func tap(item: ItemModel) {
-        
-        if item.type == .textField {
-    
-            if toolManager.selectedItem?.id == item.id {
-                subviewManager.showTextEditor = true
-                toolManager.selectedItem = item
-            } else {
-                toolManager.selectedItem = item
-            }
-            
-        } else {
-            toolManager.selectedItem = item
-        }
+    func tap(item: PPItemModel) {
+        toolManager.activeItem = item
+        subviewManager.showInspector.toggle()
     }
     
     func getFrame() -> CGSize {

@@ -49,10 +49,12 @@ extension ObjectView {
                 ppPage.media = page.backgroundMedia
             }
             
+            var index = 0
             for item in page.items {
                 do {
                     
                     let ppItem = PPItemModel(
+                        index: index,
                         type: try transferItemType(type: item.type)
                     )
                     
@@ -113,6 +115,8 @@ extension ObjectView {
                 } catch {
                     continue
                 }
+                
+                index += 1
             }
         }
     }
