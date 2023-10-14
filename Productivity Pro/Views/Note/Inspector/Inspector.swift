@@ -33,11 +33,11 @@ struct Inspector: View {
             .padding()
             
             TabView(selection: $view) {
-                Text("Übersicht")
+                InspectorOverview()
                     .tag(0)
                 
                 CalculatorView()
-                    .padding(.bottom, 10)
+                    .modifier(LockScreen())
                     .tag(1)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))

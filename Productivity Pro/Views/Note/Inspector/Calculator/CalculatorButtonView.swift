@@ -23,7 +23,7 @@ struct CompactCalculatorButton: View {
                     width: size.width / 6,
                     height: 55
                 )
-                .background(color.gradient)
+                .background(color)
                 .clipShape(
                     RoundedRectangle(cornerRadius: 12)
                 )

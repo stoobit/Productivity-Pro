@@ -84,6 +84,9 @@
         }
       }
     },
+    "30. Juli 2007" : {
+
+    },
     "Abbrechen" : {
       "localizations" : {
         "en" : {
@@ -308,6 +311,9 @@
           }
         }
       }
+    },
+    "Die Geburt" : {
+
     },
     "Dies kann einige Minuten dauern." : {
       "localizations" : {
@@ -974,6 +980,9 @@
 
     },
     "Seite" : {
+
+    },
+    "Seite 1" : {
 
     },
     "Seite hinzufügen" : {

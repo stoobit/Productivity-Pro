@@ -30,34 +30,35 @@ struct CalculatorView: View {
                 y: reader.size.height / 2
             )
         }
+        .padding(.bottom, 10)
     }
     
     @ViewBuilder func SixthRow(size: CGSize) -> some View {
         HStack {
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "AC", color: .black
+                size: size, text: "AC", color: .gray
             ) {
                 
             }
             
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "(", color: .gray
+                size: size, text: "(", color: .green
             ) {
                 
             }
             
             Spacer()
             CompactCalculatorButton(
-                size: size, text: ")", color: .gray
+                size: size, text: ")", color: .green
             ) {
                 
             }
             
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "x\u{1D43}", color: .gray
+                size: size, text: "x\u{1D43}", color: .green
             ) {
                 
             }
@@ -69,28 +70,28 @@ struct CalculatorView: View {
         HStack {
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "sin", color: .gray
+                size: size, text: "sin", color: .green
             ) {
                 
             }
             
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "cos", color: .gray
+                size: size, text: "cos", color: .green
             ) {
                 
             }
             
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "tan", color: .gray
+                size: size, text: "tan", color: .green
             ) {
                 
             }
             
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "log", color: .gray
+                size: size, text: "log", color: .green
             ) {
                 
             }
@@ -102,7 +103,7 @@ struct CalculatorView: View {
         HStack {
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "+", color: .gray
+                size: size, text: "+", color: .green
             ) {
                 
             }
@@ -135,7 +136,7 @@ struct CalculatorView: View {
         HStack {
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "-", color: .gray
+                size: size, text: "-", color: .green
             ) {
                 
             }
@@ -168,7 +169,7 @@ struct CalculatorView: View {
         HStack {
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "x", color: .gray
+                size: size, text: "x", color: .green
             ) {
                 
             }
@@ -201,7 +202,7 @@ struct CalculatorView: View {
         HStack {
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "/", color: .gray
+                size: size, text: "/", color: .green
             ) {
                 
             }
@@ -215,14 +216,14 @@ struct CalculatorView: View {
             
             Spacer()
             CompactCalculatorButton(
-                size: size, text: ".", color: .black
+                size: size, text: ".", color: .gray
             ) {
                 
             }
             
             Spacer()
             CompactCalculatorButton(
-                size: size, text: "=", color: .black
+                size: size, text: "=", color: .gray
             ) {
                 
             }

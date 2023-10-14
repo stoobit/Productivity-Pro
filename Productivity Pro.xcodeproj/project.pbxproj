@@ -534,6 +534,7 @@
 			children = (
 				BB24CE262ADB33EA0022C0E4 /* Inspector.swift */,
 				BBDEC1C62ADB3BC4008F7396 /* Overview */,
+				BBBCACAF2A253BC000C23B2C /* Calculator */,
 			);
 			path = Inspector;
 			sourceTree = "<group>";
@@ -700,7 +701,6 @@
 				BB047CDC2AC0C1DD0027409F /* FileSystemView */,
 				BBCCE4F028D52911001DBD8A /* CreateNote */,
 				BB9DF5A828DFA25600AC988D /* Note */,
-				BBBCACAF2A253BC000C23B2C /* Calculator */,
 			);
 			path = Views;
 			sourceTree = "<group>";
