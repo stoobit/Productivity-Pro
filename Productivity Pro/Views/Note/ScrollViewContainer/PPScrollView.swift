@@ -45,6 +45,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
         
+        scrollView.setZoomScale(getScale(), animated: false)
         return scrollView
     }
     

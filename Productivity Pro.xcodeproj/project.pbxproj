@@ -531,6 +531,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BB24CE252ADB2DE80022C0E4 /* Inspector */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Inspector;
+			sourceTree = "<group>";
+		};
 		BB24E84729EB62210082AE98 /* Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,6 +937,7 @@
 				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* PageItems */,
+				BB24CE252ADB2DE80022C0E4 /* Inspector */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
 				BBF930782A674C0700AD3958 /* PPDrawingToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
