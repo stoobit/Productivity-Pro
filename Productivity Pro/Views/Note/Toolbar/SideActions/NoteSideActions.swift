@@ -18,9 +18,7 @@ struct NoteSideActions: ToolbarContent {
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarLeading) {
-            Button(action: toggleOverview) {
-                Image(systemName: "square.grid.2x2")
-            }
+            PageActions()
             
             Button(action: {
                 toolManager.activePage?.isBookmarked.toggle()
@@ -33,8 +31,6 @@ struct NoteSideActions: ToolbarContent {
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
-            PageActions()
-            
             @Bindable var subviewValue = subviewManager
             Button("Inspektor", systemImage: "sidebar.trailing") {
                 toggleInspector()

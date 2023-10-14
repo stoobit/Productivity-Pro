@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-struct CompactCalculatorView<Content: View>: View {
-    
-    @Bindable var calculator: Calculator
-    let content: (CGSize) -> Content
+struct CalculatorView: View {
+    @State var calculator: Calculator = Calculator()
     
     var body: some View {
         GeometryReader { reader in
             VStack {
-                content(reader.size)
+                
                 
                 Spacer()
                 

@@ -588,9 +588,6 @@
         }
       }
     },
-    "Hello, World!" : {
-
-    },
     "Hexagon" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -601,9 +598,6 @@
           }
         }
       }
-    },
-    "hi" : {
-
     },
     "Hinzufügen" : {
       "localizations" : {
@@ -842,9 +836,6 @@
     "pencil" : {
 
     },
-    "Pi" : {
-
-    },
     "Pin entfernen" : {
 
     },
@@ -852,6 +843,7 @@
 
     },
     "Powered by " : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

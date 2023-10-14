@@ -68,7 +68,7 @@ struct NoteView: View {
                 )
             )
             .inspector(isPresented: $subviewValue.showInspector) {
-                Text("hi")
+                Inspector()
             }
             
         } else {
