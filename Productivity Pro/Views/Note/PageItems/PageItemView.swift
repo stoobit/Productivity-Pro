@@ -15,24 +15,19 @@ struct PageItemView: View {
     var page: PPPageModel
     
     @Binding var scale: CGFloat
-    @Binding var offset: CGPoint
     
-    var highRes: Bool
+    var highResolution: Bool
     var pdfRendering: Bool
     
     var body: some View {
         ForEach(page.items!) { item in
             
-//            ItemView(
-//                document: $document,
-//                offset: $offset,
-//                page: $page,
-//                item: $item,
-//                toolManager: toolManager,
-//                subviewManager: subviewManager,
-//                highRes: highRes,
-//                pdfRendering: pdfRendering
-//            )
+            ItemView(
+                note: note, page: page, item: item,
+                scale: $scale,
+                highResolution: highResolution,
+                pdfRendering: pdfRendering
+            )
             .onTapGesture {
                 if subviewManager.showInspector == false {
                     tap(item: item)

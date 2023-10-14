@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct ItemView: View {
+    var note: PPNoteModel
+    var page: PPPageModel
+    var item: PPItemModel
     
-    @Binding var document: Document
-    @Binding var offset: CGFloat
+    @Binding var scale: CGFloat
     
-    @Binding var page: Page
-    @Binding var item: ItemModel
-    
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
-    @State var editItemModel: EditItemModel = EditItemModel()
-    
-    var highRes: Bool
+    var highResolution: Bool
     var pdfRendering: Bool
     
     var body: some View {

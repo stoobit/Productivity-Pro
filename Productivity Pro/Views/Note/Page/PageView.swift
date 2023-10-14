@@ -53,8 +53,7 @@ struct PageView: View {
                 note: note,
                 page: page,
                 scale: $scale,
-                offset: $offset,
-                highRes: highResolution,
+                highResolution: highResolution,
                 pdfRendering: pdfRendering
             )
             
