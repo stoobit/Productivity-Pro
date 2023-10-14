@@ -35,10 +35,9 @@ extension NoteMainToolbar {
     }
     
     func addShape(type: PPShapeType) {
-        guard let index = contentObject.note?.pages?.count else { return }
         toolManager.isCanvasEnabled = false
         
-        let item = PPItemModel(index: index, type: .shape)
+        let item = PPItemModel(index: 0, type: .shape)
         item.width = 200
         item.height = type == .hexagon ? 175 : 200
         
@@ -55,7 +54,9 @@ extension NoteMainToolbar {
         if let page = contentObject.note!.pages!.first(where: {
             $0.id == toolManager.activePage?.id
         }) {
+            item.index = page.items?.count ?? 0
             page.items?.append(item)
+            
             toolManager.activeItem = item
         }
     }

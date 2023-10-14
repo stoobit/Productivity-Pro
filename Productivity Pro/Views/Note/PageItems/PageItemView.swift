@@ -33,7 +33,6 @@ struct PageItemView: View {
 //                highRes: highRes,
 //                pdfRendering: pdfRendering
 //            )
-            Text("servus")
             .onTapGesture {
                 if subviewManager.showInspector == false {
                     tap(item: item)
