@@ -65,9 +65,9 @@ struct PageView: View {
 //                size: size
 //            )
 //            
-//            SnapItemView(toolManager: toolManager, page: $page)
-//                .scaleEffect(1/toolManager.zoomScale)
-//                .allowsHitTesting(false)
+            SnapItemView(page: page, scale: $scale)
+                .scaleEffect(1/scale)
+                .allowsHitTesting(false)
             
         }
         .dropDestination(for: Data.self) { items, location in

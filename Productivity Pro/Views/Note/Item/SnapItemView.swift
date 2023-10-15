@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct SnapItemView: View {
+    @Environment(ToolManager.self) var toolManager
+    var page: PPPageModel
     
-    @Bindable var toolManager: ToolManager
-    @Binding var page: Page
-    
+    @Binding var scale: CGFloat
+   
     var body: some View {
         ZStack {
             
@@ -19,7 +20,7 @@ struct SnapItemView: View {
                 HStack {
                     Spacer()
                     SnapLine(
-                        width: 1, height: getFrame().height * toolManager.zoomScale
+                        width: 1, height: getFrame().height * scale
                     )
                     Spacer()
                 }
@@ -29,15 +30,15 @@ struct SnapItemView: View {
                 VStack {
                     Spacer()
                     SnapLine(
-                        width: getFrame().width * toolManager.zoomScale, height: 1
+                        width: getFrame().width * scale, height: 1
                     )
                     Spacer()
                 }
             }
         }
         .frame(
-            width: getFrame().width * toolManager.zoomScale,
-            height: getFrame().height * toolManager.zoomScale
+            width: getFrame().width * scale,
+            height: getFrame().height * scale
         )
         
     }
@@ -45,7 +46,7 @@ struct SnapItemView: View {
     @ViewBuilder func SnapLine(width: CGFloat, height: CGFloat) -> some View {
         Rectangle()
             .frame(width: width, height: height)
-            .foregroundColor(.accentColor)
+            .foregroundStyle(Color.accentColor)
     }
     
     func getFrame() -> CGSize {
