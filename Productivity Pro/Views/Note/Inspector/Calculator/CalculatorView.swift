@@ -255,50 +255,42 @@ struct CalculatorView: View {
                     }
                 }
                 //MARK: Buttons for entry
-                VStack(spacing: UIDevice.current.userInterfaceIdiom == .phone ? geometry.size.height/80 : 20){ //VStack of HStacks to make a grid of buttons
-                    if(geometry.size.height > 375){
-                        Spacer(minLength: 0)
-                    }
+                VStack(spacing: 30){
+                    
                     if(geometry.size.width < 640){
                         HStack(spacing: 15){
                             CalculatorButton(size: geometry.size, text: "sin", color: .green) {
                                 addDigit(digit: " sin ")
                             }
                             
-                            CalculatorButton(size: geometry.size, text: "sin", color: .green) {
+                            CalculatorButton(size: geometry.size, text: "cos", color: .green) {
                                 addDigit(digit: " cos ")
                             }
                             
-                            CalculatorButton(size: geometry.size, text: "sin", color: .green) {
+                            CalculatorButton(size: geometry.size, text: "tan", color: .green) {
                                 addDigit(digit: " tan ")
                             }
                             
-                            CalculatorButton(size: geometry.size, text: "sin", color: .green) {
+                            CalculatorButton(size: geometry.size, text: "log", color: .green) {
                                 addDigit(digit: " log ")
                                 logTrue = true
                             }
                         }
                         HStack(spacing: 15){
-                            MyButton4(symbol: "trash.square"){}
-                                .simultaneousGesture(
-                                    LongPressGesture()
-                                        .onEnded { _ in
-                                            ClearAll()
-                                        })
-                                .highPriorityGesture(TapGesture()
-                                    .onEnded { _ in
-                                        ClearOne()
-                                    })
-                            MyButton3(symbol: "(", size: 35){
+                            CalculatorButton(size: geometry.size, text: "DEL", color: .green) {
+                                ClearOne()
+                            }
+                                
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 logTrue = false
                                 addDigit(digit: "(")
                             }
-                            .keyboardShortcut("(", modifiers: [])
-                            MyButton3(symbol: ")", size: 35){
+                            
+                            CalculatorButton(size: geometry.size, text: ")", color: .green) {
                                 addDigit(digit: ")")
                             }
-                            .keyboardShortcut(")", modifiers: [])
-                            Button {
+                            
+                            CalculatorButton(size: geometry.size, text: "a\u{207F}", color: .green) {
                                 if(powerTrue){
                                     powerTrue = false
                                     powerColor = colorScheme == .dark ? .white : .black
@@ -311,55 +303,39 @@ struct CalculatorView: View {
                                 } else {
                                     powerColor = powerTrue ? .gray : .black
                                 }
-                            } label: {
-                                Text("x\u{1D43}")
-                                    .font(.system(size: 30, design: .rounded).bold())
-                                    .frame(width: 50, height: 50, alignment: .center)
-                                    .foregroundColor(colorScheme == .dark ? .black : .white)
-                                    .overlay{
-                                        Image.init(systemName: "square")
-                                            .resizable()
-                                            .frame(width: 50, height: 50, alignment: .center)
-                                            .foregroundColor(colorScheme == .dark ? .black : .white)
-                                    }
-                                
                             }
-                            .frame(width: 70, height: 70)
-                            .background(powerColor)
-                            .cornerRadius(15)
-                            .keyboardShortcut("p", modifiers: [])
                         }
                         
                     }
                     HStack(spacing: 15){
                         if(geometry.size.width > 640){
-                            MyButton4(symbol: "trash.square"){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 ClearAll()
                             }
                             .keyboardShortcut(.delete, modifiers: [.option])
-                            MyButton4(symbol: "delete.left"){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 ClearOne()
                             }
                             .keyboardShortcut(.delete, modifiers: [])
-                            MyButton3(symbol: "ANS", size: 20){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 addDigit(digit: " ANS ")
                             }
                             .keyboardShortcut("a", modifiers: [])
                         }
-                        MyButton1(symbol: "plus.square") {
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             powerTrue = false
                             addDigit(digit: " + ")
                         }
                         .keyboardShortcut("+", modifiers: [])
-                        MyButton2(symbol: "1.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "1")
                         }
                         .keyboardShortcut("1", modifiers: [])
-                        MyButton2(symbol: "2.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "2")
                         }
                         .keyboardShortcut("2", modifiers: [])
-                        MyButton2(symbol: "3.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "3")
                         }
                         .keyboardShortcut("3", modifiers: [])
@@ -367,42 +343,36 @@ struct CalculatorView: View {
                     .foregroundColor(.white)
                     HStack(spacing: 15){
                         if(geometry.size.width > 640){
-                            MyButton3(symbol: "π", size: 35){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 addDigit(digit: "π")
                             }
-                            MyButton3(symbol: "(", size: 35){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 logTrue = false
                                 addDigit(digit: "(")
                             }
-                            .keyboardShortcut("(", modifiers: [])
-                            MyButton3(symbol: ")", size: 35){
+
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 addDigit(digit: ")")
                             }
-                            .keyboardShortcut(")", modifiers: [])
                         }
-                        MyButton1(symbol: "minus.square"){
-                            powerTrue = false
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {                            powerTrue = false
                             addDigit(digit: " - ")
                         }
-                        .keyboardShortcut("-", modifiers: [])
-                        MyButton2(symbol: "4.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "4")
                         }
-                        .keyboardShortcut("4", modifiers: [])
-                        MyButton2(symbol: "5.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "5")
                         }
-                        .keyboardShortcut("5", modifiers: [])
-                        MyButton2(symbol: "6.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "6")
                         }
-                        .keyboardShortcut("6", modifiers: [])
                         
                     }
                     
                     HStack(spacing: 15){
                         if(geometry.size.width > 640){
-                            Button {
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 if(powerTrue){
                                     powerTrue = false
                                     powerColor = colorScheme == .dark ? .white : .black
@@ -415,23 +385,7 @@ struct CalculatorView: View {
                                 } else {
                                     powerColor = powerTrue ? .gray : .black
                                 }
-                            } label: {
-                                Text("x\u{1D43}")
-                                    .font(.system(size: 30).bold())
-                                    .frame(width: 50, height: 50, alignment: .center)
-                                    .foregroundColor(colorScheme == .dark ? .black : .white)
-                                    .overlay{
-                                        Image.init(systemName: "square")
-                                            .resizable()
-                                            .frame(width: 50, height: 50, alignment: .center)
-                                            .foregroundColor(colorScheme == .dark ? .black : .white)
-                                    }
-                                
                             }
-                            .frame(width: 70, height: 70)
-                            .background(powerColor)
-                            .cornerRadius(15)
-                            .keyboardShortcut("p", modifiers: [])
                             .onChange(of: powerTrue) {
                                 if(powerTrue){
                                     powerColor = .gray
@@ -439,29 +393,29 @@ struct CalculatorView: View {
                                     powerColor = colorScheme == .dark ? .white : .black
                                 }
                             }
-                            MyButton3(symbol: "sin", size: 25){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 addDigit(digit: " sin ")
                             }
-                            .keyboardShortcut("s", modifiers: [])
-                            MyButton3(symbol: "cos", size: 25){
+                            
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 addDigit(digit: " cos ")
                             }
-                            .keyboardShortcut("c", modifiers: [])
+                            
                         }
-                        MyButton1(symbol: "multiply.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             powerTrue = false
                             addDigit(digit: " × ")
                         }
                         .keyboardShortcut("*", modifiers: [])
-                        MyButton2(symbol: "7.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "7")
                         }
                         .keyboardShortcut("7", modifiers: [])
-                        MyButton2(symbol: "8.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "8")
                         }
                         .keyboardShortcut("8", modifiers: [])
-                        MyButton2(symbol: "9.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "9")
                         }
                         .keyboardShortcut("9", modifiers: [])
@@ -470,50 +424,36 @@ struct CalculatorView: View {
                     
                     HStack (spacing: 15){
                         if(geometry.size.width > 640){
-                            MyButton3(symbol: "\u{221A}x", size: 25){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 addDigit(digit: " \u{221A} ")
                             }
                             .keyboardShortcut("p", modifiers: [.option])
-                            MyButton3(symbol: "tan", size: 25){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 addDigit(digit: " tan ")
                             }
                             .keyboardShortcut("t", modifiers: [])
-                            MyButton3(symbol: "log", size: 25){
+                            CalculatorButton(size: geometry.size, text: "(", color: .green) {
                                 addDigit(digit: " log ")
                                 logTrue = true
                             }
                             .keyboardShortcut("l", modifiers: [])
                         }
-                        MyButton1(symbol: "divide.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             powerTrue = false
                             addDigit(digit: " / ")
                         }
                         .keyboardShortcut("/", modifiers: [])
-                        MyButton2(symbol: "0.square"){
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             addDigit(digit: "0")
                         }
                         .keyboardShortcut("0", modifiers: [])
-                        Button {
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             inputString = inputString + (systemLanguage == 0 ? "." : ",")
                             display = inputString
                             print(geometry.size.height)
-                        } label: {
-                            Text(systemLanguage == 0 ? "." : ",")
-                                .font(.system(size: 30, design: .rounded).bold())
-                                .frame(width: 50, height: 50, alignment: .center)
-                                .foregroundColor(colorScheme == .dark ? .black : .white)
-                                .overlay{
-                                    Image.init(systemName: "square")
-                                        .resizable()
-                                        .frame(width: 50, height: 50, alignment: .center)
-                                        .foregroundColor(colorScheme == .dark ? .black : .white)
-                                }
                         }
-                        .keyboardShortcut(systemLanguage == 0 ? "." : ",", modifiers: [])
-                        .frame(width: 70, height: 70)
-                        .background(getcalcCS(currentCS: colorScheme))
-                        .cornerRadius(15)
-                        MyButton2(symbol: "equal.square"){
+                        
+                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
                             if(display != "Syntax Error"){
                                 powerColor = colorScheme == .dark ? .white : .black
                                 inputString = autoAdd(str: UserDefaults.standard.string(forKey: "input")!) //IMPORTANT
