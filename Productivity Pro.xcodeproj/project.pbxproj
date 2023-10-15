@@ -936,7 +936,7 @@
 				BB3E9AA72A33AC27006045E1 /* NoteView */,
 				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BB24E84729EB62210082AE98 /* Page */,
-				BBDCF5D6299E699C004C99AE /* PageItems */,
+				BBDCF5D6299E699C004C99AE /* Item */,
 				BB24CE252ADB2DE80022C0E4 /* Inspector */,
 				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
 				BBF930782A674C0700AD3958 /* PPDrawingToolbar */,
@@ -1083,7 +1083,7 @@
 			path = ExportableItemModels;
 			sourceTree = "<group>";
 		};
-		BBDCF5D6299E699C004C99AE /* PageItems */ = {
+		BBDCF5D6299E699C004C99AE /* Item */ = {
 			isa = PBXGroup;
 			children = (
 				BB5034182993172800913B3A /* PageItemView.swift */,
@@ -1096,7 +1096,7 @@
 				BBADD1362A5102620075B825 /* MarkdownParserView.swift */,
 				BBC7B9772A1988E800D496CB /* ToolView */,
 			);
-			path = PageItems;
+			path = Item;
 			sourceTree = "<group>";
 		};
 		BBDCF5DB299EB2EE004C99AE /* EditPageItems */ = {

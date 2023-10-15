@@ -12,7 +12,7 @@ struct PageItemView: View {
     @Environment(SubviewManager.self) var subviewManager
     
     var note: PPNoteModel
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
     
     @Binding var scale: CGFloat
     
@@ -20,10 +20,11 @@ struct PageItemView: View {
     var pdfRendering: Bool
     
     var body: some View {
-        ForEach(page.items!) { item in
+        ForEach(page.items!) { ppItem in
+            @Bindable var item = ppItem
             
             ItemView(
-                note: note, page: page, item: item,
+                note: note, page: page, item: ppItem,
                 scale: $scale,
                 highResolution: highResolution,
                 pdfRendering: pdfRendering

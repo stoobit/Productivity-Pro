@@ -21,7 +21,7 @@ struct PageView: View {
     var defaultFontSize: Double = 12
     
     var note: PPNoteModel
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
     
     @Binding var scale: CGFloat
     @Binding var offset: CGPoint
