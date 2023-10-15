@@ -8,16 +8,25 @@
 import SwiftUI
 
 struct Inspector: View {
+    @Environment(\.horizontalSizeClass) var hsc
+    @Environment(\.verticalSizeClass) var vsc
     @Environment(ToolManager.self) var toolManager
     
     @State var view: Int = 0
     
     var body: some View {
-        if toolManager.activeItem == nil {
-            DefaultView()
-        } else {
-            
+        Group {
+            if toolManager.activeItem == nil {
+                if hsc == .regular {
+                    DefaultView()
+                } else {
+                    InspectorOverview()
+                }
+            } else {
+                Text(vsc.debugDescription)
+            }
         }
+        .onChange(of: hsc) { view = 0 }
     }
     
     @ViewBuilder func DefaultView() -> some View {

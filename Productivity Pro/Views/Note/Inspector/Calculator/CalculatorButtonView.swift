@@ -6,28 +6,3 @@
 //
 
 import SwiftUI
-
-struct CompactCalculatorButton: View {
-    
-    let size: CGSize
-    let text: String
-    let color: Color
-    let action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            Text(text)
-                .foregroundColor(.white)
-                .font(.title2.bold())
-                .frame(
-                    width: size.width / 6,
-                    height: 55
-                )
-                .background(color)
-                .clipShape(
-                    RoundedRectangle(cornerRadius: 12)
-                )
-                .padding(4)
-        }
-    }
-}
