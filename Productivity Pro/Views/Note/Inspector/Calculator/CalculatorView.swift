@@ -226,142 +226,34 @@ struct CalculatorView: View {
                 .padding(.top, 10)
                 
                 Spacer()
-                
-                VStack(spacing: 10){
                     
-                    HStack(spacing: 15){
-                        CalculatorButton(size: geometry.size, text: "DEL", color: .gray) {
-                            ClearOne()
+                ViewThatFits(in: .vertical) {
+                    VStack(spacing: 10){
+                        Row1(geometry: geometry)
+                        Row2(geometry: geometry)
+                        Row3(geometry: geometry)
+                        Row4(geometry: geometry)
+                        Row5(geometry: geometry)
+                        Row6(geometry: geometry)
+                    }
+                    
+                    ViewThatFits(in: .vertical) {
+                        VStack(spacing: 10){
+                            Row1(geometry: geometry)
+                            Row3(geometry: geometry)
+                            Row4(geometry: geometry)
+                            Row5(geometry: geometry)
+                            Row6(geometry: geometry)
                         }
                         
-                        CalculatorButton(size: geometry.size, text: "(", color: .green) {
-                            logTrue = false
-                            addDigit(digit: "(")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: ")", color: .green) {
-                            addDigit(digit: ")")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "a\u{207F}", color: .green) {
-                            if(powerTrue){
-                                powerTrue = false
-                                powerColor = colorScheme == .dark ? .white : .black
-                            } else {
-                                powerTrue = true
-                                powerColor = .gray
-                            }
-                            if(colorScheme == .dark){
-                                powerColor = powerTrue ? .gray : .white
-                            } else {
-                                powerColor = powerTrue ? .gray : .black
-                            }
+                        VStack(spacing: 10){
+                            Row3(geometry: geometry)
+                            Row4(geometry: geometry)
+                            Row5(geometry: geometry)
+                            Row6(geometry: geometry)
                         }
                     }
                     
-                    HStack(spacing: 15){
-                        CalculatorButton(size: geometry.size, text: "sin", color: .green) {
-                            addDigit(digit: " sin ")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "cos", color: .green) {
-                            addDigit(digit: " cos ")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "tan", color: .green) {
-                            addDigit(digit: " tan ")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "log", color: .green) {
-                            addDigit(digit: " log ")
-                            logTrue = true
-                        }
-                    }
-                        
-                    HStack(spacing: 15){
-                        CalculatorButton(size: geometry.size, text: "+", color: .green) {
-                            powerTrue = false
-                            addDigit(digit: " + ")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "1", color: .accentColor) {
-                            addDigit(digit: "1")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "2", color: .accentColor) {
-                            addDigit(digit: "2")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "3", color: .accentColor) {
-                            addDigit(digit: "3")
-                        }
-                    }
-                    .foregroundColor(.white)
-                    HStack(spacing: 15){
-                        CalculatorButton(size: geometry.size, text: "-", color: .green) {
-                            powerTrue = false
-                            addDigit(digit: " - ")
-                        }
-                        CalculatorButton(size: geometry.size, text: "4", color: .accentColor) {
-                            addDigit(digit: "4")
-                        }
-                        CalculatorButton(size: geometry.size, text: "5", color: .accentColor) {
-                            addDigit(digit: "5")
-                        }
-                        CalculatorButton(size: geometry.size, text: "6", color: .accentColor) {
-                            addDigit(digit: "6")
-                        }
-                        
-                    }
-                    
-                    HStack(spacing: 15){
-                        CalculatorButton(size: geometry.size, text: "×", color: .green) {
-                            powerTrue = false
-                            addDigit(digit: " × ")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "7", color: .accentColor) {
-                            addDigit(digit: "7")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "8", color: .accentColor) {
-                            addDigit(digit: "8")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "9", color: .accentColor) {
-                            addDigit(digit: "9")
-                        }
-                    }
-                    
-                    HStack (spacing: 15){
-                        CalculatorButton(size: geometry.size, text: "/", color: .green) {
-                            powerTrue = false
-                            addDigit(digit: " / ")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: ".", color: .green) {
-                            inputString.append(".")
-                            display = inputString
-                            print(geometry.size.height)
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "0", color: .accentColor) {
-                            addDigit(digit: "0")
-                        }
-                        
-                        CalculatorButton(size: geometry.size, text: "=", color: .gray) {
-                            if(display != "Syntax Error"){
-                                powerColor = colorScheme == .dark ? .white : .black
-                                inputString = autoAdd(str: inputString)
-                                display = inputString
-                                display2 = display
-                                display = format(arg: String(calc.math(arg: inputString)))
-                                inputString = ""
-                                powerTrue = false
-                            }
-                        }
-                        
-                    }
                 }
                 .padding(.bottom, 12)
             }
@@ -369,4 +261,151 @@ struct CalculatorView: View {
         }
         
     }
+    
+    @ViewBuilder func Row1(geometry: GeometryProxy) -> some View {
+        HStack(spacing: 15){
+            CalculatorButton(size: geometry.size, text: "DEL", color: .gray) {
+                ClearOne()
+            }
+            
+            CalculatorButton(size: geometry.size, text: "(", color: .green) {
+                logTrue = false
+                addDigit(digit: "(")
+            }
+            
+            CalculatorButton(size: geometry.size, text: ")", color: .green) {
+                addDigit(digit: ")")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "a\u{207F}", color: .green) {
+                if(powerTrue){
+                    powerTrue = false
+                    powerColor = colorScheme == .dark ? .white : .black
+                } else {
+                    powerTrue = true
+                    powerColor = .gray
+                }
+                if(colorScheme == .dark){
+                    powerColor = powerTrue ? .gray : .white
+                } else {
+                    powerColor = powerTrue ? .gray : .black
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder func Row2(geometry: GeometryProxy) -> some View {
+        HStack(spacing: 15){
+            CalculatorButton(size: geometry.size, text: "sin", color: .green) {
+                addDigit(digit: " sin ")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "cos", color: .green) {
+                addDigit(digit: " cos ")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "tan", color: .green) {
+                addDigit(digit: " tan ")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "log", color: .green) {
+                addDigit(digit: " log ")
+                logTrue = true
+            }
+        }
+    }
+    
+    @ViewBuilder func Row3(geometry: GeometryProxy) -> some View {
+        HStack(spacing: 15){
+            CalculatorButton(size: geometry.size, text: "+", color: .green) {
+                powerTrue = false
+                addDigit(digit: " + ")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "1", color: .accentColor) {
+                addDigit(digit: "1")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "2", color: .accentColor) {
+                addDigit(digit: "2")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "3", color: .accentColor) {
+                addDigit(digit: "3")
+            }
+        }
+    }
+    
+    @ViewBuilder func Row4(geometry: GeometryProxy) -> some View {
+        HStack(spacing: 15){
+            CalculatorButton(size: geometry.size, text: "-", color: .green) {
+                powerTrue = false
+                addDigit(digit: " - ")
+            }
+            CalculatorButton(size: geometry.size, text: "4", color: .accentColor) {
+                addDigit(digit: "4")
+            }
+            CalculatorButton(size: geometry.size, text: "5", color: .accentColor) {
+                addDigit(digit: "5")
+            }
+            CalculatorButton(size: geometry.size, text: "6", color: .accentColor) {
+                addDigit(digit: "6")
+            }
+            
+        }
+    }
+    
+    @ViewBuilder func Row5(geometry: GeometryProxy) -> some View {
+        HStack(spacing: 15){
+            CalculatorButton(size: geometry.size, text: "×", color: .green) {
+                powerTrue = false
+                addDigit(digit: " × ")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "7", color: .accentColor) {
+                addDigit(digit: "7")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "8", color: .accentColor) {
+                addDigit(digit: "8")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "9", color: .accentColor) {
+                addDigit(digit: "9")
+            }
+        }
+    }
+    
+    @ViewBuilder func Row6(geometry: GeometryProxy) -> some View {
+        HStack(spacing: 15){
+            CalculatorButton(size: geometry.size, text: "/", color: .green) {
+                powerTrue = false
+                addDigit(digit: " / ")
+            }
+            
+            CalculatorButton(size: geometry.size, text: ".", color: .green) {
+                inputString.append(".")
+                display = inputString
+                print(geometry.size.height)
+            }
+            
+            CalculatorButton(size: geometry.size, text: "0", color: .accentColor) {
+                addDigit(digit: "0")
+            }
+            
+            CalculatorButton(size: geometry.size, text: "=", color: .gray) {
+                if(display != "Syntax Error"){
+                    powerColor = colorScheme == .dark ? .white : .black
+                    inputString = autoAdd(str: inputString)
+                    display = inputString
+                    display2 = display
+                    display = format(arg: String(calc.math(arg: inputString)))
+                    inputString = ""
+                    powerTrue = false
+                }
+            }
+            
+        }
+    }
+    
 }
