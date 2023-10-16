@@ -255,40 +255,40 @@ struct CalculatorView: View {
                     }
                     
                 }
-                .padding(.bottom, 12)
             }
             .position(x: geometry.size.width/2, y: geometry.size.height/2)
         }
+        .padding(.vertical, 12)
         
     }
     
     @ViewBuilder func Row1(geometry: GeometryProxy) -> some View {
         HStack(spacing: 15){
-            CalculatorButton(size: geometry.size, text: "DEL", color: .gray) {
+            CalculatorButton(size: geometry.size, text: "DEL", color: .orange) {
                 ClearOne()
             }
             
-            CalculatorButton(size: geometry.size, text: "(", color: .green) {
+            CalculatorButton(size: geometry.size, text: "(", color: .gray) {
                 logTrue = false
                 addDigit(digit: "(")
             }
             
-            CalculatorButton(size: geometry.size, text: ")", color: .green) {
+            CalculatorButton(size: geometry.size, text: ")", color: .gray) {
                 addDigit(digit: ")")
             }
             
-            CalculatorButton(size: geometry.size, text: "a\u{207F}", color: .green) {
+            CalculatorButton(size: geometry.size, text: "a\u{207F}", color: .gray) {
                 if(powerTrue){
                     powerTrue = false
                     powerColor = colorScheme == .dark ? .white : .black
                 } else {
                     powerTrue = true
-                    powerColor = .gray
+                    powerColor = .orange
                 }
                 if(colorScheme == .dark){
-                    powerColor = powerTrue ? .gray : .white
+                    powerColor = powerTrue ? .orange : .white
                 } else {
-                    powerColor = powerTrue ? .gray : .black
+                    powerColor = powerTrue ? .orange : .black
                 }
             }
         }
@@ -296,19 +296,19 @@ struct CalculatorView: View {
     
     @ViewBuilder func Row2(geometry: GeometryProxy) -> some View {
         HStack(spacing: 15){
-            CalculatorButton(size: geometry.size, text: "sin", color: .green) {
+            CalculatorButton(size: geometry.size, text: "sin", color: .gray) {
                 addDigit(digit: " sin ")
             }
             
-            CalculatorButton(size: geometry.size, text: "cos", color: .green) {
+            CalculatorButton(size: geometry.size, text: "cos", color: .gray) {
                 addDigit(digit: " cos ")
             }
             
-            CalculatorButton(size: geometry.size, text: "tan", color: .green) {
+            CalculatorButton(size: geometry.size, text: "tan", color: .gray) {
                 addDigit(digit: " tan ")
             }
             
-            CalculatorButton(size: geometry.size, text: "log", color: .green) {
+            CalculatorButton(size: geometry.size, text: "log", color: .gray) {
                 addDigit(digit: " log ")
                 logTrue = true
             }
@@ -317,7 +317,7 @@ struct CalculatorView: View {
     
     @ViewBuilder func Row3(geometry: GeometryProxy) -> some View {
         HStack(spacing: 15){
-            CalculatorButton(size: geometry.size, text: "+", color: .green) {
+            CalculatorButton(size: geometry.size, text: "+", color: .gray) {
                 powerTrue = false
                 addDigit(digit: " + ")
             }
@@ -338,7 +338,7 @@ struct CalculatorView: View {
     
     @ViewBuilder func Row4(geometry: GeometryProxy) -> some View {
         HStack(spacing: 15){
-            CalculatorButton(size: geometry.size, text: "-", color: .green) {
+            CalculatorButton(size: geometry.size, text: "-", color: .gray) {
                 powerTrue = false
                 addDigit(digit: " - ")
             }
@@ -357,7 +357,7 @@ struct CalculatorView: View {
     
     @ViewBuilder func Row5(geometry: GeometryProxy) -> some View {
         HStack(spacing: 15){
-            CalculatorButton(size: geometry.size, text: "×", color: .green) {
+            CalculatorButton(size: geometry.size, text: "×", color: .gray) {
                 powerTrue = false
                 addDigit(digit: " × ")
             }
@@ -378,12 +378,12 @@ struct CalculatorView: View {
     
     @ViewBuilder func Row6(geometry: GeometryProxy) -> some View {
         HStack(spacing: 15){
-            CalculatorButton(size: geometry.size, text: "/", color: .green) {
+            CalculatorButton(size: geometry.size, text: "/", color: .gray) {
                 powerTrue = false
                 addDigit(digit: " / ")
             }
             
-            CalculatorButton(size: geometry.size, text: ".", color: .green) {
+            CalculatorButton(size: geometry.size, text: ".", color: .gray) {
                 inputString.append(".")
                 display = inputString
                 print(geometry.size.height)
@@ -393,7 +393,7 @@ struct CalculatorView: View {
                 addDigit(digit: "0")
             }
             
-            CalculatorButton(size: geometry.size, text: "=", color: .gray) {
+            CalculatorButton(size: geometry.size, text: "=", color: .orange) {
                 if(display != "Syntax Error"){
                     powerColor = colorScheme == .dark ? .white : .black
                     inputString = autoAdd(str: inputString)

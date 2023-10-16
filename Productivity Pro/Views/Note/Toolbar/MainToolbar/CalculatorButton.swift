@@ -10,7 +10,7 @@ import SwiftUI
 extension NoteMainToolbar {
     
     @ViewBuilder func CalculatorButton() -> some View {
-        Button(action: { openWindow(id: "calculator") }) {
+        Button(action: { subviewManager.showCalculator.toggle() }) {
             Label("Rechner", systemImage: "x.squareroot")
                 .modifier(PremiumBadge())
         }

@@ -16,24 +16,26 @@ struct NoteSideActions: ToolbarContent {
     
     var contentObject: ContentObject
     var body: some ToolbarContent {
+        @Bindable var subviewValue = subviewManager
         
         ToolbarItemGroup(placement: .topBarLeading) {
             PageActions()
-            
-            Button(action: {
-                toolManager.activePage?.isBookmarked.toggle()
-            }) {
-                Image(
-                    systemName: toolManager.activePage?.isBookmarked  == true ? "bookmark.fill" : "bookmark"
-                )
-                .tint(Color.red)
-            }
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
-            @Bindable var subviewValue = subviewManager
-            Button("Inspektor", systemImage: "sidebar.trailing") {
-                toggleInspector()
+            
+            Section {
+                Button("Inspektor", systemImage: "paintbrush.pointed") {}
+                    .popover(isPresented: $subviewValue.showCalculator) {
+                        CalculatorView()
+                            .frame(width: 300, height: 460)
+                            .presentationCompactAdaptation(.popover)
+                            .modifier(LockScreen())
+                    }
+            }
+            
+            Section {
+                Button("Undo", systemImage: "arrow.uturn.backward") {}
             }
         }
         

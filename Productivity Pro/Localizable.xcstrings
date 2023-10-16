@@ -84,9 +84,6 @@
         }
       }
     },
-    "30. Juli 2007" : {
-
-    },
     "Abbrechen" : {
       "localizations" : {
         "en" : {
@@ -311,9 +308,6 @@
           }
         }
       }
-    },
-    "Die Geburt" : {
-
     },
     "Dies kann einige Minuten dauern." : {
       "localizations" : {
@@ -693,6 +687,12 @@
     "Lehrer" : {
 
     },
+    "Lesezeichen entfernen" : {
+
+    },
+    "Lesezeichen hinzufügen" : {
+
+    },
     "Letzte Vorlage" : {
       "localizations" : {
         "en" : {
@@ -982,9 +982,6 @@
     "Seite" : {
 
     },
-    "Seite 1" : {
-
-    },
     "Seite hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -1168,6 +1165,9 @@
           }
         }
       }
+    },
+    "Undo" : {
+
     },
     "Vorlage ändern" : {
       "localizations" : {

@@ -28,7 +28,6 @@
 		BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E693F2A71CE01008E0C5F /* TemplateView.swift */; };
 		BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */; };
 		BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */; };
-		BB24CE272ADB33EA0022C0E4 /* Inspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24CE262ADB33EA0022C0E4 /* Inspector.swift */; };
 		BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */; };
 		BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */; };
 		BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27BB512A62C30700392E1E /* RealityNoteModel.swift */; };
@@ -200,7 +199,6 @@
 		BBDCF5DD299EB6AC004C99AE /* EditPageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5DC299EB6AC004C99AE /* EditPageItemView.swift */; };
 		BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDD126D2A694A4A005E99C5 /* PPSizeButton.swift */; };
 		BBDD12702A694EC7005E99C5 /* PPMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDD126F2A694EC7005E99C5 /* PPMenuView.swift */; };
-		BBDEC1C82ADB3BD2008F7396 /* InspectorOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDEC1C72ADB3BD2008F7396 /* InspectorOverview.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
 		BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC301D2A670EF80021C7E6 /* DrawingView.swift */; };
@@ -266,7 +264,6 @@
 		BB1E693F2A71CE01008E0C5F /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewHelper.swift; sourceTree = "<group>"; };
 		BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePreviewProvider.swift; sourceTree = "<group>"; };
-		BB24CE262ADB33EA0022C0E4 /* Inspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspector.swift; sourceTree = "<group>"; };
 		BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapper.swift; sourceTree = "<group>"; };
 		BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewRepresentable.swift; sourceTree = "<group>"; };
 		BB27BB512A62C30700392E1E /* RealityNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityNoteModel.swift; sourceTree = "<group>"; };
@@ -436,7 +433,6 @@
 		BBDCF5DC299EB6AC004C99AE /* EditPageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageItemView.swift; sourceTree = "<group>"; };
 		BBDD126D2A694A4A005E99C5 /* PPSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSizeButton.swift; sourceTree = "<group>"; };
 		BBDD126F2A694EC7005E99C5 /* PPMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPMenuView.swift; sourceTree = "<group>"; };
-		BBDEC1C72ADB3BD2008F7396 /* InspectorOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorOverview.swift; sourceTree = "<group>"; };
 		BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDropDelegate.swift; sourceTree = "<group>"; };
 		BBE9196D28F381FE001EF750 /* PPScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollView.swift; sourceTree = "<group>"; };
 		BBEC301D2A670EF80021C7E6 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
@@ -523,16 +519,6 @@
 				BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		BB24CE252ADB2DE80022C0E4 /* Inspector */ = {
-			isa = PBXGroup;
-			children = (
-				BB24CE262ADB33EA0022C0E4 /* Inspector.swift */,
-				BBDEC1C62ADB3BC4008F7396 /* Overview */,
-				BBBCACAF2A253BC000C23B2C /* Calculator */,
-			);
-			path = Inspector;
 			sourceTree = "<group>";
 		};
 		BB24E84729EB62210082AE98 /* Page */ = {
@@ -924,14 +910,14 @@
 				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
-				BB24CE252ADB2DE80022C0E4 /* Inspector */,
-				BBDCF5DB299EB2EE004C99AE /* EditPageItems */,
+				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
 				BBF930782A674C0700AD3958 /* PPDrawingToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
 				BB37AD882A2C0A12006DB94D /* Overview */,
 				BB9CC946293FD4450094446A /* Share+Collaborate */,
+				BBBCACAF2A253BC000C23B2C /* Calculator */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -1085,7 +1071,7 @@
 			path = Item;
 			sourceTree = "<group>";
 		};
-		BBDCF5DB299EB2EE004C99AE /* EditPageItems */ = {
+		BBDCF5DB299EB2EE004C99AE /* InspectorView */ = {
 			isa = PBXGroup;
 			children = (
 				BBDCF5DC299EB6AC004C99AE /* EditPageItemView.swift */,
@@ -1097,15 +1083,7 @@
 				BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */,
 				BB2CFBA22A660EA7009774BB /* EditMarkdownView */,
 			);
-			path = EditPageItems;
-			sourceTree = "<group>";
-		};
-		BBDEC1C62ADB3BC4008F7396 /* Overview */ = {
-			isa = PBXGroup;
-			children = (
-				BBDEC1C72ADB3BD2008F7396 /* InspectorOverview.swift */,
-			);
-			path = Overview;
+			path = InspectorView;
 			sourceTree = "<group>";
 		};
 		BBEC301C2A670EA60021C7E6 /* PPDrawingKit */ = {
@@ -1318,7 +1296,6 @@
 				BBCCE4EB28D52743001DBD8A /* NoteModel.swift in Sources */,
 				BB58477D29A18BF900C21B17 /* PPControlBar.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
-				BBDEC1C82ADB3BD2008F7396 /* InspectorOverview.swift in Sources */,
 				BB2CFEFF2A6EB3C40035511A /* PPControlButtonStyle.swift in Sources */,
 				BB79870B2AD49C0C003469E6 /* CalculatorButton.swift in Sources */,
 				BB655AFC2AB772E000FB005A /* NoteViewOnChange.swift in Sources */,
@@ -1329,7 +1306,6 @@
 				BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
 				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
-				BB24CE272ADB33EA0022C0E4 /* Inspector.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
 				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,

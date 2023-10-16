@@ -17,11 +17,8 @@ struct NoteTitleMenu: View {
     
     var body: some View {
         Section {
-            Button(action: { contentObject.isPinned.toggle() }) {
-                Label(
-                    contentObject.isPinned ? "Pin entfernen" : "Anpinnen",
-                    systemImage: contentObject.isPinned ? "pin.slash" : "pin"
-                )
+            Button("Übersicht", systemImage: "square.grid.2x2") {
+                subviewManager.overviewSheet.toggle()
             }
         }
         
@@ -29,6 +26,13 @@ struct NoteTitleMenu: View {
             Button("Umbenennen", systemImage: "pencil", action: {
                 subviewManager.renameView.toggle()
             })
+            
+            Button(action: { contentObject.isPinned.toggle() }) {
+                Label(
+                    contentObject.isPinned ? "Pin entfernen" : "Anpinnen",
+                    systemImage: contentObject.isPinned ? "pin.slash" : "pin"
+                )
+            }
         }
         
         Section {

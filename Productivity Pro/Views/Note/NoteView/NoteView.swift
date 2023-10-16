@@ -67,9 +67,6 @@ struct NoteView: View {
                     isPresented: $subviewValue.renameView
                 )
             )
-            .inspector(isPresented: $subviewValue.showInspector) {
-                Inspector()
-            }
             
         } else {
             ContentUnavailableView(

@@ -11,44 +11,26 @@ import PDFKit
 struct PageBackgroundPDF: View {
     var page: PPPageModel
     
-    @State var loadedPDF: PDFPage?
-    @State var renderedPDF: UIImage?
-    
+    @State var loadedPDF: PDFDocument?
     @Binding var scale: CGFloat
     
     var body: some View {
         ZStack {
-            if let rendering = renderedPDF {
-                Image(uiImage: rendering)
-                    .resizable()
-                    .scaledToFit()
+            if let pdf = loadedPDF {
+                PDFKitView(pdfDocument: pdf, size: getFrame())
                     .frame(
-                        width: scale * getFrame().width,
-                        height: scale * getFrame().height
+                        width: getFrame().width,
+                        height: getFrame().height
                     )
-                    .scaleEffect(1 / scale)
             }
         }
-        .onChange(of: scale, initial: true) {
-            render()
-        }
-    }
-    
-    func render() {
-        if loadedPDF == nil {
-            guard let data = page.media else { return }
-            let pdfDocument = PDFDocument(data: data)
-            
-            loadedPDF = pdfDocument?.page(at: 0)
-        }
-        
-        if let loaded = loadedPDF {
-            let image = loaded.thumbnail(of: CGSize(
-                width: getFrame().width * 2.7 * scale,
-                height: getFrame().width * 2.7 * scale
-            ), for: .mediaBox)
-            
-            renderedPDF = image
+        .allowsHitTesting(false)
+        .onAppear {
+            if loadedPDF == nil {
+                DispatchQueue.global(qos: .userInteractive).async {
+                    loadedPDF = PDFDocument(data: page.media!)
+                }
+            }
         }
     }
     
@@ -62,5 +44,29 @@ struct PageBackgroundPDF: View {
         }
         
         return frame
+    }
+}
+
+struct PDFKitView: UIViewRepresentable {
+    
+    var pdfDocument: PDFDocument
+    var size: CGSize
+    
+    func makeUIView(context: Context) -> PDFView {
+        let pdfView = PDFView()
+        pdfView.document = pdfDocument
+        pdfView.isUserInteractionEnabled = false
+        pdfView.pageShadowsEnabled = false
+        
+        pdfView.frame = CGRect(origin: .zero, size: size)
+        pdfView.scaleFactor = pdfView.scaleFactorForSizeToFit
+        
+        pdfView.backgroundColor = .clear
+        
+        return pdfView
+    }
+    
+    func updateUIView(_ pdfView: PDFView, context: Context) {
+        pdfView.document = pdfDocument
     }
 }

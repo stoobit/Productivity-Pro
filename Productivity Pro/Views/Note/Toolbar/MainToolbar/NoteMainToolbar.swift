@@ -8,8 +8,7 @@
 import SwiftUI
 import StoreKit
 
-struct NoteMainToolbar: ToolbarContent {
-    @Environment(\.openWindow) var openWindow
+struct NoteMainToolbar: CustomizableToolbarContent {
     var contentObject: ContentObject
     
     @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
@@ -19,7 +18,7 @@ struct NoteMainToolbar: ToolbarContent {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    var body: some ToolbarContent {
+    var body: some CustomizableToolbarContent {
         
         ToolbarItem(id: "shapes", placement: .secondaryAction) {
             ShapesButton()
@@ -31,6 +30,10 @@ struct NoteMainToolbar: ToolbarContent {
         
         ToolbarItem(id: "media", placement: .secondaryAction) {
             MediaButton()
+        }
+        
+        ToolbarItem(id: "calc", placement: .secondaryAction) {
+            CalculatorButton()
         }
     }
     
