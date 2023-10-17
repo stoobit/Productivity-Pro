@@ -7,6 +7,6 @@
 
 import SwiftUI
 
-extension NoteSideActions {
+extension NoteSecondaryToolbar {
     
 }

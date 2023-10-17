@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension NoteSideActions {
+extension NoteSecondaryToolbar {
     @ViewBuilder func Inspector() -> some View {
         
 //        Menu(content: {

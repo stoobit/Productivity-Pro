@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension NoteSideActions {
+extension NoteSecondaryToolbar {
     
     func toggleOverview() {
         toolManager.isCanvasEnabled = false

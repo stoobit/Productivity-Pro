@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct NoteSideActions: ToolbarContent {
+struct NoteSecondaryToolbar: ToolbarContent {
     @Environment(\.undoManager) var undoManager
     @Environment(\.horizontalSizeClass) var hsc
     
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
+    
+    @State var showCalculator: Bool = false
     
     var contentObject: ContentObject
     var body: some ToolbarContent {
@@ -28,9 +30,8 @@ struct NoteSideActions: ToolbarContent {
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
+            MainAction()
             Button("Undo", systemImage: "arrow.uturn.backward") {}
-            Button("Inspektor", systemImage: "paintbrush.pointed") {}
-            
             PageActions()
         }
         

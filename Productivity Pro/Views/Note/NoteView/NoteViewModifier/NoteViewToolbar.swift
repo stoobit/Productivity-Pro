@@ -19,7 +19,7 @@ struct NoteViewToolbar: ViewModifier {
                 NoteTitleMenu(contentObject: contentObject)
             }
             .toolbar {
-                NoteSideActions(contentObject: contentObject)
+                NoteSecondaryToolbar(contentObject: contentObject)
             }
             .toolbar(id: "customizable") {
                 NoteMainToolbar(contentObject: contentObject)

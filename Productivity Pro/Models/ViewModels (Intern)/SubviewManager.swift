@@ -14,8 +14,6 @@ import Observation
     var importMedia: Bool = false
     
     var showInspector: Bool = false
-    var showCalculator: Bool = false
-    
     var renameView: Bool = false
     var shareView: Bool = false
     
