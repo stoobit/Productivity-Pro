@@ -21,12 +21,19 @@ struct NoteSecondaryToolbar: ToolbarContent {
         @Bindable var subviewValue = subviewManager
         
         ToolbarItemGroup(placement: .topBarLeading) {
-            Button("Lesezeichen", systemImage: "bookmark") {  }
-                .tint(Color.red)
+            Button("Lesezeichen", systemImage: "bookmark") { 
+                
+            }
+            .tint(Color.red)
             
-            Button("Übersicht", systemImage: "square.grid.2x2") {  }
+            Button("Übersicht", systemImage: "square.grid.2x2") { 
+                subviewManager.overview.toggle()
+            }
             
-            Button("Teilen", systemImage: "square.and.arrow.up") {  }
+            Button("Teilen", systemImage: "square.and.arrow.up") {
+                toolManager.selectedContentObject = contentObject
+                subviewManager.shareView.toggle()
+            }
         }
         
         ToolbarItemGroup(placement: .primaryAction) {

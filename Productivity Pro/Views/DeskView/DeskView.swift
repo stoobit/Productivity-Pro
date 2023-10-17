@@ -64,7 +64,7 @@ struct DeskView: View {
                 }
             }
             .fullScreenCover(isPresented: $shareView, content: {
-                ShareView()
+                ShareAppView()
             })
             
         }

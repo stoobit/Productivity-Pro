@@ -101,7 +101,6 @@
 		BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987082AD49BFE003469E6 /* MediaButton.swift */; };
 		BB7B09D22AC1CDBB0058A6A9 /* DataSystemExportable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7B09D12AC1CDBB0058A6A9 /* DataSystemExportable.swift */; };
 		BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C2C7A2A3D258100C730D3 /* String.swift */; };
-		BB7CAFE12ADE668D00513F3C /* SecondaryShareActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7CAFE02ADE668D00513F3C /* SecondaryShareActions.swift */; };
 		BB7CAFE32ADF022400513F3C /* SecondaryMainAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7CAFE22ADF022400513F3C /* SecondaryMainAction.swift */; };
 		BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F3FF82AC8171500083FCA /* CreateNoteViewHelper.swift */; };
 		BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */; };
@@ -139,7 +138,7 @@
 		BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB6A2AC7807D00255293 /* CreateNoteView.swift */; };
 		BB9BFB6E2AC7819400255293 /* TrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB6D2AC7819400255293 /* TrashView.swift */; };
 		BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB6F2AC7819D00255293 /* SearchView.swift */; };
-		BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CC947293FD45E0094446A /* ShareSheet.swift */; };
+		BB9CC948293FD45E0094446A /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9CC947293FD45E0094446A /* ShareView.swift */; };
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
@@ -158,7 +157,7 @@
 		BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */; };
 		BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */; };
 		BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E072A2693FD00155C8A /* CalculatorView.swift */; };
-		BBBBAC4C2AB8E887008CB9DA /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */; };
+		BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */; };
 		BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB22A25461900C23B2C /* Calculator.swift */; };
 		BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */; };
 		BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */; };
@@ -337,7 +336,6 @@
 		BB7987082AD49BFE003469E6 /* MediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaButton.swift; sourceTree = "<group>"; };
 		BB7B09D12AC1CDBB0058A6A9 /* DataSystemExportable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSystemExportable.swift; sourceTree = "<group>"; };
 		BB7C2C7A2A3D258100C730D3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		BB7CAFE02ADE668D00513F3C /* SecondaryShareActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryShareActions.swift; sourceTree = "<group>"; };
 		BB7CAFE22ADF022400513F3C /* SecondaryMainAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryMainAction.swift; sourceTree = "<group>"; };
 		BB7F3FF82AC8171500083FCA /* CreateNoteViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewHelper.swift; sourceTree = "<group>"; };
 		BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewFolderLink.swift; sourceTree = "<group>"; };
@@ -375,7 +373,7 @@
 		BB9BFB6A2AC7807D00255293 /* CreateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
 		BB9BFB6D2AC7819400255293 /* TrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashView.swift; sourceTree = "<group>"; };
 		BB9BFB6F2AC7819D00255293 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		BB9CC947293FD45E0094446A /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		BB9CC947293FD45E0094446A /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCoding.swift; sourceTree = "<group>"; };
@@ -394,7 +392,7 @@
 		BBB763B32A3A76DD00273182 /* EditMediaItemMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMediaItemMethods.swift; sourceTree = "<group>"; };
 		BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButtonView.swift; sourceTree = "<group>"; };
 		BBBB7E072A2693FD00155C8A /* CalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
-		BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppView.swift; sourceTree = "<group>"; };
 		BBBCACB22A25461900C23B2C /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
 		BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewContainer.swift; sourceTree = "<group>"; };
@@ -761,7 +759,7 @@
 				BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */,
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
 				BB7984642AC347F900CF3D24 /* BackupSettings.swift */,
-				BBBBAC4B2AB8E887008CB9DA /* ShareView.swift */,
+				BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */,
 				BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */,
 			);
 			path = DeskView;
@@ -900,7 +898,7 @@
 		BB9CC946293FD4450094446A /* Share+Collaborate */ = {
 			isa = PBXGroup;
 			children = (
-				BB9CC947293FD45E0094446A /* ShareSheet.swift */,
+				BB9CC947293FD45E0094446A /* ShareView.swift */,
 			);
 			path = "Share+Collaborate";
 			sourceTree = "<group>";
@@ -1116,7 +1114,6 @@
 				BB929B7F28E5076D00DA4538 /* NoteSecondaryToolbar.swift */,
 				BB7CAFE22ADF022400513F3C /* SecondaryMainAction.swift */,
 				BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */,
-				BB7CAFE02ADE668D00513F3C /* SecondaryShareActions.swift */,
 				BBEFC9502A41038F00960C8D /* SecondaryUndoActions.swift */,
 				BBEFC94E2A41035C00960C8D /* SecondaryToolbarMethods.swift */,
 			);
@@ -1283,7 +1280,6 @@
 				BB2CFBA62A660F77009774BB /* EditMarkdownToolbar.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
-				BB7CAFE12ADE668D00513F3C /* SecondaryShareActions.swift in Sources */,
 				BBDD12702A694EC7005E99C5 /* PPMenuView.swift in Sources */,
 				BB1DF60A2A687DB8006F85CE /* PPColorButton.swift in Sources */,
 				BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */,
@@ -1368,7 +1364,7 @@
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
 				BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
-				BB9CC948293FD45E0094446A /* ShareSheet.swift in Sources */,
+				BB9CC948293FD45E0094446A /* ShareView.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
@@ -1378,7 +1374,7 @@
 				BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */,
 				BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
-				BBBBAC4C2AB8E887008CB9DA /* ShareView.swift in Sources */,
+				BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */,
 				BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,

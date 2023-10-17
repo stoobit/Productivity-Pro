@@ -64,13 +64,7 @@ struct NoteViewSheet: ViewModifier {
                 )
             }
             .sheet(isPresented: $subviewManager.sharePDFSheet) {
-                ShareSheet(
-                    showProgress: $toolManager.showProgress,
-                    subviewManager: subviewManager,
-                    toolManager: toolManager,
-                    document: $document,
-                    type: .pdf
-                )
+                
             }
             .background {
                 if subviewManager.showPrinterView {

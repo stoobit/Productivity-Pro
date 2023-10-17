@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ShareView: View {
+struct ShareAppView: View {
     
     @Environment(\.dismiss) var dismiss
     
@@ -76,5 +76,5 @@ struct ShareView: View {
 }
 
 #Preview {
-    ShareView()
+    ShareAppView()
 }

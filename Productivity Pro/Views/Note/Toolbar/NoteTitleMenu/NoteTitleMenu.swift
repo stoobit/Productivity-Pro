@@ -17,15 +17,21 @@ struct NoteTitleMenu: View {
     
     var body: some View {
         Section {
-            Button("Umbenennen", systemImage: "pencil", action: {
+            Button("Umbenennen", systemImage: "pencil") {
                 subviewManager.renameView.toggle()
-            })
+            }
             
             Button(action: { contentObject.isPinned.toggle() }) {
                 Label(
                     contentObject.isPinned ? "Pin entfernen" : "Anpinnen",
                     systemImage: contentObject.isPinned ? "pin.slash" : "pin"
                 )
+            }
+        }
+        
+        Section {
+            Button("Drucken", systemImage: "printer") {
+                
             }
         }
     }

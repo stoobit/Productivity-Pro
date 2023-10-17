@@ -32,7 +32,7 @@ struct ContentView: View {
                     Label("Notizen", systemImage: "doc")
                 }
                 .sheet(isPresented: $subviewManager.shareView) {
-                    
+                    ShareView()
                 }
             
             ScheduleViewContainer()

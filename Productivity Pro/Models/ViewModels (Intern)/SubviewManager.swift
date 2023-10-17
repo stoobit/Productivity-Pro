@@ -15,7 +15,9 @@ import Observation
     
     var showInspector: Bool = false
     var renameView: Bool = false
+    
     var shareView: Bool = false
+    var overview: Bool = false
     
     var isPresentationMode: Bool = false
     

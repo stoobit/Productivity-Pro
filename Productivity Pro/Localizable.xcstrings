@@ -380,7 +380,6 @@
 
     },
     "Drucken" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -750,6 +749,9 @@
         }
       }
     },
+    "Note" : {
+
+    },
     "Notiz" : {
       "localizations" : {
         "en" : {
@@ -866,9 +868,6 @@
           }
         }
       }
-    },
-    "Processing..." : {
-
     },
     "Productivity Pro" : {
       "localizations" : {
@@ -1014,9 +1013,6 @@
     "Select an Object" : {
 
     },
-    "Share" : {
-
-    },
     "Show Border" : {
 
     },
@@ -1086,6 +1082,12 @@
           }
         }
       }
+    },
+    "Tab Content 1" : {
+
+    },
+    "Tab Content 2" : {
+
     },
     "Teilen" : {
       "localizations" : {

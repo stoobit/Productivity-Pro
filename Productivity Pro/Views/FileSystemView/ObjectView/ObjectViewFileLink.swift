@@ -12,6 +12,7 @@ struct ObjectViewFileLink: View {
     var object: ContentObject
     var swipeAction: Bool = true
     
+    @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     @AppStorage("ppgrade") var grade: Int = 5
     
@@ -55,6 +56,7 @@ struct ObjectViewFileLink: View {
             
             Section {
                 Button(action: {
+                    toolManager.selectedContentObject = object
                     subviewManager.shareView.toggle()
                 }) {
                     Label("Teilen", systemImage: "square.and.arrow.up")
