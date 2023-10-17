@@ -18,17 +18,7 @@ extension NoteSideActions {
                 }) {
                     Label("Seite hinzufügen", systemImage: "doc.badge.plus")
                 }
-                
-                Button(action: {
-                    toolManager.isCanvasEnabled = false
-                    subviewManager.changeTemplate.toggle()
-                }) {
-                    Label("Vorlage ändern", systemImage: "grid")
-                }
-                .disabled(templateChangeDisabled())
-            }
             
-            Section {
                 Button(action: {
                     toolManager.isCanvasEnabled = false
                     subviewManager.showScanDoc.toggle()
@@ -44,16 +34,23 @@ extension NoteSideActions {
                 }
             }
             
-            Button(role: .destructive, action: {
-                toolManager.isCanvasEnabled = false
-                subviewManager.isDeletePageAlert.toggle()
-            }) {
-                Label("Seite löschen", systemImage: "trash")
+            Section {
+                Button(action: {
+                    toolManager.isCanvasEnabled = false
+                    subviewManager.changeTemplate.toggle()
+                }) {
+                    Label("Vorlage ändern", systemImage: "grid")
+                }
+                .disabled(templateChangeDisabled())
+                
+                Button(role: .destructive, action: {
+                    toolManager.isCanvasEnabled = false
+                    subviewManager.isDeletePageAlert.toggle()
+                }) {
+                    Label("Seite löschen", systemImage: "trash")
+                }
+                .disabled(false)
             }
-            .disabled(false
-//                document.note.pages.count == 1
-            )
-            
         }) {
             Label("Seite", systemImage: "doc.badge.ellipsis")
         }
