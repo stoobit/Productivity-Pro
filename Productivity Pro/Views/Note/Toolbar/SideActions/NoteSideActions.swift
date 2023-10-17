@@ -19,24 +19,19 @@ struct NoteSideActions: ToolbarContent {
         @Bindable var subviewValue = subviewManager
         
         ToolbarItemGroup(placement: .topBarLeading) {
-            PageActions()
+            Button("Lesezeichen", systemImage: "bookmark") {  }
+                .tint(Color.red)
+            
+            Button("Übersicht", systemImage: "square.grid.2x2") {  }
+            
+            Button("Teilen", systemImage: "square.and.arrow.up") {  }
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
+            Button("Undo", systemImage: "arrow.uturn.backward") {}
+            Button("Inspektor", systemImage: "paintbrush.pointed") {}
             
-            Section {
-                Button("Inspektor", systemImage: "paintbrush.pointed") {}
-                    .popover(isPresented: $subviewValue.showCalculator) {
-                        CalculatorView()
-                            .frame(width: 300, height: 460)
-                            .presentationCompactAdaptation(.popover)
-                            .modifier(LockScreen())
-                    }
-            }
-            
-            Section {
-                Button("Undo", systemImage: "arrow.uturn.backward") {}
-            }
+            PageActions()
         }
         
     }

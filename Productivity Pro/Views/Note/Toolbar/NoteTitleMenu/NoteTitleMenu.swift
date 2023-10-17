@@ -17,12 +17,6 @@ struct NoteTitleMenu: View {
     
     var body: some View {
         Section {
-            Button("Übersicht", systemImage: "square.grid.2x2") {
-                subviewManager.overviewSheet.toggle()
-            }
-        }
-        
-        Section {
             Button("Umbenennen", systemImage: "pencil", action: {
                 subviewManager.renameView.toggle()
             })
@@ -32,19 +26,6 @@ struct NoteTitleMenu: View {
                     contentObject.isPinned ? "Pin entfernen" : "Anpinnen",
                     systemImage: contentObject.isPinned ? "pin.slash" : "pin"
                 )
-            }
-        }
-        
-        Section {
-            Button("Teilen", systemImage: "square.and.arrow.up") {
-                subviewManager.shareView.toggle()
-            }
-            
-            Button(action: {
-                toolManager.isCanvasEnabled = false
-                print()
-            }) {
-                Label("Drucken", systemImage: "printer")
             }
         }
     }

@@ -380,6 +380,7 @@
 
     },
     "Drucken" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -687,10 +688,7 @@
     "Lehrer" : {
 
     },
-    "Lesezeichen entfernen" : {
-
-    },
-    "Lesezeichen hinzufügen" : {
+    "Lesezeichen" : {
 
     },
     "Letzte Vorlage" : {
@@ -907,9 +905,6 @@
           }
         }
       }
-    },
-    "Rechner" : {
-
     },
     "Rechteck" : {
 

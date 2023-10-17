@@ -11,16 +11,6 @@ extension NoteSideActions {
     @ViewBuilder func PageActions() -> some View {
         
         Menu(content: {
-            Button(action: {
-                toolManager.activePage?.isBookmarked.toggle()
-            }) {
-                Label(
-                    toolManager.activePage?.isBookmarked == true ? "Lesezeichen entfernen" : "Lesezeichen hinzufügen",
-                    systemImage: toolManager.activePage?.isBookmarked  == true ? "bookmark.slash" : "bookmark"
-                )
-                .tint(Color.red)
-            }
-            
             Section {
                 Button(action: {
                     toolManager.isCanvasEnabled = false
@@ -33,7 +23,7 @@ extension NoteSideActions {
                     toolManager.isCanvasEnabled = false
                     subviewManager.changeTemplate.toggle()
                 }) {
-                    Label("Vorlage ändern", systemImage: "doc.badge.gearshape")
+                    Label("Vorlage ändern", systemImage: "grid")
                 }
                 .disabled(templateChangeDisabled())
             }

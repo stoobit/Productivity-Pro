@@ -31,10 +31,6 @@ struct NoteMainToolbar: CustomizableToolbarContent {
         ToolbarItem(id: "media", placement: .secondaryAction) {
             MediaButton()
         }
-        
-        ToolbarItem(id: "calc", placement: .secondaryAction) {
-            CalculatorButton()
-        }
     }
     
     func primaryColor() -> Color {
