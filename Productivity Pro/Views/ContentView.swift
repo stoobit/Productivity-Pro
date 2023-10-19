@@ -9,6 +9,7 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
+    @AppStorage("ppfirstsession") var firstSession: Bool = true
     
     @State var toolManager: ToolManager = ToolManager()
     @State var subviewManager: SubviewManager = SubviewManager()
@@ -46,6 +47,9 @@ struct ContentView: View {
             HomeworkView()
                 .modifier(PremiumBadge())
                 .toolbarBackground(.visible, for: .tabBar)
+                .onAppear {
+                    askNotificationPermission()
+                }
                 .tag(3)
                 .tabItem {
                     Label("Aufgaben", systemImage: "checklist")
@@ -65,8 +69,8 @@ struct ContentView: View {
         .environment(toolManager)
         .environment(subviewManager)
         .scrollIndicators(.hidden)
-        .onAppear {
-            askNotificationPermission()
+        .fullScreenCover(isPresented: $firstSession) {
+            RatingView(isPresented: $firstSession)
         }
     }
     

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct DeskView: View {
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
-    
-    @Environment(\.requestReview) var requestReview
     @State var shareView: Bool = false
     
     var body: some View {
@@ -31,7 +29,12 @@ struct DeskView: View {
                 Settings()
                 LinkView()
                 
-                Button(action: { requestReview() }) {
+                Button(action: {
+                    if let url = URL(string: "itms-apps://itunes.apple.com/app/id6449678571"
+                    ) {
+                        UIApplication.shared.open(url)
+                    }
+                }) {
                     HStack {
                         Text("Bewerte Productivity Pro")
                         Spacer()
