@@ -44,7 +44,9 @@ struct PageItemView: View {
     }
     
     func tap(item: PPItemModel) {
-        toolManager.activeItem = item
+        if subviewManager.showInspector == false {
+            toolManager.activeItem = item
+        }
     }
     
     func getFrame() -> CGSize {

@@ -14,8 +14,6 @@ struct NoteSecondaryToolbar: ToolbarContent {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @State var showCalculator: Bool = false
-    
     var contentObject: ContentObject
     var body: some ToolbarContent {
         @Bindable var subviewValue = subviewManager
@@ -30,10 +28,7 @@ struct NoteSecondaryToolbar: ToolbarContent {
                 subviewManager.overview.toggle()
             }
             
-            Button("Teilen", systemImage: "square.and.arrow.up") {
-                toolManager.selectedContentObject = contentObject
-                subviewManager.shareView.toggle()
-            }
+            ShareAction()
         }
         
         ToolbarItemGroup(placement: .primaryAction) {

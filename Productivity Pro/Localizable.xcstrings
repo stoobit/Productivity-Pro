@@ -74,6 +74,12 @@
         }
       }
     },
+    "1" : {
+
+    },
+    "2" : {
+
+    },
     "5" : {
       "localizations" : {
         "en" : {
@@ -234,6 +240,9 @@
           }
         }
       }
+    },
+    "Bewerten" : {
+
     },
     "Bibliothek" : {
       "localizations" : {
@@ -557,6 +566,9 @@
         }
       }
     },
+    "Füllung" : {
+
+    },
     "Geändert" : {
       "localizations" : {
         "en" : {
@@ -588,6 +600,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "Hexagon" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -598,6 +613,9 @@
           }
         }
       }
+    },
+    "Hilf uns zu wachsen!" : {
+
     },
     "Hinzufügen" : {
       "localizations" : {
@@ -714,6 +732,9 @@
       }
     },
     "Markdown" : {
+
+    },
+    "Mit Deiner Bewertung unterstützt Du die Entwicklung von **Productivity Pro** und sorgst dafür, dass es auch in Zukunft regelmäßig Updates gibt." : {
 
     },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
@@ -895,6 +916,9 @@
     "Radius" : {
 
     },
+    "Rahmen" : {
+
+    },
     "Raum" : {
       "localizations" : {
         "en" : {
@@ -904,9 +928,6 @@
           }
         }
       }
-    },
-    "Rechner" : {
-
     },
     "Rechteck" : {
 

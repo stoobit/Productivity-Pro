@@ -55,9 +55,16 @@ struct ObjectViewFileLink: View {
             }
             
             Section {
-                Button(action: {
-                    toolManager.selectedContentObject = object
-                    subviewManager.shareView.toggle()
+                Menu(content: {
+                    
+                    Button("Notiz", systemImage: "doc") {
+                        
+                    }
+                    
+                    Button("PDF", systemImage: "doc.richtext") {
+                        
+                    }
+                    
                 }) {
                     Label("Teilen", systemImage: "square.and.arrow.up")
                 }

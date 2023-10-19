@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
-    @AppStorage("ppfirstsession") var firstSession: Bool = true
+    @AppStorage("ppfirstsession") var firstSession: Bool = false
     
     @State var toolManager: ToolManager = ToolManager()
     @State var subviewManager: SubviewManager = SubviewManager()
@@ -69,9 +69,9 @@ struct ContentView: View {
         .environment(toolManager)
         .environment(subviewManager)
         .scrollIndicators(.hidden)
-        .fullScreenCover(isPresented: $firstSession) {
-            RatingView(isPresented: $firstSession)
-        }
+//        .fullScreenCover(isPresented: $firstSession) {
+//            RatingView(isPresented: $firstSession)
+//        }
     }
     
     func askNotificationPermission() {
