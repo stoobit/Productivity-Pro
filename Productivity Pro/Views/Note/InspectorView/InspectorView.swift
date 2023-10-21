@@ -27,7 +27,3 @@ struct InspectorView: View {
         }
     }
 }
-
-#Preview {
-    InspectorView()
-}

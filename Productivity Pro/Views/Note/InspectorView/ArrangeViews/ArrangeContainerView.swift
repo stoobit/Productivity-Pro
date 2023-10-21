@@ -24,7 +24,3 @@ struct ArrangeContainerView: View {
         }
     }
 }
-
-#Preview {
-    ArrangeContainerView()
-}

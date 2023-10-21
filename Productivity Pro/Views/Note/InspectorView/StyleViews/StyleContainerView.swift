@@ -24,7 +24,3 @@ struct StyleContainerView: View {
         }
     }
 }
-
-#Preview {
-    StyleContainerView()
-}

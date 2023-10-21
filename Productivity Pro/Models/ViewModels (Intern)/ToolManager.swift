@@ -12,9 +12,11 @@ import PDFKit
 
 @Observable class ToolManager {
     var selectedContentObject: ContentObject?
-    var activePage: PPPageModel?
     
+    var activePage: PPPageModel?
     var selectedPages: [PPPageModel] = []
+    
+    var activeItem: PPItemModel?
     var selectedItems: [PPItemModel] = []
     
     var frameVisible: Bool = true

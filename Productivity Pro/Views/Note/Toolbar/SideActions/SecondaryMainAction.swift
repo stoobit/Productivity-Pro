@@ -14,7 +14,7 @@ extension NoteSecondaryToolbar {
         Button(action: { toggleInspector() }) {
             Label("Inspektor", systemImage: "paintbrush")
         }
-        .disabled(activeItem == nil)
+        .disabled(toolManager.activeItem == nil)
         .popover(isPresented: $subviewValue.showInspector) {
             InspectorView()
                 .frame(width: 320, height: 380)

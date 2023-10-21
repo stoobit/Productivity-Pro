@@ -12,12 +12,14 @@ struct NoteViewModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .modifier(NoteViewToolbar(contentObject: contentObject))
+            .modifier(
+                NoteViewToolbar(contentObject: contentObject)
+            )
     }
 }
 
 extension View {
-    func noteViewModifier(with contentObject: ContentObject) -> some View {
-        modifier(NoteViewModifier(contentObject: contentObject))
+    func noteViewModifier(with object: ContentObject) -> some View {
+        modifier(NoteViewModifier(contentObject: object))
     }
 }

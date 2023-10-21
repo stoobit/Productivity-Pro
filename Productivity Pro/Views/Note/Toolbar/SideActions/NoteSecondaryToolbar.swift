@@ -14,8 +14,6 @@ struct NoteSecondaryToolbar: ToolbarContent {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @Binding var activeItem: PPItemModel?
-    
     var contentObject: ContentObject
     var body: some ToolbarContent {
         @Bindable var subviewValue = subviewManager

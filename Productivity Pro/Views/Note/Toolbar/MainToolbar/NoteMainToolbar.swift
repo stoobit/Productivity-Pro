@@ -18,8 +18,6 @@ struct NoteMainToolbar: CustomizableToolbarContent {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @Binding var activeItem: PPItemModel?
-    
     var body: some CustomizableToolbarContent {
         
         ToolbarItem(id: "shapes", placement: .secondaryAction) {

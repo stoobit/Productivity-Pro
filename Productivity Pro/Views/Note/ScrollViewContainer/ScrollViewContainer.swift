@@ -15,19 +15,6 @@ struct ScrollViewContainer: View {
     @State var scale: CGFloat = .zero
     @State var offset: CGPoint = .zero
     
-    init(
-        note: PPNoteModel,
-        page: PPPageModel,
-        size: CGSize
-    ) {
-        self.note = note
-        self.page = page
-        self.size = size
-        
-        self.scale = getScale()
-        self.offset = offset
-    }
-    
     var body: some View {
         @Bindable var page = page
         

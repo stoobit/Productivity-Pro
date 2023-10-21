@@ -15,9 +15,9 @@ extension NoteSecondaryToolbar {
     }
     
     func toggleInspector() {
-        let item = activeItem
-        activeItem = nil
-        activeItem = item
+        let item = toolManager.activeItem
+        toolManager.activeItem = nil
+        toolManager.activeItem = item
         
         subviewManager.showInspector.toggle()
     }
