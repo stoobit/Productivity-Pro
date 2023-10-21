@@ -13,7 +13,7 @@ struct NoteTitleMenu: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    var contentObject: ContentObject
+    @Bindable var contentObject: ContentObject
     
     var body: some View {
         Section {

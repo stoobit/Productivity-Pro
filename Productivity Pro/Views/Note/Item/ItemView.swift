@@ -15,7 +15,7 @@ struct ItemView: View {
     
     var note: PPNoteModel
     var page: PPPageModel
-    var item: PPItemModel
+    @Bindable var item: PPItemModel
     
     @Binding var scale: CGFloat
     

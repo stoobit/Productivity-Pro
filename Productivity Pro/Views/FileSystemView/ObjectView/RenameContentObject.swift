@@ -11,7 +11,7 @@ struct RenameContentObjectView: ViewModifier {
     @Environment(\.modelContext) var context
     
     var contentObjects: [ContentObject]
-    var object: ContentObject
+    @Bindable var object: ContentObject
     
     @AppStorage("ppgrade") var grade: Int = 5
     

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ObjectViewFileLink: View {
     var contentObjects: [ContentObject]
-    var object: ContentObject
+    @Bindable var object: ContentObject
     var swipeAction: Bool = true
     
     @Environment(ToolManager.self) var toolManager

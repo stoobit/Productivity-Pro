@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentObjectLink: View {
     
-    var obj: ContentObject
+    @Bindable var obj: ContentObject
     
     var body: some View {
         HStack {

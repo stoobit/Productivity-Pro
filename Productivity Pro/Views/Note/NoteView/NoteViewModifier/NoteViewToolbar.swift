@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NoteViewToolbar: ViewModifier {
-    var contentObject: ContentObject
+    @Bindable var contentObject: ContentObject
     
     func body(content: Content) -> some View {
         content

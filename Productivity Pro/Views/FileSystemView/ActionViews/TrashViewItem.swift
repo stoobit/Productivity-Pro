@@ -11,7 +11,7 @@ struct TrashViewItem: View {
     @Environment(\.modelContext) var context
     
     var contentObjects: [ContentObject]
-    var object: ContentObject
+    @Bindable var object: ContentObject
     
     @State var putBack: Bool = false
     @State var selectedParent: String = ""

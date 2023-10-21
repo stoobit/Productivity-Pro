@@ -14,7 +14,7 @@ struct NoteView: View {
     @State var activePage: PPPageModel?
     
     var contentObjects: [ContentObject]
-    var contentObject: ContentObject
+    @Bindable var contentObject: ContentObject
     
     var pages: [PPPageModel] {
         contentObject.note!.pages!

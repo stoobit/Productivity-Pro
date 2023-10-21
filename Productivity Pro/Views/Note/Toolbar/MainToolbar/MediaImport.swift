@@ -12,7 +12,7 @@ struct MediaImport: ViewModifier {
     @Environment(ToolManager.self) var toolManager
     
     @Environment(SubviewManager.self) var subviewManager
-    var contentObject: ContentObject
+    @Bindable var contentObject: ContentObject
     
     @State var pickedItem: PhotosPickerItem?
     

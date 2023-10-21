@@ -10,7 +10,7 @@ import SwiftUI
 struct ObjectViewFolderLink: View {
     var contentObjects: [ContentObject]
     
-    var object: ContentObject
+    @Bindable var object: ContentObject
     let delete: () -> Void
     
     @AppStorage("ppgrade") var grade: Int = 5

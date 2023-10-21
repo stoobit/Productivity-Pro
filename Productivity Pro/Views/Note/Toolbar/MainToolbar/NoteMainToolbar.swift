@@ -9,7 +9,7 @@ import SwiftUI
 import StoreKit
 
 struct NoteMainToolbar: CustomizableToolbarContent {
-    var contentObject: ContentObject
+    @Bindable var contentObject: ContentObject
     
     @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
     @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
