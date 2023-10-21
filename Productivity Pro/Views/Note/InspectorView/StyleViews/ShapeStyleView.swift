@@ -17,7 +17,7 @@ struct ShapeStyleView: View {
         @Bindable var item = toolManager.activeItem!.shape!
         
         Form {
-            Section {
+            Section("Füllung") {
                 Toggle("Füllung", isOn: $item.fill.animation())
                     .tint(Color.accentColor)
                     .frame(height: 30)
@@ -28,7 +28,7 @@ struct ShapeStyleView: View {
                 }
             }
             
-            Section {
+            Section("Rahmen") {
                 Toggle("Rahmen", isOn: $item.stroke.animation())
                     .tint(Color.accentColor)
                     .frame(height: 30)
@@ -36,6 +36,8 @@ struct ShapeStyleView: View {
                 if item.stroke {
                     ColorPicker("Farbe", selection: $stroke, supportsOpacity: true)
                         .frame(height: 30)
+                    
+                    
                 }
             }
         }

@@ -11,10 +11,10 @@ extension NoteSecondaryToolbar {
     @ViewBuilder func MainAction() -> some View {
         @Bindable var subviewValue = subviewManager
         
-        Button(action: { subviewManager.showInspector.toggle() }) {
+        Button(action: { toggleInspector() }) {
             Label("Inspektor", systemImage: "paintbrush")
         }
-        .disabled(toolManager.activeItem == nil)
+        .disabled(activeItem == nil)
         .popover(isPresented: $subviewValue.showInspector) {
             InspectorView()
                 .frame(width: 320, height: 380)

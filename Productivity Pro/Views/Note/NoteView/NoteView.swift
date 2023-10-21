@@ -21,6 +21,8 @@ struct NoteView: View {
             .sorted(by: { $0.index < $1.index })
     }
     
+    @State var activeItem: PPItemModel? = nil
+    
     var body: some View {
         if contentObject.note?.pages != nil {
             @Bindable var subviewValue = subviewManager
@@ -52,7 +54,7 @@ struct NoteView: View {
                     }
                 }
                 .onDisappear {
-                    toolManager.activeItem = nil
+                    activeItem = nil
                 }
             }
             .noteViewModifier(with: contentObject)

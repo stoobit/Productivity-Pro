@@ -113,6 +113,7 @@
 		BB8586992AE1E5B300C5875C /* ShapeStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8586982AE1E5B300C5875C /* ShapeStyleView.swift */; };
 		BB85869B2AE1E5BB00C5875C /* MediaStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85869A2AE1E5BB00C5875C /* MediaStyleView.swift */; };
 		BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85869C2AE1E5C500C5875C /* TextFieldStyleView.swift */; };
+		BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */; };
 		BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */; };
 		BB8A0AE32AD0B871008B4D27 /* LockViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A0AE22AD0B871008B4D27 /* LockViews.swift */; };
 		BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */; };
@@ -356,6 +357,7 @@
 		BB8586982AE1E5B300C5875C /* ShapeStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStyleView.swift; sourceTree = "<group>"; };
 		BB85869A2AE1E5BB00C5875C /* MediaStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStyleView.swift; sourceTree = "<group>"; };
 		BB85869C2AE1E5C500C5875C /* TextFieldStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyleView.swift; sourceTree = "<group>"; };
+		BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeArrangeView.swift; sourceTree = "<group>"; };
 		BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
 		BB8A0AE22AD0B871008B4D27 /* LockViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViews.swift; sourceTree = "<group>"; };
 		BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewMethods.swift; sourceTree = "<group>"; };
@@ -862,6 +864,7 @@
 			isa = PBXGroup;
 			children = (
 				BB8586962AE1E3B000C5875C /* ArrangeContainerView.swift */,
+				BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */,
 			);
 			path = ArrangeViews;
 			sourceTree = "<group>";
@@ -1464,6 +1467,7 @@
 				BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */,
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
+				BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */,
 				BB9BFB662AC7672C00255293 /* PPCanvasModel.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,

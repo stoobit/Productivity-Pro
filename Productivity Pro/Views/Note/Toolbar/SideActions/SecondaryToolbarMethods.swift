@@ -15,15 +15,15 @@ extension NoteSecondaryToolbar {
     }
     
     func toggleInspector() {
-//        toolManager.selectedItem = document.note.pages[
-//            toolManager.selectedPage
-//        ].items.first(where: { $0.id == toolManager.selectedItem?.id })
-//        
+        let item = activeItem
+        activeItem = nil
+        activeItem = item
+        
         subviewManager.showInspector.toggle()
     }
     
     func templateChangeDisabled() -> Bool {
-        var isDisabled: Bool = true
+//        var isDisabled: Bool = true
         
 //        if document.note.pages.indices.contains(toolManager.selectedPage) {
 //            if document.note.pages[toolManager.selectedPage].type == .template {
@@ -31,7 +31,7 @@ extension NoteSecondaryToolbar {
 //            }
 //        }
         
-        return isDisabled
+        return true
     }
     
     func undo() {

@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct ArrangeContainerView: View {
+    @Environment(ToolManager.self) var toolManager
+    typealias item = PPItemType
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        if toolManager.activeItem?.type == item.shape.rawValue {
+            ShapeArrangeView()
+        } else if toolManager.activeItem?.type == item.media.rawValue {
+            
+        }  else if toolManager.activeItem?.type == item.textField.rawValue {
+            
+        } else {
+            ProgressView()
+        }
     }
 }
 

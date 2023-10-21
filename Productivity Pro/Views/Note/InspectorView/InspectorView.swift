@@ -20,6 +20,10 @@ struct InspectorView: View {
             }
             .tabViewStyle(.page)
             .indexViewStyle(.page(backgroundDisplayMode: .always))
+            .background {
+                Color(UIColor.systemGroupedBackground)
+                    .ignoresSafeArea(.all)
+            }
         }
     }
 }
