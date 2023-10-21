@@ -11,5 +11,4 @@ enum PPPageType: String, Codable {
     case template = "template"
     case pdf = "pdf"
     case image = "image"
-    case mindmap = "mindmap"
 }

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct InspectorView: View {
+    @Bindable var contentObject: ContentObject
+    
     var body: some View {
         NavigationStack {
             TabView {
                 
-                StyleContainerView()
+                StyleContainerView(contentObject: contentObject)
                     .toolbarBackground(.visible, for: .tabBar)
                 
                 ArrangeContainerView()

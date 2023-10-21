@@ -11,10 +11,12 @@ struct StyleContainerView: View {
     @Environment(ToolManager.self) var toolManager
     typealias item = PPItemType
     
+    @Bindable var contentObject: ContentObject
+    
     var body: some View {
         
         if toolManager.activeItem?.type == item.shape.rawValue {
-            ShapeStyleView()
+            ShapeStyleView(contentObject: contentObject)
         } else if toolManager.activeItem?.type == item.media.rawValue {
             MediaStyleView()
         }  else if toolManager.activeItem?.type == item.textField.rawValue {

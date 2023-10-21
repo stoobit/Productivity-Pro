@@ -13,6 +13,8 @@ struct ShapeStyleView: View {
     @State var fill: Color = .black
     @State var stroke: Color = .black
     
+    @Bindable var contentObject: ContentObject
+    
     var body: some View {
         @Bindable var item = toolManager.activeItem!.shape!
         
@@ -43,7 +45,14 @@ struct ShapeStyleView: View {
         }
         .environment(\.defaultMinListRowHeight, 10)
         .onChange(of: fill) {
-            item.fillColor = fill.toCodable()
+//            item.fillColor = fill.toCodable()
+            
+            contentObject.note?
+                .pages?.first(where: {
+                    $0.id == toolManager.activePage?.id
+                })?.items?.first(where: {
+                    $0.id == toolManager.activeItem?.id
+                })?.shape?.fillColor = fill.toCodable()
         }
         .onChange(of: stroke) {
             item.strokeColor = stroke.toCodable()
@@ -51,9 +60,6 @@ struct ShapeStyleView: View {
         .onAppear {
             fill = Color(codable: item.fillColor)
             stroke = Color(codable: item.strokeColor)
-        }
-        .onChange(of: toolManager.activeItem) { old, new in
-            toolManager.activeItem = nil
         }
     }
 }
