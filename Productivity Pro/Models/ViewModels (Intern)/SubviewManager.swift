@@ -22,6 +22,12 @@ import Observation
     
     var isPresentationMode: Bool = false
     
+    var addPage: Bool = false
+    var changePage: Bool = false
+    var scanDocument: Bool = false
+    var importFile: Bool = false
+    var deletePage: Bool = false
+    
     // MARK: - UNCHECKED & OLD
     var showPrinterView: Bool = false
     
@@ -29,28 +35,5 @@ import Observation
     
     var collaborationSheet: Bool = false
     var overviewSheet: Bool = false
-    
-    var showDebuggingSheet: Bool = false
-    
-    var addPageSettingsSheet: Bool = false
-    var changeTemplate: Bool = false
-    var isDeletePageAlert: Bool = false
-    
-    var markdownHelp: Bool = false
-    
-    var showTextEditor: Bool = false
-    
-    var showCameraView: Bool = false
-    var showImportPhoto: Bool = false
-    var showScanDoc: Bool = false
-    var showImportMedia: Bool = false
-    
-    var showImportFile: Bool = false
-    
-    var newDocPDF: Bool = false
-    var newDocScan: Bool = false
-    
-    var showAddFolder: Bool = false
-    var showAddFile: Bool = false
     
 }

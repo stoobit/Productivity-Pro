@@ -739,22 +739,22 @@
 			path = FolderView;
 			sourceTree = "<group>";
 		};
-		BB655AF82AB7674900FB005A /* NoteTitleMenu */ = {
+		BB655AF82AB7674900FB005A /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
 				BB929B8128E5077800DA4538 /* NoteTitleMenu.swift */,
 				BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */,
 			);
-			path = NoteTitleMenu;
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		BB655B012AB772F700FB005A /* NoteViewModifier */ = {
 			isa = PBXGroup;
 			children = (
 				BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */,
+				BB655AFF2AB772F100FB005A /* NoteViewSheet.swift */,
 				BB655AFD2AB772E900FB005A /* NoteViewAlert.swift */,
 				BB655AFB2AB772E000FB005A /* NoteViewOnChange.swift */,
-				BB655AFF2AB772F100FB005A /* NoteViewSheet.swift */,
 			);
 			path = NoteViewModifier;
 			sourceTree = "<group>";
@@ -763,8 +763,8 @@
 			isa = PBXGroup;
 			children = (
 				BBEFC94C2A41033000960C8D /* MainToolbar */,
-				BBEFC94D2A41034600960C8D /* SideActions */,
-				BB655AF82AB7674900FB005A /* NoteTitleMenu */,
+				BBEFC94D2A41034600960C8D /* SecondaryToolbar */,
+				BB655AF82AB7674900FB005A /* SideMenu */,
 			);
 			path = Toolbar;
 			sourceTree = "<group>";
@@ -1158,7 +1158,7 @@
 			path = MainToolbar;
 			sourceTree = "<group>";
 		};
-		BBEFC94D2A41034600960C8D /* SideActions */ = {
+		BBEFC94D2A41034600960C8D /* SecondaryToolbar */ = {
 			isa = PBXGroup;
 			children = (
 				BB929B7F28E5076D00DA4538 /* NoteSecondaryToolbar.swift */,
@@ -1168,7 +1168,7 @@
 				BBEFC9502A41038F00960C8D /* SecondaryUndoActions.swift */,
 				BBEFC94E2A41035C00960C8D /* SecondaryToolbarMethods.swift */,
 			);
-			path = SideActions;
+			path = SecondaryToolbar;
 			sourceTree = "<group>";
 		};
 		BBF5FDF32AAE25CA0081C4FE /* LibraryView */ = {

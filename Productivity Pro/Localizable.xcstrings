@@ -279,7 +279,6 @@
 
     },
     "Datei importieren" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -329,6 +328,7 @@
       }
     },
     "Diese Aktion kann nicht rückgängig gemacht werde." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -342,6 +342,7 @@
 
     },
     "Diese Seite löschen?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

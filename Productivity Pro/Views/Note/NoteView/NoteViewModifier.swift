@@ -15,6 +15,9 @@ struct NoteViewModifier: ViewModifier {
             .modifier(
                 NoteViewToolbar(contentObject: contentObject)
             )
+            .modifier(
+                NoteViewSheet(contentObject: contentObject)
+            )
     }
 }
 

@@ -15,7 +15,7 @@ struct EditMarkdownToolbar: ToolbarContent {
     var body: some ToolbarContent {
         ToolbarItem(placement: .confirmationAction) {
             Button("Done") {
-                subviewManager.showTextEditor = false
+//                subviewManager.showTextEditor = false
             }
         }
         

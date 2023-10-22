@@ -14,30 +14,30 @@ extension NoteSecondaryToolbar {
             Section {
                 Button(action: {
                     toolManager.isCanvasEnabled = false
-                    subviewManager.addPageSettingsSheet = true
+                    subviewManager.addPage = true
                 }) {
                     Label("Seite hinzufügen", systemImage: "doc.badge.plus")
-                }
-            
-                Button(action: {
-                    toolManager.isCanvasEnabled = false
-                    subviewManager.showScanDoc.toggle()
-                }) {
-                    Label("Dokument scannen", systemImage: "doc.text.fill.viewfinder")
                 }
                 
                 Button(action: {
                     toolManager.isCanvasEnabled = false
-                    subviewManager.showImportFile.toggle()
+                    subviewManager.importFile = true
                 }) {
-                    Label("PDF importieren", systemImage: "folder")
+                    Label("Datei importieren", systemImage: "square.and.arrow.down")
+                }
+            
+                Button(action: {
+                    toolManager.isCanvasEnabled = false
+                    subviewManager.scanDocument = true
+                }) {
+                    Label("Dokument scannen", systemImage: "doc.text.fill.viewfinder")
                 }
             }
             
             Section {
                 Button(action: {
                     toolManager.isCanvasEnabled = false
-                    subviewManager.changeTemplate.toggle()
+                    subviewManager.changePage = true
                 }) {
                     Label("Vorlage ändern", systemImage: "grid")
                 }
@@ -45,7 +45,7 @@ extension NoteSecondaryToolbar {
                 
                 Button(role: .destructive, action: {
                     toolManager.isCanvasEnabled = false
-                    subviewManager.isDeletePageAlert.toggle()
+                    subviewManager.deletePage = true
                 }) {
                     Label("Seite löschen", systemImage: "trash")
                 }
@@ -54,13 +54,5 @@ extension NoteSecondaryToolbar {
         }) {
             Label("Seite", systemImage: "doc.badge.ellipsis")
         }
-//        .modifier(
-//            AddPDFPageHelper(
-//                document: $document,
-//                toolManager: toolManager,
-//                subviewManager: subviewManager
-//            )
-//        )
-        
     }
 }

@@ -10,93 +10,58 @@ import PencilKit
 import PDFKit
 
 struct NoteViewSheet: ViewModifier {
-    
     @Environment(\.undoManager) var undoManager
-    @Binding var document: Document
     
-    @Bindable var subviewManager: SubviewManager
-    @Bindable var toolManager: ToolManager
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
     @State var isPortrait: Bool = false
     @State var selectedColor: String = ""
     @State var selectedTemplate: String = ""
     
-    let proxy: GeometryProxy
-    
+    var contentObject: ContentObject
     func body(content: Content) -> some View {
+        @Bindable var manager = subviewManager
+        
         content
-            .sheet(isPresented: $subviewManager.changeTemplate) {
-               
-            }
-            .sheet(isPresented: $subviewManager.showTextEditor) {
-                EditMarkdownView(
-                    document: $document,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager,
-                    size: proxy.size
-                )
-                .edgesIgnoringSafeArea(.all)
-            }
-            .sheet(
-                isPresented: $subviewManager.addPageSettingsSheet,
-                onDismiss: { undoManager?.removeAllActions() }
-            ) {
+            .sheet(isPresented: $manager.addPage, content: {
                 
-//                let page = document.note.pages[toolManager.selectedPage]
+            })
+            .sheet(isPresented: $manager.importFile, content: {
                 
-//                TemplateView(
-//                    isPresented: $subviewManager.addPageSettingsSheet, 
-//                    isPortrait: $isPortrait,
-//                    selectedColor: $selectedColor,
-//                    selectedTemplate: $selectedTemplate,
-//                    buttonTitle: "Hinzufügen", 
-//                    preselectedOrientation: page.isPortrait,
-//                    preselectedColor: page.backgroundColor,
-//                    preselectedTemplate: page.backgroundTemplate,
-//                    action: addPage
-//                )
-            }
-            .sheet(isPresented: $subviewManager.overviewSheet) {
-                OverviewView(
-                    document: $document,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-            }
-            .sheet(isPresented: $subviewManager.sharePDFSheet) {
+            })
+            .sheet(isPresented: $manager.scanDocument, content: {
                 
-            }
-            .background {
-                if subviewManager.showPrinterView {
-                    if let url = toolManager.pdfRendering {
-                        PrinterView(
-                            document: $document,
-                            subviewManager: subviewManager,
-                            url: url
-                        )
-                    }
+            })
+            .sheet(isPresented: $manager.changePage, content: {
+                
+            })
+            .sheet(isPresented: $manager.overview, content: {
+                
+            })
+            .alert("", isPresented: $manager.deletePage) {
+                Button("") {
+                    
+                }
+                
+                Button("") {
+                    
                 }
             }
+//            .background {
+//                if subviewManager.showPrinterView {
+//                    if let url = toolManager.pdfRendering {
+//                        PrinterView(
+//                            document: $document,
+//                            subviewManager: subviewManager,
+//                            url: url
+//                        )
+//                    }
+//                }
+//            }
+            
     }
     
-    func addPage() {
-        
-        let newPage = Page(
-            canvasType: .pencilKit,
-            backgroundColor: selectedColor,
-            backgroundTemplate: selectedTemplate,
-            isPortrait: isPortrait
-        )
-        
-        toolManager.preloadedMedia.insert(
-            nil, at: toolManager.selectedPage + 1
-        )
-        
-        document.note.pages.insert(
-            newPage, at: toolManager.selectedPage + 1
-        )
-
-        subviewManager.addPageSettingsSheet = false
-        toolManager.selectedPage += 1
-    }
+    
+    
 }

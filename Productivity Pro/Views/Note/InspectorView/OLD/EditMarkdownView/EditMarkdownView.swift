@@ -48,7 +48,7 @@ struct EditMarkdownView: View {
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Button("Done") {
-                            subviewManager.showTextEditor.toggle()
+                            
                         }
                         .keyboardShortcut(
                             .return, modifiers: [.command]

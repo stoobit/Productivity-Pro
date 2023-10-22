@@ -19,17 +19,17 @@ struct NoteViewAlert: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .alert(
-                "Diese Seite löschen?",
-                isPresented: $subviewManager.isDeletePageAlert,
-                actions: {
-                    Button("Seite löschen", role: .destructive) { deletePage() }
-                    Button("Abbrechen", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
-                    }
-                }
-            ) {
-                Text("Diese Aktion kann nicht rückgängig gemacht werde.")
-            }
+//            .alert(
+//                "Diese Seite löschen?",
+//                isPresented: $subviewManager.isDeletePageAlert,
+//                actions: {
+//                    Button("Seite löschen", role: .destructive) { deletePage() }
+//                    Button("Abbrechen", role: .cancel) { subviewManager.isDeletePageAlert.toggle()
+//                    }
+//                }
+//            ) {
+//                Text("Diese Aktion kann nicht rückgängig gemacht werde.")
+//            }
             .alert("", isPresented: $subviewManager.renameView) {
                 TextField("", text: $renameTitle)
                 Button("Umbenennen", role: .cancel) { rename() }
