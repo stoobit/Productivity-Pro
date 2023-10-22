@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NoteView: View {
     @Environment(ToolManager.self) var toolManager
