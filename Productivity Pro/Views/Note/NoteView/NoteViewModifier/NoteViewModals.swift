@@ -15,17 +15,18 @@ struct NoteViewSheet: ViewModifier {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @State var isPortrait: Bool = false
-    @State var selectedColor: String = ""
-    @State var selectedTemplate: String = ""
-    
     var contentObject: ContentObject
     func body(content: Content) -> some View {
         @Bindable var manager = subviewManager
         
         content
             .sheet(isPresented: $manager.addPage, content: {
-                
+                TemplateView(
+                    isPresented: $manager.addPage,
+                    buttonTitle: "Hinzufügen"
+                ) { isPortrait, template, color in
+                    addPage(isPortrait, template, color)
+                }
             })
             .sheet(isPresented: $manager.importFile, content: {
                 
@@ -62,6 +63,29 @@ struct NoteViewSheet: ViewModifier {
             
     }
     
+    func addPage(_ portrait: Bool, _ template: String, _ color: String) {
+        let page: PPPageModel = PPPageModel(
+            type: .template,
+            canvas: .pkCanvas,
+            index: getIndex()
+        )
+        
+        page.isPortrait = portrait
+        page.template = template
+        page.color = color
+        
+        contentObject.note?.pages?.append(page)
+        
+        toolManager.activePage = page
+        subviewManager.addPage = false
+    }
     
+    func getIndex() -> Int {
+        var index = contentObject.note?.pages?.count ?? 1
+        
+        
+        
+        return index
+    }
     
 }

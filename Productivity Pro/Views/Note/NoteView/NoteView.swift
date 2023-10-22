@@ -12,8 +12,6 @@ struct NoteView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @State var activePage: PPPageModel?
-    
     var contentObjects: [ContentObject]
     @Bindable var contentObject: ContentObject
     
@@ -25,6 +23,7 @@ struct NoteView: View {
     var body: some View {
         if contentObject.note?.pages != nil {
             @Bindable var subviewValue = subviewManager
+            @Bindable var toolValue = toolManager
             
             GeometryReader { proxy in
                 ScrollView(.horizontal) {
@@ -35,6 +34,7 @@ struct NoteView: View {
                                 page: page,
                                 size: proxy.size
                             )
+                            .id(page)
                             .containerRelativeFrame(
                                 [.horizontal, .vertical]
                             )
@@ -44,13 +44,11 @@ struct NoteView: View {
                 }
                 .scrollIndicators(.hidden)
                 .scrollTargetBehavior(.paging)
-                .scrollPosition(id: $activePage)
-                .onChange(of: activePage, initial: true) { last, active in
-                    if let page = active {
-                        toolManager.activePage = page
-                    } else {
-                        toolManager.activePage = contentObject.note!.pages!.first!
-                    }
+                .scrollPosition(id: $toolValue.activePage)
+                .onAppear {
+                    toolManager.activePage = contentObject.note?.pages?.first(where: {
+                        $0.index == 0
+                    })
                 }
                 .onDisappear {
                     toolManager.activeItem = nil
@@ -68,6 +66,9 @@ struct NoteView: View {
                     isPresented: $subviewValue.renameView
                 )
             )
+            .overlay {
+                Text("\(toolManager.activePage?.template ?? "nil"), \(toolManager.activePage?.color ?? "nil")")
+            }
             
         } else {
             ContentUnavailableView(
