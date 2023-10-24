@@ -41,6 +41,21 @@ struct ObjectViewFolderLink: View {
         }
         .contextMenu {
             Section {
+                NavigationLink(destination: {
+                    ObjectView(
+                        parent: object.id.uuidString, 
+                        title: object.title,
+                        contentObjects: contentObjects
+                    )
+                }) {
+                    Label(
+                        "Öffnen",
+                        systemImage: "rectangle.portrait.and.arrow.forward"
+                    )
+                }
+            }
+            
+            Section {
                 Button("Umbenennen", systemImage: "pencil") {
                     isRename = true
                 }

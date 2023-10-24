@@ -45,6 +45,20 @@ struct ObjectViewFileLink: View {
         }
         .contextMenu {
             Section {
+                NavigationLink(destination: {
+                    NoteView(
+                        contentObjects: contentObjects,
+                        contentObject: object
+                    )
+                }) {
+                    Label(
+                        "Öffnen",
+                        systemImage: "rectangle.portrait.and.arrow.forward"
+                    )
+                }
+            }
+            
+            Section {
                 Button("Umbenennen", systemImage: "pencil") {
                     isRename = true
                 }

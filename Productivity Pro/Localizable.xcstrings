@@ -681,6 +681,9 @@
         }
       }
     },
+    "Möchtest du diese Seite wirklich löschen?" : {
+
+    },
     "Möchtest du dieses Fach wirklich löschen?" : {
       "localizations" : {
         "en" : {
@@ -736,6 +739,9 @@
           }
         }
       }
+    },
+    "Öffnen" : {
+
     },
     "Ordner erstellen" : {
       "localizations" : {

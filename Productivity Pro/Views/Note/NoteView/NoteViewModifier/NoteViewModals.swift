@@ -40,13 +40,16 @@ struct NoteViewSheet: ViewModifier {
             .sheet(isPresented: $manager.overview, content: {
                 
             })
-            .alert("", isPresented: $manager.deletePage) {
-                Button("") {
-                    
+            .alert(
+                "Möchtest du diese Seite wirklich löschen?",
+                isPresented: $manager.deletePage
+            ) {
+                Button("Löschen", role: .destructive) {
+                    deletePage()
                 }
                 
-                Button("") {
-                    
+                Button("Abbrechen", role: .cancel) {
+                    subviewManager.deletePage = false
                 }
             }
 //            .background {
@@ -75,17 +78,43 @@ struct NoteViewSheet: ViewModifier {
         page.color = color
         
         contentObject.note?.pages?.append(page)
+        withAnimation {
+            toolManager.activePage = page
+            subviewManager.addPage = false
+        }
+    }
+    
+    func deletePage() {
+        guard let pages = contentObject.note?.pages else { return }
         
-        toolManager.activePage = page
-        subviewManager.addPage = false
+        withAnimation {
+            if pages.count - 1 == toolManager.activePage?.index {
+                
+                toolManager.activePage = pages.first(where: {
+                    $0.index == pages.count - 1
+                })
+                
+                contentObject.note?.pages?.removeAll(where: {
+                    $0.index == pages.count - 1
+                })
+                
+            } else {
+                
+            }
+        }
     }
     
     func getIndex() -> Int {
-        var index = contentObject.note?.pages?.count ?? 1
+        guard let pages = contentObject.note?.pages else { return -1 }
+        guard let index = toolManager.activePage?.index else { return -1 }
         
+        for page in pages {
+            if index < page.index {
+                page.index += 1
+            }
+        }
         
-        
-        return index
+        return index + 1
     }
     
 }
