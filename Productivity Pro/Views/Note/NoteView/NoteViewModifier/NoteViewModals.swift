@@ -8,6 +8,7 @@
 import SwiftUI
 import PencilKit
 import PDFKit
+import VisionKit
 
 struct NoteViewSheet: ViewModifier {
     @Environment(\.undoManager) var undoManager
@@ -39,12 +40,21 @@ struct NoteViewSheet: ViewModifier {
                     changePage(isPortrait, template, color)
                 }
             })
-            .sheet(isPresented: $manager.importFile, content: {
-                
-            })
-            .sheet(isPresented: $manager.scanDocument, content: {
-                
-            })
+            .fileImporter(
+                isPresented: $manager.importFile,
+                allowedContentTypes: [.pdf],
+                allowsMultipleSelection: false
+            ) { result in
+                importPDF(with: result)
+            }
+            .fullScreenCover(isPresented: $manager.scanDocument) {
+                ScannerView(
+                    cancelAction: { manager.scanDocument = false }
+                ) { result in
+                    scanDocument(with: result)
+                }
+                .edgesIgnoringSafeArea(.all)
+            }
             .sheet(isPresented: $manager.overview, content: {
                 
             })
@@ -61,18 +71,18 @@ struct NoteViewSheet: ViewModifier {
                     subviewManager.deletePage = false
                 }
             }
-//            .background {
-//                if subviewManager.showPrinterView {
-//                    if let url = toolManager.pdfRendering {
-//                        PrinterView(
-//                            document: $document,
-//                            subviewManager: subviewManager,
-//                            url: url
-//                        )
-//                    }
-//                }
-//            }
-            
+        //            .background {
+        //                if subviewManager.showPrinterView {
+        //                    if let url = toolManager.pdfRendering {
+        //                        PrinterView(
+        //                            document: $document,
+        //                            subviewManager: subviewManager,
+        //                            url: url
+        //                        )
+        //                    }
+        //                }
+        //            }
+        
     }
     
     func addPage(_ portrait: Bool, _ template: String, _ color: String) {
@@ -101,6 +111,89 @@ struct NoteViewSheet: ViewModifier {
         }
         
         subviewManager.changePage.toggle()
+    }
+    
+    func scanDocument(with result: Result<VNDocumentCameraScan, any Error>) {
+        var selectedPage: PPPageModel?
+        
+        switch result {
+        case .success(let scan):
+            for index in 0...scan.pageCount - 1 {
+                let scanPage = scan.imageOfPage(at: index)
+                let size = scanPage.size
+                
+                let page = PPPageModel(
+                    type: .image,
+                    canvas: .pkCanvas,
+                    index: toolManager.activePage!.index + 1 + index
+                )
+                
+                page.note = contentObject.note
+                
+                page.isPortrait = size.width < size.height
+                page.template = "blank"
+                page.color = "pagewhite"
+                
+                page.media = scanPage.heicData()
+                selectedPage = page
+            }
+        case .failure:
+            break
+        }
+        
+        withAnimation {
+            toolManager.activePage = selectedPage
+        }
+        subviewManager.scanDocument = false
+    }
+    
+    func importPDF(with result: Result<[URL], any Error>) {
+        var selectedPage: PPPageModel?
+        
+        switch result {
+        case .success(let urls):
+            
+            guard let url = urls.first else { return }
+            
+            if url.startAccessingSecurityScopedResource() {
+                guard let pdf = PDFDocument(url: url) else { return }
+                defer { url.stopAccessingSecurityScopedResource() }
+                
+                for index in 0...pdf.pageCount - 1 {
+                    
+                    guard let page = pdf.page(at: index) else { return }
+                    guard let data = page.dataRepresentation else { return }
+                    
+                    let size = page.bounds(for: .mediaBox).size
+                    let title: String = page.string?.components(
+                        separatedBy: .newlines
+                    ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                    
+                    let ppPage = PPPageModel(
+                        type: .pdf, canvas: .pkCanvas,
+                        index: toolManager.activePage!.index + 1 + index
+                    )
+                    
+                    ppPage.note = contentObject.note!
+                    ppPage.media = data
+                    ppPage.title = title
+                    
+                    ppPage.isPortrait = size.width < size.height
+                    ppPage.template = "blank"
+                    ppPage.color = "pagewhite"
+                    
+                    selectedPage = ppPage
+                }
+            }
+            
+        case .failure:
+            break
+        }
+        
+        withAnimation {
+            toolManager.activePage = selectedPage
+        }
+        subviewManager.importFile = false
     }
     
     func deletePage() {

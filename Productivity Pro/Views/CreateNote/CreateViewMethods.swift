@@ -100,7 +100,7 @@ extension CreateNoteView {
                     guard let data = page.dataRepresentation else { return }
                     
                     let size = page.bounds(for: .mediaBox).size
-                    var title: String = page.string?.components(
+                    let title: String = page.string?.components(
                         separatedBy: .newlines
                     ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                     
