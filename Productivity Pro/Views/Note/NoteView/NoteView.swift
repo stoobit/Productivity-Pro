@@ -67,7 +67,7 @@ struct NoteView: View {
                 )
             )
             .overlay {
-                Text("\(toolManager.activePage?.template ?? "nil"), \(toolManager.activePage?.color ?? "nil")")
+                Text("\(toolManager.activePage?.template ?? "nil"), \(toolManager.activePage?.index ?? -1)")
             }
             
         } else {

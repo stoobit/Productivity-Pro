@@ -85,21 +85,34 @@ struct NoteViewSheet: ViewModifier {
     }
     
     func deletePage() {
-        guard let pages = contentObject.note?.pages else { return }
-        
         withAnimation {
-            if pages.count - 1 == toolManager.activePage?.index {
+            if contentObject.note!.pages!.count - 1 == toolManager.activePage?.index {
                 
                 contentObject.note?.pages?.removeAll(where: {
-                    $0.index == pages.count - 1
+                    $0.index == contentObject.note!.pages!.count - 1
                 })
                 
-                toolManager.activePage = pages.first(where: {
-                    $0.index == pages.count - 1
+                toolManager.activePage = contentObject.note?.pages?.first(where: {
+                    $0.index == contentObject.note!.pages!.count - 1
                 })
                 
             } else {
+                guard let index = toolManager.activePage?.index else {
+                    return
+                }
                 
+                contentObject.note?.pages?.removeAll(where: {
+                    $0.index == index
+                })
+                
+                for page in contentObject.note!.pages! {
+                    if index <= page.index {
+                        page.index -= 1
+                    }
+                }
+                
+                toolManager.activePage = contentObject.note?.pages?
+                    .first(where: { $0.index == index })
             }
         }
     }
