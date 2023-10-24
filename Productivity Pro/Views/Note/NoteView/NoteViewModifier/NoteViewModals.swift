@@ -28,13 +28,21 @@ struct NoteViewSheet: ViewModifier {
                     addPage(isPortrait, template, color)
                 }
             })
+            .sheet(isPresented: $manager.changePage, content: {
+                TemplateView(
+                    isPresented: $manager.changePage,
+                    buttonTitle: "Ändern",
+                    preselectedOrientation: toolManager.activePage!.isPortrait,
+                    preselectedColor: toolManager.activePage!.color,
+                    preselectedTemplate: toolManager.activePage!.template
+                ) { isPortrait, template, color in
+                    changePage(isPortrait, template, color)
+                }
+            })
             .sheet(isPresented: $manager.importFile, content: {
                 
             })
             .sheet(isPresented: $manager.scanDocument, content: {
-                
-            })
-            .sheet(isPresented: $manager.changePage, content: {
                 
             })
             .sheet(isPresented: $manager.overview, content: {
@@ -46,6 +54,7 @@ struct NoteViewSheet: ViewModifier {
             ) {
                 Button("Löschen", role: .destructive) {
                     deletePage()
+                    subviewManager.deletePage = false
                 }
                 
                 Button("Abbrechen", role: .cancel) {
@@ -82,6 +91,16 @@ struct NoteViewSheet: ViewModifier {
             toolManager.activePage = page
             subviewManager.addPage = false
         }
+    }
+    
+    func changePage(_ portrait: Bool, _ template: String, _ color: String) {
+        withAnimation(.bouncy) {
+            toolManager.activePage?.isPortrait = portrait
+            toolManager.activePage?.template = template
+            toolManager.activePage?.color = color
+        }
+        
+        subviewManager.changePage.toggle()
     }
     
     func deletePage() {

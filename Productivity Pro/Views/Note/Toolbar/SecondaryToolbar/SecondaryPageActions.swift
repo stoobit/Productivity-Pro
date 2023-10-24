@@ -41,7 +41,7 @@ extension NoteSecondaryToolbar {
                 }) {
                     Label("Vorlage ändern", systemImage: "grid")
                 }
-                .disabled(templateChangeDisabled())
+                .disabled(toolManager.activePage?.type != PPPageType.template.rawValue)
                 
                 Button(role: .destructive, action: {
                     toolManager.isCanvasEnabled = false
@@ -49,7 +49,7 @@ extension NoteSecondaryToolbar {
                 }) {
                     Label("Seite löschen", systemImage: "trash")
                 }
-                .disabled(false)
+                .disabled(contentObject.note?.pages?.count == 1)
             }
         }) {
             Label("Seite", systemImage: "doc.badge.ellipsis")

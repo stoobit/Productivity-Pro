@@ -20,7 +20,7 @@ struct NoteSecondaryToolbar: ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarLeading) {
             Button("Lesezeichen", systemImage: "bookmark") { 
-                
+                toolManager.activePage?.isBookmarked.toggle()
             }
             .tint(Color.red)
             

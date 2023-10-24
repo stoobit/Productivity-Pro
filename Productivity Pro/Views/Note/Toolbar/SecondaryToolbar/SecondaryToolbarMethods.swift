@@ -22,18 +22,6 @@ extension NoteSecondaryToolbar {
         subviewManager.showInspector.toggle()
     }
     
-    func templateChangeDisabled() -> Bool {
-//        var isDisabled: Bool = true
-        
-//        if document.note.pages.indices.contains(toolManager.selectedPage) {
-//            if document.note.pages[toolManager.selectedPage].type == .template {
-//                isDisabled = false
-//            }
-//        }
-        
-        return true
-    }
-    
     func undo() {
         undoManager?.undo()
     }
