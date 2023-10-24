@@ -90,11 +90,11 @@ struct NoteViewSheet: ViewModifier {
         withAnimation {
             if pages.count - 1 == toolManager.activePage?.index {
                 
-                toolManager.activePage = pages.first(where: {
+                contentObject.note?.pages?.removeAll(where: {
                     $0.index == pages.count - 1
                 })
                 
-                contentObject.note?.pages?.removeAll(where: {
+                toolManager.activePage = pages.first(where: {
                     $0.index == pages.count - 1
                 })
                 
