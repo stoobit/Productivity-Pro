@@ -13,7 +13,7 @@ struct NoteView: View {
     @Environment(SubviewManager.self) var subviewManager
     
     var contentObjects: [ContentObject]
-    @Bindable var contentObject: ContentObject
+    var contentObject: ContentObject
     
     var pages: [PPPageModel] {
         contentObject.note!.pages!
@@ -46,12 +46,11 @@ struct NoteView: View {
                 .scrollTargetBehavior(.paging)
                 .scrollPosition(id: $toolValue.activePage)
                 .onAppear {
-                    toolManager.activePage = contentObject.note?.pages?.first(where: {
-                        $0.index == 0
-                    })
-                }
-                .onDisappear {
-                    toolManager.activeItem = nil
+                    if toolManager.activePage == nil {
+                        toolManager.activePage = contentObject.note?.pages?.first(where: {
+                            $0.index == 0
+                        })
+                    }
                 }
             }
             .noteViewModifier(with: contentObject)

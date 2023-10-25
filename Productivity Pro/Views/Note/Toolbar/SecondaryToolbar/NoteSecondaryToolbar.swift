@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NoteSecondaryToolbar: ToolbarContent {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.undoManager) var undoManager
     @Environment(\.horizontalSizeClass) var hsc
     
@@ -19,7 +20,13 @@ struct NoteSecondaryToolbar: ToolbarContent {
         @Bindable var subviewValue = subviewManager
         
         ToolbarItemGroup(placement: .topBarLeading) {
-            Button("Lesezeichen", systemImage: "bookmark") { 
+            Button("Zurück", systemImage: "chevron.left") {
+                toolManager.activeItem = nil
+                toolManager.activePage = nil
+                dismiss()
+            }
+            
+            Button("Lesezeichen", systemImage: "bookmark") {
                 toolManager.activePage?.isBookmarked.toggle()
             }
             .tint(Color.red)
