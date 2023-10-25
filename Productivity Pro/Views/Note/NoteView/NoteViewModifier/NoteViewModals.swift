@@ -40,20 +40,20 @@ struct NoteViewSheet: ViewModifier {
                     changePage(isPortrait, template, color)
                 }
             })
+            .fullScreenCover(isPresented: $manager.scanDocument) {
+                ScannerView(
+                    cancelAction: { subviewManager.scanDocument = false }
+                ) { result in
+                    scanDocument(with: result)
+                }
+                .edgesIgnoringSafeArea(.all)
+            }
             .fileImporter(
                 isPresented: $manager.importFile,
                 allowedContentTypes: [.pdf],
                 allowsMultipleSelection: false
             ) { result in
                 importPDF(with: result)
-            }
-            .fullScreenCover(isPresented: $manager.scanDocument) {
-                ScannerView(
-                    cancelAction: { manager.scanDocument = false }
-                ) { result in
-                    scanDocument(with: result)
-                }
-                .edgesIgnoringSafeArea(.all)
             }
             .sheet(isPresented: $manager.overview, content: {
                 
@@ -103,19 +103,15 @@ struct NoteViewSheet: ViewModifier {
         }
     }
     
-    func changePage(_ portrait: Bool, _ template: String, _ color: String) {
-        withAnimation(.bouncy) {
-            toolManager.activePage?.isPortrait = portrait
-            toolManager.activePage?.template = template
-            toolManager.activePage?.color = color
-        }
+    func changePage(_ p: Bool, _ t: String, _ c: String) {
+        toolManager.activePage?.isPortrait = p
+        toolManager.activePage?.template = t
+        toolManager.activePage?.color = c
         
         subviewManager.changePage.toggle()
     }
     
     func scanDocument(with result: Result<VNDocumentCameraScan, any Error>) {
-        var selectedPage: PPPageModel?
-        
         switch result {
         case .success(let scan):
             for index in 0...scan.pageCount - 1 {
@@ -135,64 +131,69 @@ struct NoteViewSheet: ViewModifier {
                 page.color = "pagewhite"
                 
                 page.media = scanPage.heicData()
-                selectedPage = page
             }
         case .failure:
             break
         }
         
-        withAnimation {
-            toolManager.activePage = selectedPage
-        }
         subviewManager.scanDocument = false
     }
     
     func importPDF(with result: Result<[URL], any Error>) {
+        toolManager.showProgress = true
         var selectedPage: PPPageModel?
         
         switch result {
         case .success(let urls):
-            
-            guard let url = urls.first else { return }
-            
-            if url.startAccessingSecurityScopedResource() {
-                guard let pdf = PDFDocument(url: url) else { return }
-                defer { url.stopAccessingSecurityScopedResource() }
+            DispatchQueue.global(qos: .userInitiated).sync {
+                guard let url = urls.first else { return }
                 
-                for index in 0...pdf.pageCount - 1 {
+                if url.startAccessingSecurityScopedResource() {
+                    guard let pdf = PDFDocument(url: url) else { return }
+                    defer { url.stopAccessingSecurityScopedResource() }
                     
-                    guard let page = pdf.page(at: index) else { return }
-                    guard let data = page.dataRepresentation else { return }
+                    for index in 0...pdf.pageCount - 1 {
+                        
+                        guard let page = pdf.page(at: index) else { return }
+                        guard let data = page.dataRepresentation else { return }
+                        
+                        let size = page.bounds(for: .mediaBox).size
+                        let title: String = page.string?.components(
+                            separatedBy: .newlines
+                        ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                        
+                        let ppPage = PPPageModel(
+                            type: .pdf, canvas: .pkCanvas,
+                            index: toolManager.activePage!.index + 1 + index
+                        )
+                        
+                        ppPage.media = data
+                        ppPage.title = title
+                        
+                        ppPage.isPortrait = size.width < size.height
+                        ppPage.template = "blank"
+                        ppPage.color = "pagewhite"
+                        contentObject.note?.pages?.append(ppPage)
+                        
+                        if selectedPage == nil {
+                            selectedPage = ppPage
+                        }
+                    }
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                    toolManager.showProgress = false
                     
-                    let size = page.bounds(for: .mediaBox).size
-                    let title: String = page.string?.components(
-                        separatedBy: .newlines
-                    ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-                    
-                    let ppPage = PPPageModel(
-                        type: .pdf, canvas: .pkCanvas,
-                        index: toolManager.activePage!.index + 1 + index
-                    )
-                    
-                    ppPage.note = contentObject.note!
-                    ppPage.media = data
-                    ppPage.title = title
-                    
-                    ppPage.isPortrait = size.width < size.height
-                    ppPage.template = "blank"
-                    ppPage.color = "pagewhite"
-                    
-                    selectedPage = ppPage
+                    withAnimation {
+                        toolManager.activePage = selectedPage
+                    }
                 }
             }
-            
         case .failure:
+            toolManager.showProgress = false
             break
         }
         
-        withAnimation {
-            toolManager.activePage = selectedPage
-        }
         subviewManager.importFile = false
     }
     

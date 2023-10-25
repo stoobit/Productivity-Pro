@@ -18,7 +18,9 @@ extension NoteSecondaryToolbar {
                 }) {
                     Label("Seite hinzufügen", systemImage: "doc.badge.plus")
                 }
-                
+            }
+            
+            Section {
                 Button(action: {
                     toolManager.isCanvasEnabled = false
                     subviewManager.importFile = true

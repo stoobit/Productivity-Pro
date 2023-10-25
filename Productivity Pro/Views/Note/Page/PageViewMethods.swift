@@ -112,7 +112,7 @@ extension PageView {
     }
     
     func getNIColor() -> Data {
-        var color: Color = .black
+        let color: Color = .black
 //        let page = document.note.pages[
 //            toolManager.selectedPage
 //        ]

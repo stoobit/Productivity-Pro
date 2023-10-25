@@ -25,6 +25,9 @@ import PDFKit
     var isLocked: Bool = false
     var dragType: DragType = .none
     
+    var showSnapper: [Bool] = [false, false]
+    var showProgress: Bool = false
+    
     // MARK: - UNCHECKED & OLD
     
     var selectedPage: Int = 0
@@ -46,9 +49,6 @@ import PDFKit
     
     var selectedItem: ItemModel?
     var pageGotCleared: Bool = false
-    
-    var showSnapper: [Bool] = [false, false]
-    var showProgress: Bool = false
     
     var isDraggingItem: Bool = false
     

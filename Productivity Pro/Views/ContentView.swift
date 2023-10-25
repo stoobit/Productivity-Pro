@@ -66,12 +66,15 @@ struct ContentView: View {
              */
             
         }
+        .disabled(toolManager.showProgress)
+        .scrollDisabled(toolManager.showProgress)
         .environment(toolManager)
         .environment(subviewManager)
         .scrollIndicators(.hidden)
-//        .fullScreenCover(isPresented: $firstSession) {
-//            RatingView(isPresented: $firstSession)
-//        }
+        .overlay {
+            if toolManager.showProgress {
+                LoadingView()}
+        }
     }
     
     func askNotificationPermission() {
