@@ -71,100 +71,117 @@ extension CreateNoteView {
     }
     
     func importedPDF(with result: Result<[URL], any Error>) {
-        switch result {
-        case .success(let urls):
-            
-            guard let url = urls.first else { return }
-            
-            if url.startAccessingSecurityScopedResource() {
-                guard let pdf = PDFDocument(url: url) else { return }
-                defer { url.stopAccessingSecurityScopedResource() }
-                
-                let object = ContentObject(
-                    id: UUID(),
-                    title: getTitle(),
-                    type: .file,
-                    parent: parent,
-                    created: Date(),
-                    grade: grade
-                )
-                
-                context.insert(object)
-                
-                let note = PPNoteModel()
-                object.note = note
-                
-                for index in 0...pdf.pageCount - 1 {
+        toolManager.showProgress = true
+        
+        withAnimation(.bouncy) {
+            switch result {
+            case .success(let urls):
+                DispatchQueue.global(qos: .userInitiated).sync {
+                    guard let url = urls.first else { return }
                     
-                    guard let page = pdf.page(at: index) else { return }
-                    guard let data = page.dataRepresentation else { return }
-                    
-                    let size = page.bounds(for: .mediaBox).size
-                    let title: String = page.string?.components(
-                        separatedBy: .newlines
-                    ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-                    
-                    let ppPage = PPPageModel(
-                        type: .pdf, canvas: .pkCanvas, index: index
-                    )
-                    
-                    ppPage.note = note
-                    ppPage.media = data
-                    ppPage.title = title
-                    
-                    
-                    ppPage.isPortrait = size.width < size.height
-                    ppPage.template = "blank"
-                    ppPage.color = "pagewhite"
+                    if url.startAccessingSecurityScopedResource() {
+                        guard let pdf = PDFDocument(url: url) else { return }
+                        defer { url.stopAccessingSecurityScopedResource() }
+                        
+                        let object = ContentObject(
+                            id: UUID(),
+                            title: getTitle(),
+                            type: .file,
+                            parent: parent,
+                            created: Date(),
+                            grade: grade
+                        )
+                        
+                        context.insert(object)
+                        
+                        let note = PPNoteModel()
+                        object.note = note
+                        
+                        for index in 0...pdf.pageCount - 1 {
+                            
+                            guard let page = pdf.page(at: index) else { return }
+                            guard let data = page.dataRepresentation else { return }
+                            
+                            let size = page.bounds(for: .mediaBox).size
+                            let title: String = page.string?.components(
+                                separatedBy: .newlines
+                            ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                            
+                            let ppPage = PPPageModel(
+                                type: .pdf, canvas: .pkCanvas, index: index
+                            )
+                            
+                            ppPage.note = note
+                            ppPage.media = data
+                            ppPage.title = title
+                            
+                            
+                            ppPage.isPortrait = size.width < size.height
+                            ppPage.template = "blank"
+                            ppPage.color = "pagewhite"
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                            toolManager.showProgress = false
+                        }
+                    }
                 }
+                
+            case .failure:
+                break
             }
-            
-        case .failure:
-            break
         }
         
         isPresented = false
     }
     
     func scannedDocument(with result: Result<VNDocumentCameraScan, any Error>) {
-        switch result {
-        case .success(let scan):
-            withAnimation(.bouncy) {
-                let object = ContentObject(
-                    id: UUID(),
-                    title: getTitle(),
-                    type: .file,
-                    parent: parent,
-                    created: Date(),
-                    grade: grade
-                )
-                
-                context.insert(object)
-                
-                let note = PPNoteModel()
-                object.note = note
-                
-                for index in 0...scan.pageCount - 1 {
-                    let scanPage = scan.imageOfPage(at: index)
-                    let size = scanPage.size
-                    
-                    let page = PPPageModel(
-                        type: .image,
-                        canvas: .pkCanvas,
-                        index: index
+        toolManager.showProgress = true
+        
+        withAnimation(.bouncy) {
+            switch result {
+            case .success(let scan):
+                DispatchQueue.global(qos: .userInitiated).sync {
+                    let object = ContentObject(
+                        id: UUID(),
+                        title: getTitle(),
+                        type: .file,
+                        parent: parent,
+                        created: Date(),
+                        grade: grade
                     )
                     
-                    page.note = note
+                    context.insert(object)
                     
-                    page.isPortrait = size.width < size.height
-                    page.template = "blank"
-                    page.color = "pagewhite"
+                    let note = PPNoteModel()
+                    object.note = note
                     
-                    page.media = scanPage.heicData()
+                    for index in 0...scan.pageCount - 1 {
+                        let scanPage = scan.imageOfPage(at: index)
+                        let size = scanPage.size
+                        
+                        let page = PPPageModel(
+                            type: .image,
+                            canvas: .pkCanvas,
+                            index: index
+                        )
+                        
+                        page.note = note
+                        
+                        page.isPortrait = size.width < size.height
+                        page.template = "blank"
+                        page.color = "pagewhite"
+                        
+                        page.media = scanPage.heicData()
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                        toolManager.showProgress = false
+                    }
                 }
+            case .failure:
+                break
             }
-        case .failure:
-            break
         }
         
         isPresented = false

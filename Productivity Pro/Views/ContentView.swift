@@ -73,8 +73,11 @@ struct ContentView: View {
         .scrollIndicators(.hidden)
         .overlay {
             if toolManager.showProgress {
-                LoadingView()}
+                LoadingView()
+                    .transition(.push(from: .bottom))
+            }
         }
+        .animation(.bouncy, value: toolManager.showProgress)
     }
     
     func askNotificationPermission() {

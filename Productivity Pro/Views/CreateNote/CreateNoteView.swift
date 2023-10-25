@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CreateNoteView: View {
     @Environment(\.modelContext) var context
+    @Environment(ToolManager.self) var toolManager
+    
     var contentObjects: [ContentObject]
     
     @Binding var isPresented: Bool

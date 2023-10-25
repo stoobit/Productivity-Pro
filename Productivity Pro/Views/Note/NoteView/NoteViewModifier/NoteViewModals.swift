@@ -112,27 +112,51 @@ struct NoteViewSheet: ViewModifier {
     }
     
     func scanDocument(with result: Result<VNDocumentCameraScan, any Error>) {
+        toolManager.showProgress = true
+        var selectedPage: PPPageModel?
+        
         switch result {
         case .success(let scan):
-            for index in 0...scan.pageCount - 1 {
-                let scanPage = scan.imageOfPage(at: index)
-                let size = scanPage.size
+            DispatchQueue.global(qos: .userInitiated).sync {
+                guard let index = toolManager.activePage?.index else { return }
+                for page in contentObject.note!.pages! {
+                    if index < page.index {
+                        page.index += scan.pageCount
+                    }
+                }
                 
-                let page = PPPageModel(
-                    type: .image,
-                    canvas: .pkCanvas,
-                    index: toolManager.activePage!.index + 1 + index
-                )
+                for index in 0...scan.pageCount - 1 {
+                    let scanPage = scan.imageOfPage(at: index)
+                    let size = scanPage.size
+                    
+                    let page = PPPageModel(
+                        type: .image,
+                        canvas: .pkCanvas,
+                        index: toolManager.activePage!.index + 1 + index
+                    )
+                    
+                    page.isPortrait = size.width < size.height
+                    page.template = "blank"
+                    page.color = "pagewhite"
+                    
+                    contentObject.note?.pages?.append(page)
+                    page.media = scanPage.heicData()
+                    
+                    if selectedPage == nil {
+                        selectedPage = page
+                    }
+                }
                 
-                page.note = contentObject.note
-                
-                page.isPortrait = size.width < size.height
-                page.template = "blank"
-                page.color = "pagewhite"
-                
-                page.media = scanPage.heicData()
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                    toolManager.showProgress = false
+                    
+                    withAnimation {
+                        toolManager.activePage = selectedPage
+                    }
+                }
             }
         case .failure:
+            toolManager.showProgress = false
             break
         }
         
@@ -151,6 +175,13 @@ struct NoteViewSheet: ViewModifier {
                 if url.startAccessingSecurityScopedResource() {
                     guard let pdf = PDFDocument(url: url) else { return }
                     defer { url.stopAccessingSecurityScopedResource() }
+                    
+                    guard let index = toolManager.activePage?.index else { return }
+                    for page in contentObject.note!.pages! {
+                        if index < page.index {
+                            page.index += pdf.pageCount
+                        }
+                    }
                     
                     for index in 0...pdf.pageCount - 1 {
                         
@@ -205,9 +236,12 @@ struct NoteViewSheet: ViewModifier {
                     $0.index == contentObject.note!.pages!.count - 1
                 })
                 
-                toolManager.activePage = contentObject.note?.pages?.first(where: {
-                    $0.index == contentObject.note!.pages!.count - 1
-                })
+                Task {
+                    try await Task.sleep(nanoseconds: 200000000)
+                    toolManager.activePage = contentObject.note?.pages?.first(where: {
+                        $0.index == contentObject.note!.pages!.count - 1
+                    })
+                }
                 
             } else {
                 guard let index = toolManager.activePage?.index else {
@@ -224,8 +258,11 @@ struct NoteViewSheet: ViewModifier {
                     }
                 }
                 
-                toolManager.activePage = contentObject.note?.pages?
-                    .first(where: { $0.index == index })
+                Task {
+                    try await Task.sleep(nanoseconds: 200000000)
+                    toolManager.activePage = contentObject.note?.pages?
+                        .first(where: { $0.index == index })
+                }
             }
         }
     }
