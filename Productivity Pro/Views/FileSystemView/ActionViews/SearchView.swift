@@ -13,7 +13,31 @@ struct SearchView: View {
     @State var searchText: String = ""
     
     var body: some View {
-        Form {
+        List {
+            ForEach(searchResults) { object in
+                ObjectViewFileLink(
+                    contentObjects: contentObjects,
+                    object: object,
+                    swipeAction: false
+                ) {
+                    object.inTrash = true
+                }
+            }
+        }
+        .scrollContentBackground(.hidden)
+        .animation(.bouncy, value: searchResults)
+        .environment(\.defaultMinListRowHeight, 30)
+        .navigationTitle("Suchen")
+        .navigationBarTitleDisplayMode(.large)
+        .searchable(text: $searchText, placement: .toolbar) {
+            if searchText.isEmpty == false {
+                ForEach(searchKeys, id: \.self) { result in
+                    Text(result)
+                        .searchCompletion(result)
+                }
+            }
+        }
+        .overlay {
             Group {
                 if searchResults.isEmpty && searchText.isEmpty {
                     ContentUnavailableView(
@@ -27,28 +51,18 @@ struct SearchView: View {
                     )
                 }
             }
-            .listRowBackground(Color.clear)
-            
-            ForEach(searchResults) { object in
-                ObjectViewFileLink(
-                    contentObjects: contentObjects,
-                    object: object,
-                    swipeAction: false
-                ) {
-                    object.inTrash = true
-                }
-            }
         }
-        .animation(.bouncy, value: searchResults)
-        .environment(\.defaultMinListRowHeight, 30)
-        .navigationTitle("Suchen")
-        .navigationBarTitleDisplayMode(.large)
-        .searchable(text: $searchText, placement: .toolbar) {
-            ForEach(searchResults, id: \.self) { result in
-                Text(result.title)
-                    .searchCompletion(result.title)
-            }
+        .background {
+            Color(UIColor.systemGroupedBackground)
+                .ignoresSafeArea(.all)
         }
+    }
+    
+    var searchKeys: [String] {
+        let searchKeys = searchResults.map({ $0.title })
+        let keySet = Set(searchKeys)
+        
+        return Array(keySet).sorted(by: { $0 < $1 })
     }
     
     var searchResults: [ContentObject] {

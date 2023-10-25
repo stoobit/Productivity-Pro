@@ -26,19 +26,18 @@ struct TrashView: View {
     
     var body: some View {
         List {
-            if filteredObjects.isEmpty {
-                ContentUnavailableView(
-                    "Der Papierkorb ist leer.", systemImage: "trash"
-                )
-                .listRowBackground(Color.clear)
-            }
-            
             ForEach(filteredObjects) { object in
                 TrashViewItem(
                     contentObjects: contentObjects, object: object
                 )
             }
+            
+            if filteredObjects.isEmpty {
+                Text("")
+                    .listRowBackground(Color.clear)
+            }
         }
+        .scrollDisabled(filteredObjects.isEmpty)
         .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Papierkorb")
         .toolbar {
@@ -66,6 +65,13 @@ struct TrashView: View {
             }
         }) {
             Text("Möchtest du den Papierkorb wirklich entleeren?")
+        }
+        .overlay {
+            if filteredObjects.isEmpty {
+                ContentUnavailableView(
+                    "Der Papierkorb ist leer.", systemImage: "trash"
+                )
+            }
         }
     }
 }

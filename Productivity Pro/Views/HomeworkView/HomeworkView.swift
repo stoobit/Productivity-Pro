@@ -12,6 +12,8 @@ struct HomeworkView: View {
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
+    @State var presentAdd: Bool = false
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -25,11 +27,19 @@ struct HomeworkView: View {
                         description: Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
                     )
                 } else {
-                    HomeworkList()
+                    HomeworkList(presentAdd: $presentAdd)
                 }
                 
             }
             .navigationTitle("Aufgaben")
+            .toolbar {
+               ToolbarItem(placement: .topBarTrailing) {
+                   Button("Fach hinzufügen", systemImage: "plus") {
+                       presentAdd.toggle()
+                   }
+                    .disabled(subjects.value.isEmpty)
+                }
+            }
         }
         .modifier(LockScreen())
     }

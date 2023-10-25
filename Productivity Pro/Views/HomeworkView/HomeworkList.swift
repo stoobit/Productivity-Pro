@@ -26,7 +26,7 @@ struct HomeworkList: View {
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
-    @State var presentAdd: Bool = false
+    @Binding var presentAdd: Bool
     @State var presentInfo: Bool = false
     
     var body: some View {
@@ -51,14 +51,6 @@ struct HomeworkList: View {
             }
         }
         .scrollContentBackground(.hidden)
-        .toolbar {
-           ToolbarItem(placement: .topBarTrailing) {
-               Button("Fach hinzufügen", systemImage: "plus") {
-                   presentAdd.toggle()
-               }
-                .disabled(subjects.value.isEmpty)
-            }
-        }
         .sheet(isPresented: $presentAdd, content: {
             HomeworkAddView(isPresented: $presentAdd)
         })
@@ -76,8 +68,4 @@ struct HomeworkList: View {
         }
         
     }
-}
-
-#Preview {
-    HomeworkList()
 }
