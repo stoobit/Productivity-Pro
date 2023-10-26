@@ -318,9 +318,6 @@
         }
       }
     },
-    "Die Zahlung konnte aufgrund fehlender Kreditkarteninformationen oder eines anderen Fehlers nicht erfolgreich abgeschlossen werden." : {
-
-    },
     "Dies kann einige Minuten dauern." : {
       "localizations" : {
         "en" : {
@@ -394,9 +391,6 @@
 
     },
     "Editing" : {
-
-    },
-    "Ein Fehler ist aufgetreten" : {
 
     },
     "Ein Fehler ist aufgetreten." : {
@@ -757,9 +751,6 @@
       }
     },
     "Öffnen" : {
-
-    },
-    "Ok" : {
 
     },
     "Ordner erstellen" : {
