@@ -15,14 +15,14 @@ struct DragAnchor: ViewModifier {
         content
             .foregroundColor(color)
             .frame(width: 30, height: 30, alignment: .leading)
-            .frame(width: 12, height: 12)
+            .frame(width: 10, height: 10)
             .clipShape(Circle())
             .overlay {
                 Circle()
                     .stroke(Color.white, lineWidth: 2)
                     .frame(
-                        width: 12,
-                        height: 12
+                        width: 10,
+                        height: 10
                     )
             }
     }
