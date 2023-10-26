@@ -318,6 +318,9 @@
         }
       }
     },
+    "Die Zahlung konnte aufgrund fehlender Kreditkarteninformationen oder eines anderen Fehlers nicht erfolgreich abgeschlossen werden." : {
+
+    },
     "Dies kann einige Minuten dauern." : {
       "localizations" : {
         "en" : {
@@ -442,6 +445,9 @@
           }
         }
       }
+    },
+    "Es ist ein Fehler aufgetreten" : {
+
     },
     "Es wurden keine Notizen gefunden." : {
       "localizations" : {
@@ -620,9 +626,6 @@
         }
       }
     },
-    "Is subscribed." : {
-
-    },
     "Jetzt löschen" : {
       "localizations" : {
         "en" : {
@@ -754,6 +757,9 @@
       }
     },
     "Öffnen" : {
+
+    },
+    "Ok" : {
 
     },
     "Ordner erstellen" : {

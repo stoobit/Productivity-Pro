@@ -358,6 +358,7 @@
 		BB85869A2AE1E5BB00C5875C /* MediaStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStyleView.swift; sourceTree = "<group>"; };
 		BB85869C2AE1E5C500C5875C /* TextFieldStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyleView.swift; sourceTree = "<group>"; };
 		BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeArrangeView.swift; sourceTree = "<group>"; };
+		BB87680A2AEADA9800C41E35 /* Productivity Pro.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Productivity Pro.storekit"; sourceTree = "<group>"; };
 		BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
 		BB8A0AE22AD0B871008B4D27 /* LockViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViews.swift; sourceTree = "<group>"; };
 		BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewMethods.swift; sourceTree = "<group>"; };
@@ -464,7 +465,6 @@
 		BBEFC9502A41038F00960C8D /* SecondaryUndoActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryUndoActions.swift; sourceTree = "<group>"; };
 		BBF22ACB2933EFE300109848 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneInteraction.swift; sourceTree = "<group>"; };
-		BBF5FDED2AAE05750081C4FE /* StoreKit.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreKit.storekit; sourceTree = "<group>"; };
 		BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
 		BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerelSettings.swift; sourceTree = "<group>"; };
@@ -532,7 +532,6 @@
 		BB1DDA28296715590038FE16 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BBF5FDED2AAE05750081C4FE /* StoreKit.storekit */,
 				BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */,
 				BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */,
 			);
@@ -669,8 +668,9 @@
 		BB4CDD3F28D3C668009A409F /* Productivity Pro */ = {
 			isa = PBXGroup;
 			children = (
-				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
+				BB87680A2AEADA9800C41E35 /* Productivity Pro.storekit */,
+				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,

@@ -9,6 +9,7 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
+    @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     @AppStorage("ppfirstsession") var firstSession: Bool = false
     
     @State var toolManager: ToolManager = ToolManager()
@@ -78,6 +79,16 @@ struct ContentView: View {
             }
         }
         .animation(.bouncy, value: toolManager.showProgress)
+        .subscriptionStatusTask(for: "21404124") { taskState in
+            if let value = taskState.value {
+                isSubscribed = !value
+                    .filter { 
+                        $0.state != .revoked && $0.state != .expired
+                    }.isEmpty
+            } else {
+                isSubscribed = false
+            }
+        }
     }
     
     func askNotificationPermission() {

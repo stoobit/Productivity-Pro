@@ -14,11 +14,6 @@ struct DeskView: View {
     var body: some View {
         NavigationStack {
             Form {
-                
-                #if DEBUG
-                Toggle("Is subscribed.", isOn: $isSubscribed)
-                #endif
-                
                 NavigationLink(destination: {
                     PremiumView()
                 }) {
