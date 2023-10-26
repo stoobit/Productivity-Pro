@@ -57,7 +57,7 @@
          referenceType = "1">
       </LocationScenarioReference>
       <StoreKitConfigurationFileReference
-         identifier = "../../Productivity Pro/Productivity Pro.storekit">
+         identifier = "../../Productivity Pro/Resources/Productivity Pro.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction

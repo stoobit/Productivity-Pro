@@ -396,6 +396,9 @@
     "Editing" : {
 
     },
+    "Ein Fehler ist aufgetreten" : {
+
+    },
     "Ein Fehler ist aufgetreten." : {
       "localizations" : {
         "en" : {
@@ -445,9 +448,6 @@
           }
         }
       }
-    },
-    "Es ist ein Fehler aufgetreten" : {
-
     },
     "Es wurden keine Notizen gefunden." : {
       "localizations" : {
