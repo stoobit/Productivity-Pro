@@ -24,7 +24,10 @@ struct NoteViewSheet: ViewModifier {
             .sheet(isPresented: $manager.addPage, content: {
                 TemplateView(
                     isPresented: $manager.addPage,
-                    buttonTitle: "Hinzufügen"
+                    buttonTitle: "Hinzufügen",
+                    preselectedOrientation: toolManager.activePage!.isPortrait,
+                    preselectedColor: toolManager.activePage!.color,
+                    preselectedTemplate: toolManager.activePage!.template
                 ) { isPortrait, template, color in
                     addPage(isPortrait, template, color)
                 }

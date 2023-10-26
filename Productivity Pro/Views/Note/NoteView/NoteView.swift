@@ -65,9 +65,6 @@ struct NoteView: View {
                     isPresented: $subviewValue.renameView
                 )
             )
-            .overlay {
-                Text("\(toolManager.activePage?.template ?? "nil"), \(toolManager.activePage?.index ?? -1)")
-            }
             
         } else {
             ContentUnavailableView(

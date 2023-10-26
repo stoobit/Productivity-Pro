@@ -15,8 +15,8 @@ struct ItemView: View {
     
     var note: PPNoteModel
     var page: PPPageModel
-    @Bindable var item: PPItemModel
     
+    @Bindable var item: PPItemModel
     @Binding var scale: CGFloat
     
     var highResolution: Bool
@@ -85,14 +85,11 @@ struct ItemView: View {
                 editItemModel.size.height = item.height
             }
             
-//            ToolView(
-//                page: $page,
-//                item: $item,
-//                toolManager: toolManager,
-//                editItemModel: editItemModel
-//            )
-//            .scaleEffect(toolManager.zoomScale)
-//            .zIndex(Double(page.items.count + 20))
+            ToolView(page: page, item: item, scale: $scale)
+                .scaleEffect(toolManager.zoomScale)
+                .zIndex(Double(page.items!.count + 20))
+                .environment(editItemModel)
+
         }
         
     }

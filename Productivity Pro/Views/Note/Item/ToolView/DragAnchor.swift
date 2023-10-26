@@ -19,7 +19,7 @@ struct DragAnchor: ViewModifier {
             .clipShape(Circle())
             .overlay {
                 Circle()
-                    .stroke(Color.white, lineWidth: 1)
+                    .stroke(Color.white, lineWidth: 2)
                     .frame(
                         width: 12,
                         height: 12
