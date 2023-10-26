@@ -17,7 +17,6 @@ struct PremiumView: View {
             groupID: "21404124"
         )
         .storeButton(.hidden, for: .cancellation)
-        .subscriptionStoreControlStyle(.buttons)
         .background {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
