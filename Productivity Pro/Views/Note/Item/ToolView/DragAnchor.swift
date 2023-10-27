@@ -14,7 +14,7 @@ struct DragAnchor: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundColor(color)
-            .frame(width: 30, height: 30, alignment: .leading)
+            .frame(width: 50, height: 50)
             .frame(width: 10, height: 10)
             .clipShape(Circle())
             .overlay {

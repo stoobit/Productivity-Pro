@@ -146,7 +146,7 @@ struct ToolView: View {
                     .foregroundColor(.clear)
                     .border(
                         toolManager.activeItem?.isLocked == true ? Color.orange : Color.blue,
-                        width: 2
+                        width: 1
                     )
             }
     }
