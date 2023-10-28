@@ -684,6 +684,9 @@
         }
       }
     },
+    "Monatliches Abo" : {
+
+    },
     "Name" : {
 
     },
@@ -797,6 +800,9 @@
           }
         }
       }
+    },
+    "Premium abonnieren" : {
+
     },
     "Productivity Pro" : {
       "localizations" : {
