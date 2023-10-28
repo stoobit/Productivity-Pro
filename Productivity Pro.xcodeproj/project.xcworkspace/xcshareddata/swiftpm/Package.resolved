@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/glassfy/ios-sdk",
+      "state" : {
+        "revision" : "fff920920656555fbd40137a2a9397edb46f96f1",
+        "version" : "1.4.0"
+      }
+    },
+    {
       "identity" : "onpasteboardchange",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kyle-n/OnPasteboardChange",

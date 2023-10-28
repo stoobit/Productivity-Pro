@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Glassfy
 import UniformTypeIdentifiers
 
 @main
@@ -13,6 +14,10 @@ struct Productivity_ProApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear() {
+                    let key = "f1e473aa31b84eca8d4944ef486c8be8"
+                    Glassfy.initialize(apiKey: key, watcherMode: false)
+                }
         }
         .modelContainer(
             for: [

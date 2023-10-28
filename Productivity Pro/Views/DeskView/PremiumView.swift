@@ -6,27 +6,19 @@
 //
 
 import SwiftUI
-import StoreKit
 
 struct PremiumView: View {
-    @AppStorage("ppisunlocked") var isSubscribed: Bool = false
+    @EnvironmentObject var iapModel: IAPViewModel
+    
+    @AppStorage("ppisunlocked")
+    var isSubscribed: Bool = false
     
     var body: some View {
-        SubscriptionStoreView(
-            groupID: "88811DA5"
-        )
-        .subscriptionStoreButtonLabel(.multiline)
-        .subscriptionStoreControlStyle(.prominentPicker)
-        .storeButton(.hidden, for: .cancellation)
-        .background {
-            Color(UIColor.systemGroupedBackground)
-                .ignoresSafeArea(.all)
-        }
-        
-        
+        Text("\(iapModel.products.count)")
     }
 }
 
 #Preview {
     PremiumView()
+        .environmentObject(IAPViewModel())
 }

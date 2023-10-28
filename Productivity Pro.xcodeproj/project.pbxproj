@@ -173,6 +173,9 @@
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254142AC60D2400B51175 /* ObjectPickerList.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
+		BBC4BE8F2AED855A00D87B60 /* IAPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4BE8E2AED855A00D87B60 /* IAPViewModel.swift */; };
+		BBC4BE912AED8EC100D87B60 /* Glassfy in Frameworks */ = {isa = PBXBuildFile; productRef = BBC4BE902AED8EC100D87B60 /* Glassfy */; };
+		BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */; };
 		BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9732A18F09100D496CB /* ItemView.swift */; };
 		BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9752A1982F700D496CB /* EditItemModel.swift */; };
 		BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9782A1988FA00D496CB /* DragAnchor.swift */; };
@@ -418,6 +421,8 @@
 		BBBFB834299FB75400FA236F /* DragItemModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragItemModifier.swift; sourceTree = "<group>"; };
 		BBC254142AC60D2400B51175 /* ObjectPickerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPickerList.swift; sourceTree = "<group>"; };
 		BBC2C90629C5CFB40044B201 /* SnapItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapItemView.swift; sourceTree = "<group>"; };
+		BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BBC4BE8E2AED855A00D87B60 /* IAPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewModel.swift; sourceTree = "<group>"; };
 		BBC7B9732A18F09100D496CB /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		BBC7B9752A1982F700D496CB /* EditItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemModel.swift; sourceTree = "<group>"; };
 		BBC7B9782A1988FA00D496CB /* DragAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnchor.swift; sourceTree = "<group>"; };
@@ -485,8 +490,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC4BE912AED8EC100D87B60 /* Glassfy in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
+				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 				BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
 			);
@@ -655,6 +662,7 @@
 				BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */,
 				BB4CDD3F28D3C668009A409F /* Productivity Pro */,
 				BB4CDD3E28D3C668009A409F /* Products */,
+				BBC4BE882AED7BBE00D87B60 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -800,6 +808,7 @@
 				BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */,
 				BBC7B9752A1982F700D496CB /* EditItemModel.swift */,
 				BBBCACB22A25461900C23B2C /* Calculator.swift */,
+				BBC4BE8E2AED855A00D87B60 /* IAPViewModel.swift */,
 			);
 			path = "ViewModels (Intern)";
 			sourceTree = "<group>";
@@ -1057,6 +1066,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BBC4BE882AED7BBE00D87B60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BBC7B9772A1988E800D496CB /* ToolView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1246,6 +1263,7 @@
 				BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */,
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
 				BBFD5B1A2ACCDE210068609A /* RichTextKit */,
+				BBC4BE902AED8EC100D87B60 /* Glassfy */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1281,6 +1299,7 @@
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
 				BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */,
+				BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1474,6 +1493,7 @@
 				BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */,
 				BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
+				BBC4BE8F2AED855A00D87B60 /* IAPViewModel.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,
 				BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */,
@@ -1789,6 +1809,14 @@
 				kind = branch;
 			};
 		};
+		BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/glassfy/ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
 		BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
@@ -1814,6 +1842,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
+		};
+		BBC4BE902AED8EC100D87B60 /* Glassfy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			productName = Glassfy;
 		};
 		BBFD5B1A2ACCDE210068609A /* RichTextKit */ = {
 			isa = XCSwiftPackageProductDependency;
