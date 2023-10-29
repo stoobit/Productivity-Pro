@@ -19,7 +19,7 @@ struct ShapeStyleView: View {
         @Bindable var item = toolManager.activeItem!.shape!
         
         Form {
-            Section("Füllung") {
+            Section {
                 Toggle("Füllung", isOn: $item.fill.animation())
                     .tint(Color.accentColor)
                     .frame(height: 30)
@@ -30,7 +30,7 @@ struct ShapeStyleView: View {
                 }
             }
             
-            Section("Rahmen") {
+            Section {
                 Toggle("Rahmen", isOn: $item.stroke.animation())
                     .tint(Color.accentColor)
                     .frame(height: 30)
@@ -39,7 +39,19 @@ struct ShapeStyleView: View {
                     ColorPicker("Farbe", selection: $stroke, supportsOpacity: true)
                         .frame(height: 30)
                     
-                    
+                    HStack {
+                        Stepper("", value: $item.strokeWidth)
+                            .labelsHidden()
+                        
+                        Spacer()
+                        
+                        TextField(
+                            "Breite", value: $item.strokeWidth, formatter: NumberFormatter()
+                        )
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(width: 75)
+                    }
+                    .frame(height: 30)
                 }
             }
         }

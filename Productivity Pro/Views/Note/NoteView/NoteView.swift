@@ -45,12 +45,8 @@ struct NoteView: View {
                 .scrollIndicators(.hidden)
                 .scrollTargetBehavior(.paging)
                 .scrollPosition(id: $toolValue.activePage)
-                .onAppear {
-                    if toolManager.activePage == nil {
-                        toolManager.activePage = contentObject.note?.pages?.first(where: {
-                            $0.index == 0
-                        })
-                    }
+                .overlay {
+                    SidebarContainerView(proxy: proxy)
                 }
             }
             .noteViewModifier(with: contentObject)
@@ -65,6 +61,13 @@ struct NoteView: View {
                     isPresented: $subviewValue.renameView
                 )
             )
+            .onAppear {
+                if toolManager.activePage == nil {
+                    toolManager.activePage = contentObject.note?.pages?.first(where: {
+                        $0.index == 0
+                    })
+                }
+            }
             
         } else {
             ContentUnavailableView(

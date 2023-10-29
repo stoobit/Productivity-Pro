@@ -191,6 +191,9 @@
 		BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE62947CC9C000C545D /* RuledView.swift */; };
 		BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE82947DB2D000C545D /* RuledLargeView.swift */; };
 		BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDEA2947DC62000C545D /* MusicView.swift */; };
+		BBD095DC2AEECE5400E7C928 /* SidebarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */; };
+		BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */; };
+		BBD095E02AEEF4CD00E7C928 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */; };
 		BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */; };
 		BBD0DC9F2ACCB619004A2C56 /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9E2ACCB619004A2C56 /* ExportableNoteModel.swift */; };
 		BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */; };
@@ -438,6 +441,9 @@
 		BBCDFDE62947CC9C000C545D /* RuledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledView.swift; sourceTree = "<group>"; };
 		BBCDFDE82947DB2D000C545D /* RuledLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledLargeView.swift; sourceTree = "<group>"; };
 		BBCDFDEA2947DC62000C545D /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
+		BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarContainerView.swift; sourceTree = "<group>"; };
+		BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPosition.swift; sourceTree = "<group>"; };
+		BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewItem.swift; sourceTree = "<group>"; };
 		BBD0DC9E2ACCB619004A2C56 /* ExportableNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableNoteModel.swift; sourceTree = "<group>"; };
 		BBD0DCA12ACCD046004A2C56 /* ExportablePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportablePageModel.swift; sourceTree = "<group>"; };
@@ -972,6 +978,7 @@
 				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
+				BBD095DA2AEECE3E00E7C928 /* Sidebar */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
 				BBF930782A674C0700AD3958 /* PPDrawingToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
@@ -1039,6 +1046,7 @@
 				BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */,
 				BB9A364F2ABCFD2A00721C56 /* Calendar.swift */,
 				BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */,
+				BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */,
 			);
 			path = TypeModifier;
 			sourceTree = "<group>";
@@ -1104,6 +1112,15 @@
 				BBF663F72AC4E6E300FD9813 /* ObjectPicker */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		BBD095DA2AEECE3E00E7C928 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */,
+				BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */,
+			);
+			path = Sidebar;
 			sourceTree = "<group>";
 		};
 		BBD0DC9D2ACCB5F4004A2C56 /* Note */ = {
@@ -1333,6 +1350,7 @@
 			files = (
 				BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */,
 				BBD0DCA92ACCD52A004A2C56 /* ExportableMediaModel.swift in Sources */,
+				BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */,
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */,
@@ -1395,6 +1413,7 @@
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
+				BBD095E02AEEF4CD00E7C928 /* SidebarView.swift in Sources */,
 				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
 				BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */,
@@ -1408,6 +1427,7 @@
 				BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */,
 				BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */,
 				BBD0DCA22ACCD046004A2C56 /* ExportablePageModel.swift in Sources */,
+				BBD095DC2AEECE5400E7C928 /* SidebarContainerView.swift in Sources */,
 				BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */,
 				BB85869B2AE1E5BB00C5875C /* MediaStyleView.swift in Sources */,
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
