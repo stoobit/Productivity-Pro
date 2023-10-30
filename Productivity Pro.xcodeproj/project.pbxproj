@@ -194,6 +194,11 @@
 		BBD095DC2AEECE5400E7C928 /* SidebarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */; };
 		BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */; };
 		BBD095E02AEEF4CD00E7C928 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */; };
+		BBD095E32AEFC4F100E7C928 /* SidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095E22AEFC4F100E7C928 /* SidebarButton.swift */; };
+		BBD095E52AEFC4F700E7C928 /* SidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095E42AEFC4F700E7C928 /* SidebarMenu.swift */; };
+		BBD095E72AEFC50100E7C928 /* SidebarColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095E62AEFC50100E7C928 /* SidebarColorPicker.swift */; };
+		BBD095E92AEFC56400E7C928 /* SidebarToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095E82AEFC56400E7C928 /* SidebarToggle.swift */; };
+		BBD095EB2AEFC62800E7C928 /* SidebarItemContainerFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095EA2AEFC62800E7C928 /* SidebarItemContainerFrame.swift */; };
 		BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */; };
 		BBD0DC9F2ACCB619004A2C56 /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9E2ACCB619004A2C56 /* ExportableNoteModel.swift */; };
 		BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */; };
@@ -444,6 +449,11 @@
 		BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarContainerView.swift; sourceTree = "<group>"; };
 		BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPosition.swift; sourceTree = "<group>"; };
 		BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		BBD095E22AEFC4F100E7C928 /* SidebarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarButton.swift; sourceTree = "<group>"; };
+		BBD095E42AEFC4F700E7C928 /* SidebarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenu.swift; sourceTree = "<group>"; };
+		BBD095E62AEFC50100E7C928 /* SidebarColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarColorPicker.swift; sourceTree = "<group>"; };
+		BBD095E82AEFC56400E7C928 /* SidebarToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarToggle.swift; sourceTree = "<group>"; };
+		BBD095EA2AEFC62800E7C928 /* SidebarItemContainerFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemContainerFrame.swift; sourceTree = "<group>"; };
 		BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewItem.swift; sourceTree = "<group>"; };
 		BBD0DC9E2ACCB619004A2C56 /* ExportableNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableNoteModel.swift; sourceTree = "<group>"; };
 		BBD0DCA12ACCD046004A2C56 /* ExportablePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportablePageModel.swift; sourceTree = "<group>"; };
@@ -1119,8 +1129,21 @@
 			children = (
 				BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */,
 				BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */,
+				BBD095E12AEFC4DD00E7C928 /* SidebarItemContainer */,
 			);
 			path = Sidebar;
+			sourceTree = "<group>";
+		};
+		BBD095E12AEFC4DD00E7C928 /* SidebarItemContainer */ = {
+			isa = PBXGroup;
+			children = (
+				BBD095E22AEFC4F100E7C928 /* SidebarButton.swift */,
+				BBD095E42AEFC4F700E7C928 /* SidebarMenu.swift */,
+				BBD095E62AEFC50100E7C928 /* SidebarColorPicker.swift */,
+				BBD095E82AEFC56400E7C928 /* SidebarToggle.swift */,
+				BBD095EA2AEFC62800E7C928 /* SidebarItemContainerFrame.swift */,
+			);
+			path = SidebarItemContainer;
 			sourceTree = "<group>";
 		};
 		BBD0DC9D2ACCB5F4004A2C56 /* Note */ = {
@@ -1355,6 +1378,7 @@
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
+				BBD095EB2AEFC62800E7C928 /* SidebarItemContainerFrame.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
 				BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */,
@@ -1397,6 +1421,7 @@
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
 				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
+				BBD095E52AEFC4F700E7C928 /* SidebarMenu.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
 				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
 				BBC4BE972AED9FDF00D87B60 /* AdaptiveView.swift in Sources */,
@@ -1529,6 +1554,7 @@
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
 				BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */,
 				BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */,
+				BBD095E92AEFC56400E7C928 /* SidebarToggle.swift in Sources */,
 				BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */,
 				BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */,
 				BBD0DC9F2ACCB619004A2C56 /* ExportableNoteModel.swift in Sources */,
@@ -1545,12 +1571,14 @@
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
 				BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */,
+				BBD095E32AEFC4F100E7C928 /* SidebarButton.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
 				BB9367682AC9CE260096F20E /* PPTextFieldModel.swift in Sources */,
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
 				BB339F872AD44E97009DA591 /* Role.swift in Sources */,
 				BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */,
+				BBD095E72AEFC50100E7C928 /* SidebarColorPicker.swift in Sources */,
 				BB073A6F2AB8CA4800C80B59 /* SecondaryPageActions.swift in Sources */,
 				BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */,
 				BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */,

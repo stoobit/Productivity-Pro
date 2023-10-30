@@ -10,178 +10,93 @@ import SwiftUI
 struct SidebarView: View {
     var axis: Axis
     
+    let hstack = AnyLayout(HStackLayout())
+    let vstack = AnyLayout(VStackLayout())
+    
     var body: some View {
-        let layout = axis == .vertical ? AnyLayout(HStackLayout())
-                                     : AnyLayout(VStackLayout())
+        let layout = axis == .vertical ? hstack : vstack
         
         layout {
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.up")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 57.5,
-                        height: 65,
-                        alignment: .trailing
-                    )
-            }
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(width: 50, height: 65)
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(
+                SICFrame(
+                    axis: axis,
+                    alignment: axis == .vertical ? .trailing : .bottom
+                )
+            )
+            
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
+            }
+            .modifier(SICFrame(axis: axis))
             
             Spacer()
             Divider()
                 .padding(.vertical, 15)
             Spacer()
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 50,
-                        height: 65
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(SICFrame(axis: axis))
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 50,
-                        height: 65
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(SICFrame(axis: axis))
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 50,
-                        height: 65
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(SICFrame(axis: axis))
             
             Spacer()
             Divider()
                 .padding(.vertical, 15)
             Spacer()
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 50,
-                        height: 65
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(SICFrame(axis: axis))
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 50,
-                        height: 65
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(SICFrame(axis: axis))
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 50,
-                        height: 65
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(SICFrame(axis: axis))
             
             Spacer()
             Divider()
                 .padding(.vertical, 15)
             Spacer()
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 50,
-                        height: 65
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(SICFrame(axis: axis))
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.down")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 50,
-                        height: 65
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(SICFrame(axis: axis))
             
-            Button(action: {}) {
-                Image(systemName: "square.and.arrow.up")
-                    .font(.title3)
-                    .frame(width: 50, height: 50)
-                    .background {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
-                    }
-                    .frame(
-                        width: 57.5,
-                        height: 65,
-                        alignment: .leading
-                    )
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
             }
+            .modifier(
+                SICFrame(
+                    axis: axis,
+                    alignment: axis == .vertical ? .leading : .top
+                )
+            )
         }
         .frame(maxWidth: axis == .horizontal ? 65 : .infinity)
         .frame(maxHeight: axis == .vertical ? 65 : .infinity)
