@@ -17,13 +17,171 @@ struct SidebarView: View {
         layout {
             Button(action: {}) {
                 Image(systemName: "square.and.arrow.up")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 57.5,
+                        height: 65,
+                        alignment: .trailing
+                    )
             }
-            .font(.title3)
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(width: 50, height: 65)
+            }
+            
+            Spacer()
+            Divider()
+                .padding(.vertical, 15)
+            Spacer()
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 50,
+                        height: 65
+                    )
+            }
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 50,
+                        height: 65
+                    )
+            }
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 50,
+                        height: 65
+                    )
+            }
+            
+            Spacer()
+            Divider()
+                .padding(.vertical, 15)
+            Spacer()
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 50,
+                        height: 65
+                    )
+            }
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 50,
+                        height: 65
+                    )
+            }
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 50,
+                        height: 65
+                    )
+            }
+            
+            Spacer()
+            Divider()
+                .padding(.vertical, 15)
+            Spacer()
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 50,
+                        height: 65
+                    )
+            }
+            
+            Button(action: {}) {
+                Image(systemName: "square.and.arrow.down")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 50,
+                        height: 65
+                    )
+            }
             
             Button(action: {}) {
                 Image(systemName: "square.and.arrow.up")
+                    .font(.title3)
+                    .frame(width: 50, height: 50)
+                    .background {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                    .frame(
+                        width: 57.5,
+                        height: 65,
+                        alignment: .leading
+                    )
             }
-            .font(.title3)
         }
         .frame(maxWidth: axis == .horizontal ? 65 : .infinity)
         .frame(maxHeight: axis == .vertical ? 65 : .infinity)
@@ -32,4 +190,9 @@ struct SidebarView: View {
                 .foregroundStyle(.ultraThinMaterial)
         }
     }
+}
+
+#Preview {
+    SidebarView(axis: .vertical)
+        .padding()
 }
