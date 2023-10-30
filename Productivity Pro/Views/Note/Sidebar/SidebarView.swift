@@ -13,90 +13,23 @@ struct SidebarView: View {
     let hstack = AnyLayout(HStackLayout())
     let vstack = AnyLayout(VStackLayout())
     
+    typealias ax = Axis.Set
+    
     var body: some View {
         let layout = axis == .vertical ? hstack : vstack
         
-        layout {
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
+        ViewThatFits(
+            in: axis == .vertical ? ax.horizontal : ax.vertical
+        ) {
+            layout {
+                ItemBarView(axis: axis)
             }
-            .modifier(
-                SICFrame(
-                    axis: axis,
-                    alignment: axis == .vertical ? .trailing : .bottom
-                )
-            )
             
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
+            ScrollView(axis == .vertical ? ax.horizontal : ax.vertical) {
+                layout {
+                    ItemBarView(axis: axis)
+                }
             }
-            .modifier(SICFrame(axis: axis))
-            
-            Spacer()
-            Divider()
-                .padding(.vertical, 15)
-            Spacer()
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            Spacer()
-            Divider()
-                .padding(.vertical, 15)
-            Spacer()
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            Spacer()
-            Divider()
-                .padding(.vertical, 15)
-            Spacer()
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(
-                SICFrame(
-                    axis: axis,
-                    alignment: axis == .vertical ? .leading : .top
-                )
-            )
         }
         .frame(maxWidth: axis == .horizontal ? 65 : .infinity)
         .frame(maxHeight: axis == .vertical ? 65 : .infinity)
