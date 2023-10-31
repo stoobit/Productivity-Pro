@@ -11,6 +11,8 @@ enum PPItemType: String, Codable {
     case shape = "shape"
     case media = "media"
     case textField = "textField"
+    
+    case link = "link"
     case chart = "chart"
     case table = "table"
     case mindmap = "mindmap"
