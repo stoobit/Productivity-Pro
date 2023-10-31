@@ -20,7 +20,6 @@ struct SidebarContainerView: View {
     var body: some View {
         Group {
             SidebarView(axis: axis)
-                .modifier(SPModifier(proxy: proxy))
                 .padding()
         }
         .frame(
@@ -28,6 +27,7 @@ struct SidebarContainerView: View {
             height: proxy.size.height,
             alignment: alignment
         )
+        .modifier(SPModifier(proxy: proxy))
         .animation(.bouncy, value: toolManager.activeItem)
         .transition(.slide)
     }

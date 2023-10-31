@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-struct SidebarToggle: View {
+struct SidebarToggle<Content: View>: View {
+    @Binding var isOn: Bool
+    
+    let label: () -> Content
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: { isOn.toggle() }) {
+            label()
+                .foregroundStyle(isOn ? .white : .primary)
+                .font(.title3)
+                .frame(width: 50, height: 50)
+                .background {
+                    if isOn {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(Color.accentColor)
+                    } else {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
+                }
+        }
     }
-}
-
-#Preview {
-    SidebarToggle()
 }

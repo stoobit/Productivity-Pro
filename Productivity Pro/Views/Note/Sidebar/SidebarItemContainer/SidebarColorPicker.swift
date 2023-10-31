@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct SidebarColorPicker: View {
+    @State var value: Color = .accentColor
+    @Binding var color: Data
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ColorPicker("", selection: $value)
+            .labelsHidden()
+            .onChange(of: value, initial: false) {
+                color = value.toCodable()
+            }
+            .onAppear {
+                value = Color(codable: color)
+            }
     }
-}
-
-#Preview {
-    SidebarColorPicker()
 }
