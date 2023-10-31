@@ -19,14 +19,17 @@ struct AppIconSettings: View {
                     Icon("RoundedIcon")
                         .tag("AppDark")
                     
-                    Icon("RoundedLight")
+                    Icon("RoundedIconLight")
                         .tag("AppLight")
                     
                     Icon("RoundedBeta")
-                        .tag("BetaIcon")
+                        .tag("BetaDark")
                     
                     Icon("RoundedBetaLight")
                         .tag("BetaLight")
+                    
+                    Icon("RoundedMara")
+                        .tag("Mara")
                 }
                 .pickerStyle(.inline)
                 .labelsHidden()
