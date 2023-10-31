@@ -167,12 +167,12 @@ extension EditTextfieldItemView {
                 editTextFieldModel = EditTextFieldModel(
                     text: textField.text,
                     showFill: textField.showFill,
-                    fillColor: Color(codable: textField.fillColor),
+                    fillColor: Color(data: textField.fillColor),
                     showStroke: textField.showStroke,
-                    strokeColor: Color(codable: textField.strokeColor),
+                    strokeColor: Color(data: textField.strokeColor),
                     strokeWidth: textField.strokeWidth,
                     font: textField.font,
-                    fontColor: Color(codable: textField.fontColor),
+                    fontColor: Color(data: textField.fontColor),
                     fontSize: textField.fontSize,
                     isLocked: item.isLocked ?? false
                 )
@@ -189,7 +189,7 @@ extension EditTextfieldItemView {
             
             document.note.pages[
                 toolManager.selectedPage
-            ].items[index].textField?.fillColor = editTextFieldModel.fillColor.toCodable()
+            ].items[index].textField?.fillColor = editTextFieldModel.fillColor.data()
             
             document.note.pages[
                 toolManager.selectedPage
@@ -197,7 +197,7 @@ extension EditTextfieldItemView {
             
             document.note.pages[
                 toolManager.selectedPage
-            ].items[index].textField?.strokeColor = editTextFieldModel.strokeColor.toCodable()
+            ].items[index].textField?.strokeColor = editTextFieldModel.strokeColor.data()
             
             document.note.pages[
                 toolManager.selectedPage
@@ -213,7 +213,7 @@ extension EditTextfieldItemView {
             
             document.note.pages[
                 toolManager.selectedPage
-            ].items[index].textField?.fontColor = editTextFieldModel.fontColor.toCodable()
+            ].items[index].textField?.fontColor = editTextFieldModel.fontColor.data()
             
             document.note.pages[
                 toolManager.selectedPage

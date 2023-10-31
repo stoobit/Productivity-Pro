@@ -36,7 +36,7 @@ extension NoteMainToolbar {
             string: "", attributes: attributes
         )
         
-        textField.nsAttributedString = string.toCodable()
+        textField.nsAttributedString = string.data()
         item.textField = textField
         
         if let page = contentObject.note?.pages?.first(where: {

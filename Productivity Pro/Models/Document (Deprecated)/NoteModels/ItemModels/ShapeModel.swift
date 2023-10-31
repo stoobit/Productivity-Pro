@@ -16,7 +16,7 @@ struct ShapeModel: Codable, Hashable {
     var fillColor: Data
     
     var showStroke: Bool = false
-    var strokeColor: Data = Color.accentColor.toCodable()
+    var strokeColor: Data = Color.accentColor.data()
     var strokeWidth: Double = 5
     var strokeStyle: BorderStrokeStyle = .line
     

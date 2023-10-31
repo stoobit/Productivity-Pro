@@ -97,9 +97,9 @@ extension EditShapeItemView {
                 editShapeModel = EditShapeModel(
                     rotation: item.rotation,
                     showFill: shape.showFill,
-                    fillColor: Color(codable: shape.fillColor),
+                    fillColor: Color(data: shape.fillColor),
                     showStroke: shape.showStroke,
-                    strokeColor: Color(codable: shape.strokeColor),
+                    strokeColor: Color(data: shape.strokeColor),
                     strokeWidth: shape.strokeWidth,
                     cornerRadius: shape.cornerRadius
                 )
@@ -117,7 +117,7 @@ extension EditShapeItemView {
             
             document.note.pages[
                 toolManager.selectedPage
-            ].items[index].shape?.fillColor = editShapeModel.fillColor.toCodable()
+            ].items[index].shape?.fillColor = editShapeModel.fillColor.data()
             
             document.note.pages[
                 toolManager.selectedPage
@@ -125,7 +125,7 @@ extension EditShapeItemView {
             
             document.note.pages[
                 toolManager.selectedPage
-            ].items[index].shape?.strokeColor = editShapeModel.strokeColor.toCodable()
+            ].items[index].shape?.strokeColor = editShapeModel.strokeColor.data()
             
             document.note.pages[
                 toolManager.selectedPage

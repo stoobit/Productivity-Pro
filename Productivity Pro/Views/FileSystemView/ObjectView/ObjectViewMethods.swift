@@ -161,7 +161,7 @@ extension ObjectView {
         md.setFontNameForAllStyles(with: textField.font)
         md.setFontSizeForAllStyles(with: textField.fontSize * 2)
         md.setFontColorForAllStyles(
-            with: UIColor(Color(codable: textField.fontColor))
+            with: UIColor(Color(data: textField.fontColor))
         )
         
         md.code.color = UIColor(Color("codecolor"))

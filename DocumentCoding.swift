@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PPIntegrationKit
 
 func decode(url: URL) throws -> ExportableNoteModel {
     let encodedData = try Data(contentsOf: url)

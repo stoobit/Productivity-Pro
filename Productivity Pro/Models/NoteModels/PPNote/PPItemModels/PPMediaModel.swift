@@ -17,12 +17,12 @@ import SwiftData
     var media: Data
     
     var stroke: Bool = false
-    var strokeColor: Data = Color.accentColor.toCodable()
+    var strokeColor: Data = Color.accentColor.data()
     var strokeWidth: Double = 5
     var strokeStyle: PPStrokeType.RawValue
     
     var shadow: Bool = false
-    var shadowColor: Data = Color.black.toCodable()
+    var shadowColor: Data = Color.black.data()
     
     var cornerRadius: Double = 0
     var rotation: Double = 0

@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "ppintegrationkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sudo-till/PPIntegrationKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2951ae82ee4ec94be674b97cd1cf2be4f57bc477"
+      }
+    },
+    {
       "identity" : "richtextkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/danielsaidi/RichTextKit",

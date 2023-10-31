@@ -22,7 +22,7 @@ struct TextFieldItemView: View {
             if item.textField!.showStroke {
                 Rectangle()
                     .stroke(
-                        Color(codable: item.textField!.strokeColor),
+                        Color(data: item.textField!.strokeColor),
                         lineWidth: item.textField!.strokeWidth * toolManager.zoomScale
                     )
                     .frame(
@@ -32,8 +32,8 @@ struct TextFieldItemView: View {
                     )
             }
             
-            let clear = Color.clear.toCodable()
-            Color(codable: item.textField!.showFill ? item.textField!.fillColor : clear)
+            let clear = Color.clear.data()
+            Color(data: item.textField!.showFill ? item.textField!.fillColor : clear)
                 .contentShape(Rectangle())
                 .frame(
                     width: editItem.size.width * toolManager.zoomScale,

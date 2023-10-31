@@ -12,7 +12,7 @@ struct MediaModel: Codable, Hashable {
     var media: Data
     
     var showStroke: Bool = false
-    var strokeColor: Data = Color.accentColor.toCodable()
+    var strokeColor: Data = Color.accentColor.data()
     var strokeWidth: Double = 5
     var strokeStyle: BorderStrokeStyle = .line
     

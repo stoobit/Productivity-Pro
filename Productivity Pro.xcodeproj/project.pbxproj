@@ -51,7 +51,6 @@
 		BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */; };
 		BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F2FCD29129562001B7067 /* Orientation.swift */; };
 		BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F02996CE6200C0F140 /* ItemModel.swift */; };
-		BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F22996D06200C0F140 /* ShapeModel.swift */; };
 		BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F52996D07800C0F140 /* TextFieldModel.swift */; };
 		BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F72996D08300C0F140 /* MediaModel.swift */; };
 		BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */; };
@@ -85,7 +84,6 @@
 		BB68F0C22ACA1774006C91AE /* PPLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */; };
 		BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C32ACA1789006C91AE /* PPLinkType.swift */; };
 		BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */; };
-		BB6BFA272904907F002D09FD /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6BFA262904907F002D09FD /* Color.swift */; };
 		BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */; };
 		BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */; };
 		BB72A28E29760327000E9753 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB72A28D29760327000E9753 /* ToolView.swift */; };
@@ -169,6 +167,8 @@
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254142AC60D2400B51175 /* ObjectPickerList.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
+		BBC498D02AF1A0BF008FC5BA /* PPIntegrationKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBC498CF2AF1A0BF008FC5BA /* PPIntegrationKit */; };
+		BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F22996D06200C0F140 /* ShapeModel.swift */; };
 		BBC4BE8F2AED855A00D87B60 /* IAPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4BE8E2AED855A00D87B60 /* IAPViewModel.swift */; };
 		BBC4BE912AED8EC100D87B60 /* Glassfy in Frameworks */ = {isa = PBXBuildFile; productRef = BBC4BE902AED8EC100D87B60 /* Glassfy */; };
 		BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */; };
@@ -333,7 +333,6 @@
 		BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLinkModel.swift; sourceTree = "<group>"; };
 		BB68F0C32ACA1789006C91AE /* PPLinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLinkType.swift; sourceTree = "<group>"; };
 		BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemView.swift; sourceTree = "<group>"; };
-		BB6BFA262904907F002D09FD /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubviewManager.swift; sourceTree = "<group>"; };
 		BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolManager.swift; sourceTree = "<group>"; };
 		BB72A28D29760327000E9753 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; wrapsLines = 1; };
@@ -494,6 +493,7 @@
 				BBC4BE912AED8EC100D87B60 /* Glassfy in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
+				BBC498D02AF1A0BF008FC5BA /* PPIntegrationKit in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 				BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
@@ -1000,7 +1000,6 @@
 				BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */,
 				BB3525B22908673800D35790 /* Array.swift */,
 				BB174F542A1051B400F753F6 /* Date.swift */,
-				BB6BFA262904907F002D09FD /* Color.swift */,
 				BB68082A29FDD2A90026FDDF /* NSAttributedStringConverter.swift */,
 				BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */,
 				BB27FED128EA09A200459334 /* TouchType.swift */,
@@ -1265,6 +1264,7 @@
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
 				BBFD5B1A2ACCDE210068609A /* RichTextKit */,
 				BBC4BE902AED8EC100D87B60 /* Glassfy */,
+				BBC498CF2AF1A0BF008FC5BA /* PPIntegrationKit */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1301,6 +1301,7 @@
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
 				BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */,
 				BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */,
+				BBC498CE2AF1A0BF008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1386,7 +1387,6 @@
 				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
 				BBC4BE972AED9FDF00D87B60 /* AdaptiveView.swift in Sources */,
 				BB047CDE2AC0C1FF0027409F /* FileSystemView.swift in Sources */,
-				BB6BFA272904907F002D09FD /* Color.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
 				BB7987052AD49BA1003469E6 /* ShapesButton.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */,
@@ -1438,7 +1438,6 @@
 				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
 				BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */,
 				BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */,
-				BB3F75F32996D06200C0F140 /* ShapeModel.swift in Sources */,
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
 				BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */,
@@ -1498,6 +1497,7 @@
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,
 				BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */,
+				BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */,
 				BB4A93E32AAF564C00C3AED6 /* ScheduleViewContainer.swift in Sources */,
 				BB9367642AC9CDD10096F20E /* PPShapeModel.swift in Sources */,
 				BB7987072AD49BF7003469E6 /* TextFieldButton.swift in Sources */,
@@ -1811,6 +1811,14 @@
 				kind = branch;
 			};
 		};
+		BBC498CE2AF1A0BF008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sudo-till/PPIntegrationKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/glassfy/ios-sdk";
@@ -1844,6 +1852,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
+		};
+		BBC498CF2AF1A0BF008FC5BA /* PPIntegrationKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBC498CE2AF1A0BF008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */;
+			productName = PPIntegrationKit;
 		};
 		BBC4BE902AED8EC100D87B60 /* Glassfy */ = {
 			isa = XCSwiftPackageProductDependency;

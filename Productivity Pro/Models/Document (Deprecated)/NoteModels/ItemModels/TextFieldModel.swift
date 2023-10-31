@@ -16,10 +16,10 @@ struct TextFieldModel: Codable, Hashable {
     var fontColor: Data
     
     var showFill: Bool = false
-    var fillColor: Data = Color.green.toCodable()
+    var fillColor: Data = Color.green.data()
     
     var showStroke: Bool = false
-    var strokeColor: Data = Color.accentColor.toCodable()
+    var strokeColor: Data = Color.accentColor.data()
     var strokeWidth: Double = 5
     var strokeStyle: BorderStrokeStyle = .line
     

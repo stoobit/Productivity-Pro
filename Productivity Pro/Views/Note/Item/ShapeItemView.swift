@@ -41,7 +41,7 @@ struct ShapeItemView: View {
         ZStack {
             if model.fill {
                 shape
-                    .fill(Color(codable: model.fillColor))
+                    .fill(Color(data: model.fillColor))
                     .frame(
                         width: editItem.size.width * scale,
                         height: editItem.size.height * scale
@@ -51,7 +51,7 @@ struct ShapeItemView: View {
             if model.stroke {
                 shape
                     .stroke(
-                        Color(codable: model.strokeColor),
+                        Color(data: model.strokeColor),
                         lineWidth: model.strokeWidth * scale
                     )
                     .frame(
@@ -66,7 +66,7 @@ struct ShapeItemView: View {
         ZStack {
             if model.fill {
                 Rectangle()
-                    .fill(Color(codable: model.fillColor))
+                    .fill(Color(data: model.fillColor))
                     .frame(
                         width: editItem.size.width * scale,
                         height: editItem.size.height * scale
@@ -76,7 +76,7 @@ struct ShapeItemView: View {
             if model.stroke {
                 RoundedRectangle(cornerRadius: model.cornerRadius)
                     .stroke(
-                        Color(codable: model.strokeColor),
+                        Color(data: model.strokeColor),
                         lineWidth: model.strokeWidth * scale
                     )
                     .frame(

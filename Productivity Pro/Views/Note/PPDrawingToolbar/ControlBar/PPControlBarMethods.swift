@@ -199,7 +199,7 @@ extension PPControlBar {
             color = .white
         }
         
-        return color.toCodable()
+        return color.data()
     }
     
 }

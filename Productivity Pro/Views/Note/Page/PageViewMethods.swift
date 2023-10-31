@@ -121,7 +121,7 @@ extension PageView {
 //            color = .white
 //        }
         
-        return color.toCodable()
+        return color.data()
     }
     
 }

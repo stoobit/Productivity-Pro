@@ -15,10 +15,10 @@ struct SidebarColorPicker: View {
         ColorPicker("", selection: $value)
             .labelsHidden()
             .onChange(of: value, initial: false) {
-                color = value.toCodable()
+                color = value.data()
             }
             .onAppear {
-                value = Color(codable: color)
+                value = Color(data: color)
             }
             .scaleEffect(0.65)
             .frame(width: 40, height: 40)

@@ -92,7 +92,7 @@ extension EditMediaItemView {
             
             document.note.pages[
                 toolManager.selectedPage
-            ].items[index].media?.strokeColor = editMediaModel.strokeColor.toCodable()
+            ].items[index].media?.strokeColor = editMediaModel.strokeColor.data()
             
             document.note.pages[
                 toolManager.selectedPage
@@ -123,7 +123,7 @@ extension EditMediaItemView {
                 editMediaModel = EditMediaModel(
                     rotation: item.rotation,
                     showStroke: media.showStroke,
-                    strokeColor: Color(codable: media.strokeColor),
+                    strokeColor: Color(data: media.strokeColor),
                     strokeWidth: media.strokeWidth,
                     cornerRadius: media.cornerRadius
                 )

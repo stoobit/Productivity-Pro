@@ -32,7 +32,7 @@ struct MediaItemView: View {
                     style: .circular
                 )
                 .stroke(
-                    Color(codable: item.media!.strokeColor),
+                    Color(data: item.media!.strokeColor),
                     lineWidth:  item.media!.strokeWidth * toolManager.zoomScale
                 )
                 .frame(
