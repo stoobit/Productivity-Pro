@@ -167,8 +167,8 @@
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
 		BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254142AC60D2400B51175 /* ObjectPickerList.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
-		BBC498D02AF1A0BF008FC5BA /* PPIntegrationKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBC498CF2AF1A0BF008FC5BA /* PPIntegrationKit */; };
 		BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F22996D06200C0F140 /* ShapeModel.swift */; };
+		BBC498D42AF1A692008FC5BA /* PPIntegrationKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBC498D32AF1A692008FC5BA /* PPIntegrationKit */; };
 		BBC4BE8F2AED855A00D87B60 /* IAPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4BE8E2AED855A00D87B60 /* IAPViewModel.swift */; };
 		BBC4BE912AED8EC100D87B60 /* Glassfy in Frameworks */ = {isa = PBXBuildFile; productRef = BBC4BE902AED8EC100D87B60 /* Glassfy */; };
 		BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */; };
@@ -493,7 +493,7 @@
 				BBC4BE912AED8EC100D87B60 /* Glassfy in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
-				BBC498D02AF1A0BF008FC5BA /* PPIntegrationKit in Frameworks */,
+				BBC498D42AF1A692008FC5BA /* PPIntegrationKit in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 				BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
@@ -1264,7 +1264,7 @@
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
 				BBFD5B1A2ACCDE210068609A /* RichTextKit */,
 				BBC4BE902AED8EC100D87B60 /* Glassfy */,
-				BBC498CF2AF1A0BF008FC5BA /* PPIntegrationKit */,
+				BBC498D32AF1A692008FC5BA /* PPIntegrationKit */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1301,7 +1301,7 @@
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
 				BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */,
 				BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */,
-				BBC498CE2AF1A0BF008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */,
+				BBC498D22AF1A692008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1811,9 +1811,9 @@
 				kind = branch;
 			};
 		};
-		BBC498CE2AF1A0BF008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */ = {
+		BBC498D22AF1A692008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sudo-till/PPIntegrationKit";
+			repositoryURL = "https://github.com/stoobit/PPIntegrationKit";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -1853,9 +1853,9 @@
 			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
 		};
-		BBC498CF2AF1A0BF008FC5BA /* PPIntegrationKit */ = {
+		BBC498D32AF1A692008FC5BA /* PPIntegrationKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BBC498CE2AF1A0BF008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */;
+			package = BBC498D22AF1A692008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */;
 			productName = PPIntegrationKit;
 		};
 		BBC4BE902AED8EC100D87B60 /* Glassfy */ = {

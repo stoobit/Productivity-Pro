@@ -21,7 +21,7 @@
     {
       "identity" : "ppintegrationkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/sudo-till/PPIntegrationKit",
+      "location" : "https://github.com/stoobit/PPIntegrationKit",
       "state" : {
         "branch" : "main",
         "revision" : "2951ae82ee4ec94be674b97cd1cf2be4f57bc477"
