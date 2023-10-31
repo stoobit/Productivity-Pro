@@ -20,5 +20,11 @@ struct SidebarColorPicker: View {
             .onAppear {
                 value = Color(codable: color)
             }
+            .scaleEffect(0.75)
+            .frame(width: 50, height: 50)
+            .background {
+                RoundedRectangle(cornerRadius: 9)
+                    .foregroundStyle(.background)
+            }
     }
 }

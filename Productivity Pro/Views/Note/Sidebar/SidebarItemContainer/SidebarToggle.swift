@@ -19,13 +19,16 @@ struct SidebarToggle<Content: View>: View {
                 .font(.title3)
                 .frame(width: 50, height: 50)
                 .background {
-                    if isOn {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(Color.accentColor)
-                    } else {
-                        RoundedRectangle(cornerRadius: 9)
-                            .foregroundStyle(.background)
+                    Group {
+                        if isOn {
+                            RoundedRectangle(cornerRadius: 9)
+                                .foregroundStyle(Color.accentColor)
+                        } else {
+                            RoundedRectangle(cornerRadius: 9)
+                                .foregroundStyle(.background)
+                        }
                     }
+                    .animation(.bouncy, value: isOn)
                 }
         }
     }

@@ -25,40 +25,22 @@ struct ShapeBarView: View {
                 )
             )
             
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
+            SidebarColorPicker(color: $shape.fillColor)
+                .modifier(SICFrame(axis: axis))
             
             Spacer()
-            Divider()
-                .padding(.vertical, 15)
+            Divider().padding(15)
             Spacer()
             
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
+            SidebarToggle(isOn: $shape.fill) {
+                Image(systemName: "square.fill")
             }
-            .modifier(SICFrame(axis: axis))
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
-            
-            Spacer()
-            Divider()
-                .padding(.vertical, 15)
-            Spacer()
-            
-            SidebarButton(action: {}) {
-                Image(systemName: "house")
-            }
-            .modifier(SICFrame(axis: axis))
+            .modifier(
+                SICFrame(
+                    axis: axis,
+                    alignment: axis == .vertical ? .trailing : .bottom
+                )
+            )
             
             SidebarButton(action: {}) {
                 Image(systemName: "house")
@@ -71,8 +53,26 @@ struct ShapeBarView: View {
             .modifier(SICFrame(axis: axis))
             
             Spacer()
-            Divider()
-                .padding(.vertical, 15)
+            Divider().padding(15)
+            Spacer()
+            
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
+            }
+            .modifier(SICFrame(axis: axis))
+            
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
+            }
+            .modifier(SICFrame(axis: axis))
+            
+            SidebarButton(action: {}) {
+                Image(systemName: "house")
+            }
+            .modifier(SICFrame(axis: axis))
+            
+            Spacer()
+            Divider().padding(15)
             Spacer()
             
             SidebarButton(action: {}) {
