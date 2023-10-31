@@ -17,7 +17,7 @@ struct SidebarToggle<Content: View>: View {
             label()
                 .foregroundStyle(isOn ? .white : .primary)
                 .font(.title3)
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 40)
                 .background {
                     Group {
                         if isOn {

@@ -31,11 +31,11 @@ struct SidebarView: View {
                 }
             }
         }
-        .frame(maxWidth: axis == .horizontal ? 65 : .infinity)
-        .frame(maxHeight: axis == .vertical ? 65 : .infinity)
+        .frame(maxWidth: axis == .horizontal ? 55 : .infinity)
+        .frame(maxHeight: axis == .vertical ? 55 : .infinity)
         .background {
             RoundedRectangle(cornerRadius: 13)
-                .foregroundStyle(.ultraThinMaterial)
+                .foregroundStyle(.thinMaterial)
         }
     }
 }

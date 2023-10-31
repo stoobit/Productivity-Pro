@@ -14,17 +14,17 @@ struct SICFrame: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(
-                width: axis == .vertical ? value : 65,
-                height: axis == .horizontal ? value : 65,
+                width: axis == .vertical ? value : 55,
+                height: axis == .horizontal ? value : 55,
                 alignment: align
             )
     }
     
     var value: CGFloat {
         if alignment == nil {
-            return 50
+            return 40
         } else {
-            return 57.5
+            return 47.5
         }
     }
     

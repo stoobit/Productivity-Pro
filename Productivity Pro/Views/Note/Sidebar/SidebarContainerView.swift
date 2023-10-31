@@ -27,7 +27,6 @@ struct SidebarContainerView: View {
             height: proxy.size.height,
             alignment: alignment
         )
-        .modifier(SPModifier(proxy: proxy))
         .animation(.bouncy, value: toolManager.activeItem)
         .transition(.slide)
     }
@@ -53,43 +52,6 @@ struct SidebarContainerView: View {
             return .horizontal
         } else {
             return .vertical
-        }
-    }
-}
-
-struct SPModifier: ViewModifier {
-    @Environment(ToolManager.self) var toolManager
-    
-    @AppStorage("hsidebarposition")
-    var hsPosition: HSPosition = .leading
-    
-    @AppStorage("vsidebarposition")
-    var vsPosition: VSPosition = .top
-    
-    var proxy: GeometryProxy
-    func body(content: Content) -> some View {
-        if proxy.size.width > proxy.size.height {
-            content
-                .offset(x: toolManager.activeItem == nil ? offset : 0)
-        } else if proxy.size.width < proxy.size.height {
-            content
-                .offset(y: toolManager.activeItem == nil ? offset : 0)
-        }
-    }
-    
-    var offset: CGFloat {
-        if proxy.size.width > proxy.size.height {
-            if hsPosition == .leading {
-                return -100
-            } else {
-                return 100
-            }
-        } else {
-            if vsPosition == .top {
-                return -100
-            } else {
-                return 100
-            }
         }
     }
 }

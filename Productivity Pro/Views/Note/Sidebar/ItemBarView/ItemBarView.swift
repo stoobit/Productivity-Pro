@@ -12,6 +12,8 @@ struct ItemBarView: View {
     var axis: Axis
     
     var body: some View {
-        ShapeBarView(axis: axis) 
+        if toolManager.activeItem != nil {
+            ShapeBarView(axis: axis)
+        }
     }
 }

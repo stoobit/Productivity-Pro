@@ -16,7 +16,7 @@ struct SidebarButton<Content: View>: View {
         Button(action: {}) {
             label()
                 .font(.title3)
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 40)
                 .background {
                     RoundedRectangle(cornerRadius: 9)
                         .foregroundStyle(.background)
