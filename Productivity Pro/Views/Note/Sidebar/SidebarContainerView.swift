@@ -27,8 +27,6 @@ struct SidebarContainerView: View {
             height: proxy.size.height,
             alignment: alignment
         )
-        .animation(.bouncy, value: toolManager.activeItem)
-        .transition(.slide)
     }
     
     var alignment: Alignment {

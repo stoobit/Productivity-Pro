@@ -12,8 +12,11 @@ struct ItemBarView: View {
     var axis: Axis
     
     var body: some View {
-        if toolManager.activeItem != nil {
-            ShapeBarView(axis: axis)
+        Group {
+            if toolManager.activeItem != nil {
+                ShapeBarView(axis: axis)
+            }
         }
+        .animation(.bouncy, value: toolManager.activeItem)
     }
 }
