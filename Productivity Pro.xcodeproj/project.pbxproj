@@ -79,6 +79,7 @@
 		BB6701582AADEFA7001F468A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6701572AADEFA7001F468A /* ContentView.swift */; };
 		BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB67015A2AADF2D5001F468A /* DeskView.swift */; };
 		BB67015D2AADF480001F468A /* DeskViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB67015C2AADF480001F468A /* DeskViewHelper.swift */; };
+		BB6761A62AF45B20001CAE85 /* PPAnglePicker in Frameworks */ = {isa = PBXBuildFile; productRef = BB6761A52AF45B20001CAE85 /* PPAnglePicker */; };
 		BB68082B29FDD2A90026FDDF /* NSAttributedStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68082A29FDD2A90026FDDF /* NSAttributedStringConverter.swift */; };
 		BB68502B2AE99F520011A058 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68502A2AE99F520011A058 /* LoadingView.swift */; };
 		BB68F0C22ACA1774006C91AE /* PPLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */; };
@@ -490,6 +491,7 @@
 			files = (
 				BBC4BE912AED8EC100D87B60 /* Glassfy in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
+				BB6761A62AF45B20001CAE85 /* PPAnglePicker in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
 				BBC498D42AF1A692008FC5BA /* PPIntegrationKit in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
@@ -1262,6 +1264,7 @@
 				BBFD5B1A2ACCDE210068609A /* RichTextKit */,
 				BBC4BE902AED8EC100D87B60 /* Glassfy */,
 				BBC498D32AF1A692008FC5BA /* PPIntegrationKit */,
+				BB6761A52AF45B20001CAE85 /* PPAnglePicker */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1299,6 +1302,7 @@
 				BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */,
 				BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */,
 				BBC498D22AF1A692008FC5BA /* XCRemoteSwiftPackageReference "PPIntegrationKit" */,
+				BB6761A42AF45B20001CAE85 /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1799,6 +1803,14 @@
 				minimumVersion = 1.2.4;
 			};
 		};
+		BB6761A42AF45B20001CAE85 /* XCRemoteSwiftPackageReference "PPAnglePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stoobit/PPAnglePicker";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
@@ -1843,6 +1855,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */;
 			productName = SwiftyMarkdown;
+		};
+		BB6761A52AF45B20001CAE85 /* PPAnglePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB6761A42AF45B20001CAE85 /* XCRemoteSwiftPackageReference "PPAnglePicker" */;
+			productName = PPAnglePicker;
 		};
 		BBB090802A4BA35100A6F60A /* OnPasteboardChange */ = {
 			isa = XCSwiftPackageProductDependency;

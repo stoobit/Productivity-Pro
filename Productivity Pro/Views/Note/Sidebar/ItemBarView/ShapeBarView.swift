@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PPAnglePicker
 
 struct ShapeBarView: View {
     @Environment(ToolManager.self) var toolManager

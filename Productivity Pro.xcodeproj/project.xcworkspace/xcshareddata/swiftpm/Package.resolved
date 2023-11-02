@@ -19,12 +19,21 @@
       }
     },
     {
+      "identity" : "ppanglepicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stoobit/PPAnglePicker",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fc8d240014c19ae3c8b9b46b4e225b9ada3a45bc"
+      }
+    },
+    {
       "identity" : "ppintegrationkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stoobit/PPIntegrationKit",
       "state" : {
         "branch" : "main",
-        "revision" : "2951ae82ee4ec94be674b97cd1cf2be4f57bc477"
+        "revision" : "eca8380222845d6cf191b9125846e2aff2c83685"
       }
     },
     {
@@ -32,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/danielsaidi/RichTextKit",
       "state" : {
-        "revision" : "28669a2eafab8ec50ec2bc129cbd132b3212780a",
-        "version" : "0.8.0"
+        "revision" : "71b4d2c9bbc83b920ef5d4be262496e066fce5c8",
+        "version" : "0.9.1"
       }
     },
     {
