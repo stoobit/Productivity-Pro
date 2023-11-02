@@ -106,6 +106,7 @@ struct ShapeBarView: View {
             }
             .animation(.bouncy, value: shape.stroke)
             
+            
         }
     }
 }
