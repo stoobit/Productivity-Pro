@@ -15,12 +15,17 @@ struct SidebarToggle<Content: View>: View {
     var body: some View {
         Button(action: { isOn.toggle() }) {
             label()
-                .foregroundStyle(isOn ? Color.accentColor : .secondary)
+                .foregroundStyle(isOn ? .white : .accentColor)
                 .font(.title3)
                 .frame(width: 40, height: 40)
                 .background {
-                    RoundedRectangle(cornerRadius: 9)
-                        .foregroundStyle(.background)
+                    if isOn {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(Color.accentColor)
+                    } else {
+                        RoundedRectangle(cornerRadius: 9)
+                            .foregroundStyle(.background)
+                    }
                 }
         }
     }

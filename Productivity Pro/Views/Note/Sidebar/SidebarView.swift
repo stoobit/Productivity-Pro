@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SidebarView: View {
+    @Environment(\.horizontalSizeClass) var hsc
+    
     var axis: Axis
     
     let hstack = AnyLayout(HStackLayout())
@@ -25,9 +27,17 @@ struct SidebarView: View {
                 ItemBarView(axis: axis)
             }
             
-            ScrollView(axis == .vertical ? ax.horizontal : ax.vertical) {
-                layout {
-                    ItemBarView(axis: axis)
+            if axis == .vertical {
+                ScrollView(.horizontal) {
+                    layout {
+                        ItemBarView(axis: axis)
+                    }
+                }
+            } else {
+                ScrollView(.vertical) {
+                    layout {
+                        ItemBarView(axis: axis)
+                    }
                 }
             }
         }
@@ -37,6 +47,11 @@ struct SidebarView: View {
             RoundedRectangle(cornerRadius: 13)
                 .foregroundStyle(.thinMaterial)
         }
+        .padding(.horizontal, padding)
+    }
+    
+    var padding: CGFloat {
+        return axis == .vertical && hsc == .regular ? 50 : 0
     }
 }
 

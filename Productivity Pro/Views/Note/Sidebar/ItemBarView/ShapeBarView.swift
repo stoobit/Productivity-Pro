@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShapeBarView: View {
     @Environment(ToolManager.self) var toolManager
+    @Environment(\.horizontalSizeClass) var hsc
     
     @State var showLine: Bool = false
     
@@ -23,79 +24,102 @@ struct ShapeBarView: View {
         if toolManager.activeItem != nil {
             @Bindable var shape = toolManager.activeItem!.shape!
             
-            Group {
-                SidebarToggle(isOn: $shape.fill) {
-                    Image(systemName: "square.fill")
+            SidebarToggle(isOn: $shape.fill) {
+                Image(systemName: "square.fill")
+            }
+            .modifier(
+                SICFrame(
+                    axis: axis,
+                    alignment: axis == .vertical ? .trailing : .bottom
+                )
+            )
+            
+            SidebarColorPicker(color: $shape.fillColor)
+                .modifier(SICFrame(axis: axis))
+                .disabled(shape.fill == false)
+            
+            Spacer()
+            Divider()
+                .padding(.vertical, axis == .vertical ? 15 : 5)
+                .padding(.horizontal, axis == .horizontal ? 15 : 5)
+            Spacer()
+            
+            SidebarToggle(isOn: $shape.stroke) {
+                Image(systemName: "square")
+            }
+            .modifier(SICFrame(axis: axis))
+            
+            SidebarColorPicker(color: $shape.strokeColor)
+                .disabled(shape.stroke == false)
+                .modifier(SICFrame(axis: axis))
+            
+            SidebarButton(action: { showLine.toggle() }) {
+                Image(systemName: "lineweight")
+                    .disabled(shape.stroke == false)
+                    .popover(isPresented: $showLine) {
+                        Text("hello")
+                            .padding()
+                    }
+            }
+            .modifier(SICFrame(axis: axis))
+            
+            Spacer()
+            Divider()
+                .padding(.vertical, axis == .vertical ? 15 : 5)
+                .padding(.horizontal, axis == .horizontal ? 15 : 5)
+            Spacer()
+            
+            if shape.type == PPShapeType.rectangle.rawValue {
+                SidebarButton(action: {}) {
+                    Image(systemName: "angle")
+                }
+                .modifier(SICFrame(axis: axis))
+            }
+            
+            SidebarButton(action: {}) {
+                Image(systemName: "arrow.2.circlepath")
+            }
+            .modifier(SICFrame(axis: axis))
+            
+            SidebarButton(action: {}) {
+                Image(systemName: "lock.fill")
+            }
+            
+            Spacer()
+            Divider()
+                .padding(.vertical, axis == .vertical ? 15 : 5)
+                .padding(.horizontal, axis == .horizontal ? 15 : 5)
+            Spacer()
+            
+            if hsc == .regular {
+                SidebarButton(action: {}) {
+                    Image(systemName: "square.2.stack.3d.top.fill")
+                }
+                .modifier(SICFrame(axis: axis))
+                
+                SidebarButton(action: {}) {
+                    Image(systemName: "square.2.stack.3d.bottom.filled")
+                }
+                .modifier(SICFrame(axis: axis))
+                
+                SidebarButton(action: {}) {
+                    Image(systemName: "square.3.stack.3d.top.fill")
+                }
+                .modifier(SICFrame(axis: axis))
+                
+                SidebarButton(action: {}) {
+                    Image(systemName: "square.3.stack.3d.bottom.fill")
                 }
                 .modifier(
                     SICFrame(
                         axis: axis,
-                        alignment: axis == .vertical ? .trailing : .bottom
+                        alignment: axis == .vertical ? .leading : .top
                     )
                 )
                 
-                SidebarColorPicker(color: $shape.fillColor)
-                    .modifier(SICFrame(axis: axis))
-                    .disabled(shape.fill == false)
-                
-                Spacer()
-                Divider().padding(15)
-                Spacer()
-                
-                SidebarToggle(isOn: $shape.stroke) {
-                    Image(systemName: "square")
-                }
-                .modifier(SICFrame(axis: axis))
-                
-                if shape.stroke {
-                    SidebarColorPicker(color: $shape.strokeColor)
-                        .modifier(SICFrame(axis: axis))
-                    
-                    SidebarButton(action: { showLine.toggle() }) {
-                        Image(systemName: "lineweight")
-                            .popover(isPresented: $showLine) {
-                                Text("hello")
-                                    .padding()
-                            }
-                    }
-                    .modifier(SICFrame(axis: axis))
-                }
-                
-                Spacer()
-                Divider().padding(15)
-                Spacer()
-                
+            } else {
                 SidebarButton(action: {}) {
-                    Image(systemName: "house")
-                }
-                .modifier(SICFrame(axis: axis))
-                
-                SidebarButton(action: {}) {
-                    Image(systemName: "house")
-                }
-                .modifier(SICFrame(axis: axis))
-                
-                SidebarButton(action: {}) {
-                    Image(systemName: "house")
-                }
-                .modifier(SICFrame(axis: axis))
-                
-                Spacer()
-                Divider().padding(15)
-                Spacer()
-                
-                SidebarButton(action: {}) {
-                    Image(systemName: "house")
-                }
-                .modifier(SICFrame(axis: axis))
-                
-                SidebarButton(action: {}) {
-                    Image(systemName: "house")
-                }
-                .modifier(SICFrame(axis: axis))
-                
-                SidebarButton(action: {}) {
-                    Image(systemName: "house")
+                    Image(systemName: "square.stack.3d.up")
                 }
                 .modifier(
                     SICFrame(
@@ -104,8 +128,6 @@ struct ShapeBarView: View {
                     )
                 )
             }
-            .animation(.bouncy, value: shape.stroke)
-            
         }
     }
 }
