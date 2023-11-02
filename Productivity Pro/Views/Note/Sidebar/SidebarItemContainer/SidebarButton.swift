@@ -13,7 +13,7 @@ struct SidebarButton<Content: View>: View {
     let label: () -> Content
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: { action() }) {
             label()
                 .font(.title3)
                 .frame(width: 40, height: 40)

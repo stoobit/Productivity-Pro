@@ -13,6 +13,7 @@ struct SidebarColorPicker: View {
     
     var body: some View {
         ColorPicker("", selection: $value)
+            .foregroundStyle(Color.secondary)
             .labelsHidden()
             .onChange(of: value, initial: false) {
                 color = value.data()
