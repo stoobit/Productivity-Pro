@@ -23,17 +23,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stoobit/PPAnglePicker",
       "state" : {
-        "branch" : "main",
-        "revision" : "fc8d240014c19ae3c8b9b46b4e225b9ada3a45bc"
+        "revision" : "f72c542ef11ac7fac4dc7adfc724ff49d1db757d",
+        "version" : "1.3.0"
       }
     },
     {
       "identity" : "ppintegrationkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stoobit/PPIntegrationKit",
+      "kind" : "localSourceControl",
+      "location" : "/Users/till/Documents/PPIntegrationKit",
       "state" : {
         "branch" : "main",
-        "revision" : "eca8380222845d6cf191b9125846e2aff2c83685"
+        "revision" : "2951ae82ee4ec94be674b97cd1cf2be4f57bc477"
       }
     },
     {

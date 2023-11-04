@@ -47,11 +47,16 @@ struct SidebarView: View {
             RoundedRectangle(cornerRadius: 13)
                 .foregroundStyle(.thinMaterial)
         }
-        .padding(.horizontal, padding)
+        .padding(.horizontal, hor)
+        .padding(.vertical, ver)
     }
     
-    var padding: CGFloat {
+    var hor: CGFloat {
         return axis == .vertical && hsc == .regular ? 50 : 0
+    }
+    
+    var ver: CGFloat {
+        return axis == .vertical && hsc == .regular ? 0 : 25
     }
 }
 

@@ -8,24 +8,31 @@
 import SwiftUI
 
 struct SidebarColorPicker: View {
+    @Environment(\.isEnabled) var isEnabled
+    
     @State var value: Color = .accentColor
     @Binding var color: Data
     
     var body: some View {
-        ColorPicker("", selection: $value)
-            .foregroundStyle(Color.secondary)
-            .labelsHidden()
-            .onChange(of: value, initial: false) {
-                color = value.data()
+        Group {
+            if isEnabled {
+                ColorPicker("", selection: $value)
+            } else {
+                ColorPicker("", selection: .constant(Color.secondary))
             }
-            .onAppear {
-                value = Color(data: color)
-            }
-            .scaleEffect(0.65)
-            .frame(width: 40, height: 40)
-            .background {
-                RoundedRectangle(cornerRadius: 9)
-                    .foregroundStyle(.background)
-            }
+        }
+        .labelsHidden()
+        .onChange(of: value, initial: false) {
+            color = value.data()
+        }
+        .onAppear {
+            value = Color(data: color)
+        }
+        .scaleEffect(0.65)
+        .frame(width: 40, height: 40)
+        .background {
+            RoundedRectangle(cornerRadius: 9)
+                .foregroundStyle(.background)
+        }
     }
 }
