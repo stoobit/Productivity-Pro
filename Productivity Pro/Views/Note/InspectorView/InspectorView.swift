@@ -8,22 +8,55 @@
 import SwiftUI
 
 struct InspectorView: View {
+    @Environment(\.dismiss) var dismiss
+    var hsc: UserInterfaceSizeClass?
+    
+    @State var style: Bool = true
+    
     var body: some View {
         NavigationStack {
-            TabView {
+            VStack {
+                Picker("", selection: $style) {
+                    Text("Stil")
+                        .tag(true)
+                    
+                    Text("Anordnung")
+                        .tag(false)
+                }
+                .labelsHidden()
+                .pickerStyle(.segmented)
+                .padding()
                 
-                StyleContainerView()
-                    .toolbarBackground(.visible, for: .tabBar)
-                
-                ArrangeContainerView()
-                    .toolbarBackground(.visible, for: .tabBar)
+                TabView(selection: $style) {
+                    StyleContainerView()
+                        .toolbarBackground(.visible, for: .tabBar)
+                        .tag(true)
+                    
+                    ArrangeContainerView()
+                        .toolbarBackground(.visible, for: .tabBar)
+                        .tag(false)
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
             }
-            .tabViewStyle(.page)
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
             .background {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.title3.bold())
+                            .foregroundStyle(
+                                Color.secondary.secondary
+                            )
+                    }
+                }
+            }
+            .toolbar(
+                hsc == .regular ? .hidden : .visible,
+                for: .navigationBar
+            )
         }
     }
 }
