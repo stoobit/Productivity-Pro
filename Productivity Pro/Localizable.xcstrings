@@ -54,6 +54,9 @@
         }
       }
     },
+    "%@°" : {
+
+    },
     "%lld" : {
       "localizations" : {
         "en" : {
@@ -327,6 +330,9 @@
         }
       }
     },
+    "Dimensionen" : {
+
+    },
     "Dokument scannen" : {
       "localizations" : {
         "en" : {
@@ -338,6 +344,9 @@
       }
     },
     "Done" : {
+
+    },
+    "Drehung" : {
 
     },
     "Dreieck" : {
@@ -1105,7 +1114,13 @@
         }
       }
     },
+    "x" : {
+
+    },
     "X" : {
+
+    },
+    "y" : {
 
     },
     "Zu erledigen bis zum" : {

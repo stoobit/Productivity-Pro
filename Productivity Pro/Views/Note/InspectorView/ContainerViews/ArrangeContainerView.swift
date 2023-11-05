@@ -11,10 +11,11 @@ struct ArrangeContainerView: View {
     @Environment(ToolManager.self) var toolManager
     typealias item = PPItemType
     
+    var hsc: UserInterfaceSizeClass?
     var body: some View {
         
         if toolManager.activeItem?.type == item.shape.rawValue {
-            ShapeArrangeView()
+            ShapeArrangeView(hsc: hsc)
         } else if toolManager.activeItem?.type == item.media.rawValue {
             
         }  else if toolManager.activeItem?.type == item.textField.rawValue {

@@ -17,40 +17,49 @@ struct ShapeStyleView: View {
         @Bindable var item = toolManager.activeItem!.shape!
         
         Form {
-            Section {
-                Toggle("Füllung", isOn: $item.fill.animation())
-                    .tint(Color.accentColor)
-                    .frame(height: 30)
-                
-                if item.fill {
+            Section("Füllung") {
+                Toggle(isOn: $item.fill.animation()) {
+                    Image(systemName: "square.fill")
+                        .foregroundStyle(Color.primary)
+                }
+                .tint(Color.accentColor)
+                .frame(height: 30)
+            }
+             
+            if item.fill {
+                Section {
                     ColorPicker("Farbe", selection: $fill, supportsOpacity: true)
                         .frame(height: 30)
                 }
+                .listSectionSpacing(10)
             }
             
-            Section {
-                Toggle("Rahmen", isOn: $item.stroke.animation())
-                    .tint(Color.accentColor)
-                    .frame(height: 30)
+            Section("Rahmen") {
+                Toggle(isOn: $item.stroke.animation()) {
+                    Image(systemName: "square")
+                        .foregroundStyle(Color.primary)
+                }
+                .tint(Color.accentColor)
+                .frame(height: 30)
+            }
                 
-                if item.stroke {
+            if item.stroke {
+                Section {
                     ColorPicker("Farbe", selection: $stroke, supportsOpacity: true)
                         .frame(height: 30)
                     
                     HStack {
-                        Stepper("", value: $item.strokeWidth)
-                            .labelsHidden()
+                        Text("Breite")
                         
                         Spacer()
                         
-                        TextField(
-                            "Breite", value: $item.strokeWidth, formatter: NumberFormatter()
-                        )
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(width: 75)
+                        Button(String(item.strokeWidth)) {
+                            
+                        }
                     }
                     .frame(height: 30)
                 }
+                .listSectionSpacing(10)
             }
         }
         .environment(\.defaultMinListRowHeight, 10)

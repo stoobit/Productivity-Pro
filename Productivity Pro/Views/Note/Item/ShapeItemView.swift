@@ -15,8 +15,8 @@ struct ShapeItemView: View {
     @Binding var scale: CGFloat
     
     var body: some View {
-        Group {
-            if let shape = item.shape {
+        if let shape = item.shape {
+            Group {
                 if shape.type == PPShapeType.rectangle.rawValue {
                     
                     
@@ -34,7 +34,8 @@ struct ShapeItemView: View {
                     StandardShapeView(shape: Hexagon(), model: shape)
                 }
             }
-        }
+            .rotationEffect(Angle(degrees: shape.rotation))
+        } 
     }
     
     @ViewBuilder func StandardShapeView(shape: some Shape, model: PPShapeModel) -> some View {
@@ -47,7 +48,7 @@ struct ShapeItemView: View {
                         height: editItem.size.height * scale
                     )
             }
-
+            
             if model.stroke {
                 shape
                     .stroke(
@@ -72,7 +73,7 @@ struct ShapeItemView: View {
                         height: editItem.size.height * scale
                     )
             }
-
+            
             if model.stroke {
                 RoundedRectangle(cornerRadius: model.cornerRadius)
                     .stroke(

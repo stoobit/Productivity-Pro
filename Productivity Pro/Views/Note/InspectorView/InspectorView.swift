@@ -32,12 +32,13 @@ struct InspectorView: View {
                         .toolbarBackground(.visible, for: .tabBar)
                         .tag(true)
                     
-                    ArrangeContainerView()
+                    ArrangeContainerView(hsc: hsc)
                         .toolbarBackground(.visible, for: .tabBar)
                         .tag(false)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
             }
+            .scrollIndicators(.hidden)
             .background {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
