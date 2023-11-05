@@ -57,6 +57,9 @@ struct ShapeStyleView: View {
         .onChange(of: stroke) {
             item.strokeColor = stroke.data()
         }
+        .onChange(of: fill) {
+            item.fillColor = fill.data()
+        }
         .onAppear {
             fill = Color(data: item.fillColor)
             stroke = Color(data: item.strokeColor)
