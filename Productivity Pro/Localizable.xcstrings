@@ -589,6 +589,9 @@
         }
       }
     },
+    "Höhe" : {
+
+    },
     "Importieren" : {
       "localizations" : {
         "en" : {
@@ -1120,7 +1123,7 @@
     "X" : {
 
     },
-    "y" : {
+    "Y" : {
 
     },
     "Zu erledigen bis zum" : {

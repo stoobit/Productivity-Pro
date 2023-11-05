@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "ppdoublekeyboard",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stoobit/PPDoubleKeyboard",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ba48b9bb39a8b8a33fc98a25e7271524399e551e"
+      }
+    },
+    {
       "identity" : "ppintegrationkit",
       "kind" : "localSourceControl",
       "location" : "/Users/till/Documents/PPIntegrationKit",

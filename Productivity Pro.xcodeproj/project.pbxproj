@@ -208,6 +208,7 @@
 		BBE069B12AF78CA300B2D1A0 /* SecondaryInspectorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
+		BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = BBE993BF2AF850A800330733 /* PPDoubleKeyboard */; };
 		BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC301D2A670EF80021C7E6 /* DrawingView.swift */; };
 		BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */; };
 		BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */; };
@@ -480,6 +481,7 @@
 				BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */,
 				BBC4BE912AED8EC100D87B60 /* Glassfy in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
+				BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */,
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
 				BB74688B2AF5B49A0029F60D /* PPIntegrationKit in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
@@ -1223,6 +1225,7 @@
 				BB74688A2AF5B49A0029F60D /* PPIntegrationKit */,
 				BB74688C2AF5B8670029F60D /* PPAnglePicker */,
 				BB74688F2AF5B90C0029F60D /* PPAnglePicker */,
+				BBE993BF2AF850A800330733 /* PPDoubleKeyboard */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1261,6 +1264,7 @@
 				BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */,
 				BB7468892AF5B49A0029F60D /* XCRemoteSwiftPackageReference "PPIntegrationKit" */,
 				BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
+				BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1786,6 +1790,14 @@
 				minimumVersion = 1.4.0;
 			};
 		};
+		BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stoobit/PPDoubleKeyboard";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
@@ -1830,6 +1842,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBC4BE8B2AED7BFC00D87B60 /* XCRemoteSwiftPackageReference "ios-sdk" */;
 			productName = Glassfy;
+		};
+		BBE993BF2AF850A800330733 /* PPDoubleKeyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */;
+			productName = PPDoubleKeyboard;
 		};
 		BBFD5B1A2ACCDE210068609A /* RichTextKit */ = {
 			isa = XCSwiftPackageProductDependency;
