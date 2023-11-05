@@ -45,9 +45,6 @@ struct NoteView: View {
                 .scrollIndicators(.hidden)
                 .scrollTargetBehavior(.paging)
                 .scrollPosition(id: $toolValue.activePage)
-                .overlay {
-                    SidebarContainerView(proxy: proxy)
-                }
             }
             .noteViewModifier(with: contentObject)
             .background {

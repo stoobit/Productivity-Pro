@@ -188,16 +188,7 @@
 		BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE62947CC9C000C545D /* RuledView.swift */; };
 		BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDE82947DB2D000C545D /* RuledLargeView.swift */; };
 		BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDEA2947DC62000C545D /* MusicView.swift */; };
-		BBD095DC2AEECE5400E7C928 /* SidebarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */; };
 		BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */; };
-		BBD095E02AEEF4CD00E7C928 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */; };
-		BBD095E32AEFC4F100E7C928 /* SidebarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095E22AEFC4F100E7C928 /* SidebarButton.swift */; };
-		BBD095E52AEFC4F700E7C928 /* SidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095E42AEFC4F700E7C928 /* SidebarMenu.swift */; };
-		BBD095E72AEFC50100E7C928 /* SidebarColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095E62AEFC50100E7C928 /* SidebarColorPicker.swift */; };
-		BBD095E92AEFC56400E7C928 /* SidebarToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095E82AEFC56400E7C928 /* SidebarToggle.swift */; };
-		BBD095EB2AEFC62800E7C928 /* SidebarItemContainerFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095EA2AEFC62800E7C928 /* SidebarItemContainerFrame.swift */; };
-		BBD095EF2AF0624C00E7C928 /* ItemBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095EE2AF0624C00E7C928 /* ItemBarView.swift */; };
-		BBD095F12AF0FD5500E7C928 /* ShapeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095F02AF0FD5500E7C928 /* ShapeBarView.swift */; };
 		BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */; };
 		BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */; };
 		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
@@ -213,6 +204,7 @@
 		BBDCF5DD299EB6AC004C99AE /* EditPageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5DC299EB6AC004C99AE /* EditPageItemView.swift */; };
 		BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDD126D2A694A4A005E99C5 /* PPSizeButton.swift */; };
 		BBDD12702A694EC7005E99C5 /* PPMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDD126F2A694EC7005E99C5 /* PPMenuView.swift */; };
+		BBE069B12AF78CA300B2D1A0 /* SecondaryInspectorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
 		BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC301D2A670EF80021C7E6 /* DrawingView.swift */; };
@@ -433,16 +425,7 @@
 		BBCDFDE62947CC9C000C545D /* RuledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledView.swift; sourceTree = "<group>"; };
 		BBCDFDE82947DB2D000C545D /* RuledLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuledLargeView.swift; sourceTree = "<group>"; };
 		BBCDFDEA2947DC62000C545D /* MusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicView.swift; sourceTree = "<group>"; };
-		BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarContainerView.swift; sourceTree = "<group>"; };
 		BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPosition.swift; sourceTree = "<group>"; };
-		BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
-		BBD095E22AEFC4F100E7C928 /* SidebarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarButton.swift; sourceTree = "<group>"; };
-		BBD095E42AEFC4F700E7C928 /* SidebarMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarMenu.swift; sourceTree = "<group>"; };
-		BBD095E62AEFC50100E7C928 /* SidebarColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarColorPicker.swift; sourceTree = "<group>"; };
-		BBD095E82AEFC56400E7C928 /* SidebarToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarToggle.swift; sourceTree = "<group>"; };
-		BBD095EA2AEFC62800E7C928 /* SidebarItemContainerFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemContainerFrame.swift; sourceTree = "<group>"; };
-		BBD095EE2AF0624C00E7C928 /* ItemBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBarView.swift; sourceTree = "<group>"; };
-		BBD095F02AF0FD5500E7C928 /* ShapeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBarView.swift; sourceTree = "<group>"; };
 		BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewItem.swift; sourceTree = "<group>"; };
 		BBD3C4202A54DA46002BFFCF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
@@ -457,6 +440,7 @@
 		BBDCF5DC299EB6AC004C99AE /* EditPageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageItemView.swift; sourceTree = "<group>"; };
 		BBDD126D2A694A4A005E99C5 /* PPSizeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSizeButton.swift; sourceTree = "<group>"; };
 		BBDD126F2A694EC7005E99C5 /* PPMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPMenuView.swift; sourceTree = "<group>"; };
+		BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryInspectorAction.swift; sourceTree = "<group>"; };
 		BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDropDelegate.swift; sourceTree = "<group>"; };
 		BBE9196D28F381FE001EF750 /* PPScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollView.swift; sourceTree = "<group>"; };
 		BBEC301D2A670EF80021C7E6 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
@@ -852,7 +836,6 @@
 		BB8586942AE1E38200C5875C /* StyleViews */ = {
 			isa = PBXGroup;
 			children = (
-				BB8586922AE1E37C00C5875C /* StyleContainerView.swift */,
 				BB8586982AE1E5B300C5875C /* ShapeStyleView.swift */,
 				BB85869A2AE1E5BB00C5875C /* MediaStyleView.swift */,
 				BB85869C2AE1E5C500C5875C /* TextFieldStyleView.swift */,
@@ -863,7 +846,6 @@
 		BB8586952AE1E39E00C5875C /* ArrangeViews */ = {
 			isa = PBXGroup;
 			children = (
-				BB8586962AE1E3B000C5875C /* ArrangeContainerView.swift */,
 				BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */,
 			);
 			path = ArrangeViews;
@@ -953,7 +935,6 @@
 				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
-				BBD095DA2AEECE3E00E7C928 /* Sidebar */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
 				BBF930782A674C0700AD3958 /* PPDrawingToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
@@ -1088,46 +1069,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		BBD095DA2AEECE3E00E7C928 /* Sidebar */ = {
-			isa = PBXGroup;
-			children = (
-				BBD095DB2AEECE5400E7C928 /* SidebarContainerView.swift */,
-				BBD095DF2AEEF4CD00E7C928 /* SidebarView.swift */,
-				BBD095EC2AF0620000E7C928 /* ItemBarView */,
-				BBD095ED2AF0620A00E7C928 /* DrawingBarView */,
-				BBD095E12AEFC4DD00E7C928 /* SidebarItemContainer */,
-			);
-			path = Sidebar;
-			sourceTree = "<group>";
-		};
-		BBD095E12AEFC4DD00E7C928 /* SidebarItemContainer */ = {
-			isa = PBXGroup;
-			children = (
-				BBD095E22AEFC4F100E7C928 /* SidebarButton.swift */,
-				BBD095E82AEFC56400E7C928 /* SidebarToggle.swift */,
-				BBD095E62AEFC50100E7C928 /* SidebarColorPicker.swift */,
-				BBD095E42AEFC4F700E7C928 /* SidebarMenu.swift */,
-				BBD095EA2AEFC62800E7C928 /* SidebarItemContainerFrame.swift */,
-			);
-			path = SidebarItemContainer;
-			sourceTree = "<group>";
-		};
-		BBD095EC2AF0620000E7C928 /* ItemBarView */ = {
-			isa = PBXGroup;
-			children = (
-				BBD095EE2AF0624C00E7C928 /* ItemBarView.swift */,
-				BBD095F02AF0FD5500E7C928 /* ShapeBarView.swift */,
-			);
-			path = ItemBarView;
-			sourceTree = "<group>";
-		};
-		BBD095ED2AF0620A00E7C928 /* DrawingBarView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DrawingBarView;
-			sourceTree = "<group>";
-		};
 		BBDCF5D6299E699C004C99AE /* Item */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,11 +1089,21 @@
 			isa = PBXGroup;
 			children = (
 				BB8586902AE1DE4300C5875C /* InspectorView.swift */,
+				BBE069B22AF78E3A00B2D1A0 /* ContainerViews */,
 				BB8586942AE1E38200C5875C /* StyleViews */,
 				BB8586952AE1E39E00C5875C /* ArrangeViews */,
 				BB85868F2AE1DE2A00C5875C /* OLD */,
 			);
 			path = InspectorView;
+			sourceTree = "<group>";
+		};
+		BBE069B22AF78E3A00B2D1A0 /* ContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+				BB8586922AE1E37C00C5875C /* StyleContainerView.swift */,
+				BB8586962AE1E3B000C5875C /* ArrangeContainerView.swift */,
+			);
+			path = ContainerViews;
 			sourceTree = "<group>";
 		};
 		BBEC301C2A670EA60021C7E6 /* PPDrawingKit */ = {
@@ -1181,6 +1132,7 @@
 			isa = PBXGroup;
 			children = (
 				BB929B7F28E5076D00DA4538 /* NoteSecondaryToolbar.swift */,
+				BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */,
 				BB85868D2AE1D72200C5875C /* SecondaryShareAction.swift */,
 				BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */,
 				BBEFC9502A41038F00960C8D /* SecondaryUndoActions.swift */,
@@ -1342,7 +1294,6 @@
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
-				BBD095EB2AEFC62800E7C928 /* SidebarItemContainerFrame.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
 				BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */,
@@ -1350,7 +1301,6 @@
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
 				BB1DF6062A686D59006F85CE /* PPDrawingBar.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */,
-				BBD095EF2AF0624C00E7C928 /* ItemBarView.swift in Sources */,
 				BBF930732A67437900AD3958 /* PPColor.swift in Sources */,
 				BB67015D2AADF480001F468A /* DeskViewHelper.swift in Sources */,
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,
@@ -1386,7 +1336,6 @@
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
 				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
-				BBD095E52AEFC4F700E7C928 /* SidebarMenu.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
 				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
 				BBC4BE972AED9FDF00D87B60 /* AdaptiveView.swift in Sources */,
@@ -1401,7 +1350,6 @@
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
-				BBD095E02AEEF4CD00E7C928 /* SidebarView.swift in Sources */,
 				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
 				BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */,
@@ -1414,7 +1362,6 @@
 				BB53D5B029C4F79F008130F2 /* EditMarkdownView.swift in Sources */,
 				BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */,
 				BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */,
-				BBD095DC2AEECE5400E7C928 /* SidebarContainerView.swift in Sources */,
 				BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */,
 				BB85869B2AE1E5BB00C5875C /* MediaStyleView.swift in Sources */,
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
@@ -1488,6 +1435,7 @@
 				BB72A28E29760327000E9753 /* ToolView.swift in Sources */,
 				BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */,
 				BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */,
+				BBE069B12AF78CA300B2D1A0 /* SecondaryInspectorAction.swift in Sources */,
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
 				BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */,
@@ -1509,11 +1457,9 @@
 				BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */,
 				BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */,
 				BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */,
-				BBD095F12AF0FD5500E7C928 /* ShapeBarView.swift in Sources */,
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
 				BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */,
 				BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */,
-				BBD095E92AEFC56400E7C928 /* SidebarToggle.swift in Sources */,
 				BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */,
 				BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */,
 				BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */,
@@ -1528,14 +1474,12 @@
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
 				BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */,
-				BBD095E32AEFC4F100E7C928 /* SidebarButton.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
 				BB9367682AC9CE260096F20E /* PPTextFieldModel.swift in Sources */,
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
 				BB339F872AD44E97009DA591 /* Role.swift in Sources */,
 				BBDD126E2A694A4A005E99C5 /* PPSizeButton.swift in Sources */,
-				BBD095E72AEFC50100E7C928 /* SidebarColorPicker.swift in Sources */,
 				BB073A6F2AB8CA4800C80B59 /* SecondaryPageActions.swift in Sources */,
 				BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */,
 				BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */,

@@ -40,6 +40,7 @@ struct NoteSecondaryToolbar: ToolbarContent {
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
+            InspectorAction()
             Button("Undo", systemImage: "arrow.uturn.backward") {}
             PageActions()
         }
