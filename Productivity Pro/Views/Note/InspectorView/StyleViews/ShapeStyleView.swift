@@ -11,9 +11,10 @@ import PPDoubleKeyboard
 struct ShapeStyleView: View {
     @Environment(ToolManager.self) var toolManager
     
-    @State var fill: Color = .black
-    @State var stroke: Color = .black
-    
+    @State var fill: Bool = true
+    @State var stroke: Bool = false
+    @State var fillColor: Color = .black
+    @State var strokeColor: Color = .black
     @State var strokeWidth: Bool = false
     
     var body: some View {
@@ -21,7 +22,7 @@ struct ShapeStyleView: View {
         
         Form {
             Section("Füllung") {
-                Toggle(isOn: $item.fill.animation()) {
+                Toggle(isOn: $fill.animation()) {
                     Image(systemName: "square.fill")
                         .foregroundStyle(Color.primary)
                 }
@@ -31,14 +32,14 @@ struct ShapeStyleView: View {
              
             if item.fill {
                 Section {
-                    ColorPicker("Farbe", selection: $fill, supportsOpacity: true)
+                    ColorPicker("Farbe", selection: $fillColor, supportsOpacity: true)
                         .frame(height: 30)
                 }
                 .listSectionSpacing(10)
             }
             
             Section("Rahmen") {
-                Toggle(isOn: $item.stroke.animation()) {
+                Toggle(isOn: $stroke.animation()) {
                     Image(systemName: "square")
                         .foregroundStyle(Color.primary)
                 }
@@ -48,7 +49,7 @@ struct ShapeStyleView: View {
                 
             if item.stroke {
                 Section {
-                    ColorPicker("Farbe", selection: $stroke, supportsOpacity: true)
+                    ColorPicker("Farbe", selection: $strokeColor, supportsOpacity: false)
                         .frame(height: 30)
                     
                     HStack {
@@ -70,15 +71,23 @@ struct ShapeStyleView: View {
             }
         }
         .environment(\.defaultMinListRowHeight, 10)
-        .onChange(of: stroke) {
-            item.strokeColor = stroke.data()
+        .onChange(of: fillColor) {
+            item.fillColor = fillColor.data()
+        }
+        .onChange(of: strokeColor) {
+            item.strokeColor = strokeColor.data()
         }
         .onChange(of: fill) {
-            item.fillColor = fill.data()
+            item.fill = fill
+        }
+        .onChange(of: stroke) {
+            item.stroke = stroke
         }
         .onAppear {
-            fill = Color(data: item.fillColor)
-            stroke = Color(data: item.strokeColor)
+            fill = item.fill
+            stroke = item.stroke
+            fillColor = Color(data: item.fillColor)
+            strokeColor = Color(data: item.strokeColor)
         }
     }
 }

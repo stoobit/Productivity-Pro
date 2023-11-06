@@ -15,6 +15,9 @@ struct ShapeArrangeView: View {
     @State var anglePicker: Bool = false
     
     @State var xPos: Bool = false
+    @State var yPos: Bool = false
+    @State var width: Bool = false
+    @State var heigth: Bool = false
     
     var hsc: UserInterfaceSizeClass?
     var body: some View {
@@ -37,8 +40,9 @@ struct ShapeArrangeView: View {
                     Text("Y")
                     Spacer()
                     Button(String(item.y.rounded(toPlaces: 1))) {
-                        
+                        yPos.toggle()
                     }
+                    .ppDoubleKeyboard(isPresented: $yPos, value: $item.y)
                 }
                 .frame(height: 30)
             }
@@ -82,8 +86,11 @@ struct ShapeArrangeView: View {
                     Text("Breite")
                     Spacer()
                     Button(String(item.width.rounded(toPlaces: 1))) {
-                        
+                        width.toggle()
                     }
+                    .ppDoubleKeyboard(
+                        isPresented: $width, value: $item.width
+                    )
                 }
                 .frame(height: 30)
                 
@@ -91,8 +98,11 @@ struct ShapeArrangeView: View {
                     Text("Höhe")
                     Spacer()
                     Button(String(item.height.rounded(toPlaces: 1))) {
-                        
+                        heigth.toggle()
                     }
+                    .ppDoubleKeyboard(
+                        isPresented: $heigth, value: $item.height
+                    )
                 }
                 .frame(height: 30)
             }
