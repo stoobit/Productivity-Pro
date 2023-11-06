@@ -19,34 +19,49 @@ struct ShapeItemView: View {
             Group {
                 if shape.type == PPShapeType.rectangle.rawValue {
                     
-                    
+                    ShapeView(
+                        shape: RoundedRectangle(
+                            cornerRadius: shape.cornerRadius * scale,
+                            style: .circular
+                        ),
+                        model: shape
+                    )
                     
                 } else if shape.type == PPShapeType.circle.rawValue {
                     
-                    StandardShapeView(shape: Ellipse(), model: shape)
+                    ShapeView(shape: Ellipse(), model: shape)
                     
                 } else if shape.type == PPShapeType.triangle.rawValue {
                     
-                    StandardShapeView(shape: Triangle(), model: shape)
+                    ShapeView(shape: Triangle(), model: shape)
                     
                 } else if shape.type == PPShapeType.hexagon.rawValue {
                     
-                    StandardShapeView(shape: Hexagon(), model: shape)
+                    ShapeView(shape: Hexagon(), model: shape)
                 }
             }
             .rotationEffect(Angle(degrees: shape.rotation))
         } 
     }
     
-    @ViewBuilder func StandardShapeView(shape: some Shape, model: PPShapeModel) -> some View {
+    @ViewBuilder func ShapeView(shape: some Shape, model: PPShapeModel) -> some View {
         ZStack {
             if model.fill {
-                shape
-                    .fill(Color(data: model.fillColor))
-                    .frame(
-                        width: editItem.size.width * scale,
-                        height: editItem.size.height * scale
-                    )
+                if model.stroke {
+                    shape
+                        .fill(Color(data: model.fillColor))
+                        .frame(
+                            width: (editItem.size.width + model.strokeWidth / 2) * scale,
+                            height: (editItem.size.height + model.strokeWidth / 2) * scale
+                        )
+                } else {
+                    shape
+                        .fill(Color(data: model.fillColor))
+                        .frame(
+                            width: editItem.size.width * scale,
+                            height: editItem.size.height * scale
+                        )
+                }
             }
             
             if model.stroke {
@@ -59,61 +74,8 @@ struct ShapeItemView: View {
                         width: (editItem.size.width + model.strokeWidth) * scale,
                         height: (editItem.size.height + model.strokeWidth) * scale
                     )
+                    .clipShape(shape)
             }
-        }
-    }
-    
-    @ViewBuilder func RoundedShapeView(model: PPShapeModel) -> some View {
-        ZStack {
-            if model.fill {
-                Rectangle()
-                    .fill(Color(data: model.fillColor))
-                    .frame(
-                        width: editItem.size.width * scale,
-                        height: editItem.size.height * scale
-                    )
-            }
-            
-            if model.stroke {
-                RoundedRectangle(cornerRadius: model.cornerRadius)
-                    .stroke(
-                        Color(data: model.strokeColor),
-                        lineWidth: model.strokeWidth * scale
-                    )
-                    .frame(
-                        width: (editItem.size.width + model.strokeWidth) * scale,
-                        height: (editItem.size.height + model.strokeWidth) * scale
-                    )
-            }
-        }
-        .clipShape(RoundedRectangle(cornerRadius: model.cornerRadius))
-    }
-    
-}
-
-struct CornerModifier: ViewModifier {
-    
-    var item: PPItemModel
-    
-    @Binding var editItem: EditItemModel
-    @Binding var scale: CGFloat
-    
-    func body(content: Content) -> some View {
-        
-        if item.shape!.stroke {
-            content
-                .frame(
-                    width: (editItem.size.width + item.shape!.strokeWidth) * scale,
-                    height: (editItem.size.height + item.shape!.strokeWidth) * scale
-                )
-                .clipShape(
-                    RoundedRectangle(
-                        cornerRadius: item.shape!.cornerRadius * scale,
-                        style: .circular
-                    )
-                )
-        } else {
-            content
         }
     }
 }

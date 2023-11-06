@@ -16,6 +16,7 @@ struct ShapeStyleView: View {
     @State var fillColor: Color = .black
     @State var strokeColor: Color = .black
     @State var strokeWidth: Bool = false
+    @State var cornerRadius: Bool = false
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.shape!
@@ -63,6 +64,26 @@ struct ShapeStyleView: View {
                         .ppDoubleKeyboard(
                             isPresented: $strokeWidth, 
                             value: $item.strokeWidth
+                        )
+                    }
+                    .frame(height: 30)
+                }
+                .listSectionSpacing(10)
+            }
+            
+            if item.type == PPShapeType.rectangle.rawValue {
+                Section("Ecken") {
+                    HStack {
+                        Text("Radius")
+                        
+                        Spacer()
+                        
+                        Button(String(item.cornerRadius)) {
+                            cornerRadius.toggle()
+                        }
+                        .ppDoubleKeyboard(
+                            isPresented: $cornerRadius,
+                            value: $item.cornerRadius
                         )
                     }
                     .frame(height: 30)
