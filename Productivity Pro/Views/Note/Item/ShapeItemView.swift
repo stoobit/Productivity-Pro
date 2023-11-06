@@ -54,6 +54,8 @@ struct ShapeItemView: View {
                             width: (editItem.size.width + model.strokeWidth / 2) * scale,
                             height: (editItem.size.height + model.strokeWidth / 2) * scale
                         )
+                        .contentShape(shape)
+                    
                 } else {
                     shape
                         .fill(Color(data: model.fillColor))
@@ -61,6 +63,7 @@ struct ShapeItemView: View {
                             width: editItem.size.width * scale,
                             height: editItem.size.height * scale
                         )
+                        .contentShape(shape)
                 }
             }
             
@@ -74,7 +77,7 @@ struct ShapeItemView: View {
                         width: (editItem.size.width + model.strokeWidth) * scale,
                         height: (editItem.size.height + model.strokeWidth) * scale
                     )
-                    .clipShape(shape)
+                    .contentShape(shape)
             }
         }
     }

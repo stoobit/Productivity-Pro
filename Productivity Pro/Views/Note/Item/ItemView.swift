@@ -84,7 +84,6 @@ struct ItemView: View {
             .onChange(of: item.height) {
                 editItemModel.size.height = item.height
             }
-            
             ToolView(page: page, item: item, scale: $scale)
                 .scaleEffect(toolManager.zoomScale)
                 .zIndex(Double(page.items!.count + 20))
