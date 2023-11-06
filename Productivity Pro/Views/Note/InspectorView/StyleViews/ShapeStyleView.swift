@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import PPDoubleKeyboard
 
 struct ShapeStyleView: View {
     @Environment(ToolManager.self) var toolManager
     
     @State var fill: Color = .black
     @State var stroke: Color = .black
+    
+    @State var strokeWidth: Bool = false
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.shape!
@@ -54,8 +57,12 @@ struct ShapeStyleView: View {
                         Spacer()
                         
                         Button(String(item.strokeWidth)) {
-                            
+                            strokeWidth.toggle()
                         }
+                        .ppDoubleKeyboard(
+                            isPresented: $strokeWidth, 
+                            value: $item.strokeWidth
+                        )
                     }
                     .frame(height: 30)
                 }
