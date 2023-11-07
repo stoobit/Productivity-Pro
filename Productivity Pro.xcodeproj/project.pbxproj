@@ -233,6 +233,7 @@
 		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
 		BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */; };
 		BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930792A674C9600AD3958 /* PPShape.swift */; };
+		BBFA29E42AFAF0B00037F948 /* EditBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA29E32AFAF0B00037F948 /* EditBar.swift */; };
 		BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD5B1A2ACCDE210068609A /* RichTextKit */; };
 /* End PBXBuildFile section */
 
@@ -470,6 +471,7 @@
 		BBF930722A67437900AD3958 /* PPColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPColor.swift; sourceTree = "<group>"; };
 		BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingViewMethods.swift; sourceTree = "<group>"; };
 		BBF930792A674C9600AD3958 /* PPShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPShape.swift; sourceTree = "<group>"; };
+		BBFA29E32AFAF0B00037F948 /* EditBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -593,6 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
+				BBFA29E32AFAF0B00037F948 /* EditBar.swift */,
 				BB7987022AD497C1003469E6 /* NoteViewModifier.swift */,
 				BB655B012AB772F700FB005A /* NoteViewModifier */,
 			);
@@ -1296,6 +1299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */,
+				BBFA29E42AFAF0B00037F948 /* EditBar.swift in Sources */,
 				BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */,
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,

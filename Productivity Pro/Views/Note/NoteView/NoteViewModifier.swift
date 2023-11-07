@@ -18,6 +18,14 @@ struct NoteViewModifier: ViewModifier {
             .modifier(
                 NoteViewSheet(contentObject: contentObject)
             )
+            .overlay {
+                EditBar()
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .bottomLeading
+                    )
+            }
     }
 }
 

@@ -45,4 +45,8 @@ import PencilKit
  
     @Relationship(deleteRule: .cascade)
     var items: [PPItemModel]? = []
+    
+    func deleteItem(with ID: UUID?) {
+        items?.removeAll(where: { $0.id == ID })
+    }
 }

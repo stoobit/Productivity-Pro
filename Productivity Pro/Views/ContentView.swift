@@ -34,7 +34,7 @@ struct ContentView: View {
                 .toolbarBackground(.visible, for: .tabBar)
                 .tag(1)
                 .tabItem {
-                    Label("Notizen", systemImage: "doc")
+                    Label("Notizen", systemImage: "doc.fill")
                 }
                 .sheet(isPresented: $subviewManager.shareView) {
                     ShareView()
@@ -59,15 +59,14 @@ struct ContentView: View {
                     Label("Aufgaben", systemImage: "checklist")
                 }
             
-            /*
-             LibraryView()
-             .modifier(PremiumBadge())
-             .toolbarBackground(.visible, for: .tabBar)
-             .tag(4)
-             .tabItem {
-             Label("Bibliothek", systemImage: "books.vertical")
-             }
-             */
+//            Text("Fokus")
+//                .modifier(PremiumBadge())
+//                .toolbarBackground(.visible, for: .tabBar)
+//                .tag(4)
+//                .tabItem {
+//                    Label("Fokus", systemImage: "timer")
+//                }
+//                .accentColor(.orange)
             
         }
         .disabled(toolManager.showProgress)
