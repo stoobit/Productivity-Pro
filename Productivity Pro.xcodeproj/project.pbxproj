@@ -152,6 +152,7 @@
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
 		BBA8085F2AC2056100F9DFCA /* ObjectViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */; };
+		BBACDDB52B028D8300CFBF30 /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = BBACDDB42B028D8300CFBF30 /* Inject */; };
 		BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* MarkdownParserView.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
 		BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */; };
@@ -489,6 +490,7 @@
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 				BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
+				BBACDDB52B028D8300CFBF30 /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1229,6 +1231,7 @@
 				BB74688C2AF5B8670029F60D /* PPAnglePicker */,
 				BB74688F2AF5B90C0029F60D /* PPAnglePicker */,
 				BBE993BF2AF850A800330733 /* PPDoubleKeyboard */,
+				BBACDDB42B028D8300CFBF30 /* Inject */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1268,6 +1271,7 @@
 				BB7468892AF5B49A0029F60D /* XCRemoteSwiftPackageReference "PPIntegrationKit" */,
 				BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
 				BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */,
+				BBACDDB32B028D8300CFBF30 /* XCRemoteSwiftPackageReference "Inject" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1670,6 +1674,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 2.0.1;
+				OTHER_LDFLAGS = "\"-Xlinker -interposable\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.ProductivityPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1717,6 +1722,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 2.0.1;
+				OTHER_LDFLAGS = "\"-Xlinker -interposable\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.ProductivityPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1778,6 +1784,14 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		BBACDDB32B028D8300CFBF30 /* XCRemoteSwiftPackageReference "Inject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.4;
+			};
+		};
 		BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
@@ -1836,6 +1850,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */;
 			productName = PPAnglePicker;
+		};
+		BBACDDB42B028D8300CFBF30 /* Inject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBACDDB32B028D8300CFBF30 /* XCRemoteSwiftPackageReference "Inject" */;
+			productName = Inject;
 		};
 		BBB090802A4BA35100A6F60A /* OnPasteboardChange */ = {
 			isa = XCSwiftPackageProductDependency;
