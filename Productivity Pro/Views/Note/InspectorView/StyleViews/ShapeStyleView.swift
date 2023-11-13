@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Inject
 import PPDoubleKeyboard
 
 struct ShapeStyleView: View {
