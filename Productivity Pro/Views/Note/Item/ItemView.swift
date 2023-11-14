@@ -91,6 +91,36 @@ struct ItemView: View {
 
         }
         
+        #warning("Editing Menu")
+        VStack {
+            ControlGroup {
+                
+                Button("Copy", systemImage: "doc.on.doc") {
+                    
+                }
+                
+                Button("Paste", systemImage: "doc.on.clipboard") {
+                    
+                }
+                
+                Button("Cut", systemImage: "scissors", role: .destructive) {
+                    
+                }
+                
+            } label: {
+                Label("Control Group", systemImage: "rectangle.3.group.fill")
+                    .foregroundStyle(Color.blue)
+            }
+            .controlGroupStyle(.menu)
+            .overlay {
+                Label("Control Group", systemImage: "rectangle.3.group.fill")
+                    .foregroundStyle(Color.blue)
+                    .allowsHitTesting(false)
+            }
+            
+        }
+        .padding()
+        
     }
     
     func setEditModel() {
