@@ -54,6 +54,7 @@ struct SubjectSettingsRow: View {
             "Möchtest du dieses Fach wirklich löschen?",
             isPresented: $isAlert, actions: {
                 
+                #warning("use confirmation dialog instead of alert")
                 Button("Cancel", role: .cancel) { isAlert.toggle() }
                 Button("Löschen", role: .destructive) { delete() }
                 
