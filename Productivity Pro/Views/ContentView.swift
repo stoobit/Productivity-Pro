@@ -10,7 +10,6 @@ import StoreKit
 import UserNotifications
 
 struct ContentView: View {
-    @StateObject var iapModel: IAPViewModel = .init()
     
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     @AppStorage("ppfirstsession") var firstSession: Bool = false
@@ -73,7 +72,6 @@ struct ContentView: View {
         .scrollDisabled(toolManager.showProgress)
         .environment(toolManager)
         .environment(subviewManager)
-        .environmentObject(iapModel)
         .scrollIndicators(.hidden)
         .overlay {
             if toolManager.showProgress {

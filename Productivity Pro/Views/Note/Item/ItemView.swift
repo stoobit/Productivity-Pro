@@ -84,43 +84,13 @@ struct ItemView: View {
             .onChange(of: item.height) {
                 editItemModel.size.height = item.height
             }
+            
             ToolView(page: page, item: item, scale: $scale)
                 .scaleEffect(toolManager.zoomScale)
                 .zIndex(Double(page.items!.count + 20))
                 .environment(editItemModel)
 
         }
-        
-        #warning("Editing Menu")
-        VStack {
-            ControlGroup {
-                
-                Button("Copy", systemImage: "doc.on.doc") {
-                    
-                }
-                
-                Button("Paste", systemImage: "doc.on.clipboard") {
-                    
-                }
-                
-                Button("Cut", systemImage: "scissors", role: .destructive) {
-                    
-                }
-                
-            } label: {
-                Label("Control Group", systemImage: "rectangle.3.group.fill")
-                    .foregroundStyle(Color.blue)
-            }
-            .controlGroupStyle(.menu)
-            .overlay {
-                Label("Control Group", systemImage: "rectangle.3.group.fill")
-                    .foregroundStyle(Color.blue)
-                    .allowsHitTesting(false)
-            }
-            
-        }
-        .padding()
-        
     }
     
     func setEditModel() {
