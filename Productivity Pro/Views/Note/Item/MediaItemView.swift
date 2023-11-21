@@ -13,20 +13,19 @@ struct MediaItemView: View {
     @Bindable var editItem: EditItemModel
     
     @Binding var scale: CGFloat
-    
     @State var image: UIImage = UIImage()
+    
     var body: some View {
         ZStack {
+            Image(uiImage: image)
+                .resizable()
+                .frame(
+                    width: (editItem.size.width + 0.1) * scale,
+                    height: (editItem.size.height + 0.1) * scale
+                )
+            
             if item.media?.stroke == true {
                 if let media = item.media {
-                    
-                    Image(uiImage: image)
-                        .resizable()
-                        .frame(
-                            width: (editItem.size.width + (media.strokeWidth/2)) * scale,
-                            height: (editItem.size.height + (media.strokeWidth/2)) * scale
-                        )
-                    
                     RoundedRectangle(
                         cornerRadius: media.cornerRadius * scale,
                         style: .circular
@@ -41,15 +40,6 @@ struct MediaItemView: View {
                     )
                     
                 }
-            } else {
-                
-                Image(uiImage: image)
-                    .resizable()
-                    .frame(
-                        width: editItem.size.width * scale,
-                        height: editItem.size.height * scale
-                    )
-                
             }
         }
         .clipShape(RoundedRectangle(

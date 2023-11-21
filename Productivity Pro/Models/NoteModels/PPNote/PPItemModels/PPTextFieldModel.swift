@@ -15,8 +15,8 @@ import SwiftData
     
     var nsAttributedString: Data = NSAttributedString().data()
     
-    var fill: Bool = true
-    var fillColor: Data = Color.gray.data()
+    var fill: Bool = false
+    var fillColor: Data = Color.green.data()
     
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.data()

@@ -1,45 +1,40 @@
 import SwiftUI
 
 struct TextFieldItemView: View {
-    
     @Environment(\.scenePhase) private var scenePhase
-    @Binding var document: Document
     
-    @Binding var item: ItemModel
-    @Binding var page: Page
+    @Bindable var item: PPItemModel
+    @Bindable var editItem: EditItemModel
     
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
-    var editItem: EditItemModel
-    
+    @Binding var scale: CGFloat
     @State var renderedImage: UIImage?
-    @Binding var offset: CGFloat
     
     var highRes: Bool
+    
     var body: some View {
         ZStack {
-            
-            if item.textField!.showStroke {
-                Rectangle()
-                    .stroke(
-                        Color(data: item.textField!.strokeColor),
-                        lineWidth: item.textField!.strokeWidth * toolManager.zoomScale
-                    )
+            if let textField = item.textField {
+                if textField.stroke {
+                    Rectangle()
+                        .stroke(
+                            Color(data: textField.strokeColor),
+                            lineWidth: textField.strokeWidth * scale
+                        )
+                        .frame(
+                            width: (editItem.size.width + textField.strokeWidth) * scale,
+                            height: (editItem.size.height + textField.strokeWidth) * scale,
+                            alignment: .topLeading
+                        )
+                }
+                
+                Color(data: textField.fill ? textField.fillColor : Color.clear.data())
+                    .contentShape(Rectangle())
                     .frame(
-                        width: (editItem.size.width + item.textField!.strokeWidth) * toolManager.zoomScale,
-                        height: (editItem.size.height + item.textField!.strokeWidth) * toolManager.zoomScale,
+                        width: editItem.size.width * scale,
+                        height: editItem.size.height * scale,
                         alignment: .topLeading
                     )
             }
-            
-            let clear = Color.clear.data()
-            Color(data: item.textField!.showFill ? item.textField!.fillColor : clear)
-                .contentShape(Rectangle())
-                .frame(
-                    width: editItem.size.width * toolManager.zoomScale,
-                    height: editItem.size.height * toolManager.zoomScale,
-                    alignment: .topLeading
-                )
             
             if highRes == false {
                 if let image = renderedImage {
@@ -47,62 +42,41 @@ struct TextFieldItemView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(
-                            width: editItem.size.width * toolManager.zoomScale,
-                            height: editItem.size.height * toolManager.zoomScale,
+                            width: editItem.size.width * scale,
+                            height: editItem.size.height * scale,
                             alignment: .topLeading
                         )
                 }
                 
             } else {
-                MarkdownParserView(
-                    editItem: editItem,
-                    itemModel: item,
-                    page: $page,
-                    highRes: true
-                )
-                .frame(
-                    width: editItem.size.width * toolManager.zoomScale,
-                    height: editItem.size.height * toolManager.zoomScale,
-                    alignment: .topLeading
-                )
+                NSAttributedStringView(item: item, editItem: editItem)
+                    .frame(
+                        width: editItem.size.width * scale,
+                        height: editItem.size.height * scale,
+                        alignment: .topLeading
+                    )
             }
         }
         .onChange(of: editItem.size) { render() }
         .onChange(of: item.textField) { render() }
-        .onChange(of: offset) { render() }
-        .onChange(of: toolManager.zoomScale) {
-            render()
-            renderPreview()
-        }
+        .onChange(of: scale) { render() }
+        .onChange(of: scenePhase) { render() }
         .onAppear {
-            render()
-            renderPreview()
-        }
-        .onDisappear {
-            renderedImage = nil
-        }
-        .onChange(of: scenePhase) { 
             render()
         }
         
     }
     
-    @MainActor
-    func render() {
-        if toolManager.selectedTab == page.id && offset == 0 && highRes == false {
+    @MainActor func render() {
+        if highRes == false {
             var image: UIImage = renderedImage ?? UIImage()
             
             var view: some View {
-                MarkdownParserView(
-                    editItem: editItem,
-                    itemModel: item,
-                    page: $page,
-                    highRes: false
-                )
+                NSAttributedStringView(item: item, editItem: editItem)
             }
             
             let renderer = ImageRenderer(content: view)
-            let scale = 2 * toolManager.zoomScale
+            let scale = 2 * scale
             
             renderer.isOpaque = false
             
@@ -120,39 +94,4 @@ struct TextFieldItemView: View {
         }
     }
     
-    @MainActor
-    func renderPreview() {
-        if renderedImage == nil && highRes == false {
-                
-                var view: some View {
-                    MarkdownParserView(
-                        editItem: editItem,
-                        itemModel: item,
-                        page: $page,
-                        highRes: false
-                    )
-                    .scaleEffect(0.2)
-                    .frame(
-                        width: editItem.size.width * 0.2,
-                        height: editItem.size.height * 0.2
-                    )
-                }
-                
-                let renderer = ImageRenderer(content: view)
-                renderer.isOpaque = false
-                renderer.scale = 1
-                
-                renderedImage = renderer.uiImage
-            }
-    }
-    
-    func colorScheme() -> ColorScheme {
-        var cs: ColorScheme = .dark
-        
-        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
-            cs = .light
-        }
-        
-        return cs
-    }
 }

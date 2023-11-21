@@ -152,7 +152,7 @@
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
 		BBA8085F2AC2056100F9DFCA /* ObjectViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */; };
-		BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* MarkdownParserView.swift */; };
+		BBADD1382A5102620075B825 /* NSAttributedStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* NSAttributedStringView.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
 		BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
@@ -393,7 +393,7 @@
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewToolbar.swift; sourceTree = "<group>"; };
 		BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewMethods.swift; sourceTree = "<group>"; };
-		BBADD1362A5102620075B825 /* MarkdownParserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownParserView.swift; sourceTree = "<group>"; };
+		BBADD1362A5102620075B825 /* NSAttributedStringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringView.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
 		BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRowMethods.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
@@ -1082,7 +1082,7 @@
 				BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */,
 				BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */,
 				BBADD1372A5102620075B825 /* TextfieldItemView.swift */,
-				BBADD1362A5102620075B825 /* MarkdownParserView.swift */,
+				BBADD1362A5102620075B825 /* NSAttributedStringView.swift */,
 				BBC7B9772A1988E800D496CB /* ToolView */,
 			);
 			path = Item;
@@ -1320,7 +1320,7 @@
 				BB93676C2AC9CE430096F20E /* PPTableModel.swift in Sources */,
 				BBEFC94F2A41035C00960C8D /* SecondaryToolbarMethods.swift in Sources */,
 				BB6701582AADEFA7001F468A /* ContentView.swift in Sources */,
-				BBADD1382A5102620075B825 /* MarkdownParserView.swift in Sources */,
+				BBADD1382A5102620075B825 /* NSAttributedStringView.swift in Sources */,
 				BBCDBFB72AC8A9EF00EF825F /* ContentObjectLink.swift in Sources */,
 				BB68F0C22ACA1774006C91AE /* PPLinkModel.swift in Sources */,
 				BBB763B22A3A70DD00273182 /* EditTextfieldItemMethods.swift in Sources */,

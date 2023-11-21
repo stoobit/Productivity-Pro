@@ -39,22 +39,22 @@ struct ItemView: View {
                     )
                     
                 } else if item.type == PPItemType.textField.rawValue {
-//                    TextFieldItemView(
-//                        document: $document,
-//                        item: $item,
-//                        page: $page,
-//                        toolManager: toolManager,
-//                        subviewManager: subviewManager,
-//                        editItem: editItemModel,
-//                        offset: $offset,
-//                        highRes: highRes
-//                    )
+                    
+                    TextFieldItemView(
+                        item: item, 
+                        editItem: editItemModel,
+                        scale: $scale,
+                        highRes: highResolution
+                    )
+                    
                 } else if item.type == PPItemType.media.rawValue {
+                    
                     MediaItemView(
                         item: item,
                         editItem: editItemModel,
                         scale: $scale
                     )
+                    
                 }
             }
             .position(
