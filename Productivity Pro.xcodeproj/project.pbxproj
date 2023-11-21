@@ -73,7 +73,8 @@
 		BB50FCCE2B0D085000D12783 /* RTFEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */; };
 		BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */; };
 		BB50FCD22B0D18D100D12783 /* RTFEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */; };
-		BB50FCD52B0D1CE200D12783 /* RTFStyleToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD42B0D1CE200D12783 /* RTFStyleToggle.swift */; };
+		BB50FCD52B0D1CE200D12783 /* RTFStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD42B0D1CE200D12783 /* RTFStyle.swift */; };
+		BB50FCD72B0D5AFD00D12783 /* RTFAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD62B0D5AFD00D12783 /* RTFAlignment.swift */; };
 		BB53D5B029C4F79F008130F2 /* EditMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */; };
 		BB58477D29A18BF900C21B17 /* PPControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58477C29A18BF900C21B17 /* PPControlBar.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
@@ -319,7 +320,8 @@
 		BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorView.swift; sourceTree = "<group>"; };
 		BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldArrangeView.swift; sourceTree = "<group>"; };
 		BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorToolbar.swift; sourceTree = "<group>"; };
-		BB50FCD42B0D1CE200D12783 /* RTFStyleToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFStyleToggle.swift; sourceTree = "<group>"; };
+		BB50FCD42B0D1CE200D12783 /* RTFStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFStyle.swift; sourceTree = "<group>"; };
+		BB50FCD62B0D5AFD00D12783 /* RTFAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFAlignment.swift; sourceTree = "<group>"; };
 		BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownView.swift; sourceTree = "<group>"; };
 		BB58477C29A18BF900C21B17 /* PPControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPControlBar.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
@@ -753,7 +755,8 @@
 			isa = PBXGroup;
 			children = (
 				BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */,
-				BB50FCD42B0D1CE200D12783 /* RTFStyleToggle.swift */,
+				BB50FCD42B0D1CE200D12783 /* RTFStyle.swift */,
+				BB50FCD62B0D5AFD00D12783 /* RTFAlignment.swift */,
 			);
 			path = RTFEditorToolbar;
 			sourceTree = "<group>";
@@ -1324,6 +1327,7 @@
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
+				BB50FCD72B0D5AFD00D12783 /* RTFAlignment.swift in Sources */,
 				BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
@@ -1424,7 +1428,7 @@
 				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
 				BB9CC948293FD45E0094446A /* ShareView.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
-				BB50FCD52B0D1CE200D12783 /* RTFStyleToggle.swift in Sources */,
+				BB50FCD52B0D1CE200D12783 /* RTFStyle.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,

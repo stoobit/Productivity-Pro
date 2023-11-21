@@ -13,11 +13,14 @@ struct RTFEditorToolbar: ToolbarContent {
     
     var body: some ToolbarContent {
         
-        ToolbarItemGroup(placement: .primaryAction) {
-            RTFStyleToggle(context: context, style: .bold)
-            RTFStyleToggle(context: context, style: .italic)
-            RTFStyleToggle(context: context, style: .underlined)
-            RTFStyleToggle(context: context, style: .strikethrough)
+        ToolbarItemGroup(placement: .topBarLeading) {
+            Group {
+                RTFStyle(context: context)
+                RTFAlignment(context: context)
+                RichTextFontSizePicker(selection: $context.fontSize)
+                RichTextFontPicker(selection: $context.fontName)
+            }
+            .tint(Color.primary)
         }
         
     }

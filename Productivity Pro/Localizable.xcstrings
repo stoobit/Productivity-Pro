@@ -113,6 +113,9 @@
         }
       }
     },
+    "Alignment" : {
+
+    },
     "Allgemein" : {
       "localizations" : {
         "en" : {
@@ -242,6 +245,9 @@
 
     },
     "Bold" : {
+
+    },
+    "Bold, Italic, Underline, Strikethrough" : {
 
     },
     "Border Style" : {
@@ -650,10 +656,16 @@
         }
       }
     },
+    "Justified" : {
+
+    },
     "Kamera" : {
 
     },
     "Kreis" : {
+
+    },
+    "Left" : {
 
     },
     "Lehrer" : {
@@ -871,6 +883,9 @@
       }
     },
     "Rechteck" : {
+
+    },
+    "Right" : {
 
     },
     "Rolle" : {
