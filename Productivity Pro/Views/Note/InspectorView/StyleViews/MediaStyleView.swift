@@ -83,7 +83,3 @@ struct MediaStyleView: View {
         }
     }
 }
-
-#Preview {
-    MediaStyleView()
-}

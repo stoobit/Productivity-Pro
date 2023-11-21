@@ -43,6 +43,12 @@ struct NoteViewSheet: ViewModifier {
                     changePage(isPortrait, template, color)
                 }
             })
+            .sheet(isPresented: $manager.overview, content: {
+                
+            })
+            .sheet(isPresented: $manager.rtfEditor, content: {
+                RTFEditorView()
+            })
             .fullScreenCover(isPresented: $manager.scanDocument) {
                 ScannerView(
                     cancelAction: { subviewManager.scanDocument = false }
@@ -58,9 +64,6 @@ struct NoteViewSheet: ViewModifier {
             ) { result in
                 importPDF(with: result)
             }
-            .sheet(isPresented: $manager.overview, content: {
-                
-            })
             .alert(
                 "Möchtest du diese Seite wirklich löschen?",
                 isPresented: $manager.deletePage
@@ -74,17 +77,17 @@ struct NoteViewSheet: ViewModifier {
                     subviewManager.deletePage = false
                 }
             }
-        //            .background {
-        //                if subviewManager.showPrinterView {
-        //                    if let url = toolManager.pdfRendering {
-        //                        PrinterView(
-        //                            document: $document,
-        //                            subviewManager: subviewManager,
-        //                            url: url
-        //                        )
-        //                    }
-        //                }
-        //            }
+            .background {
+                if subviewManager.printerView {
+                    if let url = toolManager.pdfRendering {
+//                        PrinterView(
+//                            document: $document,
+//                            subviewManager: subviewManager,
+//                            url: url
+//                        )
+                    }
+                }
+            }
         
     }
     

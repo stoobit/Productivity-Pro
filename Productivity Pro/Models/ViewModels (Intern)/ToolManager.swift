@@ -52,7 +52,6 @@ import PDFKit
     
     var isDraggingItem: Bool = false
     
-    var photoPickerItem: PhotosPickerItem?
     var pickedImage: UIImage?
     var pdfRendering: URL?
     

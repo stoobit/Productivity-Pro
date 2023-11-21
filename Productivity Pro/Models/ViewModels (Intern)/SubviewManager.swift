@@ -28,8 +28,10 @@ import Observation
     var importFile: Bool = false
     var deletePage: Bool = false
     
+    var rtfEditor: Bool = false
+    
     // MARK: - UNCHECKED & OLD
-    var showPrinterView: Bool = false
+    var printerView: Bool = false
     
     var sharePDFSheet: Bool = false
     

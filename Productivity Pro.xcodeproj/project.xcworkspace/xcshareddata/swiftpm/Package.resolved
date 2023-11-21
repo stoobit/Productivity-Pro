@@ -1,24 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "inject",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/krzysztofzablocki/Inject.git",
-      "state" : {
-        "revision" : "2057eb9819813b89fd2107e99608d2d20890d9c5",
-        "version" : "1.2.4"
-      }
-    },
-    {
-      "identity" : "ios-sdk",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/glassfy/ios-sdk",
-      "state" : {
-        "revision" : "fff920920656555fbd40137a2a9397edb46f96f1",
-        "version" : "1.4.0"
-      }
-    },
-    {
       "identity" : "onpasteboardchange",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kyle-n/OnPasteboardChange",

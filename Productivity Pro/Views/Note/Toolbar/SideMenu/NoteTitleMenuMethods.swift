@@ -34,7 +34,7 @@ extension NoteTitleMenu {
             }
             
             toolManager.showProgress = false
-//            subviewManager.showPrinterView.toggle()
+            subviewManager.printerView.toggle()
         }
     }
     

@@ -19,7 +19,7 @@ struct ArrangeContainerView: View {
         } else if toolManager.activeItem?.type == item.media.rawValue {
             MediaArrangeView()
         }  else if toolManager.activeItem?.type == item.textField.rawValue {
-            
+            TextFieldArrangeView()
         } else {
             ProgressView()
         }

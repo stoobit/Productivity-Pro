@@ -27,5 +27,6 @@ import SwiftData
     var shadowColor: Data = Color.black.data()
     
     var cornerRadius: Double = 0
+    var rotation: Double = 0
 }
 

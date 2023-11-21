@@ -57,6 +57,7 @@ struct TextFieldItemView: View {
                     )
             }
         }
+        .rotationEffect(Angle(degrees: item.textField?.rotation ?? 0))
         .onChange(of: editItem.size) { render() }
         .onChange(of: item.textField) { render() }
         .onChange(of: scale) { render() }

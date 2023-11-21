@@ -14,6 +14,8 @@ extension ToolView {
             return item.shape!.rotation
         } else if item.type == PPItemType.media.rawValue {
             return item.media!.rotation
+        } else if item.type == PPItemType.textField.rawValue {
+            return item.textField!.rotation
         } else {
             return 0
         }

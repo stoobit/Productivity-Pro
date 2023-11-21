@@ -33,7 +33,7 @@ struct PrinterView: UIViewControllerRepresentable
             printController.present(animated: true, completionHandler: { _, _, _ in
                 printController.printFormatter = nil
                 
-                subviewManager.showPrinterView = false
+                subviewManager.printerView = false
                 try? FileManager.default.removeItem(at: url)
                 
             })
