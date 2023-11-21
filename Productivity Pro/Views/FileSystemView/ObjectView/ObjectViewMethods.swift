@@ -102,8 +102,7 @@ extension ObjectView {
                         let ppTextField = PPTextFieldModel()
                         
                         ppItem.textField = ppTextField
-                        ppTextField.nsAttributedString = markdown(textField: textField)
-                            .toCodable()
+                        ppTextField.nsAttributedString = markdown(textField: textField).data()
                         
                         ppTextField.fill = textField.showFill
                         ppTextField.fillColor = textField.fillColor

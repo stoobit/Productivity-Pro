@@ -114,17 +114,15 @@ struct TextFieldArrangeView: View {
                         Text("\(String(textField.rotation))°")
                     }
                     .popover(isPresented: $anglePicker) {
-                        PPAnglePickerView(
-                            degrees: $textField.rotation
-                        )
-                        .presentationCompactAdaptation(.popover)
-                        .frame(width: 270, height: 270)
-                        .background {
-                            Color(
-                                UIColor.secondarySystemBackground
-                            )
-                            .ignoresSafeArea(.all)
-                        }
+                        PPAnglePickerView(degrees: $textField.rotation)
+                            .presentationCompactAdaptation(.popover)
+                            .frame(width: 270, height: 270)
+                            .background {
+                                Color(
+                                    UIColor.secondarySystemBackground
+                                )
+                                .ignoresSafeArea(.all)
+                            }
                     }
                 }
                 .frame(height: 30)

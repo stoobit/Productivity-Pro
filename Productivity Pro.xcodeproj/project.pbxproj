@@ -72,6 +72,8 @@
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
 		BB50FCCE2B0D085000D12783 /* RTFEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */; };
 		BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */; };
+		BB50FCD22B0D18D100D12783 /* RTFEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */; };
+		BB50FCD52B0D1CE200D12783 /* RTFStyleToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD42B0D1CE200D12783 /* RTFStyleToggle.swift */; };
 		BB53D5B029C4F79F008130F2 /* EditMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */; };
 		BB58477D29A18BF900C21B17 /* PPControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58477C29A18BF900C21B17 /* PPControlBar.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
@@ -81,7 +83,6 @@
 		BB6701582AADEFA7001F468A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6701572AADEFA7001F468A /* ContentView.swift */; };
 		BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB67015A2AADF2D5001F468A /* DeskView.swift */; };
 		BB67015D2AADF480001F468A /* DeskViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB67015C2AADF480001F468A /* DeskViewHelper.swift */; };
-		BB68082B29FDD2A90026FDDF /* NSAttributedStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68082A29FDD2A90026FDDF /* NSAttributedStringConverter.swift */; };
 		BB68502B2AE99F520011A058 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68502A2AE99F520011A058 /* LoadingView.swift */; };
 		BB68F0C22ACA1774006C91AE /* PPLinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */; };
 		BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C32ACA1789006C91AE /* PPLinkType.swift */; };
@@ -317,6 +318,8 @@
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
 		BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorView.swift; sourceTree = "<group>"; };
 		BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldArrangeView.swift; sourceTree = "<group>"; };
+		BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorToolbar.swift; sourceTree = "<group>"; };
+		BB50FCD42B0D1CE200D12783 /* RTFStyleToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFStyleToggle.swift; sourceTree = "<group>"; };
 		BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownView.swift; sourceTree = "<group>"; };
 		BB58477C29A18BF900C21B17 /* PPControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPControlBar.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
@@ -326,7 +329,6 @@
 		BB6701572AADEFA7001F468A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB67015A2AADF2D5001F468A /* DeskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskView.swift; sourceTree = "<group>"; };
 		BB67015C2AADF480001F468A /* DeskViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskViewHelper.swift; sourceTree = "<group>"; };
-		BB68082A29FDD2A90026FDDF /* NSAttributedStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringConverter.swift; sourceTree = "<group>"; };
 		BB68502A2AE99F520011A058 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BB68F0C12ACA1774006C91AE /* PPLinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLinkModel.swift; sourceTree = "<group>"; };
 		BB68F0C32ACA1789006C91AE /* PPLinkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLinkType.swift; sourceTree = "<group>"; };
@@ -742,8 +744,18 @@
 			isa = PBXGroup;
 			children = (
 				BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */,
+				BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */,
+				BB50FCD32B0D1CAD00D12783 /* RTFEditorToolbar */,
 			);
 			path = RTFEditor;
+			sourceTree = "<group>";
+		};
+		BB50FCD32B0D1CAD00D12783 /* RTFEditorToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				BB50FCD42B0D1CE200D12783 /* RTFStyleToggle.swift */,
+			);
+			path = RTFEditorToolbar;
 			sourceTree = "<group>";
 		};
 		BB655AF82AB7674900FB005A /* SideMenu */ = {
@@ -999,7 +1011,6 @@
 				BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */,
 				BB3525B22908673800D35790 /* Array.swift */,
 				BB174F542A1051B400F753F6 /* Date.swift */,
-				BB68082A29FDD2A90026FDDF /* NSAttributedStringConverter.swift */,
 				BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */,
 				BB27FED128EA09A200459334 /* TouchType.swift */,
 				BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */,
@@ -1398,7 +1409,6 @@
 				BB9A364C2ABCD5D700721C56 /* HomeworkAddView.swift in Sources */,
 				BB7987032AD497C1003469E6 /* NoteViewModifier.swift in Sources */,
 				BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */,
-				BB68082B29FDD2A90026FDDF /* NSAttributedStringConverter.swift in Sources */,
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
 				BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */,
 				BB2CFEFD2A6EB3470035511A /* PPControlBarMethods.swift in Sources */,
@@ -1414,6 +1424,7 @@
 				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
 				BB9CC948293FD45E0094446A /* ShareView.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
+				BB50FCD52B0D1CE200D12783 /* RTFStyleToggle.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,
@@ -1423,6 +1434,7 @@
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
 				BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */,
 				BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */,
+				BB50FCD22B0D18D100D12783 /* RTFEditorToolbar.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
 				BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */,
