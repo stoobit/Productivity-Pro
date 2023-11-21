@@ -15,9 +15,9 @@ struct ArrangeContainerView: View {
     var body: some View {
         
         if toolManager.activeItem?.type == item.shape.rawValue {
-            ShapeArrangeView(hsc: hsc)
+            ShapeArrangeView()
         } else if toolManager.activeItem?.type == item.media.rawValue {
-            
+            MediaArrangeView()
         }  else if toolManager.activeItem?.type == item.textField.rawValue {
             
         } else {

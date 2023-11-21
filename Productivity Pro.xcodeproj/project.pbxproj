@@ -191,6 +191,7 @@
 		BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */; };
 		BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */; };
 		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
+		BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
 		BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */; };
@@ -428,6 +429,7 @@
 		BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPosition.swift; sourceTree = "<group>"; };
 		BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewItem.swift; sourceTree = "<group>"; };
 		BBD3C4202A54DA46002BFFCF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaArrangeView.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemView.swift; sourceTree = "<group>"; };
@@ -846,6 +848,7 @@
 			isa = PBXGroup;
 			children = (
 				BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */,
+				BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */,
 			);
 			path = ArrangeViews;
 			sourceTree = "<group>";
@@ -1350,6 +1353,7 @@
 				BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */,
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
+				BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */,
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
 				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,

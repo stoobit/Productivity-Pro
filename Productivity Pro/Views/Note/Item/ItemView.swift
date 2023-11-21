@@ -34,7 +34,7 @@ struct ItemView: View {
                     
                     ShapeItemView(
                         item: item,
-                        editItem: $editItemModel,
+                        editItem: editItemModel,
                         scale: $scale
                     )
                     
@@ -50,12 +50,11 @@ struct ItemView: View {
 //                        highRes: highRes
 //                    )
                 } else if item.type == PPItemType.media.rawValue {
-//                    MediaItemView(
-//                        item: $item,
-//                        page: $page,
-//                        toolManager: toolManager,
-//                        editItem: editItemModel
-//                    )
+                    MediaItemView(
+                        item: item,
+                        editItem: editItemModel,
+                        scale: $scale
+                    )
                 }
             }
             .position(

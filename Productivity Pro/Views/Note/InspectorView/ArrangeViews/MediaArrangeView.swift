@@ -1,15 +1,15 @@
 //
-//  ShapeArrangeView.swift
+//  MediaArrangeView.swift
 //  Productivity Pro
 //
-//  Created by Till Brügmann on 21.10.23.
+//  Created by Till Brügmann on 21.11.23.
 //
 
 import SwiftUI
-import PPAnglePicker
 import PPDoubleKeyboard
+import PPAnglePicker
 
-struct ShapeArrangeView: View {
+struct MediaArrangeView: View {
     @Environment(ToolManager.self) var toolManager
     
     @State var anglePicker: Bool = false
@@ -20,7 +20,7 @@ struct ShapeArrangeView: View {
     @State var heigth: Bool = false
     
     var body: some View {
-        @Bindable var shape = toolManager.activeItem!.shape!
+        @Bindable var media = toolManager.activeItem!.media!
         @Bindable var item = toolManager.activeItem!
         
         Form {
@@ -111,11 +111,11 @@ struct ShapeArrangeView: View {
                     Text("Drehung")
                     Spacer()
                     Button(action: { anglePicker.toggle() }) {
-                        Text("\(String(shape.rotation))°")
+                        Text("\(String(media.rotation))°")
                     }
                     .popover(isPresented: $anglePicker) {
                         PPAnglePickerView(
-                            degrees: $shape.rotation
+                            degrees: $media.rotation
                         )
                         .presentationCompactAdaptation(.popover)
                         .frame(width: 270, height: 270)
@@ -133,4 +133,8 @@ struct ShapeArrangeView: View {
         }
         .environment(\.defaultMinListRowHeight, 10)
     }
+}
+
+#Preview {
+    MediaArrangeView()
 }

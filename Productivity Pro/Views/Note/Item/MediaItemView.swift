@@ -9,43 +9,54 @@ import SwiftUI
 
 struct MediaItemView: View {
     
-    @Binding var item: ItemModel
-    @Binding var page: Page
+    @Bindable var item: PPItemModel
+    @Bindable var editItem: EditItemModel
     
-    @Bindable var toolManager: ToolManager
-    var editItem: EditItemModel
+    @Binding var scale: CGFloat
     
     @State var image: UIImage = UIImage()
     var body: some View {
         ZStack {
-            
-            Image(uiImage: image)
-                .resizable()
-                .frame(
-                    width: editItem.size.width * toolManager.zoomScale,
-                    height: editItem.size.height * toolManager.zoomScale
-                )
-            
-            if item.media!.showStroke {
-                RoundedRectangle(
-                    cornerRadius: item.media!.cornerRadius * toolManager.zoomScale,
-                    style: .circular
-                )
-                .stroke(
-                    Color(data: item.media!.strokeColor),
-                    lineWidth:  item.media!.strokeWidth * toolManager.zoomScale
-                )
-                .frame(
-                    width: (editItem.size.width + item.media!.strokeWidth) * toolManager.zoomScale,
-                    height: (editItem.size.height + item.media!.strokeWidth) * toolManager.zoomScale,
-                    alignment: .topLeading
-                )
+            if item.media?.stroke == true {
+                if let media = item.media {
+                    
+                    Image(uiImage: image)
+                        .resizable()
+                        .frame(
+                            width: (editItem.size.width + (media.strokeWidth/2)) * scale,
+                            height: (editItem.size.height + (media.strokeWidth/2)) * scale
+                        )
+                    
+                    RoundedRectangle(
+                        cornerRadius: media.cornerRadius * scale,
+                        style: .circular
+                    )
+                    .stroke(
+                        Color(data: media.strokeColor),
+                        lineWidth:  media.strokeWidth * scale * 2
+                    )
+                    .frame(
+                        width: (editItem.size.width + media.strokeWidth * 2) * scale,
+                        height: (editItem.size.height + media.strokeWidth * 2) * scale
+                    )
+                    
+                }
+            } else {
+                
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(
+                        width: editItem.size.width * scale,
+                        height: editItem.size.height * scale
+                    )
+                
             }
         }
         .clipShape(RoundedRectangle(
-            cornerRadius: item.media!.cornerRadius * toolManager.zoomScale,
+            cornerRadius: item.media!.cornerRadius * scale,
             style: .circular
         ))
+        .rotationEffect(Angle(degrees: item.media?.rotation ?? 0))
         .onAppear {
             image = UIImage(data: item.media?.media ?? Data()) ?? UIImage()
         }
