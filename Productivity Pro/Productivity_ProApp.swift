@@ -7,7 +7,6 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
-import Inject
 
 @main
 struct Productivity_ProApp: App {

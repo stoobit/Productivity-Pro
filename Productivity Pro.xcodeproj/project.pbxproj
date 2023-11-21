@@ -744,7 +744,6 @@
 			isa = PBXGroup;
 			children = (
 				BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */,
-				BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */,
 				BB50FCD32B0D1CAD00D12783 /* RTFEditorToolbar */,
 			);
 			path = RTFEditor;
@@ -753,6 +752,7 @@
 		BB50FCD32B0D1CAD00D12783 /* RTFEditorToolbar */ = {
 			isa = PBXGroup;
 			children = (
+				BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */,
 				BB50FCD42B0D1CE200D12783 /* RTFStyleToggle.swift */,
 			);
 			path = RTFEditorToolbar;

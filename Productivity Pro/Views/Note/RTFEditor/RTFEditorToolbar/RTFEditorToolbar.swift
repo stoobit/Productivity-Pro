@@ -14,7 +14,10 @@ struct RTFEditorToolbar: ToolbarContent {
     var body: some ToolbarContent {
         
         ToolbarItemGroup(placement: .primaryAction) {
-            
+            RTFStyleToggle(context: context, style: .bold)
+            RTFStyleToggle(context: context, style: .italic)
+            RTFStyleToggle(context: context, style: .underlined)
+            RTFStyleToggle(context: context, style: .strikethrough)
         }
         
     }

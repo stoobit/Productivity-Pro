@@ -241,6 +241,9 @@
     "Bild" : {
 
     },
+    "Bold" : {
+
+    },
     "Border Style" : {
 
     },
@@ -624,6 +627,9 @@
         }
       }
     },
+    "Italic" : {
+
+    },
     "Jetzt löschen" : {
       "localizations" : {
         "en" : {
@@ -983,6 +989,9 @@
     "Stil" : {
 
     },
+    "Strikethrough" : {
+
+    },
     "Student" : {
 
     },
@@ -1080,6 +1089,9 @@
           }
         }
       }
+    },
+    "Underlined" : {
+
     },
     "Undo" : {
 

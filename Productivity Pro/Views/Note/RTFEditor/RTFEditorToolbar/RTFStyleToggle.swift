@@ -6,13 +6,42 @@
 //
 
 import SwiftUI
+import RichTextKit
 
 struct RTFStyleToggle: View {
+    
+    @StateObject var context: RichTextContext
+    var style: RichTextStyle
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Group {
+            if style == .strikethrough {
+                
+                Toggle(isOn: $context.isStrikethrough) {
+                    Label("Strikethrough", systemImage: "strikethrough")
+                        .frame(width: 40, height: 40)
+                }
+                
+            } else if style == .underlined {
+                
+                Toggle(isOn: $context.isUnderlined) {
+                    Label("Underlined", systemImage: "underline")
+                }
+                
+            } else if style == .bold {
+                
+                Toggle(isOn: $context.isBold) {
+                    Label("Bold", systemImage: "bold")
+                }
+                
+            } else if style == .italic {
+                
+                Toggle(isOn: $context.isItalic) {
+                    Label("Italic", systemImage: "italic")
+                }
+                
+            }
+        }
+        .toggleStyle(.button)
     }
-}
-
-#Preview {
-    RTFStyleToggle()
 }
