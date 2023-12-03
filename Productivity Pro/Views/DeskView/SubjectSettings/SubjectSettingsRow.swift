@@ -50,14 +50,11 @@ struct SubjectSettingsRow: View {
             }
             .tint(Color.red)
         }
-        .alert(
+        .confirmationDialog(
             "Möchtest du dieses Fach wirklich löschen?",
             isPresented: $isAlert, actions: {
-                
-                #warning("use confirmation dialog instead of alert")
                 Button("Cancel", role: .cancel) { isAlert.toggle() }
                 Button("Löschen", role: .destructive) { delete() }
-                
             }
         ) {
               Text("Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht.")

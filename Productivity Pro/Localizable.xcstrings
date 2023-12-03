@@ -703,6 +703,9 @@
     "Mit Deiner Bewertung unterstützt Du die Entwicklung von **Productivity Pro** und sorgst dafür, dass es auch in Zukunft regelmäßig Updates gibt." : {
 
     },
+    "Mit einem Abonnement von Productivity Pro Premium erhältst du Zugang zu zahlreichen zusätzlichen Funktionen. Dazu gehören ein personalisierbarer Stundenplan sowie die Möglichkeit, Aufgaben effektiv zu organisieren und vieles mehr." : {
+
+    },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
       "localizations" : {
         "en" : {
@@ -839,9 +842,6 @@
           }
         }
       }
-    },
-    "Premium abonnieren" : {
-
     },
     "Productivity Pro" : {
       "localizations" : {

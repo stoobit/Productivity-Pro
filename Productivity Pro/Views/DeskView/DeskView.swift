@@ -9,17 +9,25 @@ import SwiftUI
 
 struct DeskView: View {
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
+    
+    @State var premiumView: Bool = false
     @State var shareView: Bool = false
     
     var body: some View {
         NavigationStack {
             Form {
-                NavigationLink(destination: {
-                    PremiumView()
-                }) {
-                    Label("Premium", systemImage: "crown.fill")
+                Button(action: { premiumView.toggle() }) {
+                    Label(title: {
+                        Text("Premium")
+                            .foregroundStyle(Color.white)
+                    }) {
+                        Image(systemName: "crown.fill")
+                    }
                 }
                 .frame(height: 30)
+                .sheet(isPresented: $premiumView, content: {
+                    PremiumView()
+                })
                 
                 Settings()
                 LinkView()

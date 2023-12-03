@@ -11,7 +11,8 @@ import RichTextKit
 struct RTFEditorView: View {
     @Environment(ToolManager.self) var toolManager
     
-    @StateObject var context: RichTextContext = RichTextContext()
+    @StateObject 
+    var context: RichTextContext = RichTextContext()
     @State var nsString: NSAttributedString = .init()
     
     @AppStorage("defaultFont")
@@ -46,5 +47,8 @@ struct RTFEditorView: View {
 }
 
 #Preview {
-    RTFEditorView()
+    Text("hi")
+        .sheet(isPresented: .constant(true)) {
+            RTFEditorView()
+        }
 }

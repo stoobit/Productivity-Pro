@@ -26,8 +26,8 @@ struct ShareAppView: View {
                         .background {
                             UnevenRoundedRectangle(
                                 topLeadingRadius: 20,
-                                bottomLeadingRadius: 0,
-                                bottomTrailingRadius: 0,
+                                bottomLeadingRadius: 5,
+                                bottomTrailingRadius: 5,
                                 topTrailingRadius: 20,
                                 style: .continuous
                             )
@@ -41,10 +41,10 @@ struct ShareAppView: View {
                         .padding(40)
                         .background {
                             UnevenRoundedRectangle(
-                                topLeadingRadius: 0,
+                                topLeadingRadius: 5,
                                 bottomLeadingRadius: 20,
                                 bottomTrailingRadius: 20,
-                                topTrailingRadius: 0,
+                                topTrailingRadius: 5,
                                 style: .continuous
                             )
                             .foregroundStyle(Color.white)
