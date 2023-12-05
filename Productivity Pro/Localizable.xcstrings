@@ -77,10 +77,22 @@
         }
       }
     },
+    "•  Aufgaben" : {
+
+    },
+    "•  Auswahl an verschiedenen Icons" : {
+
+    },
+    "•  personalisierbarer Stundenplan" : {
+
+    },
     "1" : {
 
     },
     "2" : {
+
+    },
+    "2.99€ / Monat" : {
 
     },
     "5" : {
@@ -102,6 +114,9 @@
           }
         }
       }
+    },
+    "Abonnieren" : {
+
     },
     "Absteigend" : {
       "localizations" : {
@@ -703,9 +718,6 @@
     "Mit Deiner Bewertung unterstützt Du die Entwicklung von **Productivity Pro** und sorgst dafür, dass es auch in Zukunft regelmäßig Updates gibt." : {
 
     },
-    "Mit einem Abonnement von Productivity Pro Premium erhältst du Zugang zu zahlreichen zusätzlichen Funktionen. Dazu gehören ein personalisierbarer Stundenplan sowie die Möglichkeit, Aufgaben effektiv zu organisieren und vieles mehr." : {
-
-    },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
       "localizations" : {
         "en" : {
@@ -852,6 +864,9 @@
           }
         }
       }
+    },
+    "Productivity Pro Premium" : {
+
     },
     "QR Code" : {
 

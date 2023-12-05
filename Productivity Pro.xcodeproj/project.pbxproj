@@ -196,6 +196,11 @@
 		BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */; };
 		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
 		BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */; };
+		BBD930EA2B1FBDB400A37F95 /* PVScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930E92B1FBDB400A37F95 /* PVScrollView.swift */; };
+		BBD930EC2B1FBFA700A37F95 /* PVItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930EB2B1FBFA700A37F95 /* PVItemView.swift */; };
+		BBD930EE2B1FC02300A37F95 /* PVAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */; };
+		BBD930F02B1FC06C00A37F95 /* PVOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930EF2B1FC06C00A37F95 /* PVOfferView.swift */; };
+		BBD930F22B1FC0C300A37F95 /* PVMethodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
 		BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */; };
@@ -438,6 +443,11 @@
 		BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewItem.swift; sourceTree = "<group>"; };
 		BBD3C4202A54DA46002BFFCF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaArrangeView.swift; sourceTree = "<group>"; };
+		BBD930E92B1FBDB400A37F95 /* PVScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVScrollView.swift; sourceTree = "<group>"; };
+		BBD930EB2B1FBFA700A37F95 /* PVItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVItemView.swift; sourceTree = "<group>"; };
+		BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVAnimationView.swift; sourceTree = "<group>"; };
+		BBD930EF2B1FC06C00A37F95 /* PVOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVOfferView.swift; sourceTree = "<group>"; };
+		BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVMethodsView.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemView.swift; sourceTree = "<group>"; };
@@ -795,11 +805,11 @@
 			children = (
 				BB67015A2AADF2D5001F468A /* DeskView.swift */,
 				BB67015C2AADF480001F468A /* DeskViewHelper.swift */,
-				BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */,
 				BBF5FDF72AAE2BC40081C4FE /* GenerelSettings.swift */,
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
 				BB7984642AC347F900CF3D24 /* BackupSettings.swift */,
 				BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */,
+				BBD930E82B1FBD5200A37F95 /* PremiumView */,
 				BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */,
 			);
 			path = DeskView;
@@ -1100,6 +1110,19 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		BBD930E82B1FBD5200A37F95 /* PremiumView */ = {
+			isa = PBXGroup;
+			children = (
+				BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */,
+				BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */,
+				BBD930E92B1FBDB400A37F95 /* PVScrollView.swift */,
+				BBD930EB2B1FBFA700A37F95 /* PVItemView.swift */,
+				BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */,
+				BBD930EF2B1FC06C00A37F95 /* PVOfferView.swift */,
+			);
+			path = PremiumView;
+			sourceTree = "<group>";
+		};
 		BBDCF5D6299E699C004C99AE /* Item */ = {
 			isa = PBXGroup;
 			children = (
@@ -1321,6 +1344,7 @@
 			files = (
 				BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */,
 				BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */,
+				BBD930EA2B1FBDB400A37F95 /* PVScrollView.swift in Sources */,
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */,
@@ -1421,6 +1445,7 @@
 				BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */,
 				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
 				BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */,
+				BBD930F22B1FC0C300A37F95 /* PVMethodsView.swift in Sources */,
 				BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */,
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
@@ -1437,6 +1462,7 @@
 				BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
 				BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */,
+				BBD930F02B1FC06C00A37F95 /* PVOfferView.swift in Sources */,
 				BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */,
 				BB50FCD22B0D18D100D12783 /* RTFEditorToolbar.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
@@ -1481,12 +1507,14 @@
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */,
 				BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */,
+				BBD930EC2B1FBFA700A37F95 /* PVItemView.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,
 				BBC7B9762A1982F700D496CB /* EditItemModel.swift in Sources */,
 				BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */,
 				BB4A93E32AAF564C00C3AED6 /* ScheduleViewContainer.swift in Sources */,
+				BBD930EE2B1FC02300A37F95 /* PVAnimationView.swift in Sources */,
 				BB9367642AC9CDD10096F20E /* PPShapeModel.swift in Sources */,
 				BB7987072AD49BF7003469E6 /* TextFieldButton.swift in Sources */,
 				BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */,
