@@ -19,7 +19,7 @@ struct DeskView: View {
                 Button(action: { premiumView.toggle() }) {
                     Label(title: {
                         Text("Premium")
-                            .foregroundStyle(Color.white)
+                            .foregroundStyle(Color.primary)
                     }) {
                         Image(systemName: "crown.fill")
                     }

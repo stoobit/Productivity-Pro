@@ -11,7 +11,11 @@ extension PremiumView {
     @ViewBuilder func PVOfferView() -> some View {
         VStack(alignment: .leading, spacing: 10) {
            HStack {
-               Text("Productivity Pro Premium")
+               ViewThatFits(in: .horizontal) {
+                   Text("Productivity Pro Premium")
+                   Text("Premium")
+               }
+               
                Spacer()
                Text("2.99€ / Monat")
                    .foregroundStyle(Color.accentColor.gradient)
