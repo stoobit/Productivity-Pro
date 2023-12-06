@@ -17,7 +17,7 @@ extension PremiumView {
                }
                
                Spacer()
-               Text("2.99€ / Monat")
+               Text("8.99€ / Jahr")
                    .foregroundStyle(Color.accentColor.gradient)
            }
            .font(.title3.bold())

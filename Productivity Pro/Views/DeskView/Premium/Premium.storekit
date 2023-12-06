@@ -74,29 +74,30 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "2.99",
+          "displayPrice" : "6.99",
           "familyShareable" : true,
           "groupNumber" : 1,
           "internalID" : "6DFAB19D",
           "introductoryOffer" : {
+            "displayPrice" : "0.99",
             "internalID" : "2A7662F0",
             "paymentMode" : "free",
-            "subscriptionPeriod" : "P1W"
+            "subscriptionPeriod" : "P2W"
           },
           "localizations" : [
             {
-              "description" : "Subscribe monthly to Premium.",
+              "description" : "Subscribe to Premium.",
               "displayName" : "Productivity Pro Premium",
               "locale" : "en_US"
             },
             {
-              "description" : "Abonniere Productivity Pro monatlich.",
+              "description" : "Abonniere Productivity Pro Premium.",
               "displayName" : "Productivity Pro Premium",
               "locale" : "de"
             }
           ],
-          "productID" : "com.stoobit.premium.monthly",
-          "recurringSubscriptionPeriod" : "P1M",
+          "productID" : "com.stoobit.productivity.premium",
+          "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Monthly Subscription",
           "subscriptionGroupID" : "B10E4A3C",
           "type" : "RecurringSubscription"

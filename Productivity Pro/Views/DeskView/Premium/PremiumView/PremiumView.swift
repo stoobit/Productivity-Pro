@@ -41,10 +41,10 @@ struct PremiumView: View {
                     Text("Abonnieren")
                         .font(.title2.bold())
                         .foregroundStyle(.white)
-                        .padding(15)
-                        .padding(.horizontal, 60)
+                        .padding(13)
+                        .padding(.horizontal, 65)
                         .background {
-                            RoundedRectangle(cornerRadius: 15)
+                            RoundedRectangle(cornerRadius: 13)
                                 .foregroundStyle(Color.accentColor.gradient)
                         }
                 }

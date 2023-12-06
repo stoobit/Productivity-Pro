@@ -92,9 +92,6 @@
     "2" : {
 
     },
-    "2.99€ / Monat" : {
-
-    },
     "5" : {
       "localizations" : {
         "en" : {
@@ -104,6 +101,9 @@
           }
         }
       }
+    },
+    "8.99€ / Jahr" : {
+
     },
     "Abbrechen" : {
       "localizations" : {

@@ -19,7 +19,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
     private(set) var finished: Bool = false
     private(set) var connectionFailure: Bool = false
     
-    private let productIds: [String] = ["com.stoobit.premium.monthly"]
+    private let productIds: [String] = ["com.stoobit.productivity.premium"]
     var updateListenerTask : Task<Void, Error>? = nil
 
     init() {
