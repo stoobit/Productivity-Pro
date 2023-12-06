@@ -17,6 +17,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
     private(set) var subscriptionGroupStatus: RenewalState?
     
     private(set) var finished: Bool = false
+    private(set) var connectionFailure: Bool = false
     
     private let productIds: [String] = ["com.stoobit.premium.monthly"]
     var updateListenerTask : Task<Void, Error>? = nil
@@ -49,7 +50,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
                     await transaction.finish()
                     
                 } catch {
-                    print("transaction failed verification")
+                    self.connectionFailure = true
                 }
             }
         }
@@ -60,7 +61,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
         do {
             subscriptions = try await Product.products(for: productIds)
         } catch {
-            print("Failed product request from app store server: \(error)")
+            connectionFailure = true
         }
     }
     
@@ -112,7 +113,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
 
                 await transaction.finish()
             } catch {
-                print("failed updating products")
+                connectionFailure = true
             }
         }
     }

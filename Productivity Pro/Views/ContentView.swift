@@ -99,10 +99,12 @@ struct ContentView: View {
     }
     
     func updateStatus() {
-        if storeVM.purchasedSubscriptions.isEmpty {
-            isSubscribed = false
-        } else {
-            isSubscribed = true
+        if storeVM.connectionFailure == false {
+            if storeVM.purchasedSubscriptions.isEmpty {
+                isSubscribed = false
+            } else {
+                isSubscribed = true
+            }
         }
     }
     
