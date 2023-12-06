@@ -50,7 +50,7 @@ struct SubjectSettingsRow: View {
             }
             .tint(Color.red)
         }
-        .confirmationDialog(
+        .alert(
             "Möchtest du dieses Fach wirklich löschen?",
             isPresented: $isAlert, actions: {
                 Button("Cancel", role: .cancel) { isAlert.toggle() }
