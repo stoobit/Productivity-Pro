@@ -49,8 +49,11 @@ struct ContentView: View {
                     .tabItem {
                         Label("Notizen", systemImage: "doc.fill")
                     }
-                    .sheet(isPresented: $subviewManager.shareView) {
-                        ShareView()
+                    .sheet(isPresented: $subviewManager.sharePDFView) {
+                        SharePDFView()
+                    }
+                    .sheet(isPresented: $subviewManager.shareProView) {
+                        ShareProView()
                     }
                 
                 ScheduleViewContainer()

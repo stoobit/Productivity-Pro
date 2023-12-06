@@ -271,6 +271,9 @@
     "Breite" : {
 
     },
+    "Buch S. 163/12" : {
+
+    },
     "c" : {
 
     },
@@ -757,9 +760,6 @@
         }
       }
     },
-    "Note" : {
-
-    },
     "Notiz" : {
       "localizations" : {
         "en" : {
@@ -826,6 +826,9 @@
     "Paste" : {
 
     },
+    "pdf" : {
+
+    },
     "PDF" : {
 
     },
@@ -869,6 +872,9 @@
       }
     },
     "Productivity Pro Premium" : {
+
+    },
+    "pronote" : {
 
     },
     "QR Code" : {
@@ -1050,12 +1056,6 @@
           }
         }
       }
-    },
-    "Tab Content 1" : {
-
-    },
-    "Tab Content 2" : {
-
     },
     "Teilen" : {
       "localizations" : {

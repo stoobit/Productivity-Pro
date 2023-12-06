@@ -17,7 +17,6 @@ import Observation
     var showCalculator: Bool = false
     
     var renameView: Bool = false
-    var shareView: Bool = false
     var overview: Bool = false
     
     var isPresentationMode: Bool = false
@@ -29,6 +28,9 @@ import Observation
     var deletePage: Bool = false
     
     var rtfEditor: Bool = false
+    
+    var shareProView: Bool = false
+    var sharePDFView: Bool = false
     
     // MARK: - UNCHECKED & OLD
     var printerView: Bool = false

@@ -12,11 +12,11 @@ extension NoteSecondaryToolbar {
         Menu(content: {
             
             Button("Notiz", systemImage: "doc") {
-                
+                subviewManager.shareProView.toggle()
             }
             
             Button("PDF", systemImage: "doc.richtext") {
-                
+                subviewManager.sharePDFView.toggle()
             }
             
         }) {
