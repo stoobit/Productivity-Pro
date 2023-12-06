@@ -16,71 +16,76 @@ struct PremiumView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                
-                Text("Premium")
-                    .font(.largeTitle.bold())
-                    .padding(.bottom)
-                
-                ViewThatFits(in: .vertical) {
-                    PVAnimationView()
-                    Color.clear
-                        .frame(width: 0, height: 0)
-                }
-                
-                Spacer()
-                PVOfferView()
-                    .padding(.vertical)
-                Spacer()
-                
-                Button(action: {
-                    Task {
-                        await subscribe()
+            if let product = storeVM.subscriptions.first {
+                VStack(spacing: 0) {
+                    
+                    Text("Premium")
+                        .font(.largeTitle.bold())
+                        .padding(.bottom)
+                    
+                    ViewThatFits(in: .vertical) {
+                        PVAnimationView()
+                        Color.clear
+                            .frame(width: 0, height: 0)
                     }
-                }) {
-                    Text("Abonnieren")
-                        .font(.title2.bold())
-                        .foregroundStyle(.white)
-                        .padding(13)
-                        .padding(.horizontal, 65)
-                        .background {
-                            RoundedRectangle(cornerRadius: 13)
-                                .foregroundStyle(Color.accentColor.gradient)
+                    
+                    Spacer()
+                    PVOfferView(product: product)
+                        .padding(.vertical)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        Task {
+                            await subscribe()
                         }
+                    }) {
+                        Text("Abonnieren")
+                            .font(.title2.bold())
+                            .foregroundStyle(.white)
+                            .padding(13)
+                            .padding(.horizontal, 65)
+                            .background {
+                                RoundedRectangle(cornerRadius: 13)
+                                    .foregroundStyle(Color.accentColor.gradient)
+                            }
+                    }
+                    .padding(.bottom, 10)
                 }
-                .padding(.bottom, 10)
-            }
-            .padding()
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.title3.bold())
-                            .foregroundStyle(Color.secondary)
+                .padding()
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: { dismiss() }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.title3.bold())
+                                .foregroundStyle(Color.secondary)
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button(action: { restore() }) {
+                            Image(systemName: "purchased")
+                        }
                     }
                 }
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    Button(action: { restore() }) {
-                        Image(systemName: "purchased")
-                    }
-                }
+            } else {
+                ProgressView()
             }
         }
-       }
-       
-       let images = [
-           "pencil",
-           "doc.fill",
-           "checklist",
-           "eraser.fill",
-           "calendar",
-           "graduationcap.fill",
-           "ruler.fill",
-           "paintbrush.fill",
-           "highlighter",
-           "lasso",
-           "tray.full.fill"
-       ]
+    }
+    
+    let images = [
+        "pencil",
+        "doc.fill",
+        "checklist",
+        "eraser.fill",
+        "calendar",
+        "graduationcap.fill",
+        "ruler.fill",
+        "paintbrush.fill",
+        "highlighter",
+        "lasso",
+        "tray.full.fill"
+    ]
 }

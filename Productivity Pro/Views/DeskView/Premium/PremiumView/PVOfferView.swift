@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import StoreKit
 
 extension PremiumView {
-    @ViewBuilder func PVOfferView() -> some View {
+    @ViewBuilder func PVOfferView(product: Product) -> some View {
         VStack(alignment: .leading, spacing: 10) {
            HStack {
                ViewThatFits(in: .horizontal) {
@@ -17,7 +18,7 @@ extension PremiumView {
                }
                
                Spacer()
-               Text("8.99€ / Jahr")
+               Text("\(product.displayPrice) / Jahr")
                    .foregroundStyle(Color.accentColor.gradient)
            }
            .font(.title3.bold())

@@ -44,6 +44,9 @@
         }
       }
     },
+    "%@ / Jahr" : {
+
+    },
     "%@ bearbeiten" : {
       "localizations" : {
         "en" : {
@@ -101,9 +104,6 @@
           }
         }
       }
-    },
-    "8.99€ / Jahr" : {
-
     },
     "Abbrechen" : {
       "localizations" : {
