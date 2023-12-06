@@ -1,5 +1,5 @@
 {
-  "identifier" : "2A6DE422",
+  "identifier" : "FF771297",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -7,10 +7,12 @@
 
   ],
   "settings" : {
-    "_billingIssuesEnabled" : false,
+    "_applicationInternalID" : "6449678571",
+    "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_locale" : "en_US",
-    "_storefront" : "USA",
+    "_lastSynchronizedDate" : 723581444.28956199,
+    "_locale" : "de",
+    "_storefront" : "DEU",
     "_storeKitErrors" : [
       {
         "current" : null,
@@ -61,45 +63,47 @@
   },
   "subscriptionGroups" : [
     {
-      "id" : "B10E4A3C",
+      "id" : "21404124",
       "localizations" : [
 
       ],
-      "name" : "Premium",
+      "name" : "Productivity Pro Premium",
       "subscriptions" : [
         {
           "adHocOffers" : [
-
+            {
+              "internalID" : "AB2E1A67",
+              "numberOfPeriods" : 1,
+              "offerID" : "com.stoobit.productivity.premium.offer",
+              "paymentMode" : "free",
+              "referenceName" : "Premium Subscription Introduction Offer",
+              "subscriptionPeriod" : "P2W"
+            }
           ],
           "codeOffers" : [
 
           ],
-          "displayPrice" : "6.99",
+          "displayPrice" : "8.99",
           "familyShareable" : true,
           "groupNumber" : 1,
-          "internalID" : "6DFAB19D",
-          "introductoryOffer" : {
-            "displayPrice" : "0.99",
-            "internalID" : "2A7662F0",
-            "paymentMode" : "free",
-            "subscriptionPeriod" : "P2W"
-          },
+          "internalID" : "6473851041",
+          "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Subscribe to Premium.",
+              "description" : "Productivity Pro Premium Subscription.",
               "displayName" : "Productivity Pro Premium",
               "locale" : "en_US"
             },
             {
-              "description" : "Abonniere Productivity Pro Premium.",
+              "description" : "Productivity Pro Premium Abonnement",
               "displayName" : "Productivity Pro Premium",
               "locale" : "de"
             }
           ],
           "productID" : "com.stoobit.productivity.premium",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Monthly Subscription",
-          "subscriptionGroupID" : "B10E4A3C",
+          "referenceName" : "Premium Subscription",
+          "subscriptionGroupID" : "21404124",
           "type" : "RecurringSubscription"
         }
       ]

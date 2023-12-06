@@ -449,8 +449,8 @@
 		BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVAnimationView.swift; sourceTree = "<group>"; };
 		BBD930EF2B1FC06C00A37F95 /* PVOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVOfferView.swift; sourceTree = "<group>"; };
 		BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVMethodsView.swift; sourceTree = "<group>"; };
-		BBD930F52B1FE6A700A37F95 /* Premium.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Premium.storekit; sourceTree = "<group>"; };
 		BBD930F62B1FEBA000A37F95 /* StoreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVM.swift; sourceTree = "<group>"; };
+		BBD930F82B20FA0000A37F95 /* Premium.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Premium.storekit; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemView.swift; sourceTree = "<group>"; };
@@ -1116,7 +1116,7 @@
 		BBD930E82B1FBD5200A37F95 /* Premium */ = {
 			isa = PBXGroup;
 			children = (
-				BBD930F52B1FE6A700A37F95 /* Premium.storekit */,
+				BBD930F82B20FA0000A37F95 /* Premium.storekit */,
 				BBD930F32B1FE61E00A37F95 /* PremiumView */,
 				BBD930F42B1FE62C00A37F95 /* Subscription */,
 			);
