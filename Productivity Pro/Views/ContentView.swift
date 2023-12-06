@@ -11,7 +11,7 @@ import UserNotifications
 
 struct ContentView: View {
     @State var storeVM: StoreVM = StoreVM()
-    let timer = Timer.publish(every: 3, on: .main, in: .common)
+    let timer = Timer.publish(every: 500000, on: .main, in: .common)
         .autoconnect()
     
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false

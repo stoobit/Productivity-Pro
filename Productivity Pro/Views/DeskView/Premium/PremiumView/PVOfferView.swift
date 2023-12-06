@@ -22,9 +22,9 @@ extension PremiumView {
            }
            .font(.title3.bold())
                
-           Text("•  personalisierbarer Stundenplan")
+           Text("•  Stundenplan")
            Text("•  Aufgaben")
-           Text("•  Auswahl an verschiedenen Icons")
+           Text("•  App Icons")
        }
        .padding()
        .background {
