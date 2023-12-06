@@ -16,18 +16,20 @@ struct DeskView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Button(action: { premiumView.toggle() }) {
-                    Label(title: {
-                        Text("Premium")
-                            .foregroundStyle(Color.primary)
-                    }) {
-                        Image(systemName: "crown.fill")
+                if isSubscribed == false {
+                    Button(action: { premiumView.toggle() }) {
+                        Label(title: {
+                            Text("Premium")
+                                .foregroundStyle(Color.primary)
+                        }) {
+                            Image(systemName: "crown.fill")
+                        }
                     }
+                    .frame(height: 30)
+                    .sheet(isPresented: $premiumView, content: {
+                        PremiumView()
+                    })
                 }
-                .frame(height: 30)
-                .sheet(isPresented: $premiumView, content: {
-                    PremiumView()
-                })
                 
                 Settings()
                 LinkView()

@@ -201,6 +201,7 @@
 		BBD930EE2B1FC02300A37F95 /* PVAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */; };
 		BBD930F02B1FC06C00A37F95 /* PVOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930EF2B1FC06C00A37F95 /* PVOfferView.swift */; };
 		BBD930F22B1FC0C300A37F95 /* PVMethodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */; };
+		BBD930F72B1FEBA000A37F95 /* StoreVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930F62B1FEBA000A37F95 /* StoreVM.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBDA2CAB29A1A84500EF297A /* EditShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */; };
 		BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */; };
@@ -448,6 +449,8 @@
 		BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVAnimationView.swift; sourceTree = "<group>"; };
 		BBD930EF2B1FC06C00A37F95 /* PVOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVOfferView.swift; sourceTree = "<group>"; };
 		BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVMethodsView.swift; sourceTree = "<group>"; };
+		BBD930F52B1FE6A700A37F95 /* Premium.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Premium.storekit; sourceTree = "<group>"; };
+		BBD930F62B1FEBA000A37F95 /* StoreVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVM.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBDA2CAA29A1A84500EF297A /* EditShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditShapeItemView.swift; sourceTree = "<group>"; };
 		BBDA2CAC29A1A96600EF297A /* EditTextfieldItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextfieldItemView.swift; sourceTree = "<group>"; };
@@ -809,7 +812,7 @@
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
 				BB7984642AC347F900CF3D24 /* BackupSettings.swift */,
 				BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */,
-				BBD930E82B1FBD5200A37F95 /* PremiumView */,
+				BBD930E82B1FBD5200A37F95 /* Premium */,
 				BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */,
 			);
 			path = DeskView;
@@ -1110,17 +1113,35 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		BBD930E82B1FBD5200A37F95 /* PremiumView */ = {
+		BBD930E82B1FBD5200A37F95 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				BBD930F52B1FE6A700A37F95 /* Premium.storekit */,
+				BBD930F32B1FE61E00A37F95 /* PremiumView */,
+				BBD930F42B1FE62C00A37F95 /* Subscription */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		BBD930F32B1FE61E00A37F95 /* PremiumView */ = {
 			isa = PBXGroup;
 			children = (
 				BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */,
-				BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */,
 				BBD930E92B1FBDB400A37F95 /* PVScrollView.swift */,
 				BBD930EB2B1FBFA700A37F95 /* PVItemView.swift */,
 				BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */,
 				BBD930EF2B1FC06C00A37F95 /* PVOfferView.swift */,
 			);
 			path = PremiumView;
+			sourceTree = "<group>";
+		};
+		BBD930F42B1FE62C00A37F95 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */,
+				BBD930F62B1FEBA000A37F95 /* StoreVM.swift */,
+			);
+			path = Subscription;
 			sourceTree = "<group>";
 		};
 		BBDCF5D6299E699C004C99AE /* Item */ = {
@@ -1450,6 +1471,7 @@
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
 				BB2CFBA42A660F4F009774BB /* EditMarkdownViewMethods.swift in Sources */,
+				BBD930F72B1FEBA000A37F95 /* StoreVM.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
 				BB9CC948293FD45E0094446A /* ShareView.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,

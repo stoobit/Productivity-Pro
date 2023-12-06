@@ -11,6 +11,7 @@ struct PremiumView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var hsc
     
+    @Environment(StoreVM.self) var storeVM
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     
     var body: some View {
@@ -32,7 +33,11 @@ struct PremiumView: View {
                     .padding(.vertical)
                 Spacer()
                 
-                Button(action: { subscribe() }) {
+                Button(action: {
+                    Task {
+                        await subscribe()
+                    }
+                }) {
                     Text("Abonnieren")
                         .font(.title2.bold())
                         .foregroundStyle(.white)
@@ -78,10 +83,4 @@ struct PremiumView: View {
            "lasso",
            "tray.full.fill"
        ]
-}
-
-#Preview {
-    NavigationStack {
-        PremiumView()
-    }
 }
