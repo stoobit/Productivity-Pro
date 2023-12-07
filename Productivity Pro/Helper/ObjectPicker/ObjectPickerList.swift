@@ -19,18 +19,17 @@ struct ObjectPickerList: View {
     var id: UUID?
     
     var type: COType
-
+    
     var body: some View {
-        List {
-            if objects.isEmpty {
-                ContentUnavailableView(
-                    parent == "root" ? "Du hast noch keine Notizen erstellt." : "Dieser Ordner ist leer.",
-                    systemImage: parent == "root" ? "doc" : "folder"
-                )
-                .listRowBackground(Color.clear)
-                
-            } else {
-                
+        if objects.isEmpty {
+            ContentUnavailableView(
+                parent == "root" ? "Du hast noch keine Notizen erstellt." : "Dieser Ordner ist leer.",
+                systemImage: parent == "root" ? "doc" : "folder"
+            )
+            .listRowBackground(Color.clear)
+            
+        } else {
+            List {
                 ForEach(objects) { object in
                     if object.type == COType.folder.rawValue {
                         
@@ -38,14 +37,14 @@ struct ObjectPickerList: View {
                             ObjectPickerList(
                                 contentObjects: contentObjects,
                                 isPresented: $isPresented,
-                                selectedObject: $selectedObject, 
+                                selectedObject: $selectedObject,
                                 parent: object.id.uuidString,
                                 title: object.title,
                                 id: id,
                                 type: type
                             )
                         }) {
-                           ContentObjectLink(obj: object)
+                            ContentObjectLink(obj: object)
                         }
                         .disabled(id == object.id)
                         
@@ -61,35 +60,35 @@ struct ObjectPickerList: View {
                         
                     }
                 }
+            }
+            .scrollContentBackground(.visible)
+            .navigationBarBackButtonHidden()
+            .environment(\.defaultMinListRowHeight, 10)
+            .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                if parent != "root" {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(action: { dismiss() }) {
+                            Image(systemName: "chevron.left")
+                                .fontWeight(.semibold)
+                        }
+                    }
+                }
                 
-            }
-        }
-        .navigationBarBackButtonHidden()
-        .environment(\.defaultMinListRowHeight, 10)
-        .navigationTitle(title)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            if parent != "root" {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "chevron.left")
-                            .fontWeight(.semibold)
+                if type == .folder {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button(action: {
+                            selectedObject = parent
+                            isPresented = false
+                        }) {
+                            Text("Auswählen")
+                        }
                     }
                 }
             }
             
-            if type == .folder {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button(action: {
-                        selectedObject = parent
-                        isPresented = false
-                    }) {
-                        Text("Auswählen")
-                    }
-                }
-            }
         }
-            
     }
     
     var objects: [ContentObject] {
