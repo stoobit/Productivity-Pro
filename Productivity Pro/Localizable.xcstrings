@@ -128,9 +128,6 @@
         }
       }
     },
-    "Alignment" : {
-
-    },
     "Allgemein" : {
       "localizations" : {
         "en" : {
@@ -257,12 +254,6 @@
       }
     },
     "Bild" : {
-
-    },
-    "Bold" : {
-
-    },
-    "Bold, Italic, Underline, Strikethrough" : {
 
     },
     "Border Style" : {
@@ -651,9 +642,6 @@
         }
       }
     },
-    "Italic" : {
-
-    },
     "Jetzt löschen" : {
       "localizations" : {
         "en" : {
@@ -678,9 +666,6 @@
 
     },
     "Kreis" : {
-
-    },
-    "Left" : {
 
     },
     "Lehrer" : {
@@ -906,9 +891,6 @@
     "Rechteck" : {
 
     },
-    "Right" : {
-
-    },
     "Rolle" : {
 
     },
@@ -1025,9 +1007,6 @@
     "Stil" : {
 
     },
-    "Strikethrough" : {
-
-    },
     "Student" : {
 
     },
@@ -1119,9 +1098,6 @@
           }
         }
       }
-    },
-    "Underlined" : {
-
     },
     "Undo" : {
 

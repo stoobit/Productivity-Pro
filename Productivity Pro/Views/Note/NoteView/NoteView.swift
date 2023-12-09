@@ -26,25 +26,37 @@ struct NoteView: View {
             @Bindable var toolValue = toolManager
             
             GeometryReader { proxy in
-                ScrollView(.horizontal) {
-                    LazyHStack(spacing: 0) {
-                        ForEach(pages) { page in
-                            ScrollViewContainer(
-                                note: contentObject.note!,
-                                page: page,
-                                size: proxy.size
+                ScrollViewReader { reader in
+                    ScrollView(.horizontal) {
+                        LazyHStack(spacing: 0) {
+                            ForEach(pages) { page in
+                                ScrollViewContainer(
+                                    note: contentObject.note!,
+                                    page: page,
+                                    size: proxy.size
+                                )
+                                .id(page)
+                                .containerRelativeFrame(
+                                    [.horizontal, .vertical]
+                                )
+                            }
+                        }
+                        .scrollTargetLayout()
+                    }
+                    .scrollIndicators(.hidden)
+                    .scrollTargetBehavior(.paging)
+                    .scrollPosition(id: $toolValue.activePage)
+                    .onAppear {
+                        if toolManager.activePage == nil {
+                            reader.scrollTo(
+                                contentObject.note?.pages?.last
                             )
-                            .id(page)
-                            .containerRelativeFrame(
-                                [.horizontal, .vertical]
-                            )
+                            
+                            toolManager.activePage = contentObject.note?.pages?.last
                         }
                     }
-                    .scrollTargetLayout()
+                    
                 }
-                .scrollIndicators(.hidden)
-                .scrollTargetBehavior(.paging)
-                .scrollPosition(id: $toolValue.activePage)
             }
             .noteViewModifier(with: contentObject)
             .background {
@@ -58,13 +70,6 @@ struct NoteView: View {
                     isPresented: $subviewValue.renameView
                 )
             )
-            .onAppear {
-                if toolManager.activePage == nil {
-                    toolManager.activePage = contentObject.note?.pages?.first(where: {
-                        $0.index == 0
-                    })
-                }
-            }
             
         } else {
             ContentUnavailableView(
@@ -74,15 +79,15 @@ struct NoteView: View {
         }
     }
     
-//    func pageIndicator() {
-//            if subviewManager.overviewSheet == false {
-//                toolManager.isPageNumberVisible = true
-//    
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//                    withAnimation {
-//                        toolManager.isPageNumberVisible = false
-//                    }
-//                }
-//            }
+    //    func pageIndicator() {
+    //            if subviewManager.overviewSheet == false {
+    //                toolManager.isPageNumberVisible = true
+    //
+    //                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+    //                    withAnimation {
+    //                        toolManager.isPageNumberVisible = false
+    //                    }
+    //                }
+    //            }
 //        }
 }
