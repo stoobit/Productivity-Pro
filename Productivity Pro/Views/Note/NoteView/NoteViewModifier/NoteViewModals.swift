@@ -17,6 +17,8 @@ struct NoteViewSheet: ViewModifier {
     @Environment(SubviewManager.self) var subviewManager
     
     var contentObject: ContentObject
+    var reader: ScrollViewProxy
+    
     func body(content: Content) -> some View {
         @Bindable var manager = subviewManager
         
@@ -231,39 +233,41 @@ struct NoteViewSheet: ViewModifier {
     }
     
     func deletePage() {
-        withAnimation {
-            if contentObject.note!.pages!.count - 1 == toolManager.activePage?.index {
-                
-                contentObject.note?.pages?.removeAll(where: {
-                    $0.index == contentObject.note!.pages!.count - 1
-                })
-                
-                Task {
-                    try await Task.sleep(nanoseconds: 200000000)
-                    toolManager.activePage = contentObject.note?.pages?.first(where: {
+        Task { @MainActor in
+            withAnimation {
+                if contentObject.note!.pages!.count - 1 == toolManager.activePage?.index {
+                    
+                    contentObject.note?.pages?.removeAll(where: {
                         $0.index == contentObject.note!.pages!.count - 1
                     })
-                }
-                
-            } else {
-                guard let index = toolManager.activePage?.index else {
-                    return
-                }
-                
-                contentObject.note?.pages?.removeAll(where: {
-                    $0.index == index
-                })
-                
-                for page in contentObject.note!.pages! {
-                    if index <= page.index {
-                        page.index -= 1
+                    
+                    let page = contentObject.note?.pages?.first(where: {
+                        $0.index == contentObject.note!.pages!.count - 1
+                    })
+                    
+                    reader.scrollTo(page)
+                    toolManager.activePage = page
+                    
+                } else {
+                    guard let index = toolManager.activePage?.index else {
+                        return
                     }
-                }
-                
-                Task {
-                    try await Task.sleep(nanoseconds: 200000000)
-                    toolManager.activePage = contentObject.note?.pages?
+                    
+                    contentObject.note?.pages?.removeAll(where: {
+                        $0.index == index
+                    })
+                    
+                    for page in contentObject.note!.pages! {
+                        if index <= page.index {
+                            page.index -= 1
+                        }
+                    }
+                    
+                    let page = contentObject.note?.pages?
                         .first(where: { $0.index == index })
+                    
+                    reader.scrollTo(page)
+                    toolManager.activePage = page
                 }
             }
         }

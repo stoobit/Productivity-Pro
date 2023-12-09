@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NoteViewModifier: ViewModifier {
     @Bindable var contentObject: ContentObject
+    var reader: ScrollViewProxy
     
     func body(content: Content) -> some View {
         content
@@ -16,13 +17,20 @@ struct NoteViewModifier: ViewModifier {
                 NoteViewToolbar(contentObject: contentObject)
             )
             .modifier(
-                NoteViewSheet(contentObject: contentObject)
+                NoteViewSheet(
+                    contentObject: contentObject, reader: reader
+                )
             )
     }
 }
 
 extension View {
-    func noteViewModifier(with object: ContentObject) -> some View {
-        modifier(NoteViewModifier(contentObject: object))
+    func noteViewModifier(
+        with object: ContentObject,
+        reader: ScrollViewProxy
+    ) -> some View {
+        modifier(NoteViewModifier(
+            contentObject: object, reader: reader
+        ))
     }
 }

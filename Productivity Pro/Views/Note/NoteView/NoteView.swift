@@ -46,19 +46,16 @@ struct NoteView: View {
                     .scrollIndicators(.hidden)
                     .scrollTargetBehavior(.paging)
                     .scrollPosition(id: $toolValue.activePage)
+                    .noteViewModifier(with: contentObject, reader: reader)
                     .onAppear {
                         if toolManager.activePage == nil {
                             toolManager.activePage = pages.last
                             reader.scrollTo(pages.last)
                         }
                     }
-                    .onChange(of: toolValue.activePage) {
-                        toolManager.pencilKit = false
-                    }
                     
                 }
             }
-            .noteViewModifier(with: contentObject)
             .background {
                 Color(UIColor.secondarySystemBackground)
                     .ignoresSafeArea(.all)
@@ -70,6 +67,9 @@ struct NoteView: View {
                     isPresented: $subviewValue.renameView
                 )
             )
+            .onChange(of: toolValue.activePage) {
+                toolManager.pencilKit = false
+            }
             
         } else {
             ContentUnavailableView(
