@@ -79,13 +79,11 @@ struct NoteViewSheet: ViewModifier {
             }
             .background {
                 if subviewManager.printerView {
-                    if let url = toolManager.pdfRendering {
-//                        PrinterView(
-//                            document: $document,
-//                            subviewManager: subviewManager,
-//                            url: url
-//                        )
-                    }
+//                    PrinterView(
+//                        document: $document,
+//                        subviewManager: subviewManager,
+//                        url: url
+//                    )
                 }
             }
         

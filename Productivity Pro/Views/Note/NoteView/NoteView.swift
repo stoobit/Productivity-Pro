@@ -48,12 +48,12 @@ struct NoteView: View {
                     .scrollPosition(id: $toolValue.activePage)
                     .onAppear {
                         if toolManager.activePage == nil {
-                            reader.scrollTo(
-                                contentObject.note?.pages?.last
-                            )
-                            
-                            toolManager.activePage = contentObject.note?.pages?.last
+                            toolManager.activePage = pages.last
+                            reader.scrollTo(pages.last)
                         }
+                    }
+                    .onChange(of: toolValue.activePage) {
+                        toolManager.pencilKit = false
                     }
                     
                 }

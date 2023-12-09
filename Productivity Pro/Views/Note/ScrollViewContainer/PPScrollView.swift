@@ -46,6 +46,11 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         scrollView.addSubview(hostedView)
         
         scrollView.setZoomScale(getScale(), animated: false)
+        
+        Task { @MainActor in
+            scale = scrollView.zoomScale
+        }
+        
         return scrollView
     }
     
@@ -122,44 +127,57 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         }
         
         func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-            editorVisible = false
-            frameVisible = false
+            Task { @MainActor in
+                editorVisible = false
+                frameVisible = false
+            }
         }
         
-        func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-            
-            self.scale = scrollView.zoomScale
-            self.offset = scrollView.contentOffset
-            
-            
-            toolManager.scale = scrollView.zoomScale
-            toolManager.offset = scrollView.contentOffset
-            
-            editorVisible = true
-            frameVisible = true
+        func scrollViewDidEndZooming(
+            _ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat
+        ) {
+            Task { @MainActor in
+                self.scale = scrollView.zoomScale
+                self.offset = scrollView.contentOffset
+                
+                
+                toolManager.scale = scrollView.zoomScale
+                toolManager.offset = scrollView.contentOffset
+                
+                editorVisible = true
+                frameVisible = true
+            }
         }
         
-        func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-            if decelerate == false {
+        func scrollViewDidEndDragging(
+            _ scrollView: UIScrollView, willDecelerate decelerate: Bool
+        ) {
+            Task { @MainActor in
+                if decelerate == false {
+                    offset = scrollView.contentOffset
+                    
+                    toolManager.scale = scrollView.zoomScale
+                    toolManager.offset = scrollView.contentOffset
+                }
+            }
+        }
+        
+        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            Task { @MainActor in
                 offset = scrollView.contentOffset
                 
                 toolManager.scale = scrollView.zoomScale
                 toolManager.offset = scrollView.contentOffset
             }
         }
-        
-        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            offset = scrollView.contentOffset
-            
-            toolManager.scale = scrollView.zoomScale
-            toolManager.offset = scrollView.contentOffset
-        }
 
         func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-            offset = scrollView.contentOffset
-            
-            toolManager.scale = scrollView.zoomScale
-            toolManager.offset = scrollView.contentOffset
+            Task { @MainActor in
+                offset = scrollView.contentOffset
+                
+                toolManager.scale = scrollView.zoomScale
+                toolManager.offset = scrollView.contentOffset
+            }
         }
     }
     

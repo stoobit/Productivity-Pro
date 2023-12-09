@@ -13,7 +13,6 @@ import ImageIO
 extension Coordinator {
     func recognizeObject(_ canvasView: PKCanvasView) {
         do {
-            
             guard let bounds = canvasView.drawing.strokes.last?.renderBounds else {
                 return
             }

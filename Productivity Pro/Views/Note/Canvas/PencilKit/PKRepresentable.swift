@@ -10,7 +10,6 @@ import PencilKit
 
 struct PKRepresentable: UIViewRepresentable {
     @Environment(ToolManager.self) var toolManager
-    @Environment(SubviewManager.self) var subviewManager
     
     @Bindable var page: PPPageModel
     @Binding var scale: CGFloat
@@ -23,33 +22,35 @@ struct PKRepresentable: UIViewRepresentable {
     let size: CGSize
     
     func makeUIView(context: Context) -> PKCanvasView {
+        Task { @MainActor in
+            canvasView.delegate = context.coordinator
+            
+            canvasView.backgroundColor = .clear
+            canvasView.bouncesZoom = false
+            canvasView.isScrollEnabled = false
+            
+            canvasView.showsVerticalScrollIndicator = false
+            canvasView.showsHorizontalScrollIndicator = false
+            
+            toolPicker.showsDrawingPolicyControls = false
+            canvasView.drawingPolicy = .pencilOnly
+            
+            adoptScale()
+            
+            try? canvasView.drawing = PKDrawing(data: page.canvas)
+            
+            canvasView.overrideUserInterfaceStyle = colorScheme()
+            toolPicker.colorUserInterfaceStyle = colorScheme()
+            
+            scale = 1
+            canvasView.bounds.size = CGSize(
+                width: getFrame().width * scale,
+                height: getFrame().height * scale
+            )
+            
+            strokeCount = canvasView.drawing.strokes.count
+        }
         
-        canvasView.delegate = context.coordinator
-        
-        canvasView.backgroundColor = .clear
-        canvasView.bouncesZoom = false
-        canvasView.isScrollEnabled = false
-        
-        canvasView.showsVerticalScrollIndicator = false
-        canvasView.showsHorizontalScrollIndicator = false
-        
-        toolPicker.showsDrawingPolicyControls = false
-        canvasView.drawingPolicy = .pencilOnly
-
-        adoptScale()
-        
-        try? canvasView.drawing = PKDrawing(data: page.canvas)
-        
-        canvasView.overrideUserInterfaceStyle = colorScheme()
-        toolPicker.colorUserInterfaceStyle = colorScheme()
-        
-        scale = 1
-        canvasView.bounds.size = CGSize(
-            width: getFrame().width * scale,
-            height: getFrame().height * scale
-        )
-        
-        strokeCount = canvasView.drawing.strokes.count
         return canvasView
     }
     

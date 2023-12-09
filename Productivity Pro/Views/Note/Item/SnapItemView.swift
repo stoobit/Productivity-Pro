@@ -36,6 +36,7 @@ struct SnapItemView: View {
                 }
             }
         }
+        .zIndex(1000)
         .frame(
             width: getFrame().width * scale,
             height: getFrame().height * scale
