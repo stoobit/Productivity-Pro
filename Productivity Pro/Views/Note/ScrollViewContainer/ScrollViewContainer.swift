@@ -32,13 +32,6 @@ struct ScrollViewContainer: View {
         .modifier(
             OrientationUpdater(isPortrait: page.isPortrait)
         )
-        .onChange(of: toolManager.activePage, initial: true) {
-            if toolManager.activePage?.id == page.id {
-                toolManager.scale = scale
-                toolManager.offset = offset
-            }
-        }
-        
     }
     
     func getScale() -> CGFloat {
