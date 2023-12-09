@@ -41,9 +41,9 @@ extension NoteMainToolbar {
         item.width = 200
         item.height = type == .hexagon ? 175 : 200
         
-        item.x = toolManager.scrollOffset.size.width * (1/1) + item.width/2 + 40
+        item.x = toolManager.offset.size.width * (1/toolManager.scale) + item.width/2 + 40
         
-        item.y = toolManager.scrollOffset.size.height * (1/1) + item.height/2 + 40
+        item.y = toolManager.offset.size.height * (1/toolManager.scale) + item.height/2 + 40
         
         let shape = PPShapeModel(type: type)
         shape.fill = true

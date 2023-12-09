@@ -30,31 +30,24 @@ import PDFKit
     
     var pencilKit: Bool = false
     
-    // MARK: - UNCHECKED & OLD
+    var scale: CGFloat = .zero
+    var offset: CGPoint = .zero
     
+    // MARK: - UNCHECKED & OLD
     var selectedPage: Int = 0
     var selectedTab: UUID = UUID()
-    
     var preloadedMedia: [PDFDocument?] = []
-    
     var copyPastePasser: CopyPastePasser?
-    
     var didZoom: Bool = false
     var didScroll: Bool = false
-    
     var scrollOffset: CGPoint = .zero
     var firstZoom: Bool = true
-    
     var isLockEnabled: Bool = true
-    
     var selectedItem: ItemModel?
     var pageGotCleared: Bool = false
-    
     var isDraggingItem: Bool = false
-    
     var pickedImage: UIImage?
     var pdfRendering: URL?
-    
     var isPageNumberVisible: Bool = true
     var objectRecognitionEnabled: Bool = false
 }

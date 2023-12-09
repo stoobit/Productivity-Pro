@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ScrollViewContainer: View {
+    @Environment(ToolManager.self) var toolManager
+    
     var note: PPNoteModel
     var page: PPPageModel
     var size: CGSize
@@ -30,6 +32,13 @@ struct ScrollViewContainer: View {
         .modifier(
             OrientationUpdater(isPortrait: page.isPortrait)
         )
+        .onChange(of: toolManager.activePage, initial: true) {
+            if toolManager.activePage?.id == page.id {
+                toolManager.scale = scale
+                toolManager.offset = offset
+            }
+        }
+        
     }
     
     func getScale() -> CGFloat {

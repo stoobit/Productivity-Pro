@@ -85,12 +85,14 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             scale: $scale,
             offset: $offset,
             editorVisible: $toolValue.editorVisible,
-            frameVisible: $toolValue.frameVisible
+            frameVisible: $toolValue.frameVisible,
+            toolManager: toolValue
         )
     }
     
     @MainActor
     class Coordinator: NSObject, UIScrollViewDelegate {
+        var toolManager: ToolManager
         var hostingController: UIHostingController<Content>
         
         @Binding var scale: CGFloat
@@ -104,13 +106,15 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             scale: Binding<CGFloat>,
             offset: Binding<CGPoint>,
             editorVisible: Binding<Bool>,
-            frameVisible: Binding<Bool>
+            frameVisible: Binding<Bool>,
+            toolManager: ToolManager
         ) {
             self.hostingController = hostingController
             _scale = scale
             _offset = offset
             _editorVisible = editorVisible
             _frameVisible = frameVisible
+            self.toolManager = toolManager
         }
         
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -127,6 +131,10 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             self.scale = scrollView.zoomScale
             self.offset = scrollView.contentOffset
             
+            
+            toolManager.scale = scrollView.zoomScale
+            toolManager.offset = scrollView.contentOffset
+            
             editorVisible = true
             frameVisible = true
         }
@@ -134,15 +142,24 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
             if decelerate == false {
                 offset = scrollView.contentOffset
+                
+                toolManager.scale = scrollView.zoomScale
+                toolManager.offset = scrollView.contentOffset
             }
         }
         
         func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
             offset = scrollView.contentOffset
+            
+            toolManager.scale = scrollView.zoomScale
+            toolManager.offset = scrollView.contentOffset
         }
 
         func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
             offset = scrollView.contentOffset
+            
+            toolManager.scale = scrollView.zoomScale
+            toolManager.offset = scrollView.contentOffset
         }
     }
     
