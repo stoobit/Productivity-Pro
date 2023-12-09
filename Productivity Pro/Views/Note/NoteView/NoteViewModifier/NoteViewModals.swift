@@ -103,6 +103,7 @@ struct NoteViewSheet: ViewModifier {
         
         contentObject.note?.pages?.append(page)
         withAnimation {
+            reader.scrollTo(page)
             toolManager.activePage = page
             subviewManager.addPage = false
         }
@@ -155,6 +156,7 @@ struct NoteViewSheet: ViewModifier {
                     toolManager.showProgress = false
                     
                     withAnimation {
+                        reader.scrollTo(selectedPage)
                         toolManager.activePage = selectedPage
                     }
                 }
@@ -220,6 +222,7 @@ struct NoteViewSheet: ViewModifier {
                     toolManager.showProgress = false
                     
                     withAnimation {
+                        reader.scrollTo(selectedPage)
                         toolManager.activePage = selectedPage
                     }
                 }
