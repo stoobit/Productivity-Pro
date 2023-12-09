@@ -62,12 +62,6 @@ struct PremiumView: View {
                                 .foregroundStyle(Color.secondary)
                         }
                     }
-                    
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button(action: { restore() }) {
-                            Image(systemName: "purchased")
-                        }
-                    }
                 }
             } else {
                 ProgressView()
