@@ -13,21 +13,21 @@ extension NoteSecondaryToolbar {
         Menu(content: {
             Section {
                 Button(action: {
-                    toolManager.isCanvasEnabled = false
+                    toolManager.pencilKit = false
                     subviewManager.addPage = true
                 }) {
                     Label("Seite hinzufügen", systemImage: "doc.badge.plus")
                 }
 
                 Button(action: {
-                    toolManager.isCanvasEnabled = false
+                    toolManager.pencilKit = false
                     subviewManager.importFile = true
                 }) {
                     Label("Datei importieren", systemImage: "square.and.arrow.down")
                 }
             
                 Button(action: {
-                    toolManager.isCanvasEnabled = false
+                    toolManager.pencilKit = false
                     subviewManager.scanDocument = true
                 }) {
                     Label("Dokument scannen", systemImage: "doc.text.fill.viewfinder")
@@ -36,7 +36,7 @@ extension NoteSecondaryToolbar {
             
             Section {
                 Button(action: {
-                    toolManager.isCanvasEnabled = false
+                    toolManager.pencilKit = false
                     subviewManager.changePage = true
                 }) {
                     Label("Vorlage ändern", systemImage: "grid")
@@ -44,7 +44,7 @@ extension NoteSecondaryToolbar {
                 .disabled(toolManager.activePage?.type != PPPageType.template.rawValue)
                 
                 Button(role: .destructive, action: {
-                    toolManager.isCanvasEnabled = false
+                    toolManager.pencilKit = false
                     subviewManager.deletePage = true
                 }) {
                     Label("Seite löschen", systemImage: "trash")

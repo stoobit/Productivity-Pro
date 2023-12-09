@@ -10,7 +10,7 @@ import PencilKit
 
 extension PencilKitViewWrapper {
     func becameForeground() {
-        if toolManager.isCanvasEnabled {
+        if toolManager.pencilKit {
             pkToolPicker.setVisible(
                 true, forFirstResponder: pkCanvasView
             )
@@ -40,7 +40,7 @@ extension PencilKitViewWrapper {
         pkCanvasView.resignFirstResponder()
         
         toolManager.isLocked = false
-        toolManager.isCanvasEnabled = false
+        toolManager.pencilKit = false
     }
     
     func didCanvasAvailabilityChange(_ isEnabled: Bool) {

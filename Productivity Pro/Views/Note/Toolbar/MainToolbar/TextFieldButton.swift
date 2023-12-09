@@ -16,7 +16,7 @@ extension NoteMainToolbar {
     }
     
     func addTextField() {
-        toolManager.isCanvasEnabled = false
+        toolManager.pencilKit = false
         
         let item = PPItemModel(index: 0, type: .textField)
         item.width = 600

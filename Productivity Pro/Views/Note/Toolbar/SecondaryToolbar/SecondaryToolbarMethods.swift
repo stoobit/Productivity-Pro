@@ -10,7 +10,7 @@ import Foundation
 extension NoteSecondaryToolbar {
     
     func toggleOverview() {
-        toolManager.isCanvasEnabled = false
+        toolManager.pencilKit = false
         subviewManager.overviewSheet.toggle()
     }
     

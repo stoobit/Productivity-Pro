@@ -17,18 +17,14 @@ import PencilKit
     
     init(
         type: PPPageType,
-        canvas: PPCanvasType,
         index: Int
     ) {
         self.type = type.rawValue
-        self.canvas = canvas.rawValue
-        
         self.created = Date()
         self.index = index
     }
     
     var type: PPPageType.RawValue
-    var canvas: PPCanvasType.RawValue
     var index: Int
     
     var title: String = ""
@@ -40,7 +36,7 @@ import PencilKit
     var isPortrait: Bool = false
     var media: Data? = nil
     
-    var pkCanvas: Data?
+    var canvas: Data = PKCanvasView().drawing.dataRepresentation()
  
     @Relationship(deleteRule: .cascade)
     var items: [PPItemModel]? = []

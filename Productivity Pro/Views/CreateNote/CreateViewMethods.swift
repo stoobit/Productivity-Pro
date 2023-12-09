@@ -27,9 +27,7 @@ extension CreateNoteView {
             let note = PPNoteModel()
             object.note = note
             
-            let page = PPPageModel(
-                type: .template, canvas: .pkCanvas, index: 0
-            )
+            let page = PPPageModel(type: .template, index: 0)
             page.note = note
             page.isPortrait = savedIsPortrait
             page.template = savedBackgroundTemplate
@@ -57,9 +55,7 @@ extension CreateNoteView {
             let note = PPNoteModel()
             object.note = note
             
-            let page = PPPageModel(
-                type: .template, canvas: .pkCanvas, index: 0
-            )
+            let page = PPPageModel(type: .template, index: 0)
             
             page.note = note
             page.isPortrait = isPortrait
@@ -108,7 +104,7 @@ extension CreateNoteView {
                             ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                             
                             let ppPage = PPPageModel(
-                                type: .pdf, canvas: .pkCanvas, index: index
+                                type: .pdf, index: index
                             )
                             
                             ppPage.note = note
@@ -159,12 +155,7 @@ extension CreateNoteView {
                     for index in 0...scan.pageCount - 1 {
                         let scanPage = scan.imageOfPage(at: index)
                         let size = scanPage.size
-                        
-                        let page = PPPageModel(
-                            type: .image,
-                            canvas: .pkCanvas,
-                            index: index
-                        )
+                        let page = PPPageModel(type: .image, index: index)
                         
                         page.note = note
                         

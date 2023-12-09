@@ -12,18 +12,18 @@ import Vision
 import ImageIO
 
 struct PencilKitViewRepresentable: UIViewRepresentable {
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
-    var size: CGSize
-    
-    @Binding var page: Page
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
+    @Bindable var page: PPPageModel
+    @Binding var scale: CGFloat
     
     @Binding var canvasView: PKCanvasView
     @Binding var toolPicker: PKToolPicker
-    
     @Binding var drawingChanged: Bool
     @Binding var strokeCount: Int
+    
+    let size: CGSize
     
     func makeUIView(context: Context) -> PKCanvasView {
         
@@ -80,10 +80,11 @@ struct PencilKitViewRepresentable: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(
+        @Bindable var value = toolManager
+        return Coordinator(
             drawingChanged: $drawingChanged,
             toolPicker: $toolPicker,
-            objectRecognitionEnabled: $toolManager.objectRecognitionEnabled,
+            objectRecognitionEnabled: $value.objectRecognitionEnabled,
             strokeCount: $strokeCount
         )
     }
@@ -313,7 +314,7 @@ struct PencilKitViewRepresentable: UIViewRepresentable {
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if  page.backgroundColor == "pagewhite" ||  page.backgroundColor == "white" ||  page.backgroundColor == "pageyellow" ||  page.backgroundColor == "yellow"{
+        if  page.color == "pagewhite" ||  page.color == "white" ||  page.color == "pageyellow" ||  page.color == "yellow"{
             cs = .light
         }
         

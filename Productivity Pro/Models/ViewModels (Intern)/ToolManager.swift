@@ -28,7 +28,7 @@ import PDFKit
     var showSnapper: [Bool] = [false, false]
     var showProgress: Bool = false
     
-    var pencilKit: Bool = false 
+    var pencilKit: Bool = false
     
     // MARK: - UNCHECKED & OLD
     
@@ -46,7 +46,6 @@ import PDFKit
     var scrollOffset: CGPoint = .zero
     var firstZoom: Bool = true
     
-    var isCanvasEnabled: Bool = false
     var isLockEnabled: Bool = true
     
     var selectedItem: ItemModel?

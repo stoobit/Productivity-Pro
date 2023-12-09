@@ -94,7 +94,6 @@ struct NoteViewSheet: ViewModifier {
     func addPage(_ portrait: Bool, _ template: String, _ color: String) {
         let page: PPPageModel = PPPageModel(
             type: .template,
-            canvas: .pkCanvas,
             index: getIndex()
         )
         
@@ -137,7 +136,6 @@ struct NoteViewSheet: ViewModifier {
                     
                     let page = PPPageModel(
                         type: .image,
-                        canvas: .pkCanvas,
                         index: toolManager.activePage!.index + 1 + index
                     )
                     
@@ -200,7 +198,7 @@ struct NoteViewSheet: ViewModifier {
                         ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                         
                         let ppPage = PPPageModel(
-                            type: .pdf, canvas: .pkCanvas,
+                            type: .pdf,
                             index: toolManager.activePage!.index + 1 + index
                         )
                         

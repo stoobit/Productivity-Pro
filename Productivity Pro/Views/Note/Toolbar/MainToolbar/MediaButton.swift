@@ -13,14 +13,14 @@ extension NoteMainToolbar {
             
             Section {
                 Button(action: {
-                    toolManager.isCanvasEnabled = false
+                    toolManager.pencilKit = false
                     subviewManager.takeMedia.toggle()
                 }) {
                     Label("Kamera", systemImage: "camera")
                 }
                 
                 Button(action: {
-                    toolManager.isCanvasEnabled = false
+                    toolManager.pencilKit = false
                     subviewManager.pickMedia.toggle()
                 }) {
                     Label("Fotos", systemImage: "photo.on.rectangle.angled")
@@ -28,7 +28,7 @@ extension NoteMainToolbar {
             }
             
             Button(action: {
-                toolManager.isCanvasEnabled = false
+                toolManager.pencilKit = false
                 subviewManager.importMedia.toggle()
             }) {
                 Label("Dateien durchsuchen", systemImage: "folder")

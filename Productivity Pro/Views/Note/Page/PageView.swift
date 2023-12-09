@@ -47,6 +47,7 @@ struct PageView: View {
                 } 
             }
             .onTapGesture { onBackgroundTap() }
+            .allowsHitTesting(toolManager.pencilKit == false)
             
             PageItemView(
                 note: note,
@@ -55,15 +56,10 @@ struct PageView: View {
                 highResolution: highResolution,
                 pdfRendering: pdfRendering
             )
+            .allowsHitTesting(toolManager.pencilKit == false)
             
-//            DrawingView(
-//                page: $page,
-//                toolManager: toolManager,
-//                subviewManager: subviewManager,
-//                drawingModel: drawingModel,
-//                pdfRendering: pdfRendering,
-//                size: size
-//            )
+            PencilKitViewWrapper(page: page, scale: $scale, size: size)
+                .allowsHitTesting(toolManager.pencilKit)
             
             SnapItemView(page: page, scale: $scale)
                 .scaleEffect(1/scale)

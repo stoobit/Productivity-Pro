@@ -29,7 +29,6 @@ extension ObjectView {
         for page in document.note.pages {
             let ppPage = PPPageModel(
                 type: transferPageType(type: page.type),
-                canvas: .pkCanvas,
                 index: contentObject.note!.pages!.count
             )
             
@@ -42,7 +41,7 @@ extension ObjectView {
             ppPage.template = page.backgroundTemplate
             ppPage.color = page.backgroundColor
             
-            ppPage.pkCanvas = page.canvas
+            ppPage.canvas = page.canvas
             ppPage.items = [PPItemModel]()
             
             if page.type == .image || page.type == .pdf {

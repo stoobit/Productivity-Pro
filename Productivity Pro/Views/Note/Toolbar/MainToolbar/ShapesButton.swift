@@ -35,7 +35,7 @@ extension NoteMainToolbar {
     }
     
     func addShape(type: PPShapeType) {
-        toolManager.isCanvasEnabled = false
+        toolManager.pencilKit = false
         
         let item = PPItemModel(index: 0, type: .shape)
         item.width = 200

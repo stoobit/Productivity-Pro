@@ -11,31 +11,31 @@ import PencilKit
 struct PencilKitViewWrapper: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.undoManager) var undoManager
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
-    var size: CGSize
+    @Bindable var page: PPPageModel
+    @Binding var scale: CGFloat
     
-    @Binding var page: Page
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
+    let size: CGSize
     
     @State var pkCanvasView: PKCanvasView = PKCanvasView()
     @State var pkToolPicker = PKToolPicker()
-    
     @State var drawingChanged: Bool = false
     @State var strokeCount: Int = 0
     
     var body: some View {
         
         PencilKitViewRepresentable(
-            size: size,
-            page: $page,
-            toolManager: toolManager,
-            subviewManager: subviewManager,
+            page: page,
+            scale: $scale,
             canvasView: $pkCanvasView,
             toolPicker: $pkToolPicker,
             drawingChanged: $drawingChanged,
-            strokeCount: $strokeCount
+            strokeCount: $strokeCount,
+            size: size
         )
+        .zIndex(Double(page.items!.count + 10))
         .onChange(of: drawingChanged) { old, value in
             didDrawingChange(value)
         }
@@ -43,7 +43,7 @@ struct PencilKitViewWrapper: View {
             didSelectedPageChange()
             disableCanvasAvailability()
         }
-        .onChange(of: toolManager.isCanvasEnabled) { old, isEnabled in
+        .onChange(of: toolManager.pencilKit) { old, isEnabled in
             didCanvasAvailabilityChange(isEnabled)
         }
         .onChange(of: scenePhase) { old, value in
@@ -56,7 +56,7 @@ struct PencilKitViewWrapper: View {
             height: toolManager.zoomScale * getFrame().height
         )
         .scaleEffect(1/toolManager.zoomScale)
-        .allowsHitTesting(toolManager.isCanvasEnabled)
+        .allowsHitTesting(toolManager.pencilKit)
     }
     
 }

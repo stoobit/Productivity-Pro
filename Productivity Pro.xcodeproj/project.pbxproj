@@ -208,7 +208,6 @@
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
 		BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = BBE993BF2AF850A800330733 /* PPDoubleKeyboard */; };
-		BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC301D2A670EF80021C7E6 /* DrawingView.swift */; };
 		BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */; };
 		BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */; };
 		BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */; };
@@ -438,7 +437,6 @@
 		BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryInspectorAction.swift; sourceTree = "<group>"; };
 		BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDropDelegate.swift; sourceTree = "<group>"; };
 		BBE9196D28F381FE001EF750 /* PPScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollView.swift; sourceTree = "<group>"; };
-		BBEC301D2A670EF80021C7E6 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 		BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettingsRow.swift; sourceTree = "<group>"; };
 		BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkItem.swift; sourceTree = "<group>"; };
 		BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkEditView.swift; sourceTree = "<group>"; };
@@ -518,7 +516,6 @@
 				BB73324F2A294D440001FD6A /* PageBackgroundView.swift */,
 				BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */,
 				BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */,
-				BBEC301D2A670EF80021C7E6 /* DrawingView.swift */,
 				BB0504292928471400DAECA6 /* BackgroundViews */,
 			);
 			path = Page;
@@ -1370,7 +1367,6 @@
 				BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */,
 				BB8586992AE1E5B300C5875C /* ShapeStyleView.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
-				BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */,
 				BBCA6FA02AF81286009C08E3 /* DoubleRounding.swift in Sources */,
 				BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */,
 				BB82B5AF2B247CD30089D423 /* PPLineModel.swift in Sources */,
