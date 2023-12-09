@@ -16,7 +16,7 @@ extension NoteSecondaryToolbar {
         }
         .disabled(toolManager.activeItem == nil)
         .popover(isPresented: $subviewValue.showInspector) {
-            InspectorView(hsc: hsc)
+            InspectorView(hsc: hsc, contentObject: contentObject)
                 .frame(
                     minWidth: hsc == .regular ? 350 : 0,
                     minHeight: hsc == .regular ? 450 : 0

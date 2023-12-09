@@ -16,6 +16,7 @@ struct NoteSecondaryToolbar: ToolbarContent {
     @Environment(SubviewManager.self) var subviewManager
     
     @Bindable var contentObject: ContentObject
+    
     var body: some ToolbarContent {
         @Bindable var subviewValue = subviewManager
         

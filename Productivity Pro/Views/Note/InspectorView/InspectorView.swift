@@ -12,6 +12,7 @@ struct InspectorView: View {
     var hsc: UserInterfaceSizeClass?
     
     @State var style: Bool = true
+    @Bindable var contentObject: ContentObject
     
     var body: some View {
         NavigationStack {
@@ -32,9 +33,11 @@ struct InspectorView: View {
                         .toolbarBackground(.visible, for: .tabBar)
                         .tag(true)
                     
-                    ArrangeContainerView(hsc: hsc)
-                        .toolbarBackground(.visible, for: .tabBar)
-                        .tag(false)
+                    ArrangeContainerView(
+                        hsc: hsc, contentObject: contentObject
+                    )
+                    .toolbarBackground(.visible, for: .tabBar)
+                    .tag(false)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
             }

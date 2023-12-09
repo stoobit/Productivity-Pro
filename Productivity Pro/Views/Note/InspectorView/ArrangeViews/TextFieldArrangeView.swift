@@ -11,6 +11,7 @@ import PPAnglePicker
 
 struct TextFieldArrangeView: View {
     @Environment(ToolManager.self) var toolManager
+    var items: [PPItemModel]
     
     @State var anglePicker: Bool = false
     
@@ -48,13 +49,19 @@ struct TextFieldArrangeView: View {
             
             Section {
                 HStack {
-                    Button(action: { }) {
+                    Button(action: {
+                        StackingModel(items: items)
+                            .moveUp(item: item)
+                    }) {
                         Image(systemName: "square.2.stack.3d.top.filled")
                     }
                     .buttonStyle(.bordered)
                     .hoverEffect(.lift)
                     
-                    Button(action: {  }) {
+                    Button(action: {
+                        StackingModel(items: items)
+                            .moveDown(item: item)
+                    }) {
                         Image(systemName: "square.2.stack.3d.bottom.filled")
                     }
                     .buttonStyle(.bordered)
@@ -64,13 +71,19 @@ struct TextFieldArrangeView: View {
                     Divider().frame(height: 20)
                     Spacer()
                     
-                    Button(action: {  }) {
+                    Button(action: {
+                        StackingModel(items: items)
+                            .bringFront(item: item)
+                    }) {
                         Image(systemName: "square.3.stack.3d.top.filled")
                     }
                     .buttonStyle(.bordered)
                     .hoverEffect(.lift)
                     
-                    Button(action: {  }) {
+                    Button(action: {
+                        StackingModel(items: items)
+                            .bringBack(item: item)
+                    }) {
                         Image(systemName: "square.3.stack.3d.bottom.filled")
                     }
                     .buttonStyle(.bordered)
@@ -131,8 +144,4 @@ struct TextFieldArrangeView: View {
         }
         .environment(\.defaultMinListRowHeight, 10)
     }
-}
-
-#Preview {
-    TextFieldArrangeView()
 }

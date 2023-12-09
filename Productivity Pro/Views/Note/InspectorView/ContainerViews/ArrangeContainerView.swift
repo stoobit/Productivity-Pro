@@ -9,19 +9,28 @@ import SwiftUI
 
 struct ArrangeContainerView: View {
     @Environment(ToolManager.self) var toolManager
-    typealias item = PPItemType
     
+    typealias item = PPItemType
     var hsc: UserInterfaceSizeClass?
+    
+    @Bindable var contentObject: ContentObject
+    
     var body: some View {
         
         if toolManager.activeItem?.type == item.shape.rawValue {
-            ShapeArrangeView()
+            ShapeArrangeView(items: items)
         } else if toolManager.activeItem?.type == item.media.rawValue {
-            MediaArrangeView()
+            MediaArrangeView(items: items)
         }  else if toolManager.activeItem?.type == item.textField.rawValue {
-            TextFieldArrangeView()
+            TextFieldArrangeView(items: items)
         } else {
             ProgressView()
         }
+    }
+    
+    var items: [PPItemModel] {
+        return contentObject.note!.pages!.first(where: {
+            $0.id == toolManager.activePage?.id
+        })!.items!
     }
 }
