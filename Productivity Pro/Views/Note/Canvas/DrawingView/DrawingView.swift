@@ -8,7 +8,7 @@
 import SwiftUI
 import PencilKit
 
-struct PencilKitViewWrapper: View {
+struct DrawingView: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.undoManager) var undoManager
     @Environment(ToolManager.self) var toolManager
@@ -26,7 +26,7 @@ struct PencilKitViewWrapper: View {
     
     var body: some View {
         
-        PencilKitViewRepresentable(
+        PKRepresentable(
             page: page,
             scale: $scale,
             canvasView: $pkCanvasView,
@@ -52,11 +52,10 @@ struct PencilKitViewWrapper: View {
             }
         }
         .frame(
-            width: toolManager.zoomScale * getFrame().width,
-            height: toolManager.zoomScale * getFrame().height
+            width: scale * getFrame().width,
+            height: scale * getFrame().height
         )
-        .scaleEffect(1/toolManager.zoomScale)
-        .allowsHitTesting(toolManager.pencilKit)
+        .scaleEffect(1 / scale)
     }
     
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 import PencilKit
 
-extension PencilKitViewWrapper {
+extension DrawingView {
     func becameForeground() {
         if toolManager.pencilKit {
             pkToolPicker.setVisible(

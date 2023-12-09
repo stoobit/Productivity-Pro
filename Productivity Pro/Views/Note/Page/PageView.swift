@@ -37,7 +37,7 @@ struct PageView: View {
     var body: some View {
         ZStack {
             ZStack {
-                PageBackgroundView(page: page)
+                PageBackgroundView(scale: $scale, page: page)
                 BackgroundTemplateView(page: page, scale: $scale)
                 
                 if page.type == PPPageType.pdf.rawValue {
@@ -58,7 +58,7 @@ struct PageView: View {
             )
             .allowsHitTesting(toolManager.pencilKit == false)
             
-            PencilKitViewWrapper(page: page, scale: $scale, size: size)
+            DrawingView(page: page, scale: $scale, size: size)
                 .allowsHitTesting(toolManager.pencilKit)
             
             SnapItemView(page: page, scale: $scale)

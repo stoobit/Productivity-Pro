@@ -85,7 +85,6 @@ struct ItemView: View {
             }
             
             ToolView(page: page, item: item, scale: $scale)
-                .scaleEffect(toolManager.zoomScale)
                 .zIndex(Double(page.items!.count + 20))
                 .environment(editItemModel)
 

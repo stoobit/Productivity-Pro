@@ -22,9 +22,9 @@ extension NoteMainToolbar {
         item.width = 600
         item.height = 300
         
-        item.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.width/2 + 40
-        
-        item.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + item.height/2 + 40
+//        item.x = toolManager.scrollOffset.size.width * (1/toolManager.zoomScale) + item.width/2 + 40
+//        
+//        item.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + item.height/2 + 40
         
         let textField = PPTextFieldModel()
         let attributes: [NSAttributedString.Key: Any] = [

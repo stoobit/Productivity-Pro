@@ -9,16 +9,18 @@ import SwiftUI
 
 struct PageBackgroundView: View {
     @Environment(ToolManager.self) var toolManager
+    @Binding var scale: CGFloat
+    
     var page: PPPageModel
     
     var body: some View {
         Rectangle()
             .foregroundColor(Color(page.color))
             .frame(
-                width: toolManager.zoomScale * getFrame().width,
-                height: toolManager.zoomScale * getFrame().height
+                width: scale * getFrame().width,
+                height: scale * getFrame().height
             )
-            .scaleEffect(1/toolManager.zoomScale)
+            .scaleEffect(1 / scale)
     }
     
     func getFrame() -> CGSize {

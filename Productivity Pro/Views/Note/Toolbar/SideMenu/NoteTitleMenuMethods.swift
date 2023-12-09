@@ -52,7 +52,6 @@ extension NoteTitleMenu {
         
         let tm = ToolManager()
         tm.scrollOffset = CGPoint(x: 0, y: 0)
-        tm.zoomScale = 1
         
 //        for page in document.note.pages {
 //            

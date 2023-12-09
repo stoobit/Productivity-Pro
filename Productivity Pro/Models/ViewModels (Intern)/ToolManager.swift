@@ -42,7 +42,6 @@ import PDFKit
     var didZoom: Bool = false
     var didScroll: Bool = false
     
-    var zoomScale: CGFloat = 1
     var scrollOffset: CGPoint = .zero
     var firstZoom: Bool = true
     

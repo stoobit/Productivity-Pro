@@ -13,7 +13,7 @@
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
 		BB073A6F2AB8CA4800C80B59 /* SecondaryPageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */; };
-		BB07E7BA2A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift */; };
+		BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
 		BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2062925A7C200F4004A /* BottomOffset.swift */; };
 		BB1321EA2985EA87006AD59D /* DragType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321E92985EA87006AD59D /* DragType.swift */; };
@@ -23,8 +23,8 @@
 		BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E693F2A71CE01008E0C5F /* TemplateView.swift */; };
 		BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */; };
 		BB1E69442A71EB5B008E0C5F /* TemplatePreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */; };
-		BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */; };
-		BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */; };
+		BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E83229EB1FD40082AE98 /* DrawingView.swift */; };
+		BB24E84929EB6FE70082AE98 /* PKRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB24E84829EB6FE70082AE98 /* PKRepresentable.swift */; };
 		BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27BB512A62C30700392E1E /* RealityNoteModel.swift */; };
 		BB27FED228EA09A200459334 /* TouchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED128EA09A200459334 /* TouchType.swift */; };
 		BB27FED828EA419300459334 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27FED728EA419300459334 /* OverviewView.swift */; };
@@ -98,6 +98,8 @@
 		BB82B5AC2B247C420089D423 /* CopyPastePasser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */; };
 		BB82B5AF2B247CD30089D423 /* PPLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5AE2B247CD30089D423 /* PPLineModel.swift */; };
 		BB82B5B52B247DDB0089D423 /* PencilKitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5B42B247DDB0089D423 /* PencilKitButton.swift */; };
+		BB82B5B72B2498CB0089D423 /* PKObjectRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5B62B2498CB0089D423 /* PKObjectRecognition.swift */; };
+		BB82B5B92B24990A0089D423 /* PKCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5B82B24990A0089D423 /* PKCoordinator.swift */; };
 		BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */; };
 		BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB854ADF29E06531002EDF7A /* PagingModifier.swift */; };
 		BB85868C2AE1ABA500C5875C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85868B2AE1ABA400C5875C /* RatingView.swift */; };
@@ -246,7 +248,7 @@
 		BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTemplateView.swift; sourceTree = "<group>"; };
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
 		BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryPageActions.swift; sourceTree = "<group>"; };
-		BB07E7B92A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapperMethods.swift; sourceTree = "<group>"; };
+		BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewMethods.swift; sourceTree = "<group>"; };
 		BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		BB0BE2062925A7C200F4004A /* BottomOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOffset.swift; sourceTree = "<group>"; };
 		BB1321E92985EA87006AD59D /* DragType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragType.swift; sourceTree = "<group>"; };
@@ -257,8 +259,8 @@
 		BB1E693F2A71CE01008E0C5F /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewHelper.swift; sourceTree = "<group>"; };
 		BB1E69432A71EB5B008E0C5F /* TemplatePreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatePreviewProvider.swift; sourceTree = "<group>"; };
-		BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewWrapper.swift; sourceTree = "<group>"; };
-		BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewRepresentable.swift; sourceTree = "<group>"; };
+		BB24E83229EB1FD40082AE98 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		BB24E84829EB6FE70082AE98 /* PKRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKRepresentable.swift; sourceTree = "<group>"; };
 		BB27BB512A62C30700392E1E /* RealityNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityNoteModel.swift; sourceTree = "<group>"; };
 		BB27FED128EA09A200459334 /* TouchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchType.swift; sourceTree = "<group>"; };
 		BB27FED728EA419300459334 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
@@ -329,6 +331,8 @@
 		BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPastePasser.swift; sourceTree = "<group>"; };
 		BB82B5AE2B247CD30089D423 /* PPLineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLineModel.swift; sourceTree = "<group>"; };
 		BB82B5B42B247DDB0089D423 /* PencilKitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitButton.swift; sourceTree = "<group>"; };
+		BB82B5B62B2498CB0089D423 /* PKObjectRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKObjectRecognition.swift; sourceTree = "<group>"; };
+		BB82B5B82B24990A0089D423 /* PKCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCoordinator.swift; sourceTree = "<group>"; };
 		BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewFolderLink.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		BB85868B2AE1ABA400C5875C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -780,6 +784,25 @@
 			name = PPDrawingKit;
 			sourceTree = "<group>";
 		};
+		BB82B5BA2B2499110089D423 /* PencilKit */ = {
+			isa = PBXGroup;
+			children = (
+				BB24E84829EB6FE70082AE98 /* PKRepresentable.swift */,
+				BB82B5B82B24990A0089D423 /* PKCoordinator.swift */,
+				BB82B5B62B2498CB0089D423 /* PKObjectRecognition.swift */,
+			);
+			path = PencilKit;
+			sourceTree = "<group>";
+		};
+		BB82B5BB2B2499250089D423 /* DrawingView */ = {
+			isa = PBXGroup;
+			children = (
+				BB24E83229EB1FD40082AE98 /* DrawingView.swift */,
+				BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */,
+			);
+			path = DrawingView;
+			sourceTree = "<group>";
+		};
 		BB84E5D429354F5800E0535C /* ItemModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -839,14 +862,13 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
-		BB988E6329999F3300762F39 /* PencilKitView */ = {
+		BB988E6329999F3300762F39 /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
-				BB24E83229EB1FD40082AE98 /* PencilKitViewWrapper.swift */,
-				BB07E7B92A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift */,
-				BB24E84829EB6FE70082AE98 /* PencilKitViewRepresentable.swift */,
+				BB82B5BB2B2499250089D423 /* DrawingView */,
+				BB82B5BA2B2499110089D423 /* PencilKit */,
 			);
-			path = PencilKitView;
+			path = Canvas;
 			sourceTree = "<group>";
 		};
 		BB9A36482ABCD25900721C56 /* NoteModels */ = {
@@ -912,7 +934,7 @@
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
-				BB988E6329999F3300762F39 /* PencilKitView */,
+				BB988E6329999F3300762F39 /* Canvas */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
 				BB37AD882A2C0A12006DB94D /* Overview */,
 				BB9CC946293FD4450094446A /* Share */,
@@ -1288,7 +1310,7 @@
 				BBF5FE032AAE61E20081C4FE /* SubjectModel.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */,
-				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
+				BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
 				BBC4BE972AED9FDF00D87B60 /* AdaptiveView.swift in Sources */,
@@ -1341,6 +1363,7 @@
 				BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */,
 				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
 				BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */,
+				BB82B5B72B2498CB0089D423 /* PKObjectRecognition.swift in Sources */,
 				BBD930F22B1FC0C300A37F95 /* PVMethodsView.swift in Sources */,
 				BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */,
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
@@ -1381,10 +1404,10 @@
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB8586912AE1DE4300C5875C /* InspectorView.swift in Sources */,
 				BB82B5B52B247DDB0089D423 /* PencilKitButton.swift in Sources */,
-				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
+				BB24E84929EB6FE70082AE98 /* PKRepresentable.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
-				BB07E7BA2A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift in Sources */,
+				BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */,
 				BB85868C2AE1ABA500C5875C /* RatingView.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,
 				BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */,
@@ -1393,6 +1416,7 @@
 				BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */,
 				BBE069B12AF78CA300B2D1A0 /* SecondaryInspectorAction.swift in Sources */,
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
+				BB82B5B92B24990A0089D423 /* PKCoordinator.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
 				BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
