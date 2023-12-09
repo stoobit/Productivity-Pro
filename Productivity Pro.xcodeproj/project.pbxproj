@@ -223,6 +223,7 @@
 		BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */; };
 		BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */; };
 		BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */; };
+		BBEE96D12B2464F800650A5B /* RTFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE96D02B2464F800650A5B /* RTFFont.swift */; };
 		BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */; };
 		BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */; };
 		BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */; };
@@ -472,6 +473,7 @@
 		BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingView.swift; sourceTree = "<group>"; };
 		BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPathCalculator.swift; sourceTree = "<group>"; };
 		BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLineModel.swift; sourceTree = "<group>"; };
+		BBEE96D02B2464F800650A5B /* RTFFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFFont.swift; sourceTree = "<group>"; };
 		BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettingsRow.swift; sourceTree = "<group>"; };
 		BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkItem.swift; sourceTree = "<group>"; };
 		BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkEditView.swift; sourceTree = "<group>"; };
@@ -772,6 +774,7 @@
 				BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */,
 				BB50FCD42B0D1CE200D12783 /* RTFStyle.swift */,
 				BB50FCD62B0D5AFD00D12783 /* RTFAlignment.swift */,
+				BBEE96D02B2464F800650A5B /* RTFFont.swift */,
 			);
 			path = RTFEditorToolbar;
 			sourceTree = "<group>";
@@ -1505,6 +1508,7 @@
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
+				BBEE96D12B2464F800650A5B /* RTFFont.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
 				BB68502B2AE99F520011A058 /* LoadingView.swift in Sources */,
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,

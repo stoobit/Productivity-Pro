@@ -23,7 +23,10 @@ struct RTFEditorView: View {
     
     var body: some View {
         NavigationStack {
-            RichTextEditor(text: $nsString, context: context)
+            RichTextEditor(text: $nsString, context: context) { editor in
+                editor.setRichTextFontName(defaultFont)
+                editor.setRichTextFontSize(defaultFontSize)
+            }
             .toolbar { RTFEditorToolbar(context: context) }
             .toolbarBackground(.visible, for: .navigationBar)
             .onChange(of: nsString) {
@@ -50,5 +53,6 @@ struct RTFEditorView: View {
     Text("hi")
         .sheet(isPresented: .constant(true)) {
             RTFEditorView()
+                .environment(ToolManager())
         }
 }

@@ -18,7 +18,7 @@ struct RTFEditorToolbar: ToolbarContent {
                 RTFStyle(context: context)
                 RTFAlignment(context: context)
                 RichTextFontSizePicker(selection: $context.fontSize)
-                RichTextFontPicker(selection: $context.fontName)
+                RTFFont(context: context)
             }
             .tint(Color.primary)
         }
