@@ -70,11 +70,7 @@
 		BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */; };
 		BB5034192993172800913B3A /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5034182993172800913B3A /* PageItemView.swift */; };
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
-		BB50FCCE2B0D085000D12783 /* RTFEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */; };
 		BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */; };
-		BB50FCD22B0D18D100D12783 /* RTFEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */; };
-		BB50FCD52B0D1CE200D12783 /* RTFStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD42B0D1CE200D12783 /* RTFStyle.swift */; };
-		BB50FCD72B0D5AFD00D12783 /* RTFAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCD62B0D5AFD00D12783 /* RTFAlignment.swift */; };
 		BB53D5B029C4F79F008130F2 /* EditMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */; };
 		BB58477D29A18BF900C21B17 /* PPControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58477C29A18BF900C21B17 /* PPControlBar.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
@@ -223,7 +219,6 @@
 		BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */; };
 		BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */; };
 		BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */; };
-		BBEE96D12B2464F800650A5B /* RTFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEE96D02B2464F800650A5B /* RTFFont.swift */; };
 		BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */; };
 		BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */; };
 		BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */; };
@@ -244,7 +239,6 @@
 		BBF930732A67437900AD3958 /* PPColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* PPColor.swift */; };
 		BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */; };
 		BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930792A674C9600AD3958 /* PPShape.swift */; };
-		BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBFD5B1A2ACCDE210068609A /* RichTextKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -325,11 +319,7 @@
 		BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
 		BB5034182993172800913B3A /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
-		BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorView.swift; sourceTree = "<group>"; };
 		BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldArrangeView.swift; sourceTree = "<group>"; };
-		BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorToolbar.swift; sourceTree = "<group>"; };
-		BB50FCD42B0D1CE200D12783 /* RTFStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFStyle.swift; sourceTree = "<group>"; };
-		BB50FCD62B0D5AFD00D12783 /* RTFAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFAlignment.swift; sourceTree = "<group>"; };
 		BB53D5AF29C4F79F008130F2 /* EditMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMarkdownView.swift; sourceTree = "<group>"; };
 		BB58477C29A18BF900C21B17 /* PPControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPControlBar.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
@@ -473,7 +463,6 @@
 		BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingView.swift; sourceTree = "<group>"; };
 		BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPathCalculator.swift; sourceTree = "<group>"; };
 		BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLineModel.swift; sourceTree = "<group>"; };
-		BBEE96D02B2464F800650A5B /* RTFFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFFont.swift; sourceTree = "<group>"; };
 		BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettingsRow.swift; sourceTree = "<group>"; };
 		BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkItem.swift; sourceTree = "<group>"; };
 		BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkEditView.swift; sourceTree = "<group>"; };
@@ -508,7 +497,6 @@
 				BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */,
 				BB74688B2AF5B49A0029F60D /* PPIntegrationKit in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
-				BBFD5B1B2ACCDE210068609A /* RichTextKit in Frameworks */,
 				BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,26 +747,6 @@
 			path = FolderView;
 			sourceTree = "<group>";
 		};
-		BB50FCCC2B0D07ED00D12783 /* RTFEditor */ = {
-			isa = PBXGroup;
-			children = (
-				BB50FCCD2B0D085000D12783 /* RTFEditorView.swift */,
-				BB50FCD32B0D1CAD00D12783 /* RTFEditorToolbar */,
-			);
-			path = RTFEditor;
-			sourceTree = "<group>";
-		};
-		BB50FCD32B0D1CAD00D12783 /* RTFEditorToolbar */ = {
-			isa = PBXGroup;
-			children = (
-				BB50FCD12B0D18D100D12783 /* RTFEditorToolbar.swift */,
-				BB50FCD42B0D1CE200D12783 /* RTFStyle.swift */,
-				BB50FCD62B0D5AFD00D12783 /* RTFAlignment.swift */,
-				BBEE96D02B2464F800650A5B /* RTFFont.swift */,
-			);
-			path = RTFEditorToolbar;
-			sourceTree = "<group>";
-		};
 		BB655AF82AB7674900FB005A /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -985,7 +953,6 @@
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
-				BB50FCCC2B0D07ED00D12783 /* RTFEditor */,
 				BBF930782A674C0700AD3958 /* PPDrawingToolbar */,
 				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
@@ -1296,7 +1263,6 @@
 				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
 				BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */,
 				BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */,
-				BBFD5B1A2ACCDE210068609A /* RichTextKit */,
 				BB74688A2AF5B49A0029F60D /* PPIntegrationKit */,
 				BB74688C2AF5B8670029F60D /* PPAnglePicker */,
 				BB74688F2AF5B90C0029F60D /* PPAnglePicker */,
@@ -1335,7 +1301,6 @@
 			packageReferences = (
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 				BB34C9B42A524F06009E3CCC /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
-				BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */,
 				BB7468892AF5B49A0029F60D /* XCRemoteSwiftPackageReference "PPIntegrationKit" */,
 				BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
 				BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */,
@@ -1378,7 +1343,6 @@
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
-				BB50FCD72B0D5AFD00D12783 /* RTFAlignment.swift in Sources */,
 				BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
@@ -1480,7 +1444,6 @@
 				BBD930F72B1FEBA000A37F95 /* StoreVM.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
-				BB50FCD52B0D1CE200D12783 /* RTFStyle.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,
@@ -1492,7 +1455,6 @@
 				BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */,
 				BBD930F02B1FC06C00A37F95 /* PVOfferView.swift in Sources */,
 				BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */,
-				BB50FCD22B0D18D100D12783 /* RTFEditorToolbar.swift in Sources */,
 				BBDA2CAF29A1A97000EF297A /* EditMediaItemView.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
 				BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */,
@@ -1508,14 +1470,12 @@
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BBDA2CAD29A1A96600EF297A /* EditTextfieldItemView.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
-				BBEE96D12B2464F800650A5B /* RTFFont.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
 				BB68502B2AE99F520011A058 /* LoadingView.swift in Sources */,
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB8586912AE1DE4300C5875C /* InspectorView.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
-				BB50FCCE2B0D085000D12783 /* RTFEditorView.swift in Sources */,
 				BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */,
 				BB1DF6042A686D14006F85CE /* PPToolButton.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
@@ -1878,14 +1838,6 @@
 				kind = branch;
 			};
 		};
-		BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.8.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1922,11 +1874,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */;
 			productName = PPDoubleKeyboard;
-		};
-		BBFD5B1A2ACCDE210068609A /* RichTextKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBFD5B192ACCDE210068609A /* XCRemoteSwiftPackageReference "RichTextKit" */;
-			productName = RichTextKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

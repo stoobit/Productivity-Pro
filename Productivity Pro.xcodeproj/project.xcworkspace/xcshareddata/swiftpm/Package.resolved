@@ -37,15 +37,6 @@
       }
     },
     {
-      "identity" : "richtextkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/danielsaidi/RichTextKit",
-      "state" : {
-        "revision" : "71b4d2c9bbc83b920ef5d4be262496e066fce5c8",
-        "version" : "0.9.1"
-      }
-    },
-    {
       "identity" : "swiftymarkdown",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/simonfairbairn/SwiftyMarkdown.git",
