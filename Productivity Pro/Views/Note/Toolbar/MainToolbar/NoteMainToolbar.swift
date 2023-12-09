@@ -20,6 +20,10 @@ struct NoteMainToolbar: CustomizableToolbarContent {
     
     var body: some CustomizableToolbarContent {
         
+        ToolbarItem(id: "pencilkit", placement: .secondaryAction) {
+            PencilKitButton()
+        }
+        
         ToolbarItem(id: "shapes", placement: .secondaryAction) {
             ShapesButton()
         }

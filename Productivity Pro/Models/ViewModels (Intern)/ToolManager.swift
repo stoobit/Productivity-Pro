@@ -28,6 +28,8 @@ import PDFKit
     var showSnapper: [Bool] = [false, false]
     var showProgress: Bool = false
     
+    var pencilKit: Bool = false 
+    
     // MARK: - UNCHECKED & OLD
     
     var selectedPage: Int = 0

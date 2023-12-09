@@ -64,7 +64,7 @@ struct PageView: View {
 //                pdfRendering: pdfRendering,
 //                size: size
 //            )
-//            
+            
             SnapItemView(page: page, scale: $scale)
                 .scaleEffect(1/scale)
                 .allowsHitTesting(false)

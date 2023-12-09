@@ -97,6 +97,7 @@
 		BB82B5AA2B2471130089D423 /* StackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5A92B2471130089D423 /* StackingModel.swift */; };
 		BB82B5AC2B247C420089D423 /* CopyPastePasser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */; };
 		BB82B5AF2B247CD30089D423 /* PPLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5AE2B247CD30089D423 /* PPLineModel.swift */; };
+		BB82B5B52B247DDB0089D423 /* PencilKitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5B42B247DDB0089D423 /* PencilKitButton.swift */; };
 		BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */; };
 		BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB854ADF29E06531002EDF7A /* PagingModifier.swift */; };
 		BB85868C2AE1ABA500C5875C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85868B2AE1ABA400C5875C /* RatingView.swift */; };
@@ -328,6 +329,7 @@
 		BB82B5A92B2471130089D423 /* StackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackingModel.swift; sourceTree = "<group>"; };
 		BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPastePasser.swift; sourceTree = "<group>"; };
 		BB82B5AE2B247CD30089D423 /* PPLineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLineModel.swift; sourceTree = "<group>"; };
+		BB82B5B42B247DDB0089D423 /* PencilKitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitButton.swift; sourceTree = "<group>"; };
 		BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewFolderLink.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		BB85868B2AE1ABA400C5875C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -1119,6 +1121,7 @@
 			isa = PBXGroup;
 			children = (
 				BB929B8328E5087200DA4538 /* NoteMainToolbar.swift */,
+				BB82B5B42B247DDB0089D423 /* PencilKitButton.swift */,
 				BB7987042AD49BA1003469E6 /* ShapesButton.swift */,
 				BB7987062AD49BF7003469E6 /* TextFieldButton.swift */,
 				BB7987082AD49BFE003469E6 /* MediaButton.swift */,
@@ -1381,6 +1384,7 @@
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB8586912AE1DE4300C5875C /* InspectorView.swift in Sources */,
+				BB82B5B52B247DDB0089D423 /* PencilKitButton.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
