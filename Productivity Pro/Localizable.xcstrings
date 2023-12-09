@@ -45,7 +45,14 @@
       }
     },
     "%@ / Jahr" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ / Year"
+          }
+        }
+      }
     },
     "%@ bearbeiten" : {
       "localizations" : {
@@ -58,7 +65,14 @@
       }
     },
     "%@°" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@°"
+          }
+        }
+      }
     },
     "%lld" : {
       "localizations" : {
@@ -81,19 +95,54 @@
       }
     },
     "•  App Icons" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• App Icons"
+          }
+        }
+      }
     },
     "•  Aufgaben" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Tasks"
+          }
+        }
+      }
     },
     "•  Stundenplan" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Schedule"
+          }
+        }
+      }
     },
     "1" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1"
+          }
+        }
+      }
     },
     "2" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2"
+          }
+        }
+      }
     },
     "5" : {
       "localizations" : {
@@ -116,7 +165,14 @@
       }
     },
     "Abonnieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subscribe"
+          }
+        }
+      }
     },
     "Absteigend" : {
       "localizations" : {
@@ -139,10 +195,24 @@
       }
     },
     "Anordnung" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrange"
+          }
+        }
+      }
     },
     "Anpinnen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin"
+          }
+        }
+      }
     },
     "App Icon" : {
       "localizations" : {
@@ -154,11 +224,15 @@
         }
       }
     },
-    "Arrange" : {
-
-    },
     "Aufgaben" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tasks"
+          }
+        }
+      }
     },
     "Aufsteigend" : {
       "localizations" : {
@@ -241,7 +315,14 @@
       }
     },
     "Bewerten" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate"
+          }
+        }
+      }
     },
     "Bibliothek" : {
       "localizations" : {
@@ -254,13 +335,24 @@
       }
     },
     "Bild" : {
-
-    },
-    "Border Style" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image"
+          }
+        }
+      }
     },
     "Breite" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Width"
+          }
+        }
+      }
     },
     "Buch S. 163/12" : {
 
@@ -269,15 +361,6 @@
 
     },
     "Cancel" : {
-
-    },
-    "Center" : {
-
-    },
-    "Color" : {
-
-    },
-    "Corner Radius" : {
 
     },
     "Datei importieren" : {
@@ -291,10 +374,24 @@
       }
     },
     "Dateien durchsuchen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse files"
+          }
+        }
+      }
     },
     "Daten werden verarbeitet..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data is processed..."
+          }
+        }
+      }
     },
     "Datum nicht verfügbar." : {
       "localizations" : {
@@ -305,9 +402,6 @@
           }
         }
       }
-    },
-    "Degrees" : {
-
     },
     "Der Papierkorb ist leer." : {
       "localizations" : {
@@ -330,7 +424,14 @@
       }
     },
     "Diese Notiz existiert nicht mehr." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This note no longer exists."
+          }
+        }
+      }
     },
     "Dieser Ordner ist leer." : {
       "localizations" : {
@@ -343,7 +444,14 @@
       }
     },
     "Dimensionen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimensions"
+          }
+        }
+      }
     },
     "Dokument scannen" : {
       "localizations" : {
@@ -355,14 +463,25 @@
         }
       }
     },
-    "Done" : {
-
-    },
     "Drehung" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rotation"
+          }
+        }
+      }
     },
     "Dreieck" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Triangle"
+          }
+        }
+      }
     },
     "Drucken" : {
       "localizations" : {
@@ -395,7 +514,14 @@
       }
     },
     "Ecken" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corners"
+          }
+        }
+      }
     },
     "Ein Fehler ist aufgetreten." : {
       "localizations" : {
@@ -507,14 +633,15 @@
         }
       }
     },
-    "Fill Style" : {
-
-    },
-    "Font" : {
-
-    },
     "Form" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shape"
+          }
+        }
+      }
     },
     "Format" : {
       "localizations" : {
@@ -527,7 +654,14 @@
       }
     },
     "Fotos" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photos"
+          }
+        }
+      }
     },
     "Freistunde" : {
       "localizations" : {
@@ -540,10 +674,24 @@
       }
     },
     "Füllung" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fill"
+          }
+        }
+      }
     },
     "g" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "g"
+          }
+        }
+      }
     },
     "Geändert" : {
       "localizations" : {
@@ -566,7 +714,14 @@
       }
     },
     "Hilf uns zu wachsen!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Help us to grow!"
+          }
+        }
+      }
     },
     "Hinzufügen" : {
       "localizations" : {
@@ -599,7 +754,14 @@
       }
     },
     "Höhe" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Height"
+          }
+        }
+      }
     },
     "Importieren" : {
       "localizations" : {
@@ -612,10 +774,24 @@
       }
     },
     "Individuell" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Individual"
+          }
+        }
+      }
     },
     "Inspektor" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspector"
+          }
+        }
+      }
     },
     "Instagram" : {
       "localizations" : {
@@ -648,16 +824,44 @@
       }
     },
     "Kamera" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera"
+          }
+        }
+      }
     },
     "Kreis" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Circle"
+          }
+        }
+      }
     },
     "Lehrer" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teacher"
+          }
+        }
+      }
     },
     "Lesezeichen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bookmark"
+          }
+        }
+      }
     },
     "Letzte Vorlage" : {
       "localizations" : {
@@ -670,10 +874,14 @@
       }
     },
     "Loading Receiver." : {
-
-    },
-    "Lock" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading Receiver"
+          }
+        }
+      }
     },
     "Löschen" : {
       "localizations" : {
@@ -685,11 +893,15 @@
         }
       }
     },
-    "Markdown" : {
-
-    },
     "Mit Deiner Bewertung unterstützt Du die Entwicklung von **Productivity Pro** und sorgst dafür, dass es auch in Zukunft regelmäßig Updates gibt." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "With your rating you support the development of **Productivity Pro** and ensure that there will be regular updates in the future."
+          }
+        }
+      }
     },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
       "localizations" : {
@@ -702,7 +914,14 @@
       }
     },
     "Möchtest du diese Seite wirklich löschen?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to delete this page?"
+          }
+        }
+      }
     },
     "Möchtest du dieses Fach wirklich löschen?" : {
       "localizations" : {
@@ -876,9 +1095,6 @@
     "Rolle" : {
 
     },
-    "Rotation" : {
-
-    },
     "Schließen" : {
       "localizations" : {
         "en" : {
@@ -958,18 +1174,6 @@
         }
       }
     },
-    "Select an Object" : {
-
-    },
-    "Show Border" : {
-
-    },
-    "Show Fill" : {
-
-    },
-    "Size" : {
-
-    },
     "Social Media" : {
 
     },
@@ -999,9 +1203,6 @@
         }
       }
     },
-    "Style" : {
-
-    },
     "Suchen" : {
       "localizations" : {
         "en" : {
@@ -1023,9 +1224,6 @@
       }
     },
     "Text" : {
-
-    },
-    "Text Style" : {
 
     },
     "Titel" : {
@@ -1102,9 +1300,6 @@
       }
     },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht." : {
-
-    },
-    "Width" : {
 
     },
     "Wiederherstellen" : {
