@@ -13,33 +13,17 @@ struct DrawingView: View {
     
     @Bindable var toolManager: ToolManager
     @Bindable var subviewManager: SubviewManager
-    @Bindable var drawingModel: PPDrawingModel
     
     var pdfRendering: Bool
     var size: CGSize
     
     var body: some View {
-        Group {
-            if page.canvasType == .ppDrawingKit {
-                
-                PPDrawingView(
-                    drawingModel: drawingModel,
-                    lines: $page.lines,
-                    scale: toolManager.zoomScale,
-                    frame: getFrame()
-                )
-                .disabled(!toolManager.isCanvasEnabled)
-                .allowsHitTesting(toolManager.isCanvasEnabled)
-                
-            } else if pdfRendering == false {
-                PencilKitViewWrapper(
-                    size: size,
-                    page: $page,
-                    toolManager: toolManager,
-                    subviewManager: subviewManager
-                )
-            }
-        }
+        PencilKitViewWrapper(
+            size: size,
+            page: $page,
+            toolManager: toolManager,
+            subviewManager: subviewManager
+        )
         .zIndex(Double(page.items.count + 10))
     }
     

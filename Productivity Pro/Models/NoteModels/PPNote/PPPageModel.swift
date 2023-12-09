@@ -40,7 +40,6 @@ import PencilKit
     var isPortrait: Bool = false
     var media: Data? = nil
     
-    var ppCanvas: PPCanvasModel?
     var pkCanvas: Data?
  
     @Relationship(deleteRule: .cascade)

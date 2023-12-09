@@ -19,7 +19,6 @@
 		BB1321EA2985EA87006AD59D /* DragType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321E92985EA87006AD59D /* DragType.swift */; };
 		BB1321F02985F547006AD59D /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321EF2985F547006AD59D /* MediaType.swift */; };
 		BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2202A6968E400223C92 /* ColorPickerHelper.swift */; };
-		BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */; };
 		BB174F552A1051B400F753F6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB174F542A1051B400F753F6 /* Date.swift */; };
 		BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E693F2A71CE01008E0C5F /* TemplateView.swift */; };
 		BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */; };
@@ -97,6 +96,7 @@
 		BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F3FF82AC8171500083FCA /* CreateNoteViewHelper.swift */; };
 		BB82B5AA2B2471130089D423 /* StackingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5A92B2471130089D423 /* StackingModel.swift */; };
 		BB82B5AC2B247C420089D423 /* CopyPastePasser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */; };
+		BB82B5AF2B247CD30089D423 /* PPLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5AE2B247CD30089D423 /* PPLineModel.swift */; };
 		BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */; };
 		BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB854ADF29E06531002EDF7A /* PagingModifier.swift */; };
 		BB85868C2AE1ABA500C5875C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85868B2AE1ABA400C5875C /* RatingView.swift */; };
@@ -134,7 +134,6 @@
 		BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364F2ABCFD2A00721C56 /* Calendar.swift */; };
 		BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */; };
 		BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB612AC7576300255293 /* PPPageModel.swift */; };
-		BB9BFB662AC7672C00255293 /* PPCanvasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB652AC7672C00255293 /* PPCanvasModel.swift */; };
 		BB9BFB692AC7684300255293 /* PPItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB682AC7684300255293 /* PPItemModel.swift */; };
 		BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB6A2AC7807D00255293 /* CreateNoteView.swift */; };
 		BB9BFB6E2AC7819400255293 /* TrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB6D2AC7819400255293 /* TrashView.swift */; };
@@ -209,9 +208,6 @@
 		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
 		BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = BBE993BF2AF850A800330733 /* PPDoubleKeyboard */; };
 		BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC301D2A670EF80021C7E6 /* DrawingView.swift */; };
-		BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */; };
-		BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */; };
-		BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */; };
 		BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */; };
 		BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */; };
 		BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */; };
@@ -227,11 +223,7 @@
 		BBF5FE032AAE61E20081C4FE /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */; };
 		BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FE042AAE66D30081C4FE /* AddSubject.swift */; };
 		BBF663F92AC4E71C00FD9813 /* ObjectPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF663F82AC4E71C00FD9813 /* ObjectPicker.swift */; };
-		BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */; };
-		BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930702A67428C00AD3958 /* PPDrawingTool.swift */; };
 		BBF930732A67437900AD3958 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* Color.swift */; };
-		BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */; };
-		BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930792A674C9600AD3958 /* PPShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -260,7 +252,6 @@
 		BB1321E92985EA87006AD59D /* DragType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragType.swift; sourceTree = "<group>"; };
 		BB1321EF2985F547006AD59D /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		BB15F2202A6968E400223C92 /* ColorPickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerHelper.swift; sourceTree = "<group>"; };
-		BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPRecognitionTool.swift; sourceTree = "<group>"; };
 		BB174F542A1051B400F753F6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		BB1E693F2A71CE01008E0C5F /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
@@ -336,6 +327,7 @@
 		BB7F3FF82AC8171500083FCA /* CreateNoteViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewHelper.swift; sourceTree = "<group>"; };
 		BB82B5A92B2471130089D423 /* StackingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackingModel.swift; sourceTree = "<group>"; };
 		BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPastePasser.swift; sourceTree = "<group>"; };
+		BB82B5AE2B247CD30089D423 /* PPLineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPLineModel.swift; sourceTree = "<group>"; };
 		BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewFolderLink.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		BB85868B2AE1ABA400C5875C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
@@ -373,7 +365,6 @@
 		BB9A364F2ABCFD2A00721C56 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		BB9BFB5B2AC747AB00255293 /* PPNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPNoteModel.swift; sourceTree = "<group>"; };
 		BB9BFB612AC7576300255293 /* PPPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPageModel.swift; sourceTree = "<group>"; };
-		BB9BFB652AC7672C00255293 /* PPCanvasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPCanvasModel.swift; sourceTree = "<group>"; };
 		BB9BFB682AC7684300255293 /* PPItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPItemModel.swift; sourceTree = "<group>"; };
 		BB9BFB6A2AC7807D00255293 /* CreateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
 		BB9BFB6D2AC7819400255293 /* TrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashView.swift; sourceTree = "<group>"; };
@@ -446,9 +437,6 @@
 		BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDropDelegate.swift; sourceTree = "<group>"; };
 		BBE9196D28F381FE001EF750 /* PPScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollView.swift; sourceTree = "<group>"; };
 		BBEC301D2A670EF80021C7E6 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
-		BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingView.swift; sourceTree = "<group>"; };
-		BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPathCalculator.swift; sourceTree = "<group>"; };
-		BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPLineModel.swift; sourceTree = "<group>"; };
 		BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectSettingsRow.swift; sourceTree = "<group>"; };
 		BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkItem.swift; sourceTree = "<group>"; };
 		BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkEditView.swift; sourceTree = "<group>"; };
@@ -464,11 +452,7 @@
 		BBF5FE022AAE61E20081C4FE /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		BBF5FE042AAE66D30081C4FE /* AddSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubject.swift; sourceTree = "<group>"; };
 		BBF663F82AC4E71C00FD9813 /* ObjectPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPicker.swift; sourceTree = "<group>"; };
-		BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingModel.swift; sourceTree = "<group>"; };
-		BBF930702A67428C00AD3958 /* PPDrawingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingTool.swift; sourceTree = "<group>"; };
 		BBF930722A67437900AD3958 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPDrawingViewMethods.swift; sourceTree = "<group>"; };
-		BBF930792A674C9600AD3958 /* PPShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,15 +497,6 @@
 				BBCDFDEA2947DC62000C545D /* MusicView.swift */,
 			);
 			path = BackgroundViews;
-			sourceTree = "<group>";
-		};
-		BB15F2262A69B3C200223C92 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BBEC30232A67392C0021C7E6 /* PPDrawingView.swift */,
-				BBF930762A67456200AD3958 /* PPDrawingViewMethods.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		BB1DDA28296715590038FE16 /* Resources */ = {
@@ -798,6 +773,14 @@
 			path = ScrollViewContainer;
 			sourceTree = "<group>";
 		};
+		BB82B5AD2B247C8E0089D423 /* PPDrawingKit */ = {
+			isa = PBXGroup;
+			children = (
+				BB82B5AE2B247CD30089D423 /* PPLineModel.swift */,
+			);
+			name = PPDrawingKit;
+			sourceTree = "<group>";
+		};
 		BB84E5D429354F5800E0535C /* ItemModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -930,7 +913,6 @@
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
-				BBEC301C2A670EA60021C7E6 /* PPDrawingKit */,
 				BB988E6329999F3300762F39 /* PencilKitView */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
 				BB37AD882A2C0A12006DB94D /* Overview */,
@@ -944,6 +926,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4CDD5528D3D518009A409F /* Document.swift */,
+				BB82B5AD2B247C8E0089D423 /* PPDrawingKit */,
 				BB9DF5B428E067E200AC988D /* NoteModels */,
 				BB27BB502A62C2E100392E1E /* RealityNoteModels */,
 			);
@@ -1132,16 +1115,6 @@
 			path = ContainerViews;
 			sourceTree = "<group>";
 		};
-		BBEC301C2A670EA60021C7E6 /* PPDrawingKit */ = {
-			isa = PBXGroup;
-			children = (
-				BB15F2262A69B3C200223C92 /* Views */,
-				BBF930752A6744E100AD3958 /* ViewModels */,
-				BBF930742A6744BE00AD3958 /* Models */,
-			);
-			path = PPDrawingKit;
-			sourceTree = "<group>";
-		};
 		BBEFC94C2A41033000960C8D /* MainToolbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1182,27 +1155,6 @@
 				BBC254142AC60D2400B51175 /* ObjectPickerList.swift */,
 			);
 			path = ObjectPicker;
-			sourceTree = "<group>";
-		};
-		BBF930742A6744BE00AD3958 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BBF930792A674C9600AD3958 /* PPShape.swift */,
-				BBF930702A67428C00AD3958 /* PPDrawingTool.swift */,
-				BB15F2242A69AA4700223C92 /* PPRecognitionTool.swift */,
-				BBEC30272A6739DA0021C7E6 /* PPLineModel.swift */,
-				BBEC30252A6739C90021C7E6 /* PPPathCalculator.swift */,
-				BB9BFB652AC7672C00255293 /* PPCanvasModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		BBF930752A6744E100AD3958 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				BBF9306E2A67409100AD3958 /* PPDrawingModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1297,7 +1249,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBF9306F2A67409100AD3958 /* PPDrawingModel.swift in Sources */,
 				BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */,
 				BBD930EA2B1FBDB400A37F95 /* PVScrollView.swift in Sources */,
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
@@ -1313,7 +1264,6 @@
 				BBF930732A67437900AD3958 /* Color.swift in Sources */,
 				BB67015D2AADF480001F468A /* DeskViewHelper.swift in Sources */,
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,
-				BBEC30262A6739C90021C7E6 /* PPPathCalculator.swift in Sources */,
 				BB2CFBA62A660F77009774BB /* EditMarkdownToolbar.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
@@ -1339,10 +1289,8 @@
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* PencilKitViewWrapper.swift in Sources */,
-				BBEC30242A67392C0021C7E6 /* PPDrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
-				BBF930772A67456200AD3958 /* PPDrawingViewMethods.swift in Sources */,
 				BBC4BE972AED9FDF00D87B60 /* AdaptiveView.swift in Sources */,
 				BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */,
 				BB047CDE2AC0C1FF0027409F /* FileSystemView.swift in Sources */,
@@ -1389,7 +1337,6 @@
 				BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */,
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
 				BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */,
-				BBF930712A67428C00AD3958 /* PPDrawingTool.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
 				BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */,
 				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
@@ -1423,6 +1370,7 @@
 				BBEC301E2A670EF80021C7E6 /* DrawingView.swift in Sources */,
 				BBCA6FA02AF81286009C08E3 /* DoubleRounding.swift in Sources */,
 				BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */,
+				BB82B5AF2B247CD30089D423 /* PPLineModel.swift in Sources */,
 				BB9BFB6E2AC7819400255293 /* TrashView.swift in Sources */,
 				BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
@@ -1434,7 +1382,6 @@
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB8586912AE1DE4300C5875C /* InspectorView.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PencilKitViewRepresentable.swift in Sources */,
-				BBF9307A2A674C9600AD3958 /* PPShape.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
 				BB07E7BA2A4E2F4600BA2DB4 /* PencilKitViewWrapperMethods.swift in Sources */,
@@ -1448,11 +1395,9 @@
 				BBB763B42A3A76DD00273182 /* EditMediaItemMethods.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
 				BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */,
-				BB9BFB662AC7672C00255293 /* PPCanvasModel.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */,
-				BB15F2252A69AA4700223C92 /* PPRecognitionTool.swift in Sources */,
 				BBD930EC2B1FBFA700A37F95 /* PVItemView.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
@@ -1501,7 +1446,6 @@
 				BB9367662AC9CE1A0096F20E /* PPMediaModel.swift in Sources */,
 				BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */,
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,
-				BBEC30282A6739DA0021C7E6 /* PPLineModel.swift in Sources */,
 				BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
 				BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */,
