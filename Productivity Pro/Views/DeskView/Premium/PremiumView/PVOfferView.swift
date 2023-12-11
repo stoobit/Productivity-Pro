@@ -19,7 +19,7 @@ extension PremiumView {
                
                Spacer()
                Text("\(product.displayPrice) / Jahr")
-                   .foregroundStyle(Color.accentColor.gradient)
+                   .foregroundStyle(Color.accentColor)
            }
            .font(.title3.bold())
                

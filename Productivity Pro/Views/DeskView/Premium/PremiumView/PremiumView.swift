@@ -47,7 +47,7 @@ struct PremiumView: View {
                             .padding(.horizontal, 65)
                             .background {
                                 RoundedRectangle(cornerRadius: 13)
-                                    .foregroundStyle(Color.accentColor.gradient)
+                                    .foregroundStyle(Color.accentColor)
                             }
                     }
                     .padding(.bottom, 10)
@@ -55,11 +55,9 @@ struct PremiumView: View {
                 .padding()
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItem(placement: .cancellationAction) {
                         Button(action: { dismiss() }) {
-                            Image(systemName: "xmark.circle.fill")
-                                .font(.title3.bold())
-                                .foregroundStyle(Color.secondary)
+                            Text("Abbrechen")
                         }
                     }
                 }

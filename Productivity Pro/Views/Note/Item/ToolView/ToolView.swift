@@ -91,7 +91,7 @@ struct ToolView: View {
     @ViewBuilder func WidthView() -> some View {
         Group {
             Circle()
-                .modifier(DragAnchor(color: .blue))
+                .modifier(DragAnchor(color: .main))
                 .offset(x: editItemModel.size.width/2 * scale, y: 0)
                 .gesture(
                     DragGesture(minimumDistance: 0)
@@ -113,7 +113,7 @@ struct ToolView: View {
     @ViewBuilder func HeightView() -> some View {
         Group {
             Circle()
-                .modifier(DragAnchor(color: .blue))
+                .modifier(DragAnchor(color: .main))
                 .offset(x: 0, y: (editItemModel.size.height/2) * scale)
                 .gesture(
                     DragGesture(minimumDistance: 0)
@@ -145,7 +145,7 @@ struct ToolView: View {
                     )
                     .foregroundColor(.clear)
                     .border(
-                        toolManager.activeItem?.isLocked == true ? Color.orange : Color.blue,
+                        toolManager.activeItem?.isLocked == true ? Color.orange : Color.main,
                         width: 1
                     )
             }

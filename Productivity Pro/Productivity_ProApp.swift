@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
-import UniformTypeIdentifiers
 
 @main
 struct Productivity_ProApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    UIView.appearance(
+                        whenContainedInInstancesOf: [UIAlertController.self]
+                    ).tintColor = UIColor.main
+                }
         }
         .modelContainer(
             for: [
@@ -28,20 +34,9 @@ struct Productivity_ProApp: App {
     }
 }
 
-extension UTType {
-    static var pro: UTType {
-        UTType(importedAs: "com.till-bruegmann.Productivity-Pro.pro")
-    }
-}
 
-extension UTType {
-    static var pronote: UTType {
-        UTType(importedAs: "com.till-bruegmann.Productivity-Pro.pronote")
-    }
-}
-
-extension UTType {
-    static var probackup: UTType {
-        UTType(importedAs: "com.till-bruegmann.Productivity-Pro.probackup")
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didUpdate userActivity: NSUserActivity) {
+        application.inputView?.tintColor = .red
     }
 }
