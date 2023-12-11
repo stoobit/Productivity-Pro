@@ -14,14 +14,14 @@ extension DeskView {
             NavigationLink(destination: {
                 GenerelSettings()
             }) {
-                Label("Allgemein", systemImage: "gearshape")
+                Label("Allgemein", systemImage: "gearshape.fill")
             }
             .frame(height: 30)
             
             NavigationLink(destination: {
                 AppIconSettings()
             }) {
-                Label("App Icon", systemImage: "app.gift")
+                Label("App Icon", systemImage: "app.gift.fill")
             }
             .frame(height: 30)
             .modifier(PremiumBadge())
@@ -30,7 +30,7 @@ extension DeskView {
             NavigationLink(destination: {
                 SubjectSettings()
             }) {
-                Label("Fächer", systemImage: "tray.2")
+                Label("Fächer", systemImage: "tray.2.fill")
             }
             .frame(height: 30)
             .modifier(PremiumBadge())
@@ -40,7 +40,7 @@ extension DeskView {
                BackupSettings()
             }) {
                 Label(
-                    "Backup", systemImage: "externaldrive.badge.timemachine"
+                    "Backup", systemImage: "externaldrive.fill.badge.timemachine"
                 )
             }
             .frame(height: 30)
