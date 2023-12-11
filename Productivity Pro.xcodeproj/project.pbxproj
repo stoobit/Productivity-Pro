@@ -152,6 +152,8 @@
 		BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
 		BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBB090802A4BA35100A6F60A /* OnPasteboardChange */; };
+		BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */; };
+		BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */; };
 		BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */; };
 		BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E072A2693FD00155C8A /* CalculatorView.swift */; };
 		BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */; };
@@ -376,6 +378,8 @@
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
 		BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRowMethods.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewCard.swift; sourceTree = "<group>"; };
+		BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinView.swift; sourceTree = "<group>"; };
 		BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButtonView.swift; sourceTree = "<group>"; };
 		BBBB7E072A2693FD00155C8A /* CalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppView.swift; sourceTree = "<group>"; };
@@ -924,6 +928,30 @@
 			path = NoteModels;
 			sourceTree = "<group>";
 		};
+		BBB19A9A2B27AF1400B92CBB /* LatinView */ = {
+			isa = PBXGroup;
+			children = (
+				BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */,
+			);
+			path = LatinView;
+			sourceTree = "<group>";
+		};
+		BBB19A9F2B27AF9300B92CBB /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */,
+				BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		BBB19AA02B27AFC000B92CBB /* VocabularyView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VocabularyView;
+			sourceTree = "<group>";
+		};
 		BBBCACAF2A253BC000C23B2C /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1124,7 +1152,9 @@
 		BBF5FDF32AAE25CA0081C4FE /* LibraryView */ = {
 			isa = PBXGroup;
 			children = (
-				BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */,
+				BBB19A9F2B27AF9300B92CBB /* MainView */,
+				BBB19A9A2B27AF1400B92CBB /* LatinView */,
+				BBB19AA02B27AFC000B92CBB /* VocabularyView */,
 			);
 			path = LibraryView;
 			sourceTree = "<group>";
@@ -1342,6 +1372,7 @@
 				BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */,
 				BB9BFB692AC7684300255293 /* PPItemModel.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */,
+				BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */,
 				BB8586992AE1E5B300C5875C /* ShapeStyleView.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBCA6FA02AF81286009C08E3 /* DoubleRounding.swift in Sources */,
@@ -1417,6 +1448,7 @@
 				BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */,
 				BB93676A2AC9CE330096F20E /* PPChartModel.swift in Sources */,
 				BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */,
+				BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */,
 				BB5034192993172800913B3A /* PageItemView.swift in Sources */,
 				BBB02B592962537C001DCB04 /* Triangle.swift in Sources */,
 				BB9367662AC9CE1A0096F20E /* PPMediaModel.swift in Sources */,

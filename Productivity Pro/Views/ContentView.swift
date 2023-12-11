@@ -15,7 +15,7 @@ struct ContentView: View {
         .autoconnect()
     
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
-    @AppStorage("ppfirstsession") var firstSession: Bool = false
+    @AppStorage("pprole") var role: Role = .individual
     
     @State var toolManager: ToolManager = ToolManager()
     @State var subviewManager: SubviewManager = SubviewManager()
@@ -74,6 +74,15 @@ struct ContentView: View {
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
+                
+                if role == .student {
+                    LibraryView()
+                        .toolbarBackground(.visible, for: .tabBar)
+                        .tag(4)
+                        .tabItem {
+                            Label("Bibliothek", systemImage: "books.vertical.fill")
+                        }
+                }
                 
             }
             .disabled(toolManager.showProgress)

@@ -843,6 +843,9 @@
         }
       }
     },
+    "Latein" : {
+
+    },
     "Lehrer" : {
       "localizations" : {
         "en" : {
@@ -937,6 +940,7 @@
 
     },
     "Noch sind keine Bücher verfügbar." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
