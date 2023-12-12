@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LibraryView: View {
     let columns = [GridItem(.adaptive(minimum: 270))]
+    let url = URL(string: "https://cloud.stoobit.com/nextcloud/index.php/apps/forms/s/faPdKcfx2gWgydCJy9WjpyEn")!
     
     var body: some View {
         NavigationStack {
@@ -133,6 +134,13 @@ struct LibraryView: View {
                 }
             }
             .navigationTitle("Bibliothek")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Link(destination: url) {
+                       Label("Beitrag hinzufügen", systemImage: "note.text.badge.plus")
+                    }
+                }
+            }
         }
     }
 }

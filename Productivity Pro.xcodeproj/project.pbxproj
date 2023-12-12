@@ -36,6 +36,11 @@
 		BB33B6B82A56EFF1003C5C14 /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BB33B6B72A56EFF1003C5C14 /* SwiftyMarkdown */; };
 		BB34C9B62A524F06009E3CCC /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BB34C9B52A524F06009E3CCC /* SwiftyMarkdown */; };
 		BB3525B32908673800D35790 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3525B22908673800D35790 /* Array.swift */; };
+		BB35A1BA2B290A3B001A3F4C /* latinvoc.json in Resources */ = {isa = PBXBuildFile; fileRef = BB35A1B92B290A3B001A3F4C /* latinvoc.json */; };
+		BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */; };
+		BB35A1C12B292191001A3F4C /* LVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C02B292191001A3F4C /* LVModel.swift */; };
+		BB35A1C32B2921DD001A3F4C /* LHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */; };
+		BB35A1C52B2921EA001A3F4C /* LGrammarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */; };
 		BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */; };
 		BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */; };
 		BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */; };
@@ -264,6 +269,11 @@
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB339F862AD44E97009DA591 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		BB35A1B92B290A3B001A3F4C /* latinvoc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latinvoc.json; sourceTree = "<group>"; };
+		BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVocabularyList.swift; sourceTree = "<group>"; };
+		BB35A1C02B292191001A3F4C /* LVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVModel.swift; sourceTree = "<group>"; };
+		BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHistoryList.swift; sourceTree = "<group>"; };
+		BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGrammarList.swift; sourceTree = "<group>"; };
 		BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewMethods.swift; sourceTree = "<group>"; };
 		BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRow.swift; sourceTree = "<group>"; };
 		BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewToolbar.swift; sourceTree = "<group>"; };
@@ -494,6 +504,7 @@
 		BB1DDA28296715590038FE16 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB35A1B92B290A3B001A3F4C /* latinvoc.json */,
 				BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */,
 				BB1DDA292967156E0038FE16 /* Pacifico-Regular.ttf */,
 			);
@@ -519,6 +530,14 @@
 				BB27BB512A62C30700392E1E /* RealityNoteModel.swift */,
 			);
 			path = RealityNoteModels;
+			sourceTree = "<group>";
+		};
+		BB35A1BF2B292175001A3F4C /* LibraryModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB35A1C02B292191001A3F4C /* LVModel.swift */,
+			);
+			path = LibraryModels;
 			sourceTree = "<group>";
 		};
 		BB37AD882A2C0A12006DB94D /* Overview */ = {
@@ -653,6 +672,7 @@
 			children = (
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels (Intern) */,
 				BB4A93D52AAF3BED00C3AED6 /* OrganizationModels */,
+				BB35A1BF2B292175001A3F4C /* LibraryModels */,
 				BB9A36482ABCD25900721C56 /* NoteModels */,
 				BB9DF5B328E067D600AC988D /* Document (Deprecated) */,
 			);
@@ -928,12 +948,15 @@
 			path = NoteModels;
 			sourceTree = "<group>";
 		};
-		BBB19A9A2B27AF1400B92CBB /* LatinView */ = {
+		BBB19A9A2B27AF1400B92CBB /* Latin */ = {
 			isa = PBXGroup;
 			children = (
 				BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */,
+				BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */,
+				BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */,
+				BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */,
 			);
-			path = LatinView;
+			path = Latin;
 			sourceTree = "<group>";
 		};
 		BBB19A9F2B27AF9300B92CBB /* MainView */ = {
@@ -1153,7 +1176,7 @@
 			isa = PBXGroup;
 			children = (
 				BBB19A9F2B27AF9300B92CBB /* MainView */,
-				BBB19A9A2B27AF1400B92CBB /* LatinView */,
+				BBB19A9A2B27AF1400B92CBB /* Latin */,
 				BBB19AA02B27AFC000B92CBB /* VocabularyView */,
 			);
 			path = LibraryView;
@@ -1248,6 +1271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB4A93C92AAEFDCC00C3AED6 /* Pacifico-Regular.ttf in Resources */,
+				BB35A1BA2B290A3B001A3F4C /* latinvoc.json in Resources */,
 				BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */,
 				BB72E1062A59B3B1005A01B9 /* README.md in Resources */,
 				BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */,
@@ -1311,10 +1335,12 @@
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* Calculator.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
+				BB35A1C52B2921EA001A3F4C /* LGrammarList.swift in Sources */,
 				BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */,
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
 				BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */,
+				BB35A1C32B2921DD001A3F4C /* LHistoryList.swift in Sources */,
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
 				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,
@@ -1358,6 +1384,7 @@
 				BBD930F72B1FEBA000A37F95 /* StoreVM.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
+				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,
@@ -1436,6 +1463,7 @@
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
 				BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */,
+				BB35A1C12B292191001A3F4C /* LVModel.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
 				BB9367682AC9CE260096F20E /* PPTextFieldModel.swift in Sources */,
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,

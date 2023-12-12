@@ -284,6 +284,9 @@
         }
       }
     },
+    "Beitrag hinzufügen" : {
+
+    },
     "Beschreibung" : {
       "localizations" : {
         "en" : {
@@ -412,6 +415,9 @@
           }
         }
       }
+    },
+    "Deutsch" : {
+
     },
     "Dies kann einige Minuten dauern." : {
       "localizations" : {
@@ -703,6 +709,12 @@
         }
       }
     },
+    "Geschichtliche Informationen" : {
+
+    },
+    "Grammatik" : {
+
+    },
     "Gruppieren" : {
       "localizations" : {
         "en" : {
@@ -712,6 +724,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "Hilf uns zu wachsen!" : {
       "localizations" : {
@@ -1283,6 +1298,9 @@
     "Undo" : {
 
     },
+    "Vokabeln" : {
+
+    },
     "Vorlage ändern" : {
       "localizations" : {
         "en" : {
@@ -1315,6 +1333,9 @@
           }
         }
       }
+    },
+    "Wortschatz %@" : {
+
     },
     "X" : {
 

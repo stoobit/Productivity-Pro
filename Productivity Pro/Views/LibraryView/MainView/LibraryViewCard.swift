@@ -16,19 +16,14 @@ struct LibraryViewCard: View {
     
     var body: some View {
         ZStack {
-            if isEnabled {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundStyle(
-                        Color(UIColor.secondarySystemGroupedBackground)
-                    )
-            } else {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundStyle(.gray.opacity(0.1))
-            }
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundStyle(
+                    Color(UIColor.secondarySystemGroupedBackground)
+                )
             
             VStack {
                 Text(title)
-                    .foregroundStyle(Color.primary)
+                    .foregroundStyle(isEnabled ? Color.primary : Color.secondary)
                     .font(.title.bold())
                     .frame(
                         maxWidth: .infinity,
@@ -36,14 +31,25 @@ struct LibraryViewCard: View {
                         alignment: .topLeading
                     )
                 
-                Image(systemName: image)
-                    .font(.largeTitle)
-                    .foregroundStyle(color.gradient)
-                    .frame(
-                        maxWidth: .infinity,
-                        maxHeight: .infinity,
-                        alignment: .bottomTrailing
-                    )
+                if isEnabled {
+                    Image(systemName: image)
+                        .font(.largeTitle)
+                        .foregroundStyle(color.gradient)
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity,
+                            alignment: .bottomTrailing
+                        )
+                } else {
+                    Image(systemName: image)
+                        .font(.largeTitle)
+                        .foregroundStyle(color.secondary)
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity,
+                            alignment: .bottomTrailing
+                        )
+                }
             }
             .padding()
             
