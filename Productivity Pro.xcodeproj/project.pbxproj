@@ -149,6 +149,8 @@
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
 		BBA3A0292B29AF2500099F6D /* RTFEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */; };
+		BBA3A02D2B29BF9900099F6D /* RTFEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA3A02C2B29BF9900099F6D /* RTFEditorToolbar.swift */; };
+		BBA3A02F2B29C04D00099F6D /* RTFAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA3A02E2B29C04D00099F6D /* RTFAlignment.swift */; };
 		BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* MediaImport.swift */; };
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
@@ -382,6 +384,8 @@
 		BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCoding.swift; sourceTree = "<group>"; };
 		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
 		BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorView.swift; sourceTree = "<group>"; };
+		BBA3A02C2B29BF9900099F6D /* RTFEditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorToolbar.swift; sourceTree = "<group>"; };
+		BBA3A02E2B29C04D00099F6D /* RTFAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFAlignment.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* MediaImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImport.swift; sourceTree = "<group>"; };
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewToolbar.swift; sourceTree = "<group>"; };
@@ -963,6 +967,8 @@
 			isa = PBXGroup;
 			children = (
 				BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */,
+				BBA3A02C2B29BF9900099F6D /* RTFEditorToolbar.swift */,
+				BBA3A02E2B29C04D00099F6D /* RTFAlignment.swift */,
 			);
 			path = RTFEditor;
 			sourceTree = "<group>";
@@ -1368,6 +1374,7 @@
 				BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */,
 				BBF663F92AC4E71C00FD9813 /* ObjectPicker.swift in Sources */,
 				BBA8085F2AC2056100F9DFCA /* ObjectViewMethods.swift in Sources */,
+				BBA3A02D2B29BF9900099F6D /* RTFEditorToolbar.swift in Sources */,
 				BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */,
 				BB655B002AB772F100FB005A /* NoteViewModals.swift in Sources */,
 				BBC7B97B2A19896A00D496CB /* ToolViewMethods.swift in Sources */,
@@ -1498,6 +1505,7 @@
 				BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */,
 				BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */,
 				BB5034192993172800913B3A /* PageItemView.swift in Sources */,
+				BBA3A02F2B29C04D00099F6D /* RTFAlignment.swift in Sources */,
 				BBB02B592962537C001DCB04 /* Triangle.swift in Sources */,
 				BB9367662AC9CE1A0096F20E /* PPMediaModel.swift in Sources */,
 				BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */,

@@ -20,17 +20,14 @@ struct RTFEditorView: View {
     var body: some View {
         NavigationStack {
             if text.string != "%$=00â" {
-                RichTextEditor(text: $text, context: context) { value in
-                    
-                }
-                .inspector(isPresented: .constant(true)) {
-                    
-                }
-                .toolbar {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Fertig") { dismiss() }
+                RichTextEditor(text: $text, context: context)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Fertig") { dismiss() }
+                        }
+                        
+                        RTFEditorToolbar(context: context, text: $text)
                     }
-                }
             }
         }
         .onAppear() {

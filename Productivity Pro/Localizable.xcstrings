@@ -891,6 +891,9 @@
         }
       }
     },
+    "Links" : {
+
+    },
     "Loading Receiver." : {
       "localizations" : {
         "en" : {
@@ -920,6 +923,9 @@
           }
         }
       }
+    },
+    "Mittig" : {
+
     },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
       "localizations" : {
@@ -1111,6 +1117,9 @@
     "Rechteck" : {
 
     },
+    "Rechts" : {
+
+    },
     "Rolle" : {
 
     },
@@ -1243,6 +1252,9 @@
       }
     },
     "Text" : {
+
+    },
+    "Textausrichtung" : {
 
     },
     "Titel" : {
