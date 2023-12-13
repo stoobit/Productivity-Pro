@@ -8,18 +8,22 @@
 import SwiftUI
 
 extension View {
-    func snapshot(scale: CGFloat) -> UIImage {
+    func snapshot(scale: CGFloat, frame: CGSize) -> UIImage {
         let controller = UIHostingController(rootView: self)
         let view = controller.view
 
-        let targetSize = controller.view.intrinsicContentSize
-        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.bounds = CGRect(origin: .zero, size: frame)
         view?.backgroundColor = .clear
 
-        let renderer = UIGraphicsImageRenderer(size: targetSize * scale)
-
-        return renderer.image { _ in
-            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = scale
+        
+        let renderer = UIGraphicsImageRenderer(size: frame, format: format)
+        
+        return renderer.image { ctx in
+            view?.drawHierarchy(
+                in: CGRect(origin: .zero, size: frame), afterScreenUpdates: true
+            )
         }
     }
 }

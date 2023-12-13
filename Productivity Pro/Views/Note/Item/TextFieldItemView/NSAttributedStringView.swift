@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SwiftyMarkdown
+import RichTextKit
 
 struct NSAttributedStringView: View {
     

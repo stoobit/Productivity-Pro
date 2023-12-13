@@ -75,12 +75,12 @@ struct ContentView: View {
                         Label("Aufgaben", systemImage: "checklist")
                     }
                 
-                LibraryView()
-                    .toolbarBackground(.visible, for: .tabBar)
-                    .tag(4)
-                    .tabItem {
-                        Label("Bibliothek", systemImage: "books.vertical.fill")
-                    }
+//                LibraryView()
+//                    .toolbarBackground(.visible, for: .tabBar)
+//                    .tag(4)
+//                    .tabItem {
+//                        Label("Bibliothek", systemImage: "books.vertical.fill")
+//                    }
                 
             }
             .disabled(toolManager.showProgress)

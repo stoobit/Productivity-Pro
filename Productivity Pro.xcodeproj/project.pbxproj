@@ -148,6 +148,7 @@
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
+		BBA3A0292B29AF2500099F6D /* RTFEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */; };
 		BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* MediaImport.swift */; };
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
@@ -380,6 +381,7 @@
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCoding.swift; sourceTree = "<group>"; };
 		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
+		BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorView.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* MediaImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImport.swift; sourceTree = "<group>"; };
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewToolbar.swift; sourceTree = "<group>"; };
@@ -948,6 +950,23 @@
 			path = NoteModels;
 			sourceTree = "<group>";
 		};
+		BBA3A0262B29AA4E00099F6D /* TextFieldItemView */ = {
+			isa = PBXGroup;
+			children = (
+				BBADD1372A5102620075B825 /* TextfieldItemView.swift */,
+				BBADD1362A5102620075B825 /* NSAttributedStringView.swift */,
+			);
+			path = TextFieldItemView;
+			sourceTree = "<group>";
+		};
+		BBA3A0272B29AF1000099F6D /* RTFEditor */ = {
+			isa = PBXGroup;
+			children = (
+				BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */,
+			);
+			path = RTFEditor;
+			sourceTree = "<group>";
+		};
 		BBB19A9A2B27AF1400B92CBB /* Latin */ = {
 			isa = PBXGroup;
 			children = (
@@ -1116,12 +1135,12 @@
 				BB5034182993172800913B3A /* PageItemView.swift */,
 				BBC7B9732A18F09100D496CB /* ItemView.swift */,
 				BBBFB834299FB75400FA236F /* DragItemModifier.swift */,
+				BBC7B9772A1988E800D496CB /* ToolView */,
 				BBC2C90629C5CFB40044B201 /* SnapItemView.swift */,
 				BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */,
 				BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */,
-				BBADD1372A5102620075B825 /* TextfieldItemView.swift */,
-				BBADD1362A5102620075B825 /* NSAttributedStringView.swift */,
-				BBC7B9772A1988E800D496CB /* ToolView */,
+				BBA3A0262B29AA4E00099F6D /* TextFieldItemView */,
+				BBA3A0272B29AF1000099F6D /* RTFEditor */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -1430,6 +1449,7 @@
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
 				BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
+				BBA3A0292B29AF2500099F6D /* RTFEditorView.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */,
 				BBD930EC2B1FBFA700A37F95 /* PVItemView.swift in Sources */,
