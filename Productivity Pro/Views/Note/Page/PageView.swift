@@ -14,12 +14,6 @@ struct PageView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @AppStorage("defaultFont")
-    var defaultFont: String = "Avenir Next"
-    
-    @AppStorage("defaultFontSize")
-    var defaultFontSize: Double = 12
-    
     var note: PPNoteModel
     @Bindable var page: PPPageModel
     

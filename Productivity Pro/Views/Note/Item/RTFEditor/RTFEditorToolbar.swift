@@ -12,9 +12,23 @@ struct RTFEditorToolbar: ToolbarContent {
     @StateObject var context: RichTextContext
     @Binding var text: NSAttributedString
     
+    @State var showSize: Bool = false
+    @State var showColor: Bool = false
+    
     var body: some ToolbarContent {
         ToolbarItemGroup(placement: .topBarLeading) {
-           RTFAlignment()
+            RTFFont()
+            RTFFontSize()
+            RTFDivider()
+            RTFStyle()
+            RTFColor()
+        }
+    }
+    
+    @ViewBuilder func RTFDivider() -> some View {
+        HStack {
+            Divider()
+                .frame(height: 30)
         }
     }
 }

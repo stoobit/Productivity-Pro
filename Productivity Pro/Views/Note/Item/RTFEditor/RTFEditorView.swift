@@ -21,6 +21,8 @@ struct RTFEditorView: View {
         NavigationStack {
             if text.string != "%$=00â" {
                 RichTextEditor(text: $text, context: context)
+                    .background(backgroundColor().ignoresSafeArea(.all, edges: .all))
+                    .toolbarBackground(.visible, for: .navigationBar)
                     .toolbar {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Fertig") { dismiss() }
@@ -47,5 +49,21 @@ struct RTFEditorView: View {
     
     func textChange() {
         toolManager.activeItem?.textField?.nsAttributedString = text.data()
+    }
+    
+    func backgroundColor() -> Color {
+        if toolManager.activeItem?.textField?.fill == true {
+            guard let color = toolManager.activeItem?.textField?.fillColor else {
+                return .clear
+            }
+            
+            return Color(data: color)
+        } else {
+            guard let color = toolManager.activePage?.color else {
+                return .clear
+            }
+            
+            return Color(color)
+        }
     }
 }

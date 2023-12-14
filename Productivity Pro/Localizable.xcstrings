@@ -519,6 +519,9 @@
         }
       }
     },
+    "Durchgestrichen" : {
+
+    },
     "Ecken" : {
       "localizations" : {
         "en" : {
@@ -638,6 +641,9 @@
           }
         }
       }
+    },
+    "Fett" : {
+
     },
     "Form" : {
       "localizations" : {
@@ -858,6 +864,9 @@
         }
       }
     },
+    "Kursiv" : {
+
+    },
     "Latein" : {
 
     },
@@ -891,9 +900,6 @@
         }
       }
     },
-    "Links" : {
-
-    },
     "Loading Receiver." : {
       "localizations" : {
         "en" : {
@@ -923,9 +929,6 @@
           }
         }
       }
-    },
-    "Mittig" : {
-
     },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
       "localizations" : {
@@ -1117,9 +1120,6 @@
     "Rechteck" : {
 
     },
-    "Rechts" : {
-
-    },
     "Rolle" : {
 
     },
@@ -1231,6 +1231,9 @@
         }
       }
     },
+    "Style" : {
+
+    },
     "Suchen" : {
       "localizations" : {
         "en" : {
@@ -1252,9 +1255,6 @@
       }
     },
     "Text" : {
-
-    },
-    "Textausrichtung" : {
 
     },
     "Titel" : {
@@ -1308,6 +1308,9 @@
       }
     },
     "Undo" : {
+
+    },
+    "Unterstrichen" : {
 
     },
     "Vokabeln" : {

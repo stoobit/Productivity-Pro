@@ -33,7 +33,7 @@ extension NoteMainToolbar {
         ]
         
         let string = NSAttributedString(
-            string: "", attributes: attributes
+            string: "Tippen zum bearbeiten...", attributes: attributes
         )
         
         textField.nsAttributedString = string.data()
