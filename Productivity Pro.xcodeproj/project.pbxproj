@@ -929,6 +929,7 @@
 				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
+				BBA3A0272B29AF1000099F6D /* RTFEditor */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
 				BB988E6329999F3300762F39 /* Canvas */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
@@ -1155,7 +1156,6 @@
 				BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */,
 				BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */,
 				BBA3A0262B29AA4E00099F6D /* TextFieldItemView */,
-				BBA3A0272B29AF1000099F6D /* RTFEditor */,
 			);
 			path = Item;
 			sourceTree = "<group>";

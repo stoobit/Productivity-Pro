@@ -50,7 +50,7 @@ struct SharePDFView: View {
                         .font(.title2.bold())
                         .foregroundStyle(.white)
                         .padding(13)
-                        .padding(.horizontal, 85)
+                        .padding(.horizontal, 93)
                         .background {
                             RoundedRectangle(cornerRadius: 13)
                                 .foregroundStyle(

@@ -13,10 +13,12 @@ extension NoteSecondaryToolbar {
             
             Button("Notiz", systemImage: "doc") {
                 subviewManager.shareProView.toggle()
+                toolManager.pencilKit = false
             }
             
             Button("PDF", systemImage: "doc.richtext") {
                 subviewManager.sharePDFView.toggle()
+                toolManager.pencilKit = false
             }
             
         }) {
