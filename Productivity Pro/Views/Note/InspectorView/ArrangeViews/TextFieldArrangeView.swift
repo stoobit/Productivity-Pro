@@ -25,6 +25,30 @@ struct TextFieldArrangeView: View {
         @Bindable var item = toolManager.activeItem!
         
         Form {
+            Section("Allgemein") {
+                HStack {
+                    Text("Zentrieren")
+                    Spacer()
+                    Button(action: { center() }) {
+                        Image(systemName: "rectangle.portrait.center.inset.filled")
+                    }
+                    .buttonStyle(.bordered)
+                }
+                .frame(height: 30)
+                
+                HStack {
+                    Text("Sperren")
+                    Spacer()
+                    Button(action: {
+                        toolManager.activeItem?.isLocked.toggle()
+                    }) {
+                        Image(systemName: toolManager.activeItem?.isLocked == true ? "hand.draw.fill" : "hand.draw")
+                    }
+                    .buttonStyle(.bordered)
+                }
+                .frame(height: 30)
+            }
+            
             Section("Position") {
                 HStack {
                     Text("X")
@@ -143,5 +167,25 @@ struct TextFieldArrangeView: View {
             .listSectionSpacing(10)
         }
         .environment(\.defaultMinListRowHeight, 10)
+    }
+    
+    func center() {
+        toolManager.activeItem?.width = getFrame().width - 100
+        toolManager.activeItem?.height = getFrame().height - 100
+        
+        toolManager.activeItem?.x = getFrame().width / 2
+        toolManager.activeItem?.y = getFrame().height / 2
+    }
+    
+    func getFrame() -> CGSize {
+        var frame: CGSize = .zero
+        
+        if toolManager.activePage?.isPortrait == true {
+            frame = CGSize(width: shortSide, height: longSide)
+        } else {
+            frame = CGSize(width: longSide, height: shortSide)
+        }
+        
+        return frame
     }
 }

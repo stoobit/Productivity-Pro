@@ -29,7 +29,7 @@ extension NoteMainToolbar {
         let textField = PPTextFieldModel()
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor(primaryColor()),
-            .font: UIFont(name: defaultFont, size: defaultFontSize)!
+            .font: UIFont(name: defaultFont, size: defaultFontSize * 1.4)!
         ]
         
         let string = NSAttributedString(
