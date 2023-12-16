@@ -744,6 +744,9 @@
         }
       }
     },
+    "Hintergrundfarbe" : {
+
+    },
     "Hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -1258,6 +1261,9 @@
       }
     },
     "Text" : {
+
+    },
+    "Textfarbe" : {
 
     },
     "Titel" : {

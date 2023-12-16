@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stoobit/PPAnglePicker",
       "state" : {
-        "revision" : "f72c542ef11ac7fac4dc7adfc724ff49d1db757d",
-        "version" : "1.3.0"
+        "revision" : "fa6c6662610e801995f7097dd5acff0d2b81b50a",
+        "version" : "1.4.0"
       }
     },
     {
@@ -33,7 +33,7 @@
       "location" : "/Users/till/Documents/PPIntegrationKit",
       "state" : {
         "branch" : "main",
-        "revision" : "2951ae82ee4ec94be674b97cd1cf2be4f57bc477"
+        "revision" : "e2ab1e289d21e594f826c42459fc1286ce9ce6eb"
       }
     },
     {
