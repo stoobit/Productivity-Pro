@@ -37,12 +37,12 @@ struct TextFieldArrangeView: View {
                 .frame(height: 30)
                 
                 HStack {
-                    Text("Sperren")
+                    Text("Sperre")
                     Spacer()
                     Button(action: {
                         toolManager.activeItem?.isLocked.toggle()
                     }) {
-                        Image(systemName: toolManager.activeItem?.isLocked == true ? "hand.draw" : "hand.draw.fill")
+                        Image(systemName: toolManager.activeItem?.isLocked == true ? "lock.fill" : "lock")
                     }
                     .buttonStyle(.bordered)
                 }
