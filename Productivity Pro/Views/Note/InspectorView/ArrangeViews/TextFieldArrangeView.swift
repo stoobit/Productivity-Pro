@@ -42,7 +42,7 @@ struct TextFieldArrangeView: View {
                     Button(action: {
                         toolManager.activeItem?.isLocked.toggle()
                     }) {
-                        Image(systemName: toolManager.activeItem?.isLocked == true ? "hand.draw.fill" : "hand.draw")
+                        Image(systemName: toolManager.activeItem?.isLocked == true ? "hand.draw" : "hand.draw.fill")
                     }
                     .buttonStyle(.bordered)
                 }
