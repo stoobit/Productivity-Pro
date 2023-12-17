@@ -5,22 +5,52 @@
 //  Created by Till Brügmann on 20.10.23.
 //
 
-import SwiftUI
 import PPDoubleKeyboard
+import SwiftUI
 
 struct TextFieldStyleView: View {
     @Environment(ToolManager.self) var toolManager
     
     @State var fill: Bool = true
     @State var stroke: Bool = false
+    @State var strokeWidth: Bool = false
+    @State var fontSize: Bool = false
+    
     @State var fillColor: Color = .black
     @State var strokeColor: Color = .black
-    @State var strokeWidth: Bool = false
+    @State var fontColor: Color = .black
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.textField!
         
         Form {
+            Section("Text") {
+                Picker("Schriftart", selection: $item.fontName) {
+                    ForEach(UIFont.familyNames, id: \.self) { font in
+                        Text(font)
+                            .tag(font)
+                    }
+                }
+                .frame(height: 30)
+                
+                HStack {
+                    Text("Schriftgröße")
+                    
+                    Spacer()
+                    Button(String(item.fontSize)) {
+                        fontSize.toggle()
+                    }
+                    .ppDoubleKeyboard(isPresented: $fontSize, value: $item.fontSize)
+                }
+                .frame(height: 30)
+            }
+            
+            Section {
+                ColorPicker("Schriftfarbe", selection: $fontColor, supportsOpacity: true)
+                    .frame(height: 30)
+            }
+            .listSectionSpacing(10)
+            
             Section("Füllung") {
                 Toggle(isOn: $fill.animation()) {
                     Image(systemName: "square.fill")
@@ -83,11 +113,15 @@ struct TextFieldStyleView: View {
         .onChange(of: stroke) {
             item.stroke = stroke
         }
+        .onChange(of: fontColor) {
+            item.textColor = fontColor.data()
+        }
         .onAppear {
             fill = item.fill
             stroke = item.stroke
             fillColor = Color(data: item.fillColor)
             strokeColor = Color(data: item.strokeColor)
+            fontColor = Color(data: item.textColor)
         }
     }
 }

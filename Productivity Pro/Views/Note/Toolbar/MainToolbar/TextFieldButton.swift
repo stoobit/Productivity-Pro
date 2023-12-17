@@ -26,17 +26,12 @@ extension NoteMainToolbar {
         
         item.y = toolManager.offset.size.height * (1/toolManager.scale) + item.height/2 + 40
         
-        let textField = PPTextFieldModel()
-        let attributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(primaryColor()),
-            .font: UIFont(name: defaultFont, size: defaultFontSize * 1.4)!
-        ]
-        
-        let string = NSAttributedString(
-            string: "Tippen zum bearbeiten...", attributes: attributes
+        let textField = PPTextFieldModel(
+            textColor: primaryColor(),
+            font: defaultFont,
+            fontSize: defaultFontSize
         )
-        
-        textField.nsAttributedString = string.data()
+      
         item.textField = textField
         
         if let page = contentObject.note?.pages?.first(where: {

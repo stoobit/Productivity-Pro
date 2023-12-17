@@ -14,10 +14,6 @@
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
 		BB073A6F2AB8CA4800C80B59 /* SecondaryPageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */; };
 		BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */; };
-		BB0B8C4F2B2B893700FAB429 /* RTFFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B8C4E2B2B893700FAB429 /* RTFFont.swift */; };
-		BB0B8C512B2B8E1200FAB429 /* RTFFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B8C502B2B8E1200FAB429 /* RTFFontSize.swift */; };
-		BB0B8C532B2B8FC600FAB429 /* RTFStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B8C522B2B8FC600FAB429 /* RTFStyle.swift */; };
-		BB0B8C552B2B926500FAB429 /* RTFColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0B8C542B2B926500FAB429 /* RTFColor.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
 		BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2062925A7C200F4004A /* BottomOffset.swift */; };
 		BB1321EA2985EA87006AD59D /* DragType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321E92985EA87006AD59D /* DragType.swift */; };
@@ -152,12 +148,12 @@
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
-		BBA3A0292B29AF2500099F6D /* RTFEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */; };
-		BBA3A02D2B29BF9900099F6D /* RTFEditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA3A02C2B29BF9900099F6D /* RTFEditorToolbar.swift */; };
+		BBA3A0292B29AF2500099F6D /* MDEditorViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA3A0282B29AF2500099F6D /* MDEditorViewContainer.swift */; };
 		BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* MediaImport.swift */; };
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
 		BBA8085F2AC2056100F9DFCA /* ObjectViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */; };
+		BBA9A23F2B2EF87C004AFAD0 /* MDEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA9A23E2B2EF87C004AFAD0 /* MDEditorView.swift */; };
 		BBADD1382A5102620075B825 /* NSAttributedStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* NSAttributedStringView.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
 		BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */; };
@@ -254,10 +250,6 @@
 		BB067088293034840076F768 /* OrientationUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationUpdater.swift; sourceTree = "<group>"; };
 		BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryPageActions.swift; sourceTree = "<group>"; };
 		BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewMethods.swift; sourceTree = "<group>"; };
-		BB0B8C4E2B2B893700FAB429 /* RTFFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFFont.swift; sourceTree = "<group>"; };
-		BB0B8C502B2B8E1200FAB429 /* RTFFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFFontSize.swift; sourceTree = "<group>"; };
-		BB0B8C522B2B8FC600FAB429 /* RTFStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFStyle.swift; sourceTree = "<group>"; };
-		BB0B8C542B2B926500FAB429 /* RTFColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFColor.swift; sourceTree = "<group>"; };
 		BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		BB0BE2062925A7C200F4004A /* BottomOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOffset.swift; sourceTree = "<group>"; };
 		BB1321E92985EA87006AD59D /* DragType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragType.swift; sourceTree = "<group>"; };
@@ -390,12 +382,12 @@
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCoding.swift; sourceTree = "<group>"; };
 		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
-		BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorView.swift; sourceTree = "<group>"; };
-		BBA3A02C2B29BF9900099F6D /* RTFEditorToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTFEditorToolbar.swift; sourceTree = "<group>"; };
+		BBA3A0282B29AF2500099F6D /* MDEditorViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDEditorViewContainer.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* MediaImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImport.swift; sourceTree = "<group>"; };
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewToolbar.swift; sourceTree = "<group>"; };
 		BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewMethods.swift; sourceTree = "<group>"; };
+		BBA9A23E2B2EF87C004AFAD0 /* MDEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDEditorView.swift; sourceTree = "<group>"; };
 		BBADD1362A5102620075B825 /* NSAttributedStringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringView.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
 		BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRowMethods.swift; sourceTree = "<group>"; };
@@ -929,7 +921,7 @@
 				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
-				BBA3A0272B29AF1000099F6D /* RTFEditor */,
+				BBA3A0272B29AF1000099F6D /* MarkdownEditor */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
 				BB988E6329999F3300762F39 /* Canvas */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
@@ -961,26 +953,13 @@
 			path = NoteModels;
 			sourceTree = "<group>";
 		};
-		BBA3A0262B29AA4E00099F6D /* TextFieldItemView */ = {
+		BBA3A0272B29AF1000099F6D /* MarkdownEditor */ = {
 			isa = PBXGroup;
 			children = (
-				BBADD1372A5102620075B825 /* TextfieldItemView.swift */,
-				BBADD1362A5102620075B825 /* NSAttributedStringView.swift */,
+				BBA3A0282B29AF2500099F6D /* MDEditorViewContainer.swift */,
+				BBA9A23E2B2EF87C004AFAD0 /* MDEditorView.swift */,
 			);
-			path = TextFieldItemView;
-			sourceTree = "<group>";
-		};
-		BBA3A0272B29AF1000099F6D /* RTFEditor */ = {
-			isa = PBXGroup;
-			children = (
-				BBA3A0282B29AF2500099F6D /* RTFEditorView.swift */,
-				BBA3A02C2B29BF9900099F6D /* RTFEditorToolbar.swift */,
-				BB0B8C4E2B2B893700FAB429 /* RTFFont.swift */,
-				BB0B8C502B2B8E1200FAB429 /* RTFFontSize.swift */,
-				BB0B8C522B2B8FC600FAB429 /* RTFStyle.swift */,
-				BB0B8C542B2B926500FAB429 /* RTFColor.swift */,
-			);
-			path = RTFEditor;
+			path = MarkdownEditor;
 			sourceTree = "<group>";
 		};
 		BBB19A9A2B27AF1400B92CBB /* Latin */ = {
@@ -1083,14 +1062,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BBC7B9772A1988E800D496CB /* ToolView */ = {
+		BBC7B9772A1988E800D496CB /* ToolViews */ = {
 			isa = PBXGroup;
 			children = (
+				BBBFB834299FB75400FA236F /* DragItemModifier.swift */,
+				BBC2C90629C5CFB40044B201 /* SnapItemView.swift */,
 				BB72A28D29760327000E9753 /* ToolView.swift */,
 				BBC7B97A2A19896A00D496CB /* ToolViewMethods.swift */,
 				BBC7B9782A1988FA00D496CB /* DragAnchor.swift */,
 			);
-			path = ToolView;
+			path = ToolViews;
 			sourceTree = "<group>";
 		};
 		BBCCE4F028D52911001DBD8A /* CreateNote */ = {
@@ -1150,12 +1131,11 @@
 			children = (
 				BB5034182993172800913B3A /* PageItemView.swift */,
 				BBC7B9732A18F09100D496CB /* ItemView.swift */,
-				BBBFB834299FB75400FA236F /* DragItemModifier.swift */,
-				BBC7B9772A1988E800D496CB /* ToolView */,
-				BBC2C90629C5CFB40044B201 /* SnapItemView.swift */,
 				BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */,
 				BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */,
-				BBA3A0262B29AA4E00099F6D /* TextFieldItemView */,
+				BBADD1372A5102620075B825 /* TextfieldItemView.swift */,
+				BBADD1362A5102620075B825 /* NSAttributedStringView.swift */,
+				BBC7B9772A1988E800D496CB /* ToolViews */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -1383,7 +1363,6 @@
 				BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */,
 				BBF663F92AC4E71C00FD9813 /* ObjectPicker.swift in Sources */,
 				BBA8085F2AC2056100F9DFCA /* ObjectViewMethods.swift in Sources */,
-				BBA3A02D2B29BF9900099F6D /* RTFEditorToolbar.swift in Sources */,
 				BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */,
 				BB655B002AB772F100FB005A /* NoteViewModals.swift in Sources */,
 				BBC7B97B2A19896A00D496CB /* ToolViewMethods.swift in Sources */,
@@ -1396,7 +1375,6 @@
 				BB047CE22AC0C6790027409F /* ObjectView.swift in Sources */,
 				BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */,
 				BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */,
-				BB0B8C512B2B8E1200FAB429 /* RTFFontSize.swift in Sources */,
 				BBCDBFB92AC8AFA800EF825F /* CreateViewMethods.swift in Sources */,
 				BBEFC9512A41038F00960C8D /* SecondaryUndoActions.swift in Sources */,
 				BBCDFDE52947C877000C545D /* DottedView.swift in Sources */,
@@ -1420,9 +1398,7 @@
 				BBD930F72B1FEBA000A37F95 /* StoreVM.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
-				BB0B8C552B2B926500FAB429 /* RTFColor.swift in Sources */,
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
-				BB0B8C532B2B8FC600FAB429 /* RTFStyle.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,
@@ -1468,11 +1444,11 @@
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
 				BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
-				BBA3A0292B29AF2500099F6D /* RTFEditorView.swift in Sources */,
+				BBA3A0292B29AF2500099F6D /* MDEditorViewContainer.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */,
 				BBD930EC2B1FBFA700A37F95 /* PVItemView.swift in Sources */,
-				BB0B8C4F2B2B893700FAB429 /* RTFFont.swift in Sources */,
+				BBA9A23F2B2EF87C004AFAD0 /* MDEditorView.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,

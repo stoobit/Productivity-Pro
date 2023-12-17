@@ -5,12 +5,11 @@
 //  Created by Till Brügmann on 25.09.23.
 //
 
-import SwiftUI
 import PencilKit
+import SwiftUI
 import SwiftyMarkdown
 
 extension ObjectView {
-    
     func importPro(url: URL) throws {
         let encodedData = try Data(contentsOf: url)
         let data = Data(base64Encoded: encodedData, options: .ignoreUnknownCharacters)
@@ -51,10 +50,9 @@ extension ObjectView {
             var index = 0
             for item in page.items {
                 do {
-                    
-                    let ppItem = PPItemModel(
+                    let ppItem = try PPItemModel(
                         index: index,
-                        type: try transferItemType(type: item.type)
+                        type: transferItemType(type: item.type)
                     )
                     
                     ppItem.page = ppPage
@@ -98,11 +96,13 @@ extension ObjectView {
                     } else if item.type == .textField {
                         guard let textField = item.textField else { continue }
                         
-                        let ppTextField = PPTextFieldModel()
+                        let ppTextField = PPTextFieldModel(
+                            textColor: Color(data: textField.fontColor),
+                            font: textField.font,
+                            fontSize: textField.fontSize
+                        )
                         
                         ppItem.textField = ppTextField
-                        ppTextField.nsAttributedString = markdown(textField: textField).data()
-                        
                         ppTextField.fill = textField.showFill
                         ppTextField.fillColor = textField.fillColor
                         
@@ -119,13 +119,9 @@ extension ObjectView {
         }
     }
     
-    func importProNote(url: URL) throws {
-        
-    }
+    func importProNote(url: URL) throws {}
     
-    func importProBackup(url: URL) throws {
-        
-    }
+    func importProBackup(url: URL) throws {}
     
     func transferPageType(type: PageType) -> PPPageType {
         switch type {
@@ -197,23 +193,22 @@ extension ObjectView {
         case .triangle:
             return .triangle
         case .hexagon:
-            return.triangle
+            return .triangle
         }
     }
     
     func getTitle(with original: String) -> String {
         var title: String = original
-        var index: Int = 1
+        var index = 1
         
         let filteredObjects = contentObjects
-            .filter({
+            .filter {
                 $0.type == COType.file.rawValue &&
-                $0.parent == parent &&
-                $0.grade == grade &&
-                $0.inTrash == false
-            })
-            .map({ $0.title })
-        
+                    $0.parent == parent &&
+                    $0.grade == grade &&
+                    $0.inTrash == false
+            }
+            .map { $0.title }
         
         while filteredObjects.contains(title) {
             title = "\(original) \(index)"
@@ -237,7 +232,9 @@ extension ObjectView {
                     }
                 }
             case .failure:
+
                 // MARK: - Disable ProgressView
+
                 break
             }
         } catch {
@@ -252,16 +249,14 @@ extension ObjectView {
             var parents: [[String]] = [[object.id.uuidString]]
             var index: Int = 0
             
-            
             while isDeleting {
                 if index < parents.count {
-                    
                     for p in parents[index] {
                         parents.append([])
                         
-                        let filteredObjects = contentObjects.filter({
-                            $0.parent == p 
-                        })
+                        let filteredObjects = contentObjects.filter {
+                            $0.parent == p
+                        }
                         
                         for filteredObject in filteredObjects {
                             filteredObject.inTrash = true
@@ -288,12 +283,12 @@ extension ObjectView {
             return []
         }
         
-        var objects = contentObjects.filter({
+        var objects = contentObjects.filter {
             $0.parent == parent &&
-            $0.grade == grade &&
-            $0.isPinned == isPinned &&
-            $0.inTrash == false
-        })
+                $0.grade == grade &&
+                $0.isPinned == isPinned &&
+                $0.inTrash == false
+        }
         
         if type == .file {
             objects = objects.filter {
@@ -325,5 +320,4 @@ extension ObjectView {
             }
         }
     }
-    
 }
