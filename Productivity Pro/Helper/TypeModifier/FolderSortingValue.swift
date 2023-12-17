@@ -8,7 +8,7 @@
 import Foundation
 
 enum SortingValue: String {
-    case title = "title"
-    case created = "created"
+    case title
+    case created
     case modified = "changed"
 }

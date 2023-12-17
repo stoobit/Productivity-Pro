@@ -49,7 +49,7 @@ struct NoteViewSheet: ViewModifier {
                 
             })
             .sheet(isPresented: $manager.rtfEditor, content: {
-                MDEditorViewContainer()
+                MDEditorView()
             })
             .fullScreenCover(isPresented: $manager.scanDocument) {
                 ScannerView(

@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "networkimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gonzalezreal/NetworkImage",
+      "state" : {
+        "revision" : "7aff8d1b31148d32c5933d75557d42f6323ee3d1",
+        "version" : "6.0.0"
+      }
+    },
+    {
       "identity" : "onpasteboardchange",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kyle-n/OnPasteboardChange",
@@ -37,21 +46,12 @@
       }
     },
     {
-      "identity" : "richtextkit",
+      "identity" : "swift-markdown-ui",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/danielsaidi/RichTextKit",
+      "location" : "https://github.com/gonzalezreal/swift-markdown-ui",
       "state" : {
-        "revision" : "7b3eda6135365abb0933a1c554badd8b24d95c01",
-        "version" : "0.9.4"
-      }
-    },
-    {
-      "identity" : "swiftymarkdown",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/simonfairbairn/SwiftyMarkdown.git",
-      "state" : {
-        "revision" : "dde451ab4ed9b77b328e21baa471fdfa0cf61369",
-        "version" : "1.2.4"
+        "revision" : "5df8a4adedd6ae4eb2455ef60ff75183984daeb8",
+        "version" : "2.2.0"
       }
     }
   ],

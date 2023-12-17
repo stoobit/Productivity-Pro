@@ -49,7 +49,7 @@ struct TextFieldItemView: View {
                 }
                 
             } else {
-                NSAttributedStringView(item: item, editItem: editItem)
+                MarkdownView(item: item, editItem: editItem)
                     .frame(
                         width: editItem.size.width * scale,
                         height: editItem.size.height * scale,
@@ -73,7 +73,7 @@ struct TextFieldItemView: View {
             var image: UIImage = renderedImage ?? UIImage()
             
             var view: some View {
-                NSAttributedStringView(item: item, editItem: editItem)
+                MarkdownView(item: item, editItem: editItem)
             }
             
             let renderer = ImageRenderer(content: view)

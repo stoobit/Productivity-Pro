@@ -7,7 +7,6 @@
 
 import SwiftUI
 import PDFKit
-import SwiftyMarkdown
 
 extension OverviewRow {
     
@@ -30,11 +29,11 @@ extension OverviewRow {
                 { $0.type == .textField && $0.isLocked == true }
             )
             
-            if let string = textFields.first?.textField?.text {
-                text = SwiftyMarkdown(
-                    string: string
-                ).attributedString().string
-            }
+//            if let string = textFields.first?.textField?.text {
+////                text = SwiftyMarkdown(
+////                    string: string
+////                ).attributedString().string
+//            }
             
             text = text.components(separatedBy: .newlines).first ?? ""
             text = text.trimmingCharacters(in: .whitespacesAndNewlines)
