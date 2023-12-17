@@ -26,6 +26,7 @@ extension Theme {
             .listItem { configuration in
                 configuration.label
                     .markdownMargin(top: .em(0.25))
+                    .markdownBulletedListMarker(.dash)
             }
             .blockquote { configuration in
                 configuration.label
@@ -40,10 +41,12 @@ extension Theme {
                             .fill(Color.teal)
                             .frame(width: 4)
                     }
-                    .background(Color.teal.opacity(0.5))
             }
             .text(text: {
-                
+                if let textField = item.textField {
+                    ForegroundColor(Color(data: textField.textColor))
+                    FontSize(textField.fontSize * 2)
+                }
             })
 
         return theme
