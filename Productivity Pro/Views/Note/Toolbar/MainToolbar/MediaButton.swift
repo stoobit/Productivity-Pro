@@ -26,14 +26,6 @@ extension NoteMainToolbar {
                     Label("Fotos", systemImage: "photo.on.rectangle.angled")
                 }
             }
-            
-            Button(action: {
-                toolManager.pencilKit = false
-                subviewManager.importMedia.toggle()
-            }) {
-                Label("Dateien durchsuchen", systemImage: "folder")
-            }
-            
         }) {
             Label("Bild", systemImage: "photo")
         }
