@@ -72,6 +72,9 @@
 		BB4CDF6A2B30CA4100E5D612 /* SplashImageGen in Frameworks */ = {isa = PBXBuildFile; productRef = BB4CDF692B30CA4100E5D612 /* SplashImageGen */; };
 		BB4CDF6C2B30CA4100E5D612 /* SplashMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BB4CDF6B2B30CA4100E5D612 /* SplashMarkdown */; };
 		BB4CDF6E2B30CA4100E5D612 /* SplashTokenizer in Frameworks */ = {isa = PBXBuildFile; productRef = BB4CDF6D2B30CA4100E5D612 /* SplashTokenizer */; };
+		BB4CDF712B30DC9700E5D612 /* ImportPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDF702B30DC9700E5D612 /* ImportPro.swift */; };
+		BB4CDF732B30DE6000E5D612 /* ImportProNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDF722B30DE6000E5D612 /* ImportProNote.swift */; };
+		BB4CDF752B30DE9600E5D612 /* ImportProBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDF742B30DE9600E5D612 /* ImportProBackup.swift */; };
 		BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */; };
 		BB5034192993172800913B3A /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5034182993172800913B3A /* PageItemView.swift */; };
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
@@ -310,6 +313,9 @@
 		BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Productivity Pro.entitlements"; sourceTree = "<group>"; };
 		BB4CDD5528D3D518009A409F /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		BB4CDF562B30BAC600E5D612 /* MarkdownTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTutorialView.swift; sourceTree = "<group>"; };
+		BB4CDF702B30DC9700E5D612 /* ImportPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPro.swift; sourceTree = "<group>"; };
+		BB4CDF722B30DE6000E5D612 /* ImportProNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportProNote.swift; sourceTree = "<group>"; };
+		BB4CDF742B30DE9600E5D612 /* ImportProBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportProBackup.swift; sourceTree = "<group>"; };
 		BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
 		BB5034182993172800913B3A /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
@@ -709,15 +715,26 @@
 			path = MarkdownTutorial;
 			sourceTree = "<group>";
 		};
+		BB4CDF6F2B30DC8000E5D612 /* ObjectViewMethods */ = {
+			isa = PBXGroup;
+			children = (
+				BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */,
+				BB4CDF702B30DC9700E5D612 /* ImportPro.swift */,
+				BB4CDF722B30DE6000E5D612 /* ImportProNote.swift */,
+				BB4CDF742B30DE9600E5D612 /* ImportProBackup.swift */,
+			);
+			path = ObjectViewMethods;
+			sourceTree = "<group>";
+		};
 		BB4F66CE2AC4B9CE00C4B34E /* ObjectView */ = {
 			isa = PBXGroup;
 			children = (
 				BB047CE12AC0C6790027409F /* ObjectView.swift */,
-				BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */,
 				BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */,
 				BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */,
 				BB7984672AC37E1E00CF3D24 /* ObjectViewFileLink.swift */,
 				BBCDBFBB2AC8D76200EF825F /* RenameContentObject.swift */,
+				BB4CDF6F2B30DC8000E5D612 /* ObjectViewMethods */,
 			);
 			path = ObjectView;
 			sourceTree = "<group>";
@@ -1335,6 +1352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4CDF732B30DE6000E5D612 /* ImportProNote.swift in Sources */,
 				BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */,
 				BBD930EA2B1FBDB400A37F95 /* PVScrollView.swift in Sources */,
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
@@ -1452,6 +1470,7 @@
 				BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */,
 				BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */,
 				BB8586992AE1E5B300C5875C /* ShapeStyleView.swift in Sources */,
+				BB4CDF712B30DC9700E5D612 /* ImportPro.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBCA6FA02AF81286009C08E3 /* DoubleRounding.swift in Sources */,
 				BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */,
@@ -1470,6 +1489,7 @@
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
 				BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */,
+				BB4CDF752B30DE9600E5D612 /* ImportProBackup.swift in Sources */,
 				BB85868C2AE1ABA500C5875C /* RatingView.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,
 				BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */,

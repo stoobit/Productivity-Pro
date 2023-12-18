@@ -377,6 +377,7 @@
       }
     },
     "Dateien durchsuchen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
