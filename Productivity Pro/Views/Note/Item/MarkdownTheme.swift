@@ -72,7 +72,7 @@ extension Theme {
                     .markdownTextStyle {
                         FontWeight(.semibold)
                         BackgroundColor(nil)
-                        FontCapsVariant(.uppercaseSmallCaps)
+                        FontCapsVariant(.lowercaseSmallCaps)
                     }
                     .overlay(alignment: .leading) {
                         Rectangle()
