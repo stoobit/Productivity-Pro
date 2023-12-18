@@ -8,26 +8,36 @@
 import SwiftUI
 
 struct MDEditorView: View {
-    @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) var dismiss
     @Environment(ToolManager.self) var toolManager
+    
+    @State var tutorial: Bool = false
+    @FocusState var isFocused: Bool
 
     var body: some View {
         @Bindable var textField = toolManager.activeItem!.textField!
 
         NavigationStack {
-//            SwiftDownEditor(text: $textField.string)
-//                .insetsSize(10)
-//                .theme(theme)
             TextEditor(text: $textField.string)
+                .focused($isFocused)
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Fertig") { dismiss() }
+                    }
+                    
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button("Markdown", systemImage: "info.circle") {
+                            tutorial.toggle()
+                        }
+                    }
+                }
+                .fullScreenCover(isPresented: $tutorial) {
+                    MarkdownTutorialView()
+                }
+                .onAppear {
+                    isFocused = true
+                }
         }
     }
-
-//    var theme: Theme {
-//        if colorScheme == .light {
-//            Theme.BuiltIn.defaultLight.theme()
-//        } else {
-//            Theme.BuiltIn.defaultLight.theme()
-//        }
-//    }
 }

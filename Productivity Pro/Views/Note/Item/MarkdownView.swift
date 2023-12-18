@@ -14,7 +14,11 @@ struct MarkdownView: View {
 
     var body: some View {
         Markdown(item.textField?.string ?? "")
-            .markdownTheme(.productivitypro(item: item))
+            .markdownTheme(.productivitypro(
+                name: item.textField?.fontName,
+                size: item.textField?.fontSize,
+                color: item.textField?.textColor
+            ))
             .padding(.leading, 14)
             .padding(.top, 7)
             .frame(

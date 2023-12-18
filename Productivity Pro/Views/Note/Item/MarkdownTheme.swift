@@ -9,45 +9,101 @@ import MarkdownUI
 import SwiftUI
 
 extension Theme {
-    static func productivitypro(item: PPItemModel) -> Theme {
+    static func productivitypro(name: String?, size: Double?, color: Data?) -> Theme {
         let theme = Theme()
-            .code {
-                FontFamilyVariant(.monospaced)
-                FontSize(.em(0.85))
-            }
-            .link {
-                ForegroundColor(.purple)
-            }
-            .paragraph { configuration in
-                configuration.label
-                    .relativeLineSpacing(.em(0.25))
-                    .markdownMargin(top: 0, bottom: 16)
-            }
-            .listItem { configuration in
-                configuration.label
-                    .markdownMargin(top: .em(0.25))
-                    .markdownBulletedListMarker(.dash)
-            }
+            .text(text: {
+                if let color = color, let name = name, let size = size {
+                    ForegroundColor(Color(data: color))
+                    FontSize(size * 2)
+                    FontFamily(.custom(name))
+                }
+            })
+            .heading1(body: { configuration in
+                configuration.label.markdownTextStyle {
+                    if let size = size {
+                        FontSize(size * 2 + 30)
+                        FontWeight(.bold)
+                    }
+                }
+            })
+            .heading2(body: { configuration in
+                configuration.label.markdownTextStyle {
+                    if let size = size {
+                        FontSize(size * 2 + 25)
+                        FontWeight(.bold)
+                    }
+                }
+            })
+            .heading3(body: { configuration in
+                configuration.label.markdownTextStyle {
+                    if let size = size {
+                        FontSize(size * 2 + 20)
+                        FontWeight(.bold)
+                    }
+                }
+            })
+            .heading4(body: { configuration in
+                configuration.label.markdownTextStyle {
+                    if let size = size {
+                        FontSize(size * 2 + 15)
+                        FontWeight(.bold)
+                    }
+                }
+            })
+            .heading5(body: { configuration in
+                configuration.label.markdownTextStyle {
+                    if let size = size {
+                        FontSize(size * 2 + 10)
+                        FontWeight(.bold)
+                    }
+                }
+            })
+            .heading6(body: { configuration in
+                configuration.label.markdownTextStyle {
+                    if let size = size {
+                        FontSize(size * 2 + 5)
+                        FontWeight(.bold)
+                    }
+                }
+            })
             .blockquote { configuration in
                 configuration.label
                     .padding()
                     .markdownTextStyle {
-                        FontCapsVariant(.lowercaseSmallCaps)
                         FontWeight(.semibold)
                         BackgroundColor(nil)
+                        FontCapsVariant(.uppercaseSmallCaps)
                     }
                     .overlay(alignment: .leading) {
                         Rectangle()
-                            .fill(Color.teal)
+                            .fill(Color.accentColor)
                             .frame(width: 4)
                     }
             }
-            .text(text: {
-                if let textField = item.textField {
-                    ForegroundColor(Color(data: textField.textColor))
-                    FontSize(textField.fontSize * 2)
-                }
-            })
+            .listItem { configuration in
+                configuration.label
+                    .markdownMargin(top: .em(0.25))
+            }
+            .link {
+                ForegroundColor(.accentColor)
+            }
+            .code {
+                FontFamilyVariant(.monospaced)
+                FontSize(.em(0.85))
+                FontWeight(.semibold)
+                ForegroundColor(Color.codecolor)
+            }
+            .codeBlock { configuration in
+                configuration.label
+                    .markdownTextStyle(textStyle: {
+                        FontFamilyVariant(.monospaced)
+                    })
+            }
+            .image { configuration in
+                configuration.label
+                    .frame(width: 0, height: 0)
+                    .opacity(0)
+            }
 
         return theme
     }
