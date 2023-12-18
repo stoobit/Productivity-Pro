@@ -25,14 +25,14 @@ struct ToolView: View {
         if item.id == toolManager.activeItem?.id {
             ZStack {
                 if toolManager.frameVisible {
-                   FrameView()
+                    FrameView()
                 }
                 
                 if toolManager.editorVisible && toolManager.activeItem?.isLocked != true {
-                    
                     if (toolManager.dragType == .none || toolManager.dragType == .size) &&
-                        toolManager.activeItem?.type != PPItemType.textField.rawValue {
-                      ResizeView()
+                        toolManager.activeItem?.type != PPItemType.textField.rawValue
+                    {
+                        ResizeView()
                     }
                     
                     if toolManager.dragType == .none || toolManager.dragType == .width {
@@ -40,7 +40,7 @@ struct ToolView: View {
                     }
                     
                     if toolManager.dragType == .none || toolManager.dragType == .height {
-                       HeightView()
+                        HeightView()
                     }
                 }
             }
@@ -54,17 +54,15 @@ struct ToolView: View {
                 height: scale * getFrame().height
             )
             .clipShape(Rectangle())
-            
-            
         }
     }
     
     @ViewBuilder func ResizeView() -> some View {
         Group {
-            Circle()
-                .modifier(DragAnchor(color: .green))
-                .offset(x: editItemModel.size.width/2 * scale,
-                        y: editItemModel.size.height/2 * scale
+            DragAnchor(color: .green)
+                .offset(
+                    x: (editItemModel.size.width / 2) * scale,
+                    y: (editItemModel.size.height / 2) * scale
                 )
                 .gesture(
                     DragGesture(minimumDistance: 0)
@@ -90,9 +88,8 @@ struct ToolView: View {
     
     @ViewBuilder func WidthView() -> some View {
         Group {
-            Circle()
-                .modifier(DragAnchor(color: .main))
-                .offset(x: editItemModel.size.width/2 * scale, y: 0)
+            DragAnchor(color: .main)
+                .offset(x: editItemModel.size.width / 2 * scale, y: 0)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
@@ -112,9 +109,8 @@ struct ToolView: View {
     
     @ViewBuilder func HeightView() -> some View {
         Group {
-            Circle()
-                .modifier(DragAnchor(color: .main))
-                .offset(x: 0, y: (editItemModel.size.height/2) * scale)
+            DragAnchor(color: .main)
+                .offset(x: 0, y: (editItemModel.size.height / 2) * scale)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in

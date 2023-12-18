@@ -7,23 +7,20 @@
 
 import SwiftUI
 
-struct DragAnchor: ViewModifier {
-    
+struct DragAnchor: View {
     let color: Color
-    
-    func body(content: Content) -> some View {
-        content
-            .frame(width: 50, height: 50)
-            .foregroundColor(color)
-            .frame(width: 10, height: 10)
-            .clipShape(Circle())
-            .overlay {
-                Circle()
-                    .stroke(Color.white, lineWidth: 2)
-                    .frame(
-                        width: 10,
-                        height: 10
-                    )
-            }
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .foregroundColor(.white)
+                .frame(width: 12, height: 12)
+
+            Circle()
+                .foregroundColor(color)
+                .frame(width: 8, height: 8)
+        }
+        .frame(width: 50, height: 50)
+        .contentShape(Circle())
     }
 }

@@ -100,8 +100,8 @@ extension ObjectView {
                             font: textField.font,
                             fontSize: textField.fontSize
                         )
-
                         ppItem.textField = ppTextField
+                        
                         ppTextField.string = textField.text
                         ppTextField.fill = textField.showFill
                         ppTextField.fillColor = textField.fillColor
