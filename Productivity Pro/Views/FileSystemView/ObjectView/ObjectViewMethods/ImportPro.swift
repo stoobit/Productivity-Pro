@@ -10,111 +10,117 @@ import SwiftUI
 
 extension ObjectView {
     func importPro(url: URL) throws {
-        let encodedData = try Data(contentsOf: url)
-        let data = Data(base64Encoded: encodedData, options: .ignoreUnknownCharacters)
-
-        let document = try JSONDecoder().decode(Document.self, from: data ?? Data())
-        let documentTitle = url.deletingPathExtension().lastPathComponent
-
-        let contentObject = ContentObject(
-            id: UUID(), title: getTitle(with: documentTitle), type: .file,
-            parent: parent, created: fileCreationDate(url: url), grade: grade
-        )
-
-        context.insert(contentObject)
-        contentObject.note = PPNoteModel()
-
-        for page in document.note.pages {
-            let ppPage = PPPageModel(
-                type: transferPageType(type: page.type),
-                index: contentObject.note!.pages!.count
+        if url.startAccessingSecurityScopedResource() {
+            let encodedData = try Data(contentsOf: url)
+            let data = Data(base64Encoded: encodedData, options: .ignoreUnknownCharacters)
+            
+            let document = try JSONDecoder().decode(Document.self, from: data ?? Data())
+            let documentTitle = url.deletingPathExtension().lastPathComponent
+            
+            let contentObject = ContentObject(
+                id: UUID(), title: getTitle(with: documentTitle), type: .file,
+                parent: parent, created: fileCreationDate(url: url), grade: grade
             )
-
-            ppPage.note = contentObject.note
-
-            ppPage.title = page.header ?? ""
-            ppPage.created = page.date ?? Date()
-
-            ppPage.isPortrait = page.isPortrait
-            ppPage.template = page.backgroundTemplate
-            ppPage.color = page.backgroundColor
-
-            ppPage.canvas = page.canvas
-            ppPage.items = [PPItemModel]()
-
-            if page.type == .image || page.type == .pdf {
-                ppPage.media = page.backgroundMedia
+            
+            defer {
+                url.stopAccessingSecurityScopedResource()
             }
-
-            var index = 0
-            for item in page.items {
-                do {
-                    let ppItem = try PPItemModel(
-                        index: index,
-                        type: transferItemType(type: item.type)
-                    )
-
-                    ppItem.page = ppPage
-                    ppItem.isLocked = item.isLocked ?? false
-
-                    ppItem.width = item.width
-                    ppItem.height = item.height
-
-                    ppItem.x = item.x
-                    ppItem.y = item.y
-
-                    if item.type == .shape {
-                        guard let shape = item.shape else { continue }
-
-                        let ppShape = PPShapeModel(type: transferShapeType(type: shape.type))
-                        ppItem.shape = ppShape
-
-                        ppShape.fill = shape.showFill
-                        ppShape.fillColor = shape.fillColor
-
-                        ppShape.stroke = shape.showStroke
-                        ppShape.strokeColor = shape.strokeColor
-                        ppShape.strokeWidth = shape.strokeWidth
-
-                        ppShape.rotation = item.rotation
-                        ppShape.cornerRadius = shape.cornerRadius
-
-                    } else if item.type == .media {
-                        guard let media = item.media else { continue }
-
-                        let ppMedia = PPMediaModel(media: media.media)
-                        ppItem.media = ppMedia
-
-                        ppMedia.stroke = media.showStroke
-                        ppMedia.strokeColor = media.strokeColor
-                        ppMedia.strokeWidth = media.strokeWidth
-
-                        ppMedia.rotation = item.rotation
-                        ppMedia.cornerRadius = media.cornerRadius
-
-                    } else if item.type == .textField {
-                        guard let textField = item.textField else { continue }
-
-                        let ppTextField = PPTextFieldModel(
-                            textColor: Color(data: textField.fontColor),
-                            font: textField.font,
-                            fontSize: textField.fontSize
-                        )
-                        ppItem.textField = ppTextField
-                        
-                        ppTextField.string = textField.text
-                        ppTextField.fill = textField.showFill
-                        ppTextField.fillColor = textField.fillColor
-
-                        ppTextField.stroke = textField.showStroke
-                        ppTextField.strokeColor = textField.strokeColor
-                        ppTextField.strokeWidth = textField.strokeWidth
-                    }
-                } catch {
-                    continue
+            
+            context.insert(contentObject)
+            contentObject.note = PPNoteModel()
+            
+            for page in document.note.pages {
+                let ppPage = PPPageModel(
+                    type: transferPageType(type: page.type),
+                    index: contentObject.note!.pages!.count
+                )
+                
+                ppPage.note = contentObject.note
+                
+                ppPage.title = page.header ?? ""
+                ppPage.created = page.date ?? Date()
+                
+                ppPage.isPortrait = page.isPortrait
+                ppPage.template = page.backgroundTemplate
+                ppPage.color = page.backgroundColor
+                
+                ppPage.canvas = page.canvas
+                ppPage.items = [PPItemModel]()
+                
+                if page.type == .image || page.type == .pdf {
+                    ppPage.media = page.backgroundMedia
                 }
-
-                index += 1
+                
+                var index = 0
+                for item in page.items {
+                    do {
+                        let ppItem = try PPItemModel(
+                            index: index,
+                            type: transferItemType(type: item.type)
+                        )
+                        
+                        ppItem.page = ppPage
+                        ppItem.isLocked = item.isLocked ?? false
+                        
+                        ppItem.width = item.width
+                        ppItem.height = item.height
+                        
+                        ppItem.x = item.x
+                        ppItem.y = item.y
+                        
+                        if item.type == .shape {
+                            guard let shape = item.shape else { continue }
+                            
+                            let ppShape = PPShapeModel(type: transferShapeType(type: shape.type))
+                            ppItem.shape = ppShape
+                            
+                            ppShape.fill = shape.showFill
+                            ppShape.fillColor = shape.fillColor
+                            
+                            ppShape.stroke = shape.showStroke
+                            ppShape.strokeColor = shape.strokeColor
+                            ppShape.strokeWidth = shape.strokeWidth
+                            
+                            ppShape.rotation = item.rotation
+                            ppShape.cornerRadius = shape.cornerRadius
+                            
+                        } else if item.type == .media {
+                            guard let media = item.media else { continue }
+                            
+                            let ppMedia = PPMediaModel(media: media.media)
+                            ppItem.media = ppMedia
+                            
+                            ppMedia.stroke = media.showStroke
+                            ppMedia.strokeColor = media.strokeColor
+                            ppMedia.strokeWidth = media.strokeWidth
+                            
+                            ppMedia.rotation = item.rotation
+                            ppMedia.cornerRadius = media.cornerRadius
+                            
+                        } else if item.type == .textField {
+                            guard let textField = item.textField else { continue }
+                            
+                            let ppTextField = PPTextFieldModel(
+                                textColor: Color(data: textField.fontColor),
+                                font: textField.font,
+                                fontSize: textField.fontSize
+                            )
+                            ppItem.textField = ppTextField
+                            
+                            ppTextField.string = textField.text
+                            ppTextField.fill = textField.showFill
+                            ppTextField.fillColor = textField.fillColor
+                            
+                            ppTextField.stroke = textField.showStroke
+                            ppTextField.strokeColor = textField.strokeColor
+                            ppTextField.strokeWidth = textField.strokeWidth
+                        }
+                    } catch {
+                        continue
+                    }
+                    
+                    index += 1
+                }
             }
         }
     }

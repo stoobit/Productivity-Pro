@@ -23,7 +23,7 @@ struct NoteViewModifier: ViewModifier {
             )
             .overlay {
                 ClipboardControl()
-                    .padding()
+                    .padding(10)
             }
     }
 }
