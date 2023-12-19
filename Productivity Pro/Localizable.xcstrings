@@ -244,6 +244,9 @@
         }
       }
     },
+    "Ausschneiden" : {
+
+    },
     "Auswählen" : {
       "localizations" : {
         "en" : {
@@ -519,6 +522,9 @@
           }
         }
       }
+    },
+    "Duplizieren" : {
+
     },
     "Ecken" : {
       "localizations" : {
@@ -848,6 +854,9 @@
           }
         }
       }
+    },
+    "Kopieren" : {
+
     },
     "Kreis" : {
       "localizations" : {

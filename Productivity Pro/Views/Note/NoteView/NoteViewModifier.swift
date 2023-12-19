@@ -21,6 +21,10 @@ struct NoteViewModifier: ViewModifier {
                     contentObject: contentObject, reader: reader
                 )
             )
+            .overlay {
+                ClipboardControl()
+                    .padding()
+            }
     }
 }
 
