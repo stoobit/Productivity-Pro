@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ObjectView: View {
+    @Environment(ToolManager.self) var toolManager
     @Environment(\.modelContext) var context
     
     var parent: String

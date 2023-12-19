@@ -24,10 +24,14 @@ struct ScrollViewContainer: View {
             note: note, page: page, size: size,
             scale: $scale, offset: $offset
         ) {
-            PageView(
-                note: note, page: page, scale: $scale,
-                offset: $offset, size: size
-            )
+            Group {
+                if toolManager.activePage?.id == page.id {
+                    PageView(
+                        note: note, page: page, scale: $scale,
+                        offset: $offset, size: size
+                    )
+                }
+            }
         }
         .modifier(
             OrientationUpdater(isPortrait: page.isPortrait)

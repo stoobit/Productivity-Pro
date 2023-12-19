@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 25.09.22.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct NoteView: View {
     @Environment(ToolManager.self) var toolManager
@@ -28,8 +28,9 @@ struct NoteView: View {
             GeometryReader { proxy in
                 ScrollViewReader { reader in
                     ScrollView(.horizontal) {
-                        LazyHStack(spacing: 0) {
-                            ForEach(pages) { page in
+                        HStack(spacing: 0) {
+                            ForEach(0 ... (pages.count - 1), id: \.self) { index in
+                                let page = pages[index]
                                 ScrollViewContainer(
                                     note: contentObject.note!,
                                     page: page,
@@ -53,7 +54,6 @@ struct NoteView: View {
                             reader.scrollTo(pages.last)
                         }
                     }
-                    
                 }
             }
             .background {

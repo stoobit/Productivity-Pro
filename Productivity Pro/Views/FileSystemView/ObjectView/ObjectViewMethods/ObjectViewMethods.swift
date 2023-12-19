@@ -10,27 +10,31 @@ import SwiftUI
 
 extension ObjectView {
     func importFile(result: Result<[URL], any Error>) {
+        toolManager.showProgress = true
         do {
             switch result {
             case .success(let success):
-                if let url = success.first {
-                    if url.pathExtension == "pro" {
-                        print("hello")
-                        try importPro(url: url)
-                    } else if url.pathExtension == "pronote" {
-                        try importProNote(url: url)
-                    } else if url.pathExtension == "probackup" {
-                        try importProBackup(url: url)
+                try DispatchQueue.global(qos: .userInitiated).sync {
+                    if let url = success.first {
+                        if url.pathExtension == "pro" {
+                            print("hello")
+                            try importPro(url: url)
+                        } else if url.pathExtension == "pronote" {
+                            try importProNote(url: url)
+                        } else if url.pathExtension == "probackup" {
+                            try importProBackup(url: url)
+                        }
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                        toolManager.showProgress = false
                     }
                 }
             case .failure:
-
-                // MARK: - Disable ProgressView
-
-                break
+                toolManager.showProgress = false
             }
         } catch {
-            // MARK: - Disable ProgressView
+            toolManager.showProgress = false
         }
     }
     
