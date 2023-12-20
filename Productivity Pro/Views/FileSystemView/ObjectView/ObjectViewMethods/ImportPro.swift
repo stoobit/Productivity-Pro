@@ -48,7 +48,10 @@ extension ObjectView {
                 ppPage.items = [PPItemModel]()
                 
                 if page.type == .image || page.type == .pdf {
-                    ppPage.media = page.backgroundMedia
+                    if let data = page.backgroundMedia {
+                        let image = UIImage(data: data)
+                        ppPage.media = image?.heicData()
+                    }
                 }
                 
                 var index = 0
@@ -87,13 +90,16 @@ extension ObjectView {
                         } else if item.type == .media {
                             guard let media = item.media else { continue }
                             
-                            let ppMedia = PPMediaModel(media: media.media)
-                            ppItem.media = ppMedia
+                            let image = UIImage(data: media.media)
+                            guard let data = image?.heicData() else { continue }
                             
+                            let ppMedia = PPMediaModel(media: data)
+                            ppItem.media = ppMedia
+                                
                             ppMedia.stroke = media.showStroke
                             ppMedia.strokeColor = media.strokeColor
                             ppMedia.strokeWidth = media.strokeWidth
-                            
+                                
                             ppMedia.rotation = item.rotation
                             ppMedia.cornerRadius = media.cornerRadius
                             
