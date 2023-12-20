@@ -28,9 +28,8 @@ struct NoteView: View {
             GeometryReader { proxy in
                 ScrollViewReader { reader in
                     ScrollView(.horizontal) {
-                        HStack(spacing: 0) {
-                            ForEach(0 ... (pages.count - 1), id: \.self) { index in
-                                let page = pages[index]
+                        LazyHStack(spacing: 0) {
+                            ForEach(pages) { page in
                                 ScrollViewContainer(
                                     note: contentObject.note!,
                                     page: page,
@@ -42,7 +41,7 @@ struct NoteView: View {
                                 )
                             }
                         }
-                        .scrollTargetLayout()
+                        .scrollTargetLayout(isEnabled: true)
                     }
                     .scrollIndicators(.hidden)
                     .scrollTargetBehavior(.paging)

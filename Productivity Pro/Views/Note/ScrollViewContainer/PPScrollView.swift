@@ -22,7 +22,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     var content: () -> Content
     
     func makeUIView(context: Context) -> UIScrollView {
-        let scrollView: UIScrollView = UIScrollView()
+        let scrollView = UIScrollView()
         scrollView.delegate = context.coordinator
         
         scrollView.minimumZoomScale = 1
@@ -35,7 +35,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         scrollView.showsHorizontalScrollIndicator = false
         
         let hostedView = context.coordinator.hostingController.view!
-        hostedView.frame =  CGRect(
+        hostedView.frame = CGRect(
             x: 0,
             y: 0,
             width: getFrame().width,
@@ -85,7 +85,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         
         return Coordinator(
             hostingController: UIHostingController(
-                rootView: self.content()
+                rootView: content()
             ),
             scale: $scale,
             offset: $offset,
@@ -139,7 +139,6 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             Task { @MainActor in
                 self.scale = scrollView.zoomScale
                 self.offset = scrollView.contentOffset
-                
                 
                 toolManager.scale = scrollView.zoomScale
                 toolManager.offset = scrollView.contentOffset
@@ -207,5 +206,4 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         
         return frame
     }
-    
 }
