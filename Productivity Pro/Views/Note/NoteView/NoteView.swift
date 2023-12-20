@@ -28,7 +28,7 @@ struct NoteView: View {
             GeometryReader { proxy in
                 ScrollViewReader { reader in
                     ScrollView(.horizontal) {
-                        LazyHStack(spacing: 0) {
+                        HStack(spacing: 0) {
                             ForEach(pages) { page in
                                 ScrollViewContainer(
                                     note: contentObject.note!,
