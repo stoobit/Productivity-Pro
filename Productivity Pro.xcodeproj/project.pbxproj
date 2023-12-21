@@ -70,6 +70,7 @@
 		BB5034192993172800913B3A /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5034182993172800913B3A /* PageItemView.swift */; };
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
 		BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */; };
+		BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */; };
@@ -311,6 +312,7 @@
 		BB5034182993172800913B3A /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
 		BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldArrangeView.swift; sourceTree = "<group>"; };
+		BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMethods.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
 		BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleMenuMethods.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				BB26F8A72B31169A00788AA4 /* ClipboardControl.swift */,
+				BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */,
 			);
 			path = ClipboardControl;
 			sourceTree = "<group>";
@@ -1362,6 +1365,7 @@
 				BBCCE4EB28D52743001DBD8A /* NoteModel.swift in Sources */,
 				BB85868E2AE1D72200C5875C /* SecondaryShareAction.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
+				BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSecondaryToolbar.swift in Sources */,
 				BB8586972AE1E3B000C5875C /* ArrangeContainerView.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,

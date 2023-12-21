@@ -35,6 +35,36 @@ struct NoteMainToolbar: CustomizableToolbarContent {
         ToolbarItem(id: "media", placement: .secondaryAction) {
             MediaButton()
         }
+        
+//        ToolbarItem(id: "link", placement: .secondaryAction) {
+//            Button(action: {}) {
+//                Image(systemName: "link")
+//            }
+//        }
+//        
+//        ToolbarItem(id: "chart", placement: .secondaryAction) {
+//            Button(action: {}) {
+//                Image(systemName: "chart.xyaxis.line")
+//            }
+//        }
+//        
+//        ToolbarItem(id: "table", placement: .secondaryAction) {
+//            Button(action: {}) {
+//                Image(systemName: "tablecells")
+//            }
+//        }
+//        
+//        ToolbarItem(id: "mindmap", placement: .secondaryAction) {
+//            Button(action: {}) {
+//                Image(systemName: "app.connected.to.app.below.fill")
+//            }
+//        }
+//        
+//        ToolbarItem(id: "3d", placement: .secondaryAction) {
+//            Button(action: {}) {
+//                Image(systemName: "scale.3d")
+//            }
+//        }
     }
     
     func primaryColor() -> Color {

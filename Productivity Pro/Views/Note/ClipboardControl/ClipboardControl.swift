@@ -8,50 +8,55 @@
 import SwiftUI
 
 struct ClipboardControl: View {
-    @Environment(ToolManager.self)
-    var toolManager
+    @Environment(ToolManager.self) var toolManager
+    @Environment(\.modelContext) var context
 
     var body: some View {
         HStack {
             Button(action: {}) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 11.5)
-                        .foregroundStyle(.thinMaterial)
-                        .frame(width: 45, height: 45)
-                
-                    Image(systemName: "doc.on.clipboard")
-                }
+                ClipboardButton(image: "doc.on.clipboard")
             }
-        
-            ControlGroup(content: {
-                Button("Kopieren", systemImage: "doc.on.doc") {}
-                
-                Button("Duplizieren", systemImage: "plus.square.on.square") {}
-                
-                Button("Ausschneiden", systemImage: "scissors", role: .destructive) {}
-                
-                Button("Löschen", systemImage: "trash", role: .destructive) {}
-            }) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 11.5)
-                        .foregroundStyle(.thinMaterial)
-                        .frame(width: 45, height: 45)
-                    
-                    Image(systemName: "scissors.badge.ellipsis")
-                }
+            
+            Button(action: {}) {
+                ClipboardButton(image: "doc.on.doc")
             }
-            .controlGroupStyle(.compactMenu)
+            .disabled(toolManager.activeItem == nil)
+            
+            Button(action: {}) {
+                ClipboardButton(image: "plus.square.on.square")
+            }
+            .disabled(toolManager.activeItem == nil)
+            
+            Button(role: .destructive, action: {}) {
+                ClipboardButton(image: "scissors")
+            }
+            .disabled(toolManager.activeItem == nil)
+            
+            Button(role: .destructive, action: { delete() }) {
+                ClipboardButton(image: "trash")
+            }
+            .disabled(toolManager.activeItem == nil)
         }
         .padding(5)
         .background {
             RoundedRectangle(cornerRadius: 14)
-                .foregroundStyle(.background)
+                .foregroundStyle(.thinMaterial)
         }
         .frame(
             maxWidth: .infinity,
             maxHeight: .infinity,
             alignment: .bottomLeading
         )
+    }
+    
+    @ViewBuilder func ClipboardButton(image: String) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 11.5)
+                .foregroundStyle(.background)
+                .frame(width: 45, height: 45)
+        
+            Image(systemName: image)
+        }
     }
 }
 
