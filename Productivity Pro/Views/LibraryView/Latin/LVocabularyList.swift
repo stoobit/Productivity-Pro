@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LVocabularyList: View {
-    var data: [LVModel]
+    var data: [VocabModel]
     var sections: [String]
     
     init() {
@@ -19,7 +19,12 @@ struct LVocabularyList: View {
     var body: some View {
         if data.isEmpty == false {
             List(sections, id: \.self) { section in
-                NavigationLink(destination: {}) {
+                NavigationLink(destination: {
+                    VocabularyView(
+                        section: section,
+                        vocabularies: getVocabs(of: section)
+                    )
+                }) {
                     Label("Wortschatz \(section)", systemImage: "cube.box")
                 }
                 .frame(height: 30)
@@ -29,11 +34,11 @@ struct LVocabularyList: View {
         }
     }
     
-    static func loadSections(data: [LVModel]) -> [String] {
+    static func loadSections(data: [VocabModel]) -> [String] {
         return Array(Set(data.map(\.section))).sorted(using: SortDescriptor(\.self))
     }
 
-    static func loadData() -> [LVModel] {
+    static func loadData() -> [VocabModel] {
         let decoder = JSONDecoder()
         
         if let filePath = Bundle.main.path(forResource: "latinvoc", ofType: "json") {
@@ -43,7 +48,7 @@ struct LVocabularyList: View {
                     .trimmingCharacters(in: .whitespacesAndNewlines)
                 
                 let jsonData = Data(string.utf8)
-                let array = try decoder.decode([LVModel].self, from: jsonData)
+                let array = try decoder.decode([VocabModel].self, from: jsonData)
                 
                 return array
             } catch {
@@ -52,5 +57,9 @@ struct LVocabularyList: View {
         }
         
         return []
+    }
+    
+    func getVocabs(of section: String) -> [VocabModel] {
+        return data.filter({ $0.section == section })
     }
 }

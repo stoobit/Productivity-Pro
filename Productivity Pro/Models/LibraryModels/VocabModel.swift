@@ -7,8 +7,8 @@
 
 import Foundation
 
-protocol VocabModel {
-    func getWord() -> String
-    func getTranslation() -> String
-    func getSection() -> String
+struct VocabModel: Codable, Hashable {
+    var word: String = ""
+    var translation: String = ""
+    var section: String = ""
 }
