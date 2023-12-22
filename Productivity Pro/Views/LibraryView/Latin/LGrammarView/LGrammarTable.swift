@@ -54,7 +54,7 @@ struct LGrammarTable: View {
                     
                     ForEach(0...top.count - 1, id: \.self) { subindex in
                         RoundedRectangle(cornerRadius: 10)
-                            .foregroundStyle(.background)
+                            .foregroundStyle(.bar)
                             .frame(maxWidth: .infinity)
                             .frame(height: 50)
                             .overlay {

@@ -147,6 +147,9 @@
         }
       }
     },
+    "3. Deklination" : {
+
+    },
     "5" : {
       "localizations" : {
         "en" : {
@@ -528,6 +531,9 @@
           }
         }
       }
+    },
+    "e-Deklination" : {
+
     },
     "Ecken" : {
       "localizations" : {
@@ -1280,6 +1286,9 @@
           }
         }
       }
+    },
+    "u-Deklination" : {
+
     },
     "Übersicht" : {
       "localizations" : {
