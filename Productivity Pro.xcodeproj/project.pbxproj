@@ -753,6 +753,13 @@
 			path = German;
 			sourceTree = "<group>";
 		};
+		BB5705262B36096900F84B45 /* GrammarView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GrammarView;
+			sourceTree = "<group>";
+		};
 		BB655AF82AB7674900FB005A /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1016,9 +1023,10 @@
 			children = (
 				BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */,
 				BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */,
-				BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */,
 				BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */,
+				BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */,
 				BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */,
+				BB5705262B36096900F84B45 /* GrammarView */,
 			);
 			path = Latin;
 			sourceTree = "<group>";

@@ -10,8 +10,19 @@ import SwiftUI
 struct LGrammarList: View {
     var body: some View {
         List {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Section("Deklinationen") {
+                
+            }
+            
+            Section("Konjugationen") {
+                
+            }
+            
+            Section("Adjektive") {
+                
+            }
         }
+        .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Grammatik")
     }
 }

@@ -46,6 +46,7 @@ struct VocabularyView: View {
             .navigationTitle("Wortschatz \(section)")
             .onAppear(perform: {
                 vocabs = getVocabs()
+                active = vocabs[0]
             })
         }
     }
