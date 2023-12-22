@@ -72,6 +72,7 @@
 		BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */; };
 		BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */; };
 		BB57051D2B35C57B00F84B45 /* LTabIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */; };
+		BB57051F2B35D45000F84B45 /* VocabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051E2B35D45000F84B45 /* VocabModel.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */; };
@@ -315,6 +316,7 @@
 		BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldArrangeView.swift; sourceTree = "<group>"; };
 		BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMethods.swift; sourceTree = "<group>"; };
 		BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTabIndicator.swift; sourceTree = "<group>"; };
+		BB57051E2B35D45000F84B45 /* VocabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabModel.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
 		BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleMenuMethods.swift; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 		BB35A1BF2B292175001A3F4C /* LibraryModels */ = {
 			isa = PBXGroup;
 			children = (
+				BB57051E2B35D45000F84B45 /* VocabModel.swift */,
 				BB35A1C02B292191001A3F4C /* LVModel.swift */,
 			);
 			path = LibraryModels;
@@ -1350,6 +1353,7 @@
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */,
 				BB4CDF572B30BAC600E5D612 /* MarkdownTutorialView.swift in Sources */,
+				BB57051F2B35D45000F84B45 /* VocabModel.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,

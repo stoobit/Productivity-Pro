@@ -129,7 +129,7 @@ struct LibraryView: View {
                         .disabled(true)
                         
                     }
-                    .padding()
+                    .padding(.horizontal, 5)
                 }
             }
             .navigationTitle("Bibliothek")

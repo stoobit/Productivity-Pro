@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct LatinView: View {
-    @State var selection: String = "Grammatik"
+    @State var selection: String = "Vokabeln"
 
     var body: some View {
         ZStack {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all, edges: [.top, .horizontal])
-            
-            TabView(selection: $selection) {
+
+            if selection == "Grammatik" {
                 LGrammarList()
-                    .tag("Grammatik")
+            } else if selection == "Vokabeln" {
                 LVocabularyList()
-                    .tag("Vokabeln")
+            } else if selection == "Geschichte" {
                 LHistoryList()
-                    .tag("Geschichte")
             }
         }
         .tabViewStyle(.page)

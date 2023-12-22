@@ -19,14 +19,20 @@ struct LVocabularyList: View {
     var body: some View {
         if data.isEmpty == false {
             List(sections, id: \.self) { section in
-                Label("Wortschatz \(section)", systemImage: "cube.box")
+                NavigationLink(destination: {}) {
+                    Label("Wortschatz \(section)", systemImage: "cube.box")
+                }
+                .frame(height: 30)
             }
+            .environment(\.defaultMinListRowHeight, 10)
+            .navigationTitle("Vokabeln")
         }
     }
     
     static func loadSections(data: [LVModel]) -> [String] {
         return Array(Set(data.map(\.section))).sorted(using: SortDescriptor(\.self))
     }
+
     static func loadData() -> [LVModel] {
         let decoder = JSONDecoder()
         
@@ -47,5 +53,4 @@ struct LVocabularyList: View {
         
         return []
     }
-    
 }

@@ -13,11 +13,10 @@ struct LTabIndicator: View {
     
     var body: some View {
         HStack {
-            Item(title: "Grammatik", image: "text.word.spacing")
-               
             Item(title: "Vokabeln", image: "textformat.abc")
+            Item(title: "Grammatik", image: "text.word.spacing")
             
-            Item(title: "Geschichte", image: "clock")
+//            Item(title: "Geschichte", image: "clock")
         }
         .padding(5)
         .background {

@@ -9,7 +9,10 @@ import SwiftUI
 
 struct LGrammarList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        }
+        .navigationTitle("Grammatik")
     }
 }
 

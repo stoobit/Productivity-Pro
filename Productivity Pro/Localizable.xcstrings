@@ -713,6 +713,9 @@
         }
       }
     },
+    "Grammatik" : {
+
+    },
     "Gruppieren" : {
       "localizations" : {
         "en" : {
@@ -1304,6 +1307,9 @@
       }
     },
     "Undo" : {
+
+    },
+    "Vokabeln" : {
 
     },
     "Vorlage ändern" : {
