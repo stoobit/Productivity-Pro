@@ -12,13 +12,15 @@ struct VocabularyView: View {
     var vocabularies: [VocabModel]
 
     var body: some View {
-        GeometryReader { _ in
+        GeometryReader { proxy in
             ScrollView(.horizontal) {
                 HStack(spacing: 0) {
-                    ForEach(vocabularies, id: \.self) { _ in
-                        VCardView()
+                    ForEach(vocabularies, id: \.self) { vocab in
+                        VCardView(proxy: proxy, vocab: vocab)
                             .containerRelativeFrame([.horizontal, .vertical])
-                            .scrollTransition(.interactive, axis: .horizontal) { content, phase in
+                            .scrollTransition(
+                                .interactive, axis: .horizontal
+                            ) { content, phase in
                                 content
                                     .opacity(phase.isIdentity ? 1.0 : 0.5)
                                     .scaleEffect(phase.isIdentity ? 1.0 : 0.1)
@@ -31,6 +33,6 @@ struct VocabularyView: View {
             .scrollTargetBehavior(.paging)
             .scrollIndicators(.hidden)
         }
-        .navigationTitle(section)
+        .navigationTitle("Wortschatz \(section)")
     }
 }
