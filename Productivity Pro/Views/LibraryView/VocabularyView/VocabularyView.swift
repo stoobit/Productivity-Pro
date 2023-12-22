@@ -9,30 +9,48 @@ import SwiftUI
 
 struct VocabularyView: View {
     var section: String
-    var vocabularies: [VocabModel]
+    var data: [VocabModel]
+
+    @State var active: VocabModel?
+    @State var vocabs: [VocabModel] = []
 
     var body: some View {
-        GeometryReader { proxy in
-            ScrollView(.horizontal) {
-                HStack(spacing: 0) {
-                    ForEach(vocabularies, id: \.self) { vocab in
-                        VCardView(proxy: proxy, vocab: vocab)
+        ZStack {
+            Color(UIColor.systemGroupedBackground)
+                .ignoresSafeArea(.all, edges: [.top, .horizontal])
+
+            GeometryReader { proxy in
+                ScrollView(.horizontal) {
+                    LazyHStack(spacing: 0) {
+                        ForEach(vocabs, id: \.self) { vocab in
+                            VCardView(
+                                proxy: proxy,
+                                vocab: vocab,
+                                active: $active
+                            )
                             .containerRelativeFrame([.horizontal, .vertical])
                             .scrollTransition(
                                 .interactive, axis: .horizontal
                             ) { content, phase in
                                 content
-                                    .opacity(phase.isIdentity ? 1.0 : 0.5)
                                     .scaleEffect(phase.isIdentity ? 1.0 : 0.1)
-                                    .blur(radius: phase.isIdentity ? 0 : 50)
                             }
+                        }
                     }
+                    .scrollTargetLayout()
                 }
-                .scrollTargetLayout()
+                .scrollTargetBehavior(.paging)
+                .scrollIndicators(.hidden)
+                .scrollPosition(id: $active)
             }
-            .scrollTargetBehavior(.paging)
-            .scrollIndicators(.hidden)
+            .navigationTitle("Wortschatz \(section)")
+            .onAppear(perform: {
+                vocabs = getVocabs()
+            })
         }
-        .navigationTitle("Wortschatz \(section)")
+    }
+
+    func getVocabs() -> [VocabModel] {
+        return data.filter { $0.section == section }.shuffled()
     }
 }

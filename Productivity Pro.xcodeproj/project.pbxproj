@@ -74,6 +74,7 @@
 		BB57051F2B35D45000F84B45 /* VocabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051E2B35D45000F84B45 /* VocabModel.swift */; };
 		BB5705212B35E24700F84B45 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705202B35E24700F84B45 /* VocabularyView.swift */; };
 		BB5705232B35E3B100F84B45 /* VCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705222B35E3B100F84B45 /* VCardView.swift */; };
+		BB5705252B35FD3800F84B45 /* VFlipModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705242B35FD3800F84B45 /* VFlipModifier.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */; };
@@ -319,6 +320,7 @@
 		BB57051E2B35D45000F84B45 /* VocabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabModel.swift; sourceTree = "<group>"; };
 		BB5705202B35E24700F84B45 /* VocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
 		BB5705222B35E3B100F84B45 /* VCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCardView.swift; sourceTree = "<group>"; };
+		BB5705242B35FD3800F84B45 /* VFlipModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFlipModifier.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
 		BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleMenuMethods.swift; sourceTree = "<group>"; };
@@ -1035,6 +1037,7 @@
 			children = (
 				BB5705202B35E24700F84B45 /* VocabularyView.swift */,
 				BB5705222B35E3B100F84B45 /* VCardView.swift */,
+				BB5705242B35FD3800F84B45 /* VFlipModifier.swift */,
 			);
 			path = VocabularyView;
 			sourceTree = "<group>";
@@ -1364,6 +1367,7 @@
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */,
+				BB5705252B35FD3800F84B45 /* VFlipModifier.swift in Sources */,
 				BBF930732A67437900AD3958 /* Color.swift in Sources */,
 				BB67015D2AADF480001F468A /* DeskViewHelper.swift in Sources */,
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,

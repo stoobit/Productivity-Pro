@@ -22,7 +22,7 @@ struct LVocabularyList: View {
                 NavigationLink(destination: {
                     VocabularyView(
                         section: section,
-                        vocabularies: getVocabs(of: section)
+                        data: data
                     )
                 }) {
                     Label("Wortschatz \(section)", systemImage: "cube.box")
@@ -57,9 +57,5 @@ struct LVocabularyList: View {
         }
         
         return []
-    }
-    
-    func getVocabs(of section: String) -> [VocabModel] {
-        return data.filter({ $0.section == section })
     }
 }
