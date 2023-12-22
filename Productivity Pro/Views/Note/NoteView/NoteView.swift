@@ -57,7 +57,7 @@ struct NoteView: View {
             }
             .background {
                 Color(UIColor.secondarySystemBackground)
-                    .ignoresSafeArea(.all)
+                    .ignoresSafeArea(.all, edges: [.top, .horizontal])
             }
             .modifier(
                 RenameContentObjectView(
@@ -68,6 +68,10 @@ struct NoteView: View {
             )
             .onChange(of: toolValue.activePage) {
                 toolManager.pencilKit = false
+            }
+            .overlay {
+                ClipboardControl()
+                    .padding(10)
             }
             
         } else {

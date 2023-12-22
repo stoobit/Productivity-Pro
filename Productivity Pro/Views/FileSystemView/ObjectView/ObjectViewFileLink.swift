@@ -70,7 +70,6 @@ struct ObjectViewFileLink: View {
             
             Section {
                 Menu(content: {
-                    
                     Button("Notiz", systemImage: "doc") {
                         subviewManager.shareProView.toggle()
                         toolManager.pencilKit = false
@@ -108,7 +107,6 @@ struct ObjectViewFileLink: View {
                 selectedObject: $selectedObject, type: .folder
             )
         }
-        
     }
     
     func move() {
@@ -117,14 +115,13 @@ struct ObjectViewFileLink: View {
             var index: Int = 1
             
             let filteredObjects = contentObjects
-                .filter({
+                .filter {
                     $0.type == object.type &&
-                    $0.parent == selectedObject &&
-                    $0.grade == grade &&
-                    $0.inTrash == false
-                })
-                .map({ $0.title })
-            
+                        $0.parent == selectedObject &&
+                        $0.grade == grade &&
+                        $0.inTrash == false
+                }
+                .map { $0.title }
             
             while filteredObjects.contains(value) {
                 value = "\(object.title) \(index)"
@@ -139,5 +136,4 @@ struct ObjectViewFileLink: View {
             selectedObject = ""
         }
     }
-    
 }

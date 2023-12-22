@@ -18,7 +18,7 @@ struct LVocabularyList: View {
     
     var body: some View {
         if data.isEmpty == false {
-            ForEach(sections, id: \.self) { section in
+            List(sections, id: \.self) { section in
                 Label("Wortschatz \(section)", systemImage: "cube.box")
             }
         }

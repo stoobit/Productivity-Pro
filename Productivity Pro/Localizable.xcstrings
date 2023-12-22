@@ -94,6 +94,9 @@
         }
       }
     },
+    "%lld. Klasse" : {
+
+    },
     "•  App Icons" : {
       "localizations" : {
         "en" : {
@@ -710,12 +713,6 @@
         }
       }
     },
-    "Geschichtliche Informationen" : {
-
-    },
-    "Grammatik" : {
-
-    },
     "Gruppieren" : {
       "localizations" : {
         "en" : {
@@ -830,6 +827,7 @@
       }
     },
     "Jgst %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1306,9 +1304,6 @@
       }
     },
     "Undo" : {
-
-    },
-    "Vokabeln" : {
 
     },
     "Vorlage ändern" : {

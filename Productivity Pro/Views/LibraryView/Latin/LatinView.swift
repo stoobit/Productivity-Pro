@@ -8,43 +8,37 @@
 import SwiftUI
 
 struct LatinView: View {
+    @State var selection: String = "Grammatik"
+
     var body: some View {
-        Form {
+        ZStack {
+            Color(UIColor.systemGroupedBackground)
+                .ignoresSafeArea(.all, edges: [.top, .horizontal])
             
-            Section {
-                DisclosureGroup(content: {
-                    LGrammarList()
-                }) {
-                    Label("Grammatik", systemImage: "text.word.spacing")
-                        .frame(height: 30)
-                }
+            TabView(selection: $selection) {
+                LGrammarList()
+                    .tag("Grammatik")
+                LVocabularyList()
+                    .tag("Vokabeln")
+                LHistoryList()
+                    .tag("Geschichte")
             }
-            
-            Section {
-                DisclosureGroup(content: {
-                    LVocabularyList()
-                }) {
-                    Label("Vokabeln", systemImage: "textformat.abc")
-                        .frame(height: 30)
-                }
-            }
-            
-            Section {
-                DisclosureGroup(content: {
-                    LHistoryList()
-                }) {
-                    Label("Geschichtliche Informationen", systemImage: "clock")
-                        .frame(height: 30)
-                }
-            }
-            
         }
-        .listSectionSpacing(10)
-        .environment(\.defaultMinListRowHeight, 10)
-        .navigationTitle("Latein")
+        .tabViewStyle(.page)
+        .overlay {
+            LTabIndicator(selection: $selection)
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity,
+                    alignment: .bottom
+                )
+                .padding(10)
+        }
     }
 }
 
 #Preview {
-    LatinView()
+    NavigationStack {
+        LatinView()
+    }
 }

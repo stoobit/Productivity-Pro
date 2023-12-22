@@ -34,20 +34,19 @@ struct LibraryView: View {
                             
                         }) {
                             LibraryViewCard(
-                                title: "Englisch",
-                                image: "bubble.left.and.text.bubble.right.fill",
-                                color: .green
+                                title: "Deutsch",
+                                image: "theatermasks.fill",
+                                color: .red
                             )
                         }
-                        .disabled(true)
-
+                        
                         NavigationLink(destination: {
                             
                         }) {
                             LibraryViewCard(
-                                title: "Deutsch",
-                                image: "theatermasks.fill",
-                                color: .red
+                                title: "Englisch",
+                                image: "bubble.left.and.text.bubble.right.fill",
+                                color: .green
                             )
                         }
                         .disabled(true)

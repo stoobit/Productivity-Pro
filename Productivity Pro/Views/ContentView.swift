@@ -56,6 +56,13 @@ struct ContentView: View {
                         ShareProView()
                     }
                 
+                LibraryView()
+                    .toolbarBackground(.visible, for: .tabBar)
+                    .tag(4)
+                    .tabItem {
+                        Label("Bibliothek", systemImage: "books.vertical.fill")
+                    }
+                
                 ScheduleViewContainer()
                     .modifier(PremiumBadge())
                     .toolbarBackground(.visible, for: .tabBar)
@@ -74,13 +81,6 @@ struct ContentView: View {
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
-                
-//                LibraryView()
-//                    .toolbarBackground(.visible, for: .tabBar)
-//                    .tag(4)
-//                    .tabItem {
-//                        Label("Bibliothek", systemImage: "books.vertical.fill")
-//                    }
                 
             }
             .disabled(toolManager.showProgress)
