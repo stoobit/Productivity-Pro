@@ -11,7 +11,7 @@ struct VocabularyView: View {
     var section: String
     var data: [VocabModel]
 
-    @State var active: VocabModel?
+    @State var active: VocabModel = VocabModel()
     @State var vocabs: [VocabModel] = []
 
     var body: some View {
@@ -20,28 +20,19 @@ struct VocabularyView: View {
                 .ignoresSafeArea(.all, edges: [.top, .horizontal])
 
             GeometryReader { proxy in
-                ScrollView(.horizontal) {
-                    LazyHStack(spacing: 0) {
-                        ForEach(vocabs, id: \.self) { vocab in
-                            VCardView(
-                                proxy: proxy,
-                                vocab: vocab,
-                                active: $active
-                            )
-                            .containerRelativeFrame([.horizontal, .vertical])
-                            .scrollTransition(
-                                .interactive, axis: .horizontal
-                            ) { content, phase in
-                                content
-                                    .scaleEffect(phase.isIdentity ? 1.0 : 0.1)
-                            }
-                        }
+                TabView(selection: $active) {
+                    ForEach(vocabs, id: \.self) { vocab in
+                        VCardView(
+                            proxy: proxy,
+                            vocab: vocab,
+                            active: $active
+                        )
+                        .containerRelativeFrame([.horizontal, .vertical])
+                        .tag(vocab)
                     }
-                    .scrollTargetLayout()
                 }
-                .scrollTargetBehavior(.paging)
-                .scrollIndicators(.hidden)
-                .scrollPosition(id: $active)
+                .tabViewStyle(.page(indexDisplayMode: .always))
+                .indexViewStyle(.page(backgroundDisplayMode: .always))
             }
             .navigationTitle("Wortschatz \(section)")
             .onAppear(perform: {

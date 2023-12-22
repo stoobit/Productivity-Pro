@@ -8,25 +8,19 @@
 import SwiftUI
 
 struct LGrammarList: View {
+    var proxy: GeometryProxy
+
     var body: some View {
         List {
-            Section("Deklinationen") {
-                
+            Section("Substantive") {
+                LGrammarNouns(proxy: proxy)
             }
-            
-            Section("Konjugationen") {
-                
-            }
-            
-            Section("Adjektive") {
-                
-            }
+
+            Section("Konjugationen") {}
+
+            Section("Adjektive") {}
         }
         .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Grammatik")
     }
-}
-
-#Preview {
-    LGrammarList()
 }

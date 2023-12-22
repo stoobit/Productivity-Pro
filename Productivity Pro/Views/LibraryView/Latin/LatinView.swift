@@ -15,12 +15,14 @@ struct LatinView: View {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all, edges: [.top, .horizontal])
 
-            if selection == "Grammatik" {
-                LGrammarList()
-            } else if selection == "Vokabeln" {
-                LVocabularyList()
-            } else if selection == "Geschichte" {
-                LHistoryList()
+            GeometryReader { proxy in
+                if selection == "Grammatik" {
+                    LGrammarList(proxy: proxy)
+                } else if selection == "Vokabeln" {
+                    LVocabularyList()
+                } else if selection == "Geschichte" {
+                    LHistoryList()
+                }
             }
         }
         .tabViewStyle(.page)

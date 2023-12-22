@@ -75,6 +75,8 @@
 		BB5705212B35E24700F84B45 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705202B35E24700F84B45 /* VocabularyView.swift */; };
 		BB5705232B35E3B100F84B45 /* VCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705222B35E3B100F84B45 /* VCardView.swift */; };
 		BB5705252B35FD3800F84B45 /* VFlipModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705242B35FD3800F84B45 /* VFlipModifier.swift */; };
+		BB5705282B3609E800F84B45 /* LGrammarTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705272B3609E800F84B45 /* LGrammarTable.swift */; };
+		BB57052B2B3611A700F84B45 /* LGrammarNouns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57052A2B3611A700F84B45 /* LGrammarNouns.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */; };
@@ -321,6 +323,8 @@
 		BB5705202B35E24700F84B45 /* VocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
 		BB5705222B35E3B100F84B45 /* VCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCardView.swift; sourceTree = "<group>"; };
 		BB5705242B35FD3800F84B45 /* VFlipModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFlipModifier.swift; sourceTree = "<group>"; };
+		BB5705272B3609E800F84B45 /* LGrammarTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGrammarTable.swift; sourceTree = "<group>"; };
+		BB57052A2B3611A700F84B45 /* LGrammarNouns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGrammarNouns.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
 		BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleMenuMethods.swift; sourceTree = "<group>"; };
@@ -753,11 +757,24 @@
 			path = German;
 			sourceTree = "<group>";
 		};
-		BB5705262B36096900F84B45 /* GrammarView */ = {
+		BB5705262B36096900F84B45 /* LGrammarView */ = {
 			isa = PBXGroup;
 			children = (
+				BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */,
+				BB5705272B3609E800F84B45 /* LGrammarTable.swift */,
+				BB57052A2B3611A700F84B45 /* LGrammarNouns.swift */,
 			);
-			path = GrammarView;
+			path = LGrammarView;
+			sourceTree = "<group>";
+		};
+		BB5705292B3609F900F84B45 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */,
+				BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */,
+				BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		BB655AF82AB7674900FB005A /* SideMenu */ = {
@@ -1022,11 +1039,8 @@
 			isa = PBXGroup;
 			children = (
 				BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */,
-				BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */,
-				BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */,
-				BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */,
-				BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */,
-				BB5705262B36096900F84B45 /* GrammarView */,
+				BB5705292B3609F900F84B45 /* Main */,
+				BB5705262B36096900F84B45 /* LGrammarView */,
 			);
 			path = Latin;
 			sourceTree = "<group>";
@@ -1435,6 +1449,7 @@
 				BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */,
 				BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */,
 				BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */,
+				BB5705282B3609E800F84B45 /* LGrammarTable.swift in Sources */,
 				BB85869B2AE1E5BB00C5875C /* MediaStyleView.swift in Sources */,
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
 				BB93676E2AC9CE500096F20E /* PPMindmapModel.swift in Sources */,
@@ -1491,6 +1506,7 @@
 				BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
+				BB57052B2B3611A700F84B45 /* LGrammarNouns.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
 				BB68502B2AE99F520011A058 /* LoadingView.swift in Sources */,
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,

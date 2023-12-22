@@ -12,7 +12,7 @@ struct VCardView: View {
     var vocab: VocabModel
 
     @State var showBack: Bool = false
-    @Binding var active: VocabModel?
+    @Binding var active: VocabModel
 
     var body: some View {
         ZStack {

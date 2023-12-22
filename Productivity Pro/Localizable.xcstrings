@@ -157,6 +157,9 @@
         }
       }
     },
+    "a-Deklination" : {
+
+    },
     "Abbrechen" : {
       "localizations" : {
         "en" : {
@@ -186,6 +189,9 @@
           }
         }
       }
+    },
+    "Adjektive" : {
+
     },
     "Allgemein" : {
       "localizations" : {
@@ -850,6 +856,9 @@
         }
       }
     },
+    "Konjugationen" : {
+
+    },
     "Kreis" : {
       "localizations" : {
         "en" : {
@@ -999,6 +1008,9 @@
           }
         }
       }
+    },
+    "o-Deklination" : {
+
     },
     "Öffnen" : {
 
@@ -1232,6 +1244,9 @@
           }
         }
       }
+    },
+    "Substantive" : {
+
     },
     "Suchen" : {
       "localizations" : {
