@@ -51,7 +51,7 @@ struct LibraryView: View {
 
     func isAvailable(at size: CGSize) -> Bool {
         var isAvailable = false
-        var height = UIScreen.main.bounds.height / 1.5
+        let height = UIScreen.main.bounds.height / 1.5
 
         if hsc == .regular && size.height > height {
             isAvailable = true

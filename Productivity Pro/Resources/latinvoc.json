@@ -1,0 +1,9277 @@
+[
+ {
+   "word": "avus",
+   "translation": "Großvater",
+   "section": "1"
+ },
+ {
+   "word": "campus",
+   "translation": "Feld, freier Platz",
+   "section": "1"
+ },
+ {
+   "word": "equus",
+   "translation": "Pferd",
+   "section": "1"
+ },
+ {
+   "word": "et",
+   "translation": "und, auch",
+   "section": "1"
+ },
+ {
+   "word": "murus",
+   "translation": "Mauer",
+   "section": "1"
+ },
+ {
+   "word": "puella",
+   "translation": "Mädchen, Freundin",
+   "section": "1"
+ },
+ {
+   "word": "serva",
+   "translation": "Sklavin, Dienerin",
+   "section": "1"
+ },
+ {
+   "word": "servus",
+   "translation": "Sklave, Diener",
+   "section": "1"
+ },
+ {
+   "word": "silva",
+   "translation": "Wald",
+   "section": "1"
+ },
+ {
+   "word": "via",
+   "translation": "Weg, Straße",
+   "section": "1"
+ },
+ {
+   "word": "vicus",
+   "translation": "Dorf, Gasse",
+   "section": "1"
+ },
+ {
+   "word": "villa",
+   "translation": "Haus, Landhaus",
+   "section": "1"
+ },
+ {
+   "word": "cur?",
+   "translation": "warum?",
+   "section": "2"
+ },
+ {
+   "word": "debere",
+   "translation": "müssen, sollen",
+   "section": "2"
+ },
+ {
+   "word": "dolere, doleo",
+   "translation": "schmerzen, wehtun",
+   "section": "2"
+ },
+ {
+   "word": "esse",
+   "translation": "sein, sich befinden",
+   "section": "2"
+ },
+ {
+   "word": "est",
+   "translation": "er (sie, es) ist",
+   "section": "2"
+ },
+ {
+   "word": "monere",
+   "translation": "mahnen, ermahnen",
+   "section": "2"
+ },
+ {
+   "word": "non",
+   "translation": "nicht",
+   "section": "2"
+ },
+ {
+   "word": "nunc  Adv.",
+   "translation": "nun, jetzt",
+   "section": "2"
+ },
+ {
+   "word": "oculus",
+   "translation": "Auge",
+   "section": "2"
+ },
+ {
+   "word": "parere, pareo",
+   "translation": "gehorchen",
+   "section": "2"
+ },
+ {
+   "word": "quid?",
+   "translation": "was?",
+   "section": "2"
+ },
+ {
+   "word": "ridere",
+   "translation": "lachen, auslachen",
+   "section": "2"
+ },
+ {
+   "word": "sunt",
+   "translation": "sie sind",
+   "section": "2"
+ },
+ {
+   "word": "tacere, taceo",
+   "translation": "schweigen, verschweigen",
+   "section": "2"
+ },
+ {
+   "word": "timere, timeo",
+   "translation": "fürchten, Angst haben",
+   "section": "2"
+ },
+ {
+   "word": "augere, augeo",
+   "translation": "vergrößern, vermehren",
+   "section": "3"
+ },
+ {
+   "word": "dominus",
+   "translation": "Herr",
+   "section": "3"
+ },
+ {
+   "word": "hic  Adv.",
+   "translation": "hier",
+   "section": "3"
+ },
+ {
+   "word": "ibi  Adv.",
+   "translation": "dort",
+   "section": "3"
+ },
+ {
+   "word": "lingua",
+   "translation": "Sprache, Rede",
+   "section": "3"
+ },
+ {
+   "word": "nam",
+   "translation": "denn, nämlich",
+   "section": "3"
+ },
+ {
+   "word": "neque",
+   "translation": "und nicht, auch nicht",
+   "section": "3"
+ },
+ {
+   "word": "neque…neque",
+   "translation": "weder…noch",
+   "section": "3"
+ },
+ {
+   "word": "quis?",
+   "translation": "wer?",
+   "section": "3"
+ },
+ {
+   "word": "respondere, respondeo",
+   "translation": "antworten",
+   "section": "3"
+ },
+ {
+   "word": "sed",
+   "translation": "aber, sondern",
+   "section": "3"
+ },
+ {
+   "word": "sedere, sedeo",
+   "translation": "sitzen",
+   "section": "3"
+ },
+ {
+   "word": "terrere, terreo",
+   "translation": "erschrecken",
+   "section": "3"
+ },
+ {
+   "word": "amicus",
+   "translation": "Freund",
+   "section": "4"
+ },
+ {
+   "word": "docere, doceo",
+   "translation": "lehren, unterrichten",
+   "section": "4"
+ },
+ {
+   "word": "gaudere, gaudeo",
+   "translation": "sich freuen",
+   "section": "4"
+ },
+ {
+   "word": "iam  Adv.",
+   "translation": "schon, bereits; nun",
+   "section": "4"
+ },
+ {
+   "word": "non iam",
+   "translation": "nicht mehr",
+   "section": "4"
+ },
+ {
+   "word": "numquam  Adv.",
+   "translation": "niemals",
+   "section": "4"
+ },
+ {
+   "word": "praebere, praebeo",
+   "translation": "geben, hinhalten",
+   "section": "4"
+ },
+ {
+   "word": "primo  Adv.",
+   "translation": "zuerst",
+   "section": "4"
+ },
+ {
+   "word": "recte  Adv.",
+   "translation": "richtig, zu Recht",
+   "section": "4"
+ },
+ {
+   "word": "saepe  Adv.",
+   "translation": "oft",
+   "section": "4"
+ },
+ {
+   "word": "studere, studeo",
+   "translation": "sich bemühen, studieren",
+   "section": "4"
+ },
+ {
+   "word": "tabula",
+   "translation": "(Schreib-)Tafel, Gemälde",
+   "section": "4"
+ },
+ {
+   "word": "tenere, teneo",
+   "translation": "halten, festhalten, besitzen",
+   "section": "4"
+ },
+ {
+   "word": "tum  Adv.",
+   "translation": "da, dann, darauf, damals",
+   "section": "4"
+ },
+ {
+   "word": "cui?",
+   "translation": "wem?",
+   "section": "5"
+ },
+ {
+   "word": "etiam",
+   "translation": "auch, sogar",
+   "section": "5"
+ },
+ {
+   "word": "flere, fleo",
+   "translation": "weinen, beweinen",
+   "section": "5"
+ },
+ {
+   "word": "gladius",
+   "translation": "Schwert",
+   "section": "5"
+ },
+ {
+   "word": "itaque",
+   "translation": "deshalb",
+   "section": "5"
+ },
+ {
+   "word": "iterum  Adv.",
+   "translation": "wiederum, zum zweiten Mal",
+   "section": "5"
+ },
+ {
+   "word": "latere, lateo",
+   "translation": "verborgen sein",
+   "section": "5"
+ },
+ {
+   "word": "placere, placeo",
+   "translation": "gefallen",
+   "section": "5"
+ },
+ {
+   "word": "sceleratus",
+   "translation": "Verbrecher",
+   "section": "5"
+ },
+ {
+   "word": "sonus",
+   "translation": "Ton, Klang, Geräusch",
+   "section": "5"
+ },
+ {
+   "word": "statim  Adv.",
+   "translation": "sofort",
+   "section": "5"
+ },
+ {
+   "word": "subito  Adv.",
+   "translation": "plötzlich",
+   "section": "5"
+ },
+ {
+   "word": "tantum  Adv. (nachgestellt)",
+   "translation": "nur",
+   "section": "5"
+ },
+ {
+   "word": "torquere, torqueo",
+   "translation": "drehen; quälen",
+   "section": "5"
+ },
+ {
+   "word": "adhuc  Adv.",
+   "translation": "bis jetzt, noch",
+   "section": "6"
+ },
+ {
+   "word": "Aeolus",
+   "translation": "Äolus (Herr über die Winde)",
+   "section": "6"
+ },
+ {
+   "word": "aqua",
+   "translation": "Wasser",
+   "section": "6"
+ },
+ {
+   "word": "cibus",
+   "translation": "Nahrung, Speise, Futter",
+   "section": "6"
+ },
+ {
+   "word": "complere, compleo",
+   "translation": "anfüllen, auffüllen",
+   "section": "6"
+ },
+ {
+   "word": "copia",
+   "translation": "Menge, Vorrat",
+   "section": "6"
+ },
+ {
+   "word": "delere, deleo",
+   "translation": "zerstören, vernichten",
+   "section": "6"
+ },
+ {
+   "word": "deus",
+   "translation": "Gott, Gottheit",
+   "section": "6"
+ },
+ {
+   "word": "gratia",
+   "translation": "Dank",
+   "section": "6"
+ },
+ {
+   "word": "gratiam habere",
+   "translation": "danken",
+   "section": "6"
+ },
+ {
+   "word": "habere, habeo",
+   "translation": "haben, halten",
+   "section": "6"
+ },
+ {
+   "word": "populus",
+   "translation": "Volk",
+   "section": "6"
+ },
+ {
+   "word": "profecto  Adv.",
+   "translation": "sicherlich, tatsächlich",
+   "section": "6"
+ },
+ {
+   "word": "semper  Adv.",
+   "translation": "immer",
+   "section": "6"
+ },
+ {
+   "word": "ventus",
+   "translation": "Wind",
+   "section": "6"
+ },
+ {
+   "word": "amica",
+   "translation": "Freundin",
+   "section": "7"
+ },
+ {
+   "word": "insula",
+   "translation": "Insel; Wohnblock",
+   "section": "7"
+ },
+ {
+   "word": "lacrima",
+   "translation": "Träne",
+   "section": "7"
+ },
+ {
+   "word": "laetitia",
+   "translation": "Freude",
+   "section": "7"
+ },
+ {
+   "word": "movere, moveo",
+   "translation": "bewegen, beeindrucken",
+   "section": "7"
+ },
+ {
+   "word": "mox  Adv.",
+   "translation": "bald",
+   "section": "7"
+ },
+ {
+   "word": "patere, pateo",
+   "translation": "offenstehen",
+   "section": "7"
+ },
+ {
+   "word": "Roma",
+   "translation": "Rom",
+   "section": "7"
+ },
+ {
+   "word": "tandem  Adv.",
+   "translation": "endlich",
+   "section": "7"
+ },
+ {
+   "word": "turba",
+   "translation": "(Menschen-)Menge",
+   "section": "7"
+ },
+ {
+   "word": "valere, valeo",
+   "translation": "gesund sein, stark sein, Einfluss haben",
+   "section": "7"
+ },
+ {
+   "word": "vale! valete!",
+   "translation": "Leb wohl! Lebt wohl!",
+   "section": "7"
+ },
+ {
+   "word": "videre, video",
+   "translation": "sehen",
+   "section": "7"
+ },
+ {
+   "word": "amare, amo",
+   "translation": "lieben",
+   "section": "8"
+ },
+ {
+   "word": "cena",
+   "translation": "Mahlzeit, Essen",
+   "section": "8"
+ },
+ {
+   "word": "delectare, delecto",
+   "translation": "erfreuen, unterhalten",
+   "section": "8"
+ },
+ {
+   "word": "domina",
+   "translation": "Herrin, Dame",
+   "section": "8"
+ },
+ {
+   "word": "filia",
+   "translation": "Tochter",
+   "section": "8"
+ },
+ {
+   "word": "intrare, intro",
+   "translation": "betreten, eintreten",
+   "section": "8"
+ },
+ {
+   "word": "laborare, laboro",
+   "translation": "arbeiten, sich anstrengen",
+   "section": "8"
+ },
+ {
+   "word": "mensa",
+   "translation": "(Ess-)Tisch",
+   "section": "8"
+ },
+ {
+   "word": "ornare, orno",
+   "translation": "ausstatten, schmücken",
+   "section": "8"
+ },
+ {
+   "word": "parare, paro",
+   "translation": "(vor)bereiten, vorhaben (m. Inf.); erwerben",
+   "section": "8"
+ },
+ {
+   "word": "properare, propero",
+   "translation": "eilen, sich beeilen",
+   "section": "8"
+ },
+ {
+   "word": "rogare, rogo",
+   "translation": "bitten, fragen",
+   "section": "8"
+ },
+ {
+   "word": "sic  Adv.",
+   "translation": "so",
+   "section": "8"
+ },
+ {
+   "word": "vocare, voco",
+   "translation": "nennen, benennen, rufen",
+   "section": "8"
+ },
+ {
+   "word": "africa",
+   "translation": "Afrika",
+   "section": "9"
+ },
+ {
+   "word": "Asia",
+   "translation": "Asien",
+   "section": "9"
+ },
+ {
+   "word": "bene  Adv.",
+   "translation": "gut",
+   "section": "9"
+ },
+ {
+   "word": "captivus",
+   "translation": "Kriegsgefangener",
+   "section": "9"
+ },
+ {
+   "word": "cenare, ceno",
+   "translation": "essen",
+   "section": "9"
+ },
+ {
+   "word": "diu  Adv.",
+   "translation": "lange (Zeit)",
+   "section": "9"
+ },
+ {
+   "word": "dolus",
+   "translation": "List, Täuschung",
+   "section": "9"
+ },
+ {
+   "word": "dubitare, dubito",
+   "translation": "zweifeln; zögern (m. Inf.)",
+   "section": "9"
+ },
+ {
+   "word": "Europa",
+   "translation": "Europa (Erdteil)",
+   "section": "9"
+ },
+ {
+   "word": "familia",
+   "translation": "Familie",
+   "section": "9"
+ },
+ {
+   "word": "filius",
+   "translation": "Sohn",
+   "section": "9"
+ },
+ {
+   "word": "iniuria",
+   "translation": "Unrecht, Beleidigung",
+   "section": "9"
+ },
+ {
+   "word": "patria",
+   "translation": "Heimat",
+   "section": "9"
+ },
+ {
+   "word": "provincia",
+   "translation": "Provinz",
+   "section": "9"
+ },
+ {
+   "word": "pugna",
+   "translation": "Kampf",
+   "section": "9"
+ },
+ {
+   "word": "pugnare, pugno",
+   "translation": "kämpfen",
+   "section": "9"
+ },
+ {
+   "word": "Romanus",
+   "translation": "Römer, Einwohner Roms",
+   "section": "9"
+ },
+ {
+   "word": "spectare, specto",
+   "translation": "betrachten, anschauen, hinsehen",
+   "section": "9"
+ },
+ {
+   "word": "superare, supero",
+   "translation": "besiegen, überwinden, übertreffen",
+   "section": "9"
+ },
+ {
+   "word": "Syria",
+   "translation": "Syrien",
+   "section": "9"
+ },
+ {
+   "word": "unde?",
+   "translation": "woher?",
+   "section": "9"
+ },
+ {
+   "word": "Aetna",
+   "translation": "Ätna (Vulkan auf Sizilien)",
+   "section": "10"
+ },
+ {
+   "word": "audire, audio",
+   "translation": "hören",
+   "section": "10"
+ },
+ {
+   "word": "Creta",
+   "translation": "Kreta (Insel im Mittelmeer)",
+   "section": "10"
+ },
+ {
+   "word": "desiderare, desidero",
+   "translation": "sich sehnen nach, vermissen",
+   "section": "10"
+ },
+ {
+   "word": "patriam desiderare",
+   "translation": "sich nach der Heimat sehnen",
+   "section": "10"
+ },
+ {
+   "word": "exspectare, exspecto",
+   "translation": "warten (auf), erwarten",
+   "section": "10"
+ },
+ {
+   "word": "habitare, habito",
+   "translation": "wohnen, bewohnen",
+   "section": "10"
+ },
+ {
+   "word": "ludus",
+   "translation": "Spiel; Schule",
+   "section": "10"
+ },
+ {
+   "word": "nescire, nescio",
+   "translation": "nicht wissen, nicht kennen, nicht verstehen",
+   "section": "10"
+ },
+ {
+   "word": "nihil",
+   "translation": "nichts",
+   "section": "10"
+ },
+ {
+   "word": "scire, scio",
+   "translation": "wissen, kennen, verstehen",
+   "section": "10"
+ },
+ {
+   "word": "Sicilia",
+   "translation": "Sizilien (Insel im Mittelmeer)",
+   "section": "10"
+ },
+ {
+   "word": "ubi?",
+   "translation": "wo?",
+   "section": "10"
+ },
+ {
+   "word": "venire, venio",
+   "translation": "kommen",
+   "section": "10"
+ },
+ {
+   "word": "Vulcanus",
+   "translation": "Vulkan(us) (Gott des Feuers)",
+   "section": "10"
+ },
+ {
+   "word": "aedificare, aedifico",
+   "translation": "bauen",
+   "section": "11"
+ },
+ {
+   "word": "aedificium",
+   "translation": "Gebäude",
+   "section": "11"
+ },
+ {
+   "word": "beneficium",
+   "translation": "Wohltat",
+   "section": "11"
+ },
+ {
+   "word": "Concordia",
+   "translation": "Concordia (Göttin der Eintracht)",
+   "section": "11"
+ },
+ {
+   "word": "consilium",
+   "translation": "Beratung, Beschluss, Plan, Rat",
+   "section": "11"
+ },
+ {
+   "word": "curia",
+   "translation": "Kurie (Sitzungsgebäude des Senats)",
+   "section": "11"
+ },
+ {
+   "word": "dea",
+   "translation": "Göttin",
+   "section": "11"
+ },
+ {
+   "word": "discipulus",
+   "translation": "Schüler",
+   "section": "11"
+ },
+ {
+   "word": "donum",
+   "translation": "Geschenk",
+   "section": "11"
+ },
+ {
+   "word": "forum",
+   "translation": "Forum, Marktplatz",
+   "section": "11"
+ },
+ {
+   "word": "frumentum",
+   "translation": "Getreide",
+   "section": "11"
+ },
+ {
+   "word": "ingenium",
+   "translation": "Begabung, Talent, Verstand",
+   "section": "11"
+ },
+ {
+   "word": "libenter  Adv.",
+   "translation": "gerne",
+   "section": "11"
+ },
+ {
+   "word": "porta",
+   "translation": "Tor",
+   "section": "11"
+ },
+ {
+   "word": "Saturnus",
+   "translation": "Saturn (Gott der Saat und der Zeit)",
+   "section": "11"
+ },
+ {
+   "word": "templum",
+   "translation": "Tempel",
+   "section": "11"
+ },
+ {
+   "word": "verbum",
+   "translation": "Wort, Äußerung",
+   "section": "11"
+ },
+ {
+   "word": "ad  Präp. m. Akk.",
+   "translation": "zu, bei, nach, an",
+   "section": "12"
+ },
+ {
+   "word": "ad basilicam esse",
+   "translation": "bei der Markthalle sein",
+   "section": "12"
+ },
+ {
+   "word": "ad basilicam properare",
+   "translation": "zu der Markthalle eilen",
+   "section": "12"
+ },
+ {
+   "word": "ante  Präp. m. Akk.",
+   "translation": "vor",
+   "section": "12"
+ },
+ {
+   "word": "ante cenam",
+   "translation": "vor dem Essen",
+   "section": "12"
+ },
+ {
+   "word": "ante villam",
+   "translation": "vor dem Landhaus",
+   "section": "12"
+ },
+ {
+   "word": "basilica",
+   "translation": "Markthalle, Gerichtshalle",
+   "section": "12"
+ },
+ {
+   "word": "cum  Präp. m. Abl.",
+   "translation": "mit, zusammen mit",
+   "section": "12"
+ },
+ {
+   "word": "cum amico",
+   "translation": "mit dem Freund",
+   "section": "12"
+ },
+ {
+   "word": "e / ex  Präp. m. Abl.",
+   "translation": "aus, von…her",
+   "section": "12"
+ },
+ {
+   "word": "e patria",
+   "translation": "aus der Heimat",
+   "section": "12"
+ },
+ {
+   "word": "ex aedificio",
+   "translation": "aus dem Gebäude",
+   "section": "12"
+ },
+ {
+   "word": "in  Präp. m. Abl.",
+   "translation": "in, an, auf, bei (wo?)",
+   "section": "12"
+ },
+ {
+   "word": "in aqua",
+   "translation": "im Wasser",
+   "section": "12"
+ },
+ {
+   "word": "in  Präp. m. Akk.",
+   "translation": "in (…hinein), nach (wohin?)",
+   "section": "12"
+ },
+ {
+   "word": "in aquam",
+   "translation": "ins Wasser",
+   "section": "12"
+ },
+ {
+   "word": "indicare, indico",
+   "translation": "anzeigen, melden",
+   "section": "12"
+ },
+ {
+   "word": "manere, maneo",
+   "translation": "bleiben, (er)warten",
+   "section": "12"
+ },
+ {
+   "word": "ornamentum",
+   "translation": "Schmuck(stück)",
+   "section": "12"
+ },
+ {
+   "word": "post  Präp. m. Akk.",
+   "translation": "hinter, nach",
+   "section": "12"
+ },
+ {
+   "word": "post villam",
+   "translation": "hinter dem Landhaus",
+   "section": "12"
+ },
+ {
+   "word": "post cenam",
+   "translation": "nach dem Essen",
+   "section": "12"
+ },
+ {
+   "word": "pretium",
+   "translation": "Preis, Wert",
+   "section": "12"
+ },
+ {
+   "word": "probare, probo",
+   "translation": "prüfen, beweisen, für gut befinden",
+   "section": "12"
+ },
+ {
+   "word": "sine  Präp. m. Abl.",
+   "translation": "ohne",
+   "section": "12"
+ },
+ {
+   "word": "sine amico",
+   "translation": "ohne den Freund",
+   "section": "12"
+ },
+ {
+   "word": "umbra",
+   "translation": "Schatten",
+   "section": "12"
+ },
+ {
+   "word": "clamare, clamo",
+   "translation": "laut rufen, schreien",
+   "section": "13"
+ },
+ {
+   "word": "ego  Nom.",
+   "translation": "ich (betont)",
+   "section": "13"
+ },
+ {
+   "word": "errare, erro",
+   "translation": "umherirren, (sich) irren",
+   "section": "13"
+ },
+ {
+   "word": "invenire, invenio",
+   "translation": "finden, erfinden",
+   "section": "13"
+ },
+ {
+   "word": "me  Akk.",
+   "translation": "mich",
+   "section": "13"
+ },
+ {
+   "word": "mecum",
+   "translation": "mit mir",
+   "section": "13"
+ },
+ {
+   "word": "mihi  Dat.",
+   "translation": "mir",
+   "section": "13"
+ },
+ {
+   "word": "-ne",
+   "translation": "Partikel im dir. Fragesatz (unübersetzt)",
+   "section": "13"
+ },
+ {
+   "word": "nobis  Dat.",
+   "translation": "uns",
+   "section": "13"
+ },
+ {
+   "word": "nos  Akk.",
+   "translation": "uns",
+   "section": "13"
+ },
+ {
+   "word": "nos  Nom.",
+   "translation": "wir (betont)",
+   "section": "13"
+ },
+ {
+   "word": "sine me",
+   "translation": "ohne mich",
+   "section": "13"
+ },
+ {
+   "word": "te  Akk.",
+   "translation": "dich",
+   "section": "13"
+ },
+ {
+   "word": "tecum",
+   "translation": "mit dir",
+   "section": "13"
+ },
+ {
+   "word": "tibi  Dat.",
+   "translation": "dir",
+   "section": "13"
+ },
+ {
+   "word": "tu  Nom.",
+   "translation": "du (betont)",
+   "section": "13"
+ },
+ {
+   "word": "vobis  Dat.",
+   "translation": "euch",
+   "section": "13"
+ },
+ {
+   "word": "vobiscum",
+   "translation": "mit euch",
+   "section": "13"
+ },
+ {
+   "word": "vos  Akk.",
+   "translation": "euch",
+   "section": "13"
+ },
+ {
+   "word": "vos  Nom.",
+   "translation": "ihr (betont)",
+   "section": "13"
+ },
+ {
+   "word": "bonus, a, um",
+   "translation": "gut, tüchtig",
+   "section": "14"
+ },
+ {
+   "word": "cuncti, ae, a",
+   "translation": "alle (zusammen)",
+   "section": "14"
+ },
+ {
+   "word": "de  m. Abl.",
+   "translation": "von, von…her, von…weg, von…herab; über",
+   "section": "14"
+ },
+ {
+   "word": "de templo",
+   "translation": "vom Tempel herab",
+   "section": "14"
+ },
+ {
+   "word": "imperium",
+   "translation": "Befehl, Herrschaft, Reich",
+   "section": "14"
+ },
+ {
+   "word": "laudare, laudo",
+   "translation": "loben",
+   "section": "14"
+ },
+ {
+   "word": "magnus, a, um",
+   "translation": "groß, bedeutend",
+   "section": "14"
+ },
+ {
+   "word": "meus, a, um",
+   "translation": "mein",
+   "section": "14"
+ },
+ {
+   "word": "multi, ae, a",
+   "translation": "viele",
+   "section": "14"
+ },
+ {
+   "word": "multus, a, um",
+   "translation": "viel",
+   "section": "14"
+ },
+ {
+   "word": "narrare, narro",
+   "translation": "erzählen",
+   "section": "14"
+ },
+ {
+   "word": "de ludo narrare",
+   "translation": "vom Spiel / über das Spiel erzählen",
+   "section": "14"
+ },
+ {
+   "word": "novus, a, um",
+   "translation": "neu, ungewöhnlich",
+   "section": "14"
+ },
+ {
+   "word": "parvus, a, um",
+   "translation": "klein, gering",
+   "section": "14"
+ },
+ {
+   "word": "-que  (angehängt)",
+   "translation": "und",
+   "section": "14"
+ },
+ {
+   "word": "servi servaeque",
+   "translation": "Sklaven und Sklavinnen",
+   "section": "14"
+ },
+ {
+   "word": "Romanus, a, um",
+   "translation": "römisch; Subst. Römer",
+   "section": "14"
+ },
+ {
+   "word": "tuus, a, um",
+   "translation": "dein",
+   "section": "14"
+ },
+ {
+   "word": "ut",
+   "translation": "wie",
+   "section": "14"
+ },
+ {
+   "word": "ager, agri  m",
+   "translation": "Acker, Feld, Gebiet",
+   "section": "15"
+ },
+ {
+   "word": "imperare, impero",
+   "translation": "befehlen, herrschen (über)",
+   "section": "15"
+ },
+ {
+   "word": "populis imperare",
+   "translation": "über (die) Völker herrschen",
+   "section": "15"
+ },
+ {
+   "word": "liber, libera, liberum",
+   "translation": "frei",
+   "section": "15"
+ },
+ {
+   "word": "magister, magistri  m",
+   "translation": "Lehrer, Meister",
+   "section": "15"
+ },
+ {
+   "word": "miser, misera, miserum",
+   "translation": "arm, erbärmlich, unglücklich",
+   "section": "15"
+ },
+ {
+   "word": "niger, nigra, nigrum",
+   "translation": "schwarz, dunkel",
+   "section": "15"
+ },
+ {
+   "word": "noster, nostra, nostrum",
+   "translation": "unser",
+   "section": "15"
+ },
+ {
+   "word": "puer, pueri  m",
+   "translation": "Junge",
+   "section": "15"
+ },
+ {
+   "word": "pulcher, pulchra, pulchrum",
+   "translation": "schön",
+   "section": "15"
+ },
+ {
+   "word": "vester, vestra, vestrum",
+   "translation": "euer",
+   "section": "15"
+ },
+ {
+   "word": "vir, viri  m",
+   "translation": "Mann",
+   "section": "15"
+ },
+ {
+   "word": "vita",
+   "translation": "Leben",
+   "section": "15"
+ },
+ {
+   "word": "a / ab  Präp. m. Abl.",
+   "translation": "von, von…her",
+   "section": "16"
+ },
+ {
+   "word": "a basilica venire",
+   "translation": "von der Markthalle kommen",
+   "section": "16"
+ },
+ {
+   "word": "ab oppido venire",
+   "translation": "von der Stadt kommen",
+   "section": "16"
+ },
+ {
+   "word": "Campania",
+   "translation": "Kampanien (fruchtbare Landschaft südlich von Rom)",
+   "section": "16"
+ },
+ {
+   "word": "carrus",
+   "translation": "Wagen, Karren",
+   "section": "16"
+ },
+ {
+   "word": "dicere, dico",
+   "translation": "sagen, sprechen",
+   "section": "16"
+ },
+ {
+   "word": "ducere, duco",
+   "translation": "führen, ziehen",
+   "section": "16"
+ },
+ {
+   "word": "mittere, mitto",
+   "translation": "(los)lassen, schicken, werfen",
+   "section": "16"
+ },
+ {
+   "word": "nuntius",
+   "translation": "Bote, Nachricht",
+   "section": "16"
+ },
+ {
+   "word": "oppidum",
+   "translation": "Stadt (Kleinstadt)",
+   "section": "16"
+ },
+ {
+   "word": "ostendere, ostendo",
+   "translation": "zeigen, erklären",
+   "section": "16"
+ },
+ {
+   "word": "per  Präp. m. Akk.",
+   "translation": "durch, hindurch",
+   "section": "16"
+ },
+ {
+   "word": "per silvam",
+   "translation": "durch den Wald",
+   "section": "16"
+ },
+ {
+   "word": "relinquere, relinquo",
+   "translation": "verlassen, zurücklassen",
+   "section": "16"
+ },
+ {
+   "word": "scribere, scribo",
+   "translation": "schreiben, beschreiben",
+   "section": "16"
+ },
+ {
+   "word": "stare, sto",
+   "translation": "stehen",
+   "section": "16"
+ },
+ {
+   "word": "trahere, traho",
+   "translation": "schleppen, ziehen",
+   "section": "16"
+ },
+ {
+   "word": "Vesuvius",
+   "translation": "Vesuv (Vulkan in Kampanien)",
+   "section": "16"
+ },
+ {
+   "word": "vinea",
+   "translation": "Weinberg, Weinstock",
+   "section": "16"
+ },
+ {
+   "word": "adducere, adduco",
+   "translation": "heranführen, veranlassen",
+   "section": "17"
+ },
+ {
+   "word": "adesse, adsum",
+   "translation": "da sein, helfen",
+   "section": "17"
+ },
+ {
+   "word": "amico adesse",
+   "translation": "dem Freund helfen",
+   "section": "17"
+ },
+ {
+   "word": "auxilium",
+   "translation": "Hilfe",
+   "section": "17"
+ },
+ {
+   "word": "bibere, bibo",
+   "translation": "trinken",
+   "section": "17"
+ },
+ {
+   "word": "consistere, consisto",
+   "translation": "stehen bleiben, haltmachen, sich aufstellen",
+   "section": "17"
+ },
+ {
+   "word": "deducere, deduco",
+   "translation": "wegführen, hinführen",
+   "section": "17"
+ },
+ {
+   "word": "deesse, desum",
+   "translation": "abwesend sein, fehlen",
+   "section": "17"
+ },
+ {
+   "word": "educere, educo",
+   "translation": "herausführen",
+   "section": "17"
+ },
+ {
+   "word": "mortuus, a, um",
+   "translation": "gestorben, tot",
+   "section": "17"
+ },
+ {
+   "word": "plenus, a, um",
+   "translation": "voll",
+   "section": "17"
+ },
+ {
+   "word": "portare, porto",
+   "translation": "bringen, tragen",
+   "section": "17"
+ },
+ {
+   "word": "posse, possum",
+   "translation": "können",
+   "section": "17"
+ },
+ {
+   "word": "vinum",
+   "translation": "Wein",
+   "section": "17"
+ },
+ {
+   "word": "aspicere, aspicio",
+   "translation": "erblicken, ansehen",
+   "section": "18"
+ },
+ {
+   "word": "autem  (nachgestellt)",
+   "translation": "aber, andererseits",
+   "section": "18"
+ },
+ {
+   "word": "Pueri autem tacent.",
+   "translation": "Die Jungen aber schweigen.",
+   "section": "18"
+ },
+ {
+   "word": "capere, capio",
+   "translation": "fassen, nehmen, erobern",
+   "section": "18"
+ },
+ {
+   "word": "descendere, descendo",
+   "translation": "herabsteigen",
+   "section": "18"
+ },
+ {
+   "word": "facere, facio",
+   "translation": "machen, tun, handeln",
+   "section": "18"
+ },
+ {
+   "word": "magis",
+   "translation": "mehr",
+   "section": "18"
+ },
+ {
+   "word": "magis…quam",
+   "translation": "mehr…als",
+   "section": "18"
+ },
+ {
+   "word": "nonne?",
+   "translation": "(etwa) nicht?",
+   "section": "18"
+ },
+ {
+   "word": "quam",
+   "translation": "als, wie",
+   "section": "18"
+ },
+ {
+   "word": "magis…quam",
+   "translation": "mehr…als",
+   "section": "18"
+ },
+ {
+   "word": "Quam pulchrum est templum!",
+   "translation": "Wie schön ist der Tempel",
+   "section": "18"
+ },
+ {
+   "word": "quin?",
+   "translation": "warum nicht?",
+   "section": "18"
+ },
+ {
+   "word": "sacrum",
+   "translation": "Opfer, Heiligtum",
+   "section": "18"
+ },
+ {
+   "word": "sacrum facere",
+   "translation": "ein Opfer bringen, opfern",
+   "section": "18"
+ },
+ {
+   "word": "summus, a, um",
+   "translation": "der höchste, oberste",
+   "section": "18"
+ },
+ {
+   "word": "apud  Präp. m. Akk.",
+   "translation": "bei",
+   "section": "19"
+ },
+ {
+   "word": "apud amicos",
+   "translation": "bei Freunden",
+   "section": "19"
+ },
+ {
+   "word": "clarus, a, um",
+   "translation": "klar, hell, berühmt",
+   "section": "19"
+ },
+ {
+   "word": "creare, creo",
+   "translation": "erschaffen, wählen",
+   "section": "19"
+ },
+ {
+   "word": "hodie  Adv.",
+   "translation": "heute",
+   "section": "19"
+ },
+ {
+   "word": "honor, honoris  m",
+   "translation": "Ehre, Ehrenamt",
+   "section": "19"
+ },
+ {
+   "word": "imperator, imperatoris  m",
+   "translation": "Befehlshaber, Feldherr, Kaiser",
+   "section": "19"
+ },
+ {
+   "word": "in honore esse",
+   "translation": "in Ehren stehen, angesehen sein",
+   "section": "19"
+ },
+ {
+   "word": "licet",
+   "translation": "es ist erlaubt, es ist möglich",
+   "section": "19"
+ },
+ {
+   "word": "mercator, mercatoris  m",
+   "translation": "Kaufmann, Händler",
+   "section": "19"
+ },
+ {
+   "word": "petere, peto",
+   "translation": "aufsuchen, (er)streben, bitten, verlangen",
+   "section": "19"
+ },
+ {
+   "word": "Pompeianus, a, um",
+   "translation": "pompejanisch, Subst. Pompejaner, Einwohner von Pom",
+   "section": "19"
+ },
+ {
+   "word": "senator, senatoris  m",
+   "translation": "Senator",
+   "section": "19"
+ },
+ {
+   "word": "tantus, a, um",
+   "translation": "so groß, so viel",
+   "section": "19"
+ },
+ {
+   "word": "Titus",
+   "translation": "Titus (röm. Kaiser 79-81 n. Chr.)",
+   "section": "19"
+ },
+ {
+   "word": "uxor, uxoris  f",
+   "translation": "Ehefrau",
+   "section": "19"
+ },
+ {
+   "word": "vendere, vendo",
+   "translation": "verkaufen",
+   "section": "19"
+ },
+ {
+   "word": "amor, amoris  m",
+   "translation": "Liebe",
+   "section": "20"
+ },
+ {
+   "word": "animus",
+   "translation": "Geist, Mut, Gesinnung",
+   "section": "20"
+ },
+ {
+   "word": "clamor, clamoris  m",
+   "translation": "Geschrei, Lärm",
+   "section": "20"
+ },
+ {
+   "word": "dum  Subj.",
+   "translation": "während, solange, bis",
+   "section": "20"
+ },
+ {
+   "word": "fur, furis  m",
+   "translation": "Dieb",
+   "section": "20"
+ },
+ {
+   "word": "in animo habere",
+   "translation": "im Sinn haben, vorhaben",
+   "section": "20"
+ },
+ {
+   "word": "liberare, libero",
+   "translation": "befreien, freilassen",
+   "section": "20"
+ },
+ {
+   "word": "mulier, mulieris  f",
+   "translation": "Frau",
+   "section": "20"
+ },
+ {
+   "word": "pecunia",
+   "translation": "Geld, Vermögen",
+   "section": "20"
+ },
+ {
+   "word": "quamquam  Subj.",
+   "translation": "obwohl",
+   "section": "20"
+ },
+ {
+   "word": "quia  Subj.",
+   "translation": "weil",
+   "section": "20"
+ },
+ {
+   "word": "quod  Subj.",
+   "translation": "weil; dass",
+   "section": "20"
+ },
+ {
+   "word": "se  Akk. / Abl.",
+   "translation": "sich",
+   "section": "20"
+ },
+ {
+   "word": "si  Subj.",
+   "translation": "wenn, falls",
+   "section": "20"
+ },
+ {
+   "word": "soror, sororis  f",
+   "translation": "Schwester",
+   "section": "20"
+ },
+ {
+   "word": "velle, volo",
+   "translation": "wollen",
+   "section": "20"
+ },
+ {
+   "word": "Caesar, Caesaris  m",
+   "translation": "Cäsar; Kaiser",
+   "section": "21"
+ },
+ {
+   "word": "carus, a, um",
+   "translation": "lieb, teuer, wertvoll",
+   "section": "21"
+ },
+ {
+   "word": "civitas, civitatis  f",
+   "translation": "Gemeinde, Staat",
+   "section": "21"
+ },
+ {
+   "word": "frater, fratris  m",
+   "translation": "Bruder",
+   "section": "21"
+ },
+ {
+   "word": "heri  Adv.",
+   "translation": "gestern",
+   "section": "21"
+ },
+ {
+   "word": "libertas, libertatis  f",
+   "translation": "Freiheit",
+   "section": "21"
+ },
+ {
+   "word": "mater, matris  f",
+   "translation": "Mutter",
+   "section": "21"
+ },
+ {
+   "word": "pater, patris  m",
+   "translation": "Vater",
+   "section": "21"
+ },
+ {
+   "word": "potestas, potestatis  f",
+   "translation": "(Amts-)Gewalt, Macht",
+   "section": "21"
+ },
+ {
+   "word": "salutare, saluto",
+   "translation": "(be)grüßen",
+   "section": "21"
+ },
+ {
+   "word": "salve! salvete!",
+   "translation": "sei gegrüßt! seid gegrüßt!",
+   "section": "21"
+ },
+ {
+   "word": "servitus, servitutis  f",
+   "translation": "Sklaverei",
+   "section": "21"
+ },
+ {
+   "word": "tam",
+   "translation": "so",
+   "section": "21"
+ },
+ {
+   "word": "tam…quam",
+   "translation": "so…wie",
+   "section": "21"
+ },
+ {
+   "word": "Capua non tam pulchra est quam Roma.",
+   "translation": "Capua ist nicht so schön wie Rom.",
+   "section": "21"
+ },
+ {
+   "word": "Vespasianus",
+   "translation": "Vespasian (röm. Kaiser 69-79 n. Chr.)",
+   "section": "21"
+ },
+ {
+   "word": "voluntas, voluntatis  f",
+   "translation": "Wille, Absicht",
+   "section": "21"
+ },
+ {
+   "word": "antiquus, a, um",
+   "translation": "alt, altertümlich",
+   "section": "22"
+ },
+ {
+   "word": "bestia",
+   "translation": "(wildes) Tier",
+   "section": "22"
+ },
+ {
+   "word": "caelum",
+   "translation": "Himmel",
+   "section": "22"
+ },
+ {
+   "word": "ceteri, ae, a",
+   "translation": "die übrigen",
+   "section": "22"
+ },
+ {
+   "word": "dare, do",
+   "translation": "geben",
+   "section": "22"
+ },
+ {
+   "word": "Diana",
+   "translation": "Diana (Göttin der Jagd)",
+   "section": "22"
+ },
+ {
+   "word": "existimare, existimo",
+   "translation": "meinen, einschätzen",
+   "section": "22"
+ },
+ {
+   "word": "Iuppiter, Iovis  m",
+   "translation": "Jupiter (höchster Gott der Römer)",
+   "section": "22"
+ },
+ {
+   "word": "Mercurius",
+   "translation": "Merkur (der Götterbote)",
+   "section": "22"
+ },
+ {
+   "word": "Minerva",
+   "translation": "Minerva (Göttin der Weisheit)",
+   "section": "22"
+ },
+ {
+   "word": "Neptunus",
+   "translation": "Neptun (Gott des Meeres)",
+   "section": "22"
+ },
+ {
+   "word": "nuntiare, nuntio",
+   "translation": "melden",
+   "section": "22"
+ },
+ {
+   "word": "servare, servo",
+   "translation": "bewahren, retten; beobachten",
+   "section": "22"
+ },
+ {
+   "word": "solum  Adv.",
+   "translation": "nur",
+   "section": "22"
+ },
+ {
+   "word": "terra",
+   "translation": "Erde, Land",
+   "section": "22"
+ },
+ {
+   "word": "varius, a, um",
+   "translation": "bunt, verschieden, vielfältig",
+   "section": "22"
+ },
+ {
+   "word": "amphitheatrum",
+   "translation": "Amphitheater",
+   "section": "23"
+ },
+ {
+   "word": "annus",
+   "translation": "Jahr",
+   "section": "23"
+ },
+ {
+   "word": "dolor, doloris  m",
+   "translation": "Schmerz",
+   "section": "23"
+ },
+ {
+   "word": "exercere, exerceo",
+   "translation": "üben, trainieren; quälen",
+   "section": "23"
+ },
+ {
+   "word": "gladiator, gladiatoris  m",
+   "translation": "Gladiator",
+   "section": "23"
+ },
+ {
+   "word": "interficere, interficio",
+   "translation": "töten, vernichten",
+   "section": "23"
+ },
+ {
+   "word": "mors, mortis  f (Gen. Pl. -ium)",
+   "translation": "Tod",
+   "section": "23"
+ },
+ {
+   "word": "negotium",
+   "translation": "Aufgabe, Geschäft; Angelegenheit",
+   "section": "23"
+ },
+ {
+   "word": "pars, partis  f (Gen. Pl. -ium)",
+   "translation": "Teil, Seite",
+   "section": "23"
+ },
+ {
+   "word": "propter  Präp. m. Akk.",
+   "translation": "wegen",
+   "section": "23"
+ },
+ {
+   "word": "propter amorem",
+   "translation": "wegen der Liebe",
+   "section": "23"
+ },
+ {
+   "word": "urbs, urbis  f (Gen. Pl. -ium)",
+   "translation": "Stadt; die Stadt Rom",
+   "section": "23"
+ },
+ {
+   "word": "vel",
+   "translation": "oder",
+   "section": "23"
+ },
+ {
+   "word": "aqua vel vinum",
+   "translation": "Wasser oder Wein",
+   "section": "23"
+ },
+ {
+   "word": "victor, victoris  m",
+   "translation": "Sieger",
+   "section": "23"
+ },
+ {
+   "word": "virtus, virtutis  f",
+   "translation": "Tapferkeit, Tüchtigkeit, Leistung",
+   "section": "23"
+ },
+ {
+   "word": "amittere, amitto",
+   "translation": "aufgeben, verlieren",
+   "section": "24"
+ },
+ {
+   "word": "fons, fontis  m (Gen. Pl. -ium)",
+   "translation": "Quelle, Ursprung",
+   "section": "24"
+ },
+ {
+   "word": "homo, hominis  m",
+   "translation": "Mensch",
+   "section": "24"
+ },
+ {
+   "word": "hora",
+   "translation": "Stunde",
+   "section": "24"
+ },
+ {
+   "word": "leo, leonis  m",
+   "translation": "Löwe",
+   "section": "24"
+ },
+ {
+   "word": "magnitudo, magnitudinis  f",
+   "translation": "Größe",
+   "section": "24"
+ },
+ {
+   "word": "mons, montis  m (Gen. Pl. -ium)",
+   "translation": "Berg",
+   "section": "24"
+ },
+ {
+   "word": "multitudo, multitudinis  f",
+   "translation": "große Zahl, Menge",
+   "section": "24"
+ },
+ {
+   "word": "natio, nationis  f",
+   "translation": "Volk, Volksstamm",
+   "section": "24"
+ },
+ {
+   "word": "nisi  Subj.",
+   "translation": "wenn nicht",
+   "section": "24"
+ },
+ {
+   "word": "regio, regionis  f",
+   "translation": "Gebiet, Gegend, Richtung",
+   "section": "24"
+ },
+ {
+   "word": "sol, solis  m",
+   "translation": "Sonne",
+   "section": "24"
+ },
+ {
+   "word": "surgere, surgo",
+   "translation": "aufrichten; sich erheben, aufstehen",
+   "section": "24"
+ },
+ {
+   "word": "an  (im dir. Fragesatz)",
+   "translation": "oder (etwa)",
+   "section": "25"
+ },
+ {
+   "word": "antea  Adv.",
+   "translation": "vorher, früher",
+   "section": "25"
+ },
+ {
+   "word": "curare, curo",
+   "translation": "pflegen, sorgen für",
+   "section": "25"
+ },
+ {
+   "word": "equum curare",
+   "translation": "das Pferd pflegen",
+   "section": "25"
+ },
+ {
+   "word": "familiam curare",
+   "translation": "für die Familie sorgen",
+   "section": "25"
+ },
+ {
+   "word": "malus, a, um",
+   "translation": "schlecht, schlimm",
+   "section": "25"
+ },
+ {
+   "word": "mirus, a, um",
+   "translation": "erstaunlich, sonderbar",
+   "section": "25"
+ },
+ {
+   "word": "monstrum",
+   "translation": "Ungeheuer",
+   "section": "25"
+ },
+ {
+   "word": "periculum",
+   "translation": "Gefahr",
+   "section": "25"
+ },
+ {
+   "word": "primum  Adv.",
+   "translation": "erstens, zuerst, zum ersten Mal",
+   "section": "25"
+ },
+ {
+   "word": "sub  Präp. m. Abl.",
+   "translation": "unter (wo?)",
+   "section": "25"
+ },
+ {
+   "word": "sub carro esse",
+   "translation": "unter dem Wagen liegen",
+   "section": "25"
+ },
+ {
+   "word": "sub  Präp. m. Akk.",
+   "translation": "unter (wohin?)",
+   "section": "25"
+ },
+ {
+   "word": "sub carrum trahere",
+   "translation": "unter den Wagen ziehen",
+   "section": "25"
+ },
+ {
+   "word": "altus, a, um",
+   "translation": "hoch, tief",
+   "section": "26"
+ },
+ {
+   "word": "complere, compleo, complevi",
+   "translation": "anfüllen, auffüllen",
+   "section": "26"
+ },
+ {
+   "word": "cum  Subj. m. Ind.",
+   "translation": "als (plötzlich); (immer) wenn",
+   "section": "26"
+ },
+ {
+   "word": "delere, deleo, delevi",
+   "translation": "zerstören, vernichten",
+   "section": "26"
+ },
+ {
+   "word": "di!  Vok.",
+   "translation": "(oh) Götter!",
+   "section": "26"
+ },
+ {
+   "word": "esse, sum, fui",
+   "translation": "sein, sich befinden",
+   "section": "26"
+ },
+ {
+   "word": "flere, fleo, flevi",
+   "translation": "weinen, beweinen",
+   "section": "26"
+ },
+ {
+   "word": "fuga",
+   "translation": "Flucht",
+   "section": "26"
+ },
+ {
+   "word": "lux, lucis  f",
+   "translation": "Licht, Tageslicht",
+   "section": "26"
+ },
+ {
+   "word": "magna voce",
+   "translation": "mit lauter Stimme",
+   "section": "26"
+ },
+ {
+   "word": "nondum  Adv.",
+   "translation": "noch nicht",
+   "section": "26"
+ },
+ {
+   "word": "nox, noctis  f  (Gen. Pl. -ium)",
+   "translation": "Nacht",
+   "section": "26"
+ },
+ {
+   "word": "posse, possum, potui",
+   "translation": "können",
+   "section": "26"
+ },
+ {
+   "word": "salus, salutis  f",
+   "translation": "Gesundheit, Rettung, Gruß, Glück",
+   "section": "26"
+ },
+ {
+   "word": "tectum",
+   "translation": "Dach; Haus",
+   "section": "26"
+ },
+ {
+   "word": "timor, timoris  m",
+   "translation": "Angst, Furcht",
+   "section": "26"
+ },
+ {
+   "word": "velle, volo, volui",
+   "translation": "wollen",
+   "section": "26"
+ },
+ {
+   "word": "vox, vocis  f",
+   "translation": "Stimme, Äußerung, Laut",
+   "section": "26"
+ },
+ {
+   "word": "arma, armorum  n Pl.",
+   "translation": "Gerät, Waffen",
+   "section": "27"
+ },
+ {
+   "word": "cadere, cado",
+   "translation": "fallen",
+   "section": "27"
+ },
+ {
+   "word": "castra, castrorum  n Pl.",
+   "translation": "Lager",
+   "section": "27"
+ },
+ {
+   "word": "dic!",
+   "translation": "sag! sprich!",
+   "section": "27"
+ },
+ {
+   "word": "duc!",
+   "translation": "führe!",
+   "section": "27"
+ },
+ {
+   "word": "fac!",
+   "translation": "tu! mach! handle!",
+   "section": "27"
+ },
+ {
+   "word": "iacere, iaceo",
+   "translation": "liegen",
+   "section": "27"
+ },
+ {
+   "word": "is, ea, id",
+   "translation": "dieser, diese, dieses; er, sie, es",
+   "section": "27"
+ },
+ {
+   "word": "liberi, liberorum  m Pl.",
+   "translation": "Kinder",
+   "section": "27"
+ },
+ {
+   "word": "Pompei, Pompeiorum  m Pl.",
+   "translation": "Pompeji (Stadt in Mittelitalien)",
+   "section": "27"
+ },
+ {
+   "word": "postea  Adv.",
+   "translation": "nachher, später",
+   "section": "27"
+ },
+ {
+   "word": "reliquiae, reliquiarum  f Pl.",
+   "translation": "Überbleibsel, Überrest, Ruine",
+   "section": "27"
+ },
+ {
+   "word": "temptare, tempto",
+   "translation": "angreifen; prüfen, versuchen",
+   "section": "27"
+ },
+ {
+   "word": "tenebrae, tenebrarum  f Pl.",
+   "translation": "Dunkelheit, Finsternis",
+   "section": "27"
+ },
+ {
+   "word": "amittere, amitto, amisi",
+   "translation": "aufgeben, verlieren",
+   "section": "28"
+ },
+ {
+   "word": "aspicere, aspicio, aspexi",
+   "translation": "erblicken, ansehen",
+   "section": "28"
+ },
+ {
+   "word": "augere, augeo, auxi",
+   "translation": "vergrößern, vermehren",
+   "section": "28"
+ },
+ {
+   "word": "cadere, cado, cecidi",
+   "translation": "fallen",
+   "section": "28"
+ },
+ {
+   "word": "dare, do, dedi",
+   "translation": "geben",
+   "section": "28"
+ },
+ {
+   "word": "dicere, dico, dixi",
+   "translation": "sagen, sprechen",
+   "section": "28"
+ },
+ {
+   "word": "ducere, duco, duxi",
+   "translation": "führen, ziehen",
+   "section": "28"
+ },
+ {
+   "word": "ecce",
+   "translation": "Schau! Sieh da! Schaut! Seht da!",
+   "section": "28"
+ },
+ {
+   "word": "enim  (nachgestellt)",
+   "translation": "nämlich",
+   "section": "28"
+ },
+ {
+   "word": "etsi",
+   "translation": "auch wenn, obwohl",
+   "section": "28"
+ },
+ {
+   "word": "Hercules, Herculis  m",
+   "translation": "Herkules (berühmtester Held der griechischen Sagenw",
+   "section": "28"
+ },
+ {
+   "word": "manere, maneo, mansi",
+   "translation": "bleiben, (er)warten",
+   "section": "28"
+ },
+ {
+   "word": "mittere, mitto, misi",
+   "translation": "(los)lassen, schicken, werfen",
+   "section": "28"
+ },
+ {
+   "word": "monumentum",
+   "translation": "Denkmal",
+   "section": "28"
+ },
+ {
+   "word": "occidere, occido, occidi",
+   "translation": "(zu Boden) fallen, umkommen, untergehen",
+   "section": "28"
+ },
+ {
+   "word": "ora",
+   "translation": "Küste",
+   "section": "28"
+ },
+ {
+   "word": "praestare, praesto, praestiti",
+   "translation": "m. Akk.  gewähren, leisten, zeigen",
+   "section": "28"
+ },
+ {
+   "word": "respondere, respondeo, respondi",
+   "translation": "antworten",
+   "section": "28"
+ },
+ {
+   "word": "ridere, rideo, risi",
+   "translation": "lachen, auslachen",
+   "section": "28"
+ },
+ {
+   "word": "scribere, scribo, scripsi",
+   "translation": "schreiben, beschreiben",
+   "section": "28"
+ },
+ {
+   "word": "sentire, sentio, sensi",
+   "translation": "fühlen, meinen, wahrnehmen",
+   "section": "28"
+ },
+ {
+   "word": "stare, sto, steti",
+   "translation": "stehen",
+   "section": "28"
+ },
+ {
+   "word": "statua",
+   "translation": "Statue",
+   "section": "28"
+ },
+ {
+   "word": "studium",
+   "translation": "Beschäftigung, Engagement, Interesse",
+   "section": "28"
+ },
+ {
+   "word": "torquere, torqueo, torsi",
+   "translation": "drehen; quälen",
+   "section": "28"
+ },
+ {
+   "word": "trahere, traho, traxi",
+   "translation": "schleppen, ziehen",
+   "section": "28"
+ },
+ {
+   "word": "agere, ago, egi",
+   "translation": "handeln, treiben, verhandeln",
+   "section": "29"
+ },
+ {
+   "word": "Augias  m",
+   "translation": "Augias (mythischer König, dessen Stall Herkules ausm",
+   "section": "29"
+ },
+ {
+   "word": "capere, capio, cepi",
+   "translation": "fassen, nehmen; erobern",
+   "section": "29"
+ },
+ {
+   "word": "comprehendere, comprehendo, comprehendi",
+   "translation": "begreifen, ergreifen, festnehmen",
+   "section": "29"
+ },
+ {
+   "word": "consilium capere",
+   "translation": "einen Plan (Entschluss) fassen",
+   "section": "29"
+ },
+ {
+   "word": "descendere, descendo, descendi",
+   "translation": "herabsteigen",
+   "section": "29"
+ },
+ {
+   "word": "fabula",
+   "translation": "Erzählung, Geschichte, Theaterstück",
+   "section": "29"
+ },
+ {
+   "word": "facere, facio, feci",
+   "translation": "machen, tun, handeln",
+   "section": "29"
+ },
+ {
+   "word": "factum",
+   "translation": "Handlung, Tat, Tatsache",
+   "section": "29"
+ },
+ {
+   "word": "fluvius",
+   "translation": "Fluss",
+   "section": "29"
+ },
+ {
+   "word": "interficere, interficio, interfeci",
+   "translation": "töten, vernichten",
+   "section": "29"
+ },
+ {
+   "word": "invenire, invenio, inveni",
+   "translation": "finden, erfinden",
+   "section": "29"
+ },
+ {
+   "word": "ita  Adv.",
+   "translation": "so",
+   "section": "29"
+ },
+ {
+   "word": "movere, moveo, movi",
+   "translation": "bewegen, beeindrucken",
+   "section": "29"
+ },
+ {
+   "word": "relinquere, relinquo, reliqui",
+   "translation": "verlassen, zurücklassen",
+   "section": "29"
+ },
+ {
+   "word": "rex, regis  m",
+   "translation": "König",
+   "section": "29"
+ },
+ {
+   "word": "sedere, sedeo, sedi",
+   "translation": "sitzen",
+   "section": "29"
+ },
+ {
+   "word": "venire, venio, veni",
+   "translation": "kommen",
+   "section": "29"
+ },
+ {
+   "word": "vertere, verto, verti",
+   "translation": "drehen, wenden",
+   "section": "29"
+ },
+ {
+   "word": "videre, video, vidi",
+   "translation": "sehen",
+   "section": "29"
+ },
+ {
+   "word": "vincere, vinco, vici",
+   "translation": "(be)siegen, übertreffen",
+   "section": "29"
+ },
+ {
+   "word": "vix  Adv.",
+   "translation": "kaum, (nur) mit Mühe",
+   "section": "29"
+ },
+ {
+   "word": "carere, careo  m. Abl.",
+   "translation": "frei sein von, ohne (etw.) sein, nicht haben",
+   "section": "30"
+ },
+ {
+   "word": "amicis carere",
+   "translation": "keine Freunde haben, ohne Freunde sein",
+   "section": "30"
+ },
+ {
+   "word": "Cerberus",
+   "translation": "Zerberus (der dreiköpfige Höllenhund)",
+   "section": "30"
+ },
+ {
+   "word": "dolere  m. Abl.",
+   "translation": "traurig sein über",
+   "section": "30"
+ },
+ {
+   "word": "iniuria dolere",
+   "translation": "über ein Unrecht traurig sein",
+   "section": "30"
+ },
+ {
+   "word": "ea hora",
+   "translation": "in dieser Stunde",
+   "section": "30"
+ },
+ {
+   "word": "eo anno",
+   "translation": "in diesem Jahr",
+   "section": "30"
+ },
+ {
+   "word": "Eurystheus  m",
+   "translation": "Eurystheus (mythischer König von Mykene)",
+   "section": "30"
+ },
+ {
+   "word": "gaudere  m. Abl.",
+   "translation": "sich freuen über",
+   "section": "30"
+ },
+ {
+   "word": "auxilio gaudere",
+   "translation": "sich über die Hilfe freuen",
+   "section": "30"
+ },
+ {
+   "word": "labor, laboris  m",
+   "translation": "Arbeit, Anstrengung",
+   "section": "30"
+ },
+ {
+   "word": "laborare  m. Abl.",
+   "translation": "leiden an, in Not / Sorge sein wegen",
+   "section": "30"
+ },
+ {
+   "word": "doloribus laborare",
+   "translation": "an Schmerzen leiden",
+   "section": "30"
+ },
+ {
+   "word": "liber, libera, liberum (a)  m. Abl.",
+   "translation": "frei von",
+   "section": "30"
+ },
+ {
+   "word": "liber (a) timore",
+   "translation": "frei von Angst",
+   "section": "30"
+ },
+ {
+   "word": "nocte",
+   "translation": "nachts",
+   "section": "30"
+ },
+ {
+   "word": "officium",
+   "translation": "Dienst, Pflicht(gefühl)",
+   "section": "30"
+ },
+ {
+   "word": "ostendere, ostendo, ostendi",
+   "translation": "zeigen, erklären",
+   "section": "30"
+ },
+ {
+   "word": "paulo post",
+   "translation": "(ein) wenig später",
+   "section": "30"
+ },
+ {
+   "word": "Pluto, Plutonis  m",
+   "translation": "Pluto (Gott der Unterwelt)",
+   "section": "30"
+ },
+ {
+   "word": "prima luce",
+   "translation": "bei Tagesanbruch",
+   "section": "30"
+ },
+ {
+   "word": "primus, a, um",
+   "translation": "der erste",
+   "section": "30"
+ },
+ {
+   "word": "prohibere, prohibeo",
+   "translation": "(a m. Abl.) abhalten (von), hindern (an)",
+   "section": "30"
+ },
+ {
+   "word": "(a) lacrimis prohibere",
+   "translation": "von den Tränen abhalten, am Weinen hindern",
+   "section": "30"
+ },
+ {
+   "word": "servare a  m. Abl.",
+   "translation": "bewahren vor, retten vor",
+   "section": "30"
+ },
+ {
+   "word": "tamen",
+   "translation": "dennoch, jedoch",
+   "section": "30"
+ },
+ {
+   "word": "alius, alia, aliud",
+   "translation": "ein anderer",
+   "section": "31"
+ },
+ {
+   "word": "animadvertere, animadverto, animadverti  m. AcI / Akk.",
+   "translation": "bemerken",
+   "section": "31"
+ },
+ {
+   "word": "bellum",
+   "translation": "Krieg",
+   "section": "31"
+ },
+ {
+   "word": "cedere, cedo, cessi",
+   "translation": "gehen, nachgeben, weichen",
+   "section": "31"
+ },
+ {
+   "word": "certe / certo  Adv.",
+   "translation": "gewiss, sicherlich",
+   "section": "31"
+ },
+ {
+   "word": "consistere, consisto, constiti",
+   "translation": "stehenbleiben, haltmachen, sich aufstellen",
+   "section": "31"
+ },
+ {
+   "word": "constat",
+   "translation": "es ist bekannt, es steht fest",
+   "section": "31"
+ },
+ {
+   "word": "Graeci, orum  m Pl.",
+   "translation": "die Griechen",
+   "section": "31"
+ },
+ {
+   "word": "honestus, a, um",
+   "translation": "ehrenhaft, angesehen",
+   "section": "31"
+ },
+ {
+   "word": "Laocoon, Laocoontis  m",
+   "translation": "Laokoon (trojanischer Priester)",
+   "section": "31"
+ },
+ {
+   "word": "paulatim  Adv.",
+   "translation": "allmählich",
+   "section": "31"
+ },
+ {
+   "word": "petere, peto, petivi",
+   "translation": "aufsuchen, (er)streben, bitten, verlangen",
+   "section": "31"
+ },
+ {
+   "word": "putare, puto",
+   "translation": "glauben, meinen",
+   "section": "31"
+ },
+ {
+   "word": "Troianus, a, um",
+   "translation": "trojanisch; Subst. Trojaner (Einwohner von Troja)",
+   "section": "31"
+ },
+ {
+   "word": "Aeneas, Aeneae  m",
+   "translation": "Äneas (Trojaner und Stammvater der Römer)",
+   "section": "32"
+ },
+ {
+   "word": "Carthago, Carthaginis  f",
+   "translation": "Karthago (Stadt in Nordafrika)",
+   "section": "32"
+ },
+ {
+   "word": "civis, civis  m (Gen. Pl. -ium)",
+   "translation": "Bürger",
+   "section": "32"
+ },
+ {
+   "word": "cogitare, cogito",
+   "translation": "denken, beabsichtigen",
+   "section": "32"
+ },
+ {
+   "word": "convenire, convenio, conveni",
+   "translation": "zusammenkommen, zusammenpassen, besuchen",
+   "section": "32"
+ },
+ {
+   "word": "Dido, Didonis  f",
+   "translation": "Dido (die Gründerin und Königin Karthagos)",
+   "section": "32"
+ },
+ {
+   "word": "finis, finis  m (Gen. Pl. -ium)",
+   "translation": "Ende, Grenze, Ziel, Zweck; Pl. Gebiet",
+   "section": "32"
+ },
+ {
+   "word": "maritus",
+   "translation": "Ehemann",
+   "section": "32"
+ },
+ {
+   "word": "oportet",
+   "translation": "es gehört sich, es ist nötig",
+   "section": "32"
+ },
+ {
+   "word": "quaerere, quaero, quaesivi",
+   "translation": "erwerben wollen, suchen, fragen",
+   "section": "32"
+ },
+ {
+   "word": "secum",
+   "translation": "mit sich, bei sich",
+   "section": "32"
+ },
+ {
+   "word": "sibi  Dat.",
+   "translation": "sich",
+   "section": "32"
+ },
+ {
+   "word": "suus, a, um",
+   "translation": "sein, ihr",
+   "section": "32"
+ },
+ {
+   "word": "vivere, vivo, vixi",
+   "translation": "leben",
+   "section": "32"
+ },
+ {
+   "word": "audacia",
+   "translation": "Frechheit, Kühnheit",
+   "section": "33"
+ },
+ {
+   "word": "caedere, caedo, cecidi",
+   "translation": "fällen, töten",
+   "section": "33"
+ },
+ {
+   "word": "circum  Präp. m. Akk.",
+   "translation": "rings um, um…herum",
+   "section": "33"
+ },
+ {
+   "word": "circum muros",
+   "translation": "um die Mauern (herum)",
+   "section": "33"
+ },
+ {
+   "word": "demonstrare, demonstro",
+   "translation": "beweisen, darlegen",
+   "section": "33"
+ },
+ {
+   "word": "desperare, despero",
+   "translation": "die Hoffnung aufgeben, verzweifeln",
+   "section": "33"
+ },
+ {
+   "word": "de salute desperare",
+   "translation": "die Hoffnung auf Rettung aufgeben",
+   "section": "33"
+ },
+ {
+   "word": "donare, dono",
+   "translation": "schenken",
+   "section": "33"
+ },
+ {
+   "word": "ferrum",
+   "translation": "Eisen; Waffe",
+   "section": "33"
+ },
+ {
+   "word": "Italia",
+   "translation": "Italien",
+   "section": "33"
+ },
+ {
+   "word": "wordi, wordorum  m Pl.",
+   "translation": "die worder (Volksstamm in Italien)",
+   "section": "33"
+ },
+ {
+   "word": "wordus",
+   "translation": "wordus (König der worder)",
+   "section": "33"
+ },
+ {
+   "word": "munire, munio",
+   "translation": "bauen, befestigen, schützen",
+   "section": "33"
+ },
+ {
+   "word": "occidere, occido, occidi",
+   "translation": "niederschlagen, töten",
+   "section": "33"
+ },
+ {
+   "word": "quidem  Adv.",
+   "translation": "freilich, gewiss, wenigstens, zwar",
+   "section": "33"
+ },
+ {
+   "word": "sperare, spero",
+   "translation": "erwarten, hoffen",
+   "section": "33"
+ },
+ {
+   "word": "surgere, surgo, surrexi",
+   "translation": "aufrichten; sich erheben, aufstehen",
+   "section": "33"
+ },
+ {
+   "word": "Turnus",
+   "translation": "Turnus (Anführer der Rutuler, Gegner des Äneas)",
+   "section": "33"
+ },
+ {
+   "word": "venia",
+   "translation": "Gefallen; Nachsicht, Verzeihung",
+   "section": "33"
+ },
+ {
+   "word": "violare, violo",
+   "translation": "verwunden, verletzen, entehren",
+   "section": "33"
+ },
+ {
+   "word": "acer, acris, acre",
+   "translation": "energisch, heftig, scharf",
+   "section": "34"
+ },
+ {
+   "word": "bibere, bibo, bibi",
+   "translation": "trinken",
+   "section": "34"
+ },
+ {
+   "word": "celer, celeris, celere",
+   "translation": "schnell",
+   "section": "34"
+ },
+ {
+   "word": "comes, comitis  m/f",
+   "translation": "Begleiter(in), Gefährte, Gefährtin",
+   "section": "34"
+ },
+ {
+   "word": "Faustulus",
+   "translation": "Faustulus (Hirte, der Romulus und Remus entdeckte)",
+   "section": "34"
+ },
+ {
+   "word": "iuvenis, iuvenis  m",
+   "translation": "junger Mann; Adj. jung",
+   "section": "34"
+ },
+ {
+   "word": "miles, militis  m",
+   "translation": "Soldat",
+   "section": "34"
+ },
+ {
+   "word": "pellere, pello, pepuli",
+   "translation": "stoßen, schlagen, (ver)treiben",
+   "section": "34"
+ },
+ {
+   "word": "repellere, repello, reppuli",
+   "translation": "zurückstoßen, abweisen, vertreiben",
+   "section": "34"
+ },
+ {
+   "word": "Romulus / Remus",
+   "translation": "Romulus und Remus (Zwillingsbrüder und sagenhafte",
+   "section": "34"
+ },
+ {
+   "word": "signum",
+   "translation": "Merkmal, Zeichen; Statue",
+   "section": "34"
+ },
+ {
+   "word": "tamquam",
+   "translation": "Adv. wie",
+   "section": "34"
+ },
+ {
+   "word": "accusare, accuso",
+   "translation": "anklagen, beschuldigen",
+   "section": "35"
+ },
+ {
+   "word": "Amulius",
+   "translation": "Amulius (König von Alba, Bruder des Numitor)",
+   "section": "35"
+ },
+ {
+   "word": "crudelis, e",
+   "translation": "grausam",
+   "section": "35"
+ },
+ {
+   "word": "defendere, defendo, defendi  (a m. Abl.)",
+   "translation": "abwehren, verteidigen (vor / gegen)",
+   "section": "35"
+ },
+ {
+   "word": "dulcis, e",
+   "translation": "angenehm, süß",
+   "section": "35"
+ },
+ {
+   "word": "fortis, e",
+   "translation": "kräftig, tapfer",
+   "section": "35"
+ },
+ {
+   "word": "locus",
+   "translation": "Ort, Platz, Stelle",
+   "section": "35"
+ },
+ {
+   "word": "Numitor, Numitoris  m",
+   "translation": "Numitor (König von Alba, Großvater von Romulus und",
+   "section": "35"
+ },
+ {
+   "word": "omnis, e",
+   "translation": "jeder, ganz; Pl. alle",
+   "section": "35"
+ },
+ {
+   "word": "postquam  Subj. m. Ind.",
+   "translation": "nachdem, als",
+   "section": "35"
+ },
+ {
+   "word": "tristis, e",
+   "translation": "traurig, unfreundlich",
+   "section": "35"
+ },
+ {
+   "word": "turpis, e",
+   "translation": "unanständig, hässlich, schändlich",
+   "section": "35"
+ },
+ {
+   "word": "unus, a, um",
+   "translation": "einer, ein einziger",
+   "section": "35"
+ },
+ {
+   "word": "unus e / ex  m. Abl.",
+   "translation": "einer von",
+   "section": "35"
+ },
+ {
+   "word": "accipere, accipio, accepi",
+   "translation": "erhalten, erfahren, annehmen",
+   "section": "36"
+ },
+ {
+   "word": "Aventinus",
+   "translation": "der Aventin (am Tiber gelegener Hügel Roms)",
+   "section": "36"
+ },
+ {
+   "word": "condere, condo, condidi",
+   "translation": "verwahren, verbergen; erbauen, gründen",
+   "section": "36"
+ },
+ {
+   "word": "contendere, contendo, contendi",
+   "translation": "sich anstrengen, kämpfen; eilen; behaupten",
+   "section": "36"
+ },
+ {
+   "word": "deligere, deligo, delegi",
+   "translation": "(aus)wählen",
+   "section": "36"
+ },
+ {
+   "word": "idoneus, a, um",
+   "translation": "geeignet, passend",
+   "section": "36"
+ },
+ {
+   "word": "Livius",
+   "translation": "Titus Livius (röm. Geschichtsschreiber, 59 v. Chr. – 17",
+   "section": "36"
+ },
+ {
+   "word": "maxime  Adv.",
+   "translation": "am meisten, besonders",
+   "section": "36"
+ },
+ {
+   "word": "multum  Adv.",
+   "translation": "sehr, viel",
+   "section": "36"
+ },
+ {
+   "word": "multum valere",
+   "translation": "großen Einfluss haben",
+   "section": "36"
+ },
+ {
+   "word": "natura",
+   "translation": "Natur, Wesen, Beschaffenheit",
+   "section": "36"
+ },
+ {
+   "word": "opportunus, a, um",
+   "translation": "geeignet, günstig",
+   "section": "36"
+ },
+ {
+   "word": "Palatium",
+   "translation": "der Paword (einer der sieben Hügel Roms)",
+   "section": "36"
+ },
+ {
+   "word": "qui, quae, quod",
+   "translation": "welcher, welche, welches; der, die, das",
+   "section": "36"
+ },
+ {
+   "word": "sex  indekl.",
+   "translation": "sechs",
+   "section": "36"
+ },
+ {
+   "word": "arcessere, arcesso, arcessivi",
+   "translation": "herbeirufen, holen",
+   "section": "37"
+ },
+ {
+   "word": "communis, e",
+   "translation": "gemeinsam, allgemein",
+   "section": "37"
+ },
+ {
+   "word": "credere, credo, credidi",
+   "translation": "glauben, anvertrauen",
+   "section": "37"
+ },
+ {
+   "word": "et…et",
+   "translation": "sowohl…als auch",
+   "section": "37"
+ },
+ {
+   "word": "fortuna",
+   "translation": "Schicksal, Glück",
+   "section": "37"
+ },
+ {
+   "word": "gloria",
+   "translation": "Ruhm, Ehre",
+   "section": "37"
+ },
+ {
+   "word": "hostis, hostis  m (Gen. Pl. -ium)",
+   "translation": "Feind (Landesfeind)",
+   "section": "37"
+ },
+ {
+   "word": "inanis, e",
+   "translation": "leer, wertlos",
+   "section": "37"
+ },
+ {
+   "word": "occupare, occupo",
+   "translation": "besetzen, einnehmen",
+   "section": "37"
+ },
+ {
+   "word": "quemadmodum",
+   "translation": "auf welche Weise, wie",
+   "section": "37"
+ },
+ {
+   "word": "tutus, a, um",
+   "translation": "sicher",
+   "section": "37"
+ },
+ {
+   "word": "aestas, aestatis  f",
+   "translation": "Sommer",
+   "section": "38"
+ },
+ {
+   "word": "aperire, aperio, aperui",
+   "translation": "aufdecken, öffnen",
+   "section": "38"
+ },
+ {
+   "word": "beatus, a, um",
+   "translation": "glücklich, reich",
+   "section": "38"
+ },
+ {
+   "word": "confirmare, confirmo",
+   "translation": "bekräftigen, ermutigen, stärken",
+   "section": "38"
+ },
+ {
+   "word": "cura",
+   "translation": "Pflege, Sorge",
+   "section": "38"
+ },
+ {
+   "word": "Hersilia",
+   "translation": "Hersilia (die sabinische Ehefrau des Romulus)",
+   "section": "38"
+ },
+ {
+   "word": "mos, moris  m",
+   "translation": "Sitte, Brauch; Pl. Charakter",
+   "section": "38"
+ },
+ {
+   "word": "omittere, omitto, omisi",
+   "translation": "aufgeben, beiseite lassen",
+   "section": "38"
+ },
+ {
+   "word": "quando",
+   "translation": "wann",
+   "section": "38"
+ },
+ {
+   "word": "Sabinus, a, um",
+   "translation": "sabinisch; Subst. Sabiner (in der Nähe Roms lebender",
+   "section": "38"
+ },
+ {
+   "word": "vitam agere",
+   "translation": "ein Leben führen, leben",
+   "section": "38"
+ },
+ {
+   "word": "appetere, appeto, appetivi",
+   "translation": "erstreben, haben wollen; angreifen",
+   "section": "39"
+ },
+ {
+   "word": "aureus, a, um",
+   "translation": "golden, aus Gold",
+   "section": "39"
+ },
+ {
+   "word": "bellum gerere",
+   "translation": "Krieg führen",
+   "section": "39"
+ },
+ {
+   "word": "Capitolium",
+   "translation": "das Kapitol (bedeutendster der sieben Hügel Roms)",
+   "section": "39"
+ },
+ {
+   "word": "concedere, concedo, concessi",
+   "translation": "erlauben, nachgeben, zugestehen",
+   "section": "39"
+ },
+ {
+   "word": "copia",
+   "translation": "Menge, Vorrat, Möglichkeit; Pl. Truppen",
+   "section": "39"
+ },
+ {
+   "word": "ergo  Adv.",
+   "translation": "also, deshalb",
+   "section": "39"
+ },
+ {
+   "word": "gerere, gero, gessi",
+   "translation": "ausführen, führen, tragen",
+   "section": "39"
+ },
+ {
+   "word": "bellum gerere",
+   "translation": "Krieg führen",
+   "section": "39"
+ },
+ {
+   "word": "praemium",
+   "translation": "Belohnung, Lohn",
+   "section": "39"
+ },
+ {
+   "word": "resistere, resisto, restiti",
+   "translation": "stehen bleiben; Widerstand leisten",
+   "section": "39"
+ },
+ {
+   "word": "Spurius Tarpeius",
+   "translation": "Spurius Tarpeius (röm. Befehlshaber)",
+   "section": "39"
+ },
+ {
+   "word": "stultus, a, um",
+   "translation": "dumm",
+   "section": "39"
+ },
+ {
+   "word": "Tarpeia",
+   "translation": "Tarpeia (Tochter des Spurius Tarpeius)",
+   "section": "39"
+ },
+ {
+   "word": "Tatius",
+   "translation": "Tatius (König der Sabiner)",
+   "section": "39"
+ },
+ {
+   "word": "abire, abeo, abii",
+   "translation": "weggehen",
+   "section": "40"
+ },
+ {
+   "word": "adire, adeo, adii  (m. Akk.)",
+   "translation": "herantreten (an), bitten, aufsuchen",
+   "section": "40"
+ },
+ {
+   "word": "senatorem adire",
+   "translation": "an einen Senator herantreten, einen Senator bitten",
+   "section": "40"
+ },
+ {
+   "word": "Circum Maximum adire",
+   "translation": "den Circus Maximus aufsuchen",
+   "section": "40"
+ },
+ {
+   "word": "Circus Maximus",
+   "translation": "Circus Maximus (Rennbahn für Wagenrennen in Rom)",
+   "section": "40"
+ },
+ {
+   "word": "exire, exeo, exii",
+   "translation": "herausgehen, hinausgehen",
+   "section": "40"
+ },
+ {
+   "word": "inire, ineo, inii",
+   "translation": "hineingehen (in), beginnen",
+   "section": "40"
+ },
+ {
+   "word": "ire, eo, ii, itum",
+   "translation": "gehen",
+   "section": "40"
+ },
+ {
+   "word": "praeterire, praetereo, praeterii",
+   "translation": "übergehen, vorbeigehen (an)",
+   "section": "40"
+ },
+ {
+   "word": "castra praeterire",
+   "translation": "am Lager vorbeigehen",
+   "section": "40"
+ },
+ {
+   "word": "factum praeterire",
+   "translation": "eine Tatsache übergehen",
+   "section": "40"
+ },
+ {
+   "word": "Brutus",
+   "translation": "Lucius Junius Brutus (Befreier Roms)",
+   "section": "41"
+ },
+ {
+   "word": "gemitus, gemitus  m",
+   "translation": "Seufzen, Traurigkeit",
+   "section": "41"
+ },
+ {
+   "word": "igitur  Adv.",
+   "translation": "also, folglich",
+   "section": "41"
+ },
+ {
+   "word": "laetus, a, um",
+   "translation": "froh; fruchtbar",
+   "section": "41"
+ },
+ {
+   "word": "manus, manus  f",
+   "translation": "Hand; Schar (von Bewaffneten)",
+   "section": "41"
+ },
+ {
+   "word": "metus, metus  m",
+   "translation": "Angst",
+   "section": "41"
+ },
+ {
+   "word": "pertinere, pertineo ad  m. Akk.",
+   "translation": "betreffen, gehören (zu), sich erstrecken (bis)",
+   "section": "41"
+ },
+ {
+   "word": "portus, portus  m",
+   "translation": "Hafen",
+   "section": "41"
+ },
+ {
+   "word": "superbus, a, um",
+   "translation": "stolz, überheblich",
+   "section": "41"
+ },
+ {
+   "word": "talis, e",
+   "translation": "derartig, ein solcher, so (beschaffen)",
+   "section": "41"
+ },
+ {
+   "word": "Tarquinius Superbus",
+   "translation": "Tarquinius Superbus (etruskischer König von Rom)",
+   "section": "41"
+ },
+ {
+   "word": "vultus, vultus  m",
+   "translation": "Gesicht, Gesichtsausdruck; Pl. Gesichtszüge",
+   "section": "41"
+ },
+ {
+   "word": "causa",
+   "translation": "Sache, Ursache, Grund; Prozess",
+   "section": "42"
+ },
+ {
+   "word": "dies, diei  m",
+   "translation": "Tag",
+   "section": "42"
+ },
+ {
+   "word": "Lucretia",
+   "translation": "Lukretia (Heldin der röm. Frühgeschichte)",
+   "section": "42"
+ },
+ {
+   "word": "medius, a, um",
+   "translation": "der mittlere, in der Mitte (von)",
+   "section": "42"
+ },
+ {
+   "word": "media in turba",
+   "translation": "mitten in der Menge",
+   "section": "42"
+ },
+ {
+   "word": "pernicies, perniciei  f",
+   "translation": "Verderben, Vernichtung",
+   "section": "42"
+ },
+ {
+   "word": "res adversae  f Pl.",
+   "translation": "Unglück",
+   "section": "42"
+ },
+ {
+   "word": "res futurae  f Pl.",
+   "translation": "Zukunft",
+   "section": "42"
+ },
+ {
+   "word": "res publica  f",
+   "translation": "Staat",
+   "section": "42"
+ },
+ {
+   "word": "res secundae  f Pl.",
+   "translation": "Glück",
+   "section": "42"
+ },
+ {
+   "word": "res, rei  f",
+   "translation": "Angelegenheit, Ding, Sache",
+   "section": "42"
+ },
+ {
+   "word": "spes, spei  f",
+   "translation": "Erwartung, Hoffnung",
+   "section": "42"
+ },
+ {
+   "word": "facilis, e",
+   "translation": "leicht (zu tun)",
+   "section": "43"
+ },
+ {
+   "word": "femina",
+   "translation": "Frau",
+   "section": "43"
+ },
+ {
+   "word": "forma",
+   "translation": "Form, Gestalt, Schönheit",
+   "section": "43"
+ },
+ {
+   "word": "hic, haec, hoc",
+   "translation": "dieser, diese, dieses (hier); folgender",
+   "section": "43"
+ },
+ {
+   "word": "Hunc militem laudo.",
+   "translation": "Diesen Soldaten (hier) lobe ich.",
+   "section": "43"
+ },
+ {
+   "word": "Miles haec dixit:",
+   "translation": "Der Soldat sagte Folgendes:",
+   "section": "43"
+ },
+ {
+   "word": "„In hac civitate libenter vivo.“",
+   "translation": "„In diesem (unserem) Staat lebe ich gerne.“",
+   "section": "43"
+ },
+ {
+   "word": "ille, illa, illud",
+   "translation": "jener, jene, jenes; der (dort); damalig, berühmt",
+   "section": "43"
+ },
+ {
+   "word": "Ille vir est servus.",
+   "translation": "Jener Mann (der Mann dort) ist ein Sklave.",
+   "section": "43"
+ },
+ {
+   "word": "Vocem illius audio.",
+   "translation": "Ich höre die Stimme von jenem (seine Stimme).",
+   "section": "43"
+ },
+ {
+   "word": "Illud bellum crudele fuit.",
+   "translation": "Der damalige (dieser berühmte) Krieg war grausam.",
+   "section": "43"
+ },
+ {
+   "word": "legere, lego, legi",
+   "translation": "lesen; auswählen",
+   "section": "43"
+ },
+ {
+   "word": "Mars, Martis  m",
+   "translation": "Mars (der röm. Kriegsgott)",
+   "section": "43"
+ },
+ {
+   "word": "memoria",
+   "translation": "Erinnerung, Gedächtnis; Zeit",
+   "section": "43"
+ },
+ {
+   "word": "memoria tenere",
+   "translation": "im Gedächtnis behalten",
+   "section": "43"
+ },
+ {
+   "word": "ne…quidem",
+   "translation": "nicht einmal",
+   "section": "43"
+ },
+ {
+   "word": "ne Mars quidem",
+   "translation": "nicht einmal Mars",
+   "section": "43"
+ },
+ {
+   "word": "sinere, sino, sivi",
+   "translation": "(zu)lassen, erlauben",
+   "section": "43"
+ },
+ {
+   "word": "Liberos vinum bibere non sinimus.",
+   "translation": "Wir lassen nicht zu (erlauben nicht), dass die Kinder W",
+   "section": "43"
+ },
+ {
+   "word": "taberna",
+   "translation": "Laden, Wirtshaus",
+   "section": "43"
+ },
+ {
+   "word": "umerus",
+   "translation": "Schulter, Oberarm",
+   "section": "43"
+ },
+ {
+   "word": "umquam  Adv.",
+   "translation": "jemals",
+   "section": "43"
+ },
+ {
+   "word": "auctor, auctoris  m",
+   "translation": "Anführer, Gründer, Schriftsteller, Verfasser",
+   "section": "44"
+ },
+ {
+   "word": "diligens, diligentis",
+   "translation": "gewissenhaft, sorgfältig",
+   "section": "44"
+ },
+ {
+   "word": "dives, divitis",
+   "translation": "reich",
+   "section": "44"
+ },
+ {
+   "word": "felix, felicis",
+   "translation": "erfolgreich, glückbringend, glücklich",
+   "section": "44"
+ },
+ {
+   "word": "intus  Adv.",
+   "translation": "im Inneren, innen",
+   "section": "44"
+ },
+ {
+   "word": "liber, libri  m",
+   "translation": "Buch",
+   "section": "44"
+ },
+ {
+   "word": "multa, orum  n Pl.",
+   "translation": "viel(es)",
+   "section": "44"
+ },
+ {
+   "word": "multa scire",
+   "translation": "viel(es) wissen",
+   "section": "44"
+ },
+ {
+   "word": "nonnulli, ae, a",
+   "translation": "einige, manche",
+   "section": "44"
+ },
+ {
+   "word": "omnia, omnium  n Pl.",
+   "translation": "alles",
+   "section": "44"
+ },
+ {
+   "word": "omnia posse",
+   "translation": "alles können",
+   "section": "44"
+ },
+ {
+   "word": "pauper, pauperis",
+   "translation": "arm",
+   "section": "44"
+ },
+ {
+   "word": "sapiens, sapientis",
+   "translation": "klug, weise",
+   "section": "44"
+ },
+ {
+   "word": "sors, sortis  f (Gen. Pl. -ium)",
+   "translation": "Los, Orakelspruch, Schicksal",
+   "section": "44"
+ },
+ {
+   "word": "thermae, thermarum  f Pl.",
+   "translation": "warme Bäder, Thermen",
+   "section": "44"
+ },
+ {
+   "word": "vetus, veteris",
+   "translation": "alt",
+   "section": "44"
+ },
+ {
+   "word": "ac / atque",
+   "translation": "und, und auch",
+   "section": "45"
+ },
+ {
+   "word": "arena",
+   "translation": "Sand, Kampfplatz",
+   "section": "45"
+ },
+ {
+   "word": "atque / ac",
+   "translation": "und, und auch",
+   "section": "45"
+ },
+ {
+   "word": "cessare, cesso",
+   "translation": "zögern, rasten",
+   "section": "45"
+ },
+ {
+   "word": "conspectus, conspectus  m",
+   "translation": "Anblick, Blickfeld",
+   "section": "45"
+ },
+ {
+   "word": "currere, curro, cucurri",
+   "translation": "laufen, eilen",
+   "section": "45"
+ },
+ {
+   "word": "equidem",
+   "translation": "(ich) allerdings, freilich",
+   "section": "45"
+ },
+ {
+   "word": "impetus, impetus  m",
+   "translation": "Angriff, Schwung",
+   "section": "45"
+ },
+ {
+   "word": "incipere, incipio, coepi (incepi)",
+   "translation": "anfangen, beginnen",
+   "section": "45"
+ },
+ {
+   "word": "ingens, ingentis",
+   "translation": "gewaltig, ungeheuer",
+   "section": "45"
+ },
+ {
+   "word": "laedere, laedo, laesi",
+   "translation": "beschädigen, verletzen, beleidigen",
+   "section": "45"
+ },
+ {
+   "word": "quoque  (nachgestellt)",
+   "translation": "auch",
+   "section": "45"
+ },
+ {
+   "word": "Ego quoque gaudeo.",
+   "translation": "Auch ich freue mich.",
+   "section": "45"
+ },
+ {
+   "word": "sollicitare, sollicito",
+   "translation": "aufhetzen, beunruhigen, erregen",
+   "section": "45"
+ },
+ {
+   "word": "turbare, turbo",
+   "translation": "durcheinanderbringen, stören",
+   "section": "45"
+ },
+ {
+   "word": "contra  Präp. m. Akk.",
+   "translation": "gegen",
+   "section": "46"
+ },
+ {
+   "word": "contra hostes",
+   "translation": "gegen die Feinde",
+   "section": "46"
+ },
+ {
+   "word": "deinde  Adv.",
+   "translation": "dann, darauf",
+   "section": "46"
+ },
+ {
+   "word": "denique  Adv.",
+   "translation": "schließlich, zuletzt",
+   "section": "46"
+ },
+ {
+   "word": "dignus, a, um  (m. Abl.)",
+   "translation": "wert, würdig (einer Sache)",
+   "section": "46"
+ },
+ {
+   "word": "praemio dignus",
+   "translation": "einer Belohnung würdig",
+   "section": "46"
+ },
+ {
+   "word": "excitare, excito",
+   "translation": "erregen, ermuntern, wecken",
+   "section": "46"
+ },
+ {
+   "word": "flagitium",
+   "translation": "Schandtat, Gemeinheit",
+   "section": "46"
+ },
+ {
+   "word": "infelix, infelicis",
+   "translation": "unglücklich",
+   "section": "46"
+ },
+ {
+   "word": "instare, insto, institi",
+   "translation": "bevorstehen, hart zusetzen",
+   "section": "46"
+ },
+ {
+   "word": "Periculum instat.",
+   "translation": "Eine Gefahr steht bevor.",
+   "section": "46"
+ },
+ {
+   "word": "hostibus instare",
+   "translation": "den Feinden hart zusetzen",
+   "section": "46"
+ },
+ {
+   "word": "iterum atque iterum  Adv.",
+   "translation": "immer wieder",
+   "section": "46"
+ },
+ {
+   "word": "obicere, obicio, obieci",
+   "translation": "darbieten, vorwerfen",
+   "section": "46"
+ },
+ {
+   "word": "sceleratum bestiis obicere",
+   "translation": "einen Verbrecher den wilden Tieren vorwerfen",
+   "section": "46"
+ },
+ {
+   "word": "comiti iniuriam obicere",
+   "translation": "dem Gefährten ein Unrecht vorwerfen",
+   "section": "46"
+ },
+ {
+   "word": "perterrere, perterreo",
+   "translation": "sehr erschrecken, einschüchtern",
+   "section": "46"
+ },
+ {
+   "word": "supplicium",
+   "translation": "Strafe, Hinrichtung, flehentliches Bitten",
+   "section": "46"
+ },
+ {
+   "word": "supplicium timere",
+   "translation": "vor der Strafe (Hinrichtung) Angst haben",
+   "section": "46"
+ },
+ {
+   "word": "suppliciis deos movere",
+   "translation": "durch flehentliches Bitten die Götter bewegen",
+   "section": "46"
+ },
+ {
+   "word": "tegere, tego, texi",
+   "translation": "bedecken, schützen, verbergen",
+   "section": "46"
+ },
+ {
+   "word": "telum",
+   "translation": "(Angriffs-)Waffe, Geschoss",
+   "section": "46"
+ },
+ {
+   "word": "accidere, accido, accidi",
+   "translation": "geschehen, sich ereignen",
+   "section": "47"
+ },
+ {
+   "word": "corpus, corporis  n",
+   "translation": "Körper, Leichnam",
+   "section": "47"
+ },
+ {
+   "word": "crimen, criminis  n",
+   "translation": "Verbrechen, Vorwurf, Beschuldigung",
+   "section": "47"
+ },
+ {
+   "word": "domus, domus  f",
+   "translation": "Haus",
+   "section": "47"
+ },
+ {
+   "word": "genus, generis  n",
+   "translation": "Abstammung, Art, Geschlecht",
+   "section": "47"
+ },
+ {
+   "word": "negare, nego",
+   "translation": "leugnen, verneinen, verweigern",
+   "section": "47"
+ },
+ {
+   "word": "nomen, nominis  n",
+   "translation": "Name",
+   "section": "47"
+ },
+ {
+   "word": "nullus, a, um  (Gen. nullius, Dat. nulli)",
+   "translation": "kein",
+   "section": "47"
+ },
+ {
+   "word": "pectus, pectoris  n",
+   "translation": "Brust, Herz",
+   "section": "47"
+ },
+ {
+   "word": "pes, pedis  m",
+   "translation": "Fuß",
+   "section": "47"
+ },
+ {
+   "word": "rapere, rapio, rapui",
+   "translation": "wegführen, rauben, wegreißen",
+   "section": "47"
+ },
+ {
+   "word": "scelus, sceleris  n",
+   "translation": "Verbrechen; Schurke",
+   "section": "47"
+ },
+ {
+   "word": "tempus, temporis  n",
+   "translation": "(günstige) Zeit, Umstände",
+   "section": "47"
+ },
+ {
+   "word": "vulnus, vulneris  n",
+   "translation": "Wunde, Verlust (milit.)",
+   "section": "47"
+ },
+ {
+   "word": "cantare, canto",
+   "translation": "singen",
+   "section": "48"
+ },
+ {
+   "word": "carmen, carminis  n",
+   "translation": "Gedicht, Lied",
+   "section": "48"
+ },
+ {
+   "word": "certus, a, um",
+   "translation": "sicher, bestimmt",
+   "section": "48"
+ },
+ {
+   "word": "fundere, fundo, fudi",
+   "translation": "(aus)gießen, zerstreuen",
+   "section": "48"
+ },
+ {
+   "word": "gens, gentis  f  (Gen. Pl. -ium)",
+   "translation": "Familienverband, Stamm, Volk",
+   "section": "48"
+ },
+ {
+   "word": "hostia",
+   "translation": "Opfertier, Schlachtopfer",
+   "section": "48"
+ },
+ {
+   "word": "perire, pereo, perii",
+   "translation": "umkommen, zugrunde gehen",
+   "section": "48"
+ },
+ {
+   "word": "prex, precis  f",
+   "translation": "Bitte, Gebet",
+   "section": "48"
+ },
+ {
+   "word": "reprehendere, reprehendo, reprehendi",
+   "translation": "schimpfen, kritisieren",
+   "section": "48"
+ },
+ {
+   "word": "sacerdos, sacerdotis  m/f",
+   "translation": "Priester(in)",
+   "section": "48"
+ },
+ {
+   "word": "sanctus, a, um",
+   "translation": "ehrwürdig, heilig",
+   "section": "48"
+ },
+ {
+   "word": "sanguis, sanguinis  m",
+   "translation": "Blut",
+   "section": "48"
+ },
+ {
+   "word": "senatus, senatus  m",
+   "translation": "Senat, Senatsversammlung",
+   "section": "48"
+ },
+ {
+   "word": "tribuere, tribuo, tribui",
+   "translation": "schenken, zuteilen",
+   "section": "48"
+ },
+ {
+   "word": "animal, animalis  n (Gen. Pl. -ium)",
+   "translation": "Lebewesen, Tier",
+   "section": "49"
+ },
+ {
+   "word": "caput, capitis  n",
+   "translation": "Kopf; Hauptstadt",
+   "section": "49"
+ },
+ {
+   "word": "Caput mihi dolet.",
+   "translation": "Der Kopf tut mir weh.",
+   "section": "49"
+ },
+ {
+   "word": "Roma caput imperii est.",
+   "translation": "Rom ist die Hauptstadt des Reiches.",
+   "section": "49"
+ },
+ {
+   "word": "decem  indekl.",
+   "translation": "zehn",
+   "section": "49"
+ },
+ {
+   "word": "duo, duae, duo",
+   "translation": "zwei",
+   "section": "49"
+ },
+ {
+   "word": "duodecim  indekl.",
+   "translation": "zwölf",
+   "section": "49"
+ },
+ {
+   "word": "duodeviginti  indekl.",
+   "translation": "achtzehn",
+   "section": "49"
+ },
+ {
+   "word": "fugere, fugio, fugi  (m. Akk.)",
+   "translation": "fliehen (vor), meiden",
+   "section": "49"
+ },
+ {
+   "word": "ad portum fugere",
+   "translation": "zum Hafen fliehen",
+   "section": "49"
+ },
+ {
+   "word": "periculum fugere",
+   "translation": "vor der Gefahr fliehen, die Gefahr meiden",
+   "section": "49"
+ },
+ {
+   "word": "mare, maris  n  (Abl. Sg. -i, Nom. / Akk. Pl. -ia, Gen. Pl.",
+   "translation": "Meer",
+   "section": "49"
+ },
+ {
+   "word": "moenia, moenium  n Pl.",
+   "translation": "Mauern, Stadtmauern",
+   "section": "49"
+ },
+ {
+   "word": "navis, navis  f  (Gen. Pl. -ium)",
+   "translation": "Schiff",
+   "section": "49"
+ },
+ {
+   "word": "novem  indekl.",
+   "translation": "neun",
+   "section": "49"
+ },
+ {
+   "word": "numerus",
+   "translation": "Zahl, Menge",
+   "section": "49"
+ },
+ {
+   "word": "octo  indekl.",
+   "translation": "acht",
+   "section": "49"
+ },
+ {
+   "word": "quattuor  indekl.",
+   "translation": "vier",
+   "section": "49"
+ },
+ {
+   "word": "quattuordecim  indekl.",
+   "translation": "vierzehn",
+   "section": "49"
+ },
+ {
+   "word": "quindecim  indekl.",
+   "translation": "fünfzehn",
+   "section": "49"
+ },
+ {
+   "word": "quinque  indekl.",
+   "translation": "fünf",
+   "section": "49"
+ },
+ {
+   "word": "quot?",
+   "translation": "wie viel(e)?",
+   "section": "49"
+ },
+ {
+   "word": "Quot senatores adsunt?",
+   "translation": "Wie viele Senatoren sind da?",
+   "section": "49"
+ },
+ {
+   "word": "sedecim  indekl.",
+   "translation": "sechzehn",
+   "section": "49"
+ },
+ {
+   "word": "septem  indekl.",
+   "translation": "sieben",
+   "section": "49"
+ },
+ {
+   "word": "septendecim  indekl.",
+   "translation": "siebzehn",
+   "section": "49"
+ },
+ {
+   "word": "tredecim  indekl.",
+   "translation": "dreizehn",
+   "section": "49"
+ },
+ {
+   "word": "tres, tres, tria",
+   "translation": "drei",
+   "section": "49"
+ },
+ {
+   "word": "turris, turris  f  (Akk. Sg. -im, Abl. Sg. -i, Gen. Pl. -ium)",
+   "translation": "Turm",
+   "section": "49"
+ },
+ {
+   "word": "undecim  indekl.",
+   "translation": "elf",
+   "section": "49"
+ },
+ {
+   "word": "undeviginti  indekl.",
+   "translation": "neunzehn",
+   "section": "49"
+ },
+ {
+   "word": "viginti  indekl.",
+   "translation": "zwanzig",
+   "section": "49"
+ },
+ {
+   "word": "circiter  Adv.",
+   "translation": "ungefähr",
+   "section": "50"
+ },
+ {
+   "word": "complures, complura",
+   "translation": "mehrere",
+   "section": "50"
+ },
+ {
+   "word": "damnare, damno  (m. Gen.)",
+   "translation": "verurteilen (wegen)",
+   "section": "50"
+ },
+ {
+   "word": "furem criminis damnare",
+   "translation": "einen Dieb wegen eines Verbrechens verurteilen",
+   "section": "50"
+ },
+ {
+   "word": "fenestra",
+   "translation": "Fenster",
+   "section": "50"
+ },
+ {
+   "word": "impedire, impedio",
+   "translation": "hindern, verhindern",
+   "section": "50"
+ },
+ {
+   "word": "ira",
+   "translation": "Zorn, Wut",
+   "section": "50"
+ },
+ {
+   "word": "iudex, iudicis  m",
+   "translation": "Richter",
+   "section": "50"
+ },
+ {
+   "word": "lex, legis  f",
+   "translation": "Gesetz, Bedingung",
+   "section": "50"
+ },
+ {
+   "word": "paene  Adv.",
+   "translation": "fast",
+   "section": "50"
+ },
+ {
+   "word": "poena",
+   "translation": "Strafe",
+   "section": "50"
+ },
+ {
+   "word": "remanere, remaneo, remansi",
+   "translation": "(zurück)bleiben",
+   "section": "50"
+ },
+ {
+   "word": "species, speciei  f",
+   "translation": "Anblick, Aussehen, Schein",
+   "section": "50"
+ },
+ {
+   "word": "totus, a, um  (Gen. totius, Dat. toti)",
+   "translation": "ganz, gesamt",
+   "section": "50"
+ },
+ {
+   "word": "arcessere, arcesso, arcessivi, arcessitum",
+   "translation": "herbeirufen, holen",
+   "section": "51"
+ },
+ {
+   "word": "armatus, a, um",
+   "translation": "bewaffnet",
+   "section": "51"
+ },
+ {
+   "word": "dare, do, dedi, datum",
+   "translation": "geben",
+   "section": "51"
+ },
+ {
+   "word": "decimus, a, um",
+   "translation": "der zehnte",
+   "section": "51"
+ },
+ {
+   "word": "dux, ducis  m/f",
+   "translation": "Anführer(in)",
+   "section": "51"
+ },
+ {
+   "word": "Etruscus, a, um",
+   "translation": "etruskisch, Subst. Etrusker",
+   "section": "51"
+ },
+ {
+   "word": "huc  Adv.",
+   "translation": "hierher",
+   "section": "51"
+ },
+ {
+   "word": "monere, moneo, monui, monitum",
+   "translation": "mahnen, ermahnen",
+   "section": "51"
+ },
+ {
+   "word": "nonus, a, um",
+   "translation": "der neunte",
+   "section": "51"
+ },
+ {
+   "word": "os, oris  n",
+   "translation": "Gesicht, Mund",
+   "section": "51"
+ },
+ {
+   "word": "petere, peto, petivi, petitum",
+   "translation": "aufsuchen, (er)streben, bitten, verlangen",
+   "section": "51"
+ },
+ {
+   "word": "quaerere, quaero, quaesivi, quaesitum",
+   "translation": "erwerben wollen, suchen, fragen",
+   "section": "51"
+ },
+ {
+   "word": "quartus, a, um",
+   "translation": "der vierte",
+   "section": "51"
+ },
+ {
+   "word": "quintus, a, um",
+   "translation": "der fünfte",
+   "section": "51"
+ },
+ {
+   "word": "quo?",
+   "translation": "wohin?",
+   "section": "51"
+ },
+ {
+   "word": "secundus, a, um",
+   "translation": "der zweite; günstig",
+   "section": "51"
+ },
+ {
+   "word": "secundum factum Herculis",
+   "translation": "die zweite Tat des Herkules",
+   "section": "51"
+ },
+ {
+   "word": "ventus secundus",
+   "translation": "günstiger Wind",
+   "section": "51"
+ },
+ {
+   "word": "septimus, a, um",
+   "translation": "der siebte",
+   "section": "51"
+ },
+ {
+   "word": "servire, servio",
+   "translation": "dienen, Sklave sein",
+   "section": "51"
+ },
+ {
+   "word": "sextus, a, um",
+   "translation": "der sechste",
+   "section": "51"
+ },
+ {
+   "word": "socius",
+   "translation": "Gefährte, Verbündeter",
+   "section": "51"
+ },
+ {
+   "word": "terrere, terreo, terrui, territum",
+   "translation": "erschrecken",
+   "section": "51"
+ },
+ {
+   "word": "tertius, a, um",
+   "translation": "der dritte",
+   "section": "51"
+ },
+ {
+   "word": "alius…alius",
+   "translation": "der eine…der andere",
+   "section": "52"
+ },
+ {
+   "word": "capere, capio, cepi, captum",
+   "translation": "fassen, nehmen; erobern",
+   "section": "52"
+ },
+ {
+   "word": "comprehendere, comprehendo, comprehendi, compreh",
+   "translation": "begreifen, ergreifen, festnehmen",
+   "section": "52"
+ },
+ {
+   "word": "conicere, conicio, conieci, coniectum",
+   "translation": "(zusammen)werfen, folgern, vermuten",
+   "section": "52"
+ },
+ {
+   "word": "ducere, duco, duxi, ductum",
+   "translation": "führen, ziehen",
+   "section": "52"
+ },
+ {
+   "word": "facere, facio, feci, factum",
+   "translation": "machen, tun, handeln",
+   "section": "52"
+ },
+ {
+   "word": "interficere, interficio, interfeci, interfectum",
+   "translation": "töten, vernichten",
+   "section": "52"
+ },
+ {
+   "word": "invenire, invenio, inveni, inventum",
+   "translation": "finden, erfinden",
+   "section": "52"
+ },
+ {
+   "word": "laedere, laedo, laesi, laesum",
+   "translation": "beschädigen, verletzen, beleidigen",
+   "section": "52"
+ },
+ {
+   "word": "littera",
+   "translation": "Buchstabe; Pl. Brief; Literatur, Wissenschaft",
+   "section": "52"
+ },
+ {
+   "word": "mittere, mitto, misi, missum",
+   "translation": "(los)lassen, schicken, werfen",
+   "section": "52"
+ },
+ {
+   "word": "pauci, ae, a",
+   "translation": "wenige",
+   "section": "52"
+ },
+ {
+   "word": "recitare, recito",
+   "translation": "vortragen, vorlesen",
+   "section": "52"
+ },
+ {
+   "word": "reprehendere, reprehendo, reprehendi, reprehensum",
+   "translation": "schimpfen, kritisieren",
+   "section": "52"
+ },
+ {
+   "word": "ridere, rideo, risi, risum",
+   "translation": "lachen, auslachen",
+   "section": "52"
+ },
+ {
+   "word": "trahere, traho, traxi, tractum",
+   "translation": "schleppen, ziehen",
+   "section": "52"
+ },
+ {
+   "word": "undique  Adv.",
+   "translation": "von allen Seiten, von überallher",
+   "section": "52"
+ },
+ {
+   "word": "venire, venio, veni, ventum",
+   "translation": "kommen",
+   "section": "52"
+ },
+ {
+   "word": "ventum est",
+   "translation": "man kam",
+   "section": "52"
+ },
+ {
+   "word": "videre, video, vidi, visum",
+   "translation": "sehen",
+   "section": "52"
+ },
+ {
+   "word": "vincere, vinco, vici, victum",
+   "translation": "(be)siegen, übertreffen",
+   "section": "52"
+ },
+ {
+   "word": "vis  f  (Akk. vim, Abl. vi)",
+   "translation": "Gewalt, Kraft, Menge",
+   "section": "52"
+ },
+ {
+   "word": "accipere, accipio, accepi, acceptum",
+   "translation": "erhalten, erfahren, annehmen",
+   "section": "53"
+ },
+ {
+   "word": "amore capi",
+   "translation": "von Liebe ergriffen werden",
+   "section": "53"
+ },
+ {
+   "word": "animadvertere, animadverto, animadverti, animadversu",
+   "translation": "bemerken",
+   "section": "53"
+ },
+ {
+   "word": "at",
+   "translation": "aber, dagegen, jedoch",
+   "section": "53"
+ },
+ {
+   "word": "calamitas, calamitatis  f",
+   "translation": "Schaden, Unglück",
+   "section": "53"
+ },
+ {
+   "word": "considere, consido, consedi, consessum",
+   "translation": "sich setzen, sich niederlassen",
+   "section": "53"
+ },
+ {
+   "word": "deducere, deduco, deduxi, deductum",
+   "translation": "wegführen, hinführen",
+   "section": "53"
+ },
+ {
+   "word": "Europa",
+   "translation": "Europa (die Tochter des phönizischen Königs Agenor)",
+   "section": "53"
+ },
+ {
+   "word": "gravis, e",
+   "translation": "schwer",
+   "section": "53"
+ },
+ {
+   "word": "litus, litoris  n",
+   "translation": "Küste, Strand",
+   "section": "53"
+ },
+ {
+   "word": "mutare, muto",
+   "translation": "(ver)ändern, verwandeln",
+   "section": "53"
+ },
+ {
+   "word": "perterrere, perterreo, perterrui, perterritum",
+   "translation": "sehr erschrecken, einschüchtern",
+   "section": "53"
+ },
+ {
+   "word": "praeclarus, a, um",
+   "translation": "großartig",
+   "section": "53"
+ },
+ {
+   "word": "rapere, rapio, rapui, raptum",
+   "translation": "wegführen, rauben, wegreißen",
+   "section": "53"
+ },
+ {
+   "word": "redire, redeo, redii, reditum",
+   "translation": "zurückgehen, zurückkehren",
+   "section": "53"
+ },
+ {
+   "word": "tangere, tango, tetigi, tactum",
+   "translation": "berühren",
+   "section": "53"
+ },
+ {
+   "word": "taurus",
+   "translation": "Stier",
+   "section": "53"
+ },
+ {
+   "word": "tergum",
+   "translation": "Rücken",
+   "section": "53"
+ },
+ {
+   "word": "virgo, virginis  f",
+   "translation": "Mädchen, Jungfrau",
+   "section": "53"
+ },
+ {
+   "word": "bono animo esse",
+   "translation": "guten Mutes sein, zuversichtlich sein",
+   "section": "54"
+ },
+ {
+   "word": "constituere, constituo, constitui, constitutum",
+   "translation": "festsetzen, beschließen",
+   "section": "54"
+ },
+ {
+   "word": "eius modi / eiusmodi",
+   "translation": "derartig, so beschaffen",
+   "section": "54"
+ },
+ {
+   "word": "ignis, ignis  m",
+   "translation": "Feuer",
+   "section": "54"
+ },
+ {
+   "word": "in vincula dare",
+   "translation": "in Fesseln legen, fesseln, gefangen nehmen",
+   "section": "54"
+ },
+ {
+   "word": "interrogare, interrogo",
+   "translation": "fragen",
+   "section": "54"
+ },
+ {
+   "word": "modus",
+   "translation": "Art, Weise; Maß",
+   "section": "54"
+ },
+ {
+   "word": "mortalis, e",
+   "translation": "sterblich; Subst. Mensch",
+   "section": "54"
+ },
+ {
+   "word": "movere, moveo, movi, motum",
+   "translation": "bewegen, beeindrucken",
+   "section": "54"
+ },
+ {
+   "word": "necessarius, a, um",
+   "translation": "notwendig",
+   "section": "54"
+ },
+ {
+   "word": "placet  m. Dat.",
+   "translation": "es gefällt jdm., jd. beschließt",
+   "section": "54"
+ },
+ {
+   "word": "mihi placet",
+   "translation": "es gefällt mir, ich beschließe",
+   "section": "54"
+ },
+ {
+   "word": "plenus, a, um (m. Gen.)",
+   "translation": "voll (von / mit)",
+   "section": "54"
+ },
+ {
+   "word": "plenus timoris",
+   "translation": "voller Angst",
+   "section": "54"
+ },
+ {
+   "word": "Prometheus, Promethei",
+   "translation": "Prometheus (Göttersohn, Schöpfer der Menschen)",
+   "section": "54"
+ },
+ {
+   "word": "relinquere, relinquo, reliqui, relictum",
+   "translation": "verlassen, zurücklassen",
+   "section": "54"
+ },
+ {
+   "word": "statuere, statuo, statui, statutum",
+   "translation": "aufstellen, beschließen, festsetzen",
+   "section": "54"
+ },
+ {
+   "word": "torquere, torqueo, torsi, tortum",
+   "translation": "drehen; quälen",
+   "section": "54"
+ },
+ {
+   "word": "vinculum",
+   "translation": "Band, Fessel; Pl. Gefängnis",
+   "section": "54"
+ },
+ {
+   "word": "adducere, adduco, adduxi, adductum",
+   "translation": "heranführen, veranlassen",
+   "section": "55"
+ },
+ {
+   "word": "aer, aeris  m",
+   "translation": "Luft",
+   "section": "55"
+ },
+ {
+   "word": "condere, condo, condidi, conditum",
+   "translation": "verwahren, verbergen; erbauen, gründen",
+   "section": "55"
+ },
+ {
+   "word": "Daedalus",
+   "translation": "Dädalus (berühmter Baumeister und Erfinder aus Athe",
+   "section": "55"
+ },
+ {
+   "word": "icarus",
+   "translation": "Ikarus (der Sohn des Dädalus)",
+   "section": "55"
+ },
+ {
+   "word": "latus, a, um",
+   "translation": "breit, ausgedehnt",
+   "section": "55"
+ },
+ {
+   "word": "mora",
+   "translation": "Aufenthalt, Verzögerung",
+   "section": "55"
+ },
+ {
+   "word": "nemo, neminis",
+   "translation": "niemand",
+   "section": "55"
+ },
+ {
+   "word": "priusquam  Subj.",
+   "translation": "bevor, eher als",
+   "section": "55"
+ },
+ {
+   "word": "Aderam, priusquam venisti.",
+   "translation": "Ich war da, bevor du gekommen bist. Ich war eher da,",
+   "section": "55"
+ },
+ {
+   "word": "retinere, retineo, retinui, retentum",
+   "translation": "behalten, festhalten, zurückhalten",
+   "section": "55"
+ },
+ {
+   "word": "solvere, solvo, solvi, solutum",
+   "translation": "lösen, auflösen; bezahlen",
+   "section": "55"
+ },
+ {
+   "word": "vincula solvere",
+   "translation": "die Fesseln lösen",
+   "section": "55"
+ },
+ {
+   "word": "poenam solvere",
+   "translation": "Strafe bezahlen, bestraft werden",
+   "section": "55"
+ },
+ {
+   "word": "somnus",
+   "translation": "Schlaf",
+   "section": "55"
+ },
+ {
+   "word": "unda",
+   "translation": "Welle, Gewässer",
+   "section": "55"
+ },
+ {
+   "word": "vehemens, vehementis",
+   "translation": "energisch, heftig",
+   "section": "55"
+ },
+ {
+   "word": "vitare, vito",
+   "translation": "meiden, vermeiden",
+   "section": "55"
+ },
+ {
+   "word": "volare, volo",
+   "translation": "fliegen, eilen",
+   "section": "55"
+ },
+ {
+   "word": "aestimare, aestimo",
+   "translation": "einschätzen, beurteilen;",
+   "section": "56"
+ },
+ {
+   "word": "Apollo, Apollinis  m",
+   "translation": "Apollon (Gott des Lichts, der Künste und der Weissagu",
+   "section": "56"
+ },
+ {
+   "word": "appellare, appello",
+   "translation": "anrufen; m. dopp. Akk. nennen",
+   "section": "56"
+ },
+ {
+   "word": "ara",
+   "translation": "Altar",
+   "section": "56"
+ },
+ {
+   "word": "colere, colo, colui, cultum",
+   "translation": "bewirtschaften, pflegen; verehren",
+   "section": "56"
+ },
+ {
+   "word": "agros colere",
+   "translation": "die Felder bewirtschaften",
+   "section": "56"
+ },
+ {
+   "word": "deos colere",
+   "translation": "die Götter verehren",
+   "section": "56"
+ },
+ {
+   "word": "dicere, dico, dixi, dictum",
+   "translation": "sagen, sprechen;",
+   "section": "56"
+ },
+ {
+   "word": "ducere, duco, duxi, ductum",
+   "translation": "führen, ziehen;",
+   "section": "56"
+ },
+ {
+   "word": "facere, facio, feci, factum",
+   "translation": "machen, tun, handeln;",
+   "section": "56"
+ },
+ {
+   "word": "in  Präp. m. Akk.",
+   "translation": "in (…hinein), nach (wohin?);",
+   "section": "56"
+ },
+ {
+   "word": "ipse, ipsa, ipsum",
+   "translation": "(er, sie, es) selbst; persönlich; gerade; sogar (hervorhe",
+   "section": "56"
+ },
+ {
+   "word": "Latona",
+   "translation": "Latona (Göttin)",
+   "section": "56"
+ },
+ {
+   "word": "legere, lego, legi, lectum",
+   "translation": "lesen; auswählen",
+   "section": "56"
+ },
+ {
+   "word": "nefarius, a, um",
+   "translation": "gottlos, verbrecherisch",
+   "section": "56"
+ },
+ {
+   "word": "Nioba",
+   "translation": "Niobe (Königin von Theben)",
+   "section": "56"
+ },
+ {
+   "word": "nominare, nomino",
+   "translation": "nennen",
+   "section": "56"
+ },
+ {
+   "word": "parere, pario, peperi, partum",
+   "translation": "zur Welt bringen, gebären; schaffen",
+   "section": "56"
+ },
+ {
+   "word": "filium parere",
+   "translation": "einen Sohn zur Welt bringen",
+   "section": "56"
+ },
+ {
+   "word": "gloriam parere",
+   "translation": "(sich) Ruhm (ver)schaffen",
+   "section": "56"
+ },
+ {
+   "word": "potens, potentis",
+   "translation": "mächtig, stark",
+   "section": "56"
+ },
+ {
+   "word": "putare, puto",
+   "translation": "glauben, meinen;",
+   "section": "56"
+ },
+ {
+   "word": "reddere, reddo, reddidi, redditum",
+   "translation": "zurückgeben, etw. zukommen lassen; m. dopp. Akk. jd",
+   "section": "56"
+ },
+ {
+   "word": "superi, superorum  m Pl.",
+   "translation": "die Götter",
+   "section": "56"
+ },
+ {
+   "word": "Tantalus",
+   "translation": "Tantalus (Sohn des Jupiter)",
+   "section": "56"
+ },
+ {
+   "word": "vindicare, vindico",
+   "translation": "beanspruchen, bestrafen;",
+   "section": "56"
+ },
+ {
+   "word": "omnia sibi vindicare",
+   "translation": "alles für sich beanspruchen",
+   "section": "56"
+ },
+ {
+   "word": "dolum vindicare",
+   "translation": "eine List bestrafen",
+   "section": "56"
+ },
+ {
+   "word": "in hostes vindicare",
+   "translation": "gegen die Feinde vorgehen",
+   "section": "56"
+ },
+ {
+   "word": "acerbus, a, um",
+   "translation": "bitter, grausam, rücksichtslos",
+   "section": "57"
+ },
+ {
+   "word": "commovere, commoveo, commovi, commotum",
+   "translation": "bewegen, veranlassen",
+   "section": "57"
+ },
+ {
+   "word": "condicio, condicionis  f",
+   "translation": "Bedingung, Lage, Verabredung",
+   "section": "57"
+ },
+ {
+   "word": "coniunx, coniugis  m/f",
+   "translation": "Gatte, Gattin",
+   "section": "57"
+ },
+ {
+   "word": "Eurydica",
+   "translation": "Eurydike (Gattin des Orpheus)",
+   "section": "57"
+ },
+ {
+   "word": "flectere, flecto, flexi, flexum",
+   "translation": "biegen, (hin)lenken, umstimmen",
+   "section": "57"
+ },
+ {
+   "word": "iubere, iubeo, iussi, iussum  (m. Akk.)",
+   "translation": "anordnen, befehlen",
+   "section": "57"
+ },
+ {
+   "word": "Servum laborare iubeo.",
+   "translation": "Ich befehle dem Sklaven zu arbeiten. Ich befehle, dass",
+   "section": "57"
+ },
+ {
+   "word": "non solum…, sed etiam",
+   "translation": "nicht nur…, sondern auch",
+   "section": "57"
+ },
+ {
+   "word": "nubere, nubo, nupsi, nuptum  m. Dat.",
+   "translation": "heiraten",
+   "section": "57"
+ },
+ {
+   "word": "iuveni nubere",
+   "translation": "einen jungen Mann heiraten",
+   "section": "57"
+ },
+ {
+   "word": "Orpheus, Orphei",
+   "translation": "Orpheus (berühmter thrakischer Sänger)",
+   "section": "57"
+ },
+ {
+   "word": "perdere, perdo, perdidi, perditum",
+   "translation": "verlieren, verschwenden, zugrunde richten",
+   "section": "57"
+ },
+ {
+   "word": "vocem perdere",
+   "translation": "seine Stimme verlieren",
+   "section": "57"
+ },
+ {
+   "word": "tempus perdere",
+   "translation": "Zeit verschwenden",
+   "section": "57"
+ },
+ {
+   "word": "rem publicam perdere",
+   "translation": "den Staat zugrunde richten",
+   "section": "57"
+ },
+ {
+   "word": "reducere, reduco, reduxi, reductum",
+   "translation": "zurückführen, zurückziehen",
+   "section": "57"
+ },
+ {
+   "word": "respicere, respicio, respexi, respectum",
+   "translation": "zurückblicken, berücksichtigen",
+   "section": "57"
+ },
+ {
+   "word": "simul  Adv.",
+   "translation": "gleichzeitig, zugleich",
+   "section": "57"
+ },
+ {
+   "word": "Tartarus",
+   "translation": "der Tartarus, die Unterwelt",
+   "section": "57"
+ },
+ {
+   "word": "vetare, veto, vetui, vetitum  (m. Akk.)",
+   "translation": "verbieten",
+   "section": "57"
+ },
+ {
+   "word": "Te abire veto.",
+   "translation": "Ich verbiete dir wegzugehen. Ich verbiete, dass du weg",
+   "section": "57"
+ },
+ {
+   "word": "brevi (tempore)",
+   "translation": "nach kurzer Zeit, bald (darauf)",
+   "section": "58"
+ },
+ {
+   "word": "debere, debeo, debui, debitum",
+   "translation": "müssen, sollen, schulden",
+   "section": "58"
+ },
+ {
+   "word": "deligere, deligo, delegi, delectum",
+   "translation": "(aus)wählen",
+   "section": "58"
+ },
+ {
+   "word": "effugere, effugio, effugi  (m. Akk.)",
+   "translation": "entfliehen, entkommen",
+   "section": "58"
+ },
+ {
+   "word": "fallere, fallo, fefelli",
+   "translation": "täuschen, betrügen",
+   "section": "58"
+ },
+ {
+   "word": "fidem servare",
+   "translation": "die Treue halten; sein Wort halten",
+   "section": "58"
+ },
+ {
+   "word": "fides, fidei  f",
+   "translation": "Glaube, Treue, Vertrauen, Zuverlässigkeit",
+   "section": "58"
+ },
+ {
+   "word": "immo  Adv.",
+   "translation": "im Gegenteil, ja sogar",
+   "section": "58"
+ },
+ {
+   "word": "inferi, inferorum  m Pl.",
+   "translation": "die Bewohner der Unterwelt, Unterwelt",
+   "section": "58"
+ },
+ {
+   "word": "obsecrare, obsecro",
+   "translation": "anflehen, bitten",
+   "section": "58"
+ },
+ {
+   "word": "premere, premo, pressi, pressum",
+   "translation": "(unter)drücken, bedrängen",
+   "section": "58"
+ },
+ {
+   "word": "promittere, promitto, promisi, promissum",
+   "translation": "versprechen",
+   "section": "58"
+ },
+ {
+   "word": "regere, rego, rexi, rectum",
+   "translation": "beherrschen, leiten, lenken",
+   "section": "58"
+ },
+ {
+   "word": "saxum",
+   "translation": "Fels, Stein",
+   "section": "58"
+ },
+ {
+   "word": "Sisyphus",
+   "translation": "Sisyphos (König von Korinth)",
+   "section": "58"
+ },
+ {
+   "word": "summus mons  m",
+   "translation": "Berggipfel, die höchste Stelle des Berges",
+   "section": "58"
+ },
+ {
+   "word": "brevi (tempore)",
+   "translation": "nach kurzer Zeit, bald darauf",
+   "section": "58"
+ },
+ {
+   "word": "volvere, volvo, volvi, volutum",
+   "translation": "rollen, wälzen; überlegen",
+   "section": "58"
+ },
+ {
+   "word": "consulere, consulo, consului, consultum",
+   "translation": "m. Akk.  um Rat fragen;",
+   "section": "59"
+ },
+ {
+   "word": "deos consulere",
+   "translation": "die Götter um Rat fragen",
+   "section": "59"
+ },
+ {
+   "word": "sociis consulere",
+   "translation": "für die Verbündeten sorgen",
+   "section": "59"
+ },
+ {
+   "word": "in hostes consulere",
+   "translation": "gegen die Feinde vorgehen",
+   "section": "59"
+ },
+ {
+   "word": "iuvare, iuvo, iuvi  m. Akk.",
+   "translation": "unterstützen, helfen; erfreuen",
+   "section": "59"
+ },
+ {
+   "word": "neglegere, neglego, neglexi, neglectum",
+   "translation": "nicht (be)achten, vernachlässigen",
+   "section": "59"
+ },
+ {
+   "word": "parcere, parco, peperci  m. Dat.",
+   "translation": "schonen, verschonen",
+   "section": "59"
+ },
+ {
+   "word": "captivis parcere",
+   "translation": "die Kriegsgefangenen (ver)schonen",
+   "section": "59"
+ },
+ {
+   "word": "persuadere, persuadeo, persuasi, persuasum m. Dat.",
+   "translation": "überreden, überzeugen (m. AcI)",
+   "section": "59"
+ },
+ {
+   "word": "senatoribus persuadere",
+   "translation": "die Senatoren überzeugen",
+   "section": "59"
+ },
+ {
+   "word": "plebs, plebis  f",
+   "translation": "(nicht adeliges, einfaches) Volk",
+   "section": "59"
+ },
+ {
+   "word": "praeesse, praesum, praefui  m. Dat.",
+   "translation": "leiten, an der Spitze stehen",
+   "section": "59"
+ },
+ {
+   "word": "Imperator militibus praeest.",
+   "translation": "Der Feldherr steht an der Spitze der Soldaten.",
+   "section": "59"
+ },
+ {
+   "word": "pro  Präp. m. Abl.",
+   "translation": "vor; anstelle von, für",
+   "section": "59"
+ },
+ {
+   "word": "pro domo sedere",
+   "translation": "vor dem Haus sitzen",
+   "section": "59"
+ },
+ {
+   "word": "pro amico respondere",
+   "translation": "für den Freund, anstelle des Freundes antworten",
+   "section": "59"
+ },
+ {
+   "word": "providere, provideo, providi, provisum",
+   "translation": "m. Akk.  vorhersehen;",
+   "section": "59"
+ },
+ {
+   "word": "periculum providere",
+   "translation": "eine Gefahr vorhersehen",
+   "section": "59"
+ },
+ {
+   "word": "civibus providere",
+   "translation": "für die Bürger sorgen",
+   "section": "59"
+ },
+ {
+   "word": "quaerere, quaero, quaesivi, quaesitum  ex / de m . Abl.",
+   "translation": "erwerben wollen, suchen;",
+   "section": "59"
+ },
+ {
+   "word": "e mercatore pretium quaerere",
+   "translation": "den Händler nach dem Preis fragen",
+   "section": "59"
+ },
+ {
+   "word": "senex, senis  m",
+   "translation": "Greis, alter Mann",
+   "section": "59"
+ },
+ {
+   "word": "tribunus",
+   "translation": "Tribun (führender Vertreter eines Stadtbezirkes, einer L",
+   "section": "59"
+ },
+ {
+   "word": "vestis, vestis  f (Gen. Pl. -ium)",
+   "translation": "Kleidung, Pl. Kleider",
+   "section": "59"
+ },
+ {
+   "word": "alere, alo, alui, altum",
+   "translation": "ernähren, großziehen",
+   "section": "60"
+ },
+ {
+   "word": "auxilio venire",
+   "translation": "zu Hilfe kommen",
+   "section": "60"
+ },
+ {
+   "word": "avertere, averto, averti, aversum",
+   "translation": "abwenden, vertreiben",
+   "section": "60"
+ },
+ {
+   "word": "Coriolanus",
+   "translation": "Coriolan (röm. Patrizier)",
+   "section": "60"
+ },
+ {
+   "word": "crimini dare",
+   "translation": "zum Vorwurf machen",
+   "section": "60"
+ },
+ {
+   "word": "curae esse",
+   "translation": "Sorge bereiten",
+   "section": "60"
+ },
+ {
+   "word": "deserere, desero, deserui, desertum",
+   "translation": "im Stich lassen, verlassen",
+   "section": "60"
+ },
+ {
+   "word": "discere, disco, didici",
+   "translation": "lernen, erfahren",
+   "section": "60"
+ },
+ {
+   "word": "efficere, efficio, effeci, effectum",
+   "translation": "bewirken, herstellen",
+   "section": "60"
+ },
+ {
+   "word": "frangere, frango, fregi, fractum",
+   "translation": "zerbrechen (trans.)",
+   "section": "60"
+ },
+ {
+   "word": "Servus tabulam frangit.",
+   "translation": "Der Sklave zerbricht die Schreibtafel.",
+   "section": "60"
+ },
+ {
+   "word": "Tabula frangitur.",
+   "translation": "Die Schreibtafel wird zerbrochen. Die Schreibtafel zerb",
+   "section": "60"
+ },
+ {
+   "word": "intra  Präp. m. Akk.",
+   "translation": "innerhalb (von)",
+   "section": "60"
+ },
+ {
+   "word": "intra muros",
+   "translation": "innerhalb der Mauern",
+   "section": "60"
+ },
+ {
+   "word": "intra decem annos",
+   "translation": "innerhalb von zehn Jahren",
+   "section": "60"
+ },
+ {
+   "word": "num?  (im Hauptsatz)",
+   "translation": "etwa?",
+   "section": "60"
+ },
+ {
+   "word": "perniciei esse",
+   "translation": "Verderben bringen",
+   "section": "60"
+ },
+ {
+   "word": "ponere, pono, posui, positum",
+   "translation": "(auf)stellen, (hin)legen, setzen",
+   "section": "60"
+ },
+ {
+   "word": "usui esse",
+   "translation": "von Nutzen sein, nützlich sein",
+   "section": "60"
+ },
+ {
+   "word": "usus, usus  m",
+   "translation": "Nutzen, Benutzung",
+   "section": "60"
+ },
+ {
+   "word": "arx, arcis  f",
+   "translation": "Burg",
+   "section": "61"
+ },
+ {
+   "word": "Camillus",
+   "translation": "Camillus (röm. Politiker und Feldherr, um 446-365 v. C",
+   "section": "61"
+ },
+ {
+   "word": "custos, custodis  m/f",
+   "translation": "Wächter(in)",
+   "section": "61"
+ },
+ {
+   "word": "desinere, desino, desii, desitum",
+   "translation": "aufhören",
+   "section": "61"
+ },
+ {
+   "word": "exercitus, exercitus  m",
+   "translation": "Heer",
+   "section": "61"
+ },
+ {
+   "word": "Gallus, a, um",
+   "translation": "gallisch, Subst. Gallier",
+   "section": "61"
+ },
+ {
+   "word": "haerere, haereo, haesi",
+   "translation": "hängen, stecken bleiben",
+   "section": "61"
+ },
+ {
+   "word": "idem, eadem, idem",
+   "translation": "derselbe, der gleiche",
+   "section": "61"
+ },
+ {
+   "word": "idem…qui",
+   "translation": "derselbe…wie",
+   "section": "61"
+ },
+ {
+   "word": "Iuno, Iunonis  f",
+   "translation": "Juno (Ehefrau des Jupiter, Göttin der Ehe und der Frau",
+   "section": "61"
+ },
+ {
+   "word": "proelium",
+   "translation": "Kampf, Schlacht",
+   "section": "61"
+ },
+ {
+   "word": "qualis, e",
+   "translation": "wie (beschaffen), was für ein(e)",
+   "section": "61"
+ },
+ {
+   "word": "sacer, sacra, sacrum  (m. Gen.)",
+   "translation": "(jdm.) heilig, geweiht",
+   "section": "61"
+ },
+ {
+   "word": "silentium",
+   "translation": "Schweigen",
+   "section": "61"
+ },
+ {
+   "word": "talis…qualis",
+   "translation": "so beschaffen…wie (beschaffen)",
+   "section": "61"
+ },
+ {
+   "word": "tantum…quantum",
+   "translation": "so viel…wie (viel)",
+   "section": "61"
+ },
+ {
+   "word": "tantus…quantus",
+   "translation": "so groß…wie (groß)",
+   "section": "61"
+ },
+ {
+   "word": "tot  indekl.",
+   "translation": "so viele",
+   "section": "61"
+ },
+ {
+   "word": "tot…quot",
+   "translation": "so viele…wie (viele)",
+   "section": "61"
+ },
+ {
+   "word": "vestigium",
+   "translation": "Fußsohle, Spur, Stelle",
+   "section": "61"
+ },
+ {
+   "word": "addere, addo, addidi, additum",
+   "translation": "hinzufügen",
+   "section": "62"
+ },
+ {
+   "word": "amicitia",
+   "translation": "Freundschaft",
+   "section": "62"
+ },
+ {
+   "word": "apertus, a, um",
+   "translation": "offen, offenkundig",
+   "section": "62"
+ },
+ {
+   "word": "augere, augeo, auxi, auctum",
+   "translation": "vergrößern, vermehren",
+   "section": "62"
+ },
+ {
+   "word": "cupere, cupio, cupivi, cupitum",
+   "translation": "wünschen, verlangen",
+   "section": "62"
+ },
+ {
+   "word": "dexter, dext(e)ra, dext(e)rum",
+   "translation": "rechts",
+   "section": "62"
+ },
+ {
+   "word": "dext(e)ra (manus)",
+   "translation": "die Rechte, die rechte Hand",
+   "section": "62"
+ },
+ {
+   "word": "Hamilcar, Hamilcaris  m",
+   "translation": "Hamilkar (Vater Hannibals)",
+   "section": "62"
+ },
+ {
+   "word": "Hannibal, Hannibalis  m",
+   "translation": "Hannibal (karthagischer Feldherr, 247-183 v. Chr.)",
+   "section": "62"
+ },
+ {
+   "word": "immortalis, e",
+   "translation": "unsterblich",
+   "section": "62"
+ },
+ {
+   "word": "iurare, iuro",
+   "translation": "schwören",
+   "section": "62"
+ },
+ {
+   "word": "odio esse",
+   "translation": "verhasst sein",
+   "section": "62"
+ },
+ {
+   "word": "Romani Hannibali odio erant.",
+   "translation": "Die Römer waren Hannibal verhasst. Die Römer wurde",
+   "section": "62"
+ },
+ {
+   "word": "odium",
+   "translation": "Hass",
+   "section": "62"
+ },
+ {
+   "word": "pellere, pello, pepuli, pulsum",
+   "translation": "stoßen, schlagen, (ver)treiben",
+   "section": "62"
+ },
+ {
+   "word": "trans  Präp. m. Akk.",
+   "translation": "über (…hinaus), jenseits",
+   "section": "62"
+ },
+ {
+   "word": "trans montes",
+   "translation": "über die Berge, jenseits der Berge",
+   "section": "62"
+ },
+ {
+   "word": "vertere, verto, verti, versum",
+   "translation": "drehen, wenden",
+   "section": "62"
+ },
+ {
+   "word": "agmen, agminis  n",
+   "translation": "Heereszug",
+   "section": "63"
+ },
+ {
+   "word": "Alpes, Alpium  f Pl.",
+   "translation": "die Alpen",
+   "section": "63"
+ },
+ {
+   "word": "aut",
+   "translation": "oder",
+   "section": "63"
+ },
+ {
+   "word": "conficere, conficio, confeci, confectum",
+   "translation": "fertig machen, beenden",
+   "section": "63"
+ },
+ {
+   "word": "defendere, defendo, defendi, defensum",
+   "translation": "abwehren, verteidigen",
+   "section": "63"
+ },
+ {
+   "word": "expellere, expello, expuli, expulsum",
+   "translation": "vertreiben, verbannen",
+   "section": "63"
+ },
+ {
+   "word": "incipere, incipio, coepi (incepi), inceptum",
+   "translation": "anfangen, beginnen",
+   "section": "63"
+ },
+ {
+   "word": "insidiae, insidiarum  f Pl.",
+   "translation": "Falle, Attentat, Hinterlist",
+   "section": "63"
+ },
+ {
+   "word": "iter, itineris  n",
+   "translation": "Reise, Marsch, Weg",
+   "section": "63"
+ },
+ {
+   "word": "obicere, obicio, obieci, obiectum",
+   "translation": "darbieten, vorwerfen",
+   "section": "63"
+ },
+ {
+   "word": "oratio, orationis  f",
+   "translation": "Rede",
+   "section": "63"
+ },
+ {
+   "word": "Poenus, a, um",
+   "translation": "punisch, karthagisch; Subst. Punier, Karthager",
+   "section": "63"
+ },
+ {
+   "word": "procedere, procedo, processi",
+   "translation": "(vorwärts)gehen, vorrücken",
+   "section": "63"
+ },
+ {
+   "word": "subire, subeo, subii",
+   "translation": "auf sich nehmen, herangehen",
+   "section": "63"
+ },
+ {
+   "word": "superesse, supersum, superfui",
+   "translation": "überleben, übrig sein",
+   "section": "63"
+ },
+ {
+   "word": "transire, transeo, transii",
+   "translation": "durchqueren, hinübergehen, überschreiten",
+   "section": "63"
+ },
+ {
+   "word": "usque Adv.",
+   "translation": "ad  m. Akk.  bis (zu)",
+   "section": "63"
+ },
+ {
+   "word": "usque ad campum ire",
+   "translation": "bis zum Feld gehen",
+   "section": "63"
+ },
+ {
+   "word": "agere, ago, egi, actum",
+   "translation": "handeln, treiben, verhandeln",
+   "section": "64"
+ },
+ {
+   "word": "argentum",
+   "translation": "Silber",
+   "section": "64"
+ },
+ {
+   "word": "consul, consulis  m",
+   "translation": "Konsul",
+   "section": "64"
+ },
+ {
+   "word": "ignotus, a, um",
+   "translation": "unbekannt",
+   "section": "64"
+ },
+ {
+   "word": "luctus, luctus  m",
+   "translation": "Trauer",
+   "section": "64"
+ },
+ {
+   "word": "ne  Subj. m. Konj.",
+   "translation": "dass nicht, nicht zu (m. Inf.)",
+   "section": "64"
+ },
+ {
+   "word": "ne  Subj. m. Konj.",
+   "translation": "dass nicht;",
+   "section": "64"
+ },
+ {
+   "word": "periculum est, ne",
+   "translation": "es besteht die Gefahr, dass",
+   "section": "64"
+ },
+ {
+   "word": "timere, ne",
+   "translation": "fürchten, dass",
+   "section": "64"
+ },
+ {
+   "word": "occidere, occido, occidi, occisum",
+   "translation": "niederschlagen, töten",
+   "section": "64"
+ },
+ {
+   "word": "orare, oro",
+   "translation": "(an)beten, bitten",
+   "section": "64"
+ },
+ {
+   "word": "periculum est, ne  m. Konj.",
+   "translation": "es besteht die Gefahr, dass",
+   "section": "64"
+ },
+ {
+   "word": "postremo  Adv.",
+   "translation": "schließlich",
+   "section": "64"
+ },
+ {
+   "word": "postulare, postulo",
+   "translation": "fordern",
+   "section": "64"
+ },
+ {
+   "word": "praeda",
+   "translation": "Beute",
+   "section": "64"
+ },
+ {
+   "word": "singulus, a, um",
+   "translation": "je ein, jeder einzelne",
+   "section": "64"
+ },
+ {
+   "word": "sui, suorum  m Pl.",
+   "translation": "die Seinen, die Ihren, seine (ihre) Leute",
+   "section": "64"
+ },
+ {
+   "word": "timere, ne  m. Konj.",
+   "translation": "fürchten, dass",
+   "section": "64"
+ },
+ {
+   "word": "ut  Subj. m. Konj.",
+   "translation": "dass, zu (m. Inf.)",
+   "section": "64"
+ },
+ {
+   "word": "victoria",
+   "translation": "Sieg",
+   "section": "64"
+ },
+ {
+   "word": "a iuventute",
+   "translation": "von Jugend an",
+   "section": "65"
+ },
+ {
+   "word": "adversus  Präp. m. Akk.",
+   "translation": "gegen",
+   "section": "65"
+ },
+ {
+   "word": "adversus consules",
+   "translation": "gegen die Konsuln",
+   "section": "65"
+ },
+ {
+   "word": "auris, auris  f (Gen. Pl. -ium)",
+   "translation": "Ohr",
+   "section": "65"
+ },
+ {
+   "word": "Christianus, a, um",
+   "translation": "christlich; Subst. Christ",
+   "section": "65"
+ },
+ {
+   "word": "circúmdare, circumdo, circumdedi, circumdatum",
+   "translation": "umgeben",
+   "section": "65"
+ },
+ {
+   "word": "convertere, converto, converti, conversum",
+   "translation": "verändern, (um)wenden",
+   "section": "65"
+ },
+ {
+   "word": "Iudaeus, a, um",
+   "translation": "jüdisch; Subst. Jude",
+   "section": "65"
+ },
+ {
+   "word": "iuventus, iuventutis  f",
+   "translation": "Jugend",
+   "section": "65"
+ },
+ {
+   "word": "ne  Subj. m. Konj.",
+   "translation": "dass nicht;",
+   "section": "65"
+ },
+ {
+   "word": "opprimere, opprimo, oppressi, oppressum",
+   "translation": "bedrohen, niederwerfen, unterdrücken",
+   "section": "65"
+ },
+ {
+   "word": "pergere, pergo, perrexi",
+   "translation": "aufbrechen; weitermachen",
+   "section": "65"
+ },
+ {
+   "word": "quidam, quaedam, quiddam  subst.",
+   "translation": "ein gewisser, (irgend)einer; Pl. einige",
+   "section": "65"
+ },
+ {
+   "word": "quidam, quaedam, quoddam  adj.",
+   "translation": "ein gewisser, (irgend)ein; Pl. einige",
+   "section": "65"
+ },
+ {
+   "word": "religio, religionis  f",
+   "translation": "Glaube, Aberglaube, (Gottes-) Verehrung, Frömmigkeit",
+   "section": "65"
+ },
+ {
+   "word": "respondere, respondeo, respondi, responsum",
+   "translation": "antworten",
+   "section": "65"
+ },
+ {
+   "word": "Saulus / Paulus",
+   "translation": "Saulus / Paulus (hebräischer / christl. Name des Apost",
+   "section": "65"
+ },
+ {
+   "word": "scribere, scribo, scripsi, scriptum",
+   "translation": "schreiben, beschreiben",
+   "section": "65"
+ },
+ {
+   "word": "tradere, trado, tradidi, traditum",
+   "translation": "übergeben, überliefern",
+   "section": "65"
+ },
+ {
+   "word": "ut  Subj. m. Konj.",
+   "translation": "dass, sodass, damit, um zu (m. Inf.)",
+   "section": "65"
+ },
+ {
+   "word": "aeternus, a, um",
+   "translation": "ewig",
+   "section": "66"
+ },
+ {
+   "word": "ante  Adv.",
+   "translation": "vorher",
+   "section": "66"
+ },
+ {
+   "word": "Christus",
+   "translation": "Christus",
+   "section": "66"
+ },
+ {
+   "word": "comperire, comperio, comperi, compertum",
+   "translation": "(genau) erfahren",
+   "section": "66"
+ },
+ {
+   "word": "crux, crucis  f",
+   "translation": "Kreuz",
+   "section": "66"
+ },
+ {
+   "word": "falsus, a, um",
+   "translation": "FALSCH",
+   "section": "66"
+ },
+ {
+   "word": "fama",
+   "translation": "(guter / schlechter) Ruf, Gerücht",
+   "section": "66"
+ },
+ {
+   "word": "frequens, frequentis",
+   "translation": "häufig, zahlreich",
+   "section": "66"
+ },
+ {
+   "word": "furor, furoris  m",
+   "translation": "Wahnsinn, Wut",
+   "section": "66"
+ },
+ {
+   "word": "invitus, a, um",
+   "translation": "ungern, gegen den Willen",
+   "section": "66"
+ },
+ {
+   "word": "iste, ista, istud",
+   "translation": "dieser, diese, dieses (da)",
+   "section": "66"
+ },
+ {
+   "word": "metuere, metuo, metui",
+   "translation": "(sich) fürchten",
+   "section": "66"
+ },
+ {
+   "word": "necare, neco",
+   "translation": "töten",
+   "section": "66"
+ },
+ {
+   "word": "paulo",
+   "translation": "(um) ein wenig",
+   "section": "66"
+ },
+ {
+   "word": "pervenire, pervenio, perveni, perventum  ad / in m. Akk.",
+   "translation": "kommen zu / nach",
+   "section": "66"
+ },
+ {
+   "word": "ad forum pervenire",
+   "translation": "zum Forum kommen",
+   "section": "66"
+ },
+ {
+   "word": "placidus, a, um",
+   "translation": "friedlich, ruhig, sanft",
+   "section": "66"
+ },
+ {
+   "word": "sceleratus, a, um",
+   "translation": "verbrecherisch, schändlich; Subst. Verbrecher",
+   "section": "66"
+ },
+ {
+   "word": "animadvertere, animadverto, animadverti, animadversu",
+   "translation": "bemerken; vorgehen gegen",
+   "section": "67"
+ },
+ {
+   "word": "animadvertere in senatum",
+   "translation": "gegen den Senat vorgehen",
+   "section": "67"
+ },
+ {
+   "word": "cultus, cultus  m",
+   "translation": "Bildung, Lebensweise, Pflege, Verehrung",
+   "section": "67"
+ },
+ {
+   "word": "cum  Subj. m. Konj.",
+   "translation": "als, nachdem; weil; obwohl, während (dagegen)",
+   "section": "67"
+ },
+ {
+   "word": "deponere, depono, deposui, depositum",
+   "translation": "niederlegen, aufgeben",
+   "section": "67"
+ },
+ {
+   "word": "dimittere, dimitto, dimisi, dimissum",
+   "translation": "aufgeben, entlassen",
+   "section": "67"
+ },
+ {
+   "word": "Diocletianus",
+   "translation": "Diokletian (röm. Kaiser 284- 305 n. Chr.)",
+   "section": "67"
+ },
+ {
+   "word": "gerere, gero, gessi, gestum",
+   "translation": "ausführen, führen, tragen",
+   "section": "67"
+ },
+ {
+   "word": "impellere, impello, impuli, impulsum",
+   "translation": "antreiben, veranlassen",
+   "section": "67"
+ },
+ {
+   "word": "necesse (est)",
+   "translation": "(es ist) notwendig",
+   "section": "67"
+ },
+ {
+   "word": "occulte  Adv.",
+   "translation": "heimlich",
+   "section": "67"
+ },
+ {
+   "word": "protinus  Adv.",
+   "translation": "sofort",
+   "section": "67"
+ },
+ {
+   "word": "restituere, restituo, restitui, restitutum",
+   "translation": "wiederherstellen",
+   "section": "67"
+ },
+ {
+   "word": "Sebastianus",
+   "translation": "Sebastian (christl. Märtyrer)",
+   "section": "67"
+ },
+ {
+   "word": "sustinere, sustineo, sustinui",
+   "translation": "ertragen, standhalten",
+   "section": "67"
+ },
+ {
+   "word": "iniurias sustinere",
+   "translation": "die Beleidigungen ertragen, den Beleidigungen standha",
+   "section": "67"
+ },
+ {
+   "word": "tribuere, tribuo, tribui, tributum",
+   "translation": "schenken, zuteilen",
+   "section": "67"
+ },
+ {
+   "word": "ubi (primum)  Subj. m. Ind.",
+   "translation": "sobald",
+   "section": "67"
+ },
+ {
+   "word": "claudere, claudo, clausi, clausum",
+   "translation": "schließen, abschließen, einschließen",
+   "section": "68"
+ },
+ {
+   "word": "collocare, colloco",
+   "translation": "aufstellen, unterbringen",
+   "section": "68"
+ },
+ {
+   "word": "conscribere, conscribo, conscripsi, conscriptum",
+   "translation": "aufschreiben, verfassen",
+   "section": "68"
+ },
+ {
+   "word": "conspicere, conspicio, conspexi, conspectum",
+   "translation": "erblicken",
+   "section": "68"
+ },
+ {
+   "word": "Constantinus",
+   "translation": "Konstantin (der Große; röm. Kaiser 306-337 n. Chr.)",
+   "section": "68"
+ },
+ {
+   "word": "convocare, convoco",
+   "translation": "zusammenrufen, versammeln",
+   "section": "68"
+ },
+ {
+   "word": "exire, exeo, exii, exitum",
+   "translation": "herausgehen, hinausgehen; enden",
+   "section": "68"
+ },
+ {
+   "word": "fiducia",
+   "translation": "Vertrauen",
+   "section": "68"
+ },
+ {
+   "word": "fiducia sui",
+   "translation": "Selbstvertrauen",
+   "section": "68"
+ },
+ {
+   "word": "inter  Präp. m. Akk.",
+   "translation": "unter, während, zwischen",
+   "section": "68"
+ },
+ {
+   "word": "inter liberos",
+   "translation": "unter den Kindern, zwischen den Kindern",
+   "section": "68"
+ },
+ {
+   "word": "inter cenam",
+   "translation": "während des Essens",
+   "section": "68"
+ },
+ {
+   "word": "noscere, nosco, novi, notum",
+   "translation": "erkennen, kennenlernen; Perf.  wissen, kennen",
+   "section": "68"
+ },
+ {
+   "word": "omnino  Adv.",
+   "translation": "insgesamt, überhaupt, völlig",
+   "section": "68"
+ },
+ {
+   "word": "pons, pontis  m (Gen. Pl. -ium)",
+   "translation": "Brücke",
+   "section": "68"
+ },
+ {
+   "word": "ruere, ruo, rui",
+   "translation": "stürzen, eilen, stürmen",
+   "section": "68"
+ },
+ {
+   "word": "tegere, tego, texi, tectum",
+   "translation": "bedecken, schützen, verbergen",
+   "section": "68"
+ },
+ {
+   "word": "Tiberis, Tiberis  m  (Akk. -im, Abl. -i)",
+   "translation": "der Tiber (Fluss durch Rom)",
+   "section": "68"
+ },
+ {
+   "word": "ver, veris  n",
+   "translation": "Frühling",
+   "section": "68"
+ },
+ {
+   "word": "arbor, arboris  f",
+   "translation": "Baum",
+   "section": "69"
+ },
+ {
+   "word": "cogere, cogo, coegi, coactum",
+   "translation": "(ver)sammeln; zwingen",
+   "section": "69"
+ },
+ {
+   "word": "milites cogere",
+   "translation": "die Soldaten versammeln",
+   "section": "69"
+ },
+ {
+   "word": "nullo cogente",
+   "translation": "ohne Zwang",
+   "section": "69"
+ },
+ {
+   "word": "cognoscere, cognosco, cognovi, cognitum",
+   "translation": "erkennen, kennenlernen; Perf. kennen, wissen",
+   "section": "69"
+ },
+ {
+   "word": "Te cognovi.",
+   "translation": "Ich habe dich kennengelernt. Ich kenne dich.",
+   "section": "69"
+ },
+ {
+   "word": "decernere, decerno, decrevi, decretum",
+   "translation": "beschließen, entscheiden",
+   "section": "69"
+ },
+ {
+   "word": "deo gratias",
+   "translation": "Gott sei Dank!",
+   "section": "69"
+ },
+ {
+   "word": "translationus, a, um",
+   "translation": "translationisch, Subst. translatione",
+   "section": "69"
+ },
+ {
+   "word": "libellus",
+   "translation": "kleines Buch, Heft",
+   "section": "69"
+ },
+ {
+   "word": "maximus, a, um",
+   "translation": "der größte, sehr groß",
+   "section": "69"
+ },
+ {
+   "word": "numen, numinis  n",
+   "translation": "Gottheit, göttlicher Wille",
+   "section": "69"
+ },
+ {
+   "word": "plus, pluris",
+   "translation": "mehr",
+   "section": "69"
+ },
+ {
+   "word": "praesens, praesentis",
+   "translation": "anwesend, gegenwärtig",
+   "section": "69"
+ },
+ {
+   "word": "res gestae  f Pl.",
+   "translation": "Taten",
+   "section": "69"
+ },
+ {
+   "word": "saevus, a, um",
+   "translation": "schrecklich, wild, wütend",
+   "section": "69"
+ },
+ {
+   "word": "verus, a, um",
+   "translation": "echt, richtig, wahr",
+   "section": "69"
+ },
+ {
+   "word": "barbarus, a, um",
+   "translation": "ausländisch, unzivilisiert; Subst. Barbar",
+   "section": "70"
+ },
+ {
+   "word": "Carolo auctore",
+   "translation": "auf Veranlassung Karls",
+   "section": "70"
+ },
+ {
+   "word": "Carolo Magno imperatore",
+   "translation": "unter der Herrschaft Karls des Großen",
+   "section": "70"
+ },
+ {
+   "word": "Carolus Magnus",
+   "translation": "Karl der Große (König des Frankenreiches 768-814)",
+   "section": "70"
+ },
+ {
+   "word": "censere, censeo, censui, censum  (m. Akk.)",
+   "translation": "meinen, einschätzen; seine Stimme abgeben (für)",
+   "section": "70"
+ },
+ {
+   "word": "Linguam wordam pulchram esse censeo.",
+   "translation": "Ich meine, dass die lateinische Sprache schön ist.",
+   "section": "70"
+ },
+ {
+   "word": "Senatores pacem censent.",
+   "translation": "Die Senatoren stimmen für (den) Frieden.",
+   "section": "70"
+ },
+ {
+   "word": "docere, doceo, docui, doctum",
+   "translation": "lehren, unterrichten",
+   "section": "70"
+ },
+ {
+   "word": "ignoscere, ignosco, ignovi, ignotum",
+   "translation": "verzeihen",
+   "section": "70"
+ },
+ {
+   "word": "legatus",
+   "translation": "Gesandter, Bevollmächtigter",
+   "section": "70"
+ },
+ {
+   "word": "me invito",
+   "translation": "gegen meinen Willen",
+   "section": "70"
+ },
+ {
+   "word": "me praesente",
+   "translation": "in meiner Anwesenheit",
+   "section": "70"
+ },
+ {
+   "word": "munus, muneris  n",
+   "translation": "Geschenk; Aufgabe",
+   "section": "70"
+ },
+ {
+   "word": "munera mittere",
+   "translation": "Geschenke schicken",
+   "section": "70"
+ },
+ {
+   "word": "liber ab omni munere",
+   "translation": "frei von jeder Aufgabe (Verpflichtung)",
+   "section": "70"
+ },
+ {
+   "word": "nomine",
+   "translation": "namens",
+   "section": "70"
+ },
+ {
+   "word": "nuper  Adv.",
+   "translation": "neulich, vor kurzem",
+   "section": "70"
+ },
+ {
+   "word": "pax, pacis  f",
+   "translation": "Frieden",
+   "section": "70"
+ },
+ {
+   "word": "Persae, Persarum  m Pl.",
+   "translation": "die Perser",
+   "section": "70"
+ },
+ {
+   "word": "rege vivo",
+   "translation": "zu Lebzeiten des Königs",
+   "section": "70"
+ },
+ {
+   "word": "vivus, a, um",
+   "translation": "lebend, lebendig",
+   "section": "70"
+ },
+ {
+   "word": "alienus, a, um",
+   "translation": "fremd",
+   "section": "71"
+ },
+ {
+   "word": "auctoritas, auctoritatis  f",
+   "translation": "Ansehen, Einfluss, Macht",
+   "section": "71"
+ },
+ {
+   "word": "Augustus",
+   "translation": "Augustus (erster röm. Kaiser 27 v. Chr. – 14 n. Chr.)",
+   "section": "71"
+ },
+ {
+   "word": "commodum",
+   "translation": "Bequemlichkeit, Vorteil",
+   "section": "71"
+ },
+ {
+   "word": "corripere, corripio, corripui, correptum",
+   "translation": "ergreifen, gewaltsam an sich reißen",
+   "section": "71"
+ },
+ {
+   "word": "translationia",
+   "translation": "translationien",
+   "section": "71"
+ },
+ {
+   "word": "humanitas, humanitatis  f",
+   "translation": "Menschlichkeit, Menschenfreundlichkeit; Bildung",
+   "section": "71"
+ },
+ {
+   "word": "intellegere, intellego, intellexi, intellectum",
+   "translation": "(be)merken, verstehen",
+   "section": "71"
+ },
+ {
+   "word": "-ne…an (Wahlfrage im Hauptsatz)",
+   "translation": "…oder",
+   "section": "71"
+ },
+ {
+   "word": "obtinere, obtineo",
+   "translation": "(in Besitz) haben, (besetzt) halten",
+   "section": "71"
+ },
+ {
+   "word": "orbis, orbis  m",
+   "translation": "Kreis(lauf); Erdkreis, Welt",
+   "section": "71"
+ },
+ {
+   "word": "quare?",
+   "translation": "weshalb? wodurch?",
+   "section": "71"
+ },
+ {
+   "word": "qui, quae, quod  adj.",
+   "translation": "welcher, welche, welches",
+   "section": "71"
+ },
+ {
+   "word": "quidnam?",
+   "translation": "was denn?",
+   "section": "71"
+ },
+ {
+   "word": "saeculum",
+   "translation": "Jahrhundert, Menschenalter, Zeit(alter)",
+   "section": "71"
+ },
+ {
+   "word": "usque Adv.",
+   "translation": "ohne Unterbrechung;",
+   "section": "71"
+ },
+ {
+   "word": "utrum…an (Wahlfrage im Hauptsatz)",
+   "translation": "…oder",
+   "section": "71"
+ },
+ {
+   "word": "civitas, civitatis  f",
+   "translation": "Gemeinde, Staat; Bürgerrecht",
+   "section": "72"
+ },
+ {
+   "word": "deficere, deficio, defeci, defectum  (a m. Abl.)",
+   "translation": "abnehmen, ermatten, abfallen (von)",
+   "section": "72"
+ },
+ {
+   "word": "exstinguere, exstinguo, exstinxi, exstinctum",
+   "translation": "auslöschen, vernichten",
+   "section": "72"
+ },
+ {
+   "word": "item  Adv.",
+   "translation": "ebenso, gleichfalls",
+   "section": "72"
+ },
+ {
+   "word": "mens, mentis  f (Gen. Pl. -ium)",
+   "translation": "Geist, Sinn, Verstand; Meinung",
+   "section": "72"
+ },
+ {
+   "word": "posteri, posterorum  m Pl.",
+   "translation": "Nachkommen",
+   "section": "72"
+ },
+ {
+   "word": "praestare, praesto, praestiti",
+   "translation": "m. Akk.  gewähren, leisten, zeigen;",
+   "section": "72"
+ },
+ {
+   "word": "officium praestare",
+   "translation": "seine Pflicht erfüllen",
+   "section": "72"
+ },
+ {
+   "word": "amico praestare",
+   "translation": "den Freund übertreffen",
+   "section": "72"
+ },
+ {
+   "word": "prodere, prodo, prodidi, proditum",
+   "translation": "verraten; überliefern",
+   "section": "72"
+ },
+ {
+   "word": "prohibere, ne  m. Konj.",
+   "translation": "daran hindern, dass",
+   "section": "72"
+ },
+ {
+   "word": "proinde  Adv.",
+   "translation": "also, daher",
+   "section": "72"
+ },
+ {
+   "word": "quamvis  Subj. m. Konj.",
+   "translation": "wenn auch, obwohl",
+   "section": "72"
+ },
+ {
+   "word": "quiescere, quiesco, quievi, quietum",
+   "translation": "(aus)ruhen, schlafen",
+   "section": "72"
+ },
+ {
+   "word": "sponte mea (tua, sua)",
+   "translation": "freiwillig, von selbst",
+   "section": "72"
+ },
+ {
+   "word": "vis  f  (Akk. vim, Abl. vi)",
+   "translation": "Gewalt, Kraft, Menge",
+   "section": "72"
+ },
+ {
+   "word": "abesse, absum, afui  (a m. Abl.)",
+   "translation": "entfernt sein, abwesend sein, fehlen",
+   "section": "73"
+ },
+ {
+   "word": "ab urbe abesse",
+   "translation": "von der Stadt entfernt sein",
+   "section": "73"
+ },
+ {
+   "word": "Multa mihi absunt.",
+   "translation": "Mir fehlt viel(es).",
+   "section": "73"
+ },
+ {
+   "word": "ars, artis  f (Gen. Pl. -ium)",
+   "translation": "Kunst, Fertigkeit, Eigenschaft",
+   "section": "73"
+ },
+ {
+   "word": "centum  indekl.",
+   "translation": "hundert",
+   "section": "73"
+ },
+ {
+   "word": "difficilis, e",
+   "translation": "schwer, schwierig",
+   "section": "73"
+ },
+ {
+   "word": "locare, loco",
+   "translation": "aufstellen, setzen; vermieten",
+   "section": "73"
+ },
+ {
+   "word": "moenia locare",
+   "translation": "Stadtmauern errichten",
+   "section": "73"
+ },
+ {
+   "word": "domum locare",
+   "translation": "ein Haus vermieten",
+   "section": "73"
+ },
+ {
+   "word": "longus, a, um",
+   "translation": "lang, weit",
+   "section": "73"
+ },
+ {
+   "word": "milia, milium  Pl.",
+   "translation": "tausend, Tausende",
+   "section": "73"
+ },
+ {
+   "word": "mille  Sg. indekl.",
+   "translation": "tausend",
+   "section": "73"
+ },
+ {
+   "word": "non dubito, quin  m. Konj.",
+   "translation": "Ich zweifle nicht (daran), dass…",
+   "section": "73"
+ },
+ {
+   "word": "quasi  Adv.",
+   "translation": "gleichsam",
+   "section": "73"
+ },
+ {
+   "word": "quin?",
+   "translation": "(im Hauptsatz)  warum nicht?",
+   "section": "73"
+ },
+ {
+   "word": "non dubito, quin  m. Konj.",
+   "translation": "Ich zweifle nicht (daran), dass…",
+   "section": "73"
+ },
+ {
+   "word": "ruri  Adv.",
+   "translation": "auf dem Land",
+   "section": "73"
+ },
+ {
+   "word": "rus, ruris  n",
+   "translation": "Feld, Land (im Gegensatz zu Stadt), Landgut",
+   "section": "73"
+ },
+ {
+   "word": "utilis, e",
+   "translation": "nützlich",
+   "section": "73"
+ },
+ {
+   "word": "aes, aeris  n",
+   "translation": "Erz, Geld",
+   "section": "74"
+ },
+ {
+   "word": "aes alienum",
+   "translation": "Schulden",
+   "section": "74"
+ },
+ {
+   "word": "edere, edo, edidi, editum",
+   "translation": "herausgeben, bekannt machen, veranstalten",
+   "section": "74"
+ },
+ {
+   "word": "emere, emo, emi, emptum",
+   "translation": "kaufen",
+   "section": "74"
+ },
+ {
+   "word": "evenire, evenio, eveni, eventum",
+   "translation": "sich ereignen",
+   "section": "74"
+ },
+ {
+   "word": "exigere, exigo, exegi, exactum",
+   "translation": "(ein)fordern, vollenden",
+   "section": "74"
+ },
+ {
+   "word": "impedire, ne  m. Konj.",
+   "translation": "(ver)hindern, dass",
+   "section": "74"
+ },
+ {
+   "word": "improbus, a, um",
+   "translation": "schlecht, unanständig",
+   "section": "74"
+ },
+ {
+   "word": "incertus, a, um",
+   "translation": "ungewiss, unsicher",
+   "section": "74"
+ },
+ {
+   "word": "inde  Adv.",
+   "translation": "von dort; darauf; deshalb",
+   "section": "74"
+ },
+ {
+   "word": "munitio, munitionis  f",
+   "translation": "Bau, Befestigung",
+   "section": "74"
+ },
+ {
+   "word": "nihil…nisi",
+   "translation": "nichts…außer, nichts (anderes)…als, nur",
+   "section": "74"
+ },
+ {
+   "word": "Nihil (aliud) nisi veniam a te peto.",
+   "translation": "Ich verlange nichts außer Nachsicht von dir. Ich verlang",
+   "section": "74"
+ },
+ {
+   "word": "num?  (im Gliedsatz)",
+   "translation": "ob, ob nicht",
+   "section": "74"
+ },
+ {
+   "word": "poscere, posco, poposci",
+   "translation": "fordern, verlangen",
+   "section": "74"
+ },
+ {
+   "word": "quoniam  Subj. m. Ind.",
+   "translation": "da ja, da nun",
+   "section": "74"
+ },
+ {
+   "word": "utrum…an (im Gliedsatz)",
+   "translation": "ob…oder",
+   "section": "74"
+ },
+ {
+   "word": "aliter  Adv.",
+   "translation": "anders; sonst",
+   "section": "75"
+ },
+ {
+   "word": "ambo, ambae, ambo",
+   "translation": "beide (zusammen)",
+   "section": "75"
+ },
+ {
+   "word": "aspicere, aspicio, aspexi, aspectum",
+   "translation": "erblicken, ansehen",
+   "section": "75"
+ },
+ {
+   "word": "culpa",
+   "translation": "Schuld",
+   "section": "75"
+ },
+ {
+   "word": "facinus, facinoris  n",
+   "translation": "Handlung; Untat",
+   "section": "75"
+ },
+ {
+   "word": "forte  Adv.",
+   "translation": "zufällig",
+   "section": "75"
+ },
+ {
+   "word": "iactare, iacto",
+   "translation": "schleudern, werfen; rühmen",
+   "section": "75"
+ },
+ {
+   "word": "iudicare, iudico",
+   "translation": "urteilen, beurteilen",
+   "section": "75"
+ },
+ {
+   "word": "magistratus, magistratus  m",
+   "translation": "Amt, Beamter",
+   "section": "75"
+ },
+ {
+   "word": "minime  Adv.",
+   "translation": "am wenigsten, überhaupt nicht",
+   "section": "75"
+ },
+ {
+   "word": "pariter  Adv.",
+   "translation": "ebenso, gleichzeitig",
+   "section": "75"
+ },
+ {
+   "word": "parum  Adv.",
+   "translation": "(zu) wenig",
+   "section": "75"
+ },
+ {
+   "word": "praetor, praetoris  m",
+   "translation": "Prätor (für die Rechtsprechung zuständiger Beamter)",
+   "section": "75"
+ },
+ {
+   "word": "prope  Adv.",
+   "translation": "nahe, in der Nähe; beinahe",
+   "section": "75"
+ },
+ {
+   "word": "afferre, affero, attuli, allatum",
+   "translation": "bringen, herbeibringen, mitbringen; melden",
+   "section": "76"
+ },
+ {
+   "word": "asper, aspera, asperum",
+   "translation": "rau; streng",
+   "section": "76"
+ },
+ {
+   "word": "conferre, confero, contuli, collatum",
+   "translation": "vergleichen, zusammentragen",
+   "section": "76"
+ },
+ {
+   "word": "crescere, cresco, crevi",
+   "translation": "wachsen",
+   "section": "76"
+ },
+ {
+   "word": "deferre, defero, detuli, delatum",
+   "translation": "hinbringen, melden, übertragen",
+   "section": "76"
+ },
+ {
+   "word": "differre, differo, distuli, dilatum  (a m. Abl.)",
+   "translation": "aufschieben; sich unterscheiden (von)",
+   "section": "76"
+ },
+ {
+   "word": "supplicium differre",
+   "translation": "die Hinrichtung aufschieben",
+   "section": "76"
+ },
+ {
+   "word": "a fratre differre",
+   "translation": "sich vom Bruder unterscheiden",
+   "section": "76"
+ },
+ {
+   "word": "efferre, effero, extuli, elatum",
+   "translation": "herausheben, hervorbringen",
+   "section": "76"
+ },
+ {
+   "word": "ferre, fero, tuli, latum",
+   "translation": "bringen, tragen; ertragen",
+   "section": "76"
+ },
+ {
+   "word": "inferre, infero, intuli, illatum",
+   "translation": "hineintragen, zufügen",
+   "section": "76"
+ },
+ {
+   "word": "offerre, offero, obtuli, oblatum",
+   "translation": "anbieten, entgegenbringen",
+   "section": "76"
+ },
+ {
+   "word": "perferre, perfero, pertuli, perlatum",
+   "translation": "(über)bringen, ertragen",
+   "section": "76"
+ },
+ {
+   "word": "praeferre, praefero, praetuli, praelatum",
+   "translation": "vorziehen",
+   "section": "76"
+ },
+ {
+   "word": "recens, recentis",
+   "translation": "frisch, neu",
+   "section": "76"
+ },
+ {
+   "word": "referre, refero, rettuli, relatum",
+   "translation": "(zurück)bringen, berichten",
+   "section": "76"
+ },
+ {
+   "word": "vendere, vendo, vendidi, venditum",
+   "translation": "verkaufen",
+   "section": "76"
+ },
+ {
+   "word": "aliqui, aliqua, aliquod  adj.",
+   "translation": "(irgend)ein",
+   "section": "77"
+ },
+ {
+   "word": "aliquis, aliquid  subst.",
+   "translation": "(irgend)jemand",
+   "section": "77"
+ },
+ {
+   "word": "casus, casus  m",
+   "translation": "Fall, Zufall",
+   "section": "77"
+ },
+ {
+   "word": "casus nominativus",
+   "translation": "der (Fall) Nominativ",
+   "section": "77"
+ },
+ {
+   "word": "casus civitatis",
+   "translation": "der Untergang des Staates",
+   "section": "77"
+ },
+ {
+   "word": "casu evenire",
+   "translation": "sich zufällig ereignen",
+   "section": "77"
+ },
+ {
+   "word": "cernere, cerno",
+   "translation": "sehen, bemerken",
+   "section": "77"
+ },
+ {
+   "word": "constare, consto, constiti",
+   "translation": "ex m. Abl. bestehen aus",
+   "section": "77"
+ },
+ {
+   "word": "oratio e compluribus partibus constat.",
+   "translation": "Eine Rede besteht aus mehreren Teilen.",
+   "section": "77"
+ },
+ {
+   "word": "cupidus, a, um  (m. Gen.)",
+   "translation": "(be)gierig (nach)",
+   "section": "77"
+ },
+ {
+   "word": "cupidus pecuniae",
+   "translation": "gierig nach Geld, geldgierig",
+   "section": "77"
+ },
+ {
+   "word": "cursus, cursus  m",
+   "translation": "Lauf",
+   "section": "77"
+ },
+ {
+   "word": "imprimis  Adv.",
+   "translation": "besonders, vor allem",
+   "section": "77"
+ },
+ {
+   "word": "miscere, misceo, miscui, mixtum",
+   "translation": "mischen, verwirren, durcheinanderbringen",
+   "section": "77"
+ },
+ {
+   "word": "motus, motus  m",
+   "translation": "Bewegung",
+   "section": "77"
+ },
+ {
+   "word": "nec  / neque",
+   "translation": "und nicht, auch nicht",
+   "section": "77"
+ },
+ {
+   "word": "nocturnus, a, um",
+   "translation": "nächtlich",
+   "section": "77"
+ },
+ {
+   "word": "opinio, opinionis  f",
+   "translation": "Meinung, (guter) Ruf",
+   "section": "77"
+ },
+ {
+   "word": "quondam  Adv.",
+   "translation": "einmal, einst; manchmal",
+   "section": "77"
+ },
+ {
+   "word": "sapere, sapio, sapivi",
+   "translation": "Verstand haben, Geschmack haben",
+   "section": "77"
+ },
+ {
+   "word": "sidus, sideris  n",
+   "translation": "Stern, Sternbild",
+   "section": "77"
+ },
+ {
+   "word": "Thales, Thalis  m",
+   "translation": "Thales (griech. Philosoph aus Milet, um 600 v. Chr.)",
+   "section": "77"
+ },
+ {
+   "word": "aurum",
+   "translation": "Gold",
+   "section": "78"
+ },
+ {
+   "word": "brevis, e",
+   "translation": "kurz",
+   "section": "78"
+ },
+ {
+   "word": "comparare, comparo",
+   "translation": "vergleichen",
+   "section": "78"
+ },
+ {
+   "word": "Croesus",
+   "translation": "Krösus (König von Lydien, 6. Jh. v. Chr.)",
+   "section": "78"
+ },
+ {
+   "word": "demum  Adv.",
+   "translation": "endlich, erst",
+   "section": "78"
+ },
+ {
+   "word": "divinus, a, um",
+   "translation": "göttlich",
+   "section": "78"
+ },
+ {
+   "word": "extra  Präp. m. Akk.",
+   "translation": "außerhalb (von)",
+   "section": "78"
+ },
+ {
+   "word": "fatum",
+   "translation": "Schicksal, Götterspruch",
+   "section": "78"
+ },
+ {
+   "word": "Graecia",
+   "translation": "Griechenland",
+   "section": "78"
+ },
+ {
+   "word": "humanus, a, um",
+   "translation": "menschlich; gebildet",
+   "section": "78"
+ },
+ {
+   "word": "interea  Adv.",
+   "translation": "inzwischen, unterdessen",
+   "section": "78"
+ },
+ {
+   "word": "minimus, a, um",
+   "translation": "der kleinste, der geringste",
+   "section": "78"
+ },
+ {
+   "word": "ops, opis  f",
+   "translation": "Hilfe, Kraft; Pl. Macht, Mittel, Reichtum",
+   "section": "78"
+ },
+ {
+   "word": "fratri opem ferre",
+   "translation": "dem Bruder Hilfe bringen",
+   "section": "78"
+ },
+ {
+   "word": "magnae opes",
+   "translation": "große Macht, großer Reichtum",
+   "section": "78"
+ },
+ {
+   "word": "recipere, recipio, recepi, receptum",
+   "translation": "zurücknehmen, aufnehmen, wiederbekommen",
+   "section": "78"
+ },
+ {
+   "word": "regius, a, um",
+   "translation": "königlich",
+   "section": "78"
+ },
+ {
+   "word": "(domus) regia",
+   "translation": "königliches Haus, (Königs-)Palast",
+   "section": "78"
+ },
+ {
+   "word": "regnum",
+   "translation": "(Königs-)Herrschaft, Reich",
+   "section": "78"
+ },
+ {
+   "word": "Solo, Solonis  m",
+   "translation": "Solon (athenischer Gesetzgeber im 6. Jh. v. Chr.)",
+   "section": "78"
+ },
+ {
+   "word": "aio (3. Pers. Sg. ait, 3. Pers. Pl. aiunt)",
+   "translation": "behaupte(te) ich, sag(t)e ich",
+   "section": "79"
+ },
+ {
+   "word": "Alcaeus",
+   "translation": "Alkaios (griech. Dichter, um 600 v. Chr.)",
+   "section": "79"
+ },
+ {
+   "word": "componere, compono, composui, compositum",
+   "translation": "abfassen, ordnen, schlichten; vergleichen",
+   "section": "79"
+ },
+ {
+   "word": "contingere, contingo, contigi, contactum",
+   "translation": "berühren; gelingen",
+   "section": "79"
+ },
+ {
+   "word": "Contingit mihi, ut veniam.",
+   "translation": "Es gelingt mir zu kommen.",
+   "section": "79"
+ },
+ {
+   "word": "epistula",
+   "translation": "Brief",
+   "section": "79"
+ },
+ {
+   "word": "exilium",
+   "translation": "Exil, Verbannung",
+   "section": "79"
+ },
+ {
+   "word": "gaudium",
+   "translation": "Freude",
+   "section": "79"
+ },
+ {
+   "word": "initium",
+   "translation": "Anfang, Eingang",
+   "section": "79"
+ },
+ {
+   "word": "mollis, e",
+   "translation": "weich, angenehm; freundlich",
+   "section": "79"
+ },
+ {
+   "word": "nuptiae, nuptiarum  f Pl.",
+   "translation": "Hochzeit",
+   "section": "79"
+ },
+ {
+   "word": "perficere, perficio, perfeci, perfectum",
+   "translation": "erreichen, fertigstellen, vollenden",
+   "section": "79"
+ },
+ {
+   "word": "prior, prius  (Gen. prioris)",
+   "translation": "der erste, der frühere, der vordere",
+   "section": "79"
+ },
+ {
+   "word": "salutem dicere  (m. Dat.)",
+   "translation": "(jdn.) grüßen, begrüßen",
+   "section": "79"
+ },
+ {
+   "word": "Sappho Alcaeo amico salutem dicit.",
+   "translation": "Sappho grüßt ihren Freund Alkaios.",
+   "section": "79"
+ },
+ {
+   "word": "Sappho, Sapphus  f",
+   "translation": "Sappho (griech. Dichterin, um 600 v. Chr.)",
+   "section": "79"
+ },
+ {
+   "word": "solacium",
+   "translation": "Trost, Trostmittel",
+   "section": "79"
+ },
+ {
+   "word": "solacio esse",
+   "translation": "Trost bringen",
+   "section": "79"
+ },
+ {
+   "word": "versus, versus  m",
+   "translation": "Vers",
+   "section": "79"
+ },
+ {
+   "word": "auxilio vocare",
+   "translation": "zu Hilfe rufen",
+   "section": "80"
+ },
+ {
+   "word": "Corinthus  f",
+   "translation": "Korinth (Stadt in Griechenland)",
+   "section": "80"
+ },
+ {
+   "word": "cupiditas, cupiditatis  f (m. Gen.)",
+   "translation": "(heftiges) Verlangen (nach), Leidenschaft",
+   "section": "80"
+ },
+ {
+   "word": "cupiditas gloriae",
+   "translation": "das Verlangen nach Ruhm",
+   "section": "80"
+ },
+ {
+   "word": "ibycus",
+   "translation": "Ibykos (griech. Dichter, um 550 v. Chr.)",
+   "section": "80"
+ },
+ {
+   "word": "maior, maius  (Gen. maioris)",
+   "translation": "größer",
+   "section": "80"
+ },
+ {
+   "word": "melior, melius  (Gen. melioris)",
+   "translation": "besser",
+   "section": "80"
+ },
+ {
+   "word": "minor, minus  (Gen. minoris)",
+   "translation": "kleiner, geringer",
+   "section": "80"
+ },
+ {
+   "word": "nex, necis  f",
+   "translation": "Mord, (gewaltsamer) Tod",
+   "section": "80"
+ },
+ {
+   "word": "obscurus, a, um",
+   "translation": "dunkel, unbekannt",
+   "section": "80"
+ },
+ {
+   "word": "optimus, a, um",
+   "translation": "der beste, sehr gut",
+   "section": "80"
+ },
+ {
+   "word": "peior, peius  (Gen. peioris)",
+   "translation": "schlechter, schlimmer",
+   "section": "80"
+ },
+ {
+   "word": "pessimus, a, um",
+   "translation": "der schlechteste, der schlimmste",
+   "section": "80"
+ },
+ {
+   "word": "plurimi, ae, a",
+   "translation": "die meisten, sehr viele",
+   "section": "80"
+ },
+ {
+   "word": "poeta, poetae  m",
+   "translation": "Dichter",
+   "section": "80"
+ },
+ {
+   "word": "testis, testis  m/f (Gen. Pl. -ium)",
+   "translation": "Zeuge, Zeugin",
+   "section": "80"
+ },
+ {
+   "word": "una  Adv.",
+   "translation": "zugleich, zusammen",
+   "section": "80"
+ },
+ {
+   "word": "una cum patre",
+   "translation": "zusammen mit dem Vater",
+   "section": "80"
+ },
+ {
+   "word": "Antigona",
+   "translation": "Antigone (Tochter des Ödipus)",
+   "section": "81"
+ },
+ {
+   "word": "causa  (nachgestellt) m. Gen.",
+   "translation": "wegen",
+   "section": "81"
+ },
+ {
+   "word": "gloriae causa",
+   "translation": "wegen des Ruhms",
+   "section": "81"
+ },
+ {
+   "word": "cavere, caveo, cavi, cautum  (m. Akk.)",
+   "translation": "sich hüten (vor), Vorsorge treffen",
+   "section": "81"
+ },
+ {
+   "word": "Cave iram!",
+   "translation": "Hüte dich vor Zorn!",
+   "section": "81"
+ },
+ {
+   "word": "Cave, (ne) cadas!",
+   "translation": "Hüte dich zu fallen!",
+   "section": "81"
+ },
+ {
+   "word": "Creon, Creontis  m",
+   "translation": "Kreon (König von Theben, Onkel der Antigone)",
+   "section": "81"
+ },
+ {
+   "word": "durus, a, um",
+   "translation": "hart, hartherzig",
+   "section": "81"
+ },
+ {
+   "word": "impius, a, um",
+   "translation": "gottlos, gewissenlos",
+   "section": "81"
+ },
+ {
+   "word": "imponere, impono, imposui, impositum",
+   "translation": "auferlegen, einsetzen",
+   "section": "81"
+ },
+ {
+   "word": "civibus legem imponere",
+   "translation": "den Bürgern ein Gesetz auferlegen",
+   "section": "81"
+ },
+ {
+   "word": "iustus, a, um",
+   "translation": "gerecht",
+   "section": "81"
+ },
+ {
+   "word": "nolle, nolo, nolui",
+   "translation": "nicht wollen",
+   "section": "81"
+ },
+ {
+   "word": "patrius, a, um",
+   "translation": "heimisch, väterlich",
+   "section": "81"
+ },
+ {
+   "word": "peccare, pecco",
+   "translation": "sündigen, einen Fehler machen",
+   "section": "81"
+ },
+ {
+   "word": "pius, a, um",
+   "translation": "fromm, gerecht, pflichtbewusst",
+   "section": "81"
+ },
+ {
+   "word": "praesidium",
+   "translation": "(Wach-)Posten, Schutztruppe",
+   "section": "81"
+ },
+ {
+   "word": "quisnam",
+   "translation": "wer denn?",
+   "section": "81"
+ },
+ {
+   "word": "sententia",
+   "translation": "Meinung, Satz, Sinn, Antrag (im Senat)",
+   "section": "81"
+ },
+ {
+   "word": "superbia",
+   "translation": "Stolz, Überheblichkeit",
+   "section": "81"
+ },
+ {
+   "word": "adulescens, adulescentis  m (Gen. Pl. -ium)",
+   "translation": "jung; Subst. junger Mann",
+   "section": "82"
+ },
+ {
+   "word": "aedis, aedis  f (Gen. Pl. -ium)",
+   "translation": "Tempel, Pl. Haus",
+   "section": "82"
+ },
+ {
+   "word": "attingere, attingo, attigi, attactum",
+   "translation": "berühren",
+   "section": "82"
+ },
+ {
+   "word": "canis, canis  m",
+   "translation": "Hund",
+   "section": "82"
+ },
+ {
+   "word": "committere, committo, commisi, commissum",
+   "translation": "anvertrauen; veranstalten; zustande bringen",
+   "section": "82"
+ },
+ {
+   "word": "ludos committere",
+   "translation": "Spiele veranstalten, eröffnen",
+   "section": "82"
+ },
+ {
+   "word": "proelium committere",
+   "translation": "eine Schlacht liefern, kämpfen",
+   "section": "82"
+ },
+ {
+   "word": "custodia",
+   "translation": "Gefängnis, Haft, Wache",
+   "section": "82"
+ },
+ {
+   "word": "dos, dotis  f",
+   "translation": "Mitgift",
+   "section": "82"
+ },
+ {
+   "word": "ferus, a, um",
+   "translation": "wild",
+   "section": "82"
+ },
+ {
+   "word": "incredibilis, e",
+   "translation": "unglaublich",
+   "section": "82"
+ },
+ {
+   "word": "indignus, a, um  (m. Abl.)",
+   "translation": "unwürdig (einer Sache)",
+   "section": "82"
+ },
+ {
+   "word": "honore indignus",
+   "translation": "der Ehre unwürdig",
+   "section": "82"
+ },
+ {
+   "word": "iungere, iungo, iunxi, iunctum",
+   "translation": "verbinden, vereinigen",
+   "section": "82"
+ },
+ {
+   "word": "ius, iuris  n",
+   "translation": "Recht",
+   "section": "82"
+ },
+ {
+   "word": "pudet, puduit  m. Akk.",
+   "translation": "es beschämt (jdn.)",
+   "section": "82"
+ },
+ {
+   "word": "Pudet me flere.",
+   "translation": "Es beschämt mich zu weinen. Ich schäme mich zu wei",
+   "section": "82"
+ },
+ {
+   "word": "Pudet me huius facinoris.",
+   "translation": "Ich schäme mich wegen dieser Untat.",
+   "section": "82"
+ },
+ {
+   "word": "sermo, sermonis  m",
+   "translation": "Gespräch, Sprache, Gerede",
+   "section": "82"
+ },
+ {
+   "word": "solus, a, um",
+   "translation": "allein, einzig",
+   "section": "82"
+ },
+ {
+   "word": "Cato, Catonis  m",
+   "translation": "Cato (röm. Politiker und Feldherr)",
+   "section": "83"
+ },
+ {
+   "word": "corrumpere, corrumpo, corrupi, corruptum",
+   "translation": "bestechen, verderben",
+   "section": "83"
+ },
+ {
+   "word": "iudicem corrumpere",
+   "translation": "den Richter bestechen",
+   "section": "83"
+ },
+ {
+   "word": "iuventutem corrumpere",
+   "translation": "die Jugend verderben",
+   "section": "83"
+ },
+ {
+   "word": "diligere, diligo, dilexi, dilectum",
+   "translation": "hochachten, lieben",
+   "section": "83"
+ },
+ {
+   "word": "facile  Adv.",
+   "translation": "leicht",
+   "section": "83"
+ },
+ {
+   "word": "Flamininus",
+   "translation": "Flamininus (röm. Politiker und Feldherr)",
+   "section": "83"
+ },
+ {
+   "word": "Graecus, a, um",
+   "translation": "griechisch; Subst. Grieche",
+   "section": "83"
+ },
+ {
+   "word": "levis, e",
+   "translation": "leicht, leichtsinnig",
+   "section": "83"
+ },
+ {
+   "word": "maiores, maiorum  m Pl.",
+   "translation": "Vorfahren",
+   "section": "83"
+ },
+ {
+   "word": "modo…modo",
+   "translation": "manchmal…manchmal",
+   "section": "83"
+ },
+ {
+   "word": "more Graecorum",
+   "translation": "nach Art der Griechen",
+   "section": "83"
+ },
+ {
+   "word": "optare, opto",
+   "translation": "wünschen",
+   "section": "83"
+ },
+ {
+   "word": "opus, operis  n",
+   "translation": "Arbeit, Werk",
+   "section": "83"
+ },
+ {
+   "word": "perturbare, perturbo",
+   "translation": "in Verwirrung bringen",
+   "section": "83"
+ },
+ {
+   "word": "philosophus",
+   "translation": "Philosoph",
+   "section": "83"
+ },
+ {
+   "word": "potius  Adv.",
+   "translation": "eher, lieber",
+   "section": "83"
+ },
+ {
+   "word": "utinam  m. Konj.",
+   "translation": "hoffentlich, wenn doch",
+   "section": "83"
+ },
+ {
+   "word": "Utinam venias!",
+   "translation": "Hoffentlich kommst du!",
+   "section": "83"
+ },
+ {
+   "word": "Utinam venisses!",
+   "translation": "Wenn du doch gekommen wärest!",
+   "section": "83"
+ },
+ {
+   "word": "vitium",
+   "translation": "Fehler, schlechte Eigenschaft",
+   "section": "83"
+ },
+ {
+   "word": "voluptas, voluptatis  f",
+   "translation": "Lust, Vergnügen",
+   "section": "83"
+ },
+ {
+   "word": "afficere, afficio, affeci, affectum  m. Abl.",
+   "translation": "versehen mit etw.",
+   "section": "84"
+ },
+ {
+   "word": "poena afficere",
+   "translation": "bestrafen",
+   "section": "84"
+ },
+ {
+   "word": "supplicio afficere",
+   "translation": "hinrichten lassen",
+   "section": "84"
+ },
+ {
+   "word": "ceterum  Adv.",
+   "translation": "übrigens, im Übrigen",
+   "section": "84"
+ },
+ {
+   "word": "colligere, colligo, collegi, collectum",
+   "translation": "sammeln",
+   "section": "84"
+ },
+ {
+   "word": "Hector, Hectoris  m",
+   "translation": "Hektor (stärkster der trojanischen Helden im Kampf ge",
+   "section": "84"
+ },
+ {
+   "word": "illic  Adv.",
+   "translation": "dort",
+   "section": "84"
+ },
+ {
+   "word": "incendium",
+   "translation": "Brand, Feuer",
+   "section": "84"
+ },
+ {
+   "word": "Laelius",
+   "translation": "Laelius (röm. Politiker und Feldherr)",
+   "section": "84"
+ },
+ {
+   "word": "legatio, legationis  f",
+   "translation": "Gesandtschaft",
+   "section": "84"
+ },
+ {
+   "word": "memor, memoris  m. Gen.",
+   "translation": "in Erinnerung an",
+   "section": "84"
+ },
+ {
+   "word": "Memor periculi sum.",
+   "translation": "Ich erinnere mich an die Gefahr. Ich denke an die Gefa",
+   "section": "84"
+ },
+ {
+   "word": "nobilis, e",
+   "translation": "adelig, berühmt, vornehm",
+   "section": "84"
+ },
+ {
+   "word": "qui  Adv.",
+   "translation": "wie",
+   "section": "84"
+ },
+ {
+   "word": "restare, resto, restiti",
+   "translation": "übrig bleiben; Widerstand leisten",
+   "section": "84"
+ },
+ {
+   "word": "Hoc dicere restat.",
+   "translation": "Das bleibt (noch) zu sagen übrig.",
+   "section": "84"
+ },
+ {
+   "word": "Milites hostibus fortiter restiterunt.",
+   "translation": "Die Soldaten leisteten den Feinden tapfer Widerstand.",
+   "section": "84"
+ },
+ {
+   "word": "rumpere, rumpo, rupi, ruptum",
+   "translation": "zerbrechen",
+   "section": "84"
+ },
+ {
+   "word": "Scipio, Scipionis  m",
+   "translation": "Scipio (röm. Politiker und Feldherr)",
+   "section": "84"
+ },
+ {
+   "word": "spatium",
+   "translation": "Raum, Strecke, Zeit(raum)",
+   "section": "84"
+ },
+ {
+   "word": "Troia",
+   "translation": "Troja (Stadt in Kleinasien)",
+   "section": "84"
+ },
+ {
+   "word": "accedere, accedo, accessi, accessum  (ad m. Akk.)",
+   "translation": "herbeikommen, hinzukommen",
+   "section": "85"
+ },
+ {
+   "word": "ad rem publicam accedere",
+   "translation": "sich politisch betätigen",
+   "section": "85"
+ },
+ {
+   "word": "Atticus",
+   "translation": "Atticus (Freund und Verleger Ciceros)",
+   "section": "85"
+ },
+ {
+   "word": "Catullus",
+   "translation": "Catull (röm. Dichter, 1. Jh. v. Chr.)",
+   "section": "85"
+ },
+ {
+   "word": "Cicero, Ciceronis  m",
+   "translation": "Cicero (röm. Redner, Schriftsteller und Politiker, 106-43",
+   "section": "85"
+ },
+ {
+   "word": "coniuratio, coniurationis  f",
+   "translation": "Verschwörung",
+   "section": "85"
+ },
+ {
+   "word": "conservare, conservo  (a m. Abl.)",
+   "translation": "retten (vor), bewahren",
+   "section": "85"
+ },
+ {
+   "word": "a vitio conservare",
+   "translation": "vor einem Fehler bewahren",
+   "section": "85"
+ },
+ {
+   "word": "convivium",
+   "translation": "Gastmahl, Gelage",
+   "section": "85"
+ },
+ {
+   "word": "familiaris, e",
+   "translation": "freundschaftlich, vertraut; Subst. Freund",
+   "section": "85"
+ },
+ {
+   "word": "militaris, e",
+   "translation": "militärisch, Kriegs-",
+   "section": "85"
+ },
+ {
+   "word": "otium",
+   "translation": "freie Zeit, Ruhe (von berufl. Tätigkeit); Frieden",
+   "section": "85"
+ },
+ {
+   "word": "palam  Adv.",
+   "translation": "bekannt, in aller Öffentlichkeit",
+   "section": "85"
+ },
+ {
+   "word": "post  Adv.",
+   "translation": "dann, später",
+   "section": "85"
+ },
+ {
+   "word": "quotiens",
+   "translation": "wie oft, sooft",
+   "section": "85"
+ },
+ {
+   "word": "Quotiens venis, gaudeo.",
+   "translation": "Sooft du kommst, freue ich mich.",
+   "section": "85"
+ },
+ {
+   "word": "Romam",
+   "translation": "nach Rom (wohin?)",
+   "section": "85"
+ },
+ {
+   "word": "satis  Adv.",
+   "translation": "genug",
+   "section": "85"
+ },
+ {
+   "word": "tunc  Adv.",
+   "translation": "damals, dann",
+   "section": "85"
+ },
+ {
+   "word": "aditus, aditus  m",
+   "translation": "Zugang, Eingang",
+   "section": "86"
+ },
+ {
+   "word": "aut…aut",
+   "translation": "entweder…oder",
+   "section": "86"
+ },
+ {
+   "word": "illuc  Adv.",
+   "translation": "dahin, dorthin",
+   "section": "86"
+ },
+ {
+   "word": "inquam (3. Pers. Sg. inquit)",
+   "translation": "sag(t)e ich",
+   "section": "86"
+ },
+ {
+   "word": "istic  Adv.",
+   "translation": "da, dort",
+   "section": "86"
+ },
+ {
+   "word": "Maecenas, Maecenatis  m",
+   "translation": "Mäzenas (Förderer der Künste zur Zeit des Augustus)",
+   "section": "86"
+ },
+ {
+   "word": "membrum",
+   "translation": "Glied, (Körper-)Teil",
+   "section": "86"
+ },
+ {
+   "word": "membra corporis",
+   "translation": "die Glieder des Körpers",
+   "section": "86"
+ },
+ {
+   "word": "membra orationis",
+   "translation": "die Teile einer Rede",
+   "section": "86"
+ },
+ {
+   "word": "occurrere, occurro, occurri",
+   "translation": "begegnen, entgegentreten",
+   "section": "86"
+ },
+ {
+   "word": "plurimum  Adv.",
+   "translation": "am meisten, sehr viel",
+   "section": "86"
+ },
+ {
+   "word": "plus  Adv.",
+   "translation": "mehr",
+   "section": "86"
+ },
+ {
+   "word": "possidere, possideo, possedi, possessum",
+   "translation": "besitzen",
+   "section": "86"
+ },
+ {
+   "word": "praeterea  Adv.",
+   "translation": "außerdem",
+   "section": "86"
+ },
+ {
+   "word": "prehendere, prehendo, prehendi, prehensum",
+   "translation": "ergreifen, nehmen",
+   "section": "86"
+ },
+ {
+   "word": "manum amici prehendere",
+   "translation": "die Hand des Freundes ergreifen",
+   "section": "86"
+ },
+ {
+   "word": "quam",
+   "translation": "als, wie",
+   "section": "86"
+ },
+ {
+   "word": "quam celerrime",
+   "translation": "möglichst schnell",
+   "section": "86"
+ },
+ {
+   "word": "visere, viso, visi, visum",
+   "translation": "besichtigen, besuchen",
+   "section": "86"
+ },
+ {
+   "word": "carpere, carpo, carpsi, carptum",
+   "translation": "pflücken, genießen; nutzen",
+   "section": "87"
+ },
+ {
+   "word": "Carpe diem!",
+   "translation": "Genieße den Tag! Nutze den Tag (die Zeit)!",
+   "section": "87"
+ },
+ {
+   "word": "dictum",
+   "translation": "Ausspruch, Wort",
+   "section": "87"
+ },
+ {
+   "word": "divus, a, um",
+   "translation": "göttlich",
+   "section": "87"
+ },
+ {
+   "word": "Epicurus",
+   "translation": "Epikur (griech. Philosoph, um 341 – 270 v. Chr.)",
+   "section": "87"
+ },
+ {
+   "word": "gratus, a, um",
+   "translation": "dankbar, willkommen, beliebt",
+   "section": "87"
+ },
+ {
+   "word": "donum gratum",
+   "translation": "ein willkommenes Geschenk",
+   "section": "87"
+ },
+ {
+   "word": "homo gratus",
+   "translation": "ein beliebter Mensch",
+   "section": "87"
+ },
+ {
+   "word": "Horatius",
+   "translation": "Horaz (röm. Dichter, 65-8 v. Chr.)",
+   "section": "87"
+ },
+ {
+   "word": "invidia",
+   "translation": "Neid",
+   "section": "87"
+ },
+ {
+   "word": "iucundus, a, um",
+   "translation": "angenehm, erfreulich",
+   "section": "87"
+ },
+ {
+   "word": "nec…nec",
+   "translation": "weder…noch",
+   "section": "87"
+ },
+ {
+   "word": "occupatus, a, um  (in m. Abl.)",
+   "translation": "beschäftigt (mit)",
+   "section": "87"
+ },
+ {
+   "word": "Magistratus in negotiis occupati sunt.",
+   "translation": "Die Beamten sind mit ihren Aufgaben beschäftigt.",
+   "section": "87"
+ },
+ {
+   "word": "pecus, pecoris  n",
+   "translation": "Vieh, Tier",
+   "section": "87"
+ },
+ {
+   "word": "raro  Adv.",
+   "translation": "selten",
+   "section": "87"
+ },
+ {
+   "word": "se recipere",
+   "translation": "sich zurückziehen",
+   "section": "87"
+ },
+ {
+   "word": "Copiae in castra se receperunt.",
+   "translation": "Die Truppen haben sich ins Lager zurückgezogen.",
+   "section": "87"
+ },
+ {
+   "word": "Tibullus",
+   "translation": "Tibull (röm. Dichter, um 55 - 19 v. Chr.)",
+   "section": "87"
+ },
+ {
+   "word": "contra  Adv.",
+   "translation": "gegenüber, dagegen",
+   "section": "88"
+ },
+ {
+   "word": "dignitas, dignitatis  f",
+   "translation": "Ansehen, Würde; (gesellschaftliche) Stellung",
+   "section": "88"
+ },
+ {
+   "word": "diversus, a, um",
+   "translation": "verschieden, entgegengesetzt, feindlich",
+   "section": "88"
+ },
+ {
+   "word": "studia diversa",
+   "translation": "verschiedene (entgegengesetzte) Interessen",
+   "section": "88"
+ },
+ {
+   "word": "egregius, a, um",
+   "translation": "ausgezeichnet, hervorragend",
+   "section": "88"
+ },
+ {
+   "word": "exemplum",
+   "translation": "Beispiel, Vorbild",
+   "section": "88"
+ },
+ {
+   "word": "grandis, e",
+   "translation": "alt; bedeutend, groß",
+   "section": "88"
+ },
+ {
+   "word": "haud",
+   "translation": "nicht",
+   "section": "88"
+ },
+ {
+   "word": "incendere, incendo, incendi, incensum",
+   "translation": "entflammen, in Brand stecken",
+   "section": "88"
+ },
+ {
+   "word": "opus est  m. Abl.",
+   "translation": "es ist nötig, man braucht (etw.)",
+   "section": "88"
+ },
+ {
+   "word": "Nobis amicis opus est.",
+   "translation": "Wir brauchen Freunde.",
+   "section": "88"
+ },
+ {
+   "word": "Ovidius",
+   "translation": "Ovid (röm. Dichter, 43 v. Chr. - 17 n. Chr.)",
+   "section": "88"
+ },
+ {
+   "word": "permittere, permitto, permisi, permissum",
+   "translation": "erlauben, überlassen",
+   "section": "88"
+ },
+ {
+   "word": "probus, a, um",
+   "translation": "anständig, gut",
+   "section": "88"
+ },
+ {
+   "word": "proferre, profero, protuli, prolatum",
+   "translation": "(hervor)holen, zur Sprache bringen",
+   "section": "88"
+ },
+ {
+   "word": "Romae",
+   "translation": "in Rom (wo?)",
+   "section": "88"
+ },
+ {
+   "word": "se praebere",
+   "translation": "sich zeigen",
+   "section": "88"
+ },
+ {
+   "word": "Vergilius",
+   "translation": "Vergil (röm. Dichter, 70 - 19 v. Chr.)",
+   "section": "88"
+ },
+ {
+   "word": "aequus, a, um",
+   "translation": "eben, gleich, gerecht, gnädig",
+   "section": "89"
+ },
+ {
+   "word": "campus aequus",
+   "translation": "ein eben (freies) Feld",
+   "section": "89"
+ },
+ {
+   "word": "iudex aequus",
+   "translation": "ein gerechter Richter",
+   "section": "89"
+ },
+ {
+   "word": "ius aequum",
+   "translation": "gleiches Recht, Rechtsgleichheit",
+   "section": "89"
+ },
+ {
+   "word": "animus aequus",
+   "translation": "Ausgeglichenheit; Gleichgültigkeit",
+   "section": "89"
+ },
+ {
+   "word": "auferre, aufero, abstuli, ablatum",
+   "translation": "wegbringen, rauben",
+   "section": "89"
+ },
+ {
+   "word": "discedere, discedo, discessi, discessum",
+   "translation": "auseinandergehen, weggehen",
+   "section": "89"
+ },
+ {
+   "word": "furtum",
+   "translation": "Diebstahl, Hinterlist",
+   "section": "89"
+ },
+ {
+   "word": "furtum committere",
+   "translation": "einen Diebstahl begehen",
+   "section": "89"
+ },
+ {
+   "word": "incolumis, e",
+   "translation": "unverletzt, wohlbehalten",
+   "section": "89"
+ },
+ {
+   "word": "optimus quisque",
+   "translation": "gerade die Besten",
+   "section": "89"
+ },
+ {
+   "word": "Optimus quisque rei publicae providet.",
+   "translation": "Gerade die Besten sorgen für den Staat.",
+   "section": "89"
+ },
+ {
+   "word": "permovere, permoveo, permovi, permotum",
+   "translation": "beunruhigen, veranlassen",
+   "section": "89"
+ },
+ {
+   "word": "praeter  Präp. m. Akk.",
+   "translation": "außer",
+   "section": "89"
+ },
+ {
+   "word": "proximus, a, um",
+   "translation": "der nächste",
+   "section": "89"
+ },
+ {
+   "word": "pudor, pudoris  m",
+   "translation": "Scham(gefühl), Anstand",
+   "section": "89"
+ },
+ {
+   "word": "quisque, quaeque, quodque  adj.",
+   "translation": "jeder",
+   "section": "89"
+ },
+ {
+   "word": "quisque, quidque  subst.",
+   "translation": "jeder",
+   "section": "89"
+ },
+ {
+   "word": "ultimus, a, um",
+   "translation": "der äußerste, der entfernteste, der letzte",
+   "section": "89"
+ },
+ {
+   "word": "arbitrari, arbitror, arbitratus sum",
+   "translation": "glauben, meinen",
+   "section": "90"
+ },
+ {
+   "word": "fateri, fateor, fassus sum",
+   "translation": "bekennen, gestehen",
+   "section": "90"
+ },
+ {
+   "word": "Herc(u)le!",
+   "translation": "Beim Herkules!",
+   "section": "90"
+ },
+ {
+   "word": "incedere, incedo, incessi, incessum",
+   "translation": "heranrücken, eintreten; (jdn.) befallen",
+   "section": "90"
+ },
+ {
+   "word": "In hostes incedimus.",
+   "translation": "Wir rücken gegen die Feinde vor.",
+   "section": "90"
+ },
+ {
+   "word": "Magna cura incessit.",
+   "translation": "Große Sorge kam auf (trat ein).",
+   "section": "90"
+ },
+ {
+   "word": "Metus me incedit.",
+   "translation": "Furcht befällt mich.",
+   "section": "90"
+ },
+ {
+   "word": "memorare, memoro",
+   "translation": "erwähnen, sagen",
+   "section": "90"
+ },
+ {
+   "word": "morari, moror, moratus sum",
+   "translation": "(sich) aufhalten",
+   "section": "90"
+ },
+ {
+   "word": "polliceri, polliceor, pollicitus sum",
+   "translation": "versprechen",
+   "section": "90"
+ },
+ {
+   "word": "precari, precor, precatus sum",
+   "translation": "bitten",
+   "section": "90"
+ },
+ {
+   "word": "procul",
+   "translation": "von fern, weit weg; a m. Abl. fern von",
+   "section": "90"
+ },
+ {
+   "word": "reri, reor, ratus sum",
+   "translation": "meinen",
+   "section": "90"
+ },
+ {
+   "word": "suspicari, suspicor, suspicatus sum",
+   "translation": "vermuten",
+   "section": "90"
+ },
+ {
+   "word": "tueri, tueor",
+   "translation": "betrachten, schützen, (milit.) sichern",
+   "section": "90"
+ },
+ {
+   "word": "naturam tueri",
+   "translation": "die Natur betrachten",
+   "section": "90"
+ },
+ {
+   "word": "fines tueri",
+   "translation": "die Grenzen (das Gebiet) sichern",
+   "section": "90"
+ },
+ {
+   "word": "vereri, vereor, veritus sum",
+   "translation": "fürchten, sich scheuen; verehren",
+   "section": "90"
+ },
+ {
+   "word": "Periculum vereor.",
+   "translation": "Ich fürchte die Gefahr.",
+   "section": "90"
+ },
+ {
+   "word": "Deos vereor.",
+   "translation": "Ich verehre die Götter.",
+   "section": "90"
+ },
+ {
+   "word": "vero  Adv.",
+   "translation": "aber; in der Tat, wirklich",
+   "section": "90"
+ },
+ {
+   "word": "aggredi, aggredior, aggressus sum",
+   "translation": "angreifen, herangehen",
+   "section": "91"
+ },
+ {
+   "word": "causas agere",
+   "translation": "Prozesse führen",
+   "section": "91"
+ },
+ {
+   "word": "consequi, consequor, consecutus sum  m. Akk.",
+   "translation": "erreichen, nachfolgen",
+   "section": "91"
+ },
+ {
+   "word": "experiri, experior, expertus sum",
+   "translation": "erfahren, versuchen",
+   "section": "91"
+ },
+ {
+   "word": "fere  Adv.",
+   "translation": "fast, beinahe; ungefähr",
+   "section": "91"
+ },
+ {
+   "word": "loqui, loquor, locutus sum",
+   "translation": "reden, sprechen",
+   "section": "91"
+ },
+ {
+   "word": "moliri, molior, molitus sum",
+   "translation": "(an)treiben; planen, unternehmen",
+   "section": "91"
+ },
+ {
+   "word": "pati, patior, passus sum",
+   "translation": "(er)leiden, ertragen, zulassen",
+   "section": "91"
+ },
+ {
+   "word": "Dolores patior.",
+   "translation": "Ich erleiden (ertragen) Schmerzen.",
+   "section": "91"
+ },
+ {
+   "word": "Hoc numquam patiar.",
+   "translation": "Das werde ich niemals zulassen.",
+   "section": "91"
+ },
+ {
+   "word": "Pater filios discedere passus non est.",
+   "translation": "Der Vater ließ nicht zu, dass die Söhne weggehen (L1:",
+   "section": "91"
+ },
+ {
+   "word": "queri, queror, questus sum  (m. Akk.)",
+   "translation": "klagen, sich beklagen über",
+   "section": "91"
+ },
+ {
+   "word": "se dare",
+   "translation": "sich widmen, sich hingeben",
+   "section": "91"
+ },
+ {
+   "word": "otio me do.",
+   "translation": "Ich gebe mich der Ruhe hin. Ich widme mich der Ruhe.",
+   "section": "91"
+ },
+ {
+   "word": "sensus, sensus  m",
+   "translation": "Gefühl, Sinn, Verstand",
+   "section": "91"
+ },
+ {
+   "word": "sequi, sequor, secutus sum  m. Akk.",
+   "translation": "folgen",
+   "section": "91"
+ },
+ {
+   "word": "amicum sequi",
+   "translation": "dem Freund folgen",
+   "section": "91"
+ },
+ {
+   "word": "sumere, sumo, sumpsi, sumptum",
+   "translation": "nehmen",
+   "section": "91"
+ },
+ {
+   "word": "velut",
+   "translation": "wie, wie zum Beispiel",
+   "section": "91"
+ },
+ {
+   "word": "anima",
+   "translation": "Atem, Leben, Seele",
+   "section": "92"
+ },
+ {
+   "word": "colloqui, colloquor, collocutus sum",
+   "translation": "sich unterhalten; verhandeln, besprechen",
+   "section": "92"
+ },
+ {
+   "word": "conari, conor, conatus sum",
+   "translation": "versuchen",
+   "section": "92"
+ },
+ {
+   "word": "hortari, hortor, hortatus sum",
+   "translation": "auffordern, ermahnen",
+   "section": "92"
+ },
+ {
+   "word": "intueri, intueor",
+   "translation": "anschauen",
+   "section": "92"
+ },
+ {
+   "word": "mirari, miror, miratus sum",
+   "translation": "bewundern, sich wundern",
+   "section": "92"
+ },
+ {
+   "word": "mori, morior, mortuus sum",
+   "translation": "sterben",
+   "section": "92"
+ },
+ {
+   "word": "opinari, opinor, opinatus sum",
+   "translation": "glauben, meinen",
+   "section": "92"
+ },
+ {
+   "word": "oriri, orior, ortus sum",
+   "translation": "entstehen, sich erheben",
+   "section": "92"
+ },
+ {
+   "word": "Sol oritur.",
+   "translation": "Die Sonne geht auf.",
+   "section": "92"
+ },
+ {
+   "word": "Clamor oritur.",
+   "translation": "Geschrei erhebt sich.",
+   "section": "92"
+ },
+ {
+   "word": "Bellum oritur.",
+   "translation": "Ein Krieg bricht aus.",
+   "section": "92"
+ },
+ {
+   "word": "proficisci, proficiscor, profectus sum",
+   "translation": "(ab)reisen, aufbrechen",
+   "section": "92"
+ },
+ {
+   "word": "ratio, rationis  f",
+   "translation": "Grund, Vernunft, Überlegung; Art und Weise; Berechnu",
+   "section": "92"
+ },
+ {
+   "word": "nulla ratione",
+   "translation": "ohne jeden Grund",
+   "section": "92"
+ },
+ {
+   "word": "eadem ratione",
+   "translation": "auf dieselbe Weise",
+   "section": "92"
+ },
+ {
+   "word": "ratione agere",
+   "translation": "mit Vernunft (vernünftig) handeln",
+   "section": "92"
+ },
+ {
+   "word": "spiritus, spiritus  m",
+   "translation": "Atem, Seele",
+   "section": "92"
+ },
+ {
+   "word": "vereri, ne  m. Konj.",
+   "translation": "fürchten, dass",
+   "section": "92"
+ },
+ {
+   "word": "versari, versor, versatus sum",
+   "translation": "sich aufhalten, sich befinden, sich beschäftigen",
+   "section": "92"
+ },
+ {
+   "word": "in re publica versari",
+   "translation": "politisch tätig sein",
+   "section": "92"
+ },
+ {
+   "word": "contentus, a, um",
+   "translation": "zufrieden",
+   "section": "93"
+ },
+ {
+   "word": "imitari, imitor, imitatus sum",
+   "translation": "nachahmen",
+   "section": "93"
+ },
+ {
+   "word": "nasci, nascor, natus sum",
+   "translation": "entstehen, geboren werden",
+   "section": "93"
+ },
+ {
+   "word": "Antiquo genere natus est.",
+   "translation": "Er stammt aus einem alten Geschlecht.",
+   "section": "93"
+ },
+ {
+   "word": "Scelus ab invidia natum est.",
+   "translation": "Das Verbrechen entstand aus Neid.",
+   "section": "93"
+ },
+ {
+   "word": "opera",
+   "translation": "Arbeit, Mühe",
+   "section": "93"
+ },
+ {
+   "word": "par, paris",
+   "translation": "gleich, ebenbürtig",
+   "section": "93"
+ },
+ {
+   "word": "persequi, persequor, persecutus sum",
+   "translation": "verfolgen; erstreben",
+   "section": "93"
+ },
+ {
+   "word": "plerique, pleraeque, pleraque",
+   "translation": "die meisten, sehr viele",
+   "section": "93"
+ },
+ {
+   "word": "praecipere, praecipio, praecepi, praeceptum",
+   "translation": "(be)lehren, vorschreiben",
+   "section": "93"
+ },
+ {
+   "word": "privatus, a, um",
+   "translation": "persönlich, privat; Subst. Privatperson",
+   "section": "93"
+ },
+ {
+   "word": "progredi, progredior, progressus sum",
+   "translation": "vorrücken, weitergehen",
+   "section": "93"
+ },
+ {
+   "word": "publicus, a, um",
+   "translation": "öffentlich, staatlich",
+   "section": "93"
+ },
+ {
+   "word": "rectus, a, um",
+   "translation": "gerade, recht, richtig",
+   "section": "93"
+ },
+ {
+   "word": "ultro  Adv.",
+   "translation": "freiwillig, noch dazu",
+   "section": "93"
+ },
+ {
+   "word": "uti, utor, usus sum  m. Abl.",
+   "translation": "benutzen, gebrauchen",
+   "section": "93"
+ },
+ {
+   "word": "Ulixes dolo utitur.",
+   "translation": "Odysseus wendet eine List an.",
+   "section": "93"
+ },
+ {
+   "word": "Marco utor amico.",
+   "translation": "Ich habe Markus als Freund.",
+   "section": "93"
+ },
+ {
+   "word": "voluptatem capere e / ex",
+   "translation": "Freude haben an",
+   "section": "93"
+ },
+ {
+   "word": "ac / atque",
+   "translation": "und, und auch; im Vergleich: wie, als",
+   "section": "94"
+ },
+ {
+   "word": "actio, actionis  f",
+   "translation": "Tätigkeit; Gerichtsverhandlung; Rede",
+   "section": "94"
+ },
+ {
+   "word": "agitare, agito",
+   "translation": "betreiben; überlegen",
+   "section": "94"
+ },
+ {
+   "word": "atque / ac",
+   "translation": "und, und auch; im Vergleich: wie, als",
+   "section": "94"
+ },
+ {
+   "word": "confiteri, confiteor, confessus sum",
+   "translation": "(ein)gestehen",
+   "section": "94"
+ },
+ {
+   "word": "consuescere, consuesco, consuevi, consuetum  m. Inf.",
+   "translation": "sich daran gewöhnen",
+   "section": "94"
+ },
+ {
+   "word": "Equus parere consuescit.",
+   "translation": "Das Pferd gewöhnt sich daran zu gehorchen.",
+   "section": "94"
+ },
+ {
+   "word": "cor, cordis  n",
+   "translation": "Herz",
+   "section": "94"
+ },
+ {
+   "word": "cordi esse",
+   "translation": "am Herzen liegen",
+   "section": "94"
+ },
+ {
+   "word": "idem ac / atque",
+   "translation": "derselbe wie",
+   "section": "94"
+ },
+ {
+   "word": "Idem dicitis ac amici.",
+   "translation": "Ihr sagt dasselbe wie die Freunde.",
+   "section": "94"
+ },
+ {
+   "word": "ingredi, ingredior, ingressus sum",
+   "translation": "betreten; beginnen",
+   "section": "94"
+ },
+ {
+   "word": "instruere, instruo, instruxi, instructum",
+   "translation": "aufstellen, ausrüsten; unterrichten",
+   "section": "94"
+ },
+ {
+   "word": "manifestus, a, um",
+   "translation": "offenkundig; überführt",
+   "section": "94"
+ },
+ {
+   "word": "onus, oneris  n",
+   "translation": "Last",
+   "section": "94"
+ },
+ {
+   "word": "quantus, a, um",
+   "translation": "wie groß, wie viel",
+   "section": "94"
+ },
+ {
+   "word": "remittere, remitto, remisi, remissum",
+   "translation": "zurückschicken; nachlassen, vermindern",
+   "section": "94"
+ },
+ {
+   "word": "scilicet  Adv.",
+   "translation": "freilich, natürlich",
+   "section": "94"
+ },
+ {
+   "word": "suscipere, suscipio, suscepi, susceptum",
+   "translation": "auf sich nehmen, sich (einer Sache) annehmen, untern",
+   "section": "94"
+ },
+ {
+   "word": "videri, videor, visus sum",
+   "translation": "scheinen, gelten (als)",
+   "section": "94"
+ },
+ {
+   "word": "acies, aciei  f",
+   "translation": "Schlachtordnung, Schärfe",
+   "section": "95"
+ },
+ {
+   "word": "aetas, aetatis  f",
+   "translation": "Lebensalter, Zeit, Zeitalter",
+   "section": "95"
+ },
+ {
+   "word": "domum  Akk.",
+   "translation": "nach Hause (wohin?)",
+   "section": "95"
+ },
+ {
+   "word": "eicere, eicio, eieci, eiectum",
+   "translation": "hinauswerfen, vertreiben",
+   "section": "95"
+ },
+ {
+   "word": "instituere, instituo, institui, institutum",
+   "translation": "beginnen, einrichten, unterrichten",
+   "section": "95"
+ },
+ {
+   "word": "nepos, nepotis  m",
+   "translation": "Enkel",
+   "section": "95"
+ },
+ {
+   "word": "neque vero",
+   "translation": "aber nicht",
+   "section": "95"
+ },
+ {
+   "word": "nobilitas, nobilitatis  f",
+   "translation": "Adel, vornehme Abstammung",
+   "section": "95"
+ },
+ {
+   "word": "ordo, ordinis  m",
+   "translation": "Ordnung, Reihe, Stand",
+   "section": "95"
+ },
+ {
+   "word": "ordo senatorum",
+   "translation": "der Senatorenstand",
+   "section": "95"
+ },
+ {
+   "word": "eiusdem ordinis",
+   "translation": "vom gleichen Rang (Stand)",
+   "section": "95"
+ },
+ {
+   "word": "pater familias",
+   "translation": "Hausherr, Familienoberhaupt",
+   "section": "95"
+ },
+ {
+   "word": "potentia",
+   "translation": "Macht",
+   "section": "95"
+ },
+ {
+   "word": "prospicere, prospicio, prospexi, prospectum",
+   "translation": "achtgeben, dafür sorgen, (vorher)sehen",
+   "section": "95"
+ },
+ {
+   "word": "mortem prospicere",
+   "translation": "den Tod vorhersehen",
+   "section": "95"
+ },
+ {
+   "word": "saluti patris prospicere",
+   "translation": "für das Wohl des Vaters sorgen",
+   "section": "95"
+ },
+ {
+   "word": "reliquus, a, um",
+   "translation": "übrig, künftig",
+   "section": "95"
+ },
+ {
+   "word": "res familiaris  f",
+   "translation": "(Privat-)Vermögen, Besitz",
+   "section": "95"
+ },
+ {
+   "word": "subicere, subicio, subieci, subiectum",
+   "translation": "darunterlegen; unterwerfen",
+   "section": "95"
+ },
+ {
+   "word": "parcere hostibus subiectis",
+   "translation": "die unterworfenen Feinde schonen",
+   "section": "95"
+ },
+ {
+   "word": "-ve",
+   "translation": "oder",
+   "section": "95"
+ },
+ {
+   "word": "accendere, accendo, accendi, accensum",
+   "translation": "anfeuern, anzünden",
+   "section": "96"
+ },
+ {
+   "word": "ira accensus",
+   "translation": "zornentbrannt, zornerfüllt",
+   "section": "96"
+ },
+ {
+   "word": "admittere, admitto, admisi, admissum",
+   "translation": "hinzuziehen, zulassen",
+   "section": "96"
+ },
+ {
+   "word": "ardere, ardeo, arsi, arsurum",
+   "translation": "brennen",
+   "section": "96"
+ },
+ {
+   "word": "domi",
+   "translation": "zu Hause, daheim (wo?)",
+   "section": "96"
+ },
+ {
+   "word": "flamma",
+   "translation": "Flamme, Feuer",
+   "section": "96"
+ },
+ {
+   "word": "interesse, intersum, interfui  (m. Dat.)",
+   "translation": "dazwischen sein; teilnehmen (an)",
+   "section": "96"
+ },
+ {
+   "word": "iudicium",
+   "translation": "Gericht, Urteil",
+   "section": "96"
+ },
+ {
+   "word": "libido, libidinis  f (m. Gen.)",
+   "translation": "Verlangen (nach), Lust, Willkür",
+   "section": "96"
+ },
+ {
+   "word": "licentia",
+   "translation": "Freiheit, Willkür",
+   "section": "96"
+ },
+ {
+   "word": "locus",
+   "translation": "Ort, Platz, Stelle; Gegend",
+   "section": "96"
+ },
+ {
+   "word": "loca, locorum  n Pl.",
+   "translation": "",
+   "section": "96"
+ },
+ {
+   "word": "nimis / nimium  Adv.",
+   "translation": "(all)zu, (all)zu sehr",
+   "section": "96"
+ },
+ {
+   "word": "nimium libertatis",
+   "translation": "zu viel Freiheit",
+   "section": "96"
+ },
+ {
+   "word": "nimius, a, um",
+   "translation": "übermäßig, zu groß",
+   "section": "96"
+ },
+ {
+   "word": "quicumque, quaecumque, quodcumque",
+   "translation": "jeder, der; wer auch immer",
+   "section": "96"
+ },
+ {
+   "word": "quippe  Adv.",
+   "translation": "freilich",
+   "section": "96"
+ },
+ {
+   "word": "quisquis, quidquid (quicquid)  subst.",
+   "translation": "jeder, der; wer auch immer",
+   "section": "96"
+ },
+ {
+   "word": "tametsi  Subj.",
+   "translation": "obwohl, wenn auch",
+   "section": "96"
+ },
+ {
+   "word": "adversus, a, um",
+   "translation": "entgegengesetzt, feindlich",
+   "section": "97"
+ },
+ {
+   "word": "commodus, a, um",
+   "translation": "günstig, angenehm, angemessen",
+   "section": "97"
+ },
+ {
+   "word": "iniquus, a, um",
+   "translation": "ungerecht, ungleich",
+   "section": "97"
+ },
+ {
+   "word": "interest  (m. Gen.)",
+   "translation": "es ist wichtig (für jdn.)",
+   "section": "97"
+ },
+ {
+   "word": "Omnium interest te valere.",
+   "translation": "Es ist für alle wichtig, dass du gesund bist.",
+   "section": "97"
+ },
+ {
+   "word": "libet, libuit",
+   "translation": "es gefällt",
+   "section": "97"
+ },
+ {
+   "word": "malle, malo, malui",
+   "translation": "lieber wollen",
+   "section": "97"
+ },
+ {
+   "word": "mea interest",
+   "translation": "es ist wichtig für mich",
+   "section": "97"
+ },
+ {
+   "word": "mea refert",
+   "translation": "es ist wichtig für mich",
+   "section": "97"
+ },
+ {
+   "word": "modo  Adv.",
+   "translation": "eben (noch); nur",
+   "section": "97"
+ },
+ {
+   "word": "obses, obsidis  m/f",
+   "translation": "Geisel",
+   "section": "97"
+ },
+ {
+   "word": "princeps, principis  m",
+   "translation": "der Erste, der führende Mann; Kaiser",
+   "section": "97"
+ },
+ {
+   "word": "refert  (m. Gen.)",
+   "translation": "es ist wichtig (für jdn.)",
+   "section": "97"
+ },
+ {
+   "word": "Omnium refert te valere.",
+   "translation": "Es ist für alle wichtig, dass du gesund bist.",
+   "section": "97"
+ },
+ {
+   "word": "rursus  Adv.",
+   "translation": "wieder",
+   "section": "97"
+ },
+ {
+   "word": "tollere, tollo, sustuli, sublatum",
+   "translation": "aufheben, in die Höhe heben, wegnehmen",
+   "section": "97"
+ },
+ {
+   "word": "manus ad caelum tollere",
+   "translation": "die Hände zum Himmel erheben",
+   "section": "97"
+ },
+ {
+   "word": "legem tollere",
+   "translation": "ein Gesetz aufheben",
+   "section": "97"
+ },
+ {
+   "word": "Venus, Veneris  f",
+   "translation": "Venus (die Göttin der Liebe)",
+   "section": "97"
+ },
+ {
+   "word": "adventus, adventus  m",
+   "translation": "Ankunft",
+   "section": "98"
+ },
+ {
+   "word": "aequor, aequoris  n",
+   "translation": "Ebene, Fläche, Meer",
+   "section": "98"
+ },
+ {
+   "word": "avaritia",
+   "translation": "Geiz, Habsucht",
+   "section": "98"
+ },
+ {
+   "word": "currus, currus  m",
+   "translation": "Wagen",
+   "section": "98"
+ },
+ {
+   "word": "fluctus, fluctus  m",
+   "translation": "Flut, Strömung",
+   "section": "98"
+ },
+ {
+   "word": "hiems, hiemis  f",
+   "translation": "Winter; Unwetter",
+   "section": "98"
+ },
+ {
+   "word": "minus  Adv.",
+   "translation": "weniger",
+   "section": "98"
+ },
+ {
+   "word": "prius  Adv.",
+   "translation": "früher, zuerst",
+   "section": "98"
+ },
+ {
+   "word": "quaesere, quaeso",
+   "translation": "bitten",
+   "section": "98"
+ },
+ {
+   "word": "repente  Adv.",
+   "translation": "plötzlich, unerwartet",
+   "section": "98"
+ },
+ {
+   "word": "ripa",
+   "translation": "Ufer",
+   "section": "98"
+ },
+ {
+   "word": "suspicio, suspicionis  f",
+   "translation": "Verdacht, Vermutung",
+   "section": "98"
+ },
+ {
+   "word": "tempestas, tempestatis  f",
+   "translation": "Sturm, (schlechtes) Wetter; Zeit",
+   "section": "98"
+ },
+ {
+   "word": "vehere, veho, vexi, vectum",
+   "translation": "fahren, tragen, ziehen",
+   "section": "98"
+ },
+ {
+   "word": "Frumentum veho.",
+   "translation": "Ich fahre (transportiere) Getreide.",
+   "section": "98"
+ },
+ {
+   "word": "vehi, vehor, vectus sum",
+   "translation": "sich fortbewegen, fahren",
+   "section": "98"
+ },
+ {
+   "word": "Carro vehor.",
+   "translation": "Ich fahre mit (auf) dem Wagen.",
+   "section": "98"
+ },
+ {
+   "word": "alter, altera, alterum (Gen. alterius, Dat. alteri)",
+   "translation": "der eine / der andere (von zweien)",
+   "section": "99"
+ },
+ {
+   "word": "amplus, a, um",
+   "translation": "bedeutend, groß, weit",
+   "section": "99"
+ },
+ {
+   "word": "an  (im indir. Fragesatz)",
+   "translation": "ob nicht (nach Ausdrücken des Nichtwissens und Zweif",
+   "section": "99"
+ },
+ {
+   "word": "Nescio, an nuntius venerit.",
+   "translation": "Ich weiß nicht, ob nicht eine Nachricht gekommen ist.",
+   "section": "99"
+ },
+ {
+   "word": "collum",
+   "translation": "Hals",
+   "section": "99"
+ },
+ {
+   "word": "fieri, fio, factus sum",
+   "translation": "gemacht werden; geschehen, werden",
+   "section": "99"
+ },
+ {
+   "word": "ignarus, a, um (m. Gen.)",
+   "translation": "ohne Kenntnis, unwissend",
+   "section": "99"
+ },
+ {
+   "word": "ignarus periculorum",
+   "translation": "ohne Kenntnis der Gefahren",
+   "section": "99"
+ },
+ {
+   "word": "impetrare, impetro",
+   "translation": "erreichen, durchsetzen",
+   "section": "99"
+ },
+ {
+   "word": "irasci, irascor (m. Dat.)",
+   "translation": "in Zorn geraten, zornig sein (gegen / über)",
+   "section": "99"
+ },
+ {
+   "word": "laus, laudis  f",
+   "translation": "Lob, Ruhm",
+   "section": "99"
+ },
+ {
+   "word": "ob  Präp. m. Akk.",
+   "translation": "wegen; für; gegen(über)",
+   "section": "99"
+ },
+ {
+   "word": "quam ob rem",
+   "translation": "weshalb; deshalb",
+   "section": "99"
+ },
+ {
+   "word": "quam ob rem",
+   "translation": "weshalb; deshalb",
+   "section": "99"
+ },
+ {
+   "word": "repetere, repeto, repetivi, repetitum",
+   "translation": "(zurück)verlangen, wiederholen",
+   "section": "99"
+ },
+ {
+   "word": "verba repetere",
+   "translation": "Wörter wiederholen",
+   "section": "99"
+ },
+ {
+   "word": "pecuniam repetere",
+   "translation": "Geld (zurück)verlangen",
+   "section": "99"
+ },
+ {
+   "word": "sumptus, sumptus  m",
+   "translation": "Aufwand, Kosten",
+   "section": "99"
+ },
+ {
+   "word": "uterque, utraque, utrumque  (Gen. utriusque, Dat. utriqu",
+   "translation": "beide, jeder (von zweien)",
+   "section": "99"
+ },
+ {
+   "word": "Uterque consul adest.",
+   "translation": "Beide Konsuln sind anwesend.",
+   "section": "99"
+ },
+ {
+   "word": "caedes, caedis  f (Gen. Pl. -ium)",
+   "translation": "Mord, Blutbad",
+   "section": "100"
+ },
+ {
+   "word": "continere, contineo, continui, contentum",
+   "translation": "festhalten, enthalten",
+   "section": "100"
+ },
+ {
+   "word": "dividere, divido, divisi, divisum",
+   "translation": "teilen, trennen",
+   "section": "100"
+ },
+ {
+   "word": "eo  Adv.",
+   "translation": "dorthin; deswegen",
+   "section": "100"
+ },
+ {
+   "word": "excipere, excipio, excepi, exceptum",
+   "translation": "aufnehmen, eine Ausnahme machen",
+   "section": "100"
+ },
+ {
+   "word": "fieri  m. Gen.",
+   "translation": "Eigentum (von jdm.) werden",
+   "section": "100"
+ },
+ {
+   "word": "Domus mercatoris fit.",
+   "translation": "Das Haus wird Eigentum des Kaufmanns.",
+   "section": "100"
+ },
+ {
+   "word": "frustra  Adv.",
+   "translation": "vergeblich",
+   "section": "100"
+ },
+ {
+   "word": "hinc  Adv.",
+   "translation": "von hier, hierauf",
+   "section": "100"
+ },
+ {
+   "word": "merces, mercedis  f",
+   "translation": "Lohn",
+   "section": "100"
+ },
+ {
+   "word": "requirere, requiro, requisivi, requisitum",
+   "translation": "aufsuchen, sich erkundigen, verlangen",
+   "section": "100"
+ },
+ {
+   "word": "sive / seu",
+   "translation": "oder, oder wenn",
+   "section": "100"
+ },
+ {
+   "word": "tendere, tendo, tetendi, tentum",
+   "translation": "(aus)strecken, spannen, sich anstrengen",
+   "section": "100"
+ },
+ {
+   "word": "theatrum",
+   "translation": "Theater",
+   "section": "100"
+ },
+ {
+   "word": "consuevisse, consuevi  Perf.",
+   "translation": "gewohnt sein",
+   "section": "101"
+ },
+ {
+   "word": "Magister liberos docere consuevit.",
+   "translation": "Der Lehrer ist es gewohnt, die Kinder zu unterrichten.",
+   "section": "101"
+ },
+ {
+   "word": "Hoc fieri consuevit.",
+   "translation": "Das geschieht gewöhnlich.",
+   "section": "101"
+ },
+ {
+   "word": "dignus, qui  m. Konj.",
+   "translation": "würdig, zu…",
+   "section": "101"
+ },
+ {
+   "word": "Dignus es, qui lauderis.",
+   "translation": "Du bist würdig, gelobt zu werden. Du verdienst es, gelo",
+   "section": "101"
+ },
+ {
+   "word": "fructus, fructus  m",
+   "translation": "Frucht, Nutzen, Ertrag",
+   "section": "101"
+ },
+ {
+   "word": "fructum capere",
+   "translation": "Nutzen ziehen",
+   "section": "101"
+ },
+ {
+   "word": "imago, imaginis  f",
+   "translation": "Bild, Abbild",
+   "section": "101"
+ },
+ {
+   "word": "meminisse, memini  Perf.",
+   "translation": "(m. Gen. / Akk.) sich erinnern an; (m. AcI) daran denke",
+   "section": "101"
+ },
+ {
+   "word": "Avi / avum memini.",
+   "translation": "Ich erinnere mich an den Großvater.",
+   "section": "101"
+ },
+ {
+   "word": "Meministine me esse amicum tuum?",
+   "translation": "Denkst du daran, dass ich dein Freund bin?",
+   "section": "101"
+ },
+ {
+   "word": "nemo est, qui  m. Konj.",
+   "translation": "es gibt niemand, der…",
+   "section": "101"
+ },
+ {
+   "word": "no(vi)sse, novi  Perf.",
+   "translation": "kennen, wissen",
+   "section": "101"
+ },
+ {
+   "word": "odisse, odi  Perf.",
+   "translation": "hassen",
+   "section": "101"
+ },
+ {
+   "word": "quippe qui (quippe cum)",
+   "translation": "da ja",
+   "section": "101"
+ },
+ {
+   "word": "simulacrum",
+   "translation": "Bild, Schatten (eines Toten)",
+   "section": "101"
+ },
+ {
+   "word": "sive…sive",
+   "translation": "sei es (dass)…sei es (dass)",
+   "section": "101"
+ },
+ {
+   "word": "sunt, qui  m. Konj.",
+   "translation": "es gibt Leute, die…",
+   "section": "101"
+ },
+ {
+   "word": "universus, a, um",
+   "translation": "gesamt; Pl. alle zusammen",
+   "section": "101"
+ },
+ {
+   "word": "unusquisque nostrum",
+   "translation": "ein jeder von uns",
+   "section": "101"
+ },
+ {
+   "word": "audere, audeo, ausus sum",
+   "translation": "wagen",
+   "section": "102"
+ },
+ {
+   "word": "celeritas, celeritatis  f",
+   "translation": "Schnelligkeit",
+   "section": "102"
+ },
+ {
+   "word": "confidere, confido, confisus sum",
+   "translation": "vertrauen",
+   "section": "102"
+ },
+ {
+   "word": "confisus suis viribus",
+   "translation": "im Vertrauen auf seine Kräfte",
+   "section": "102"
+ },
+ {
+   "word": "creber, crebra, crebrum",
+   "translation": "häufig, zahlreich",
+   "section": "102"
+ },
+ {
+   "word": "crebro  Adv.",
+   "translation": "häufig",
+   "section": "102"
+ },
+ {
+   "word": "fingere, fingo, finxi, fictum",
+   "translation": "gestalten, sich (etw.) ausdenken",
+   "section": "102"
+ },
+ {
+   "word": "statuam fingere",
+   "translation": "eine Statue gestalten (erschaffen)",
+   "section": "102"
+ },
+ {
+   "word": "causas fingere",
+   "translation": "sich Gründe ausdenken",
+   "section": "102"
+ },
+ {
+   "word": "gaudere, gaudeo, gavisus sum",
+   "translation": "sich freuen",
+   "section": "102"
+ },
+ {
+   "word": "perpetuus, a, um",
+   "translation": "dauerhaft, ewig",
+   "section": "102"
+ },
+ {
+   "word": "in perpetuum",
+   "translation": "für immer",
+   "section": "102"
+ },
+ {
+   "word": "perpetuo  Adv.",
+   "translation": "ununterbrochen",
+   "section": "102"
+ },
+ {
+   "word": "perspicere, perspicio, perspexi, perspectum",
+   "translation": "durchschauen, genau betrachten, sehen, erkennen",
+   "section": "102"
+ },
+ {
+   "word": "quomodo",
+   "translation": "wie? auf welche Weise?",
+   "section": "102"
+ },
+ {
+   "word": "reperire, reperio, repperi, repertum",
+   "translation": "(wieder)finden",
+   "section": "102"
+ },
+ {
+   "word": "reverti, revertor, reverti, reversum",
+   "translation": "zurückkehren",
+   "section": "102"
+ },
+ {
+   "word": "solere, soleo, solitus sum",
+   "translation": "gewohnt sein, gewöhnlich etw. tun",
+   "section": "102"
+ },
+ {
+   "word": "Cato hoc dicere solebat.",
+   "translation": "Cato sagte gewöhnlich dies.",
+   "section": "102"
+ },
+ {
+   "word": "vulgo  Adv.",
+   "translation": "allgemein, gewöhnlich",
+   "section": "102"
+ },
+ {
+   "word": "abducere, abduco, abduxi, abductum",
+   "translation": "wegführen",
+   "section": "103"
+ },
+ {
+   "word": "adeo  Adv.",
+   "translation": "so sehr",
+   "section": "103"
+ },
+ {
+   "word": "aestus, aestus  m",
+   "translation": "Hitze, Flut",
+   "section": "103"
+ },
+ {
+   "word": "alter…alter",
+   "translation": "der eine…der andere",
+   "section": "103"
+ },
+ {
+   "word": "consumere, consumo, consumpsi, consumptum",
+   "translation": "verbrauchen, verwenden",
+   "section": "103"
+ },
+ {
+   "word": "egredi, egredior, egressus sum",
+   "translation": "hinausgehen, verlassen",
+   "section": "103"
+ },
+ {
+   "word": "modum egredi",
+   "translation": "das Maß überschreiten",
+   "section": "103"
+ },
+ {
+   "word": "perfectus, a, um",
+   "translation": "vollkommen, vollendet",
+   "section": "103"
+ },
+ {
+   "word": "prorsus  Adv.",
+   "translation": "überhaupt, völlig",
+   "section": "103"
+ },
+ {
+   "word": "sedes, sedis  f",
+   "translation": "Platz, Sitz, Wohnsitz",
+   "section": "103"
+ },
+ {
+   "word": "vas, vasis  n (Pl. vasa, vasorum)",
+   "translation": "Gefäß",
+   "section": "103"
+ },
+ {
+   "word": "Aristoteles, Aristotelis  m",
+   "translation": "Aristoteles (griech. Philosoph, 384-322 v. Chr., Schüler",
+   "section": "104"
+ },
+ {
+   "word": "multo magis",
+   "translation": "(um) viel mehr",
+   "section": "104"
+ },
+ {
+   "word": "multo  Adv.",
+   "translation": "(um) viel",
+   "section": "104"
+ },
+ {
+   "word": "multo magis",
+   "translation": "(um) viel mehr",
+   "section": "104"
+ },
+ {
+   "word": "neque tamen",
+   "translation": "freilich nicht, jedoch nicht",
+   "section": "104"
+ },
+ {
+   "word": "niti, nitor, nixus sum",
+   "translation": "(m. Abl.) sich stützen auf;",
+   "section": "104"
+ },
+ {
+   "word": "mensa niti",
+   "translation": "sich auf den Tisch stützen, sich auf dem Tisch abstütze",
+   "section": "104"
+ },
+ {
+   "word": "ad gloriam niti",
+   "translation": "nach Ruhm streben",
+   "section": "104"
+ },
+ {
+   "word": "parens, parentis  m/f",
+   "translation": "Vater, Mutter; Pl. Eltern",
+   "section": "104"
+ },
+ {
+   "word": "Plato, Platonis  m",
+   "translation": "Plato (griech. Philosoph, 427-348 v. Chr., Schüler des",
+   "section": "104"
+ },
+ {
+   "word": "plerumque  Adv.",
+   "translation": "meistens",
+   "section": "104"
+ },
+ {
+   "word": "praesertim (cum)",
+   "translation": "besonders (da / weil)",
+   "section": "104"
+ },
+ {
+   "word": "pristinus, a, um",
+   "translation": "früher",
+   "section": "104"
+ },
+ {
+   "word": "quanto…tanto  (m. Kompar.)",
+   "translation": "je…desto",
+   "section": "104"
+ },
+ {
+   "word": "quanto altius…tanto melius",
+   "translation": "je höher…desto besser",
+   "section": "104"
+ },
+ {
+   "word": "succedere, succedo, successi, successum",
+   "translation": "(nach)folgen, nachrücken",
+   "section": "104"
+ },
+ {
+   "word": "superior, superius  (Gen. superioris)",
+   "translation": "der frühere, der weiter oben gelegene",
+   "section": "104"
+ },
+]
