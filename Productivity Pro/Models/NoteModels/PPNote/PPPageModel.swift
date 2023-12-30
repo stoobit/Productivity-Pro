@@ -10,7 +10,7 @@ import SwiftData
 import PencilKit
 
 @Model final class PPPageModel: Identifiable {
-    @Attribute(.unique) var id: UUID = UUID()
+    var id: UUID = UUID()
     
     @Relationship(inverse: \PPNoteModel.pages)
     var note: PPNoteModel?

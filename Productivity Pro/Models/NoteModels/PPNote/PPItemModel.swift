@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model final class PPItemModel: Identifiable {
-    @Attribute(.unique) var id: UUID = UUID()
+    var id: UUID = UUID()
    
     @Relationship(inverse: \PPPageModel.items)
     var page: PPPageModel?

@@ -59,11 +59,3 @@ struct ClipboardControl: View {
         }
     }
 }
-
-#Preview {
-    ClipboardControl()
-        .background(Color.red)
-        .environment(ToolManager())
-        .padding()
-        .ignoresSafeArea(.all)
-}

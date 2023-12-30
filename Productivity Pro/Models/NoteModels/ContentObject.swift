@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 
 @Model final class ContentObject: Identifiable {
+    var id: UUID = UUID()
     
     init(
         id: UUID,
@@ -28,8 +29,6 @@ import SwiftData
         self.grade = grade
         self.subject = subject
     }
-    
-    @Attribute(.unique) public var id: UUID
     
     var type: COType.RawValue
     
