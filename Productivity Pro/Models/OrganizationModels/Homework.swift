@@ -9,7 +9,6 @@ import SwiftData
 import Foundation
 
 @Model final class Homework: Identifiable {
-    
     init() { }
     
     var id: UUID = UUID()

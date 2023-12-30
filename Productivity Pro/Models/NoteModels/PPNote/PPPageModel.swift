@@ -10,7 +10,7 @@ import SwiftData
 import PencilKit
 
 @Model final class PPPageModel: Identifiable {
-    @Attribute(.unique) var id: UUID = UUID()
+    var id: UUID = UUID()
     
     @Relationship(inverse: \PPNoteModel.pages)
     var note: PPNoteModel?
@@ -24,11 +24,11 @@ import PencilKit
         self.index = index
     }
     
-    var type: PPPageType.RawValue
-    var index: Int
+    var type: PPPageType.RawValue = ""
+    var index: Int = 0
     
     var title: String = ""
-    var created: Date
+    var created: Date = Date()
     var isBookmarked: Bool = false
     
     var template: String = ""

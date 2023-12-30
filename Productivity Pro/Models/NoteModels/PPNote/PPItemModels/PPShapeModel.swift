@@ -14,7 +14,7 @@ import SwiftData
         self.strokeStyle = PPStrokeType.line.rawValue
     }
     
-    var type: PPShapeType.RawValue
+    var type: PPShapeType.RawValue = ""
     
     var fill: Bool = true
     var fillColor: Data = Color.gray.data()

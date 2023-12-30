@@ -14,6 +14,6 @@ import SwiftData
         self.type = PPLinkType.medium.rawValue
     }
     
-    var type: PPLinkType.RawValue
-    var linkedObject: UUID
+    var type: PPLinkType.RawValue = ""
+    var linkedObject: UUID = UUID()
 }

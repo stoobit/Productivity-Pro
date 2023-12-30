@@ -18,10 +18,10 @@ import SwiftData
     }
     
     var string: String = ""
-    var textColor: Data
+    var textColor: Data = Data()
     
-    var fontName: String
-    var fontSize: Double
+    var fontName: String = ""
+    var fontSize: Double = 0
     
     var fill: Bool = false
     var fillColor: Data = Color.green.data()
@@ -29,7 +29,7 @@ import SwiftData
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.data()
     var strokeWidth: Double = 10
-    var strokeStyle: PPStrokeType.RawValue
+    var strokeStyle: PPStrokeType.RawValue = ""
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.data()

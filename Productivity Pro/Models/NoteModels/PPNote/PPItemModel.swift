@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model final class PPItemModel: Identifiable {
-    @Attribute(.unique) var id: UUID = UUID()
+    var id: UUID = UUID()
    
     @Relationship(inverse: \PPPageModel.items)
     var page: PPPageModel?
@@ -19,8 +19,8 @@ import SwiftData
         self.index = index
     }
     
-    var index: Int
-    var type: PPItemType.RawValue
+    var index: Int = -10
+    var type: PPItemType.RawValue = ""
     
     var isLocked: Bool = false
     
