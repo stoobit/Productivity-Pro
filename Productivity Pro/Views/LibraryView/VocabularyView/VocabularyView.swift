@@ -27,7 +27,7 @@ struct VocabularyView: View {
                                 proxy: proxy,
                                 vocab: vocab,
                                 active: $active,
-                                index: index
+                                index: index(of: vocab)
                             )
                             .containerRelativeFrame([.horizontal, .vertical])
                             .scrollTransition(
@@ -56,7 +56,7 @@ struct VocabularyView: View {
         return data.filter { $0.section == section }.shuffled()
     }
     
-    var index: String {
-        return "\((vocabs.firstIndex(of: active ?? .init()) ?? 0) + 1) / \(vocabs.count)"
+    func index(of model: VocabModel) ->  String {
+        return "\((vocabs.firstIndex(of: model) ?? 0) + 1) / \(vocabs.count)"
     }
 }
