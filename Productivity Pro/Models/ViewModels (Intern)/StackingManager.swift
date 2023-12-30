@@ -1,5 +1,5 @@
 //
-//  StackingModel.swift
+//  StackingManager.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 09.12.23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StackingModel {
+struct StackingManager {
     var items: [PPItemModel]
     
     func moveUp(item: PPItemModel) {

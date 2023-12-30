@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ExportableModel {
+struct ExportableModel {
     static func write(note: ExportableNoteModel, to url: URL) throws {
         if url.startAccessingSecurityScopedResource() {
             let data = try JSONEncoder().encode(note)

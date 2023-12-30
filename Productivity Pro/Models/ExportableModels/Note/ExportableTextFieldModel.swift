@@ -17,7 +17,7 @@ public struct ExportableTextFieldModel: Codable {
     var fill: Bool
     var fillColor: Data
     
-    var stroke: Bool = false
+    var stroke: Bool
     var strokeColor: Data
     var strokeWidth: Double
     var strokeStyle: PPStrokeType.RawValue

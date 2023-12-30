@@ -74,7 +74,7 @@ struct TextFieldArrangeView: View {
             Section {
                 HStack {
                     Button(action: {
-                        StackingModel(items: items)
+                        StackingManager(items: items)
                             .moveUp(item: item)
                     }) {
                         Image(systemName: "square.2.stack.3d.top.filled")
@@ -83,7 +83,7 @@ struct TextFieldArrangeView: View {
                     .hoverEffect(.lift)
                     
                     Button(action: {
-                        StackingModel(items: items)
+                        StackingManager(items: items)
                             .moveDown(item: item)
                     }) {
                         Image(systemName: "square.2.stack.3d.bottom.filled")
@@ -96,7 +96,7 @@ struct TextFieldArrangeView: View {
                     Spacer()
                     
                     Button(action: {
-                        StackingModel(items: items)
+                        StackingManager(items: items)
                             .bringFront(item: item)
                     }) {
                         Image(systemName: "square.3.stack.3d.top.filled")
@@ -105,7 +105,7 @@ struct TextFieldArrangeView: View {
                     .hoverEffect(.lift)
                     
                     Button(action: {
-                        StackingModel(items: items)
+                        StackingManager(items: items)
                             .bringBack(item: item)
                     }) {
                         Image(systemName: "square.3.stack.3d.bottom.filled")
