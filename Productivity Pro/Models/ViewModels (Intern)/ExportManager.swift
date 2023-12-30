@@ -8,7 +8,36 @@
 import Foundation
 
 struct ExportManager {
-    public func export() {}
+    public func export(contentObject: ContentObject, to url: URL) {
+        if let note = contentObject.note {
+            do {
+                if url.startAccessingSecurityScopedResource() {
+                    let exportable = export(note: note)
+                    let insecureData = try JSONEncoder().encode(exportable)
+                    let data = insecureData.base64EncodedData()
+                    
+                    let destination = url.appendingPathComponent(
+                        contentObject.title, conformingTo: .pronote
+                    )
+                    try data.write(to: destination)
+                    
+                    let attributes = [
+                        FileAttributeKey.creationDate: contentObject.created as NSDate,
+                        FileAttributeKey.modificationDate: contentObject.modified as NSDate
+                    ]
+                    try FileManager.default.setAttributes(
+                        attributes, ofItemAtPath: destination.path
+                    )
+                    
+                    url.stopAccessingSecurityScopedResource()
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    public func backup() {}
 
     private func export(textField: PPTextFieldModel) -> ExportableTextFieldModel {
         let exportable = ExportableTextFieldModel(
@@ -65,7 +94,7 @@ struct ExportManager {
         return exportable
     }
 
-    private func export(item: PPItemModel) -> ExportableItemModel {
+    public func export(item: PPItemModel) -> ExportableItemModel {
         var exportable = ExportableItemModel(
             id: item.id,
             index: item.index,
@@ -114,6 +143,14 @@ struct ExportManager {
     }
 
     private func export(note: PPNoteModel) -> ExportableNoteModel {
-        
+        var exportable = ExportableNoteModel()
+
+        if let pages = note.pages {
+            for page in pages {
+                exportable.pages.append(export(page: page))
+            }
+        }
+
+        return exportable
     }
 }

@@ -44,7 +44,6 @@ struct ShareProView: View {
                 Spacer()
                 
                 Button(action: {
-                    
                 }) {
                     Text("Teilen")
                         .font(.title2.bold())
@@ -67,6 +66,12 @@ struct ShareProView: View {
                     }
                 }
             }
+            
+        }
+        .onAppear {
+            ExportManager().export(contentObject: <#T##ContentObject#>, to: <#T##URL#>)
+        }
+        .onDisappear {
             
         }
     }
