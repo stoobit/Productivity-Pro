@@ -12,18 +12,24 @@ extension ClipboardControl {
         toolManager.activePage?.deleteItem(
             with: toolManager.activeItem?.id
         )
+        
         toolManager.activeItem = nil
     }
     
     func duplicate() {
-        guard let original = toolManager.activeItem else { return }
-        let duplicate = original as! NSObject
-        let item = duplicate.copy() as! PPItemModel
         
-        item.x += 50
-        item.y += 50
-        
-        toolManager.activeItem = item
     }
     
+    func copy() {
+//        let jsonData = try? JSONEncoder().encode(toolManager.activeItem)
+//        if let data = jsonData {
+//            UIPasteboard.general.setData(
+//                data, forPasteboardType: "productivity pro"
+//            )
+//        }
+    }
+    
+    func paste() {}
+    
+    func cut() {}
 }

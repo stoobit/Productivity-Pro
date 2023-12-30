@@ -13,11 +13,11 @@ struct ClipboardControl: View {
 
     var body: some View {
         HStack {
-            Button(action: {}) {
+            Button(action: { paste() }) {
                 ClipboardButton(image: "doc.on.clipboard")
             }
             
-            Button(action: {}) {
+            Button(action: { copy() }) {
                 ClipboardButton(image: "doc.on.doc")
             }
             .disabled(toolManager.activeItem == nil)
@@ -27,7 +27,7 @@ struct ClipboardControl: View {
             }
             .disabled(toolManager.activeItem == nil)
             
-            Button(role: .destructive, action: {}) {
+            Button(role: .destructive, action: { cut() }) {
                 ClipboardButton(image: "scissors")
             }
             .disabled(toolManager.activeItem == nil)

@@ -40,5 +40,4 @@ import SwiftData
     var mindmap: PPMindmapModel?
     var immersiveObject: PPImmersiveObjectModel?
     
-    
 }
