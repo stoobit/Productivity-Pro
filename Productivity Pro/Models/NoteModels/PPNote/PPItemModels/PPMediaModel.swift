@@ -14,12 +14,12 @@ import SwiftData
         self.strokeStyle = PPStrokeType.line.rawValue
     }
     
-    var media: Data = Data()
+    var media: Data
     
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.data()
     var strokeWidth: Double = 10
-    var strokeStyle: PPStrokeType.RawValue = ""
+    var strokeStyle: PPStrokeType.RawValue
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.data()

@@ -9,6 +9,7 @@ import Foundation
 import SwiftData
 
 @Model final class ContentObject: Identifiable {
+    
     init(
         id: UUID,
         title: String,
@@ -28,16 +29,17 @@ import SwiftData
         self.subject = subject
     }
     
-    var id: UUID = UUID()
-    var type: COType.RawValue = ""
+    @Attribute(.unique) public var id: UUID
     
-    var title: String = ""
-    var parent: String = ""
+    var type: COType.RawValue
     
-    var created: Date = Date()
-    var modified: Date = Date()
+    var title: String
+    var parent: String
     
-    var grade: Int = 0
+    var created: Date
+    var modified: Date
+    
+    var grade: Int
     var subject: UUID?
     
     var isPinned: Bool = false
@@ -47,7 +49,7 @@ import SwiftData
 }
 
 enum COType: String, Codable {
-    case file
-    case folder
-    case all
+    case file = "file"
+    case folder = "folder"
+    case all = "all"
 }

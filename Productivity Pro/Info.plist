@@ -70,10 +70,6 @@
 		<key>UIApplicationSupportsTabbedSceneCollection</key>
 		<false/>
 	</dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
