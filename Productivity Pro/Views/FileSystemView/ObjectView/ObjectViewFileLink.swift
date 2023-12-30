@@ -71,8 +71,10 @@ struct ObjectViewFileLink: View {
             Section {
                 Menu(content: {
                     Button("Notiz", systemImage: "doc") {
-                        subviewManager.shareProView.toggle()
                         toolManager.pencilKit = false
+                        toolManager.selectedContentObject = object
+                        
+                        subviewManager.shareProView.toggle()
                     }
                     
                     Button("PDF", systemImage: "doc.richtext") {

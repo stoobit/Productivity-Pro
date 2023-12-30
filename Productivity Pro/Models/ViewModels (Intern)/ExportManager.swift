@@ -8,27 +8,32 @@
 import Foundation
 
 struct ExportManager {
-    public func export(contentObject: ContentObject, to url: URL) {
-        if let note = contentObject.note {
+    public func export(contentObject: ContentObject?, to url: URL) {
+        if let contentObject = contentObject, let note = contentObject.note {
             do {
-                if url.startAccessingSecurityScopedResource() {
+                let destination = url.appendingPathComponent(
+                    contentObject.title, conformingTo: .pronote
+                )
+
+                if destination.startAccessingSecurityScopedResource() {
                     let exportable = export(note: note)
                     let insecureData = try JSONEncoder().encode(exportable)
                     let data = insecureData.base64EncodedData()
-                    
-                    let destination = url.appendingPathComponent(
-                        contentObject.title, conformingTo: .pronote
-                    )
-                    try data.write(to: destination)
-                    
+
                     let attributes = [
                         FileAttributeKey.creationDate: contentObject.created as NSDate,
                         FileAttributeKey.modificationDate: contentObject.modified as NSDate
                     ]
-                    try FileManager.default.setAttributes(
-                        attributes, ofItemAtPath: destination.path
-                    )
-                    
+
+                    if FileManager.default.createFile(
+                        atPath: destination.path(),
+                        contents: data, attributes: attributes
+                    ) {
+                        print("success")
+                    } else {
+                        print("🔴 0")
+                    }
+
                     url.stopAccessingSecurityScopedResource()
                 }
             } catch {

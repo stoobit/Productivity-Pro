@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShareProView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(ToolManager.self) var toolManager
     
     var body: some View {
         NavigationStack {
@@ -43,6 +44,8 @@ struct ShareProView: View {
                 
                 Spacer()
                 
+                
+                
                 Button(action: {
                 }) {
                     Text("Teilen")
@@ -69,17 +72,13 @@ struct ShareProView: View {
             
         }
         .onAppear {
-            ExportManager().export(contentObject: <#T##ContentObject#>, to: <#T##URL#>)
+            ExportManager().export(
+                contentObject: toolManager.selectedContentObject,
+                to: .downloadsDirectory
+            )
         }
         .onDisappear {
             
         }
     }
-}
-
-#Preview {
-    Text("hello")
-        .sheet(isPresented: .constant(true)) {
-            ShareProView()
-        }
 }
