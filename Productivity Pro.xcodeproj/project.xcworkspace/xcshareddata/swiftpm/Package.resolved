@@ -37,15 +37,6 @@
       }
     },
     {
-      "identity" : "ppintegrationkit",
-      "kind" : "localSourceControl",
-      "location" : "/Users/till/Documents/PPIntegrationKit",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e2ab1e289d21e594f826c42459fc1286ce9ce6eb"
-      }
-    },
-    {
       "identity" : "swift-markdown-ui",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gonzalezreal/swift-markdown-ui",

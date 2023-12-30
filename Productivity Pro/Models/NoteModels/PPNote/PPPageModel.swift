@@ -5,7 +5,6 @@
 //  Created by Till Brügmann on 29.09.23.
 //
 
-import SwiftUI
 import SwiftData
 import PencilKit
 

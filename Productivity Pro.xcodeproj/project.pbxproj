@@ -95,7 +95,6 @@
 		BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73324F2A294D440001FD6A /* PageBackgroundView.swift */; };
 		BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */; };
 		BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73F053297F278F00ED23CC /* BundleExtension.swift */; };
-		BB74688B2AF5B49A0029F60D /* PPIntegrationKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB74688A2AF5B49A0029F60D /* PPIntegrationKit */; };
 		BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */ = {isa = PBXBuildFile; productRef = BB74688C2AF5B8670029F60D /* PPAnglePicker */; };
 		BB7468902AF5B90C0029F60D /* PPAnglePicker in Frameworks */ = {isa = PBXBuildFile; productRef = BB74688F2AF5B90C0029F60D /* PPAnglePicker */; };
 		BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984642AC347F900CF3D24 /* BackupSettings.swift */; };
@@ -170,7 +169,15 @@
 		BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBB090802A4BA35100A6F60A /* OnPasteboardChange */; };
 		BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */; };
 		BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */; };
-		BBB538802B40B74D00C874EA /* IntegrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5387F2B40B74D00C874EA /* IntegrationModel.swift */; };
+		BBB538802B40B74D00C874EA /* ExportableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5387F2B40B74D00C874EA /* ExportableModel.swift */; };
+		BBB538832B40BA7F00C874EA /* ExportableBackupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */; };
+		BBB538852B40BADC00C874EA /* ExportableContentObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538842B40BADC00C874EA /* ExportableContentObjectModel.swift */; };
+		BBB538872B40BB3300C874EA /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */; };
+		BBB5388D2B40BB4900C874EA /* ExportablePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538882B40BB4900C874EA /* ExportablePageModel.swift */; };
+		BBB5388E2B40BB4900C874EA /* ExportableTextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538892B40BB4900C874EA /* ExportableTextFieldModel.swift */; };
+		BBB5388F2B40BB4900C874EA /* ExportableItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388A2B40BB4900C874EA /* ExportableItemModel.swift */; };
+		BBB538902B40BB4900C874EA /* ExportableShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388B2B40BB4900C874EA /* ExportableShapeModel.swift */; };
+		BBB538912B40BB4900C874EA /* ExportableMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388C2B40BB4900C874EA /* ExportableMediaModel.swift */; };
 		BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */; };
 		BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E072A2693FD00155C8A /* CalculatorView.swift */; };
 		BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */; };
@@ -200,7 +207,6 @@
 		BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDFDEA2947DC62000C545D /* MusicView.swift */; };
 		BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */; };
 		BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */; };
-		BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */; };
 		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
 		BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */; };
 		BBD930EA2B1FBDB400A37F95 /* PVScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930E92B1FBDB400A37F95 /* PVScrollView.swift */; };
@@ -402,7 +408,6 @@
 		BB9BFB6F2AC7819D00255293 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
-		BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCoding.swift; sourceTree = "<group>"; };
 		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
 		BBA3A0282B29AF2500099F6D /* MDEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDEditorView.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* MediaImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImport.swift; sourceTree = "<group>"; };
@@ -416,7 +421,15 @@
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewCard.swift; sourceTree = "<group>"; };
 		BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinView.swift; sourceTree = "<group>"; };
-		BBB5387F2B40B74D00C874EA /* IntegrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationModel.swift; sourceTree = "<group>"; };
+		BBB5387F2B40B74D00C874EA /* ExportableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableModel.swift; sourceTree = "<group>"; };
+		BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableBackupModel.swift; sourceTree = "<group>"; };
+		BBB538842B40BADC00C874EA /* ExportableContentObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableContentObjectModel.swift; sourceTree = "<group>"; };
+		BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportableNoteModel.swift; sourceTree = "<group>"; };
+		BBB538882B40BB4900C874EA /* ExportablePageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportablePageModel.swift; sourceTree = "<group>"; };
+		BBB538892B40BB4900C874EA /* ExportableTextFieldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportableTextFieldModel.swift; sourceTree = "<group>"; };
+		BBB5388A2B40BB4900C874EA /* ExportableItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportableItemModel.swift; sourceTree = "<group>"; };
+		BBB5388B2B40BB4900C874EA /* ExportableShapeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportableShapeModel.swift; sourceTree = "<group>"; };
+		BBB5388C2B40BB4900C874EA /* ExportableMediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportableMediaModel.swift; sourceTree = "<group>"; };
 		BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButtonView.swift; sourceTree = "<group>"; };
 		BBBB7E072A2693FD00155C8A /* CalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppView.swift; sourceTree = "<group>"; };
@@ -494,7 +507,6 @@
 				BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */,
-				BB74688B2AF5B49A0029F60D /* PPIntegrationKit in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,7 +658,6 @@
 			isa = PBXGroup;
 			children = (
 				BB72E1052A59B3B1005A01B9 /* README.md */,
-				BBA1F0282AC1C10E0060B111 /* DocumentCoding.swift */,
 				BB4CDD3F28D3C668009A409F /* Productivity Pro */,
 				BB4CDD3E28D3C668009A409F /* Products */,
 				BBC4BE882AED7BBE00D87B60 /* Frameworks */,
@@ -709,6 +720,7 @@
 				BB4A93D52AAF3BED00C3AED6 /* OrganizationModels */,
 				BB35A1BF2B292175001A3F4C /* LibraryModels */,
 				BB9A36482ABCD25900721C56 /* NoteModels */,
+				BBB538812B40B86000C874EA /* ExportableModels */,
 				BB9DF5B328E067D600AC988D /* Document (Deprecated) */,
 			);
 			path = Models;
@@ -841,7 +853,6 @@
 				BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */,
 				BBC7B9752A1982F700D496CB /* EditItemModel.swift */,
 				BB82B5A92B2471130089D423 /* StackingModel.swift */,
-				BBB5387F2B40B74D00C874EA /* IntegrationModel.swift */,
 				BBBCACB22A25461900C23B2C /* Calculator.swift */,
 			);
 			path = "ViewModels (Intern)";
@@ -1068,6 +1079,38 @@
 				BB5705242B35FD3800F84B45 /* VFlipModifier.swift */,
 			);
 			path = VocabularyView;
+			sourceTree = "<group>";
+		};
+		BBB538812B40B86000C874EA /* ExportableModels */ = {
+			isa = PBXGroup;
+			children = (
+				BBB5387F2B40B74D00C874EA /* ExportableModel.swift */,
+				BBB538922B40BBD300C874EA /* Backup */,
+				BBB538932B40BBE100C874EA /* Note */,
+			);
+			path = ExportableModels;
+			sourceTree = "<group>";
+		};
+		BBB538922B40BBD300C874EA /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */,
+				BBB538842B40BADC00C874EA /* ExportableContentObjectModel.swift */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
+		BBB538932B40BBE100C874EA /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */,
+				BBB538882B40BB4900C874EA /* ExportablePageModel.swift */,
+				BBB5388A2B40BB4900C874EA /* ExportableItemModel.swift */,
+				BBB5388B2B40BB4900C874EA /* ExportableShapeModel.swift */,
+				BBB5388C2B40BB4900C874EA /* ExportableMediaModel.swift */,
+				BBB538892B40BB4900C874EA /* ExportableTextFieldModel.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		BBBCACAF2A253BC000C23B2C /* Calculator */ = {
@@ -1307,7 +1350,6 @@
 			name = "Productivity Pro";
 			packageProductDependencies = (
 				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
-				BB74688A2AF5B49A0029F60D /* PPIntegrationKit */,
 				BB74688C2AF5B8670029F60D /* PPAnglePicker */,
 				BB74688F2AF5B90C0029F60D /* PPAnglePicker */,
 				BBE993BF2AF850A800330733 /* PPDoubleKeyboard */,
@@ -1345,7 +1387,6 @@
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
-				BB7468892AF5B49A0029F60D /* XCRemoteSwiftPackageReference "PPIntegrationKit" */,
 				BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
 				BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */,
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
@@ -1392,6 +1433,7 @@
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
 				BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */,
+				BBB5388F2B40BB4900C874EA /* ExportableItemModel.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */,
@@ -1401,7 +1443,7 @@
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
-				BBB538802B40B74D00C874EA /* IntegrationModel.swift in Sources */,
+				BBB538802B40B74D00C874EA /* ExportableModel.swift in Sources */,
 				BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */,
 				BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */,
 				BB93676C2AC9CE430096F20E /* PPTableModel.swift in Sources */,
@@ -1441,6 +1483,7 @@
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
 				BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */,
 				BB35A1C32B2921DD001A3F4C /* LHistoryList.swift in Sources */,
+				BBB538872B40BB3300C874EA /* ExportableNoteModel.swift in Sources */,
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
 				BB26F8A82B31169A00788AA4 /* ClipboardControl.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
@@ -1487,6 +1530,7 @@
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
 				BBD930F72B1FEBA000A37F95 /* StoreVM.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GenerelSettings.swift in Sources */,
+				BBB538902B40BB4900C874EA /* ExportableShapeModel.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
@@ -1505,6 +1549,7 @@
 				BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */,
 				BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */,
 				BB8586992AE1E5B300C5875C /* ShapeStyleView.swift in Sources */,
+				BBB538852B40BADC00C874EA /* ExportableContentObjectModel.swift in Sources */,
 				BB4CDF712B30DC9700E5D612 /* ImportPro.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
 				BBCA6FA02AF81286009C08E3 /* DoubleRounding.swift in Sources */,
@@ -1515,11 +1560,13 @@
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
 				BB57052B2B3611A700F84B45 /* LGrammarNouns.swift in Sources */,
+				BBB5388D2B40BB4900C874EA /* ExportablePageModel.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
 				BB68502B2AE99F520011A058 /* LoadingView.swift in Sources */,
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB8586912AE1DE4300C5875C /* InspectorView.swift in Sources */,
+				BBB5388E2B40BB4900C874EA /* ExportableTextFieldModel.swift in Sources */,
 				BB82B5B52B247DDB0089D423 /* PencilKitButton.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PKRepresentable.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
@@ -1540,7 +1587,7 @@
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBA3A0292B29AF2500099F6D /* MDEditorView.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
-				BBD0DCA02ACCC2FE004A2C56 /* DocumentCoding.swift in Sources */,
+				BBB538912B40BB4900C874EA /* ExportableMediaModel.swift in Sources */,
 				BBD930EC2B1FBFA700A37F95 /* PVItemView.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
@@ -1558,6 +1605,7 @@
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
 				BB57051D2B35C57B00F84B45 /* LTabIndicator.swift in Sources */,
 				BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */,
+				BBB538832B40BA7F00C874EA /* ExportableBackupModel.swift in Sources */,
 				BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */,
 				BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */,
 				BB3F2FCE29129562001B7067 /* Orientation.swift in Sources */,
@@ -1843,14 +1891,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BB7468892AF5B49A0029F60D /* XCRemoteSwiftPackageReference "PPIntegrationKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/till/Documents/PPIntegrationKit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stoobit/PPAnglePicker";
@@ -1886,11 +1926,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BB74688A2AF5B49A0029F60D /* PPIntegrationKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB7468892AF5B49A0029F60D /* XCRemoteSwiftPackageReference "PPIntegrationKit" */;
-			productName = PPIntegrationKit;
-		};
 		BB74688C2AF5B8670029F60D /* PPAnglePicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PPAnglePicker;
