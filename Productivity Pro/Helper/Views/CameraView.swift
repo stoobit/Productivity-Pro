@@ -30,7 +30,7 @@ struct CameraView: UIViewControllerRepresentable {
         }
     }
     
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    final class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         var picker: CameraView
         
         let dismiss: () -> Void

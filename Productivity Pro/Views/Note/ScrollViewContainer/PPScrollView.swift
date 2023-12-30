@@ -96,7 +96,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     }
     
     @MainActor
-    class Coordinator: NSObject, UIScrollViewDelegate {
+    final class Coordinator: NSObject, UIScrollViewDelegate {
         var toolManager: ToolManager
         var hostingController: UIHostingController<Content>
         

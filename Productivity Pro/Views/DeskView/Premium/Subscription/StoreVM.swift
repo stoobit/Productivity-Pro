@@ -11,7 +11,7 @@ import StoreKit
 typealias RenewalInfo = StoreKit.Product.SubscriptionInfo.RenewalInfo
 typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
 
-@Observable class StoreVM {
+@Observable final class StoreVM {
     private(set) var subscriptions: [Product] = []
     private(set) var purchasedSubscriptions: [Product] = []
     private(set) var subscriptionGroupStatus: RenewalState?

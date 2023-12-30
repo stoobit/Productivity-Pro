@@ -10,7 +10,7 @@ import PencilKit
 import PhotosUI
 import PDFKit
 
-@Observable class ToolManager {
+@Observable final class ToolManager {
     var selectedContentObject: ContentObject?
     
     var activePage: PPPageModel?

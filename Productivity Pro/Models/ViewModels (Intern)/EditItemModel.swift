@@ -8,7 +8,7 @@
 import Observation
 import SwiftUI
 
-@Observable class EditItemModel {
+@Observable final class EditItemModel {
     var position: CGPoint = .zero
     var size: CGSize = .zero
 }

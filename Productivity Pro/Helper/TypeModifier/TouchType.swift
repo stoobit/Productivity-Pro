@@ -11,7 +11,7 @@ extension UITouch.TouchType: CustomStringConvertible {
     public var description: String { self == .direct ? "Touch" : "Pencil" }
 }
 
-class TouchType: UITapGestureRecognizer {
+final class TouchType: UITapGestureRecognizer {
     let touchType: Binding<UITouch.TouchType>
     init(_ touchType: Binding<UITouch.TouchType>) {
         self.touchType = touchType

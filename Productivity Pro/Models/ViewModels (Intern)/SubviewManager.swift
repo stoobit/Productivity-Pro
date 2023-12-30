@@ -7,7 +7,7 @@
 
 import Observation
 
-@Observable class SubviewManager {
+@Observable final class SubviewManager {
     
     var takeMedia: Bool = false
     var pickMedia: Bool = false

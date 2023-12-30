@@ -35,7 +35,7 @@ struct Productivity_ProApp: App {
 }
 
 
-class AppDelegate: NSObject, UIApplicationDelegate {
+final class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didUpdate userActivity: NSUserActivity) {
         application.inputView?.tintColor = .red
     }

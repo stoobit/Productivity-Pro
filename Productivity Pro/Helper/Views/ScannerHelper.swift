@@ -40,7 +40,7 @@ public struct ScannerHelper: UIViewControllerRepresentable {
 @available(iOS 13, *)
 public extension ScannerView {
     
-    class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
+    final class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         
         public init(
             cancelAction: @escaping ScannerView.CancelAction,

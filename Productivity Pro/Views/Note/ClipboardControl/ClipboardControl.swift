@@ -22,7 +22,7 @@ struct ClipboardControl: View {
             }
             .disabled(toolManager.activeItem == nil)
             
-            Button(action: {}) {
+            Button(action: { duplicate() }) {
                 ClipboardButton(image: "plus.square.on.square")
             }
             .disabled(toolManager.activeItem == nil)

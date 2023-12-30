@@ -46,7 +46,7 @@ private struct ColorPickerSheet: UIViewRepresentable {
         Coordinator(selection: $selection, isPresented: $isPresented)
     }
     
-    class Coordinator: NSObject, UIColorPickerViewControllerDelegate {
+    final class Coordinator: NSObject, UIColorPickerViewControllerDelegate {
         @Binding var selection: Color
         @Binding var isPresented: Bool
         var didPresent = false

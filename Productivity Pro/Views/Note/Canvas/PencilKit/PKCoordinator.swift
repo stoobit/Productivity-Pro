@@ -8,7 +8,7 @@
 import SwiftUI
 import PencilKit
 
-class Coordinator: NSObject, PKCanvasViewDelegate {
+final class Coordinator: NSObject, PKCanvasViewDelegate {
     var update: Bool = true
     
     @Binding var drawingChanged: Bool
