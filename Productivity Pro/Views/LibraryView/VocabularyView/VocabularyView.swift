@@ -26,7 +26,8 @@ struct VocabularyView: View {
                             VCardView(
                                 proxy: proxy,
                                 vocab: vocab,
-                                active: $active
+                                active: $active,
+                                index: index
                             )
                             .containerRelativeFrame([.horizontal, .vertical])
                             .scrollTransition(
@@ -53,5 +54,9 @@ struct VocabularyView: View {
 
     func getVocabs() -> [VocabModel] {
         return data.filter { $0.section == section }.shuffled()
+    }
+    
+    var index: String {
+        return "\((vocabs.firstIndex(of: active ?? .init()) ?? 0) + 1) / \(vocabs.count)"
     }
 }

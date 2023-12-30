@@ -15,14 +15,12 @@ struct LatinView: View {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all, edges: [.top, .horizontal])
 
-            GeometryReader { proxy in
-                if selection == "Grammatik" {
-                    LGrammarList(proxy: proxy)
-                } else if selection == "Vokabeln" {
-                    LVocabularyList()
-                } else if selection == "Geschichte" {
-                    LHistoryList()
-                }
+            if selection == "Grammatik" {
+                LGrammarList()
+            } else if selection == "Vokabeln" {
+                LVocabularyList()
+            } else if selection == "Geschichte" {
+                LHistoryList()
             }
         }
         .tabViewStyle(.page)
@@ -33,7 +31,7 @@ struct LatinView: View {
                     maxHeight: .infinity,
                     alignment: .bottom
                 )
-                .padding(10)
+                .padding(15)
         }
     }
 }

@@ -74,6 +74,16 @@
         }
       }
     },
+    "%lf %lf" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lf %2$lf"
+          }
+        }
+      }
+    },
     "%lld" : {
       "localizations" : {
         "en" : {
@@ -95,7 +105,14 @@
       }
     },
     "%lld. Klasse" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld. Klasse"
+          }
+        }
+      }
     },
     "•  App Icons" : {
       "localizations" : {
@@ -194,7 +211,14 @@
       }
     },
     "Adjektive" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adjective"
+          }
+        }
+      }
     },
     "Allgemein" : {
       "localizations" : {
@@ -297,7 +321,14 @@
       }
     },
     "Beitrag hinzufügen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add post"
+          }
+        }
+      }
     },
     "Beschreibung" : {
       "localizations" : {
@@ -359,6 +390,9 @@
         }
       }
     },
+    "Bitte vergrößere dieses Fenster um auf die Bibliothek zuzugreifen." : {
+
+    },
     "Breite" : {
       "localizations" : {
         "en" : {
@@ -384,17 +418,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Import File"
-          }
-        }
-      }
-    },
-    "Dateien durchsuchen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Browse files"
           }
         }
       }
@@ -441,6 +464,9 @@
           }
         }
       }
+    },
+    "Diese Ansicht ist nicht verfügbar." : {
+
     },
     "Diese Notiz existiert nicht mehr." : {
       "localizations" : {
@@ -841,17 +867,6 @@
         }
       }
     },
-    "Jgst %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grade %lld"
-          }
-        }
-      }
-    },
     "Kamera" : {
       "localizations" : {
         "en" : {
@@ -973,17 +988,6 @@
     },
     "Name" : {
 
-    },
-    "Noch sind keine Bücher verfügbar." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "There are no books available yet."
-          }
-        }
-      }
     },
     "Notiz" : {
       "localizations" : {

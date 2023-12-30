@@ -13,7 +13,8 @@ struct VCardView: View {
 
     @State var showBack: Bool = false
     @Binding var active: VocabModel?
-
+    
+    var index: String
     var body: some View {
         ZStack {
             CardView(string: vocab.word)
@@ -42,8 +43,16 @@ struct VCardView: View {
             RoundedRectangle(cornerRadius: 14)
                 .stroke(Color.accentColor, lineWidth: 3)
 
-            Text(string)
-                .font(.title3)
+            HStack {
+                Text(string)
+                    .font(.title3)
+            }
+            
+            Text(index)
+                .foregroundStyle(Color.secondary)
+                .font(.caption)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                .padding()
         }
         .frame(
             width: proxy.size.width * 0.7,

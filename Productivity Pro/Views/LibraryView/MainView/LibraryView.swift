@@ -8,142 +8,55 @@
 import SwiftUI
 
 struct LibraryView: View {
-    let columns = [GridItem(.adaptive(minimum: 270))]
-    let url = URL(string: "https://cloud.stoobit.com/nextcloud/index.php/apps/forms/s/faPdKcfx2gWgydCJy9WjpyEn")!
-    
+    @Environment(\.horizontalSizeClass) var hsc
+    let url = URL(string: "https://stoobit.com")!
+
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color(UIColor.systemGroupedBackground)
-                    .ignoresSafeArea(.all)
-                
-                ScrollView {
-                    LazyVGrid(columns: columns) {
-                       
-                        NavigationLink(destination: {
-                            LatinView()
-                        }) {
-                            LibraryViewCard(
-                                title: "Latein",
-                                image: "laurel.leading",
-                                color: .yellow
-                            )
-                        }
+        GeometryReader { proxy in
+            Group {
+                NavigationStack {
+                    ZStack {
+                        Color(UIColor.systemGroupedBackground)
+                            .ignoresSafeArea(.all)
                         
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Deutsch",
-                                image: "theatermasks.fill",
-                                color: .red
-                            )
-                        }
-                        
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Englisch",
-                                image: "bubble.left.and.text.bubble.right.fill",
-                                color: .green
-                            )
-                        }
-                        .disabled(true)
-                        
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Mathe",
-                                image: "compass.drawing",
-                                color: .blue
-                            )
-                        }
-                        .disabled(true)
-                        
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Informatik",
-                                image: "hammer.fill",
-                                color: .pink
-                            )
-                        }
-                        .disabled(true)
-                        
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Chemie",
-                                image: "atom",
-                                color: .primary
-                            )
-                        }
-                        .disabled(true)
-                        
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Physik",
-                                image: "paperplane.fill",
-                                color: .teal
-                            )
-                        }
-                        .disabled(true)
-                        
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Geographie",
-                                image: "globe.desk.fill",
-                                color: .brown
-                            )
-                        }
-                        .disabled(true)
-                        
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Geschichte",
-                                image: "clock.fill",
-                                color: .orange
-                            )
-                        }
-                        .disabled(true)
-                        
-                        NavigationLink(destination: {
-                            
-                        }) {
-                            LibraryViewCard(
-                                title: "Sozialkunde",
-                                image: "person.3.fill",
-                                color: .indigo
-                            )
-                        }
-                        .disabled(true)
-                        
+                        LibrarySubjectsList()
                     }
-                    .padding(.horizontal, 5)
+                    .navigationTitle("Bibliothek")
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Link(destination: url) {
+                                Label("Beitrag hinzufügen", systemImage: "note.text.badge.plus")
+                            }
+                        }
+                    }
                 }
-            }
-            .navigationTitle("Bibliothek")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Link(destination: url) {
-                       Label("Beitrag hinzufügen", systemImage: "note.text.badge.plus")
+                .overlay {
+                    if isAvailable(at: proxy.size) == false {
+                        ZStack {
+                            Color(UIColor.systemGroupedBackground)
+                                .ignoresSafeArea(.all)
+                            
+                            ContentUnavailableView(
+                                "Diese Ansicht ist nicht verfügbar.",
+                                systemImage: "eye.slash.fill",
+                                description: Text("Bitte vergrößere dieses Fenster um auf die Bibliothek zuzugreifen.")
+                            )
+                        }
                     }
                 }
             }
+            .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
         }
     }
-}
 
-#Preview {
-    LibraryView()
+    func isAvailable(at size: CGSize) -> Bool {
+        var isAvailable = false
+        var height = UIScreen.main.bounds.height / 1.5
+
+        if hsc == .regular && size.height > height {
+            isAvailable = true
+        }
+
+        return isAvailable
+    }
 }

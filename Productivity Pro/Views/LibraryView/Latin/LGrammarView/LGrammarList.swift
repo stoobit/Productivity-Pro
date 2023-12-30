@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct LGrammarList: View {
-    var proxy: GeometryProxy
 
     var body: some View {
         List {
             Section("Substantive") {
-                LGrammarNouns(proxy: proxy)
+                LGrammarNouns()
             }
 
             Section("Konjugationen") {}

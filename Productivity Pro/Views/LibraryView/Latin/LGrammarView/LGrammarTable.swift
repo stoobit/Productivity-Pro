@@ -19,13 +19,13 @@ struct LGrammarTable: View {
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundStyle(.clear)
                     .frame(maxWidth: .infinity)
-                    .frame(height: 50)
+                    .frame(height: 55)
                 
                 ForEach(top, id: \.self) { string in
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundStyle(Color.accentColor)
                         .frame(maxWidth: .infinity)
-                        .frame(height: 50)
+                        .frame(height: 55)
                         .overlay {
                             Text(string)
                                 .font(.headline)
@@ -43,7 +43,7 @@ struct LGrammarTable: View {
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundStyle(Color.accentColor)
                         .frame(maxWidth: .infinity)
-                        .frame(height: 50)
+                        .frame(height: 55)
                         .overlay {
                             Text(string)
                                 .font(.headline)
@@ -56,7 +56,7 @@ struct LGrammarTable: View {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundStyle(.bar)
                             .frame(maxWidth: .infinity)
-                            .frame(height: 50)
+                            .frame(height: 55)
                             .overlay {
                                 Text(contents[index][subindex])
                                     .font(.body)

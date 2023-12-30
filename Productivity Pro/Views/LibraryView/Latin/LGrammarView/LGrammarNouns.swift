@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LGrammarNouns: View {
-    var proxy: GeometryProxy
-
     var body: some View {
         NavigationLink(destination: {
             NounTable(contents: [
@@ -87,18 +85,28 @@ struct LGrammarNouns: View {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
 
-            LGrammarTable(
-                top: ["Singular", "Plural"],
-                leading: [
-                    "Nominativ",
-                    "Genitiv",
-                    "Dativ",
-                    "Akkusativ",
-                    "Ablativ",
-                ],
-                contents: contents
-            )
-            .frame(width: proxy.size.width * 1)
+            GeometryReader { proxy in
+                LGrammarTable(
+                    top: ["Singular", "Plural"],
+                    leading: [
+                        "Nominativ",
+                        "Genitiv",
+                        "Dativ",
+                        "Akkusativ",
+                        "Ablativ",
+                    ],
+                    contents: contents
+                )
+                .frame(
+                    width: proxy.size.width * 0.75,
+                    height: proxy.size.height * 0.75
+                )
+                .position(
+                    x: proxy.size.width / 2,
+                    y: proxy.size.height / 2
+                )
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }

@@ -216,6 +216,7 @@
 		BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC62712905EED800364B57 /* IndicatorText.swift */; };
 		BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */; };
 		BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D9299E9506004C99AE /* Hexagon.swift */; };
+		BBDFFD3E2B408C380006FE11 /* LibrarySubjectsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDFFD3D2B408C380006FE11 /* LibrarySubjectsList.swift */; };
 		BBE069B12AF78CA300B2D1A0 /* SecondaryInspectorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
@@ -459,6 +460,7 @@
 		BBDC62712905EED800364B57 /* IndicatorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorText.swift; sourceTree = "<group>"; };
 		BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeItemView.swift; sourceTree = "<group>"; };
 		BBDCF5D9299E9506004C99AE /* Hexagon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
+		BBDFFD3D2B408C380006FE11 /* LibrarySubjectsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySubjectsList.swift; sourceTree = "<group>"; };
 		BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryInspectorAction.swift; sourceTree = "<group>"; };
 		BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewDropDelegate.swift; sourceTree = "<group>"; };
 		BBE9196D28F381FE001EF750 /* PPScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollView.swift; sourceTree = "<group>"; };
@@ -1049,6 +1051,7 @@
 			isa = PBXGroup;
 			children = (
 				BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */,
+				BBDFFD3D2B408C380006FE11 /* LibrarySubjectsList.swift */,
 				BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */,
 			);
 			path = MainView;
@@ -1457,6 +1460,7 @@
 				BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */,
 				BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */,
 				BBCDBFB92AC8AFA800EF825F /* CreateViewMethods.swift in Sources */,
+				BBDFFD3E2B408C380006FE11 /* LibrarySubjectsList.swift in Sources */,
 				BBEFC9512A41038F00960C8D /* SecondaryUndoActions.swift in Sources */,
 				BBCDFDE52947C877000C545D /* DottedView.swift in Sources */,
 				BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */,
