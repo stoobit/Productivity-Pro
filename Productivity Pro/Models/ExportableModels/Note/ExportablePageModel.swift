@@ -22,7 +22,7 @@ public struct ExportablePageModel: Codable {
     var isPortrait: Bool
     var media: Data?
     
-    var pkCanvas: Data
+    var canvas: Data
     
     var items: [ExportableItemModel] = []
 }
