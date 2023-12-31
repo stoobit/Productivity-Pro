@@ -17,7 +17,6 @@ extension ObjectView {
                 try DispatchQueue.global(qos: .userInitiated).sync {
                     if let url = success.first {
                         if url.pathExtension == "pro" {
-                            print("hello")
                             try importPro(url: url)
                         } else if url.pathExtension == "pronote" {
                             try importProNote(url: url)
