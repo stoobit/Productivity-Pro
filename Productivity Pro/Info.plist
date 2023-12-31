@@ -8,7 +8,7 @@
 			<key>CFBundleTypeIconsFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Notiz (1.0)</string>
+			<string>Pro File</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
@@ -27,7 +27,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>Backup</string>
+			<string>Pro Backup</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
@@ -37,7 +37,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>Notiz</string>
+			<string>Pro Note</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
@@ -79,7 +79,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Notiz (1.0)</string>
+			<string>Pro File</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
@@ -99,7 +99,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Backup</string>
+			<string>Pro Backup</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
@@ -119,7 +119,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Notiz</string>
+			<string>Pro Note</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
@@ -142,7 +142,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Notiz (1.0)</string>
+			<string>Pro File</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
@@ -162,7 +162,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Backup</string>
+			<string>Pro Backup</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
@@ -182,7 +182,7 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Notiz</string>
+			<string>Pro Note</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
