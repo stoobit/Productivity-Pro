@@ -85,6 +85,7 @@ struct ImportManager {
             importable.textField = ppImport(textField: item.textField!)
         }
         
+        importable.page = nil
         return importable
     }
     
@@ -103,10 +104,14 @@ struct ImportManager {
         importable.isPortrait = page.isPortrait
         importable.media = page.media
         importable.canvas = page.canvas
+        importable.items = .init()
         
+        var items: [PPItemModel] = []
         for item in page.items {
-            importable.items?.append(ppImport(item: item))
+            items.append(ppImport(item: item))
         }
+        
+        importable.items = items
         
         return importable
     }
@@ -114,10 +119,12 @@ struct ImportManager {
     private func ppImport(note: ExportableNoteModel) -> PPNoteModel {
         let importable = PPNoteModel()
         
+        var pages: [PPPageModel] = []
         for page in note.pages {
-            importable.pages?.append(ppImport(page: page))
+            pages.append(ppImport(page: page))
         }
         
+        importable.pages = pages
         return importable
     }
     
