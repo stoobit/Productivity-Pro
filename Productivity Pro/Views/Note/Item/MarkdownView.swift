@@ -13,7 +13,7 @@ struct MarkdownView: View {
     @Bindable var editItem: EditItemModel
 
     var body: some View {
-        Markdown(item.textField?.string ?? "")
+        Markdown(string)
             .markdownTheme(.productivitypro(
                 name: item.textField?.fontName,
                 size: item.textField?.fontSize,
@@ -27,5 +27,17 @@ struct MarkdownView: View {
                 alignment: .topLeading
             )
             .clipShape(Rectangle())
+    }
+
+    var string: String {
+        guard let text = item.textField?.string else {
+            return "Markdown..."
+        }
+        
+        if text.isEmpty {
+            return "Markdown..."
+        }
+        
+        return text
     }
 }
