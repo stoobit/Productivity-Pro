@@ -8,7 +8,7 @@
 import Foundation
 
 struct ExportManager {
-    public func export(contentObject: ContentObject?, to url: URL) {
+    public func export(contentObject: ContentObject?, to url: URL) -> URL {
         if let contentObject = contentObject, let note = contentObject.note {
             do {
                 let destination = url.appendingPathComponent(
@@ -25,21 +25,20 @@ struct ExportManager {
                         FileAttributeKey.modificationDate: contentObject.modified as NSDate
                     ]
 
-                    if FileManager.default.createFile(
+                    FileManager.default.createFile(
                         atPath: destination.path(),
                         contents: data, attributes: attributes
-                    ) {
-                        print("success")
-                    } else {
-                        print("🔴 0")
-                    }
-
-                    url.stopAccessingSecurityScopedResource()
+                    )
+                    
+                    defer { destination.stopAccessingSecurityScopedResource() }
+                    return destination
                 }
             } catch {
                 print(error.localizedDescription)
             }
         }
+        
+        return .applicationDirectory
     }
 
     public func backup() {}

@@ -11,6 +11,8 @@ struct ShareProView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(ToolManager.self) var toolManager
     
+    @State var url: URL = .applicationDirectory
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 25) {
@@ -36,7 +38,9 @@ struct ShareProView: View {
                         )
                         .frame(width: 120, height: 165)
                         .clipShape(.rect)
-                        .draggable(Image(systemName: "house"))
+                        .onDrag({
+                            return NSItemProvider(contentsOf: url, contentType: .pronote)
+                        })
                 }
                 
                 Text("Buch S. 163/12")
@@ -44,10 +48,7 @@ struct ShareProView: View {
                 
                 Spacer()
                 
-                
-                
-                Button(action: {
-                }) {
+                ShareLink(item: url) {
                     Text("Teilen")
                         .font(.title2.bold())
                         .foregroundStyle(.white)
@@ -69,16 +70,21 @@ struct ShareProView: View {
                     }
                 }
             }
-            
         }
-        .onAppear {
-            ExportManager().export(
-                contentObject: toolManager.selectedContentObject,
-                to: .downloadsDirectory
-            )
-        }
-        .onDisappear {
-            
-        }
+        .onAppear { loadFile() }
+        .onDisappear { removeFile() }
+    }
+    
+    func loadFile() {
+        url = ExportManager().export(
+            contentObject: toolManager.selectedContentObject,
+            to: .cachesDirectory
+        )
+    }
+    
+    func removeFile() {
+        do {
+            try FileManager.default.removeItem(atPath: url.path())
+        } catch {}
     }
 }
