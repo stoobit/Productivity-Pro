@@ -170,7 +170,6 @@
 		BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBB090802A4BA35100A6F60A /* OnPasteboardChange */; };
 		BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */; };
 		BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */; };
-		BBB538802B40B74D00C874EA /* ExportableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5387F2B40B74D00C874EA /* ExportableModel.swift */; };
 		BBB538832B40BA7F00C874EA /* ExportableBackupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */; };
 		BBB538852B40BADC00C874EA /* ExportableContentObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538842B40BADC00C874EA /* ExportableContentObjectModel.swift */; };
 		BBB538872B40BB3300C874EA /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */; };
@@ -424,7 +423,6 @@
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewCard.swift; sourceTree = "<group>"; };
 		BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinView.swift; sourceTree = "<group>"; };
-		BBB5387F2B40B74D00C874EA /* ExportableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableModel.swift; sourceTree = "<group>"; };
 		BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableBackupModel.swift; sourceTree = "<group>"; };
 		BBB538842B40BADC00C874EA /* ExportableContentObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableContentObjectModel.swift; sourceTree = "<group>"; };
 		BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportableNoteModel.swift; sourceTree = "<group>"; };
@@ -1090,7 +1088,6 @@
 		BBB538812B40B86000C874EA /* ExportableModels */ = {
 			isa = PBXGroup;
 			children = (
-				BBB5387F2B40B74D00C874EA /* ExportableModel.swift */,
 				BBB538922B40BBD300C874EA /* Backup */,
 				BBB538932B40BBE100C874EA /* Note */,
 			);
@@ -1449,7 +1446,6 @@
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
-				BBB538802B40B74D00C874EA /* ExportableModel.swift in Sources */,
 				BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */,
 				BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */,
 				BB93676C2AC9CE430096F20E /* PPTableModel.swift in Sources */,

@@ -129,6 +129,17 @@ struct ImportManager {
             let created = attr[FileAttributeKey.creationDate] as! Date
             let modified = attr[FileAttributeKey.modificationDate] as! Date
             
+            let encodedData = try Data(contentsOf: url)
+            
+            guard let data = Data(
+                base64Encoded: encodedData, options: .ignoreUnknownCharacters
+            ) else {
+                throw RuntimeError("Import failed.")
+            }
+            
+            let importable = try JSONDecoder().decode(ExportableNoteModel.self, from: data)
+            let note = ImportManager().ppImport(note: importable)
+            
             let contentObject = ContentObject(
                 id: UUID(),
                 title: title,
@@ -139,6 +150,8 @@ struct ImportManager {
             )
             
             contentObject.modified = modified
+            contentObject.note = note
+            
             defer { url.stopAccessingSecurityScopedResource() }
             return contentObject
             
