@@ -17,7 +17,14 @@ extension ClipboardControl {
     }
     
     func duplicate() {
+        guard let item = toolManager.activeItem else { return }
+        var exportable = ExportManager().export(item: item)
         
+        exportable.id = UUID()
+        exportable.index = toolManager.activePage?.items?.count ?? 0
+        
+        exportable.x += 50
+        exportable.y += 50
     }
     
     func copy() {
