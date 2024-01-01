@@ -6,15 +6,28 @@
 //
 
 import SwiftUI
+import OnPasteboardChange
 
 struct ClipboardControl: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(\.modelContext) var context
+    
+    @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
+    @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
+    
+    @State var disablePasteboard: Bool = true
 
     var body: some View {
         HStack {
             Button(action: { paste() }) {
                 ClipboardButton(image: "doc.on.clipboard")
+            }
+            .disabled(disablePasteboard)
+            .onPasteboardChange {
+                disablePasteboard = pasteboardState()
+            }
+            .onAppear {
+                disablePasteboard = pasteboardState()
             }
             
             Button(action: { copy() }) {

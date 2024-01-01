@@ -55,58 +55,117 @@ extension ClipboardControl {
     }
     
     func addImage() {
-        toolManager.showProgress = true
-        Task {
-            await MainActor.run {
-                addImage()
-                
-                toolManager.showProgress = false
-                toolManager.copyPastePasser = .none
-            }
+        guard let selectedImage = UIPasteboard.general.image else { return }
+        
+        let image = resize(selectedImage, to: CGSize(width: 2048, height: 2048))
+        let ratio = 400/image.size.width
+        
+        let item = PPItemModel(index: 0, type: .media)
+        item.width = image.size.width * ratio
+        item.height = image.size.height * ratio
+        
+        let size = toolManager.offset.size
+        let scale = (1/toolManager.scale)
+        
+        item.x = size.width * scale + item.width/2 + 40
+        item.y = size.height * scale + item.height/2 + 40
+        
+        guard let data = image.heicData() else { return }
+        let media = PPMediaModel(media: data)
+        
+        item.media = media
+        
+        let page = toolManager.activePage
+        item.index = page?.items?.count ?? 0
+        page?.items?.append(item)
+        
+        toolManager.activeItem = item
+    }
+    
+    func addTextField() {
+        if let string = UIPasteboard.general.string {
+            let item = PPItemModel(index: 0, type: .textField)
+            item.width = 600
+            item.height = 300
+            
+            let size = toolManager.offset.size
+            let scale = (1/toolManager.scale)
+            
+            item.x = size.width * scale + item.width/2 + 40
+            item.y = size.height * scale + item.height/2 + 40
+            
+            let textField = PPTextFieldModel(
+                textColor: primaryColor(),
+                font: defaultFont,
+                fontSize: defaultFontSize
+            )
+            
+            item.textField = textField
+            textField.string = string
+            
+            let page = toolManager.activePage
+            item.index = page?.items?.count ?? 0
+            page?.items?.append(item)
+            
+            toolManager.activeItem = item
         }
     }
     
-    func addTextField() {}
-    
     func addItem() {
-        Task {
-            await MainActor.run {
-                do {
-                    let jsonData = UIPasteboard.general
-                        .data(forPasteboardType: "productivityproitem")
-                    
-                    if let data = jsonData {
-                        var pasteItem: ItemModel = try JSONDecoder().decode(
-                            ItemModel.self, from: data
-                        )
-                        
-                        toolManager.showProgress = true
-                        
-                        pasteItem.id = UUID()
-                        
-                        pasteItem.x = toolManager.offset.size.width * (1/toolManager.scale) + pasteItem.width/2 + 40
-                        
-                        pasteItem.y = toolManager.scrollOffset.size.height * (1/toolManager.zoomScale) + pasteItem.height/2 + 40
-                        
-                        pasteItem.isLocked = false
-                        
-                        document.document.note.pages[
-                            toolManager.selectedPage
-                        ].items.append(pasteItem)
-                        
-                        toolManager.selectedItem = pasteItem
-                    }
-                    
-                } catch { print("fail") }
+        do {
+            let jsonData = UIPasteboard.general
+                .data(forPasteboardType: "productivityproitem")
+            
+            if let data = jsonData {
+                var pasteItem: ExportableItemModel = try JSONDecoder().decode(
+                    ExportableItemModel.self, from: data
+                )
                 
-                toolManager.showProgress = false
-                toolManager.copyPastePasser = .none
+                let size = toolManager.offset.size
+                let scale = (1/toolManager.scale)
+                
+                pasteItem.id = UUID()
+                pasteItem.index = toolManager.activePage?.items?.count ?? 0
+                pasteItem.x = size.width * scale + pasteItem.width/2 + 40
+                pasteItem.y = size.height * scale + pasteItem.height/2 + 40
+                
+                let item = ImportManager().ppImport(item: pasteItem)
+                toolManager.activePage?.items?.append(item)
+                toolManager.activeItem = item
             }
-        }
+            
+        } catch {}
     }
     
     func cut() {
         copy()
         delete()
+    }
+    
+    func pasteboardState() -> Bool {
+        var pasteDisabled = true
+        
+        if UIPasteboard.general.hasImages ||
+            UIPasteboard.general.hasStrings ||
+            UIPasteboard.general.contains(pasteboardTypes: ["productivityproitem"])
+        {
+            pasteDisabled = false
+        }
+        
+        return pasteDisabled
+    }
+    
+    func primaryColor() -> Color {
+        let page = toolManager.activePage
+        
+        guard let color = page?.color else {
+            return Color.gray
+        }
+        
+        if color == "pageblack" || color == "pagegray" {
+            return Color.white
+        } else {
+            return Color.black
+        }
     }
 }

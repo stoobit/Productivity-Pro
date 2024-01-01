@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 13.03.23.
 //
 
-import SwiftUI
 import PhotosUI
+import SwiftUI
 
 struct MediaImport: ViewModifier {
     @Environment(ToolManager.self) var toolManager
@@ -53,39 +53,35 @@ struct MediaImport: ViewModifier {
                         addMedia(with: data)
                     }
                     
-                } catch { }
+                } catch {}
             }
-        
     }
     
     func addMedia(with imageData: Data) {
         guard let selectedImage = UIImage(data: imageData) else { return }
         
-        let image = resize(
-            selectedImage, to: CGSize(width: 2048, height: 2048)
-        )
+        let image = resize(selectedImage, to: CGSize(width: 2048, height: 2048))
         let ratio = 400/image.size.width
         
         let item = PPItemModel(index: 0, type: .media)
         item.width = image.size.width * ratio
         item.height = image.size.height * ratio
         
-        item.x = toolManager.offset.size.width * (1/toolManager.scale) + item.width/2 + 40
+        let size = toolManager.offset.size
+        let scale = (1/toolManager.scale)
         
-        item.y = toolManager.offset.size.height * (1/toolManager.scale) + item.height/2 + 40
+        item.x = size.width * scale + item.width/2 + 40
+        item.y = size.height * scale + item.height/2 + 40
         
         guard let data = image.heicData() else { return }
         let media = PPMediaModel(media: data)
         
         item.media = media
         
-        if let page = contentObject.note!.pages!.first(where: {
-            $0.id == toolManager.activePage!.id
-        }) {
-            item.index = page.items?.count ?? 0
-            page.items?.append(item)
-            
-            toolManager.activeItem = item
-        }
+        let page = toolManager.activePage
+        item.index = page?.items?.count ?? 0
+        page?.items?.append(item)
+        
+        toolManager.activeItem = item
     }
 }
