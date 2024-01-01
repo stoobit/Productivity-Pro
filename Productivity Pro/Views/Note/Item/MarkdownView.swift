@@ -31,6 +31,7 @@ struct MarkdownView: View {
             .clipShape(Rectangle())
             .onChange(of: toolManager.activeItem?.textField?.string) { _, new in
                 print(new ?? "error")
+                print("hello")
             }
     }
 
