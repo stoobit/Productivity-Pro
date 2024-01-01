@@ -9,6 +9,8 @@ import MarkdownUI
 import SwiftUI
 
 struct MarkdownView: View {
+    @Environment(ToolManager.self) var toolManager
+    
     @Bindable var item: PPItemModel
     @Bindable var editItem: EditItemModel
 
@@ -27,6 +29,9 @@ struct MarkdownView: View {
                 alignment: .topLeading
             )
             .clipShape(Rectangle())
+            .onChange(of: toolManager.activeItem?.textField?.string) { _, new in
+                print(new ?? "error")
+            }
     }
 
     var string: String {

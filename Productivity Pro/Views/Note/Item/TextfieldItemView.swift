@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TextFieldItemView: View {
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(ToolManager.self) var toolManager
     
     @Bindable var item: PPItemModel
     @Bindable var editItem: EditItemModel
@@ -74,6 +75,7 @@ struct TextFieldItemView: View {
             
             var view: some View {
                 MarkdownView(item: item, editItem: editItem)
+                    .environment(toolManager)
             }
             
             let renderer = ImageRenderer(content: view)
