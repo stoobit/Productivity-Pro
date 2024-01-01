@@ -47,11 +47,13 @@ extension ObjectView {
                 ppPage.canvas = page.canvas
                 ppPage.items = [PPItemModel]()
                 
-                if page.type == .image || page.type == .pdf {
+                if page.type == .image {
                     if let data = page.backgroundMedia {
                         let image = UIImage(data: data)
                         ppPage.media = image?.heicData()
                     }
+                } else if page.type == .pdf {
+                    ppPage.media = page.backgroundMedia
                 }
                 
                 var index = 0

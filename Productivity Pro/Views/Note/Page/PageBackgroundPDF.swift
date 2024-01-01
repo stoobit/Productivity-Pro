@@ -28,7 +28,9 @@ struct PageBackgroundPDF: View {
         .onAppear {
             if loadedPDF == nil {
                 DispatchQueue.global(qos: .userInteractive).async {
-                    loadedPDF = PDFDocument(data: page.media!)
+                    if let media = page.media {
+                        loadedPDF = PDFDocument(data: media)
+                    }
                 }
             }
         }
