@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 23.09.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct HomeworkEditView: View {
     @Environment(\.modelContext) var context
@@ -15,7 +15,7 @@ struct HomeworkEditView: View {
     @Binding var isPresented: Bool
     
     @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
     @AppStorage("notificationTime")
     var notificationTime: Date = Calendar.current.date(
@@ -26,7 +26,7 @@ struct HomeworkEditView: View {
     @State var notePicker: Bool = false
     
     @State var title: String = ""
-    @State var date: Date = Date()
+    @State var date: Date = .init()
     @State var pickedNote: String = ""
     @State var description: String = ""
     
@@ -66,7 +66,6 @@ struct HomeworkEditView: View {
                     .frame(height: 30)
                     
                     HStack {
-                        
                         if isEditing {
                             Text(
                                 pickedNote.isEmpty ? "Notiz" : contentObjects.first(where: {
@@ -108,31 +107,30 @@ struct HomeworkEditView: View {
                     }
                 }
                 
-                TextField(
-                    "Beschreibung",
-                    text: $description, axis: .vertical
-                )
-                .frame(minHeight: 30)
+                TextEditor(text: $description)
+                    .listRowInsets(edgeInsets())
+                    .frame(minHeight: 150)
             }
             .animation(.bouncy, value: isEditing)
             .environment(\.defaultMinListRowHeight, 10)
             .disabled(isEditing == false)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(isEditing ? "Bearbeiten" : "Schließen") { 
-                        if isEditing {
-                            edit()
-                        } else {
-                            isPresented.toggle()
-                        }
+                    Button("Schließen") {
+                        isPresented.toggle()
                     }
                     .disabled(homework.title == "")
                 }
                 
                 ToolbarItem(placement: .topBarLeading) {
                     Button(action: {
-                        isEditing.toggle()
-                        set()
+                        if isEditing {
+                            edit()
+                            isEditing = false
+                        } else {
+                            set()
+                            isEditing = true
+                        }
                     }) {
                         Image(
                             systemName: isEditing ? "pencil.slash" : "pencil"
@@ -168,8 +166,6 @@ struct HomeworkEditView: View {
                 )
             
             pushNotification()
-            
-            isPresented.toggle()
             try? context.save()
         }
     }
@@ -187,11 +183,11 @@ struct HomeworkEditView: View {
             byAdding: .year, value: 1, to: tomorrow
         )!
         
-        return tomorrow...max
+        return tomorrow ... max
     }()
     
     func getSubject(from title: String) -> Subject {
-        var subject: Subject = Subject()
+        var subject = Subject()
         
         if let s = subjects.value.first(where: {
             $0.title == title
@@ -205,7 +201,6 @@ struct HomeworkEditView: View {
     }
     
     func pushNotification() {
-        
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
         content.title = homework.title
@@ -232,5 +227,15 @@ struct HomeworkEditView: View {
         )
 
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    func edgeInsets() -> EdgeInsets {
+        var insets = EdgeInsets()
+        let value: CGFloat = 5
+        
+        insets.leading = value
+        insets.trailing = value
+        
+        return insets
     }
 }

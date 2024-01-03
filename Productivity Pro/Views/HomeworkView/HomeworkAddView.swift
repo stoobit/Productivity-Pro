@@ -5,15 +5,15 @@
 //  Created by Till Brügmann on 21.09.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct HomeworkAddView: View {
     @Environment(\.modelContext) var context
     @Query(animation: .bouncy) var contentObjects: [ContentObject]
     
     @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
     @AppStorage("notificationTime")
     var notificationTime: Date = Calendar.current.date(
@@ -22,7 +22,7 @@ struct HomeworkAddView: View {
     
     @State var notePicker: Bool = false
     @State var pickedNote: String = ""
-    @State var homework: Homework = Homework()
+    @State var homework: Homework = .init()
     
     @Binding var isPresented: Bool
     
@@ -77,17 +77,15 @@ struct HomeworkAddView: View {
                         ObjectPicker(
                             objects: contentObjects,
                             isPresented: $notePicker,
-                            selectedObject: $pickedNote, 
+                            selectedObject: $pickedNote,
                             type: .file
                         )
                     }
                 }
                 
-                TextField(
-                    "Beschreibung",
-                    text: $homework.homeworkDescription, axis: .vertical
-                )
-                .frame(minHeight: 30)
+                TextEditor(text: $homework.homeworkDescription)
+                    .listRowInsets(edgeInsets())
+                    .frame(minHeight: 150)
             }
             .environment(\.defaultMinListRowHeight, 10)
             .toolbar {
@@ -137,11 +135,10 @@ struct HomeworkAddView: View {
             byAdding: .year, value: 1, to: tomorrow
         )!
         
-        return tomorrow...max
+        return tomorrow ... max
     }()
     
     func pushNotification() {
-        
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
         content.title = homework.title
@@ -168,5 +165,15 @@ struct HomeworkAddView: View {
         )
 
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    func edgeInsets() -> EdgeInsets {
+        var insets = EdgeInsets()
+        let value: CGFloat = 5
+        
+        insets.leading = value
+        insets.trailing = value
+        
+        return insets
     }
 }
