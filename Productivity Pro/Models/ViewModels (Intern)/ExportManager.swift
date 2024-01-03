@@ -29,7 +29,7 @@ struct ExportManager {
                         atPath: destination.path(),
                         contents: data, attributes: attributes
                     )
-                    
+
                     defer { destination.stopAccessingSecurityScopedResource() }
                     return destination
                 }
@@ -37,11 +37,30 @@ struct ExportManager {
                 print(error.localizedDescription)
             }
         }
-        
+
         return .applicationDirectory
     }
 
-    public func backup() {}
+    public func backup(contentObject: ContentObject) -> ExportableContentObjectModel {
+        var exportable = ExportableContentObjectModel(
+            id: contentObject.id,
+            type: contentObject.type,
+            title: contentObject.title,
+            parent: contentObject.parent,
+            created: contentObject.created,
+            modified: contentObject.modified,
+            grade: contentObject.grade,
+            subject: contentObject.subject,
+            isPinned: contentObject.isPinned,
+            inTrash: contentObject.inTrash
+        )
+
+        if contentObject.type == COType.file.rawValue, let note = contentObject.note {
+            exportable.note = export(note: note)
+        }
+
+        return exportable
+    }
 
     private func export(textField: PPTextFieldModel) -> ExportableTextFieldModel {
         let exportable = ExportableTextFieldModel(

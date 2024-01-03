@@ -80,6 +80,7 @@ struct BackupSettings: View {
     }
     
     func createBackup() {
+        exportetCount = 0 
         backingUp = true
 //        var backup = DataSystemExportable()
         
