@@ -15,7 +15,7 @@ struct ContentView: View {
         .autoconnect()
     
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
-    @AppStorage("pprole") var role: Role = .individual
+    @AppStorage("pprole") var role: Role = .none
     
     @State var toolManager: ToolManager = ToolManager()
     @State var subviewManager: SubviewManager = SubviewManager()

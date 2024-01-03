@@ -11,7 +11,7 @@ import SwiftUI
 struct GeneralSettings: View {
     @Environment(\.horizontalSizeClass) var hsc
     
-    @AppStorage("pprole") var role: Role = .individual
+    @AppStorage("pprole") var role: Role = .none
     @AppStorage("notificationTime")
     var notificationTime: Date = Calendar.current.date(
         bySettingHour: 15, minute: 30, second: 00, of: Date()
@@ -37,10 +37,6 @@ struct GeneralSettings: View {
             Form {
                 Section("Rolle") {
                     Picker("", selection: $role) {
-                        Text("Individuell")
-                            .frame(height: 30)
-                            .tag(Role.individual)
-                        
                         Text("Schüler")
                             .frame(height: 30)
                             .tag(Role.student)

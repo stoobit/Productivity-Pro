@@ -10,5 +10,5 @@ import Foundation
 enum Role: String, Codable {
     case student = "Student"
     case teacher = "Teacher"
-    case individual = "Individual"
+    case none = "hdhdhdh"
 }

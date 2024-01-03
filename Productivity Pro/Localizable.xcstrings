@@ -828,6 +828,7 @@
       }
     },
     "Individuell" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
