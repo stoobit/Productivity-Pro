@@ -20,8 +20,6 @@ extension ObjectView {
                             try importPro(url: url)
                         } else if url.pathExtension == "pronote" {
                             try importProNote(url: url)
-                        } else if url.pathExtension == "probackup" {
-                            try importProBackup(url: url)
                         }
                     }
                     

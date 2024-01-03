@@ -65,7 +65,6 @@
 		BB4CDF572B30BAC600E5D612 /* MarkdownTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDF562B30BAC600E5D612 /* MarkdownTutorialView.swift */; };
 		BB4CDF712B30DC9700E5D612 /* ImportPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDF702B30DC9700E5D612 /* ImportPro.swift */; };
 		BB4CDF732B30DE6000E5D612 /* ImportProNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDF722B30DE6000E5D612 /* ImportProNote.swift */; };
-		BB4CDF752B30DE9600E5D612 /* ImportProBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4CDF742B30DE9600E5D612 /* ImportProBackup.swift */; };
 		BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */; };
 		BB5034192993172800913B3A /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5034182993172800913B3A /* PageItemView.swift */; };
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
@@ -322,7 +321,6 @@
 		BB4CDF562B30BAC600E5D612 /* MarkdownTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTutorialView.swift; sourceTree = "<group>"; };
 		BB4CDF702B30DC9700E5D612 /* ImportPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPro.swift; sourceTree = "<group>"; };
 		BB4CDF722B30DE6000E5D612 /* ImportProNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportProNote.swift; sourceTree = "<group>"; };
-		BB4CDF742B30DE9600E5D612 /* ImportProBackup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportProBackup.swift; sourceTree = "<group>"; };
 		BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
 		BB5034182993172800913B3A /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
@@ -742,7 +740,6 @@
 				BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */,
 				BB4CDF702B30DC9700E5D612 /* ImportPro.swift */,
 				BB4CDF722B30DE6000E5D612 /* ImportProNote.swift */,
-				BB4CDF742B30DE9600E5D612 /* ImportProBackup.swift */,
 			);
 			path = ObjectViewMethods;
 			sourceTree = "<group>";
@@ -1577,7 +1574,6 @@
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
 				BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */,
-				BB4CDF752B30DE9600E5D612 /* ImportProBackup.swift in Sources */,
 				BB85868C2AE1ABA500C5875C /* RatingView.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,
 				BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */,

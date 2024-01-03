@@ -128,6 +128,28 @@ struct ImportManager {
         return importable
     }
     
+    func ppImport(contentObject: ExportableContentObjectModel) -> ContentObject {
+        let importable = ContentObject(
+            id: contentObject.id,
+            title: contentObject.title,
+            type: COType(rawValue: contentObject.type)!,
+            parent: contentObject.parent,
+            created: contentObject.created,
+            grade: contentObject.grade,
+            subject: contentObject.subject
+        )
+        
+        importable.modified = contentObject.modified
+        importable.isPinned = contentObject.isPinned
+        importable.inTrash = contentObject.inTrash
+        
+        if contentObject.type == COType.file.rawValue, let note = contentObject.note {
+            importable.note = ppImport(note: note)
+        }
+        
+        return importable
+    }
+    
     func ppImport(from url: URL, to parent: String, with grade: Int) throws -> ContentObject {
         if url.startAccessingSecurityScopedResource() {
             let title: String = url.deletingPathExtension().lastPathComponent
