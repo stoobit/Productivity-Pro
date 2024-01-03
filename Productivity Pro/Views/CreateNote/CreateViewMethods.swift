@@ -111,7 +111,6 @@ extension CreateNoteView {
                             ppPage.media = data
                             ppPage.title = title
                             
-                            
                             ppPage.isPortrait = size.width < size.height
                             ppPage.template = "blank"
                             ppPage.color = "pagewhite"
