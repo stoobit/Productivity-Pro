@@ -25,6 +25,7 @@ struct BackupSettings: View {
     
     @State var showExporter: Bool = false
     @State var showImporter: Bool = false
+    @State var showAlert: Bool = false
     
     var body: some View {
         Form {
@@ -83,8 +84,9 @@ struct BackupSettings: View {
                     onCompletion: { _ in }
                 )
                 
-                Button(action: { showImporter.toggle() }) {
+                Button(role: .destructive, action: { showAlert.toggle() }) {
                     Label("Backup importieren", systemImage: "square.and.arrow.down")
+                        .foregroundStyle(.red)
                 }
                 .fileImporter(
                     isPresented: $showImporter, allowedContentTypes: [.probackup]
@@ -92,6 +94,22 @@ struct BackupSettings: View {
                     withAnimation(.bouncy) {
                         importBackup(result: result)
                     }
+                }
+                .alert("Möchtest du wirklich ein Backup importieren?", isPresented: $showAlert, actions: {
+                    Button(role: .destructive, action: {
+                        showAlert = false
+                        showImporter = true
+                    }) {
+                        Text("Importieren")
+                    }
+                    
+                    Button(role: .cancel, action: {
+                        showAlert = false
+                    }) {
+                        Text("Abbrechen")
+                    }
+                }) {
+                    Text("Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!")
                 }
             }
         }

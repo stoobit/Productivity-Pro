@@ -220,6 +220,9 @@
         }
       }
     },
+    "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
+
+    },
     "Allgemein" : {
       "localizations" : {
         "en" : {
@@ -997,6 +1000,9 @@
           }
         }
       }
+    },
+    "Möchtest du wirklich ein Backup importieren?" : {
+
     },
     "Name" : {
 
