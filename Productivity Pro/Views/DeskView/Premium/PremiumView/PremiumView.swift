@@ -33,6 +33,12 @@ struct PremiumView: View {
                     PVOfferView(product: product)
                         .padding(.vertical)
                     
+                    Text("Teste Productivity Pro Premium die ersten 2 Wochen kostenlos.")
+                        .font(.caption)
+                        .foregroundStyle(Color.secondary)
+                        .padding(.horizontal)
+                        .multilineTextAlignment(.center)
+                    
                     Spacer()
                     
                     Button(action: {
