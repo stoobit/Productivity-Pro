@@ -10,6 +10,7 @@ import SwiftUI
 
 struct BackupSettings: View {
     @Environment(\.modelContext) var context
+    @Environment(ToolManager.self) var toolManager
     
     @Query(
         FetchDescriptor(
@@ -21,7 +22,9 @@ struct BackupSettings: View {
     
     @State var backingUp: Bool = false
     @State var backup: Data?
+    
     @State var showExporter: Bool = false
+    @State var showImporter: Bool = false
     
     var body: some View {
         Form {
@@ -79,6 +82,17 @@ struct BackupSettings: View {
                     defaultFilename: "Backup",
                     onCompletion: { _ in }
                 )
+                
+                Button(action: { showImporter.toggle() }) {
+                    Label("Backup importieren", systemImage: "square.and.arrow.down")
+                }
+                .fileImporter(
+                    isPresented: $showImporter, allowedContentTypes: [.probackup]
+                ) { result in
+                    withAnimation(.bouncy) {
+                        importBackup(result: result)
+                    }
+                }
             }
         }
         .environment(\.defaultMinListRowHeight, 10)
