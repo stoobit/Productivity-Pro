@@ -33,6 +33,7 @@
 		BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */; };
 		BB2A8E192B45F0DB0072D3CC /* BackupMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A8E182B45F0DB0072D3CC /* BackupMethods.swift */; };
 		BB2A8E1C2B460BEA0072D3CC /* NoteOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A8E1B2B460BEA0072D3CC /* NoteOverviewView.swift */; };
+		BB2A8E1E2B460CD30072D3CC /* NoteViewModalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */; };
 		BB3208A82981DFFF0014F602 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB339F872AD44E97009DA591 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB339F862AD44E97009DA591 /* Role.swift */; };
@@ -289,6 +290,7 @@
 		BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectRecognition.mlmodel; sourceTree = "<group>"; };
 		BB2A8E182B45F0DB0072D3CC /* BackupMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupMethods.swift; sourceTree = "<group>"; };
 		BB2A8E1B2B460BEA0072D3CC /* NoteOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOverviewView.swift; sourceTree = "<group>"; };
+		BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModalMethods.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB339F862AD44E97009DA591 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
@@ -819,6 +821,7 @@
 			children = (
 				BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */,
 				BB655AFF2AB772F100FB005A /* NoteViewModals.swift */,
+				BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */,
 			);
 			path = NoteViewModifier;
 			sourceTree = "<group>";
@@ -1587,6 +1590,7 @@
 				BB82B5B52B247DDB0089D423 /* PencilKitButton.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PKRepresentable.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
+				BB2A8E1E2B460CD30072D3CC /* NoteViewModalMethods.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
 				BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */,
 				BB85868C2AE1ABA500C5875C /* RatingView.swift in Sources */,
