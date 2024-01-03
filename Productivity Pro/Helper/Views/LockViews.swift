@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LockScreen: ViewModifier {
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
-    
+    @State var showPremium: Bool = false
+
     func body(content: Content) -> some View {
         if isSubscribed {
             content
@@ -18,9 +19,14 @@ struct LockScreen: ViewModifier {
                 .allowsHitTesting(false)
                 .blur(radius: 20)
                 .overlay {
-                    Label("Premium", systemImage: "crown.fill")
-                        .font(.largeTitle.bold())
-                        .foregroundStyle(Color.accentColor.gradient)
+                    Button(action: { showPremium.toggle() }) {
+                        Label("Premium", systemImage: "crown.fill")
+                            .font(.largeTitle.bold())
+                            .foregroundStyle(Color.accentColor.gradient)
+                    }
+                    .sheet(isPresented: $showPremium) {
+                        PremiumView()
+                    }
                 }
         }
     }
@@ -29,7 +35,7 @@ struct LockScreen: ViewModifier {
 struct LockButton: ViewModifier {
     @AppStorage("ppisunlocked")
     var isSubscribed: Bool = false
-    
+
     func body(content: Content) -> some View {
         if isSubscribed {
             content
