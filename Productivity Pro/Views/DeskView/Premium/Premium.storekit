@@ -10,7 +10,7 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 723581444.28956199,
+    "_lastSynchronizedDate" : 725971099.61969805,
     "_locale" : "de",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
@@ -72,7 +72,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "AB2E1A67",
+              "internalID" : "0E5E75E9",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivity.premium.offer",
               "paymentMode" : "free",
@@ -83,7 +83,7 @@
           "codeOffers" : [
 
           ],
-          "displayPrice" : "8.99",
+          "displayPrice" : "12.99",
           "familyShareable" : true,
           "groupNumber" : 1,
           "internalID" : "6473851041",

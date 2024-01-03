@@ -12,7 +12,7 @@ extension DeskView {
     @ViewBuilder func Settings() -> some View {
         Section("Einstellungen") {
             NavigationLink(destination: {
-                GenerelSettings()
+                GeneralSettings()
             }) {
                 Label("Allgemein", systemImage: "gearshape")
             }

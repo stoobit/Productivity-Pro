@@ -8,7 +8,7 @@
 import PPDoubleKeyboard
 import SwiftUI
 
-struct GenerelSettings: View {
+struct GeneralSettings: View {
     @Environment(\.horizontalSizeClass) var hsc
     
     @AppStorage("pprole") var role: Role = .individual
@@ -98,5 +98,5 @@ struct GenerelSettings: View {
 }
 
 #Preview {
-    GenerelSettings()
+    GeneralSettings()
 }

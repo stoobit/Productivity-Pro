@@ -29,6 +29,17 @@ struct DeskView: View {
                     .sheet(isPresented: $premiumView, content: {
                         PremiumView()
                     })
+                } else {
+                    Button(action: { premiumView.toggle() }) {
+                        Label(title: {
+                            Text("Premium")
+                                .foregroundStyle(Color.primary)
+                        }) {
+                            Image(systemName: "crown.fill")
+                        }
+                    }
+                    .frame(height: 30)
+                    .manageSubscriptionsSheet(isPresented: $premiumView)
                 }
                 
                 Settings()
