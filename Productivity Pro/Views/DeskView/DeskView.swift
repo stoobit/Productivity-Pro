@@ -11,42 +11,52 @@ struct DeskView: View {
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     
     @State var premiumView: Bool = false
+    @State var settingsView: Bool = false
     @State var shareView: Bool = false
     
     var body: some View {
         NavigationStack {
             Form {
-                if isSubscribed == false {
-                    Button(action: { premiumView.toggle() }) {
-                        Label(title: {
-                            Text("Premium")
-                                .foregroundStyle(Color.primary)
-                        }) {
-                            Image(systemName: "crown.fill")
+                Section {
+                    if isSubscribed == false {
+                        Button(action: { premiumView.toggle() }) {
+                            Label(title: {
+                                Text("Premium")
+                                    .foregroundStyle(Color.primary)
+                            }) {
+                                Image(systemName: "crown.fill")
+                            }
                         }
-                    }
-                    .frame(height: 30)
-                    .sheet(isPresented: $premiumView, content: {
-                        PremiumView()
-                    })
-                } else {
-                    Button(action: { premiumView.toggle() }) {
-                        Label(title: {
-                            Text("Premium")
-                                .foregroundStyle(Color.primary)
-                        }) {
-                            Image(systemName: "crown.fill")
+                        .frame(height: 30)
+                        .sheet(isPresented: $premiumView, content: {
+                            PremiumView()
+                        })
+                    } else {
+                        HStack {
+                            Button(action: { settingsView.toggle() }) {
+                                Label(title: {
+                                    Text("Premium")
+                                        .foregroundStyle(Color.primary)
+                                }) {
+                                    Image(systemName: "crown.fill")
+                                }
+                            }
+                            
+                            Spacer()
+                            
+                            Image(systemName: "checkmark.circle.fill")
+                                .imageScale(.large)
+                                .foregroundStyle(Color.green)
                         }
+                        .frame(height: 30)
+                        .manageSubscriptionsSheet(isPresented: $settingsView)
                     }
-                    .frame(height: 30)
-                    .manageSubscriptionsSheet(isPresented: $premiumView)
                 }
                 
                 Settings()
-                LinkView()
                 
                 Button(action: {
-                    if let url = URL(string: "itms-apps://itunes.apple.com/app/id6449678571"
+                    if let url = URL(string: "https://apps.apple.com/app/id6449678571?action=write-review"
                     ) {
                         UIApplication.shared.open(url)
                     }
@@ -71,7 +81,6 @@ struct DeskView: View {
                 }
                 .foregroundStyle(.primary)
                 .frame(height: 30)
-                
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Schreibtisch")
@@ -85,7 +94,6 @@ struct DeskView: View {
             .fullScreenCover(isPresented: $shareView, content: {
                 ShareAppView()
             })
-            
         }
     }
 }

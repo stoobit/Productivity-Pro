@@ -66,8 +66,8 @@ struct SubjectSettingsRow: View {
             for sSubject in day.subjects {
                 if sSubject.subject == subject.title {
                     
-                    let indexD = schedule.value.firstIndex(of: day)!
-                    let indexS = day.subjects.firstIndex(of: sSubject)!
+                    guard let indexD = schedule.value.firstIndex(of: day) else { continue }
+                    guard let indexS = day.subjects.firstIndex(of: sSubject) else { continue }
                     let schedSubject = ScheduleSubject(subject: "", room: "")
                     
                     schedule.value[indexD].subjects[indexS] = schedSubject

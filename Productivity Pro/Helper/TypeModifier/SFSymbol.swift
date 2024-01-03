@@ -39,7 +39,7 @@ let symbols: [String] = [
     "cloud.sun.rain",
     "thermometer.medium",
     "syringe",
-    "stethoscope",
+    "laurel.leading",
     "brain",
     "banknote",
     "eurosign",

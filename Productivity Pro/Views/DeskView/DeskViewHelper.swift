@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension DeskView {
-    
     @ViewBuilder func Settings() -> some View {
         Section("Einstellungen") {
             NavigationLink(destination: {
@@ -17,7 +16,7 @@ extension DeskView {
                 Label("Allgemein", systemImage: "gearshape")
             }
             .frame(height: 30)
-            
+
             NavigationLink(destination: {
                 AppIconSettings()
             }) {
@@ -26,7 +25,7 @@ extension DeskView {
             .frame(height: 30)
             .modifier(PremiumBadge())
             .modifier(LockButton())
-            
+
             NavigationLink(destination: {
                 SubjectSettings()
             }) {
@@ -35,9 +34,9 @@ extension DeskView {
             .frame(height: 30)
             .modifier(PremiumBadge())
             .modifier(LockButton())
-            
+
             NavigationLink(destination: {
-               BackupSettings()
+                BackupSettings()
             }) {
                 Label(
                     "Backup", systemImage: "externaldrive.badge.timemachine"
@@ -48,35 +47,7 @@ extension DeskView {
             .modifier(LockButton())
         }
     }
-    
-    @ViewBuilder func LinkView() -> some View {
-        Section("Social Media") {
-            Link(destination: URL(
-                string: "https://www.instagram.com/productivitypro_app/"
-            )!) {
-                Label("Instagram", systemImage: "camera.fill")
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [.purple, .pink, .orange, .yellow],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-            }
-            .frame(height: 30)
-            
-            Link(destination: URL(
-                string: "https://twitter.com/stoobitofficial"
-            )!) {
-                Label("X", systemImage: "x.square.fill")
-                    .foregroundStyle(Color.primary)
-            }
-            .frame(height: 30)
-        }
-    }
-
 }
-
 
 struct DeskView_Previews2: PreviewProvider {
     static var previews: some View {

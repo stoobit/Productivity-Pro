@@ -849,6 +849,7 @@
       }
     },
     "Instagram" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1223,9 +1224,6 @@
           }
         }
       }
-    },
-    "Social Media" : {
-
     },
     "Sortieren" : {
       "localizations" : {
