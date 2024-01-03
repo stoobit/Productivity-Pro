@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 26.09.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct BackupSettings: View {
     @Environment(\.modelContext) var context
@@ -20,18 +20,37 @@ struct BackupSettings: View {
     ) var contentObjects: [ContentObject]
     
     @State var backingUp: Bool = false
-    @State var exportetCount: Double = 0
+    @State var backup: Data?
+    @State var showExporter: Bool = false
     
     var body: some View {
         Form {
             Section(content: {
-                Button(
-                    "Backup erstellen",
-                    systemImage: "externaldrive.badge.timemachine",
-                    action: createBackup
-                )
-                .frame(height: 30)
-                .disabled(contentObjects.isEmpty)
+                HStack {
+                    Button(
+                        "Backup erstellen",
+                        systemImage: "externaldrive.badge.timemachine",
+                        action: {
+                            backingUp = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                createBackup()
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    backingUp = false
+                                }
+                            }
+                        }
+                    )
+                    .frame(height: 30)
+                    .disabled(contentObjects.isEmpty)
+                    .disabled(backingUp)
+                    
+                    Spacer()
+                    
+                    if backingUp {
+                        ProgressView()
+                    }
+                }
             }, footer: {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill")
@@ -40,7 +59,7 @@ struct BackupSettings: View {
                 }
             })
             
-            Section() {
+            Section {
                 NumberIndicator(type: .file)
                     .frame(height: 30)
                 
@@ -48,16 +67,19 @@ struct BackupSettings: View {
                     .frame(height: 30)
             }
             
-            ProgressView(
-                value: exportetCount,
-                total: Double(contentObjects.count)
-            ) {
-                
+            Section {
+                Button(action: { showExporter.toggle() }) {
+                    Label("Backup exportieren", systemImage: "square.and.arrow.up")
+                }
+                .disabled(!(backup != nil && backingUp == false))
+                .fileExporter(
+                    isPresented: $showExporter,
+                    document: BackupFile(data: backup ?? Data()),
+                    contentType: .probackup,
+                    defaultFilename: "Backup",
+                    onCompletion: { _ in }
+                )
             }
-            .progressViewStyle(.linear)
-            .frame(height: 30)
-            .labelsHidden()
-            
         }
         .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Backup")
@@ -67,9 +89,9 @@ struct BackupSettings: View {
     func NumberIndicator(type: COType) -> some View {
         let title = type == .file ? "Notizen" : "Ordner"
         let image = type == .file ? "doc" : "folder"
-        let count = contentObjects.filter({
+        let count = contentObjects.filter {
             $0.type == type.rawValue
-        }).count
+        }.count
         
         HStack {
             Label(title, systemImage: image)
@@ -80,20 +102,16 @@ struct BackupSettings: View {
     }
     
     func createBackup() {
-        exportetCount = 0 
-        backingUp = true
-//        var backup = DataSystemExportable()
+        let exporter = ExportManager()
+        var backup = ExportableBackupModel()
         
-//        for contentObject in contentObjects {
-//            let objectBackup = ContentObjectExportable
-//            
-//            backup.contentObjects.append(objectBackup)
-//            exportetCount += 1
-//        }
+        for contentObject in contentObjects {
+            let exportable = exporter.backup(contentObject: contentObject)
+            backup.contentObjects.append(exportable)
+        }
         
-        backingUp = false
+        self.backup = try? JSONEncoder().encode(backup)
     }
-    
 }
 
 #Preview {

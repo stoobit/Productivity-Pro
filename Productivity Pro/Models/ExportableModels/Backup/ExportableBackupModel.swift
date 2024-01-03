@@ -8,5 +8,5 @@
 import Foundation
 
 struct ExportableBackupModel: Codable {
-    
+    var contentObjects: [ExportableContentObjectModel] = []
 }
