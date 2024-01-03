@@ -15,9 +15,17 @@ struct LGrammarList: View {
                 LGrammarNouns()
             }
 
-            Section("Konjugationen") {}
+            Section("Konjugationen") {
+                Label("In Arbeit...", systemImage: "line.3.crossed.swirl.circle.fill")
+                    .foregroundStyle(Color.secondary)
+                    .frame(height: 30)
+            }
 
-            Section("Adjektive") {}
+            Section("Adjektive") {
+                Label("In Arbeit...", systemImage: "line.3.crossed.swirl.circle.fill")
+                    .foregroundStyle(Color.secondary)
+                    .frame(height: 30)
+            }
         }
         .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Grammatik")
