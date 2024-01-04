@@ -46,6 +46,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Productivity Preview.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Productivity Pro.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -223,6 +228,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>BB4CDD3C28D3C668009A409F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB5A231B2B476D9F00F1D1B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
