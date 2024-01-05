@@ -105,7 +105,7 @@ struct HomeworkAddView: View {
                 byAdding: .day, value: 1, to: homework.date
             )!
             
-            homework.subject = subjects.value[0].title
+            homework.subject = subjects.value.sorted(by: { $0.title < $1.title })[0].title
         }
     }
     
