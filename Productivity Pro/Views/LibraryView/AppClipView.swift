@@ -13,9 +13,15 @@ struct AppClipView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Bibliothek")
-                    .font(.largeTitle.bold())
-                    .padding(.bottom, 5)
+                ViewThatFits(in: .horizontal) {
+                    Text("Bibliothek – App Clip")
+                        .font(.largeTitle.bold())
+                        .padding(.bottom, 5)
+                    
+                    Text("Bibliothek")
+                        .font(.largeTitle.bold())
+                        .padding(.bottom, 5)
+                }
                 
                 Text("Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen.")
                     .multilineTextAlignment(.center)
