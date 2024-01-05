@@ -25,6 +25,7 @@ struct OpenURL: ViewModifier {
             .onOpenURL(perform: { url in
                 self.url = url
                 if url.pathExtension == "pronote" {
+                    toolManager.pencilKit = false
                     showPicker.toggle()
                 } else {
                     showAlert.toggle()
