@@ -81,23 +81,10 @@
 		BB5705282B3609E800F84B45 /* LGrammarTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705272B3609E800F84B45 /* LGrammarTable.swift */; };
 		BB57052B2B3611A700F84B45 /* LGrammarNouns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57052A2B3611A700F84B45 /* LGrammarNouns.swift */; };
 		BB5A231F2B476D9F00F1D1B6 /* Productivity_PreviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5A231E2B476D9F00F1D1B6 /* Productivity_PreviewApp.swift */; };
-		BB5A23212B476D9F00F1D1B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5A23202B476D9F00F1D1B6 /* ContentView.swift */; };
 		BB5A23232B476DA000F1D1B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB5A23222B476DA000F1D1B6 /* Assets.xcassets */; };
 		BB5A23262B476DA000F1D1B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB5A23252B476DA000F1D1B6 /* Preview Assets.xcassets */; };
 		BB5A232B2B476DA000F1D1B6 /* Productivity Preview.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = BB5A231C2B476D9F00F1D1B6 /* Productivity Preview.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BB5A23302B476DF300F1D1B6 /* ExportableShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388B2B40BB4900C874EA /* ExportableShapeModel.swift */; };
-		BB5A23312B476DF300F1D1B6 /* ExportableMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388C2B40BB4900C874EA /* ExportableMediaModel.swift */; };
-		BB5A23322B476DF300F1D1B6 /* ExportableTextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538892B40BB4900C874EA /* ExportableTextFieldModel.swift */; };
-		BB5A23332B476DF300F1D1B6 /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */; };
-		BB5A23342B476DF300F1D1B6 /* ExportablePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538882B40BB4900C874EA /* ExportablePageModel.swift */; };
-		BB5A23352B476DF300F1D1B6 /* ExportableItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388A2B40BB4900C874EA /* ExportableItemModel.swift */; };
 		BB5A23362B476E0200F1D1B6 /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
-		BB5A23372B476EE900F1D1B6 /* PPItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677E2AC9D40C0096F20E /* PPItemType.swift */; };
-		BB5A23382B476EE900F1D1B6 /* PPPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677A2AC9D3E20096F20E /* PPPageType.swift */; };
-		BB5A23392B476EE900F1D1B6 /* PPShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367802AC9D41F0096F20E /* PPShapeType.swift */; };
-		BB5A233A2B476EE900F1D1B6 /* PPCanvasType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677C2AC9D3F40096F20E /* PPCanvasType.swift */; };
-		BB5A233B2B476EE900F1D1B6 /* PPStrokeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367762AC9D3C50096F20E /* PPStrokeType.swift */; };
-		BB5A233C2B476EE900F1D1B6 /* PPLinkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68F0C32ACA1789006C91AE /* PPLinkType.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */; };
@@ -192,12 +179,6 @@
 		BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */; };
 		BBB538832B40BA7F00C874EA /* ExportableBackupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */; };
 		BBB538852B40BADC00C874EA /* ExportableContentObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538842B40BADC00C874EA /* ExportableContentObjectModel.swift */; };
-		BBB538872B40BB3300C874EA /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */; };
-		BBB5388D2B40BB4900C874EA /* ExportablePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538882B40BB4900C874EA /* ExportablePageModel.swift */; };
-		BBB5388E2B40BB4900C874EA /* ExportableTextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538892B40BB4900C874EA /* ExportableTextFieldModel.swift */; };
-		BBB5388F2B40BB4900C874EA /* ExportableItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388A2B40BB4900C874EA /* ExportableItemModel.swift */; };
-		BBB538902B40BB4900C874EA /* ExportableShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388B2B40BB4900C874EA /* ExportableShapeModel.swift */; };
-		BBB538912B40BB4900C874EA /* ExportableMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388C2B40BB4900C874EA /* ExportableMediaModel.swift */; };
 		BBB538952B40BE4700C874EA /* ExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538942B40BE4700C874EA /* ExportManager.swift */; };
 		BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */; };
 		BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E072A2693FD00155C8A /* CalculatorView.swift */; };
@@ -206,6 +187,28 @@
 		BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */; };
 		BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */; };
 		BBBFB835299FB75400FA236F /* DragItemModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFB834299FB75400FA236F /* DragItemModifier.swift */; };
+		BBC0BAAE2B47F2A300D47A21 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5A23202B476D9F00F1D1B6 /* ContentView.swift */; };
+		BBC0BAAF2B47F2CB00D47A21 /* ExportablePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538882B40BB4900C874EA /* ExportablePageModel.swift */; };
+		BBC0BAB02B47F2CB00D47A21 /* ExportableMediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388C2B40BB4900C874EA /* ExportableMediaModel.swift */; };
+		BBC0BAB12B47F2CB00D47A21 /* ExportableShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388B2B40BB4900C874EA /* ExportableShapeModel.swift */; };
+		BBC0BAB22B47F2CB00D47A21 /* ExportableTextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538892B40BB4900C874EA /* ExportableTextFieldModel.swift */; };
+		BBC0BAB32B47F2CB00D47A21 /* ExportableNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */; };
+		BBC0BAB42B47F2CB00D47A21 /* ExportableItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB5388A2B40BB4900C874EA /* ExportableItemModel.swift */; };
+		BBC0BAB52B47F2F000D47A21 /* LibraryViewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */; };
+		BBC0BAB62B47F2F000D47A21 /* LVocabularyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */; };
+		BBC0BAB72B47F2F000D47A21 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDF42AAE25FD0081C4FE /* LibraryView.swift */; };
+		BBC0BAB82B47F2F000D47A21 /* LGrammarNouns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57052A2B3611A700F84B45 /* LGrammarNouns.swift */; };
+		BBC0BAB92B47F2F000D47A21 /* LTabIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */; };
+		BBC0BABA2B47F2F000D47A21 /* LGrammarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */; };
+		BBC0BABB2B47F2F000D47A21 /* VCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705222B35E3B100F84B45 /* VCardView.swift */; };
+		BBC0BABC2B47F2F000D47A21 /* LHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */; };
+		BBC0BABD2B47F2F000D47A21 /* VFlipModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705242B35FD3800F84B45 /* VFlipModifier.swift */; };
+		BBC0BABE2B47F2F000D47A21 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705202B35E24700F84B45 /* VocabularyView.swift */; };
+		BBC0BABF2B47F2F000D47A21 /* LibrarySubjectsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDFFD3D2B408C380006FE11 /* LibrarySubjectsList.swift */; };
+		BBC0BAC02B47F2F000D47A21 /* LatinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */; };
+		BBC0BAC12B47F2F000D47A21 /* LGrammarTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705272B3609E800F84B45 /* LGrammarTable.swift */; };
+		BBC0BAC22B47F32A00D47A21 /* VocabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051E2B35D45000F84B45 /* VocabModel.swift */; };
+		BBC0BAC32B47F35C00D47A21 /* latinvoc.json in Resources */ = {isa = PBXBuildFile; fileRef = BB35A1B92B290A3B001A3F4C /* latinvoc.json */; };
 		BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC254142AC60D2400B51175 /* ObjectPickerList.swift */; };
 		BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC2C90629C5CFB40044B201 /* SnapItemView.swift */; };
 		BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75F22996D06200C0F140 /* ShapeModel.swift */; };
@@ -1536,6 +1539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB5A23262B476DA000F1D1B6 /* Preview Assets.xcassets in Resources */,
+				BBC0BAC32B47F35C00D47A21 /* latinvoc.json in Resources */,
 				BB5A23232B476DA000F1D1B6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1559,7 +1563,6 @@
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB1321F02985F547006AD59D /* MediaType.swift in Sources */,
 				BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */,
-				BBB5388F2B40BB4900C874EA /* ExportableItemModel.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */,
@@ -1581,6 +1584,7 @@
 				BB4CDD5628D3D518009A409F /* Document.swift in Sources */,
 				BBCDFDE32947BF84000C545D /* SquaredView.swift in Sources */,
 				BBCCE4EB28D52743001DBD8A /* NoteModel.swift in Sources */,
+				BBC0BAB22B47F2CB00D47A21 /* ExportableTextFieldModel.swift in Sources */,
 				BB85868E2AE1D72200C5875C /* SecondaryShareAction.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */,
@@ -1609,7 +1613,6 @@
 				BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */,
 				BB2A8E192B45F0DB0072D3CC /* BackupMethods.swift in Sources */,
 				BB35A1C32B2921DD001A3F4C /* LHistoryList.swift in Sources */,
-				BBB538872B40BB3300C874EA /* ExportableNoteModel.swift in Sources */,
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
 				BB26F8A82B31169A00788AA4 /* ClipboardControl.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
@@ -1658,7 +1661,6 @@
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
 				BBD930F72B1FEBA000A37F95 /* StoreVM.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GeneralSettings.swift in Sources */,
-				BBB538902B40BB4900C874EA /* ExportableShapeModel.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
@@ -1688,13 +1690,11 @@
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
 				BB57052B2B3611A700F84B45 /* LGrammarNouns.swift in Sources */,
-				BBB5388D2B40BB4900C874EA /* ExportablePageModel.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,
 				BB68502B2AE99F520011A058 /* LoadingView.swift in Sources */,
 				BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */,
 				BB4A93E52AAF580800C3AED6 /* ScheduleColumn.swift in Sources */,
 				BB8586912AE1DE4300C5875C /* InspectorView.swift in Sources */,
-				BBB5388E2B40BB4900C874EA /* ExportableTextFieldModel.swift in Sources */,
 				BB82B5B52B247DDB0089D423 /* PencilKitButton.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PKRepresentable.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
@@ -1716,7 +1716,6 @@
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBA3A0292B29AF2500099F6D /* MDEditorView.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
-				BBB538912B40BB4900C874EA /* ExportableMediaModel.swift in Sources */,
 				BBD930EC2B1FBFA700A37F95 /* PVItemView.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
@@ -1727,6 +1726,7 @@
 				BBD930EE2B1FC02300A37F95 /* PVAnimationView.swift in Sources */,
 				BB9367642AC9CDD10096F20E /* PPShapeModel.swift in Sources */,
 				BB7987072AD49BF7003469E6 /* TextFieldButton.swift in Sources */,
+				BBC0BAB32B47F2CB00D47A21 /* ExportableNoteModel.swift in Sources */,
 				BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */,
 				BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */,
 				BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */,
@@ -1741,19 +1741,23 @@
 				BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */,
 				BB4A93F02AAF8EB200C3AED6 /* ScheduleAddSubject.swift in Sources */,
 				BB3208A82981DFFF0014F602 /* CameraView.swift in Sources */,
+				BBC0BAB02B47F2CB00D47A21 /* ExportableMediaModel.swift in Sources */,
 				BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */,
 				BB9367702AC9CE5D0096F20E /* PPImmersiveObjectModel.swift in Sources */,
 				BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */,
 				BB8A0AE32AD0B871008B4D27 /* LockViews.swift in Sources */,
+				BBC0BAB12B47F2CB00D47A21 /* ExportableShapeModel.swift in Sources */,
 				BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */,
 				BB7984682AC37E1E00CF3D24 /* ObjectViewFileLink.swift in Sources */,
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
 				BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
+				BBC0BAAF2B47F2CB00D47A21 /* ExportablePageModel.swift in Sources */,
 				BB9367682AC9CE260096F20E /* PPTextFieldModel.swift in Sources */,
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
+				BBC0BAB42B47F2CB00D47A21 /* ExportableItemModel.swift in Sources */,
 				BB339F872AD44E97009DA591 /* Role.swift in Sources */,
 				BB073A6F2AB8CA4800C80B59 /* SecondaryPageActions.swift in Sources */,
 				BBD930FA2B21132F00A37F95 /* ShareProView.swift in Sources */,
@@ -1782,20 +1786,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB5A23382B476EE900F1D1B6 /* PPPageType.swift in Sources */,
-				BB5A233B2B476EE900F1D1B6 /* PPStrokeType.swift in Sources */,
-				BB5A23372B476EE900F1D1B6 /* PPItemType.swift in Sources */,
-				BB5A233C2B476EE900F1D1B6 /* PPLinkType.swift in Sources */,
-				BB5A23312B476DF300F1D1B6 /* ExportableMediaModel.swift in Sources */,
-				BB5A23212B476D9F00F1D1B6 /* ContentView.swift in Sources */,
-				BB5A23352B476DF300F1D1B6 /* ExportableItemModel.swift in Sources */,
-				BB5A23302B476DF300F1D1B6 /* ExportableShapeModel.swift in Sources */,
-				BB5A23342B476DF300F1D1B6 /* ExportablePageModel.swift in Sources */,
-				BB5A23392B476EE900F1D1B6 /* PPShapeType.swift in Sources */,
 				BB5A23362B476E0200F1D1B6 /* FileTypes.swift in Sources */,
-				BB5A23332B476DF300F1D1B6 /* ExportableNoteModel.swift in Sources */,
-				BB5A233A2B476EE900F1D1B6 /* PPCanvasType.swift in Sources */,
-				BB5A23322B476DF300F1D1B6 /* ExportableTextFieldModel.swift in Sources */,
+				BBC0BABC2B47F2F000D47A21 /* LHistoryList.swift in Sources */,
+				BBC0BAAE2B47F2A300D47A21 /* ContentView.swift in Sources */,
+				BBC0BAB82B47F2F000D47A21 /* LGrammarNouns.swift in Sources */,
+				BBC0BABB2B47F2F000D47A21 /* VCardView.swift in Sources */,
+				BBC0BAC22B47F32A00D47A21 /* VocabModel.swift in Sources */,
+				BBC0BABA2B47F2F000D47A21 /* LGrammarList.swift in Sources */,
+				BBC0BAC02B47F2F000D47A21 /* LatinView.swift in Sources */,
+				BBC0BABF2B47F2F000D47A21 /* LibrarySubjectsList.swift in Sources */,
+				BBC0BAB52B47F2F000D47A21 /* LibraryViewCard.swift in Sources */,
+				BBC0BAC12B47F2F000D47A21 /* LGrammarTable.swift in Sources */,
+				BBC0BAB62B47F2F000D47A21 /* LVocabularyList.swift in Sources */,
+				BBC0BAB72B47F2F000D47A21 /* LibraryView.swift in Sources */,
+				BBC0BABE2B47F2F000D47A21 /* VocabularyView.swift in Sources */,
+				BBC0BAB92B47F2F000D47A21 /* LTabIndicator.swift in Sources */,
+				BBC0BABD2B47F2F000D47A21 /* VFlipModifier.swift in Sources */,
 				BB5A231F2B476D9F00F1D1B6 /* Productivity_PreviewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2050,6 +2056,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2089,6 +2096,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

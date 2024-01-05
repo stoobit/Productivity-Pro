@@ -339,17 +339,6 @@
         }
       }
     },
-    "Beschreibung" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Description"
-          }
-        }
-      }
-    },
     "Bewegen" : {
       "localizations" : {
         "en" : {
@@ -840,34 +829,12 @@
     "In Arbeit..." : {
 
     },
-    "Individuell" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Individual"
-          }
-        }
-      }
-    },
     "Inspektor" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inspector"
-          }
-        }
-      }
-    },
-    "Instagram" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Instagram"
           }
         }
       }

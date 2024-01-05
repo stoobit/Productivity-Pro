@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct Productivity_PreviewApp: App {
     var body: some Scene {
-        DocumentGroup(viewing: ProNoteFile.self) { file in
+        WindowGroup {
             ContentView()
         }
     }
