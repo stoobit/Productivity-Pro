@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeworkAddView: View {
     @Environment(\.modelContext) var context
-    @Query(animation: .bouncy) var contentObjects: [ContentObject]
+    var contentObjects: [ContentObject]
     
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())

@@ -52,7 +52,9 @@ struct HomeworkList: View {
         }
         .scrollContentBackground(.hidden)
         .sheet(isPresented: $presentAdd, content: {
-            HomeworkAddView(isPresented: $presentAdd)
+            HomeworkAddView(
+                contentObjects: contentObjects, isPresented: $presentAdd
+            )
         })
         .onAppear {
             let cal = Calendar.current

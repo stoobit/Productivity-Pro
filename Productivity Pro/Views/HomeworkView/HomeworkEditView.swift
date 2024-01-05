@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeworkEditView: View {
     @Environment(\.modelContext) var context
-    @Query(animation: .bouncy) var contentObjects: [ContentObject]
+    var contentObjects: [ContentObject]
     
     @Binding var isPresented: Bool
     
