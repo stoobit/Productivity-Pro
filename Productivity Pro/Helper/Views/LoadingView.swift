@@ -11,7 +11,7 @@ struct LoadingView: View {
     var body: some View {
         HStack {
             ProgressView()
-            
+
             Text("Daten werden verarbeitet...")
                 .foregroundStyle(Color.white)
                 .padding(.leading)
@@ -24,22 +24,4 @@ struct LoadingView: View {
                 .foregroundStyle(Color.accentColor)
         }
     }
-}
-
-#Preview {
-    ContentView()
-        .overlay {
-            LoadingView()
-        }
-        .modelContainer(
-            for: [
-                Homework.self,
-                ContentObject.self,
-                PPNoteModel.self,
-                PPPageModel.self,
-                PPItemModel.self
-            ],
-            isAutosaveEnabled: true,
-            isUndoEnabled: true
-        )
 }

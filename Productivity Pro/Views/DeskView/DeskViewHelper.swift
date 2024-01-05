@@ -48,9 +48,3 @@ extension DeskView {
         }
     }
 }
-
-struct DeskView_Previews2: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

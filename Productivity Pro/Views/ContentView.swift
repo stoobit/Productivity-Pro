@@ -10,7 +10,13 @@ import SwiftData
 import SwiftUI
 import UserNotifications
 
-struct ContentView: View {
+struct ContentViewContainer: View {
+    var body: some View {
+        ContentView()
+    }
+}
+
+fileprivate struct ContentView: View {
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     

@@ -13,7 +13,7 @@ struct Productivity_ProApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentViewContainer()
                 .onAppear { onAppear() }
         }
         .modelContainer(

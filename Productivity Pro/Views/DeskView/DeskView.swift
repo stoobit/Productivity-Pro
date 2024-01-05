@@ -97,9 +97,3 @@ struct DeskView: View {
         }
     }
 }
-
-struct DeskView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
