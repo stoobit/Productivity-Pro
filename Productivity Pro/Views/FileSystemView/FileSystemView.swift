@@ -5,11 +5,9 @@
 //  Created by Till Brügmann on 24.09.23.
 //
 
-import SwiftData
 import SwiftUI
 
 struct FileSystemView: View {
-    @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
 
     @AppStorage("ppgrade") var grade: Int = 5
@@ -42,8 +40,4 @@ struct FileSystemView: View {
             }
         }
     }
-}
-
-#Preview {
-    ContentView()
 }

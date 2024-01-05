@@ -15,9 +15,6 @@ struct Productivity_ProApp: App {
         WindowGroup {
             ContentView()
                 .onAppear { onAppear() }
-                .onOpenURL(perform: { _ in
-
-                })
         }
         .modelContainer(
             for: [

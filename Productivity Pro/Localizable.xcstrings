@@ -395,6 +395,9 @@
         }
       }
     },
+    "Bitte importiere die Datei über das Import-Menü oder die Backup-Ansicht." : {
+
+    },
     "Bitte vergrößere dieses Fenster um auf die Bibliothek zuzugreifen." : {
 
     },
@@ -821,6 +824,9 @@
           }
         }
       }
+    },
+    "Import nicht möglich" : {
+
     },
     "Importieren" : {
       "localizations" : {
@@ -1329,6 +1335,9 @@
       }
     },
     "Undo" : {
+
+    },
+    "Verstanden" : {
 
     },
     "Vokabeln" : {

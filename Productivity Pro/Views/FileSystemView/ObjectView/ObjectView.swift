@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 24.09.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ObjectView: View {
     @Environment(ToolManager.self) var toolManager
@@ -16,7 +16,7 @@ struct ObjectView: View {
     var title: String
     var contentObjects: [ContentObject]
     
-    @AppStorage("ppsorttype") 
+    @AppStorage("ppsorttype")
     var sortType: SortingValue = .title
     
     @AppStorage("ppisreverse")
@@ -28,7 +28,6 @@ struct ObjectView: View {
     @AppStorage("ppgrade")
     var grade: Int = 5
     
-    // MARK: Creation Values
     @State var addFolder: Bool = false
     @State var createNote: Bool = false
     @State var importFile: Bool = false
@@ -92,7 +91,7 @@ struct ObjectView: View {
         .modifier(
             AddFolderView(
                 parent: parent,
-                contentObjects: contentObjects, 
+                contentObjects: contentObjects,
                 isPresented: $addFolder
             )
         )
@@ -112,7 +111,6 @@ struct ObjectView: View {
                 importFile(result: result)
             }
         }
-        
     }
     
     @ViewBuilder func ObjectLink(for object: ContentObject) -> some View {
@@ -130,5 +128,4 @@ struct ObjectView: View {
             }
         }
     }
-    
 }

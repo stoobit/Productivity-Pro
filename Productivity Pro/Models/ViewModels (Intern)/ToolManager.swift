@@ -5,10 +5,10 @@
 //  Created by Till Brügmann on 08.11.22.
 //
 
-import SwiftUI
+import PDFKit
 import PencilKit
 import PhotosUI
-import PDFKit
+import SwiftUI
 
 @Observable final class ToolManager {
     var selectedContentObject: ContentObject?
@@ -34,8 +34,9 @@ import PDFKit
     var offset: CGPoint = .zero
     
     // MARK: - UNCHECKED & OLD
+
     var selectedPage: Int = 0
-    var selectedTab: UUID = UUID()
+    var selectedTab: UUID = .init()
     var preloadedMedia: [PDFDocument?] = []
     var copyPastePasser: CopyPastePasser?
     var didZoom: Bool = false

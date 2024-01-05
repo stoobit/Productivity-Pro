@@ -5,20 +5,24 @@
 //  Created by Till Brügmann on 10.09.23.
 //
 
-import SwiftUI
 import StoreKit
+import SwiftData
+import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
-    @State var storeVM: StoreVM = StoreVM()
+    @Query(animation: .bouncy)
+    var contentObjects: [ContentObject]
+    
+    @State var storeVM: StoreVM = .init()
     let timer = Timer.publish(every: 500000, on: .main, in: .common)
         .autoconnect()
     
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     @AppStorage("pprole") var role: Role = .none
     
-    @State var toolManager: ToolManager = ToolManager()
-    @State var subviewManager: SubviewManager = SubviewManager()
+    @State var toolManager: ToolManager = .init()
+    @State var subviewManager: SubviewManager = .init()
     
     @State var selectedTab: Int = 1
     
@@ -26,7 +30,7 @@ struct ContentView: View {
         ZStack {
             if storeVM.finished {
                 Text("Loading Receiver.")
-                    .onReceive(timer) { time in
+                    .onReceive(timer) { _ in
                         storeVM = StoreVM()
                     }
                     .onAppear {
@@ -35,7 +39,6 @@ struct ContentView: View {
             }
             
             TabView(selection: $selectedTab) {
-                
                 DeskView()
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(0)
@@ -43,7 +46,7 @@ struct ContentView: View {
                         Label("Schreibtisch", systemImage: "lamp.desk")
                     }
                 
-                FileSystemView()
+                FileSystemView(contentObjects: contentObjects)
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(1)
                     .tabItem {
@@ -81,9 +84,9 @@ struct ContentView: View {
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
-                
             }
             .disabled(toolManager.showProgress)
+            .modifier(OpenURL(objects: contentObjects))
             .scrollDisabled(toolManager.showProgress)
             .environment(toolManager)
             .environment(subviewManager)
@@ -96,7 +99,6 @@ struct ContentView: View {
                 }
             }
             .animation(.bouncy, value: toolManager.showProgress)
-            
         }
     }
     
@@ -104,7 +106,7 @@ struct ContentView: View {
         if isSubscribed {
             UNUserNotificationCenter.current().requestAuthorization(
                 options: [.alert, .badge, .sound]
-            ) { success, error in }
+            ) { _, _ in }
         }
     }
     
@@ -117,5 +119,4 @@ struct ContentView: View {
             }
         }
     }
-    
 }

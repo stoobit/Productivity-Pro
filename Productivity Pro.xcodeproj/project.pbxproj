@@ -244,6 +244,7 @@
 		BBD930FA2B21132F00A37F95 /* ShareProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930F92B21132F00A37F95 /* ShareProView.swift */; };
 		BBD930FC2B21133600A37F95 /* SharePDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930FB2B21133600A37F95 /* SharePDFView.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
+		BBD995B62B48917500A05E34 /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD995B52B48917500A05E34 /* OpenURL.swift */; };
 		BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */; };
 		BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */; };
 		BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC62712905EED800364B57 /* IndicatorText.swift */; };
@@ -528,6 +529,7 @@
 		BBD930F92B21132F00A37F95 /* ShareProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareProView.swift; sourceTree = "<group>"; };
 		BBD930FB2B21133600A37F95 /* SharePDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePDFView.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
+		BBD995B52B48917500A05E34 /* OpenURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURL.swift; sourceTree = "<group>"; };
 		BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPDFPageHelper.swift; sourceTree = "<group>"; };
 		BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundPDF.swift; sourceTree = "<group>"; };
 		BBDC62712905EED800364B57 /* IndicatorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorText.swift; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 			isa = PBXGroup;
 			children = (
 				BB6701572AADEFA7001F468A /* ContentView.swift */,
+				BBD995B52B48917500A05E34 /* OpenURL.swift */,
 				BB85868B2AE1ABA400C5875C /* RatingView.swift */,
 				BB6BFA2129048BBE002D09FD /* DeskView */,
 				BB4A93DE2AAF556900C3AED6 /* ScheduleView */,
@@ -1602,6 +1605,7 @@
 				BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
+				BBD995B62B48917500A05E34 /* OpenURL.swift in Sources */,
 				BBC4BE972AED9FDF00D87B60 /* AdaptiveView.swift in Sources */,
 				BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */,
 				BB047CDE2AC0C1FF0027409F /* FileSystemView.swift in Sources */,
