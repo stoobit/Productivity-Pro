@@ -12,7 +12,7 @@ struct LibraryView: View {
     @State var appClip: Bool = false
     
     var showBar: Bool = true
-    let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScG0ddfysBmxF3TssvUW16lbNz3ThoVdF2qHqMzoi0wl3jfFQ/viewform?usp=sf_link")!
+    let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScqlAMTAIt2DGzUsYyk8HkMphjBfU2arwxyTCm2a3moDwPEqw/viewform?usp=sf_link")!
 
     var body: some View {
         GeometryReader { proxy in
