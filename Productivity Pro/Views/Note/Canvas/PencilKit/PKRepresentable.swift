@@ -8,6 +8,7 @@
 import SwiftUI
 import PencilKit
 
+@MainActor
 struct PKRepresentable: UIViewRepresentable {
     @Environment(ToolManager.self) var toolManager
     

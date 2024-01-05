@@ -10,15 +10,14 @@ import SwiftUI
 @main
 struct Productivity_ProApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onAppear {
-                    UIView.appearance(
-                        whenContainedInInstancesOf: [UIAlertController.self]
-                    ).tintColor = UIColor.main
-                }
+                .onAppear { onAppear() }
+                .onOpenURL(perform: { _ in
+
+                })
         }
         .modelContainer(
             for: [
@@ -32,11 +31,12 @@ struct Productivity_ProApp: App {
             isUndoEnabled: true
         )
     }
-}
 
-
-final class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, didUpdate userActivity: NSUserActivity) {
-        application.inputView?.tintColor = .red
+    func onAppear() {
+        UIView.appearance(
+            whenContainedInInstancesOf: [UIAlertController.self]
+        ).tintColor = UIColor.main
     }
 }
+
+final class AppDelegate: NSObject, UIApplicationDelegate {}
