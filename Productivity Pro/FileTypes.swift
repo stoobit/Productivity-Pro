@@ -37,8 +37,8 @@ struct BackupFile: FileDocument {
 
     init(configuration: ReadConfiguration) throws {
         if let data = configuration.file.regularFileContents {
-            guard let encryptedData = Data(base64Encoded: data) else { return }
-            self.data = encryptedData
+            guard let decryptedData = Data(base64Encoded: data, options: .ignoreUnknownCharacters) else { return }
+            self.data = decryptedData
         }
     }
 
