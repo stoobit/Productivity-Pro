@@ -253,6 +253,9 @@
         }
       }
     },
+    "App Clip" : {
+
+    },
     "App Icon" : {
       "localizations" : {
         "en" : {
@@ -1124,6 +1127,9 @@
 
     },
     "Rolle" : {
+
+    },
+    "Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen." : {
 
     },
     "Schließen" : {

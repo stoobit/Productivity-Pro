@@ -9,7 +9,10 @@ import SwiftUI
 
 struct LibraryView: View {
     @Environment(\.horizontalSizeClass) var hsc
-    let url = URL(string: "https://stoobit.com")!
+    @State var appClip: Bool = false
+    
+    var showBar: Bool = true
+    let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScG0ddfysBmxF3TssvUW16lbNz3ThoVdF2qHqMzoi0wl3jfFQ/viewform?usp=sf_link")!
 
     var body: some View {
         GeometryReader { proxy in
@@ -18,16 +21,25 @@ struct LibraryView: View {
                     ZStack {
                         Color(UIColor.systemGroupedBackground)
                             .ignoresSafeArea(.all)
-                        
+
                         LibrarySubjectsList()
                     }
                     .navigationTitle("Bibliothek")
                     .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            Link(destination: url) {
-                                Label("Beitrag hinzufügen", systemImage: "note.text.badge.plus")
+                        if showBar {
+                            ToolbarItemGroup(placement: .topBarLeading) {
+                                Link(destination: url) {
+                                    Label("Beitrag hinzufügen", systemImage: "person.fill.badge.plus")
+                                }
+                                
+                                Button(action: { appClip.toggle() }) {
+                                    Label("App Clip", systemImage: "appclip")
+                                }
                             }
                         }
+                    }
+                    .sheet(isPresented: $appClip) {
+                        AppClipView()
                     }
                 }
                 .overlay {
@@ -35,7 +47,7 @@ struct LibraryView: View {
                         ZStack {
                             Color(UIColor.systemGroupedBackground)
                                 .ignoresSafeArea(.all)
-                            
+
                             ContentUnavailableView(
                                 "Diese Ansicht ist nicht verfügbar.",
                                 systemImage: "eye.slash.fill",
