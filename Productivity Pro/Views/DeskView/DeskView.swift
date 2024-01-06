@@ -49,7 +49,10 @@ struct DeskView: View {
                                 .foregroundStyle(Color.green)
                         }
                         .frame(height: 30)
-                        .manageSubscriptionsSheet(isPresented: $settingsView)
+                        .manageSubscriptionsSheet(
+                            isPresented: $settingsView,
+                            subscriptionGroupID: "21404124"
+                        )
                     }
                 }
                 
