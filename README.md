@@ -1,6 +1,6 @@
 # Productivity Pro
 
-## Release 2.0
+## 🛠️ Release 2.0.v
 - Overview
 - Undo & Redo
 - View Updates 
@@ -8,13 +8,33 @@
 - PDF Export
 - (.pronote Export, if it is not working)
 
-## Future
-**DO NOT ADD UNTIL VERSION 2.O IS FINISHED**
+## 🗺️ Release 2.1.v
+- Links 
 - Unsplash Integration 
+- Pi Integration
 - Library Extension
+
+## 🗺️ Release 2.2.v
+- PencilKit Shape Recognition
+- Library Extension
+
+## 🗺️ Release 2.3.v
+- Collaboration
+- Library Extension
+
+## 🗺️ Release 2.4.v
 - Charts
+- Maps
+- Library Extension
+
+## 🗺️ Release 2.5.v
 - Mindmaps
-- Links
-- Maps Integration 
+- Library Extension
+
+## 🗺️ Release 2.6.v
 - Tables
-- 3D Object Integration 
+- Library Extension
+
+## 🗺️ Release 2.6.v
+- 3D Objects 
+- Library Extension
