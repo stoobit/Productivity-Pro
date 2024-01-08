@@ -6,6 +6,10 @@
 - View Updates 
 - Markdown Tutorial
 - PDF Export
+- Print
+- Page Indicator 
+- PencilKit Button 
+- 
 - (.pronote Export, if it is not working)
 
 ## 🗺️ Release 2.1.v
@@ -35,6 +39,6 @@
 - Tables
 - Library Extension
 
-## 🗺️ Release 2.6.v
+## 🗺️ Release 2.7.v
 - 3D Objects 
 - Library Extension
