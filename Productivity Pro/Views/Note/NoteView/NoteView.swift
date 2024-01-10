@@ -28,7 +28,7 @@ struct NoteView: View {
             GeometryReader { proxy in
                 ScrollViewReader { reader in
                     ScrollView(.horizontal) {
-                        HStack(spacing: 0) {
+                        LazyHStack(spacing: 0) {
                             ForEach(pages) { page in
                                 ScrollViewContainer(
                                     note: contentObject.note!,
@@ -66,12 +66,16 @@ struct NoteView: View {
                     isPresented: $subviewValue.renameView
                 )
             )
-            .onChange(of: toolValue.activePage) {
+            .onChange(of: toolValue.activePage, initial: true) {
                 toolManager.pencilKit = false
+                indicator()
             }
             .overlay {
                 ClipboardControl()
                     .padding(10)
+                
+                IndicatorText(contentObject: contentObject)
+                    .offset(y: toolManager.isPageNumberVisible ? 0 : -60)
             }
             
         } else {
@@ -82,15 +86,17 @@ struct NoteView: View {
         }
     }
     
-    //    func pageIndicator() {
-    //            if subviewManager.overviewSheet == false {
-    //                toolManager.isPageNumberVisible = true
-    //
-    //                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-    //                    withAnimation {
-    //                        toolManager.isPageNumberVisible = false
-    //                    }
-    //                }
-    //            }
-//        }
+    func indicator() {
+        if subviewManager.overviewSheet == false {
+            withAnimation(.bouncy(duration: 0.5)) {
+                toolManager.isPageNumberVisible = true
+            }
+    
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                withAnimation(.bouncy(duration: 0.5)) {
+                    toolManager.isPageNumberVisible = false
+                }
+            }
+        }
+    }
 }

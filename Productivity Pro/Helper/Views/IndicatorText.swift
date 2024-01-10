@@ -7,30 +7,39 @@
 
 import SwiftUI
 
-
 struct IndicatorText: View {
+    @Environment(ToolManager.self) var toolManager
+    var pages: [PPPageModel]
     
-    let document: Document
-    @Bindable var toolManager: ToolManager
-    
-    var body: some View {
-        let total = document.note.pages.count
-        let number = toolManager.selectedPage + 1
-        
-        Group {
-            Text("\(number) von \(total)")
-        }
-        .padding(5)
-        .fontWeight(.medium)
-        .foregroundColor(.white.opacity(0.8))
-        .background(Color.gray.opacity(0.5))
-        .cornerRadius(6)
-        .colorScheme(.light)
-        .frame(
-            maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading
-        )
-        .padding()
-        
+    init(contentObject: ContentObject?) {
+        pages = contentObject?.note?.pages ?? []
     }
     
+    var body: some View {
+        let total = pages.count
+        let number = (toolManager.activePage?.index ?? 0) + 1
+        
+        ZStack {
+            UnevenRoundedRectangle(
+                topLeadingRadius: 0,
+                bottomLeadingRadius: 8,
+                bottomTrailingRadius: 8,
+                topTrailingRadius: 0,
+                style: .circular
+            )
+            .foregroundStyle(.background)
+            .frame(width: 60, height: 30)
+            
+            Text("\(number) von \(total)")
+                .fontWeight(.semibold)
+                .font(.caption)
+                .foregroundStyle(Color.secondary)
+        }
+        .frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
+        .padding(.leading, 10)
+    }
 }

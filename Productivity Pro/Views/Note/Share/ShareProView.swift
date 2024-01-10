@@ -43,8 +43,10 @@ struct ShareProView: View {
                         })
                 }
                 
-                Text("Buch S. 163/12")
-                    .font(.headline.bold())
+                if let text = toolManager.selectedContentObject?.title {
+                    Text(text)
+                        .font(.headline.bold())
+                }
                 
                 Spacer()
                 

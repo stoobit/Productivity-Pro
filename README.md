@@ -8,8 +8,6 @@
 - PDF Export
 - Print
 - Page Indicator 
-- PencilKit Button 
-- 
 - (.pronote Export, if it is not working)
 
 ## 🗺️ Release 2.1.v

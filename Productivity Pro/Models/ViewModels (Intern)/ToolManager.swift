@@ -33,6 +33,8 @@ import SwiftUI
     var scale: CGFloat = .zero
     var offset: CGPoint = .zero
     
+    var isPageNumberVisible: Bool = true
+
     // MARK: - UNCHECKED & OLD
 
     var selectedPage: Int = 0
@@ -49,6 +51,5 @@ import SwiftUI
     var isDraggingItem: Bool = false
     var pickedImage: UIImage?
     var pdfRendering: URL?
-    var isPageNumberVisible: Bool = true
     var objectRecognitionEnabled: Bool = false
 }

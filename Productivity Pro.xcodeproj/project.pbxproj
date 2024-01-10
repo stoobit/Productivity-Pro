@@ -1313,8 +1313,8 @@
 		BBCCE4F528D53DE3001DBD8A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				BBBD13E8290EA46C001145A4 /* TypeModifier */,
 				BBBD13E9290EA4D6001145A4 /* Views */,
+				BBBD13E8290EA46C001145A4 /* TypeModifier */,
 				BB6BFA2229048C5E002D09FD /* TemplateView */,
 				BBF663F72AC4E6E300FD9813 /* ObjectPicker */,
 			);
