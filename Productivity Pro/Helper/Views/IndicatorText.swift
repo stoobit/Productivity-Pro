@@ -27,13 +27,13 @@ struct IndicatorText: View {
                 topTrailingRadius: 0,
                 style: .circular
             )
-            .foregroundStyle(.background)
+            .foregroundStyle(Color.secondary)
             .frame(width: 60, height: 30)
             
             Text("\(number) von \(total)")
                 .fontWeight(.semibold)
                 .font(.caption)
-                .foregroundStyle(Color.secondary)
+                .foregroundStyle(Color.white)
         }
         .frame(
             maxWidth: .infinity,

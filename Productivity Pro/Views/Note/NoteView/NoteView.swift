@@ -88,12 +88,12 @@ struct NoteView: View {
     
     func indicator() {
         if subviewManager.overviewSheet == false {
-            withAnimation(.bouncy(duration: 0.5)) {
+            withAnimation(.spring(duration: 0.4)) {
                 toolManager.isPageNumberVisible = true
             }
     
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                withAnimation(.bouncy(duration: 0.5)) {
+                withAnimation(.spring(duration: 0.4)) {
                     toolManager.isPageNumberVisible = false
                 }
             }
