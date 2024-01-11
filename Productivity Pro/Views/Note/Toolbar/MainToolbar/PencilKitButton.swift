@@ -9,14 +9,16 @@ import SwiftUI
 
 extension NoteMainToolbar {
     @ViewBuilder func PencilKitButton() -> some View {
-        Button(action: { 
-            
+        Button(action: {
             toolManager.pencilKit.toggle()
             toolManager.activeItem = nil
-            
+
         }) {
-            Image(systemName: toolManager.pencilKit ? "pencil.tip.crop.circle.fill" : "pencil.tip.crop.circle"
-            )
+            if toolManager.pencilKit {
+                Image(systemName: "pencil.tip.crop.circle.fill")
+            } else {
+                Image(systemName: "pencil.tip.crop.circle")
+            }
         }
     }
 }

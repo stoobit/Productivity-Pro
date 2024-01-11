@@ -266,6 +266,9 @@
         }
       }
     },
+    "Apple Pencil" : {
+
+    },
     "Aufgaben" : {
       "localizations" : {
         "en" : {
@@ -588,6 +591,9 @@
           }
         }
       }
+    },
+    "Einfügen" : {
+
     },
     "Einstellungen" : {
       "localizations" : {
