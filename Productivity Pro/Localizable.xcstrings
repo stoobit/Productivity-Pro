@@ -5,6 +5,7 @@
 
     },
     "," : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -25,6 +26,7 @@
       }
     },
     "." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -70,16 +72,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@°"
-          }
-        }
-      }
-    },
-    "%lf %lf" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lf %2$lf"
           }
         }
       }
@@ -145,6 +137,7 @@
       }
     },
     "1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -155,6 +148,7 @@
       }
     },
     "2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -168,6 +162,7 @@
 
     },
     "5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -219,6 +214,9 @@
           }
         }
       }
+    },
+    "Alle" : {
+
     },
     "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
 
@@ -417,9 +415,6 @@
     "Buch S. 163/12" : {
 
     },
-    "c" : {
-
-    },
     "Cancel" : {
 
     },
@@ -462,9 +457,6 @@
           }
         }
       }
-    },
-    "Deutsch" : {
-
     },
     "Dies kann einige Minuten dauern." : {
       "localizations" : {
@@ -746,6 +738,7 @@
       }
     },
     "g" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -890,9 +883,6 @@
         }
       }
     },
-    "Latein" : {
-
-    },
     "Lehrer" : {
       "localizations" : {
         "en" : {
@@ -914,6 +904,7 @@
       }
     },
     "Letzte Vorlage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1065,6 +1056,7 @@
 
     },
     "PDF importieren" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1073,9 +1065,6 @@
           }
         }
       }
-    },
-    "pencil" : {
-
     },
     "Pin entfernen" : {
 
@@ -1245,9 +1234,6 @@
     "Stil" : {
 
     },
-    "Student" : {
-
-    },
     "Stundenplan" : {
       "localizations" : {
         "en" : {
@@ -1360,6 +1346,7 @@
       }
     },
     "Vorlage auswählen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

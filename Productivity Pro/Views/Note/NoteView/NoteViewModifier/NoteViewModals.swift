@@ -42,7 +42,7 @@ struct NoteViewSheet: ViewModifier {
                     changePage(isPortrait, template, color)
                 }
             })
-            .sheet(isPresented: $manager.overview, content: {
+            .inspector(isPresented: $manager.overview, content: {
                 NoteOverviewView(contentObject: contentObject)
             })
             .sheet(isPresented: $manager.rtfEditor, content: {

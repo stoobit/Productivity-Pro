@@ -87,6 +87,7 @@
 		BB5A23362B476E0200F1D1B6 /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB5DB6CD2B482BDC000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
 		BB5DB6CE2B482C1C000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
+		BB603B2F2B50AE8700FAE8B7 /* NoteOverviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB603B2E2B50AE8700FAE8B7 /* NoteOverviewListView.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */; };
@@ -392,6 +393,7 @@
 		BB5A23272B476DA000F1D1B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB5A23282B476DA000F1D1B6 /* Productivity_Preview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Productivity_Preview.entitlements; sourceTree = "<group>"; };
 		BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClipView.swift; sourceTree = "<group>"; };
+		BB603B2E2B50AE8700FAE8B7 /* NoteOverviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteOverviewListView.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
 		BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleMenuMethods.swift; sourceTree = "<group>"; };
@@ -669,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				BB2A8E1B2B460BEA0072D3CC /* NoteOverviewView.swift */,
+				BB603B2E2B50AE8700FAE8B7 /* NoteOverviewListView.swift */,
 				BB2A8E1A2B460A830072D3CC /* OLD */,
 			);
 			path = Overview;
@@ -1678,6 +1681,7 @@
 				BBD930FC2B21133600A37F95 /* SharePDFView.swift in Sources */,
 				BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */,
 				BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */,
+				BB603B2F2B50AE8700FAE8B7 /* NoteOverviewListView.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
 				BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */,
 				BBD930F02B1FC06C00A37F95 /* PVOfferView.swift in Sources */,
@@ -1987,14 +1991,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.ProductivityPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "2,7";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -2036,13 +2040,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.ProductivityPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "2,7";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

@@ -11,11 +11,9 @@ struct ExportManager {
     public func export(contentObject: ContentObject?, to url: URL) -> URL {
         if let contentObject = contentObject, let note = contentObject.note {
             do {
-                let destination = url.appendingPathComponent(
-                    contentObject.title, conformingTo: .pronote
-                )
+                let destination = url.appending(path: "\(contentObject.title).pronote")
 
-                if destination.startAccessingSecurityScopedResource() {
+                if url.startAccessingSecurityScopedResource() {
                     let exportable = export(note: note)
                     let insecureData = try JSONEncoder().encode(exportable)
                     let data = insecureData.base64EncodedData()
@@ -26,11 +24,11 @@ struct ExportManager {
                     ]
 
                     FileManager.default.createFile(
-                        atPath: destination.path(),
+                        atPath: destination.path,
                         contents: data, attributes: attributes
                     )
 
-                    defer { destination.stopAccessingSecurityScopedResource() }
+                    defer { url.stopAccessingSecurityScopedResource() }
                     return destination
                 }
             } catch {
@@ -38,7 +36,7 @@ struct ExportManager {
             }
         }
 
-        return .applicationDirectory
+        return .homeDirectory
     }
 
     public func backup(contentObject: ContentObject) -> ExportableContentObjectModel {

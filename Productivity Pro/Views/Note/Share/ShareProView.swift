@@ -39,7 +39,8 @@ struct ShareProView: View {
                         .frame(width: 120, height: 165)
                         .clipShape(.rect)
                         .onDrag({
-                            return NSItemProvider(contentsOf: url, contentType: .pronote)
+                            return NSItemProvider(contentsOf: url, contentType: .folder
+                            )
                         })
                 }
                 
@@ -80,7 +81,9 @@ struct ShareProView: View {
     func loadFile() {
         url = ExportManager().export(
             contentObject: toolManager.selectedContentObject,
-            to: .cachesDirectory
+            to: .applicationSupportDirectory.appending(
+                component: "com.stoobit.ProductivityPro"
+            )
         )
     }
     
