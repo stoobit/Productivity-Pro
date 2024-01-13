@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OpenURL: ViewModifier {
     @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     @Environment(\.modelContext) var context
 
     @AppStorage("ppgrade") var grade: Int = 5
@@ -19,6 +20,8 @@ struct OpenURL: ViewModifier {
 
     @State var showPicker: Bool = false
     @State var showAlert: Bool = false
+    
+    var contentObjects: [ContentObject]
 
     func body(content: Content) -> some View {
         content
@@ -26,7 +29,14 @@ struct OpenURL: ViewModifier {
                 self.url = url
                 if url.pathExtension == "pronote" {
                     toolManager.pencilKit = false
-                    showPicker.toggle()
+                    
+                    subviewManager.sharePDFView = false
+                    subviewManager.shareProView = false
+                    subviewManager.showInspector = false
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        showPicker = true
+                    }
                 } else {
                     showAlert.toggle()
                 }
@@ -74,10 +84,33 @@ struct OpenURL: ViewModifier {
             to: parent,
             with: grade
         )
+        
+        importable.title = getTitle(with: importable.title)
 
         context.insert(importable)
 
         self.url = nil
         parent = ""
+    }
+    
+    func getTitle(with original: String) -> String {
+        var title: String = original
+        var index = 1
+
+        let filteredObjects = contentObjects
+            .filter {
+                $0.type == COType.file.rawValue &&
+                    $0.parent == parent &&
+                    $0.grade == grade &&
+                    $0.inTrash == false
+            }
+            .map { $0.title }
+
+        while filteredObjects.contains(title) {
+            title = "\(original) \(index)"
+            index += 1
+        }
+
+        return title
     }
 }

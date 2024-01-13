@@ -92,7 +92,10 @@ fileprivate struct ContentView: View {
                     }
             }
             .disabled(toolManager.showProgress)
-            .modifier(OpenURL(objects: contentObjects))
+            .modifier(
+                OpenURL(objects: contentObjects,
+                contentObjects: contentObjects)
+            )
             .scrollDisabled(toolManager.showProgress)
             .environment(toolManager)
             .environment(subviewManager)
