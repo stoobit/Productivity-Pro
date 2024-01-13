@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 19.12.23.
 //
 
-import SwiftUI
 import OnPasteboardChange
+import SwiftUI
 
 struct ClipboardControl: View {
     @Environment(ToolManager.self) var toolManager
@@ -18,42 +18,46 @@ struct ClipboardControl: View {
     @State var disablePasteboard: Bool = true
 
     var body: some View {
-        HStack {
-            Button(action: { paste() }) {
-                ClipboardButton(image: "doc.on.clipboard")
-            }
-            .disabled(disablePasteboard)
-            .onPasteboardChange {
-                disablePasteboard = pasteboardState()
-            }
-            .onAppear {
-                disablePasteboard = pasteboardState()
-            }
+        ZStack {
+            HStack {
+                Button(action: { paste() }) {
+                    ClipboardButton(image: "doc.on.clipboard")
+                }
+                .disabled(disablePasteboard)
+                .onPasteboardChange {
+                    disablePasteboard = pasteboardState()
+                }
+                .onAppear {
+                    disablePasteboard = pasteboardState()
+                }
             
-            Button(action: { copy() }) {
-                ClipboardButton(image: "doc.on.doc")
-            }
-            .disabled(toolManager.activeItem == nil)
+                Button(action: { copy() }) {
+                    ClipboardButton(image: "doc.on.doc")
+                }
+                .disabled(toolManager.activeItem == nil)
             
-            Button(action: { duplicate() }) {
-                ClipboardButton(image: "plus.square.on.square")
-            }
-            .disabled(toolManager.activeItem == nil)
+                Button(action: { duplicate() }) {
+                    ClipboardButton(image: "plus.square.on.square")
+                }
+                .disabled(toolManager.activeItem == nil)
             
-            Button(role: .destructive, action: { cut() }) {
-                ClipboardButton(image: "scissors")
-            }
-            .disabled(toolManager.activeItem == nil)
+                Button(role: .destructive, action: { cut() }) {
+                    ClipboardButton(image: "scissors")
+                }
+                .disabled(toolManager.activeItem == nil)
             
-            Button(role: .destructive, action: { delete() }) {
-                ClipboardButton(image: "trash")
+                Button(role: .destructive, action: { delete() }) {
+                    ClipboardButton(image: "trash")
+                }
+                .disabled(toolManager.activeItem == nil)
             }
-            .disabled(toolManager.activeItem == nil)
-        }
-        .padding(5)
-        .background {
-            RoundedRectangle(cornerRadius: 14)
-                .foregroundStyle(.thinMaterial)
+            .padding(5)
+            .background {
+                RoundedRectangle(cornerRadius: 14)
+                    .foregroundStyle(.thinMaterial)
+            }
+            .offset(y: toolManager.pencilKit ? 100 : 0)
+            .animation(.bouncy, value: toolManager.pencilKit)
         }
         .frame(
             maxWidth: .infinity,

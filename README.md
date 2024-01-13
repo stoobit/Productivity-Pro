@@ -7,7 +7,6 @@
 - Markdown Tutorial
 - PDF Export
 - Print
-- (.pronote Export, if it is not working)
 
 ## 🗺️ Release 2.1.v
 - Links 
