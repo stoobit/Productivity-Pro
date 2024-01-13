@@ -8,29 +8,26 @@
 import Foundation
 
 struct ExportManager {
-    public func export(contentObject: ContentObject?, to url: URL) -> URL {
+    public func export(contentObject: ContentObject?) -> URL {
         if let contentObject = contentObject, let note = contentObject.note {
             do {
-                let destination = url.appending(path: "\(contentObject.title).pronote")
+                let url = URL.documentsDirectory.appending(
+                    path: "\(contentObject.title).pronote"
+                )
 
-                if url.startAccessingSecurityScopedResource() {
-                    let exportable = export(note: note)
-                    let insecureData = try JSONEncoder().encode(exportable)
-                    let data = insecureData.base64EncodedData()
+                let exportable = export(note: note)
+                let insecureData = try JSONEncoder().encode(exportable)
+                let data = insecureData.base64EncodedData()
 
-                    let attributes = [
-                        FileAttributeKey.creationDate: contentObject.created as NSDate,
-                        FileAttributeKey.modificationDate: contentObject.modified as NSDate
-                    ]
+                let attributes = [
+                    FileAttributeKey.creationDate: contentObject.created as NSDate,
+                    FileAttributeKey.modificationDate: contentObject.modified as NSDate
+                ]
+                
+                try data.write(to: url, options: [.atomic, .completeFileProtection])
+                try FileManager.default.setAttributes(attributes, ofItemAtPath: url.path)
 
-                    FileManager.default.createFile(
-                        atPath: destination.path,
-                        contents: data, attributes: attributes
-                    )
-
-                    defer { url.stopAccessingSecurityScopedResource() }
-                    return destination
-                }
+                return url
             } catch {
                 print(error.localizedDescription)
             }

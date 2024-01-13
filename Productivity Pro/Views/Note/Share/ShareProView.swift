@@ -80,10 +80,7 @@ struct ShareProView: View {
     
     func loadFile() {
         url = ExportManager().export(
-            contentObject: toolManager.selectedContentObject,
-            to: .applicationSupportDirectory.appending(
-                component: "com.stoobit.ProductivityPro"
-            )
+            contentObject: toolManager.selectedContentObject
         )
     }
     

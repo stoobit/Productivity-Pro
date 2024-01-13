@@ -108,6 +108,7 @@
 		BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73F053297F278F00ED23CC /* BundleExtension.swift */; };
 		BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */ = {isa = PBXBuildFile; productRef = BB74688C2AF5B8670029F60D /* PPAnglePicker */; };
 		BB7468902AF5B90C0029F60D /* PPAnglePicker in Frameworks */ = {isa = PBXBuildFile; productRef = BB74688F2AF5B90C0029F60D /* PPAnglePicker */; };
+		BB7495CF2B5204DD00A1E83D /* MDTIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7495CE2B5204DD00A1E83D /* MDTIntro.swift */; };
 		BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984642AC347F900CF3D24 /* BackupSettings.swift */; };
 		BB7984682AC37E1E00CF3D24 /* ObjectViewFileLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984672AC37E1E00CF3D24 /* ObjectViewFileLink.swift */; };
 		BB7987032AD497C1003469E6 /* NoteViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987022AD497C1003469E6 /* NoteViewModifier.swift */; };
@@ -246,7 +247,6 @@
 		BBD930FC2B21133600A37F95 /* SharePDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930FB2B21133600A37F95 /* SharePDFView.swift */; };
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBD995B62B48917500A05E34 /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD995B52B48917500A05E34 /* OpenURL.swift */; };
-		BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */; };
 		BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */; };
 		BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC62712905EED800364B57 /* IndicatorText.swift */; };
 		BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */; };
@@ -412,6 +412,7 @@
 		BB73324F2A294D440001FD6A /* PageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundView.swift; sourceTree = "<group>"; };
 		BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundScan.swift; sourceTree = "<group>"; };
 		BB73F053297F278F00ED23CC /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		BB7495CE2B5204DD00A1E83D /* MDTIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTIntro.swift; sourceTree = "<group>"; };
 		BB7984642AC347F900CF3D24 /* BackupSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupSettings.swift; sourceTree = "<group>"; };
 		BB7984672AC37E1E00CF3D24 /* ObjectViewFileLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewFileLink.swift; sourceTree = "<group>"; };
 		BB7987022AD497C1003469E6 /* NoteViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModifier.swift; sourceTree = "<group>"; };
@@ -532,7 +533,6 @@
 		BBD930FB2B21133600A37F95 /* SharePDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePDFView.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
 		BBD995B52B48917500A05E34 /* OpenURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenURL.swift; sourceTree = "<group>"; };
-		BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPDFPageHelper.swift; sourceTree = "<group>"; };
 		BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageBackgroundPDF.swift; sourceTree = "<group>"; };
 		BBDC62712905EED800364B57 /* IndicatorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorText.swift; sourceTree = "<group>"; };
 		BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeItemView.swift; sourceTree = "<group>"; };
@@ -812,6 +812,7 @@
 			isa = PBXGroup;
 			children = (
 				BB4CDF562B30BAC600E5D612 /* MarkdownTutorialView.swift */,
+				BB7495CE2B5204DD00A1E83D /* MDTIntro.swift */,
 			);
 			path = MarkdownTutorial;
 			sourceTree = "<group>";
@@ -1272,7 +1273,6 @@
 				BB3208A72981DFFF0014F602 /* CameraView.swift */,
 				BB3208A92981E8E90014F602 /* ScannerHelper.swift */,
 				BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */,
-				BBDABD3C29D23A570038CFC2 /* AddPDFPageHelper.swift */,
 				BB854ADF29E06531002EDF7A /* PagingModifier.swift */,
 				BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */,
 				BB8A0AE22AD0B871008B4D27 /* LockViews.swift */,
@@ -1699,6 +1699,7 @@
 				BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */,
 				BB82B5AF2B247CD30089D423 /* PPLineModel.swift in Sources */,
 				BB9BFB6E2AC7819400255293 /* TrashView.swift in Sources */,
+				BB7495CF2B5204DD00A1E83D /* MDTIntro.swift in Sources */,
 				BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
@@ -1783,7 +1784,6 @@
 				BB5034192993172800913B3A /* PageItemView.swift in Sources */,
 				BBB02B592962537C001DCB04 /* Triangle.swift in Sources */,
 				BB9367662AC9CE1A0096F20E /* PPMediaModel.swift in Sources */,
-				BBDABD3D29D23A570038CFC2 /* AddPDFPageHelper.swift in Sources */,
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,
 				BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
@@ -1979,7 +1979,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2028,7 +2028,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportsDocumentBrowser = NO;
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
