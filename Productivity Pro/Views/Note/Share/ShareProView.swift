@@ -38,10 +38,9 @@ struct ShareProView: View {
                         )
                         .frame(width: 120, height: 165)
                         .clipShape(.rect)
-                        .onDrag({
-                            return NSItemProvider(contentsOf: url, contentType: .folder
-                            )
-                        })
+                        .onDrag {
+                            NSItemProvider(contentsOf: url, contentType: .pronote)
+                        }
                 }
                 
                 if let text = toolManager.selectedContentObject?.title {
@@ -86,7 +85,7 @@ struct ShareProView: View {
     
     func removeFile() {
         do {
-            try FileManager.default.removeItem(atPath: url.path())
+            try FileManager.default.removeItem(atPath: url.path)
         } catch {}
     }
 }

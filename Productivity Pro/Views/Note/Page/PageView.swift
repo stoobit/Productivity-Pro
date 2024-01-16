@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 27.11.22.
 //
 
-import SwiftUI
 import PencilKit
+import SwiftUI
 
 struct PageView: View {
     @Environment(\.colorScheme) var cs
@@ -23,6 +23,7 @@ struct PageView: View {
     let size: CGSize
     
     // MARK: - unchecked
+
     @State var isTargeted: Bool = true
     
     var pdfRendering: Bool = false
@@ -38,7 +39,7 @@ struct PageView: View {
                     PageBackgroundPDF(page: page, scale: $scale)
                 } else if page.type == PPPageType.image.rawValue {
                     PageBackgroundScan(page: page, scale: $scale)
-                } 
+                }
             }
             .onTapGesture { onBackgroundTap() }
             .allowsHitTesting(toolManager.pencilKit == false)
@@ -56,12 +57,13 @@ struct PageView: View {
                 .allowsHitTesting(toolManager.pencilKit)
             
             SnapItemView(page: page, scale: $scale)
-                .scaleEffect(1/scale)
+                .scaleEffect(1 / scale)
                 .allowsHitTesting(false)
-            
         }
-        .dropDestination(for: Data.self) { items, location in
-            onDrop(items: items)
+        .dropDestination(for: Image.self) { items, _ in
+            for item in items {
+                add(image: item)
+            }
             return true
         }
         .disabled(subviewManager.isPresentationMode)
@@ -69,6 +71,5 @@ struct PageView: View {
             width: getFrame().width * scale,
             height: getFrame().height * scale
         )
-            
     }
 }

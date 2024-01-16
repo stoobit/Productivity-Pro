@@ -10,24 +10,6 @@ import PencilKit
 import SwiftUI
 
 extension PageView {
-    func onDrop(items: [Data]) {
-//        toolManager.showProgress = true
-//
-//        Task {
-//            await MainActor.run {
-//                for item in items {
-//                    if let string = String(data: item, encoding: .utf8) {
-//
-//                    } else if let image = UIImage(data: item) {
-//
-//                    }
-//                }
-//
-//                toolManager.showProgress = false
-//            }
-//        }
-    }
-    
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
@@ -56,5 +38,33 @@ extension PageView {
             toolManager.dragType = .none
             toolManager.editorVisible = true
         }
+    }
+    
+    @MainActor func add(image: Image) {
+        let selectedImage = image.asUIImage()
+        
+        let image = resize(selectedImage, to: CGSize(width: 2048, height: 2048))
+        let ratio = 400/image.size.width
+        
+        let item = PPItemModel(index: 0, type: .media)
+        item.width = image.size.width * ratio
+        item.height = image.size.height * ratio
+        
+        let size = toolManager.offset.size
+        let scale = (1/toolManager.scale)
+        
+        item.x = size.width * scale + item.width/2 + 40
+        item.y = size.height * scale + item.height/2 + 40
+        
+        guard let data = image.heicData() else { return }
+        let media = PPMediaModel(media: data)
+        
+        item.media = media
+        
+        let page = toolManager.activePage
+        item.index = page?.items?.count ?? 0
+        page?.items?.append(item)
+        
+        toolManager.activeItem = item
     }
 }

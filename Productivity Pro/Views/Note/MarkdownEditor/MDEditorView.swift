@@ -32,7 +32,7 @@ struct MDEditorView: View {
                         }
                     }
                 }
-                .fullScreenCover(isPresented: $tutorial) {
+                .sheet(isPresented: $tutorial) {
                     MarkdownTutorialView()
                 }
                 .onAppear {
