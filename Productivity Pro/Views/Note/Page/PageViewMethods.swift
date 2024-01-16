@@ -40,6 +40,33 @@ extension PageView {
         }
     }
     
+    func add(string: String) {
+        toolManager.pencilKit = false
+        
+        let item = PPItemModel(index: 0, type: .textField)
+        item.width = 600
+        item.height = 300
+        
+        item.x = toolManager.offset.size.width * (1/toolManager.scale) + item.width/2 + 40
+        
+        item.y = toolManager.offset.size.height * (1/toolManager.scale) + item.height/2 + 40
+        
+        let textField = PPTextFieldModel(
+            textColor: primaryColor(),
+            font: defaultFont,
+            fontSize: defaultFontSize
+        )
+      
+        textField.string = string
+        item.textField = textField
+        
+        let page = toolManager.activePage
+        item.index = page?.items?.count ?? 0
+        page?.items?.append(item)
+        
+        toolManager.activeItem = item
+    }
+    
     @MainActor func add(image: Image) {
         let selectedImage = image.asUIImage()
         
@@ -66,5 +93,19 @@ extension PageView {
         page?.items?.append(item)
         
         toolManager.activeItem = item
+    }
+    
+    func primaryColor() -> Color {
+        let page = toolManager.activePage
+        
+        guard let color = page?.color else {
+            return Color.gray
+        }
+        
+        if color == "pageblack" || color == "pagegray" {
+            return Color.white
+        } else {
+            return Color.black
+        }
     }
 }

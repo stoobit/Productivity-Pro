@@ -68,14 +68,12 @@ struct NoteView: View {
             )
             .onChange(of: toolValue.activePage, initial: true) {
                 toolManager.pencilKit = false
-                indicator()
             }
             .overlay {
                 ClipboardControl()
                     .padding(10)
                 
                 IndicatorText(contentObject: contentObject)
-                    .offset(y: toolManager.isPageNumberVisible ? 0 : -60)
             }
             
         } else {
@@ -83,20 +81,6 @@ struct NoteView: View {
                 "Ein Fehler ist aufgetreten.",
                 systemImage: "exclamationmark.triangle.fill"
             )
-        }
-    }
-    
-    func indicator() {
-        if subviewManager.overviewSheet == false {
-            withAnimation(.spring(duration: 0.4)) {
-                toolManager.isPageNumberVisible = true
-            }
-    
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                withAnimation(.spring(duration: 0.4)) {
-                    toolManager.isPageNumberVisible = false
-                }
-            }
         }
     }
 }

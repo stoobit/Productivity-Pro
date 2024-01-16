@@ -32,8 +32,6 @@ import SwiftUI
     
     var scale: CGFloat = .zero
     var offset: CGPoint = .zero
-    
-    var isPageNumberVisible: Bool = true
 
     // MARK: - UNCHECKED & OLD
 

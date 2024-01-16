@@ -38,8 +38,8 @@ struct IndicatorText: View {
         .frame(
             maxWidth: .infinity,
             maxHeight: .infinity,
-            alignment: .topLeading
+            alignment: .topTrailing
         )
-        .padding(.leading, 10)
+        .padding(.trailing, 10)
     }
 }

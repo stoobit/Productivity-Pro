@@ -14,6 +14,9 @@ struct PageView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
+    @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
+    @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
+    
     var note: PPNoteModel
     @Bindable var page: PPPageModel
     
@@ -63,6 +66,12 @@ struct PageView: View {
         .dropDestination(for: Image.self) { items, _ in
             for item in items {
                 add(image: item)
+            }
+            return true
+        }
+        .dropDestination(for: String.self) { items, _ in
+            for item in items {
+                add(string: item)
             }
             return true
         }

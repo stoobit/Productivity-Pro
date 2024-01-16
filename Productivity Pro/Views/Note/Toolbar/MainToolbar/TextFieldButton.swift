@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension NoteMainToolbar {
-    
     @ViewBuilder func TextFieldButton() -> some View {
         Button(action: { addTextField() }) {
             Label("Text", systemImage: "character.textbox")
@@ -43,5 +42,4 @@ extension NoteMainToolbar {
             toolManager.activeItem = item
         }
     }
-    
 }
