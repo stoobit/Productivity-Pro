@@ -8,8 +8,7 @@
 import SwiftUI
 
 extension TemplateView {
-    
-    @ViewBuilder 
+    @ViewBuilder
     func OrientationView() -> some View {
         Picker("Format", selection: $isPortrait) {
             Text("Hochformat")
@@ -22,18 +21,16 @@ extension TemplateView {
         .frame(height: 30)
     }
     
-    @ViewBuilder 
+    @ViewBuilder
     func ColorsView() -> some View {
         HStack {
             Text("Farbe")
             Spacer()
             
-           
             ColorView(value: "pagewhite")
             ColorView(value: "pageyellow")
             ColorView(value: "pagegray")
             ColorView(value: "pageblack")
-            
         }
         .frame(height: 30)
     }
@@ -56,33 +53,33 @@ extension TemplateView {
         }
     }
     
-    @ViewBuilder 
+    @ViewBuilder
     func TemplateView() -> some View {
         ScrollView(.horizontal) {
             ScrollViewReader { reader in
                 HStack {
                     TemplateItem(title: "Blanko", value: "blank", view: BackgroundViews().Blank())
-                        .padding([.leading, .vertical], 30)
+                        .padding(20)
                         .id("blank")
                     
                     TemplateItem(title: "Kariert", value: "squared", view: BackgroundViews().Squared())
-                        .padding([.leading, .vertical], 30)
+                        .padding(20)
                         .id("squared")
                     
                     TemplateItem(title: "Liniert Klein", value: "ruled", view: BackgroundViews().Ruled())
-                        .padding([.leading, .vertical], 30)
+                        .padding(20)
                         .id("ruled")
                     
                     TemplateItem(title: "Liniert Groß", value: "ruled.large", view: BackgroundViews().RuledLarge())
-                        .padding([.leading, .vertical], 30)
+                        .padding(20)
                         .id("ruled.large")
                     
-                    TemplateItem(title: "Gepunktet", value: "dotted", view:BackgroundViews().Dotted())
-                        .padding([.leading, .vertical], 30)
+                    TemplateItem(title: "Gepunktet", value: "dotted", view: BackgroundViews().Dotted())
+                        .padding(20)
                         .id("dotted")
                     
-                    TemplateItem(title: "Notentlinien", value: "music", view:BackgroundViews().Music())
-                        .padding(30)
+                    TemplateItem(title: "Notentlinien", value: "music", view: BackgroundViews().Music())
+                        .padding(20)
                         .id("music")
                 }
                 .onAppear {
@@ -98,7 +95,6 @@ extension TemplateView {
         title: String, value: String, view: some View
     ) -> some View {
         ZStack {
-            
             VStack {
                 view
                     .frame(width: 250, height: 225)
@@ -166,7 +162,5 @@ extension TemplateView {
         .onTapGesture {
             selectedTemplate = value
         }
-        
     }
-    
 }
