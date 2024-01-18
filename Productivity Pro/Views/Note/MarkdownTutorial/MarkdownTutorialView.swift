@@ -14,7 +14,7 @@ struct MarkdownTutorialView: View {
         TabView(selection: $tab) {
             MDTIntro()
                 .tag(1)
-            Text("Tab Content 2")
+            MDTBold()
                 .tag(2)
         }
         .indexViewStyle(
@@ -23,6 +23,12 @@ struct MarkdownTutorialView: View {
         .tabViewStyle(
             .page(indexDisplayMode: .always)
         )
+        .background {
+            Rectangle()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea(.all, edges: .all)
+                .foregroundStyle(Color.accentColor.gradient)
+        }
     }
 }
 

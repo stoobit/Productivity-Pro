@@ -8,6 +8,7 @@
 - PDF Export
 - Print
 - Crash on .pronote?/.pro Import
+- Page Count on Delete (e.g.: 2/1 `SHOULD NOT HAPPEN`)
 
 ## 🗺️ Release 2.1.v
 - Links 

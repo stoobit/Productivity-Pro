@@ -80,6 +80,7 @@
 		BB5705252B35FD3800F84B45 /* VFlipModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705242B35FD3800F84B45 /* VFlipModifier.swift */; };
 		BB5705282B3609E800F84B45 /* LGrammarTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705272B3609E800F84B45 /* LGrammarTable.swift */; };
 		BB57052B2B3611A700F84B45 /* LGrammarNouns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57052A2B3611A700F84B45 /* LGrammarNouns.swift */; };
+		BB58E4892B572BC50060D8E4 /* MDTBold.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB58E4882B572BC50060D8E4 /* MDTBold.swift */; };
 		BB5A231F2B476D9F00F1D1B6 /* Productivity_PreviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5A231E2B476D9F00F1D1B6 /* Productivity_PreviewApp.swift */; };
 		BB5A23232B476DA000F1D1B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB5A23222B476DA000F1D1B6 /* Assets.xcassets */; };
 		BB5A23262B476DA000F1D1B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB5A23252B476DA000F1D1B6 /* Preview Assets.xcassets */; };
@@ -385,6 +386,7 @@
 		BB5705242B35FD3800F84B45 /* VFlipModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFlipModifier.swift; sourceTree = "<group>"; };
 		BB5705272B3609E800F84B45 /* LGrammarTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGrammarTable.swift; sourceTree = "<group>"; };
 		BB57052A2B3611A700F84B45 /* LGrammarNouns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGrammarNouns.swift; sourceTree = "<group>"; };
+		BB58E4882B572BC50060D8E4 /* MDTBold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDTBold.swift; sourceTree = "<group>"; };
 		BB5A231C2B476D9F00F1D1B6 /* Productivity Preview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Preview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB5A231E2B476D9F00F1D1B6 /* Productivity_PreviewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productivity_PreviewApp.swift; sourceTree = "<group>"; };
 		BB5A23202B476D9F00F1D1B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -813,6 +815,7 @@
 			children = (
 				BB4CDF562B30BAC600E5D612 /* MarkdownTutorialView.swift */,
 				BB7495CE2B5204DD00A1E83D /* MDTIntro.swift */,
+				BB58E4882B572BC50060D8E4 /* MDTBold.swift */,
 			);
 			path = MarkdownTutorial;
 			sourceTree = "<group>";
@@ -1649,6 +1652,7 @@
 				BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */,
 				BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */,
 				BBCDBFB92AC8AFA800EF825F /* CreateViewMethods.swift in Sources */,
+				BB58E4892B572BC50060D8E4 /* MDTBold.swift in Sources */,
 				BBDFFD3E2B408C380006FE11 /* LibrarySubjectsList.swift in Sources */,
 				BBEFC9512A41038F00960C8D /* SecondaryUndoActions.swift in Sources */,
 				BBCDFDE52947C877000C545D /* DottedView.swift in Sources */,

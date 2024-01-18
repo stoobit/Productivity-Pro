@@ -9,7 +9,7 @@ import MarkdownUI
 import SwiftUI
 
 extension Theme {
-    static func productivitypro(name: String?, size: Double?, color: Data?) -> Theme {
+    static func productivitypro(name: String?, size: Double?, color: Data?, code: Bool = true) -> Theme {
         let theme = Theme()
             .text(text: {
                 if let color = color, let name = name, let size = size {
@@ -88,10 +88,14 @@ extension Theme {
                 ForegroundColor(.accentColor)
             }
             .code {
-                FontFamilyVariant(.monospaced)
-                FontSize(.em(0.85))
-                FontWeight(.semibold)
-                ForegroundColor(Color.codecolor)
+                if code {
+                    FontFamilyVariant(.monospaced)
+                    FontSize(.em(0.85))
+                    FontWeight(.semibold)
+                    ForegroundColor(Color.codecolor)
+                } else {
+                    FontWeight(.regular)
+                }
             }
             .codeBlock { configuration in
                 configuration.label

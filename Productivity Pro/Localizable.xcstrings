@@ -947,9 +947,6 @@
         }
       }
     },
-    "Mit Markdown kannst du Text formatieren, ohne deinen Schreibfluss zu unterbrechen. Dazu musst du lediglich verschiedene Zeichen miteinander kombinieren. Klingt erstmal schwer, ist aber ganz leicht." : {
-
-    },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
       "localizations" : {
         "en" : {
@@ -1259,9 +1256,6 @@
           }
         }
       }
-    },
-    "Tab Content 2" : {
-
     },
     "Teilen" : {
       "localizations" : {
