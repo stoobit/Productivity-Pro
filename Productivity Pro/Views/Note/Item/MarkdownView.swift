@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MarkdownView: View {
     @Environment(ToolManager.self) var toolManager
-    
+
     @Bindable var item: PPItemModel
     @Bindable var editItem: EditItemModel
 
@@ -29,21 +29,17 @@ struct MarkdownView: View {
                 alignment: .topLeading
             )
             .clipShape(Rectangle())
-            .onChange(of: toolManager.activeItem?.textField?.string) { _, new in
-                print(new ?? "error")
-                print("hello")
-            }
     }
 
     var string: String {
         guard let text = item.textField?.string else {
             return "Markdown..."
         }
-        
+
         if text.isEmpty {
             return "Markdown..."
         }
-        
+
         return text
     }
 }

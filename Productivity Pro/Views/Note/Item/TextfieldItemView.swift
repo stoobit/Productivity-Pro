@@ -63,6 +63,7 @@ struct TextFieldItemView: View {
         .onChange(of: item.textField) { render() }
         .onChange(of: scale) { render() }
         .onChange(of: scenePhase) { render() }
+        .onChange(of: item.textField?.string) { render() } 
         .onAppear {
             render()
         }
