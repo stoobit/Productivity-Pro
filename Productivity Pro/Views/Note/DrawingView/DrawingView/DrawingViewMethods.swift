@@ -45,13 +45,10 @@ extension DrawingView {
     
     func didCanvasAvailabilityChange(_ isEnabled: Bool) {
         if isEnabled {
-            pkToolPicker.setVisible(
-                true, forFirstResponder: pkCanvasView
-            )
+            pkToolPicker.setVisible(true, forFirstResponder: pkCanvasView)
             
             pkToolPicker.addObserver(pkCanvasView)
             pkCanvasView.becomeFirstResponder()
-            
         } else {
             disableCanvasAvailability()
         }

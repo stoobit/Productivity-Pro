@@ -1049,13 +1049,13 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
-		BB988E6329999F3300762F39 /* Canvas */ = {
+		BB988E6329999F3300762F39 /* DrawingView */ = {
 			isa = PBXGroup;
 			children = (
 				BB82B5BB2B2499250089D423 /* DrawingView */,
 				BB82B5BA2B2499110089D423 /* PencilKit */,
 			);
-			path = Canvas;
+			path = DrawingView;
 			sourceTree = "<group>";
 		};
 		BB9A36482ABCD25900721C56 /* NoteModels */ = {
@@ -1124,7 +1124,7 @@
 				BBA3A0272B29AF1000099F6D /* MarkdownEditor */,
 				BB4CDF552B30BAB500E5D612 /* MarkdownTutorial */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
-				BB988E6329999F3300762F39 /* Canvas */,
+				BB988E6329999F3300762F39 /* DrawingView */,
 				BB6BFA2029048B96002D09FD /* Toolbar */,
 				BB37AD882A2C0A12006DB94D /* Overview */,
 				BB9CC946293FD4450094446A /* Share */,
