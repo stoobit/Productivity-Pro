@@ -10,20 +10,6 @@ import PencilKit
 
 extension NoteTitleMenu {
     
-    func sharePDF() {
-        toolManager.showProgress = true
-        toolManager.selectedItem = nil
-        
-        Task(priority: .userInitiated) {
-            await MainActor.run {
-                toolManager.pdfRendering = renderPDF()
-            }
-            
-            toolManager.showProgress = false
-//            subviewManager.sharePDFSheet.toggle()
-        }
-    }
-    
     func print() {
         toolManager.showProgress = true
         toolManager.selectedItem = nil

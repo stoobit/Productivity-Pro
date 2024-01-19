@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 15.04.23.
 //
 
-import SwiftUI
 import PencilKit
+import SwiftUI
 
 @MainActor
 struct DrawingView: View {
@@ -20,13 +20,12 @@ struct DrawingView: View {
     
     let size: CGSize
     
-    @State var pkCanvasView: PKCanvasView = PKCanvasView()
+    @State var pkCanvasView: PKCanvasView = .init()
     @State var pkToolPicker = PKToolPicker()
     @State var drawingChanged: Bool = false
     @State var strokeCount: Int = 0
     
     var body: some View {
-        
         PKRepresentable(
             page: page,
             scale: $scale,
@@ -37,17 +36,17 @@ struct DrawingView: View {
             size: size
         )
         .zIndex(Double(page.items!.count + 10))
-        .onChange(of: drawingChanged) { old, value in
+        .onChange(of: drawingChanged) { _, value in
             didDrawingChange(value)
         }
         .onChange(of: toolManager.selectedPage) {
             didSelectedPageChange()
             disableCanvasAvailability()
         }
-        .onChange(of: toolManager.pencilKit) { old, isEnabled in
+        .onChange(of: toolManager.pencilKit) { _, isEnabled in
             didCanvasAvailabilityChange(isEnabled)
         }
-        .onChange(of: scenePhase) { old, value in
+        .onChange(of: scenePhase) { _, value in
             if value == .active {
                 becameForeground()
             }
@@ -58,5 +57,4 @@ struct DrawingView: View {
         )
         .scaleEffect(1 / scale)
     }
-    
 }
