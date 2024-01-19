@@ -8,7 +8,6 @@
 import Foundation
 
 extension NoteSecondaryToolbar {
-    
     func toggleOverview() {
         toolManager.pencilKit = false
         subviewManager.overviewSheet.toggle()
@@ -21,13 +20,4 @@ extension NoteSecondaryToolbar {
         
         subviewManager.showInspector.toggle()
     }
-    
-    func undo() {
-        undoManager?.undo()
-    }
-    
-    func redo() {
-        undoManager?.redo()
-    }
-    
 }

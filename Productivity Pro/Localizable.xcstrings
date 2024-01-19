@@ -4,34 +4,12 @@
     "" : {
 
     },
-    "," : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ","
-          }
-        }
-      }
-    },
     ", " : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : ","
-          }
-        }
-      }
-    },
-    "." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "."
           }
         }
       }
@@ -136,41 +114,8 @@
         }
       }
     },
-    "1" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1"
-          }
-        }
-      }
-    },
-    "2" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2"
-          }
-        }
-      }
-    },
     "3. Deklination" : {
 
-    },
-    "5" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5"
-          }
-        }
-      }
     },
     "a-Deklination" : {
 
@@ -737,17 +682,6 @@
         }
       }
     },
-    "g" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "g"
-          }
-        }
-      }
-    },
     "Geändert" : {
       "localizations" : {
         "en" : {
@@ -903,17 +837,6 @@
         }
       }
     },
-    "Letzte Vorlage" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Last Template"
-          }
-        }
-      }
-    },
     "Loading Receiver." : {
       "localizations" : {
         "en" : {
@@ -1054,17 +977,6 @@
     },
     "PDF" : {
 
-    },
-    "PDF importieren" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Import PDF"
-          }
-        }
-      }
     },
     "Pin entfernen" : {
 
@@ -1326,9 +1238,6 @@
         }
       }
     },
-    "Undo" : {
-
-    },
     "Verstanden" : {
 
     },
@@ -1345,18 +1254,10 @@
         }
       }
     },
-    "Vorlage auswählen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select Template"
-          }
-        }
-      }
-    },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht." : {
+
+    },
+    "Widerrufen" : {
 
     },
     "Wiederherstellen" : {
@@ -1368,6 +1269,9 @@
           }
         }
       }
+    },
+    "Wiederholen" : {
+
     },
     "Wortschatz %@" : {
 

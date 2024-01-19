@@ -165,6 +165,7 @@
 		BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB6A2AC7807D00255293 /* CreateNoteView.swift */; };
 		BB9BFB6E2AC7819400255293 /* TrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB6D2AC7819400255293 /* TrashView.swift */; };
 		BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9BFB6F2AC7819D00255293 /* SearchView.swift */; };
+		BB9C63B22B5AF3D10022AC4F /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */; };
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
@@ -1553,6 +1554,7 @@
 			files = (
 				BB5A23262B476DA000F1D1B6 /* Preview Assets.xcassets in Resources */,
 				BBC0BAC32B47F35C00D47A21 /* latinvoc.json in Resources */,
+				BB9C63B22B5AF3D10022AC4F /* Localizable.xcstrings in Resources */,
 				BB5A23232B476DA000F1D1B6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
