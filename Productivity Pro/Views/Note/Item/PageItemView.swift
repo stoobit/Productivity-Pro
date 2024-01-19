@@ -16,8 +16,8 @@ struct PageItemView: View {
     
     @Binding var scale: CGFloat
     
-    var highResolution: Bool
-    var pdfRendering: Bool
+    var realrenderText: Bool
+    var preloadModels: Bool
     
     var body: some View {
         ForEach(page.items!) { ppItem in
@@ -26,8 +26,8 @@ struct PageItemView: View {
             ItemView(
                 note: note, page: page, item: ppItem,
                 scale: $scale,
-                highResolution: highResolution,
-                pdfRendering: pdfRendering
+                realrenderText: realrenderText,
+                preloadModels: preloadModels
             )
             .onTapGesture {
                 tap(item: item)

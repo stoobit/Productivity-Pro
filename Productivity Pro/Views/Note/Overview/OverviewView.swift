@@ -11,30 +11,21 @@ struct OverviewView: View {
     
     @Environment(\.horizontalSizeClass) var hsc
     @Environment(\.undoManager) var undoManager
-    @Environment(\.colorScheme) var cs
+//    @Environment(\.colorScheme) var cs
     
-    @Binding var document: Document
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
-    
-    @State var current: Page?
-    @State var pageToDelete: Page!
+    @Bindable var contentObject: ContentObject
     
     var body: some View {
-    
         NavigationStack {
             ScrollViewReader { proxy in
                 List {
-                    ForEach($document.note.pages) { $page in
-                        OverviewRow(
-                            document: $document,
-                            toolManager: toolManager,
-                            subviewManager: subviewManager,
-                            page: page
-                        )
-                        .moveDisabled(document.note.pages.count == 1)
-                        .deleteDisabled(document.note.pages.count == 1)
+                    ForEach(contentObject.note?.pages ?? []) { page in
+                        OverviewRow(contentObject: contentObject, page: page)
+                        .moveDisabled(contentObject.note?.pages?.count == 1)
+                        .deleteDisabled(contentObject.note?.pages?.count == 1)
                         .id(page.id)
                     }
                     .onMove(perform: move)
@@ -46,12 +37,11 @@ struct OverviewView: View {
             .navigationTitle("Übersicht")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.browser)
-            .toolbarBackground(.visible, for: .tabBar)
-            
+            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Fertig") { 
-                        subviewManager.overviewSheet.toggle()
+                        subviewManager.overview.toggle()
                     }
                     .keyboardShortcut(.return, modifiers: [])
                 }

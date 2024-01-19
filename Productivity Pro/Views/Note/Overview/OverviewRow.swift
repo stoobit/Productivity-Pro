@@ -8,89 +8,73 @@
 import SwiftUI
 
 struct OverviewRow: View {
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
-    @Environment(\.undoManager) var undoManager
-    
-    @Binding var document: Document
-    
-    @Bindable var toolManager: ToolManager
-    @Bindable var subviewManager: SubviewManager
-    
-    var page: Page
+    var contentObject: ContentObject
+    var page: PPPageModel
     
     var body: some View {
         Button(action: { openPage() }) {
-                HStack {
+            HStack {
+                Text("")
+                    .overlay { PageOverview() }
+                    .frame(width: 150, height: 150)
                     
-                    Text("")
-//                        .overlay { PageOverview() }
-                        .frame(width: 150, height: 150)
+                Spacer()
                     
-                    Spacer()
-                    
-                    VStack(alignment: .trailing) {
-                        
-                        if header() != "" {
-                            Text(header())
-                                .font(.title3.bold())
-                                .lineLimit(1)
+                VStack(alignment: .trailing) {
+                    ViewThatFits(in: .horizontal) {
+                        Group {
+                            Text(page.created, style: .date) +
+                                Text(", ") +
+                                Text(page.created, style: .time)
                         }
                         
-                        if let date = page.date {
-                            Text(date, format: .dateTime)
-                        } else {
-                            Text("Datum nicht verfügbar.")
-                        }
-                        
-                        Spacer()
-                        
-                        Text(pageNumber())
-                            .foregroundStyle(Color.secondary)
-                            .font(.caption)
+                        Text(page.created, style: .date)
                     }
-                    .padding(.leading, 30)
-                    
+                    .multilineTextAlignment(.trailing)
+                    .foregroundStyle(Color.primary)
+                    .font(.body)
+                    .fontWeight(.semibold)
+                        
+                    Spacer()
+                        
+                    Text(pageNumber())
+                        .foregroundStyle(Color.secondary)
+                        .font(.caption)
                 }
+                .padding(.leading, 30)
+            }
         }
         .frame(maxWidth: .infinity, minHeight: 200)
         .padding(.vertical)
-        
     }
     
-//    @ViewBuilder func PageOverview() -> some View {
-//        ZStack {
-//            PageView(
-//                document: $document,
-//                page: .constant(page),
-//                offset: .constant(0),
-//                toolManager: tm(),
-//                subviewManager: subviewManager,
-//                drawingModel: PPDrawingModel(),
-//                highRes: true,
-//                size: .zero
-//            )
-//            .scaleEffect(150 / getFrame().width)
-//            .frame(
-//                width: 150,
-//                height: (150 / getFrame().width) * getFrame().height
-//            )
-//            .clipShape(RoundedRectangle(cornerRadius: 9))
-//            .allowsHitTesting(false)
-//            
-//            RoundedRectangle(cornerRadius: 9)
-//                .stroke(Color.secondary, lineWidth: 2.0)
-//                .frame(
-//                    width: 150,
-//                    height: (150 / getFrame().width) * getFrame().height
-//                )
-//            
-//        }
-//    }
-    
-    func tm() -> ToolManager {
-        let tm = ToolManager()
-        tm.preloadedMedia = toolManager.preloadedMedia
-        
-        return tm
+    @ViewBuilder func PageOverview() -> some View {
+        ZStack {
+            PageView(
+                note: contentObject.note!,
+                page: page,
+                scale: .constant(1),
+                offset: .constant(.zero),
+                size: .zero,
+                realrenderText: true
+            )
+            .scaleEffect(150 / getFrame().width)
+            .frame(
+                width: 150,
+                height: (150 / getFrame().width) * getFrame().height
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 9))
+            .allowsHitTesting(false)
+
+            RoundedRectangle(cornerRadius: 9)
+                .stroke(Color.secondary, lineWidth: 2.0)
+                .frame(
+                    width: 150,
+                    height: (150 / getFrame().width) * getFrame().height
+                )
+        }
     }
 }

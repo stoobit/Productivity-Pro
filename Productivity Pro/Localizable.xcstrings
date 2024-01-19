@@ -160,9 +160,6 @@
         }
       }
     },
-    "Alle" : {
-
-    },
     "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
 
     },
@@ -384,6 +381,7 @@
       }
     },
     "Datum nicht verfügbar." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

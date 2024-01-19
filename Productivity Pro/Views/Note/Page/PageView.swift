@@ -25,12 +25,8 @@ struct PageView: View {
     
     let size: CGSize
     
-    // MARK: - unchecked
-
-    @State var isTargeted: Bool = true
-    
-    var pdfRendering: Bool = false
-    var highResolution: Bool = false
+    var preloadModels: Bool = false
+    var realrenderText: Bool = false
     
     var body: some View {
         ZStack {
@@ -51,8 +47,8 @@ struct PageView: View {
                 note: note,
                 page: page,
                 scale: $scale,
-                highResolution: highResolution,
-                pdfRendering: pdfRendering
+                realrenderText: realrenderText, 
+                preloadModels: preloadModels
             )
             .allowsHitTesting(toolManager.pencilKit == false)
             

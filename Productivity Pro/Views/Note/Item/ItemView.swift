@@ -19,12 +19,12 @@ struct ItemView: View {
     @Bindable var item: PPItemModel
     @Binding var scale: CGFloat
     
-    var highResolution: Bool
-    var pdfRendering: Bool
+    var realrenderText: Bool
+    var preloadModels: Bool
     
     var body: some View {
         
-        if pdfRendering {
+        if preloadModels {
             self.setEditModel()
         }
         
@@ -44,7 +44,7 @@ struct ItemView: View {
                         item: item, 
                         editItem: editItemModel,
                         scale: $scale,
-                        highRes: highResolution
+                        highRes: realrenderText
                     )
                     
                 } else if item.type == PPItemType.media.rawValue {

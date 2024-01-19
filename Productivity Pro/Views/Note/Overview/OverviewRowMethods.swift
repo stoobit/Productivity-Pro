@@ -10,12 +10,12 @@ import SwiftUI
 
 extension OverviewRow {
     func pageNumber() -> String {
-        let index = document.note.pages.firstIndex(of: page) ?? -1
-        return "Seite \(index + 1)"
+//        let index = document.note.pages.firstIndex(of: page) ?? -1
+        return "Seite \(2 + 1)"
     }
     
     func header() -> String {
-        return "text"
+        return page.title
     }
 
     func openPage() {
