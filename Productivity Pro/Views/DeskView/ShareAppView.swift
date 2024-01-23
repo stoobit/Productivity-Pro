@@ -5,73 +5,55 @@
 //  Created by Till Brügmann on 18.09.23.
 //
 
+import QRCode
 import SwiftUI
 
 struct ShareAppView: View {
-    
     @Environment(\.dismiss) var dismiss
-    
+
     var body: some View {
         NavigationStack {
-            ViewThatFits(in: [.horizontal, .vertical]) {
-                
-                VStack(spacing: 30) {
-                    
-                    Image("qrcode")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 300, height: 300)
-                        .foregroundStyle(Color.accentColor.gradient)
-                        .padding(40)
-                        .background {
-                            UnevenRoundedRectangle(
-                                topLeadingRadius: 20,
-                                bottomLeadingRadius: 5,
-                                bottomTrailingRadius: 5,
-                                topTrailingRadius: 20,
-                                style: .continuous
-                            )
+            Image(uiImage: image)
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: 350, maxHeight: 350)
+                .padding(50)
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity
+                )
+                .foregroundStyle(Color.accentColor.gradient)
+                .ignoresSafeArea(.all, edges: .all)
+                .background(Color.accentColor.gradient)
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Fertig") { dismiss() }
                             .foregroundStyle(Color.white)
-                        }
-                    
-                    Text("Productivity Pro")
-                        .frame(width: 300)
-                        .font(.system(size: 40).bold())
-                        .foregroundStyle(Color.accentColor.gradient)
-                        .padding(40)
-                        .background {
-                            UnevenRoundedRectangle(
-                                topLeadingRadius: 5,
-                                bottomLeadingRadius: 20,
-                                bottomTrailingRadius: 20,
-                                topTrailingRadius: 5,
-                                style: .continuous
-                            )
-                            .foregroundStyle(Color.white)
-                        }
+                    }
                 }
-                .padding(.vertical, 30)
-                
-                Image("qrcode")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 300, height: 300)
-                    .foregroundStyle(Color.white)
-            }
-            .frame(
-                maxWidth: .infinity, maxHeight: .infinity
-            )
-            .ignoresSafeArea(.all, edges: .all)
-            .background(Color.accentColor.gradient)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Fertig") { dismiss() }
-                        .foregroundStyle(Color.white)
-                }
-            }
-            
         }
-        .preferredColorScheme(.dark)
+    }
+
+    var image: UIImage {
+        let doc = QRCode.Document(
+            utf8String: "https://apple.co/44ju7GT"
+        )
+
+        let shape = QRCode.Shape()
+        shape.eye = QRCode.EyeShape.Squircle()
+        shape.onPixels = QRCode.PixelShape.RoundedPath(
+            cornerRadiusFraction: 0.8,
+            hasInnerCorners: true
+        )
+
+        doc.design.shape = shape
+        doc.design.style.onPixels = QRCode.FillStyle.Solid(UIColor.white.cgColor)
+        
+        doc.design.style.background = QRCode.FillStyle.clear
+        
+        return doc.uiImage(
+            CGSize(width: 2000, height: 2000)
+        ) ?? UIImage()
     }
 }
 

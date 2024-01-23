@@ -248,6 +248,10 @@
 		BBD9411A299195260085151B /* NoteSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD94119299195260085151B /* NoteSize.swift */; };
 		BBD995B62B48917500A05E34 /* OpenURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD995B52B48917500A05E34 /* OpenURL.swift */; };
 		BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDABD3E29D257410038CFC2 /* PageBackgroundPDF.swift */; };
+		BBDB92E12B60447600847B27 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = BBDB92E02B60447600847B27 /* QRCode */; };
+		BBDB92E32B60447600847B27 /* QRCodeDetector in Frameworks */ = {isa = PBXBuildFile; productRef = BBDB92E22B60447600847B27 /* QRCodeDetector */; };
+		BBDB92E52B60447600847B27 /* QRCodeDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BBDB92E42B60447600847B27 /* QRCodeDynamic */; };
+		BBDB92E72B60447600847B27 /* QRCodeStatic in Frameworks */ = {isa = PBXBuildFile; productRef = BBDB92E62B60447600847B27 /* QRCodeStatic */; };
 		BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC62712905EED800364B57 /* IndicatorText.swift */; };
 		BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */; };
 		BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D9299E9506004C99AE /* Hexagon.swift */; };
@@ -563,11 +567,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBDB92E12B60447600847B27 /* QRCode in Frameworks */,
 				BB7468902AF5B90C0029F60D /* PPAnglePicker in Frameworks */,
 				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
 				BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
+				BBDB92E52B60447600847B27 /* QRCodeDynamic in Frameworks */,
 				BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */,
+				BBDB92E32B60447600847B27 /* QRCodeDetector in Frameworks */,
+				BBDB92E72B60447600847B27 /* QRCodeStatic in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1452,6 +1460,10 @@
 				BB74688F2AF5B90C0029F60D /* PPAnglePicker */,
 				BBE993BF2AF850A800330733 /* PPDoubleKeyboard */,
 				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
+				BBDB92E02B60447600847B27 /* QRCode */,
+				BBDB92E22B60447600847B27 /* QRCodeDetector */,
+				BBDB92E42B60447600847B27 /* QRCodeDynamic */,
+				BBDB92E62B60447600847B27 /* QRCodeStatic */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1509,6 +1521,7 @@
 				BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
 				BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */,
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				BBDB92DF2B60447600847B27 /* XCRemoteSwiftPackageReference "QRCode" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -2176,6 +2189,14 @@
 				kind = branch;
 			};
 		};
+		BBDB92DF2B60447600847B27 /* XCRemoteSwiftPackageReference "QRCode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dagronf/QRCode";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 17.0.0;
+			};
+		};
 		BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stoobit/PPDoubleKeyboard";
@@ -2205,6 +2226,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
+		};
+		BBDB92E02B60447600847B27 /* QRCode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBDB92DF2B60447600847B27 /* XCRemoteSwiftPackageReference "QRCode" */;
+			productName = QRCode;
+		};
+		BBDB92E22B60447600847B27 /* QRCodeDetector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBDB92DF2B60447600847B27 /* XCRemoteSwiftPackageReference "QRCode" */;
+			productName = QRCodeDetector;
+		};
+		BBDB92E42B60447600847B27 /* QRCodeDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBDB92DF2B60447600847B27 /* XCRemoteSwiftPackageReference "QRCode" */;
+			productName = QRCodeDynamic;
+		};
+		BBDB92E62B60447600847B27 /* QRCodeStatic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBDB92DF2B60447600847B27 /* XCRemoteSwiftPackageReference "QRCode" */;
+			productName = QRCodeStatic;
 		};
 		BBE993BF2AF850A800330733 /* PPDoubleKeyboard */ = {
 			isa = XCSwiftPackageProductDependency;
