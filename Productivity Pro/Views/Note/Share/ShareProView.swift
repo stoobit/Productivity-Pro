@@ -42,6 +42,9 @@ struct ShareProView: View {
                             NSItemProvider(contentsOf: url, contentType: .pronote)
                         }
                 }
+                .onDrag {
+                    NSItemProvider(contentsOf: url, contentType: .pronote)
+                }
                 
                 if let text = toolManager.selectedContentObject?.title {
                     Text(text)

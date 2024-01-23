@@ -124,7 +124,6 @@
 		BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */; };
 		BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB854ADF29E06531002EDF7A /* PagingModifier.swift */; };
 		BB85868C2AE1ABA500C5875C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85868B2AE1ABA400C5875C /* RatingView.swift */; };
-		BB85868E2AE1D72200C5875C /* SecondaryShareAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85868D2AE1D72200C5875C /* SecondaryShareAction.swift */; };
 		BB8586912AE1DE4300C5875C /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8586902AE1DE4300C5875C /* InspectorView.swift */; };
 		BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8586922AE1E37C00C5875C /* StyleContainerView.swift */; };
 		BB8586972AE1E3B000C5875C /* ArrangeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8586962AE1E3B000C5875C /* ArrangeContainerView.swift */; };
@@ -186,7 +185,6 @@
 		BBB538952B40BE4700C874EA /* ExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538942B40BE4700C874EA /* ExportManager.swift */; };
 		BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */; };
 		BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBB7E072A2693FD00155C8A /* CalculatorView.swift */; };
-		BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */; };
 		BBBCACB52A25461900C23B2C /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCACB22A25461900C23B2C /* CalculatorModel.swift */; };
 		BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */; };
 		BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */; };
@@ -276,6 +274,8 @@
 		BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FE042AAE66D30081C4FE /* AddSubject.swift */; };
 		BBF663F92AC4E71C00FD9813 /* ObjectPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF663F82AC4E71C00FD9813 /* ObjectPicker.swift */; };
 		BBF930732A67437900AD3958 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* Color.swift */; };
+		BBFA92452B607DB30055CE9D /* ShareQRPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA92442B607DB30055CE9D /* ShareQRPDFView.swift */; };
+		BBFA92482B607E840055CE9D /* ShareMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA92472B607E840055CE9D /* ShareMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -432,7 +432,6 @@
 		BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewFolderLink.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		BB85868B2AE1ABA400C5875C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
-		BB85868D2AE1D72200C5875C /* SecondaryShareAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryShareAction.swift; sourceTree = "<group>"; };
 		BB8586902AE1DE4300C5875C /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
 		BB8586922AE1E37C00C5875C /* StyleContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleContainerView.swift; sourceTree = "<group>"; };
 		BB8586962AE1E3B000C5875C /* ArrangeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeContainerView.swift; sourceTree = "<group>"; };
@@ -497,7 +496,6 @@
 		BBB538942B40BE4700C874EA /* ExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportManager.swift; sourceTree = "<group>"; };
 		BBBB7E062A2693FD00155C8A /* CalculatorButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButtonView.swift; sourceTree = "<group>"; };
 		BBBB7E072A2693FD00155C8A /* CalculatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
-		BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAppView.swift; sourceTree = "<group>"; };
 		BBBCACB22A25461900C23B2C /* CalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		BBBCF5CA291DA4FB00A7C43C /* CoreGraphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics.swift; sourceTree = "<group>"; };
 		BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewContainer.swift; sourceTree = "<group>"; };
@@ -560,6 +558,8 @@
 		BBF5FE042AAE66D30081C4FE /* AddSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSubject.swift; sourceTree = "<group>"; };
 		BBF663F82AC4E71C00FD9813 /* ObjectPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPicker.swift; sourceTree = "<group>"; };
 		BBF930722A67437900AD3958 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		BBFA92442B607DB30055CE9D /* ShareQRPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareQRPDFView.swift; sourceTree = "<group>"; };
+		BBFA92472B607E840055CE9D /* ShareMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -786,6 +786,7 @@
 				BB4A93DF2AAF557B00C3AED6 /* HomeworkView */,
 				BBF5FDF32AAE25CA0081C4FE /* LibraryView */,
 				BB047CDC2AC0C1DD0027409F /* FileSystemView */,
+				BBFA92462B607E750055CE9D /* ShareMenu */,
 				BBCCE4F028D52911001DBD8A /* CreateNote */,
 				BB9DF5A828DFA25600AC988D /* Note */,
 			);
@@ -932,7 +933,6 @@
 				BBF5FDF92AAE2BCE0081C4FE /* AppIconSettings.swift */,
 				BB7984642AC347F900CF3D24 /* BackupSettings.swift */,
 				BB2A8E182B45F0DB0072D3CC /* BackupMethods.swift */,
-				BBBBAC4B2AB8E887008CB9DA /* ShareAppView.swift */,
 				BBD930E82B1FBD5200A37F95 /* Premium */,
 				BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */,
 			);
@@ -1103,6 +1103,7 @@
 			children = (
 				BBD930F92B21132F00A37F95 /* ShareProView.swift */,
 				BBD930FB2B21133600A37F95 /* SharePDFView.swift */,
+				BBFA92442B607DB30055CE9D /* ShareQRPDFView.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -1406,7 +1407,6 @@
 			children = (
 				BB929B7F28E5076D00DA4538 /* NoteSecondaryToolbar.swift */,
 				BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */,
-				BB85868D2AE1D72200C5875C /* SecondaryShareAction.swift */,
 				BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */,
 				BBEFC9502A41038F00960C8D /* SecondaryUndoActions.swift */,
 				BBEFC94E2A41035C00960C8D /* SecondaryToolbarMethods.swift */,
@@ -1433,6 +1433,14 @@
 				BBC254142AC60D2400B51175 /* ObjectPickerList.swift */,
 			);
 			path = ObjectPicker;
+			sourceTree = "<group>";
+		};
+		BBFA92462B607E750055CE9D /* ShareMenu */ = {
+			isa = PBXGroup;
+			children = (
+				BBFA92472B607E840055CE9D /* ShareMenu.swift */,
+			);
+			path = ShareMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1599,7 +1607,6 @@
 				BBCDFDE32947BF84000C545D /* SquaredView.swift in Sources */,
 				BBCCE4EB28D52743001DBD8A /* NoteModel.swift in Sources */,
 				BBC0BAB22B47F2CB00D47A21 /* ExportableTextFieldModel.swift in Sources */,
-				BB85868E2AE1D72200C5875C /* SecondaryShareAction.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSecondaryToolbar.swift in Sources */,
@@ -1610,6 +1617,7 @@
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */,
+				BBFA92482B607E840055CE9D /* ShareMenu.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
 				BBD995B62B48917500A05E34 /* OpenURL.swift in Sources */,
@@ -1687,7 +1695,6 @@
 				BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */,
 				BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
-				BBBBAC4C2AB8E887008CB9DA /* ShareAppView.swift in Sources */,
 				BBD930F02B1FC06C00A37F95 /* PVOfferView.swift in Sources */,
 				BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
@@ -1785,6 +1792,7 @@
 				BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */,
 				BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */,
 				BB5034192993172800913B3A /* PageItemView.swift in Sources */,
+				BBFA92452B607DB30055CE9D /* ShareQRPDFView.swift in Sources */,
 				BBB02B592962537C001DCB04 /* Triangle.swift in Sources */,
 				BB9367662AC9CE1A0096F20E /* PPMediaModel.swift in Sources */,
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,

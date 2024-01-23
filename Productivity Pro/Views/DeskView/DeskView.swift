@@ -12,7 +12,6 @@ struct DeskView: View {
     
     @State var premiumView: Bool = false
     @State var settingsView: Bool = false
-    @State var shareView: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -87,16 +86,6 @@ struct DeskView: View {
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Schreibtisch")
-            .toolbar {
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button("QR Code", systemImage: "qrcode") {
-                        shareView.toggle()
-                    }
-                }
-            }
-            .fullScreenCover(isPresented: $shareView, content: {
-                ShareAppView()
-            })
         }
     }
 }

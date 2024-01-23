@@ -70,18 +70,7 @@ struct ObjectViewFileLink: View {
             
             Section {
                 Menu(content: {
-                    Button("Notiz", systemImage: "doc") {
-                        toolManager.pencilKit = false
-                        toolManager.selectedContentObject = object
-                        
-                        subviewManager.shareProView.toggle()
-                    }
-                    
-                    Button("PDF", systemImage: "doc.richtext") {
-                        subviewManager.sharePDFView.toggle()
-                        toolManager.pencilKit = false
-                    }
-                    
+                   ShareMenu(object: object)
                 }) {
                     Label("Teilen", systemImage: "square.and.arrow.up")
                 }

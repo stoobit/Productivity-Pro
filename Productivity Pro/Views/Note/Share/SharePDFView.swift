@@ -35,8 +35,8 @@ struct SharePDFView: View {
                         )
                         .frame(width: 120, height: 165)
                         .clipShape(.rect)
-                        .draggable(Image(systemName: "house"))
                 }
+                .draggable(Image(systemName: "house"))
                 
                 Text("Buch S. 163/12")
                     .font(.headline.bold())

@@ -64,6 +64,9 @@ fileprivate struct ContentView: View {
                     .sheet(isPresented: $subviewManager.shareProView) {
                         ShareProView()
                     }
+                    .sheet(isPresented: $subviewManager.shareQRPDFView) {
+                        ShareQRPDFView()
+                    }
                 
                 LibraryView()
                     .toolbarBackground(.visible, for: .tabBar)

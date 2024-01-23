@@ -31,6 +31,7 @@ import Observation
     
     var shareProView: Bool = false
     var sharePDFView: Bool = false
+    var shareQRPDFView: Bool = false
     
     // MARK: - UNCHECKED & OLD
     var printerView: Bool = false

@@ -1,13 +1,13 @@
 //
-//  AppClipView.swift
+//  ShareQRPDFView.swift
 //  Productivity Pro
 //
-//  Created by Till Brügmann on 05.01.24.
+//  Created by Till Brügmann on 24.01.24.
 //
 
 import SwiftUI
 
-struct AppClipView: View {
+struct ShareQRPDFView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -23,7 +23,7 @@ struct AppClipView: View {
                         .padding(.bottom, 5)
                 }
                 
-                Text("Scanne diesen QR Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen.")
+                Text("Scanne diesen QR-Code, um direkt auf eine PDF Version dieser Notiz zugreifen zu können.")
                     .multilineTextAlignment(.center)
                 
                 Spacer()
@@ -48,8 +48,5 @@ struct AppClipView: View {
 }
 
 #Preview {
-    Text("")
-        .sheet(isPresented: .constant(true), content: {
-            AppClipView()
-        })
+    ShareQRPDFView()
 }

@@ -40,7 +40,11 @@ struct NoteSecondaryToolbar: ToolbarContent {
                 subviewManager.overview.toggle()
             }
             
-            ShareAction()
+            Menu(content: {
+                ShareMenu(object: contentObject)
+            }) {
+                Label("Teilen", systemImage: "square.and.arrow.up")
+            }
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
