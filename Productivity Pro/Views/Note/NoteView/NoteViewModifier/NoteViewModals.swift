@@ -43,7 +43,7 @@ struct NoteViewSheet: ViewModifier {
                 }
             })
             .sheet(isPresented: $manager.overview, content: {
-                OverviewView(contentObject: contentObject)
+                OverviewContainerView(contentObject: contentObject)
             })
             .sheet(isPresented: $manager.rtfEditor, content: {
                 MDEditorView()

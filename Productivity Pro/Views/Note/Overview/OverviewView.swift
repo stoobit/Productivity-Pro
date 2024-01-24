@@ -9,44 +9,55 @@ import SwiftUI
 
 struct OverviewView: View {
     @Environment(ToolManager.self) var toolManager
-    @Environment(SubviewManager.self) var subviewManager
+    @State var pages: [PPPageModel] = .init()
 
-    @State var pages: [PPPageModel]
     var contentObject: ContentObject
-
-    init(contentObject: ContentObject) {
-        self.contentObject = contentObject
-
-        pages = contentObject.note!.pages!
-            .sorted(by: { $0.index < $1.index })
-    }
+    var filter: Bool
 
     var body: some View {
-        NavigationStack {
-            ScrollViewReader { _ in
-                List {
-                    ForEach(pages) { page in
-                        OverviewRow(contentObject: contentObject, page: page)
-                            .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
-                            .moveDisabled(contentObject.note?.pages?.count == 1)
-                            .deleteDisabled(contentObject.note?.pages?.count == 1)
-                            .id(page.id)
-                    }
-                    .onMove(perform: move)
-                    .onDelete(perform: delete)
+        ScrollViewReader { _ in
+            List {
+                ForEach(pages) { page in
+                    OverviewRow(contentObject: contentObject, page: page)
+                        .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
+                        .moveDisabled(contentObject.note?.pages?.count == 1)
+                        .deleteDisabled(contentObject.note?.pages?.count == 1)
+                        .id(page.id)
+                }
+                .onMove(perform: move)
+                .onDelete(perform: delete)
+                .moveDisabled(filter)
+            }
+            .scrollContentBackground(.hidden)
+            .scrollIndicators(.hidden)
+            .background {
+                Color(UIColor.systemGroupedBackground)
+                    .ignoresSafeArea(.all)
+            }
+            .onChange(of: contentObject.note?.pages) {
+                withAnimation(.bouncy) {
+                    sort()
                 }
             }
-            .navigationTitle("Übersicht")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarRole(.browser)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Fertig") {
-                        subviewManager.overview.toggle()
-                    }
-                    .keyboardShortcut(.return, modifiers: [])
+            .onChange(of: filter) {
+                withAnimation(.bouncy) {
+                    sort()
                 }
             }
+            .onAppear {
+                sort()
+            }
+        }
+    }
+
+    func sort() {
+        if filter == false {
+            pages = contentObject.note!.pages!
+                .sorted(by: { $0.index < $1.index })
+        } else {
+            pages = contentObject.note!.pages!
+                .filter { $0.isBookmarked == true }
+                .sorted(by: { $0.index < $1.index })
         }
     }
 }

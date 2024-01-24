@@ -15,35 +15,56 @@ struct OverviewRow: View {
     var page: PPPageModel
     
     var body: some View {
-        Button(action: { openPage() }) {
-            ViewThatFits(in: .horizontal) {
-                LargeView()
+        ViewThatFits(in: .horizontal) {
+            LargeView()
+            
+            ZStack {
+                PreviewView()
                 
-                ZStack {
-                    Text("")
-                        .overlay { PageOverview() }
-                        .frame(width: 150, height: 150)
-                    
-                    Text(pageNumber())
-                        .foregroundStyle(Color.secondary)
-                        .font(.caption)
-                        .frame(
-                            maxWidth: .infinity,
-                            maxHeight: .infinity,
-                            alignment: .bottomTrailing
-                        )
-                }
+                Text(compactPageNumber())
+                    .foregroundStyle(Color.secondary)
+                    .font(.caption)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .bottomTrailing
+                    )
             }
         }
-        .frame(maxWidth: .infinity, minHeight: 200)
+        .frame(maxWidth: .infinity, minHeight: page.isPortrait ? 200 : 100)
         .padding(.vertical)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            openPage()
+        }
+    }
+    
+    @ViewBuilder func PreviewView() -> some View {
+        Text("")
+            .overlay {
+                PageOverview()
+                
+                Image(systemName: page.isBookmarked ? "bookmark.fill" : "bookmark")
+                    .contentTransition(.symbolEffect(.replace))
+                    .foregroundStyle(Color.red)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .bottomTrailing
+                    )
+                    .padding(7)
+                    .onTapGesture {
+                        withAnimation(.bouncy) {
+                            page.isBookmarked.toggle()
+                        }
+                    }
+            }
+            .frame(width: 150, height: 150)
     }
     
     @ViewBuilder func LargeView() -> some View {
         HStack {
-            Text("")
-                .overlay { PageOverview() }
-                .frame(width: 150, height: 150)
+            PreviewView()
                 
             Spacer()
                 

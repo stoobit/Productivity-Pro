@@ -150,6 +150,7 @@
 		BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677E2AC9D40C0096F20E /* PPItemType.swift */; };
 		BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367802AC9D41F0096F20E /* PPShapeType.swift */; };
 		BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */; };
+		BB96F5AA2B608DF90044B200 /* OverviewContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5A92B608DF90044B200 /* OverviewContainerView.swift */; };
 		BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */; };
 		BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36492ABCD29700721C56 /* Homework.swift */; };
 		BB9A364C2ABCD5D700721C56 /* HomeworkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364B2ABCD5D700721C56 /* HomeworkAddView.swift */; };
@@ -458,6 +459,7 @@
 		BB93677E2AC9D40C0096F20E /* PPItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPItemType.swift; sourceTree = "<group>"; };
 		BB9367802AC9D41F0096F20E /* PPShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPShapeType.swift; sourceTree = "<group>"; };
 		BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterHelper.swift; sourceTree = "<group>"; };
+		BB96F5A92B608DF90044B200 /* OverviewContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewContainerView.swift; sourceTree = "<group>"; };
 		BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkList.swift; sourceTree = "<group>"; };
 		BB9A36492ABCD29700721C56 /* Homework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
 		BB9A364B2ABCD5D700721C56 /* HomeworkAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkAddView.swift; sourceTree = "<group>"; };
@@ -666,6 +668,7 @@
 		BB37AD882A2C0A12006DB94D /* Overview */ = {
 			isa = PBXGroup;
 			children = (
+				BB96F5A92B608DF90044B200 /* OverviewContainerView.swift */,
 				BB27FED728EA419300459334 /* OverviewView.swift */,
 				BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */,
 				BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */,
@@ -1635,6 +1638,7 @@
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
 				BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */,
+				BB96F5AA2B608DF90044B200 /* OverviewContainerView.swift in Sources */,
 				BB2A8E192B45F0DB0072D3CC /* BackupMethods.swift in Sources */,
 				BB35A1C32B2921DD001A3F4C /* LHistoryList.swift in Sources */,
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
