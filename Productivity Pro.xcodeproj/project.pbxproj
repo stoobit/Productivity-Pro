@@ -89,7 +89,6 @@
 		BB5DB6CE2B482C1C000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
-		BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */; };
 		BB655B002AB772F100FB005A /* NoteViewModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AFF2AB772F100FB005A /* NoteViewModals.swift */; };
 		BB6701582AADEFA7001F468A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6701572AADEFA7001F468A /* ContentView.swift */; };
 		BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB67015A2AADF2D5001F468A /* DeskView.swift */; };
@@ -154,6 +153,7 @@
 		BB96F5AC2B61B4FB0044B200 /* ShareQRPDFMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5AB2B61B4FB0044B200 /* ShareQRPDFMethods.swift */; };
 		BB96F5AF2B61B60F0044B200 /* ShareQRPDFModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5AE2B61B60F0044B200 /* ShareQRPDFModels.swift */; };
 		BB96F5B12B61BB0F0044B200 /* pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB96F5B02B61BB0F0044B200 /* pdf.pdf */; };
+		BB96F5B32B61C0460044B200 /* PDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5B22B61C0460044B200 /* PDFManager.swift */; };
 		BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */; };
 		BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36492ABCD29700721C56 /* Homework.swift */; };
 		BB9A364C2ABCD5D700721C56 /* HomeworkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364B2ABCD5D700721C56 /* HomeworkAddView.swift */; };
@@ -403,7 +403,6 @@
 		BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClipView.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
-		BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleMenuMethods.swift; sourceTree = "<group>"; };
 		BB655AFF2AB772F100FB005A /* NoteViewModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModals.swift; sourceTree = "<group>"; };
 		BB6701572AADEFA7001F468A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB67015A2AADF2D5001F468A /* DeskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskView.swift; sourceTree = "<group>"; };
@@ -466,6 +465,7 @@
 		BB96F5AB2B61B4FB0044B200 /* ShareQRPDFMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareQRPDFMethods.swift; sourceTree = "<group>"; };
 		BB96F5AE2B61B60F0044B200 /* ShareQRPDFModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareQRPDFModels.swift; sourceTree = "<group>"; };
 		BB96F5B02B61BB0F0044B200 /* pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pdf.pdf; sourceTree = "<group>"; };
+		BB96F5B22B61C0460044B200 /* PDFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFManager.swift; sourceTree = "<group>"; };
 		BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkList.swift; sourceTree = "<group>"; };
 		BB9A36492ABCD29700721C56 /* Homework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
 		BB9A364B2ABCD5D700721C56 /* HomeworkAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkAddView.swift; sourceTree = "<group>"; };
@@ -905,15 +905,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BB655AF82AB7674900FB005A /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				BB929B8128E5077800DA4538 /* NoteTitleMenu.swift */,
-				BB655AF92AB7679A00FB005A /* NoteTitleMenuMethods.swift */,
-			);
-			path = SideMenu;
-			sourceTree = "<group>";
-		};
 		BB655B012AB772F700FB005A /* NoteViewModifier */ = {
 			isa = PBXGroup;
 			children = (
@@ -927,9 +918,9 @@
 		BB6BFA2029048B96002D09FD /* Toolbar */ = {
 			isa = PBXGroup;
 			children = (
+				BB929B8128E5077800DA4538 /* NoteTitleMenu.swift */,
 				BBEFC94C2A41033000960C8D /* MainToolbar */,
 				BBEFC94D2A41034600960C8D /* SecondaryToolbar */,
-				BB655AF82AB7674900FB005A /* SideMenu */,
 			);
 			path = Toolbar;
 			sourceTree = "<group>";
@@ -967,6 +958,7 @@
 				BB82B5A92B2471130089D423 /* StackingManager.swift */,
 				BBB538942B40BE4700C874EA /* ExportManager.swift */,
 				BB441DD42B41A05300B103DE /* ImportManager.swift */,
+				BB96F5B22B61C0460044B200 /* PDFManager.swift */,
 				BBC7B9752A1982F700D496CB /* EditItemModel.swift */,
 				BBBCACB22A25461900C23B2C /* CalculatorModel.swift */,
 			);
@@ -1653,7 +1645,6 @@
 				BBBCACB52A25461900C23B2C /* CalculatorModel.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
 				BB35A1C52B2921EA001A3F4C /* LGrammarList.swift in Sources */,
-				BB655AFA2AB7679A00FB005A /* NoteTitleMenuMethods.swift in Sources */,
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
 				BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */,
@@ -1814,6 +1805,7 @@
 				BB67015B2AADF2D5001F468A /* DeskView.swift in Sources */,
 				BB93676A2AC9CE330096F20E /* PPChartModel.swift in Sources */,
 				BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */,
+				BB96F5B32B61C0460044B200 /* PDFManager.swift in Sources */,
 				BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */,
 				BB5034192993172800913B3A /* PageItemView.swift in Sources */,
 				BBFA92452B607DB30055CE9D /* ShareQRPDFView.swift in Sources */,

@@ -24,6 +24,8 @@ struct ShareMenu: View {
             
             Button("PDF", systemImage: "doc.richtext") {
                 toolManager.pencilKit = false
+                toolManager.selectedContentObject = object
+                
                 subviewManager.sharePDFView.toggle()
             }
         }

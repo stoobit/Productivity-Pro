@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SharePDFView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(ToolManager.self) var toolManager
     
     var body: some View {
         NavigationStack {
@@ -43,9 +44,7 @@ struct SharePDFView: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    
-                }) {
+                Button(action: {}) {
                     Text("Teilen")
                         .font(.title2.bold())
                         .foregroundStyle(.white)
@@ -67,7 +66,11 @@ struct SharePDFView: View {
                     }
                 }
             }
-            
+        }
+        .onAppear {
+            if let contentObject = toolManager.selectedContentObject {
+                try? PDFManager().exportPDF(from: contentObject)
+            }
         }
     }
 }

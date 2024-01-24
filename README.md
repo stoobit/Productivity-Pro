@@ -1,7 +1,6 @@
 # Productivity Pro
 
 ## 🛠️ Release 2.0.v
-- Overview
 - Undo & Redo
 - View Updates 
 - Markdown Tutorial
