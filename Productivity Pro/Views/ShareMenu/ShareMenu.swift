@@ -32,7 +32,7 @@ struct ShareMenu: View {
             toolManager.pencilKit = false
             subviewManager.shareQRPDFView.toggle()
         }) {
-            Label("QR Code", systemImage: "qrcode")
+            Label("QRShare", systemImage: "qrcode")
         }
     }
 }
