@@ -16,39 +16,56 @@ struct OverviewRow: View {
     
     var body: some View {
         Button(action: { openPage() }) {
-            HStack {
-                Text("")
-                    .overlay { PageOverview() }
-                    .frame(width: 150, height: 150)
+            ViewThatFits(in: .horizontal) {
+                LargeView()
+                
+                ZStack {
+                    Text("")
+                        .overlay { PageOverview() }
+                        .frame(width: 150, height: 150)
                     
-                Spacer()
-                    
-                VStack(alignment: .trailing) {
-                    ViewThatFits(in: .horizontal) {
-                        Group {
-                            Text(page.created, style: .date) +
-                                Text(", ") +
-                                Text(page.created, style: .time)
-                        }
-                        
-                        Text(page.created, style: .date)
-                    }
-                    .multilineTextAlignment(.trailing)
-                    .foregroundStyle(Color.primary)
-                    .font(.body)
-                    .fontWeight(.semibold)
-                        
-                    Spacer()
-                        
                     Text(pageNumber())
                         .foregroundStyle(Color.secondary)
                         .font(.caption)
+                        .frame(
+                            maxWidth: .infinity,
+                            maxHeight: .infinity,
+                            alignment: .bottomTrailing
+                        )
                 }
-                .padding(.leading, 30)
             }
         }
         .frame(maxWidth: .infinity, minHeight: 200)
         .padding(.vertical)
+    }
+    
+    @ViewBuilder func LargeView() -> some View {
+        HStack {
+            Text("")
+                .overlay { PageOverview() }
+                .frame(width: 150, height: 150)
+                
+            Spacer()
+                
+            VStack(alignment: .trailing) {
+                Group {
+                    Text(page.created, style: .date) +
+                        Text(", ") +
+                        Text(page.created, style: .time)
+                }
+                .multilineTextAlignment(.trailing)
+                .foregroundStyle(Color.primary)
+                .font(.body)
+                .fontWeight(.semibold)
+                    
+                Spacer()
+                    
+                Text(pageNumber())
+                    .foregroundStyle(Color.secondary)
+                    .font(.caption)
+            }
+            .padding(.leading, 30)
+        }
     }
     
     @ViewBuilder func PageOverview() -> some View {
@@ -70,7 +87,7 @@ struct OverviewRow: View {
             .allowsHitTesting(false)
 
             RoundedRectangle(cornerRadius: 9)
-                .stroke(Color.secondary, lineWidth: 2.0)
+                .stroke(Color.accentColor, lineWidth: 1.5)
                 .frame(
                     width: 150,
                     height: (150 / getFrame().width) * getFrame().height

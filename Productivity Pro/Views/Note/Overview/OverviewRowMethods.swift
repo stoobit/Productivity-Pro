@@ -10,19 +10,19 @@ import SwiftUI
 
 extension OverviewRow {
     func pageNumber() -> String {
-//        let index = document.note.pages.firstIndex(of: page) ?? -1
-        return "Seite \(2 + 1)"
+        return "Seite \(page.index + 1)"
     }
     
-    func header() -> String {
-        return page.title
+    func compactPageNumber() -> String {
+        return "\(page.index + 1)"
     }
 
     func openPage() {
-        withAnimation {
-            toolManager.selectedTab = page.id
+        withAnimation(.bouncy) {
+            toolManager.activePage = page
         }
-        subviewManager.overviewSheet.toggle()
+        
+        subviewManager.overview.toggle()
     }
     
     func getFrame() -> CGSize {

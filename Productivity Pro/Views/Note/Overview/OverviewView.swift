@@ -8,39 +8,40 @@
 import SwiftUI
 
 struct OverviewView: View {
-    
-    @Environment(\.horizontalSizeClass) var hsc
-    @Environment(\.undoManager) var undoManager
-//    @Environment(\.colorScheme) var cs
-    
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
-    
-    @Bindable var contentObject: ContentObject
-    
+
+    @State var pages: [PPPageModel]
+    var contentObject: ContentObject
+
+    init(contentObject: ContentObject) {
+        self.contentObject = contentObject
+
+        pages = contentObject.note!.pages!
+            .sorted(by: { $0.index < $1.index })
+    }
+
     var body: some View {
         NavigationStack {
-            ScrollViewReader { proxy in
+            ScrollViewReader { _ in
                 List {
-                    ForEach(contentObject.note?.pages ?? []) { page in
+                    ForEach(pages) { page in
                         OverviewRow(contentObject: contentObject, page: page)
-                        .moveDisabled(contentObject.note?.pages?.count == 1)
-                        .deleteDisabled(contentObject.note?.pages?.count == 1)
-                        .id(page.id)
+                            .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
+                            .moveDisabled(contentObject.note?.pages?.count == 1)
+                            .deleteDisabled(contentObject.note?.pages?.count == 1)
+                            .id(page.id)
                     }
                     .onMove(perform: move)
                     .onDelete(perform: delete)
-
                 }
-                .listStyle(.plain)
             }
             .navigationTitle("Übersicht")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.browser)
-            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Fertig") { 
+                    Button("Fertig") {
                         subviewManager.overview.toggle()
                     }
                     .keyboardShortcut(.return, modifiers: [])
@@ -48,5 +49,4 @@ struct OverviewView: View {
             }
         }
     }
-    
 }
