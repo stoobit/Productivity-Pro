@@ -5,7 +5,6 @@
 - View Updates 
 - Markdown Tutorial
 - PDF Export
-- Print
 - Crash on .pronote?/.pro Import
 
 ## 🗺️ Release 2.1.v

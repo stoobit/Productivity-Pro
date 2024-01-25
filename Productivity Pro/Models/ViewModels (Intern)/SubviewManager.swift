@@ -33,12 +33,5 @@ import Observation
     var sharePDFView: Bool = false
     var shareQRPDFView: Bool = false
     
-    // MARK: - UNCHECKED & OLD
     var printerView: Bool = false
-    
-    var sharePDFSheet: Bool = false
-    
-    var collaborationSheet: Bool = false
-    var overviewSheet: Bool = false
-    
 }

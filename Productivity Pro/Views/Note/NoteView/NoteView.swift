@@ -83,6 +83,7 @@ struct NoteView: View {
                     .padding(10)
                 
                 IndicatorText(contentObject: contentObject)
+                PrinterViewContainer(contentObject: contentObject)
             }
             
         } else {

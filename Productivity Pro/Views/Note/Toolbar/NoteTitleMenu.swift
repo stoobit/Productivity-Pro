@@ -31,7 +31,7 @@ struct NoteTitleMenu: View {
         
         Section {
             Button("Drucken", systemImage: "printer") {
-                
+                subviewManager.printerView.toggle()
             }
         }
     }

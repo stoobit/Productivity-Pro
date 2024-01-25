@@ -38,6 +38,7 @@ struct NoteSecondaryToolbar: ToolbarContent {
             
             Button("Übersicht", systemImage: "square.grid.2x2") { 
                 subviewManager.overview.toggle()
+                toolManager.pencilKit = false
             }
             
             Menu(content: {
