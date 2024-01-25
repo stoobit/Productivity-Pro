@@ -11,6 +11,8 @@ struct SharePDFView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(ToolManager.self) var toolManager
     
+    @State var url: URL?
+    
     var body: some View {
         NavigationStack {
             VStack(spacing: 25) {
@@ -39,25 +41,32 @@ struct SharePDFView: View {
                 }
                 .draggable(Image(systemName: "house"))
                 
-                Text("Buch S. 163/12")
-                    .font(.headline.bold())
+                if let title = toolManager.selectedContentObject?.title {
+                    Text(title)
+                        .font(.headline.bold())
+                }
                 
                 Spacer()
                 
-                Button(action: {}) {
-                    Text("Teilen")
-                        .font(.title2.bold())
-                        .foregroundStyle(.white)
-                        .padding(13)
-                        .padding(.horizontal, 93)
-                        .background {
-                            RoundedRectangle(cornerRadius: 13)
-                                .foregroundStyle(
-                                    Color.accentColor
-                                )
-                        }
+                if let url = url {
+                    ShareLink(item: url) {
+                        Text("Teilen")
+                            .font(.title2.bold())
+                            .foregroundStyle(.white)
+                            .padding(13)
+                            .padding(.horizontal, 93)
+                            .background {
+                                RoundedRectangle(cornerRadius: 13)
+                                    .foregroundStyle(
+                                        Color.accentColor
+                                    )
+                            }
+                    }
+                    .padding(.bottom, 40)
+                } else {
+                    ProgressView()
+                        .padding(.bottom, 40)
                 }
-                .padding(.bottom, 40)
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -68,8 +77,14 @@ struct SharePDFView: View {
             }
         }
         .onAppear {
+           render()
+        }
+    }
+    
+    func render() {
+        DispatchQueue.main.async {
             if let contentObject = toolManager.selectedContentObject {
-                try? PDFManager().exportPDF(from: contentObject)
+                url = try? PDFManager().exportPDF(from: contentObject)
             }
         }
     }

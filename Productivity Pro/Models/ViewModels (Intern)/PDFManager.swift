@@ -5,9 +5,11 @@
 //  Created by Till Brügmann on 24.01.24.
 //
 
+import PDFKit
 import SwiftUI
 
 struct PDFManager {
+    @MainActor
     func exportPDF(from contentObject: ContentObject) throws -> URL {
         var url = URL.documentsDirectory
         url.append(path: "\(contentObject.title).pdf")
@@ -16,35 +18,50 @@ struct PDFManager {
         guard var pages = note.pages else { throw RuntimeError("Pages are empty.") }
         pages.sort(using: SortDescriptor(\.index))
         
-        let renderer = UIGraphicsPDFRenderer()
-      
-        try renderer.writePDF(to: url, withActions: { context in
-            for page in pages {
-                let frame = CGRect(origin: .zero, size: getFrame(page: page))
-                let info: [String: Any] = .init()
-                
-                context.beginPage(withBounds: frame, pageInfo: info)
-                
-                let view = PageView(
-                    note: note,
-                    page: page,
-                    scale: .constant(1),
-                    offset: .constant(.zero),
-                    size: getFrame(page: page)
-                )
-                .environment(ToolManager())
-                .environment(SubviewManager())
-                
-                let hostingController = UIHostingController(rootView: view)
-                hostingController.view.frame = frame
-                
-                guard let uiView = hostingController.view else {
-                    return
-                }
-                
-                uiView.layer.render(in: context.cgContext)
+        guard let pdf = CGContext(url as CFURL, mediaBox: nil, nil) else {
+            return url
+        }
+        
+        for page in pages {
+            var frame = CGRect(origin: .zero, size: getFrame(page: page))
+            pdf.beginPage(mediaBox: &frame)
+            
+            let view = PageView(
+                note: note,
+                page: page,
+                scale: .constant(1),
+                offset: .constant(.zero),
+                size: getFrame(page: page),
+                preloadModels: true,
+                realrenderText: true
+            )
+            .environment(ToolManager())
+            .environment(SubviewManager())
+            
+            let renderer = ImageRenderer(content: view)
+           
+            renderer.render { _, context in
+                context(pdf)
             }
-        })
+           
+            pdf.endPDFPage()
+        }
+        pdf.closePDF()
+        
+//        if url.startAccessingSecurityScopedResource() {
+//            guard let pdfDocument = PDFDocument(url: url) else { return url }
+//            defer { url.stopAccessingSecurityScopedResource() }
+//            
+//            for index in 0 ... pages.count - 1 {
+//                guard let page = pdfDocument.page(at: 0) else { return url }
+//                
+//                let annotation = PDFAnnotation()
+//                annotation.border = PDFBorder()
+//                annotation.border?.lineWidth = 100
+//            }
+//            
+//            pdfDocument.write(to: url)
+//        }
         
         return url
     }

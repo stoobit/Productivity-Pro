@@ -9,8 +9,11 @@ import QRCode
 import SwiftUI
 
 struct ShareQRPDFView: View {
+    @Environment(ToolManager.self) var toolManager
     @Environment(\.dismiss) var dismiss
+    
     @State var result: String = ""
+    @State var url: URL?
     
     var body: some View {
         NavigationStack {
@@ -24,7 +27,14 @@ struct ShareQRPDFView: View {
                 
                 Spacer()
                 
-                ResultView()
+                if let url = url {
+                    ResultView()
+                        .onAppear {
+                            upload(to: url)
+                        }
+                } else {
+                    ProgressView()
+                }
                 
                 Spacer()
             }
@@ -37,7 +47,15 @@ struct ShareQRPDFView: View {
                 }
             }
             .onAppear {
-                upload()
+                render()
+            }
+        }
+    }
+    
+    func render() {
+        DispatchQueue.main.async {
+            if let contentObject = toolManager.selectedContentObject {
+                url = try? PDFManager().exportPDF(from: contentObject)
             }
         }
     }

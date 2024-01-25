@@ -1123,7 +1123,6 @@
 		BB9DF5A828DFA25600AC988D /* Note */ = {
 			isa = PBXGroup;
 			children = (
-				BBFA92472B607E840055CE9D /* ShareMenu.swift */,
 				BB3E9AA72A33AC27006045E1 /* NoteView */,
 				BB26F8A62B31166D00788AA4 /* ClipboardControl */,
 				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
@@ -1451,6 +1450,7 @@
 		BBFA92462B607E750055CE9D /* ShareMenu */ = {
 			isa = PBXGroup;
 			children = (
+				BBFA92472B607E840055CE9D /* ShareMenu.swift */,
 			);
 			path = ShareMenu;
 			sourceTree = "<group>";

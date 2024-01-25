@@ -10,11 +10,11 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 extension ShareQRPDFView {
-    func upload() {
+    func upload(to fileurl: URL) {
         let request: URLRequest
 
         do {
-            request = try createRequest()
+            request = try createRequest(fileurl: fileurl)
         } catch {
             print(error)
             return
@@ -44,7 +44,7 @@ extension ShareQRPDFView {
         task.resume()
     }
 
-    func createRequest() throws -> URLRequest {
+    func createRequest(fileurl: URL) throws -> URLRequest {
         let boundary = generateBoundaryString()
 
         let url = URL(string: "https://tmpfiles.org/api/v1/upload")!
@@ -52,8 +52,9 @@ extension ShareQRPDFView {
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
-        let fileURL = Bundle.main.url(forResource: "pdf", withExtension: "pdf")!
-        request.httpBody = try createBody(filePathKey: "file", urls: [fileURL], boundary: boundary)
+        request.httpBody = try createBody(
+            filePathKey: "file", urls: [fileurl], boundary: boundary
+        )
 
         return request
     }
@@ -69,13 +70,19 @@ extension ShareQRPDFView {
 
         for url in urls {
             let filename = url.lastPathComponent
-            let data = try Data(contentsOf: url)
-
-            body.append("--\(boundary)\r\n")
-            body.append("Content-Disposition: form-data; name=\"\(filePathKey)\"; filename=\"\(filename)\"\r\n")
-            body.append("Content-Type: \(url.mimeType)\r\n\r\n")
-            body.append(data)
-            body.append("\r\n")
+            
+            if url.startAccessingSecurityScopedResource() {
+                let data = try Data(contentsOf: url)
+                defer {
+                    url.stopAccessingSecurityScopedResource()
+                }
+                
+                body.append("--\(boundary)\r\n")
+                body.append("Content-Disposition: form-data; name=\"\(filePathKey)\"; filename=\"\(filename)\"\r\n")
+                body.append("Content-Type: \(url.mimeType)\r\n\r\n")
+                body.append(data)
+                body.append("\r\n")
+            }
         }
 
         body.append("--\(boundary)--\r\n")

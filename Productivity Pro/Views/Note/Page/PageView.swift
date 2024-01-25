@@ -32,10 +32,7 @@ struct PageView: View {
         ZStack {
             ZStack {
                 PageBackgroundView(scale: $scale, page: page)
-                
-                if realrenderText == false {
-                    BackgroundTemplateView(page: page, scale: $scale)
-                }
+                BackgroundTemplateView(page: page, scale: $scale)
                 
                 if page.type == PPPageType.pdf.rawValue {
                     PageBackgroundPDF(page: page, scale: $scale)
@@ -44,21 +41,21 @@ struct PageView: View {
                 }
             }
             .onTapGesture { onBackgroundTap() }
+            .allowsHitTesting(false)
+            
+            PageItemView(
+                note: note,
+                page: page,
+                scale: $scale,
+                realrenderText: realrenderText,
+                preloadModels: preloadModels
+            )
             .allowsHitTesting(toolManager.pencilKit == false)
             
-            if realrenderText == false {
-                PageItemView(
-                    note: note,
-                    page: page,
-                    scale: $scale,
-                    realrenderText: realrenderText,
-                    preloadModels: preloadModels
-                )
-                .allowsHitTesting(toolManager.pencilKit == false)
+            if preloadModels == false {
+                DrawingView(page: page, scale: $scale, size: size)
+                    .allowsHitTesting(toolManager.pencilKit)
             }
-            
-            DrawingView(page: page, scale: $scale, size: size)
-                .allowsHitTesting(toolManager.pencilKit)
             
             SnapItemView(page: page, scale: $scale)
                 .scaleEffect(1 / scale)
