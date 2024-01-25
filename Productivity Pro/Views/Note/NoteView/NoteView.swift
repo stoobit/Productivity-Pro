@@ -50,6 +50,12 @@ struct NoteView: View {
                     .onChange(of: proxy.size) {
                         reader.scrollTo(toolManager.activePage)
                     }
+                    .sheet(isPresented: $subviewValue.overview, content: {
+                        OverviewContainerView(
+                            contentObject: contentObject, 
+                            scrollView: reader
+                        )
+                    })
                     .onAppear {
                         if toolManager.activePage == nil {
                             toolManager.activePage = pages.last

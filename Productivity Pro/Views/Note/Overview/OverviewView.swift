@@ -14,15 +14,21 @@ struct OverviewView: View {
     var contentObject: ContentObject
     var filter: Bool
 
+    var scrollView: ScrollViewProxy
+
     var body: some View {
         ScrollViewReader { _ in
             List {
                 ForEach(pages) { page in
-                    OverviewRow(contentObject: contentObject, page: page)
-                        .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
-                        .moveDisabled(contentObject.note?.pages?.count == 1)
-                        .deleteDisabled(contentObject.note?.pages?.count == 1)
-                        .id(page.id)
+                    OverviewRow(
+                        contentObject: contentObject,
+                        page: page,
+                        scrollView: scrollView
+                    )
+                    .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
+                    .moveDisabled(contentObject.note?.pages?.count == 1)
+                    .deleteDisabled(contentObject.note?.pages?.count == 1)
+                    .id(page.id)
                 }
                 .onMove(perform: move)
                 .onDelete(perform: delete)

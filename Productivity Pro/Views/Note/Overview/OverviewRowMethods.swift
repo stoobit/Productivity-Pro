@@ -18,7 +18,8 @@ extension OverviewRow {
     }
 
     func openPage() {
-        withAnimation(.bouncy) {
+        withAnimation(.smooth) {
+            scrollView.scrollTo(page)
             toolManager.activePage = page
         }
         
