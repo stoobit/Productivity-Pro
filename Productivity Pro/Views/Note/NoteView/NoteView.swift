@@ -21,7 +21,7 @@ struct NoteView: View {
     }
     
     var body: some View {
-        if contentObject.note?.pages != nil {
+        if contentObject.note?.pages != nil && !contentObject.inTrash {
             @Bindable var subviewValue = subviewManager
             @Bindable var toolValue = toolManager
             
