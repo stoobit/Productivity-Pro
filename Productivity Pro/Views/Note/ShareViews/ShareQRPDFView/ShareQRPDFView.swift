@@ -49,6 +49,17 @@ struct ShareQRPDFView: View {
             .onAppear {
                 render()
             }
+            .onDisappear {
+                removeFile()
+            }
+        }
+    }
+    
+    func removeFile() {
+        if let url = url {
+            do {
+                try FileManager.default.removeItem(atPath: url.path)
+            } catch {}
         }
     }
     

@@ -39,7 +39,15 @@ struct SharePDFView: View {
                         .frame(width: 120, height: 165)
                         .clipShape(.rect)
                 }
-                .draggable(Image(systemName: "house"))
+                .onDrag {
+                    if let url = url {
+                        return NSItemProvider(
+                            contentsOf: url, contentType: .pdf
+                        )
+                    } else {
+                        return NSItemProvider()
+                    }
+                }
                 
                 if let title = toolManager.selectedContentObject?.title {
                     Text(title)
@@ -77,7 +85,10 @@ struct SharePDFView: View {
             }
         }
         .onAppear {
-           render()
+            render()
+        }
+        .onDisappear {
+            removeFile()
         }
     }
     
@@ -86,6 +97,14 @@ struct SharePDFView: View {
             if let contentObject = toolManager.selectedContentObject {
                 url = try? PDFManager().exportPDF(from: contentObject)
             }
+        }
+    }
+    
+    func removeFile() {
+        if let url = url {
+            do {
+                try FileManager.default.removeItem(atPath: url.path)
+            } catch {}
         }
     }
 }
