@@ -41,7 +41,7 @@ struct PageView: View {
                 }
             }
             .onTapGesture { onBackgroundTap() }
-            .allowsHitTesting(false)
+            .allowsHitTesting(toolManager.pencilKit == false)
             
             PageItemView(
                 note: note,
