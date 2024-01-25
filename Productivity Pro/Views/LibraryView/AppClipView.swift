@@ -23,7 +23,7 @@ struct AppClipView: View {
                         .padding(.bottom, 5)
                 }
                 
-                Text("Scanne diesen QR Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen.")
+                Text("Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen.")
                     .multilineTextAlignment(.center)
                 
                 Spacer()
