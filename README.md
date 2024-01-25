@@ -7,7 +7,6 @@
 - PDF Export
 - Print
 - Crash on .pronote?/.pro Import
-- Homework Link Crash
 
 ## 🗺️ Release 2.1.v
 - Links 

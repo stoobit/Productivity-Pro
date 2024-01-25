@@ -49,7 +49,9 @@ struct HomeworkItem: View {
                 Image(systemName: "trash")
             }
             
-            Button(action: { showDescription.toggle() }) {
+            Button(action: {
+                showDescription.toggle()
+            }) {
                 Image(systemName: "info.circle")
             }
             .tint(.accentColor)
@@ -66,6 +68,13 @@ struct HomeworkItem: View {
                 isPresented: $showDescription,
                 homework: homework
             )
+        }
+        .onAppear {
+            if let note = homework.note {
+                if contentObjects.contains(note) == false {
+                    homework.note = nil
+                }
+            }
         }
         
     }

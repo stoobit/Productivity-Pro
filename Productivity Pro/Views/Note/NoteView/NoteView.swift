@@ -86,10 +86,15 @@ struct NoteView: View {
             }
             
         } else {
-            ContentUnavailableView(
-                "Ein Fehler ist aufgetreten.",
-                systemImage: "exclamationmark.triangle.fill"
-            )
+            ZStack {
+                Color(UIColor.secondarySystemBackground)
+                    .ignoresSafeArea(.all, edges: [.top, .horizontal])
+                
+                ContentUnavailableView(
+                    "Ein Fehler ist aufgetreten.",
+                    systemImage: "exclamationmark.triangle.fill"
+                )
+            }
         }
     }
 }
