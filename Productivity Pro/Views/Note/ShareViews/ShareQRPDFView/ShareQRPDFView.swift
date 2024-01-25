@@ -5,7 +5,7 @@
 //  Created by Till Brügmann on 24.01.24.
 //
 
-import QRCode
+import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct ShareQRPDFView: View {
@@ -69,34 +69,33 @@ struct ShareQRPDFView: View {
         } else if result == "" {
             ProgressView()
         } else {
-            Image(uiImage: image)
+            Image(uiImage: generateQRCode(from: result))
                 .resizable()
+                .interpolation(.none)
                 .scaledToFit()
-                .frame(width: 200)
+                .frame(width: 190)
         }
     }
     
-    var image: UIImage {
-        let doc = QRCode.Document(
-            utf8String: result
-        )
-
-        let shape = QRCode.Shape()
-        shape.eye = QRCode.EyeShape.Squircle()
-        shape.onPixels = QRCode.PixelShape.RoundedPath(
-            cornerRadiusFraction: 0.8,
-            hasInnerCorners: true
-        )
-
-        doc.design.shape = shape
+    func generateQRCode(from string: String) -> UIImage {
+        let context = CIContext()
+        let filter = CIFilter.qrCodeGenerator()
         
-        doc.design.style.onPixels = QRCode.FillStyle.Solid(UIColor.systemBlue.cgColor)
+        filter.message = Data(string.utf8)
+
+        if let outputImage = filter.outputImage {
             
-        doc.design.style.background = QRCode.FillStyle.clear
+            let maskFilter = CIFilter.blendWithMask()
+            maskFilter.maskImage = outputImage.applyingFilter("CIColorInvert")
+            maskFilter.inputImage = CIImage(color: CIColor(color: .systemBlue))
+            let coloredImage = maskFilter.outputImage!
             
-        return doc.uiImage(
-            CGSize(width: 2000, height: 2000)
-        ) ?? UIImage()
+            if let cgimg = context.createCGImage(coloredImage, from: coloredImage.extent) {
+                return UIImage(cgImage: cgimg)
+            }
+        }
+
+        return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
 }
 

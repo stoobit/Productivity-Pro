@@ -21,23 +21,24 @@ extension ShareQRPDFView {
         }
 
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let data = data, error == nil else {
-                result = "error"
-                return
-            }
+            do {
+                guard let data = data, error == nil else {
+                    result = "error"
+                    return
+                }
 
-            let model = try? JSONDecoder().decode(
-                FetchModel.self, from: data
-            )
+                print("🟢", String(NSString(data: data, encoding: String.Encoding.utf8.rawValue) ?? ""))
 
-            if let url = model?.data.url {
-                var temporary = url
-                temporary.replace(
-                    "https://tmpfiles.org/",
-                    with: "https://tmpfiles.org/dl/"
+                let model = try JSONDecoder().decode(
+                    FetchModel.self, from: data
                 )
-                
+
+                var temporary = model.data.url
+                temporary.replace("https://tmpfiles.org/", with: "https://tmpfiles.org/dl/")
+
                 result = temporary
+            } catch {
+                result = "error"
             }
         }
 
@@ -51,6 +52,8 @@ extension ShareQRPDFView {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+
+        let fileURL = Bundle.main.url(forResource: "test", withExtension: "pdf")!
 
         request.httpBody = try createBody(
             filePathKey: "file", urls: [fileurl], boundary: boundary
@@ -70,19 +73,13 @@ extension ShareQRPDFView {
 
         for url in urls {
             let filename = url.lastPathComponent
-            
-            if url.startAccessingSecurityScopedResource() {
-                let data = try Data(contentsOf: url)
-                defer {
-                    url.stopAccessingSecurityScopedResource()
-                }
-                
-                body.append("--\(boundary)\r\n")
-                body.append("Content-Disposition: form-data; name=\"\(filePathKey)\"; filename=\"\(filename)\"\r\n")
-                body.append("Content-Type: \(url.mimeType)\r\n\r\n")
-                body.append(data)
-                body.append("\r\n")
-            }
+            let data = try Data(contentsOf: url)
+
+            body.append("--\(boundary)\r\n")
+            body.append("Content-Disposition: form-data; name=\"\(filePathKey)\"; filename=\"\(filename)\"\r\n")
+            body.append("Content-Type: \(url.mimeType)\r\n\r\n")
+            body.append(data)
+            body.append("\r\n")
         }
 
         body.append("--\(boundary)--\r\n")

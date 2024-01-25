@@ -152,12 +152,8 @@
 		BB96F5AA2B608DF90044B200 /* OverviewContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5A92B608DF90044B200 /* OverviewContainerView.swift */; };
 		BB96F5AC2B61B4FB0044B200 /* ShareQRPDFMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5AB2B61B4FB0044B200 /* ShareQRPDFMethods.swift */; };
 		BB96F5AF2B61B60F0044B200 /* ShareQRPDFModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5AE2B61B60F0044B200 /* ShareQRPDFModels.swift */; };
-		BB96F5B12B61BB0F0044B200 /* pdf.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB96F5B02B61BB0F0044B200 /* pdf.pdf */; };
+		BB96F5B12B61BB0F0044B200 /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB96F5B02B61BB0F0044B200 /* test.pdf */; };
 		BB96F5B32B61C0460044B200 /* PDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5B22B61C0460044B200 /* PDFManager.swift */; };
-		BB96F5B72B61DFFF0044B200 /* QRCode in Frameworks */ = {isa = PBXBuildFile; productRef = BB96F5B62B61DFFF0044B200 /* QRCode */; };
-		BB96F5B92B61DFFF0044B200 /* QRCodeDetector in Frameworks */ = {isa = PBXBuildFile; productRef = BB96F5B82B61DFFF0044B200 /* QRCodeDetector */; };
-		BB96F5BB2B61DFFF0044B200 /* QRCodeDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BB96F5BA2B61DFFF0044B200 /* QRCodeDynamic */; };
-		BB96F5BD2B61DFFF0044B200 /* QRCodeStatic in Frameworks */ = {isa = PBXBuildFile; productRef = BB96F5BC2B61DFFF0044B200 /* QRCodeStatic */; };
 		BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */; };
 		BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36492ABCD29700721C56 /* Homework.swift */; };
 		BB9A364C2ABCD5D700721C56 /* HomeworkAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A364B2ABCD5D700721C56 /* HomeworkAddView.swift */; };
@@ -464,7 +460,7 @@
 		BB96F5A92B608DF90044B200 /* OverviewContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewContainerView.swift; sourceTree = "<group>"; };
 		BB96F5AB2B61B4FB0044B200 /* ShareQRPDFMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareQRPDFMethods.swift; sourceTree = "<group>"; };
 		BB96F5AE2B61B60F0044B200 /* ShareQRPDFModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareQRPDFModels.swift; sourceTree = "<group>"; };
-		BB96F5B02B61BB0F0044B200 /* pdf.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = pdf.pdf; sourceTree = "<group>"; };
+		BB96F5B02B61BB0F0044B200 /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
 		BB96F5B22B61C0460044B200 /* PDFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFManager.swift; sourceTree = "<group>"; };
 		BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkList.swift; sourceTree = "<group>"; };
 		BB9A36492ABCD29700721C56 /* Homework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
@@ -575,15 +571,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB96F5B72B61DFFF0044B200 /* QRCode in Frameworks */,
 				BB7468902AF5B90C0029F60D /* PPAnglePicker in Frameworks */,
 				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
 				BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
-				BB96F5BB2B61DFFF0044B200 /* QRCodeDynamic in Frameworks */,
 				BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */,
-				BB96F5B92B61DFFF0044B200 /* QRCodeDetector in Frameworks */,
-				BB96F5BD2B61DFFF0044B200 /* QRCodeStatic in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -772,7 +764,7 @@
 				BB1DDA28296715590038FE16 /* Resources */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
 				BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */,
-				BB96F5B02B61BB0F0044B200 /* pdf.pdf */,
+				BB96F5B02B61BB0F0044B200 /* test.pdf */,
 			);
 			path = "Productivity Pro";
 			sourceTree = "<group>";
@@ -1480,10 +1472,6 @@
 				BB74688F2AF5B90C0029F60D /* PPAnglePicker */,
 				BBE993BF2AF850A800330733 /* PPDoubleKeyboard */,
 				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
-				BB96F5B62B61DFFF0044B200 /* QRCode */,
-				BB96F5B82B61DFFF0044B200 /* QRCodeDetector */,
-				BB96F5BA2B61DFFF0044B200 /* QRCodeDynamic */,
-				BB96F5BC2B61DFFF0044B200 /* QRCodeStatic */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1541,7 +1529,6 @@
 				BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
 				BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */,
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
-				BB96F5B52B61DFFF0044B200 /* XCRemoteSwiftPackageReference "QRCode" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1560,7 +1547,7 @@
 			files = (
 				BB4A93C92AAEFDCC00C3AED6 /* Pacifico-Regular.ttf in Resources */,
 				BB35A1BA2B290A3B001A3F4C /* latinvoc.json in Resources */,
-				BB96F5B12B61BB0F0044B200 /* pdf.pdf in Resources */,
+				BB96F5B12B61BB0F0044B200 /* test.pdf in Resources */,
 				BB9C63B62B5AFE2A0022AC4F /* README.md in Resources */,
 				BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */,
 				BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */,
@@ -2197,14 +2184,6 @@
 				minimumVersion = 1.2.0;
 			};
 		};
-		BB96F5B52B61DFFF0044B200 /* XCRemoteSwiftPackageReference "QRCode" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dagronf/QRCode";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 17.0.0;
-			};
-		};
 		BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
@@ -2240,26 +2219,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */;
 			productName = PPAnglePicker;
-		};
-		BB96F5B62B61DFFF0044B200 /* QRCode */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB96F5B52B61DFFF0044B200 /* XCRemoteSwiftPackageReference "QRCode" */;
-			productName = QRCode;
-		};
-		BB96F5B82B61DFFF0044B200 /* QRCodeDetector */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB96F5B52B61DFFF0044B200 /* XCRemoteSwiftPackageReference "QRCode" */;
-			productName = QRCodeDetector;
-		};
-		BB96F5BA2B61DFFF0044B200 /* QRCodeDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB96F5B52B61DFFF0044B200 /* XCRemoteSwiftPackageReference "QRCode" */;
-			productName = QRCodeDynamic;
-		};
-		BB96F5BC2B61DFFF0044B200 /* QRCodeStatic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB96F5B52B61DFFF0044B200 /* XCRemoteSwiftPackageReference "QRCode" */;
-			productName = QRCodeStatic;
 		};
 		BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;

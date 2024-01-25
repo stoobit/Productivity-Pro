@@ -8,7 +8,7 @@
 import Foundation
 
 struct FetchModel: Codable {
-    let status: String
+    let status: String?
     let data: FetchContent
 }
 
