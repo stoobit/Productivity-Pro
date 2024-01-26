@@ -83,7 +83,7 @@
 		BB5A231F2B476D9F00F1D1B6 /* Productivity_PreviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5A231E2B476D9F00F1D1B6 /* Productivity_PreviewApp.swift */; };
 		BB5A23232B476DA000F1D1B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB5A23222B476DA000F1D1B6 /* Assets.xcassets */; };
 		BB5A23262B476DA000F1D1B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB5A23252B476DA000F1D1B6 /* Preview Assets.xcassets */; };
-		BB5A232B2B476DA000F1D1B6 /* Productivity Preview.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = BB5A231C2B476D9F00F1D1B6 /* Productivity Preview.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BB5A232B2B476DA000F1D1B6 /* Productivity Preview.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = BB5A231C2B476D9F00F1D1B6 /* Productivity Preview.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BB5A23362B476E0200F1D1B6 /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB5DB6CD2B482BDC000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
 		BB5DB6CE2B482C1C000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
@@ -1839,6 +1839,7 @@
 /* Begin PBXTargetDependency section */
 		BB5A232A2B476DA000F1D1B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = BB5A231B2B476D9F00F1D1B6 /* Productivity Preview */;
 			targetProxy = BB5A23292B476DA000F1D1B6 /* PBXContainerItemProxy */;
 		};

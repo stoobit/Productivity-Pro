@@ -38,9 +38,17 @@ struct PageView: View {
                 }
                 
                 if page.type == PPPageType.pdf.rawValue {
-                    PageBackgroundPDF(page: page, scale: $scale)
+                    PageBackgroundPDF(
+                        page: page,
+                        scale: $scale,
+                        preloadModels: preloadModels
+                    )
                 } else if page.type == PPPageType.image.rawValue {
-                    PageBackgroundScan(page: page, scale: $scale)
+                    PageBackgroundScan(
+                        page: page,
+                        scale: $scale,
+                        preloadModels: preloadModels
+                    )
                 }
             }
             .onTapGesture { onBackgroundTap() }

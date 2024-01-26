@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 28.03.23.
 //
 
-import SwiftUI
 import PDFKit
+import SwiftUI
 
 struct PageBackgroundPDF: View {
     var page: PPPageModel
@@ -14,25 +14,43 @@ struct PageBackgroundPDF: View {
     @State var loadedPDF: PDFDocument?
     @Binding var scale: CGFloat
     
+    var preloadModels: Bool
+    
     var body: some View {
-        ZStack {
-            if let pdf = loadedPDF {
-                PDFKitView(pdfDocument: pdf, size: getFrame())
-                    .frame(
-                        width: getFrame().width,
-                        height: getFrame().height
-                    )
+        if preloadModels {
+            PDFView(document: preload())
+        } else {
+            ZStack {
+                PDFView(document: loadedPDF)
             }
-        }
-        .allowsHitTesting(false)
-        .onAppear {
-            if loadedPDF == nil {
-                DispatchQueue.global(qos: .userInteractive).async {
-                    if let media = page.media {
-                        loadedPDF = PDFDocument(data: media)
+            .onAppear {
+                if loadedPDF == nil {
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        if let media = page.media {
+                            loadedPDF = PDFDocument(data: media)
+                        }
                     }
                 }
             }
+        }
+    }
+    
+    func preload() -> PDFDocument? {
+        if let media = page.media {
+            return PDFDocument(data: media)
+        }
+        
+        return nil
+    }
+    
+    @ViewBuilder func PDFView(document: PDFDocument?) -> some View {
+        if let pdf = document {
+            PDFKitView(pdfDocument: pdf, size: getFrame())
+                .allowsHitTesting(false)
+                .frame(
+                    width: getFrame().width,
+                    height: getFrame().height
+                )
         }
     }
     
@@ -50,7 +68,6 @@ struct PageBackgroundPDF: View {
 }
 
 struct PDFKitView: UIViewRepresentable {
-    
     var pdfDocument: PDFDocument
     var size: CGSize
     

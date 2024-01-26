@@ -13,9 +13,26 @@ struct PageBackgroundScan: View {
     @Binding var scale: CGFloat
     @State var renderedBackground: UIImage?
     
+    var preloadModels: Bool
+    
     var body: some View {
+        if preloadModels {
+            ImageView(image: image())
+        } else {
+            ImageView(image: renderedBackground)
+                .onAppear {
+                    if renderedBackground == nil {
+                        DispatchQueue.global(qos: .userInteractive).async {
+                            render()
+                        }
+                    }
+                }
+        }
+    }
+    
+    @ViewBuilder func ImageView(image: UIImage?) -> some View {
         ZStack {
-            if let rendering = renderedBackground {
+            if let rendering = image {
                 Image(uiImage: rendering)
                     .resizable()
                     .scaledToFit()
@@ -23,18 +40,18 @@ struct PageBackgroundScan: View {
                         width: scale * getFrame().width,
                         height: scale * getFrame().height
                     )
-                    .scaleEffect(1/scale)
-                
+                    .scaleEffect(1 / scale)
             }
         }
         .allowsHitTesting(false)
-        .onAppear {
-            if renderedBackground == nil {
-                DispatchQueue.global(qos: .userInteractive).async {
-                    render()
-                }
-            }
-        }
+    }
+    
+    func image() -> UIImage? {
+        guard let media = page.media else { return nil }
+        let image = UIImage(data: media) ?? UIImage()
+        let resized = resize(image, to: getFrame())
+        
+        return resized
     }
     
     func getFrame() -> CGSize {
