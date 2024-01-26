@@ -56,24 +56,26 @@ struct SharePDFView: View {
                 
                 Spacer()
                 
-                if let url = url {
-                    ShareLink(item: url) {
-                        Text("Teilen")
-                            .font(.title2.bold())
-                            .foregroundStyle(.white)
-                            .padding(13)
-                            .padding(.horizontal, 93)
-                            .background {
-                                RoundedRectangle(cornerRadius: 13)
-                                    .foregroundStyle(
-                                        Color.accentColor
-                                    )
-                            }
+                ShareLink(item: url ?? .documentsDirectory) {
+                    Text("Teilen")
+                        .font(.title2.bold())
+                        .foregroundStyle(.white)
+                        .padding(13)
+                        .padding(.horizontal, 93)
+                        .background {
+                            RoundedRectangle(cornerRadius: 13)
+                                .foregroundStyle(
+                                    Color.accentColor
+                                )
+                        }
+                }
+                .padding(.bottom, 40)
+                .opacity(url == nil ? 0 : 1)
+                .allowsHitTesting(url != nil)
+                .overlay {
+                    if url == nil {
+                        ProgressView()
                     }
-                    .padding(.bottom, 40)
-                } else {
-                    ProgressView()
-                        .padding(.bottom, 40)
                 }
             }
             .toolbar {

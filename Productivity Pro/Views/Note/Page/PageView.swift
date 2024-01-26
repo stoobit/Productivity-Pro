@@ -32,7 +32,10 @@ struct PageView: View {
         ZStack {
             ZStack {
                 PageBackgroundView(scale: $scale, page: page)
-                BackgroundTemplateView(page: page, scale: $scale)
+                
+                if preloadModels == false {
+                    BackgroundTemplateView(page: page, scale: $scale)
+                }
                 
                 if page.type == PPPageType.pdf.rawValue {
                     PageBackgroundPDF(page: page, scale: $scale)

@@ -6,6 +6,7 @@
 //
 
 import PDFKit
+import PencilKit
 import SwiftUI
 
 struct PDFManager {
@@ -26,15 +27,25 @@ struct PDFManager {
             var frame = CGRect(origin: .zero, size: getFrame(page: page))
             pdf.beginPage(mediaBox: &frame)
             
-            let view = PageView(
-                note: note,
-                page: page,
-                scale: .constant(1),
-                offset: .constant(.zero),
-                size: getFrame(page: page),
-                preloadModels: true,
-                realrenderText: true
-            )
+            let view = ZStack {
+                PageView(
+                    note: note,
+                    page: page,
+                    scale: .constant(1),
+                    offset: .constant(.zero),
+                    size: getFrame(page: page),
+                    preloadModels: true,
+                    realrenderText: true
+                )
+                
+                Image(uiImage: renderCanvas(page: page))
+                    .resizable()
+                    .scaledToFit()
+                    .frame(
+                        width: getFrame(page: page).width,
+                        height: getFrame(page: page).height
+                    )
+            }
             .environment(ToolManager())
             .environment(SubviewManager())
             
@@ -46,113 +57,25 @@ struct PDFManager {
            
             pdf.endPDFPage()
         }
+        
         pdf.closePDF()
-        
-//        if url.startAccessingSecurityScopedResource() {
-//            guard let pdfDocument = PDFDocument(url: url) else { return url }
-//            defer { url.stopAccessingSecurityScopedResource() }
-//            
-//            for index in 0 ... pages.count - 1 {
-//                guard let page = pdfDocument.page(at: 0) else { return url }
-//                
-//                let annotation = PDFAnnotation()
-//                annotation.border = PDFBorder()
-//                annotation.border?.lineWidth = 100
-//            }
-//            
-//            pdfDocument.write(to: url)
-//        }
-        
         return url
     }
     
-//    @MainActor func renderPDF() -> URL {
-//        let name: String = URL.desktopDirectory.deletingPathExtension().lastPathComponent
-//
-//        let url = URL.documentsDirectory.appending(
-//            path: "\(name).pdf"
-//        )
-//
-//        guard let pdf = CGContext(url as CFURL, mediaBox: nil, nil) else {
-//            return url
-//        }
-//
-//        let tm = ToolManager()
-//        tm.scrollOffset = CGPoint(x: 0, y: 0)
-//
-    ////        for page in document.note.pages {
-    ////
-    ////            let renderedCanvas = renderCanvas(page: page)
-    ////            var box = CGRect(
-    ////                x: 0,
-    ////                y: 0,
-    ////                width: getFrame(page: page).width,
-    ////                height: getFrame(page: page).height
-    ////            )
-    ////
-    ////            pdf.beginPage(mediaBox: &box)
-    ////
-    ////            var view: some View {
-    ////                ZStack {
-    ////
-    ////                    PageView(
-    ////                        document: $document,
-    ////                        page: .constant(page),
-    ////                        offset: .constant(0),
-    ////                        toolManager: tm,
-    ////                        subviewManager: subviewManager,
-    ////                        drawingModel: PPDrawingModel(),
-    ////                        pdfRendering: true,
-    ////                        highRes: true,
-    ////                        size: getFrame(page: page)
-    ////                    )
-    ////
-    ////                    Image(uiImage: renderedCanvas)
-    ////                        .resizable()
-    ////                        .scaledToFit()
-    ////                        .frame(
-    ////                            width: getFrame(page: page).width,
-    ////                            height: getFrame(page: page).height
-    ////                        )
-    ////
-    ////                }
-    ////                .frame(
-    ////                    width: getFrame(page: page).width,
-    ////                    height: getFrame(page: page).height
-    ////                )
-    ////            }
-    ////
-    ////            let renderer = ImageRenderer(content: view)
-    ////
-    ////            renderer.render { size, context in
-    ////                context(pdf)
-    ////            }
-    ////
-    ////            pdf.endPDFPage()
-    ////
-    ////        }
-//
-//        pdf.closePDF()
-//
-//        return url
-//    }
-    
-    func renderCanvas(page: Page) -> UIImage {
+    func renderCanvas(page: PPPageModel) -> UIImage {
         var image = UIImage()
-//
-//        UITraitCollection(
-//            userInterfaceStyle: colorScheme(page: page)
-//        ).performAsCurrent {
-//            try? image = PKDrawing(data: page.canvas).image(
-//                from: CGRect(
-//                    x: 0,
-//                    y: 0,
-//                    width: getFrame(page: page).width,
-//                    height: getFrame(page: page).height
-//                ),
-//                scale: 70
-//            )
-//        }
+        
+        UITraitCollection(userInterfaceStyle: colorScheme(page: page)).performAsCurrent {
+            try? image = PKDrawing(data: page.canvas).image(
+                from: CGRect(
+                    x: 0,
+                    y: 0,
+                    width: getFrame(page: page).width,
+                    height: getFrame(page: page).height
+                ),
+                scale: 5
+            )
+        }
         
         return image
     }
@@ -169,10 +92,10 @@ struct PDFManager {
         return frame
     }
     
-    private func colorScheme(page: Page) -> UIUserInterfaceStyle {
+    private func colorScheme(page: PPPageModel) -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if page.backgroundColor == "pagewhite" || page.backgroundColor == "white" || page.backgroundColor == "pageyellow" || page.backgroundColor == "yellow" {
+        if page.color == "pagewhite" || page.color == "white" || page.color == "pageyellow" || page.color == "yellow" {
             cs = .light
         }
         
