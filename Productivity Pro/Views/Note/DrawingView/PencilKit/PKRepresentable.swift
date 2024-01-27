@@ -20,8 +20,6 @@ struct PKRepresentable: UIViewRepresentable {
     @Binding var drawingChanged: Bool
     @Binding var strokeCount: Int
     
-    let size: CGSize
-    
     func makeUIView(context: Context) -> PKCanvasView {
         Task { @MainActor in
             canvasView.delegate = context.coordinator

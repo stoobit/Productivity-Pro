@@ -33,7 +33,6 @@ struct PDFManager {
                     page: page,
                     scale: .constant(1),
                     offset: .constant(.zero),
-                    size: getFrame(page: page),
                     preloadModels: true,
                     realrenderText: true
                 )
@@ -57,8 +56,10 @@ struct PDFManager {
            
             pdf.endPDFPage()
         }
-        
         pdf.closePDF()
+        
+       
+        
         return url
     }
     

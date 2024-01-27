@@ -14,33 +14,19 @@ struct PageBackgroundPDF: View {
     @State var loadedPDF: PDFDocument?
     @Binding var scale: CGFloat
     
-    var preloadModels: Bool
-    
     var body: some View {
-        if preloadModels {
-            PDFView(document: preload())
-        } else {
-            ZStack {
-                PDFView(document: loadedPDF)
-            }
-            .onAppear {
-                if loadedPDF == nil {
-                    DispatchQueue.global(qos: .userInteractive).async {
-                        if let media = page.media {
-                            loadedPDF = PDFDocument(data: media)
-                        }
+        ZStack {
+            PDFView(document: loadedPDF)
+        }
+        .onAppear {
+            if loadedPDF == nil {
+                DispatchQueue.global(qos: .userInteractive).async {
+                    if let media = page.media {
+                        loadedPDF = PDFDocument(data: media)
                     }
                 }
             }
         }
-    }
-    
-    func preload() -> PDFDocument? {
-        if let media = page.media {
-            return PDFDocument(data: media)
-        }
-        
-        return nil
     }
     
     @ViewBuilder func PDFView(document: PDFDocument?) -> some View {

@@ -18,8 +18,6 @@ struct DrawingView: View {
     @Bindable var page: PPPageModel
     @Binding var scale: CGFloat
     
-    let size: CGSize
-    
     @State var pkCanvasView: PKCanvasView = .init()
     @State var pkToolPicker = PKToolPicker()
     @State var drawingChanged: Bool = false
@@ -32,8 +30,7 @@ struct DrawingView: View {
             canvasView: $pkCanvasView,
             toolPicker: $pkToolPicker,
             drawingChanged: $drawingChanged,
-            strokeCount: $strokeCount,
-            size: size
+            strokeCount: $strokeCount
         )
         .zIndex(Double(page.items!.count + 10))
         .onChange(of: drawingChanged) { _, value in

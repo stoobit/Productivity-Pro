@@ -23,8 +23,6 @@ struct PageView: View {
     @Binding var scale: CGFloat
     @Binding var offset: CGPoint
     
-    let size: CGSize
-    
     var preloadModels: Bool = false
     var realrenderText: Bool = false
     
@@ -37,11 +35,10 @@ struct PageView: View {
                     BackgroundTemplateView(page: page, scale: $scale)
                 }
                 
-                if page.type == PPPageType.pdf.rawValue {
+                if page.type == PPPageType.pdf.rawValue && !preloadModels {
                     PageBackgroundPDF(
                         page: page,
-                        scale: $scale,
-                        preloadModels: preloadModels
+                        scale: $scale
                     )
                 } else if page.type == PPPageType.image.rawValue {
                     PageBackgroundScan(
@@ -64,7 +61,7 @@ struct PageView: View {
             .allowsHitTesting(toolManager.pencilKit == false)
             
             if preloadModels == false {
-                DrawingView(page: page, scale: $scale, size: size)
+                DrawingView(page: page, scale: $scale)
                     .allowsHitTesting(toolManager.pencilKit)
             }
             

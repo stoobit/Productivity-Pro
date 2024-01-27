@@ -98,7 +98,6 @@ struct OverviewRow: View {
                 page: page,
                 scale: .constant(1),
                 offset: .constant(.zero),
-                size: .zero,
                 realrenderText: true
             )
             .scaleEffect(150 / getFrame().width)

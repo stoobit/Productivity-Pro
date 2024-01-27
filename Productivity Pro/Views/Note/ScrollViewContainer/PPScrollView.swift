@@ -12,9 +12,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    var note: PPNoteModel
-    var page: PPPageModel
-    var size: CGSize
+    var isPortrait: Bool
     
     @Binding var scale: CGFloat
     @Binding var offset: CGPoint
@@ -23,58 +21,39 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     
     func makeUIView(context: Context) -> UIScrollView {
         let scrollView = UIScrollView()
+        
         scrollView.delegate = context.coordinator
-        
-        scrollView.minimumZoomScale = 1
+        scrollView.minimumZoomScale = 0.4
         scrollView.maximumZoomScale = 3
-        
         scrollView.bouncesZoom = false
         scrollView.isScrollEnabled = true
-        
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         
-        let hostedView = context.coordinator.hostingController.view!
-        hostedView.frame = CGRect(
-            x: 0,
-            y: 0,
-            width: getFrame().width,
-            height: getFrame().height
-        )
-        
+        let controller = context.coordinator.hostingController
+        let hostedView = controller.view!
+        hostedView.frame = CGRect(origin: .zero, size: getFrame())
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
+        scrollView.setZoomScale(scrollView.minimumZoomScale, animated: false)
         
-        scrollView.setZoomScale(getScale(), animated: false)
-        
-        Task { @MainActor in
-            scale = scrollView.zoomScale
-        }
-        
+        Task { @MainActor in scale = scrollView.zoomScale }
         return scrollView
     }
     
     func updateUIView(_ uiView: UIScrollView, context: Context) {
-        if uiView.minimumZoomScale != getScale() {
-            uiView.minimumZoomScale = getScale()
-            
-            if getScale() > uiView.zoomScale {
-                uiView.setZoomScale(getScale(), animated: true)
-            }
-        }
+        let subView = uiView.subviews[0]
+
+        let deltaWidth = uiView.bounds.size.width - uiView.contentSize.width
+        let offsetX = CGFloat(max(deltaWidth * 0.5, 0.0))
         
-        if uiView.maximumZoomScale != 2.2 {
-            uiView.maximumZoomScale = 2.2
-            uiView.setZoomScale(getScale(), animated: true)
-        }
-        
-        if toolManager.isLocked {
-            uiView.isScrollEnabled = false
-            uiView.pinchGestureRecognizer?.isEnabled = false
-        } else {
-            uiView.isScrollEnabled = true
-            uiView.pinchGestureRecognizer?.isEnabled = true
-        }
+        let deltaHeight = uiView.bounds.size.height - uiView.contentSize.height
+        let offsetY = CGFloat(max(deltaHeight * 0.5, 0.0))
+
+        subView.center = CGPoint(
+            x: uiView.contentSize.width * 0.5 + offsetX,
+            y: uiView.contentSize.height * 0.5 + offsetY
+        )
         
         context.coordinator.hostingController.rootView = content()
         assert(context.coordinator.hostingController.view.superview == uiView)
@@ -84,48 +63,54 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         @Bindable var toolValue = toolManager
         
         return Coordinator(
-            hostingController: UIHostingController(
-                rootView: content()
-            ),
+            hostingController: UIHostingController(rootView: content()),
             scale: $scale,
             offset: $offset,
             editorVisible: $toolValue.editorVisible,
-            frameVisible: $toolValue.frameVisible,
-            toolManager: toolValue
+            frameVisible: $toolValue.frameVisible
         )
     }
     
     @MainActor
     final class Coordinator: NSObject, UIScrollViewDelegate {
-        var toolManager: ToolManager
         var hostingController: UIHostingController<Content>
         
         @Binding var scale: CGFloat
         @Binding var offset: CGPoint
-        
         @Binding var editorVisible: Bool
         @Binding var frameVisible: Bool
         
         init(
             hostingController: UIHostingController<Content>,
-            scale: Binding<CGFloat>,
-            offset: Binding<CGPoint>,
-            editorVisible: Binding<Bool>,
-            frameVisible: Binding<Bool>,
-            toolManager: ToolManager
+            scale: Binding<CGFloat>, offset: Binding<CGPoint>,
+            editorVisible: Binding<Bool>, frameVisible: Binding<Bool>
         ) {
             self.hostingController = hostingController
             _scale = scale
             _offset = offset
             _editorVisible = editorVisible
             _frameVisible = frameVisible
-            self.toolManager = toolManager
         }
         
+        func scrollViewDidZoom(_ scrollView: UIScrollView) {
+            let subView = scrollView.subviews[0]
+
+            let deltaWidth = scrollView.bounds.size.width - scrollView.contentSize.width
+            let offsetX = CGFloat(max(deltaWidth * 0.5, 0.0))
+            
+            let deltaHeight = scrollView.bounds.size.height - scrollView.contentSize.height
+            let offsetY = CGFloat(max(deltaHeight * 0.5, 0.0))
+
+            subView.center = CGPoint(
+                x: scrollView.contentSize.width * 0.5 + offsetX,
+                y: scrollView.contentSize.height * 0.5 + offsetY
+            )
+        }
+
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {
             return hostingController.view
         }
-        
+
         func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
             Task { @MainActor in
                 editorVisible = false
@@ -140,9 +125,6 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
                 self.scale = scrollView.zoomScale
                 self.offset = scrollView.contentOffset
                 
-                toolManager.scale = scrollView.zoomScale
-                toolManager.offset = scrollView.contentOffset
-                
                 editorVisible = true
                 frameVisible = true
             }
@@ -152,54 +134,28 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             _ scrollView: UIScrollView, willDecelerate decelerate: Bool
         ) {
             Task { @MainActor in
-                if decelerate == false {
-                    offset = scrollView.contentOffset
-                    
-                    toolManager.scale = scrollView.zoomScale
-                    toolManager.offset = scrollView.contentOffset
-                }
+                offset = scrollView.contentOffset
             }
         }
         
         func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
             Task { @MainActor in
                 offset = scrollView.contentOffset
-                
-                toolManager.scale = scrollView.zoomScale
-                toolManager.offset = scrollView.contentOffset
             }
         }
 
         func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
             Task { @MainActor in
                 offset = scrollView.contentOffset
-                
-                toolManager.scale = scrollView.zoomScale
-                toolManager.offset = scrollView.contentOffset
             }
         }
-    }
-    
-    func getScale() -> CGFloat {
-        var scale: CGFloat = 0
-        
-        if page.isPortrait {
-            scale = size.width / shortSide
-        } else {
-            scale = size.width / longSide
-        }
-        
-        return scale
     }
     
     func getFrame() -> CGSize {
         var frame: CGSize = .zero
         
-        if page.isPortrait {
-            frame = CGSize(
-                width: shortSide,
-                height: longSide
-            )
+        if isPortrait {
+            frame = CGSize(width: shortSide, height: longSide)
         } else {
             frame = CGSize(width: longSide, height: shortSide)
         }

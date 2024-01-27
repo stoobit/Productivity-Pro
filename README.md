@@ -6,6 +6,7 @@
 - Markdown Tutorial
 - PDF Export
 - Crash on .pronote?/.pro Import
+- scrollview
 
 ## 🗺️ Release 2.1.v
 - Links 

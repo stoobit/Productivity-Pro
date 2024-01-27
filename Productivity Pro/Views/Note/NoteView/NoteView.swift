@@ -31,7 +31,7 @@ struct NoteView: View {
                         LazyHStack(spacing: 0) {
                             ForEach(pages) { page in
                                 ScrollViewContainer(
-                                    note: contentObject.note!,
+                                    note: contentObject.note!, 
                                     page: page,
                                     size: proxy.size
                                 )
@@ -47,6 +47,9 @@ struct NoteView: View {
                     .scrollTargetBehavior(.paging)
                     .scrollPosition(id: $toolValue.activePage)
                     .noteViewModifier(with: contentObject, reader: reader)
+                    .onChange(of: proxy.size) {
+                        reader.scrollTo(toolManager.activePage)
+                    }
                     .onChange(of: proxy.size) {
                         reader.scrollTo(toolManager.activePage)
                     }
