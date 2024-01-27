@@ -14,6 +14,8 @@ struct PremiumView: View {
     @Environment(StoreVM.self) var storeVM
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     
+    @State var load: Bool = false
+    
     var body: some View {
         NavigationStack {
             if let product = storeVM.subscriptions.first {
@@ -55,8 +57,15 @@ struct PremiumView: View {
                                 RoundedRectangle(cornerRadius: 13)
                                     .foregroundStyle(Color.accentColor)
                             }
+                            .opacity(load ? 0 : 1)
+                            .overlay {
+                                if load {
+                                    ProgressView()
+                                }
+                            }
                     }
                     .padding(.bottom, 10)
+                    .allowsTightening(load == false)
                 }
                 .padding()
                 .navigationBarTitleDisplayMode(.inline)
