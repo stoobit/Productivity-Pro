@@ -53,8 +53,6 @@ extension ShareQRPDFView {
         request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
-        let fileURL = Bundle.main.url(forResource: "test", withExtension: "pdf")!
-
         request.httpBody = try createBody(
             filePathKey: "file", urls: [fileurl], boundary: boundary
         )
