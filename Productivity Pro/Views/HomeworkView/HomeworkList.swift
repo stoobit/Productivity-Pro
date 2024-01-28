@@ -53,11 +53,8 @@ struct HomeworkList: View {
             )
         })
         .onAppear {
-            let cal = Calendar.current
             for homework in homeworkTasks {
-                if cal.numberOfDaysBetween(
-                    homework.date, and: Date()
-                ) == -1 {
+                if Calendar.current.isDateInYesterday(homework.date) {
                     context.delete(homework)
                 }
             }
