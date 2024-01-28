@@ -13,6 +13,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     @Environment(SubviewManager.self) var subviewManager
     
     var isPortrait: Bool
+    var size: CGSize
     
     @Binding var scale: CGFloat
     @Binding var offset: CGPoint
@@ -23,8 +24,8 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         let scrollView = UIScrollView()
         
         scrollView.delegate = context.coordinator
-        scrollView.minimumZoomScale = 0.4
-        scrollView.maximumZoomScale = 3
+        scrollView.minimumZoomScale = getScale()
+        scrollView.maximumZoomScale = 2.3
         scrollView.bouncesZoom = false
         scrollView.isScrollEnabled = true
         scrollView.showsVerticalScrollIndicator = false
@@ -35,28 +36,24 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         hostedView.frame = CGRect(origin: .zero, size: getFrame())
         hostedView.backgroundColor = .secondarySystemBackground
         scrollView.addSubview(hostedView)
-        scrollView.setZoomScale(scrollView.minimumZoomScale, animated: false)
+        scrollView.setZoomScale(getScale(), animated: false)
         
         Task { @MainActor in scale = scrollView.zoomScale }
         return scrollView
     }
     
     func updateUIView(_ uiView: UIScrollView, context: Context) {
-        let subView = uiView.subviews[0]
-
-        let deltaWidth = uiView.bounds.size.width - uiView.contentSize.width
-        let offsetX = CGFloat(max(deltaWidth * 0.5, 0.0))
-        
-        let deltaHeight = uiView.bounds.size.height - uiView.contentSize.height
-        let offsetY = CGFloat(max(deltaHeight * 0.5, 0.0))
-
-        subView.center = CGPoint(
-            x: uiView.contentSize.width * 0.5 + offsetX,
-            y: uiView.contentSize.height * 0.5 + offsetY
-        )
-        
         context.coordinator.hostingController.rootView = content()
         assert(context.coordinator.hostingController.view.superview == uiView)
+        
+        if uiView.minimumZoomScale != getScale() {
+            uiView.minimumZoomScale = getScale()
+            
+            if uiView.zoomScale < uiView.minimumZoomScale {
+                uiView.setZoomScale(getScale(), animated: true)
+                uiView.setContentOffset(.zero, animated: true)
+            }
+        }
     }
     
     func makeCoordinator() -> Coordinator {
@@ -64,6 +61,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         
         return Coordinator(
             hostingController: UIHostingController(rootView: content()),
+            fitting: getScale(),
             scale: $scale,
             offset: $offset,
             editorVisible: $toolValue.editorVisible,
@@ -74,6 +72,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     @MainActor
     final class Coordinator: NSObject, UIScrollViewDelegate {
         var hostingController: UIHostingController<Content>
+        var fitting: CGFloat
         
         @Binding var scale: CGFloat
         @Binding var offset: CGPoint
@@ -82,10 +81,12 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         
         init(
             hostingController: UIHostingController<Content>,
+            fitting: CGFloat,
             scale: Binding<CGFloat>, offset: Binding<CGPoint>,
             editorVisible: Binding<Bool>, frameVisible: Binding<Bool>
         ) {
             self.hostingController = hostingController
+            self.fitting = fitting
             _scale = scale
             _offset = offset
             _editorVisible = editorVisible
@@ -93,18 +94,20 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         }
         
         func scrollViewDidZoom(_ scrollView: UIScrollView) {
-            let subView = scrollView.subviews[0]
-
-            let deltaWidth = scrollView.bounds.size.width - scrollView.contentSize.width
-            let offsetX = CGFloat(max(deltaWidth * 0.5, 0.0))
-            
-            let deltaHeight = scrollView.bounds.size.height - scrollView.contentSize.height
-            let offsetY = CGFloat(max(deltaHeight * 0.5, 0.0))
-
-            subView.center = CGPoint(
-                x: scrollView.contentSize.width * 0.5 + offsetX,
-                y: scrollView.contentSize.height * 0.5 + offsetY
-            )
+            if scrollView.zoomScale < fitting {
+                let subView = scrollView.subviews[0]
+                
+                let deltaWidth = scrollView.bounds.size.width - scrollView.contentSize.width
+                let offsetX = CGFloat(max(deltaWidth * 0.5, 0.0))
+                
+                let deltaHeight = scrollView.bounds.size.height - scrollView.contentSize.height
+                let offsetY = CGFloat(max(deltaHeight * 0.5, 0.0))
+                
+                subView.center = CGPoint(
+                    x: scrollView.contentSize.width * 0.5 + offsetX,
+                    y: scrollView.contentSize.height * 0.5 + offsetY
+                )
+            }
         }
 
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -161,5 +164,17 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         }
         
         return frame
+    }
+    
+    func getScale() -> CGFloat {
+        var scale: CGFloat = 0
+           
+        if isPortrait {
+            scale = size.width / shortSide
+        } else {
+            scale = size.width / longSide
+        }
+           
+        return scale
     }
 }

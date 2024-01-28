@@ -21,7 +21,10 @@ struct ScrollViewContainer: View {
     
     var body: some View {
         PPScrollView(
-            isPortrait: page.isPortrait, scale: $scale, offset: $offset
+            isPortrait: page.isPortrait,
+            size: size, 
+            scale: $scale,
+            offset: $offset
         ) {
             PageView(
                 note: note,
