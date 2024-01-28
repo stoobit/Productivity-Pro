@@ -105,7 +105,7 @@ struct ObjectView: View {
         .fileImporter(
             isPresented: $importFile,
             allowedContentTypes: [.pro, .pronote],
-            allowsMultipleSelection: false
+            allowsMultipleSelection: true
         ) { result in
             withAnimation(.bouncy) {
                 importFile(result: result)
