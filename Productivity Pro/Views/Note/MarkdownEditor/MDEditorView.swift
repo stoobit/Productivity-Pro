@@ -27,7 +27,7 @@ struct MDEditorView: View {
                     }
                     
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Markdown", systemImage: "info.circle") {
+                        Button("Markdown", systemImage: "puzzlepiece.fill") {
                             tutorial.toggle()
                         }
                     }

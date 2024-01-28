@@ -5,8 +5,7 @@
 - View Updates 
 - Markdown Tutorial
 - PDF Export
-- Crash on .pronote?/.pro Import
-- scrollview
+- Performance Optimizations 
 
 ## 🗺️ Release 2.1.v
 - Links 

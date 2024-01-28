@@ -56,10 +56,8 @@ struct PDFManager {
            
             pdf.endPDFPage()
         }
+        
         pdf.closePDF()
-        
-       
-        
         return url
     }
     
