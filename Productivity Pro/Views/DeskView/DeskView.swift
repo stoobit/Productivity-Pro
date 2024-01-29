@@ -29,6 +29,7 @@ struct DeskView: View {
                         .frame(height: 30)
                         .sheet(isPresented: $premiumView, content: {
                             PremiumView()
+                                .interactiveDismissDisabled()
                         })
                     } else {
                         HStack {

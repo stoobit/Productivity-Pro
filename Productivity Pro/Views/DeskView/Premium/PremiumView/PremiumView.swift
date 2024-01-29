@@ -65,7 +65,7 @@ struct PremiumView: View {
                             }
                     }
                     .padding(.bottom, 10)
-                    .allowsTightening(load == false)
+                    .allowsHitTesting(load == false)
                 }
                 .padding()
                 .navigationBarTitleDisplayMode(.inline)

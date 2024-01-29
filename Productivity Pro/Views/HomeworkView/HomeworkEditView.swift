@@ -119,7 +119,7 @@ struct HomeworkEditView: View {
                     Button("Schließen") {
                         isPresented.toggle()
                     }
-                    .disabled(homework.title == "")
+                    .disabled(homework.title == "" || isEditing)
                 }
                 
                 ToolbarItem(placement: .topBarLeading) {
