@@ -20,7 +20,7 @@ fileprivate struct ContentView: View {
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     
-    @State var storeVM: StoreVM = .init()
+    @State var storeVM: StoreViewModel = .init()
     let timer = Timer.publish(every: 500000, on: .main, in: .common)
         .autoconnect()
     
@@ -37,7 +37,7 @@ fileprivate struct ContentView: View {
             if storeVM.finished {
                 Text("Loading Receiver.")
                     .onReceive(timer) { _ in
-                        storeVM = StoreVM()
+                        storeVM = StoreViewModel()
                     }
                     .onAppear {
                         updateStatus()

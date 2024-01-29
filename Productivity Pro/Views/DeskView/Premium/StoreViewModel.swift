@@ -11,7 +11,7 @@ import StoreKit
 typealias RenewalInfo = StoreKit.Product.SubscriptionInfo.RenewalInfo
 typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
 
-@Observable final class StoreVM {
+@Observable final class StoreViewModel {
     private(set) var subscriptions: [Product] = []
     private(set) var purchasedSubscriptions: [Product] = []
     private(set) var subscriptionGroupStatus: RenewalState?
@@ -19,8 +19,8 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
     private(set) var finished: Bool = false
     private(set) var connectionFailure: Bool = false
     
-    private let productIds: [String] = ["com.stoobit.productivity.premium"]
-    var updateListenerTask : Task<Void, Error>? = nil
+    let productIds: [String] = ["com.stoobit.productivity.premium"]
+    var updateListenerTask: Task<Void, Error>? = nil
 
     init() {
         updateListenerTask = listenForTransactions()
@@ -37,8 +37,6 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
     deinit {
         updateListenerTask?.cancel()
     }
-    
-    
     
     func listenForTransactions() -> Task<Void, Error> {
         return Task.detached {
@@ -100,15 +98,15 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
                 let transaction = try checkVerified(result)
                 
                 switch transaction.productType {
-                    case .autoRenewable:
+                case .autoRenewable:
                     if let subscription = subscriptions.first(where: {
                         $0.id == transaction.productID
                     }) {
                         purchasedSubscriptions.append(subscription)
                         print(purchasedSubscriptions)
                     }
-                    default:
-                        break
+                default:
+                    break
                 }
 
                 await transaction.finish()
@@ -117,9 +115,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
             }
         }
     }
-
 }
-
 
 public enum StoreError: Error {
     case failedVerification
