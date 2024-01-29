@@ -10,7 +10,7 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 725971099.61969805,
+    "_lastSynchronizedDate" : 728250830.609586,
     "_locale" : "de",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
@@ -72,7 +72,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "0E5E75E9",
+              "internalID" : "AA564F7A",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivity.premium.offer",
               "paymentMode" : "free",
@@ -90,12 +90,12 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Productivity Pro Premium Subscription.",
+              "description" : "Schedules, Tasks, App Icons & more.",
               "displayName" : "Productivity Pro Premium",
               "locale" : "en_US"
             },
             {
-              "description" : "Productivity Pro Premium Abonnement",
+              "description" : "Stundenplan, Aufgaben, App Icons & mehr.",
               "displayName" : "Productivity Pro Premium",
               "locale" : "de"
             }
