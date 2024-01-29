@@ -154,20 +154,18 @@ struct HomeworkEditView: View {
     }
     
     func edit() {
-        withAnimation(.bouncy) {
-            homework.title = title
-            homework.date = date
-            homework.note = contentObjects.first(where: { $0.id.uuidString == pickedNote })
-            homework.homeworkDescription = description
+        homework.title = title
+        homework.date = date
+        homework.note = contentObjects.first(where: { $0.id.uuidString == pickedNote })
+        homework.homeworkDescription = description
             
-            UNUserNotificationCenter.current()
-                .removePendingNotificationRequests(
-                    withIdentifiers: [homework.id.uuidString]
-                )
+        UNUserNotificationCenter.current()
+            .removePendingNotificationRequests(
+                withIdentifiers: [homework.id.uuidString]
+            )
             
-            pushNotification()
-            try? context.save()
-        }
+        pushNotification()
+        try? context.save()
     }
     
     let dateRange: ClosedRange<Date> = {
@@ -207,18 +205,22 @@ struct HomeworkEditView: View {
         content.body = "Diese Hausaufgabe ist bis morgen in \(homework.subject) auf."
 
         let calendar = Calendar.current
-        let date = DateComponents(
+        let date = Calendar.current.date(
+            byAdding: .day, value: -1, to: homework.date
+        )!
+        
+        let compontent = DateComponents(
             calendar: calendar,
             timeZone: .current,
-            year: calendar.component(.year, from: homework.date),
-            month: calendar.component(.month, from: homework.date),
-            day: calendar.component(.day, from: homework.date),
+            year: calendar.component(.year, from: date),
+            month: calendar.component(.month, from: date),
+            day: calendar.component(.day, from: date),
             hour: calendar.component(.hour, from: notificationTime),
             minute: calendar.component(.minute, from: notificationTime)
         )
         
         let trigger = UNCalendarNotificationTrigger(
-            dateMatching: date, repeats: false
+            dateMatching: compontent, repeats: false
         )
         
         let request = UNNotificationRequest(
