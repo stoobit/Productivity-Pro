@@ -103,7 +103,6 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
                         $0.id == transaction.productID
                     }) {
                         purchasedSubscriptions.append(subscription)
-                        print(purchasedSubscriptions)
                     }
                 default:
                     break
