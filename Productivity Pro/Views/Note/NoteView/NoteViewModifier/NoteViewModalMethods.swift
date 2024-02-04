@@ -22,8 +22,8 @@ extension NoteViewSheet {
         
         contentObject.note?.pages?.append(page)
         withAnimation {
-            reader.scrollTo(page)
             toolManager.activePage = page
+            reader.scrollTo(page)
             subviewManager.addPage = false
         }
     }

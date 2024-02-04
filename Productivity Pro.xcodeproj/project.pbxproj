@@ -152,7 +152,6 @@
 		BB96F5AA2B608DF90044B200 /* OverviewContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5A92B608DF90044B200 /* OverviewContainerView.swift */; };
 		BB96F5AC2B61B4FB0044B200 /* ShareQRPDFMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5AB2B61B4FB0044B200 /* ShareQRPDFMethods.swift */; };
 		BB96F5AF2B61B60F0044B200 /* ShareQRPDFModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5AE2B61B60F0044B200 /* ShareQRPDFModels.swift */; };
-		BB96F5B12B61BB0F0044B200 /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB96F5B02B61BB0F0044B200 /* test.pdf */; };
 		BB96F5B32B61C0460044B200 /* PDFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5B22B61C0460044B200 /* PDFManager.swift */; };
 		BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */; };
 		BB9A364A2ABCD29700721C56 /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9A36492ABCD29700721C56 /* Homework.swift */; };
@@ -459,7 +458,6 @@
 		BB96F5A92B608DF90044B200 /* OverviewContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewContainerView.swift; sourceTree = "<group>"; };
 		BB96F5AB2B61B4FB0044B200 /* ShareQRPDFMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareQRPDFMethods.swift; sourceTree = "<group>"; };
 		BB96F5AE2B61B60F0044B200 /* ShareQRPDFModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareQRPDFModels.swift; sourceTree = "<group>"; };
-		BB96F5B02B61BB0F0044B200 /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
 		BB96F5B22B61C0460044B200 /* PDFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFManager.swift; sourceTree = "<group>"; };
 		BB9A36462ABCCF5E00721C56 /* HomeworkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkList.swift; sourceTree = "<group>"; };
 		BB9A36492ABCD29700721C56 /* Homework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
@@ -762,7 +760,6 @@
 				BB1DDA28296715590038FE16 /* Resources */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
 				BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */,
-				BB96F5B02B61BB0F0044B200 /* test.pdf */,
 			);
 			path = "Productivity Pro";
 			sourceTree = "<group>";
@@ -1544,7 +1541,6 @@
 			files = (
 				BB4A93C92AAEFDCC00C3AED6 /* Pacifico-Regular.ttf in Resources */,
 				BB35A1BA2B290A3B001A3F4C /* latinvoc.json in Resources */,
-				BB96F5B12B61BB0F0044B200 /* test.pdf in Resources */,
 				BB9C63B62B5AFE2A0022AC4F /* README.md in Resources */,
 				BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */,
 				BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */,

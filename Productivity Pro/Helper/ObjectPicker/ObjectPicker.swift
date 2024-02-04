@@ -39,6 +39,7 @@ struct ObjectPicker: View {
                     type: type
                 )
             }
+            .scrollIndicators(.hidden)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Abbrechen") { isPresented.toggle() }
