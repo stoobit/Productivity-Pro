@@ -284,6 +284,7 @@
       }
     },
     "Bewerten" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -711,6 +712,7 @@
 
     },
     "Hilf uns zu wachsen!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -863,6 +865,7 @@
 
     },
     "Mit Deiner Bewertung unterstützt Du die Entwicklung von **Productivity Pro** und sorgst dafür, dass es auch in Zukunft regelmäßig Updates gibt." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -962,6 +965,9 @@
 
     },
     "Öffnen" : {
+
+    },
+    "one" : {
 
     },
     "Ordner erstellen" : {
@@ -1214,6 +1220,9 @@
         }
       }
     },
+    "two" : {
+
+    },
     "u-Deklination" : {
 
     },
@@ -1226,6 +1235,9 @@
           }
         }
       }
+    },
+    "Überspringen" : {
+
     },
     "Uhrzeit der Benachrichtigung" : {
       "localizations" : {

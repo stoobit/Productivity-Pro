@@ -61,7 +61,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Pacifico-Regular.tff</string>
+		<string>pacifico.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
