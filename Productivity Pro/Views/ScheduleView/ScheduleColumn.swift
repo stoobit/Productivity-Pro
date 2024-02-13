@@ -21,7 +21,7 @@ struct ScheduleColumn: View {
     
     var body: some View {
         LazyVStack(alignment: .leading) {
-            Text(day.id)
+            Text(String(localized: String.LocalizationValue(day.id)))
                 .fontWeight(.bold)
                 .lineLimit(1)
                 .padding(.vertical, 10)

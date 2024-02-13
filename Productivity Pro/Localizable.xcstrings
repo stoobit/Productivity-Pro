@@ -24,17 +24,6 @@
         }
       }
     },
-    "%@ / Jahr" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ / Year"
-          }
-        }
-      }
-    },
     "%@ bearbeiten" : {
       "localizations" : {
         "en" : {
@@ -85,39 +74,6 @@
         }
       }
     },
-    "•  App Icons" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• App Icons"
-          }
-        }
-      }
-    },
-    "•  Aufgaben" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Tasks"
-          }
-        }
-      }
-    },
-    "•  Stundenplan" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Schedule"
-          }
-        }
-      }
-    },
     "3. Deklination" : {
 
     },
@@ -130,17 +86,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
-          }
-        }
-      }
-    },
-    "Abonnieren" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Subscribe"
           }
         }
       }
@@ -199,7 +144,14 @@
       }
     },
     "App Clip" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Clip"
+          }
+        }
+      }
     },
     "App Icon" : {
       "localizations" : {
@@ -212,7 +164,14 @@
       }
     },
     "Apple Pencil" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pencil"
+          }
+        }
+      }
     },
     "Aufgaben" : {
       "localizations" : {
@@ -265,10 +224,24 @@
       }
     },
     "Backup exportieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export Backup"
+          }
+        }
+      }
     },
     "Backup importieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import Backup"
+          }
+        }
+      }
     },
     "Bearbeiten" : {
       "localizations" : {
@@ -331,7 +304,14 @@
       }
     },
     "Bibliothek – App Clip" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Library - App Clip"
+          }
+        }
+      }
     },
     "Bild" : {
       "localizations" : {
@@ -359,9 +339,6 @@
         }
       }
     },
-    "Cancel" : {
-
-    },
     "Datei importieren" : {
       "localizations" : {
         "en" : {
@@ -382,23 +359,22 @@
         }
       }
     },
-    "Datum nicht verfügbar." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date not available."
-          }
-        }
-      }
-    },
     "Der Papierkorb ist leer." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The trash is empty."
+          }
+        }
+      }
+    },
+    "Dienstag" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tuesday"
           }
         }
       }
@@ -452,6 +428,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scan Document"
+          }
+        }
+      }
+    },
+    "Donnerstag" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thursday"
           }
         }
       }
@@ -675,6 +661,16 @@
         }
       }
     },
+    "Freitag" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Friday"
+          }
+        }
+      }
+    },
     "Füllung" : {
       "localizations" : {
         "en" : {
@@ -876,6 +872,16 @@
         }
       }
     },
+    "Mittwoch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wednesday"
+          }
+        }
+      }
+    },
     "Möchtest du den Papierkorb wirklich entleeren?" : {
       "localizations" : {
         "en" : {
@@ -908,6 +914,16 @@
     },
     "Möchtest du wirklich ein Backup importieren?" : {
 
+    },
+    "Montag" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monday"
+          }
+        }
+      }
     },
     "Name" : {
 
@@ -1272,9 +1288,6 @@
           }
         }
       }
-    },
-    "Wiederholen" : {
-
     },
     "Wortschatz %@" : {
 

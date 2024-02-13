@@ -56,11 +56,6 @@ struct NoteSecondaryToolbar: ToolbarContent {
                     contentObject.note?.modelContext?.undoManager?.undo()
                 }
 //                .disabled(undoManager?.canUndo == false)
-                
-                Button("Wiederholen", systemImage: "arrow.uturn.forward") {
-                   undoManager?.undo()
-                }
-//                .disabled(undoManager?.canUndo == false)
             }
             
             PageActions()

@@ -18,11 +18,11 @@ struct SubjectSettingsRow: View {
     
     @AppStorage("ppschedule")
     var schedule: CodableWrapper<Array<ScheduleDay>> = .init(value: [
-        ScheduleDay(id: "Montag"),
-        ScheduleDay(id: "Dienstag"),
-        ScheduleDay(id: "Mittwoch"),
-        ScheduleDay(id: "Donnerstag"),
-        ScheduleDay(id: "Freitag")
+        ScheduleDay(id: String(localized: "Montag")),
+        ScheduleDay(id: String(localized: "Dienstag")),
+        ScheduleDay(id: String(localized: "Mittwoch")),
+        ScheduleDay(id: String(localized: "Donnerstag")),
+        ScheduleDay(id: String(localized: "Freitag"))
     ])
     
     @State var isAlert: Bool = false
@@ -53,7 +53,7 @@ struct SubjectSettingsRow: View {
         .alert(
             "Möchtest du dieses Fach wirklich löschen?",
             isPresented: $isAlert, actions: {
-                Button("Cancel", role: .cancel) { isAlert.toggle() }
+                Button("Abbrechen", role: .cancel) { isAlert.toggle() }
                 Button("Löschen", role: .destructive) { delete() }
             }
         ) {
