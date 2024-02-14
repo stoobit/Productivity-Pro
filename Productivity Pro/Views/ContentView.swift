@@ -112,9 +112,6 @@ fileprivate struct ContentView: View {
             }
             .animation(.bouncy, value: toolManager.showProgress)
         }
-        .fullScreenCover(isPresented: .constant(true), content: {
-            OnboardingView()
-        })
     }
     
     func askNotificationPermission() {
