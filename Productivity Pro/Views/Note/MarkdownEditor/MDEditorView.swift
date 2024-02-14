@@ -10,9 +10,9 @@ import SwiftUI
 struct MDEditorView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(ToolManager.self) var toolManager
-    
-    @State var tutorial: Bool = false
+
     @FocusState var isFocused: Bool
+    let url = "https://www.stoobit.com/blog/markdown.html"
 
     var body: some View {
         @Bindable var textField = toolManager.activeItem!.textField!
@@ -25,15 +25,13 @@ struct MDEditorView: View {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Fertig") { dismiss() }
                     }
-                    
+
                     ToolbarItem(placement: .topBarLeading) {
-                        Button("Markdown", systemImage: "puzzlepiece.fill") {
-                            tutorial.toggle()
-                        }
+                        Link("M", destination: URL(string: url)!)
+                        .fontDesign(.rounded)
+                        .fontWeight(.medium)
+                        .font(.title2)
                     }
-                }
-                .sheet(isPresented: $tutorial) {
-                    MarkdownTutorialView()
                 }
                 .onAppear {
                     isFocused = true

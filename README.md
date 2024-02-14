@@ -3,10 +3,8 @@
 ## 🛠️ Release 2.0.v
 - Undo & Redo
 - View Updates 
-- Markdown Tutorial
 - PDF Export
 - Performance Optimizations 
-- Onboarding UI
 
 ## 🗺️ Release 2.1.v
 - Links 
