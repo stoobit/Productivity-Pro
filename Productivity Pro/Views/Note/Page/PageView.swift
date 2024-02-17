@@ -40,6 +40,7 @@ struct PageView: View {
                         page: page,
                         scale: $scale
                     )
+                    
                 } else if page.type == PPPageType.image.rawValue {
                     PageBackgroundScan(
                         page: page,
@@ -50,6 +51,10 @@ struct PageView: View {
             }
             .onTapGesture { onBackgroundTap() }
             .allowsHitTesting(toolManager.pencilKit == false)
+            
+            if preloadModels && realrenderText {
+                RenderedPDF(page: page)
+            }
             
             PageItemView(
                 note: note,

@@ -3,7 +3,6 @@
 ## 🛠️ Release 2.0.v
 - Undo & Redo
 - View Updates 
-- PDF Export
 - Performance Optimizations 
 
 ## 🗺️ Release 2.1.v
