@@ -202,7 +202,7 @@ struct HomeworkEditView: View {
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
         content.title = homework.title
-        content.body = "Diese Hausaufgabe ist bis morgen in \(homework.subject) auf."
+        content.body = "Diese Aufgabe ist bis morgen in \(homework.subject) zu erledigen."
 
         let calendar = Calendar.current
         let date = Calendar.current.date(

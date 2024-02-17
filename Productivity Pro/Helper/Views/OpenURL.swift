@@ -26,6 +26,10 @@ struct OpenURL: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onOpenURL(perform: { url in
+                if url.scheme == "productivitypro" {
+                    return
+                }
+                
                 self.url = url
                 if url.pathExtension == "pronote" {
                     toolManager.pencilKit = false

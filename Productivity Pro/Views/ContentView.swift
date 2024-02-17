@@ -16,7 +16,7 @@ struct ContentViewContainer: View {
     }
 }
 
-fileprivate struct ContentView: View {
+private struct ContentView: View {
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     
@@ -97,7 +97,7 @@ fileprivate struct ContentView: View {
             .disabled(toolManager.showProgress)
             .modifier(
                 OpenURL(objects: contentObjects,
-                contentObjects: contentObjects)
+                        contentObjects: contentObjects)
             )
             .scrollDisabled(toolManager.showProgress)
             .environment(toolManager)
@@ -112,6 +112,9 @@ fileprivate struct ContentView: View {
             }
             .animation(.bouncy, value: toolManager.showProgress)
         }
+        .onOpenURL(perform: { url in
+            handle(url: url)
+        })
     }
     
     func askNotificationPermission() {
@@ -130,5 +133,23 @@ fileprivate struct ContentView: View {
                 isSubscribed = true
             }
         }
+    }
+    
+    func handle(url: URL) {
+        guard url.scheme == "productivitypro" else {
+            return
+        }
+        
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
+            print("Invalid URL")
+            return
+        }
+
+        guard let action = components.host, action == "tasks" else {
+            print("Unknown URL, we can't handle this one!")
+            return
+        }
+        
+        selectedTab = 3
     }
 }
