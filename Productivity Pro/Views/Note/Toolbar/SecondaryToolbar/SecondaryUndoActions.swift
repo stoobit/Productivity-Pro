@@ -8,22 +8,27 @@
 import SwiftUI
 
 extension NoteSecondaryToolbar {
-    @ViewBuilder func Inspector() -> some View {
-        
-//        Menu(content: {
-//            
-//            Button("Widerrufen", systemImage: "arrow.uturn.backward", action: undo)
-//                .disabled(!(undoManager?.canUndo ?? false))
-//            
-//            Button("Wiederholen", systemImage: "arrow.uturn.forward", action: redo)
-//                .disabled(!(undoManager?.canRedo ?? false))
-//            
-//        }, label: {
-//            Label(
-//                "Widerrufen/Wiederholen",
-//                systemImage: "arrow.uturn.backward.circle.badge.ellipsis"
-//            )
-//        })
-        
+    @ViewBuilder func UndoActions() -> some View {
+        Menu {
+            Button("Widerrufen", systemImage: "arrow.uturn.backward") {
+                undo()
+            }
+
+            Button("Wiederholen", systemImage: "arrow.uturn.forward") {
+                redo()
+            }
+        } label: {
+            Label("Bearbeiten", systemImage: "arrow.uturn.backward")
+        } primaryAction: {
+            undo()
+        }
+    }
+
+    func undo() {
+        contentObject.note?.modelContext?.undoManager?.undo()
+    }
+
+    func redo() {
+        contentObject.note?.modelContext?.undoManager?.redo()
     }
 }

@@ -50,14 +50,7 @@ struct NoteSecondaryToolbar: ToolbarContent {
         
         ToolbarItemGroup(placement: .primaryAction) {
             InspectorAction()
-            
-            Section {
-                Button("Widerrufen", systemImage: "arrow.uturn.backward") {
-                    contentObject.note?.modelContext?.undoManager?.undo()
-                }
-//                .disabled(undoManager?.canUndo == false)
-            }
-            
+            UndoActions()
             PageActions()
         }
         
