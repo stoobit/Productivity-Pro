@@ -24,6 +24,8 @@ private struct ContentView: View {
     let timer = Timer.publish(every: 500000, on: .main, in: .common)
         .autoconnect()
     
+    let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
+    
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     @AppStorage("pprole") var role: Role = .none
     
@@ -68,12 +70,14 @@ private struct ContentView: View {
                         ShareQRPDFView()
                     }
                 
-                LibraryView()
-                    .toolbarBackground(.visible, for: .tabBar)
-                    .tag(4)
-                    .tabItem {
-                        Label("Bibliothek", systemImage: "books.vertical.fill")
-                    }
+                if locale == "Deutsch" {
+                    LibraryView()
+                        .toolbarBackground(.visible, for: .tabBar)
+                        .tag(4)
+                        .tabItem {
+                            Label("Bibliothek", systemImage: "books.vertical.fill")
+                        }
+                }
                 
                 ScheduleViewContainer()
                     .modifier(PremiumBadge())
