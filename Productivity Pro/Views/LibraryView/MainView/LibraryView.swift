@@ -9,10 +9,11 @@ import SwiftUI
 
 struct LibraryView: View {
     @Environment(\.horizontalSizeClass) var hsc
+
     @State var appClip: Bool = false
-    
+    @State var google: Bool = false
+
     var showBar: Bool = true
-    let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScqlAMTAIt2DGzUsYyk8HkMphjBfU2arwxyTCm2a3moDwPEqw/viewform?usp=sf_link")!
 
     var body: some View {
         GeometryReader { proxy in
@@ -30,10 +31,10 @@ struct LibraryView: View {
                     .toolbar {
                         if showBar {
                             ToolbarItemGroup(placement: .topBarTrailing) {
-                                Link(destination: url) {
+                                Button(action: { google.toggle() }) {
                                     Label("Beitrag hinzufügen", systemImage: "person.fill.badge.plus")
                                 }
-                                
+
                                 Button(action: { appClip.toggle() }) {
                                     Label("App Clip", systemImage: "appclip")
                                 }
@@ -42,6 +43,9 @@ struct LibraryView: View {
                     }
                     .sheet(isPresented: $appClip) {
                         AppClipView()
+                    }
+                    .sheet(isPresented: $google) {
+                        GoogleView()
                     }
                 }
                 .overlay {
