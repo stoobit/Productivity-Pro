@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LGrammarList: View {
-
     var body: some View {
         List {
             Section("Substantive") {
@@ -28,6 +27,6 @@ struct LGrammarList: View {
             }
         }
         .environment(\.defaultMinListRowHeight, 10)
-        .navigationTitle("Grammatik")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

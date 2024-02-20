@@ -30,7 +30,7 @@ struct LVocabularyList: View {
                 .frame(height: 30)
             }
             .environment(\.defaultMinListRowHeight, 10)
-            .navigationTitle("Vokabeln")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     

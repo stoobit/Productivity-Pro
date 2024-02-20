@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
 struct Productivity_ProApp: App {
@@ -15,6 +16,15 @@ struct Productivity_ProApp: App {
         WindowGroup {
             ContentViewContainer()
                 .onAppear { onAppear() }
+                .task {
+                    Tips.showAllTipsForTesting()
+                    try? Tips.resetDatastore()
+                    
+                    try? Tips.configure([
+                        .displayFrequency(.immediate),
+                        .datastoreLocation(.applicationDefault)
+                    ])
+                }
         }
         .modelContainer(
             for: [
@@ -30,9 +40,9 @@ struct Productivity_ProApp: App {
     }
 
     func onAppear() {
-        UIView.appearance(
-            whenContainedInInstancesOf: [UIAlertController.self]
-        ).tintColor = UIColor.main
+        UIView
+            .appearance(whenContainedInInstancesOf: [UIAlertController.self])
+            .tintColor = UIColor.main
     }
 }
 

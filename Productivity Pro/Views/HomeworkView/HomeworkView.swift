@@ -32,6 +32,8 @@ struct HomeworkView: View {
                 
             }
             .navigationTitle("Aufgaben")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarRole(.editor)
             .toolbar {
                ToolbarItem(placement: .topBarTrailing) {
                    Button("Fach hinzufügen", systemImage: "plus") {

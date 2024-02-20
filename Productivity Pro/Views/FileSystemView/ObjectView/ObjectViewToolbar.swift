@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct FolderViewToolbar: ToolbarContent {
     @Environment(\.dismiss) var dismiss
@@ -25,13 +26,14 @@ struct FolderViewToolbar: ToolbarContent {
     @Binding var createNote: Bool
     
     var contentObjects: [ContentObject]
+    private let tip = ImportTip()
     
     var body: some ToolbarContent {
-        
         ToolbarItemGroup(placement: .topBarTrailing) {
             Button("Importieren", systemImage: "square.and.arrow.down") {
                 importFile.toggle()
             }
+            .popoverTip(tip)
             
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 addFolder = true
@@ -67,7 +69,7 @@ struct FolderViewToolbar: ToolbarContent {
                 Button(action: { isReverse.toggle() }) {
                     Label(
                         isReverse ? "Absteigend" : "Aufsteigend",
-                        systemImage: isReverse ? "chevron.down" :"chevron.up"
+                        systemImage: isReverse ? "chevron.down" : "chevron.up"
                     )
                 }
                 
@@ -79,6 +81,5 @@ struct FolderViewToolbar: ToolbarContent {
                 Label("Sortieren", systemImage: "list.bullet")
             }
         }
-        
     }
 }

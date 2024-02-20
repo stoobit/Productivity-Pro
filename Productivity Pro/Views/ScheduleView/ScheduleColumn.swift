@@ -22,9 +22,11 @@ struct ScheduleColumn: View {
     var body: some View {
         LazyVStack(alignment: .leading) {
             Text(String(localized: String.LocalizationValue(day.id)))
-                .fontWeight(.bold)
+                .font(.callout)
+                .foregroundStyle(Color.secondary)
                 .lineLimit(1)
-                .padding(.vertical, 10)
+                .padding(.top, 10)
+                .padding(.bottom, 3)
             
             ForEach(day.subjects) { subject in
                 Icon(for: subject)

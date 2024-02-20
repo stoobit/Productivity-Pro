@@ -73,6 +73,7 @@ struct ObjectView: View {
             .scrollContentBackground(.hidden)
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
             .toolbarRole(.browser)
             .toolbar {

@@ -125,6 +125,7 @@ struct LibrarySubjectsList: View {
                 
             }
             .padding(.horizontal, 5)
+            .padding(.top, 25)
         }
     }
 }

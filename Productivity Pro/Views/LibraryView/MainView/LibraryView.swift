@@ -25,9 +25,11 @@ struct LibraryView: View {
                         LibrarySubjectsList()
                     }
                     .navigationTitle("Bibliothek")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbarRole(.editor)
                     .toolbar {
                         if showBar {
-                            ToolbarItemGroup(placement: .topBarLeading) {
+                            ToolbarItemGroup(placement: .topBarTrailing) {
                                 Link(destination: url) {
                                     Label("Beitrag hinzufügen", systemImage: "person.fill.badge.plus")
                                 }

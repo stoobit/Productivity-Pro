@@ -87,6 +87,8 @@ struct DeskView: View {
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Schreibtisch")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarRole(.editor)
         }
     }
 }
