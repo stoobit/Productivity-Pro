@@ -27,6 +27,7 @@ struct ScheduleColumn: View {
                 .lineLimit(1)
                 .padding(.top, 10)
                 .padding(.bottom, 3)
+                .padding(.leading)
             
             ForEach(day.subjects) { subject in
                 Icon(for: subject)

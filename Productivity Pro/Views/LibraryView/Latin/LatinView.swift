@@ -31,7 +31,7 @@ struct LatinView: View {
                     maxHeight: .infinity,
                     alignment: .bottom
                 )
-                .padding(15)
+                .padding(25)
         }
     }
 }
