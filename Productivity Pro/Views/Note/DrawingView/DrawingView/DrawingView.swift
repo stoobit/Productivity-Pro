@@ -36,7 +36,7 @@ struct DrawingView: View {
         .onChange(of: drawingChanged) { _, value in
             didDrawingChange(value)
         }
-        .onChange(of: toolManager.selectedPage) {
+        .onChange(of: toolManager.activePage) {
             didSelectedPageChange()
             disableCanvasAvailability()
         }

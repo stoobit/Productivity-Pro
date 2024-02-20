@@ -32,22 +32,4 @@ import SwiftUI
     
     var scale: CGFloat = .zero
     var offset: CGPoint = .zero
-
-    // MARK: - UNCHECKED & OLD
-
-    var selectedPage: Int = 0
-    var selectedTab: UUID = .init()
-    var preloadedMedia: [PDFDocument?] = []
-    var copyPastePasser: CopyPastePasser?
-    var didZoom: Bool = false
-    var didScroll: Bool = false
-    var scrollOffset: CGPoint = .zero
-    var firstZoom: Bool = true
-    var isLockEnabled: Bool = true
-    var selectedItem: ItemModel?
-    var pageGotCleared: Bool = false
-    var isDraggingItem: Bool = false
-    var pickedImage: UIImage?
-    var pdfRendering: URL?
-    var objectRecognitionEnabled: Bool = false
 }

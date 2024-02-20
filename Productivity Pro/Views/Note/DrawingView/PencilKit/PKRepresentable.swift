@@ -79,7 +79,6 @@ struct PKRepresentable: UIViewRepresentable {
         return Coordinator(
             drawingChanged: $drawingChanged,
             toolPicker: $toolPicker,
-            objectRecognitionEnabled: $value.objectRecognitionEnabled,
             strokeCount: $strokeCount
         )
     }
