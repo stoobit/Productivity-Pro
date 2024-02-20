@@ -124,7 +124,7 @@ struct LibrarySubjectsList: View {
                 .disabled(true)
                 
             }
-            .padding(.horizontal, 5)
+            .padding(.horizontal, 6)
             .padding(.top, 25)
         }
     }
