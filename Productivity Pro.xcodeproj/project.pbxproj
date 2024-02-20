@@ -753,8 +753,6 @@
 			isa = PBXGroup;
 			children = (
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
-				BB626D912B27704B004B4EEA /* FileTypes.swift */,
-				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
@@ -762,6 +760,7 @@
 				BB1DDA28296715590038FE16 /* Resources */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
 				BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */,
+				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 			);
 			path = "Productivity Pro";
 			sourceTree = "<group>";
@@ -1307,6 +1306,7 @@
 		BBCCE4F528D53DE3001DBD8A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				BB626D912B27704B004B4EEA /* FileTypes.swift */,
 				BBBD13E9290EA4D6001145A4 /* Views */,
 				BBBD13E8290EA46C001145A4 /* Types */,
 				BB6BFA2229048C5E002D09FD /* TemplateView */,
