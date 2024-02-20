@@ -13,12 +13,14 @@ struct MDEditorView: View {
 
     @FocusState var isFocused: Bool
     let url = "https://www.stoobit.com/blog/markdown.html"
+    
+    @State var text: String = ""
 
     var body: some View {
-        @Bindable var textField = toolManager.activeItem!.textField!
 
         NavigationStack {
-            TextEditor(text: $textField.string)
+            TextEditor(text: $text)
+                .fontDesign(.monospaced)
                 .focused($isFocused)
                 .toolbarBackground(.visible, for: .navigationBar)
                 .toolbar {
@@ -34,7 +36,14 @@ struct MDEditorView: View {
                     }
                 }
                 .onAppear {
+                    if let string = toolManager.activeItem?.textField?.string {
+                        text = string
+                    }
+                    
                     isFocused = true
+                }
+                .onChange(of: text, initial: false) {
+                    toolManager.activeItem?.textField?.string = text
                 }
         }
     }
