@@ -15,7 +15,7 @@ struct FileSystemView: View {
     var body: some View {
         NavigationStack {
             ObjectView(
-                parent: "root", title: "Notizen",
+                parent: "root", title: String(localized: "Notizen"),
                 contentObjects: contentObjects
             )
             .overlay {

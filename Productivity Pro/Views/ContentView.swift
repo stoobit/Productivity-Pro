@@ -17,15 +17,15 @@ struct ContentViewContainer: View {
 }
 
 private struct ContentView: View {
+    @Environment(\.scenePhase) var scenePhase
+    
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     
     @State var storeVM: StoreViewModel = .init()
-    let timer = Timer.publish(every: 500000, on: .main, in: .common)
-        .autoconnect()
-    
     let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
     
+    @AppStorage("ppisstoobitdeveloper") var isDeveloper: Bool = false
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     @AppStorage("pprole") var role: Role = .none
     
@@ -37,13 +37,12 @@ private struct ContentView: View {
     var body: some View {
         ZStack {
             if storeVM.finished {
-                Text("Loading Receiver.")
-                    .onReceive(timer) { _ in
-                        storeVM = StoreViewModel()
-                    }
-                    .onAppear {
-                        updateStatus()
-                    }
+               Text("loadable")
+                    .onChange(of: scenePhase, initial: true, {
+                        if isDeveloper == false {
+                            updateStatus()
+                        }
+                    })
             }
             
             TabView(selection: $selectedTab) {

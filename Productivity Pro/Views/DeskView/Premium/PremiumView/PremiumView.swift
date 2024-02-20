@@ -14,30 +14,75 @@ struct PremiumView: View {
 
     @Environment(StoreViewModel.self) var storeVM
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
+    @AppStorage("ppisstoobitdeveloper") var isDeveloper: Bool = false
 
     @State var load: Bool = false
+    @State var disabled: Bool = false
+    @State var showAlert: Bool = false
+    @State var text: String = ""
 
     var body: some View {
-        SubscriptionStoreView(productIDs: storeVM.productIds) {
-            VStack {
-                Text("Premium")
-                    .font(.largeTitle.bold())
+        NavigationStack {
+            SubscriptionStoreView(productIDs: storeVM.productIds) {
+                VStack {
+                    Text("Premium")
+                        .font(.largeTitle.bold())
+
+                    ViewThatFits(in: .vertical) {
+                        PVAnimationView()
+                        Color.clear.frame(width: 0, height: 0)
+                    }
+                }
+            }
+            .storeButton(.hidden, for: .cancellation)
+            .storeButton(.visible, for: .restorePurchases)
+            .subscriptionStoreControlStyle(.prominentPicker)
+            .onInAppPurchaseCompletion { _, result in
+                if case .success(.success(_)) = result {
+                    isSubscribed = true
+                    dismiss()
+                } else {
+                    print("An error occurred.")
+                }
+
+                disabled = false
+            }
+            .onInAppPurchaseStart { _ in
+                disabled = true
+            }
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Abbrechen") {
+                        dismiss()
+                    }
+                    .disabled(disabled)
+                }
                 
-                ViewThatFits(in: .vertical) {
-                    PVAnimationView()
-                    Color.clear.frame(width: 0, height: 0)
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Entwickler", systemImage: "person.fill") {
+                        showAlert.toggle()
+                    }
+                    .disabled(disabled)
                 }
             }
         }
-        .storeButton(.visible, for: .restorePurchases)
-        .subscriptionStoreControlStyle(.prominentPicker)
-        .onInAppPurchaseCompletion { _, result in
-            if case .success(.success(_)) = result {
-                isSubscribed = true
-                dismiss()
-            } else {
-               print("An error occurred.")
+        .alert("Productivity Pro", isPresented: $showAlert) {
+            Button("Abbrechen", role: .cancel) {
+                showAlert = false
+                text = ""
             }
+            
+            Button("Anmelden") {
+                if text == "xAbu-RTi-093-mMkl-öÜ" {
+                    isDeveloper = true
+                    isSubscribed = true
+                }
+                
+                showAlert = false
+                dismiss()
+            }
+            
+            SecureField("Passwort", text: $text)
         }
     }
 

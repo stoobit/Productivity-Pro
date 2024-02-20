@@ -123,6 +123,9 @@
         }
       }
     },
+    "Anmelden" : {
+
+    },
     "Anordnung" : {
       "localizations" : {
         "en" : {
@@ -549,6 +552,9 @@
         }
       }
     },
+    "Entwickler" : {
+
+    },
     "Erstellt" : {
       "localizations" : {
         "en" : {
@@ -841,7 +847,11 @@
         }
       }
     },
+    "loadable" : {
+
+    },
     "Loading Receiver." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -996,6 +1006,9 @@
           }
         }
       }
+    },
+    "Passwort" : {
+
     },
     "pdf" : {
 
