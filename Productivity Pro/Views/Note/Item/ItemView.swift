@@ -13,8 +13,8 @@ struct ItemView: View {
     
     @State var editItemModel: EditItemModel = EditItemModel()
     
-    var note: PPNoteModel
-    var page: PPPageModel
+    @Bindable var note: PPNoteModel
+    @Bindable var page: PPPageModel
     
     @Bindable var item: PPItemModel
     @Binding var scale: CGFloat

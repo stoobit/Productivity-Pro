@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PageBackgroundScan: View {
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
     
     @Binding var scale: CGFloat
     @State var renderedBackground: UIImage?

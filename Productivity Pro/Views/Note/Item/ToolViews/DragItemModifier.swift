@@ -11,8 +11,8 @@ struct DragItemModifier: ViewModifier {
     @Environment(ToolManager.self) var toolManager
     @GestureState private var startLocation: CGPoint? = nil
     
-    var item: PPItemModel
-    var page: PPPageModel
+    @Bindable var item: PPItemModel
+    @Bindable var page: PPPageModel
     
     @Bindable var editItemModel: EditItemModel
     @Binding var scale: CGFloat

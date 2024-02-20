@@ -11,7 +11,7 @@ struct PageBackgroundView: View {
     @Environment(ToolManager.self) var toolManager
     @Binding var scale: CGFloat
     
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
     
     var body: some View {
         Rectangle()

@@ -11,7 +11,7 @@ struct PageItemView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    var note: PPNoteModel
+    @Bindable var note: PPNoteModel
     @Bindable var page: PPPageModel
     
     @Binding var scale: CGFloat

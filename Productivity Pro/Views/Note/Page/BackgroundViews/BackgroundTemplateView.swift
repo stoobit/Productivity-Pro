@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BackgroundTemplateView: View {
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
     @Binding var scale: CGFloat
     
     var body: some View {

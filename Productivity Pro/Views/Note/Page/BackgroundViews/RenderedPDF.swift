@@ -9,7 +9,7 @@ import PDFKit
 import SwiftUI
 
 struct RenderedPDF: View {
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
 
     var body: some View {
         Image(uiImage: render())

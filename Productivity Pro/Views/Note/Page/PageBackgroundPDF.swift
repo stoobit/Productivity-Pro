@@ -9,7 +9,7 @@ import PDFKit
 import SwiftUI
 
 struct PageBackgroundPDF: View {
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
     
     @State var loadedPDF: PDFDocument?
     @Binding var scale: CGFloat

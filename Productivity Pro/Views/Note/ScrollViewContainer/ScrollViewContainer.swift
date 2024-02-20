@@ -11,8 +11,8 @@ import SwiftUI
 struct ScrollViewContainer: View {
     @Environment(ToolManager.self) var toolManager
     
-    var note: PPNoteModel
-    var page: PPPageModel
+    @Bindable var note: PPNoteModel
+    @Bindable var page: PPPageModel
     
     var size: CGSize
     

@@ -12,7 +12,7 @@ struct OverviewRow: View {
     @Environment(SubviewManager.self) var subviewManager
     
     var contentObject: ContentObject
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
     
     var scrollView: ScrollViewProxy
     

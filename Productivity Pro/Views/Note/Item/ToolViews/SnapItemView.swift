@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SnapItemView: View {
     @Environment(ToolManager.self) var toolManager
-    var page: PPPageModel
+    @Bindable var page: PPPageModel
     
     @Binding var scale: CGFloat
    

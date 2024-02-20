@@ -12,8 +12,8 @@ struct ToolView: View {
     @Environment(SubviewManager.self) var subviewManager
     @Environment(EditItemModel.self) var editItemModel
     
-    var page: PPPageModel
-    var item: PPItemModel
+    @Bindable var page: PPPageModel
+    @Bindable var item: PPItemModel
     
     @GestureState var width: Double? = nil
     @GestureState var height: Double? = nil

@@ -17,7 +17,7 @@ struct PageView: View {
     @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
     @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
     
-    var note: PPNoteModel
+    @Bindable var note: PPNoteModel
     @Bindable var page: PPPageModel
     
     @Binding var scale: CGFloat
