@@ -768,6 +768,9 @@
     "Import nicht möglich" : {
 
     },
+    "Importiere deine Notizen, die du mit Productivity Pro 1 erstellt hast." : {
+
+    },
     "Importieren" : {
       "localizations" : {
         "en" : {
@@ -1077,9 +1080,6 @@
     "Rolle" : {
 
     },
-    "Save the photo as favorite" : {
-
-    },
     "Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen." : {
 
     },
@@ -1312,9 +1312,6 @@
 
     },
     "Y" : {
-
-    },
-    "Your favorite photos will appear in the favorite folder." : {
 
     },
     "Zentrieren" : {

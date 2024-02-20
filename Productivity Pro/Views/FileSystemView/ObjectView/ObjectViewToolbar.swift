@@ -26,14 +26,14 @@ struct FolderViewToolbar: ToolbarContent {
     @Binding var createNote: Bool
     
     var contentObjects: [ContentObject]
-    private let tip = ImportTip()
     
     var body: some ToolbarContent {
         ToolbarItemGroup(placement: .topBarTrailing) {
-            Button("Importieren", systemImage: "square.and.arrow.down") {
-                importFile.toggle()
+            Button(action: { importFile.toggle() }) {
+                Image(systemName: "square.and.arrow.down")
+                    .accessibilityLabel(Text("Importieren"))
+                    .popoverTip(ImportTip(), arrowEdge: .top)
             }
-            .popoverTip(tip)
             
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 addFolder = true

@@ -9,14 +9,14 @@ import TipKit
 
 struct ImportTip: Tip {
     var title: Text {
-        Text("Save the photo as favorite")
+        Text("Importieren")
     }
 
     var message: Text? {
-        Text("Your favorite photos will appear in the favorite folder.")
+        Text("Importiere deine Notizen, die du mit Productivity Pro 1 erstellt hast.")
     }
-
+    
     var image: Image? {
-        Image(systemName: "heart")
+        Image(systemName: "doc.fill")
     }
 }

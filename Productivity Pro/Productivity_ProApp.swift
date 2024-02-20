@@ -17,9 +17,6 @@ struct Productivity_ProApp: App {
             ContentViewContainer()
                 .onAppear { onAppear() }
                 .task {
-                    Tips.showAllTipsForTesting()
-                    try? Tips.resetDatastore()
-                    
                     try? Tips.configure([
                         .displayFrequency(.immediate),
                         .datastoreLocation(.applicationDefault)
