@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct MediaItemView: View {
-    
     @Bindable var item: PPItemModel
     @Bindable var editItem: EditItemModel
     
     @Binding var scale: CGFloat
-    @State var image: UIImage = UIImage()
+    @State var image: UIImage = .init()
     
     var body: some View {
         ZStack {
@@ -32,13 +31,12 @@ struct MediaItemView: View {
                     )
                     .stroke(
                         Color(data: media.strokeColor),
-                        lineWidth:  media.strokeWidth * scale * 2
+                        lineWidth: media.strokeWidth * scale * 2
                     )
                     .frame(
                         width: (editItem.size.width + media.strokeWidth * 2) * scale,
                         height: (editItem.size.height + media.strokeWidth * 2) * scale
                     )
-                    
                 }
             }
         }

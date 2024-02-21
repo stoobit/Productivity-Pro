@@ -30,8 +30,10 @@ struct NoteView: View {
                     ScrollView(.horizontal) {
                         LazyHStack(spacing: 0) {
                             ForEach(pages) { page in
+                                @Bindable var page = page
+                                
                                 ScrollViewContainer(
-                                    note: contentObject.note!, 
+                                    note: contentObject.note!,
                                     page: page,
                                     size: proxy.size
                                 )
@@ -55,7 +57,7 @@ struct NoteView: View {
                     }
                     .sheet(isPresented: $subviewValue.overview, content: {
                         OverviewContainerView(
-                            contentObject: contentObject, 
+                            contentObject: contentObject,
                             scrollView: reader
                         )
                     })

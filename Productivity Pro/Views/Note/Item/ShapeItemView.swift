@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ShapeItemView: View {
-    
     @Bindable var item: PPItemModel
     @Bindable var editItem: EditItemModel
     
@@ -18,7 +17,6 @@ struct ShapeItemView: View {
         if let shape = item.shape {
             Group {
                 if shape.type == PPShapeType.rectangle.rawValue {
-                    
                     ShapeView(
                         shape: RoundedRectangle(
                             cornerRadius: shape.cornerRadius * scale,
@@ -28,20 +26,17 @@ struct ShapeItemView: View {
                     )
                     
                 } else if shape.type == PPShapeType.circle.rawValue {
-                    
                     ShapeView(shape: Ellipse(), model: shape)
                     
                 } else if shape.type == PPShapeType.triangle.rawValue {
-                    
                     ShapeView(shape: Triangle(), model: shape)
                     
                 } else if shape.type == PPShapeType.hexagon.rawValue {
-                    
                     ShapeView(shape: Hexagon(), model: shape)
                 }
             }
             .rotationEffect(Angle(degrees: shape.rotation))
-        } 
+        }
     }
     
     @ViewBuilder func ShapeView(shape: some Shape, model: PPShapeModel) -> some View {

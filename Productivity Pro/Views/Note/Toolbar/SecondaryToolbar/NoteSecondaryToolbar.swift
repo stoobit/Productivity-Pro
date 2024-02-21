@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteSecondaryToolbar: ToolbarContent {
     @Environment(\.dismiss) var dismiss
-    @Environment(\.undoManager) var undoManager
+    @Environment(\.modelContext) var modelContext
     @Environment(\.horizontalSizeClass) var hsc
     
     @Environment(ToolManager.self) var toolManager

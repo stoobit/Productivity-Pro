@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct OrientationUpdater: ViewModifier {
-    
     var isPortrait: Bool
-    
+
     func body(content: Content) -> some View {
         if isPortrait {
             content
@@ -19,4 +18,3 @@ struct OrientationUpdater: ViewModifier {
         }
     }
 }
-

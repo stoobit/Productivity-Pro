@@ -11,7 +11,7 @@ struct ItemView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @State var editItemModel: EditItemModel = EditItemModel()
+    @State var editItemModel: EditItemModel = .init()
     
     @Bindable var note: PPNoteModel
     @Bindable var page: PPPageModel
@@ -23,7 +23,6 @@ struct ItemView: View {
     var preloadModels: Bool
     
     var body: some View {
-        
         if preloadModels {
             self.setEditModel()
         }
@@ -31,7 +30,6 @@ struct ItemView: View {
         return Group {
             Group {
                 if item.type == PPItemType.shape.rawValue {
-                    
                     ShapeItemView(
                         item: item,
                         editItem: editItemModel,
@@ -39,22 +37,19 @@ struct ItemView: View {
                     )
                     
                 } else if item.type == PPItemType.textField.rawValue {
-                    
                     TextFieldItemView(
-                        item: item, 
+                        item: item,
                         editItem: editItemModel,
                         scale: $scale,
                         highRes: realrenderText
                     )
                     
                 } else if item.type == PPItemType.media.rawValue {
-                    
                     MediaItemView(
                         item: item,
                         editItem: editItemModel,
                         scale: $scale
                     )
-                    
                 }
             }
             .position(
@@ -87,7 +82,6 @@ struct ItemView: View {
             ToolView(page: page, item: item, scale: $scale)
                 .zIndex(Double(page.items!.count + 20))
                 .environment(editItemModel)
-
         }
     }
     

@@ -22,7 +22,7 @@ struct ScrollViewContainer: View {
     var body: some View {
         PPScrollView(
             isPortrait: page.isPortrait,
-            size: size, 
+            size: size,
             scale: $scale,
             offset: $offset
         ) {
@@ -33,8 +33,6 @@ struct ScrollViewContainer: View {
                 offset: $offset
             )
         }
-        .modifier(
-            OrientationUpdater(isPortrait: page.isPortrait)
-        )
+        .modifier(OrientationUpdater(isPortrait: page.isPortrait))
     }
 }
