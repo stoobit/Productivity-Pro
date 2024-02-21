@@ -20,11 +20,10 @@ struct PageItemView: View {
     var preloadModels: Bool
     
     var body: some View {
-        ForEach(page.items!) { ppItem in
-            @Bindable var item = ppItem
-            
+        ForEach(page.items!) { item in
             ItemView(
-                note: note, page: page, item: ppItem,
+                note: note, page: page,
+                item: item,
                 scale: $scale,
                 realrenderText: realrenderText,
                 preloadModels: preloadModels
@@ -33,7 +32,6 @@ struct PageItemView: View {
                 tap(item: item)
             }
             .zIndex(Double(item.index))
-            
         }
         .frame(
             width: scale * getFrame().width,
@@ -44,7 +42,7 @@ struct PageItemView: View {
     }
     
     func tap(item: PPItemModel) {
-        if  item.id != toolManager.activeItem?.id && subviewManager.showInspector == false {
+        if item.id != toolManager.activeItem?.id && subviewManager.showInspector == false {
             toolManager.activeItem = item
         } else if toolManager.activeItem?.type == PPItemType.textField.rawValue && item.id == toolManager.activeItem?.id && subviewManager.showInspector == false {
             subviewManager.rtfEditor.toggle()

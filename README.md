@@ -1,9 +1,8 @@
 # Productivity Pro
 
 ## 🛠️ Release 2.0.v
-- Undo & Redo
 - View Updates 
-- Performance Optimizations 
+- Performance 
 
 ## 🗺️ Release 2.1.v
 - Links 

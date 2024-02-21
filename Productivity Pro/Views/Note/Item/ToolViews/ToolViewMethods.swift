@@ -11,11 +11,11 @@ extension ToolView {
     
     func getRotation() -> CGFloat {
         if item.type == PPItemType.shape.rawValue {
-            return item.shape!.rotation
+            return item.shape?.rotation ?? 0
         } else if item.type == PPItemType.media.rawValue {
-            return item.media!.rotation
+            return item.media?.rotation ?? 0
         } else if item.type == PPItemType.textField.rawValue {
-            return item.textField!.rotation
+            return item.textField?.rotation ?? 0
         } else {
             return 0
         }

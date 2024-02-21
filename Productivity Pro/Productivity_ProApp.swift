@@ -17,8 +17,6 @@ struct Productivity_ProApp: App {
             ContentViewContainer()
                 .onAppear { onAppear() }
                 .task {
-                    try? Tips.resetDatastore()
-                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         try? Tips.configure([
                             .displayFrequency(.immediate),
@@ -31,9 +29,6 @@ struct Productivity_ProApp: App {
             for: [
                 Homework.self,
                 ContentObject.self,
-                PPNoteModel.self,
-                PPPageModel.self,
-                PPItemModel.self
             ],
             isAutosaveEnabled: true,
             isUndoEnabled: true

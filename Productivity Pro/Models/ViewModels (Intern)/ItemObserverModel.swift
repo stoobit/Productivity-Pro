@@ -7,6 +7,10 @@
 
 import SwiftUI
 
-@Observable final class ItemObserver {
+@Observable class ItemObserver {
+    var item: PPItemModel
     
+    init(item: PPItemModel) {
+        self.item = item
+    }
 }
