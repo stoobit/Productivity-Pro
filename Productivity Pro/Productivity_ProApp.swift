@@ -17,10 +17,14 @@ struct Productivity_ProApp: App {
             ContentViewContainer()
                 .onAppear { onAppear() }
                 .task {
-                    try? Tips.configure([
-                        .displayFrequency(.immediate),
-                        .datastoreLocation(.applicationDefault)
-                    ])
+                    try? Tips.resetDatastore()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        try? Tips.configure([
+                            .displayFrequency(.immediate),
+                            .datastoreLocation(.applicationDefault)
+                        ])
+                    }
                 }
         }
         .modelContainer(
