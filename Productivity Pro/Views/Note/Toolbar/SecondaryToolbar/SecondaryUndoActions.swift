@@ -37,8 +37,8 @@ extension NoteSecondaryToolbar {
 
     func undo() {
         modelContext.undoManager?.undo()
-        toolManager.activeItem?.width += 0.1
-        toolManager.activeItem?.width -= 0.1
+        toolManager.activeItem?.width += 0.01
+        toolManager.activeItem?.width -= 0.01
     }
 
     func redo() {

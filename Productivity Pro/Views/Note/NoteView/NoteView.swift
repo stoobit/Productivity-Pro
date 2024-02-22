@@ -13,7 +13,7 @@ struct NoteView: View {
     @Environment(SubviewManager.self) var subviewManager
     
     var contentObjects: [ContentObject]
-    var contentObject: ContentObject
+    @Bindable var contentObject: ContentObject
     
     var pages: [PPPageModel] {
         contentObject.note!.pages!
@@ -30,22 +30,13 @@ struct NoteView: View {
                     ScrollView(.horizontal) {
                         LazyHStack(spacing: 0) {
                             ForEach(pages) { page in
-                                @Bindable var page = page
-                                
-//                                let binding = Binding(
-//                                    get: { self.page },
-//                                    set: { self.username = $0 }
-//                                )
-
                                 ScrollViewContainer(
                                     note: contentObject.note!,
                                     page: page,
                                     size: proxy.size
                                 )
+                                .containerRelativeFrame([.horizontal, .vertical])
                                 .id(page)
-                                .containerRelativeFrame(
-                                    [.horizontal, .vertical]
-                                )
                             }
                         }
                         .scrollTargetLayout(isEnabled: true)
