@@ -32,6 +32,11 @@ struct NoteView: View {
                             ForEach(pages) { page in
                                 @Bindable var page = page
                                 
+//                                let binding = Binding(
+//                                    get: { self.page },
+//                                    set: { self.username = $0 }
+//                                )
+
                                 ScrollViewContainer(
                                     note: contentObject.note!,
                                     page: page,

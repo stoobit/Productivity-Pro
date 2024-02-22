@@ -3,6 +3,7 @@
 ## 🛠️ Release 2.0.v
 - View Updates 
 - Performance 
+- Overview
 
 ## 🗺️ Release 2.1.v
 - Links 

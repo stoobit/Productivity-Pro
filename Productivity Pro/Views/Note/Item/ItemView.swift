@@ -15,33 +15,14 @@ struct ItemView: View {
     
     @Bindable var note: PPNoteModel
     @Bindable var page: PPPageModel
+    @Bindable var item: PPItemModel
     
-    @Bindable var item: ItemObserver
     @Binding var scale: CGFloat
     
     var realrenderText: Bool
     var preloadModels: Bool
     
-    init(
-        note: PPNoteModel,
-        page: PPPageModel,
-        item: PPItemModel,
-        scale: Binding<CGFloat>,
-        realrenderText: Bool,
-        preloadModels: Bool
-    ) {
-        self.note = note
-        self.page = page
-        self.realrenderText = realrenderText
-        self.preloadModels = preloadModels
-        
-        _scale = scale
-        self.item = ItemObserver(item: item)
-    }
-    
     var body: some View {
-        @Bindable var item = item.item
-        
         if preloadModels {
             self.setEditModel()
         }
@@ -106,10 +87,10 @@ struct ItemView: View {
     
     func setEditModel() {
         editItemModel.position = CGPoint(
-            x: item.item.x, y: item.item.y
+            x: item.x, y: item.y
         )
         editItemModel.size = CGSize(
-            width: item.item.width, height: item.item.height
+            width: item.width, height: item.height
         )
     }
 }

@@ -36,9 +36,11 @@ struct NoteSecondaryToolbar: ToolbarContent {
             }
             .tint(Color.red)
             
-            Button("Übersicht", systemImage: "square.grid.2x2") { 
-                subviewManager.overview.toggle()
+            Button("Übersicht", systemImage: "square.grid.2x2") {
                 toolManager.pencilKit = false
+                toolManager.activeItem = nil
+                
+                subviewManager.overview.toggle()
             }
             
             Menu(content: {
