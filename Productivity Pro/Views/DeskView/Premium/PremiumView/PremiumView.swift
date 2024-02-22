@@ -100,11 +100,3 @@ struct PremiumView: View {
         "tray.full.fill"
     ]
 }
-
-#Preview {
-    Text("hello")
-        .sheet(isPresented: .constant(true), content: {
-            PremiumView()
-                .environment(StoreViewModel())
-        })
-}

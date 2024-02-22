@@ -37,7 +37,7 @@ private struct ContentView: View {
     var body: some View {
         ZStack {
             if storeVM.finished {
-               Text("loadable")
+               Text("Premium")
                     .onChange(of: scenePhase, initial: true, {
                         if isDeveloper == false {
                             updateStatus()

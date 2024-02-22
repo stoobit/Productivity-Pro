@@ -2,7 +2,14 @@
   "sourceLanguage" : "de",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     ", " : {
       "localizations" : {
@@ -75,10 +82,24 @@
       }
     },
     "3. Deklination" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3rd Declination"
+          }
+        }
+      }
     },
     "a-Deklination" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a-Declination"
+          }
+        }
+      }
     },
     "Abbrechen" : {
       "localizations" : {
@@ -111,7 +132,14 @@
       }
     },
     "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All existing notes will be replaced by the backup. This action cannot be undone!"
+          }
+        }
+      }
     },
     "Allgemein" : {
       "localizations" : {
@@ -124,7 +152,14 @@
       }
     },
     "Anmelden" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login"
+          }
+        }
+      }
     },
     "Anordnung" : {
       "localizations" : {
@@ -286,17 +321,6 @@
         }
       }
     },
-    "Bewerten" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rate"
-          }
-        }
-      }
-    },
     "Bibliothek" : {
       "localizations" : {
         "en" : {
@@ -328,10 +352,24 @@
       }
     },
     "Bitte importiere die Datei über das Import-Menü oder die Backup-Ansicht." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please import the file via the import menu or the backup view."
+          }
+        }
+      }
     },
     "Bitte vergrößere dieses Fenster um auf die Bibliothek zuzugreifen." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please enlarge this window to access the library."
+          }
+        }
+      }
     },
     "Breite" : {
       "localizations" : {
@@ -394,7 +432,14 @@
       }
     },
     "Diese Ansicht ist nicht verfügbar." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This view is not available."
+          }
+        }
+      }
     },
     "Diese Notiz existiert nicht mehr." : {
       "localizations" : {
@@ -497,7 +542,14 @@
       }
     },
     "e-Deklination" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e-Declination"
+          }
+        }
+      }
     },
     "Ecken" : {
       "localizations" : {
@@ -520,7 +572,14 @@
       }
     },
     "Einfügen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insert"
+          }
+        }
+      }
     },
     "Einstellungen" : {
       "localizations" : {
@@ -553,7 +612,14 @@
       }
     },
     "Entwickler" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer"
+          }
+        }
+      }
     },
     "Erstellt" : {
       "localizations" : {
@@ -626,7 +692,14 @@
       }
     },
     "Filter" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
+        }
+      }
     },
     "Form" : {
       "localizations" : {
@@ -708,23 +781,6 @@
         }
       }
     },
-    "hello" : {
-
-    },
-    "Hello, World!" : {
-
-    },
-    "Hilf uns zu wachsen!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Help us to grow!"
-          }
-        }
-      }
-    },
     "Hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -766,10 +822,24 @@
       }
     },
     "Import nicht möglich" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import not possible"
+          }
+        }
+      }
     },
     "Importiere deine Notizen, die du mit Productivity Pro 1 erstellt hast." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import your notes created with Productivity Pro 1."
+          }
+        }
+      }
     },
     "Importieren" : {
       "localizations" : {
@@ -782,7 +852,14 @@
       }
     },
     "In Arbeit..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Progress..."
+          }
+        }
+      }
     },
     "Inspektor" : {
       "localizations" : {
@@ -815,7 +892,14 @@
       }
     },
     "Konjugationen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conjugations"
+          }
+        }
+      }
     },
     "Kreis" : {
       "localizations" : {
@@ -847,20 +931,6 @@
         }
       }
     },
-    "loadable" : {
-
-    },
-    "Loading Receiver." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loading Receiver"
-          }
-        }
-      }
-    },
     "Löschen" : {
       "localizations" : {
         "en" : {
@@ -872,15 +942,11 @@
       }
     },
     "M" : {
-
-    },
-    "Mit Deiner Bewertung unterstützt Du die Entwicklung von **Productivity Pro** und sorgst dafür, dass es auch in Zukunft regelmäßig Updates gibt." : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "With your rating you support the development of **Productivity Pro** and ensure that there will be regular updates in the future."
+            "value" : "M"
           }
         }
       }
@@ -926,7 +992,14 @@
       }
     },
     "Möchtest du wirklich ein Backup importieren?" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you really want to import a backup?"
+          }
+        }
+      }
     },
     "Montag" : {
       "localizations" : {
@@ -939,7 +1012,14 @@
       }
     },
     "Name" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name"
+          }
+        }
+      }
     },
     "Notiz" : {
       "localizations" : {
@@ -972,10 +1052,24 @@
       }
     },
     "o-Deklination" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o-Declination"
+          }
+        }
+      }
     },
     "Öffnen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open"
+          }
+        }
+      }
     },
     "Ordner erstellen" : {
       "localizations" : {
@@ -1008,19 +1102,54 @@
       }
     },
     "Passwort" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Password"
+          }
+        }
+      }
     },
     "pdf" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pdf"
+          }
+        }
+      }
     },
     "PDF" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF"
+          }
+        }
+      }
     },
     "Pin entfernen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove Pin"
+          }
+        }
+      }
     },
     "Position" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Position"
+          }
+        }
+      }
     },
     "Premium" : {
       "localizations" : {
@@ -1043,10 +1172,24 @@
       }
     },
     "pronote" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pronote"
+          }
+        }
+      }
     },
     "QRShare" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QRShare"
+          }
+        }
+      }
     },
     "Querformat" : {
       "localizations" : {
@@ -1059,10 +1202,24 @@
       }
     },
     "Radius" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radius"
+          }
+        }
+      }
     },
     "Rahmen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Border"
+          }
+        }
+      }
     },
     "Raum" : {
       "localizations" : {
@@ -1075,16 +1232,44 @@
       }
     },
     "Rechteck" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rectangle"
+          }
+        }
+      }
     },
     "Rolle" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Role"
+          }
+        }
+      }
     },
     "Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan this QR code with another iPad to access Productivity Pro's library directly without having to install the app."
+          }
+        }
+      }
     },
     "Scanne diesen QR-Code, um direkt auf eine PDF Version dieser Notiz zugreifen zu können." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan this QR code to directly access a PDF version of this note."
+          }
+        }
+      }
     },
     "Schließen" : {
       "localizations" : {
@@ -1127,7 +1312,14 @@
       }
     },
     "Schriftfarbe" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Font Color"
+          }
+        }
+      }
     },
     "Schriftgröße" : {
       "localizations" : {
@@ -1140,13 +1332,34 @@
       }
     },
     "Schüler" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Student"
+          }
+        }
+      }
     },
     "Sechseck" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hexagon"
+          }
+        }
+      }
     },
     "Seite" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page"
+          }
+        }
+      }
     },
     "Seite hinzufügen" : {
       "localizations" : {
@@ -1179,10 +1392,24 @@
       }
     },
     "Sperre" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock"
+          }
+        }
+      }
     },
     "Stil" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style"
+          }
+        }
+      }
     },
     "Stundenplan" : {
       "localizations" : {
@@ -1195,7 +1422,14 @@
       }
     },
     "Substantive" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouns"
+          }
+        }
+      }
     },
     "Suchen" : {
       "localizations" : {
@@ -1218,7 +1452,14 @@
       }
     },
     "Text" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text"
+          }
+        }
+      }
     },
     "Titel" : {
       "localizations" : {
@@ -1231,7 +1472,14 @@
       }
     },
     "u-Deklination" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "u-Declination"
+          }
+        }
+      }
     },
     "Übersicht" : {
       "localizations" : {
@@ -1244,7 +1492,14 @@
       }
     },
     "Überspringen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
+          }
+        }
+      }
     },
     "Uhrzeit der Benachrichtigung" : {
       "localizations" : {
@@ -1277,7 +1532,14 @@
       }
     },
     "Verstanden" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
     },
     "Vorlage ändern" : {
       "localizations" : {
@@ -1290,10 +1552,24 @@
       }
     },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you delete this subject, the tasks and schedule entries connected with this subject will also be deleted."
+          }
+        }
+      }
     },
     "Widerrufen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Undo"
+          }
+        }
+      }
     },
     "Wiederherstellen" : {
       "localizations" : {
@@ -1306,19 +1582,54 @@
       }
     },
     "Wiederholen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redo"
+          }
+        }
+      }
     },
     "Wortschatz %@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vocabulary %@"
+          }
+        }
+      }
     },
     "X" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X"
+          }
+        }
+      }
     },
     "Y" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y"
+          }
+        }
+      }
     },
     "Zentrieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Center"
+          }
+        }
+      }
     },
     "Zu erledigen bis zum" : {
       "localizations" : {
