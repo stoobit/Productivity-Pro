@@ -5,6 +5,10 @@
 - Performance 
 - Overview
 
+## 🗺️ Release 2.0.1
+- Documentation of Full Project
+- Extendable Marks 
+
 ## 🗺️ Release 2.1.v
 - Links 
 - Unsplash Integration 
@@ -12,6 +16,8 @@
 - Library Extension
 
 ## 🗺️ Release 2.2.v
+- Sticker
+- Insertable Background
 - PencilKit Shape Recognition
 - Library Extension
 

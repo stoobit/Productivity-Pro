@@ -37,12 +37,12 @@ private struct ContentView: View {
     var body: some View {
         ZStack {
             if storeVM.finished {
-               Text("Premium")
-                    .onChange(of: scenePhase, initial: true, {
+                Text("Premium")
+                    .onChange(of: scenePhase, initial: true) {
                         if isDeveloper == false {
                             updateStatus()
                         }
-                    })
+                    }
             }
             
             TabView(selection: $selectedTab) {
