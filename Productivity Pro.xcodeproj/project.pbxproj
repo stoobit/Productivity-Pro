@@ -677,14 +677,14 @@
 			path = Overview;
 			sourceTree = "<group>";
 		};
-		BB3E9AA72A33AC27006045E1 /* NoteView */ = {
+		BB3E9AA72A33AC27006045E1 /* Note */ = {
 			isa = PBXGroup;
 			children = (
 				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
 				BB7987022AD497C1003469E6 /* NoteViewModifier.swift */,
 				BB655B012AB772F700FB005A /* NoteViewModifier */,
 			);
-			path = NoteView;
+			path = Note;
 			sourceTree = "<group>";
 		};
 		BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */ = {
@@ -790,7 +790,7 @@
 				BB047CDC2AC0C1DD0027409F /* FileSystemView */,
 				BBFA92462B607E750055CE9D /* ShareMenu */,
 				BBCCE4F028D52911001DBD8A /* CreateNote */,
-				BB9DF5A828DFA25600AC988D /* Note */,
+				BB9DF5A828DFA25600AC988D /* NoteView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1103,14 +1103,14 @@
 			path = ShareViews;
 			sourceTree = "<group>";
 		};
-		BB9DF5A828DFA25600AC988D /* Note */ = {
+		BB9DF5A828DFA25600AC988D /* NoteView */ = {
 			isa = PBXGroup;
 			children = (
-				BB3E9AA72A33AC27006045E1 /* NoteView */,
-				BB26F8A62B31166D00788AA4 /* ClipboardControl */,
-				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
+				BB3E9AA72A33AC27006045E1 /* Note */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
+				BB26F8A62B31166D00788AA4 /* ClipboardControl */,
+				BB7A200129A278F300D2B466 /* ScrollViewContainer */,
 				BBA3A0272B29AF1000099F6D /* MarkdownEditor */,
 				BBDCF5DB299EB2EE004C99AE /* InspectorView */,
 				BB988E6329999F3300762F39 /* DrawingView */,
@@ -1119,7 +1119,7 @@
 				BB9CC946293FD4450094446A /* ShareViews */,
 				BBBCACAF2A253BC000C23B2C /* Calculator */,
 			);
-			path = Note;
+			path = NoteView;
 			sourceTree = "<group>";
 		};
 		BB9DF5B328E067D600AC988D /* Document (Deprecated) */ = {
