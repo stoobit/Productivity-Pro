@@ -277,6 +277,8 @@
 		BBF930732A67437900AD3958 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF930722A67437900AD3958 /* Color.swift */; };
 		BBFA92452B607DB30055CE9D /* ShareQRPDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA92442B607DB30055CE9D /* ShareQRPDFView.swift */; };
 		BBFA92482B607E840055CE9D /* ShareMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFA92472B607E840055CE9D /* ShareMenu.swift */; };
+		BBFE03C72B8AAB4600210BA4 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = BBFE03C62B8AAB4600210BA4 /* ComposableArchitecture */; };
+		BBFE03CA2B8AAD3A00210BA4 /* PencilKitFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFE03C92B8AAD3A00210BA4 /* PencilKitFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -565,6 +567,7 @@
 		BBF930722A67437900AD3958 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		BBFA92442B607DB30055CE9D /* ShareQRPDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareQRPDFView.swift; sourceTree = "<group>"; };
 		BBFA92472B607E840055CE9D /* ShareMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMenu.swift; sourceTree = "<group>"; };
+		BBFE03C92B8AAD3A00210BA4 /* PencilKitFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -574,6 +577,7 @@
 			files = (
 				BB7468902AF5B90C0029F60D /* PPAnglePicker in Frameworks */,
 				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
+				BBFE03C72B8AAB4600210BA4 /* ComposableArchitecture in Frameworks */,
 				BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */,
@@ -761,6 +765,8 @@
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
+				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
+				BBFE03C82B8AAD1A00210BA4 /* TCA */,
 				BB4CDD4828D3C66A009A409F /* Preview Content */,
 				BB1DDA28296715590038FE16 /* Resources */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
@@ -798,7 +804,6 @@
 		BB4CDD5B28D3D564009A409F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BB6F3DD2291B0E6B005BDDEB /* ViewModels (Intern) */,
 				BB4A93D52AAF3BED00C3AED6 /* OrganizationModels */,
 				BB35A1BF2B292175001A3F4C /* LibraryModels */,
 				BB9A36482ABCD25900721C56 /* NoteModels */,
@@ -932,7 +937,7 @@
 			path = TemplateView;
 			sourceTree = "<group>";
 		};
-		BB6F3DD2291B0E6B005BDDEB /* ViewModels (Intern) */ = {
+		BB6F3DD2291B0E6B005BDDEB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */,
@@ -945,7 +950,7 @@
 				BBBCACB22A25461900C23B2C /* CalculatorModel.swift */,
 				BBC9FF4A2B86AF6300710F36 /* ObserverModels.swift */,
 			);
-			path = "ViewModels (Intern)";
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		BB7A200129A278F300D2B466 /* ScrollViewContainer */ = {
@@ -1448,6 +1453,14 @@
 			path = ShareMenu;
 			sourceTree = "<group>";
 		};
+		BBFE03C82B8AAD1A00210BA4 /* TCA */ = {
+			isa = PBXGroup;
+			children = (
+				BBFE03C92B8AAD3A00210BA4 /* PencilKitFeature.swift */,
+			);
+			path = TCA;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1473,6 +1486,7 @@
 				BB74688F2AF5B90C0029F60D /* PPAnglePicker */,
 				BBE993BF2AF850A800330733 /* PPDoubleKeyboard */,
 				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
+				BBFE03C62B8AAB4600210BA4 /* ComposableArchitecture */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1530,7 +1544,7 @@
 				BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
 				BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */,
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
-				BBFE03C42B89F0D800210BA4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				BBFE03C52B8AAB4600210BA4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1785,6 +1799,7 @@
 				BB9367682AC9CE260096F20E /* PPTextFieldModel.swift in Sources */,
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
+				BBFE03CA2B8AAD3A00210BA4 /* PencilKitFeature.swift in Sources */,
 				BBC0BAB42B47F2CB00D47A21 /* ExportableItemModel.swift in Sources */,
 				BB339F872AD44E97009DA591 /* Role.swift in Sources */,
 				BB073A6F2AB8CA4800C80B59 /* SecondaryPageActions.swift in Sources */,
@@ -2212,7 +2227,7 @@
 				kind = branch;
 			};
 		};
-		BBFE03C42B89F0D800210BA4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		BBFE03C52B8AAB4600210BA4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
@@ -2246,6 +2261,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */;
 			productName = PPDoubleKeyboard;
+		};
+		BBFE03C62B8AAB4600210BA4 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBFE03C52B8AAB4600210BA4 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
