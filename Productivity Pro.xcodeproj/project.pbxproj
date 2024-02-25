@@ -766,6 +766,7 @@
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
+				BB84DD0B2B8BF6FA002C2A9A /* VUModel */,
 				BBFE03C82B8AAD1A00210BA4 /* TCA */,
 				BB4CDD4828D3C66A009A409F /* Preview Content */,
 				BB1DDA28296715590038FE16 /* Resources */,
@@ -987,6 +988,13 @@
 				BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */,
 			);
 			path = DrawingView;
+			sourceTree = "<group>";
+		};
+		BB84DD0B2B8BF6FA002C2A9A /* VUModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VUModel;
 			sourceTree = "<group>";
 		};
 		BB84E5D429354F5800E0535C /* ItemModels */ = {
