@@ -1,13 +1,11 @@
 # Productivity Pro
 
 ## 🛠️ Release 2.0.v
-- View Updates 
-    Create an array from SwiftData with a container for each SwiftData Model as a computed value with @Observable classes:
-    [https://stackoverflow.com/questions/59341026]
-    
-- Performance 
-- Overview
-- Keyboard Shortcuts 
+- VUModel: EditItemModel extension for every SwiftData model value
+- URModel: Custom Undo/Redo Methods
+- add keyboard shortcuts
+- create an optimized overview with custom SwiftUI Components
+- improve SwiftUI ScrollView performance 
 
 ## 🗺️ Release 2.0.1
 - Documentation of Full Project
