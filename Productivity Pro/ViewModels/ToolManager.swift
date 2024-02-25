@@ -5,9 +5,6 @@
 //  Created by Till Brügmann on 08.11.22.
 //
 
-import PDFKit
-import PencilKit
-import PhotosUI
 import SwiftUI
 
 @Observable final class ToolManager {
