@@ -17,6 +17,13 @@ import SwiftData
         self.fontSize = fontSize
     }
     
+    init() {
+        self.strokeStyle = PPStrokeType.line.rawValue
+        self.textColor = Color.black.data()
+        self.fontName = "Avenir Next"
+        self.fontSize = 13
+    }
+    
     var string: String = ""
     var textColor: Data
     

@@ -21,7 +21,8 @@ struct TextFieldStyleView: View {
     @State var fontColor: Color = .black
     
     var body: some View {
-        @Bindable var item = toolManager.activeItem!.textField!
+        @Bindable var item = toolManager.activeItem?
+            .textField ?? PPTextFieldModel()
         
         Form {
             Section("Text") {

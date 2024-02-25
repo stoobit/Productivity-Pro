@@ -2,8 +2,12 @@
 
 ## 🛠️ Release 2.0.v
 - View Updates 
+    Create an array from SwiftData with a container for each SwiftData Model as a computed value with @Observable classes:
+    [https://stackoverflow.com/questions/59341026]
+    
 - Performance 
 - Overview
+- Keyboard Shortcuts 
 
 ## 🗺️ Release 2.0.1
 - Documentation of Full Project
