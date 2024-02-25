@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 16.04.23.
 //
 
-import SwiftUI
 import PencilKit
+import SwiftUI
 
 @MainActor
 struct PKRepresentable: UIViewRepresentable {
@@ -32,12 +32,7 @@ struct PKRepresentable: UIViewRepresentable {
             canvasView.showsHorizontalScrollIndicator = false
             
             toolPicker.showsDrawingPolicyControls = false
-            
-            #if DEBUG
-            canvasView.drawingPolicy = .anyInput
-            #else
             canvasView.drawingPolicy = .pencilOnly
-            #endif
             
             adoptScale()
             
@@ -101,7 +96,7 @@ struct PKRepresentable: UIViewRepresentable {
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if  page.color == "pagewhite" ||  page.color == "white" ||  page.color == "pageyellow" ||  page.color == "yellow"{
+        if page.color == "pagewhite" || page.color == "white" || page.color == "pageyellow" || page.color == "yellow" {
             cs = .light
         }
         
@@ -114,5 +109,4 @@ struct PKRepresentable: UIViewRepresentable {
         
         canvasView.setZoomScale(scale, animated: false)
     }
-    
 }
