@@ -11,7 +11,7 @@ struct ItemView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @State var editItemModel: EditItemModel = .init()
+    @State var vuModel: VUModel = .init()
     
     @Bindable var note: PPNoteModel
     @Bindable var page: PPPageModel
@@ -24,7 +24,7 @@ struct ItemView: View {
     
     var body: some View {
         if preloadModels {
-            self.setEditModel()
+            vuModel.setModel(from: item)
         }
         
         return Group {
@@ -32,65 +32,39 @@ struct ItemView: View {
                 if item.type == PPItemType.shape.rawValue {
                     ShapeItemView(
                         item: item,
-                        editItem: editItemModel,
+                        editItem: vuModel,
                         scale: $scale
                     )
-                    
                 } else if item.type == PPItemType.textField.rawValue {
                     TextFieldItemView(
                         item: item,
-                        editItem: editItemModel,
+                        editItem: vuModel,
                         scale: $scale,
                         highRes: realrenderText
                     )
-                    
                 } else if item.type == PPItemType.media.rawValue {
                     MediaItemView(
                         item: item,
-                        editItem: editItemModel,
+                        editItem: vuModel,
                         scale: $scale
                     )
                 }
             }
+            .modifier(VUModifier(vuModel: vuModel, item: item))
             .position(
-                x: (editItemModel.position.x) * scale,
-                y: (editItemModel.position.y) * scale
+                x: (vuModel.position.x) * scale,
+                y: (vuModel.position.y) * scale
             )
             .modifier(
                 DragItemModifier(
                     item: item, page: page,
-                    editItemModel: editItemModel,
+                    editItemModel: vuModel,
                     scale: $scale
                 )
             )
-            .onAppear {
-                setEditModel()
-            }
-            .onChange(of: item.x) {
-                editItemModel.position.x = item.x
-            }
-            .onChange(of: item.y) {
-                editItemModel.position.y = item.y
-            }
-            .onChange(of: item.width) {
-                editItemModel.size.width = item.width
-            }
-            .onChange(of: item.height) {
-                editItemModel.size.height = item.height
-            }
             
-            ToolView(page: page, item: item, scale: $scale)
+            ToolView(page: page, item: item, vuModel: vuModel, scale: $scale)
                 .zIndex(Double(page.items!.count + 20))
-                .environment(editItemModel)
         }
-    }
-    
-    func setEditModel() {
-        editItemModel.position = CGPoint(
-            x: item.x, y: item.y
-        )
-        editItemModel.size = CGSize(
-            width: item.width, height: item.height
-        )
     }
 }

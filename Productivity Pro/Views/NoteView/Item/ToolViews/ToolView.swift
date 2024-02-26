@@ -10,10 +10,11 @@ import SwiftUI
 struct ToolView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
-    @Environment(EditItemModel.self) var editItemModel
     
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
+    
+    @Bindable var vuModel: VUModel
     
     @GestureState var width: Double? = nil
     @GestureState var height: Double? = nil
@@ -46,8 +47,8 @@ struct ToolView: View {
             }
             .rotationEffect(Angle(degrees: getRotation()))
             .position(
-                x: editItemModel.position.x * scale,
-                y: editItemModel.position.y * scale
+                x: vuModel.position.x * scale,
+                y: vuModel.position.y * scale
             )
             .frame(
                 width: scale * getFrame().width,
@@ -61,8 +62,8 @@ struct ToolView: View {
         Group {
             DragAnchor(color: .green)
                 .offset(
-                    x: (editItemModel.size.width / 2) * scale,
-                    y: (editItemModel.size.height / 2) * scale
+                    x: (vuModel.size.width / 2) * scale,
+                    y: (vuModel.size.height / 2) * scale
                 )
                 .gesture(
                     DragGesture(minimumDistance: 0)
@@ -70,16 +71,16 @@ struct ToolView: View {
                             changeScale(value: value)
                         }
                         .onEnded { _ in
-                            item.width = editItemModel.size.width
-                            item.height = editItemModel.size.height
+                            item.width = vuModel.size.width
+                            item.height = vuModel.size.height
                             
                             toolManager.dragType = .none
                         }
                         .updating($width) { _, width, _ in
-                            width = width ?? editItemModel.size.width
+                            width = width ?? vuModel.size.width
                         }
                         .updating($height) { _, height, _ in
-                            height = height ?? editItemModel.size.height
+                            height = height ?? vuModel.size.height
                         }
                 )
         }
@@ -89,18 +90,18 @@ struct ToolView: View {
     @ViewBuilder func WidthView() -> some View {
         Group {
             DragAnchor(color: .main)
-                .offset(x: editItemModel.size.width / 2 * scale, y: 0)
+                .offset(x: vuModel.size.width / 2 * scale, y: 0)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
                             changeWidth(value: value)
                         }
                         .onEnded { _ in
-                            item.width = editItemModel.size.width
+                            item.width = vuModel.size.width
                             toolManager.dragType = .none
                         }
                         .updating($width) { _, startLocation, _ in
-                            startLocation = startLocation ?? editItemModel.size.width
+                            startLocation = startLocation ?? vuModel.size.width
                         }
                 )
         }
@@ -110,14 +111,14 @@ struct ToolView: View {
     @ViewBuilder func HeightView() -> some View {
         Group {
             DragAnchor(color: .main)
-                .offset(x: 0, y: (editItemModel.size.height / 2) * scale)
+                .offset(x: 0, y: (vuModel.size.height / 2) * scale)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
                             changeHeight(value: value)
                         }
                         .onEnded { _ in
-                            item.height = editItemModel.size.height
+                            item.height = vuModel.size.height
                             toolManager.dragType = .none
                         }
                         .updating($height) { _, startLocation, _ in
@@ -136,8 +137,8 @@ struct ToolView: View {
             .overlay {
                 Rectangle()
                     .frame(
-                        width: editItemModel.size.width * scale,
-                        height: editItemModel.size.height * scale
+                        width: vuModel.size.width * scale,
+                        height: vuModel.size.height * scale
                     )
                     .foregroundColor(.clear)
                     .border(

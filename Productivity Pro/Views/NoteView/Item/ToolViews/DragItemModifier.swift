@@ -14,7 +14,7 @@ struct DragItemModifier: ViewModifier {
     @Bindable var item: PPItemModel
     @Bindable var page: PPPageModel
     
-    @Bindable var editItemModel: EditItemModel
+    @Bindable var editItemModel: VUModel
     @Binding var scale: CGFloat
     
     func body(content: Content) -> some View {

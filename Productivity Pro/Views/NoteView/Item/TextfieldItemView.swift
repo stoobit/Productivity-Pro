@@ -5,7 +5,7 @@ struct TextFieldItemView: View {
     @Environment(ToolManager.self) var toolManager
     
     @Bindable var item: PPItemModel
-    @Bindable var editItem: EditItemModel
+    @Bindable var editItem: VUModel
     
     @Binding var scale: CGFloat
     @State var renderedImage: UIImage?

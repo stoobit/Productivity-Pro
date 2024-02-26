@@ -39,7 +39,7 @@ extension ToolView {
         toolManager.activeItem = item
         zPositioning = CGSize(width: 1, height: 0)
         
-        var newLocation = width ?? editItemModel.size.width
+        var newLocation = width ?? vuModel.size.width
         
         if (newLocation + ((value.translation.width * 2) * (1/scale))) > 1 {
             newLocation += ((value.translation.width * 2) * (1/scale))
@@ -47,7 +47,7 @@ extension ToolView {
             newLocation = 1
         }
         
-        editItemModel.size.width = newLocation
+        vuModel.size.width = newLocation
     }
     
     func changeHeight(value: DragGesture.Value) {
@@ -56,7 +56,7 @@ extension ToolView {
         toolManager.activeItem = item
         zPositioning = CGSize(width: 0, height: 1)
 
-        var newLocation = height ?? editItemModel.size.height
+        var newLocation = height ?? vuModel.size.height
         
         if (newLocation + ((value.translation.height * 2) * (1/scale))) > 1 {
             newLocation += ((value.translation.height * 2) * (1/scale))
@@ -64,7 +64,7 @@ extension ToolView {
             newLocation = 1
         }
         
-        editItemModel.size.height = newLocation
+        vuModel.size.height = newLocation
     }
     
     func changeScale(value: DragGesture.Value) {
@@ -72,8 +72,8 @@ extension ToolView {
         toolManager.dragType = .size
         toolManager.activeItem = item
        
-        var newWidth = width ?? editItemModel.size.width
-        var newHeight = height ?? editItemModel.size.height
+        var newWidth = width ?? vuModel.size.width
+        var newHeight = height ?? vuModel.size.height
         
         if (newWidth + ((value.translation.width * 2) * (1/scale))) > 1 {
             newWidth += ((value.translation.width * 2) * (1/scale))
@@ -87,11 +87,11 @@ extension ToolView {
             newHeight = 1
         }
         
-        let oldWidth = editItemModel.size.width
-        let oldHeight = editItemModel.size.height
+        let oldWidth = vuModel.size.width
+        let oldHeight = vuModel.size.height
         
-        editItemModel.size.width *= (newWidth/oldWidth + newHeight/oldHeight)/2
-        editItemModel.size.height *= (newWidth/oldWidth + newHeight/oldHeight)/2
+        vuModel.size.width *= (newWidth/oldWidth + newHeight/oldHeight)/2
+        vuModel.size.height *= (newWidth/oldWidth + newHeight/oldHeight)/2
         
     }
     
