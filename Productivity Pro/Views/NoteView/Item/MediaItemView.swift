@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MediaItemView: View {
     @Bindable var item: PPItemModel
-    @Bindable var editItem: MediaVUModel
+    @Bindable var vuModel: MediaVUModel
     
     @Binding var scale: CGFloat
     @State var image: UIImage = .init()
@@ -19,8 +19,8 @@ struct MediaItemView: View {
             Image(uiImage: image)
                 .resizable()
                 .frame(
-                    width: (editItem.size.width + 0.1) * scale,
-                    height: (editItem.size.height + 0.1) * scale
+                    width: (vuModel.size.width + 0.1) * scale,
+                    height: (vuModel.size.height + 0.1) * scale
                 )
             
             if item.media?.stroke == true {
@@ -34,8 +34,8 @@ struct MediaItemView: View {
                         lineWidth: media.strokeWidth * scale * 2
                     )
                     .frame(
-                        width: (editItem.size.width + media.strokeWidth * 2) * scale,
-                        height: (editItem.size.height + media.strokeWidth * 2) * scale
+                        width: (vuModel.size.width + media.strokeWidth * 2) * scale,
+                        height: (vuModel.size.height + media.strokeWidth * 2) * scale
                     )
                 }
             }

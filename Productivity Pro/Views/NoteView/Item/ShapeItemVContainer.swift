@@ -24,7 +24,7 @@ struct ShapeItemViewContainer: View {
         return ZStack {
             ShapeItemView(
                 item: item,
-                editItem: vuModel,
+                vuModel: vuModel,
                 scale: $scale
             )
             .modifier(ShapeVUModifier(vuModel: vuModel, item: item))

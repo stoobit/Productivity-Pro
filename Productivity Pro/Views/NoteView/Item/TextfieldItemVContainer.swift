@@ -25,7 +25,7 @@ struct TextfieldItemVContainer: View {
         return ZStack {
             TextFieldItemView(
                 item: item,
-                editItem: vuModel,
+                vuModel: vuModel,
                 scale: $scale,
                 highRes: realrenderText
             )

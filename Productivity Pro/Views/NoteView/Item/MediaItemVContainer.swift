@@ -24,7 +24,7 @@ struct MediaItemVContainer: View {
         return ZStack {
             MediaItemView(
                 item: item,
-                editItem: vuModel,
+                vuModel: vuModel,
                 scale: $scale
             )
             .modifier(MediaVUModifier(vuModel: vuModel, item: item))

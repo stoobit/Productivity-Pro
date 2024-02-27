@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShapeItemView: View {
     @Bindable var item: PPItemModel
-    @Bindable var editItem: ShapeVUModel
+    @Bindable var vuModel: ShapeVUModel
     
     @Binding var scale: CGFloat
     
@@ -46,8 +46,8 @@ struct ShapeItemView: View {
                     shape
                         .fill(Color(data: model.fillColor))
                         .frame(
-                            width: (editItem.size.width + model.strokeWidth / 2) * scale,
-                            height: (editItem.size.height + model.strokeWidth / 2) * scale
+                            width: (vuModel.size.width + model.strokeWidth / 2) * scale,
+                            height: (vuModel.size.height + model.strokeWidth / 2) * scale
                         )
                         .contentShape(shape)
                     
@@ -55,8 +55,8 @@ struct ShapeItemView: View {
                     shape
                         .fill(Color(data: model.fillColor))
                         .frame(
-                            width: editItem.size.width * scale,
-                            height: editItem.size.height * scale
+                            width: vuModel.size.width * scale,
+                            height: vuModel.size.height * scale
                         )
                         .contentShape(shape)
                 }
@@ -69,8 +69,8 @@ struct ShapeItemView: View {
                         lineWidth: model.strokeWidth * scale
                     )
                     .frame(
-                        width: (editItem.size.width + model.strokeWidth) * scale,
-                        height: (editItem.size.height + model.strokeWidth) * scale
+                        width: (vuModel.size.width + model.strokeWidth) * scale,
+                        height: (vuModel.size.height + model.strokeWidth) * scale
                     )
                     .contentShape(shape)
             }

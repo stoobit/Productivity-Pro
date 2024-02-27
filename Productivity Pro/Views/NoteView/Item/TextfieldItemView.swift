@@ -5,7 +5,7 @@ struct TextFieldItemView: View {
     @Environment(ToolManager.self) var toolManager
     
     @Bindable var item: PPItemModel
-    @Bindable var editItem: TextfieldVUModel
+    @Bindable var vuModel: TextfieldVUModel
     
     @Binding var scale: CGFloat
     @State var renderedImage: UIImage?
@@ -22,8 +22,8 @@ struct TextFieldItemView: View {
                             lineWidth: textField.strokeWidth * scale
                         )
                         .frame(
-                            width: (editItem.size.width + textField.strokeWidth) * scale,
-                            height: (editItem.size.height + textField.strokeWidth) * scale,
+                            width: (vuModel.size.width + textField.strokeWidth) * scale,
+                            height: (vuModel.size.height + textField.strokeWidth) * scale,
                             alignment: .topLeading
                         )
                 }
@@ -31,8 +31,8 @@ struct TextFieldItemView: View {
                 Color(data: textField.fill ? textField.fillColor : Color.clear.data())
                     .contentShape(Rectangle())
                     .frame(
-                        width: editItem.size.width * scale,
-                        height: editItem.size.height * scale,
+                        width: vuModel.size.width * scale,
+                        height: vuModel.size.height * scale,
                         alignment: .topLeading
                     )
             }
@@ -43,23 +43,23 @@ struct TextFieldItemView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(
-                            width: editItem.size.width * scale,
-                            height: editItem.size.height * scale,
+                            width: vuModel.size.width * scale,
+                            height: vuModel.size.height * scale,
                             alignment: .topLeading
                         )
                 }
                 
             } else {
-                MarkdownView(item: item, editItem: editItem)
+                MarkdownView(item: item, editItem: vuModel)
                     .frame(
-                        width: editItem.size.width * scale,
-                        height: editItem.size.height * scale,
+                        width: vuModel.size.width * scale,
+                        height: vuModel.size.height * scale,
                         alignment: .topLeading
                     )
             }
         }
         .rotationEffect(Angle(degrees: item.textField?.rotation ?? 0))
-        .onChange(of: editItem.size) { render() }
+        .onChange(of: vuModel.size) { render() }
         .onChange(of: item.textField) { render() }
         .onChange(of: scale) { render() }
         .onChange(of: scenePhase) { render() }
@@ -74,7 +74,7 @@ struct TextFieldItemView: View {
             var image: UIImage = renderedImage ?? UIImage()
             
             var view: some View {
-                MarkdownView(item: item, editItem: editItem)
+                MarkdownView(item: item, editItem: vuModel)
                     .environment(toolManager)
             }
             
