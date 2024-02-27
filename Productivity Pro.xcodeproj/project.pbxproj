@@ -120,7 +120,11 @@
 		BB82B5B72B2498CB0089D423 /* PKObjectRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5B62B2498CB0089D423 /* PKObjectRecognition.swift */; };
 		BB82B5B92B24990A0089D423 /* PKCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5B82B24990A0089D423 /* PKCoordinator.swift */; };
 		BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */; };
-		BB84DD0E2B8CCD20002C2A9A /* VUModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD0D2B8CCD20002C2A9A /* VUModifier.swift */; };
+		BB84DD132B8E781E002C2A9A /* ShapeItemVContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD122B8E781E002C2A9A /* ShapeItemVContainer.swift */; };
+		BB84DD152B8E783F002C2A9A /* MediaItemVContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD142B8E783F002C2A9A /* MediaItemVContainer.swift */; };
+		BB84DD172B8E78EF002C2A9A /* TextfieldItemVContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD162B8E78EF002C2A9A /* TextfieldItemVContainer.swift */; };
+		BB84DD1A2B8E7C5D002C2A9A /* ShapeVUModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD192B8E7C5D002C2A9A /* ShapeVUModel.swift */; };
+		BB84DD1C2B8E7C66002C2A9A /* ShapeVUModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD1B2B8E7C66002C2A9A /* ShapeVUModifier.swift */; };
 		BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB854ADF29E06531002EDF7A /* PagingModifier.swift */; };
 		BB8586912AE1DE4300C5875C /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8586902AE1DE4300C5875C /* InspectorView.swift */; };
 		BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8586922AE1E37C00C5875C /* StyleContainerView.swift */; };
@@ -221,7 +225,6 @@
 		BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */; };
 		BBC4BE972AED9FDF00D87B60 /* AdaptiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4BE962AED9FDF00D87B60 /* AdaptiveView.swift */; };
 		BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9732A18F09100D496CB /* ItemView.swift */; };
-		BBC7B9762A1982F700D496CB /* VUModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9752A1982F700D496CB /* VUModel.swift */; };
 		BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9782A1988FA00D496CB /* DragAnchor.swift */; };
 		BBC7B97B2A19896A00D496CB /* ToolViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B97A2A19896A00D496CB /* ToolViewMethods.swift */; };
 		BBCA6FA02AF81286009C08E3 /* DoubleRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA6F9F2AF81286009C08E3 /* DoubleRounding.swift */; };
@@ -430,7 +433,11 @@
 		BB82B5B62B2498CB0089D423 /* PKObjectRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKObjectRecognition.swift; sourceTree = "<group>"; };
 		BB82B5B82B24990A0089D423 /* PKCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKCoordinator.swift; sourceTree = "<group>"; };
 		BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewFolderLink.swift; sourceTree = "<group>"; };
-		BB84DD0D2B8CCD20002C2A9A /* VUModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VUModifier.swift; sourceTree = "<group>"; };
+		BB84DD122B8E781E002C2A9A /* ShapeItemVContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeItemVContainer.swift; sourceTree = "<group>"; };
+		BB84DD142B8E783F002C2A9A /* MediaItemVContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemVContainer.swift; sourceTree = "<group>"; };
+		BB84DD162B8E78EF002C2A9A /* TextfieldItemVContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldItemVContainer.swift; sourceTree = "<group>"; };
+		BB84DD192B8E7C5D002C2A9A /* ShapeVUModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeVUModel.swift; sourceTree = "<group>"; };
+		BB84DD1B2B8E7C66002C2A9A /* ShapeVUModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeVUModifier.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
 		BB8586902AE1DE4300C5875C /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
 		BB8586922AE1E37C00C5875C /* StyleContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleContainerView.swift; sourceTree = "<group>"; };
@@ -510,7 +517,6 @@
 		BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BBC4BE962AED9FDF00D87B60 /* AdaptiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveView.swift; sourceTree = "<group>"; };
 		BBC7B9732A18F09100D496CB /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
-		BBC7B9752A1982F700D496CB /* VUModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VUModel.swift; sourceTree = "<group>"; };
 		BBC7B9782A1988FA00D496CB /* DragAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnchor.swift; sourceTree = "<group>"; };
 		BBC7B97A2A19896A00D496CB /* ToolViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolViewMethods.swift; sourceTree = "<group>"; };
 		BBCA6F9F2AF81286009C08E3 /* DoubleRounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRounding.swift; sourceTree = "<group>"; };
@@ -763,6 +769,7 @@
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
+				BB84DD0F2B8E764E002C2A9A /* VUModels */,
 				BB84DD0C2B8BF882002C2A9A /* URModels */,
 				BBFE03C82B8AAD1A00210BA4 /* TCA */,
 				BB4CDD4828D3C66A009A409F /* Preview Content */,
@@ -938,8 +945,6 @@
 		BB6F3DD2291B0E6B005BDDEB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				BBC7B9752A1982F700D496CB /* VUModel.swift */,
-				BB84DD0D2B8CCD20002C2A9A /* VUModifier.swift */,
 				BB6F3DD5291B10F5005BDDEB /* ToolManager.swift */,
 				BB6F3DD3291B0E85005BDDEB /* SubviewManager.swift */,
 				BB82B5A92B2471130089D423 /* StackingManager.swift */,
@@ -992,6 +997,24 @@
 			children = (
 			);
 			path = URModels;
+			sourceTree = "<group>";
+		};
+		BB84DD0F2B8E764E002C2A9A /* VUModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB84DD192B8E7C5D002C2A9A /* ShapeVUModel.swift */,
+				BB84DD1B2B8E7C66002C2A9A /* ShapeVUModifier.swift */,
+			);
+			path = VUModels;
+			sourceTree = "<group>";
+		};
+		BB84DD182B8E7A54002C2A9A /* MarkdownView */ = {
+			isa = PBXGroup;
+			children = (
+				BBADD1362A5102620075B825 /* MarkdownView.swift */,
+				BBA9A2492B2F0C96004AFAD0 /* MarkdownTheme.swift */,
+			);
+			path = MarkdownView;
 			sourceTree = "<group>";
 		};
 		BB84E5D429354F5800E0535C /* ItemModels */ = {
@@ -1374,11 +1397,13 @@
 			children = (
 				BB5034182993172800913B3A /* PageItemView.swift */,
 				BBC7B9732A18F09100D496CB /* ItemView.swift */,
+				BB84DD122B8E781E002C2A9A /* ShapeItemVContainer.swift */,
 				BBDCF5D7299E7326004C99AE /* ShapeItemView.swift */,
+				BB84DD142B8E783F002C2A9A /* MediaItemVContainer.swift */,
 				BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */,
+				BB84DD162B8E78EF002C2A9A /* TextfieldItemVContainer.swift */,
 				BBADD1372A5102620075B825 /* TextfieldItemView.swift */,
-				BBADD1362A5102620075B825 /* MarkdownView.swift */,
-				BBA9A2492B2F0C96004AFAD0 /* MarkdownTheme.swift */,
+				BB84DD182B8E7A54002C2A9A /* MarkdownView */,
 				BBC7B9772A1988E800D496CB /* ToolViews */,
 			);
 			path = Item;
@@ -1614,6 +1639,7 @@
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
+				BB84DD172B8E78EF002C2A9A /* TextfieldItemVContainer.swift in Sources */,
 				BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */,
 				BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */,
 				BB93676C2AC9CE430096F20E /* PPTableModel.swift in Sources */,
@@ -1630,6 +1656,8 @@
 				BBC0BAB22B47F2CB00D47A21 /* ExportableTextFieldModel.swift in Sources */,
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */,
+				BB84DD132B8E781E002C2A9A /* ShapeItemVContainer.swift in Sources */,
+				BB84DD1C2B8E7C66002C2A9A /* ShapeVUModifier.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSecondaryToolbar.swift in Sources */,
 				BB8586972AE1E3B000C5875C /* ArrangeContainerView.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
@@ -1652,6 +1680,7 @@
 				BB7987052AD49BA1003469E6 /* ShapesButton.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* CalculatorModel.swift in Sources */,
+				BB84DD152B8E783F002C2A9A /* MediaItemVContainer.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
 				BB35A1C52B2921EA001A3F4C /* LGrammarList.swift in Sources */,
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
@@ -1678,7 +1707,6 @@
 				BBCDFDEB2947DC62000C545D /* MusicView.swift in Sources */,
 				BBB049782B84FA95005531D5 /* GoogleView.swift in Sources */,
 				BB5705282B3609E800F84B45 /* LGrammarTable.swift in Sources */,
-				BB84DD0E2B8CCD20002C2A9A /* VUModifier.swift in Sources */,
 				BB85869B2AE1E5BB00C5875C /* MediaStyleView.swift in Sources */,
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
 				BB93676E2AC9CE500096F20E /* PPMindmapModel.swift in Sources */,
@@ -1700,6 +1728,7 @@
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
 				BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
+				BB84DD1A2B8E7C5D002C2A9A /* ShapeVUModel.swift in Sources */,
 				BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */,
 				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
 				BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */,
@@ -1766,7 +1795,6 @@
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,
-				BBC7B9762A1982F700D496CB /* VUModel.swift in Sources */,
 				BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */,
 				BB4A93E32AAF564C00C3AED6 /* ScheduleViewContainer.swift in Sources */,
 				BBD930EE2B1FC02300A37F95 /* PVAnimationView.swift in Sources */,

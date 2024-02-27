@@ -22,7 +22,7 @@ struct PageItemView: View {
     var body: some View {
         ForEach(page.items!) { item in
             ItemView(
-                note: note, page: page,
+                page: page,
                 item: item,
                 scale: $scale,
                 realrenderText: realrenderText,
