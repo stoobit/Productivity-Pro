@@ -28,5 +28,8 @@ struct ShapeVUModifier: ViewModifier {
             .onChange(of: item.height) {
                 vuModel.size.height = item.height
             }
+            .onChange(of: item.shape?.fillColor) { old, new in
+                vuModel.fillColor = Color(data: new!)
+            }
     }
 }

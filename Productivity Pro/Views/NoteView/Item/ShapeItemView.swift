@@ -44,7 +44,7 @@ struct ShapeItemView: View {
             if model.fill {
                 if model.stroke {
                     shape
-                        .fill(Color(data: model.fillColor))
+                        .fill(vuModel.fillColor)
                         .frame(
                             width: (vuModel.size.width + model.strokeWidth / 2) * scale,
                             height: (vuModel.size.height + model.strokeWidth / 2) * scale
@@ -53,7 +53,7 @@ struct ShapeItemView: View {
                     
                 } else {
                     shape
-                        .fill(Color(data: model.fillColor))
+                        .fill(vuModel.fillColor)
                         .frame(
                             width: vuModel.size.width * scale,
                             height: vuModel.size.height * scale

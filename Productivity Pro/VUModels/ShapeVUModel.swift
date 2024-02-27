@@ -13,8 +13,12 @@ import SwiftUI
     
     var fillColor: Color = Color.clear
     
+    
     func setModel(from item: PPItemModel) {
         self.position = CGPoint(x: item.x, y: item.y)
         self.size = CGSize(width: item.width, height: item.height)
+        
+        guard let shape = item.shape else { return }
+        self.fillColor = Color(data: shape.fillColor)
     }
 }
