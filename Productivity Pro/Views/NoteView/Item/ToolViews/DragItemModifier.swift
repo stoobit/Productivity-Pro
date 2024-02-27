@@ -14,7 +14,7 @@ struct DragItemModifier: ViewModifier {
     @Bindable var item: PPItemModel
     @Bindable var page: PPPageModel
     
-    @Bindable var editItemModel: VUModel
+    @Binding var position: CGPoint
     @Binding var scale: CGFloat
     
     func body(content: Content) -> some View {
@@ -25,34 +25,33 @@ struct DragItemModifier: ViewModifier {
                         .onChanged { value in
                             toolManager.editorVisible = false
                             
-                            var newLocation = startLocation ?? editItemModel.position
+                            var newLocation = startLocation ?? position
                             
                             newLocation.x += (value.translation.width * (1 / scale))
                             newLocation.y += (value.translation.height * (1 / scale))
                             
-                            if newLocation.x > getBorder().width - 20 && newLocation.x < getBorder().width + 20 {
-                                editItemModel.position.x = getBorder().width
+                            if newLocation.x > getBorder().width - 20, newLocation.x < getBorder().width + 20 {
+                                position.x = getBorder().width
                                 toolManager.showSnapper[0] = true
                             } else {
-                                editItemModel.position.x = newLocation.x
+                                position.x = newLocation.x
                                 toolManager.showSnapper[0] = false
                             }
                             
-                            if newLocation.y > getBorder().height - 20 && newLocation.y < getBorder().height + 20 {
-                                editItemModel.position.y = getBorder().height
+                            if newLocation.y > getBorder().height - 20, newLocation.y < getBorder().height + 20 {
+                                position.y = getBorder().height
                                 toolManager.showSnapper[1] = true
                             } else {
-                                editItemModel.position.y = newLocation.y
+                                position.y = newLocation.y
                                 toolManager.showSnapper[1] = false
                             }
-                            
                         }
-                        .updating($startLocation) { (value, startLocation, transaction) in
-                            startLocation = startLocation ?? editItemModel.position
+                        .updating($startLocation) { _, startLocation, _ in
+                            startLocation = startLocation ?? position
                         }
-                        .onEnded { value in
-                            item.x = editItemModel.position.x
-                            item.y = editItemModel.position.y
+                        .onEnded { _ in
+                            item.x = position.x
+                            item.y = position.y
                             
                             toolManager.editorVisible = true
                             
@@ -77,5 +76,4 @@ struct DragItemModifier: ViewModifier {
         
         return frame
     }
-    
 }

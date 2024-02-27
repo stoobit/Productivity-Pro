@@ -14,7 +14,8 @@ struct ToolView: View {
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
     
-    @Bindable var vuModel: VUModel
+    @Binding var position: CGPoint
+    @Binding var size: CGSize
     
     @GestureState var width: Double? = nil
     @GestureState var height: Double? = nil
@@ -47,8 +48,8 @@ struct ToolView: View {
             }
             .rotationEffect(Angle(degrees: getRotation()))
             .position(
-                x: vuModel.position.x * scale,
-                y: vuModel.position.y * scale
+                x: position.x * scale,
+                y: position.y * scale
             )
             .frame(
                 width: scale * getFrame().width,
@@ -62,8 +63,8 @@ struct ToolView: View {
         Group {
             DragAnchor(color: .green)
                 .offset(
-                    x: (vuModel.size.width / 2) * scale,
-                    y: (vuModel.size.height / 2) * scale
+                    x: (size.width / 2) * scale,
+                    y: (size.height / 2) * scale
                 )
                 .gesture(
                     DragGesture(minimumDistance: 0)
@@ -71,16 +72,16 @@ struct ToolView: View {
                             changeScale(value: value)
                         }
                         .onEnded { _ in
-                            item.width = vuModel.size.width
-                            item.height = vuModel.size.height
+                            item.width = size.width
+                            item.height = size.height
                             
                             toolManager.dragType = .none
                         }
                         .updating($width) { _, width, _ in
-                            width = width ?? vuModel.size.width
+                            width = width ?? size.width
                         }
                         .updating($height) { _, height, _ in
-                            height = height ?? vuModel.size.height
+                            height = height ?? size.height
                         }
                 )
         }
@@ -90,18 +91,18 @@ struct ToolView: View {
     @ViewBuilder func WidthView() -> some View {
         Group {
             DragAnchor(color: .main)
-                .offset(x: vuModel.size.width / 2 * scale, y: 0)
+                .offset(x: size.width / 2 * scale, y: 0)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
                             changeWidth(value: value)
                         }
                         .onEnded { _ in
-                            item.width = vuModel.size.width
+                            item.width = size.width
                             toolManager.dragType = .none
                         }
                         .updating($width) { _, startLocation, _ in
-                            startLocation = startLocation ?? vuModel.size.width
+                            startLocation = startLocation ?? size.width
                         }
                 )
         }
@@ -111,14 +112,14 @@ struct ToolView: View {
     @ViewBuilder func HeightView() -> some View {
         Group {
             DragAnchor(color: .main)
-                .offset(x: 0, y: (vuModel.size.height / 2) * scale)
+                .offset(x: 0, y: (size.height / 2) * scale)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
                             changeHeight(value: value)
                         }
                         .onEnded { _ in
-                            item.height = vuModel.size.height
+                            item.height = size.height
                             toolManager.dragType = .none
                         }
                         .updating($height) { _, startLocation, _ in
@@ -137,8 +138,8 @@ struct ToolView: View {
             .overlay {
                 Rectangle()
                     .frame(
-                        width: vuModel.size.width * scale,
-                        height: vuModel.size.height * scale
+                        width: size.width * scale,
+                        height: size.height * scale
                     )
                     .foregroundColor(.clear)
                     .border(

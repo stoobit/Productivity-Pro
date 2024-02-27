@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShapeItemView: View {
     @Bindable var item: PPItemModel
-    @Bindable var editItem: VUModel
+    @Bindable var editItem: ShapeVUModel
     
     @Binding var scale: CGFloat
     

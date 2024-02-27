@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct MediaItemVContainer: View {
-    @State var vuModel: VUModel = .init()
+    @State var vuModel: MediaVUModel = .init()
     
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
     @Binding var scale: CGFloat
     
-    var realrenderText: Bool
     var preloadModels: Bool
     
     var body: some View {
@@ -23,12 +22,12 @@ struct MediaItemVContainer: View {
         }
         
         return ZStack {
-            ShapeItemView(
+            MediaItemView(
                 item: item,
                 editItem: vuModel,
                 scale: $scale
             )
-            .modifier(VUModifier(vuModel: vuModel, item: item))
+            .modifier(MediaVUModifier(vuModel: vuModel, item: item))
             .position(
                 x: (vuModel.position.x) * scale,
                 y: (vuModel.position.y) * scale
@@ -36,7 +35,7 @@ struct MediaItemVContainer: View {
             .modifier(
                 DragItemModifier(
                     item: item, page: page,
-                    editItemModel: vuModel,
+                    position: $vuModel.position,
                     scale: $scale
                 )
             )
@@ -44,7 +43,8 @@ struct MediaItemVContainer: View {
             ToolView(
                 page: page,
                 item: item,
-                vuModel: vuModel,
+                position: $vuModel.position,
+                size: $vuModel.size,
                 scale: $scale
             )
             .zIndex(index)

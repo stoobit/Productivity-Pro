@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TextfieldItemVContainer: View {
-    @State var vuModel: VUModel = .init()
+    @State var vuModel: TextfieldVUModel = .init()
     
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
@@ -23,12 +23,13 @@ struct TextfieldItemVContainer: View {
         }
         
         return ZStack {
-            ShapeItemView(
+            TextFieldItemView(
                 item: item,
                 editItem: vuModel,
-                scale: $scale
+                scale: $scale,
+                highRes: realrenderText
             )
-            .modifier(VUModifier(vuModel: vuModel, item: item))
+            .modifier(TextfieldVUModifier(vuModel: vuModel, item: item))
             .position(
                 x: (vuModel.position.x) * scale,
                 y: (vuModel.position.y) * scale
@@ -36,7 +37,7 @@ struct TextfieldItemVContainer: View {
             .modifier(
                 DragItemModifier(
                     item: item, page: page,
-                    editItemModel: vuModel,
+                    position: $vuModel.position,
                     scale: $scale
                 )
             )
@@ -44,7 +45,8 @@ struct TextfieldItemVContainer: View {
             ToolView(
                 page: page,
                 item: item,
-                vuModel: vuModel,
+                position: $vuModel.position,
+                size: $vuModel.size,
                 scale: $scale
             )
             .zIndex(index)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MediaItemView: View {
     @Bindable var item: PPItemModel
-    @Bindable var editItem: VUModel
+    @Bindable var editItem: MediaVUModel
     
     @Binding var scale: CGFloat
     @State var image: UIImage = .init()

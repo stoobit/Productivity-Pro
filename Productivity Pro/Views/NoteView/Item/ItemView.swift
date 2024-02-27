@@ -25,7 +25,6 @@ struct ItemView: View {
                 page: page,
                 item: item,
                 scale: $scale,
-                realrenderText: realrenderText,
                 preloadModels: preloadModels
             )
         } else if item.type == PPItemType.media.rawValue {
@@ -33,7 +32,6 @@ struct ItemView: View {
                 page: page,
                 item: item,
                 scale: $scale,
-                realrenderText: realrenderText,
                 preloadModels: preloadModels
             )
         } else if item.type == PPItemType.textField.rawValue {

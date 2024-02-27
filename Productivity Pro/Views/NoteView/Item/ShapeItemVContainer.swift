@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ShapeItemViewContainer: View {
-    @State var vuModel: VUModel = .init()
+    @State var vuModel: ShapeVUModel = .init()
     
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
     @Binding var scale: CGFloat
     
-    var realrenderText: Bool
     var preloadModels: Bool
     
     var body: some View {
@@ -28,7 +27,7 @@ struct ShapeItemViewContainer: View {
                 editItem: vuModel,
                 scale: $scale
             )
-            .modifier(VUModifier(vuModel: vuModel, item: item))
+            .modifier(ShapeVUModifier(vuModel: vuModel, item: item))
             .position(
                 x: (vuModel.position.x) * scale,
                 y: (vuModel.position.y) * scale
@@ -36,7 +35,7 @@ struct ShapeItemViewContainer: View {
             .modifier(
                 DragItemModifier(
                     item: item, page: page,
-                    editItemModel: vuModel,
+                    position: $vuModel.position,
                     scale: $scale
                 )
             )
@@ -44,7 +43,8 @@ struct ShapeItemViewContainer: View {
             ToolView(
                 page: page,
                 item: item,
-                vuModel: vuModel,
+                position: $vuModel.position,
+                size: $vuModel.size,
                 scale: $scale
             )
             .zIndex(index)

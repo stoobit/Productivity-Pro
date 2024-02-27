@@ -1,5 +1,5 @@
 //
-//  ShapeVUModifier.swift
+//  MediaVUModifier.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 27.02.24.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ShapeVUModifier: ViewModifier {
-    @Bindable var vuModel: ShapeVUModel
+struct MediaVUModifier: ViewModifier {
+    @Bindable var vuModel: MediaVUModel
     @Bindable var item: PPItemModel
 
     func body(content: Content) -> some View {
@@ -30,3 +30,4 @@ struct ShapeVUModifier: ViewModifier {
             }
     }
 }
+

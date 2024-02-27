@@ -1,5 +1,5 @@
 //
-//  ShapeVUModel.swift
+//  MediaVUModel.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 27.02.24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@Observable final class ShapeVUModel {
+@Observable final class MediaVUModel {
     var position: CGPoint = .zero
     var size: CGSize = .zero
     
