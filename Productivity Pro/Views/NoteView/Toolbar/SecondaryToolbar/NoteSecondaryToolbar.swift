@@ -9,11 +9,11 @@ import SwiftUI
 
 struct NoteSecondaryToolbar: ToolbarContent {
     @Environment(\.dismiss) var dismiss
-    @Environment(\.modelContext) var modelContext
     @Environment(\.horizontalSizeClass) var hsc
     
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
+    @Environment(URModel.self) var urModel
     
     @Bindable var contentObject: ContentObject
     
@@ -22,7 +22,6 @@ struct NoteSecondaryToolbar: ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarLeading) {
             Button("Zurück", systemImage: "chevron.left") {
-                
                 toolManager.activeItem = nil
                 toolManager.activePage = nil
                 toolManager.pencilKit = false
@@ -30,8 +29,7 @@ struct NoteSecondaryToolbar: ToolbarContent {
                 dismiss()
             }
             
-            Button("Lesezeichen", systemImage:  toolManager.activePage?.isBookmarked == true ? "bookmark.fill" : "bookmark"
-            ) {
+            Button("Lesezeichen", systemImage: toolManager.activePage?.isBookmarked == true ? "bookmark.fill" : "bookmark") {
                 toolManager.activePage?.isBookmarked.toggle()
             }
             .tint(Color.red)
@@ -55,7 +53,5 @@ struct NoteSecondaryToolbar: ToolbarContent {
             UndoActions()
             PageActions()
         }
-        
     }
 }
-

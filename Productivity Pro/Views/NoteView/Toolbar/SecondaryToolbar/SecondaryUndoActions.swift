@@ -13,51 +13,22 @@ extension NoteSecondaryToolbar {
             Button("Widerrufen", systemImage: "arrow.uturn.backward") {
                 undo()
             }
-            .disabled(undoDisabled)
 
             Button("Wiederholen", systemImage: "arrow.uturn.forward") {
                 redo()
             }
-            .disabled(redoDisabled)
         } label: {
-            if undoDisabled == true && redoDisabled == false {
-                Label("Bearbeiten", systemImage: "arrow.uturn.forward")
-            } else {
-                Label("Bearbeiten", systemImage: "arrow.uturn.backward")
-            }
+            Label("Bearbeiten", systemImage: "arrow.uturn.backward")
         } primaryAction: {
-            if undoDisabled == true && redoDisabled == false {
-                redo()
-            } else {
-                undo()
-            }
+            undo()
         }
-        .disabled(undoDisabled && redoDisabled)
     }
 
     func undo() {
-        modelContext.undoManager?.undo()
-        toolManager.activeItem?.width += 0.01
-        toolManager.activeItem?.width -= 0.01
+        urModel.undo()
     }
 
     func redo() {
-        modelContext.undoManager?.redo()
-    }
-
-    var undoDisabled: Bool {
-        if modelContext.undoManager == nil {
-            return true
-        } else {
-            return !modelContext.undoManager!.canUndo
-        }
-    }
-
-    var redoDisabled: Bool {
-        if modelContext.undoManager == nil {
-            return true
-        } else {
-            return !modelContext.undoManager!.canRedo
-        }
+        urModel.redo()
     }
 }
