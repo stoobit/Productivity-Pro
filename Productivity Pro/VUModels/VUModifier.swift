@@ -1,5 +1,5 @@
 //
-//  ShapeVUModifier.swift
+//  VUModifier.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 27.02.24.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ShapeVUModifier: ViewModifier {
-    @Bindable var vuModel: ShapeVUModel
+struct VUModifier: ViewModifier {
+    @Bindable var vuModel: VUModel
     @Bindable var item: PPItemModel
 
     func body(content: Content) -> some View {
@@ -27,9 +27,6 @@ struct ShapeVUModifier: ViewModifier {
             }
             .onChange(of: item.height) {
                 vuModel.size.height = item.height
-            }
-            .onChange(of: item.shape?.fillColor) { old, new in
-                vuModel.fillColor = Color(data: new!)
             }
     }
 }

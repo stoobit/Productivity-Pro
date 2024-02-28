@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MediaItemVContainer: View {
-    @State var vuModel: MediaVUModel = .init()
+    @State var vuModel: VUModel = .init()
     
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
@@ -27,7 +27,7 @@ struct MediaItemVContainer: View {
                 vuModel: vuModel,
                 scale: $scale
             )
-            .modifier(MediaVUModifier(vuModel: vuModel, item: item))
+            .modifier(VUModifier(vuModel: vuModel, item: item))
             .position(
                 x: (vuModel.position.x) * scale,
                 y: (vuModel.position.y) * scale

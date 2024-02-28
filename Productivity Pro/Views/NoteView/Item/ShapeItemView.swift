@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShapeItemView: View {
     @Bindable var item: PPItemModel
-    @Bindable var vuModel: ShapeVUModel
+    @Bindable var vuModel: VUModel
     
     @Binding var scale: CGFloat
     
@@ -44,7 +44,7 @@ struct ShapeItemView: View {
             if model.fill {
                 if model.stroke {
                     shape
-                        .fill(vuModel.fillColor)
+                        .fill(Color(data: model.fillColor))
                         .frame(
                             width: (vuModel.size.width + model.strokeWidth / 2) * scale,
                             height: (vuModel.size.height + model.strokeWidth / 2) * scale
@@ -53,7 +53,7 @@ struct ShapeItemView: View {
                     
                 } else {
                     shape
-                        .fill(vuModel.fillColor)
+                        .fill(Color(data: model.fillColor))
                         .frame(
                             width: vuModel.size.width * scale,
                             height: vuModel.size.height * scale

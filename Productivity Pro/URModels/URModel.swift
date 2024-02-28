@@ -14,6 +14,8 @@ import Foundation
     var canUndo: Bool = false
     var canRedo: Bool = false
     
+    func change() {}
+    
     func undo() {}
     
     func redo() {}

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TextfieldItemVContainer: View {
-    @State var vuModel: TextfieldVUModel = .init()
+    @State var vuModel: VUModel = .init()
     
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
@@ -29,7 +29,7 @@ struct TextfieldItemVContainer: View {
                 scale: $scale,
                 highRes: realrenderText
             )
-            .modifier(TextfieldVUModifier(vuModel: vuModel, item: item))
+            .modifier(VUModifier(vuModel: vuModel, item: item))
             .position(
                 x: (vuModel.position.x) * scale,
                 y: (vuModel.position.y) * scale

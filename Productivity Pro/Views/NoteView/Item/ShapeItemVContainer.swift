@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ShapeItemViewContainer: View {
-    @State var vuModel: ShapeVUModel = .init()
+    @State var vuModel: VUModel = .init()
     
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
@@ -27,7 +27,7 @@ struct ShapeItemViewContainer: View {
                 vuModel: vuModel,
                 scale: $scale
             )
-            .modifier(ShapeVUModifier(vuModel: vuModel, item: item))
+            .modifier(VUModifier(vuModel: vuModel, item: item))
             .position(
                 x: (vuModel.position.x) * scale,
                 y: (vuModel.position.y) * scale

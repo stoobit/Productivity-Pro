@@ -123,12 +123,8 @@
 		BB84DD132B8E781E002C2A9A /* ShapeItemVContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD122B8E781E002C2A9A /* ShapeItemVContainer.swift */; };
 		BB84DD152B8E783F002C2A9A /* MediaItemVContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD142B8E783F002C2A9A /* MediaItemVContainer.swift */; };
 		BB84DD172B8E78EF002C2A9A /* TextfieldItemVContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD162B8E78EF002C2A9A /* TextfieldItemVContainer.swift */; };
-		BB84DD1F2B8E7DDD002C2A9A /* ShapeVUModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD1D2B8E7DDD002C2A9A /* ShapeVUModel.swift */; };
-		BB84DD202B8E7DDD002C2A9A /* ShapeVUModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD1E2B8E7DDD002C2A9A /* ShapeVUModifier.swift */; };
-		BB84DD222B8E7DFB002C2A9A /* MediaVUModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD212B8E7DFB002C2A9A /* MediaVUModel.swift */; };
-		BB84DD242B8E7E04002C2A9A /* MediaVUModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD232B8E7E04002C2A9A /* MediaVUModifier.swift */; };
-		BB84DD262B8E7E14002C2A9A /* TextfieldVUModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD252B8E7E14002C2A9A /* TextfieldVUModel.swift */; };
-		BB84DD282B8E7E24002C2A9A /* TextfieldVUModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD272B8E7E24002C2A9A /* TextfieldVUModifier.swift */; };
+		BB84DD1F2B8E7DDD002C2A9A /* VUModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD1D2B8E7DDD002C2A9A /* VUModel.swift */; };
+		BB84DD202B8E7DDD002C2A9A /* VUModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD1E2B8E7DDD002C2A9A /* VUModifier.swift */; };
 		BB84DD2E2B8E952C002C2A9A /* URModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD2D2B8E952C002C2A9A /* URModel.swift */; };
 		BB84DD302B8E956B002C2A9A /* ActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB84DD2F2B8E956B002C2A9A /* ActionModel.swift */; };
 		BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB854ADF29E06531002EDF7A /* PagingModifier.swift */; };
@@ -440,12 +436,8 @@
 		BB84DD122B8E781E002C2A9A /* ShapeItemVContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeItemVContainer.swift; sourceTree = "<group>"; };
 		BB84DD142B8E783F002C2A9A /* MediaItemVContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemVContainer.swift; sourceTree = "<group>"; };
 		BB84DD162B8E78EF002C2A9A /* TextfieldItemVContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldItemVContainer.swift; sourceTree = "<group>"; };
-		BB84DD1D2B8E7DDD002C2A9A /* ShapeVUModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeVUModel.swift; sourceTree = "<group>"; };
-		BB84DD1E2B8E7DDD002C2A9A /* ShapeVUModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeVUModifier.swift; sourceTree = "<group>"; };
-		BB84DD212B8E7DFB002C2A9A /* MediaVUModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVUModel.swift; sourceTree = "<group>"; };
-		BB84DD232B8E7E04002C2A9A /* MediaVUModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVUModifier.swift; sourceTree = "<group>"; };
-		BB84DD252B8E7E14002C2A9A /* TextfieldVUModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldVUModel.swift; sourceTree = "<group>"; };
-		BB84DD272B8E7E24002C2A9A /* TextfieldVUModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldVUModifier.swift; sourceTree = "<group>"; };
+		BB84DD1D2B8E7DDD002C2A9A /* VUModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VUModel.swift; sourceTree = "<group>"; };
+		BB84DD1E2B8E7DDD002C2A9A /* VUModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VUModifier.swift; sourceTree = "<group>"; };
 		BB84DD2D2B8E952C002C2A9A /* URModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URModel.swift; sourceTree = "<group>"; };
 		BB84DD2F2B8E956B002C2A9A /* ActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionModel.swift; sourceTree = "<group>"; };
 		BB854ADF29E06531002EDF7A /* PagingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingModifier.swift; sourceTree = "<group>"; };
@@ -1002,12 +994,8 @@
 		BB84DD0F2B8E764E002C2A9A /* VUModels */ = {
 			isa = PBXGroup;
 			children = (
-				BB84DD1D2B8E7DDD002C2A9A /* ShapeVUModel.swift */,
-				BB84DD1E2B8E7DDD002C2A9A /* ShapeVUModifier.swift */,
-				BB84DD212B8E7DFB002C2A9A /* MediaVUModel.swift */,
-				BB84DD232B8E7E04002C2A9A /* MediaVUModifier.swift */,
-				BB84DD252B8E7E14002C2A9A /* TextfieldVUModel.swift */,
-				BB84DD272B8E7E24002C2A9A /* TextfieldVUModifier.swift */,
+				BB84DD1D2B8E7DDD002C2A9A /* VUModel.swift */,
+				BB84DD1E2B8E7DDD002C2A9A /* VUModifier.swift */,
 			);
 			path = VUModels;
 			sourceTree = "<group>";
@@ -1660,7 +1648,7 @@
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */,
 				BB84DD132B8E781E002C2A9A /* ShapeItemVContainer.swift in Sources */,
-				BB84DD202B8E7DDD002C2A9A /* ShapeVUModifier.swift in Sources */,
+				BB84DD202B8E7DDD002C2A9A /* VUModifier.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSecondaryToolbar.swift in Sources */,
 				BB8586972AE1E3B000C5875C /* ArrangeContainerView.swift in Sources */,
 				BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */,
@@ -1696,7 +1684,6 @@
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
 				BB26F8A82B31169A00788AA4 /* ClipboardControl.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
-				BB84DD242B8E7E04002C2A9A /* MediaVUModifier.swift in Sources */,
 				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
 				BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */,
@@ -1733,12 +1720,11 @@
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
 				BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
-				BB84DD1F2B8E7DDD002C2A9A /* ShapeVUModel.swift in Sources */,
+				BB84DD1F2B8E7DDD002C2A9A /* VUModel.swift in Sources */,
 				BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */,
 				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
 				BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */,
 				BB82B5B72B2498CB0089D423 /* PKObjectRecognition.swift in Sources */,
-				BB84DD222B8E7DFB002C2A9A /* MediaVUModel.swift in Sources */,
 				BBD930F22B1FC0C300A37F95 /* PVMethodsView.swift in Sources */,
 				BB5705232B35E3B100F84B45 /* VCardView.swift in Sources */,
 				BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */,
@@ -1837,7 +1823,6 @@
 				BBC0BAAF2B47F2CB00D47A21 /* ExportablePageModel.swift in Sources */,
 				BB9367682AC9CE260096F20E /* PPTextFieldModel.swift in Sources */,
 				BB4A93EC2AAF5F5A00C3AED6 /* ScheduleDayModel.swift in Sources */,
-				BB84DD262B8E7E14002C2A9A /* TextfieldVUModel.swift in Sources */,
 				BB6F3DD4291B0E85005BDDEB /* SubviewManager.swift in Sources */,
 				BBC0BAB42B47F2CB00D47A21 /* ExportableItemModel.swift in Sources */,
 				BB339F872AD44E97009DA591 /* Role.swift in Sources */,
@@ -1854,7 +1839,6 @@
 				BBFA92452B607DB30055CE9D /* ShareQRPDFView.swift in Sources */,
 				BBB02B592962537C001DCB04 /* Triangle.swift in Sources */,
 				BB9367662AC9CE1A0096F20E /* PPMediaModel.swift in Sources */,
-				BB84DD282B8E7E24002C2A9A /* TextfieldVUModifier.swift in Sources */,
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,
 				BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,

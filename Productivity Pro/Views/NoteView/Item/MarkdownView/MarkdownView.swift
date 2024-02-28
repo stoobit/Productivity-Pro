@@ -12,7 +12,7 @@ struct MarkdownView: View {
     @Environment(ToolManager.self) var toolManager
 
     @Bindable var item: PPItemModel
-    @Bindable var editItem: TextfieldVUModel
+    @Bindable var editItem: VUModel
 
     var body: some View {
         Markdown(string)
