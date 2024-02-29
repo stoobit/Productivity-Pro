@@ -25,10 +25,10 @@ extension NoteSecondaryToolbar {
     }
 
     func undo() {
-        urModel.undo()
+        
     }
 
     func redo() {
-        urModel.redo()
+        
     }
 }

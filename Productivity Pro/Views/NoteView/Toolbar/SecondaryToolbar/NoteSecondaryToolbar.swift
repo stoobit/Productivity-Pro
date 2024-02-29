@@ -13,7 +13,6 @@ struct NoteSecondaryToolbar: ToolbarContent {
     
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
-    @Environment(URModel.self) var urModel
     
     @Bindable var contentObject: ContentObject
     

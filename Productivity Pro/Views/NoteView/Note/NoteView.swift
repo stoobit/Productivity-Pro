@@ -12,8 +12,6 @@ struct NoteView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
-    @State var urModel: URModel = .init()
-    
     var contentObjects: [ContentObject]
     @Bindable var contentObject: ContentObject
     
@@ -88,7 +86,6 @@ struct NoteView: View {
                 IndicatorText(contentObject: contentObject)
                 PrinterViewContainer(contentObject: contentObject)
             }
-            .environment(urModel)
             
         } else {
             ZStack {

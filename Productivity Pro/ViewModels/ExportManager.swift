@@ -160,7 +160,7 @@ struct ExportManager {
         return exportable
     }
 
-    func export(note: PPNoteModel) -> ExportableNoteModel {
+    private func export(note: PPNoteModel) -> ExportableNoteModel {
         var exportable = ExportableNoteModel()
 
         if let pages = note.pages {
