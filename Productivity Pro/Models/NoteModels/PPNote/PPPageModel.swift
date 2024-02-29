@@ -44,6 +44,6 @@ import PencilKit
         items?.removeAll(where: { $0.id == ID })
     }
     
-    @Transient var store: [PPItemModel] = []
+    @Transient var store: [ExportableItemModel] = []
     @Transient var version: Int = 0
 }

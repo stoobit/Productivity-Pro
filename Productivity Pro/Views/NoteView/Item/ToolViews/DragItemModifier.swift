@@ -50,6 +50,8 @@ struct DragItemModifier: ViewModifier {
                             startLocation = startLocation ?? position
                         }
                         .onEnded { _ in
+                            page.store(item)
+                            
                             item.x = position.x
                             item.y = position.y
                             

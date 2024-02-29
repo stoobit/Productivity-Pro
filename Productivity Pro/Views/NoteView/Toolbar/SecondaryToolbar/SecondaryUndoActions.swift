@@ -25,7 +25,7 @@ extension NoteSecondaryToolbar {
     }
 
     func undo() {
-        
+        toolManager.activePage?.undo()
     }
 
     func redo() {

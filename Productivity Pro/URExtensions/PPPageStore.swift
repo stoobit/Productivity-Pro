@@ -9,7 +9,10 @@ import Foundation
 
 extension PPPageModel {
     func store(_ item: PPItemModel) {
-        store.append(item)
+        let storable = ExportManager().export(item: item)
+        store.append(storable)
+        
         version += 1
+        print(version)
     }
 }
