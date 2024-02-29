@@ -73,6 +73,7 @@ struct MediaStyleView: View {
         .environment(\.defaultMinListRowHeight, 10)
         .onChange(of: strokeColor) {
             item.strokeColor = strokeColor.data()
+            toolManager.update += 1
         }
         .onChange(of: stroke) {
             item.stroke = stroke

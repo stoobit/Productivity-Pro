@@ -266,9 +266,6 @@
 		BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */; };
 		BBEFC94F2A41035C00960C8D /* SecondaryToolbarMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC94E2A41035C00960C8D /* SecondaryToolbarMethods.swift */; };
 		BBEFC9512A41038F00960C8D /* SecondaryUndoActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEFC9502A41038F00960C8D /* SecondaryUndoActions.swift */; };
-		BBF1F77E2B913C26001CE1C7 /* PPPageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1F77D2B913C26001CE1C7 /* PPPageStore.swift */; };
-		BBF1F7802B913D30001CE1C7 /* PPPageUndo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1F77F2B913D30001CE1C7 /* PPPageUndo.swift */; };
-		BBF1F7822B913D35001CE1C7 /* PPPageRedo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF1F7812B913D35001CE1C7 /* PPPageRedo.swift */; };
 		BBF22ACC2933EFE300109848 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF22ACB2933EFE300109848 /* PageView.swift */; };
 		BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */; };
 		BBF5FDEF2AAE09E50081C4FE /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */; };
@@ -559,9 +556,6 @@
 		BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkEditView.swift; sourceTree = "<group>"; };
 		BBEFC94E2A41035C00960C8D /* SecondaryToolbarMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryToolbarMethods.swift; sourceTree = "<group>"; };
 		BBEFC9502A41038F00960C8D /* SecondaryUndoActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryUndoActions.swift; sourceTree = "<group>"; };
-		BBF1F77D2B913C26001CE1C7 /* PPPageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPageStore.swift; sourceTree = "<group>"; };
-		BBF1F77F2B913D30001CE1C7 /* PPPageUndo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPageUndo.swift; sourceTree = "<group>"; };
-		BBF1F7812B913D35001CE1C7 /* PPPageRedo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPPageRedo.swift; sourceTree = "<group>"; };
 		BBF22ACB2933EFE300109848 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneInteraction.swift; sourceTree = "<group>"; };
 		BBF5FDEE2AAE09E50081C4FE /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
@@ -772,7 +766,6 @@
 				BB4CDD5B28D3D564009A409F /* Models */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
 				BB84DD0F2B8E764E002C2A9A /* VUModels */,
-				BBF1F77C2B913C0D001CE1C7 /* URExtensions */,
 				BB4CDD4828D3C66A009A409F /* Preview Content */,
 				BB1DDA28296715590038FE16 /* Resources */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
@@ -1448,16 +1441,6 @@
 			path = SecondaryToolbar;
 			sourceTree = "<group>";
 		};
-		BBF1F77C2B913C0D001CE1C7 /* URExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				BBF1F77D2B913C26001CE1C7 /* PPPageStore.swift */,
-				BBF1F77F2B913D30001CE1C7 /* PPPageUndo.swift */,
-				BBF1F7812B913D35001CE1C7 /* PPPageRedo.swift */,
-			);
-			path = URExtensions;
-			sourceTree = "<group>";
-		};
 		BBF5FDF32AAE25CA0081C4FE /* LibraryView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1631,7 +1614,6 @@
 				BBF930732A67437900AD3958 /* Color.swift in Sources */,
 				BB67015D2AADF480001F468A /* DeskViewHelper.swift in Sources */,
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,
-				BBF1F77E2B913C26001CE1C7 /* PPPageStore.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
 				BB84DD172B8E78EF002C2A9A /* TextfieldItemVContainer.swift in Sources */,
@@ -1660,7 +1642,6 @@
 				BBF5FE032AAE61E20081C4FE /* SubjectModel.swift in Sources */,
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */,
-				BBF1F7802B913D30001CE1C7 /* PPPageUndo.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */,
 				BBFA92482B607E840055CE9D /* ShareMenu.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
@@ -1735,7 +1716,6 @@
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
 				BBD930F72B1FEBA000A37F95 /* StoreViewModel.swift in Sources */,
-				BBF1F7822B913D35001CE1C7 /* PPPageRedo.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GeneralSettings.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,

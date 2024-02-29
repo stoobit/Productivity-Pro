@@ -29,4 +29,6 @@ import SwiftUI
     
     var scale: CGFloat = .zero
     var offset: CGPoint = .zero
+    
+    var update: Int = 0
 }

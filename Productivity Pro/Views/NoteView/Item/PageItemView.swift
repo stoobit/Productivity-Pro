@@ -32,6 +32,7 @@ struct PageItemView: View {
                 tap(item: item)
             }
             .zIndex(Double(item.index))
+            .id(toolManager.update)
         }
         .frame(
             width: scale * getFrame().width,
