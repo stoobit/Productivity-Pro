@@ -1,11 +1,11 @@
 # Productivity Pro
 
 ## 🛠️ Release 2.0.v
-- VUModel: EditItemModel extension for every SwiftData model value
 - URModel: Custom Undo/Redo Methods
 - add keyboard shortcuts
 - create an optimized overview with custom SwiftUI Components
 - improve SwiftUI ScrollView & MD performance 
+- rotation and number animation performance 
 
 ## 🗺️ Release 2.1.v
 - Links 
