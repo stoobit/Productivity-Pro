@@ -23,7 +23,7 @@ struct ExportManager {
                     FileAttributeKey.creationDate: contentObject.created as NSDate,
                     FileAttributeKey.modificationDate: contentObject.modified as NSDate
                 ]
-                
+
                 try data.write(to: url, options: [.atomic, .completeFileProtection])
                 try FileManager.default.setAttributes(attributes, ofItemAtPath: url.path)
 
@@ -160,7 +160,7 @@ struct ExportManager {
         return exportable
     }
 
-    private func export(note: PPNoteModel) -> ExportableNoteModel {
+    func export(note: PPNoteModel) -> ExportableNoteModel {
         var exportable = ExportableNoteModel()
 
         if let pages = note.pages {

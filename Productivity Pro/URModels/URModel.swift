@@ -8,13 +8,18 @@
 import Foundation
 
 @Observable class URModel {
-    var store: [ActionModel] = []
+    var store: [ExportableNoteModel] = []
     var index: Int = 0
     
     var canUndo: Bool = false
     var canRedo: Bool = false
     
-    func change() {}
+    func change(note: PPNoteModel) {
+        let manager = ExportManager()
+        let value = manager.export(note: note)
+        
+        store.append(value)
+    }
     
     func undo() {}
     

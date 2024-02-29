@@ -21,9 +21,11 @@ extension NoteViewSheet {
         page.color = color
         
         contentObject.note?.pages?.append(page)
+        
         withAnimation {
-            toolManager.activePage = page
             reader.scrollTo(page)
+            
+            toolManager.activePage = page
             subviewManager.addPage = false
         }
     }
