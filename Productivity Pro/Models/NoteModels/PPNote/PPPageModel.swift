@@ -43,4 +43,7 @@ import PencilKit
     func deleteItem(with ID: UUID?) {
         items?.removeAll(where: { $0.id == ID })
     }
+    
+    @Transient var store: [PPItemModel] = []
+    @Transient var version: Int = 0
 }
