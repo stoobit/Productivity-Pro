@@ -21,7 +21,7 @@ struct MediaItemVContainer: View {
             vuModel.setModel(from: item)
         }
         
-        return ZStack {
+        return Group {
             MediaItemView(
                 item: item,
                 vuModel: vuModel,

@@ -22,7 +22,7 @@ struct TextfieldItemVContainer: View {
             vuModel.setModel(from: item)
         }
         
-        return ZStack {
+        return Group {
             TextFieldItemView(
                 item: item,
                 vuModel: vuModel,

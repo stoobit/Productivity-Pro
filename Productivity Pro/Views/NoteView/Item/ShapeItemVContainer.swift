@@ -21,7 +21,7 @@ struct ShapeItemViewContainer: View {
             vuModel.setModel(from: item)
         }
         
-        return ZStack {
+        return Group {
             ShapeItemView(
                 item: item,
                 vuModel: vuModel,
