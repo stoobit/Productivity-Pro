@@ -50,8 +50,12 @@ struct DragItemModifier: ViewModifier {
                             startLocation = startLocation ?? position
                         }
                         .onEnded { _ in
-                            item.x = position.x
-                            item.y = position.y
+                            page.store(item) {
+                                item.x = position.x
+                                item.y = position.y
+                                
+                                return item
+                            }
                             
                             toolManager.editorVisible = true
                             

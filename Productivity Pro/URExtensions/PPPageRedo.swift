@@ -16,5 +16,17 @@ extension PPPageModel {
         return version == store.count - 1 ? false : true
     }
     
-    func redo() {}
+    func redo() {
+        
+        
+        version += 1
+
+        guard let items = items else { return }
+        let stored = store[version]
+
+        let item = ImportManager().ppImport(item: stored)
+        let active = items.first(where: { $0.id == stored.id })
+        self.items?.removeAll(where: { $0 == active })
+        self.items?.append(item)
+    }
 }

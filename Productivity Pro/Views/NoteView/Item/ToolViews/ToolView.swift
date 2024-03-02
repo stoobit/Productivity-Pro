@@ -72,8 +72,12 @@ struct ToolView: View {
                             changeScale(value: value)
                         }
                         .onEnded { _ in
-                            item.width = size.width
-                            item.height = size.height
+                            page.store(item) {
+                                item.width = size.width
+                                item.height = size.height
+                             
+                                return item
+                            }
                             
                             toolManager.dragType = .none
                         }
@@ -98,7 +102,11 @@ struct ToolView: View {
                             changeWidth(value: value)
                         }
                         .onEnded { _ in
-                            item.width = size.width
+                            page.store(item) {
+                                item.width = size.width
+                                return item
+                            }
+                            
                             toolManager.dragType = .none
                         }
                         .updating($width) { _, startLocation, _ in
@@ -119,7 +127,11 @@ struct ToolView: View {
                             changeHeight(value: value)
                         }
                         .onEnded { _ in
-                            item.height = size.height
+                            page.store(item) {
+                                item.height = size.height
+                                return item
+                            }
+                            
                             toolManager.dragType = .none
                         }
                         .updating($height) { _, startLocation, _ in
