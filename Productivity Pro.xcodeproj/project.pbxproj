@@ -55,6 +55,12 @@
 		BB47056B2B93393E009A5FCD /* PPPageUndo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705682B93393E009A5FCD /* PPPageUndo.swift */; };
 		BB47056C2B93393E009A5FCD /* PPPageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705692B93393E009A5FCD /* PPPageStore.swift */; };
 		BB47056D2B93393E009A5FCD /* PPPageRedo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB47056A2B93393E009A5FCD /* PPPageRedo.swift */; };
+		BB4705752B9391E8009A5FCD /* ShortcutModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705702B9391E8009A5FCD /* ShortcutModifier.swift */; };
+		BB4705762B9391E8009A5FCD /* DKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705712B9391E8009A5FCD /* DKView.swift */; };
+		BB4705772B9391E8009A5FCD /* DoubleKeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705722B9391E8009A5FCD /* DoubleKeyboardModifier.swift */; };
+		BB4705782B9391E8009A5FCD /* DKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705732B9391E8009A5FCD /* DKButton.swift */; };
+		BB4705792B9391E8009A5FCD /* FloatingPointHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705742B9391E8009A5FCD /* FloatingPointHelper.swift */; };
+		BB47057C2B93923A009A5FCD /* PPAnglePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB47057A2B939239009A5FCD /* PPAnglePicker.swift */; };
 		BB48220F2B814C1400B5F314 /* RenderedPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48220E2B814C1400B5F314 /* RenderedPDF.swift */; };
 		BB4932F42B84EC310066E27B /* ImportTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4932F32B84EC310066E27B /* ImportTip.swift */; };
 		BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */; };
@@ -108,7 +114,6 @@
 		BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7332512A294FE00001FD6A /* PageBackgroundScan.swift */; };
 		BB73F054297F278F00ED23CC /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73F053297F278F00ED23CC /* BundleExtension.swift */; };
 		BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */ = {isa = PBXBuildFile; productRef = BB74688C2AF5B8670029F60D /* PPAnglePicker */; };
-		BB7468902AF5B90C0029F60D /* PPAnglePicker in Frameworks */ = {isa = PBXBuildFile; productRef = BB74688F2AF5B90C0029F60D /* PPAnglePicker */; };
 		BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984642AC347F900CF3D24 /* BackupSettings.swift */; };
 		BB7984682AC37E1E00CF3D24 /* ObjectViewFileLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7984672AC37E1E00CF3D24 /* ObjectViewFileLink.swift */; };
 		BB7987032AD497C1003469E6 /* NoteViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987022AD497C1003469E6 /* NoteViewModifier.swift */; };
@@ -231,7 +236,7 @@
 		BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9732A18F09100D496CB /* ItemView.swift */; };
 		BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B9782A1988FA00D496CB /* DragAnchor.swift */; };
 		BBC7B97B2A19896A00D496CB /* ToolViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC7B97A2A19896A00D496CB /* ToolViewMethods.swift */; };
-		BBCA6FA02AF81286009C08E3 /* DoubleRounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA6F9F2AF81286009C08E3 /* DoubleRounding.swift */; };
+		BBCA6FA02AF81286009C08E3 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCA6F9F2AF81286009C08E3 /* Double.swift */; };
 		BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCB2AEC294E800D00C68B72 /* DragHelper.swift */; };
 		BBCCE4EB28D52743001DBD8A /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCCE4EA28D52743001DBD8A /* NoteModel.swift */; };
 		BBCD8B212B7BEF1C00FD4286 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD8B202B7BEF1C00FD4286 /* OnboardingView.swift */; };
@@ -263,7 +268,6 @@
 		BBE069B12AF78CA300B2D1A0 /* SecondaryInspectorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
-		BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = BBE993BF2AF850A800330733 /* PPDoubleKeyboard */; };
 		BBEBA9A22B6836AA00F7E536 /* PVItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBA9A12B6836AA00F7E536 /* PVItemView.swift */; };
 		BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D52ABF6654007EDFF6 /* SubjectSettingsRow.swift */; };
 		BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */; };
@@ -370,6 +374,12 @@
 		BB4705682B93393E009A5FCD /* PPPageUndo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPageUndo.swift; sourceTree = "<group>"; };
 		BB4705692B93393E009A5FCD /* PPPageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPageStore.swift; sourceTree = "<group>"; };
 		BB47056A2B93393E009A5FCD /* PPPageRedo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPageRedo.swift; sourceTree = "<group>"; };
+		BB4705702B9391E8009A5FCD /* ShortcutModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortcutModifier.swift; sourceTree = "<group>"; };
+		BB4705712B9391E8009A5FCD /* DKView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKView.swift; sourceTree = "<group>"; };
+		BB4705722B9391E8009A5FCD /* DoubleKeyboardModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleKeyboardModifier.swift; sourceTree = "<group>"; };
+		BB4705732B9391E8009A5FCD /* DKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKButton.swift; sourceTree = "<group>"; };
+		BB4705742B9391E8009A5FCD /* FloatingPointHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingPointHelper.swift; sourceTree = "<group>"; };
+		BB47057A2B939239009A5FCD /* PPAnglePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAnglePicker.swift; sourceTree = "<group>"; };
 		BB48220E2B814C1400B5F314 /* RenderedPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderedPDF.swift; sourceTree = "<group>"; };
 		BB4932F32B84EC310066E27B /* ImportTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTip.swift; sourceTree = "<group>"; };
 		BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWrapper.swift; sourceTree = "<group>"; };
@@ -525,7 +535,7 @@
 		BBC7B9732A18F09100D496CB /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		BBC7B9782A1988FA00D496CB /* DragAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnchor.swift; sourceTree = "<group>"; };
 		BBC7B97A2A19896A00D496CB /* ToolViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolViewMethods.swift; sourceTree = "<group>"; };
-		BBCA6F9F2AF81286009C08E3 /* DoubleRounding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRounding.swift; sourceTree = "<group>"; };
+		BBCA6F9F2AF81286009C08E3 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		BBCB2AEC294E800D00C68B72 /* DragHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragHelper.swift; sourceTree = "<group>"; };
 		BBCCE4EA28D52743001DBD8A /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
 		BBCD8B202B7BEF1C00FD4286 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -584,11 +594,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB7468902AF5B90C0029F60D /* PPAnglePicker in Frameworks */,
 				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
 				BB74688D2AF5B8670029F60D /* PPAnglePicker in Frameworks */,
 				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
-				BBE993C02AF850A800330733 /* PPDoubleKeyboard in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -709,6 +717,26 @@
 			path = URExtensions;
 			sourceTree = "<group>";
 		};
+		BB47056E2B9391B8009A5FCD /* PPAnglePicker */ = {
+			isa = PBXGroup;
+			children = (
+				BB47057A2B939239009A5FCD /* PPAnglePicker.swift */,
+			);
+			path = PPAnglePicker;
+			sourceTree = "<group>";
+		};
+		BB47056F2B9391C6009A5FCD /* PPDoubleKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BB4705732B9391E8009A5FCD /* DKButton.swift */,
+				BB4705712B9391E8009A5FCD /* DKView.swift */,
+				BB4705722B9391E8009A5FCD /* DoubleKeyboardModifier.swift */,
+				BB4705742B9391E8009A5FCD /* FloatingPointHelper.swift */,
+				BB4705702B9391E8009A5FCD /* ShortcutModifier.swift */,
+			);
+			path = PPDoubleKeyboard;
+			sourceTree = "<group>";
+		};
 		BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,6 +807,8 @@
 			isa = PBXGroup;
 			children = (
 				BB4CDD4028D3C668009A409F /* Productivity_ProApp.swift */,
+				BB47056E2B9391B8009A5FCD /* PPAnglePicker */,
+				BB47056F2B9391C6009A5FCD /* PPDoubleKeyboard */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB4CDD5B28D3D564009A409F /* Models */,
@@ -1287,7 +1317,7 @@
 				BB9A364F2ABCFD2A00721C56 /* Calendar.swift */,
 				BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */,
 				BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */,
-				BBCA6F9F2AF81286009C08E3 /* DoubleRounding.swift */,
+				BBCA6F9F2AF81286009C08E3 /* Double.swift */,
 				BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */,
 			);
 			path = Types;
@@ -1512,8 +1542,6 @@
 			packageProductDependencies = (
 				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
 				BB74688C2AF5B8670029F60D /* PPAnglePicker */,
-				BB74688F2AF5B90C0029F60D /* PPAnglePicker */,
-				BBE993BF2AF850A800330733 /* PPDoubleKeyboard */,
 				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
 			);
 			productName = "Productivity Pro";
@@ -1569,8 +1597,6 @@
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
 				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
-				BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */,
-				BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */,
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
@@ -1691,6 +1717,7 @@
 				BB4705662B9332C9009A5FCD /* MDViewContainer.swift in Sources */,
 				BB8586932AE1E37C00C5875C /* StyleContainerView.swift in Sources */,
 				BB26F8A82B31169A00788AA4 /* ClipboardControl.swift in Sources */,
+				BB4705782B9391E8009A5FCD /* DKButton.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
 				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
@@ -1708,6 +1735,7 @@
 				BB5705282B3609E800F84B45 /* LGrammarTable.swift in Sources */,
 				BB85869B2AE1E5BB00C5875C /* MediaStyleView.swift in Sources */,
 				BBDCF5D8299E7326004C99AE /* ShapeItemView.swift in Sources */,
+				BB4705772B9391E8009A5FCD /* DoubleKeyboardModifier.swift in Sources */,
 				BB93676E2AC9CE500096F20E /* PPMindmapModel.swift in Sources */,
 				BB047CE22AC0C6790027409F /* ObjectView.swift in Sources */,
 				BB441DD52B41A05300B103DE /* ImportManager.swift in Sources */,
@@ -1748,6 +1776,7 @@
 				BBD930FC2B21133600A37F95 /* SharePDFView.swift in Sources */,
 				BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */,
 				BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */,
+				BB47057C2B93923A009A5FCD /* PPAnglePicker.swift in Sources */,
 				BBD9411A299195260085151B /* NoteSize.swift in Sources */,
 				BB68F0C42ACA1789006C91AE /* PPLinkType.swift in Sources */,
 				BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */,
@@ -1759,7 +1788,7 @@
 				BBB538852B40BADC00C874EA /* ExportableContentObjectModel.swift in Sources */,
 				BB4CDF712B30DC9700E5D612 /* ImportPro.swift in Sources */,
 				BBDABD3F29D257410038CFC2 /* PageBackgroundPDF.swift in Sources */,
-				BBCA6FA02AF81286009C08E3 /* DoubleRounding.swift in Sources */,
+				BBCA6FA02AF81286009C08E3 /* Double.swift in Sources */,
 				BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */,
 				BB82B5AF2B247CD30089D423 /* PPLineModel.swift in Sources */,
 				BB9BFB6E2AC7819400255293 /* TrashView.swift in Sources */,
@@ -1776,7 +1805,9 @@
 				BB24E84929EB6FE70082AE98 /* PKRepresentable.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
 				BB2A8E1E2B460CD30072D3CC /* NoteViewModalMethods.swift in Sources */,
+				BB4705752B9391E8009A5FCD /* ShortcutModifier.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,
+				BB4705762B9391E8009A5FCD /* DKView.swift in Sources */,
 				BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,
 				BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */,
@@ -1807,6 +1838,7 @@
 				BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */,
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
 				BB57051D2B35C57B00F84B45 /* LTabIndicator.swift in Sources */,
+				BB4705792B9391E8009A5FCD /* FloatingPointHelper.swift in Sources */,
 				BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */,
 				BBB538832B40BA7F00C874EA /* ExportableBackupModel.swift in Sources */,
 				BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */,
@@ -2227,14 +2259,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stoobit/PPAnglePicker";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
-			};
-		};
 		BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
@@ -2251,24 +2275,11 @@
 				kind = branch;
 			};
 		};
-		BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stoobit/PPDoubleKeyboard";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		BB74688C2AF5B8670029F60D /* PPAnglePicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PPAnglePicker;
-		};
-		BB74688F2AF5B90C0029F60D /* PPAnglePicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BB74688E2AF5B90C0029F60D /* XCRemoteSwiftPackageReference "PPAnglePicker" */;
 			productName = PPAnglePicker;
 		};
 		BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */ = {
@@ -2280,11 +2291,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
 			productName = OnPasteboardChange;
-		};
-		BBE993BF2AF850A800330733 /* PPDoubleKeyboard */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBE993BE2AF850A800330733 /* XCRemoteSwiftPackageReference "PPDoubleKeyboard" */;
-			productName = PPDoubleKeyboard;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

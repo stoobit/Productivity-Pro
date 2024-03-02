@@ -5,9 +5,8 @@
 //  Created by Till Brügmann on 21.10.23.
 //
 
-import SwiftUI
-import PPAnglePicker
 import PPDoubleKeyboard
+import SwiftUI
 
 struct ShapeArrangeView: View {
     @Environment(ToolManager.self) var toolManager
@@ -58,7 +57,7 @@ struct ShapeArrangeView: View {
                     .buttonStyle(.bordered)
                     .hoverEffect(.lift)
                     
-                    Button(action: { 
+                    Button(action: {
                         StackingManager(items: items)
                             .moveDown(item: item)
                     }) {
@@ -71,7 +70,7 @@ struct ShapeArrangeView: View {
                     Divider().frame(height: 20)
                     Spacer()
                     
-                    Button(action: { 
+                    Button(action: {
                         StackingManager(items: items)
                             .bringFront(item: item)
                     }) {
@@ -80,7 +79,7 @@ struct ShapeArrangeView: View {
                     .buttonStyle(.bordered)
                     .hoverEffect(.lift)
                     
-                    Button(action: { 
+                    Button(action: {
                         StackingManager(items: items)
                             .bringBack(item: item)
                     }) {

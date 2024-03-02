@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import PPDoubleKeyboard
-import PPAnglePicker
 
 struct TextFieldArrangeView: View {
     @Environment(ToolManager.self) var toolManager

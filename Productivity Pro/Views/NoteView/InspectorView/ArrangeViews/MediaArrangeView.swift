@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import PPDoubleKeyboard
-import PPAnglePicker
 
 struct MediaArrangeView: View {
     @Environment(ToolManager.self) var toolManager
