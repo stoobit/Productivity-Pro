@@ -42,9 +42,7 @@ struct NoteViewSheet: ViewModifier {
                     changePage(isPortrait, template, color)
                 }
             })
-            .sheet(isPresented: $manager.rtfEditor, content: {
-                MDEditorView()
-            })
+            .modifier(MDViewContainer(isPresented: $manager.rtfEditor))
             .fullScreenCover(isPresented: $manager.scanDocument) {
                 ScannerView(
                     cancelAction: { subviewManager.scanDocument = false }

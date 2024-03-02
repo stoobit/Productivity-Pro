@@ -27,7 +27,6 @@ private struct ContentView: View {
     
     @AppStorage("ppisstoobitdeveloper") var isDeveloper: Bool = false
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
-    @AppStorage("pprole") var role: Role = .none
     
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()

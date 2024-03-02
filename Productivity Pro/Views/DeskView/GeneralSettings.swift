@@ -11,14 +11,12 @@ import SwiftUI
 struct GeneralSettings: View {
     @Environment(\.horizontalSizeClass) var hsc
     
-    @AppStorage("pprole") var role: Role = .none
+    @AppStorage("isMarkdownf") var markdownFullscreen: Bool = false
+    
     @AppStorage("notificationTime")
     var notificationTime: Date = Calendar.current.date(
         bySettingHour: 15, minute: 30, second: 00, of: Date()
     )!
-    
-    @AppStorage("automaticallyDeselectEraser")
-    private var automaticallyDeselectEraser: Bool = false
     
     @AppStorage("defaultFont")
     private var defaultFont: String = "Avenir Next"
@@ -35,29 +33,16 @@ struct GeneralSettings: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Rolle") {
-                    Picker("", selection: $role) {
-                        Text("Schüler")
-                            .frame(height: 30)
-                            .tag(Role.student)
-                        
-                        Text("Lehrer")
-                            .frame(height: 30)
-                            .tag(Role.teacher)
-                    }
-                    .pickerStyle(.inline)
-                    .labelsHidden()
-                }
-                
                 Section("Aufgaben") {
                     DatePicker(
                         "Uhrzeit der Benachrichtigung",
                         selection: $notificationTime,
                         displayedComponents: .hourAndMinute
                     )
+                    .frame(height: 30)
                 }
                 
-                Section("Notizen") {
+                Section("Markdown") {
                     Picker("Schriftart", selection: $fontSetter) {
                         ForEach(UIFont.familyNames, id: \.self) { font in
                             Text(font)
@@ -81,6 +66,14 @@ struct GeneralSettings: View {
                         }
                     }
                     .frame(height: 30)
+                }
+                
+                Picker("Markdown Editor", selection: $markdownFullscreen) {
+                    Text("Kompakt")
+                        .tag(false)
+                    
+                    Text("Groß")
+                        .tag(true)
                 }
             }
             .environment(\.defaultMinListRowHeight, 10)

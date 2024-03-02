@@ -60,10 +60,12 @@ struct TextFieldItemView: View {
         }
         .rotationEffect(Angle(degrees: item.textField?.rotation ?? 0))
         .onChange(of: vuModel.size) { render() }
-        .onChange(of: item.textField) { render() }
         .onChange(of: scale) { render() }
-        .onChange(of: scenePhase) { render() }
-        .onChange(of: item.textField?.string) { render() }
+        .onChange(of: scenePhase) {
+            if scenePhase == .active {
+                render()
+            }
+        }
         .onAppear {
             render()
         }

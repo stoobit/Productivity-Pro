@@ -771,6 +771,9 @@
         }
       }
     },
+    "Groß" : {
+
+    },
     "Gruppieren" : {
       "localizations" : {
         "en" : {
@@ -891,6 +894,9 @@
         }
       }
     },
+    "Kompakt" : {
+
+    },
     "Konjugationen" : {
       "localizations" : {
         "en" : {
@@ -912,6 +918,7 @@
       }
     },
     "Lehrer" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -950,6 +957,12 @@
           }
         }
       }
+    },
+    "Markdown" : {
+
+    },
+    "Markdown Editor" : {
+
     },
     "Mittwoch" : {
       "localizations" : {
@@ -1242,6 +1255,7 @@
       }
     },
     "Rolle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1332,6 +1346,7 @@
       }
     },
     "Schüler" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
