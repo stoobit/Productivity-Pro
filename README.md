@@ -4,8 +4,10 @@
 - URModel: Custom Undo/Redo Methods
 - add keyboard shortcuts
 - create an optimized overview with custom SwiftUI Components
-- improve SwiftUI ScrollView & MD performance 
+- improve SwiftUI ScrollView
 - rotation and number animation performance 
+
+## 🗺️ Bug Fixes 2.0.1+
 
 ## 🗺️ Release 2.1.v
 - Links 
