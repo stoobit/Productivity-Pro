@@ -25,7 +25,6 @@ struct MDEditorView: View {
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Fertig") {
-                            toolManager.update += 1
                             dismiss()
                         }
                     }

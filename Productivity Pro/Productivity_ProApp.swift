@@ -31,7 +31,7 @@ struct Productivity_ProApp: App {
                 ContentObject.self,
             ],
             isAutosaveEnabled: true,
-            isUndoEnabled: true
+            isUndoEnabled: false
         )
     }
 

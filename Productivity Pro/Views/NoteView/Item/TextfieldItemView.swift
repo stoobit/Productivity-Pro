@@ -3,6 +3,7 @@ import SwiftUI
 struct TextFieldItemView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
     @Bindable var item: PPItemModel
     @Bindable var vuModel: VUModel
@@ -65,6 +66,9 @@ struct TextFieldItemView: View {
             if scenePhase == .active {
                 render()
             }
+        }
+        .onChange(of: subviewManager.rtfEditor) {
+            render()
         }
         .onAppear {
             render()

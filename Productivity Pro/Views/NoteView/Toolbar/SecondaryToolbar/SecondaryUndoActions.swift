@@ -30,32 +30,26 @@ extension NoteSecondaryToolbar {
     }
 
     func undo() {
-        toolManager.activePage?.modelContext?.undoManager?.undo()
-        toolManager.update += 1
+        toolManager.activePage?.undo()
     }
 
     func redo() {
-        toolManager.activePage?.modelContext?.undoManager?.redo()
-        toolManager.update += 1
+        toolManager.activePage?.redo()
     }
 
     var undoDisabled: Bool {
-        let manager = toolManager.activePage?.modelContext?.undoManager
-
-        guard let canUndo = manager?.canUndo else {
-            return true
+        if let undo = toolManager.activePage?.canUndo {
+            return !undo
         }
-
-        return !canUndo
+        
+        return true
     }
 
     var redoDisabled: Bool {
-        let manager = toolManager.activePage?.modelContext?.undoManager
-
-        guard let canRedo = manager?.canRedo else {
-            return true
+        if let redo = toolManager.activePage?.canRedo {
+            return !redo
         }
-
-        return !canRedo
+        
+        return true
     }
 }

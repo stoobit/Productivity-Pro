@@ -52,6 +52,9 @@
 		BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */; };
 		BB441DD52B41A05300B103DE /* ImportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB441DD42B41A05300B103DE /* ImportManager.swift */; };
 		BB4705662B9332C9009A5FCD /* MDViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705652B9332C9009A5FCD /* MDViewContainer.swift */; };
+		BB47056B2B93393E009A5FCD /* PPPageUndo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705682B93393E009A5FCD /* PPPageUndo.swift */; };
+		BB47056C2B93393E009A5FCD /* PPPageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705692B93393E009A5FCD /* PPPageStore.swift */; };
+		BB47056D2B93393E009A5FCD /* PPPageRedo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB47056A2B93393E009A5FCD /* PPPageRedo.swift */; };
 		BB48220F2B814C1400B5F314 /* RenderedPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48220E2B814C1400B5F314 /* RenderedPDF.swift */; };
 		BB4932F42B84EC310066E27B /* ImportTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4932F32B84EC310066E27B /* ImportTip.swift */; };
 		BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */; };
@@ -364,6 +367,9 @@
 		BB3F75FA2997F38100C0F140 /* BorderStrokeStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderStrokeStyle.swift; sourceTree = "<group>"; };
 		BB441DD42B41A05300B103DE /* ImportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportManager.swift; sourceTree = "<group>"; };
 		BB4705652B9332C9009A5FCD /* MDViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDViewContainer.swift; sourceTree = "<group>"; };
+		BB4705682B93393E009A5FCD /* PPPageUndo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPageUndo.swift; sourceTree = "<group>"; };
+		BB4705692B93393E009A5FCD /* PPPageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPageStore.swift; sourceTree = "<group>"; };
+		BB47056A2B93393E009A5FCD /* PPPageRedo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPPageRedo.swift; sourceTree = "<group>"; };
 		BB48220E2B814C1400B5F314 /* RenderedPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderedPDF.swift; sourceTree = "<group>"; };
 		BB4932F32B84EC310066E27B /* ImportTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTip.swift; sourceTree = "<group>"; };
 		BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWrapper.swift; sourceTree = "<group>"; };
@@ -693,6 +699,16 @@
 			path = Note;
 			sourceTree = "<group>";
 		};
+		BB4705672B933920009A5FCD /* URExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				BB4705692B93393E009A5FCD /* PPPageStore.swift */,
+				BB4705682B93393E009A5FCD /* PPPageUndo.swift */,
+				BB47056A2B93393E009A5FCD /* PPPageRedo.swift */,
+			);
+			path = URExtensions;
+			sourceTree = "<group>";
+		};
 		BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +784,7 @@
 				BB4CDD5B28D3D564009A409F /* Models */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
 				BB84DD0F2B8E764E002C2A9A /* VUModels */,
+				BB4705672B933920009A5FCD /* URExtensions */,
 				BB4CDD4828D3C66A009A409F /* Preview Content */,
 				BB1DDA28296715590038FE16 /* Resources */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
@@ -1646,6 +1663,7 @@
 				BB3F75F62996D07800C0F140 /* TextFieldModel.swift in Sources */,
 				BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */,
+				BB47056B2B93393E009A5FCD /* PPPageUndo.swift in Sources */,
 				BBFA92482B607E840055CE9D /* ShareMenu.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
@@ -1707,6 +1725,7 @@
 				BB7987032AD497C1003469E6 /* NoteViewModifier.swift in Sources */,
 				BBCDFDE72947CC9C000C545D /* RuledView.swift in Sources */,
 				BBF22ACC2933EFE300109848 /* PageView.swift in Sources */,
+				BB47056C2B93393E009A5FCD /* PPPageStore.swift in Sources */,
 				BB9BFB622AC7576300255293 /* PPPageModel.swift in Sources */,
 				BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */,
 				BB84DD1F2B8E7DDD002C2A9A /* VUModel.swift in Sources */,
@@ -1822,6 +1841,7 @@
 				BB93676A2AC9CE330096F20E /* PPChartModel.swift in Sources */,
 				BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */,
 				BB96F5B32B61C0460044B200 /* PDFManager.swift in Sources */,
+				BB47056D2B93393E009A5FCD /* PPPageRedo.swift in Sources */,
 				BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */,
 				BB5034192993172800913B3A /* PageItemView.swift in Sources */,
 				BBFA92452B607DB30055CE9D /* ShareQRPDFView.swift in Sources */,

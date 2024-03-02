@@ -110,11 +110,9 @@ struct TextFieldStyleView: View {
         }
         .onChange(of: fill) {
             item.fill = fill
-            toolManager.update += 1
         }
         .onChange(of: stroke) {
             item.stroke = stroke
-            toolManager.update += 1
         }
         .onChange(of: fontColor) {
             item.textColor = fontColor.data()
