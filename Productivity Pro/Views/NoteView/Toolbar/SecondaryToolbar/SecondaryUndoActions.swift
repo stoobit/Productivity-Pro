@@ -41,7 +41,7 @@ extension NoteSecondaryToolbar {
         }
         .id(toolManager.update)
         .onChange(of: toolManager.pencilKit) {
-            toolManager.activePage!.reset()
+            toolManager.activePage?.reset()
         }
     }
 
