@@ -5,7 +5,6 @@
 //  Created by Till Brügmann on 21.10.23.
 //
 
-import PPDoubleKeyboard
 import SwiftUI
 
 struct ShapeArrangeView: View {
@@ -126,17 +125,15 @@ struct ShapeArrangeView: View {
                         Text("\(String(shape.rotation))°")
                     }
                     .popover(isPresented: $anglePicker) {
-                        PPAnglePickerView(
-                            degrees: $shape.rotation
-                        )
-                        .presentationCompactAdaptation(.popover)
-                        .frame(width: 270, height: 270)
-                        .background {
-                            Color(
-                                UIColor.secondarySystemBackground
-                            )
-                            .ignoresSafeArea(.all)
-                        }
+                        PPAnglePickerView(item: $shape.rotation)
+                            .presentationCompactAdaptation(.popover)
+                            .frame(width: 270, height: 270)
+                            .background {
+                                Color(
+                                    UIColor.secondarySystemBackground
+                                )
+                                .ignoresSafeArea(.all)
+                            }
                     }
                 }
                 .frame(height: 30)

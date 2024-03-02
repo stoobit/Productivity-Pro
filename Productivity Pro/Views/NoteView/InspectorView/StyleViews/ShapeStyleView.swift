@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import PPDoubleKeyboard
 
 struct ShapeStyleView: View {
     @Environment(ToolManager.self) var toolManager

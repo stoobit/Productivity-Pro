@@ -14,21 +14,20 @@ struct DKView: View {
     var body: some View {
         VStack {
             Text(display)
-                .contentTransition(.numericText())
-                .animation(.bouncy, value: display)
+                .monospacedDigit()
                 .frame(width: 201, alignment: .trailing)
                 .font(.title.bold())
             
             Spacer()
             
             HStack {
-                DKButton(title: "7", position: .topLeading) {
+                DKButton(title: "7", position: .center) {
                     add("7")
                 }
                 DKButton(title: "8", position: .center) {
                     add("8")
                 }
-                DKButton(title: "9", position: .topTrailing) {
+                DKButton(title: "9", position: .center) {
                     add("9")
                 }
             }
@@ -62,7 +61,7 @@ struct DKView: View {
             }
             
             HStack {
-                DKButton(title: ".", position: .bottomLeading) {
+                DKButton(title: ".", position: .center) {
                     if string.contains(".") == false {
                         add(".")
                     }
@@ -72,7 +71,7 @@ struct DKView: View {
                     add("0")
                 }
                 
-                DKButton(title: "delete.left.fill", position: .bottomTrailing) {
+                DKButton(title: "delete.left.fill", position: .center) {
                     string = String(string.dropLast())
                     value = Double(string) ?? 0
                 }

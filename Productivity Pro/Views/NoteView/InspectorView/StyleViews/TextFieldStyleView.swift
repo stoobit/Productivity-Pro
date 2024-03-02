@@ -5,7 +5,6 @@
 //  Created by Till Brügmann on 20.10.23.
 //
 
-import PPDoubleKeyboard
 import SwiftUI
 
 struct TextFieldStyleView: View {

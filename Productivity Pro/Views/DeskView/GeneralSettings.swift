@@ -5,7 +5,6 @@
 //  Created by Till Brügmann on 10.09.23.
 //
 
-import PPDoubleKeyboard
 import SwiftUI
 
 struct GeneralSettings: View {

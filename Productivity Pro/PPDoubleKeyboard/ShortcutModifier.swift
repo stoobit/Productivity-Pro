@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 17.0, *)
-@available(macOS 14.0, *)
 struct PPShortcutModifier: ViewModifier {
     var shortcut: String
     

@@ -9,7 +9,9 @@ import OnPasteboardChange
 import SwiftUI
 
 struct ClipboardControl: View {
+    @Environment(SubviewManager.self) var subviewManager
     @Environment(ToolManager.self) var toolManager
+    
     @Environment(\.modelContext) var context
     
     @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
@@ -23,6 +25,7 @@ struct ClipboardControl: View {
                 Button(action: { paste() }) {
                     ClipboardButton(image: "doc.on.clipboard")
                 }
+                .disabled(subviewManager.showInspector)
                 .disabled(disablePasteboard)
                 .onPasteboardChange {
                     disablePasteboard = pasteboardState()
@@ -34,21 +37,25 @@ struct ClipboardControl: View {
                 Button(action: { copy() }) {
                     ClipboardButton(image: "doc.on.doc")
                 }
+                .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             
                 Button(action: { duplicate() }) {
                     ClipboardButton(image: "plus.square.on.square")
                 }
+                .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             
                 Button(role: .destructive, action: { cut() }) {
                     ClipboardButton(image: "scissors")
                 }
+                .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             
                 Button(role: .destructive, action: { delete() }) {
                     ClipboardButton(image: "trash")
                 }
+                .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             }
             .padding(5)

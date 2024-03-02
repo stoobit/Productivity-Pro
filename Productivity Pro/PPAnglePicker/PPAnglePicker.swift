@@ -7,22 +7,24 @@
 
 import SwiftUI
 
-public struct PPAnglePickerView: View {
+struct PPAnglePickerView: View {
+    @Environment(ToolManager.self) var toolManager
+    
     @State private var buttons: Bool = true
     @State private var angleState: String = "0.0"
     
-    @Binding var degrees: Double
+    @State var degrees: Double = 0
+    @Binding var item: Double
     
-    public init(degrees: Binding<Double>) {
-        _degrees = degrees
-    }
-    
-    public var body: some View {
+    var body: some View {
         ZStack {
             if buttons {
                 ForEach(0 ... 7, id: \.self) { value in
                     Button(action: {
                         degrees = Double(45 * value)
+                        item = Double(45 * value)
+                        
+                        toolManager.update += 1
                     }) {
                         Rectangle()
                             .foregroundStyle(.clear)
@@ -74,6 +76,10 @@ public struct PPAnglePickerView: View {
                                 .onChanged { value in
                                     change(location: value.location)
                                 }
+                                .onEnded { _ in
+                                    self.item = self.degrees
+                                    toolManager.update += 1
+                                }
                         )
                 }
                 .transition(.asymmetric(
@@ -84,13 +90,11 @@ public struct PPAnglePickerView: View {
             
             VStack(spacing: 10) {
                 Text(angleState)
+                    .monospacedDigit()
                     .font(.largeTitle.bold())
                     .foregroundStyle(Color.primary)
-                    .contentTransition(.numericText(value: degrees))
                     .onChange(of: degrees, initial: true) {
-                        withAnimation(.bouncy) {
-                            angleState = String(degrees)
-                        }
+                        angleState = String(degrees)
                     }
                 
                 Button(action: { withAnimation(.bouncy) { buttons.toggle() } }) {
@@ -98,6 +102,9 @@ public struct PPAnglePickerView: View {
                         .imageScale(.large)
                 }
             }
+        }
+        .onAppear {
+            degrees = item
         }
     }
     

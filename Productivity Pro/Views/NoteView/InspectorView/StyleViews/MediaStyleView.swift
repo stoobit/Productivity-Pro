@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import PPDoubleKeyboard
 
 struct MediaStyleView: View {
     @Environment(ToolManager.self) var toolManager
