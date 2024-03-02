@@ -93,15 +93,22 @@ struct ShapeStyleView: View {
         .environment(\.defaultMinListRowHeight, 10)
         .onChange(of: fillColor) {
             item.fillColor = fillColor.data()
+            toolManager.update += 1
         }
         .onChange(of: strokeColor) {
             item.strokeColor = strokeColor.data()
+            toolManager.update += 1
         }
         .onChange(of: fill) {
             item.fill = fill
+            toolManager.update += 1
         }
         .onChange(of: stroke) {
             item.stroke = stroke
+            toolManager.update += 1
+        }
+        .onChange(of: item.cornerRadius) {
+            toolManager.update += 1
         }
         .onAppear {
             fill = item.fill
