@@ -13,7 +13,7 @@ struct MDEditorView: View {
 
     @FocusState var isFocused: Bool
     let url = "https://www.stoobit.com/blog/markdown.html"
-    
+
     @State var text: String = ""
 
     var body: some View {
@@ -38,6 +38,9 @@ struct MDEditorView: View {
                     }
                 }
                 .onAppear {
+                    if let str = toolManager.activeItem?.textField?.string {
+                        text = str
+                    }
                     isFocused = true
                 }
         }
