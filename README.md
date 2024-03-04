@@ -8,6 +8,14 @@
 - rotation and number animation performance 
 
 ## 🗺️ Bug Fixes 2.0.1+
+- Homework -> <Important Feature>
+- Performance Improvements
+- Schedule & Homework -> <Connection>
+- Assign Subjects to Folders
+- Homework Edit Improvements 
+- Schedule Animation Improvements
+- Overview Improvements 
+- Library Extension
 
 ## 🗺️ Release 2.1.v
 - Links 
