@@ -57,7 +57,7 @@ struct OpenURL: ViewModifier {
                 ppImport()
             }
             .alert("Import nicht möglich", isPresented: $showAlert, actions: {
-                Button("Verstanden", role: .cancel) {
+                Button("Ok", role: .cancel) {
                     showAlert.toggle()
                 }
             }) {

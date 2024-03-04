@@ -51,6 +51,8 @@ extension ClipboardControl {
             addTextField()
         } else if UIPasteboard.general.contains(pasteboardTypes: ["productivityproitem"]) {
             addItem()
+        } else {
+            alert.toggle()
         }
     }
     
@@ -140,19 +142,6 @@ extension ClipboardControl {
     func cut() {
         copy()
         delete()
-    }
-    
-    func pasteboardState() -> Bool {
-        var pasteDisabled = true
-        
-        if UIPasteboard.general.hasImages ||
-            UIPasteboard.general.hasStrings ||
-            UIPasteboard.general.contains(pasteboardTypes: ["productivityproitem"])
-        {
-            pasteDisabled = false
-        }
-        
-        return pasteDisabled
     }
     
     func primaryColor() -> Color {

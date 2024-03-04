@@ -631,6 +631,9 @@
         }
       }
     },
+    "Es konnte kein Objekt eingefügt werden." : {
+
+    },
     "Es wurden keine Notizen gefunden." : {
       "localizations" : {
         "en" : {
@@ -1083,6 +1086,9 @@
           }
         }
       }
+    },
+    "Ok" : {
+
     },
     "Ordner erstellen" : {
       "localizations" : {
@@ -1547,6 +1553,7 @@
       }
     },
     "Verstanden" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

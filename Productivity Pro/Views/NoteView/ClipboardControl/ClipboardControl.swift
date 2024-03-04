@@ -5,7 +5,6 @@
 //  Created by Till Brügmann on 19.12.23.
 //
 
-import OnPasteboardChange
 import SwiftUI
 
 struct ClipboardControl: View {
@@ -17,7 +16,7 @@ struct ClipboardControl: View {
     @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
     @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
     
-    @State var disablePasteboard: Bool = true
+    @State var alert: Bool = false
 
     var body: some View {
         ZStack {
@@ -26,12 +25,10 @@ struct ClipboardControl: View {
                     ClipboardButton(image: "doc.on.clipboard")
                 }
                 .disabled(subviewManager.showInspector)
-                .disabled(disablePasteboard)
-                .onPasteboardChange {
-                    disablePasteboard = pasteboardState()
-                }
-                .onAppear {
-                    disablePasteboard = pasteboardState()
+                .alert(
+                    "Es konnte kein Objekt eingefügt werden.", isPresented: $alert
+                ) {
+                    Button("Ok") { alert.toggle() }
                 }
             
                 Button(action: { copy() }) {

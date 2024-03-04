@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "onpasteboardchange",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kyle-n/OnPasteboardChange",
-      "state" : {
-        "branch" : "main",
-        "revision" : "56da3a9f6be340698f4516b25dda09cff952214a"
-      }
-    },
-    {
       "identity" : "swift-markdown-ui",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gonzalezreal/swift-markdown-ui",

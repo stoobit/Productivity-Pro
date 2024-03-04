@@ -192,7 +192,6 @@
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
 		BBB049782B84FA95005531D5 /* GoogleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB049772B84FA95005531D5 /* GoogleView.swift */; };
 		BBB049792B84FC72005531D5 /* GoogleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB049772B84FA95005531D5 /* GoogleView.swift */; };
-		BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */ = {isa = PBXBuildFile; productRef = BBB090802A4BA35100A6F60A /* OnPasteboardChange */; };
 		BBB19A992B27A51C00B92CBB /* LibraryViewCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A982B27A51C00B92CBB /* LibraryViewCard.swift */; };
 		BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */; };
 		BBB538832B40BA7F00C874EA /* ExportableBackupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */; };
@@ -592,7 +591,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
-				BBB090812A4BA35100A6F60A /* OnPasteboardChange in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1535,7 +1533,6 @@
 			);
 			name = "Productivity Pro";
 			packageProductDependencies = (
-				BBB090802A4BA35100A6F60A /* OnPasteboardChange */,
 				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
 			);
 			productName = "Productivity Pro";
@@ -1590,7 +1587,6 @@
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
-				BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */,
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
@@ -2260,14 +2256,6 @@
 				minimumVersion = 2.2.0;
 			};
 		};
-		BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kyle-n/OnPasteboardChange";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2275,11 +2263,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
-		};
-		BBB090802A4BA35100A6F60A /* OnPasteboardChange */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BBB0907F2A4BA35100A6F60A /* XCRemoteSwiftPackageReference "OnPasteboardChange" */;
-			productName = OnPasteboardChange;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

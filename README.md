@@ -5,9 +5,10 @@
 - add keyboard shortcuts
 - create an optimized overview with custom SwiftUI Components
 - improve SwiftUI ScrollView
-- rotation and number animation performance 
 
 ## 🗺️ Bug Fixes 2.0.1+
+- textfield rendering 
+- rotation optimizations 
 - Homework -> <Important Feature>
 - Performance Improvements
 - Schedule & Homework -> <Connection>
