@@ -2,12 +2,12 @@
 
 ## 🛠️ Release 2.0.v
 - URModel: Custom Undo/Redo Methods
-- add keyboard shortcuts
 - create an optimized overview with custom SwiftUI Components
 - improve SwiftUI ScrollView
 
 ## 🗺️ Bug Fixes 2.0.1+
-- textfield rendering 
+- add keyboard shortcuts
+- textfield rendering (drag & drop)
 - rotation optimizations 
 - Homework -> <Important Feature>
 - Performance Improvements

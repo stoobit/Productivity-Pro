@@ -12,13 +12,11 @@ extension PPPageModel {
         if store.count == 0 {
             return false
         }
-        
+
         return version == store.count - 1 ? false : true
     }
-    
+
     func redo() {
-        
-        
         version += 1
 
         guard let items = items else { return }

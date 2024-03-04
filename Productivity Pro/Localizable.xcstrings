@@ -1260,6 +1260,9 @@
         }
       }
     },
+    "redo" : {
+
+    },
     "Rolle" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1551,6 +1554,9 @@
           }
         }
       }
+    },
+    "undo" : {
+
     },
     "Verstanden" : {
       "extractionState" : "stale",

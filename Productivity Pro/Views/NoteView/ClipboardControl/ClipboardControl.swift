@@ -24,6 +24,7 @@ struct ClipboardControl: View {
                 Button(action: { paste() }) {
                     ClipboardButton(image: "doc.on.clipboard")
                 }
+                .keyboardShortcut(KeyEquivalent("v"), modifiers: .command)
                 .disabled(subviewManager.showInspector)
                 .alert(
                     "Es konnte kein Objekt eingefügt werden.", isPresented: $alert
@@ -34,24 +35,28 @@ struct ClipboardControl: View {
                 Button(action: { copy() }) {
                     ClipboardButton(image: "doc.on.doc")
                 }
+                .keyboardShortcut(KeyEquivalent("c"), modifiers: .command)
                 .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             
                 Button(action: { duplicate() }) {
                     ClipboardButton(image: "plus.square.on.square")
                 }
+                .keyboardShortcut(KeyEquivalent("d"), modifiers: .command)
                 .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             
                 Button(role: .destructive, action: { cut() }) {
                     ClipboardButton(image: "scissors")
                 }
+                .keyboardShortcut(KeyEquivalent("x"), modifiers: .command)
                 .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             
                 Button(role: .destructive, action: { delete() }) {
                     ClipboardButton(image: "trash")
                 }
+                .keyboardShortcut(.delete, modifiers: [])
                 .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             }
