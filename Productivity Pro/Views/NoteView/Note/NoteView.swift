@@ -35,7 +35,7 @@ struct NoteView: View {
                                     page: page,
                                     size: proxy.size
                                 )
-                                .containerRelativeFrame([.horizontal, .vertical])
+                                .containerRelativeFrame([.horizontal])
                                 .id(page)
                             }
                         }
