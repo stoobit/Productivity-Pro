@@ -45,18 +45,15 @@ struct NoteView: View {
                     .scrollTargetBehavior(.paging)
                     .scrollPosition(id: $toolValue.activePage)
                     .noteViewModifier(with: contentObject, reader: reader)
-                    .onChange(of: proxy.size) {
-                        reader.scrollTo(toolManager.activePage)
-                    }
-                    .onChange(of: proxy.size) {
-                        reader.scrollTo(toolManager.activePage)
-                    }
                     .sheet(isPresented: $subviewValue.overview, content: {
                         OverviewContainerView(
                             contentObject: contentObject,
                             scrollView: reader
                         )
                     })
+                    .onChange(of: proxy.size) {
+                        reader.scrollTo(toolManager.activePage)
+                    }
                     .onAppear {
                         if toolManager.activePage == nil {
                             toolManager.activePage = pages.last
