@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "pages",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nachonavarro/Pages.git",
+      "state" : {
+        "revision" : "4cdbe4ff2f9ddbfda8cf0376a2acb678a1a0a0a2",
+        "version" : "0.1.5"
+      }
+    },
+    {
       "identity" : "swift-markdown-ui",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gonzalezreal/swift-markdown-ui",

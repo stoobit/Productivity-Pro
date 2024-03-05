@@ -263,6 +263,7 @@
 		BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDCF5D9299E9506004C99AE /* Hexagon.swift */; };
 		BBDFFD3E2B408C380006FE11 /* LibrarySubjectsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDFFD3D2B408C380006FE11 /* LibrarySubjectsList.swift */; };
 		BBE069B12AF78CA300B2D1A0 /* SecondaryInspectorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE069B02AF78CA300B2D1A0 /* SecondaryInspectorAction.swift */; };
+		BBE7415F2B97086400E71B09 /* Pages in Frameworks */ = {isa = PBXBuildFile; productRef = BBE7415E2B97086400E71B09 /* Pages */; };
 		BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */; };
 		BBE9196E28F381FE001EF750 /* PPScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE9196D28F381FE001EF750 /* PPScrollView.swift */; };
 		BBEBA9A22B6836AA00F7E536 /* PVItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEBA9A12B6836AA00F7E536 /* PVItemView.swift */; };
@@ -590,6 +591,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBE7415F2B97086400E71B09 /* Pages in Frameworks */,
 				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 			);
@@ -1534,6 +1536,7 @@
 			name = "Productivity Pro";
 			packageProductDependencies = (
 				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
+				BBE7415E2B97086400E71B09 /* Pages */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1588,6 +1591,7 @@
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				BBE7415D2B97086400E71B09 /* XCRemoteSwiftPackageReference "Pages" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -2256,6 +2260,14 @@
 				minimumVersion = 2.2.0;
 			};
 		};
+		BBE7415D2B97086400E71B09 /* XCRemoteSwiftPackageReference "Pages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nachonavarro/Pages.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2263,6 +2275,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		BBE7415E2B97086400E71B09 /* Pages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBE7415D2B97086400E71B09 /* XCRemoteSwiftPackageReference "Pages" */;
+			productName = Pages;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -37,10 +37,6 @@ struct NoteView: View {
                                 )
                                 .containerRelativeFrame([.horizontal])
                                 .id(page)
-                                
-//                                Text("hellow")
-//                                    .containerRelativeFrame([.horizontal])
-//                                    .id(page)
                             }
                         }
                         .scrollTargetLayout(isEnabled: true)
