@@ -16,8 +16,9 @@ extension PPPageModel {
         return version == store.count - 1 ? false : true
     }
 
-    func redo() {
+    func redo(toolManager: ToolManager) {
         version += 1
+        let activeID = toolManager.activeItem?.id
 
         guard let items = items else { return }
         let stored = store[version]
@@ -26,5 +27,9 @@ extension PPPageModel {
         let active = items.first(where: { $0.id == stored.id })
         self.items?.removeAll(where: { $0 == active })
         self.items?.append(item)
+        
+        toolManager.activeItem = self.items?.first(where: {
+            $0.id == activeID
+        })
     }
 }

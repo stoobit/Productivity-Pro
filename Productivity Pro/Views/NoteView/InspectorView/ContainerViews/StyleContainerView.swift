@@ -14,9 +14,9 @@ struct StyleContainerView: View {
     var body: some View {
         
         if toolManager.activeItem?.type == item.shape.rawValue {
-            ShapeStyleView()
+            ShapeStyleView(toolManager: toolManager)
         } else if toolManager.activeItem?.type == item.media.rawValue {
-            MediaStyleView()
+            MediaStyleView(toolManager: toolManager)
         }  else if toolManager.activeItem?.type == item.textField.rawValue {
             TextFieldStyleView()
         } else {

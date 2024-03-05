@@ -32,24 +32,6 @@ struct ScrollViewContainer: View {
                 scale: $scale,
                 offset: $offset
             )
-            .background {
-                VStack {
-                    Button("undo") {
-                        toolManager.activePage?.undo()
-                        toolManager.update += 1
-                    }
-                    .keyboardShortcut(KeyEquivalent("z"), modifiers: .command)
-                    
-                    Button("redo") {
-                        toolManager.activePage?.redo()
-                        toolManager.update += 1
-                    }
-                    .keyboardShortcut(KeyEquivalent("z"), modifiers: [
-                        .command, .shift
-                    ])
-                }
-            }
-            
         }
         .modifier(OrientationUpdater(isPortrait: page.isPortrait))
     }

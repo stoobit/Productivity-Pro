@@ -46,12 +46,12 @@ extension NoteSecondaryToolbar {
     }
 
     func undo() {
-        toolManager.activePage?.undo()
+        toolManager.activePage?.undo(toolManager: toolManager)
         toolManager.update += 1
     }
 
     func redo() {
-        toolManager.activePage?.redo()
+        toolManager.activePage?.redo(toolManager: toolManager)
         toolManager.update += 1
     }
 

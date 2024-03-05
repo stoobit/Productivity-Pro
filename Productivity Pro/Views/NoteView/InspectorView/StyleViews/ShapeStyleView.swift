@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct ShapeStyleView: View {
-    @Environment(ToolManager.self) var toolManager
+    @Bindable var toolManager: ToolManager
     
-    @State var fill: Bool = true
-    @State var fillColor: Color = .black
-    @State var stroke: Bool = false
-    @State var strokeColor: Color = .black
-    @State var strokeWidth: Double = 0
-    @State var cornerRadius: Double = 0
+    @State var fill: Bool
+    @State var fillColor: Color
+    @State var stroke: Bool
+    @State var strokeColor: Color
+    @State var strokeWidth: Double
+    @State var cornerRadius: Double
     
     @State var radiusPicker: Bool = false
     @State var strokePicker: Bool = false
+    
+    init(toolManager: ToolManager) {
+        self.toolManager = toolManager
+        let item = toolManager.activeItem!.shape!
+        
+        _fill = State(initialValue: item.fill)
+        _fillColor = State(initialValue: Color(data: item.fillColor))
+        
+        _stroke = State(initialValue: item.stroke)
+        _strokeColor = State(initialValue: Color(data: item.strokeColor))
+        _strokeWidth = State(initialValue: item.strokeWidth)
+        
+        _cornerRadius = State(initialValue: item.cornerRadius)
+    }
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.shape!
@@ -142,16 +156,6 @@ struct ShapeStyleView: View {
                 
                 return activeItem
             }
-        }
-        .onAppear {
-            fill = item.fill
-            fillColor = Color(data: item.fillColor)
-            
-            stroke = item.stroke
-            strokeColor = Color(data: item.strokeColor)
-            strokeWidth = item.strokeWidth
-            
-            cornerRadius = item.cornerRadius
         }
     }
 }

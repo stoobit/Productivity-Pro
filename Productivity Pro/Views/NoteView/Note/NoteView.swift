@@ -63,6 +63,22 @@ struct NoteView: View {
                 }
             }
             .background {
+                Button("Widerrufen") {
+                    toolManager.activePage?.undo(
+                        toolManager: toolManager
+                    )
+                    toolManager.update += 1
+                }
+                .keyboardShortcut(KeyEquivalent("z"), modifiers: .command)
+                
+                Button("Wiederherstellen") {
+                    toolManager.activePage?.redo(toolManager: toolManager)
+                    toolManager.update += 1
+                }
+                .keyboardShortcut(KeyEquivalent("z"), modifiers: [
+                    .command, .shift
+                ])
+                
                 Color(UIColor.secondarySystemBackground)
                     .ignoresSafeArea(.all, edges: [.top, .horizontal])
             }

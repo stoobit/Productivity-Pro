@@ -8,15 +8,26 @@
 import SwiftUI
 
 struct MediaStyleView: View {
-    @Environment(ToolManager.self) var toolManager
+    @Bindable var toolManager: ToolManager
     
-    @State var stroke: Bool = false
-    @State var strokeColor: Color = .black
-    @State var strokeWidth: Double = 0
-    @State var cornerRadius: Double = 0
+    @State var stroke: Bool
+    @State var strokeColor: Color
+    @State var strokeWidth: Double
+    @State var cornerRadius: Double
     
     @State var strokePicker: Bool = false
     @State var radiusPicker: Bool = false
+    
+    init(toolManager: ToolManager) {
+        self.toolManager = toolManager
+        let item = toolManager.activeItem!.media!
+        
+        _stroke = State(initialValue: item.stroke)
+        _strokeColor = State(initialValue: Color(data: item.strokeColor))
+        _strokeWidth = State(initialValue: item.strokeWidth)
+        
+        _cornerRadius = State(initialValue: item.cornerRadius)
+    }
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.media!
