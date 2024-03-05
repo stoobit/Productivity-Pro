@@ -17,6 +17,7 @@ struct MediaStyleView: View {
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.media!
+        @Bindable var activeItem = toolManager.activeItem!
         
         Form {
             Section("Rahmen") {
@@ -71,15 +72,32 @@ struct MediaStyleView: View {
         }
         .environment(\.defaultMinListRowHeight, 10)
         .onChange(of: strokeColor) {
-            item.strokeColor = strokeColor.data()
-            toolManager.update += 1
+            toolManager.activePage?.store(activeItem) {
+                item.strokeColor = strokeColor.data()
+                toolManager.update += 1
+                
+                return activeItem
+            }
         }
         .onChange(of: stroke) {
-            item.stroke = stroke
-            toolManager.update += 1
+            toolManager.activePage?.store(activeItem) {
+                item.stroke = stroke
+                toolManager.update += 1
+                
+                return activeItem
+            }
         }
         .onChange(of: item.cornerRadius) {
-            toolManager.update += 1
+            toolManager.activePage?.store(activeItem) {
+                toolManager.update += 1
+                return activeItem
+            }
+        }
+        .onChange(of: item.strokeWidth) {
+            toolManager.activePage?.store(activeItem) {
+                toolManager.update += 1
+                return activeItem
+            }
         }
         .onAppear {
             stroke = item.stroke

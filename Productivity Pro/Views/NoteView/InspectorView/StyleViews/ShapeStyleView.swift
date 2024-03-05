@@ -19,6 +19,7 @@ struct ShapeStyleView: View {
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.shape!
+        @Bindable var activeItem = toolManager.activeItem!
         
         Form {
             Section("Füllung") {
@@ -91,24 +92,43 @@ struct ShapeStyleView: View {
             }
         }
         .environment(\.defaultMinListRowHeight, 10)
-        .onChange(of: fillColor) {
-            item.fillColor = fillColor.data()
-            toolManager.update += 1
-        }
-        .onChange(of: strokeColor) {
-            item.strokeColor = strokeColor.data()
-            toolManager.update += 1
-        }
         .onChange(of: fill) {
-            item.fill = fill
-            toolManager.update += 1
+            toolManager.activePage?.store(activeItem) {
+                item.fill = fill
+                toolManager.update += 1
+                
+                return activeItem
+            }
         }
         .onChange(of: stroke) {
-            item.stroke = stroke
-            toolManager.update += 1
+            toolManager.activePage?.store(activeItem) {
+                item.stroke = stroke
+                toolManager.update += 1
+                
+                return activeItem
+            }
+        }
+        .onChange(of: fillColor) {
+            toolManager.activePage?.store(activeItem) {
+                item.fillColor = fillColor.data()
+                toolManager.update += 1
+             
+                return activeItem
+            }
+        }
+        .onChange(of: strokeColor) {
+            toolManager.activePage?.store(activeItem) {
+                item.strokeColor = strokeColor.data()
+                toolManager.update += 1
+             
+                return activeItem
+            }
         }
         .onChange(of: item.cornerRadius) {
-            toolManager.update += 1
+            toolManager.activePage?.store(activeItem) {
+                toolManager.update += 1
+                return activeItem
+            }
         }
         .onAppear {
             fill = item.fill
