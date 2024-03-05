@@ -11,11 +11,14 @@ struct ShapeStyleView: View {
     @Environment(ToolManager.self) var toolManager
     
     @State var fill: Bool = true
-    @State var stroke: Bool = false
     @State var fillColor: Color = .black
+    @State var stroke: Bool = false
     @State var strokeColor: Color = .black
-    @State var strokeWidth: Bool = false
-    @State var cornerRadius: Bool = false
+    @State var strokeWidth: Double = 0
+    @State var cornerRadius: Double = 0
+    
+    @State var radiusPicker: Bool = false
+    @State var strokePicker: Bool = false
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.shape!
@@ -31,7 +34,7 @@ struct ShapeStyleView: View {
                 .frame(height: 30)
             }
              
-            if item.fill {
+            if fill {
                 Section {
                     ColorPicker("Farbe", selection: $fillColor, supportsOpacity: true)
                         .frame(height: 30)
@@ -48,7 +51,7 @@ struct ShapeStyleView: View {
                 .frame(height: 30)
             }
                 
-            if item.stroke {
+            if stroke {
                 Section {
                     ColorPicker("Farbe", selection: $strokeColor, supportsOpacity: false)
                         .frame(height: 30)
@@ -62,8 +65,8 @@ struct ShapeStyleView: View {
                             strokeWidth.toggle()
                         }
                         .ppDoubleKeyboard(
-                            isPresented: $strokeWidth, 
-                            value: $item.strokeWidth
+                            isPresented: $strokePicker,
+                            value: $strokeWidth
                         )
                     }
                     .frame(height: 30)
@@ -83,7 +86,7 @@ struct ShapeStyleView: View {
                         }
                         .ppDoubleKeyboard(
                             isPresented: $cornerRadius,
-                            value: $item.cornerRadius
+                            value: $radiusPicker
                         )
                     }
                     .frame(height: 30)
@@ -100,19 +103,19 @@ struct ShapeStyleView: View {
                 return activeItem
             }
         }
-        .onChange(of: stroke) {
-            toolManager.activePage?.store(activeItem) {
-                item.stroke = stroke
-                toolManager.update += 1
-                
-                return activeItem
-            }
-        }
         .onChange(of: fillColor) {
             toolManager.activePage?.store(activeItem) {
                 item.fillColor = fillColor.data()
                 toolManager.update += 1
              
+                return activeItem
+            }
+        }
+        .onChange(of: stroke) {
+            toolManager.activePage?.store(activeItem) {
+                item.stroke = stroke
+                toolManager.update += 1
+                
                 return activeItem
             }
         }
@@ -124,17 +127,31 @@ struct ShapeStyleView: View {
                 return activeItem
             }
         }
-        .onChange(of: item.cornerRadius) {
+        .onChange(of: strokeWidth) {
             toolManager.activePage?.store(activeItem) {
+                item.strokeWidth = strokeWidth
                 toolManager.update += 1
+             
+                return activeItem
+            }
+        }
+        .onChange(of: cornerRadius) {
+            toolManager.activePage?.store(activeItem) {
+                item.cornerRadius = cornerRadius
+                toolManager.update += 1
+                
                 return activeItem
             }
         }
         .onAppear {
             fill = item.fill
-            stroke = item.stroke
             fillColor = Color(data: item.fillColor)
+            
+            stroke = item.stroke
             strokeColor = Color(data: item.strokeColor)
+            strokeWidth = item.strokeWidth
+            
+            cornerRadius = item.cornerRadius
         }
     }
 }
