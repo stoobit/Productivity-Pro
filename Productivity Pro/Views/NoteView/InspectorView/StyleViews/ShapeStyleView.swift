@@ -62,7 +62,7 @@ struct ShapeStyleView: View {
                         Spacer()
                         
                         Button(String(item.strokeWidth)) {
-                            strokeWidth.toggle()
+                            strokePicker.toggle()
                         }
                         .ppDoubleKeyboard(
                             isPresented: $strokePicker,
@@ -82,11 +82,11 @@ struct ShapeStyleView: View {
                         Spacer()
                         
                         Button(String(item.cornerRadius)) {
-                            cornerRadius.toggle()
+                            radiusPicker.toggle()
                         }
                         .ppDoubleKeyboard(
-                            isPresented: $cornerRadius,
-                            value: $radiusPicker
+                            isPresented: $radiusPicker,
+                            value: $cornerRadius
                         )
                     }
                     .frame(height: 30)

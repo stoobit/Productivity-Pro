@@ -12,8 +12,11 @@ struct MediaStyleView: View {
     
     @State var stroke: Bool = false
     @State var strokeColor: Color = .black
-    @State var strokeWidth: Bool = false
-    @State var cornerRadius: Bool = false
+    @State var strokeWidth: Double = 0
+    @State var cornerRadius: Double = 0
+    
+    @State var strokePicker: Bool = false
+    @State var radiusPicker: Bool = false
     
     var body: some View {
         @Bindable var item = toolManager.activeItem!.media!
@@ -29,7 +32,7 @@ struct MediaStyleView: View {
                 .frame(height: 30)
             }
                 
-            if item.stroke {
+            if stroke {
                 Section {
                     ColorPicker("Farbe", selection: $strokeColor, supportsOpacity: false)
                         .frame(height: 30)
@@ -40,11 +43,11 @@ struct MediaStyleView: View {
                         Spacer()
                         
                         Button(String(item.strokeWidth)) {
-                            strokeWidth.toggle()
+                            strokePicker.toggle()
                         }
                         .ppDoubleKeyboard(
-                            isPresented: $strokeWidth,
-                            value: $item.strokeWidth
+                            isPresented: $strokePicker,
+                            value: $strokeWidth
                         )
                     }
                     .frame(height: 30)
@@ -59,11 +62,11 @@ struct MediaStyleView: View {
                     Spacer()
                     
                     Button(String(item.cornerRadius)) {
-                        cornerRadius.toggle()
+                        radiusPicker.toggle()
                     }
                     .ppDoubleKeyboard(
-                        isPresented: $cornerRadius,
-                        value: $item.cornerRadius
+                        isPresented: $radiusPicker,
+                        value: $cornerRadius
                     )
                 }
                 .frame(height: 30)
@@ -71,14 +74,6 @@ struct MediaStyleView: View {
             .listSectionSpacing(10)
         }
         .environment(\.defaultMinListRowHeight, 10)
-        .onChange(of: strokeColor) {
-            toolManager.activePage?.store(activeItem) {
-                item.strokeColor = strokeColor.data()
-                toolManager.update += 1
-                
-                return activeItem
-            }
-        }
         .onChange(of: stroke) {
             toolManager.activePage?.store(activeItem) {
                 item.stroke = stroke
@@ -87,21 +82,36 @@ struct MediaStyleView: View {
                 return activeItem
             }
         }
-        .onChange(of: item.cornerRadius) {
+        .onChange(of: strokeColor) {
             toolManager.activePage?.store(activeItem) {
+                item.strokeColor = strokeColor.data()
                 toolManager.update += 1
+             
                 return activeItem
             }
         }
-        .onChange(of: item.strokeWidth) {
+        .onChange(of: strokeWidth) {
             toolManager.activePage?.store(activeItem) {
+                item.strokeWidth = strokeWidth
                 toolManager.update += 1
+             
+                return activeItem
+            }
+        }
+        .onChange(of: cornerRadius) {
+            toolManager.activePage?.store(activeItem) {
+                item.cornerRadius = cornerRadius
+                toolManager.update += 1
+                
                 return activeItem
             }
         }
         .onAppear {
             stroke = item.stroke
             strokeColor = Color(data: item.strokeColor)
+            strokeWidth = item.strokeWidth
+            
+            cornerRadius = item.cornerRadius
         }
     }
 }
