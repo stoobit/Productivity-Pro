@@ -7,7 +7,7 @@
 
 ## 🗺️ Bug Fixes 2.0.1+
 - add keyboard shortcuts
-- textfield rendering (drag & drop)
+- textfield rendering performance when changing size
 - rotation optimizations 
 - Homework -> <Important Feature>
 - Performance Improvements
