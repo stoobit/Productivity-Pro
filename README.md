@@ -2,8 +2,10 @@
 
 ## 🛠️ Release 2.0.v
 - URModel: Custom Undo/Redo Methods
-- create an optimized overview with custom SwiftUI Components
+- render Overview
 - improve SwiftUI ScrollView
+- media performance
+- pencilkit performnace 
 
 ## 🗺️ Bug Fixes 2.0.1+
 - add keyboard shortcuts
