@@ -5,7 +5,8 @@
 - render Overview
 - improve SwiftUI ScrollView
 - media performance
-- pencilkit performnace 
+- pencilkit performnace
+- latein view navigation title
 
 ## 🗺️ Bug Fixes 2.0.1+
 - add keyboard shortcuts
