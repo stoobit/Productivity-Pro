@@ -44,13 +44,6 @@ struct NoteView: View {
                     .scrollIndicators(.hidden)
                     .scrollTargetBehavior(.paging)
                     .scrollPosition(id: $toolValue.activePage)
-                    .noteViewModifier(with: contentObject, reader: reader)
-                    .sheet(isPresented: $subviewValue.overview, content: {
-                        OverviewContainerView(
-                            contentObject: contentObject,
-                            scrollView: reader
-                        )
-                    })
                     .onChange(of: proxy.size) {
                         reader.scrollTo(toolManager.activePage)
                     }
@@ -82,6 +75,7 @@ struct NoteView: View {
                 Color(UIColor.secondarySystemBackground)
                     .ignoresSafeArea(.all, edges: [.top, .horizontal])
             }
+            .noteViewModifier(with: contentObject, reader: reader)
             .modifier(
                 RenameContentObjectView(
                     contentObjects: contentObjects,

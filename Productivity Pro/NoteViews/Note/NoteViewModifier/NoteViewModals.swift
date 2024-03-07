@@ -20,6 +20,12 @@ struct NoteViewSheet: ViewModifier {
         @Bindable var manager = subviewManager
         
         content
+            .sheet(isPresented: $subviewValue.overview, content: {
+                OverviewContainerView(
+                    contentObject: contentObject,
+                    scrollView: reader
+                )
+            })
             .sheet(isPresented: $manager.addPage, content: {
                 TemplateView(
                     isPresented: $manager.addPage,
