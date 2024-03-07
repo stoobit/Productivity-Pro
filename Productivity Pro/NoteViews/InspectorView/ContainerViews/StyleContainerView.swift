@@ -18,7 +18,7 @@ struct StyleContainerView: View {
         } else if toolManager.activeItem?.type == item.media.rawValue {
             MediaStyleView(toolManager: toolManager)
         }  else if toolManager.activeItem?.type == item.textField.rawValue {
-            TextFieldStyleView()
+            TextFieldStyleView(toolManager: toolManager)
         } else {
             ProgressView()
         }

@@ -765,6 +765,7 @@
       }
     },
     "Geändert" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -919,6 +920,9 @@
           }
         }
       }
+    },
+    "Latein" : {
+
     },
     "Lehrer" : {
       "extractionState" : "stale",

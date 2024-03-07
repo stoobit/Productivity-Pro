@@ -60,7 +60,10 @@ struct MediaImport: ViewModifier {
     func addMedia(with imageData: Data) {
         guard let selectedImage = UIImage(data: imageData) else { return }
         
-        let image = resize(selectedImage, to: CGSize(width: 2048, height: 2048))
+        let image = resize(selectedImage, to: CGSize(
+            width: 1024, height: 1024)
+        )
+        
         let ratio = 400/image.size.width
         
         let item = PPItemModel(index: 0, type: .media)

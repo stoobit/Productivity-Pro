@@ -63,7 +63,7 @@ struct FolderViewToolbar: ToolbarContent {
                 Picker("", selection: $sortType) {
                     Text("Name").tag(SortingValue.title)
                     Text("Erstellt").tag(SortingValue.created)
-                    Text("Geändert").tag(SortingValue.modified)
+//                    Text("Geändert").tag(SortingValue.modified)
                 }
                 
                 Button(action: { isReverse.toggle() }) {

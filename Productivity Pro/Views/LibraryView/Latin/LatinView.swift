@@ -23,6 +23,8 @@ struct LatinView: View {
                 LHistoryList()
             }
         }
+        .navigationTitle("Latein")
+        .navigationBarTitleDisplayMode(.inline)
         .tabViewStyle(.page)
         .overlay {
             LTabIndicator(selection: $selection)

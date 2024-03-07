@@ -4,13 +4,13 @@
 - URModel: Custom Undo/Redo Methods
 - render Overview
 - improve SwiftUI ScrollView
-- media performance
-- pencilkit performnace
-- latein view navigation title
 
 ## 🗺️ Bug Fixes 2.0.1+
+- tca for <inspector>
+- tca, pencilkit performance 
+- media performance 
 - add keyboard shortcuts
-- textfield rendering performance when changing size
+- textfield rendering performance (also when changing size)
 - rotation optimizations 
 - Homework -> <Important Feature>
 - Performance Improvements

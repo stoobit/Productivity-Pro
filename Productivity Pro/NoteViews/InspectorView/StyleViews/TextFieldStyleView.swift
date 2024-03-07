@@ -10,27 +10,44 @@ import SwiftUI
 struct TextFieldStyleView: View {
     @Bindable var toolManager: ToolManager
     
-    @State var fill: Bool = true
-    @State var fillColor: Color = .black
+    @State var fill: Bool
+    @State var fillColor: Color
     
-    @State var stroke: Bool = false
-    @State var strokeColor: Color = .black
-    @State var strokeWidth: Double = 0
+    @State var stroke: Bool
+    @State var strokeColor: Color
+    @State var strokeWidth: Double
     
-    @State var fontName: String = ""
-    @State var fontSize: Double = 0
-    @State var fontColor: Color = .black
+    @State var fontName: String
+    @State var fontSize: Double
+    @State var fontColor: Color
     
     @State var strokePicker: Bool = false
     @State var sizePicker: Bool = false
     
+    init(toolManager: ToolManager) {
+        self.toolManager = toolManager
+        let item = toolManager.activeItem!.textField!
+        
+        _fill = State(initialValue: item.fill)
+        _fillColor = State(initialValue: Color(data: item.fillColor))
+        
+        _stroke = State(initialValue: item.stroke)
+        _strokeColor = State(initialValue: Color(data: item.strokeColor))
+        _strokeWidth = State(initialValue: item.strokeWidth)
+        
+        _fontName = State(initialValue: item.fontName)
+        _fontSize = State(initialValue: item.fontSize)
+        _fontColor = State(initialValue: Color(data: item.textColor))
+    }
+    
     var body: some View {
         @Bindable var item = toolManager.activeItem?
             .textField ?? PPTextFieldModel()
+        @Bindable var activeItem = toolManager.activeItem!
         
         Form {
             Section("Text") {
-                Picker("Schriftart", selection: $item.fontName) {
+                Picker("Schriftart", selection: $fontName) {
                     ForEach(UIFont.familyNames, id: \.self) { font in
                         Text(font)
                             .tag(font)
@@ -43,9 +60,11 @@ struct TextFieldStyleView: View {
                     
                     Spacer()
                     Button(String(item.fontSize)) {
-                        fontSize.toggle()
+                        sizePicker.toggle()
                     }
-                    .ppDoubleKeyboard(isPresented: $fontSize, value: $item.fontSize)
+                    .ppDoubleKeyboard(
+                        isPresented: $sizePicker, value: $fontSize
+                    )
                 }
                 .frame(height: 30)
             }
@@ -93,11 +112,11 @@ struct TextFieldStyleView: View {
                         Spacer()
                         
                         Button(String(item.strokeWidth)) {
-                            strokeWidth.toggle()
+                            strokePicker.toggle()
                         }
                         .ppDoubleKeyboard(
-                            isPresented: $strokeWidth,
-                            value: $item.strokeWidth
+                            isPresented: $strokePicker,
+                            value: $strokeWidth
                         )
                     }
                     .frame(height: 30)
@@ -106,38 +125,69 @@ struct TextFieldStyleView: View {
             }
         }
         .environment(\.defaultMinListRowHeight, 10)
-        .onChange(of: fillColor) {
-            item.fillColor = fillColor.data()
-            toolManager.update += 1
-        }
-        .onChange(of: strokeColor) {
-            item.strokeColor = strokeColor.data()
-            toolManager.update += 1
-        }
         .onChange(of: fill) {
-            item.fill = fill
-            toolManager.update += 1
+            toolManager.activePage?.store(activeItem) {
+                item.fill = fill
+                toolManager.update += 1
+                
+                return activeItem
+            }
+        }
+        .onChange(of: fillColor) {
+            toolManager.activePage?.store(activeItem) {
+                item.fillColor = fillColor.data()
+                toolManager.update += 1
+                
+                return activeItem
+            }
         }
         .onChange(of: stroke) {
-            item.stroke = stroke
-            toolManager.update += 1
+            toolManager.activePage?.store(activeItem) {
+                item.stroke = stroke
+                toolManager.update += 1
+                
+                return activeItem
+            }
+        }
+        .onChange(of: strokeColor) {
+            toolManager.activePage?.store(activeItem) {
+                item.strokeColor = strokeColor.data()
+                toolManager.update += 1
+                
+                return activeItem
+            }
+        }
+        .onChange(of: strokeWidth) {
+            toolManager.activePage?.store(activeItem) {
+                item.strokeWidth = strokeWidth
+                toolManager.update += 1
+                
+                return activeItem
+            }
+        }
+        .onChange(of: fontName) {
+            toolManager.activePage?.store(activeItem) {
+                item.fontName = fontName
+                toolManager.update += 1
+                
+                return activeItem
+            }
+        }
+        .onChange(of: fontSize) {
+            toolManager.activePage?.store(activeItem) {
+                item.fontSize = fontSize
+                toolManager.update += 1
+                
+                return activeItem
+            }
         }
         .onChange(of: fontColor) {
-            item.textColor = fontColor.data()
-            toolManager.update += 1
-        }
-        .onChange(of: item.fontName) {
-            toolManager.update += 1
-        }
-        .onChange(of: item.fontSize) {
-            toolManager.update += 1
-        }
-        .onAppear {
-            fill = item.fill
-            stroke = item.stroke
-            fillColor = Color(data: item.fillColor)
-            strokeColor = Color(data: item.strokeColor)
-            fontColor = Color(data: item.textColor)
+            toolManager.activePage?.store(activeItem) {
+                item.textColor = fontColor.data()
+                toolManager.update += 1
+                
+                return activeItem
+            }
         }
     }
 }

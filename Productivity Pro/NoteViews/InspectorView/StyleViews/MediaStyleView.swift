@@ -117,12 +117,5 @@ struct MediaStyleView: View {
                 return activeItem
             }
         }
-        .onAppear {
-            stroke = item.stroke
-            strokeColor = Color(data: item.strokeColor)
-            strokeWidth = item.strokeWidth
-            
-            cornerRadius = item.cornerRadius
-        }
     }
 }
