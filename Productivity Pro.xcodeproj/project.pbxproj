@@ -41,6 +41,7 @@
 		BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */; };
 		BB35A1C32B2921DD001A3F4C /* LHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */; };
 		BB35A1C52B2921EA001A3F4C /* LGrammarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */; };
+		BB36D4B42B9A240C00CBDCAD /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = BB36D4B32B9A240C00CBDCAD /* ComposableArchitecture */; };
 		BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */; };
 		BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */; };
 		BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */; };
@@ -593,6 +594,7 @@
 			files = (
 				BBE7415F2B97086400E71B09 /* Pages in Frameworks */,
 				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
+				BB36D4B42B9A240C00CBDCAD /* ComposableArchitecture in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1537,6 +1539,7 @@
 			packageProductDependencies = (
 				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
 				BBE7415E2B97086400E71B09 /* Pages */,
+				BB36D4B32B9A240C00CBDCAD /* ComposableArchitecture */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1592,6 +1595,7 @@
 			packageReferences = (
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 				BBE7415D2B97086400E71B09 /* XCRemoteSwiftPackageReference "Pages" */,
+				BB36D4B22B9A240C00CBDCAD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -2252,6 +2256,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BB36D4B22B9A240C00CBDCAD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
 		BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
@@ -2271,6 +2283,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB36D4B32B9A240C00CBDCAD /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB36D4B22B9A240C00CBDCAD /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
 		BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
