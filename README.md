@@ -6,6 +6,7 @@
 - improve SwiftUI ScrollView
 
 ## 🗺️ Bug Fixes 2.0.1+
+- general code improvements 
 - tca for <inspector>
 - tca, pencilkit performance 
 - media performance 
