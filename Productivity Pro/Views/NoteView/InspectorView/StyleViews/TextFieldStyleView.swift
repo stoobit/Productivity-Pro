@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct TextFieldStyleView: View {
-    @Environment(ToolManager.self) var toolManager
+    @Bindable var toolManager: ToolManager
     
     @State var fill: Bool = true
-    @State var stroke: Bool = false
-    @State var strokeWidth: Bool = false
-    @State var fontSize: Bool = false
-    
     @State var fillColor: Color = .black
+    
+    @State var stroke: Bool = false
     @State var strokeColor: Color = .black
+    @State var strokeWidth: Double = 0
+    
+    @State var fontName: String = ""
+    @State var fontSize: Double = 0
     @State var fontColor: Color = .black
+    
+    @State var strokePicker: Bool = false
+    @State var sizePicker: Bool = false
     
     var body: some View {
         @Bindable var item = toolManager.activeItem?
