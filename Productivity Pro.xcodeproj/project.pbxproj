@@ -806,6 +806,7 @@
 				BB47056F2B9391C6009A5FCD /* PPDoubleKeyboard */,
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
+				BB9DF5A828DFA25600AC988D /* NoteViews */,
 				BB4CDD5B28D3D564009A409F /* Models */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
 				BB84DD0F2B8E764E002C2A9A /* VUModels */,
@@ -839,7 +840,6 @@
 				BB047CDC2AC0C1DD0027409F /* FileSystemView */,
 				BBFA92462B607E750055CE9D /* ShareMenu */,
 				BBCCE4F028D52911001DBD8A /* CreateNote */,
-				BB9DF5A828DFA25600AC988D /* NoteView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1167,7 +1167,7 @@
 			path = ShareViews;
 			sourceTree = "<group>";
 		};
-		BB9DF5A828DFA25600AC988D /* NoteView */ = {
+		BB9DF5A828DFA25600AC988D /* NoteViews */ = {
 			isa = PBXGroup;
 			children = (
 				BB3E9AA72A33AC27006045E1 /* Note */,
@@ -1183,7 +1183,7 @@
 				BB9CC946293FD4450094446A /* ShareViews */,
 				BBBCACAF2A253BC000C23B2C /* Calculator */,
 			);
-			path = NoteView;
+			path = NoteViews;
 			sourceTree = "<group>";
 		};
 		BB9DF5B328E067D600AC988D /* Document (Deprecated) */ = {
