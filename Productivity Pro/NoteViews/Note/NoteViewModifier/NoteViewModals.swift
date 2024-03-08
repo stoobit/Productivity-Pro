@@ -20,7 +20,7 @@ struct NoteViewSheet: ViewModifier {
         @Bindable var manager = subviewManager
         
         content
-            .sheet(isPresented: $subviewValue.overview, content: {
+            .sheet(isPresented: $manager.overview, content: {
                 OverviewContainerView(
                     contentObject: contentObject,
                     scrollView: reader

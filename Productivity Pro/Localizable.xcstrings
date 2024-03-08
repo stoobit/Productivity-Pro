@@ -788,6 +788,9 @@
         }
       }
     },
+    "hello" : {
+
+    },
     "Hinzufügen" : {
       "localizations" : {
         "en" : {
