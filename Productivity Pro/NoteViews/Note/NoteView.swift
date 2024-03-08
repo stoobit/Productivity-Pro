@@ -40,6 +40,7 @@ struct NoteView: View {
                             }
                         }
                         .scrollTargetLayout(isEnabled: true)
+                        .noteViewModifier(with: contentObject, reader: reader)
                     }
                     .scrollIndicators(.hidden)
                     .scrollTargetBehavior(.paging)
@@ -75,7 +76,6 @@ struct NoteView: View {
                 Color(UIColor.secondarySystemBackground)
                     .ignoresSafeArea(.all, edges: [.top, .horizontal])
             }
-            .noteViewModifier(with: contentObject, reader: reader)
             .modifier(
                 RenameContentObjectView(
                     contentObjects: contentObjects,
