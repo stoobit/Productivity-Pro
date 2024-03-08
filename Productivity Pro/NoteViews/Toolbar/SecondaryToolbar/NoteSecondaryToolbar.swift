@@ -25,6 +25,7 @@ struct NoteSecondaryToolbar: ToolbarContent {
                 toolManager.activePage = nil
                 toolManager.pencilKit = false
                 
+                toolManager.index = 0
                 dismiss()
             }
             
