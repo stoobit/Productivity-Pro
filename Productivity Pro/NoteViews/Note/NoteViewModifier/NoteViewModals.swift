@@ -14,17 +14,13 @@ struct NoteViewSheet: ViewModifier {
     @Environment(SubviewManager.self) var subviewManager
     
     var contentObject: ContentObject
-    var reader: ScrollViewProxy
     
     func body(content: Content) -> some View {
         @Bindable var manager = subviewManager
         
         content
             .sheet(isPresented: $manager.overview, content: {
-                OverviewContainerView(
-                    contentObject: contentObject,
-                    scrollView: reader
-                )
+                OverviewContainerView(contentObject: contentObject)
             })
             .sheet(isPresented: $manager.addPage, content: {
                 TemplateView(
@@ -75,15 +71,6 @@ struct NoteViewSheet: ViewModifier {
                 
                 Button("Abbrechen", role: .cancel) {
                     subviewManager.deletePage = false
-                }
-            }
-            .background {
-                if subviewManager.printerView {
-//                    PrinterView(
-//                        document: $document,
-//                        subviewManager: subviewManager,
-//                        url: url
-//                    )
                 }
             }
     }

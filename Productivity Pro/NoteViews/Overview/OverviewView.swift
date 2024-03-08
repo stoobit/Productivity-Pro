@@ -14,16 +14,12 @@ struct OverviewView: View {
     var contentObject: ContentObject
     var filter: Bool
 
-    var scrollView: ScrollViewProxy
-
     var body: some View {
         ScrollViewReader { _ in
             List {
                 ForEach(pages) { page in
                     OverviewRow(
-                        contentObject: contentObject,
-                        page: page,
-                        scrollView: scrollView
+                        contentObject: contentObject, page: page
                     )
                     .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
                     .moveDisabled(contentObject.note?.pages?.count == 1)

@@ -26,33 +26,24 @@ struct NoteView: View {
             @Bindable var toolValue = toolManager
             
             GeometryReader { proxy in
-                ScrollViewReader { reader in
-                    ScrollView(.horizontal) {
-                        LazyHStack(spacing: 0) {
-                            ForEach(pages) { page in
-                                ScrollViewContainer(
-                                    note: contentObject.note!,
-                                    page: page,
-                                    size: proxy.size
-                                )
-                                .containerRelativeFrame([.horizontal])
-                                .id(page)
-                            }
-                        }
-                        .scrollTargetLayout(isEnabled: true)
-                        .noteViewModifier(with: contentObject, reader: reader)
-                    }
-                    .scrollIndicators(.hidden)
-                    .scrollTargetBehavior(.paging)
-                    .scrollPosition(id: $toolValue.activePage)
-                    .onChange(of: proxy.size) {
-                        reader.scrollTo(toolManager.activePage)
-                    }
-                    .onAppear {
-                        if toolManager.activePage == nil {
-                            toolManager.activePage = pages.last
-                            reader.scrollTo(pages.last)
-                        }
+                PagerView(pages, currentPage: $toolValue.index) { page in
+                    ScrollViewContainer(
+                        note: contentObject.note!,
+                        page: page, size: proxy.size
+                    )
+                }
+                .noteViewModifier(with: contentObject)
+                .onChange(of: toolValue.index) {
+                    toolManager.activeItem = nil
+                        
+                    toolManager.activePage = pages[toolValue.index]
+                    contentObject.note?.index = toolValue.index
+                }
+                .onAppear {
+                    if let index = contentObject.note?.index {
+                        toolValue.index = index
+                    } else {
+                        toolValue.index = 0
                     }
                 }
             }

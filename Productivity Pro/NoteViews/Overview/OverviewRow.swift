@@ -14,8 +14,6 @@ struct OverviewRow: View {
     var contentObject: ContentObject
     @Bindable var page: PPPageModel
     
-    var scrollView: ScrollViewProxy
-    
     var body: some View {
         ViewThatFits(in: .horizontal) {
             LargeView()

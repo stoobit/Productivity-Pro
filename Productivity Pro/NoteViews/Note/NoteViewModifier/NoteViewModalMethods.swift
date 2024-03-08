@@ -23,8 +23,6 @@ extension NoteViewSheet {
         contentObject.note?.pages?.append(page)
         
         withAnimation {
-            reader.scrollTo(page)
-            
             toolManager.activePage = page
             subviewManager.addPage = false
         }
@@ -77,7 +75,6 @@ extension NoteViewSheet {
                     toolManager.showProgress = false
                     
                     withAnimation {
-                        reader.scrollTo(selectedPage)
                         toolManager.activePage = selectedPage
                     }
                 }
@@ -141,7 +138,6 @@ extension NoteViewSheet {
                     toolManager.showProgress = false
                     
                     withAnimation {
-                        reader.scrollTo(selectedPage)
                         toolManager.activePage = selectedPage
                     }
                 }
@@ -165,7 +161,6 @@ extension NoteViewSheet {
                         $0.index == contentObject.note!.pages!.count - 1
                     })
                     
-                    reader.scrollTo(page)
                     toolManager.activePage = page
                     
                 } else {
@@ -186,7 +181,6 @@ extension NoteViewSheet {
                     let page = contentObject.note?.pages?
                         .first(where: { $0.index == index })
                     
-                    reader.scrollTo(page)
                     toolManager.activePage = page
                 }
             }

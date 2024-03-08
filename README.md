@@ -3,10 +3,9 @@
 ## 🛠️ Release 2.0.v
 - URModel: Custom Undo/Redo Methods
 - render Overview
-- improve SwiftUI ScrollView
 
 ## 🗺️ Bug Fixes 2.0.1+
-- scrollview performance 
+- scrollview minimum zoom
 - general code improvements 
 - tca for <inspector>
 - tca, pencilkit performance 

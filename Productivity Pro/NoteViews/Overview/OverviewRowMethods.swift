@@ -19,7 +19,6 @@ extension OverviewRow {
 
     func openPage() {
         withAnimation(.smooth) {
-            scrollView.scrollTo(page)
             toolManager.activePage = page
         }
         
