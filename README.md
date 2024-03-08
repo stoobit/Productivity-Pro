@@ -7,8 +7,7 @@
 ## 🗺️ Bug Fixes 2.0.1+
 - scrollview minimum zoom
 - general code improvements 
-- tca for <inspector>
-- tca, pencilkit performance 
+- pencilkit performance 
 - media performance 
 - add keyboard shortcuts
 - textfield rendering performance (also when changing size)
