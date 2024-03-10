@@ -3,6 +3,7 @@
 ## 🛠️ Release 2.0.v
 - URModel: Custom Undo/Redo Methods
 - render Overview
+- performance & uikit views 
 
 ## 🗺️ Bug Fixes 2.0.1+
 - scrollview minimum zoom
