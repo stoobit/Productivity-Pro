@@ -110,7 +110,7 @@ struct ShapeStyleView: View {
         }
         .environment(\.defaultMinListRowHeight, 10)
         .onChange(of: fill) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.fill = fill
                 toolManager.update += 1
                 
@@ -118,7 +118,7 @@ struct ShapeStyleView: View {
             }
         }
         .onChange(of: fillColor) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.fillColor = fillColor.data()
                 toolManager.update += 1
              
@@ -126,7 +126,7 @@ struct ShapeStyleView: View {
             }
         }
         .onChange(of: stroke) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.stroke = stroke
                 toolManager.update += 1
                 
@@ -134,7 +134,7 @@ struct ShapeStyleView: View {
             }
         }
         .onChange(of: strokeColor) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.strokeColor = strokeColor.data()
                 toolManager.update += 1
              
@@ -142,7 +142,7 @@ struct ShapeStyleView: View {
             }
         }
         .onChange(of: strokeWidth) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.strokeWidth = strokeWidth
                 toolManager.update += 1
              
@@ -150,7 +150,7 @@ struct ShapeStyleView: View {
             }
         }
         .onChange(of: cornerRadius) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.cornerRadius = cornerRadius
                 toolManager.update += 1
                 

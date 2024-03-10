@@ -26,9 +26,9 @@ struct NoteViewSheet: ViewModifier {
                 TemplateView(
                     isPresented: $manager.addPage,
                     buttonTitle: "Hinzufügen",
-                    preselectedOrientation: toolManager.activePage!.isPortrait,
-                    preselectedColor: toolManager.activePage!.color,
-                    preselectedTemplate: toolManager.activePage!.template
+                    preselectedOrientation: toolManager.activePage.isPortrait,
+                    preselectedColor: toolManager.activePage.color,
+                    preselectedTemplate: toolManager.activePage.template
                 ) { isPortrait, template, color in
                     addPage(isPortrait, template, color)
                 }
@@ -37,9 +37,9 @@ struct NoteViewSheet: ViewModifier {
                 TemplateView(
                     isPresented: $manager.changePage,
                     buttonTitle: "Ändern",
-                    preselectedOrientation: toolManager.activePage!.isPortrait,
-                    preselectedColor: toolManager.activePage!.color,
-                    preselectedTemplate: toolManager.activePage!.template
+                    preselectedOrientation: toolManager.activePage.isPortrait,
+                    preselectedColor: toolManager.activePage.color,
+                    preselectedTemplate: toolManager.activePage.template
                 ) { isPortrait, template, color in
                     changePage(isPortrait, template, color)
                 }

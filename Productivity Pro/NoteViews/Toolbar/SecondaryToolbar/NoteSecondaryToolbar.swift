@@ -22,15 +22,13 @@ struct NoteSecondaryToolbar: ToolbarContent {
         ToolbarItemGroup(placement: .topBarLeading) {
             Button("Zurück", systemImage: "chevron.left") {
                 toolManager.activeItem = nil
-                toolManager.activePage = nil
                 toolManager.pencilKit = false
                 
-                toolManager.index = 0
                 dismiss()
             }
             
-            Button("Lesezeichen", systemImage: toolManager.activePage?.isBookmarked == true ? "bookmark.fill" : "bookmark") {
-                toolManager.activePage?.isBookmarked.toggle()
+            Button("Lesezeichen", systemImage: toolManager.activePage.isBookmarked == true ? "bookmark.fill" : "bookmark") {
+                toolManager.activePage.isBookmarked.toggle()
             }
             .tint(Color.red)
             

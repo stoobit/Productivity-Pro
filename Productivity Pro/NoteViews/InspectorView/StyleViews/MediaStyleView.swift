@@ -86,7 +86,7 @@ struct MediaStyleView: View {
         }
         .environment(\.defaultMinListRowHeight, 10)
         .onChange(of: stroke) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.stroke = stroke
                 toolManager.update += 1
                 
@@ -94,7 +94,7 @@ struct MediaStyleView: View {
             }
         }
         .onChange(of: strokeColor) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.strokeColor = strokeColor.data()
                 toolManager.update += 1
              
@@ -102,7 +102,7 @@ struct MediaStyleView: View {
             }
         }
         .onChange(of: strokeWidth) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.strokeWidth = strokeWidth
                 toolManager.update += 1
              
@@ -110,7 +110,7 @@ struct MediaStyleView: View {
             }
         }
         .onChange(of: cornerRadius) {
-            toolManager.activePage?.store(activeItem) {
+            toolManager.activePage.store(activeItem) {
                 item.cornerRadius = cornerRadius
                 toolManager.update += 1
                 

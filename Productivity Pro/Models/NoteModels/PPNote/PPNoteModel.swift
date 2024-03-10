@@ -14,5 +14,5 @@ import SwiftData
     @Relationship(deleteRule: .cascade)
     var pages: [PPPageModel]? = []
     
-    var index: Int? = 0
+    var recent: PPPageModel? 
 }

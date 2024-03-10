@@ -41,7 +41,6 @@
 		BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */; };
 		BB35A1C32B2921DD001A3F4C /* LHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */; };
 		BB35A1C52B2921EA001A3F4C /* LGrammarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */; };
-		BB36D4C42B9B865000CBDCAD /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36D4C32B9B865000CBDCAD /* PagingView.swift */; };
 		BB36D4C62B9D2D5600CBDCAD /* ArrangeRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36D4C52B9D2D5600CBDCAD /* ArrangeRotationView.swift */; };
 		BB36D4C82B9D31EC00CBDCAD /* ArrangeGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36D4C72B9D31EC00CBDCAD /* ArrangeGeneralView.swift */; };
 		BB36D4CA2B9D324700CBDCAD /* ArrangeStackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36D4C92B9D324700CBDCAD /* ArrangeStackingView.swift */; };
@@ -358,7 +357,6 @@
 		BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVocabularyList.swift; sourceTree = "<group>"; };
 		BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHistoryList.swift; sourceTree = "<group>"; };
 		BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGrammarList.swift; sourceTree = "<group>"; };
-		BB36D4C32B9B865000CBDCAD /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
 		BB36D4C52B9D2D5600CBDCAD /* ArrangeRotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeRotationView.swift; sourceTree = "<group>"; };
 		BB36D4C72B9D31EC00CBDCAD /* ArrangeGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeGeneralView.swift; sourceTree = "<group>"; };
 		BB36D4C92B9D324700CBDCAD /* ArrangeStackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeStackingView.swift; sourceTree = "<group>"; };
@@ -681,14 +679,6 @@
 				BB57051E2B35D45000F84B45 /* VocabModel.swift */,
 			);
 			path = LibraryModels;
-			sourceTree = "<group>";
-		};
-		BB36D4C22B9B862A00CBDCAD /* PagingView */ = {
-			isa = PBXGroup;
-			children = (
-				BB36D4C32B9B865000CBDCAD /* PagingView.swift */,
-			);
-			path = PagingView;
 			sourceTree = "<group>";
 		};
 		BB37AD882A2C0A12006DB94D /* Overview */ = {
@@ -1180,7 +1170,6 @@
 			isa = PBXGroup;
 			children = (
 				BB3E9AA72A33AC27006045E1 /* Note */,
-				BB36D4C22B9B862A00CBDCAD /* PagingView */,
 				BB24E84729EB62210082AE98 /* Page */,
 				BBDCF5D6299E699C004C99AE /* Item */,
 				BB26F8A62B31166D00788AA4 /* ClipboardControl */,
@@ -1669,7 +1658,6 @@
 				BB84DD172B8E78EF002C2A9A /* TextfieldItemVContainer.swift in Sources */,
 				BB4A93F22AB09FFB00C3AED6 /* HomeworkView.swift in Sources */,
 				BBEF06D82ABF7106007EDFF6 /* HomeworkItem.swift in Sources */,
-				BB36D4C42B9B865000CBDCAD /* PagingView.swift in Sources */,
 				BB93676C2AC9CE430096F20E /* PPTableModel.swift in Sources */,
 				BBEFC94F2A41035C00960C8D /* SecondaryToolbarMethods.swift in Sources */,
 				BB6701582AADEFA7001F468A /* ContentView.swift in Sources */,

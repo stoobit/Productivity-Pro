@@ -24,15 +24,15 @@ extension OverviewView {
                         $0.index == contentObject.note!.pages!.count - 1
                     })
                     
-                    let page = contentObject.note?.pages?.first(where: {
+                    let page = contentObject.note!.pages!.first(where: {
                         $0.index == contentObject.note!.pages!.count - 1
-                    })
+                    })!
                     
                     toolManager.activePage = page
                     
                 } else {
                     let index = pages[offsets.first!].index
-                    contentObject.note?.pages?.removeAll(where: {
+                    contentObject.note!.pages!.removeAll(where: {
                         $0.index == index
                     })
                     
@@ -42,8 +42,8 @@ extension OverviewView {
                         }
                     }
                     
-                    let page = contentObject.note?.pages?
-                        .first(where: { $0.index == index })
+                    let page = contentObject.note!.pages!
+                        .first(where: { $0.index == index })!
                     
                     toolManager.activePage = page
                 }

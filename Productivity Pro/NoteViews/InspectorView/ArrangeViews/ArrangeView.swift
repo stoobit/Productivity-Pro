@@ -73,13 +73,13 @@ struct ArrangeView: View {
                 .frame(height: 30)
             }
             .onChange(of: x) {
-                toolManager.activePage?.store(item) {
+                toolManager.activePage.store(item) {
                     item.x = x
                     return item
                 }
             }
             .onChange(of: y) {
-                toolManager.activePage?.store(item) {
+                toolManager.activePage.store(item) {
                     item.y = y
                     return item
                 }
@@ -113,13 +113,13 @@ struct ArrangeView: View {
                 .frame(height: 30)
             }
             .onChange(of: width) {
-                toolManager.activePage?.store(item) {
+                toolManager.activePage.store(item) {
                     item.width = width
                     return item
                 }
             }
             .onChange(of: height) {
-                toolManager.activePage?.store(item) {
+                toolManager.activePage.store(item) {
                     item.height = height
                     return item
                 }
@@ -131,7 +131,7 @@ struct ArrangeView: View {
     }
     
     func center() {
-        toolManager.activePage?.store(toolManager.activeItem!) {
+        toolManager.activePage.store(toolManager.activeItem!) {
             toolManager.activeItem?.width = getFrame().width - 100
             toolManager.activeItem?.height = getFrame().height - 100
             
@@ -145,7 +145,7 @@ struct ArrangeView: View {
     func getFrame() -> CGSize {
         var frame: CGSize = .zero
         
-        if toolManager.activePage?.isPortrait == true {
+        if toolManager.activePage.isPortrait == true {
             frame = CGSize(width: shortSide, height: longSide)
         } else {
             frame = CGSize(width: longSide, height: shortSide)

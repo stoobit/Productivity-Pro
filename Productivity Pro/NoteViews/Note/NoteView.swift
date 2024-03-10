@@ -26,32 +26,32 @@ struct NoteView: View {
             @Bindable var toolValue = toolManager
             
             GeometryReader { proxy in
-                PagerView(pages, currentPage: $toolValue.index) { page in
-                    ScrollViewContainer(
-                        note: contentObject.note!,
-                        page: page, size: proxy.size
-                    )
+                TabView(selection: $toolValue.activePage) {
+                    ForEach(pages) { page in
+                        ScrollViewContainer(
+                            note: contentObject.note!,
+                            page: page, size: proxy.size
+                        )
+                        .tag(page)
+                    }
                 }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 .noteViewModifier(with: contentObject)
-                .onChange(of: toolValue.index) {
+                .onChange(of: toolValue.activePage) {
                     toolManager.activeItem = nil
-                        
-                    toolManager.activePage = pages[toolValue.index]
-                    contentObject.note?.index = toolValue.index
+                    contentObject.note?.recent = toolManager.activePage
                 }
                 .onAppear {
-                    if let index = contentObject.note?.index {
-                        toolValue.index = index
-                    } else {
-                        toolValue.index = 0
+                    guard let recent = contentObject.note?.recent else {
+                        return
                     }
                     
-                    toolManager.activePage = pages[toolManager.index]
+                    toolValue.activePage = recent
                 }
             }
             .background {
                 Button("Widerrufen") {
-                    toolManager.activePage?.undo(
+                    toolManager.activePage.undo(
                         toolManager: toolManager
                     )
                     toolManager.update += 1
@@ -59,7 +59,7 @@ struct NoteView: View {
                 .keyboardShortcut(KeyEquivalent("z"), modifiers: .command)
                 
                 Button("Wiederherstellen") {
-                    toolManager.activePage?.redo(toolManager: toolManager)
+                    toolManager.activePage.redo(toolManager: toolManager)
                     toolManager.update += 1
                 }
                 .keyboardShortcut(KeyEquivalent("z"), modifiers: [

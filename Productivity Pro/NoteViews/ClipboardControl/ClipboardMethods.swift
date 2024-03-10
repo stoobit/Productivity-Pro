@@ -9,7 +9,7 @@ import SwiftUI
 
 extension ClipboardControl {
     func delete() {
-        toolManager.activePage?.deleteItem(
+        toolManager.activePage.deleteItem(
             with: toolManager.activeItem?.id
         )
         
@@ -21,13 +21,13 @@ extension ClipboardControl {
         var exportable = ExportManager().export(item: item)
         
         exportable.id = UUID()
-        exportable.index = toolManager.activePage?.items?.count ?? 0
+        exportable.index = toolManager.activePage.items?.count ?? 0
         
         exportable.x += 50
         exportable.y += 50
         
         let duplicate = ImportManager().ppImport(item: exportable)
-        toolManager.activePage?.items?.append(duplicate)
+        toolManager.activePage.items?.append(duplicate)
         toolManager.activeItem = duplicate
     }
     
@@ -78,8 +78,8 @@ extension ClipboardControl {
         item.media = media
         
         let page = toolManager.activePage
-        item.index = page?.items?.count ?? 0
-        page?.items?.append(item)
+        item.index = page.items?.count ?? 0
+        page.items?.append(item)
         
         toolManager.activeItem = item
     }
@@ -106,8 +106,8 @@ extension ClipboardControl {
             textField.string = string
             
             let page = toolManager.activePage
-            item.index = page?.items?.count ?? 0
-            page?.items?.append(item)
+            item.index = page.items?.count ?? 0
+            page.items?.append(item)
             
             toolManager.activeItem = item
         }
@@ -127,12 +127,12 @@ extension ClipboardControl {
                 let scale = (1/toolManager.scale)
                 
                 pasteItem.id = UUID()
-                pasteItem.index = toolManager.activePage?.items?.count ?? 0
+                pasteItem.index = toolManager.activePage.items?.count ?? 0
                 pasteItem.x = size.width * scale + pasteItem.width/2 + 40
                 pasteItem.y = size.height * scale + pasteItem.height/2 + 40
                 
                 let item = ImportManager().ppImport(item: pasteItem)
-                toolManager.activePage?.items?.append(item)
+                toolManager.activePage.items?.append(item)
                 toolManager.activeItem = item
             }
             
@@ -147,11 +147,7 @@ extension ClipboardControl {
     func primaryColor() -> Color {
         let page = toolManager.activePage
         
-        guard let color = page?.color else {
-            return Color.gray
-        }
-        
-        if color == "pageblack" || color == "pagegray" {
+        if page.color == "pageblack" || page.color == "pagegray" {
             return Color.white
         } else {
             return Color.black

@@ -47,33 +47,25 @@ extension NoteSecondaryToolbar {
         }
         .id(toolManager.update)
         .onChange(of: toolManager.pencilKit) {
-            toolManager.activePage?.reset()
+            toolManager.activePage.reset()
         }
     }
 
     func undo() {
-        toolManager.activePage?.undo(toolManager: toolManager)
+        toolManager.activePage.undo(toolManager: toolManager)
         toolManager.update += 1
     }
 
     func redo() {
-        toolManager.activePage?.redo(toolManager: toolManager)
+        toolManager.activePage.redo(toolManager: toolManager)
         toolManager.update += 1
     }
 
     var undoDisabled: Bool {
-        if let undo = toolManager.activePage?.canUndo {
-            return !undo
-        }
-
-        return true
+        !toolManager.activePage.canUndo
     }
 
     var redoDisabled: Bool {
-        if let redo = toolManager.activePage?.canRedo {
-            return !redo
-        }
-
-        return true
+        !toolManager.activePage.canRedo
     }
 }

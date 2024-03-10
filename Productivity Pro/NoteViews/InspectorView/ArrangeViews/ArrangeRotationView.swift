@@ -84,7 +84,7 @@ extension ArrangeView {
             }
         }
         .onChange(of: rotation) {
-            toolManager.activePage?.store(item) {
+            toolManager.activePage.store(item) {
                 if item.type == PPItemType.shape.rawValue {
                     item.shape?.rotation = rotation
                 } else if item.type == PPItemType.media.rawValue {

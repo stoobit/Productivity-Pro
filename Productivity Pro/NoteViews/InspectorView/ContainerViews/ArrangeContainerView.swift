@@ -18,7 +18,7 @@ struct ArrangeContainerView: View {
     var body: some View {
         ArrangeView(
             toolManager: toolManager,
-            items: toolManager.activePage?.items ?? []
+            items: toolManager.activePage.items ?? []
         )
     }
 }
