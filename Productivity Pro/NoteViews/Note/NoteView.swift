@@ -43,6 +43,7 @@ struct NoteView: View {
                 }
                 .onAppear {
                     guard let recent = contentObject.note?.recent else {
+                        toolValue.activePage = pages[0]
                         return
                     }
                     
