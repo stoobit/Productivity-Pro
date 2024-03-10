@@ -13,6 +13,10 @@ extension ClipboardControl {
             with: toolManager.activeItem?.id
         )
         
+        toolManager.activePage.store(toolManager.activeItem!, type: .delete) {
+            toolManager.activeItem!
+        }
+        
         toolManager.activeItem = nil
     }
     
@@ -81,6 +85,10 @@ extension ClipboardControl {
         item.index = page.items?.count ?? 0
         page.items?.append(item)
         
+        page.store(item, type: .create) {
+            item
+        }
+        
         toolManager.activeItem = item
     }
     
@@ -109,6 +117,10 @@ extension ClipboardControl {
             item.index = page.items?.count ?? 0
             page.items?.append(item)
             
+            page.store(item, type: .create) {
+                item
+            }
+            
             toolManager.activeItem = item
         }
     }
@@ -133,6 +145,11 @@ extension ClipboardControl {
                 
                 let item = ImportManager().ppImport(item: pasteItem)
                 toolManager.activePage.items?.append(item)
+                
+                toolManager.activePage.store(item, type: .create) {
+                    item
+                }
+                
                 toolManager.activeItem = item
             }
             

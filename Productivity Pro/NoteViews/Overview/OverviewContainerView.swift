@@ -14,31 +14,33 @@ struct OverviewContainerView: View {
     @State var filter: Bool = false
 
     var body: some View {
-        NavigationStack {
-            OverviewView(contentObject: contentObject, filter: filter)
-                .navigationTitle("Übersicht")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Fertig") {
-                            subviewManager.overview.toggle()
-                        }
-                        .keyboardShortcut(.return, modifiers: [])
-                    }
+        ZStack {
+            Color(
+                UIColor.secondarySystemBackground
+            )
+            .ignoresSafeArea(.all)
 
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {
-                            filter.toggle()
-                        }) {
-                            Label("Filter", systemImage: filter ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
+            NavigationStack {
+                OverviewView(contentObject: contentObject, filter: filter)
+                    .navigationTitle("Übersicht")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Fertig") {
+                                subviewManager.overview.toggle()
+                            }
+                            .keyboardShortcut(.return, modifiers: [])
                         }
-                        .disabled(
-                            contentObject.note!.pages!.filter {
-                                $0.isBookmarked == true
-                            }.isEmpty
-                        )
+
+                        ToolbarItem(placement: .topBarLeading) {
+                            Button(action: {
+                                filter.toggle()
+                            }) {
+                                Label("Filter", systemImage: filter ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
+                            }
+                        }
                     }
-                }
+            }
         }
     }
 }

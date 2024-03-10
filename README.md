@@ -1,11 +1,11 @@
 # Productivity Pro
 
 ## 🛠️ Release 2.0.v
-- URModel: Custom Undo/Redo Methods
-- render Overview
+- overview
 - performance & uikit views 
 
 ## 🗺️ Bug Fixes 2.0.1+
+- print -> loading animation 
 - scrollview minimum zoom
 - general code improvements 
 - pencilkit performance 

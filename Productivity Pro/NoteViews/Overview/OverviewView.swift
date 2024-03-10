@@ -15,7 +15,7 @@ struct OverviewView: View {
     var filter: Bool
 
     var body: some View {
-        ScrollViewReader { _ in
+        ScrollViewReader { reader in
             List {
                 ForEach(pages) { page in
                     OverviewRow(
@@ -48,6 +48,13 @@ struct OverviewView: View {
             }
             .onAppear {
                 sort()
+                reader.scrollTo(toolManager.activePage)
+            }
+            .overlay {
+                if pages.isEmpty {
+                    ContentUnavailableView(
+                        "Du hast keiner Seite ein Lesezeichen hinzugefügt.", systemImage: "bookmark.slash.fill")
+                }
             }
         }
     }
