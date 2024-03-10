@@ -36,11 +36,7 @@ struct PageView: View {
                 }
                 
                 if page.type == PPPageType.pdf.rawValue && !preloadModels {
-                    PageBackgroundPDF(
-                        page: page,
-                        scale: $scale
-                    )
-                    
+                    PageBackgroundPDF(page: page, scale: $scale)
                 } else if page.type == PPPageType.image.rawValue {
                     PageBackgroundScan(
                         page: page,
