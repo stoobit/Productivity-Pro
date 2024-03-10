@@ -42,6 +42,9 @@
 		BB35A1C32B2921DD001A3F4C /* LHistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */; };
 		BB35A1C52B2921EA001A3F4C /* LGrammarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */; };
 		BB36D4C42B9B865000CBDCAD /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36D4C32B9B865000CBDCAD /* PagingView.swift */; };
+		BB36D4C62B9D2D5600CBDCAD /* ArrangeRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36D4C52B9D2D5600CBDCAD /* ArrangeRotationView.swift */; };
+		BB36D4C82B9D31EC00CBDCAD /* ArrangeGeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36D4C72B9D31EC00CBDCAD /* ArrangeGeneralView.swift */; };
+		BB36D4CA2B9D324700CBDCAD /* ArrangeStackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36D4C92B9D324700CBDCAD /* ArrangeStackingView.swift */; };
 		BB37AD8A2A2C0AF2006DB94D /* OverviewViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */; };
 		BB37AD8E2A2C0B58006DB94D /* OverviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */; };
 		BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */; };
@@ -81,7 +84,7 @@
 		BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */; };
 		BB5034192993172800913B3A /* PageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5034182993172800913B3A /* PageItemView.swift */; };
 		BB5069EA29CE294E001330AE /* ImageUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5069E929CE294E001330AE /* ImageUIImage.swift */; };
-		BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */; };
+		BB50FCD02B0D0ABE00D12783 /* ArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCF2B0D0ABE00D12783 /* ArrangeView.swift */; };
 		BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */; };
 		BB57051D2B35C57B00F84B45 /* LTabIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */; };
 		BB57051F2B35D45000F84B45 /* VocabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051E2B35D45000F84B45 /* VocabModel.swift */; };
@@ -140,7 +143,6 @@
 		BB8586992AE1E5B300C5875C /* ShapeStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8586982AE1E5B300C5875C /* ShapeStyleView.swift */; };
 		BB85869B2AE1E5BB00C5875C /* MediaStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85869A2AE1E5BB00C5875C /* MediaStyleView.swift */; };
 		BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85869C2AE1E5C500C5875C /* TextFieldStyleView.swift */; };
-		BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */; };
 		BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */; };
 		BB8A0AE32AD0B871008B4D27 /* LockViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A0AE22AD0B871008B4D27 /* LockViews.swift */; };
 		BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */; };
@@ -249,7 +251,6 @@
 		BBD095DE2AEEF06500E7C928 /* SidebarPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */; };
 		BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */; };
 		BBD3C4212A54DA46002BFFCF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD3C4202A54DA46002BFFCF /* View.swift */; };
-		BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */; };
 		BBD930EA2B1FBDB400A37F95 /* PVScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930E92B1FBDB400A37F95 /* PVScrollView.swift */; };
 		BBD930EE2B1FC02300A37F95 /* PVAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */; };
 		BBD930F22B1FC0C300A37F95 /* PVMethodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */; };
@@ -358,6 +359,9 @@
 		BB35A1C22B2921DD001A3F4C /* LHistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LHistoryList.swift; sourceTree = "<group>"; };
 		BB35A1C42B2921EA001A3F4C /* LGrammarList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LGrammarList.swift; sourceTree = "<group>"; };
 		BB36D4C32B9B865000CBDCAD /* PagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		BB36D4C52B9D2D5600CBDCAD /* ArrangeRotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeRotationView.swift; sourceTree = "<group>"; };
+		BB36D4C72B9D31EC00CBDCAD /* ArrangeGeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeGeneralView.swift; sourceTree = "<group>"; };
+		BB36D4C92B9D324700CBDCAD /* ArrangeStackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeStackingView.swift; sourceTree = "<group>"; };
 		BB37AD892A2C0AF2006DB94D /* OverviewViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewMethods.swift; sourceTree = "<group>"; };
 		BB37AD8D2A2C0B58006DB94D /* OverviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRow.swift; sourceTree = "<group>"; };
 		BB3E9AA32A33A2D3006045E1 /* NoteViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewToolbar.swift; sourceTree = "<group>"; };
@@ -399,7 +403,7 @@
 		BB4F66D02AC4BA6300C4B34E /* AddFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFolderView.swift; sourceTree = "<group>"; };
 		BB5034182993172800913B3A /* PageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageItemView.swift; sourceTree = "<group>"; };
 		BB5069E929CE294E001330AE /* ImageUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUIImage.swift; sourceTree = "<group>"; };
-		BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldArrangeView.swift; sourceTree = "<group>"; };
+		BB50FCCF2B0D0ABE00D12783 /* ArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeView.swift; sourceTree = "<group>"; };
 		BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMethods.swift; sourceTree = "<group>"; };
 		BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTabIndicator.swift; sourceTree = "<group>"; };
 		BB57051E2B35D45000F84B45 /* VocabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabModel.swift; sourceTree = "<group>"; };
@@ -459,7 +463,6 @@
 		BB8586982AE1E5B300C5875C /* ShapeStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStyleView.swift; sourceTree = "<group>"; };
 		BB85869A2AE1E5BB00C5875C /* MediaStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStyleView.swift; sourceTree = "<group>"; };
 		BB85869C2AE1E5C500C5875C /* TextFieldStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyleView.swift; sourceTree = "<group>"; };
-		BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeArrangeView.swift; sourceTree = "<group>"; };
 		BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
 		BB8A0AE22AD0B871008B4D27 /* LockViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViews.swift; sourceTree = "<group>"; };
 		BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewMethods.swift; sourceTree = "<group>"; };
@@ -548,7 +551,6 @@
 		BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPosition.swift; sourceTree = "<group>"; };
 		BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewItem.swift; sourceTree = "<group>"; };
 		BBD3C4202A54DA46002BFFCF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaArrangeView.swift; sourceTree = "<group>"; };
 		BBD930E92B1FBDB400A37F95 /* PVScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVScrollView.swift; sourceTree = "<group>"; };
 		BBD930ED2B1FC02300A37F95 /* PVAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVAnimationView.swift; sourceTree = "<group>"; };
 		BBD930F12B1FC0C300A37F95 /* PVMethodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVMethodsView.swift; sourceTree = "<group>"; };
@@ -1078,9 +1080,10 @@
 		BB8586952AE1E39E00C5875C /* ArrangeViews */ = {
 			isa = PBXGroup;
 			children = (
-				BB85869E2AE3AC7400C5875C /* ShapeArrangeView.swift */,
-				BBD499812B0C2FD600A5FAD5 /* MediaArrangeView.swift */,
-				BB50FCCF2B0D0ABE00D12783 /* TextFieldArrangeView.swift */,
+				BB50FCCF2B0D0ABE00D12783 /* ArrangeView.swift */,
+				BB36D4C72B9D31EC00CBDCAD /* ArrangeGeneralView.swift */,
+				BB36D4C92B9D324700CBDCAD /* ArrangeStackingView.swift */,
+				BB36D4C52B9D2D5600CBDCAD /* ArrangeRotationView.swift */,
 			);
 			path = ArrangeViews;
 			sourceTree = "<group>";
@@ -1697,7 +1700,7 @@
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
 				BBD995B62B48917500A05E34 /* OpenURL.swift in Sources */,
 				BBC4BE972AED9FDF00D87B60 /* AdaptiveView.swift in Sources */,
-				BB50FCD02B0D0ABE00D12783 /* TextFieldArrangeView.swift in Sources */,
+				BB50FCD02B0D0ABE00D12783 /* ArrangeView.swift in Sources */,
 				BB047CDE2AC0C1FF0027409F /* FileSystemView.swift in Sources */,
 				BBEBA9A22B6836AA00F7E536 /* PVItemView.swift in Sources */,
 				BBCB2AED294E800D00C68B72 /* DragHelper.swift in Sources */,
@@ -1711,7 +1714,6 @@
 				BB35A1C52B2921EA001A3F4C /* LGrammarList.swift in Sources */,
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
-				BBD499822B0C2FD600A5FAD5 /* MediaArrangeView.swift in Sources */,
 				BB96F5AC2B61B4FB0044B200 /* ShareQRPDFMethods.swift in Sources */,
 				BB96F5AA2B608DF90044B200 /* OverviewContainerView.swift in Sources */,
 				BB2A8E192B45F0DB0072D3CC /* BackupMethods.swift in Sources */,
@@ -1740,6 +1742,7 @@
 				BB4705772B9391E8009A5FCD /* DKModifier.swift in Sources */,
 				BB93676E2AC9CE500096F20E /* PPMindmapModel.swift in Sources */,
 				BB047CE22AC0C6790027409F /* ObjectView.swift in Sources */,
+				BB36D4C62B9D2D5600CBDCAD /* ArrangeRotationView.swift in Sources */,
 				BB441DD52B41A05300B103DE /* ImportManager.swift in Sources */,
 				BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */,
 				BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */,
@@ -1767,11 +1770,13 @@
 				BB5705232B35E3B100F84B45 /* VCardView.swift in Sources */,
 				BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */,
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
+				BB36D4CA2B9D324700CBDCAD /* ArrangeStackingView.swift in Sources */,
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
 				BBD930F72B1FEBA000A37F95 /* StoreViewModel.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GeneralSettings.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
+				BB36D4C82B9D31EC00CBDCAD /* ArrangeGeneralView.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,
@@ -1821,7 +1826,6 @@
 				BBE069B12AF78CA300B2D1A0 /* SecondaryInspectorAction.swift in Sources */,
 				BB82B5B92B24990A0089D423 /* PKCoordinator.swift in Sources */,
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
-				BB85869F2AE3AC7400C5875C /* ShapeArrangeView.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBA3A0292B29AF2500099F6D /* MDEditorView.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,

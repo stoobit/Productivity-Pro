@@ -45,6 +45,8 @@ struct NoteView: View {
                     } else {
                         toolValue.index = 0
                     }
+                    
+                    toolManager.activePage = pages[toolManager.index]
                 }
             }
             .background {
