@@ -13,29 +13,35 @@ extension NoteSecondaryToolbar {
             if (undoDisabled && redoDisabled) || toolManager.pencilKit {
                 Button("Widerrufen", systemImage: "arrow.uturn.backward") {}
                     .disabled(true)
+            } else if undoDisabled && redoDisabled == false {
+                Menu {
+                    Button("Widerrufen", systemImage: "arrow.uturn.backward") {
+                        undo()
+                    }
+                    .disabled(undoDisabled)
+
+                    Button("Wiederholen", systemImage: "arrow.uturn.forward") {
+                        redo()
+                    }
+                    .disabled(redoDisabled)
+                } label: {
+                    Label("Bearbeiten", systemImage: "arrow.uturn.backward")
+                }
             } else {
                 Menu {
                     Button("Widerrufen", systemImage: "arrow.uturn.backward") {
                         undo()
                     }
                     .disabled(undoDisabled)
-                    
+
                     Button("Wiederholen", systemImage: "arrow.uturn.forward") {
                         redo()
                     }
                     .disabled(redoDisabled)
                 } label: {
-                    if undoDisabled == false {
-                        Label("Bearbeiten", systemImage: "arrow.uturn.backward")
-                    } else {
-                        Label("Bearbeiten", systemImage: "arrow.uturn.forward")
-                    }
+                    Label("Bearbeiten", systemImage: "arrow.uturn.backward")
                 } primaryAction: {
-                    if undoDisabled == false {
-                        undo()
-                    } else {
-                        redo()
-                    }
+                    undo()
                 }
             }
         }

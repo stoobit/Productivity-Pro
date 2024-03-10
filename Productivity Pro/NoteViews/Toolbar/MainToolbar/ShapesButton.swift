@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension NoteMainToolbar {
-    
     @ViewBuilder func ShapesButton() -> some View {
         Menu(content: {
             Section {
@@ -50,15 +49,14 @@ extension NoteMainToolbar {
         shape.fillColor = primaryColor().data()
         
         item.shape = shape
-        
-        if let page = contentObject.note!.pages!.first(where: {
-            $0.id == toolManager.activePage?.id
-        }) {
-            item.index = page.items?.count ?? 0
-            page.items?.append(item)
+        let page = toolManager.activePage
+        item.index = page?.items?.count ?? 0
+        page?.items?.append(item)
             
-            toolManager.activeItem = item
+        page?.store(item, type: .create) {
+            item
         }
+        
+        toolManager.activeItem = item
     }
-    
 }

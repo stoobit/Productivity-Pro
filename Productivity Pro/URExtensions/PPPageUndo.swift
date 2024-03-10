@@ -14,18 +14,19 @@ extension PPPageModel {
 
     func undo(toolManager: ToolManager) {
         version -= 1
-        let activeID = toolManager.activeItem?.id
-        
+
         guard let items = items else { return }
         let stored = store[version]
 
         let item = ImportManager().ppImport(item: stored)
         let active = items.first(where: { $0.id == stored.id })
         self.items?.removeAll(where: { $0 == active })
-        self.items?.append(item)
-        
-        toolManager.activeItem = self.items?.first(where: {
-            $0.id == activeID
-        })
+
+        if stored.isDeleted != true {
+            self.items?.append(item)
+            toolManager.activeItem = item
+        } else {
+            toolManager.activeItem = nil
+        }
     }
 }

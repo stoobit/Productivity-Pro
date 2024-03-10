@@ -9,6 +9,7 @@ import Foundation
 
 public struct ExportableItemModel: Codable {
     var id: UUID
+    var isDeleted: Bool?
     
     var index: Int
     var type: PPItemType.RawValue

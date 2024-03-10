@@ -64,6 +64,10 @@ extension PageView {
         item.index = page?.items?.count ?? 0
         page?.items?.append(item)
         
+        page?.store(item, type: .create) {
+            item
+        }
+        
         toolManager.activeItem = item
     }
     
@@ -91,6 +95,10 @@ extension PageView {
         let page = toolManager.activePage
         item.index = page?.items?.count ?? 0
         page?.items?.append(item)
+        
+        page?.store(item, type: .create) {
+            item
+        }
         
         toolManager.activeItem = item
     }

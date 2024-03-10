@@ -80,10 +80,13 @@ struct MediaImport: ViewModifier {
         let media = PPMediaModel(media: data)
         
         item.media = media
-        
         let page = toolManager.activePage
         item.index = page?.items?.count ?? 0
         page?.items?.append(item)
+            
+        page?.store(item, type: .create) {
+            item
+        }
         
         toolManager.activeItem = item
     }
