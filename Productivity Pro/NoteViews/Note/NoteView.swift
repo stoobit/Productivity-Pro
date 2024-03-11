@@ -27,7 +27,7 @@ struct NoteView: View {
             @Bindable var toolValue = toolManager
             
             GeometryReader { proxy in
-                ScrollViewReader { _ in
+                ScrollViewReader { scrollView in
                     ScrollView(.horizontal) {
                         LazyHStack(spacing: 0) {
                             ForEach(pages) { page in
@@ -43,21 +43,22 @@ struct NoteView: View {
                         .scrollTargetLayout(isEnabled: true)
                     }
                     .scrollIndicators(.hidden)
-                    .scrollTargetBehavior(.viewAligned)
+                    .scrollTargetBehavior(.paging)
                     .scrollPosition(id: $toolValue.activePage)
-                }
-                .noteViewModifier(with: contentObject)
-                .onChange(of: toolValue.activePage) {
-                    toolManager.activeItem = nil
-                    contentObject.note?.recent = toolManager.activePage
-                }
-                .onAppear {
-                    guard let recent = contentObject.note?.recent else {
-                        toolValue.activePage = pages[0]
-                        return
+                    .noteViewModifier(with: contentObject)
+                    .onChange(of: toolValue.activePage) {
+                        toolManager.activeItem = nil
+                        contentObject.note?.recent = toolManager.activePage
                     }
-                    
-                    toolValue.activePage = recent
+                    .onAppear {
+                        guard let recent = contentObject.note?.recent else {
+                            toolValue.activePage = pages[0]
+                            return
+                        }
+                        
+                        toolValue.activePage = recent
+                        scrollView.scrollTo(toolValue.activePage)
+                    }
                 }
             }
             .background {
