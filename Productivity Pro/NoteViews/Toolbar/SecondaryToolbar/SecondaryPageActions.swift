@@ -41,7 +41,7 @@ extension NoteSecondaryToolbar {
                 }) {
                     Label("Vorlage ändern", systemImage: "grid")
                 }
-                .disabled(toolManager.activePage.type != PPPageType.template.rawValue)
+                .disabled(toolManager.activePage?.type != PPPageType.template.rawValue)
                 
                 Button(role: .destructive, action: {
                     toolManager.pencilKit = false

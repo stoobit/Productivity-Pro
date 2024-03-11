@@ -81,10 +81,10 @@ struct MediaImport: ViewModifier {
         
         item.media = media
         let page = toolManager.activePage
-        item.index = page.items?.count ?? 0
-        page.items?.append(item)
+        item.index = page?.items?.count ?? 0
+        page?.items?.append(item)
             
-        page.store(item, type: .create) {
+        page?.store(item, type: .create) {
             item
         }
         

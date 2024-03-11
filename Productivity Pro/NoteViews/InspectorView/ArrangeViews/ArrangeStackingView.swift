@@ -14,7 +14,7 @@ extension ArrangeView {
         Section {
             HStack {
                 Button(action: {
-                    toolManager.activePage.store(item) {
+                    toolManager.activePage?.store(item) {
                         StackingManager(items: items)
                             .moveUp(item: item)
                      
@@ -27,7 +27,7 @@ extension ArrangeView {
                 .hoverEffect(.lift)
                 
                 Button(action: {
-                    toolManager.activePage.store(item) {
+                    toolManager.activePage?.store(item) {
                         StackingManager(items: items)
                             .moveDown(item: item)
                      
@@ -44,7 +44,7 @@ extension ArrangeView {
                 Spacer()
                 
                 Button(action: {
-                    toolManager.activePage.store(item) {
+                    toolManager.activePage?.store(item) {
                         StackingManager(items: items)
                             .bringFront(item: item)
                      
@@ -57,7 +57,7 @@ extension ArrangeView {
                 .hoverEffect(.lift)
                 
                 Button(action: {
-                    toolManager.activePage.store(item) {
+                    toolManager.activePage?.store(item) {
                         StackingManager(items: items)
                             .bringBack(item: item)
                      

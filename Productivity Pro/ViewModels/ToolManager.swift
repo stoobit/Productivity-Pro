@@ -10,7 +10,7 @@ import SwiftUI
 @Observable final class ToolManager {
     var selectedContentObject: ContentObject?
     
-    var activePage: PPPageModel = .init(type: .template, index: -1)
+    var activePage: PPPageModel?
     var selectedPages: [PPPageModel] = []
     
     var activeItem: PPItemModel?

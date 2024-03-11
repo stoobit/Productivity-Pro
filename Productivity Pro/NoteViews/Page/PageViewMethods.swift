@@ -61,10 +61,10 @@ extension PageView {
         item.textField = textField
         
         let page = toolManager.activePage
-        item.index = page.items?.count ?? 0
-        page.items?.append(item)
+        item.index = page?.items?.count ?? 0
+        page?.items?.append(item)
         
-        page.store(item, type: .create) {
+        page?.store(item, type: .create) {
             item
         }
         
@@ -93,10 +93,10 @@ extension PageView {
         item.media = media
         
         let page = toolManager.activePage
-        item.index = page.items?.count ?? 0
-        page.items?.append(item)
+        item.index = page?.items?.count ?? 0
+        page?.items?.append(item)
         
-        page.store(item, type: .create) {
+        page?.store(item, type: .create) {
             item
         }
         
@@ -106,7 +106,7 @@ extension PageView {
     func primaryColor() -> Color {
         let page = toolManager.activePage
         
-        if page.color == "pageblack" || page.color == "pagegray" {
+        if page?.color == "pageblack" || page?.color == "pagegray" {
             return Color.white
         } else {
             return Color.black

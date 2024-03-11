@@ -126,7 +126,7 @@ struct TextFieldStyleView: View {
         }
         .environment(\.defaultMinListRowHeight, 10)
         .onChange(of: fill) {
-            toolManager.activePage.store(activeItem) {
+            toolManager.activePage?.store(activeItem) {
                 item.fill = fill
                 toolManager.update += 1
                 
@@ -134,7 +134,7 @@ struct TextFieldStyleView: View {
             }
         }
         .onChange(of: fillColor) {
-            toolManager.activePage.store(activeItem) {
+            toolManager.activePage?.store(activeItem) {
                 item.fillColor = fillColor.data()
                 toolManager.update += 1
                 
@@ -142,7 +142,7 @@ struct TextFieldStyleView: View {
             }
         }
         .onChange(of: stroke) {
-            toolManager.activePage.store(activeItem) {
+            toolManager.activePage?.store(activeItem) {
                 item.stroke = stroke
                 toolManager.update += 1
                 
@@ -150,7 +150,7 @@ struct TextFieldStyleView: View {
             }
         }
         .onChange(of: strokeColor) {
-            toolManager.activePage.store(activeItem) {
+            toolManager.activePage?.store(activeItem) {
                 item.strokeColor = strokeColor.data()
                 toolManager.update += 1
                 
@@ -158,7 +158,7 @@ struct TextFieldStyleView: View {
             }
         }
         .onChange(of: strokeWidth) {
-            toolManager.activePage.store(activeItem) {
+            toolManager.activePage?.store(activeItem) {
                 item.strokeWidth = strokeWidth
                 toolManager.update += 1
                 
@@ -166,7 +166,7 @@ struct TextFieldStyleView: View {
             }
         }
         .onChange(of: fontName) {
-            toolManager.activePage.store(activeItem) {
+            toolManager.activePage?.store(activeItem) {
                 item.fontName = fontName
                 toolManager.update += 1
                 
@@ -174,7 +174,7 @@ struct TextFieldStyleView: View {
             }
         }
         .onChange(of: fontSize) {
-            toolManager.activePage.store(activeItem) {
+            toolManager.activePage?.store(activeItem) {
                 item.fontSize = fontSize
                 toolManager.update += 1
                 
@@ -182,7 +182,7 @@ struct TextFieldStyleView: View {
             }
         }
         .onChange(of: fontColor) {
-            toolManager.activePage.store(activeItem) {
+            toolManager.activePage?.store(activeItem) {
                 item.textColor = fontColor.data()
                 toolManager.update += 1
                 

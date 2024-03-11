@@ -59,7 +59,7 @@ struct NoteMainToolbar: CustomizableToolbarContent {
     
     func primaryColor() -> Color {
         let page = contentObject.note!.pages?.first(where: {
-            $0.id == toolManager.activePage.id
+            $0.id == toolManager.activePage?.id
         })
         
         guard let color = page?.color else {

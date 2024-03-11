@@ -27,8 +27,8 @@ struct NoteSecondaryToolbar: ToolbarContent {
                 dismiss()
             }
             
-            Button("Lesezeichen", systemImage: toolManager.activePage.isBookmarked == true ? "bookmark.fill" : "bookmark") {
-                toolManager.activePage.isBookmarked.toggle()
+            Button("Lesezeichen", systemImage: toolManager.activePage?.isBookmarked == true ? "bookmark.fill" : "bookmark") {
+                toolManager.activePage?.isBookmarked.toggle()
             }
             .tint(Color.red)
             

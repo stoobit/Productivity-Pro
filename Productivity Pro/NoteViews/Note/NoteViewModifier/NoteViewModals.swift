@@ -23,25 +23,33 @@ struct NoteViewSheet: ViewModifier {
                 OverviewContainerView(contentObject: contentObject)
             })
             .sheet(isPresented: $manager.addPage, content: {
-                TemplateView(
-                    isPresented: $manager.addPage,
-                    buttonTitle: "Hinzufügen",
-                    preselectedOrientation: toolManager.activePage.isPortrait,
-                    preselectedColor: toolManager.activePage.color,
-                    preselectedTemplate: toolManager.activePage.template
-                ) { isPortrait, template, color in
-                    addPage(isPortrait, template, color)
+                if let page = toolManager.activePage {
+                    TemplateView(
+                        isPresented: $manager.addPage,
+                        buttonTitle: "Hinzufügen",
+                        preselectedOrientation: page.isPortrait,
+                        preselectedColor: page.color,
+                        preselectedTemplate: page.template
+                    ) { isPortrait, template, color in
+                        addPage(isPortrait, template, color)
+                    }
+                } else {
+                    ProgressView()
                 }
             })
             .sheet(isPresented: $manager.changePage, content: {
-                TemplateView(
-                    isPresented: $manager.changePage,
-                    buttonTitle: "Ändern",
-                    preselectedOrientation: toolManager.activePage.isPortrait,
-                    preselectedColor: toolManager.activePage.color,
-                    preselectedTemplate: toolManager.activePage.template
-                ) { isPortrait, template, color in
-                    changePage(isPortrait, template, color)
+                if let page = toolManager.activePage {
+                    TemplateView(
+                        isPresented: $manager.changePage,
+                        buttonTitle: "Ändern",
+                        preselectedOrientation: page.isPortrait,
+                        preselectedColor: page.color,
+                        preselectedTemplate: page.template
+                    ) { isPortrait, template, color in
+                        changePage(isPortrait, template, color)
+                    }
+                } else {
+                    ProgressView()
                 }
             })
             .modifier(MDViewContainer(isPresented: $manager.rtfEditor))

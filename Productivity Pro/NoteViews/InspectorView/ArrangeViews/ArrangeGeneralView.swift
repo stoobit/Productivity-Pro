@@ -28,7 +28,7 @@ extension ArrangeView {
                 Text("Sperre")
                 Spacer()
                 Button(action: {
-                    toolManager.activePage.store(item) {
+                    toolManager.activePage?.store(item) {
                         toolManager.activeItem?.isLocked.toggle()
                         return item
                     }

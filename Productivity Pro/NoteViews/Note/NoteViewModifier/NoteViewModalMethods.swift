@@ -29,9 +29,9 @@ extension NoteViewSheet {
     }
     
     func changePage(_ p: Bool, _ t: String, _ c: String) {
-        toolManager.activePage.isPortrait = p
-        toolManager.activePage.template = t
-        toolManager.activePage.color = c
+        toolManager.activePage?.isPortrait = p
+        toolManager.activePage?.template = t
+        toolManager.activePage?.color = c
         
         subviewManager.changePage.toggle()
     }
@@ -43,7 +43,10 @@ extension NoteViewSheet {
         switch result {
         case .success(let scan):
             DispatchQueue.global(qos: .userInitiated).sync {
-                let index = toolManager.activePage.index 
+                guard let index = toolManager.activePage?.index else {
+                    return
+                }
+                
                 for page in contentObject.note!.pages! {
                     if index < page.index {
                         page.index += scan.pageCount
@@ -54,9 +57,13 @@ extension NoteViewSheet {
                     let scanPage = scan.imageOfPage(at: index)
                     let size = scanPage.size
                     
+                    guard let i = toolManager.activePage?.index else {
+                        return
+                    }
+                    
                     let page = PPPageModel(
                         type: .image,
-                        index: toolManager.activePage.index + 1 + index
+                        index: i + 1 + index
                     )
                     
                     page.isPortrait = size.width < size.height
@@ -101,7 +108,10 @@ extension NoteViewSheet {
                     guard let pdf = PDFDocument(url: url) else { return }
                     defer { url.stopAccessingSecurityScopedResource() }
                     
-                    let index = toolManager.activePage.index
+                    guard let index = toolManager.activePage?.index else {
+                        return
+                    }
+                    
                     for page in contentObject.note!.pages! {
                         if index < page.index {
                             page.index += pdf.pageCount
@@ -117,9 +127,13 @@ extension NoteViewSheet {
                             separatedBy: .newlines
                         ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                         
+                        guard let i = toolManager.activePage?.index else {
+                            return
+                        }
+                        
                         let ppPage = PPPageModel(
                             type: .pdf,
-                            index: toolManager.activePage.index + 1 + index
+                            index: i + 1 + index
                         )
                         
                         ppPage.media = data
@@ -156,7 +170,7 @@ extension NoteViewSheet {
     func deletePage() {
         Task { @MainActor in
             withAnimation {
-                if contentObject.note!.pages!.count - 1 == toolManager.activePage.index {
+                if contentObject.note!.pages!.count - 1 == toolManager.activePage?.index {
                     contentObject.note?.pages?.removeAll(where: {
                         $0.index == contentObject.note!.pages!.count - 1
                     })
@@ -168,7 +182,9 @@ extension NoteViewSheet {
                     toolManager.activePage = page
                     
                 } else {
-                    let index = toolManager.activePage.index
+                    guard let index = toolManager.activePage?.index else {
+                        return
+                    }
                     
                     contentObject.note?.pages?.removeAll(where: {
                         $0.index == index
@@ -191,7 +207,9 @@ extension NoteViewSheet {
     
     func getIndex() -> Int {
         guard let pages = contentObject.note?.pages else { return -1 }
-        let index = toolManager.activePage.index
+        guard let index = toolManager.activePage?.index else {
+            return -1
+        }
         
         for page in pages {
             if index < page.index {

@@ -17,7 +17,7 @@ struct IndicatorText: View {
     
     var body: some View {
         let total = pages.count
-        let number = (toolManager.activePage.index) + 1
+        let number = (toolManager.activePage?.index ?? 0) + 1
         
         ZStack {
             UnevenRoundedRectangle(
