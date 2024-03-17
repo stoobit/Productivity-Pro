@@ -51,12 +51,12 @@ struct NoteView: View {
                         contentObject.note?.recent = toolManager.activePage
                     }
                     .onAppear {
-                        guard let recent = contentObject.note?.recent else {
+                        if let recent = contentObject.note?.recent {
+                            toolValue.activePage = recent
+                        } else {
                             toolValue.activePage = pages[0]
-                            return
                         }
                         
-                        toolValue.activePage = recent
                         scrollView.scrollTo(toolValue.activePage)
                     }
                 }
