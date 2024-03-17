@@ -34,5 +34,4 @@ struct PageBackgroundView: View {
         
         return frame
     }
-    
 }
