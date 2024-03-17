@@ -32,6 +32,11 @@ extension ClipboardControl {
         
         let duplicate = ImportManager().ppImport(item: exportable)
         toolManager.activePage?.items?.append(duplicate)
+        
+        toolManager.activePage?.store(duplicate, type: .create) {
+            duplicate
+        }
+        
         toolManager.activeItem = duplicate
     }
     
