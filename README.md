@@ -5,21 +5,22 @@
 - performance & uikit views 
 
 ## 🗺️ Bug Fixes 2.0.1+
-- print -> loading animation 
+- connect background template with subject
+- print -> loading animation
 - scrollview minimum zoom
-- general code improvements 
-- pencilkit performance 
-- media performance 
+- general code improvements
+- pencilkit performance
+- media performance
 - add keyboard shortcuts
 - textfield rendering performance (also when changing size)
-- rotation optimizations 
-- Homework -> <Important Feature>
+- rotation optimizations
+- Homework ->
 - Performance Improvements
-- Schedule & Homework -> <Connection>
+- Schedule & Homework ->
 - Assign Subjects to Folders
-- Homework Edit Improvements 
+- Homework Edit Improvements
 - Schedule Animation Improvements
-- Overview Improvements 
+- Overview Improvements
 - Library Extension
 
 ## 🗺️ Release 2.1.v
