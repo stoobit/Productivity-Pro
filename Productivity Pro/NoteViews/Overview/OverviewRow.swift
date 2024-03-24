@@ -14,6 +14,8 @@ struct OverviewRow: View {
     var contentObject: ContentObject
     @Bindable var page: PPPageModel
     
+    var update: () -> Void
+    
     var body: some View {
         ViewThatFits(in: .horizontal) {
             LargeView()
@@ -56,6 +58,7 @@ struct OverviewRow: View {
                     .onTapGesture {
                         withAnimation(.bouncy) {
                             page.isBookmarked.toggle()
+                            update()
                         }
                     }
             }
@@ -94,7 +97,7 @@ struct OverviewRow: View {
             PageView(
                 note: contentObject.note!,
                 page: page,
-                scale: .constant(1),
+                scale: .constant(0.01),
                 offset: .constant(.zero),
                 realrenderText: true
             )

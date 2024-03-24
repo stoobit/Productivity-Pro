@@ -18,9 +18,11 @@ struct OverviewView: View {
         ScrollViewReader { reader in
             List {
                 ForEach(pages) { page in
-                    OverviewRow(
-                        contentObject: contentObject, page: page
-                    )
+                    OverviewRow(contentObject: contentObject, page: page) {
+                        if filter {
+                            sort()
+                        }
+                    }
                     .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
                     .moveDisabled(contentObject.note?.pages?.count == 1)
                     .deleteDisabled(contentObject.note?.pages?.count == 1)
@@ -62,11 +64,11 @@ struct OverviewView: View {
     func sort() {
         if filter == false {
             pages = contentObject.note!.pages!
-                .sorted(by: { $0.index < $1.index })
+                .sorted(using: SortDescriptor(\.index))
         } else {
             pages = contentObject.note!.pages!
-                .filter { $0.isBookmarked == true }
-                .sorted(by: { $0.index < $1.index })
+                .filter(\.isBookmarked)
+                .sorted(using: SortDescriptor(\.index))
         }
     }
 }
