@@ -1,7 +1,6 @@
 # Productivity Pro
 
 ## 🛠️ Release 2.0.v
-- overview
 - performance & uikit views 
 
 ## 🗺️ Bug Fixes 2.0.1+
