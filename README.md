@@ -14,9 +14,9 @@
 - add keyboard shortcuts
 - textfield rendering performance (also when changing size)
 - rotation optimizations
-- Homework ->
+- Homework -> ui improvements 
 - Performance Improvements
-- Schedule & Homework ->
+- Schedule & Homework -> connection
 - Assign Subjects to Folders
 - Homework Edit Improvements
 - Schedule Animation Improvements
