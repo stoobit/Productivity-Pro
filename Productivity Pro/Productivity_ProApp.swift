@@ -10,8 +10,6 @@ import TipKit
 
 @main
 struct Productivity_ProApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
     var body: some Scene {
         WindowGroup {
             ContentViewContainer()
@@ -41,5 +39,3 @@ struct Productivity_ProApp: App {
             .tintColor = UIColor.main
     }
 }
-
-final class AppDelegate: NSObject, UIApplicationDelegate {}
