@@ -15,7 +15,6 @@ struct NoteView: View {
     var contentObjects: [ContentObject]
     @Bindable var contentObject: ContentObject
     
-    let container: Axis.Set = [.horizontal, .vertical]
     var pages: [PPPageModel] {
         contentObject.note!.pages!
             .sorted(by: { $0.index < $1.index })
@@ -27,37 +26,29 @@ struct NoteView: View {
             @Bindable var toolValue = toolManager
             
             GeometryReader { proxy in
-                ScrollViewReader { scrollView in
-                    ScrollView(.horizontal) {
-                        LazyHStack(spacing: 0) {
-                            ForEach(pages) { page in
-                                ScrollViewContainer(
-                                    note: contentObject.note!,
-                                    page: page,
-                                    size: proxy.size
-                                )
-                                .containerRelativeFrame(container)
-                                .id(page)
-                            }
-                        }
-                        .scrollTargetLayout(isEnabled: true)
-                    }
-                    .scrollIndicators(.hidden)
-                    .scrollTargetBehavior(.paging)
-                    .scrollPosition(id: $toolValue.activePage)
-                    .noteViewModifier(with: contentObject)
-                    .onChange(of: toolValue.activePage) {
-                        toolManager.activeItem = nil
-                        contentObject.note?.recent = toolManager.activePage
-                    }
-                    .onAppear {
-                        if let recent = contentObject.note?.recent {
-                            toolValue.activePage = recent
-                        } else {
-                            toolValue.activePage = pages[0]
-                        }
+                PageViewController(
+                    pages: pages.map {
+                        ScrollViewContainer(
+                            note: contentObject.note!,
+                            page: $0,
+                            size: proxy.size
+                        )
+                    }, currentPage: $toolValue.index
+                )
+                .noteViewModifier(with: contentObject)
+                .onChange(of: toolManager.index) {
+                    toolManager.activePage = pages[toolManager.index]
                         
-                        scrollView.scrollTo(toolValue.activePage)
+                    toolManager.activeItem = nil
+                    contentObject.note?.recent = toolManager.activePage
+                }
+                .onAppear {
+                    if let recent = contentObject.note?.recent {
+                        toolValue.activePage = recent
+                        toolValue.index = recent.index
+                    } else {
+                        toolValue.activePage = pages[0]
+                        toolValue.index = 0
                     }
                 }
             }
