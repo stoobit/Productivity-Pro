@@ -26,6 +26,8 @@ extension NoteViewSheet {
             toolManager.activePage = page
             subviewManager.addPage = false
         }
+        
+        toolManager.index += 1
     }
     
     func changePage(_ p: Bool, _ t: String, _ c: String) {
@@ -86,6 +88,8 @@ extension NoteViewSheet {
                             toolManager.activePage = selectedPage
                         }
                     }
+                    
+                    toolManager.index += 1
                 }
             }
         case .failure:
@@ -158,6 +162,8 @@ extension NoteViewSheet {
                             toolManager.activePage = selectedPage
                         }
                     }
+                    
+                    toolManager.index += 1
                 }
             }
         case .failure:

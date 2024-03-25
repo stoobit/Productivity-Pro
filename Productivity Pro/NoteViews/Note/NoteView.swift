@@ -26,7 +26,9 @@ struct NoteView: View {
             @Bindable var toolValue = toolManager
             
             GeometryReader { proxy in
-                Group {
+                ZStack {
+                    Text("stoobit")
+                    
                     PageViewController(
                         pages: pages.map {
                             ScrollViewContainer(
