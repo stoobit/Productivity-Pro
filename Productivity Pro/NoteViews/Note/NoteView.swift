@@ -53,8 +53,7 @@ struct NoteView: View {
                         toolValue.activePage = recent
                         toolValue.index = recent.index
                     } else {
-                        toolValue.activePage = pages[0]
-                        toolValue.index = 0
+                        toolValue.activePage = pages.first
                     }
                 }
             }
