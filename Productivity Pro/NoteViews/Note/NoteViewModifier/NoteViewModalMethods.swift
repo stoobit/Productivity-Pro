@@ -175,40 +175,39 @@ extension NoteViewSheet {
     
     func deletePage() {
         Task { @MainActor in
-            withAnimation {
-                if contentObject.note!.pages!.count - 1 == toolManager.activePage?.index {
-                    contentObject.note?.pages?.removeAll(where: {
-                        $0.index == contentObject.note!.pages!.count - 1
-                    })
+        
+            if contentObject.note!.pages!.count - 1 == toolManager.activePage?.index {
+                contentObject.note?.pages?.removeAll(where: {
+                    $0.index == contentObject.note!.pages!.count - 1
+                })
                     
-                    let page = contentObject.note!.pages!.first(where: {
-                        $0.index == contentObject.note!.pages!.count - 1
-                    })!
+                let page = contentObject.note!.pages!.first(where: {
+                    $0.index == contentObject.note!.pages!.count - 1
+                })!
                     
-                    toolManager.activePage = page
-                    toolManager.index = page.index
+                toolManager.activePage = page
+                toolManager.index = page.index
                     
-                } else {
-                    guard let index = toolManager.activePage?.index else {
-                        return
-                    }
-                    
-                    contentObject.note?.pages?.removeAll(where: {
-                        $0.index == index
-                    })
-                    
-                    for page in contentObject.note!.pages! {
-                        if index <= page.index {
-                            page.index -= 1
-                        }
-                    }
-                    
-                    let page = contentObject.note!.pages!
-                        .first(where: { $0.index == index })!
-                    
-                    toolManager.activePage = page
-                    toolManager.index = page.index
+            } else {
+                guard let index = toolManager.activePage?.index else {
+                    return
                 }
+                    
+                contentObject.note?.pages?.removeAll(where: {
+                    $0.index == index
+                })
+                    
+                for page in contentObject.note!.pages! {
+                    if index <= page.index {
+                        page.index -= 1
+                    }
+                }
+                    
+                let page = contentObject.note!.pages!
+                    .first(where: { $0.index == index })!
+                    
+                toolManager.activePage = page
+                toolManager.index = page.index
             }
         }
     }
