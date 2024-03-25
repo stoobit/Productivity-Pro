@@ -28,6 +28,7 @@ struct NoteView: View {
             GeometryReader { proxy in
                 ZStack {
                     Text("stoobit")
+                        .foregroundStyle(.clear)
                     
                     PageViewController(
                         pages: pages.map {

@@ -24,10 +24,10 @@ extension NoteViewSheet {
         
         withAnimation {
             toolManager.activePage = page
-            subviewManager.addPage = false
+            toolManager.index += 1
         }
         
-        toolManager.index += 1
+        subviewManager.addPage = false
     }
     
     func changePage(_ p: Bool, _ t: String, _ c: String) {
@@ -87,9 +87,9 @@ extension NoteViewSheet {
                         if let selectedPage = selectedPage {
                             toolManager.activePage = selectedPage
                         }
+                        
+                        toolManager.index += 1
                     }
-                    
-                    toolManager.index += 1
                 }
             }
         case .failure:
@@ -161,9 +161,9 @@ extension NoteViewSheet {
                         if let selectedPage = selectedPage {
                             toolManager.activePage = selectedPage
                         }
+                        
+                        toolManager.index += 1
                     }
-                    
-                    toolManager.index += 1
                 }
             }
         case .failure:
@@ -186,6 +186,7 @@ extension NoteViewSheet {
                     })!
                     
                     toolManager.activePage = page
+                    toolManager.index = page.index
                     
                 } else {
                     guard let index = toolManager.activePage?.index else {
@@ -206,6 +207,7 @@ extension NoteViewSheet {
                         .first(where: { $0.index == index })!
                     
                     toolManager.activePage = page
+                    toolManager.index = page.index
                 }
             }
         }

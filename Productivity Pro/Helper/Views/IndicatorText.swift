@@ -28,7 +28,7 @@ struct IndicatorText: View {
                 style: .circular
             )
             .foregroundStyle(Color.secondary)
-            .frame(width: 60, height: 30)
+            .frame(width: 70, height: 30)
             
             Text("\(number) von \(total)")
                 .fontWeight(.semibold)
