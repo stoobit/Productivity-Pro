@@ -522,7 +522,14 @@
       }
     },
     "Du hast keiner Seite ein Lesezeichen hinzugefügt." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You haven't bookmarked any pages."
+          }
+        }
+      }
     },
     "Du hast noch keine Fächer erstellt." : {
       "localizations" : {
@@ -635,7 +642,14 @@
       }
     },
     "Es konnte kein Objekt eingefügt werden." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No object could be inserted."
+          }
+        }
+      }
     },
     "Es wurden keine Notizen gefunden." : {
       "localizations" : {
@@ -767,19 +781,15 @@
         }
       }
     },
-    "Geändert" : {
-      "extractionState" : "stale",
+    "Groß" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Changed"
+            "value" : "Large"
           }
         }
       }
-    },
-    "Groß" : {
-
     },
     "Gruppieren" : {
       "localizations" : {
@@ -902,7 +912,14 @@
       }
     },
     "Kompakt" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compact"
+          }
+        }
+      }
     },
     "Konjugationen" : {
       "localizations" : {
@@ -925,15 +942,11 @@
       }
     },
     "Latein" : {
-
-    },
-    "Lehrer" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Teacher"
+            "value" : "Latin"
           }
         }
       }
@@ -969,10 +982,24 @@
       }
     },
     "Markdown" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markdown"
+          }
+        }
+      }
     },
     "Markdown Editor" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markdown Editor"
+          }
+        }
+      }
     },
     "Mittwoch" : {
       "localizations" : {
@@ -1095,7 +1122,14 @@
       }
     },
     "Ok" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
     },
     "Ordner erstellen" : {
       "localizations" : {
@@ -1267,17 +1301,6 @@
         }
       }
     },
-    "Rolle" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Role"
-          }
-        }
-      }
-    },
     "Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen." : {
       "localizations" : {
         "en" : {
@@ -1358,17 +1381,6 @@
         }
       }
     },
-    "Schüler" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Student"
-          }
-        }
-      }
-    },
     "Sechseck" : {
       "localizations" : {
         "en" : {
@@ -1440,7 +1452,14 @@
       }
     },
     "stoobit" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "stoobit"
+          }
+        }
+      }
     },
     "Stundenplan" : {
       "localizations" : {
@@ -1558,17 +1577,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Untitled"
-          }
-        }
-      }
-    },
-    "Verstanden" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ok"
           }
         }
       }

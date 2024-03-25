@@ -2067,7 +2067,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Productivity Pro/Productivity Pro.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"Productivity Pro/Preview Content\"";
 				DEVELOPMENT_TEAM = X8ZDMM9V4U;
 				ENABLE_PREVIEWS = YES;
@@ -2116,7 +2116,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Productivity Pro/Productivity Pro.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"Productivity Pro/Preview Content\"";
 				DEVELOPMENT_TEAM = X8ZDMM9V4U;
 				ENABLE_PREVIEWS = YES;
@@ -2160,7 +2160,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Productivity Preview/Productivity_Preview.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"Productivity Preview/Preview Content\"";
 				DEVELOPMENT_TEAM = X8ZDMM9V4U;
 				ENABLE_PREVIEWS = YES;
@@ -2185,6 +2185,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -2200,7 +2201,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Productivity Preview/Productivity_Preview.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"Productivity Preview/Preview Content\"";
 				DEVELOPMENT_TEAM = X8ZDMM9V4U;
 				ENABLE_PREVIEWS = YES;
@@ -2225,6 +2226,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
