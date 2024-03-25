@@ -26,15 +26,18 @@ struct NoteView: View {
             @Bindable var toolValue = toolManager
             
             GeometryReader { proxy in
-                PageViewController(
-                    pages: pages.map {
-                        ScrollViewContainer(
-                            note: contentObject.note!,
-                            page: $0,
-                            size: proxy.size
-                        )
-                    }, currentPage: $toolValue.index
-                )
+                Group {
+                    PageViewController(
+                        pages: pages.map {
+                            ScrollViewContainer(
+                                note: contentObject.note!,
+                                page: $0,
+                                size: proxy.size
+                            )
+                        }, currentPage: $toolValue.index
+                    )
+                    .id(pages.count)
+                }
                 .noteViewModifier(with: contentObject)
                 .onChange(of: toolManager.index) {
                     toolManager.activePage = pages[toolManager.index]
