@@ -10,7 +10,7 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 728250830.609586,
+    "_lastSynchronizedDate" : 733146317.285375,
     "_locale" : "de",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
@@ -72,7 +72,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "AA564F7A",
+              "internalID" : "2E7F266E",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivity.premium.offer",
               "paymentMode" : "free",
