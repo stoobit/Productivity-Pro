@@ -146,6 +146,7 @@
 		BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */; };
 		BB8A0AE32AD0B871008B4D27 /* LockViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A0AE22AD0B871008B4D27 /* LockViews.swift */; };
 		BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */; };
+		BB921B2C2BB2D4A300B999CF /* privacypolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = BB921B2B2BB2D4A200B999CF /* privacypolicy.html */; };
 		BB929B8028E5076D00DA4538 /* NoteSecondaryToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB929B7F28E5076D00DA4538 /* NoteSecondaryToolbar.swift */; };
 		BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB929B8128E5077800DA4538 /* NoteTitleMenu.swift */; };
 		BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB929B8328E5087200DA4538 /* NoteMainToolbar.swift */; };
@@ -467,6 +468,7 @@
 		BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
 		BB8A0AE22AD0B871008B4D27 /* LockViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViews.swift; sourceTree = "<group>"; };
 		BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewMethods.swift; sourceTree = "<group>"; };
+		BB921B2B2BB2D4A200B999CF /* privacypolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacypolicy.html; sourceTree = "<group>"; };
 		BB929B7F28E5076D00DA4538 /* NoteSecondaryToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSecondaryToolbar.swift; sourceTree = "<group>"; };
 		BB929B8128E5077800DA4538 /* NoteTitleMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTitleMenu.swift; sourceTree = "<group>"; };
 		BB929B8328E5087200DA4538 /* NoteMainToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMainToolbar.swift; sourceTree = "<group>"; };
@@ -648,6 +650,7 @@
 		BB1DDA28296715590038FE16 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BB921B2B2BB2D4A200B999CF /* privacypolicy.html */,
 				BB35A1B92B290A3B001A3F4C /* latinvoc.json */,
 				BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */,
 				BB1DDA292967156E0038FE16 /* pacifico.ttf */,
@@ -1624,6 +1627,7 @@
 				BB4A93C92AAEFDCC00C3AED6 /* pacifico.ttf in Resources */,
 				BB35A1BA2B290A3B001A3F4C /* latinvoc.json in Resources */,
 				BB9C63B62B5AFE2A0022AC4F /* README.md in Resources */,
+				BB921B2C2BB2D4A300B999CF /* privacypolicy.html in Resources */,
 				BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */,
 				BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */,
 				BB4CDD4728D3C66A009A409F /* Assets.xcassets in Resources */,
