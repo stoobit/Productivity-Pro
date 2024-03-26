@@ -9,7 +9,9 @@ import StoreKit
 import SwiftUI
 
 struct PremiumView: View {
-    let url = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula"
+    let terms = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula"
+    let privacy = "https://www.stoobit.com/privacypolicy.html"
+    
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var hsc
 
@@ -35,11 +37,11 @@ struct PremiumView: View {
                     }
                 }
             }
-            .subscriptionStorePolicyDestination(for: .privacyPolicy) {
-                PrivacyPolicyView()
-            }
             .subscriptionStorePolicyDestination(
-                url: URL(string: url)!,for: .termsOfService
+                url: URL(string: terms)!,for: .termsOfService
+            )
+            .subscriptionStorePolicyDestination(
+                url: URL(string: privacy)!,for: .privacyPolicy
             )
             .storeButton(.visible, for: .policies)
             .storeButton(.hidden, for: .cancellation)

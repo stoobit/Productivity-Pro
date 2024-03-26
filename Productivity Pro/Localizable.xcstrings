@@ -301,16 +301,6 @@
         }
       }
     },
-    "Bei Fragen oder Bedenken zur Datenschutzvereinbarung oder zum Umgang mit persönlichen Daten können sich die Nutzer jederzeit an uns wenden." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "For questions or concerns regarding the privacy policy or the handling of personal data, users can contact us."
-          }
-        }
-      }
-    },
     "Beitrag hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -427,16 +417,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Data is processed..."
-          }
-        }
-      }
-    },
-    "Datenschutzvereinbarung" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Privacy Policy"
           }
         }
       }
@@ -591,16 +571,6 @@
         }
       }
     },
-    "Durch die Nutzung unserer Dienste erklären sich die Nutzer mit dieser Datenschutzvereinbarung einverstanden." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "By using our services, users agree to this privacy policy."
-          }
-        }
-      }
-    },
     "e-Deklination" : {
       "localizations" : {
         "en" : {
@@ -677,16 +647,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Developer"
-          }
-        }
-      }
-    },
-    "Erhebung und Verwendung von Daten" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Collection and Use of Data"
           }
         }
       }
@@ -1021,16 +981,6 @@
         }
       }
     },
-    "Kontakt" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contact"
-          }
-        }
-      }
-    },
     "Kreis" : {
       "localizations" : {
         "en" : {
@@ -1241,26 +1191,6 @@
         }
       }
     },
-    "Nutzer haben das Recht, der Verarbeitung ihrer Daten zu widersprechen oder ihre Einwilligung zur Verarbeitung jederzeit zu widerrufen." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Users have the right to object to the processing of their data or withdraw their consent to processing at any time."
-          }
-        }
-      }
-    },
-    "Nutzer haben das Recht, ihre persönlichen Daten einzusehen, zu korrigieren oder zu löschen, wenn sie ungenau oder nicht mehr erforderlich sind." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Users have the right to access, correct, or delete their personal data if it is inaccurate or no longer needed."
-          }
-        }
-      }
-    },
     "o-Deklination" : {
       "localizations" : {
         "en" : {
@@ -1357,26 +1287,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Import PDF"
-          }
-        }
-      }
-    },
-    "Persönliche Daten, die von den Nutzern bereitgestellt werden, werden ausschließlich für den angegebenen Zweck verwendet und nicht an Dritte weitergegeben, es sei denn, dies ist gesetzlich vorgeschrieben." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Personal data provided by users is used solely for the specified purpose and is not disclosed to third parties unless required by law."
-          }
-        }
-      }
-    },
-    "Petra Brügmann, 26.03.2024" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Petra Brügmann, 03/26/2024"
           }
         }
       }
@@ -1481,16 +1391,6 @@
         }
       }
     },
-    "Rechte der Nutzer" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "User Rights"
-          }
-        }
-      }
-    },
     "Rechteck" : {
       "localizations" : {
         "en" : {
@@ -1577,16 +1477,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Font Size"
-          }
-        }
-      }
-    },
-    "Schutz der Daten" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data Protection"
           }
         }
       }
@@ -1707,16 +1597,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
-          }
-        }
-      }
-    },
-    "support@stoobit.com" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "support@stoobit.com"
           }
         }
       }
@@ -1867,46 +1747,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Redo"
-          }
-        }
-      }
-    },
-    "Wir erheben nur die Informationen, die für die Bereitstellung unserer Dienste unbedingt erforderlich sind." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "We only collect information that is strictly necessary for providing our services."
-          }
-        }
-      }
-    },
-    "Wir lesen keine Daten der Nutzer, einschließlich ihrer persönlichen Kommunikationen oder anderer vertraulicher Informationen." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "We do not read any user data, including their personal communications or other confidential information."
-          }
-        }
-      }
-    },
-    "Wir treffen angemessene technische und organisatorische Maßnahmen, um die Sicherheit der Daten unserer Nutzer zu gewährleisten und unbefugten Zugriff, Verlust oder Diebstahl zu verhindern." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "We implement appropriate technical and organizational measures to ensure the security of our users' data and prevent unauthorized access, loss, or theft."
-          }
-        }
-      }
-    },
-    "Wir verpflichten uns, die Privatsphäre unserer Nutzer zu respektieren und alle persönlichen Daten, die über unsere Plattform erhoben werden, streng vertraulich zu behandeln." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "We commit to respecting the privacy of our users and treating all personal data collected through our platform with strict confidentiality. This privacy policy stipulates that no user data is read by us."
           }
         }
       }
