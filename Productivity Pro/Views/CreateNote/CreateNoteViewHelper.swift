@@ -44,7 +44,9 @@ extension CreateNoteView {
     
     @ViewBuilder
     func CNButton(
-        _ title: String, icon: String, showIcon: Bool, action: @escaping () -> Void
+        _ title: LocalizedStringKey,
+        icon: String, showIcon: Bool,
+        action: @escaping () -> Void
     ) -> some View {
         
         Button(action: action) {

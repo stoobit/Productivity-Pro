@@ -9,6 +9,7 @@ import StoreKit
 import SwiftUI
 
 struct PremiumView: View {
+    let url = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula"
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var hsc
 
@@ -34,6 +35,13 @@ struct PremiumView: View {
                     }
                 }
             }
+            .subscriptionStorePolicyDestination(for: .privacyPolicy) {
+                PrivacyPolicyView()
+            }
+            .subscriptionStorePolicyDestination(
+                url: URL(string: url)!,for: .termsOfService
+            )
+            .storeButton(.visible, for: .policies)
             .storeButton(.hidden, for: .cancellation)
             .storeButton(.visible, for: .restorePurchases)
             .subscriptionStoreControlStyle(.prominentPicker)
@@ -57,7 +65,7 @@ struct PremiumView: View {
                     }
                     .disabled(disabled)
                 }
-                
+
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Entwickler", systemImage: "person.fill") {
                         showAlert.toggle()
@@ -71,17 +79,17 @@ struct PremiumView: View {
                 showAlert = false
                 text = ""
             }
-            
+
             Button("Anmelden") {
                 if text == "xAbu-RTi-093-mMkl-öÜ" {
                     isDeveloper = true
                     isSubscribed = true
                 }
-                
+
                 showAlert = false
                 dismiss()
             }
-            
+
             SecureField("Passwort", text: $text)
         }
     }

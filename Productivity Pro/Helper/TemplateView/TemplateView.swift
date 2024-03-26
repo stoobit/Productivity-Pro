@@ -24,7 +24,7 @@ struct TemplateView: View {
     @State var selectedColor: String = "pagewhite"
     @State var selectedTemplate: String = "blank"
     
-    let buttonTitle: String
+    let buttonTitle: LocalizedStringKey
     
     var preselectedOrientation: Bool = true
     var preselectedColor: String = "pagewhite"

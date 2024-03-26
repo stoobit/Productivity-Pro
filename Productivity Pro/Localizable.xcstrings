@@ -76,7 +76,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld. Klasse"
+            "value" : "Grade %lld"
           }
         }
       }
@@ -147,6 +147,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "General"
+          }
+        }
+      }
+    },
+    "Ändern" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change"
           }
         }
       }
@@ -371,6 +381,16 @@
         }
       }
     },
+    "Blanko" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blank"
+          }
+        }
+      }
+    },
     "Breite" : {
       "localizations" : {
         "en" : {
@@ -397,6 +417,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Data is processed..."
+          }
+        }
+      }
+    },
+    "Datenschutzvereinbarung" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy Policy"
           }
         }
       }
@@ -631,6 +661,16 @@
         }
       }
     },
+    "Erstellen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create"
+          }
+        }
+      }
+    },
     "Erstellt" : {
       "localizations" : {
         "en" : {
@@ -781,6 +821,16 @@
         }
       }
     },
+    "Gepunktet" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dotted"
+          }
+        }
+      }
+    },
     "Groß" : {
       "localizations" : {
         "en" : {
@@ -816,7 +866,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Layout"
+            "value" : "Horizontal & Vertical"
           }
         }
       }
@@ -911,6 +961,16 @@
         }
       }
     },
+    "Kariert" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkered"
+          }
+        }
+      }
+    },
     "Kompakt" : {
       "localizations" : {
         "en" : {
@@ -957,6 +1017,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bookmark"
+          }
+        }
+      }
+    },
+    "Letzte Vorlage" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last Template"
+          }
+        }
+      }
+    },
+    "Liniert Groß" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lined Large"
+          }
+        }
+      }
+    },
+    "Liniert Klein" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lined Small"
           }
         }
       }
@@ -1067,6 +1157,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Name"
+          }
+        }
+      }
+    },
+    "Notentlinien" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Staff Lines"
           }
         }
       }
@@ -1187,6 +1287,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PDF"
+          }
+        }
+      }
+    },
+    "PDF importieren" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import PDF"
           }
         }
       }
@@ -1401,6 +1511,16 @@
         }
       }
     },
+    "Seite %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page %lld"
+          }
+        }
+      }
+    },
     "Seite hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -1591,6 +1711,16 @@
         }
       }
     },
+    "Vorlage auswählen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Template"
+          }
+        }
+      }
+    },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht." : {
       "localizations" : {
         "en" : {
@@ -1630,6 +1760,9 @@
           }
         }
       }
+    },
+    "Wir verpflichten uns, die Privatsphäre unserer Nutzer zu respektieren und alle persönlichen Daten, die über unsere Plattform erhoben werden, streng vertraulich zu behandeln." : {
+
     },
     "Wortschatz %@" : {
       "localizations" : {

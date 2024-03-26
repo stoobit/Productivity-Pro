@@ -92,7 +92,7 @@ extension TemplateView {
 
     @ViewBuilder
     func TemplateItem(
-        title: String, value: String, view: some View
+        title: LocalizedStringKey, value: String, view: some View
     ) -> some View {
         ZStack {
             VStack {

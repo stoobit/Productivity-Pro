@@ -9,11 +9,11 @@ import PDFKit
 import SwiftUI
 
 extension OverviewRow {
-    func pageNumber() -> String {
+    func pageNumber() -> LocalizedStringKey {
         return "Seite \(page.index + 1)"
     }
     
-    func compactPageNumber() -> String {
+    func compactPageNumber() -> LocalizedStringKey {
         return "\(page.index + 1)"
     }
 

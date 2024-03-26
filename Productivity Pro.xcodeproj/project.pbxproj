@@ -183,6 +183,7 @@
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
 		BBA3A0292B29AF2500099F6D /* MDEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA3A0282B29AF2500099F6D /* MDEditorView.swift */; };
+		BBA5C4932BB2449500C285EA /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA5C4922BB2449500C285EA /* PrivacyPolicyView.swift */; };
 		BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* MediaImport.swift */; };
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
@@ -502,6 +503,7 @@
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
 		BBA3A0282B29AF2500099F6D /* MDEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDEditorView.swift; sourceTree = "<group>"; };
+		BBA5C4922BB2449500C285EA /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* MediaImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImport.swift; sourceTree = "<group>"; };
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewToolbar.swift; sourceTree = "<group>"; };
@@ -1411,6 +1413,7 @@
 			children = (
 				BBD930F82B20FA0000A37F95 /* Premium.storekit */,
 				BBD930F62B1FEBA000A37F95 /* StoreViewModel.swift */,
+				BBA5C4922BB2449500C285EA /* PrivacyPolicyView.swift */,
 				BBD930F32B1FE61E00A37F95 /* PremiumView */,
 				BBD930F42B1FE62C00A37F95 /* Subscription */,
 			);
@@ -1856,6 +1859,7 @@
 				BB9367702AC9CE5D0096F20E /* PPImmersiveObjectModel.swift in Sources */,
 				BB3F75F12996CE6200C0F140 /* ItemModel.swift in Sources */,
 				BB8A0AE32AD0B871008B4D27 /* LockViews.swift in Sources */,
+				BBA5C4932BB2449500C285EA /* PrivacyPolicyView.swift in Sources */,
 				BBC0BAB12B47F2CB00D47A21 /* ExportableShapeModel.swift in Sources */,
 				BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */,
 				BB7984682AC37E1E00CF3D24 /* ObjectViewFileLink.swift in Sources */,
