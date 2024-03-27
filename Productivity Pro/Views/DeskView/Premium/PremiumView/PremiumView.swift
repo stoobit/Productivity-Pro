@@ -11,7 +11,7 @@ import SwiftUI
 struct PremiumView: View {
     let terms = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula"
     let privacy = "https://www.stoobit.com/privacypolicy.html"
-    
+
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var hsc
 
@@ -38,10 +38,10 @@ struct PremiumView: View {
                 }
             }
             .subscriptionStorePolicyDestination(
-                url: URL(string: terms)!,for: .termsOfService
+                url: URL(string: terms)!, for: .termsOfService
             )
             .subscriptionStorePolicyDestination(
-                url: URL(string: privacy)!,for: .privacyPolicy
+                url: URL(string: privacy)!, for: .privacyPolicy
             )
             .storeButton(.visible, for: .policies)
             .storeButton(.hidden, for: .cancellation)
@@ -67,32 +67,7 @@ struct PremiumView: View {
                     }
                     .disabled(disabled)
                 }
-
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Entwickler", systemImage: "person.fill") {
-                        showAlert.toggle()
-                    }
-                    .disabled(disabled)
-                }
             }
-        }
-        .alert("Productivity Pro", isPresented: $showAlert) {
-            Button("Abbrechen", role: .cancel) {
-                showAlert = false
-                text = ""
-            }
-
-            Button("Anmelden") {
-                if text == "xAbu-RTi-093-mMkl-öÜ" {
-                    isDeveloper = true
-                    isSubscribed = true
-                }
-
-                showAlert = false
-                dismiss()
-            }
-
-            SecureField("Passwort", text: $text)
         }
     }
 
