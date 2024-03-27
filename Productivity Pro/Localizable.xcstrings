@@ -161,16 +161,6 @@
         }
       }
     },
-    "Anmelden" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Login"
-          }
-        }
-      }
-    },
     "Anordnung" : {
       "localizations" : {
         "en" : {
@@ -637,16 +627,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Empty"
-          }
-        }
-      }
-    },
-    "Entwickler" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Developer"
           }
         }
       }
@@ -1247,16 +1227,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Empty Trash"
-          }
-        }
-      }
-    },
-    "Passwort" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Password"
           }
         }
       }
