@@ -5,6 +5,7 @@
 //  Created by Till Brügmann on 05.01.24.
 //
 
+import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct AppClipView: View {
@@ -28,10 +29,11 @@ struct AppClipView: View {
                 
                 Spacer()
                 
-                Image("appclip")
+                Image(uiImage: generateQRCode())
                     .resizable()
+                    .interpolation(.none)
                     .scaledToFit()
-                    .frame(width: 200)
+                    .frame(width: 190)
                 
                 Spacer()
             }
@@ -44,6 +46,28 @@ struct AppClipView: View {
                 }
             }
         }
+    }
+    
+    func generateQRCode() -> UIImage {
+        let string = "https://appclip.apple.com/id?p=com.stoobit.ProductivityPro.Clip"
+        
+        let context = CIContext()
+        let filter = CIFilter.qrCodeGenerator()
+        
+        filter.message = Data(string.utf8)
+
+        if let outputImage = filter.outputImage {
+            let maskFilter = CIFilter.blendWithMask()
+            maskFilter.maskImage = outputImage.applyingFilter("CIColorInvert")
+            maskFilter.inputImage = CIImage(color: CIColor(color: .systemBlue))
+            let coloredImage = maskFilter.outputImage!
+            
+            if let cgimg = context.createCGImage(coloredImage, from: coloredImage.extent) {
+                return UIImage(cgImage: cgimg)
+            }
+        }
+
+        return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
 }
 
