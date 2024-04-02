@@ -40,6 +40,7 @@ struct NoteView: View {
                         }, currentPage: $toolValue.index
                     )
                     .id(pages.count)
+                    .id(proxy.size.width)
                 }
                 .noteViewModifier(with: contentObject)
                 .onChange(of: toolManager.index) {

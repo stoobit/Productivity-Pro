@@ -18,6 +18,7 @@
 - Schedule Animation Improvements
 - Overview Improvements
 - Library Extension
+- adoption of page min width to window width
 
 ## 🗺️ Release 2.1.v
 - Links 

@@ -68,7 +68,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         
         if uiView.maximumZoomScale != 2.2 {
             uiView.maximumZoomScale = 2.2
-            uiView.setZoomScale(getScale(), animated: true)
+            uiView.setZoomScale(getScale(), animated: false)
         }
         
         context.coordinator.hostingController.rootView = content()
