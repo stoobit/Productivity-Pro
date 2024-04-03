@@ -10,8 +10,8 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 733146317.285375,
-    "_locale" : "de",
+    "_lastSynchronizedDate" : 733874978.82862496,
+    "_locale" : "en_US",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
       {
@@ -67,42 +67,77 @@
       "localizations" : [
 
       ],
-      "name" : "Productivity Pro Premium",
+      "name" : "Productivity Pro Premium ",
       "subscriptions" : [
         {
           "adHocOffers" : [
             {
-              "internalID" : "2E7F266E",
+              "internalID" : "FD39DE76",
               "numberOfPeriods" : 1,
-              "offerID" : "com.stoobit.productivity.premium.offer",
+              "offerID" : "com.stoobit.productivitypro.premium.monthlysub.offer",
               "paymentMode" : "free",
-              "referenceName" : "Premium Subscription Introduction Offer",
-              "subscriptionPeriod" : "P2W"
+              "referenceName" : "Monthly Promotional Offer",
+              "subscriptionPeriod" : "P1M"
             }
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6480533506",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Enjoy Premium and stay flexible. ",
+              "displayName" : "Monthly Subscription",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Zahle monatlich und bleib flexibel.",
+              "displayName" : "Monatliches Abonnement",
+              "locale" : "de"
+            }
+          ],
+          "productID" : "com.stoobit.productivitypro.premium.monthlysub",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly Subscription",
+          "subscriptionGroupID" : "21404124",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
           ],
           "codeOffers" : [
 
           ],
           "displayPrice" : "12.99",
           "familyShareable" : true,
-          "groupNumber" : 1,
+          "groupNumber" : 2,
           "internalID" : "6473851041",
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Schedules, Tasks, App Icons & more.",
-              "displayName" : "Productivity Pro Premium",
-              "locale" : "en_US"
-            },
-            {
               "description" : "Stundenplan, Aufgaben, App Icons & mehr.",
               "displayName" : "Productivity Pro Premium",
               "locale" : "de"
+            },
+            {
+              "description" : "Bezahle Premium jährlich und spare Geld.",
+              "displayName" : "Jährliches Abonnement",
+              "locale" : "de"
+            },
+            {
+              "description" : "Enjoy Premium and save money.",
+              "displayName" : "Yearly Subscription",
+              "locale" : "en_US"
             }
           ],
           "productID" : "com.stoobit.productivity.premium",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Premium Subscription",
+          "referenceName" : "Yearly Subscription",
           "subscriptionGroupID" : "21404124",
           "type" : "RecurringSubscription"
         }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DeskView: View {
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
+    @AppStorage("ppispurchased") var isPurchased: Bool = false
     
     @State var premiumView: Bool = false
     @State var settingsView: Bool = false
@@ -17,7 +18,7 @@ struct DeskView: View {
         NavigationStack {
             Form {
                 Section {
-                    if isSubscribed == false {
+                    if isSubscribed == false && isPurchased == false {
                         Button(action: { premiumView.toggle() }) {
                             Label(title: {
                                 Text("Premium")
@@ -31,7 +32,7 @@ struct DeskView: View {
                             PremiumView()
                                 .interactiveDismissDisabled()
                         })
-                    } else {
+                    } else if isSubscribed == true && isPurchased == false {
                         HStack {
                             Button(action: { settingsView.toggle() }) {
                                 Label(title: {
@@ -54,6 +55,8 @@ struct DeskView: View {
                             subscriptionGroupID: "21404124"
                         )
                     }
+                    
+                    // Store
                 }
                 
                 Settings()

@@ -9,10 +9,12 @@ import SwiftUI
 
 struct LockScreen: ViewModifier {
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
+    @AppStorage("ppispurchased") var isPurchased: Bool = false
+    
     @State var showPremium: Bool = false
 
     func body(content: Content) -> some View {
-        if isSubscribed {
+        if isSubscribed || isPurchased {
             content
         } else {
             content

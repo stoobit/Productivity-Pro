@@ -25,7 +25,7 @@ private struct ContentView: View {
     @State var storeVM: StoreViewModel = .init()
     let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
     
-    @AppStorage("ppisstoobitdeveloper") var isDeveloper: Bool = false
+    @AppStorage("ppispurchased") var isPurchased: Bool = false
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
     
     @State var toolManager: ToolManager = .init()
@@ -38,7 +38,7 @@ private struct ContentView: View {
             if storeVM.finished {
                 Text("Premium")
                     .onChange(of: scenePhase, initial: true) {
-                        if isDeveloper == false {
+                        if isPurchased == false {
                             updateStatus()
                         }
                     }

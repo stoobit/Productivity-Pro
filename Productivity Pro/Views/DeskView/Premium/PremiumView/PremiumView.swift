@@ -17,7 +17,6 @@ struct PremiumView: View {
 
     @Environment(StoreViewModel.self) var storeVM
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
-    @AppStorage("ppisstoobitdeveloper") var isDeveloper: Bool = false
 
     @State var load: Bool = false
     @State var disabled: Bool = false
@@ -26,14 +25,14 @@ struct PremiumView: View {
 
     var body: some View {
         NavigationStack {
-            SubscriptionStoreView(productIDs: storeVM.productIds) {
+            SubscriptionStoreView(groupID: "21404124") {
                 VStack {
                     Text("Premium")
                         .font(.largeTitle.bold())
 
                     ViewThatFits(in: .vertical) {
                         PVAnimationView()
-                        Color.clear.frame(width: 0, height: 0)
+                        EmptyView()
                     }
                 }
             }
@@ -43,8 +42,8 @@ struct PremiumView: View {
             .subscriptionStorePolicyDestination(
                 url: URL(string: privacy)!, for: .privacyPolicy
             )
-            .storeButton(.visible, for: .policies)
             .storeButton(.hidden, for: .cancellation)
+            .storeButton(.visible, for: .policies)
             .storeButton(.visible, for: .restorePurchases)
             .subscriptionStoreControlStyle(.prominentPicker)
             .onInAppPurchaseCompletion { _, result in
