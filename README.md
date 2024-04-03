@@ -1,24 +1,31 @@
 # Productivity Pro
 
-## 🗺️ Bug Fixes 2.0.1+
-- connect background template with subject
-- print -> loading animation
-- scrollview minimum zoom
-- general code improvements
-- pencilkit performance
-- media performance
+## 🗺️ Release 2.0.2
+- minimum zoom scale of UIScrollView
+- update PageViewController when window size changes
+- improve overview
+- improve textfield rendering performance (-> when size gets changed)
+
+## 🗺️ Release 2.0.3
+- loading animation when printing pdf gets rendered 
+- improve pencilkit performance 
+- improve pdfkit performance
+
+## 🗺️ Release 2.0.4
 - add keyboard shortcuts
-- textfield rendering performance (also when changing size)
-- rotation optimizations
-- Homework -> ui improvements 
-- Performance Improvements
-- Schedule & Homework -> connection
-- Assign Subjects to Folders
-- Homework Edit Improvements
-- Schedule Animation Improvements
-- Overview Improvements
+- improve `Homework` UI (add/edit view) and perfomrance
+- improve schedule animations 
+
+## 🗺️ Release 2.0.5
+- assign subject to folder
+- assign background templates to folders 
+
+## 🗺️ Release 2.0.6
+- show summary of homeworks when tapping on a subject in schedule 
+- optimize rotation of items 
+
+## 🗺️ Release 2.0.7
 - Library Extension
-- adoption of page min width to window width
 
 ## 🗺️ Release 2.1.v
 - Links 
