@@ -18,10 +18,7 @@ struct PremiumView: View {
     @Environment(StoreViewModel.self) var storeVM
     @AppStorage("ppisunlocked") var isSubscribed: Bool = false
 
-    @State var load: Bool = false
     @State var disabled: Bool = false
-    @State var showAlert: Bool = false
-    @State var text: String = ""
 
     var body: some View {
         NavigationStack {

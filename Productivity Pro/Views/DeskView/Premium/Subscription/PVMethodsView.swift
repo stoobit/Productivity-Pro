@@ -9,14 +9,8 @@ import Foundation
 import StoreKit
 
 extension PremiumView {
-    
     func subscribe() async {
-        DispatchQueue.main.async {
-            load = true
-        }
-        
         do {
-            
             guard let subscription = storeVM.subscriptions.first else { return }
             
             if try await storeVM.purchase(subscription) != nil {
@@ -27,14 +21,5 @@ extension PremiumView {
         } catch {
             print("purchase failed")
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            load = false
-        }
     }
-    
-    func restore() {
-        
-    }
-    
 }

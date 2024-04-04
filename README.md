@@ -1,9 +1,6 @@
 # Productivity Pro
 
 ## 🗺️ Release 2.0.3
-- Updated Pricing & Purchase Options 
-
-## 🗺️ Release 2.0.3
 - minimum zoom scale of UIScrollView
 - update PageViewController when window size changes
 - improve overview

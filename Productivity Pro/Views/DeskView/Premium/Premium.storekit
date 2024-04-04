@@ -4,13 +4,32 @@
 
   ],
   "products" : [
-
+    {
+      "displayPrice" : "29.99",
+      "familyShareable" : true,
+      "internalID" : "6480534610",
+      "localizations" : [
+        {
+          "description" : "Zahle einmalig für Productivity Pro Premium.",
+          "displayName" : "Productivity Pro Premium",
+          "locale" : "de"
+        },
+        {
+          "description" : "Pay one-time for Productivity Pro Premium.",
+          "displayName" : "Productivity Pro Premium",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.onetimepurchase",
+      "referenceName" : "Onetime Purchase to unlock Productivity Pro Premium",
+      "type" : "NonConsumable"
+    }
   ],
   "settings" : {
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 733874978.82862496,
+    "_lastSynchronizedDate" : 733887835.63336694,
     "_locale" : "en_US",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
@@ -72,7 +91,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "FD39DE76",
+              "internalID" : "431812C9",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivitypro.premium.monthlysub.offer",
               "paymentMode" : "free",
@@ -84,7 +103,7 @@
 
           ],
           "displayPrice" : "1.99",
-          "familyShareable" : false,
+          "familyShareable" : true,
           "groupNumber" : 1,
           "internalID" : "6480533506",
           "introductoryOffer" : null,
