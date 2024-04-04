@@ -8,8 +8,9 @@
 
 ## 🗺️ Release 2.0.4
 - loading animation when printing pdf gets rendered 
-- improve pencilkit performance 
-- improve pdfkit performance
+- improve PencilKit performance 
+- improve PDFKit performance
+- pdf rendering updates
 
 ## 🗺️ Release 2.0.5
 - add keyboard shortcuts
@@ -25,11 +26,11 @@
 - optimize rotation of items 
 
 ## 🗺️ Release 2.0.8
-- introduce store with sticker packs and backgrounds 
+- Unsplash Integration 
 - Library Extension
 
 ## 🗺️ Release 2.1.v
-- Links 
+- Mindmap
 - Unsplash Integration 
 - Pi Integration
 - Library Extension
@@ -41,22 +42,10 @@
 - Library Extension
 
 ## 🗺️ Release 2.3.v
-- Collaboration
+- Mindmaps
 - Library Extension
 
 ## 🗺️ Release 2.4.v
 - Charts
 - Maps
-- Library Extension
-
-## 🗺️ Release 2.5.v
-- Mindmaps
-- Library Extension
-
-## 🗺️ Release 2.6.v
-- Tables
-- Library Extension
-
-## 🗺️ Release 2.7.v
-- 3D Objects 
 - Library Extension
