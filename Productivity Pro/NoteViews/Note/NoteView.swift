@@ -57,6 +57,9 @@ struct NoteView: View {
                         toolValue.activePage = pages.first
                     }
                 }
+                .onDisappear {
+                    toolValue.index = 0
+                }
             }
             .background {
                 Button("Widerrufen") {
