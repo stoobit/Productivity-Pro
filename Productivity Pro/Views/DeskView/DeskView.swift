@@ -32,21 +32,14 @@ struct DeskView: View {
                                 .interactiveDismissDisabled()
                         })
                     } else if isSubscribed == true {
-                        HStack {
-                            Button(action: { settingsView.toggle() }) {
-                                Label(title: {
-                                    Text("Premium")
-                                        .foregroundStyle(Color.primary)
-                                }) {
-                                    Image(systemName: "crown.fill")
-                                }
+                        Button(action: { settingsView.toggle() }) {
+                            Label(title: {
+                                Text("Premium")
+                                    .foregroundStyle(Color.primary)
+                            }) {
+                                Image(systemName: "crown.fill")
+                                    .foregroundStyle(Color.green)
                             }
-                            
-                            Spacer()
-                            
-                            Image(systemName: "checkmark.circle.fill")
-                                .imageScale(.large)
-                                .foregroundStyle(Color.green)
                         }
                         .frame(height: 30)
                         .manageSubscriptionsSheet(
