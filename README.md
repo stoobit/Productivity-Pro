@@ -21,10 +21,11 @@
 - assign background templates to folders 
 
 ## 🗺️ Release 2.0.7
-- show summary of homeworks when tapping on a subject in schedule 
+- show summary of homework when tapping on a subject in schedule 
 - optimize rotation of items 
 
 ## 🗺️ Release 2.0.8
+- introduce store with sticker packs and backgrounds 
 - Library Extension
 
 ## 🗺️ Release 2.1.v
