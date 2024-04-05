@@ -15,6 +15,8 @@ struct NoteView: View {
     var contentObjects: [ContentObject]
     @Bindable var contentObject: ContentObject
     
+    @State var didAppear: Int = -1
+    
     var pages: [PPPageModel] {
         contentObject.note!.pages!
             .sorted(by: { $0.index < $1.index })
@@ -45,20 +47,25 @@ struct NoteView: View {
                 .noteViewModifier(with: contentObject)
                 .onChange(of: toolManager.index) {
                     toolManager.activePage = pages[toolManager.index]
-                        
+                    
                     toolManager.activeItem = nil
                     contentObject.note?.recent = toolManager.activePage
                 }
                 .onAppear {
-                    if let recent = contentObject.note?.recent {
-                        toolValue.activePage = recent
-                        toolValue.index = recent.index
+                    if didAppear != -1 {
+                        toolManager.index = didAppear
                     } else {
-                        toolValue.activePage = pages.first
+                        if let recent = contentObject.note?.recent {
+                            toolManager.activePage = recent
+                            toolManager.index = recent.index
+                        } else {
+                            toolManager.activePage = pages.first
+                        }
                     }
                 }
                 .onDisappear {
-                    toolValue.index = 0
+                    didAppear = toolManager.index
+                    toolManager.index = 0
                 }
             }
             .background {
