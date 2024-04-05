@@ -22,7 +22,7 @@ extension OverviewRow {
             toolManager.activePage = page
         }
         
-        toolManager.index = page.index
+        pvModel.index = page.index
         subviewManager.overview.toggle()
     }
     

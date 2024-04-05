@@ -29,7 +29,7 @@ extension OverviewView {
                 })!
                     
                 toolManager.activePage = page
-                toolManager.index = page.index
+                pvModel.index = page.index
                     
             } else {
                 let index = pages[offsets.first!].index
@@ -47,7 +47,7 @@ extension OverviewView {
                     .first(where: { $0.index == index })!
                     
                 toolManager.activePage = page
-                toolManager.index = page.index
+                pvModel.index = page.index
             }
         }
     }

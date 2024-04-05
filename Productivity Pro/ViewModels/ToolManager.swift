@@ -8,7 +8,6 @@
 import SwiftUI
 
 @Observable final class ToolManager {
-    var index: Int = 0
     var selectedContentObject: ContentObject?
     
     var activePage: PPPageModel?

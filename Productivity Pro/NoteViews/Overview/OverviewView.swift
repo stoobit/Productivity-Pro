@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OverviewView: View {
     @Environment(ToolManager.self) var toolManager
+    @Environment(PagingViewModel.self) var pvModel
+    
     @State var pages: [PPPageModel] = .init()
 
     var contentObject: ContentObject

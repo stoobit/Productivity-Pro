@@ -24,7 +24,7 @@ extension NoteViewSheet {
         
         withAnimation {
             toolManager.activePage = page
-            toolManager.index += 1
+            pvModel.index += 1
         }
         
         subviewManager.addPage = false
@@ -88,7 +88,7 @@ extension NoteViewSheet {
                             toolManager.activePage = selectedPage
                         }
                         
-                        toolManager.index += 1
+                        pvModel.index += 1
                     }
                 }
             }
@@ -162,7 +162,7 @@ extension NoteViewSheet {
                             toolManager.activePage = selectedPage
                         }
                         
-                        toolManager.index += 1
+                        pvModel.index += 1
                     }
                 }
             }
@@ -186,7 +186,7 @@ extension NoteViewSheet {
                 })!
                     
                 toolManager.activePage = page
-                toolManager.index = page.index
+                pvModel.index = page.index
                     
             } else {
                 guard let index = toolManager.activePage?.index else {
@@ -207,7 +207,7 @@ extension NoteViewSheet {
                     .first(where: { $0.index == index })!
                     
                 toolManager.activePage = page
-                toolManager.index = page.index
+                pvModel.index = page.index
             }
         }
     }

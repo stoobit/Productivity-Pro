@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PageViewController<Page: View>: UIViewControllerRepresentable {
+struct PagingViewController<Page: View>: UIViewControllerRepresentable {
     var pages: [Page]
     @Binding var currentPage: Int
 
@@ -19,8 +19,7 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
         let pageViewController = UIPageViewController(
             transitionStyle: .scroll,
             navigationOrientation: .horizontal,
-            options: [UIPageViewController.OptionsKey.interPageSpacing : 20]
-        )
+            options: [UIPageViewController.OptionsKey.interPageSpacing: 20])
         pageViewController.dataSource = context.coordinator
         pageViewController.delegate = context.coordinator
 
@@ -28,20 +27,23 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
-        pageViewController.setViewControllers(
-            [context.coordinator.controllers[currentPage]], direction: .forward, animated: true)
+        if context.coordinator.controllers.indices.contains(currentPage) {
+            pageViewController.setViewControllers([
+                context.coordinator.controllers[currentPage]
+            ], direction: .forward, animated: true)
+        }
     }
 
     class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-        var parent: PageViewController
+        var parent: PagingViewController
         var controllers = [UIViewController]()
 
-        init(_ pageViewController: PageViewController) {
+        init(_ pageViewController: PagingViewController) {
             parent = pageViewController
             controllers = parent.pages.map {
                 let controller = UIHostingController(rootView: $0)
                 controller.view.backgroundColor = .clear
-                
+
                 return controller
             }
         }
@@ -56,7 +58,7 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
             if index == 0 {
                 return nil
             }
-            
+
             return controllers[index - 1]
         }
 
@@ -67,11 +69,11 @@ struct PageViewController<Page: View>: UIViewControllerRepresentable {
             guard let index = controllers.firstIndex(of: viewController) else {
                 return nil
             }
-            
+
             if index + 1 == controllers.count {
                 return nil
             }
-            
+
             return controllers[index + 1]
         }
 

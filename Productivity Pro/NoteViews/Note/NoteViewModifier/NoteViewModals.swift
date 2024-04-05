@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct NoteViewSheet: ViewModifier {
-    @Environment(\.undoManager) var undoManager
-    
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
+    @Environment(PagingViewModel.self) var pvModel
     
     var contentObject: ContentObject
     

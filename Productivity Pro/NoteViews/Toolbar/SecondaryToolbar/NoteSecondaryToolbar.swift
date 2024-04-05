@@ -21,6 +21,8 @@ struct NoteSecondaryToolbar: ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarLeading) {
             Button("Zurück", systemImage: "chevron.left") {
+                contentObject.note?.recent = toolManager.activePage
+                
                 toolManager.activeItem = nil
                 toolManager.pencilKit = false
                 

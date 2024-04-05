@@ -10,6 +10,7 @@ import SwiftUI
 struct OverviewRow: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
+    @Environment(PagingViewModel.self) var pvModel
     
     var contentObject: ContentObject
     @Bindable var page: PPPageModel

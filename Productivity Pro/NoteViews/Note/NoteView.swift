@@ -15,7 +15,7 @@ struct NoteView: View {
     var contentObjects: [ContentObject]
     @Bindable var contentObject: ContentObject
     
-    @State var didAppear: Int = -1
+    @State var pvModel: PagingViewModel = .init()
     
     var pages: [PPPageModel] {
         contentObject.note!.pages!
@@ -32,40 +32,42 @@ struct NoteView: View {
                     Text("stoobit")
                         .foregroundStyle(.clear)
                     
-                    PageViewController(
+                    PagingViewController(
                         pages: pages.map {
                             ScrollViewContainer(
                                 note: contentObject.note!,
                                 page: $0,
                                 size: proxy.size
                             )
-                        }, currentPage: $toolValue.index
+                        }, currentPage: $pvModel.index
                     )
                     .id(pages.count)
                     .id(proxy.size.width)
                 }
                 .noteViewModifier(with: contentObject)
-                .onChange(of: toolManager.index) {
-                    toolManager.activePage = pages[toolManager.index]
+                .onChange(of: pvModel.index) {
+                    if pages.indices.contains(pvModel.index) {
+                        toolManager.activePage = pages[pvModel.index]
+                    }
                     
                     toolManager.activeItem = nil
-                    contentObject.note?.recent = toolManager.activePage
                 }
                 .onAppear {
-                    if didAppear != -1 {
-                        toolManager.index = didAppear
-                    } else {
+                    if pvModel.didAppear == false {
                         if let recent = contentObject.note?.recent {
+                            pvModel.index = recent.index
                             toolManager.activePage = recent
-                            toolManager.index = recent.index
                         } else {
+                            pvModel.index = 0
                             toolManager.activePage = pages.first
                         }
+                        
+                        pvModel.didAppear = true
+                    } else {
+                        if pages.indices.contains(pvModel.index) {
+                            toolManager.activePage = pages[pvModel.index]
+                        }
                     }
-                }
-                .onDisappear {
-                    didAppear = toolManager.index
-                    toolManager.index = 0
                 }
             }
             .background {
@@ -105,6 +107,7 @@ struct NoteView: View {
                 IndicatorText(contentObject: contentObject)
                 PrinterViewContainer(contentObject: contentObject)
             }
+            .environment(pvModel)
             
         } else {
             ZStack {
