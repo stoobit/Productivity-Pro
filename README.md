@@ -14,7 +14,7 @@
 
 ## 🗺️ Release 2.0.6
 - add keyboard shortcuts
-- improve `Homework` UI (add/edit view) and perfomrance
+- improve `Homework` UI (add/edit view) and performance
 - improve schedule animations 
 
 ## 🗺️ Release 2.0.7
