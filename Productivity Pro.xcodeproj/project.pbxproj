@@ -71,6 +71,15 @@
 		BB47057C2B93923A009A5FCD /* PPAnglePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB47057A2B939239009A5FCD /* PPAnglePicker.swift */; };
 		BB48220F2B814C1400B5F314 /* RenderedPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48220E2B814C1400B5F314 /* RenderedPDF.swift */; };
 		BB4932F42B84EC310066E27B /* ImportTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4932F32B84EC310066E27B /* ImportTip.swift */; };
+		BB4984082BC32BC8008D45B0 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4984072BC32BC8008D45B0 /* Metal.framework */; };
+		BB49840A2BC32BCD008D45B0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4984092BC32BCD008D45B0 /* Accelerate.framework */; };
+		BB49840E2BC32E35008D45B0 /* LibLlama.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49840D2BC32E35008D45B0 /* LibLlama.swift */; };
+		BB4984132BC32F41008D45B0 /* llama in Frameworks */ = {isa = PBXBuildFile; productRef = BB4984122BC32F41008D45B0 /* llama */; };
+		BB4984182BC32FA7008D45B0 /* LlamaState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984172BC32FA7008D45B0 /* LlamaState.swift */; };
+		BB49841D2BC32FCD008D45B0 /* AIInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984192BC32FCD008D45B0 /* AIInputButton.swift */; };
+		BB49841E2BC32FCD008D45B0 /* AIDownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */; };
+		BB49841F2BC32FCD008D45B0 /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841B2BC32FCD008D45B0 /* AIView.swift */; };
+		BB4984202BC32FCD008D45B0 /* AILoadCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */; };
 		BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */; };
 		BB4A93C92AAEFDCC00C3AED6 /* pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1DDA292967156E0038FE16 /* pacifico.ttf */; };
 		BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */; };
@@ -411,6 +420,14 @@
 		BB47057A2B939239009A5FCD /* PPAnglePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAnglePicker.swift; sourceTree = "<group>"; };
 		BB48220E2B814C1400B5F314 /* RenderedPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderedPDF.swift; sourceTree = "<group>"; };
 		BB4932F32B84EC310066E27B /* ImportTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTip.swift; sourceTree = "<group>"; };
+		BB4984072BC32BC8008D45B0 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		BB4984092BC32BCD008D45B0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BB49840D2BC32E35008D45B0 /* LibLlama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibLlama.swift; sourceTree = "<group>"; };
+		BB4984172BC32FA7008D45B0 /* LlamaState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LlamaState.swift; sourceTree = "<group>"; };
+		BB4984192BC32FCD008D45B0 /* AIInputButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIInputButton.swift; sourceTree = "<group>"; };
+		BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIDownloadButton.swift; sourceTree = "<group>"; };
+		BB49841B2BC32FCD008D45B0 /* AIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
+		BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AILoadCustomButton.swift; sourceTree = "<group>"; };
 		BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWrapper.swift; sourceTree = "<group>"; };
 		BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		BB4A93E02AAF559800C3AED6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -637,6 +654,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4984132BC32F41008D45B0 /* llama in Frameworks */,
+				BB49840A2BC32BCD008D45B0 /* Accelerate.framework in Frameworks */,
+				BB4984082BC32BC8008D45B0 /* Metal.framework in Frameworks */,
 				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 			);
@@ -804,6 +824,51 @@
 			path = PPDoubleKeyboard;
 			sourceTree = "<group>";
 		};
+		BB49840B2BC32D1B008D45B0 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				BB4984142BC32F50008D45B0 /* llama.swift */,
+				BB49840C2BC32E13008D45B0 /* llama.cpp */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
+		BB49840C2BC32E13008D45B0 /* llama.cpp */ = {
+			isa = PBXGroup;
+			children = (
+				BB49840D2BC32E35008D45B0 /* LibLlama.swift */,
+			);
+			path = llama.cpp;
+			sourceTree = "<group>";
+		};
+		BB4984142BC32F50008D45B0 /* llama.swift */ = {
+			isa = PBXGroup;
+			children = (
+				BB4984152BC32F8A008D45B0 /* Views */,
+				BB4984162BC32F90008D45B0 /* Models */,
+			);
+			path = llama.swift;
+			sourceTree = "<group>";
+		};
+		BB4984152BC32F8A008D45B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB49841B2BC32FCD008D45B0 /* AIView.swift */,
+				BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */,
+				BB4984192BC32FCD008D45B0 /* AIInputButton.swift */,
+				BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BB4984162BC32F90008D45B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB4984172BC32FA7008D45B0 /* LlamaState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +946,7 @@
 				BBCCE4F528D53DE3001DBD8A /* Helper */,
 				BB4CDD5228D3D4D0009A409F /* Views */,
 				BB9DF5A828DFA25600AC988D /* NoteViews */,
+				BB49840B2BC32D1B008D45B0 /* AI */,
 				BB4CDD5B28D3D564009A409F /* Models */,
 				BB6F3DD2291B0E6B005BDDEB /* ViewModels */,
 				BB84DD0F2B8E764E002C2A9A /* VUModels */,
@@ -1424,6 +1490,8 @@
 		BBC4BE882AED7BBE00D87B60 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB4984092BC32BCD008D45B0 /* Accelerate.framework */,
+				BB4984072BC32BC8008D45B0 /* Metal.framework */,
 				BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */,
 			);
 			name = Frameworks;
@@ -1651,6 +1719,7 @@
 			name = "Productivity Pro";
 			packageProductDependencies = (
 				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
+				BB4984122BC32F41008D45B0 /* llama */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1713,6 +1782,7 @@
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
 				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				BB4984112BC32F41008D45B0 /* XCRemoteSwiftPackageReference "llama.cpp" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -1841,6 +1911,7 @@
 				BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */,
 				BB24E83329EB1FD40082AE98 /* DrawingView.swift in Sources */,
 				BB47056B2B93393E009A5FCD /* PPPageUndo.swift in Sources */,
+				BB49841D2BC32FCD008D45B0 /* AIInputButton.swift in Sources */,
 				BBFA92482B607E840055CE9D /* ShareMenu.swift in Sources */,
 				BB6F3DD6291B10F5005BDDEB /* ToolManager.swift in Sources */,
 				BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */,
@@ -1946,6 +2017,7 @@
 				BB047CDB2AC09A960027409F /* PremiumBadge.swift in Sources */,
 				BB82B5AF2B247CD30089D423 /* PPLineModel.swift in Sources */,
 				BB9BFB6E2AC7819400255293 /* TrashView.swift in Sources */,
+				BB49841F2BC32FCD008D45B0 /* AIView.swift in Sources */,
 				BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
@@ -1965,6 +2037,7 @@
 				BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */,
 				BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */,
 				BB9BFB5C2AC747AB00255293 /* PPNoteModel.swift in Sources */,
+				BB49840E2BC32E35008D45B0 /* LibLlama.swift in Sources */,
 				BB48220F2B814C1400B5F314 /* RenderedPDF.swift in Sources */,
 				BB5705212B35E24700F84B45 /* VocabularyView.swift in Sources */,
 				BB72A28E29760327000E9753 /* ToolView.swift in Sources */,
@@ -1977,6 +2050,7 @@
 				BBA3A0292B29AF2500099F6D /* MDEditorView.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
+				BB49841E2BC32FCD008D45B0 /* AIDownloadButton.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,
 				BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */,
@@ -1992,6 +2066,7 @@
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
 				BB57051D2B35C57B00F84B45 /* LTabIndicator.swift in Sources */,
 				BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */,
+				BB4984182BC32FA7008D45B0 /* LlamaState.swift in Sources */,
 				BBB538832B40BA7F00C874EA /* ExportableBackupModel.swift in Sources */,
 				BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */,
 				BB7332502A294D440001FD6A /* PageBackgroundView.swift in Sources */,
@@ -1999,6 +2074,7 @@
 				BB854AE029E06531002EDF7A /* PagingModifier.swift in Sources */,
 				BB4A93F02AAF8EB200C3AED6 /* ScheduleAddSubject.swift in Sources */,
 				BB3208A82981DFFF0014F602 /* CameraView.swift in Sources */,
+				BB4984202BC32FCD008D45B0 /* AILoadCustomButton.swift in Sources */,
 				BBC0BAB02B47F2CB00D47A21 /* ExportableMediaModel.swift in Sources */,
 				BBDC62722905EED800364B57 /* IndicatorText.swift in Sources */,
 				BB9367702AC9CE5D0096F20E /* PPImmersiveObjectModel.swift in Sources */,
@@ -2526,6 +2602,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BB4984112BC32F41008D45B0 /* XCRemoteSwiftPackageReference "llama.cpp" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ggerganov/llama.cpp.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
@@ -2537,6 +2621,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB4984122BC32F41008D45B0 /* llama */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB4984112BC32F41008D45B0 /* XCRemoteSwiftPackageReference "llama.cpp" */;
+			productName = llama;
+		};
 		BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;

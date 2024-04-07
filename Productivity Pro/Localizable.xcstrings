@@ -31,6 +31,16 @@
         }
       }
     },
+    "%@ (Downloading %lld%%)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (Downloading %2$lld%%)"
+          }
+        }
+      }
+    },
     "%@ bearbeiten" : {
       "localizations" : {
         "en" : {
@@ -80,6 +90,12 @@
           }
         }
       }
+    },
+    "1. Make sure the model is in GGUF Format" : {
+
+    },
+    "2. Copy the download link of the quantized model" : {
+
     },
     "3. Deklination" : {
       "localizations" : {
@@ -301,6 +317,9 @@
         }
       }
     },
+    "Bench" : {
+
+    },
     "Bewegen" : {
       "localizations" : {
         "en" : {
@@ -391,6 +410,15 @@
         }
       }
     },
+    "Cancel" : {
+
+    },
+    "Clear" : {
+
+    },
+    "Copy" : {
+
+    },
     "Datei importieren" : {
       "localizations" : {
         "en" : {
@@ -410,6 +438,9 @@
           }
         }
       }
+    },
+    "Default Models" : {
+
     },
     "Der Papierkorb ist leer." : {
       "localizations" : {
@@ -500,6 +531,18 @@
           }
         }
       }
+    },
+    "Download Custom Model" : {
+
+    },
+    "Download Models From Hugging Face" : {
+
+    },
+    "Downloaded Models" : {
+
+    },
+    "Downloading %lld%%" : {
+
     },
     "Drehung" : {
       "localizations" : {
@@ -821,6 +864,9 @@
         }
       }
     },
+    "Help" : {
+
+    },
     "Hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -1021,6 +1067,12 @@
         }
       }
     },
+    "Load %@" : {
+
+    },
+    "Load Custom Model" : {
+
+    },
     "Löschen" : {
       "localizations" : {
         "en" : {
@@ -1110,6 +1162,9 @@
           }
         }
       }
+    },
+    "Model Settings" : {
+
     },
     "Montag" : {
       "localizations" : {
@@ -1230,6 +1285,9 @@
           }
         }
       }
+    },
+    "Paste Quantized Download Link" : {
+
     },
     "pdf" : {
       "localizations" : {
@@ -1501,6 +1559,9 @@
         }
       }
     },
+    "Send" : {
+
+    },
     "Sortieren" : {
       "localizations" : {
         "en" : {
@@ -1660,6 +1721,12 @@
           }
         }
       }
+    },
+    "Unknown status" : {
+
+    },
+    "View Models" : {
+
     },
     "Vorlage ändern" : {
       "localizations" : {

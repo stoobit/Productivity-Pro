@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "llama.cpp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ggerganov/llama.cpp.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "855f54402e866ed19d8d675b56a81c844c64b325"
+      }
+    },
+    {
       "identity" : "networkimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gonzalezreal/NetworkImage",
