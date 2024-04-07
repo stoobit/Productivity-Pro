@@ -6,6 +6,10 @@ struct AIView: View {
     @State private var showingHelp = false    // To track if Help Sheet should be shown
 
     var body: some View {
+       Text("hello")
+    }
+    
+    @ViewBuilder func OLD() -> some View {
         NavigationView {
             VStack {
                 ScrollView(.vertical, showsIndicators: true) {
