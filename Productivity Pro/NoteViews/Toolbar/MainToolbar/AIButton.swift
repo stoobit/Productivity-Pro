@@ -11,7 +11,6 @@ extension NoteMainToolbar {
     @ViewBuilder func AIButton() -> some View {
         Button(action: { subviewManager.showAI.toggle() }) {
             Label("AI", systemImage: "brain")
-                .accentColor(Color.green)
         }
     }
 }
