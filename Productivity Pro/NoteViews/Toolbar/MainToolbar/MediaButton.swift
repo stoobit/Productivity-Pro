@@ -10,7 +10,6 @@ import SwiftUI
 extension NoteMainToolbar {
     @ViewBuilder func MediaButton() -> some View {
         Menu(content: {
-            
             Section {
                 Button(action: {
                     toolManager.pencilKit = false
@@ -18,7 +17,7 @@ extension NoteMainToolbar {
                 }) {
                     Label("Kamera", systemImage: "camera")
                 }
-                
+
                 Button(action: {
                     toolManager.pencilKit = false
                     subviewManager.pickMedia.toggle()
@@ -29,7 +28,5 @@ extension NoteMainToolbar {
         }) {
             Label("Bild", systemImage: "photo")
         }
-        .modifier(MediaImport(contentObject: contentObject))
-        
     }
 }

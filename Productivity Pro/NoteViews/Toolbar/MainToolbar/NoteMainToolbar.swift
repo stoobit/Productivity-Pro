@@ -37,6 +37,10 @@ struct NoteMainToolbar: CustomizableToolbarContent {
                 MediaButton()
             }
             
+            ToolbarItem(id: "ai", placement: .secondaryAction) {
+                AIButton()
+            }
+            
         } else {
             Group {
                 ToolbarItem(id: "canvas", placement: .secondaryAction) {

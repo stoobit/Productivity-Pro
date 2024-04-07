@@ -18,6 +18,7 @@ struct NoteViewSheet: ViewModifier {
         @Bindable var manager = subviewManager
         
         content
+            .modifier(MediaImport(contentObject: contentObject))
             .sheet(isPresented: $manager.overview, content: {
                 OverviewContainerView(contentObject: contentObject)
             })
@@ -35,6 +36,9 @@ struct NoteViewSheet: ViewModifier {
                 } else {
                     ProgressView()
                 }
+            })
+            .sheet(isPresented: $manager.showAI, content: {
+                AIView()
             })
             .sheet(isPresented: $manager.changePage, content: {
                 if let page = toolManager.activePage {

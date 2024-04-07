@@ -80,6 +80,7 @@
 		BB49841E2BC32FCD008D45B0 /* AIDownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */; };
 		BB49841F2BC32FCD008D45B0 /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841B2BC32FCD008D45B0 /* AIView.swift */; };
 		BB4984202BC32FCD008D45B0 /* AILoadCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */; };
+		BB4984222BC332EA008D45B0 /* AIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984212BC332EA008D45B0 /* AIButton.swift */; };
 		BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */; };
 		BB4A93C92AAEFDCC00C3AED6 /* pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1DDA292967156E0038FE16 /* pacifico.ttf */; };
 		BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */; };
@@ -428,6 +429,7 @@
 		BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIDownloadButton.swift; sourceTree = "<group>"; };
 		BB49841B2BC32FCD008D45B0 /* AIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
 		BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AILoadCustomButton.swift; sourceTree = "<group>"; };
+		BB4984212BC332EA008D45B0 /* AIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIButton.swift; sourceTree = "<group>"; };
 		BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWrapper.swift; sourceTree = "<group>"; };
 		BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		BB4A93E02AAF559800C3AED6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -791,6 +793,7 @@
 				BB9DF5AD28E0664C00AC988D /* NoteView.swift */,
 				BB7987022AD497C1003469E6 /* NoteViewModifier.swift */,
 				BB655B012AB772F700FB005A /* NoteViewModifier */,
+				BB4984232BC333BA008D45B0 /* MediaImport */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -867,6 +870,14 @@
 				BB4984172BC32FA7008D45B0 /* LlamaState.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BB4984232BC333BA008D45B0 /* MediaImport */ = {
+			isa = PBXGroup;
+			children = (
+				BBA803D429BE9CB2005F4031 /* MediaImport.swift */,
+			);
+			path = MediaImport;
 			sourceTree = "<group>";
 		};
 		BB4A93CD2AAF15A200C3AED6 /* SubjectSettings */ = {
@@ -1616,7 +1627,7 @@
 				BB7987042AD49BA1003469E6 /* ShapesButton.swift */,
 				BB7987062AD49BF7003469E6 /* TextFieldButton.swift */,
 				BB7987082AD49BFE003469E6 /* MediaButton.swift */,
-				BBA803D429BE9CB2005F4031 /* MediaImport.swift */,
+				BB4984212BC332EA008D45B0 /* AIButton.swift */,
 			);
 			path = MainToolbar;
 			sourceTree = "<group>";
@@ -1993,6 +2004,7 @@
 				BBD930F72B1FEBA000A37F95 /* StoreViewModel.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GeneralSettings.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
+				BB4984222BC332EA008D45B0 /* AIButton.swift in Sources */,
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
 				BB36D4C82B9D31EC00CBDCAD /* ArrangeGeneralView.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,

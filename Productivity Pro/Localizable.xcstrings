@@ -147,6 +147,9 @@
         }
       }
     },
+    "AI" : {
+
+    },
     "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
       "localizations" : {
         "en" : {

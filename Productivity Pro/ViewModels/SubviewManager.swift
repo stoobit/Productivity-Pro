@@ -15,6 +15,7 @@ import Observation
     
     var showInspector: Bool = false
     var showCalculator: Bool = false
+    var showAI: Bool = false
     
     var renameView: Bool = false
     var overview: Bool = false
