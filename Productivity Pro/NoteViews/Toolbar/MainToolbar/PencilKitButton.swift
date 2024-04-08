@@ -15,9 +15,9 @@ extension NoteMainToolbar {
 
         }) {
             if toolManager.pencilKit {
-                Image(systemName: "pencil.tip.crop.circle.fill")
+                Label("Apple Pencil", systemImage: "pencil.tip.crop.circle.fill")
             } else {
-                Image(systemName: "pencil.tip.crop.circle")
+                Label("Apple Pencil", systemImage: "pencil.tip.crop.circle")
             }
         }
     }
