@@ -30,22 +30,24 @@
 - Library Extension
 
 ## 🗺️ Release 2.1.v
+- AI Integration
+
+## 🗺️ Release 2.2.v
 - Mindmap
-- Unsplash Integration 
 - Pi Integration
 - Library Extension
 
-## 🗺️ Release 2.2.v
+## 🗺️ Release 2.3.v
 - Sticker
 - Insertable Background
 - PencilKit Shape Recognition
 - Library Extension
 
-## 🗺️ Release 2.3.v
+## 🗺️ Release 2.4.v
 - Mindmaps
 - Library Extension
 
-## 🗺️ Release 2.4.v
+## 🗺️ Release 2.5.v
 - Charts
 - Maps
 - Library Extension

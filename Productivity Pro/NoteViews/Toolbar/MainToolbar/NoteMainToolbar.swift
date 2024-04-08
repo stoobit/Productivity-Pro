@@ -37,9 +37,11 @@ struct NoteMainToolbar: CustomizableToolbarContent {
                 MediaButton()
             }
             
+            #if DEBUG
             ToolbarItem(id: "ai", placement: .secondaryAction) {
                 AIButton()
             }
+            #endif
             
         } else {
             Group {
