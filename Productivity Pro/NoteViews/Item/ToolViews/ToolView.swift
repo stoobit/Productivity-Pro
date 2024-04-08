@@ -106,6 +106,7 @@ struct ToolView: View {
                             }
                             
                             toolManager.dragType = .none
+                            vuModel.update.toggle()
                         }
                         .updating($width) { _, startLocation, _ in
                             startLocation = startLocation ?? vuModel.size.width
@@ -131,6 +132,7 @@ struct ToolView: View {
                             }
                             
                             toolManager.dragType = .none
+                            vuModel.update.toggle()
                         }
                         .updating($height) { _, startLocation, _ in
                             startLocation = startLocation ?? item.height

@@ -60,35 +60,45 @@ struct TextFieldItemView: View {
             }
         }
         .rotationEffect(Angle(degrees: item.textField?.rotation ?? 0))
-        .onChange(of: vuModel.size) { render() }
         .onChange(of: scale) { render() }
+        .onChange(of: vuModel.update) { render() }
+        .onChange(of: vuModel.size) {
+            if vuModel.created {
+                render(preview: subviewManager.showInspector ? false : true)
+            } else {
+                render()
+                vuModel.created = true
+            }
+        }
         .onChange(of: scenePhase) {
             if scenePhase == .active {
                 render()
             }
         }
         .onChange(of: subviewManager.rtfEditor) {
-            render()
+            if toolManager.activeItem == item {
+                render()
+            }
         }
         .onAppear {
-            render()
+            if vuModel.created {
+                render()
+            }
         }
     }
     
-    @MainActor func render() {
+    @MainActor func render(preview: Bool = false) {
         if highRes == false {
             var image: UIImage = renderedImage ?? UIImage()
-            
             var view: some View {
                 MarkdownView(item: item, editItem: vuModel)
                     .environment(toolManager)
             }
             
             let renderer = ImageRenderer(content: view)
-            let scale = 2 * scale
-            
             renderer.isOpaque = false
             
+            let scale = preview ? 1 : 2 * scale
             if scale < 1 {
                 renderer.scale = 1
             } else {

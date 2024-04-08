@@ -4,7 +4,6 @@
 - minimum zoom scale of UIScrollView
 - update PageViewController when window size changes
 - improve overview
-- improve textfield rendering performance (-> when size gets changed)
 
 ## 🗺️ Release 2.0.5
 - loading animation when printing pdf gets rendered 
@@ -31,6 +30,9 @@
 
 ## 🗺️ Release 2.1.v
 - AI Integration
+
+## 🗺️ Release 2.1.1
+- BUG FIXES AND PERFORMANCE IMPROVEMENTS
 
 ## 🗺️ Release 2.2.v
 - Mindmap

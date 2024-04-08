@@ -118,11 +118,17 @@ struct ArrangeView: View {
                     return item
                 }
             }
+            .onChange(of: item.width) {
+                width = item.width
+            }
             .onChange(of: height) {
                 toolManager.activePage?.store(item) {
                     item.height = height
                     return item
                 }
+            }
+            .onChange(of: item.height) {
+                height = item.height
             }
             
             RotationView()
