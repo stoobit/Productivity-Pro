@@ -8,7 +8,6 @@
 import PencilKit
 import SwiftUI
 
-@MainActor
 struct DrawingView: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.undoManager) var undoManager
