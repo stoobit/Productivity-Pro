@@ -347,4 +347,6 @@ actor LlamaContext {
     }
 }
 
-
+extension OpaquePointer: @unchecked Sendable {
+    
+}
