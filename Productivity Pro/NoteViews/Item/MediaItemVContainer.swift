@@ -22,32 +22,22 @@ struct MediaItemVContainer: View {
         }
         
         return Group {
-            MediaItemView(
-                item: item,
-                vuModel: vuModel,
-                scale: $scale
-            )
-            .modifier(VUModifier(vuModel: vuModel, item: item))
-            .position(
-                x: (vuModel.position.x) * scale,
-                y: (vuModel.position.y) * scale
-            )
-            .modifier(
-                DragItemModifier(
-                    item: item, page: page,
-                    position: $vuModel.position,
-                    scale: $scale
+            MediaItemView(item: item, vuModel: vuModel, scale: $scale)
+                .modifier(VUModifier(vuModel: vuModel, item: item))
+                .position(
+                    x: (vuModel.position.x) * scale,
+                    y: (vuModel.position.y) * scale
                 )
-            )
+                .modifier(
+                    DragItemModifier(
+                        item: item, page: page,
+                        position: $vuModel.position,
+                        scale: $scale
+                    )
+                )
             
-            ToolView(
-                page: page,
-                item: item,
-                position: $vuModel.position,
-                size: $vuModel.size,
-                scale: $scale
-            )
-            .zIndex(index)
+            ToolView(page: page, item: item, vuModel: vuModel, scale: $scale)
+                .zIndex(index)
         }
     }
     

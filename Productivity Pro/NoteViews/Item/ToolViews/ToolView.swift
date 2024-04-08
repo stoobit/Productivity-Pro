@@ -13,9 +13,7 @@ struct ToolView: View {
     
     @Bindable var page: PPPageModel
     @Bindable var item: PPItemModel
-    
-    @Binding var position: CGPoint
-    @Binding var size: CGSize
+    @Bindable var vuModel: VUModel
     
     @GestureState var width: Double? = nil
     @GestureState var height: Double? = nil
@@ -48,8 +46,8 @@ struct ToolView: View {
             }
             .rotationEffect(Angle(degrees: getRotation()))
             .position(
-                x: position.x * scale,
-                y: position.y * scale
+                x: vuModel.position.x * scale,
+                y: vuModel.position.y * scale
             )
             .frame(
                 width: scale * getFrame().width,
@@ -63,8 +61,8 @@ struct ToolView: View {
         Group {
             DragAnchor(color: .green)
                 .offset(
-                    x: (size.width / 2) * scale,
-                    y: (size.height / 2) * scale
+                    x: (vuModel.size.width / 2) * scale,
+                    y: (vuModel.size.height / 2) * scale
                 )
                 .gesture(
                     DragGesture(minimumDistance: 0)
@@ -73,8 +71,8 @@ struct ToolView: View {
                         }
                         .onEnded { _ in
                             page.store(item) {
-                                item.width = size.width
-                                item.height = size.height
+                                item.width = vuModel.size.width
+                                item.height = vuModel.size.height
                              
                                 return item
                             }
@@ -82,10 +80,10 @@ struct ToolView: View {
                             toolManager.dragType = .none
                         }
                         .updating($width) { _, width, _ in
-                            width = width ?? size.width
+                            width = width ?? vuModel.size.width
                         }
                         .updating($height) { _, height, _ in
-                            height = height ?? size.height
+                            height = height ?? vuModel.size.height
                         }
                 )
         }
@@ -95,7 +93,7 @@ struct ToolView: View {
     @ViewBuilder func WidthView() -> some View {
         Group {
             DragAnchor(color: .main)
-                .offset(x: size.width / 2 * scale, y: 0)
+                .offset(x: vuModel.size.width / 2 * scale, y: 0)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
@@ -103,14 +101,14 @@ struct ToolView: View {
                         }
                         .onEnded { _ in
                             page.store(item) {
-                                item.width = size.width
+                                item.width = vuModel.size.width
                                 return item
                             }
                             
                             toolManager.dragType = .none
                         }
                         .updating($width) { _, startLocation, _ in
-                            startLocation = startLocation ?? size.width
+                            startLocation = startLocation ?? vuModel.size.width
                         }
                 )
         }
@@ -120,7 +118,7 @@ struct ToolView: View {
     @ViewBuilder func HeightView() -> some View {
         Group {
             DragAnchor(color: .main)
-                .offset(x: 0, y: (size.height / 2) * scale)
+                .offset(x: 0, y: (vuModel.size.height / 2) * scale)
                 .gesture(
                     DragGesture(minimumDistance: 0)
                         .onChanged { value in
@@ -128,7 +126,7 @@ struct ToolView: View {
                         }
                         .onEnded { _ in
                             page.store(item) {
-                                item.height = size.height
+                                item.height = vuModel.size.height
                                 return item
                             }
                             
@@ -150,8 +148,8 @@ struct ToolView: View {
             .overlay {
                 Rectangle()
                     .frame(
-                        width: size.width * scale,
-                        height: size.height * scale
+                        width: vuModel.size.width * scale,
+                        height: vuModel.size.height * scale
                     )
                     .foregroundColor(.clear)
                     .border(

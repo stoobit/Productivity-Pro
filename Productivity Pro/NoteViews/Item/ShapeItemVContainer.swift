@@ -40,14 +40,8 @@ struct ShapeItemViewContainer: View {
                 )
             )
             
-            ToolView(
-                page: page,
-                item: item,
-                position: $vuModel.position,
-                size: $vuModel.size,
-                scale: $scale
-            )
-            .zIndex(index)
+            ToolView(page: page, item: item, vuModel: vuModel, scale: $scale)
+                .zIndex(index)
         }
     }
     
