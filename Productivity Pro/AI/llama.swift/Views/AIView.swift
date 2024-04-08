@@ -6,7 +6,7 @@ struct AIView: View {
     @State private var showingHelp = false    // To track if Help Sheet should be shown
 
     var body: some View {
-       Text("hello")
+       OLD()
     }
     
     @ViewBuilder func OLD() -> some View {

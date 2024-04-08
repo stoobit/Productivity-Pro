@@ -16,8 +16,7 @@ struct AIDownloadButton: View {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename)
     }
 
-    private func checkFileExistenceAndUpdateStatus() {
-    }
+    private func checkFileExistenceAndUpdateStatus() {}
 
     init(llamaState: LlamaState, modelName: String, modelUrl: String, filename: String) {
         self.llamaState = llamaState
@@ -41,7 +40,7 @@ struct AIDownloadButton: View {
                 return
             }
 
-            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+            guard let response = response as? HTTPURLResponse, (200 ... 299).contains(response.statusCode) else {
                 print("Server error!")
                 return
             }
@@ -54,7 +53,11 @@ struct AIDownloadButton: View {
                     llamaState.cacheCleared = false
 
                     let model = AIModel(name: modelName, url: modelUrl, filename: filename, status: "downloaded")
-                    llamaState.downloadedModels.append(model)
+                    
+                    DispatchQueue.main.async {
+                        llamaState.downloadedModels.append(model)
+                    }
+                    
                     status = "downloaded"
                 }
             } catch let err {
@@ -101,11 +104,11 @@ struct AIDownloadButton: View {
                 Text("Unknown status")
             }
         }
-        .onDisappear() {
+        .onDisappear {
             downloadTask?.cancel()
         }
-        .onChange(of: llamaState.cacheCleared) { 
-            if  llamaState.cacheCleared {
+        .onChange(of: llamaState.cacheCleared) {
+            if llamaState.cacheCleared {
                 downloadTask?.cancel()
                 let fileURL = AIDownloadButton.getFileURL(filename: filename)
                 status = FileManager.default.fileExists(atPath: fileURL.path) ? "downloaded" : "download"
