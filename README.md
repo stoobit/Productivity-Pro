@@ -3,13 +3,13 @@
 ## 🗺️ Release 2.0.4
 - minimum zoom scale of UIScrollView
 - update PageViewController when window size changes
-- improve overview
 
 ## 🗺️ Release 2.0.5
 - loading animation when printing pdf gets rendered 
 - improve PencilKit performance 
 - improve PDFKit performance
 - pdf rendering updates
+- improve overview
 
 ## 🗺️ Release 2.0.6
 - add keyboard shortcuts
