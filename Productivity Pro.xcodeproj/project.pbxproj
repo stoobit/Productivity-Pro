@@ -81,6 +81,8 @@
 		BB49841F2BC32FCD008D45B0 /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841B2BC32FCD008D45B0 /* AIView.swift */; };
 		BB4984202BC32FCD008D45B0 /* AILoadCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */; };
 		BB4984222BC332EA008D45B0 /* AIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984212BC332EA008D45B0 /* AIButton.swift */; };
+		BB49EE042BC5C4D1004CB803 /* PPScrollViewUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49EE032BC5C4D1004CB803 /* PPScrollViewUpdate.swift */; };
+		BB49EE062BC5C4DA004CB803 /* PPScrollViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49EE052BC5C4DA004CB803 /* PPScrollViewCoordinator.swift */; };
 		BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */; };
 		BB4A93C92AAEFDCC00C3AED6 /* pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1DDA292967156E0038FE16 /* pacifico.ttf */; };
 		BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */; };
@@ -430,6 +432,8 @@
 		BB49841B2BC32FCD008D45B0 /* AIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
 		BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AILoadCustomButton.swift; sourceTree = "<group>"; };
 		BB4984212BC332EA008D45B0 /* AIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIButton.swift; sourceTree = "<group>"; };
+		BB49EE032BC5C4D1004CB803 /* PPScrollViewUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollViewUpdate.swift; sourceTree = "<group>"; };
+		BB49EE052BC5C4DA004CB803 /* PPScrollViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollViewCoordinator.swift; sourceTree = "<group>"; };
 		BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWrapper.swift; sourceTree = "<group>"; };
 		BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		BB4A93E02AAF559800C3AED6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -1151,6 +1155,8 @@
 			children = (
 				BBBE85F62A4B92B2000A5AB4 /* ScrollViewContainer.swift */,
 				BBE9196D28F381FE001EF750 /* PPScrollView.swift */,
+				BB49EE032BC5C4D1004CB803 /* PPScrollViewUpdate.swift */,
+				BB49EE052BC5C4DA004CB803 /* PPScrollViewCoordinator.swift */,
 			);
 			path = ScrollViewContainer;
 			sourceTree = "<group>";
@@ -2000,6 +2006,7 @@
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
 				BB36D4CA2B9D324700CBDCAD /* ArrangeStackingView.swift in Sources */,
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
+				BB49EE042BC5C4D1004CB803 /* PPScrollViewUpdate.swift in Sources */,
 				BBD930F72B1FEBA000A37F95 /* StoreViewModel.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GeneralSettings.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
@@ -2075,6 +2082,7 @@
 				BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */,
 				BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */,
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
+				BB49EE062BC5C4DA004CB803 /* PPScrollViewCoordinator.swift in Sources */,
 				BB57051D2B35C57B00F84B45 /* LTabIndicator.swift in Sources */,
 				BB7F3FF92AC8171500083FCA /* CreateNoteViewHelper.swift in Sources */,
 				BB4984182BC32FA7008D45B0 /* LlamaState.swift in Sources */,
