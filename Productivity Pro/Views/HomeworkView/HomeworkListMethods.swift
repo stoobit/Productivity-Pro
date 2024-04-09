@@ -14,12 +14,14 @@ extension HomeworkList {
         return Array(Set(dates)).sorted(by: { $0 < $1 })
     }
     
-    func formattedString(of date: Date) -> String {
+    func formattedString(of date: Date) -> LocalizedStringKey {
         let calendar = Calendar.current
         
         if calendar.numberOfDaysBetween(Date(), and: date) > 7  {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "d. MMMM"
+            dateFormatter.dateFormat = String(
+                localized: LocalizedStringResource(stringLiteral: "d. MMMM")
+            )
             
             return "Bis zum \(dateFormatter.string(from: date)) zu erledigen"
             

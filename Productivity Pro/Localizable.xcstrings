@@ -148,7 +148,14 @@
       }
     },
     "AI" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AI"
+          }
+        }
+      }
     },
     "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
       "localizations" : {
@@ -373,6 +380,46 @@
         }
       }
     },
+    "Bis %@ zu erledigen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To be done by %@"
+          }
+        }
+      }
+    },
+    "Bis heute zu erledigen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To be done by today"
+          }
+        }
+      }
+    },
+    "Bis morgen zu erledigen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To be done by tomorrow"
+          }
+        }
+      }
+    },
+    "Bis zum %@ zu erledigen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To be done by %@"
+          }
+        }
+      }
+    },
     "Bitte importiere die Datei über das Import-Menü oder die Backup-Ansicht." : {
       "localizations" : {
         "en" : {
@@ -421,6 +468,16 @@
     },
     "Copy" : {
 
+    },
+    "d. MMMM" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MMMM d"
+          }
+        }
+      }
     },
     "Datei importieren" : {
       "localizations" : {
