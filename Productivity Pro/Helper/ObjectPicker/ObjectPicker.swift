@@ -34,7 +34,9 @@ struct ObjectPicker: View {
                     isPresented: $isPresented,
                     selectedObject: $selectedObject, 
                     parent: "root",
-                    title: "Notizen",
+                    title: String(localized: LocalizedStringResource(
+                        stringLiteral: "Notizen")
+                    ),
                     id: id,
                     type: type
                 )

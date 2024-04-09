@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 21.09.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct HomeworkList: View {
     @Environment(\.modelContext) var context
@@ -20,7 +20,7 @@ struct HomeworkList: View {
     @Query(animation: .bouncy) var contentObjects: [ContentObject]
     
     @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
     @Binding var presentAdd: Bool
     @State var presentInfo: Bool = false
@@ -39,9 +39,7 @@ struct HomeworkList: View {
                                 )
                             
                             context.delete(homework)
-                            try? context.save()
                         }
-                        
                     }
                 }
             }
@@ -61,6 +59,5 @@ struct HomeworkList: View {
             
             try? context.save()
         }
-        
     }
 }

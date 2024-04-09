@@ -55,9 +55,9 @@ struct HomeworkAddView: View {
                     
                     HStack {
                         Text(
-                            pickedNote.isEmpty ? "Notiz" : contentObjects.first(where: {
+                            LocalizedStringKey(pickedNote.isEmpty ? "Notiz" : contentObjects.first(where: {
                                 $0.id.uuidString == pickedNote
-                            })?.title ?? "Fehler"
+                            })?.title ?? "Fehler")
                         )
                         
                         Spacer()
