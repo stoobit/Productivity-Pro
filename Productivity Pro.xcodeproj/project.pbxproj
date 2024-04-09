@@ -1788,7 +1788,6 @@
 			knownRegions = (
 				de,
 				en,
-				Base,
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
