@@ -9,24 +9,22 @@ import SwiftUI
 
 extension PPScrollView {
     func updateUIView(_ uiView: UIScrollView, context: Context) {
-        if uiView.minimumZoomScale != getScale() {
-            uiView.minimumZoomScale = getScale()
-            
-            if getScale() > uiView.zoomScale {
-                uiView.setZoomScale(getScale(), animated: true)
+        let minimumScale = minimumScale()
+
+        if minimumScale != uiView.minimumZoomScale {
+            uiView.minimumZoomScale = minimumScale
+            if uiView.zoomScale < minimumScale {
+                uiView.setZoomScale(minimumScale, animated: true)
             }
-            
+
             Task { @MainActor in
-                scale = uiView.zoomScale
+                scale = minimumScale
             }
         }
-        
-        if uiView.maximumZoomScale != 2.2 {
-            uiView.maximumZoomScale = 2.2
-            uiView.setZoomScale(getScale(), animated: false)
-        }
-        
+
         context.coordinator.hostingController.rootView = content()
-        assert(context.coordinator.hostingController.view.superview == uiView)
+        assert(
+            context.coordinator.hostingController.view.superview == uiView
+        )
     }
 }

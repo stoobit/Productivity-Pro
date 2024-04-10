@@ -10,39 +10,46 @@ import SwiftUI
 extension PPScrollView {
     @MainActor
     final class Coordinator: NSObject, UIScrollViewDelegate {
-        var toolManager: ToolManager
+        @Bindable var toolManager: ToolManager
         var hostingController: UIHostingController<Content>
         
         @Binding var scale: CGFloat
         @Binding var offset: CGPoint
         
-        @Binding var editorVisible: Bool
-        @Binding var frameVisible: Bool
-        
         init(
             hostingController: UIHostingController<Content>,
-            scale: Binding<CGFloat>,
-            offset: Binding<CGPoint>,
-            editorVisible: Binding<Bool>,
-            frameVisible: Binding<Bool>,
+            scale: Binding<CGFloat>, offset: Binding<CGPoint>,
             toolManager: ToolManager
         ) {
             self.hostingController = hostingController
+            self.toolManager = toolManager
+            
             _scale = scale
             _offset = offset
-            _editorVisible = editorVisible
-            _frameVisible = frameVisible
-            self.toolManager = toolManager
         }
         
         func viewForZooming(in scrollView: UIScrollView) -> UIView? {
             return hostingController.view
         }
         
-        func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        func scrollViewDidZoom(_ scrollView: UIScrollView) {
+            let bounds = scrollView.bounds
+            let size = scrollView.contentSize
+            
+            let offsetX = max((bounds.width - size.width) * 0.5, 0)
+            let offsetY = max((bounds.height - size.height) * 0.5, 0)
+            
+            scrollView.contentInset = UIEdgeInsets(
+                top: offsetY, left: offsetX, bottom: 0, right: 0
+            )
+        }
+        
+        func scrollViewWillBeginZooming(
+            _ scrollView: UIScrollView, with view: UIView?
+        ) {
             Task { @MainActor in
-                editorVisible = false
-                frameVisible = false
+                toolManager.editorVisible = false
+                toolManager.frameVisible = false
             }
         }
         
@@ -56,8 +63,8 @@ extension PPScrollView {
                 toolManager.scale = scrollView.zoomScale
                 toolManager.offset = scrollView.contentOffset
                 
-                editorVisible = true
-                frameVisible = true
+                toolManager.editorVisible = true
+                toolManager.frameVisible = true
             }
         }
         
@@ -97,14 +104,8 @@ extension PPScrollView {
         @Bindable var toolValue = toolManager
         
         return Coordinator(
-            hostingController: UIHostingController(
-                rootView: content()
-            ),
-            scale: $scale,
-            offset: $offset,
-            editorVisible: $toolValue.editorVisible,
-            frameVisible: $toolValue.frameVisible,
-            toolManager: toolValue
+            hostingController: UIHostingController(rootView: content()),
+            scale: $scale, offset: $offset, toolManager: toolValue
         )
     }
 }
