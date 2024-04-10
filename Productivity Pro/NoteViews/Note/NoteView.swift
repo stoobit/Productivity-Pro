@@ -35,9 +35,8 @@ struct NoteView: View {
                     PagingViewController(
                         pages: pages.map {
                             ScrollViewContainer(
-                                note: contentObject.note!,
-                                page: $0,
-                                size: proxy.size
+                                note: contentObject.note!, page: $0,
+                                proxy: proxy
                             )
                         }, currentPage: $pvModel.index
                     )
@@ -45,30 +44,8 @@ struct NoteView: View {
                     .id(proxy.size.width)
                 }
                 .noteViewModifier(with: contentObject)
-                .onChange(of: pvModel.index) {
-                    if pages.indices.contains(pvModel.index) {
-                        toolManager.activePage = pages[pvModel.index]
-                    }
-                    
-                    toolManager.activeItem = nil
-                }
-                .onAppear {
-                    if pvModel.didAppear == false {
-                        if let recent = contentObject.note?.recent {
-                            pvModel.index = recent.index
-                            toolManager.activePage = recent
-                        } else {
-                            pvModel.index = 0
-                            toolManager.activePage = pages.first
-                        }
-                        
-                        pvModel.didAppear = true
-                    } else {
-                        if pages.indices.contains(pvModel.index) {
-                            toolManager.activePage = pages[pvModel.index]
-                        }
-                    }
-                }
+                .onChange(of: pvModel.index) { updateIndex() }
+                .onAppear { onAppear() }
             }
             .background {
                 Button("Widerrufen") {
@@ -120,5 +97,31 @@ struct NoteView: View {
                 )
             }
         }
+    }
+    
+    func onAppear() {
+        if pvModel.didAppear == false {
+            if let recent = contentObject.note?.recent {
+                pvModel.index = recent.index
+                toolManager.activePage = recent
+            } else {
+                pvModel.index = 0
+                toolManager.activePage = pages.first
+            }
+            
+            pvModel.didAppear = true
+        } else {
+            if pages.indices.contains(pvModel.index) {
+                toolManager.activePage = pages[pvModel.index]
+            }
+        }
+    }
+    
+    func updateIndex() {
+        if pages.indices.contains(pvModel.index) {
+            toolManager.activePage = pages[pvModel.index]
+        }
+        
+        toolManager.activeItem = nil
     }
 }

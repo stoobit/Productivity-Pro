@@ -13,7 +13,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     @Environment(SubviewManager.self) var subviewManager
     
     var isPortrait: Bool
-    var size: CGSize
+    var proxy: GeometryProxy
     
     @Binding var scale: CGFloat
     @Binding var offset: CGPoint
@@ -45,17 +45,37 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         
         Task { @MainActor in
             scale = scrollView.zoomScale
+            offset = scrollView.contentOffset
+            
+            toolManager.scale = scrollView.zoomScale
+            toolManager.offset = scrollView.contentOffset
         }
         
         return scrollView
     }
     
     func fitScale() -> CGFloat {
-        return size.width / (isPortrait ? shortSide : longSide)
+        let frame = proxy.frame(in: .local)
+        
+        if isPortrait {
+            return frame.width / shortSide
+        } else {
+            if frame.width > frame.height {
+                return frame.width / longSide
+            } else {
+                return frame.height / shortSide
+            }
+        }
     }
     
     func minimumScale() -> CGFloat {
-        return (size.height / (isPortrait ? longSide : shortSide)) * 0.8
+        let frame = proxy.frame(in: .local)
+        
+        if isPortrait || frame.width > frame.height {
+            return frame.height / longSide
+        } else {
+            return frame.width / longSide
+        }
     }
     
     func getFrame() -> CGSize {

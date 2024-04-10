@@ -14,7 +14,7 @@ struct ScrollViewContainer: View {
     @Bindable var note: PPNoteModel
     @Bindable var page: PPPageModel
 
-    var size: CGSize
+    var proxy: GeometryProxy
 
     @State var scale: CGFloat = .zero
     @State var offset: CGPoint = .zero
@@ -22,7 +22,7 @@ struct ScrollViewContainer: View {
     var body: some View {
         PPScrollView(
             isPortrait: page.isPortrait,
-            size: size,
+            proxy: proxy,
             scale: $scale,
             offset: $offset
         ) {
