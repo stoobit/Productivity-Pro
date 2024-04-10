@@ -45,8 +45,12 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         scrollView.setZoomScale(fitScale(), animated: false)
         
         Task { @MainActor in
+            try await Task.sleep(nanoseconds: 1000000)
             toolManager.scale = scrollView.zoomScale
             toolManager.offset = scrollView.contentOffset
+            
+            scale = scrollView.zoomScale
+            offset = scrollView.contentOffset
         }
         
         return scrollView
