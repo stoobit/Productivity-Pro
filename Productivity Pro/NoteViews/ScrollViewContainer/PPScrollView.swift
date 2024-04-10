@@ -12,6 +12,8 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
+    var scrollView: UIScrollView
+    
     var isPortrait: Bool
     var proxy: GeometryProxy
     
@@ -21,7 +23,6 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
     var content: () -> Content
     
     func makeUIView(context: Context) -> UIScrollView {
-        let scrollView = UIScrollView()
         scrollView.delegate = context.coordinator
         
         scrollView.bouncesZoom = false
@@ -44,9 +45,6 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         scrollView.setZoomScale(fitScale(), animated: false)
         
         Task { @MainActor in
-            scale = scrollView.zoomScale
-            offset = scrollView.contentOffset
-            
             toolManager.scale = scrollView.zoomScale
             toolManager.offset = scrollView.contentOffset
         }

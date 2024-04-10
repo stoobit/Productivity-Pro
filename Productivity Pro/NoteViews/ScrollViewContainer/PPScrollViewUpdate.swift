@@ -10,7 +10,6 @@ import SwiftUI
 extension PPScrollView {
     func updateUIView(_ uiView: UIScrollView, context: Context) {
         let minimumScale = minimumScale()
-
         if minimumScale != uiView.minimumZoomScale {
             uiView.minimumZoomScale = minimumScale
             if uiView.zoomScale < minimumScale {

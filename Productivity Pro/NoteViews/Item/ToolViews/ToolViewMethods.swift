@@ -8,7 +8,6 @@
 import SwiftUI
 
 extension ToolView {
-    
     func getRotation() -> CGFloat {
         if item.type == PPItemType.shape.rawValue {
             return item.shape?.rotation ?? 0
@@ -34,7 +33,6 @@ extension ToolView {
     }
     
     func changeWidth(value: DragGesture.Value) {
-        
         toolManager.dragType = .width
         toolManager.activeItem = item
         zPositioning = CGSize(width: 1, height: 0)
@@ -51,7 +49,6 @@ extension ToolView {
     }
     
     func changeHeight(value: DragGesture.Value) {
-        
         toolManager.dragType = .height
         toolManager.activeItem = item
         zPositioning = CGSize(width: 0, height: 1)
@@ -68,7 +65,6 @@ extension ToolView {
     }
     
     func changeScale(value: DragGesture.Value) {
-        
         toolManager.dragType = .size
         toolManager.activeItem = item
        
@@ -92,7 +88,5 @@ extension ToolView {
         
         vuModel.size.width *= (newWidth/oldWidth + newHeight/oldHeight)/2
         vuModel.size.height *= (newWidth/oldWidth + newHeight/oldHeight)/2
-        
     }
-    
 }
