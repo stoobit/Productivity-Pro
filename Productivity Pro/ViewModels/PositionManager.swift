@@ -48,6 +48,18 @@ enum Pos {
         }
     }
 
+    func minimumScale(isPortrait: Bool, frame: S) -> CGFloat {
+        if isPortrait {
+            return frame.height / longSide
+        } else {
+            if frame.width > frame.height {
+                return frame.height / shortSide
+            } else {
+                return frame.width / longSide
+            }
+        }
+    }
+
     typealias M = ToolManager
     typealias I = PPItemModel
     typealias P = PPPageModel

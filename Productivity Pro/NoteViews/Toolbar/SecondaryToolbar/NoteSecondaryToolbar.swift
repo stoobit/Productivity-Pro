@@ -26,6 +26,10 @@ struct NoteSecondaryToolbar: ToolbarContent {
                 toolManager.activeItem = nil
                 toolManager.pencilKit = false
                 
+                for page in contentObject.note!.pages! {
+                    page.store = []
+                }
+                
                 dismiss()
             }
             

@@ -25,7 +25,16 @@ struct MDEditorView: View {
                 .toolbar {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Fertig") {
-                            toolManager.activeItem?.textField?.string = text
+                            guard let item = toolManager.activeItem else {
+                                dismiss()
+                                return
+                            }
+
+                            toolManager.activePage?.store(item) {
+                                item.textField?.string = text
+                                return item
+                            }
+
                             dismiss()
                         }
                     }
@@ -41,6 +50,7 @@ struct MDEditorView: View {
                     if let str = toolManager.activeItem?.textField?.string {
                         text = str
                     }
+
                     isFocused = true
                 }
         }
