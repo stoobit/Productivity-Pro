@@ -69,17 +69,14 @@ extension ClipboardControl {
         guard let selectedImage = UIPasteboard.general.image else { return }
         
         let image = resize(selectedImage, to: CGSize(width: 2048, height: 2048))
-        let ratio = 400/image.size.width
+        let ratio = 400 / image.size.width
         
         let item = PPItemModel(index: 0, type: .media)
         item.width = image.size.width * ratio
         item.height = image.size.height * ratio
         
-        let size = toolManager.offset.size
-        let scale = (1/toolManager.scale)
-        
-        item.x = size.width * scale + item.width/2 + 40
-        item.y = size.height * scale + item.height/2 + 40
+        item.x = PPIPosition.calculate(model: toolManager, item: item).x
+        item.y = PPIPosition.calculate(model: toolManager, item: item).y
         
         guard let data = image.heicData() else { return }
         let media = PPMediaModel(media: data)
@@ -103,11 +100,8 @@ extension ClipboardControl {
             item.width = 600
             item.height = 300
             
-            let size = toolManager.offset.size
-            let scale = (1/toolManager.scale)
-            
-            item.x = size.width * scale + item.width/2 + 40
-            item.y = size.height * scale + item.height/2 + 40
+            item.x = PPIPosition.calculate(model: toolManager, item: item).x
+            item.y = PPIPosition.calculate(model: toolManager, item: item).y
             
             let textField = PPTextFieldModel(
                 textColor: primaryColor(),
@@ -140,13 +134,15 @@ extension ClipboardControl {
                     ExportableItemModel.self, from: data
                 )
                 
-                let size = toolManager.offset.size
-                let scale = (1/toolManager.scale)
-                
                 pasteItem.id = UUID()
                 pasteItem.index = toolManager.activePage?.items?.count ?? 0
-                pasteItem.x = size.width * scale + pasteItem.width/2 + 40
-                pasteItem.y = size.height * scale + pasteItem.height/2 + 40
+                
+                pasteItem.x = PPIPosition.calculate(
+                    model: toolManager, item: pasteItem
+                ).x
+                pasteItem.y = PPIPosition.calculate(
+                    model: toolManager, item: pasteItem
+                ).y
                 
                 let item = ImportManager().ppImport(item: pasteItem)
                 toolManager.activePage?.items?.append(item)

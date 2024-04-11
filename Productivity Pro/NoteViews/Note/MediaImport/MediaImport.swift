@@ -70,11 +70,8 @@ struct MediaImport: ViewModifier {
         item.width = image.size.width * ratio
         item.height = image.size.height * ratio
         
-        let size = toolManager.offset.size
-        let scale = (1/toolManager.scale)
-        
-        item.x = size.width * scale + item.width/2 + 40
-        item.y = size.height * scale + item.height/2 + 40
+        item.x = PPIPosition.calculate(model: toolManager, item: item).x
+        item.y = PPIPosition.calculate(model: toolManager, item: item).y
         
         guard let data = image.heicData() else { return }
         let media = PPMediaModel(media: data)
