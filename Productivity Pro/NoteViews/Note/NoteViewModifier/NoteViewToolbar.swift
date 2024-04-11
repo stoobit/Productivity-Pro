@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NoteViewToolbar: ViewModifier {
     @Bindable var contentObject: ContentObject
+    var size: CGSize
     
     func body(content: Content) -> some View {
         content
@@ -23,7 +24,7 @@ struct NoteViewToolbar: ViewModifier {
                 NoteSecondaryToolbar(contentObject: contentObject)
             }
             .toolbar(id: "customizable") {
-                NoteMainToolbar(contentObject: contentObject)
+                NoteMainToolbar(contentObject: contentObject, size: size)
             }
     }
 }

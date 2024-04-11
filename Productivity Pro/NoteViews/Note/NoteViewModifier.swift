@@ -9,20 +9,23 @@ import SwiftUI
 
 struct NoteViewModifier: ViewModifier {
     @Bindable var contentObject: ContentObject
+    var size: CGSize
 
     func body(content: Content) -> some View {
         content
             .modifier(
-                NoteViewToolbar(contentObject: contentObject)
+                NoteViewToolbar(contentObject: contentObject, size: size)
             )
             .modifier(
-                NoteViewSheet(contentObject: contentObject)
+                NoteViewSheet(contentObject: contentObject, size: size)
             )
     }
 }
 
 extension View {
-    func noteViewModifier(with object: ContentObject) -> some View {
-        modifier(NoteViewModifier(contentObject: object))
+    func noteViewModifier(
+        with object: ContentObject, size: CGSize
+    ) -> some View {
+        modifier(NoteViewModifier(contentObject: object, size: size))
     }
 }

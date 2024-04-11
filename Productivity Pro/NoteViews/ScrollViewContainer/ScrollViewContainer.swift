@@ -26,7 +26,10 @@ struct ScrollViewContainer: View {
             scrollView: scrollView, isPortrait: page.isPortrait,
             proxy: proxy, scale: $scale, offset: $offset
         ) {
-            PageView(note: note, page: page, scale: $scale, offset: $offset)
+            PageView(
+                note: note, page: page,
+                scale: $scale, offset: $offset, size: proxy.size
+            )
         }
         .modifier(OrientationUpdater(isPortrait: page.isPortrait))
         .onChange(of: pvModel.index) {

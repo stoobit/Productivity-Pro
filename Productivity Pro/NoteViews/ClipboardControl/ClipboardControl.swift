@@ -17,6 +17,7 @@ struct ClipboardControl: View {
     @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
     
     @State var alert: Bool = false
+    var size: CGSize
 
     var body: some View {
         ZStack {

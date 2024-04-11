@@ -13,12 +13,13 @@ struct NoteViewSheet: ViewModifier {
     @Environment(PagingViewModel.self) var pvModel
     
     var contentObject: ContentObject
+    var size: CGSize
     
     func body(content: Content) -> some View {
         @Bindable var manager = subviewManager
         
         content
-            .modifier(MediaImport(contentObject: contentObject))
+            .modifier(MediaImport(contentObject: contentObject, size: size))
             .sheet(isPresented: $manager.overview, content: {
                 OverviewContainerView(contentObject: contentObject)
             })

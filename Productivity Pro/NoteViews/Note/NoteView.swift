@@ -43,9 +43,16 @@ struct NoteView: View {
                     .id(pages.count)
                     .id(proxy.size.width)
                 }
-                .noteViewModifier(with: contentObject)
+                .noteViewModifier(with: contentObject, size: proxy.size)
                 .onChange(of: pvModel.index) { updateIndex() }
                 .onAppear { onAppear() }
+                .overlay {
+                    ClipboardControl(size: proxy.size)
+                        .padding(10)
+                    
+                    IndicatorText(contentObject: contentObject)
+                    PrinterViewContainer(contentObject: contentObject)
+                }
             }
             .background {
                 Button("Widerrufen") {
@@ -76,13 +83,6 @@ struct NoteView: View {
             )
             .onChange(of: toolValue.activePage, initial: true) {
                 toolManager.pencilKit = false
-            }
-            .overlay {
-                ClipboardControl()
-                    .padding(10)
-                
-                IndicatorText(contentObject: contentObject)
-                PrinterViewContainer(contentObject: contentObject)
             }
             .environment(pvModel)
             

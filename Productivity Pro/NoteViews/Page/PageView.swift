@@ -23,6 +23,7 @@ struct PageView: View {
     @Binding var scale: CGFloat
     @Binding var offset: CGPoint
     
+    var size: CGSize = .zero
     var preloadModels: Bool = false
     var realrenderText: Bool = false
     

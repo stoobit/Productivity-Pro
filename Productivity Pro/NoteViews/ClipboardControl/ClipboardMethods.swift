@@ -75,8 +75,9 @@ extension ClipboardControl {
         item.width = image.size.width * ratio
         item.height = image.size.height * ratio
         
-        item.x = PPIPosition.calculate(model: toolManager, item: item).x
-        item.y = PPIPosition.calculate(model: toolManager, item: item).y
+        let size = Pos.calculate(model: toolManager, item: item, size: size)
+        item.x = size.x
+        item.y = size.y
         
         guard let data = image.heicData() else { return }
         let media = PPMediaModel(media: data)
@@ -100,8 +101,9 @@ extension ClipboardControl {
             item.width = 600
             item.height = 300
             
-            item.x = PPIPosition.calculate(model: toolManager, item: item).x
-            item.y = PPIPosition.calculate(model: toolManager, item: item).y
+            let size = Pos.calculate(model: toolManager, item: item, size: size)
+            item.x = size.x
+            item.y = size.y
             
             let textField = PPTextFieldModel(
                 textColor: primaryColor(),
@@ -137,12 +139,9 @@ extension ClipboardControl {
                 pasteItem.id = UUID()
                 pasteItem.index = toolManager.activePage?.items?.count ?? 0
                 
-                pasteItem.x = PPIPosition.calculate(
-                    model: toolManager, item: pasteItem
-                ).x
-                pasteItem.y = PPIPosition.calculate(
-                    model: toolManager, item: pasteItem
-                ).y
+                let size = Pos.calculate(model: toolManager, item: pasteItem, size: size)
+                pasteItem.x = size.x
+                pasteItem.y = size.y
                 
                 let item = ImportManager().ppImport(item: pasteItem)
                 toolManager.activePage?.items?.append(item)

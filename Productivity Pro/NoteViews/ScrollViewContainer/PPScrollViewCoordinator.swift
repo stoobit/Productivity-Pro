@@ -10,6 +10,8 @@ import SwiftUI
 extension PPScrollView {
     @MainActor
     final class Coordinator: NSObject, UIScrollViewDelegate {
+        var parent: PPScrollView
+        
         @Bindable var toolManager: ToolManager
         var hostingController: UIHostingController<Content>
         
@@ -17,10 +19,12 @@ extension PPScrollView {
         @Binding var offset: CGPoint
         
         init(
+            parent: PPScrollView,
             hostingController: UIHostingController<Content>,
             scale: Binding<CGFloat>, offset: Binding<CGPoint>,
             toolManager: ToolManager
         ) {
+            self.parent = parent
             self.hostingController = hostingController
             self.toolManager = toolManager
             
@@ -98,12 +102,26 @@ extension PPScrollView {
                 toolManager.offset = scrollView.contentOffset
             }
         }
+        
+        @objc func doubleTap() {
+            Task { @MainActor in
+                let scale = parent.fitScale()
+                parent.scrollView.setZoomScale(scale, animated: true)
+                
+                self.scale = scale
+                toolManager.scale = scale
+                
+                self.offset = parent.scrollView.contentOffset
+                toolManager.offset = parent.scrollView.contentOffset
+            }
+        }
     }
     
     func makeCoordinator() -> Coordinator {
         @Bindable var toolValue = toolManager
         
         return Coordinator(
+            parent: self,
             hostingController: UIHostingController(rootView: content()),
             scale: $scale, offset: $offset, toolManager: toolValue
         )

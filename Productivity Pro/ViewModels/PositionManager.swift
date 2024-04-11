@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum PPIPosition {
-    private static func calculate(model: M, size: S, proxy: G, isPortrait: Bool) -> CGPoint {
-        if model.scale >= fitScale(isPortrait: isPortrait, proxy: proxy) {
+enum Pos {
+    private static func calculate(model: M, item: S, size: S, isPortrait: Bool) -> CGPoint {
+        if model.scale >= fitScale(isPortrait: isPortrait, size: size) {
             let modelSize = model.offset.size
-            let x = modelSize.width * (1 / model.scale) + size.width / 2 + 40
-            let y = modelSize.height * (1 / model.scale) + size.height / 2 + 40
+            let x = modelSize.width * (1 / model.scale) + item.width / 2 + 40
+            let y = modelSize.height * (1 / model.scale) + item.height / 2 + 40
 
             return .init(x: x, y: y)
         } else {
@@ -20,32 +20,30 @@ enum PPIPosition {
         }
     }
 
-    static func calculate(model: M, page: P, item: E, proxy: G) -> CGPoint {
+    static func calculate(model: M, item: E, size: S) -> CGPoint {
         calculate(
             model: model,
-            size: .init(width: item.width, height: item.height),
-            proxy: proxy, isPortrait: page.isPortrait
+            item: .init(width: item.width, height: item.height),
+            size: size, isPortrait: model.activePage!.isPortrait
         )
     }
 
-    static func calculate(model: M, page: P, item: I, proxy: G) -> CGPoint {
+    static func calculate(model: M, item: I, size: S) -> CGPoint {
         calculate(
             model: model,
-            size: .init(width: item.width, height: item.height),
-            proxy: proxy, isPortrait: page.isPortrait
+            item: .init(width: item.width, height: item.height),
+            size: size, isPortrait: model.activePage!.isPortrait
         )
     }
 
-    static func fitScale(isPortrait: Bool, proxy: G) -> CGFloat {
-        let frame = proxy.frame(in: .local)
-
+    static func fitScale(isPortrait: Bool, size: S) -> CGFloat {
         if isPortrait {
-            return frame.width / shortSide
+            return size.width / shortSide
         } else {
-            if frame.width > frame.height {
-                return frame.width / longSide
+            if size.width > size.height {
+                return size.width / longSide
             } else {
-                return frame.height / shortSide
+                return size.height / shortSide
             }
         }
     }
@@ -55,5 +53,4 @@ enum PPIPosition {
     typealias P = PPPageModel
     typealias E = ExportableItemModel
     typealias S = CGSize
-    typealias G = GeometryProxy
 }
