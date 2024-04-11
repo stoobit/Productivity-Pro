@@ -83,6 +83,7 @@
 		BB4984222BC332EA008D45B0 /* AIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984212BC332EA008D45B0 /* AIButton.swift */; };
 		BB49EE042BC5C4D1004CB803 /* PPScrollViewUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49EE032BC5C4D1004CB803 /* PPScrollViewUpdate.swift */; };
 		BB49EE062BC5C4DA004CB803 /* PPScrollViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49EE052BC5C4DA004CB803 /* PPScrollViewCoordinator.swift */; };
+		BB49EE082BC752EC004CB803 /* PositionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49EE072BC752EC004CB803 /* PositionManager.swift */; };
 		BB4A93C32AAEED1900C3AED6 /* CodableWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */; };
 		BB4A93C92AAEFDCC00C3AED6 /* pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB1DDA292967156E0038FE16 /* pacifico.ttf */; };
 		BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */; };
@@ -434,6 +435,7 @@
 		BB4984212BC332EA008D45B0 /* AIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIButton.swift; sourceTree = "<group>"; };
 		BB49EE032BC5C4D1004CB803 /* PPScrollViewUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollViewUpdate.swift; sourceTree = "<group>"; };
 		BB49EE052BC5C4DA004CB803 /* PPScrollViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPScrollViewCoordinator.swift; sourceTree = "<group>"; };
+		BB49EE072BC752EC004CB803 /* PositionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionManager.swift; sourceTree = "<group>"; };
 		BB4A93C22AAEED1900C3AED6 /* CodableWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableWrapper.swift; sourceTree = "<group>"; };
 		BB4A93CA2AAEFEC600C3AED6 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		BB4A93E02AAF559800C3AED6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -1145,6 +1147,7 @@
 				BBB538942B40BE4700C874EA /* ExportManager.swift */,
 				BB441DD42B41A05300B103DE /* ImportManager.swift */,
 				BB96F5B22B61C0460044B200 /* PDFManager.swift */,
+				BB49EE072BC752EC004CB803 /* PositionManager.swift */,
 				BBBCACB22A25461900C23B2C /* CalculatorModel.swift */,
 			);
 			path = ViewModels;
@@ -2070,6 +2073,7 @@
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB49841E2BC32FCD008D45B0 /* AIDownloadButton.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
+				BB49EE082BC752EC004CB803 /* PositionManager.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,
 				BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */,
 				BB4A93E32AAF564C00C3AED6 /* ScheduleViewContainer.swift in Sources */,

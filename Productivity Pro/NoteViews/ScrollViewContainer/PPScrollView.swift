@@ -30,7 +30,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         
-        scrollView.minimumZoomScale = minimumScale()
+        scrollView.minimumZoomScale = minimumScale
         scrollView.maximumZoomScale = 2.2
         
         let hostedView = context.coordinator.hostingController.view!
@@ -70,7 +70,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         }
     }
     
-    func minimumScale() -> CGFloat {
+    var minimumScale: CGFloat {
         let frame = proxy.frame(in: .local)
         
         if isPortrait || frame.width > frame.height {
