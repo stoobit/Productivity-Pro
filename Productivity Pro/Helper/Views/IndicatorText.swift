@@ -27,7 +27,7 @@ struct IndicatorText: View {
                 topTrailingRadius: 0,
                 style: .circular
             )
-            .foregroundStyle(Color.secondary)
+            .foregroundStyle(Color.accentColor)
             .frame(width: 70, height: 30)
             
             Text("\(number) von \(total)")
@@ -41,18 +41,5 @@ struct IndicatorText: View {
             alignment: .topTrailing
         )
         .padding(.trailing, 10)
-        .colorScheme(colorScheme())
-    }
-    
-    func colorScheme() -> ColorScheme {
-        guard let page = toolManager.activePage else {
-            return .light
-        }
-        
-        if page.color == "pagewhite" || page.color == "pageyellow" {
-            return .light
-        } else {
-            return .dark
-        }
     }
 }

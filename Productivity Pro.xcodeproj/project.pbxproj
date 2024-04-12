@@ -37,6 +37,8 @@
 		BB28F0C02A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */; };
 		BB2A8E192B45F0DB0072D3CC /* BackupMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A8E182B45F0DB0072D3CC /* BackupMethods.swift */; };
 		BB2A8E1E2B460CD30072D3CC /* NoteViewModalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */; };
+		BB30C2DA2BC9B344009D69CA /* PVCUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2D92BC9B344009D69CA /* PVCUpdate.swift */; };
+		BB30C2DC2BC9B34D009D69CA /* PVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2DB2BC9B34D009D69CA /* PVCCoordinator.swift */; };
 		BB3208A82981DFFF0014F602 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB339F872AD44E97009DA591 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB339F862AD44E97009DA591 /* Role.swift */; };
@@ -390,6 +392,8 @@
 		BB28F0BF2A60BA3B00FFD4F1 /* ObjectRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectRecognition.mlmodel; sourceTree = "<group>"; };
 		BB2A8E182B45F0DB0072D3CC /* BackupMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupMethods.swift; sourceTree = "<group>"; };
 		BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModalMethods.swift; sourceTree = "<group>"; };
+		BB30C2D92BC9B344009D69CA /* PVCUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVCUpdate.swift; sourceTree = "<group>"; };
+		BB30C2DB2BC9B34D009D69CA /* PVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVCCoordinator.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB339F862AD44E97009DA591 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
@@ -710,6 +714,8 @@
 			isa = PBXGroup;
 			children = (
 				BB0677132BB0E52D00BEA66F /* PagingViewController.swift */,
+				BB30C2D92BC9B344009D69CA /* PVCUpdate.swift */,
+				BB30C2DB2BC9B34D009D69CA /* PVCCoordinator.swift */,
 				BBDF2E2F2BC07AE000F627B8 /* PagingViewModel.swift */,
 			);
 			path = PagingView;
@@ -1797,6 +1803,7 @@
 			knownRegions = (
 				de,
 				en,
+				Base,
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
@@ -2029,6 +2036,7 @@
 				BB4F66D12AC4BA6300C4B34E /* AddFolderView.swift in Sources */,
 				BB9BFB692AC7684300255293 /* PPItemModel.swift in Sources */,
 				BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */,
+				BB30C2DC2BC9B34D009D69CA /* PVCCoordinator.swift in Sources */,
 				BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */,
 				BB8586992AE1E5B300C5875C /* ShapeStyleView.swift in Sources */,
 				BBB538852B40BADC00C874EA /* ExportableContentObjectModel.swift in Sources */,
@@ -2107,6 +2115,7 @@
 				BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */,
 				BB7984682AC37E1E00CF3D24 /* ObjectViewFileLink.swift in Sources */,
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
+				BB30C2DA2BC9B344009D69CA /* PVCUpdate.swift in Sources */,
 				BB9A36502ABCFD2A00721C56 /* Calendar.swift in Sources */,
 				BB3E9AA42A33A2D3006045E1 /* NoteViewToolbar.swift in Sources */,
 				BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */,
