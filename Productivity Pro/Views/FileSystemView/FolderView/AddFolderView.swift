@@ -43,26 +43,24 @@ struct AddFolderView: ViewModifier {
             )
             
             if title.trimmingCharacters(in: .whitespaces).isEmpty {
-                title = "Unbenannt"
+                title = String(localized: "Unbenannt")
             }
             
             let const: String = title
             var index: Int = 1
             
             let filteredObjects = contentObjects
-                .filter({
+                .filter {
                     $0.type == COType.folder.rawValue &&
-                    $0.parent == parent &&
-                    $0.grade == grade &&
-                    $0.inTrash == false
-                })
-                .map({ $0.title })
+                        $0.parent == parent &&
+                        $0.grade == grade &&
+                        $0.inTrash == false
+                }
+                .map { $0.title }
             
             while filteredObjects.contains(title) {
-                
                 title = "\(const) \(index)"
                 index += 1
-                
             }
             
             folder.title = title
@@ -71,5 +69,4 @@ struct AddFolderView: ViewModifier {
             title = ""
         }
     }
-    
 }

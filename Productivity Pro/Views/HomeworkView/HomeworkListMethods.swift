@@ -19,9 +19,7 @@ extension HomeworkList {
         
         if calendar.numberOfDaysBetween(Date(), and: date) > 7  {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = String(
-                localized: LocalizedStringResource(stringLiteral: "d. MMMM")
-            )
+            dateFormatter.dateFormat = String(localized: "d. MMMM")
             
             return "Bis zum \(dateFormatter.string(from: date)) zu erledigen"
             

@@ -5,16 +5,16 @@
 //  Created by Till Brügmann on 28.09.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ObjectPicker: View {
     var objects: [ContentObject]
     var contentObjects: [ContentObject] {
-        objects.filter({
+        objects.filter {
             $0.inTrash == false &&
-            $0.grade == grade
-        })
+                $0.grade == grade
+        }
     }
     
     @AppStorage("ppgrade")
@@ -32,11 +32,9 @@ struct ObjectPicker: View {
                 ObjectPickerList(
                     contentObjects: contentObjects,
                     isPresented: $isPresented,
-                    selectedObject: $selectedObject, 
+                    selectedObject: $selectedObject,
                     parent: "root",
-                    title: String(localized: LocalizedStringResource(
-                        stringLiteral: "Notizen")
-                    ),
+                    title: String(localized: "Notizen"),
                     id: id,
                     type: type
                 )

@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct PagingViewController<Page: View>: UIViewControllerRepresentable {
+    var isHorizontal: Bool
     var pages: [Page]
+
     @Binding var currentPage: Int
 
     func makeUIViewController(context: Context) -> UIPageViewController {
+        let spacing = isHorizontal ? 20 : 0
+        
         let pageViewController = UIPageViewController(
             transitionStyle: .scroll,
-            navigationOrientation: .horizontal,
+            navigationOrientation: isHorizontal ? .horizontal : .vertical,
             options: [
-                UIPageViewController.OptionsKey.interPageSpacing: 20
+                UIPageViewController.OptionsKey.interPageSpacing: spacing
             ])
 
         pageViewController.dataSource = context.coordinator

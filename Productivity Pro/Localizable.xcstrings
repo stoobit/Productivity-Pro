@@ -542,6 +542,16 @@
         }
       }
     },
+    "Diese Aufgabe ist bis morgen in %@ zu erledigen." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This task must be completed in %@ by tomorrow."
+          }
+        }
+      }
+    },
     "Diese Notiz existiert nicht mehr." : {
       "localizations" : {
         "en" : {
@@ -710,6 +720,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
+          }
+        }
+      }
+    },
+    "Einstellungen ändern?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change settings?"
+          }
+        }
+      }
+    },
+    "Einstellungen geändert" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings Changed"
           }
         }
       }
@@ -963,6 +993,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Height"
+          }
+        }
+      }
+    },
+    "Horizontal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal"
           }
         }
       }
@@ -1242,6 +1282,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Name"
+          }
+        }
+      }
+    },
+    "Neustarten" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restart"
           }
         }
       }
@@ -1569,6 +1619,16 @@
         }
       }
     },
+    "Scrollrichtung der Seiten" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page Scrolling Direction"
+          }
+        }
+      }
+    },
     "Sechseck" : {
       "localizations" : {
         "en" : {
@@ -1712,6 +1772,16 @@
         }
       }
     },
+    "Tippe um Productivity Pro zu öffnen." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to open Productivity Pro."
+          }
+        }
+      }
+    },
     "Titel" : {
       "localizations" : {
         "en" : {
@@ -1762,6 +1832,16 @@
         }
       }
     },
+    "Um diese Einstellungen zu ändern muss die App neugestartet werden." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To change these settings the app must be restarted."
+          }
+        }
+      }
+    },
     "Umbenennen" : {
       "localizations" : {
         "en" : {
@@ -1782,8 +1862,28 @@
         }
       }
     },
+    "Unbenannt %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Untitled %lld"
+          }
+        }
+      }
+    },
     "Unknown status" : {
 
+    },
+    "Vertikal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertical"
+          }
+        }
+      }
     },
     "View Models" : {
 

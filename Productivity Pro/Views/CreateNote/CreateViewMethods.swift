@@ -5,12 +5,11 @@
 //  Created by Till Brügmann on 30.09.23.
 //
 
-import SwiftUI
 import PDFKit
+import SwiftUI
 import VisionKit
 
 extension CreateNoteView {
-    
     func lastTemplate() {
         withAnimation(.bouncy) {
             let object = ContentObject(
@@ -94,7 +93,6 @@ extension CreateNoteView {
                         object.note = note
                         
                         for index in 0...pdf.pageCount - 1 {
-                            
                             guard let page = pdf.page(at: index) else { return }
                             guard let data = page.dataRepresentation else { return }
                             
@@ -178,27 +176,23 @@ extension CreateNoteView {
     }
     
     func getTitle() -> String {
-        var title: String = "Unbenannt"
-        var index: Int = 1
+        var title = String(localized: "Unbenannt")
+        var index = 1
         
         let filteredObjects = contentObjects
-            .filter({
+            .filter {
                 $0.type == COType.file.rawValue &&
-                $0.parent == parent &&
-                $0.grade == grade &&
-                $0.inTrash == false
-            })
-            .map({ $0.title })
-        
+                    $0.parent == parent &&
+                    $0.grade == grade &&
+                    $0.inTrash == false
+            }
+            .map { $0.title }
         
         while filteredObjects.contains(title) {
-            
-            title = "Unbenannt \(index)"
+            title = String(localized: "Unbenannt \(index)")
             index += 1
-            
         }
         
         return title
     }
-    
 }

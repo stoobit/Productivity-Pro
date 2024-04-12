@@ -202,14 +202,14 @@ struct HomeworkEditView: View {
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
         content.title = homework.title
-        content.body = "Diese Aufgabe ist bis morgen in \(homework.subject) zu erledigen."
+        content.body = String(localized: "Diese Aufgabe ist bis morgen in \(homework.subject) zu erledigen.")
 
         let calendar = Calendar.current
         let date = Calendar.current.date(
             byAdding: .day, value: -1, to: homework.date
         )!
         
-        let compontent = DateComponents(
+        let component = DateComponents(
             calendar: calendar,
             timeZone: .current,
             year: calendar.component(.year, from: date),
@@ -220,7 +220,7 @@ struct HomeworkEditView: View {
         )
         
         let trigger = UNCalendarNotificationTrigger(
-            dateMatching: compontent, repeats: false
+            dateMatching: component, repeats: false
         )
         
         let request = UNNotificationRequest(

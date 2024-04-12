@@ -10,6 +10,7 @@ import SwiftUI
 struct GeneralSettings: View {
     @Environment(\.horizontalSizeClass) var hsc
     
+    @AppStorage("horizontalScroll") var isHorizontal: Bool = true
     @AppStorage("isMarkdownf") var markdownFullscreen: Bool = false
     
     @AppStorage("notificationTime")
@@ -23,15 +24,73 @@ struct GeneralSettings: View {
     @AppStorage("defaultFontSize")
     private var defaultFontSize: Double = 12
     
+    @State private var scrollSetter: Bool = true
     @State private var fontSetter: String = "Avenir Next"
     @State private var sizeSetter: Double = 12
     @State private var cbSetter: Int = 0
     
-    @State var showSizePicker: Bool = false
+    @State private var showSizePicker: Bool = false
+    @State private var showTerminationAlert: Bool = false
     
     var body: some View {
         NavigationStack {
             Form {
+                Section("Notizen") {
+                    Picker("Scrollrichtung der Seiten", selection: $scrollSetter) {
+                        Text("Horizontal")
+                            .tag(true)
+                        
+                        Text("Vertikal")
+                            .tag(false)
+                    }
+                }
+                .onChange(of: scrollSetter) {
+                    if scrollSetter != isHorizontal {
+                        showTerminationAlert = true
+                    }
+                }
+                .alert(
+                    "Einstellungen ändern?", isPresented: $showTerminationAlert,
+                    actions: {
+                        Button("Abbrechen", role: .cancel) {
+                            scrollSetter = isHorizontal
+                            showTerminationAlert = false
+                        }
+                        
+                        Button("Neustarten") {
+                            isHorizontal = scrollSetter
+                            showTerminationAlert = false
+                            
+                            var localUserInfo: [AnyHashable: Any] = [:]
+                            localUserInfo["pushType"] = "restart"
+                               
+                            let content = UNMutableNotificationContent()
+                            content.title = String(localized: "Einstellungen geändert")
+                            content.body = String(
+                                localized: "Tippe um Productivity Pro zu öffnen."
+                            )
+                            
+                            content.sound = UNNotificationSound.default
+                            content.userInfo = localUserInfo
+                            let trigger = UNTimeIntervalNotificationTrigger(
+                                timeInterval: 0.5, repeats: false
+                            )
+
+                            let identifier = "com.stoobit.restart"
+                            let request = UNNotificationRequest
+                                .init(identifier: identifier, content: content, trigger: trigger)
+                            
+                            let center = UNUserNotificationCenter.current()
+                            center.add(request)
+                            
+                            exit(0)
+                        }
+                    },
+                    message: {
+                        Text("Um diese Einstellungen zu ändern muss die App neugestartet werden.")
+                    }
+                )
+                
                 Section("Aufgaben") {
                     DatePicker(
                         "Uhrzeit der Benachrichtigung",
@@ -80,8 +139,17 @@ struct GeneralSettings: View {
             .onAppear {
                 fontSetter = defaultFont
                 sizeSetter = defaultFontSize
+                scrollSetter = isHorizontal
+                
+                askNotificationPermission()
             }
         }
+    }
+    
+    func askNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: [.alert, .badge, .sound]
+        ) { _, _ in }
     }
 }
 
