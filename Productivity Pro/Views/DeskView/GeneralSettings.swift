@@ -49,47 +49,6 @@ struct GeneralSettings: View {
                         showTerminationAlert = true
                     }
                 }
-                .alert(
-                    "Einstellungen ändern?", isPresented: $showTerminationAlert,
-                    actions: {
-                        Button("Abbrechen", role: .cancel) {
-                            scrollSetter = isHorizontal
-                            showTerminationAlert = false
-                        }
-                        
-                        Button("Neustarten") {
-                            isHorizontal = scrollSetter
-                            showTerminationAlert = false
-                            
-                            var localUserInfo: [AnyHashable: Any] = [:]
-                            localUserInfo["pushType"] = "restart"
-                               
-                            let content = UNMutableNotificationContent()
-                            content.title = String(localized: "Einstellungen geändert")
-                            content.body = String(
-                                localized: "Tippe um Productivity Pro zu öffnen."
-                            )
-                            
-                            content.sound = UNNotificationSound.default
-                            content.userInfo = localUserInfo
-                            let trigger = UNTimeIntervalNotificationTrigger(
-                                timeInterval: 0.5, repeats: false
-                            )
-
-                            let identifier = "com.stoobit.restart"
-                            let request = UNNotificationRequest
-                                .init(identifier: identifier, content: content, trigger: trigger)
-                            
-                            let center = UNUserNotificationCenter.current()
-                            center.add(request)
-                            
-                            exit(0)
-                        }
-                    },
-                    message: {
-                        Text("Um diese Einstellungen zu ändern muss die App neugestartet werden.")
-                    }
-                )
                 
                 Section("Aufgaben") {
                     DatePicker(
@@ -143,6 +102,47 @@ struct GeneralSettings: View {
                 
                 askNotificationPermission()
             }
+            .alert(
+                "Einstellungen ändern?", isPresented: $showTerminationAlert,
+                actions: {
+                    Button("Abbrechen", role: .cancel) {
+                        scrollSetter = isHorizontal
+                        showTerminationAlert = false
+                    }
+                    
+                    Button("Neustarten") {
+                        isHorizontal = scrollSetter
+                        showTerminationAlert = false
+                        
+                        var localUserInfo: [AnyHashable: Any] = [:]
+                        localUserInfo["pushType"] = "restart"
+                           
+                        let content = UNMutableNotificationContent()
+                        content.title = String(localized: "Einstellungen geändert")
+                        content.body = String(
+                            localized: "Tippe um Productivity Pro zu öffnen."
+                        )
+                        
+                        content.sound = UNNotificationSound.default
+                        content.userInfo = localUserInfo
+                        let trigger = UNTimeIntervalNotificationTrigger(
+                            timeInterval: 0.5, repeats: false
+                        )
+
+                        let identifier = "com.stoobit.restart"
+                        let request = UNNotificationRequest
+                            .init(identifier: identifier, content: content, trigger: trigger)
+                        
+                        let center = UNUserNotificationCenter.current()
+                        center.add(request)
+                        
+                        exit(0)
+                    }
+                },
+                message: {
+                    Text("Um diese Einstellungen zu ändern muss die App neugestartet werden.")
+                }
+            )
         }
     }
     
