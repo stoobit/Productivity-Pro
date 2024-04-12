@@ -16,7 +16,25 @@ enum Pos {
 
             return .init(x: x, y: y)
         } else {
-            return CGPoint(x: 700, y: 990)
+            if isPortrait {
+                let modelSize = model.offset.size
+                let x: CGFloat = item.width / 2 + 40
+                let y = modelSize.height * (1 / model.scale) + item.height / 2 + 40
+
+                return .init(x: x, y: y)
+            } else if isPortrait == false && size.width > size.height {
+                let modelSize = model.offset.size
+                let x: CGFloat =  item.width / 2 + 40
+                let y = modelSize.height * (1 / model.scale) + item.height / 2 + 40
+
+                return .init(x: x, y: y)
+            } else {
+                let modelSize = model.offset.size
+                let x = modelSize.width * (1 / model.scale) + item.width / 2 + 40
+                let y: CGFloat = item.height / 2 + 40
+                
+                return .init(x: x, y: y)
+            }
         }
     }
 
