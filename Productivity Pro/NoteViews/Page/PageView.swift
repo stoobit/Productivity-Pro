@@ -31,6 +31,7 @@ struct PageView: View {
         ZStack {
             ZStack {
                 PageBackgroundView(scale: $scale, page: page)
+                    .shadow(color: Color.shadow.opacity(0.5), radius: 2)
                 
                 if preloadModels == false {
                     BackgroundTemplateView(page: page, scale: $scale)
