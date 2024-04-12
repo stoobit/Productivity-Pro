@@ -1,7 +1,6 @@
 # Productivity Pro
 
 ## 🗺️ Release 2.0.4
-- minimum zoom scale of UIScrollView
 - update PageViewController when window size changes
 
 ## 🗺️ Release 2.0.5
