@@ -136,7 +136,7 @@ struct GeneralSettings: View {
                         let center = UNUserNotificationCenter.current()
                         center.add(request)
                         
-                        exit(0)
+                        exit(EXIT_SUCCESS)
                     }
                 },
                 message: {

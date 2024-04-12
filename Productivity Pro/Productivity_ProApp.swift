@@ -11,7 +11,7 @@ import TipKit
 @main
 struct Productivity_ProApp: App {
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(id: "main") {
             ContentViewContainer()
                 .onAppear { onAppear() }
                 .task {
