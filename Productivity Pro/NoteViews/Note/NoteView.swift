@@ -35,7 +35,7 @@ struct NoteView: View {
                         .foregroundStyle(.clear)
                     
                     PagingViewController(
-                        isHorizontal: isHorizontal, 
+                        isHorizontal: isHorizontal,
                         pages: pages.map {
                             ScrollViewContainer(
                                 note: contentObject.note!, page: $0,
@@ -88,7 +88,6 @@ struct NoteView: View {
                 toolManager.pencilKit = false
             }
             .environment(pvModel)
-            
         } else {
             ZStack {
                 Color(UIColor.secondarySystemBackground)
@@ -104,20 +103,44 @@ struct NoteView: View {
     
     func onAppear() {
         if pvModel.didAppear == false {
-            if let recent = contentObject.note?.recent {
-                pvModel.index = recent.index
-                toolManager.activePage = recent
-            } else {
-                pvModel.index = 0
-                toolManager.activePage = pages.first
+            Task { @MainActor in
+                let recent: Int = contentObject.note?.recent?.index ?? 0
+            
+                var pages = pages.map(\.index)
+                pages.append(recent)
+            
+                for page in pages {
+                    pvModel.index = page
+                    try await Task.sleep(nanoseconds: 500000000)
+                }
+                
+                pvModel.index = pages.last ?? 0
+                toolManager.activePage = self.pages[pvModel.index]
+                
+                pvModel.didAppear = true
             }
             
-            pvModel.didAppear = true
         } else {
             if pages.indices.contains(pvModel.index) {
                 toolManager.activePage = pages[pvModel.index]
             }
         }
+        
+//        if pvModel.didAppear == false {
+//            if let recent = contentObject.note?.recent {
+//                pvModel.index = recent.index
+//                toolManager.activePage = recent
+//            } else {
+//                pvModel.index = 0
+//                toolManager.activePage = pages.first
+//            }
+//
+//            pvModel.didAppear = true
+//        } else {
+//            if pages.indices.contains(pvModel.index) {
+//                toolManager.activePage = pages[pvModel.index]
+//            }
+//        }
     }
     
     func updateIndex() {

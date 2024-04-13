@@ -41,9 +41,8 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             height: getFrame().height
         )
         
-        let initialScale = (minimumScale + fitScale()) / 2
         scrollView.addSubview(hostedView)
-        scrollView.setZoomScale(initialScale, animated: false)
+        scrollView.setZoomScale(fitScale(), animated: false)
         
         Task { @MainActor in
             try await Task.sleep(nanoseconds: 10000)
@@ -52,20 +51,10 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             
             scale = scrollView.zoomScale
             offset = scrollView.contentOffset
-            
-            let bounds = scrollView.bounds
-            let size = scrollView.contentSize
-            
-            let offsetX = max((bounds.width - size.width) * 0.5, 0)
-            let offsetY = max((bounds.height - size.height) * 0.5, 0)
-            
-            scrollView.contentInset = UIEdgeInsets(
-                top: offsetY, left: offsetX, bottom: 0, right: 0
-            )
         }
         
         let doubleTap = UITapGestureRecognizer(
-            target: context.coordinator, 
+            target: context.coordinator,
             action: #selector(Coordinator.doubleTap)
         )
         

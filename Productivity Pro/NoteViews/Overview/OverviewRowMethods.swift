@@ -18,10 +18,7 @@ extension OverviewRow {
     }
 
     func openPage() {
-        withAnimation(.smooth) {
-            toolManager.activePage = page
-        }
-        
+        toolManager.activePage = page
         pvModel.index = page.index
         subviewManager.overview.toggle()
     }

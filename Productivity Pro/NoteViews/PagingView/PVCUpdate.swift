@@ -12,15 +12,7 @@ extension PagingViewController {
         if context.coordinator.controllers.indices.contains(currentPage) {
             pageViewController.setViewControllers([
                 context.coordinator.controllers[currentPage]
-            ], direction: .forward, animated: true, completion: { _ in
-                if context.coordinator.controllers.indices.contains(currentPage + 1) {
-                    context.coordinator.controllers[currentPage + 1].loadViewIfNeeded()
-                }
-
-                if context.coordinator.controllers.indices.contains(currentPage - 1) {
-                    context.coordinator.controllers[currentPage - 1].loadViewIfNeeded()
-                }
-            })
+            ], direction: .forward, animated: false)
         }
     }
 }
