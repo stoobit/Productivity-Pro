@@ -19,6 +19,9 @@ struct HomeworkList: View {
     
     @Query(animation: .bouncy) var contentObjects: [ContentObject]
     
+    @AppStorage("ppisunlocked")
+    var isUnlocked: Bool = false
+    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
@@ -27,10 +30,17 @@ struct HomeworkList: View {
     
     var body: some View {
         List {
+            if isUnlocked == false {
+                PremiumButton()
+            }
+            
             ForEach(dates(), id: \.self) { date in
                 Section(formattedString(of: date)) {
                     ForEach(filterTasks(by: date)) { homework in
-                        HomeworkItem(contentObjects: contentObjects, homework: homework) {
+                        HomeworkItem(
+                            contentObjects: contentObjects,
+                            homework: homework
+                        ) {
                             UNUserNotificationCenter.current()
                                 .removePendingNotificationRequests(
                                     withIdentifiers: [
@@ -40,6 +50,7 @@ struct HomeworkList: View {
                             
                             context.delete(homework)
                         }
+                        .disabled(isUnlocked == false)
                     }
                 }
             }
@@ -56,8 +67,6 @@ struct HomeworkList: View {
                     context.delete(homework)
                 }
             }
-            
-            try? context.save()
         }
     }
 }

@@ -30,7 +30,6 @@ struct ScheduleViewContainer: View {
                     }
                 }
         }
-        .modifier(LockScreen())
     }
 }
 

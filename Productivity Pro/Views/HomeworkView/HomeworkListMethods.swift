@@ -10,8 +10,13 @@ import SwiftUI
 extension HomeworkList {
     
     func dates() -> [Date] {
-        let dates = homeworkTasks.map { $0.date }
-        return Array(Set(dates)).sorted(by: { $0 < $1 })
+        if isUnlocked {
+            let dates = homeworkTasks.map { $0.date }
+            return Array(Set(dates)).sorted(by: { $0 < $1 })
+        } else {
+            let dates = preview.map { $0.date }
+            return Array(Set(dates)).sorted(by: { $0 < $1 })
+        }
     }
     
     func formattedString(of date: Date) -> LocalizedStringKey {
@@ -27,7 +32,7 @@ extension HomeworkList {
             return "Bis heute zu erledigen"
         } else if calendar.numberOfDaysBetween(Date(), and: date) == 1 {
             return "Bis morgen zu erledigen"
-        }else {
+        } else {
             let formatter = DateFormatter()
             let day = formatter.weekdaySymbols[
                 Calendar.current.component(.weekday, from: date) - 1
@@ -38,9 +43,16 @@ extension HomeworkList {
     }
     
     func filterTasks(by date: Date) -> [Homework] {
-        let filtered = homeworkTasks.filter { $0.date == date }
-        return filtered.sorted(by: {
-            $0.subject < $1.subject
-        })
+        if isUnlocked {
+            let filtered = homeworkTasks.filter { $0.date == date }
+            return filtered.sorted(by: {
+                $0.subject < $1.subject
+            })
+        } else {
+            let filtered = preview.filter { $0.date == date }
+            return filtered.sorted(by: {
+                $0.subject < $1.subject
+            })
+        }
     }
 }

@@ -460,6 +460,9 @@
         }
       }
     },
+    "Buch S. 136" : {
+
+    },
     "Cancel" : {
 
     },
@@ -1584,7 +1587,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Desktop %@ Fächer"
+            "value" : "Desktop %@ Subjects"
           }
         }
       }

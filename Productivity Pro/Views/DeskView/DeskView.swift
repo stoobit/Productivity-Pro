@@ -17,7 +17,7 @@ struct DeskView: View {
         NavigationStack {
             Form {
                 if isUnlocked == false {
-                    DeskPremiumButton()
+                    PremiumButton()
                 }
                 
                 Settings()

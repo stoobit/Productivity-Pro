@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeworkItem: View {
+    @AppStorage("ppisunlocked")
+    var isUnlocked: Bool = false
+    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
@@ -45,22 +48,26 @@ struct HomeworkItem: View {
             }
         }
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
-            Button(role: .destructive, action: delete) {
-                Image(systemName: "trash")
+            if isUnlocked {
+                Button(role: .destructive, action: delete) {
+                    Image(systemName: "trash")
+                }
+                
+                Button(action: {
+                    showDescription.toggle()
+                }) {
+                    Image(systemName: "info.circle")
+                }
+                .tint(.accentColor)
             }
-            
-            Button(action: {
-                showDescription.toggle()
-            }) {
-                Image(systemName: "info.circle")
-            }
-            .tint(.accentColor)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            Button(role: .destructive, action: delete) {
-                Image(systemName: "checkmark.circle")
+            if isUnlocked {
+                Button(role: .destructive, action: delete) {
+                    Image(systemName: "checkmark.circle")
+                }
+                .tint(.green)
             }
-            .tint(.green)
         }
         .sheet(isPresented: $showDescription) {
             HomeworkEditView(
@@ -87,7 +94,7 @@ struct HomeworkItem: View {
         }) {
             subject = s
         } else {
-            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
+            subject = HomeworkList.subject()
         }
         
         return subject

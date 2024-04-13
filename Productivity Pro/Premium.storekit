@@ -10,12 +10,12 @@
       "internalID" : "6496854860",
       "localizations" : [
         {
-          "description" : "Productivity. Redefined.",
+          "description" : "Einmal zahlen. Für immer nutzen.",
           "displayName" : "Productivity Pro Premium",
           "locale" : "de"
         },
         {
-          "description" : "Productivity. Redefined.",
+          "description" : "Pay once. Use forever.",
           "displayName" : "Productivity Pro Premium",
           "locale" : "en_US"
         }
@@ -29,8 +29,8 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 734728419.05035996,
-    "_locale" : "en_US",
+    "_lastSynchronizedDate" : 734737634.96129501,
+    "_locale" : "de",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
       {
@@ -91,7 +91,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "FA7A31A1",
+              "internalID" : "9944F40D",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivitypro.premium.monthlysub.offer",
               "paymentMode" : "free",

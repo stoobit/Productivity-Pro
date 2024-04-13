@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct HomeworkView: View {
+    @AppStorage("ppisunlocked")
+    var isUnlocked: Bool = false
     
     @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
     @State var presentAdd: Bool = false
     
@@ -20,7 +22,7 @@ struct HomeworkView: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
 
-                if subjects.value.isEmpty {
+                if subjects.value.isEmpty && isUnlocked {
                     ContentUnavailableView(
                         "Du hast noch keine Fächer erstellt.",
                         systemImage: "tray.2",
@@ -29,21 +31,19 @@ struct HomeworkView: View {
                 } else {
                     HomeworkList(presentAdd: $presentAdd)
                 }
-                
             }
             .navigationTitle("Aufgaben")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
             .toolbar {
-               ToolbarItem(placement: .topBarTrailing) {
-                   Button("Fach hinzufügen", systemImage: "plus") {
-                       presentAdd.toggle()
-                   }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Fach hinzufügen", systemImage: "plus") {
+                        presentAdd.toggle()
+                    }
                     .disabled(subjects.value.isEmpty)
                 }
             }
         }
-        .modifier(LockScreen())
     }
 }
 

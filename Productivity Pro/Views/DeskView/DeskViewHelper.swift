@@ -23,8 +23,7 @@ extension DeskView {
                 Label("App Icon", systemImage: "app.gift")
             }
             .frame(height: 30)
-            .modifier(PremiumBadge())
-            .modifier(LockButton())
+            .modifier(PremiumBadge(disabled: true))
 
             NavigationLink(destination: {
                 SubjectSettings()
@@ -32,8 +31,7 @@ extension DeskView {
                 Label("Fächer", systemImage: "tray.2")
             }
             .frame(height: 30)
-            .modifier(PremiumBadge())
-            .modifier(LockButton())
+            .modifier(PremiumBadge(disabled: true))
 
             NavigationLink(destination: {
                 BackupSettings()
@@ -43,8 +41,7 @@ extension DeskView {
                 )
             }
             .frame(height: 30)
-            .modifier(PremiumBadge())
-            .modifier(LockButton())
+            .modifier(PremiumBadge(disabled: true))
         }
     }
 }

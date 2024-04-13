@@ -8,7 +8,7 @@
 import StoreKit
 import SwiftUI
 
-struct DeskPremiumButton: View {
+struct PremiumButton: View {
     @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     let id = "com.stoobit.productivitypro.premium.unlock"
 

@@ -6,11 +6,17 @@
 //
 
 import SwiftData
-import Foundation
+import SwiftUI
 
 @Model final class Homework: Identifiable {
     
     init() { }
+    
+    init(title: LocalizedStringResource, subject: String, date: Date) {
+        self.title = String(localized: title)
+        self.subject = subject
+        self.date = date
+    }
     
     var id: UUID = UUID()
     

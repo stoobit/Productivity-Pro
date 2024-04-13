@@ -73,7 +73,7 @@ private struct ContentView: View {
                 }
                 
                 ScheduleViewContainer()
-                    .modifier(PremiumBadge())
+                    .modifier(PremiumBadge(disabled: false))
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(2)
                     .tabItem {
@@ -81,7 +81,7 @@ private struct ContentView: View {
                     }
                 
                 HomeworkView()
-                    .modifier(PremiumBadge())
+                    .modifier(PremiumBadge(disabled: false))
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         askNotificationPermission()

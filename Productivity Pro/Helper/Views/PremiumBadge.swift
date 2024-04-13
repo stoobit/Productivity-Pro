@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PremiumBadge: ViewModifier {
     @AppStorage("ppisunlocked") var isUnlocked: Bool = false
+    var disabled: Bool
     
     func body(content: Content) -> some View {
         if isUnlocked {
@@ -16,6 +17,7 @@ struct PremiumBadge: ViewModifier {
         } else {
             content
                 .badge(Text("Premium"))
+                .disabled(disabled)
         }
     }
 }
