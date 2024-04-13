@@ -39,6 +39,7 @@
 		BB2A8E1E2B460CD30072D3CC /* NoteViewModalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */; };
 		BB30C2DA2BC9B344009D69CA /* PVCUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2D92BC9B344009D69CA /* PVCUpdate.swift */; };
 		BB30C2DC2BC9B34D009D69CA /* PVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2DB2BC9B34D009D69CA /* PVCCoordinator.swift */; };
+		BB30C2DF2BCAA75C009D69CA /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2DE2BCAA75C009D69CA /* ProgressModel.swift */; };
 		BB3208A82981DFFF0014F602 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB339F872AD44E97009DA591 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB339F862AD44E97009DA591 /* Role.swift */; };
@@ -394,6 +395,7 @@
 		BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModalMethods.swift; sourceTree = "<group>"; };
 		BB30C2D92BC9B344009D69CA /* PVCUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVCUpdate.swift; sourceTree = "<group>"; };
 		BB30C2DB2BC9B34D009D69CA /* PVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVCCoordinator.swift; sourceTree = "<group>"; };
+		BB30C2DE2BCAA75C009D69CA /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB339F862AD44E97009DA591 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
@@ -1154,6 +1156,7 @@
 				BB441DD42B41A05300B103DE /* ImportManager.swift */,
 				BB96F5B22B61C0460044B200 /* PDFManager.swift */,
 				BB49EE072BC752EC004CB803 /* PositionManager.swift */,
+				BB30C2DE2BCAA75C009D69CA /* ProgressModel.swift */,
 				BBBCACB22A25461900C23B2C /* CalculatorModel.swift */,
 			);
 			path = ViewModels;
@@ -2113,6 +2116,7 @@
 				BB8A0AE32AD0B871008B4D27 /* LockViews.swift in Sources */,
 				BBC0BAB12B47F2CB00D47A21 /* ExportableShapeModel.swift in Sources */,
 				BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */,
+				BB30C2DF2BCAA75C009D69CA /* ProgressModel.swift in Sources */,
 				BB7984682AC37E1E00CF3D24 /* ObjectViewFileLink.swift in Sources */,
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
 				BB30C2DA2BC9B344009D69CA /* PVCUpdate.swift in Sources */,
