@@ -116,7 +116,7 @@ struct NoteView: View {
             
                 for page in pages {
                     pvModel.index = page
-                    try await Task.sleep(nanoseconds: 500000000)
+                    try await Task.sleep(nanoseconds: 300000000)
                 }
                 
                 pvModel.index = pages.last ?? 0
