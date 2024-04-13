@@ -88,6 +88,11 @@ struct NoteView: View {
                 toolManager.pencilKit = false
             }
             .environment(pvModel)
+            .allowsHitTesting(pvModel.didAppear)
+            .overlay {
+                self.LoadingView()
+            }
+            
         } else {
             ZStack {
                 Color(UIColor.secondarySystemBackground)
@@ -117,7 +122,9 @@ struct NoteView: View {
                 pvModel.index = pages.last ?? 0
                 toolManager.activePage = self.pages[pvModel.index]
                 
-                pvModel.didAppear = true
+                withAnimation(.bouncy) {
+                    pvModel.didAppear = true
+                }
             }
             
         } else {
@@ -125,22 +132,6 @@ struct NoteView: View {
                 toolManager.activePage = pages[pvModel.index]
             }
         }
-        
-//        if pvModel.didAppear == false {
-//            if let recent = contentObject.note?.recent {
-//                pvModel.index = recent.index
-//                toolManager.activePage = recent
-//            } else {
-//                pvModel.index = 0
-//                toolManager.activePage = pages.first
-//            }
-//
-//            pvModel.didAppear = true
-//        } else {
-//            if pages.indices.contains(pvModel.index) {
-//                toolManager.activePage = pages[pvModel.index]
-//            }
-//        }
     }
     
     func updateIndex() {
@@ -149,5 +140,18 @@ struct NoteView: View {
         }
         
         toolManager.activeItem = nil
+    }
+    
+    @ViewBuilder func LoadingView() -> some View {
+        if pvModel.didAppear == false {
+            ZStack {
+                Color(UIColor.secondarySystemBackground)
+                    .ignoresSafeArea(.all)
+                
+                ProgressView()
+                    .controlSize(.extraLarge)
+            }
+            .transition(.opacity)
+        }
     }
 }

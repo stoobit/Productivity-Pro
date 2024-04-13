@@ -39,7 +39,8 @@
 		BB2A8E1E2B460CD30072D3CC /* NoteViewModalMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */; };
 		BB30C2DA2BC9B344009D69CA /* PVCUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2D92BC9B344009D69CA /* PVCUpdate.swift */; };
 		BB30C2DC2BC9B34D009D69CA /* PVCCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2DB2BC9B34D009D69CA /* PVCCoordinator.swift */; };
-		BB30C2DF2BCAA75C009D69CA /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2DE2BCAA75C009D69CA /* ProgressModel.swift */; };
+		BB30C2E22BCAE1CC009D69CA /* llama in Frameworks */ = {isa = PBXBuildFile; productRef = BB30C2E12BCAE1CC009D69CA /* llama */; };
+		BB30C2E52BCAE1FD009D69CA /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = BB30C2E42BCAE1FD009D69CA /* MarkdownUI */; };
 		BB3208A82981DFFF0014F602 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB339F872AD44E97009DA591 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB339F862AD44E97009DA591 /* Role.swift */; };
@@ -77,7 +78,6 @@
 		BB4984082BC32BC8008D45B0 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4984072BC32BC8008D45B0 /* Metal.framework */; };
 		BB49840A2BC32BCD008D45B0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4984092BC32BCD008D45B0 /* Accelerate.framework */; };
 		BB49840E2BC32E35008D45B0 /* LibLlama.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49840D2BC32E35008D45B0 /* LibLlama.swift */; };
-		BB4984132BC32F41008D45B0 /* llama in Frameworks */ = {isa = PBXBuildFile; productRef = BB4984122BC32F41008D45B0 /* llama */; };
 		BB4984182BC32FA7008D45B0 /* LlamaState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984172BC32FA7008D45B0 /* LlamaState.swift */; };
 		BB49841D2BC32FCD008D45B0 /* AIInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984192BC32FCD008D45B0 /* AIInputButton.swift */; };
 		BB49841E2BC32FCD008D45B0 /* AIDownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */; };
@@ -209,7 +209,6 @@
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
 		BBA8085F2AC2056100F9DFCA /* ObjectViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */; };
-		BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */; };
 		BBA9A24A2B2F0C96004AFAD0 /* MarkdownTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA9A2492B2F0C96004AFAD0 /* MarkdownTheme.swift */; };
 		BBADD1382A5102620075B825 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1362A5102620075B825 /* MarkdownView.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
@@ -395,7 +394,6 @@
 		BB2A8E1D2B460CD30072D3CC /* NoteViewModalMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModalMethods.swift; sourceTree = "<group>"; };
 		BB30C2D92BC9B344009D69CA /* PVCUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVCUpdate.swift; sourceTree = "<group>"; };
 		BB30C2DB2BC9B34D009D69CA /* PVCCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVCCoordinator.swift; sourceTree = "<group>"; };
-		BB30C2DE2BCAA75C009D69CA /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB339F862AD44E97009DA591 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
@@ -668,11 +666,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB4984132BC32F41008D45B0 /* llama in Frameworks */,
+				BB30C2E22BCAE1CC009D69CA /* llama in Frameworks */,
 				BB49840A2BC32BCD008D45B0 /* Accelerate.framework in Frameworks */,
 				BB4984082BC32BC8008D45B0 /* Metal.framework in Frameworks */,
-				BBA9A2482B2F08BA004AFAD0 /* MarkdownUI in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
+				BB30C2E52BCAE1FD009D69CA /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1156,7 +1154,6 @@
 				BB441DD42B41A05300B103DE /* ImportManager.swift */,
 				BB96F5B22B61C0460044B200 /* PDFManager.swift */,
 				BB49EE072BC752EC004CB803 /* PositionManager.swift */,
-				BB30C2DE2BCAA75C009D69CA /* ProgressModel.swift */,
 				BBBCACB22A25461900C23B2C /* CalculatorModel.swift */,
 			);
 			path = ViewModels;
@@ -1747,8 +1744,8 @@
 			);
 			name = "Productivity Pro";
 			packageProductDependencies = (
-				BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */,
-				BB4984122BC32F41008D45B0 /* llama */,
+				BB30C2E12BCAE1CC009D69CA /* llama */,
+				BB30C2E42BCAE1FD009D69CA /* MarkdownUI */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1810,8 +1807,8 @@
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
-				BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
-				BB4984112BC32F41008D45B0 /* XCRemoteSwiftPackageReference "llama.cpp" */,
+				BB30C2E02BCAE1CC009D69CA /* XCRemoteSwiftPackageReference "llama.cpp" */,
+				BB30C2E32BCAE1FD009D69CA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -2116,7 +2113,6 @@
 				BB8A0AE32AD0B871008B4D27 /* LockViews.swift in Sources */,
 				BBC0BAB12B47F2CB00D47A21 /* ExportableShapeModel.swift in Sources */,
 				BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */,
-				BB30C2DF2BCAA75C009D69CA /* ProgressModel.swift in Sources */,
 				BB7984682AC37E1E00CF3D24 /* ObjectViewFileLink.swift in Sources */,
 				BBF5FDFA2AAE2BCE0081C4FE /* AppIconSettings.swift in Sources */,
 				BB30C2DA2BC9B344009D69CA /* PVCUpdate.swift in Sources */,
@@ -2638,7 +2634,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BB4984112BC32F41008D45B0 /* XCRemoteSwiftPackageReference "llama.cpp" */ = {
+		BB30C2E02BCAE1CC009D69CA /* XCRemoteSwiftPackageReference "llama.cpp" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ggerganov/llama.cpp.git";
 			requirement = {
@@ -2646,25 +2642,25 @@
 				kind = branch;
 			};
 		};
-		BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+		BB30C2E32BCAE1FD009D69CA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
+				minimumVersion = 2.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BB4984122BC32F41008D45B0 /* llama */ = {
+		BB30C2E12BCAE1CC009D69CA /* llama */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BB4984112BC32F41008D45B0 /* XCRemoteSwiftPackageReference "llama.cpp" */;
+			package = BB30C2E02BCAE1CC009D69CA /* XCRemoteSwiftPackageReference "llama.cpp" */;
 			productName = llama;
 		};
-		BBA9A2472B2F08BA004AFAD0 /* MarkdownUI */ = {
+		BB30C2E42BCAE1FD009D69CA /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BBA9A2462B2F08BA004AFAD0 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			package = BB30C2E32BCAE1FD009D69CA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */

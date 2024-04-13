@@ -30,7 +30,6 @@ private struct ContentView: View {
     
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()
-    @State var progressModel: ProgressModel = .init()
     
     @State var selectedTab: Int = 1
     
@@ -67,9 +66,6 @@ private struct ContentView: View {
                     }
                     .sheet(isPresented: $subviewManager.shareQRPDFView) {
                         ShareQRPDFView()
-                    }
-                    .overlay {
-                        LoadingView()
                     }
                 
                 if locale == "Deutsch" {
@@ -108,7 +104,6 @@ private struct ContentView: View {
             .scrollDisabled(toolManager.showProgress)
             .environment(toolManager)
             .environment(subviewManager)
-            .environment(progressModel)
             .environment(storeVM)
             .scrollIndicators(.hidden)
             .overlay {
@@ -122,18 +117,6 @@ private struct ContentView: View {
         .onOpenURL(perform: { url in
             handle(url: url)
         })
-    }
-    
-    @ViewBuilder func LoadingView() -> some View {
-        if progressModel.isVisible {
-            ZStack {
-                Color(UIColor.systemGroupedBackground)
-                    .ignoresSafeArea(.all)
-                
-                ProgressView()
-                    .controlSize(.extraLarge)
-            }
-        }
     }
     
     func askNotificationPermission() {
