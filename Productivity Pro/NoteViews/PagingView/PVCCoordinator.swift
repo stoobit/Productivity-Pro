@@ -58,8 +58,7 @@ extension PagingViewController {
             previousViewControllers: [UIViewController],
             transitionCompleted completed: Bool
         ) {
-            if completed,
-               let visibleViewController = pageViewController.viewControllers?.first,
+            if let visibleViewController = pageViewController.viewControllers?.first,
                let index = controllers.firstIndex(of: visibleViewController)
             {
                 parent.currentPage = index
