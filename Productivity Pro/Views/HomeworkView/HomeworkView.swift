@@ -41,6 +41,7 @@ struct HomeworkView: View {
                         presentAdd.toggle()
                     }
                     .disabled(subjects.value.isEmpty)
+                    .disabled(isUnlocked == false)
                 }
             }
         }
