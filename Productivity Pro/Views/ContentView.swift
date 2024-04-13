@@ -17,16 +17,13 @@ struct ContentViewContainer: View {
 }
 
 private struct ContentView: View {
-    @Environment(\.scenePhase) var scenePhase
-    
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     
     @State var storeVM: StoreViewModel = .init()
     let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
     
-    @AppStorage("ppisstoobitdeveloper") var isDeveloper: Bool = false
-    @AppStorage("ppisunlocked") var isSubscribed: Bool = false
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()
@@ -37,10 +34,8 @@ private struct ContentView: View {
         ZStack {
             if storeVM.finished {
                 Text("Premium")
-                    .onChange(of: scenePhase, initial: true) {
-                        if isDeveloper == false {
-                            updateStatus()
-                        }
+                    .task {
+                        updateStatus()
                     }
             }
             
@@ -98,8 +93,10 @@ private struct ContentView: View {
             }
             .disabled(toolManager.showProgress)
             .modifier(
-                OpenURL(objects: contentObjects,
-                        contentObjects: contentObjects)
+                OpenURL(
+                    objects: contentObjects,
+                    contentObjects: contentObjects
+                )
             )
             .scrollDisabled(toolManager.showProgress)
             .environment(toolManager)
@@ -120,7 +117,7 @@ private struct ContentView: View {
     }
     
     func askNotificationPermission() {
-        if isSubscribed {
+        if isUnlocked {
             UNUserNotificationCenter.current().requestAuthorization(
                 options: [.alert, .badge, .sound]
             ) { _, _ in }
@@ -130,9 +127,9 @@ private struct ContentView: View {
     func updateStatus() {
         if storeVM.connectionFailure == false {
             if storeVM.purchasedSubscriptions.isEmpty {
-                isSubscribed = false
+                isUnlocked = false
             } else {
-                isSubscribed = true
+                isUnlocked = true
             }
         }
     }

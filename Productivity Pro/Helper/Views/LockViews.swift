@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct LockScreen: ViewModifier {
-    @AppStorage("ppisunlocked") var isSubscribed: Bool = false
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     @State var showPremium: Bool = false
 
     func body(content: Content) -> some View {
-        if isSubscribed {
+        if isUnlocked {
             content
         } else {
             content
@@ -24,9 +24,6 @@ struct LockScreen: ViewModifier {
                             .font(.largeTitle.bold())
                             .foregroundStyle(Color.accentColor.gradient)
                     }
-                    .sheet(isPresented: $showPremium) {
-                        PremiumView()
-                    }
                 }
         }
     }
@@ -34,10 +31,10 @@ struct LockScreen: ViewModifier {
 
 struct LockButton: ViewModifier {
     @AppStorage("ppisunlocked")
-    var isSubscribed: Bool = false
+    var isUnlocked: Bool = false
 
     func body(content: Content) -> some View {
-        if isSubscribed {
+        if isUnlocked {
             content
         } else {
             content

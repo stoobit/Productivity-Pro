@@ -5,23 +5,23 @@
   ],
   "products" : [
     {
-      "displayPrice" : "29.99",
+      "displayPrice" : "12.99",
       "familyShareable" : true,
-      "internalID" : "6480534610",
+      "internalID" : "6496854860",
       "localizations" : [
         {
-          "description" : "Zahle einmalig für Productivity Pro Premium.",
+          "description" : "Productivity. Redefined.",
           "displayName" : "Productivity Pro Premium",
           "locale" : "de"
         },
         {
-          "description" : "Pay one-time for Productivity Pro Premium.",
+          "description" : "Productivity. Redefined.",
           "displayName" : "Productivity Pro Premium",
           "locale" : "en_US"
         }
       ],
-      "productID" : "com.stoobit.productivitypro.onetimepurchase",
-      "referenceName" : "Onetime Purchase to unlock Productivity Pro Premium",
+      "productID" : "com.stoobit.productivitypro.premium.unlock",
+      "referenceName" : "Productivity Pro Premium",
       "type" : "NonConsumable"
     }
   ],
@@ -29,7 +29,7 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 733887835.63336694,
+    "_lastSynchronizedDate" : 734728419.05035996,
     "_locale" : "en_US",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
@@ -91,7 +91,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "431812C9",
+              "internalID" : "FA7A31A1",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivitypro.premium.monthlysub.offer",
               "paymentMode" : "free",
@@ -109,7 +109,7 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Enjoy Premium and stay flexible. ",
+              "description" : "Enjoy all premium features and stay flexible.",
               "displayName" : "Monthly Subscription",
               "locale" : "en_US"
             },
@@ -139,19 +139,14 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Stundenplan, Aufgaben, App Icons & mehr.",
-              "displayName" : "Productivity Pro Premium",
-              "locale" : "de"
-            },
-            {
-              "description" : "Bezahle Premium jährlich und spare Geld.",
-              "displayName" : "Jährliches Abonnement",
-              "locale" : "de"
-            },
-            {
-              "description" : "Enjoy Premium and save money.",
+              "description" : "Save money without missing out on features.",
               "displayName" : "Yearly Subscription",
               "locale" : "en_US"
+            },
+            {
+              "description" : "Spare Geld, ohne auf Features zu verzichten.",
+              "displayName" : "Jährliches Abonnement",
+              "locale" : "de"
             }
           ],
           "productID" : "com.stoobit.productivity.premium",

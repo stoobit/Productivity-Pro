@@ -81,7 +81,7 @@
          referenceType = "1">
       </LocationScenarioReference>
       <StoreKitConfigurationFileReference
-         identifier = "../../Productivity Pro/Views/DeskView/Premium/Premium.storekit">
+         identifier = "../../Productivity Pro/Premium.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction

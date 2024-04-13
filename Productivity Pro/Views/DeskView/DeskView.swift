@@ -8,54 +8,22 @@
 import SwiftUI
 
 struct DeskView: View {
-    @AppStorage("ppisunlocked") var isSubscribed: Bool = false
-    
-    @State var premiumView: Bool = false
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     @State var settingsView: Bool = false
+    
+    let string = "https://apps.apple.com/app/id6449678571?action=write-review"
     
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    if isSubscribed == false {
-                        Button(action: { premiumView.toggle() }) {
-                            Label(title: {
-                                Text("Premium")
-                                    .foregroundStyle(Color.primary)
-                            }) {
-                                Image(systemName: "crown.fill")
-                            }
-                        }
-                        .frame(height: 30)
-                        .sheet(isPresented: $premiumView, content: {
-                            PremiumView()
-                                .interactiveDismissDisabled()
-                        })
-                    } else if isSubscribed == true {
-                        Button(action: { settingsView.toggle() }) {
-                            Label(title: {
-                                Text("Premium")
-                                    .foregroundStyle(Color.primary)
-                            }) {
-                                Image(systemName: "crown.fill")
-                                    .foregroundStyle(Color.green)
-                            }
-                        }
-                        .frame(height: 30)
-                        .manageSubscriptionsSheet(
-                            isPresented: $settingsView,
-                            subscriptionGroupID: "21404124"
-                        )
-                    }
-                    
-                    // Store
+                if isUnlocked == false {
+                    DeskPremiumButton()
                 }
                 
                 Settings()
                 
                 Button(action: {
-                    if let url = URL(string: "https://apps.apple.com/app/id6449678571?action=write-review"
-                    ) {
+                    if let url = URL(string: string) {
                         UIApplication.shared.open(url)
                     }
                 }) {

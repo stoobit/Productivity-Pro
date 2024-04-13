@@ -20,8 +20,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
     private(set) var connectionFailure: Bool = false
     
     let productIds: [String] = [
-        "com.stoobit.productivity.premium",
-        "com.stoobit.productivitypro.premium.monthlysub",
+        "com.stoobit.productivitypro.premium.unlock"
     ]
     
     var updateListenerTask: Task<Void, Error>? = nil
@@ -102,7 +101,7 @@ typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
                 let transaction = try checkVerified(result)
                 
                 switch transaction.productType {
-                case .autoRenewable:
+                case .nonConsumable:
                     if let subscription = subscriptions.first(where: {
                         $0.id == transaction.productID
                     }) {

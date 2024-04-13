@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct PremiumBadge: ViewModifier {
-    @AppStorage("ppisunlocked") var isSubscribed: Bool = false
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     
     func body(content: Content) -> some View {
-        if isSubscribed {
+        if isUnlocked {
             content
         } else {
             content
