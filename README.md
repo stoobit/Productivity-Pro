@@ -5,6 +5,7 @@
 - improve overview
 
 ## 🗺️ Release 2.0.5
+- share extension
 - loading animation when printing pdf gets rendered 
 - improve PencilKit performance 
 - improve PDFKit performance
