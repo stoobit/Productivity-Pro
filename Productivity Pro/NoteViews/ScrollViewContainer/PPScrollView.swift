@@ -53,6 +53,14 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
             offset = scrollView.contentOffset
         }
         
+        let singleTap = UITapGestureRecognizer(
+            target: context.coordinator,
+            action: #selector(Coordinator.singleTap)
+        )
+        
+        singleTap.numberOfTapsRequired = 1
+        scrollView.addGestureRecognizer(singleTap)
+        
         let doubleTap = UITapGestureRecognizer(
             target: context.coordinator,
             action: #selector(Coordinator.doubleTap)

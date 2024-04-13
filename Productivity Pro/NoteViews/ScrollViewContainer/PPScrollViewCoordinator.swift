@@ -115,6 +115,12 @@ extension PPScrollView {
                 toolManager.offset = parent.scrollView.contentOffset
             }
         }
+        
+        @objc func singleTap() {
+            Task { @MainActor in
+                toolManager.activeItem = nil
+            }
+        }
     }
     
     func makeCoordinator() -> Coordinator {

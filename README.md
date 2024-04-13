@@ -1,7 +1,8 @@
 # Productivity Pro
 
 ## 🗺️ Release 2.0.4
-- update PageViewController when window size changes
+- PageViewController 
+- improve overview
 
 ## 🗺️ Release 2.0.5
 - loading animation when printing pdf gets rendered 
