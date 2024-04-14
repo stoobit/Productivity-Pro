@@ -118,7 +118,14 @@
       }
     },
     "AB durchlesen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "read worksheet"
+          }
+        }
+      }
     },
     "Abbrechen" : {
       "localizations" : {
@@ -384,7 +391,14 @@
       }
     },
     "Biologie" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biology"
+          }
+        }
+      }
     },
     "Bis %@ zu erledigen" : {
       "localizations" : {
@@ -467,22 +481,50 @@
       }
     },
     "Buch S. 92, Aufgabe 2+3" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "book p. 92, 2+3"
+          }
+        }
+      }
     },
     "Cancel" : {
 
     },
     "Cäsar-Verschlüsselung in Java implementieren" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "implement Caesar-Encryption in Java"
+          }
+        }
+      }
     },
     "Chemie" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chemistry"
+          }
+        }
+      }
     },
     "Clear" : {
 
     },
     "Comment fertig schreiben" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "write comment"
+          }
+        }
+      }
     },
     "Copy" : {
 
@@ -531,7 +573,14 @@
       }
     },
     "Deutsch" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
+          }
+        }
+      }
     },
     "Dienstag" : {
       "localizations" : {
@@ -766,7 +815,14 @@
       }
     },
     "Englisch" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "German"
+          }
+        }
+      }
     },
     "Entfernen" : {
       "localizations" : {
@@ -949,7 +1005,14 @@
       }
     },
     "Geographie" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geography"
+          }
+        }
+      }
     },
     "Gepunktet" : {
       "localizations" : {
@@ -962,7 +1025,14 @@
       }
     },
     "Geschichte" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "History"
+          }
+        }
+      }
     },
     "Groß" : {
       "localizations" : {
@@ -1078,7 +1148,14 @@
       }
     },
     "Informatik" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IT"
+          }
+        }
+      }
     },
     "Inspektor" : {
       "localizations" : {
@@ -1151,7 +1228,14 @@
       }
     },
     "Kunst" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Art"
+          }
+        }
+      }
     },
     "Latein" : {
       "localizations" : {
@@ -1250,10 +1334,24 @@
       }
     },
     "Mathe" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maths"
+          }
+        }
+      }
     },
     "Metamorphosen 1-4 übersetzen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "translate Metamorphoses 1-4"
+          }
+        }
+      }
     },
     "Mittwoch" : {
       "localizations" : {
@@ -1472,7 +1570,14 @@
       }
     },
     "Physik" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Physics"
+          }
+        }
+      }
     },
     "Pin entfernen" : {
       "localizations" : {
@@ -1485,7 +1590,14 @@
       }
     },
     "Portrait fertig zeichnen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "draw portrait"
+          }
+        }
+      }
     },
     "Position" : {
       "localizations" : {
@@ -1588,7 +1700,14 @@
       }
     },
     "Referat \"Kulturelle Evolution\"" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "presentation \"Cultural Evolution\""
+          }
+        }
+      }
     },
     "Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen." : {
       "localizations" : {
@@ -1744,7 +1863,14 @@
       }
     },
     "Sozialkunde" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Politics"
+          }
+        }
+      }
     },
     "Sperre" : {
       "localizations" : {
@@ -1757,7 +1883,14 @@
       }
     },
     "Sport" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PE"
+          }
+        }
+      }
     },
     "Stil" : {
       "localizations" : {
@@ -1780,7 +1913,14 @@
       }
     },
     "Strukturformel von D-Glucose aufstellen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "structural formula of D-Glucose"
+          }
+        }
+      }
     },
     "Stundenplan" : {
       "localizations" : {
@@ -2009,7 +2149,14 @@
       }
     },
     "Wirtschaft" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Economy"
+          }
+        }
+      }
     },
     "Wortschatz %@" : {
       "localizations" : {

@@ -44,12 +44,12 @@ extension HomeworkList {
             Homework(
                 title: "AB durchlesen",
                 subject: "Physik",
-                date: Date.today().next(.monday)
+                date: Date.today().next(.friday)
             ),
             Homework(
                 title: "Metamorphosen 1-4 übersetzen",
                 subject: "Latein",
-                date: Date.today().next(.monday)
+                date: Date.today().next(.friday)
             ),
         ]
     }

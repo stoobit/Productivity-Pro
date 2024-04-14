@@ -12,9 +12,13 @@ import SwiftUI
     
     init() { }
     
-    init(title: LocalizedStringResource, subject: String, date: Date) {
+    init(
+        title: LocalizedStringResource,
+        subject: LocalizedStringResource,
+        date: Date
+    ) {
         self.title = String(localized: title)
-        self.subject = subject
+        self.subject = String(localized: subject)
         self.date = date
     }
     

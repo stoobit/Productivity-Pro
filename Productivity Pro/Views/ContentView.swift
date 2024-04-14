@@ -117,7 +117,7 @@ private struct ContentView: View {
             handle(url: url)
         })
         .onAppear {
-            if contentObjects.count > 0 {
+            if contentObjects.count > 9 {
                 requestReview()
             }
         }
