@@ -17,8 +17,6 @@ struct PKRepresentable: UIViewRepresentable {
     
     @Binding var canvasView: PKCanvasView
     @Binding var toolPicker: PKToolPicker
-    @Binding var drawingChanged: Bool
-    @Binding var strokeCount: Int
     
     func makeUIView(context: Context) -> PKCanvasView {
         Task { @MainActor in
@@ -46,11 +44,8 @@ struct PKRepresentable: UIViewRepresentable {
                 width: getFrame().width * scale,
                 height: getFrame().height * scale
             )
-            
-            strokeCount = canvasView.drawing.strokes.count
         }
         
-
         return canvasView
     }
     
@@ -60,10 +55,6 @@ struct PKRepresentable: UIViewRepresentable {
             canvasView.isRulerActive = false
         }
         
-        if canvasView.zoomScale != scale {
-            canvasView.setZoomScale(scale, animated: false)
-        }
-        
         canvasView.overrideUserInterfaceStyle = colorScheme()
         toolPicker.colorUserInterfaceStyle = colorScheme()
         
@@ -71,33 +62,25 @@ struct PKRepresentable: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        @Bindable var value = toolManager
-        return Coordinator(
-            drawingChanged: $drawingChanged,
-            toolPicker: $toolPicker,
-            strokeCount: $strokeCount
-        )
+        Coordinator(page: page)
     }
     
     func getFrame() -> CGSize {
-        var frame: CGSize = .zero
-        
         if page.isPortrait {
-            frame = CGSize(
-                width: shortSide,
-                height: longSide
-            )
+            return CGSize(width: shortSide, height: longSide)
         } else {
-            frame = CGSize(width: longSide, height: shortSide)
+            return CGSize(width: longSide, height: shortSide)
         }
-        
-        return frame
     }
     
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if page.color == "pagewhite" || page.color == "white" || page.color == "pageyellow" || page.color == "yellow" {
+        if page.color == "pagewhite" ||
+            page.color == "white" ||
+            page.color == "pageyellow" ||
+            page.color == "yellow"
+        {
             cs = .light
         }
         

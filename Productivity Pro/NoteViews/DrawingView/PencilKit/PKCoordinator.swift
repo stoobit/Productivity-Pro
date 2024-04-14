@@ -5,36 +5,19 @@
 //  Created by Till Brügmann on 09.12.23.
 //
 
-import SwiftUI
 import PencilKit
+import SwiftUI
 
 final class Coordinator: NSObject, PKCanvasViewDelegate {
-    var update: Bool = true
-    
-    @Binding var drawingChanged: Bool
-    @Binding var toolPicker: PKToolPicker
-    
-    @Binding var strokeCount: Int
-    
-    init(
-        drawingChanged: Binding<Bool>,
-        toolPicker: Binding<PKToolPicker>,
-        strokeCount: Binding<Int>
-    ) {
-        _drawingChanged = drawingChanged
-        _toolPicker = toolPicker
-        _strokeCount = strokeCount
+    @Bindable var page: PPPageModel
+
+    init(page: PPPageModel) {
+        self.page = page
     }
-    
+
     func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
         Task { @MainActor in
-            if update {
-                update = false
-                drawingChanged = true
-                
-                strokeCount = canvasView.drawing.strokes.count
-                update = true
-            }
+            page.canvas = canvasView.drawing.dataRepresentation()
         }
     }
 }

@@ -18,8 +18,6 @@ import SwiftUI
     
     var frameVisible: Bool = true
     var editorVisible: Bool = true
-    
-    var isLocked: Bool = false
     var dragType: DragType = .none
     
     var showSnapper: [Bool] = [false, false]
