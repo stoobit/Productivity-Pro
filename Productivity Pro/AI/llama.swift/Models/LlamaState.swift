@@ -146,12 +146,6 @@ class LlamaState: ObservableObject {
         let tokens_per_second = Double(await llamaContext.n_len) / t_generation
 
         await llamaContext.clear()
-        messageLog += """
-        \n
-        Done
-        Heat up took \(t_heat)s
-        Generated \(tokens_per_second) t/s\n
-        """
     }
 
     func bench() async {
