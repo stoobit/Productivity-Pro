@@ -130,8 +130,6 @@ class LlamaState: ObservableObject {
         }
 
         await llamaContext.completion_init(text: text)
-        let t_heat_end = DispatchTime.now().uptimeNanoseconds
-
         messageLog += "\(text)"
 
         while await llamaContext.n_cur < llamaContext.n_len {
