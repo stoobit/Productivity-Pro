@@ -129,10 +129,8 @@ class LlamaState: ObservableObject {
             return
         }
 
-        let t_start = DispatchTime.now().uptimeNanoseconds
         await llamaContext.completion_init(text: text)
         let t_heat_end = DispatchTime.now().uptimeNanoseconds
-        let t_heat = Double(t_heat_end - t_start) / NS_PER_S
 
         messageLog += "\(text)"
 
@@ -140,10 +138,6 @@ class LlamaState: ObservableObject {
             let result = await llamaContext.completion_loop()
             messageLog += "\(result)"
         }
-
-        let t_end = DispatchTime.now().uptimeNanoseconds
-        let t_generation = Double(t_end - t_heat_end) / NS_PER_S
-        let tokens_per_second = Double(await llamaContext.n_len) / t_generation
 
         await llamaContext.clear()
     }

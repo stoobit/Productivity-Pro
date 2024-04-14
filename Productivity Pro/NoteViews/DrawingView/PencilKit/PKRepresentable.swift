@@ -50,6 +50,7 @@ struct PKRepresentable: UIViewRepresentable {
             strokeCount = canvasView.drawing.strokes.count
         }
         
+
         return canvasView
     }
     
