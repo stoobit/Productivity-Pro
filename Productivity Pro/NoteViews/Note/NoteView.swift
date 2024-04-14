@@ -41,6 +41,10 @@ struct NoteView: View {
                                 note: contentObject.note!, page: $0,
                                 proxy: proxy
                             )
+                            .environment(toolManager)
+                            .environment(subviewManager)
+                            .environment(pvModel)
+                            
                         }, currentPage: $pvModel.index
                     )
                     .id(pages.count)
