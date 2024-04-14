@@ -2,7 +2,6 @@
 
 ## 🗺️ Release 2.0.4
 - PageViewController 
-- improve overview
 
 ## 🗺️ Release 2.0.5
 - share extension
