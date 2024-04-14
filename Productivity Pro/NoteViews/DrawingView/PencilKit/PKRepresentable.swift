@@ -55,6 +55,10 @@ struct PKRepresentable: UIViewRepresentable {
             canvasView.isRulerActive = false
         }
         
+        if canvasView.zoomScale != scale {
+            canvasView.setZoomScale(scale, animated: true)
+        }
+        
         canvasView.overrideUserInterfaceStyle = colorScheme()
         toolPicker.colorUserInterfaceStyle = colorScheme()
         
@@ -62,7 +66,7 @@ struct PKRepresentable: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(page: page)
+        Coordinator(self, page: page)
     }
     
     func getFrame() -> CGSize {
@@ -76,11 +80,10 @@ struct PKRepresentable: UIViewRepresentable {
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if page.color == "pagewhite" ||
+        if page.color == "pagewhite" || 
             page.color == "white" ||
             page.color == "pageyellow" ||
-            page.color == "yellow"
-        {
+            page.color == "yellow" {
             cs = .light
         }
         

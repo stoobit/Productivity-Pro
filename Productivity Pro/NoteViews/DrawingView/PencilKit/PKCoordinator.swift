@@ -9,15 +9,13 @@ import PencilKit
 import SwiftUI
 
 final class Coordinator: NSObject, PKCanvasViewDelegate {
+    var parent: PKRepresentable
     @Bindable var page: PPPageModel
 
-    init(page: PPPageModel) {
+    init(_ parent: PKRepresentable, page: PPPageModel) {
+        self.parent = parent
         self.page = page
     }
 
-    func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
-        Task { @MainActor in
-            page.canvas = canvasView.drawing.dataRepresentation()
-        }
-    }
+    func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {}
 }

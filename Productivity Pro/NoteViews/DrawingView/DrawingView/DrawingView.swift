@@ -9,8 +9,10 @@ import PencilKit
 import SwiftUI
 
 struct DrawingView: View {
-    @Environment(ToolManager.self) var toolManager
     @Environment(\.scenePhase) var scenePhase
+    @Environment(\.undoManager) var undoManager
+    @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
     
     @Bindable var page: PPPageModel
     @Binding var scale: CGFloat
@@ -25,12 +27,24 @@ struct DrawingView: View {
             toolPicker: $pkToolPicker
         )
         .zIndex(index)
-        .onChange(of: toolManager.activePage) { disableCanvas() }
-        .onChange(of: toolManager.pencilKit) {
-            setCanvas()
+        .onChange(of: toolManager.activePage) {
+            didSelectedPageChange()
+            disableCanvasAvailability()
+            page.canvas = pkCanvasView.drawing.dataRepresentation()
         }
-        .onChange(of: scenePhase) {
-            if scenePhase == .active { becameForeground() }
+        .onChange(of: toolManager.pencilKit) {
+            didCanvasAvailabilityChange(toolManager.pencilKit)
+            
+            if toolManager.pencilKit == false {
+                page.canvas = pkCanvasView.drawing.dataRepresentation()
+            }
+        }
+        .onChange(of: scenePhase) { _, value in
+            if value == .active {
+                becameForeground()
+            } else {
+                page.canvas = pkCanvasView.drawing.dataRepresentation()
+            }
         }
         .frame(
             width: scale * getFrame().width,

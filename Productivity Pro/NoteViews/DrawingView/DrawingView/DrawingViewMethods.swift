@@ -11,25 +11,16 @@ import SwiftUI
 extension DrawingView {
     func becameForeground() {
         if toolManager.pencilKit {
-            pkToolPicker.setVisible(true, forFirstResponder: pkCanvasView)
+            pkToolPicker.setVisible(
+                true, forFirstResponder: pkCanvasView
+            )
             
             pkToolPicker.addObserver(pkCanvasView)
             pkCanvasView.becomeFirstResponder()
         }
     }
     
-    func setCanvas() {
-        if toolManager.pencilKit {
-            pkToolPicker.setVisible(true, forFirstResponder: pkCanvasView)
-            pkToolPicker.addObserver(pkCanvasView)
-            
-            pkCanvasView.becomeFirstResponder()
-        } else {
-            disableCanvas()
-        }
-    }
-    
-    func disableCanvas() {
+    func didSelectedPageChange() {
         pkCanvasView.isRulerActive = false
         pkToolPicker.setVisible(
             false, forFirstResponder: pkCanvasView
@@ -39,6 +30,28 @@ extension DrawingView {
         pkCanvasView.resignFirstResponder()
         
         toolManager.pencilKit = false
+    }
+    
+    func didCanvasAvailabilityChange(_ isEnabled: Bool) {
+        if isEnabled {
+            pkToolPicker.setVisible(true, forFirstResponder: pkCanvasView)
+            
+            pkToolPicker.addObserver(pkCanvasView)
+            pkCanvasView.becomeFirstResponder()
+        } else {
+            disableCanvasAvailability()
+        }
+    }
+    
+    func disableCanvasAvailability() {
+        pkCanvasView.isRulerActive = false
+        
+        pkToolPicker.setVisible(
+            false, forFirstResponder: pkCanvasView
+        )
+        
+        pkToolPicker.removeObserver(pkCanvasView)
+        pkCanvasView.resignFirstResponder()
     }
     
     func getFrame() -> CGSize {
