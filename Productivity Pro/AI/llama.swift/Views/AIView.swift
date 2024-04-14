@@ -11,7 +11,12 @@ struct AIView: View {
     var body: some View {
         if llamaState.downloadedModels.isEmpty {
             AISetupContainer(inProgress: $showProgress) {
-               AIProgressView()
+                AIProgressView(
+                    llamaState: llamaState,
+                    modelName: llamaState.defaultModels[0].name,
+                    modelUrl: llamaState.defaultModels[0].url,
+                    filename: llamaState.defaultModels[0].filename
+                )
             }
         }
     }
@@ -115,13 +120,13 @@ struct AIView: View {
                 }
                 Section(header: Text("Downloaded Models")) {
                     ForEach(llamaState.downloadedModels) { model in
-                        AIDownloadButton(llamaState: llamaState, modelName: model.name, modelUrl: model.url, filename: model.filename)
+//                        AIDownloadButton(llamaState: llamaState, modelName: model.name, modelUrl: model.url, filename: model.filename)
                     }
                     .onDelete(perform: delete)
                 }
                 Section(header: Text("Default Models")) {
                     ForEach(llamaState.undownloadedModels) { model in
-                        AIDownloadButton(llamaState: llamaState, modelName: model.name, modelUrl: model.url, filename: model.filename)
+//                        AIDownloadButton(llamaState: llamaState, modelName: model.name, modelUrl: model.url, filename: model.filename)
                     }
                 }
             }

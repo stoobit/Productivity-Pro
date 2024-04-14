@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AIDownloadButton: View {
+struct AIProgressView: View {
     @ObservedObject private var llamaState: LlamaState
     private var modelName: String
     private var modelUrl: String
@@ -24,7 +24,7 @@ struct AIDownloadButton: View {
         self.modelUrl = modelUrl
         self.filename = filename
 
-        let fileURL = AIDownloadButton.getFileURL(filename: filename)
+        let fileURL = AIProgressView.getFileURL(filename: filename)
         status = FileManager.default.fileExists(atPath: fileURL.path) ? "downloaded" : "download"
     }
 
@@ -32,7 +32,7 @@ struct AIDownloadButton: View {
         status = "downloading"
         print("Downloading model \(modelName) from \(modelUrl)")
         guard let url = URL(string: modelUrl) else { return }
-        let fileURL = AIDownloadButton.getFileURL(filename: filename)
+        let fileURL = AIProgressView.getFileURL(filename: filename)
 
         downloadTask = URLSession.shared.downloadTask(with: url) { temporaryURL, response, error in
             if let error = error {
@@ -73,47 +73,61 @@ struct AIDownloadButton: View {
     }
 
     var body: some View {
-        VStack {
-            if status == "download" {
-                Button(action: download) {
-                    Text("Download " + modelName)
-                }
-            } else if status == "downloading" {
-                Button(action: {
-                    downloadTask?.cancel()
-                    status = "download"
-                }) {
-                    Text("\(modelName) (Downloading \(Int(progress * 100))%)")
-                }
-            } else if status == "downloaded" {
-                Button(action: {
-                    let fileURL = AIDownloadButton.getFileURL(filename: filename)
-                    if !FileManager.default.fileExists(atPath: fileURL.path) {
-                        download()
-                        return
-                    }
-                    do {
-                        try llamaState.loadModel(modelUrl: fileURL)
-                    } catch let err {
-                        print("Error: \(err.localizedDescription)")
-                    }
-                }) {
-                    Text("Load \(modelName)")
-                }
-            } else {
-                Text("Unknown status")
-            }
+        HStack {
+            ProgressView(value: progress, total: 1)
+                .tint(Color.primary)
+                .progressViewStyle(.linear)
+
+            Text("\(Int(progress * 100))%")
+                .frame(width: 50)
+                .padding(.leading)
         }
-        .onDisappear {
-            downloadTask?.cancel()
+        .padding(70)
+        .onAppear {
+            download()
         }
-        .onChange(of: llamaState.cacheCleared) {
-            if llamaState.cacheCleared {
-                downloadTask?.cancel()
-                let fileURL = AIDownloadButton.getFileURL(filename: filename)
-                status = FileManager.default.fileExists(atPath: fileURL.path) ? "downloaded" : "download"
-            }
-        }
+        
+//        VStack {
+//            if status == "download" {
+//                Button(action: download) {
+//                    Text("Download " + modelName)
+//                }
+//            } else if status == "downloading" {
+//                Button(action: {
+//                    downloadTask?.cancel()
+//                    status = "download"
+//                }) {
+//                    Text("\(modelName) (Downloading \(Int(progress * 100))%)")
+//                }
+//            } else if status == "downloaded" {
+//                Button(action: {
+//                    let fileURL = AIDownloadButton.getFileURL(filename: filename)
+//                    if !FileManager.default.fileExists(atPath: fileURL.path) {
+//                        download()
+//                        return
+//                    }
+//                    do {
+//                        try llamaState.loadModel(modelUrl: fileURL)
+//                    } catch let err {
+//                        print("Error: \(err.localizedDescription)")
+//                    }
+//                }) {
+//                    Text("Load \(modelName)")
+//                }
+//            } else {
+//                Text("Unknown status")
+//            }
+//        }
+//        .onDisappear {
+//            downloadTask?.cancel()
+//        }
+//        .onChange(of: llamaState.cacheCleared) {
+//            if llamaState.cacheCleared {
+//                downloadTask?.cancel()
+//                let fileURL = AIDownloadButton.getFileURL(filename: filename)
+//                status = FileManager.default.fileExists(atPath: fileURL.path) ? "downloaded" : "download"
+//            }
+//        }
     }
 }
 

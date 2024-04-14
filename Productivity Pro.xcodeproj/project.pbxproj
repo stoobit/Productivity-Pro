@@ -84,7 +84,7 @@
 		BB49840E2BC32E35008D45B0 /* LibLlama.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49840D2BC32E35008D45B0 /* LibLlama.swift */; };
 		BB4984182BC32FA7008D45B0 /* LlamaState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984172BC32FA7008D45B0 /* LlamaState.swift */; };
 		BB49841D2BC32FCD008D45B0 /* AIInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984192BC32FCD008D45B0 /* AIInputButton.swift */; };
-		BB49841E2BC32FCD008D45B0 /* AIDownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */; };
+		BB49841E2BC32FCD008D45B0 /* AIPorgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841A2BC32FCD008D45B0 /* AIPorgressView.swift */; };
 		BB49841F2BC32FCD008D45B0 /* AIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841B2BC32FCD008D45B0 /* AIView.swift */; };
 		BB4984202BC32FCD008D45B0 /* AILoadCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */; };
 		BB4984222BC332EA008D45B0 /* AIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4984212BC332EA008D45B0 /* AIButton.swift */; };
@@ -126,7 +126,6 @@
 		BB5DB6CD2B482BDC000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
 		BB5DB6CE2B482C1C000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
 		BB61AD3F2BCC2F7E00F4C34A /* AISetupContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61AD3E2BCC2F7E00F4C34A /* AISetupContainer.swift */; };
-		BB61AD432BCC311800F4C34A /* AIProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61AD422BCC311800F4C34A /* AIProgressView.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB655B002AB772F100FB005A /* NoteViewModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AFF2AB772F100FB005A /* NoteViewModals.swift */; };
@@ -436,7 +435,7 @@
 		BB49840D2BC32E35008D45B0 /* LibLlama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibLlama.swift; sourceTree = "<group>"; };
 		BB4984172BC32FA7008D45B0 /* LlamaState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LlamaState.swift; sourceTree = "<group>"; };
 		BB4984192BC32FCD008D45B0 /* AIInputButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIInputButton.swift; sourceTree = "<group>"; };
-		BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIDownloadButton.swift; sourceTree = "<group>"; };
+		BB49841A2BC32FCD008D45B0 /* AIPorgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIPorgressView.swift; sourceTree = "<group>"; };
 		BB49841B2BC32FCD008D45B0 /* AIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIView.swift; sourceTree = "<group>"; };
 		BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AILoadCustomButton.swift; sourceTree = "<group>"; };
 		BB4984212BC332EA008D45B0 /* AIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIButton.swift; sourceTree = "<group>"; };
@@ -480,7 +479,6 @@
 		BB5A23282B476DA000F1D1B6 /* Productivity_Preview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Productivity_Preview.entitlements; sourceTree = "<group>"; };
 		BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClipView.swift; sourceTree = "<group>"; };
 		BB61AD3E2BCC2F7E00F4C34A /* AISetupContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISetupContainer.swift; sourceTree = "<group>"; };
-		BB61AD422BCC311800F4C34A /* AIProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIProgressView.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
 		BB655AFF2AB772F100FB005A /* NoteViewModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModals.swift; sourceTree = "<group>"; };
@@ -869,7 +867,6 @@
 				BB49841B2BC32FCD008D45B0 /* AIView.swift */,
 				BB61AD402BCC302100F4C34A /* SetupView */,
 				BB61AD412BCC302A00F4C34A /* ChatView */,
-				BB49841A2BC32FCD008D45B0 /* AIDownloadButton.swift */,
 				BB4984192BC32FCD008D45B0 /* AIInputButton.swift */,
 				BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */,
 			);
@@ -1106,7 +1103,7 @@
 			isa = PBXGroup;
 			children = (
 				BB61AD3E2BCC2F7E00F4C34A /* AISetupContainer.swift */,
-				BB61AD422BCC311800F4C34A /* AIProgressView.swift */,
+				BB49841A2BC32FCD008D45B0 /* AIPorgressView.swift */,
 			);
 			path = SetupView;
 			sourceTree = "<group>";
@@ -2008,7 +2005,6 @@
 				BB49EE042BC5C4D1004CB803 /* PPScrollViewUpdate.swift in Sources */,
 				BBF5FDF82AAE2BC40081C4FE /* GeneralSettings.swift in Sources */,
 				BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */,
-				BB61AD432BCC311800F4C34A /* AIProgressView.swift in Sources */,
 				BB4984222BC332EA008D45B0 /* AIButton.swift in Sources */,
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
 				BB36D4C82B9D31EC00CBDCAD /* ArrangeGeneralView.swift in Sources */,
@@ -2069,7 +2065,7 @@
 				BBA3A0292B29AF2500099F6D /* MDEditorView.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
-				BB49841E2BC32FCD008D45B0 /* AIDownloadButton.swift in Sources */,
+				BB49841E2BC32FCD008D45B0 /* AIPorgressView.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
 				BB49EE082BC752EC004CB803 /* PositionManager.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,

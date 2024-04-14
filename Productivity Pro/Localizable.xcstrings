@@ -31,16 +31,6 @@
         }
       }
     },
-    "%@ (Downloading %lld%%)" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ (Downloading %2$lld%%)"
-          }
-        }
-      }
-    },
     "%@ bearbeiten" : {
       "localizations" : {
         "en" : {
@@ -91,6 +81,9 @@
         }
       }
     },
+    "%lld%%" : {
+
+    },
     "1. Make sure the model is in GGUF Format" : {
 
     },
@@ -106,9 +99,6 @@
           }
         }
       }
-    },
-    "33%" : {
-
     },
     "a-Deklination" : {
       "localizations" : {
@@ -1288,9 +1278,6 @@
           }
         }
       }
-    },
-    "Load %@" : {
-
     },
     "Load Custom Model" : {
 

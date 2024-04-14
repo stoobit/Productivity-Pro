@@ -70,7 +70,7 @@ class LlamaState: ObservableObject {
         return paths[0]
     }
 
-    private let defaultModels: [AIModel] = [
+    let defaultModels: [AIModel] = [
         AIModel(name: "TinyLlama-1.1B (Q4_0, 0.6 GiB)", url: "https://huggingface.co/TheBloke/TinyLlama-1.1B-1T-OpenOrca-GGUF/resolve/main/tinyllama-1.1b-1t-openorca.Q4_0.gguf?download=true", filename: "tinyllama-1.1b-1t-openorca.Q4_0.gguf", status: "download"),
         AIModel(
             name: "TinyLlama-1.1B Chat (Q8_0, 1.1 GiB)",
