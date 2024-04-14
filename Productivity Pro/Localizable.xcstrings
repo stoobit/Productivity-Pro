@@ -107,6 +107,9 @@
         }
       }
     },
+    "33%" : {
+
+    },
     "a-Deklination" : {
       "localizations" : {
         "en" : {
@@ -156,6 +159,9 @@
           }
         }
       }
+    },
+    "AI herunterladen und offline nutzen." : {
+
     },
     "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
       "localizations" : {
@@ -1157,6 +1163,9 @@
         }
       }
     },
+    "Je nach Leistung und Sprache der AI kann die Download-Größe variieren." : {
+
+    },
     "Jetzt löschen" : {
       "localizations" : {
         "en" : {
@@ -1226,6 +1235,9 @@
           }
         }
       }
+    },
+    "Lade Productivity Pro AI auf dein iPad herunter und nutze künstliche Intelligenz offline. So bleiben deine Daten sicher & privat." : {
+
     },
     "Latein" : {
       "localizations" : {
@@ -1608,6 +1620,9 @@
           }
         }
       }
+    },
+    "Productivity Pro AI" : {
+
     },
     "pronote" : {
       "localizations" : {
