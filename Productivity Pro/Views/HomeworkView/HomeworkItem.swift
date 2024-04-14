@@ -94,7 +94,7 @@ struct HomeworkItem: View {
         }) {
             subject = s
         } else {
-            subject = HomeworkList.subject()
+            subject = HomeworkList.subject(title: title)
         }
         
         return subject

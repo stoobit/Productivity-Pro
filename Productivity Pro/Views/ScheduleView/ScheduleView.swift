@@ -8,49 +8,42 @@
 import SwiftUI
 
 struct ScheduleView: View {
-    
     @Binding var isEditing: Bool
     var hsc: UserInterfaceSizeClass?
     
     @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
-    @AppStorage("ppschedule")
-    var schedule: CodableWrapper<Array<ScheduleDay>> = .init(value: [
-        ScheduleDay(id: String(localized: "Montag")),
-        ScheduleDay(id: String(localized: "Dienstag")),
-        ScheduleDay(id: String(localized: "Mittwoch")),
-        ScheduleDay(id: String(localized: "Donnerstag")),
-        ScheduleDay(id: String(localized: "Freitag"))
-    ])
+    @AppStorage("ppisunlocked")
+    var isUnlocked: Bool = false
+    
+    @Binding var schedule: CodableWrapper<[ScheduleDay]>
     
     var body: some View {
         ZStack {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
         
-            if subjects.value.isEmpty == false {
+            if subjects.value.isEmpty && isUnlocked {
                 Group {
-                    if hsc == .regular {
-                        StaticView()
-                    } else {
-                        FluidView()
-                    }
+                    ContentUnavailableView(
+                        "Du hast noch keine Fächer erstellt.",
+                        systemImage: "tray.2",
+                        description: Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
+                    )
                 }
-                .padding(.horizontal, 7)
             } else {
-                ContentUnavailableView(
-                    "Du hast noch keine Fächer erstellt.",
-                    systemImage: "tray.2",
-                    description: Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
-                )
+                if hsc == .regular {
+                    StaticView()
+                } else {
+                    FluidView()
+                }
             }
         }
     }
     
     @ViewBuilder func FluidView() -> some View {
         ScrollView(.vertical) {
-            
             ScrollView(.horizontal) {
                 LazyHStack(alignment: .top, spacing: 0) {
                     ScheduleColumn(
@@ -83,13 +76,26 @@ struct ScheduleView: View {
             }
             .scrollTargetBehavior(.paging)
             .safeAreaPadding(.horizontal, 0)
-            
         }
         .scrollIndicators(.never)
     }
     
     @ViewBuilder func StaticView() -> some View {
         ScrollView(.vertical) {
+            if isUnlocked == false {
+                PremiumButton()
+                    .padding(.horizontal)
+                    .padding(.vertical, 11)
+                    .background {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundStyle(
+                                Color(UIColor.secondarySystemGroupedBackground)
+                            )
+                    }
+                    .padding(.bottom, 13)
+                    .padding(.top, 35)
+            }
+            
             HStack(alignment: .top) {
                 ScheduleColumn(
                     isEditing: $isEditing, day: $schedule.value[0]
@@ -111,6 +117,7 @@ struct ScheduleView: View {
                     isEditing: $isEditing, day: $schedule.value[4]
                 )
             }
+            .padding(.top, isUnlocked ? 25 : 0)
         }
         .padding(.horizontal)
         .scrollIndicators(.never)

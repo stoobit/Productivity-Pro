@@ -188,7 +188,9 @@ struct ScheduleColumn: View {
         }) {
             subject = s
         } else {
-            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
+            subject = HomeworkList.subject(
+                title: scheduleSubject.subject
+            )
         }
         
         return subject

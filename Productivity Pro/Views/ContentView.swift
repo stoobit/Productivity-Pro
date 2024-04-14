@@ -17,6 +17,8 @@ struct ContentViewContainer: View {
 }
 
 private struct ContentView: View {
+    @Environment(\.requestReview) var requestReview
+    
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     
@@ -114,6 +116,11 @@ private struct ContentView: View {
         .onOpenURL(perform: { url in
             handle(url: url)
         })
+        .onAppear {
+            if contentObjects.count > 0 {
+                requestReview()
+            }
+        }
     }
     
     func askNotificationPermission() {

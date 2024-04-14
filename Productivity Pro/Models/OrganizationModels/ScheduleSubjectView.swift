@@ -14,4 +14,18 @@ struct ScheduleSubject: Identifiable, Codable, Equatable {
     var room: String = ""
     
     var isMarked: Bool = false
+    
+    init(subject: LocalizedStringResource, room: String) {
+        self.subject = String(localized: subject)
+        self.room = room
+    }
+    
+    init(_ subject: String, room: String) {
+        self.subject = subject
+        self.room = room
+    }
+    
+    init() {
+        
+    }
 }

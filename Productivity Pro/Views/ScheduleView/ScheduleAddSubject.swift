@@ -117,9 +117,7 @@ struct ScheduleAddSubject: View {
     }
     
     func add() {
-        let new = ScheduleSubject(
-            subject: subject, room: text
-        )
+        let new = ScheduleSubject(subject, room: text)
         
         day.subjects.append(new)
         isPresented.toggle()

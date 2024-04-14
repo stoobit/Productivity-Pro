@@ -44,6 +44,7 @@
 		BB30C2EE2BCB023A009D69CA /* DeskPremiumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2ED2BCB023A009D69CA /* DeskPremiumButton.swift */; };
 		BB30C2F02BCB0DFA009D69CA /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2EF2BCB0DFA009D69CA /* StoreViewModel.swift */; };
 		BB30C2F22BCB38A4009D69CA /* HomeworkPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2F12BCB38A4009D69CA /* HomeworkPreview.swift */; };
+		BB30C2F42BCB465F009D69CA /* SchedulePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB30C2F32BCB465F009D69CA /* SchedulePreview.swift */; };
 		BB3208A82981DFFF0014F602 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A72981DFFF0014F602 /* CameraView.swift */; };
 		BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3208A92981E8E90014F602 /* ScannerHelper.swift */; };
 		BB339F872AD44E97009DA591 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB339F862AD44E97009DA591 /* Role.swift */; };
@@ -393,6 +394,7 @@
 		BB30C2ED2BCB023A009D69CA /* DeskPremiumButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskPremiumButton.swift; sourceTree = "<group>"; };
 		BB30C2EF2BCB0DFA009D69CA /* StoreViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		BB30C2F12BCB38A4009D69CA /* HomeworkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkPreview.swift; sourceTree = "<group>"; };
+		BB30C2F32BCB465F009D69CA /* SchedulePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePreview.swift; sourceTree = "<group>"; };
 		BB3208A72981DFFF0014F602 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB339F862AD44E97009DA591 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
@@ -911,6 +913,7 @@
 			children = (
 				BB4A93E22AAF564C00C3AED6 /* ScheduleViewContainer.swift */,
 				BB4A93E02AAF559800C3AED6 /* ScheduleView.swift */,
+				BB30C2F32BCB465F009D69CA /* SchedulePreview.swift */,
 				BB4A93E42AAF580800C3AED6 /* ScheduleColumn.swift */,
 				BB4A93EF2AAF8EB200C3AED6 /* ScheduleAddSubject.swift */,
 			);
@@ -1987,6 +1990,7 @@
 				BB36D4C82B9D31EC00CBDCAD /* ArrangeGeneralView.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
+				BB30C2F42BCB465F009D69CA /* SchedulePreview.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,
 				BBD930FC2B21133600A37F95 /* SharePDFView.swift in Sources */,
 				BBF5FDF52AAE25FD0081C4FE /* LibraryView.swift in Sources */,
