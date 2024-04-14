@@ -117,16 +117,6 @@
         }
       }
     },
-    "AB durchlesen" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "read worksheet"
-          }
-        }
-      }
-    },
     "Abbrechen" : {
       "localizations" : {
         "en" : {
@@ -1585,16 +1575,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remove Pin"
-          }
-        }
-      }
-    },
-    "Portrait fertig zeichnen" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "draw portrait"
           }
         }
       }

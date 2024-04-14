@@ -14,12 +14,7 @@ extension HomeworkList {
             Homework(
                 title: "Buch S. 92, Aufgabe 2+3",
                 subject: "Mathe",
-                date: Date.today().next(.wednesday)
-            ),
-            Homework(
-                title: "Portrait fertig zeichnen",
-                subject: "Kunst",
-                date: Date.today().next(.wednesday)
+                date: Date.today().next(.thursday)
             ),
             Homework(
                 title: "Cäsar-Verschlüsselung in Java implementieren",
@@ -34,7 +29,7 @@ extension HomeworkList {
             Homework(
                 title: "Strukturformel von D-Glucose aufstellen",
                 subject: "Chemie",
-                date: Date.today().next(.monday)
+                date: Date.today().next(.thursday)
             ),
             Homework(
                 title: "Comment fertig schreiben",
@@ -42,14 +37,9 @@ extension HomeworkList {
                 date: Date.today().next(.monday)
             ),
             Homework(
-                title: "AB durchlesen",
-                subject: "Physik",
-                date: Date.today().next(.friday)
-            ),
-            Homework(
                 title: "Metamorphosen 1-4 übersetzen",
                 subject: "Latein",
-                date: Date.today().next(.friday)
+                date: Date.today().next(.tuesday)
             ),
         ]
     }
