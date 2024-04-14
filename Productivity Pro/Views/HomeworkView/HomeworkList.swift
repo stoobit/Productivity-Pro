@@ -35,7 +35,7 @@ struct HomeworkList: View {
             }
             
             ForEach(dates(), id: \.self) { date in
-                Section(formattedString(of: date)) {
+                Section(content: {
                     ForEach(filterTasks(by: date)) { homework in
                         HomeworkItem(
                             contentObjects: contentObjects,
@@ -52,7 +52,14 @@ struct HomeworkList: View {
                         }
                         .disabled(isUnlocked == false)
                     }
-                }
+                }, header: {
+                    if isUnlocked {
+                        Text(formattedString(of: date))
+                    } else {
+                        Text(formattedString(of: date))
+                            .redacted(reason: .placeholder)
+                    }
+                })
             }
         }
         .scrollContentBackground(.hidden)

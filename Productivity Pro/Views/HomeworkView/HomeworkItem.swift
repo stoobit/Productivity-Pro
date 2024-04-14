@@ -12,7 +12,7 @@ struct HomeworkItem: View {
     var isUnlocked: Bool = false
     
     @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
     var contentObjects: [ContentObject]
     var homework: Homework
@@ -24,7 +24,12 @@ struct HomeworkItem: View {
     var body: some View {
         Group {
             if homework.note == nil {
-                Item()
+                if isUnlocked {
+                    Item()
+                } else {
+                    Item()
+                        .redacted(reason: .placeholder)
+                }
             } else {
                 NavigationLink(destination: {
                     if let note = homework.note {
@@ -83,11 +88,10 @@ struct HomeworkItem: View {
                 }
             }
         }
-        
     }
     
     func getSubject(from title: String) -> Subject {
-        var subject: Subject = Subject()
+        var subject = Subject()
         
         if let s = subjects.value.first(where: {
             $0.title == title
