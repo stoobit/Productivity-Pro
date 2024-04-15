@@ -82,13 +82,34 @@
       }
     },
     "%lld%%" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%"
+          }
+        }
+      }
     },
     "1. Make sure the model is in GGUF Format" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1. Make sure the model is in GGUF Format"
+          }
+        }
+      }
     },
     "2. Copy the download link of the quantized model" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2. Copy the download link of the quantized model."
+          }
+        }
+      }
     },
     "3. Deklination" : {
       "localizations" : {
@@ -151,7 +172,14 @@
       }
     },
     "AI herunterladen und offline nutzen." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download AI and use it offline."
+          }
+        }
+      }
     },
     "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
       "localizations" : {
@@ -324,7 +352,14 @@
       }
     },
     "Bench" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bench"
+          }
+        }
+      }
     },
     "Bewegen" : {
       "localizations" : {
@@ -477,7 +512,14 @@
       }
     },
     "Cancel" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
     },
     "Cäsar-Verschlüsselung in Java implementieren" : {
       "localizations" : {
@@ -500,7 +542,14 @@
       }
     },
     "Clear" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear"
+          }
+        }
+      }
     },
     "Comment fertig schreiben" : {
       "localizations" : {
@@ -513,7 +562,14 @@
       }
     },
     "Copy" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy"
+          }
+        }
+      }
     },
     "d. MMMM" : {
       "localizations" : {
@@ -546,7 +602,14 @@
       }
     },
     "Default Models" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default Models"
+          }
+        }
+      }
     },
     "Der Papierkorb ist leer." : {
       "localizations" : {
@@ -659,16 +722,44 @@
       }
     },
     "Download Custom Model" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download Custom Model"
+          }
+        }
+      }
     },
     "Download Models From Hugging Face" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download Models From Hugging Face"
+          }
+        }
+      }
     },
     "Downloaded Models" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloaded Models"
+          }
+        }
+      }
     },
     "Downloading %lld%%" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading %lld%%"
+          }
+        }
+      }
     },
     "Drehung" : {
       "localizations" : {
@@ -1041,7 +1132,14 @@
       }
     },
     "Help" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Help"
+          }
+        }
+      }
     },
     "Hinzufügen" : {
       "localizations" : {
@@ -1154,7 +1252,14 @@
       }
     },
     "Je nach Leistung und Sprache der AI kann die Download-Größe variieren." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Depending on the performance and language of the AI, the download size may vary."
+          }
+        }
+      }
     },
     "Jetzt löschen" : {
       "localizations" : {
@@ -1227,7 +1332,14 @@
       }
     },
     "Lade Productivity Pro AI auf dein iPad herunter und nutze künstliche Intelligenz offline. So bleiben deine Daten sicher & privat." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download Productivity Pro AI on your iPad and use artificial intelligence offline. This keeps your data safe & private."
+          }
+        }
+      }
     },
     "Latein" : {
       "localizations" : {
@@ -1280,7 +1392,14 @@
       }
     },
     "Load Custom Model" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Load Custom Model"
+          }
+        }
+      }
     },
     "Löschen" : {
       "localizations" : {
@@ -1393,7 +1512,14 @@
       }
     },
     "Model Settings" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Model Settings"
+          }
+        }
+      }
     },
     "Montag" : {
       "localizations" : {
@@ -1526,7 +1652,14 @@
       }
     },
     "Paste Quantized Download Link" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paste Quantized Download Link"
+          }
+        }
+      }
     },
     "pdf" : {
       "localizations" : {
@@ -1609,7 +1742,14 @@
       }
     },
     "Productivity Pro AI" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Productivity Pro AI"
+          }
+        }
+      }
     },
     "pronote" : {
       "localizations" : {
@@ -1832,7 +1972,14 @@
       }
     },
     "Send" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send"
+          }
+        }
+      }
     },
     "Sortieren" : {
       "localizations" : {
@@ -2055,7 +2202,14 @@
       }
     },
     "Unknown status" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unknown Status"
+          }
+        }
+      }
     },
     "Vertikal" : {
       "localizations" : {
@@ -2068,7 +2222,14 @@
       }
     },
     "View Models" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View Models"
+          }
+        }
+      }
     },
     "Vorlage ändern" : {
       "localizations" : {
