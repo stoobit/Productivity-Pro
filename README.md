@@ -1,8 +1,5 @@
 # Productivity Pro
 
-## 🗺️ Release 2.0.4
-- PageViewController 
-
 ## 🗺️ Release 2.0.5
 - share extension
 - loading animation when printing pdf gets rendered 
@@ -10,6 +7,8 @@
 - improve PDFKit performance
 - pdf rendering updates
 - improve overview
+- edit bar animation 
+- improve UIPageViewController performance when creating a new page 
 
 ## 🗺️ Release 2.0.6
 - add keyboard shortcuts
