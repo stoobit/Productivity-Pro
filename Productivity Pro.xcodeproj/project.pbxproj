@@ -50,6 +50,7 @@
 		BB339F872AD44E97009DA591 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB339F862AD44E97009DA591 /* Role.swift */; };
 		BB33D52A2BBDC4AF000AE4EA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BB33D5292BBDC3BE000AE4EA /* PrivacyInfo.xcprivacy */; };
 		BB33D52C2BBDC4B1000AE4EA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = BB33D5292BBDC3BE000AE4EA /* PrivacyInfo.xcprivacy */; };
+		BB341B0D2BCDDDBE00BF3A93 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BB341B0C2BCDDDBE00BF3A93 /* InfoPlist.xcstrings */; };
 		BB3525B32908673800D35790 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3525B22908673800D35790 /* Array.swift */; };
 		BB35A1BA2B290A3B001A3F4C /* latinvoc.json in Resources */ = {isa = PBXBuildFile; fileRef = BB35A1B92B290A3B001A3F4C /* latinvoc.json */; };
 		BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */; };
@@ -401,6 +402,7 @@
 		BB3208A92981E8E90014F602 /* ScannerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerHelper.swift; sourceTree = "<group>"; };
 		BB339F862AD44E97009DA591 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		BB33D5292BBDC3BE000AE4EA /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		BB341B0C2BCDDDBE00BF3A93 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		BB35A1B92B290A3B001A3F4C /* latinvoc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latinvoc.json; sourceTree = "<group>"; };
 		BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVocabularyList.swift; sourceTree = "<group>"; };
@@ -979,6 +981,7 @@
 				BB1DDA28296715590038FE16 /* Resources */,
 				BB4CDD4628D3C66A009A409F /* Assets.xcassets */,
 				BB3EE92C2ACBFB1D00FA0702 /* Localizable.xcstrings */,
+				BB341B0C2BCDDDBE00BF3A93 /* InfoPlist.xcstrings */,
 				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB33D5292BBDC3BE000AE4EA /* PrivacyInfo.xcprivacy */,
 				BBD930F82B20FA0000A37F95 /* Premium.storekit */,
@@ -1833,6 +1836,7 @@
 				BB4A93C92AAEFDCC00C3AED6 /* pacifico.ttf in Resources */,
 				BB35A1BA2B290A3B001A3F4C /* latinvoc.json in Resources */,
 				BB9C63B62B5AFE2A0022AC4F /* README.md in Resources */,
+				BB341B0D2BCDDDBE00BF3A93 /* InfoPlist.xcstrings in Resources */,
 				BB921B2C2BB2D4A300B999CF /* privacypolicy.html in Resources */,
 				BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */,
 				BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */,
@@ -2413,8 +2417,8 @@
 				INFOPLIST_FILE = "Productivity Pro/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to scan documents and add photos to your Productivty Pro documents.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to the photo library in order to import images into your Productivity Pro documents.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Diese App benötigt Kamerazugriff, um Dokumente zu scannen und Fotos zu deinen Productivity Pro Notizen hinzuzufügen.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Diese App benötigt Zugriff auf die Fotobibliothek, um Bilder in deine Productivity Pro Notizen importieren zu können.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -2462,8 +2466,8 @@
 				INFOPLIST_FILE = "Productivity Pro/Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to scan documents and add photos to your Productivty Pro documents.";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app needs access to the photo library in order to import images into your Productivity Pro documents.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Diese App benötigt Kamerazugriff, um Dokumente zu scannen und Fotos zu deinen Productivity Pro Notizen hinzuzufügen.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Diese App benötigt Zugriff auf die Fotobibliothek, um Bilder in deine Productivity Pro Notizen importieren zu können.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
