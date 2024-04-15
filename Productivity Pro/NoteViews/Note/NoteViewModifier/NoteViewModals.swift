@@ -56,7 +56,6 @@ struct NoteViewSheet: ViewModifier {
                     ProgressView()
                 }
             })
-            .modifier(MDViewContainer(isPresented: $manager.rtfEditor))
             .fullScreenCover(isPresented: $manager.scanDocument) {
                 ScannerView(
                     cancelAction: { subviewManager.scanDocument = false }

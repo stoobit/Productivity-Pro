@@ -67,8 +67,7 @@ struct ClipboardControl: View {
                 RoundedRectangle(cornerRadius: 14)
                     .foregroundStyle(.thinMaterial)
             }
-            .offset(y: toolManager.pencilKit ? 100 : 0)
-            .animation(.bouncy, value: toolManager.pencilKit)
+            .disabled(toolManager.pencilKit)
         }
         .frame(
             maxWidth: .infinity,

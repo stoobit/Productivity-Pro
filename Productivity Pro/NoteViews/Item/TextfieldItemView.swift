@@ -39,16 +39,28 @@ struct TextFieldItemView: View {
             }
             
             if highRes == false {
-                if let image = renderedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(
-                            width: vuModel.size.width * scale,
-                            height: vuModel.size.height * scale,
-                            alignment: .topLeading
-                        )
-                }
+                // MARK: default way to render, undo changes when publishing to the AppStore
+
+//                if let image = renderedImage {
+//                    Image(uiImage: image)
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(
+//                            width: vuModel.size.width * scale,
+//                            height: vuModel.size.height * scale,
+//                            alignment: .topLeading
+//                        )
+//                }
+
+                // MARK: new way development
+                
+                UITextField(scale: scale)
+                    .frame(
+                        width: vuModel.size.width,
+                        height: vuModel.size.height,
+                        alignment: .topLeading
+                    )
+                    .scaleEffect(scale)
                 
             } else {
                 MarkdownView(item: item, editItem: vuModel)
@@ -60,31 +72,34 @@ struct TextFieldItemView: View {
             }
         }
         .rotationEffect(Angle(degrees: item.textField?.rotation ?? 0))
-        .onChange(of: scale) { render() }
-        .onChange(of: vuModel.update) { render() }
-        .onChange(of: vuModel.size) {
-            if vuModel.created {
-                render(preview: subviewManager.showInspector ? false : true)
-            } else {
-                render()
-                vuModel.created = true
-            }
-        }
-        .onChange(of: scenePhase) {
-            if scenePhase == .active {
-                render()
-            }
-        }
-        .onChange(of: subviewManager.rtfEditor) {
-            if toolManager.activeItem == item {
-                render()
-            }
-        }
-        .onAppear {
-            if vuModel.created {
-                render()
-            }
-        }
+
+        // MARK: default way to render, undo changes when publishing to the AppStore
+
+//        .onChange(of: scale) { render() }
+//        .onChange(of: vuModel.update) { render() }
+//        .onChange(of: vuModel.size) {
+//            if vuModel.created {
+//                render(preview: subviewManager.showInspector ? false : true)
+//            } else {
+//                render()
+//                vuModel.created = true
+//            }
+//        }
+//        .onChange(of: scenePhase) {
+//            if scenePhase == .active {
+//                render()
+//            }
+//        }
+//        .onChange(of: subviewManager.rtfEditor) {
+//            if toolManager.activeItem == item {
+//                render()
+//            }
+//        }
+//        .onAppear {
+//            if vuModel.created {
+//                render()
+//            }
+//        }
     }
     
     @MainActor func render(preview: Bool = false) {

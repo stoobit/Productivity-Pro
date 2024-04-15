@@ -126,6 +126,7 @@
 		BB5DB6CD2B482BDC000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
 		BB5DB6CE2B482C1C000674C3 /* AppClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */; };
 		BB61AD3F2BCC2F7E00F4C34A /* AISetupContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61AD3E2BCC2F7E00F4C34A /* AISetupContainer.swift */; };
+		BB61D9152BCDB84200CA1EDE /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61D9142BCDB84200CA1EDE /* UITextField.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB655B002AB772F100FB005A /* NoteViewModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AFF2AB772F100FB005A /* NoteViewModals.swift */; };
@@ -479,6 +480,7 @@
 		BB5A23282B476DA000F1D1B6 /* Productivity_Preview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Productivity_Preview.entitlements; sourceTree = "<group>"; };
 		BB5DB6CC2B482BDC000674C3 /* AppClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppClipView.swift; sourceTree = "<group>"; };
 		BB61AD3E2BCC2F7E00F4C34A /* AISetupContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISetupContainer.swift; sourceTree = "<group>"; };
+		BB61D9142BCDB84200CA1EDE /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
 		BB655AFF2AB772F100FB005A /* NoteViewModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModals.swift; sourceTree = "<group>"; };
@@ -1594,6 +1596,7 @@
 				BB6ABB7E29CD0882008B58E3 /* MediaItemView.swift */,
 				BB84DD162B8E78EF002C2A9A /* TextfieldItemVContainer.swift */,
 				BBADD1372A5102620075B825 /* TextfieldItemView.swift */,
+				BB61D9142BCDB84200CA1EDE /* UITextField.swift */,
 				BB84DD182B8E7A54002C2A9A /* MarkdownView */,
 				BBC7B9772A1988E800D496CB /* ToolViews */,
 			);
@@ -1974,6 +1977,7 @@
 				BB047CE22AC0C6790027409F /* ObjectView.swift in Sources */,
 				BB36D4C62B9D2D5600CBDCAD /* ArrangeRotationView.swift in Sources */,
 				BB441DD52B41A05300B103DE /* ImportManager.swift in Sources */,
+				BB61D9152BCDB84200CA1EDE /* UITextField.swift in Sources */,
 				BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */,
 				BB7984652AC347F900CF3D24 /* BackupSettings.swift in Sources */,
 				BBCDBFB92AC8AFA800EF825F /* CreateViewMethods.swift in Sources */,

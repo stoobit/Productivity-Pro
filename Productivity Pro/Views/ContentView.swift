@@ -118,7 +118,10 @@ private struct ContentView: View {
         })
         .onAppear {
             if contentObjects.count > 9 {
+#if DEBUG
+#else
                 requestReview()
+#endif
             }
         }
     }
