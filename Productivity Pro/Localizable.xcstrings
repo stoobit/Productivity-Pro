@@ -7,6 +7,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
+          },
+          "kr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : ""
+            }
           }
         }
       }
