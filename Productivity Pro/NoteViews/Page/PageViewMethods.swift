@@ -51,11 +51,8 @@ extension PageView {
         item.x = size.x
         item.y = size.y
         
-        let textField = PPTextFieldModel(
-            textColor: primaryColor(),
-            font: defaultFont,
-            fontSize: defaultFontSize
-        )
+        let textField = PPTextFieldModel()
+        #warning("NSAttributedString")
       
         textField.string = string
         item.textField = textField

@@ -42,11 +42,8 @@ struct ImportManager {
     }
     
     private func ppImport(textField: ExportableTextFieldModel) -> PPTextFieldModel {
-        let importable = PPTextFieldModel(
-            textColor: Color(data: textField.textColor),
-            font: textField.fontName,
-            fontSize: textField.fontSize
-        )
+        let importable = PPTextFieldModel()
+        #warning("NSAttributedString")
         
         importable.string = textField.string
         importable.fill = textField.fill

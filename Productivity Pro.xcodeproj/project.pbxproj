@@ -54,6 +54,7 @@
 		BB341B122BCF137300BF3A93 /* UITFUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB341B112BCF137300BF3A93 /* UITFUpdate.swift */; };
 		BB341B142BCF137B00BF3A93 /* UITFCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB341B132BCF137B00BF3A93 /* UITFCoordinator.swift */; };
 		BB341B162BCF13B400BF3A93 /* UITFHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB341B152BCF13B400BF3A93 /* UITFHelper.swift */; };
+		BB341B182BCF195200BF3A93 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB341B172BCF195200BF3A93 /* NSAttributedString.swift */; };
 		BB3525B32908673800D35790 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3525B22908673800D35790 /* Array.swift */; };
 		BB35A1BA2B290A3B001A3F4C /* latinvoc.json in Resources */ = {isa = PBXBuildFile; fileRef = BB35A1B92B290A3B001A3F4C /* latinvoc.json */; };
 		BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */; };
@@ -408,6 +409,7 @@
 		BB341B112BCF137300BF3A93 /* UITFUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITFUpdate.swift; sourceTree = "<group>"; };
 		BB341B132BCF137B00BF3A93 /* UITFCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITFCoordinator.swift; sourceTree = "<group>"; };
 		BB341B152BCF13B400BF3A93 /* UITFHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITFHelper.swift; sourceTree = "<group>"; };
+		BB341B172BCF195200BF3A93 /* NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		BB3525B22908673800D35790 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		BB35A1B92B290A3B001A3F4C /* latinvoc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = latinvoc.json; sourceTree = "<group>"; };
 		BB35A1BB2B290A79001A3F4C /* LVocabularyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LVocabularyList.swift; sourceTree = "<group>"; };
@@ -1512,6 +1514,7 @@
 				BB3525B22908673800D35790 /* Array.swift */,
 				BB174F542A1051B400F753F6 /* Date.swift */,
 				BBF930722A67437900AD3958 /* Color.swift */,
+				BB341B172BCF195200BF3A93 /* NSAttributedString.swift */,
 				BBF3622429A16AE600C7A52F /* iPhoneInteraction.swift */,
 				BB27FED128EA09A200459334 /* TouchType.swift */,
 				BBE9196928F333AC001EF750 /* OverviewDropDelegate.swift */,
@@ -2078,6 +2081,7 @@
 				BB82B5B52B247DDB0089D423 /* PencilKitButton.swift in Sources */,
 				BB24E84929EB6FE70082AE98 /* PKRepresentable.swift in Sources */,
 				BB28336C2ABE0EA500BFB6D5 /* ScheduleSubjectView.swift in Sources */,
+				BB341B182BCF195200BF3A93 /* NSAttributedString.swift in Sources */,
 				BB2A8E1E2B460CD30072D3CC /* NoteViewModalMethods.swift in Sources */,
 				BB4705752B9391E8009A5FCD /* ShortcutModifier.swift in Sources */,
 				BBF3622529A16AE600C7A52F /* iPhoneInteraction.swift in Sources */,

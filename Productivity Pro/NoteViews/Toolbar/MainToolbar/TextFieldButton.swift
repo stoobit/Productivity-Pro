@@ -25,11 +25,8 @@ extension NoteMainToolbar {
         item.x = size.x
         item.y = size.y
         
-        let textField = PPTextFieldModel(
-            textColor: primaryColor(),
-            font: defaultFont,
-            fontSize: defaultFontSize
-        )
+        let textField = PPTextFieldModel()
+        #warning("NSAttributedString")
       
         item.textField = textField
         let page = toolManager.activePage

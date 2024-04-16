@@ -5,38 +5,39 @@
 //  Created by Till Brügmann on 01.10.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @Model final class PPTextFieldModel {
-    init(textColor: Color, font: String, fontSize: Double) {
-        self.strokeStyle = PPStrokeType.line.rawValue
-        
-        self.textColor = textColor.data()
-        self.fontName = font
-        self.fontSize = fontSize
-    }
-    
     init() {
-        self.strokeStyle = PPStrokeType.line.rawValue
-        self.textColor = Color.black.data()
-        self.fontName = "Avenir Next"
-        self.fontSize = 13
+        self.text = NSAttributedString().data()
     }
     
+    init(text: NSAttributedString) {
+        self.text = text.data()
+    }
+    
+    init(text: Data) {
+        self.text = text
+    }
+    
+    var text: Data
+    
+    // MARK: text attributes
+
     var string: String = ""
-    var textColor: Data
+    var textColor: Data = Color.black.data()
+    var fontName: String = "Avenir Next"
+    var fontSize: Double = 13
     
-    var fontName: String
-    var fontSize: Double
-    
+    // MARK: box attributes
+
     var fill: Bool = false
     var fillColor: Data = Color.green.data()
-    
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.data()
     var strokeWidth: Double = 10
-    var strokeStyle: PPStrokeType.RawValue
+    var strokeStyle: PPStrokeType.RawValue = PPStrokeType.line.rawValue
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.data()
@@ -44,4 +45,3 @@ import SwiftData
     var cornerRadius: Double = 0
     var rotation: Double = 0
 }
-

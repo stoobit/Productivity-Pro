@@ -108,11 +108,8 @@ extension ObjectView {
                         } else if item.type == .textField {
                             guard let textField = item.textField else { continue }
                             
-                            let ppTextField = PPTextFieldModel(
-                                textColor: Color(data: textField.fontColor),
-                                font: textField.font,
-                                fontSize: textField.fontSize
-                            )
+                            let ppTextField = PPTextFieldModel()
+                            #warning("NSAttributedString")
                             ppItem.textField = ppTextField
                             
                             ppTextField.string = textField.text
