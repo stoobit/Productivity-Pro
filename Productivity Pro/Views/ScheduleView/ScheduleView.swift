@@ -117,7 +117,7 @@ struct ScheduleView: View {
                     isEditing: $isEditing, day: $schedule.value[4]
                 )
             }
-            .padding(.top, isUnlocked ? 25 : 0)
+            .padding(.top, isUnlocked ? 5 : 0)
         }
         .padding(.horizontal)
         .scrollIndicators(.never)
