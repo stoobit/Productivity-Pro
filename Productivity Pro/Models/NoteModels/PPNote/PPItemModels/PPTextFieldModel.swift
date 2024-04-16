@@ -21,7 +21,14 @@ import SwiftUI
         self.text = text
     }
     
-    var text: Data
+    var text: Data?
+    var attributedString: NSAttributedString {
+        if let text = text {
+            return NSAttributedString(data: text)
+        } else {
+            return NSAttributedString("Ein Fehler ist aufgetreten.")
+        }
+    }
     
     // MARK: text attributes
 
