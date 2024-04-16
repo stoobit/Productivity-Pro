@@ -25,8 +25,7 @@ struct PageView: View {
     
     var size: CGSize = .zero
     var preloadModels: Bool = false
-    var realrenderText: Bool = false
-    
+
     var body: some View {
         ZStack {
             ZStack {
@@ -50,15 +49,10 @@ struct PageView: View {
             .onTapGesture { onBackgroundTap() }
             .allowsHitTesting(toolManager.pencilKit == false)
             
-            if preloadModels && realrenderText {
-                RenderedPDF(page: page)
-            }
+            if preloadModels { RenderedPDF(page: page) }
             
             PageItemView(
-                note: note,
-                page: page,
-                scale: $scale,
-                realrenderText: realrenderText,
+                note: note, page: page, scale: $scale,
                 preloadModels: preloadModels
             )
             .allowsHitTesting(toolManager.pencilKit == false)

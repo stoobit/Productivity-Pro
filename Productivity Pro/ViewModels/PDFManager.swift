@@ -29,12 +29,9 @@ struct PDFManager {
             
             let view = ZStack {
                 PageView(
-                    note: note,
-                    page: page,
-                    scale: .constant(1),
-                    offset: .constant(.zero),
-                    preloadModels: true,
-                    realrenderText: true
+                    note: note, page: page,
+                    scale: .constant(1), offset: .constant(.zero),
+                    preloadModels: true
                 )
                 
                 Image(uiImage: renderCanvas(page: page))

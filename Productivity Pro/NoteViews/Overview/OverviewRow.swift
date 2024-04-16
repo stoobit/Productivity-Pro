@@ -99,8 +99,7 @@ struct OverviewRow: View {
                 note: contentObject.note!,
                 page: page,
                 scale: .constant(0.01),
-                offset: .constant(.zero),
-                realrenderText: true
+                offset: .constant(.zero)
             )
             .scaleEffect(150 / getFrame().width)
             .frame(

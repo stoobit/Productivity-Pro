@@ -14,7 +14,6 @@ struct TextfieldItemVContainer: View {
     @Bindable var item: PPItemModel
     @Binding var scale: CGFloat
     
-    var realrenderText: Bool
     var preloadModels: Bool
     
     var body: some View {
@@ -24,10 +23,7 @@ struct TextfieldItemVContainer: View {
         
         return Group {
             TextFieldItemView(
-                item: item,
-                vuModel: vuModel,
-                scale: $scale,
-                highRes: realrenderText
+                item: item, vuModel: vuModel, scale: $scale
             )
             .modifier(VUModifier(vuModel: vuModel, item: item))
             .position(
