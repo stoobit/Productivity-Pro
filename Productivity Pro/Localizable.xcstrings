@@ -7,12 +7,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : ""
-          },
-          "kr" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : ""
-            }
           }
         }
       }
@@ -143,6 +137,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "취소"
           }
         }
       }
@@ -1680,6 +1680,12 @@
     "PDF" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PDF"
