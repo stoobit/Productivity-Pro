@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AISetupContainer < Content: View>: View {
+struct AISetupContainer <Content: View>: View {
     @Environment(\.dismiss) var dismiss
     
     @Binding var inProgress: Bool
@@ -102,6 +102,7 @@ struct AISetupContainer < Content: View>: View {
                             dismiss()
                         }
                         .foregroundStyle(Color.primary)
+                        .disabled(inProgress)
                     }
                 }
             }

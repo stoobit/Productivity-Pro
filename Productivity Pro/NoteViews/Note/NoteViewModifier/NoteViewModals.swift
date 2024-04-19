@@ -40,6 +40,7 @@ struct NoteViewSheet: ViewModifier {
             })
             .sheet(isPresented: $manager.showAI, content: {
                 AIView()
+                    .interactiveDismissDisabled()
             })
             .sheet(isPresented: $manager.changePage, content: {
                 if let page = toolManager.activePage {
