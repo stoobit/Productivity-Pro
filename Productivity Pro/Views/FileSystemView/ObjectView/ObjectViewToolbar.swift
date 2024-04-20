@@ -10,6 +10,8 @@ import TipKit
 
 struct FolderViewToolbar: ToolbarContent {
     @Environment(\.dismiss) var dismiss
+    @Environment(SubviewManager.self) var subviewManager
+    
     var parent: String
     
     @AppStorage("ppsorttype")
@@ -28,6 +30,10 @@ struct FolderViewToolbar: ToolbarContent {
     
     var body: some ToolbarContent {
         ToolbarItemGroup(placement: .topBarTrailing) {
+            Button("Bibliothek", systemImage: "books.vertical") {
+                subviewManager.liapView.toggle()
+            }
+            
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 addFolder = true
             }

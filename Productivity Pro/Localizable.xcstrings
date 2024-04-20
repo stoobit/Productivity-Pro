@@ -248,6 +248,7 @@
       }
     },
     "App Clip" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -358,6 +359,7 @@
       }
     },
     "Beitrag hinzufügen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -488,6 +490,7 @@
       }
     },
     "Bitte vergrößere dieses Fenster um auf die Bibliothek zuzugreifen." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -668,6 +671,7 @@
       }
     },
     "Diese Ansicht ist nicht verfügbar." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1146,6 +1150,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "Help" : {
       "localizations" : {

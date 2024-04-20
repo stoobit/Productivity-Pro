@@ -36,6 +36,8 @@ struct ObjectView: View {
 
     var body: some View {
         ZStack {
+            @Bindable var subviewManager = subviewManager
+            
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
             
@@ -88,6 +90,9 @@ struct ObjectView: View {
             .navigationBarTitleDisplayMode(
                 parent == "root" ? .large : .inline
             )
+            .sheet(isPresented: $subviewManager.liapView) {
+                LIAPView(parent: parent)
+            }
         }
         .modifier(
             AddFolderView(

@@ -12,7 +12,6 @@ import Observation
     var takeMedia: Bool = false
     var pickMedia: Bool = false
     var importMedia: Bool = false
-    var importPDF: Bool = false
     
     var showInspector: Bool = false
     var showCalculator: Bool = false
@@ -35,4 +34,5 @@ import Observation
     var shareQRPDFView: Bool = false
     
     var printerView: Bool = false
+    var liapView: Bool = false
 }
