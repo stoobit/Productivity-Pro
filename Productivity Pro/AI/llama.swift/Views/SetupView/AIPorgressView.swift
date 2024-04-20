@@ -82,7 +82,7 @@ struct AIProgressView: View {
                 .frame(width: 50)
                 .padding(.leading)
         }
-        .padding(70)
+        .padding(.horizontal, 70)
         .onAppear {
             download()
         }

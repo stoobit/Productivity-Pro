@@ -101,8 +101,10 @@ struct AISetupContainer <Content: View>: View {
                         Button("Abbrechen") {
                             dismiss()
                         }
-                        .foregroundStyle(Color.primary)
                         .disabled(inProgress)
+                        .foregroundStyle(
+                            inProgress ? Color.secondary : Color.primary
+                        )
                     }
                 }
             }

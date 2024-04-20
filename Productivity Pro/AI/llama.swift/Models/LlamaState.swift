@@ -26,7 +26,6 @@ class LlamaState: ObservableObject {
     private var llamaContext: LlamaContext?
     private var defaultModelUrl: URL? {
         Bundle.main.url(forResource: "ggml-model", withExtension: "gguf", subdirectory: "models")
-        // Bundle.main.url(forResource: "llama-2-7b-chat", withExtension: "Q2_K.gguf", subdirectory: "models")
     }
 
     init() {
@@ -70,50 +69,24 @@ class LlamaState: ObservableObject {
         return paths[0]
     }
 
-    let defaultModels: [AIModel] = [
-        AIModel(name: "TinyLlama-1.1B (Q4_0, 0.6 GiB)", url: "https://huggingface.co/TheBloke/TinyLlama-1.1B-1T-OpenOrca-GGUF/resolve/main/tinyllama-1.1b-1t-openorca.Q4_0.gguf?download=true", filename: "tinyllama-1.1b-1t-openorca.Q4_0.gguf", status: "download"),
-        AIModel(
-            name: "TinyLlama-1.1B Chat (Q8_0, 1.1 GiB)",
-            url: "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q8_0.gguf?download=true",
-            filename: "tinyllama-1.1b-chat-v1.0.Q8_0.gguf", status: "download"
-        ),
-
-        AIModel(
-            name: "TinyLlama-1.1B (F16, 2.2 GiB)",
-            url: "https://huggingface.co/ggml-org/models/resolve/main/tinyllama-1.1b/ggml-model-f16.gguf?download=true",
-            filename: "tinyllama-1.1b-f16.gguf", status: "download"
-        ),
-
-        AIModel(
-            name: "Phi-2.7B (Q4_0, 1.6 GiB)",
-            url: "https://huggingface.co/ggml-org/models/resolve/main/phi-2/ggml-model-q4_0.gguf?download=true",
-            filename: "phi-2-q4_0.gguf", status: "download"
-        ),
-
-        AIModel(
-            name: "Phi-2.7B (Q8_0, 2.8 GiB)",
-            url: "https://huggingface.co/ggml-org/models/resolve/main/phi-2/ggml-model-q8_0.gguf?download=true",
-            filename: "phi-2-q8_0.gguf", status: "download"
-        ),
-
+    private let defaultModels: [AIModel] = [
         AIModel(
             name: "Mistral-7B-v0.1 (Q4_0, 3.8 GiB)",
             url: "https://huggingface.co/TheBloke/Mistral-7B-v0.1-GGUF/resolve/main/mistral-7b-v0.1.Q4_0.gguf?download=true",
             filename: "mistral-7b-v0.1.Q4_0.gguf", status: "download"
         ),
         AIModel(
-            name: "OpenHermes-2.5-Mistral-7B (Q3_K_M, 3.52 GiB)",
-            url: "https://huggingface.co/TheBloke/OpenHermes-2.5-Mistral-7B-GGUF/resolve/main/openhermes-2.5-mistral-7b.Q3_K_M.gguf?download=true",
-            filename: "openhermes-2.5-mistral-7b.Q3_K_M.gguf", status: "download"
-        )
+            name: "Mistral-7B-v0.1 (Q4_0, 3.8 GiB)",
+            url: "https://huggingface.co/TheBloke/em_german_leo_mistral-GGUF/resolve/main/em_german_leo_mistral.Q2_K.gguf?download=true",
+            filename: "em_german_leo_mistral.Q2_K.gguf", status: "download"
+        ),
     ]
+
     func loadModel(modelUrl: URL?) throws {
         if let modelUrl {
             messageLog += "Loading model...\n"
             llamaContext = try LlamaContext.create_context(path: modelUrl.path())
             messageLog += "Loaded model \(modelUrl.lastPathComponent)\n"
-
-            // Assuming that the model is successfully loaded, update the downloaded models
             updateDownloadedModels(modelName: modelUrl.lastPathComponent, status: "downloaded")
         } else {
             messageLog += "Load a model from the list below\n"
