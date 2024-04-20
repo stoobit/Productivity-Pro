@@ -3,7 +3,7 @@ import SwiftUI
 struct AIView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.openWindow) var openWindow
-    
+
     @StateObject var llamaState = LlamaState()
 
     @State private var showProgress: Bool = false
@@ -23,10 +23,10 @@ struct AIView: View {
                 }
             }
         } else {
-            
+            AIChatView(llamaState: llamaState)
         }
     }
-    
+
     var ix: Int {
         if Locale.current.localizedString(
             forIdentifier: "DE"

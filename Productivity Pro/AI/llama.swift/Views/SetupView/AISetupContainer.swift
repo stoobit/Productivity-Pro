@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AISetupContainer <Content: View>: View {
+struct AISetupContainer<Content: View>: View {
     @Environment(\.dismiss) var dismiss
-    
+
     @Binding var inProgress: Bool
     var content: () -> Content
 
@@ -20,25 +20,7 @@ struct AISetupContainer <Content: View>: View {
                     .foregroundStyle(.windowBackground)
                     .ignoresSafeArea()
                     .overlay {
-                        HStack {
-                            Spacer()
-                            Rectangle()
-                                .frame(width: 50)
-                                .foregroundStyle(.blue)
-                            Spacer()
-                            Spacer()
-                            Rectangle()
-                                .frame(width: 50, height: 1000)
-                                .foregroundStyle(.purple)
-                            Spacer()
-                            Spacer()
-                            Rectangle()
-                                .frame(width: 50)
-                                .foregroundStyle(.yellow)
-                            Spacer()
-                        }
-                        .rotationEffect(Angle(degrees: 225))
-                        .blur(radius: 100)
+                       Background()
                     }
 
                 VStack {
@@ -109,5 +91,27 @@ struct AISetupContainer <Content: View>: View {
                 }
             }
         }
+    }
+    
+    @ViewBuilder func Background() -> some View {
+        HStack {
+            Spacer()
+            Rectangle()
+                .frame(width: 50)
+                .foregroundStyle(.blue)
+            Spacer()
+            Spacer()
+            Rectangle()
+                .frame(width: 50, height: 1000)
+                .foregroundStyle(.purple)
+            Spacer()
+            Spacer()
+            Rectangle()
+                .frame(width: 50)
+                .foregroundStyle(.yellow)
+            Spacer()
+        }
+        .rotationEffect(Angle(degrees: 225))
+        .blur(radius: 100)
     }
 }

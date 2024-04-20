@@ -8,12 +8,42 @@
 import SwiftUI
 
 struct AIChatView: View {
-    @ObservedObject private var llamaState: LlamaState
+    @Environment(\.dismiss) var dismiss
+
+    @ObservedObject var llamaState: LlamaState
     @State var multiLineText: String = ""
-    
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {}
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Abbrechen") {
+                            dismiss()
+                        }
+                    }
+                }
+        }
+        .onAppear {
+            load()
+        }
     }
+
+    private func load() {
+        do {
+            try llamaState.loadModel(
+                modelUrl: getFileURL(
+                    filename: llamaState.downloadedModels[0].filename
+                )
+            )
+        } catch {}
+    }
+
+    private func getFileURL(filename: String) -> URL {
+        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename)
+    }
+
+    // MARK: OLD
 
     @ViewBuilder func OLD() -> some View {
         NavigationView {
