@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ObjectView: View {
     @Environment(ToolManager.self) var toolManager
+    @Environment(SubviewManager.self) var subviewManager
+    
     @Environment(\.modelContext) var context
     
     var parent: String
@@ -79,9 +81,7 @@ struct ObjectView: View {
             .toolbar {
                 FolderViewToolbar(
                     parent: parent,
-                    addFolder: $addFolder,
-                    importFile: $importFile,
-                    createNote: $createNote,
+                    addFolder: $addFolder, importFile: $importFile,
                     contentObjects: contentObjects
                 )
             }
@@ -96,16 +96,9 @@ struct ObjectView: View {
                 isPresented: $addFolder
             )
         )
-        .sheet(isPresented: $createNote) {
-            CreateNoteView(
-                contentObjects: contentObjects,
-                isPresented: $createNote,
-                parent: parent
-            )
-        }
         .fileImporter(
             isPresented: $importFile,
-            allowedContentTypes: [.pro, .pronote],
+            allowedContentTypes: [.pro, .pronote, .pdf],
             allowsMultipleSelection: true
         ) { result in
             withAnimation(.bouncy) {

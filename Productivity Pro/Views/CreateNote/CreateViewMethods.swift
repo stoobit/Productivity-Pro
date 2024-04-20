@@ -5,7 +5,6 @@
 //  Created by Till Brügmann on 30.09.23.
 //
 
-import PDFKit
 import SwiftUI
 import VisionKit
 
@@ -31,8 +30,6 @@ extension CreateNoteView {
             page.isPortrait = savedIsPortrait
             page.template = savedBackgroundTemplate
             page.color = savedBackgroundColor
-            
-            isPresented.toggle()
         }
     }
     
@@ -61,71 +58,8 @@ extension CreateNoteView {
             page.template = template
             page.color = color
             
-            isPresented.toggle()
+            selectTemplate.toggle()
         }
-    }
-    
-    func importedPDF(with result: Result<[URL], any Error>) {
-        toolManager.showProgress = true
-        
-        withAnimation(.bouncy) {
-            switch result {
-            case .success(let urls):
-                DispatchQueue.global(qos: .userInitiated).sync {
-                    guard let url = urls.first else { return }
-                    
-                    if url.startAccessingSecurityScopedResource() {
-                        guard let pdf = PDFDocument(url: url) else { return }
-                        defer { url.stopAccessingSecurityScopedResource() }
-                        
-                        let object = ContentObject(
-                            id: UUID(),
-                            title: getTitle(),
-                            type: .file,
-                            parent: parent,
-                            created: Date(),
-                            grade: grade
-                        )
-                        
-                        context.insert(object)
-                        
-                        let note = PPNoteModel()
-                        object.note = note
-                        
-                        for index in 0...pdf.pageCount - 1 {
-                            guard let page = pdf.page(at: index) else { return }
-                            guard let data = page.dataRepresentation else { return }
-                            
-                            let size = page.bounds(for: .mediaBox).size
-                            let title: String = page.string?.components(
-                                separatedBy: .newlines
-                            ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-                            
-                            let ppPage = PPPageModel(
-                                type: .pdf, index: index
-                            )
-                            
-                            ppPage.note = note
-                            ppPage.media = data
-                            ppPage.title = title
-                            
-                            ppPage.isPortrait = size.width < size.height
-                            ppPage.template = "blank"
-                            ppPage.color = "pagewhite"
-                        }
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-                            toolManager.showProgress = false
-                        }
-                    }
-                }
-                
-            case .failure:
-                break
-            }
-        }
-        
-        isPresented = false
     }
     
     func scannedDocument(with result: Result<VNDocumentCameraScan, any Error>) {
@@ -172,7 +106,7 @@ extension CreateNoteView {
             }
         }
         
-        isPresented = false
+        scanDocument = false
     }
     
     func getTitle() -> String {

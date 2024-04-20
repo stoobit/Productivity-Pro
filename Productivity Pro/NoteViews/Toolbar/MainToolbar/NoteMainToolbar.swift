@@ -37,13 +37,6 @@ struct NoteMainToolbar: CustomizableToolbarContent {
             ToolbarItem(id: "media", placement: .secondaryAction) {
                 MediaButton()
             }
-            
-            #if DEBUG
-            ToolbarItem(id: "ai", placement: .secondaryAction) {
-                AIButton()
-            }
-            #endif
-            
         } else {
             Group {
                 ToolbarItem(id: "canvas", placement: .secondaryAction) {

@@ -60,7 +60,7 @@ public extension ScannerView {
         public func documentCameraViewController(
             _ controller: VNDocumentCameraViewController,
             didFailWithError error: Error) {
-            resultAction(.failure(error))
+            cancelAction()
         }
         
         public func documentCameraViewController(

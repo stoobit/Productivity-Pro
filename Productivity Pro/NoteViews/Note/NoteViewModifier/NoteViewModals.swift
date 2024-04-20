@@ -38,10 +38,6 @@ struct NoteViewSheet: ViewModifier {
                     ProgressView()
                 }
             })
-            .sheet(isPresented: $manager.showAI, content: {
-                AIView()
-                    .interactiveDismissDisabled()
-            })
             .sheet(isPresented: $manager.changePage, content: {
                 if let page = toolManager.activePage {
                     TemplateView(

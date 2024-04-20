@@ -12,10 +12,10 @@ import Observation
     var takeMedia: Bool = false
     var pickMedia: Bool = false
     var importMedia: Bool = false
+    var importPDF: Bool = false
     
     var showInspector: Bool = false
     var showCalculator: Bool = false
-    var showAI: Bool = false
     
     var renameView: Bool = false
     var overview: Bool = false

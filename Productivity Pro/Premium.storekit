@@ -5,7 +5,7 @@
   ],
   "products" : [
     {
-      "displayPrice" : "12.99",
+      "displayPrice" : "2.99",
       "familyShareable" : true,
       "internalID" : "6496854860",
       "localizations" : [
@@ -29,7 +29,7 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 734737634.96129501,
+    "_lastSynchronizedDate" : 735341218.71644104,
     "_locale" : "de",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
@@ -91,7 +91,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "9944F40D",
+              "internalID" : "0334472E",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivitypro.premium.monthlysub.offer",
               "paymentMode" : "free",
@@ -110,18 +110,18 @@
           "localizations" : [
             {
               "description" : "Enjoy all premium features and stay flexible.",
-              "displayName" : "Monthly Subscription",
+              "displayName" : "Monthly Subscription (OLD)",
               "locale" : "en_US"
             },
             {
               "description" : "Zahle monatlich und bleib flexibel.",
-              "displayName" : "Monatliches Abonnement",
+              "displayName" : "Monatliches Abonnement (ALT)",
               "locale" : "de"
             }
           ],
           "productID" : "com.stoobit.productivitypro.premium.monthlysub",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Monthly Subscription",
+          "referenceName" : "Monthly Subscription (OLD)",
           "subscriptionGroupID" : "21404124",
           "type" : "RecurringSubscription"
         },
@@ -139,19 +139,19 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Save money without missing out on features.",
-              "displayName" : "Yearly Subscription",
+              "description" : "Subscribe yearly and save money.",
+              "displayName" : "Yearly Subscription (OLD)",
               "locale" : "en_US"
             },
             {
               "description" : "Spare Geld, ohne auf Features zu verzichten.",
-              "displayName" : "Jährliches Abonnement",
+              "displayName" : "Jährliches Abonnement (ALT)",
               "locale" : "de"
             }
           ],
           "productID" : "com.stoobit.productivity.premium",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "Yearly Subscription",
+          "referenceName" : "Yearly Subscription (OLD)",
           "subscriptionGroupID" : "21404124",
           "type" : "RecurringSubscription"
         }

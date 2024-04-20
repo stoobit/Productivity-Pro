@@ -23,25 +23,19 @@ struct FolderViewToolbar: ToolbarContent {
     
     @Binding var addFolder: Bool
     @Binding var importFile: Bool
-    @Binding var createNote: Bool
     
     var contentObjects: [ContentObject]
     
     var body: some ToolbarContent {
         ToolbarItemGroup(placement: .topBarTrailing) {
-            Button(action: { importFile.toggle() }) {
-                Image(systemName: "square.and.arrow.down")
-                    .accessibilityLabel(Text("Importieren"))
-                    .popoverTip(ImportTip(), arrowEdge: .top)
-            }
-            
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 addFolder = true
             }
             
-            Button("Notiz erstellen", systemImage: "plus") {
-                createNote.toggle()
-            }
+            CreateNoteView(
+                contentObjects: contentObjects, 
+                parent: parent, importFile: $importFile
+            )
         }
         
         ToolbarItemGroup(placement: .topBarLeading) {

@@ -12,8 +12,6 @@ struct CreateNoteView: View {
     @Environment(ToolManager.self) var toolManager
     
     var contentObjects: [ContentObject]
-    
-    @Binding var isPresented: Bool
     let parent: String
     
     @AppStorage("savedBackgroundColor")
@@ -27,57 +25,39 @@ struct CreateNoteView: View {
     
     @AppStorage("ppgrade") var grade: Int = 5
     
-    // MARK: Subview Values
     @State var selectTemplate: Bool = false
     @State var scanDocument: Bool = false
-    @State var importPDF: Bool = false
+    @Binding var importFile: Bool
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color(UIColor.systemGroupedBackground)
-                    .ignoresSafeArea(.all)
+        VStack {
+            Menu("Notiz erstellen", systemImage: "plus") {
+                Button("Vorlage auswählen", systemImage: "grid") {
+                    selectTemplate.toggle()
+                }
                 
-                VStack {
-                    ViewThatFits(in: .horizontal) {
-                        CNGrid(axis: .horizontal, showIcon: true)
-                        
-                        ViewThatFits(in: .vertical) {
-                            CNGrid(axis: .vertical, showIcon: true)
-                            CNGrid(axis: .vertical, showIcon: false)
-                        }
-                    }
+                Button("Datei importieren", systemImage: "square.and.arrow.down") {
+                    importFile.toggle()
+                }
+                
+                Button("Dokument scannen", systemImage: "doc.viewfinder") {
+                    scanDocument.toggle()
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen", role: .cancel) {
-                        isPresented.toggle()
-                    }
-                }
+        }
+        .sheet(isPresented: $selectTemplate) {
+            TemplateView(
+                isPresented: $selectTemplate,
+                buttonTitle: "Erstellen"
+            ) { isPortrait, template, color in
+                selectedTemplate(isPortrait, template, color)
             }
-            .sheet(isPresented: $selectTemplate) {
-                TemplateView(
-                    isPresented: $selectTemplate,
-                    buttonTitle: "Erstellen"
-                ) { isPortrait, template, color in
-                    selectedTemplate(isPortrait, template, color)
-                }
+        }
+        .fullScreenCover(isPresented: $scanDocument) {
+            ScannerView(cancelAction: { scanDocument = false }) { result in
+                scannedDocument(with: result)
             }
-            .fileImporter(
-                isPresented: $importPDF,
-                allowedContentTypes: [.pdf],
-                allowsMultipleSelection: false
-            ) { result in
-                importedPDF(with: result)
-            }
-            .fullScreenCover(isPresented: $scanDocument) {
-                ScannerView(cancelAction: { scanDocument = false }) { result in
-                    scannedDocument(with: result)
-                }
-                .edgesIgnoringSafeArea(.all)
-            }
-            
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }

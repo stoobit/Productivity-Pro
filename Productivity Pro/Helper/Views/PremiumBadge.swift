@@ -2,8 +2,10 @@
 //  PremiumBadge.swift
 //  Productivity Pro
 //
-//  Created by Till Brügmann on 24.09.23.
+//  Created by Till Brügmann on 20.04.24.
 //
+
+import SwiftUI
 
 import SwiftUI
 

@@ -12,36 +12,36 @@ import ImageIO
 
 extension Coordinator {
     func recognizeObject(_ canvasView: PKCanvasView) {
-        do {
-            guard let bounds = canvasView.drawing.strokes.last?.renderBounds else {
-                return
-            }
+//        do {
+//            guard let bounds = canvasView.drawing.strokes.last?.renderBounds else {
+//                return
+//            }
+//            
+//            let canvasCopy = PKCanvasView()
+//            canvasCopy.drawing.strokes = [canvasView.drawing.strokes.last!]
+//            
+//            let uiImage = canvasCopy.drawing.image(from: bounds, scale: 1)
+//            guard let cgImage = uiImage.cgImage else { return }
+//            
+//            let model = try VNCoreMLModel(
+//                for: ObjectRecognition(configuration: MLModelConfiguration()).model
+//            )
+//            
+//            let request = VNCoreMLRequest(model: model)
+//            let handler = VNImageRequestHandler(cgImage: cgImage)
+//            
+//            try handler.perform([request])
+//            guard let results = request.results else { return }
+//            
+//            let detections = results as! [VNClassificationObservation]
+//            if let shape = detections.first?.identifier {
+//                print("ML: \(shape)")
+//                replace(shape, in: canvasView)
+//            }
             
-            let canvasCopy = PKCanvasView()
-            canvasCopy.drawing.strokes = [canvasView.drawing.strokes.last!]
-            
-            let uiImage = canvasCopy.drawing.image(from: bounds, scale: 1)
-            guard let cgImage = uiImage.cgImage else { return }
-            
-            let model = try VNCoreMLModel(
-                for: ObjectRecognition(configuration: MLModelConfiguration()).model
-            )
-            
-            let request = VNCoreMLRequest(model: model)
-            let handler = VNImageRequestHandler(cgImage: cgImage)
-            
-            try handler.perform([request])
-            guard let results = request.results else { return }
-            
-            let detections = results as! [VNClassificationObservation]
-            if let shape = detections.first?.identifier {
-                print("ML: \(shape)")
-                replace(shape, in: canvasView)
-            }
-            
-        } catch {
-            print("ML: There was an error.")
-        }
+//        } catch {
+//            print("ML: There was an error.")
+//        }
     }
     
     func replace(_ shape: String, in canvasView: PKCanvasView) {

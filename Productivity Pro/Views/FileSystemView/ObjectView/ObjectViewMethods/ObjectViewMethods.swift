@@ -5,6 +5,7 @@
 //  Created by Till Brügmann on 25.09.23.
 //
 
+import PDFKit
 import PencilKit
 import SwiftUI
 
@@ -20,6 +21,8 @@ extension ObjectView {
                             try importPro(url: url)
                         } else if url.pathExtension == "pronote" {
                             try importProNote(url: url)
+                        } else if url.pathExtension == "pdf" {
+                            importPDF(with: result)
                         }
                     }
                     
@@ -121,5 +124,89 @@ extension ObjectView {
                 return objects.sorted(by: { $0.modified > $1.modified })
             }
         }
+    }
+    
+    func importPDF(with result: Result<[URL], any Error>) {
+        toolManager.showProgress = true
+        
+        withAnimation(.bouncy) {
+            switch result {
+            case .success(let urls):
+                DispatchQueue.global(qos: .userInitiated).sync {
+                    guard let url = urls.first else { return }
+                    
+                    if url.startAccessingSecurityScopedResource() {
+                        guard let pdf = PDFDocument(url: url) else { return }
+                        defer { url.stopAccessingSecurityScopedResource() }
+                        
+                        let object = ContentObject(
+                            id: UUID(),
+                            title: getTitle(),
+                            type: .file,
+                            parent: parent,
+                            created: Date(),
+                            grade: grade
+                        )
+                        
+                        context.insert(object)
+                        
+                        let note = PPNoteModel()
+                        object.note = note
+                        
+                        for index in 0 ... pdf.pageCount - 1 {
+                            guard let page = pdf.page(at: index) else { return }
+                            guard let data = page.dataRepresentation else { return }
+                            
+                            let size = page.bounds(for: .mediaBox).size
+                            let title: String = page.string?.components(
+                                separatedBy: .newlines
+                            ).first?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                            
+                            let ppPage = PPPageModel(
+                                type: .pdf, index: index
+                            )
+                            
+                            ppPage.note = note
+                            ppPage.media = data
+                            ppPage.title = title
+                            
+                            ppPage.isPortrait = size.width < size.height
+                            ppPage.template = "blank"
+                            ppPage.color = "pagewhite"
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                            toolManager.showProgress = false
+                        }
+                    }
+                }
+                
+            case .failure:
+                break
+            }
+        }
+        
+        importFile = false
+    }
+    
+    func getTitle() -> String {
+        var title = String(localized: "Unbenannt")
+        var index = 1
+        
+        let filteredObjects = contentObjects
+            .filter {
+                $0.type == COType.file.rawValue &&
+                    $0.parent == parent &&
+                    $0.grade == grade &&
+                    $0.inTrash == false
+            }
+            .map { $0.title }
+        
+        while filteredObjects.contains(title) {
+            title = String(localized: "Unbenannt \(index)")
+            index += 1
+        }
+        
+        return title
     }
 }

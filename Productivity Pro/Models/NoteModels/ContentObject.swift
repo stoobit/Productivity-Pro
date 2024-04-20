@@ -48,7 +48,11 @@ import SwiftData
 }
 
 enum COType: String, Codable {
+    case all = "all"
+    
     case file = "file"
     case folder = "folder"
-    case all = "all"
+    
+    case vocabulary = "vocabulary"
+    case pdf = ""
 }

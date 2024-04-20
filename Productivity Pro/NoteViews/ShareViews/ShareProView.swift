@@ -27,8 +27,7 @@ struct ShareProView: View {
                         style: .continuous
                     )
                     .frame(width: 120, height: 165)
-                    .foregroundStyle(Color.primary)
-                    .colorInvert()
+                    .foregroundStyle(Color.white)
                     .shadow(radius: 5)
                     
                     Text("pronote")

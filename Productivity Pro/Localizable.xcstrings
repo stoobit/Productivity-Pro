@@ -31,6 +31,16 @@
         }
       }
     },
+    "%@ %lld" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$lld"
+          }
+        }
+      }
+    },
     "%@ bearbeiten" : {
       "localizations" : {
         "en" : {
@@ -1187,6 +1197,26 @@
         }
       }
     },
+    "Home" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
+    },
+    "Home %@ Fächer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home %@ Fächer"
+          }
+        }
+      }
+    },
     "Horizontal" : {
       "localizations" : {
         "en" : {
@@ -1368,6 +1398,7 @@
       }
     },
     "Letzte Vorlage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1694,6 +1725,7 @@
       }
     },
     "PDF importieren" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1869,26 +1901,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Close"
-          }
-        }
-      }
-    },
-    "Schreibtisch" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desktop"
-          }
-        }
-      }
-    },
-    "Schreibtisch %@ Fächer" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Desktop %@ Subjects"
           }
         }
       }

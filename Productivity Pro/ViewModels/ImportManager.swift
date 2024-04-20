@@ -147,10 +147,21 @@ struct ImportManager {
         return importable
     }
     
-    func ppImport(from url: URL, to parent: String, with grade: Int) throws -> ContentObject {
+    func ppImport(
+        from url: URL, to parent: String, with grade: Int,
+        contentObjects: [ContentObject]
+    ) throws -> ContentObject {
         if url.startAccessingSecurityScopedResource() {
-            let title: String = url.deletingPathExtension().lastPathComponent
-            let attr = try FileManager.default.attributesOfItem(atPath: url.path)
+            let title: String = getTitle(
+                basis: url.deletingPathExtension().lastPathComponent,
+                contentObjects: contentObjects,
+                parent: parent, grade: grade
+            )
+            
+            
+            let attr = try FileManager.default.attributesOfItem(
+                atPath: url.path
+            )
             
             let created = attr[FileAttributeKey.creationDate] as! Date
             let modified = attr[FileAttributeKey.modificationDate] as! Date
@@ -184,5 +195,30 @@ struct ImportManager {
         } else {
             throw RuntimeError("Import failed.")
         }
+    }
+    
+    func getTitle(
+        basis: String,
+        contentObjects: [ContentObject],
+        parent: String, grade: Int
+    ) -> String {
+        var title = basis
+        var index = 1
+        
+        let filteredObjects = contentObjects
+            .filter {
+                $0.type == COType.file.rawValue &&
+                    $0.parent == parent &&
+                    $0.grade == grade &&
+                    $0.inTrash == false
+            }
+            .map { $0.title }
+        
+        while filteredObjects.contains(title) {
+            title = String(localized: "\(basis) \(index)")
+            index += 1
+        }
+        
+        return title
     }
 }

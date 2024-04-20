@@ -86,7 +86,8 @@ struct OpenURL: ViewModifier {
         let importable = try importer.ppImport(
             from: url,
             to: parent,
-            with: grade
+            with: grade, 
+            contentObjects: contentObjects
         )
         
         importable.title = getTitle(with: importable.title)

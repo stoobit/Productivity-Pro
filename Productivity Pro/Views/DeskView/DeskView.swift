@@ -49,7 +49,7 @@ struct DeskView: View {
                 .frame(height: 30)
             }
             .environment(\.defaultMinListRowHeight, 10)
-            .navigationTitle("Schreibtisch")
+            .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
         }

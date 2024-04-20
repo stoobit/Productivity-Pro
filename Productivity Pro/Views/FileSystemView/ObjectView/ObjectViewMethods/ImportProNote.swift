@@ -11,7 +11,10 @@ import SwiftUI
 extension ObjectView {
     func importProNote(url: URL) throws {
         let contentObject = try ImportManager()
-            .ppImport(from: url, to: parent, with: grade)
+            .ppImport(
+                from: url, to: parent, with: grade, 
+                contentObjects: contentObjects
+            )
         
         context.insert(contentObject)
     }

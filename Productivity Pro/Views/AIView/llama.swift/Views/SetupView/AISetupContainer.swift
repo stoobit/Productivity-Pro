@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct AISetupContainer<Content: View>: View {
-    @Environment(\.dismiss) var dismiss
-
     @Binding var inProgress: Bool
     var content: () -> Content
 
@@ -78,17 +76,6 @@ struct AISetupContainer<Content: View>: View {
                 }
                 .padding()
                 .toolbarBackground(.hidden, for: .navigationBar)
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Abbrechen") {
-                            dismiss()
-                        }
-                        .disabled(inProgress)
-                        .foregroundStyle(
-                            inProgress ? Color.secondary : Color.primary
-                        )
-                    }
-                }
             }
         }
     }

@@ -46,7 +46,7 @@ private struct ContentView: View {
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(0)
                     .tabItem {
-                        Label("Schreibtisch", systemImage: "lamp.desk")
+                        Label("Home", systemImage: "house.fill")
                     }
                 
                 FileSystemView(contentObjects: contentObjects)
@@ -65,30 +65,26 @@ private struct ContentView: View {
                         ShareQRPDFView()
                     }
                 
-                if locale == "Deutsch" {
-                    LibraryView()
-                        .toolbarBackground(.visible, for: .tabBar)
-                        .tag(4)
-                        .tabItem {
-                            Label("Bibliothek", systemImage: "books.vertical.fill")
-                        }
-                }
-                
-                ScheduleViewContainer()
-                    .modifier(PremiumBadge(disabled: false))
+                AIView()
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(2)
+                    .tabItem {
+                        Label("AI", systemImage: "brain.fill")
+                    }
+                
+                ScheduleViewContainer()
+                    .toolbarBackground(.visible, for: .tabBar)
+                    .tag(3)
                     .tabItem {
                         Label("Stundenplan", systemImage: "calendar")
                     }
                 
                 HomeworkView()
-                    .modifier(PremiumBadge(disabled: false))
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         askNotificationPermission()
                     }
-                    .tag(3)
+                    .tag(4)
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
@@ -118,20 +114,18 @@ private struct ContentView: View {
         })
         .onAppear {
             if contentObjects.count > 9 {
-#if DEBUG
-#else
+                #if DEBUG
+                #else
                 requestReview()
-#endif
+                #endif
             }
         }
     }
     
     func askNotificationPermission() {
-        if isUnlocked {
-            UNUserNotificationCenter.current().requestAuthorization(
-                options: [.alert, .badge, .sound]
-            ) { _, _ in }
-        }
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: [.alert, .badge, .sound]
+        ) { _, _ in }
     }
     
     func updateStatus() {

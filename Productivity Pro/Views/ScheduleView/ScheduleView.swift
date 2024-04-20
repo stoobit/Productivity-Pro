@@ -29,7 +29,7 @@ struct ScheduleView: View {
                     ContentUnavailableView(
                         "Du hast noch keine Fächer erstellt.",
                         systemImage: "tray.2",
-                        description: Text("Schreibtisch \(Image(systemName: "arrow.right")) Fächer")
+                        description: Text("Home \(Image(systemName: "arrow.right")) Fächer")
                     )
                 }
             } else {
