@@ -9,8 +9,10 @@ import SwiftUI
 
 struct LIAPView: View {
     @Environment(\.dismiss) var dismiss
-    @AppStorage("ppgrade") var grade: Int = 5
     var parent: String
+    
+    @AppStorage("ppgrade") var grade: Int = 5
+    @AppStorage("ppenglischvocab unlocked") var vocabUnlocked: Bool = false
 
     var body: some View {
         NavigationStack {

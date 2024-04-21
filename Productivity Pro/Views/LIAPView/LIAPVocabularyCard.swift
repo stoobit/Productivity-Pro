@@ -9,6 +9,10 @@ import SwiftUI
 import StoreKit
 
 extension LIAPView {
+    fileprivate var id: String {
+        "com.stoobit.productivitypro.library.latinvocabulary"
+    }
+    
     @ViewBuilder func VocabularyCard() -> some View {
             ZStack(alignment: .bottom) {
                 Image("latin")
@@ -39,9 +43,23 @@ extension LIAPView {
                 }
                 .frame(height: 120)
                 
-                ProductView(
-                    id: "com.stoobit.productivitypro.library.latinvocabulary"
-                )
+                Group {
+                    if vocabUnlocked {
+                        Button(action: { dismiss() }) {
+                            Image(systemName: "plus")
+                                .foregroundStyle(.blue)
+                                .fontWeight(.medium)
+                                .padding(6)
+                                .background {
+                                    Circle()
+                                        .foregroundStyle(.background)
+                                }
+                                .padding(.bottom, 15)
+                        }
+                    } else {
+                        ProductView(id: id)
+                    }
+                }
                 .productViewStyle(.compact)
                 .foregroundStyle(Color.clear)
                 .frame(
@@ -51,6 +69,11 @@ extension LIAPView {
                 )
                 .padding(.horizontal, 15)
                 .colorScheme(.light)
+                .onInAppPurchaseCompletion { _, result in
+                    if case .success(.success) = result {
+                        vocabUnlocked.toggle()
+                    }
+                }
             }
             .listRowInsets(EdgeInsets())
         } 
