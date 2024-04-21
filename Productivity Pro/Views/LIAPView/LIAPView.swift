@@ -8,22 +8,19 @@
 import SwiftUI
 
 struct LIAPView: View {
+    @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
     var parent: String
-    
+
     @AppStorage("ppgrade") var grade: Int = 5
     @AppStorage("ppenglischvocab unlocked") var vocabUnlocked: Bool = false
-    
+
     @AppStorage("ppunlockedbooks")
     var unlockedBooks: CodableWrapper<[String]> = .init(value: [])
 
     var body: some View {
         NavigationStack {
             Form {
-                Section("Vokabeln") {
-                    VocabularyCard()
-                }
-
                 Section("Lektüre") {
                     ScrollView(.horizontal) {
                         LazyHStack {
@@ -40,6 +37,10 @@ struct LIAPView: View {
                     .safeAreaPadding(.vertical, 12)
                     .safeAreaPadding(.horizontal, 10)
                     .listRowInsets(EdgeInsets())
+                }
+                
+                Section("Vokabeln") {
+                    VocabularyCard()
                 }
             }
             .scrollIndicators(.hidden)

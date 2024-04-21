@@ -45,6 +45,8 @@ import SwiftData
     var inTrash: Bool = false
     
     var note: PPNoteModel?
+    var book: PPBookModel?
+    var vocabulary: PPVocabularyModel?
 }
 
 enum COType: String, Codable {

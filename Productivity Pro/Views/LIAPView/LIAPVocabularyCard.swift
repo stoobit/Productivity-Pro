@@ -47,6 +47,7 @@ extension LIAPView {
                 Group {
                     if vocabUnlocked {
                         Button(action: {
+                            addVocabulary()
                             dismiss()
                         }) {
                             Image(systemName: "plus")

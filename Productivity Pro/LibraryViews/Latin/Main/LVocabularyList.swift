@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LVocabularyList: View {
-    var data: [PPVocabularyModel]
+    var data: [PPVocabularyItem]
     var sections: [String]
     
     init() {
@@ -34,21 +34,22 @@ struct LVocabularyList: View {
         }
     }
     
-    static func loadSections(data: [PPVocabularyModel]) -> [String] {
-        return Array(Set(data.map(\.section))).sorted(using: SortDescriptor(\.self))
+    static func loadSections(data: [PPVocabularyItem]) -> [String] {
+        return Array(Set(data.map(\.section)))
+            .sorted(using: SortDescriptor(\.self))
     }
 
-    static func loadData() -> [PPVocabularyModel] {
+    static func loadData() -> [PPVocabularyItem] {
         let decoder = JSONDecoder()
         
-        if let filePath = Bundle.main.path(forResource: "latinvoc", ofType: "json") {
+        if let filePath = Bundle.main.path(forResource: "latinvocabulary", ofType: "json") {
             do {
                 let fileUrl = URL(fileURLWithPath: filePath)
                 let string = try String(contentsOf: fileUrl)
                     .trimmingCharacters(in: .whitespacesAndNewlines)
                 
                 let jsonData = Data(string.utf8)
-                let array = try decoder.decode([PPVocabularyModel].self, from: jsonData)
+                let array = try decoder.decode([PPVocabularyItem].self, from: jsonData)
                 
                 return array
             } catch {

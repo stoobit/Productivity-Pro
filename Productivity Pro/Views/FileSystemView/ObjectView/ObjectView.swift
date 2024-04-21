@@ -44,7 +44,13 @@ struct ObjectView: View {
             List {
                 Section {
                     ForEach(
-                        getObjects(typeSorting == true ? .file : .all, isPinned: true)
+                        getObjects(typeSorting == true ? .vocabulary : .all, isPinned: true)
+                    ) { object in
+                        ObjectLink(for: object)
+                    }
+                    
+                    ForEach(
+                        getObjects(typeSorting == true ? .file : .none, isPinned: true)
                     ) { object in
                         ObjectLink(for: object)
                     }
@@ -58,7 +64,13 @@ struct ObjectView: View {
                 
                 Section {
                     ForEach(
-                        getObjects(typeSorting == true ? .file : .all, isPinned: false)
+                        getObjects(typeSorting == true ? .vocabulary : .all, isPinned: false)
+                    ) { object in
+                        ObjectLink(for: object)
+                    }
+                    
+                    ForEach(
+                        getObjects(typeSorting == true ? .file : .none, isPinned: false)
                     ) { object in
                         ObjectLink(for: object)
                     }
@@ -120,6 +132,12 @@ struct ObjectView: View {
                 deleteObject(object)
             }
         } else if object.type == COType.file.rawValue {
+            ObjectViewFileLink(
+                contentObjects: contentObjects, object: object
+            ) {
+                deleteObject(object)
+            }
+        } else if object.type == COType.vocabulary.rawValue {
             ObjectViewFileLink(
                 contentObjects: contentObjects, object: object
             ) {

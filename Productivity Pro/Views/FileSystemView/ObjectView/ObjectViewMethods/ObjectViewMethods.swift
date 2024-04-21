@@ -95,7 +95,11 @@ extension ObjectView {
                 $0.inTrash == false
         }
         
-        if type == .file {
+        if type == .vocabulary {
+            objects = objects.filter {
+                $0.type == COType.vocabulary.rawValue
+            }
+        } else if type == .file {
             objects = objects.filter {
                 $0.type == COType.file.rawValue
             }

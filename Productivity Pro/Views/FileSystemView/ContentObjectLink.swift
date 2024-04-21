@@ -38,4 +38,8 @@ struct ContentObjectLink: View {
         }
         .frame(height: 40)
     }
+    
+    var icon: String {
+        
+    }
 }
