@@ -16,8 +16,6 @@ struct AIProgressView: View {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename)
     }
 
-    private func checkFileExistenceAndUpdateStatus() {}
-
     init(llamaState: LlamaState, modelName: String, modelUrl: String, filename: String) {
         self.llamaState = llamaState
         self.modelName = modelName
@@ -53,11 +51,11 @@ struct AIProgressView: View {
                     llamaState.cacheCleared = false
 
                     let model = AIModel(name: modelName, url: modelUrl, filename: filename, status: "downloaded")
-                    
+
                     DispatchQueue.main.async {
                         llamaState.downloadedModels.append(model)
                     }
-                    
+
                     status = "downloaded"
                 }
             } catch let err {
@@ -84,9 +82,12 @@ struct AIProgressView: View {
         }
         .padding(.horizontal, 70)
         .onAppear {
-            download()
+            if llamaState.isLoading == false {
+                llamaState.isLoading = true
+                download()
+            }
         }
-        
+
 //        VStack {
 //            if status == "download" {
 //                Button(action: download) {

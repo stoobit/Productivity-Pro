@@ -21,6 +21,9 @@ class LlamaState: ObservableObject {
     @Published var cacheCleared = false
     @Published var downloadedModels: [AIModel] = []
     @Published var undownloadedModels: [AIModel] = []
+    
+    @Published var isLoading: Bool = false
+    
     let NS_PER_S = 1_000_000_000.0
 
     private var llamaContext: LlamaContext?
