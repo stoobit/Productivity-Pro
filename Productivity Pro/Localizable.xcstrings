@@ -38,6 +38,12 @@
             "state" : "new",
             "value" : "%1$@ %2$lld"
           }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@%2lld"
+          }
         }
       }
     },
@@ -131,6 +137,16 @@
         }
       }
     },
+    "104 Wortschätze mit 1854 Vokabeln" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
+    },
     "a-Deklination" : {
       "localizations" : {
         "en" : {
@@ -147,12 +163,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cancel"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "취소"
           }
         }
       }
@@ -243,17 +253,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pin"
-          }
-        }
-      }
-    },
-    "App Clip" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "App Clip"
           }
         }
       }
@@ -354,17 +353,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edit"
-          }
-        }
-      }
-    },
-    "Beitrag hinzufügen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add post"
           }
         }
       }
@@ -485,17 +473,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Please import the file via the import menu or the backup view."
-          }
-        }
-      }
-    },
-    "Bitte vergrößere dieses Fenster um auf die Bibliothek zuzugreifen." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Please enlarge this window to access the library."
           }
         }
       }
@@ -666,17 +643,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This can take a few minutes."
-          }
-        }
-      }
-    },
-    "Diese Ansicht ist nicht verfügbar." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This view is not available."
           }
         }
       }
@@ -1151,9 +1117,6 @@
         }
       }
     },
-    "Hello, World!" : {
-
-    },
     "Help" : {
       "localizations" : {
         "en" : {
@@ -1394,23 +1357,32 @@
         }
       }
     },
+    "Latein Vokabeln" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latin Vocabulary"
+          }
+        }
+      }
+    },
+    "Lektüre" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reading"
+          }
+        }
+      }
+    },
     "Lesezeichen" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bookmark"
-          }
-        }
-      }
-    },
-    "Letzte Vorlage" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Last Template"
           }
         }
       }
@@ -1721,23 +1693,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PDF"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PDF"
-          }
-        }
-      }
-    },
-    "PDF importieren" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Import PDF"
           }
         }
       }
@@ -2258,6 +2213,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "View Models"
+          }
+        }
+      }
+    },
+    "Vokabeln" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vocabulary"
           }
         }
       }

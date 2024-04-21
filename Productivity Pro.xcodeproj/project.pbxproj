@@ -211,6 +211,10 @@
 		BBA9A24A2B2F0C96004AFAD0 /* UITFTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA9A2492B2F0C96004AFAD0 /* UITFTheme.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
 		BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */; };
+		BBAF6D0A2BD492BB00FAA524 /* LIAPVocabularyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */; };
+		BBAF6D0C2BD492F500FAA524 /* LIAPBookCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0B2BD492F500FAA524 /* LIAPBookCard.swift */; };
+		BBAF6D0E2BD4934000FAA524 /* LIAPBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0D2BD4934000FAA524 /* LIAPBookModel.swift */; };
+		BBAF6D102BD4935B00FAA524 /* LIAPBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0F2BD4935B00FAA524 /* LIAPBooks.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
 		BBB049782B84FA95005531D5 /* GoogleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB049772B84FA95005531D5 /* GoogleView.swift */; };
 		BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */; };
@@ -530,6 +534,10 @@
 		BBA9A2492B2F0C96004AFAD0 /* UITFTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITFTheme.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
 		BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRowMethods.swift; sourceTree = "<group>"; };
+		BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPVocabularyCard.swift; sourceTree = "<group>"; };
+		BBAF6D0B2BD492F500FAA524 /* LIAPBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPBookCard.swift; sourceTree = "<group>"; };
+		BBAF6D0D2BD4934000FAA524 /* LIAPBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPBookModel.swift; sourceTree = "<group>"; };
+		BBAF6D0F2BD4935B00FAA524 /* LIAPBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPBooks.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BBB049772B84FA95005531D5 /* GoogleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleView.swift; sourceTree = "<group>"; };
 		BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinView.swift; sourceTree = "<group>"; };
@@ -1151,6 +1159,10 @@
 			isa = PBXGroup;
 			children = (
 				BB8103EE2BD4782B005D08BD /* LIAPView.swift */,
+				BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */,
+				BBAF6D0B2BD492F500FAA524 /* LIAPBookCard.swift */,
+				BBAF6D0D2BD4934000FAA524 /* LIAPBookModel.swift */,
+				BBAF6D0F2BD4935B00FAA524 /* LIAPBooks.swift */,
 			);
 			path = LIAPView;
 			sourceTree = "<group>";
@@ -1712,8 +1724,6 @@
 				de,
 				en,
 				Base,
-				ko,
-				fr,
 			);
 			mainGroup = BB4CDD3428D3C668009A409F;
 			packageReferences = (
@@ -1804,6 +1814,7 @@
 				BB341B162BCF13B400BF3A93 /* UITFHelper.swift in Sources */,
 				BB67015D2AADF480001F468A /* DeskViewHelper.swift in Sources */,
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,
+				BBAF6D0C2BD492F500FAA524 /* LIAPBookCard.swift in Sources */,
 				BB61AD3F2BCC2F7E00F4C34A /* AISetupContainer.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
@@ -1911,6 +1922,7 @@
 				BB5705232B35E3B100F84B45 /* VCardView.swift in Sources */,
 				BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */,
 				BB27BB522A62C30700392E1E /* RealityNoteModel.swift in Sources */,
+				BBAF6D102BD4935B00FAA524 /* LIAPBooks.swift in Sources */,
 				BB36D4CA2B9D324700CBDCAD /* ArrangeStackingView.swift in Sources */,
 				BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */,
 				BB49EE042BC5C4D1004CB803 /* PPScrollViewUpdate.swift in Sources */,
@@ -1919,6 +1931,7 @@
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
 				BB36D4C82B9D31EC00CBDCAD /* ArrangeGeneralView.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
+				BBAF6D0E2BD4934000FAA524 /* LIAPBookModel.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
 				BB30C2F42BCB465F009D69CA /* SchedulePreview.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,
@@ -1992,6 +2005,7 @@
 				BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */,
 				BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */,
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
+				BBAF6D0A2BD492BB00FAA524 /* LIAPVocabularyCard.swift in Sources */,
 				BB49EE062BC5C4DA004CB803 /* PPScrollViewCoordinator.swift in Sources */,
 				BB57051D2B35C57B00F84B45 /* LTabIndicator.swift in Sources */,
 				BB4984182BC32FA7008D45B0 /* LlamaState.swift in Sources */,

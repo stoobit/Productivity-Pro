@@ -8,10 +8,49 @@
 import SwiftUI
 
 struct LIAPView: View {
+    @Environment(\.dismiss) var dismiss
     @AppStorage("ppgrade") var grade: Int = 5
     var parent: String
-    
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Form {
+                Section("Vokabeln") {
+                    VocabularyCard()
+                }
+
+                Section("Lektüre") {
+                    ScrollView(.horizontal) {
+                        LazyHStack {
+                            ForEach(books) { book in
+                                BookCard(
+                                    title: book.title, author: book.author,
+                                    image: book.image, id: book.iapID
+                                )
+                            }
+                        }
+                        .scrollTargetLayout()
+                    }
+                    .scrollIndicators(.hidden)
+                    .safeAreaPadding(.vertical, 12)
+                    .safeAreaPadding(.horizontal, 10)
+                    .listRowInsets(EdgeInsets())
+                }
+            }
+            .scrollIndicators(.hidden)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Abbrechen") {
+                        dismiss()
+                    }
+                    .foregroundStyle(.primary)
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
+}
+
+#Preview {
+    LIAPView(parent: "root")
 }

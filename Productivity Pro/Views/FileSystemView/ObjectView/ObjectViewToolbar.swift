@@ -27,11 +27,15 @@ struct FolderViewToolbar: ToolbarContent {
     @Binding var importFile: Bool
     
     var contentObjects: [ContentObject]
+    let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
     
     var body: some ToolbarContent {
         ToolbarItemGroup(placement: .topBarTrailing) {
-            Button("Bibliothek", systemImage: "books.vertical") {
-                subviewManager.liapView.toggle()
+           
+            if locale == "Deutsch" {
+                Button("Bibliothek", systemImage: "books.vertical") {
+                    subviewManager.liapView.toggle()
+                }
             }
             
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {

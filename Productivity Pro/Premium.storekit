@@ -5,6 +5,141 @@
   ],
   "products" : [
     {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6499086685",
+      "localizations" : [
+        {
+          "description" : "Lese deine Schullektüre in Productivity Pro.",
+          "displayName" : "Lektüre – Der Dräumling",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.book.derdrauumling",
+      "referenceName" : "Der Dräumling",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6499086625",
+      "localizations" : [
+        {
+          "description" : "Lese deine Schullektüre in Productivity Pro.",
+          "displayName" : "Lektüre – Der eing…dete Kranke",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.book.dereingebildetekranke",
+      "referenceName" : "Der eingebildete Kranke",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6499086701",
+      "localizations" : [
+        {
+          "description" : "Lese deine Schullektüre in Productivity Pro.",
+          "displayName" : "Lektüre – Der Prozeß",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.book.derprozess",
+      "referenceName" : "Der Prozeß",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6499086857",
+      "localizations" : [
+        {
+          "description" : "Lese deine Schullektüre in Productivity Pro.",
+          "displayName" : "Lektüre – Der Schimmelreiter",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.book.derschimmelreiter",
+      "referenceName" : "Der Schimmelreiter",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6499086398",
+      "localizations" : [
+        {
+          "description" : "Lese deine Schullektüre in Productivity Pro.",
+          "displayName" : "Lektüre – Werther",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.book.werther",
+      "referenceName" : "Die leiden des jungen Werther",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6499084901",
+      "localizations" : [
+        {
+          "description" : "Lese deine Schullektüre in Productivity Pro.",
+          "displayName" : "Lektüre – Emilia Galotti",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.book.emiliagalotti",
+      "referenceName" : "Emilia Galotti",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6499086776",
+      "localizations" : [
+        {
+          "description" : "Lese deine Schullektüre in Productivity Pro.",
+          "displayName" : "Lektüre – Frühlings Erwachen",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.book.fruehlingserwachen",
+      "referenceName" : "Frühlings Erwachen",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6499086585",
+      "localizations" : [
+        {
+          "description" : "Lese deine Schullektüre in Productivity Pro.",
+          "displayName" : "Lektüre – Kabale und Liebe",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.book.kabaleundliebe",
+      "referenceName" : "Kabale und Liebe",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6499084732",
+      "localizations" : [
+        {
+          "description" : "Lerne Lateinvokabeln mit Productivity Pro.",
+          "displayName" : "Vokabeln – Latein Wortschätze",
+          "locale" : "de"
+        }
+      ],
+      "productID" : "com.stoobit.productivitypro.library.latinvocabulary",
+      "referenceName" : "Latin Vocabulary",
+      "type" : "NonConsumable"
+    },
+    {
       "displayPrice" : "2.99",
       "familyShareable" : true,
       "internalID" : "6496854860",
@@ -29,7 +164,7 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 735341218.71644104,
+    "_lastSynchronizedDate" : 735356218.03506398,
     "_locale" : "de",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
@@ -91,7 +226,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "0334472E",
+              "internalID" : "7E8A794A",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivitypro.premium.monthlysub.offer",
               "paymentMode" : "free",
@@ -139,14 +274,14 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Subscribe yearly and save money.",
-              "displayName" : "Yearly Subscription (OLD)",
-              "locale" : "en_US"
-            },
-            {
               "description" : "Spare Geld, ohne auf Features zu verzichten.",
               "displayName" : "Jährliches Abonnement (ALT)",
               "locale" : "de"
+            },
+            {
+              "description" : "Subscribe yearly and save money.",
+              "displayName" : "Yearly Subscription (OLD)",
+              "locale" : "en_US"
             }
           ],
           "productID" : "com.stoobit.productivity.premium",
