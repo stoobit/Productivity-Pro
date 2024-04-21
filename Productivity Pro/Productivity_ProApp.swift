@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import TipKit
 
 @main
 struct Productivity_ProApp: App {
@@ -14,17 +13,9 @@ struct Productivity_ProApp: App {
         WindowGroup(id: "main") {
             ContentViewContainer()
                 .onAppear { onAppear() }
-                .task {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        try? Tips.configure([
-                            .displayFrequency(.immediate),
-                            .datastoreLocation(.applicationDefault),
-                        ])
-                    }
-                }
         }
         .modelContainer(
-            for: [ 
+            for: [
                 Homework.self,
                 ContentObject.self,
                 PPBookModel.self,
@@ -36,7 +27,9 @@ struct Productivity_ProApp: App {
 
     func onAppear() {
         UIView
-            .appearance(whenContainedInInstancesOf: [UIAlertController.self])
+            .appearance(
+                whenContainedInInstancesOf: [UIAlertController.self]
+            )
             .tintColor = UIColor.main
     }
 }

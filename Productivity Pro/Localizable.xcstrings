@@ -597,6 +597,9 @@
         }
       }
     },
+    "Datum anzeigen" : {
+
+    },
     "Default Models" : {
       "localizations" : {
         "en" : {
@@ -858,6 +861,7 @@
       }
     },
     "Einstellungen ändern?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -868,6 +872,7 @@
       }
     },
     "Einstellungen geändert" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1098,6 +1103,7 @@
       }
     },
     "Groß" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1188,6 +1194,7 @@
       }
     },
     "Horizontal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1298,6 +1305,7 @@
       }
     },
     "Kompakt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1438,6 +1446,7 @@
       }
     },
     "Markdown" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1448,6 +1457,7 @@
       }
     },
     "Markdown Editor" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1558,6 +1568,7 @@
       }
     },
     "Neustarten" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1898,6 +1909,7 @@
       }
     },
     "Scrollrichtung der Seiten" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2088,6 +2100,7 @@
       }
     },
     "Tippe um Productivity Pro zu öffnen." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2138,6 +2151,7 @@
       }
     },
     "Uhrzeit der Benachrichtigung" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2148,6 +2162,7 @@
       }
     },
     "Um diese Einstellungen zu ändern muss die App neugestartet werden." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2198,6 +2213,7 @@
       }
     },
     "Vertikal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

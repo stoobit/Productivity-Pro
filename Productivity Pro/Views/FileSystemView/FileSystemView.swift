@@ -30,7 +30,7 @@ struct FileSystemView: View {
                         .foregroundStyle(.white)
                 }
                 .frame(width: 110, height: 50)
-                .background(Color.blue)
+                .background(Color.accentColor)
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 .frame(
                     maxWidth: .infinity, maxHeight: .infinity,

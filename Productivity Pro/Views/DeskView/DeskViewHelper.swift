@@ -11,24 +11,17 @@ extension DeskView {
     @ViewBuilder func Settings() -> some View {
         Section("Einstellungen") {
             NavigationLink(destination: {
-                GeneralSettings()
+                SubjectSettings()
             }) {
-                Label("Allgemein", systemImage: "gearshape")
-            }
-            .frame(height: 30)
-
-            NavigationLink(destination: {
-                AppIconSettings()
-            }) {
-                Label("App Icon", systemImage: "app.gift")
+                Label("Fächer", systemImage: "tray.2")
             }
             .frame(height: 30)
             .modifier(PremiumBadge(disabled: true))
 
             NavigationLink(destination: {
-                SubjectSettings()
+                AppIconSettings()
             }) {
-                Label("Fächer", systemImage: "tray.2")
+                Label("App Icon", systemImage: "app.gift")
             }
             .frame(height: 30)
             .modifier(PremiumBadge(disabled: true))

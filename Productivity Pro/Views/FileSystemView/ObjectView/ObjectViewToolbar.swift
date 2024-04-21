@@ -23,6 +23,9 @@ struct FolderViewToolbar: ToolbarContent {
     @AppStorage("ppsortbytype")
     var typeSorting: Bool = true
     
+    @AppStorage("pp show date")
+    var showDate: Bool = true
+    
     @Binding var addFolder: Bool
     @Binding var importFile: Bool
     
@@ -67,7 +70,6 @@ struct FolderViewToolbar: ToolbarContent {
                 Picker("", selection: $sortType) {
                     Text("Name").tag(SortingValue.title)
                     Text("Erstellt").tag(SortingValue.created)
-//                    Text("Geändert").tag(SortingValue.modified)
                 }
                 
                 Button(action: { isReverse.toggle() }) {
@@ -79,6 +81,7 @@ struct FolderViewToolbar: ToolbarContent {
                 
                 Section {
                     Toggle("Gruppieren", isOn: $typeSorting)
+                    Toggle("Datum anzeigen", isOn: $showDate)
                 }
                 
             }) {

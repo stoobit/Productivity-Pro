@@ -9,8 +9,6 @@ import SwiftData
 import SwiftUI
 
 struct NoteView: View {
-    @AppStorage("horizontalScroll") var isHorizontal: Bool = true
-    
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
@@ -35,7 +33,6 @@ struct NoteView: View {
                         .foregroundStyle(.clear)
                     
                     PagingViewController(
-                        isHorizontal: isHorizontal,
                         pages: pages.map {
                             ScrollViewContainer(
                                 note: contentObject.note!, page: $0,

@@ -30,6 +30,9 @@ struct ObjectView: View {
     @AppStorage("ppgrade")
     var grade: Int = 5
     
+    @AppStorage("pp show date")
+    var showDate: Bool = true
+    
     @State var addFolder: Bool = false
     @State var createNote: Bool = false
     @State var importFile: Bool = false
@@ -85,6 +88,7 @@ struct ObjectView: View {
             .animation(.bouncy, value: grade)
             .animation(.bouncy, value: sortType)
             .animation(.bouncy, value: typeSorting)
+            .animation(.bouncy, value: showDate)
             .animation(.bouncy, value: isReverse)
             .scrollContentBackground(.hidden)
             .environment(\.defaultMinListRowHeight, 10)
