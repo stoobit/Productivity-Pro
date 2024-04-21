@@ -24,7 +24,11 @@ struct Productivity_ProApp: App {
                 }
         }
         .modelContainer(
-            for: [ Homework.self, ContentObject.self],
+            for: [ 
+                Homework.self,
+                ContentObject.self,
+                PPBookModel.self,
+            ],
             isAutosaveEnabled: true,
             isUndoEnabled: false
         )

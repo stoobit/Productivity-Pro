@@ -54,5 +54,5 @@ enum COType: String, Codable {
     case folder = "folder"
     
     case vocabulary = "vocabulary"
-    case pdf = ""
+    case book = "book"
 }

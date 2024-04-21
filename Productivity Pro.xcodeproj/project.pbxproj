@@ -112,7 +112,6 @@
 		BB50FCD02B0D0ABE00D12783 /* ArrangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB50FCCF2B0D0ABE00D12783 /* ArrangeView.swift */; };
 		BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */; };
 		BB57051D2B35C57B00F84B45 /* LTabIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */; };
-		BB57051F2B35D45000F84B45 /* VocabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB57051E2B35D45000F84B45 /* VocabModel.swift */; };
 		BB5705212B35E24700F84B45 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705202B35E24700F84B45 /* VocabularyView.swift */; };
 		BB5705232B35E3B100F84B45 /* VCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705222B35E3B100F84B45 /* VCardView.swift */; };
 		BB5705252B35FD3800F84B45 /* VFlipModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705242B35FD3800F84B45 /* VFlipModifier.swift */; };
@@ -213,8 +212,10 @@
 		BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */; };
 		BBAF6D0A2BD492BB00FAA524 /* LIAPVocabularyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */; };
 		BBAF6D0C2BD492F500FAA524 /* LIAPBookCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0B2BD492F500FAA524 /* LIAPBookCard.swift */; };
-		BBAF6D0E2BD4934000FAA524 /* LIAPBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0D2BD4934000FAA524 /* LIAPBookModel.swift */; };
+		BBAF6D0E2BD4934000FAA524 /* PPBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0D2BD4934000FAA524 /* PPBookModel.swift */; };
 		BBAF6D102BD4935B00FAA524 /* LIAPBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0F2BD4935B00FAA524 /* LIAPBooks.swift */; };
+		BBAF6D142BD5027100FAA524 /* PPVocabularyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D132BD5027100FAA524 /* PPVocabularyModel.swift */; };
+		BBAF6D162BD5059400FAA524 /* PPVocabularyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D152BD5059400FAA524 /* PPVocabularyItem.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
 		BBB049782B84FA95005531D5 /* GoogleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB049772B84FA95005531D5 /* GoogleView.swift */; };
 		BBB19A9E2B27AF7A00B92CBB /* LatinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */; };
@@ -435,7 +436,6 @@
 		BB50FCCF2B0D0ABE00D12783 /* ArrangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrangeView.swift; sourceTree = "<group>"; };
 		BB5705192B34FDE300F84B45 /* ClipboardMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardMethods.swift; sourceTree = "<group>"; };
 		BB57051C2B35C57B00F84B45 /* LTabIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LTabIndicator.swift; sourceTree = "<group>"; };
-		BB57051E2B35D45000F84B45 /* VocabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabModel.swift; sourceTree = "<group>"; };
 		BB5705202B35E24700F84B45 /* VocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
 		BB5705222B35E3B100F84B45 /* VCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCardView.swift; sourceTree = "<group>"; };
 		BB5705242B35FD3800F84B45 /* VFlipModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFlipModifier.swift; sourceTree = "<group>"; };
@@ -536,8 +536,10 @@
 		BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRowMethods.swift; sourceTree = "<group>"; };
 		BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPVocabularyCard.swift; sourceTree = "<group>"; };
 		BBAF6D0B2BD492F500FAA524 /* LIAPBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPBookCard.swift; sourceTree = "<group>"; };
-		BBAF6D0D2BD4934000FAA524 /* LIAPBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPBookModel.swift; sourceTree = "<group>"; };
+		BBAF6D0D2BD4934000FAA524 /* PPBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPBookModel.swift; sourceTree = "<group>"; };
 		BBAF6D0F2BD4935B00FAA524 /* LIAPBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPBooks.swift; sourceTree = "<group>"; };
+		BBAF6D132BD5027100FAA524 /* PPVocabularyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVocabularyModel.swift; sourceTree = "<group>"; };
+		BBAF6D152BD5059400FAA524 /* PPVocabularyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVocabularyItem.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BBB049772B84FA95005531D5 /* GoogleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleView.swift; sourceTree = "<group>"; };
 		BBB19A9D2B27AF7A00B92CBB /* LatinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatinView.swift; sourceTree = "<group>"; };
@@ -761,14 +763,6 @@
 				BBA9A2492B2F0C96004AFAD0 /* UITFTheme.swift */,
 			);
 			path = TextField;
-			sourceTree = "<group>";
-		};
-		BB35A1BF2B292175001A3F4C /* LibraryModels */ = {
-			isa = PBXGroup;
-			children = (
-				BB57051E2B35D45000F84B45 /* VocabModel.swift */,
-			);
-			path = LibraryModels;
 			sourceTree = "<group>";
 		};
 		BB37AD882A2C0A12006DB94D /* Overview */ = {
@@ -1000,7 +994,6 @@
 			isa = PBXGroup;
 			children = (
 				BB4A93D52AAF3BED00C3AED6 /* OrganizationModels */,
-				BB35A1BF2B292175001A3F4C /* LibraryModels */,
 				BB9A36482ABCD25900721C56 /* NoteModels */,
 				BBB538812B40B86000C874EA /* ExportableModels */,
 				BB9DF5B328E067D600AC988D /* Document (Deprecated) */,
@@ -1161,7 +1154,6 @@
 				BB8103EE2BD4782B005D08BD /* LIAPView.swift */,
 				BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */,
 				BBAF6D0B2BD492F500FAA524 /* LIAPBookCard.swift */,
-				BBAF6D0D2BD4934000FAA524 /* LIAPBookModel.swift */,
 				BBAF6D0F2BD4935B00FAA524 /* LIAPBooks.swift */,
 			);
 			path = LIAPView;
@@ -1271,6 +1263,8 @@
 			isa = PBXGroup;
 			children = (
 				BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */,
+				BBAF6D122BD5025200FAA524 /* PPVocabulary */,
+				BBAF6D112BD5024A00FAA524 /* PPBook */,
 				BB9BFB5A2AC7463A00255293 /* PPNote */,
 			);
 			path = NoteModels;
@@ -1371,6 +1365,23 @@
 				BBA3A0282B29AF2500099F6D /* MDEditorView.swift */,
 			);
 			path = MarkdownEditor;
+			sourceTree = "<group>";
+		};
+		BBAF6D112BD5024A00FAA524 /* PPBook */ = {
+			isa = PBXGroup;
+			children = (
+				BBAF6D0D2BD4934000FAA524 /* PPBookModel.swift */,
+			);
+			path = PPBook;
+			sourceTree = "<group>";
+		};
+		BBAF6D122BD5025200FAA524 /* PPVocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				BBAF6D132BD5027100FAA524 /* PPVocabularyModel.swift */,
+				BBAF6D152BD5059400FAA524 /* PPVocabularyItem.swift */,
+			);
+			path = PPVocabulary;
 			sourceTree = "<group>";
 		};
 		BBB19A9A2B27AF1400B92CBB /* Latin */ = {
@@ -1799,7 +1810,6 @@
 				BBD3C4212A54DA46002BFFCF /* View.swift in Sources */,
 				BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */,
 				BBEF06DA2ABF7B46007EDFF6 /* HomeworkEditView.swift in Sources */,
-				BB57051F2B35D45000F84B45 /* VocabModel.swift in Sources */,
 				BB067089293034840076F768 /* OrientationUpdater.swift in Sources */,
 				BB4CDD4128D3C668009A409F /* Productivity_ProApp.swift in Sources */,
 				BB30C2F02BCB0DFA009D69CA /* StoreViewModel.swift in Sources */,
@@ -1917,6 +1927,7 @@
 				BB84DD1F2B8E7DDD002C2A9A /* VUModel.swift in Sources */,
 				BB844FBE2AC2385F00EE9C93 /* ObjectViewFolderLink.swift in Sources */,
 				BB9A364E2ABCFA4900721C56 /* HomeworkListMethods.swift in Sources */,
+				BBAF6D142BD5027100FAA524 /* PPVocabularyModel.swift in Sources */,
 				BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */,
 				BB82B5B72B2498CB0089D423 /* PKObjectRecognition.swift in Sources */,
 				BB5705232B35E3B100F84B45 /* VCardView.swift in Sources */,
@@ -1931,7 +1942,7 @@
 				BB35A1BC2B290A79001A3F4C /* LVocabularyList.swift in Sources */,
 				BB36D4C82B9D31EC00CBDCAD /* ArrangeGeneralView.swift in Sources */,
 				BBC7B9742A18F09100D496CB /* ItemView.swift in Sources */,
-				BBAF6D0E2BD4934000FAA524 /* LIAPBookModel.swift in Sources */,
+				BBAF6D0E2BD4934000FAA524 /* PPBookModel.swift in Sources */,
 				BB9BFB6B2AC7807D00255293 /* CreateNoteView.swift in Sources */,
 				BB30C2F42BCB465F009D69CA /* SchedulePreview.swift in Sources */,
 				BB9367772AC9D3C50096F20E /* PPStrokeType.swift in Sources */,
@@ -1988,6 +1999,7 @@
 				BBF5FDFE2AAE304B0081C4FE /* SubjectSettings.swift in Sources */,
 				BB27FED228EA09A200459334 /* TouchType.swift in Sources */,
 				BBA3A0292B29AF2500099F6D /* MDEditorView.swift in Sources */,
+				BBAF6D162BD5059400FAA524 /* PPVocabularyItem.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
 				BB49841E2BC32FCD008D45B0 /* AIPorgressView.swift in Sources */,

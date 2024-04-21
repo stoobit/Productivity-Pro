@@ -9,10 +9,10 @@ import SwiftUI
 
 struct VCardView: View {
     var proxy: GeometryProxy
-    var vocab: VocabModel
+    var vocab: PPVocabularyModel
 
     @State var showBack: Bool = false
-    @Binding var active: VocabModel?
+    @Binding var active: PPVocabularyModel?
     
     var index: String
     var body: some View {

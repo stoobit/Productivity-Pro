@@ -9,10 +9,10 @@ import SwiftUI
 
 struct VocabularyView: View {
     var section: String
-    var data: [VocabModel]
+    var data: [PPVocabularyModel]
 
-    @State var active: VocabModel?
-    @State var vocabs: [VocabModel] = []
+    @State var active: PPVocabularyModel?
+    @State var vocabs: [PPVocabularyModel] = []
 
     var body: some View {
         ZStack {
@@ -52,11 +52,11 @@ struct VocabularyView: View {
         }
     }
 
-    func getVocabs() -> [VocabModel] {
+    func getVocabs() -> [PPVocabularyModel] {
         return data.filter { $0.section == section }.shuffled()
     }
     
-    func index(of model: VocabModel) ->  String {
+    func index(of model: PPVocabularyModel) ->  String {
         return "\((vocabs.firstIndex(of: model) ?? 0) + 1) / \(vocabs.count)"
     }
 }

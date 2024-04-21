@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LVocabularyList: View {
-    var data: [VocabModel]
+    var data: [PPVocabularyModel]
     var sections: [String]
     
     init() {
@@ -34,11 +34,11 @@ struct LVocabularyList: View {
         }
     }
     
-    static func loadSections(data: [VocabModel]) -> [String] {
+    static func loadSections(data: [PPVocabularyModel]) -> [String] {
         return Array(Set(data.map(\.section))).sorted(using: SortDescriptor(\.self))
     }
 
-    static func loadData() -> [VocabModel] {
+    static func loadData() -> [PPVocabularyModel] {
         let decoder = JSONDecoder()
         
         if let filePath = Bundle.main.path(forResource: "latinvoc", ofType: "json") {
@@ -48,7 +48,7 @@ struct LVocabularyList: View {
                     .trimmingCharacters(in: .whitespacesAndNewlines)
                 
                 let jsonData = Data(string.utf8)
-                let array = try decoder.decode([VocabModel].self, from: jsonData)
+                let array = try decoder.decode([PPVocabularyModel].self, from: jsonData)
                 
                 return array
             } catch {
