@@ -13,6 +13,9 @@ struct LIAPView: View {
     
     @AppStorage("ppgrade") var grade: Int = 5
     @AppStorage("ppenglischvocab unlocked") var vocabUnlocked: Bool = false
+    
+    @AppStorage("ppunlockedbooks")
+    var unlockedBooks: CodableWrapper<[String]> = .init(value: [])
 
     var body: some View {
         NavigationStack {

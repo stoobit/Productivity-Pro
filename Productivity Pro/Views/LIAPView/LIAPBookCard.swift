@@ -42,16 +42,39 @@ extension LIAPView {
                     )
                     .padding()
                         
-                    ProductView(id: id)
-                        .productViewStyle(.compact)
-                        .foregroundStyle(Color.clear)
-                        .frame(
-                            maxWidth: .infinity,
-                            maxHeight: .infinity,
-                            alignment: .bottomTrailing
-                        )
-                        .padding(.horizontal, 15)
-                        .colorScheme(.light)
+                    Group {
+                        if unlockedBooks.value.contains(id) {
+                            Button(action: {
+                                dismiss()
+                            }) {
+                                Image(systemName: "plus")
+                                    .foregroundStyle(.blue)
+                                    .fontWeight(.medium)
+                                    .padding(6)
+                                    .background {
+                                        Circle()
+                                            .foregroundStyle(.background)
+                                    }
+                                    .padding(.bottom, 15)
+                            }
+                        } else {
+                            ProductView(id: id)
+                                .onInAppPurchaseCompletion { _, result in
+                                    if case .success(.success) = result {
+                                        unlockedBooks.value.append(id)
+                                    }
+                                }
+                        }
+                    }
+                    .productViewStyle(.compact)
+                    .foregroundStyle(Color.clear)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .bottomTrailing
+                    )
+                    .padding(.horizontal, 15)
+                    .colorScheme(.light)
                 }
                 .frame(width: 320, height: 120)
             }
