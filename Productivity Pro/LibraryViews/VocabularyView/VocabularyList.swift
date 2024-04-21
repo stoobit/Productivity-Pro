@@ -7,25 +7,28 @@
 
 import SwiftUI
 
-struct LVocabularyList: View {
+struct VocabularyList: View {
+    var model: PPVocabularyModel
+    
     var data: [PPVocabularyItem]
     var sections: [String]
     
-    init() {
-        data = LVocabularyList.loadData()
-        sections = LVocabularyList.loadSections(data: data)
+    init(model: PPVocabularyModel) {
+        self.model = model
+        
+        data = VocabularyList.loadData()
+        sections = VocabularyList.loadSections(data: data)
     }
     
     var body: some View {
         if data.isEmpty == false {
             List(sections, id: \.self) { section in
                 NavigationLink(destination: {
-                    VocabularyView(
-                        section: section,
-                        data: data
-                    )
+                    VocabularyView(section: section, data: data)
                 }) {
-                    Label("Wortschatz \(section)", systemImage: "cube.box")
+                    Label(
+                        "Wortschatz \(section)", systemImage: "cube.box"
+                    )
                 }
                 .frame(height: 30)
             }
@@ -42,7 +45,9 @@ struct LVocabularyList: View {
     static func loadData() -> [PPVocabularyItem] {
         let decoder = JSONDecoder()
         
-        if let filePath = Bundle.main.path(forResource: "latinvocabulary", ofType: "json") {
+        if let filePath = Bundle.main.path(
+            forResource: "latinvocabulary", ofType: "json"
+        ) {
             do {
                 let fileUrl = URL(fileURLWithPath: filePath)
                 let string = try String(contentsOf: fileUrl)

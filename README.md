@@ -2,8 +2,10 @@
 
 ## 🗺️ Release 2.1.v
 - AI Integration
-- Library Shop
 - RTF Fields
+- Books
+- Trash improvements 
+- search improvements 
 
 ## 🗺️ Release 2.1.1
 - share extension

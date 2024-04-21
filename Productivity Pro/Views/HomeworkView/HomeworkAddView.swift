@@ -76,7 +76,7 @@ struct HomeworkAddView: View {
                     .sheet(isPresented: $notePicker) {
                         ObjectPicker(
                             objects: contentObjects,
-                            isPresented: $notePicker,
+                            isPresented: $notePicker, id: UUID(), 
                             selectedObject: $pickedNote,
                             type: .file
                         )

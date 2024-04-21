@@ -128,6 +128,7 @@
       }
     },
     "3. Deklination" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -148,6 +149,7 @@
       }
     },
     "a-Deklination" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -178,6 +180,7 @@
       }
     },
     "Adjektive" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -398,6 +401,7 @@
       }
     },
     "Bibliothek – App Clip" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -811,6 +815,7 @@
       }
     },
     "e-Deklination" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1235,6 +1240,7 @@
       }
     },
     "In Arbeit..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1316,6 +1322,7 @@
       }
     },
     "Konjugationen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1619,6 +1626,7 @@
       }
     },
     "o-Deklination" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1849,6 +1857,7 @@
       }
     },
     "Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1979,6 +1988,9 @@
         }
       }
     },
+    "Shuffle" : {
+
+    },
     "Sortieren" : {
       "localizations" : {
         "en" : {
@@ -2060,6 +2072,7 @@
       }
     },
     "Substantive" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2121,6 +2134,7 @@
       }
     },
     "u-Deklination" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

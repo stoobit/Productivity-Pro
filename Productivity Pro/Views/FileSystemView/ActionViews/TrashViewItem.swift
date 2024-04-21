@@ -42,7 +42,7 @@ struct TrashViewItem: View {
         .sheet(isPresented: $putBack, onDismiss: putObjectBack) {
             ObjectPicker(
                 objects: contentObjects,
-                isPresented: $putBack,
+                isPresented: $putBack, id: object.id, 
                 selectedObject: $selectedParent, type: .folder
             )
         }

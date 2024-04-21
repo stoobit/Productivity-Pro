@@ -30,8 +30,7 @@ struct ObjectView: View {
     @AppStorage("ppgrade")
     var grade: Int = 5
     
-    @AppStorage("pp show date")
-    var showDate: Bool = true
+    @AppStorage("pp show date") var showDate: Bool = false
     
     @State var addFolder: Bool = false
     @State var createNote: Bool = false
@@ -142,10 +141,10 @@ struct ObjectView: View {
                 deleteObject(object)
             }
         } else if object.type == COType.vocabulary.rawValue {
-            ObjectViewFileLink(
+            ObjectViewVocabularyLink(
                 contentObjects: contentObjects, object: object
             ) {
-                deleteObject(object)
+                context.delete(object)
             }
         }
     }

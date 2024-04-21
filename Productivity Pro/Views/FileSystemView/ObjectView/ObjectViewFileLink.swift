@@ -93,8 +93,8 @@ struct ObjectViewFileLink: View {
         )
         .sheet(isPresented: $isMove, onDismiss: move) {
             ObjectPicker(
-                objects: contentObjects,
-                isPresented: $isMove,
+                objects: contentObjects, 
+                isPresented: $isMove, id: object.id, 
                 selectedObject: $selectedObject, type: .folder
             )
         }

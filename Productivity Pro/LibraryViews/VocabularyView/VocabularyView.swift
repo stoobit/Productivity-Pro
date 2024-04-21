@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct VocabularyView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var section: String
     var data: [PPVocabularyItem]
 
@@ -44,11 +46,26 @@ struct VocabularyView: View {
                 .scrollIndicators(.hidden)
                 .scrollPosition(id: $active)
             }
-            .navigationTitle("Wortschatz \(section)")
             .onAppear(perform: {
                 vocabs = getVocabs()
                 active = vocabs[0]
             })
+            .navigationTitle("Wortschatz \(section)")
+            .toolbarRole(.browser)
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button(action: { dismiss() }) {
+                        Label("Zurück", systemImage: "chevron.left")
+                    }
+                    
+                    Button("Shuffle", systemImage: "shuffle") {
+                        vocabs = getVocabs()
+                        active = vocabs[0]
+                    }
+                }
+            }
         }
     }
 

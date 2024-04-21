@@ -24,7 +24,7 @@ struct ObjectViewVocabularyLink: View {
     
     var body: some View {
         NavigationLink(destination: {
-           
+           VocabularyViewContainer(object: object)
         }) {
             ContentObjectLink(obj: object)
         }
@@ -44,10 +44,7 @@ struct ObjectViewVocabularyLink: View {
         .contextMenu {
             Section {
                 NavigationLink(destination: {
-                    NoteView(
-                        contentObjects: contentObjects,
-                        contentObject: object
-                    )
+                    VocabularyViewContainer(object: object)
                 }) {
                     Label(
                         "Öffnen",
@@ -66,20 +63,12 @@ struct ObjectViewVocabularyLink: View {
                 }
             }
             
-            Section {
-                Menu(content: {
-                   ShareMenu(object: object)
-                }) {
-                    Label("Teilen", systemImage: "square.and.arrow.up")
-                }
-            }
-            
             Button(role: .destructive, action: {
                 withAnimation(.bouncy) {
                     delete()
                 }
             }) {
-                Label("Löschen", systemImage: "trash")
+                Label("Entfernen", systemImage: "trash")
             }
         }
         .modifier(
@@ -93,6 +82,7 @@ struct ObjectViewVocabularyLink: View {
             ObjectPicker(
                 objects: contentObjects,
                 isPresented: $isMove,
+                id: object.id,
                 selectedObject: $selectedObject, type: .folder
             )
         }

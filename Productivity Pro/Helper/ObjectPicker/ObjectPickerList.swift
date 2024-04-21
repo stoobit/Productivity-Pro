@@ -16,7 +16,7 @@ struct ObjectPickerList: View {
     
     var parent: String
     var title: String
-    var id: UUID?
+    var id: UUID
     
     var type: COType
     
@@ -31,24 +31,27 @@ struct ObjectPickerList: View {
                 
             } else {
                 List {
-                    ForEach(objects) { object in
-                        if object.type == COType.folder.rawValue {
+                    Section {
+                        ForEach(objects.filter {
+                            $0.type == COType.folder.rawValue
+                        }) { object in
                             NavigationLink(destination: {
                                 ObjectPickerList(
                                     contentObjects: contentObjects,
                                     isPresented: $isPresented,
                                     selectedObject: $selectedObject,
                                     parent: object.id.uuidString,
-                                    title: object.title,
-                                    id: id,
-                                    type: type
+                                    title: object.title, id: id, type: type
                                 )
                             }) {
                                 ContentObjectLink(obj: object)
                             }
                             .disabled(id == object.id)
-                            
-                        } else if object.type == COType.file.rawValue {
+                        }
+                        
+                        ForEach(objects.filter {
+                            $0.type != COType.folder.rawValue
+                        }) { object in
                             Button(action: {
                                 selectedObject = object.id.uuidString
                                 isPresented.toggle()
@@ -90,8 +93,8 @@ struct ObjectPickerList: View {
     }
     
     var objects: [ContentObject] {
-        return contentObjects.filter {
-            $0.parent == parent
-        }.sorted(by: { $0.title < $1.title })
+        return contentObjects.filter { $0.parent == parent }
+            .sorted(by: { $0.title < $1.title })
+            .sorted(by: { $0.type > $1.type })
     }
 }

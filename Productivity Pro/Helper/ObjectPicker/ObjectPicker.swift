@@ -21,7 +21,7 @@ struct ObjectPicker: View {
     var grade: Int = 5
     
     @Binding var isPresented: Bool
-    var id: UUID?
+    var id: UUID
     
     @Binding var selectedObject: String
     var type: COType
@@ -35,8 +35,7 @@ struct ObjectPicker: View {
                     selectedObject: $selectedObject,
                     parent: "root",
                     title: String(localized: "Notizen"),
-                    id: id,
-                    type: type
+                    id: id, type: type
                 )
             }
             .scrollIndicators(.hidden)

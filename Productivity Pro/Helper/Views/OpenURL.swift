@@ -48,9 +48,8 @@ struct OpenURL: ViewModifier {
             .sheet(isPresented: $showPicker, content: {
                 ObjectPicker(
                     objects: objects,
-                    isPresented: $showPicker,
-                    selectedObject: $parent,
-                    type: .folder
+                    isPresented: $showPicker, id: UUID(),
+                    selectedObject: $parent, type: .folder
                 )
             })
             .onChange(of: parent) {

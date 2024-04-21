@@ -23,8 +23,7 @@ struct FolderViewToolbar: ToolbarContent {
     @AppStorage("ppsortbytype")
     var typeSorting: Bool = true
     
-    @AppStorage("pp show date")
-    var showDate: Bool = true
+    @AppStorage("pp show date") var showDate: Bool = false
     
     @Binding var addFolder: Bool
     @Binding var importFile: Bool

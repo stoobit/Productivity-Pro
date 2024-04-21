@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentObjectLink: View {
-    @AppStorage("pp show date") var showDate: Bool = true
+    @AppStorage("pp show date") var showDate: Bool = false
     @Bindable var obj: ContentObject
     
     var body: some View {
