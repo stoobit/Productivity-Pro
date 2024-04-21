@@ -55,37 +55,32 @@ extension TemplateView {
     
     @ViewBuilder
     func TemplateView() -> some View {
-        ScrollView(.horizontal) {
-            ScrollViewReader { reader in
+        ScrollViewReader { reader in
+            ScrollView(.horizontal) {
                 HStack {
                     TemplateItem(title: "Blanko", value: "blank", view: BackgroundViews().Blank())
-                        .padding(20)
                         .id("blank")
                     
                     TemplateItem(title: "Kariert", value: "squared", view: BackgroundViews().Squared())
-                        .padding(20)
                         .id("squared")
                     
                     TemplateItem(title: "Liniert Klein", value: "ruled", view: BackgroundViews().Ruled())
-                        .padding(20)
                         .id("ruled")
                     
                     TemplateItem(title: "Liniert Groß", value: "ruled.large", view: BackgroundViews().RuledLarge())
-                        .padding(20)
                         .id("ruled.large")
                     
                     TemplateItem(title: "Gepunktet", value: "dotted", view: BackgroundViews().Dotted())
-                        .padding(20)
                         .id("dotted")
                     
                     TemplateItem(title: "Notentlinien", value: "music", view: BackgroundViews().Music())
-                        .padding(20)
                         .id("music")
                 }
                 .onAppear {
                     reader.scrollTo(preselectedTemplate)
                 }
             }
+            .safeAreaPadding(8)
         }
         .listRowInsets(EdgeInsets())
     }
@@ -162,5 +157,7 @@ extension TemplateView {
         .onTapGesture {
             selectedTemplate = value
         }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 8)
     }
 }
