@@ -5,7 +5,8 @@
 - RTF Fields
 - Books
 - Trash improvements 
-- search improvements 
+- search improvements
+- analytics  
 
 ## 🗺️ Release 2.1.1
 - share extension

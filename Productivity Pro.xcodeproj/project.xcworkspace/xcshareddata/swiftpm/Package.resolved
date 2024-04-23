@@ -1,5 +1,5 @@
 {
-  "originHash" : "dc10c299d67e4ba823c051cf125afec978c7cf7f773c06c8162d13577754720b",
+  "originHash" : "4f843de7d24b710c7e699bb0f885c588b2f724124461e9819cce9fc20f0b5486",
   "pins" : [
     {
       "identity" : "llama.cpp",
@@ -8,6 +8,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "855f54402e866ed19d8d675b56a81c844c64b325"
+      }
+    },
+    {
+      "identity" : "mixpanel-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mixpanel/mixpanel-swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "1ae92448ec3b0841ae5ceaa151c98ae66776596a"
       }
     },
     {

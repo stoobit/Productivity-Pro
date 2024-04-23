@@ -177,6 +177,7 @@
 		BB93677F2AC9D40C0096F20E /* PPItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93677E2AC9D40C0096F20E /* PPItemType.swift */; };
 		BB9367812AC9D41F0096F20E /* PPShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9367802AC9D41F0096F20E /* PPShapeType.swift */; };
 		BB944E8C29B6ACA400C70CD5 /* PrinterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB944E8B29B6ACA400C70CD5 /* PrinterHelper.swift */; };
+		BB947C692BD809E400A46386 /* Mixpanel in Frameworks */ = {isa = PBXBuildFile; productRef = BB947C682BD809E400A46386 /* Mixpanel */; };
 		BB94F3582BD5BF12009B95CD /* VocabularyViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB94F3572BD5BF12009B95CD /* VocabularyViewContainer.swift */; };
 		BB96F5AA2B608DF90044B200 /* OverviewContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5A92B608DF90044B200 /* OverviewContainerView.swift */; };
 		BB96F5AC2B61B4FB0044B200 /* ShareQRPDFMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB96F5AB2B61B4FB0044B200 /* ShareQRPDFMethods.swift */; };
@@ -620,6 +621,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB947C692BD809E400A46386 /* Mixpanel in Frameworks */,
 				BB30C2E22BCAE1CC009D69CA /* llama in Frameworks */,
 				BB49840A2BC32BCD008D45B0 /* Accelerate.framework in Frameworks */,
 				BB4984082BC32BC8008D45B0 /* Metal.framework in Frameworks */,
@@ -1658,6 +1660,7 @@
 			packageProductDependencies = (
 				BB30C2E12BCAE1CC009D69CA /* llama */,
 				BB30C2E42BCAE1FD009D69CA /* MarkdownUI */,
+				BB947C682BD809E400A46386 /* Mixpanel */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1701,6 +1704,7 @@
 			packageReferences = (
 				BB30C2E02BCAE1CC009D69CA /* XCRemoteSwiftPackageReference "llama.cpp" */,
 				BB30C2E32BCAE1FD009D69CA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				BB947C672BD809E400A46386 /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -2404,6 +2408,14 @@
 				minimumVersion = 2.3.0;
 			};
 		};
+		BB947C672BD809E400A46386 /* XCRemoteSwiftPackageReference "mixpanel-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mixpanel/mixpanel-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2416,6 +2428,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB30C2E32BCAE1FD009D69CA /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		BB947C682BD809E400A46386 /* Mixpanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB947C672BD809E400A46386 /* XCRemoteSwiftPackageReference "mixpanel-swift" */;
+			productName = Mixpanel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
