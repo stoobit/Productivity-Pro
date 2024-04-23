@@ -127,34 +127,12 @@
         }
       }
     },
-    "3. Deklination" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "3rd Declination"
-          }
-        }
-      }
-    },
     "104 Wortschätze mit 1854 Vokabeln" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
-          }
-        }
-      }
-    },
-    "a-Deklination" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "a-Declination"
           }
         }
       }
@@ -175,17 +153,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descending"
-          }
-        }
-      }
-    },
-    "Adjektive" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Adjective"
           }
         }
       }
@@ -400,17 +367,6 @@
         }
       }
     },
-    "Bibliothek – App Clip" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Library - App Clip"
-          }
-        }
-      }
-    },
     "Bild" : {
       "localizations" : {
         "en" : {
@@ -602,7 +558,14 @@
       }
     },
     "Datum anzeigen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Date"
+          }
+        }
+      }
     },
     "Default Models" : {
       "localizations" : {
@@ -814,17 +777,6 @@
         }
       }
     },
-    "e-Deklination" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "e-Declination"
-          }
-        }
-      }
-    },
     "Ecken" : {
       "localizations" : {
         "en" : {
@@ -861,28 +813,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
-          }
-        }
-      }
-    },
-    "Einstellungen ändern?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Change settings?"
-          }
-        }
-      }
-    },
-    "Einstellungen geändert" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings Changed"
           }
         }
       }
@@ -1107,17 +1037,6 @@
         }
       }
     },
-    "Groß" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Large"
-          }
-        }
-      }
-    },
     "Gruppieren" : {
       "localizations" : {
         "en" : {
@@ -1198,17 +1117,6 @@
         }
       }
     },
-    "Horizontal" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Horizontal"
-          }
-        }
-      }
-    },
     "Import nicht möglich" : {
       "localizations" : {
         "en" : {
@@ -1235,17 +1143,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Import"
-          }
-        }
-      }
-    },
-    "In Arbeit..." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In Progress..."
           }
         }
       }
@@ -1306,28 +1203,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Checkered"
-          }
-        }
-      }
-    },
-    "Kompakt" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Compact"
-          }
-        }
-      }
-    },
-    "Konjugationen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Conjugations"
           }
         }
       }
@@ -1452,28 +1327,6 @@
         }
       }
     },
-    "Markdown" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Markdown"
-          }
-        }
-      }
-    },
-    "Markdown Editor" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Markdown Editor"
-          }
-        }
-      }
-    },
     "Mathe" : {
       "localizations" : {
         "en" : {
@@ -1574,17 +1427,6 @@
         }
       }
     },
-    "Neustarten" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restart"
-          }
-        }
-      }
-    },
     "Notentlinien" : {
       "localizations" : {
         "en" : {
@@ -1621,17 +1463,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notes"
-          }
-        }
-      }
-    },
-    "o-Deklination" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "o-Declination"
           }
         }
       }
@@ -1856,17 +1687,6 @@
         }
       }
     },
-    "Scanne diesen QR-Code mit einem anderen iPad, um direkt auf die Bibliothek von Productivity Pro zugreifen zu können, ohne die App installieren zu müssen." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scan this QR code with another iPad to access Productivity Pro's library directly without having to install the app."
-          }
-        }
-      }
-    },
     "Scanne diesen QR-Code, um direkt auf eine PDF Version dieser Notiz zugreifen zu können." : {
       "localizations" : {
         "en" : {
@@ -1913,17 +1733,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Font Size"
-          }
-        }
-      }
-    },
-    "Scrollrichtung der Seiten" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Page Scrolling Direction"
           }
         }
       }
@@ -1989,7 +1798,14 @@
       }
     },
     "Shuffle" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shuffle"
+          }
+        }
+      }
     },
     "Sortieren" : {
       "localizations" : {
@@ -2071,17 +1887,6 @@
         }
       }
     },
-    "Substantive" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nouns"
-          }
-        }
-      }
-    },
     "Suchen" : {
       "localizations" : {
         "en" : {
@@ -2112,34 +1917,12 @@
         }
       }
     },
-    "Tippe um Productivity Pro zu öffnen." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap to open Productivity Pro."
-          }
-        }
-      }
-    },
     "Titel" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Title"
-          }
-        }
-      }
-    },
-    "u-Deklination" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "u-Declination"
           }
         }
       }
@@ -2160,28 +1943,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Skip"
-          }
-        }
-      }
-    },
-    "Uhrzeit der Benachrichtigung" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Time of Notification"
-          }
-        }
-      }
-    },
-    "Um diese Einstellungen zu ändern muss die App neugestartet werden." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "To change these settings the app must be restarted."
           }
         }
       }
@@ -2222,17 +1983,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unknown Status"
-          }
-        }
-      }
-    },
-    "Vertikal" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vertical"
           }
         }
       }
