@@ -6,4 +6,13 @@ Productivity Pro is developed by students specifically for students to make thei
 Productivity Pro is available on the [App Store](https://apps.apple.com/us/app/productivity-pro/id6449678571) for iPad.
 
 ## Contribution
-Contributions of all kinds are appreciated. Simply fork the project and work on one of the bugs/features in the [issues](https://github.com/stoobit/Productivity-Pro/issues) tab.
+Contributions of all kinds ([code](#code) / [localizations](#localizations) / [app icons](#app-icons)) are appreciated. Therefore simply fork the project and start creating.
+
+### Code
+
+### Localizations 
+
+### App Icons
+
+
+work on one of the bugs/features in the [issues](https://github.com/stoobit/Productivity-Pro/issues) tab. 
