@@ -9,10 +9,13 @@ Productivity Pro is available on the [App Store](https://apps.apple.com/us/app/p
 Contributions of all kinds ([code](#code) / [localizations](#localizations) / [app icons](#app-icons)) are appreciated. Therefore simply fork the project and start creating.
 
 ### Code
+work on one of the bugs/features in the [issues](https://github.com/stoobit/Productivity-Pro/issues) tab. 
 
 ### Localizations 
 
 ### App Icons
 
-
-work on one of the bugs/features in the [issues](https://github.com/stoobit/Productivity-Pro/issues) tab. 
+## Contact 
+If you have any questions, suggestions or anything similar, just let me know via:
+- [Email](mailto:support@stoobit.com)
+- [iMessages](imessage://support@stoobit.com)
