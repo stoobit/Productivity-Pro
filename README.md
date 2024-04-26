@@ -18,4 +18,4 @@ work on one of the bugs/features in the [issues](https://github.com/stoobit/Prod
 ## Contact 
 If you have any questions, suggestions or anything similar, just let me know via:
 - [Email](mailto:support@stoobit.com)
-- [iMessages](imessage://support@stoobit.com)
+- [iMessages](imessage:support@stoobit.com)
