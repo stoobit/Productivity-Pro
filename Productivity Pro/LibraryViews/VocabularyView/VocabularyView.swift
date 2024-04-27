@@ -50,6 +50,7 @@ struct VocabularyView: View {
                 vocabs = getVocabs()
                 active = vocabs[0]
             })
+            .toolbarBackground(.visible, for: .navigationBar)
             .navigationTitle("Wortschatz \(section)")
             .toolbarRole(.browser)
             .navigationBarTitleDisplayMode(.inline)
