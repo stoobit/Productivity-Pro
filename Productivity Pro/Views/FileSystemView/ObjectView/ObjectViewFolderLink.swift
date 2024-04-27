@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ObjectViewFolderLink: View {
+    @Environment(SubviewManager.self) var subviewManager
+    
     var contentObjects: [ContentObject]
     
     @Bindable var object: ContentObject
@@ -20,10 +22,13 @@ struct ObjectViewFolderLink: View {
     @State var selectedObject: String = ""
     
     var body: some View {
+        @Bindable var subviewValue = subviewManager
+        
         NavigationLink(destination: {
             ObjectView(
                 parent: object.id.uuidString, title: object.title,
-                contentObjects: contentObjects
+                contentObjects: contentObjects,
+                liapView: $subviewValue.liapView
             )
         }) {
             ContentObjectLink(obj: object)
@@ -45,7 +50,8 @@ struct ObjectViewFolderLink: View {
                     ObjectView(
                         parent: object.id.uuidString, 
                         title: object.title,
-                        contentObjects: contentObjects
+                        contentObjects: contentObjects,
+                        liapView: $subviewValue.liapView
                     )
                 }) {
                     Label(

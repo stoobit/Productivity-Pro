@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct FileSystemView: View {
+    @Environment(SubviewManager.self) var subviewManager
+    
+    @AppStorage("ppgrade") var grade: Int = 5
     var contentObjects: [ContentObject]
 
-    @AppStorage("ppgrade") var grade: Int = 5
-
     var body: some View {
+        @Bindable var subviewValue = subviewManager
+        
         NavigationStack {
             ObjectView(
                 parent: "root", title: String(localized: "Notizen"),
-                contentObjects: contentObjects
+                contentObjects: contentObjects, 
+                liapView: $subviewValue.liapView
             )
             .overlay {
                 Menu(content: {

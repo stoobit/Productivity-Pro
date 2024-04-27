@@ -35,11 +35,11 @@ struct ObjectView: View {
     @State var addFolder: Bool = false
     @State var createNote: Bool = false
     @State var importFile: Bool = false
+    
+    @Binding var liapView: Bool 
 
     var body: some View {
         ZStack {
-            @Bindable var subviewManager = subviewManager
-            
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
             
@@ -105,9 +105,6 @@ struct ObjectView: View {
             .navigationBarTitleDisplayMode(
                 parent == "root" ? .large : .inline
             )
-            .sheet(isPresented: $subviewManager.liapView) {
-                LIAPView(parent: parent)
-            }
         }
         .modifier(
             AddFolderView(
@@ -124,6 +121,9 @@ struct ObjectView: View {
             withAnimation(.bouncy) {
                 importFile(result: result)
             }
+        }
+        .sheet(isPresented: $liapView) {
+            LIAPView(parent: parent)
         }
     }
     
