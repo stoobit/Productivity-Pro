@@ -112,7 +112,7 @@
 		BB5705212B35E24700F84B45 /* VocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705202B35E24700F84B45 /* VocabularyView.swift */; };
 		BB5705232B35E3B100F84B45 /* VCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705222B35E3B100F84B45 /* VCardView.swift */; };
 		BB5705252B35FD3800F84B45 /* VFlipModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5705242B35FD3800F84B45 /* VFlipModifier.swift */; };
-		BB61AD3F2BCC2F7E00F4C34A /* AISetupContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61AD3E2BCC2F7E00F4C34A /* AISetupContainer.swift */; };
+		BB61AD3F2BCC2F7E00F4C34A /* AISetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61AD3E2BCC2F7E00F4C34A /* AISetupView.swift */; };
 		BB61D9152BCDB84200CA1EDE /* UITFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61D9142BCDB84200CA1EDE /* UITFRepresentable.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
@@ -214,6 +214,8 @@
 		BBAF6D162BD5059400FAA524 /* PPVocabularyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D152BD5059400FAA524 /* PPVocabularyItem.swift */; };
 		BBB02B592962537C001DCB04 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB02B582962537C001DCB04 /* Triangle.swift */; };
 		BBB049782B84FA95005531D5 /* GoogleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB049772B84FA95005531D5 /* GoogleView.swift */; };
+		BBB4ACAF2BDED38D00BA4CBA /* HomeworkAddViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB4ACAE2BDED38D00BA4CBA /* HomeworkAddViewMethods.swift */; };
+		BBB4ACB12BDED3A700BA4CBA /* HomeworkEditViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB4ACB02BDED3A700BA4CBA /* HomeworkEditViewMethods.swift */; };
 		BBB538832B40BA7F00C874EA /* ExportableBackupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */; };
 		BBB538852B40BADC00C874EA /* ExportableContentObjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538842B40BADC00C874EA /* ExportableContentObjectModel.swift */; };
 		BBB538952B40BE4700C874EA /* ExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB538942B40BE4700C874EA /* ExportManager.swift */; };
@@ -432,7 +434,7 @@
 		BB5705202B35E24700F84B45 /* VocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyView.swift; sourceTree = "<group>"; };
 		BB5705222B35E3B100F84B45 /* VCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCardView.swift; sourceTree = "<group>"; };
 		BB5705242B35FD3800F84B45 /* VFlipModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFlipModifier.swift; sourceTree = "<group>"; };
-		BB61AD3E2BCC2F7E00F4C34A /* AISetupContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISetupContainer.swift; sourceTree = "<group>"; };
+		BB61AD3E2BCC2F7E00F4C34A /* AISetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISetupView.swift; sourceTree = "<group>"; };
 		BB61D9142BCDB84200CA1EDE /* UITFRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITFRepresentable.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
@@ -533,6 +535,8 @@
 		BBAF6D152BD5059400FAA524 /* PPVocabularyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPVocabularyItem.swift; sourceTree = "<group>"; };
 		BBB02B582962537C001DCB04 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BBB049772B84FA95005531D5 /* GoogleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleView.swift; sourceTree = "<group>"; };
+		BBB4ACAE2BDED38D00BA4CBA /* HomeworkAddViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkAddViewMethods.swift; sourceTree = "<group>"; };
+		BBB4ACB02BDED3A700BA4CBA /* HomeworkEditViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkEditViewMethods.swift; sourceTree = "<group>"; };
 		BBB538822B40BA7F00C874EA /* ExportableBackupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableBackupModel.swift; sourceTree = "<group>"; };
 		BBB538842B40BADC00C874EA /* ExportableContentObjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportableContentObjectModel.swift; sourceTree = "<group>"; };
 		BBB538862B40BB3300C874EA /* ExportableNoteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportableNoteModel.swift; sourceTree = "<group>"; };
@@ -841,8 +845,7 @@
 				BB49841B2BC32FCD008D45B0 /* AIView.swift */,
 				BB61AD402BCC302100F4C34A /* SetupView */,
 				BB61AD412BCC302A00F4C34A /* ChatView */,
-				BB4984192BC32FCD008D45B0 /* AIInputButton.swift */,
-				BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */,
+				BBB4ACAD2BDEC8F500BA4CBA /* OLD */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -906,7 +909,9 @@
 				BB30C2F12BCB38A4009D69CA /* HomeworkPreview.swift */,
 				BBEF06D72ABF7106007EDFF6 /* HomeworkItem.swift */,
 				BB9A364B2ABCD5D700721C56 /* HomeworkAddView.swift */,
+				BBB4ACAE2BDED38D00BA4CBA /* HomeworkAddViewMethods.swift */,
 				BBEF06D92ABF7B46007EDFF6 /* HomeworkEditView.swift */,
+				BBB4ACB02BDED3A700BA4CBA /* HomeworkEditViewMethods.swift */,
 			);
 			path = HomeworkView;
 			sourceTree = "<group>";
@@ -1028,7 +1033,7 @@
 		BB61AD402BCC302100F4C34A /* SetupView */ = {
 			isa = PBXGroup;
 			children = (
-				BB61AD3E2BCC2F7E00F4C34A /* AISetupContainer.swift */,
+				BB61AD3E2BCC2F7E00F4C34A /* AISetupView.swift */,
 				BB49841A2BC32FCD008D45B0 /* AIPorgressView.swift */,
 			);
 			path = SetupView;
@@ -1367,6 +1372,15 @@
 				BBAF6D152BD5059400FAA524 /* PPVocabularyItem.swift */,
 			);
 			path = PPVocabulary;
+			sourceTree = "<group>";
+		};
+		BBB4ACAD2BDEC8F500BA4CBA /* OLD */ = {
+			isa = PBXGroup;
+			children = (
+				BB4984192BC32FCD008D45B0 /* AIInputButton.swift */,
+				BB49841C2BC32FCD008D45B0 /* AILoadCustomButton.swift */,
+			);
+			path = OLD;
 			sourceTree = "<group>";
 		};
 		BBB538812B40B86000C874EA /* ExportableModels */ = {
@@ -1790,7 +1804,7 @@
 				BB67015D2AADF480001F468A /* DeskViewHelper.swift in Sources */,
 				BB929B8428E5087200DA4538 /* NoteMainToolbar.swift in Sources */,
 				BBAF6D0C2BD492F500FAA524 /* LIAPBookCard.swift in Sources */,
-				BB61AD3F2BCC2F7E00F4C34A /* AISetupContainer.swift in Sources */,
+				BB61AD3F2BCC2F7E00F4C34A /* AISetupView.swift in Sources */,
 				BB1321EA2985EA87006AD59D /* DragType.swift in Sources */,
 				BB174F552A1051B400F753F6 /* Date.swift in Sources */,
 				BB84DD172B8E78EF002C2A9A /* TextfieldItemVContainer.swift in Sources */,
@@ -1963,9 +1977,11 @@
 				BBAF6D162BD5059400FAA524 /* PPVocabularyItem.swift in Sources */,
 				BBC254152AC60D2400B51175 /* ObjectPickerList.swift in Sources */,
 				BBE9196A28F333AC001EF750 /* OverviewDropDelegate.swift in Sources */,
+				BBB4ACAF2BDED38D00BA4CBA /* HomeworkAddViewMethods.swift in Sources */,
 				BB49841E2BC32FCD008D45B0 /* AIPorgressView.swift in Sources */,
 				BB9BFB702AC7819D00255293 /* SearchView.swift in Sources */,
 				BB49EE082BC752EC004CB803 /* PositionManager.swift in Sources */,
+				BBB4ACB12BDED3A700BA4CBA /* HomeworkEditViewMethods.swift in Sources */,
 				BBCDBFBC2AC8D76200EF825F /* RenameContentObject.swift in Sources */,
 				BBC498D12AF1A3CA008FC5BA /* ShapeModel.swift in Sources */,
 				BB30C2F22BCB38A4009D69CA /* HomeworkPreview.swift in Sources */,

@@ -35,11 +35,11 @@ struct ObjectView: View {
     @State var addFolder: Bool = false
     @State var createNote: Bool = false
     @State var importFile: Bool = false
-    
-    @Binding var liapView: Bool 
 
     var body: some View {
-        ZStack {
+        @Bindable var subviewValue = subviewManager
+        
+        return ZStack {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
             
@@ -122,7 +122,7 @@ struct ObjectView: View {
                 importFile(result: result)
             }
         }
-        .sheet(isPresented: $liapView) {
+        .sheet(isPresented: $subviewValue.liapView) {
             LIAPView(parent: parent)
         }
     }

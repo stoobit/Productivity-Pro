@@ -36,6 +36,8 @@ struct HomeworkItem: View {
                         NoteView(
                             contentObjects: contentObjects, contentObject: note
                         )
+                    } else if homework.note?.type == COType.vocabulary.rawValue {
+                        VocabularyList(model: homework.note!.vocabulary!)
                     } else {
                         ZStack {
                             Color(UIColor.systemGroupedBackground)

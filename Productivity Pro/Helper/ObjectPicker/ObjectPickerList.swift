@@ -58,7 +58,7 @@ struct ObjectPickerList: View {
                             }) {
                                 ContentObjectLink(obj: object)
                             }
-                            .disabled(type == .folder)
+                            .disabled(type != .file)
                         }
                     }
                 }

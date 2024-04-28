@@ -8,21 +8,63 @@
 import SwiftUI
 
 struct AIChatView: View {
-    @Environment(\.dismiss) var dismiss
-
     @ObservedObject var llamaState: LlamaState
     @State var multiLineText: String = ""
 
     var body: some View {
         NavigationStack {
-            VStack {}
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Abbrechen") {
-                            dismiss()
+            ZStack {
+                Color(UIColor.systemGroupedBackground)
+                    .ignoresSafeArea(.all)
+
+                VStack {
+                    ScrollView {}
+
+                    HStack(spacing: 15) {
+                        TextField(
+                            "Schreibe Productivity Pro AI...",
+                            text: $multiLineText, axis: .vertical
+                        )
+                        .textFieldStyle(.plain)
+                        .frame(height: 50)
+                        .padding(.horizontal, 20)
+                        .background {
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.accentColor, lineWidth: 2.0)
                         }
+
+                        Button(action: {}, label: {
+                            Label(
+                                "Nachricht abschicken",
+                                systemImage: "brain.fill"
+                            )
+                            .imageScale(.large)
+                            .foregroundStyle(Color.white)
+                            .labelStyle(.iconOnly)
+                            .frame(width: 50, height: 50)
+                            .background {
+                                RoundedRectangle(cornerRadius: 16)
+                                    .foregroundStyle(Color.accentColor)
+                            }
+                        })
                     }
+                    .padding(20)
+                    .background(.thickMaterial)
+                    .disabled(llamaState.downloadedModels.isEmpty)
                 }
+            }
+            .navigationTitle("AI")
+            .toolbarRole(.browser)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    Button(
+                        "Verlauf löschen",
+                        systemImage: "clock.badge.xmark"
+                    ) {}
+                        .disabled(llamaState.downloadedModels.isEmpty)
+                }
+            }
         }
         .onAppear {
             load()
@@ -161,7 +203,7 @@ struct AIChatView: View {
                         showingHelp = true
                     }
                 }
-            }.sheet(isPresented: $showingHelp) { // Sheet for help modal
+            }.sheet(isPresented: $showingHelp) {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
                         Text("1. Make sure the model is in GGUF Format")
@@ -169,6 +211,7 @@ struct AIChatView: View {
                         Text("2. Copy the download link of the quantized model")
                             .padding()
                     }
+                    
                     Spacer()
                 }
             }

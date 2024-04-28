@@ -1417,6 +1417,9 @@
         }
       }
     },
+    "Nachricht abschicken" : {
+
+    },
     "Name" : {
       "localizations" : {
         "en" : {
@@ -1707,6 +1710,9 @@
         }
       }
     },
+    "Schreibe Productivity Pro AI..." : {
+
+    },
     "Schriftart" : {
       "localizations" : {
         "en" : {
@@ -1986,6 +1992,9 @@
           }
         }
       }
+    },
+    "Verlauf löschen" : {
+
     },
     "View Models" : {
       "localizations" : {

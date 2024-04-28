@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ObjectViewFolderLink: View {
-    @Environment(SubviewManager.self) var subviewManager
-    
     var contentObjects: [ContentObject]
     
     @Bindable var object: ContentObject
@@ -22,13 +20,10 @@ struct ObjectViewFolderLink: View {
     @State var selectedObject: String = ""
     
     var body: some View {
-        @Bindable var subviewValue = subviewManager
-        
         NavigationLink(destination: {
             ObjectView(
                 parent: object.id.uuidString, title: object.title,
-                contentObjects: contentObjects,
-                liapView: $subviewValue.liapView
+                contentObjects: contentObjects
             )
         }) {
             ContentObjectLink(obj: object)
@@ -48,10 +43,9 @@ struct ObjectViewFolderLink: View {
             Section {
                 NavigationLink(destination: {
                     ObjectView(
-                        parent: object.id.uuidString, 
+                        parent: object.id.uuidString,
                         title: object.title,
-                        contentObjects: contentObjects,
-                        liapView: $subviewValue.liapView
+                        contentObjects: contentObjects
                     )
                 }) {
                     Label(
@@ -89,7 +83,7 @@ struct ObjectViewFolderLink: View {
         .sheet(isPresented: $isMove, onDismiss: move) {
             ObjectPicker(
                 objects: contentObjects,
-                isPresented: $isMove, id: object.id, 
+                isPresented: $isMove, id: object.id,
                 selectedObject: $selectedObject, type: .folder
             )
         }
@@ -101,14 +95,13 @@ struct ObjectViewFolderLink: View {
             var index: Int = 1
             
             let filteredObjects = contentObjects
-                .filter({
+                .filter {
                     $0.type == object.type &&
-                    $0.parent == selectedObject &&
-                    $0.grade == grade &&
-                    $0.inTrash == false
-                })
-                .map({ $0.title })
-            
+                        $0.parent == selectedObject &&
+                        $0.grade == grade &&
+                        $0.inTrash == false
+                }
+                .map { $0.title }
             
             while filteredObjects.contains(value) {
                 value = "\(object.title) \(index)"
@@ -123,5 +116,4 @@ struct ObjectViewFolderLink: View {
             selectedObject = ""
         }
     }
-    
 }
