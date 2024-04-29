@@ -349,6 +349,7 @@
       }
     },
     "Bewerte Productivity Pro" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -547,6 +548,9 @@
           }
         }
       }
+    },
+    "Daten und Synchronisation" : {
+
     },
     "Daten werden verarbeitet..." : {
       "localizations" : {
@@ -1955,6 +1959,9 @@
           }
         }
       }
+    },
+    "Uhrzeit der Benachrichtigung" : {
+
     },
     "Umbenennen" : {
       "localizations" : {

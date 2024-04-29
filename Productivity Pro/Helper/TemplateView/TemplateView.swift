@@ -37,7 +37,7 @@ struct TemplateView: View {
         NavigationStack {
             Form {
                 if buttonTitle == LocalizedStringKey("Erstellen") {
-                    TextField("Titel", text: $title)
+                    TextField("Unbenannt", text: $title)
                         .frame(height: 30)
                 }
                 
@@ -64,7 +64,7 @@ struct TemplateView: View {
                             isPortrait,
                             selectedTemplate,
                             selectedColor,
-                            title
+                            title == "" ? nil : title
                         )
                         
                         savedIsPortrait = isPortrait

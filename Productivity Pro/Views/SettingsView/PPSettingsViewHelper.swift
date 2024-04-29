@@ -9,7 +9,7 @@ import SwiftUI
 
 extension PPSettingsView {
     @ViewBuilder func Settings() -> some View {
-        Section("Einstellungen") {
+        Section("Allgemein") {
             NavigationLink(destination: {
                 SubjectSettings()
             }) {
@@ -22,16 +22,6 @@ extension PPSettingsView {
                 AppIconSettings()
             }) {
                 Label("App Icon", systemImage: "app.gift")
-            }
-            .frame(height: 30)
-            .modifier(PremiumBadge(disabled: true))
-
-            NavigationLink(destination: {
-                BackupSettings()
-            }) {
-                Label(
-                    "Backup", systemImage: "externaldrive.badge.timemachine"
-                )
             }
             .frame(height: 30)
             .modifier(PremiumBadge(disabled: true))
