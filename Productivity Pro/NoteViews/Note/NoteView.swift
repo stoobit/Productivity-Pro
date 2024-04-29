@@ -93,6 +93,7 @@ struct NoteView: View {
             .overlay {
                 self.LoadingView()
             }
+            .ignoresSafeArea(.keyboard, edges: .all)
             
         } else {
             ZStack {
