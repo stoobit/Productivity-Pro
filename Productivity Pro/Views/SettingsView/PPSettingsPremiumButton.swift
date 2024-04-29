@@ -30,5 +30,5 @@ struct PremiumButton: View {
 }
 
 #Preview {
-    DeskView()
+    PPSettingsView()
 }

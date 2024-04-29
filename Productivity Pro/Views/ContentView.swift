@@ -30,7 +30,7 @@ private struct ContentView: View {
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()
     
-    @State var selectedTab: Int = 1
+    @State var selectedTab: Int = 0
     
     var body: some View {
         ZStack {
@@ -42,16 +42,9 @@ private struct ContentView: View {
             }
             
             TabView(selection: $selectedTab) {
-                DeskView()
-                    .toolbarBackground(.visible, for: .tabBar)
-                    .tag(0)
-                    .tabItem {
-                        Label("Home", systemImage: "house.fill")
-                    }
-                
                 FileSystemView(contentObjects: contentObjects)
                     .toolbarBackground(.visible, for: .tabBar)
-                    .tag(1)
+                    .tag(0)
                     .tabItem {
                         Label("Notizen", systemImage: "doc.fill")
                     }
@@ -67,7 +60,7 @@ private struct ContentView: View {
                 
                 ScheduleViewContainer()
                     .toolbarBackground(.visible, for: .tabBar)
-                    .tag(3)
+                    .tag(1)
                     .tabItem {
                         Label("Stundenplan", systemImage: "calendar")
                     }
@@ -77,17 +70,24 @@ private struct ContentView: View {
                     .onAppear {
                         askNotificationPermission()
                     }
-                    .tag(4)
+                    .tag(2)
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
 //                
 //                AIView()
 //                    .toolbarBackground(.visible, for: .tabBar)
-//                    .tag(2)
+//                    .tag(3)
 //                    .tabItem {
 //                        Label("AI", systemImage: "brain.fill")
 //                    }
+                
+                PPSettingsView()
+                    .toolbarBackground(.visible, for: .tabBar)
+                    .tag(4)
+                    .tabItem {
+                        Label("Einstellungen", systemImage: "gearshape.fill")
+                    }
             }
             .disabled(toolManager.showProgress)
             .modifier(

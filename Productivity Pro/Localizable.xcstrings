@@ -1945,6 +1945,7 @@
       }
     },
     "Überspringen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DeskView: View {
+struct PPSettingsView: View {
     @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     @State var settingsView: Bool = false
     

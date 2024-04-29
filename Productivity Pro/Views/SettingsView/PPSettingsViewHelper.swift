@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension DeskView {
+extension PPSettingsView {
     @ViewBuilder func Settings() -> some View {
         Section("Einstellungen") {
             NavigationLink(destination: {
