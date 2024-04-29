@@ -104,7 +104,7 @@ struct HomeworkAddView: View {
                 
                 TextEditor(text: $homework.homeworkDescription)
                     .listRowInsets(edgeInsets())
-                    .frame(minHeight: 250)
+                    .frame(minHeight: 220)
             }
             .environment(\.defaultMinListRowHeight, 10)
             .toolbar {

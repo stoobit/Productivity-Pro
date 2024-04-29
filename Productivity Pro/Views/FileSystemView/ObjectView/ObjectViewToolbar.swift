@@ -38,8 +38,11 @@ struct FolderViewToolbar: ToolbarContent {
                 Button("Bibliothek", systemImage: "books.vertical") {
                     libraryView.toggle()
                         
+                    #if DEBUG
+                    #else
                     Mixpanel.mainInstance()
                         .track(event: "LIAP View", properties: [:])
+                    #endif
                 }
             }
             

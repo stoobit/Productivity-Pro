@@ -45,8 +45,11 @@ private struct ContentView: View {
             TabView(selection: $selectedTab) {
                 FileSystemView(contentObjects: contentObjects)
                     .onAppear {
+                        #if DEBUG
+                        #else
                         Mixpanel.mainInstance()
                             .track(event: "Note View", properties: [:])
+                        #endif
                     }
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(0)
@@ -65,8 +68,11 @@ private struct ContentView: View {
                 
                 ScheduleViewContainer()
                     .onAppear {
+                        #if DEBUG
+                        #else
                         Mixpanel.mainInstance()
                             .track(event: "Schedule View", properties: [:])
+                        #endif
                     }
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(1)
@@ -76,8 +82,11 @@ private struct ContentView: View {
                 
                 HomeworkView()
                     .onAppear {
+                        #if DEBUG
+                        #else
                         Mixpanel.mainInstance()
                             .track(event: "Tasks View", properties: [:])
+                        #endif
                     }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
@@ -97,8 +106,11 @@ private struct ContentView: View {
                 
                 PPSettingsView()
                     .onAppear {
+                        #if DEBUG
+                        #else
                         Mixpanel.mainInstance()
                             .track(event: "Settings View", properties: [:])
+                        #endif
                     }
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(4)

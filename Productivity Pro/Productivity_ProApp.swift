@@ -28,8 +28,11 @@ struct Productivity_ProApp: App {
         )
         .onChange(of: scenePhase) {
             if scenePhase == .active {
+                #if DEBUG
+                #else
                 Mixpanel.mainInstance()
                     .track(event: "Opened App", properties: [:])
+                #endif
             }
         }
     }
