@@ -144,6 +144,7 @@ extension TemplateView {
                             alignment: .bottomTrailing
                         )
                         .padding(10)
+                        .imageScale(.medium)
                 }
                 .frame(width: 250, height: 125, alignment: .bottom)
             }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TemplateView: View {
-    
     @AppStorage("savedIsPortrait")
     var savedIsPortrait: Bool = true
     
@@ -24,17 +23,23 @@ struct TemplateView: View {
     @State var selectedColor: String = "pagewhite"
     @State var selectedTemplate: String = "blank"
     
+    @State var title: String = ""
+    
     let buttonTitle: LocalizedStringKey
     
     var preselectedOrientation: Bool = true
     var preselectedColor: String = "pagewhite"
     var preselectedTemplate: String = "blank"
     
-    var action: (Bool, String, String) -> Void
+    var action: (Bool, String, String, String?) -> Void
     
     var body: some View {
         NavigationStack {
             Form {
+                if buttonTitle == LocalizedStringKey("Erstellen") {
+                    TextField("Titel", text: $title)
+                        .frame(height: 30)
+                }
                 
                 Section {
                     OrientationView()
@@ -42,7 +47,6 @@ struct TemplateView: View {
                 }
                 
                 TemplateView()
-                
             }
             .environment(\.defaultMinListRowHeight, 10)
             .scrollIndicators(.hidden)
@@ -59,7 +63,8 @@ struct TemplateView: View {
                         action(
                             isPortrait,
                             selectedTemplate,
-                            selectedColor
+                            selectedColor,
+                            title
                         )
                         
                         savedIsPortrait = isPortrait
@@ -68,10 +73,8 @@ struct TemplateView: View {
                     }
                 }
             }
-            
         }
         .onAppear { viewDidAppear() }
-        
     }
     
     func viewDidAppear() {

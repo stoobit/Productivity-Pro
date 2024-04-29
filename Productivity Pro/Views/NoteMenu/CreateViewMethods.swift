@@ -34,12 +34,15 @@ extension CreateNoteView {
     }
     
     func selectedTemplate(
-        _ isPortrait: Bool, _ template: String, _ color: String
+        _ isPortrait: Bool, _ template: String, _ color: String,
+        _ title: String?
     ) {
         withAnimation(.bouncy) {
+            let title = title == nil ? getTitle() : title!
+            
             let object = ContentObject(
                 id: UUID(),
-                title: getTitle(),
+                title: title,
                 type: .file,
                 parent: parent,
                 created: Date(),

@@ -34,7 +34,7 @@ struct NoteViewSheet: ViewModifier {
                         preselectedOrientation: page.isPortrait,
                         preselectedColor: page.color,
                         preselectedTemplate: page.template
-                    ) { isPortrait, template, color in
+                    ) { isPortrait, template, color, _ in
                         addPage(isPortrait, template, color)
                     }
                 } else {
@@ -49,7 +49,7 @@ struct NoteViewSheet: ViewModifier {
                         preselectedOrientation: page.isPortrait,
                         preselectedColor: page.color,
                         preselectedTemplate: page.template
-                    ) { isPortrait, template, color in
+                    ) { isPortrait, template, color, _ in
                         changePage(isPortrait, template, color)
                     }
                 } else {

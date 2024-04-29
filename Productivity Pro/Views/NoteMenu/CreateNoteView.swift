@@ -49,8 +49,8 @@ struct CreateNoteView: View {
             TemplateView(
                 isPresented: $selectTemplate,
                 buttonTitle: "Erstellen"
-            ) { isPortrait, template, color in
-                selectedTemplate(isPortrait, template, color)
+            ) { isPortrait, template, color, title in
+                selectedTemplate(isPortrait, template, color, title)
             }
         }
         .fullScreenCover(isPresented: $scanDocument) {
