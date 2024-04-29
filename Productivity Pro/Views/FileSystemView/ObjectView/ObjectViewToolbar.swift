@@ -27,6 +27,7 @@ struct FolderViewToolbar: ToolbarContent {
     
     @Binding var addFolder: Bool
     @Binding var importFile: Bool
+    @Binding var libraryView: Bool
     
     var contentObjects: [ContentObject]
     let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
@@ -36,7 +37,7 @@ struct FolderViewToolbar: ToolbarContent {
            
             if locale == "Deutsch" {
                 Button("Bibliothek", systemImage: "books.vertical") {
-                    subviewManager.liapView.toggle()
+                    libraryView.toggle()
                 }
             }
             

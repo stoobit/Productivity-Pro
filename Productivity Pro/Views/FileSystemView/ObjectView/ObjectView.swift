@@ -35,6 +35,8 @@ struct ObjectView: View {
     @State var addFolder: Bool = false
     @State var createNote: Bool = false
     @State var importFile: Bool = false
+    
+    @State var libraryView: Bool = false
 
     var body: some View {
         @Bindable var subviewValue = subviewManager
@@ -97,8 +99,8 @@ struct ObjectView: View {
             .toolbarRole(.browser)
             .toolbar {
                 FolderViewToolbar(
-                    parent: parent,
-                    addFolder: $addFolder, importFile: $importFile,
+                    parent: parent, addFolder: $addFolder,
+                    importFile: $importFile, libraryView: $libraryView,
                     contentObjects: contentObjects
                 )
             }
@@ -122,7 +124,7 @@ struct ObjectView: View {
                 importFile(result: result)
             }
         }
-        .sheet(isPresented: $subviewValue.liapView) {
+        .sheet(isPresented: $libraryView) {
             LIAPView(parent: parent)
         }
     }

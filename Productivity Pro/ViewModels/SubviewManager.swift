@@ -34,5 +34,4 @@ import Observation
     var shareQRPDFView: Bool = false
     
     var printerView: Bool = false
-    var liapView: Bool = false
 }
