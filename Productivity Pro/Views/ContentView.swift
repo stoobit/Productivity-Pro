@@ -65,13 +65,6 @@ private struct ContentView: View {
                         ShareQRPDFView()
                     }
                 
-                AIView()
-                    .toolbarBackground(.visible, for: .tabBar)
-                    .tag(2)
-                    .tabItem {
-                        Label("AI", systemImage: "brain.fill")
-                    }
-                
                 ScheduleViewContainer()
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(3)
@@ -88,6 +81,13 @@ private struct ContentView: View {
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
+//                
+//                AIView()
+//                    .toolbarBackground(.visible, for: .tabBar)
+//                    .tag(2)
+//                    .tabItem {
+//                        Label("AI", systemImage: "brain.fill")
+//                    }
             }
             .disabled(toolManager.showProgress)
             .modifier(
@@ -113,12 +113,16 @@ private struct ContentView: View {
             handle(url: url)
         })
         .onAppear {
-            if contentObjects.count > 9 {
-                #if DEBUG
-                #else
-                requestReview()
-                #endif
-            }
+            review()
+        }
+    }
+    
+    func review() {
+        if contentObjects.count > 3 {
+            #if DEBUG
+            #else
+            requestReview()
+            #endif
         }
     }
     
