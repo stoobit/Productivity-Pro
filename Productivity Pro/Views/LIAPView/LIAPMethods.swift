@@ -19,7 +19,9 @@ extension LIAPView {
                 grade: grade
             )
             
-            let vocabulary = PPVocabularyModel(filename: "latinvocabulary")
+            let vocabulary = PPVocabularyModel(
+                filename: "latinvocabulary"
+            )
             contentObject.vocabulary = vocabulary
             
             context.insert(contentObject)

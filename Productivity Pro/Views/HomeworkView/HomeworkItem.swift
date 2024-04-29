@@ -32,12 +32,12 @@ struct HomeworkItem: View {
                 }
             } else {
                 NavigationLink(destination: {
-                    if let note = homework.note {
+                    if homework.note?.type == COType.vocabulary.rawValue {
+                        VocabularyViewContainer(object: homework.note!)
+                    } else if let note = homework.note {
                         NoteView(
                             contentObjects: contentObjects, contentObject: note
                         )
-                    } else if homework.note?.type == COType.vocabulary.rawValue {
-                        VocabularyList(model: homework.note!.vocabulary!)
                     } else {
                         ZStack {
                             Color(UIColor.systemGroupedBackground)
