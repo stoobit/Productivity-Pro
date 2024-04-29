@@ -78,8 +78,14 @@ struct TemplateView: View {
     }
     
     func viewDidAppear() {
-        isPortrait = preselectedOrientation
-        selectedColor = preselectedColor
-        selectedTemplate = preselectedTemplate
+        if buttonTitle == LocalizedStringKey("Erstellen") {
+            isPortrait = savedIsPortrait
+            selectedColor = savedBackgroundColor
+            selectedTemplate = savedBackgroundTemplate
+        } else {
+            isPortrait = preselectedOrientation
+            selectedColor = preselectedColor
+            selectedTemplate = preselectedTemplate
+        }
     }
 }
