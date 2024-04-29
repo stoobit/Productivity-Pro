@@ -40,15 +40,14 @@ extension DrawingView {
             pkCanvasView.becomeFirstResponder()
         } else {
             disableCanvasAvailability()
+            page.canvas = pkCanvasView.drawing.dataRepresentation()
         }
     }
     
     func disableCanvasAvailability() {
         pkCanvasView.isRulerActive = false
         
-        pkToolPicker.setVisible(
-            false, forFirstResponder: pkCanvasView
-        )
+        pkToolPicker.setVisible(false, forFirstResponder: pkCanvasView)
         
         pkToolPicker.removeObserver(pkCanvasView)
         pkCanvasView.resignFirstResponder()

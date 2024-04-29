@@ -34,10 +34,6 @@ struct DrawingView: View {
         }
         .onChange(of: toolManager.pencilKit) {
             didCanvasAvailabilityChange(toolManager.pencilKit)
-            
-            if toolManager.pencilKit == false {
-                page.canvas = pkCanvasView.drawing.dataRepresentation()
-            }
         }
         .onChange(of: scenePhase) { _, value in
             if value == .active {
