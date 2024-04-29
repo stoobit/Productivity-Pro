@@ -86,7 +86,7 @@ private struct ContentView: View {
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(4)
                     .tabItem {
-                        Label("Einstellungen", systemImage: "gearshape.fill")
+                        Label("Einstellungen", systemImage: "gearshape.2.fill")
                     }
             }
             .disabled(toolManager.showProgress)

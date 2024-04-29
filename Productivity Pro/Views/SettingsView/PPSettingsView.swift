@@ -49,7 +49,7 @@ struct PPSettingsView: View {
                 .frame(height: 30)
             }
             .environment(\.defaultMinListRowHeight, 10)
-            .navigationTitle("Home")
+            .navigationTitle("Einstellungen")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
         }
