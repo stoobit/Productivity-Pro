@@ -159,6 +159,7 @@
 		BB8586992AE1E5B300C5875C /* ShapeStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8586982AE1E5B300C5875C /* ShapeStyleView.swift */; };
 		BB85869B2AE1E5BB00C5875C /* MediaStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85869A2AE1E5BB00C5875C /* MediaStyleView.swift */; };
 		BB85869D2AE1E5C500C5875C /* TextFieldStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB85869C2AE1E5C500C5875C /* TextFieldStyleView.swift */; };
+		BB87B7E92BDFAEE200D893B2 /* MarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB87B7E82BDFAEE200D893B2 /* MarkdownView.swift */; };
 		BB8A0AE12AD040EB008B4D27 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */; };
 		BB8F40FB29CE57CA00E625E7 /* PageViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */; };
 		BB929B8028E5076D00DA4538 /* NoteSecondaryToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB929B7F28E5076D00DA4538 /* NoteSecondaryToolbar.swift */; };
@@ -481,6 +482,7 @@
 		BB8586982AE1E5B300C5875C /* ShapeStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeStyleView.swift; sourceTree = "<group>"; };
 		BB85869A2AE1E5BB00C5875C /* MediaStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaStyleView.swift; sourceTree = "<group>"; };
 		BB85869C2AE1E5C500C5875C /* TextFieldStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyleView.swift; sourceTree = "<group>"; };
+		BB87B7E82BDFAEE200D893B2 /* MarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownView.swift; sourceTree = "<group>"; };
 		BB8A0AE02AD040EB008B4D27 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
 		BB8F40FA29CE57CA00E625E7 /* PageViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewMethods.swift; sourceTree = "<group>"; };
 		BB929B7F28E5076D00DA4538 /* NoteSecondaryToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSecondaryToolbar.swift; sourceTree = "<group>"; };
@@ -752,6 +754,7 @@
 			children = (
 				BB84DD162B8E78EF002C2A9A /* TextfieldItemVContainer.swift */,
 				BBADD1372A5102620075B825 /* TextfieldItemView.swift */,
+				BB87B7E82BDFAEE200D893B2 /* MarkdownView.swift */,
 				BB61D9142BCDB84200CA1EDE /* UITFRepresentable.swift */,
 				BB341B112BCF137300BF3A93 /* UITFUpdate.swift */,
 				BB341B152BCF13B400BF3A93 /* UITFHelper.swift */,
@@ -1850,6 +1853,7 @@
 				BB7987052AD49BA1003469E6 /* ShapesButton.swift in Sources */,
 				BBBE85F72A4B92B2000A5AB4 /* ScrollViewContainer.swift in Sources */,
 				BB8103EF2BD4782B005D08BD /* LIAPView.swift in Sources */,
+				BB87B7E92BDFAEE200D893B2 /* MarkdownView.swift in Sources */,
 				BBBCACB52A25461900C23B2C /* CalculatorModel.swift in Sources */,
 				BB84DD152B8E783F002C2A9A /* MediaItemVContainer.swift in Sources */,
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,

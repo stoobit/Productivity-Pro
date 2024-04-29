@@ -9,42 +9,34 @@ import SwiftData
 import SwiftUI
 
 @Model final class PPTextFieldModel {
+    init(textColor: Color, font: String, fontSize: Double) {
+        self.strokeStyle = PPStrokeType.line.rawValue
+        
+        self.textColor = textColor.data()
+        self.fontName = font
+        self.fontSize = fontSize
+    }
+    
     init() {
-        self.text = NSAttributedString().data()
+        self.strokeStyle = PPStrokeType.line.rawValue
+        self.textColor = Color.black.data()
+        self.fontName = "Avenir Next"
+        self.fontSize = 13
     }
     
-    init(text: NSAttributedString) {
-        self.text = text.data()
-    }
-    
-    init(text: Data) {
-        self.text = text
-    }
-    
-    var text: Data?
-    var attributedString: NSAttributedString {
-        if let text = text {
-            return NSAttributedString(data: text)
-        } else {
-            return NSAttributedString("Ein Fehler ist aufgetreten.")
-        }
-    }
-    
-    // MARK: text attributes
-
     var string: String = ""
-    var textColor: Data = Color.black.data()
-    var fontName: String = "Avenir Next"
-    var fontSize: Double = 13
+    var textColor: Data
     
-    // MARK: box attributes
-
+    var fontName: String
+    var fontSize: Double
+    
     var fill: Bool = false
     var fillColor: Data = Color.green.data()
+    
     var stroke: Bool = false
     var strokeColor: Data = Color.accentColor.data()
     var strokeWidth: Double = 10
-    var strokeStyle: PPStrokeType.RawValue = PPStrokeType.line.rawValue
+    var strokeStyle: PPStrokeType.RawValue
     
     var shadow: Bool = false
     var shadowColor: Data = Color.black.data()

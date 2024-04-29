@@ -31,7 +31,8 @@ struct PDFManager {
                 PageView(
                     note: note, page: page,
                     scale: .constant(1), offset: .constant(.zero),
-                    preloadModels: true
+                    preloadModels: true,
+                    realrenderText: true
                 )
                 
                 Image(uiImage: renderCanvas(page: page))

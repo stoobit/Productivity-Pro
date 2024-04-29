@@ -19,7 +19,10 @@ struct NoteViewSheet: ViewModifier {
         @Bindable var manager = subviewManager
         
         content
-            .modifier(MediaImport(contentObject: contentObject, size: size))
+            .modifier(
+                MediaImport(contentObject: contentObject, size: size)
+            )
+            .modifier(MDViewContainer(isPresented: $manager.rtfEditor))
             .sheet(isPresented: $manager.overview, content: {
                 OverviewContainerView(contentObject: contentObject)
             })

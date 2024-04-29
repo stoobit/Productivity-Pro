@@ -16,11 +16,16 @@ struct PageItemView: View {
     
     @Binding var scale: CGFloat
     
+    var realrenderText: Bool
     var preloadModels: Bool
+    
     var body: some View {
         ForEach(page.items!) { item in
             ItemView(
-                page: page, item: item, scale: $scale,
+                page: page,
+                item: item,
+                scale: $scale,
+                realrenderText: realrenderText,
                 preloadModels: preloadModels
             )
             .onTapGesture {

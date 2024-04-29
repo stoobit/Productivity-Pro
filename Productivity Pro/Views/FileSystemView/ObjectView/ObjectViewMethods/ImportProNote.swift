@@ -12,8 +12,7 @@ extension ObjectView {
     func importProNote(url: URL) throws {
         let contentObject = try ImportManager()
             .ppImport(
-                from: url, to: parent, with: grade, 
-                contentObjects: contentObjects
+                from: url, to: parent, with: grade
             )
         
         context.insert(contentObject)

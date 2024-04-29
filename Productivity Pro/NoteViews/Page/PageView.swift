@@ -25,6 +25,7 @@ struct PageView: View {
     
     var size: CGSize = .zero
     var preloadModels: Bool = false
+    var realrenderText: Bool = false
 
     var body: some View {
         ZStack {
@@ -53,6 +54,7 @@ struct PageView: View {
             
             PageItemView(
                 note: note, page: page, scale: $scale,
+                realrenderText: realrenderText, 
                 preloadModels: preloadModels
             )
             .allowsHitTesting(toolManager.pencilKit == false)
