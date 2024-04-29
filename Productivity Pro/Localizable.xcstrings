@@ -31,23 +31,6 @@
         }
       }
     },
-    "%@ %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ %2$lld"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@%2lld"
-          }
-        }
-      }
-    },
     "%@ bearbeiten" : {
       "localizations" : {
         "en" : {
@@ -348,17 +331,6 @@
         }
       }
     },
-    "Bewerte Productivity Pro" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rate Productivity Pro"
-          }
-        }
-      }
-    },
     "Bibliothek" : {
       "localizations" : {
         "en" : {
@@ -550,7 +522,14 @@
       }
     },
     "Daten und Synchronisation" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data and Synchronization"
+          }
+        }
+      }
     },
     "Daten werden verarbeitet..." : {
       "localizations" : {
@@ -1102,17 +1081,6 @@
         }
       }
     },
-    "Home" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Home"
-          }
-        }
-      }
-    },
     "Home %@ Fächer" : {
       "localizations" : {
         "en" : {
@@ -1424,7 +1392,14 @@
       }
     },
     "Nachricht abschicken" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Send Message"
+          }
+        }
+      }
     },
     "Name" : {
       "localizations" : {
@@ -1717,7 +1692,14 @@
       }
     },
     "Schreibe Productivity Pro AI..." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Message Productivity Pro AI..."
+          }
+        }
+      }
     },
     "Schriftart" : {
       "localizations" : {
@@ -1949,19 +1931,15 @@
         }
       }
     },
-    "Überspringen" : {
-      "extractionState" : "stale",
+    "Uhrzeit der Benachrichtigung" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Skip"
+            "value" : "Time of Notification"
           }
         }
       }
-    },
-    "Uhrzeit der Benachrichtigung" : {
-
     },
     "Umbenennen" : {
       "localizations" : {
@@ -2004,7 +1982,14 @@
       }
     },
     "Verlauf löschen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete History"
+          }
+        }
+      }
     },
     "View Models" : {
       "localizations" : {
