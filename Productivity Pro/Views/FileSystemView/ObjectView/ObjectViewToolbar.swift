@@ -5,8 +5,8 @@
 //  Created by Till Brügmann on 25.09.23.
 //
 
+import Mixpanel
 import SwiftUI
-import TipKit
 
 struct FolderViewToolbar: ToolbarContent {
     @Environment(\.dismiss) var dismiss
@@ -34,10 +34,12 @@ struct FolderViewToolbar: ToolbarContent {
     
     var body: some ToolbarContent {
         ToolbarItemGroup(placement: .topBarTrailing) {
-           
             if locale == "Deutsch" {
                 Button("Bibliothek", systemImage: "books.vertical") {
                     libraryView.toggle()
+                        
+                    Mixpanel.mainInstance()
+                        .track(event: "LIAP View", properties: [:])
                 }
             }
             
@@ -46,7 +48,7 @@ struct FolderViewToolbar: ToolbarContent {
             }
             
             CreateNoteView(
-                contentObjects: contentObjects, 
+                contentObjects: contentObjects,
                 parent: parent, importFile: $importFile
             )
         }

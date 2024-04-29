@@ -5,6 +5,7 @@
 //  Created by Till Brügmann on 10.09.23.
 //
 
+import Mixpanel
 import StoreKit
 import SwiftData
 import SwiftUI
@@ -43,6 +44,10 @@ private struct ContentView: View {
             
             TabView(selection: $selectedTab) {
                 FileSystemView(contentObjects: contentObjects)
+                    .onAppear {
+                        Mixpanel.mainInstance()
+                            .track(event: "Note View", properties: [:])
+                    }
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(0)
                     .tabItem {
@@ -59,6 +64,10 @@ private struct ContentView: View {
                     }
                 
                 ScheduleViewContainer()
+                    .onAppear {
+                        Mixpanel.mainInstance()
+                            .track(event: "Schedule View", properties: [:])
+                    }
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(1)
                     .tabItem {
@@ -66,6 +75,10 @@ private struct ContentView: View {
                     }
                 
                 HomeworkView()
+                    .onAppear {
+                        Mixpanel.mainInstance()
+                            .track(event: "Tasks View", properties: [:])
+                    }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         askNotificationPermission()
@@ -74,7 +87,7 @@ private struct ContentView: View {
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
-//                
+//
 //                AIView()
 //                    .toolbarBackground(.visible, for: .tabBar)
 //                    .tag(3)
@@ -83,6 +96,10 @@ private struct ContentView: View {
 //                    }
                 
                 PPSettingsView()
+                    .onAppear {
+                        Mixpanel.mainInstance()
+                            .track(event: "Settings View", properties: [:])
+                    }
                     .toolbarBackground(.visible, for: .tabBar)
                     .tag(4)
                     .tabItem {
