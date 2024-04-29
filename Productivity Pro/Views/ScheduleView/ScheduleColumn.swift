@@ -61,7 +61,7 @@ struct ScheduleColumn: View {
                     Button(action: { addSubject.toggle() }) {
                         PlusButton()
                     }
-                    .transition(.scale)
+                    .transition(.blurReplace.combined(with: .scale(0.9)))
                 }
             }
             .padding(.bottom, 15)
@@ -97,7 +97,9 @@ struct ScheduleColumn: View {
                             )
                     }
                     .frame(width: 35, height: 35)
-                    .transition(.scale(0, anchor: .leading))
+                    .transition(
+                        .blurReplace().combined(with: .scale(0.4))
+                    )
             }
             
             VStack {
@@ -136,7 +138,7 @@ struct ScheduleColumn: View {
                             Color.accentColor.tertiary
                         )
                 }
-                .transition(.scale)
+                .transition(.blurReplace())
                 .padding(.trailing, 10)
                 
             }
