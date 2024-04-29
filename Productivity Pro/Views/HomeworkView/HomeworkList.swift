@@ -75,5 +75,16 @@ struct HomeworkList: View {
                 }
             }
         }
+        .overlay {
+            if isUnlocked && homeworkTasks.isEmpty {
+                ContentUnavailableView(
+                    "Du hast alles erledigt.", systemImage: "checkmark.circle"
+                )
+                .foregroundStyle(Color.primary, .green)
+                .transition(
+                    .asymmetric(insertion: .opacity, removal: .identity)
+                )
+            }
+        }
     }
 }

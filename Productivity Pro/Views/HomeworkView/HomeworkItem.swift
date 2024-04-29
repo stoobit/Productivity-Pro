@@ -56,10 +56,6 @@ struct HomeworkItem: View {
         }
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
             if isUnlocked {
-                Button(role: .destructive, action: delete) {
-                    Image(systemName: "trash")
-                }
-                
                 Button(action: {
                     showDescription.toggle()
                 }) {

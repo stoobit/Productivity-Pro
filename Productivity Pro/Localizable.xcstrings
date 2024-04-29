@@ -731,6 +731,16 @@
         }
       }
     },
+    "Du hast alles erledigt." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You've done everything."
+          }
+        }
+      }
+    },
     "Du hast keiner Seite ein Lesezeichen hinzugefügt." : {
       "localizations" : {
         "en" : {
@@ -797,6 +807,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Settings"
+          }
+        }
+      }
+    },
+    "Einstellungen %@ Fächer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings %@ Subjects"
           }
         }
       }
@@ -1077,16 +1097,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Height"
-          }
-        }
-      }
-    },
-    "Home %@ Fächer" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Home %@ Fächer"
           }
         }
       }
@@ -1440,6 +1450,9 @@
           }
         }
       }
+    },
+    "Notiz verlinken" : {
+
     },
     "Notizen" : {
       "localizations" : {

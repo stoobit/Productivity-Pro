@@ -13,14 +13,30 @@ extension HomeworkAddView {
             bySettingHour: 5, minute: 00, second: 0, of: homework.date
         )!
         
-        homework.note = contentObjects.first(where: {
-            $0.id.uuidString == pickedNote
-        })
+        if linkNote && pickedNote != "" {
+            homework.note = contentObjects.first(where: {
+                $0.id.uuidString == pickedNote
+            })
+        }
     
         context.insert(homework)
         pushNotification()
         
         isPresented.toggle()
+    }
+    
+    func getSubject(from title: String) -> Subject {
+        var subject = Subject()
+        
+        if let s = subjects.value.first(where: {
+            $0.title == title
+        }) {
+            subject = s
+        } else {
+            subject = Subject(title: "", icon: "", color: Color.clear.rawValue)
+        }
+        
+        return subject
     }
     
     func pushNotification() {

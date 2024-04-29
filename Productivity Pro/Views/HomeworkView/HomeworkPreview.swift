@@ -45,6 +45,8 @@ extension HomeworkList {
     }
 
     static func subject(title: String) -> Subject {
-        return previewSubjects.first(where: { $0.title == title })!
+        return previewSubjects.first(where: {
+            $0.title == title
+        }) ?? Subject(title: "", icon: "", color: .clear)
     }
 }

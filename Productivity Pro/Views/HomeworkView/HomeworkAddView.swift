@@ -20,31 +20,58 @@ struct HomeworkAddView: View {
         bySettingHour: 15, minute: 30, second: 00, of: Date()
     )!
     
-    @State var notePicker: Bool = false
-    @State var pickedNote: String = ""
     @State var homework: Homework = .init()
-    
     @Binding var isPresented: Bool
+    
+    @State var linkNote: Bool = false
+    @State var pickedNote: String = ""
+    
+    @State var showPicker: Bool = false
     
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Titel", text: $homework.title)
-                        .frame(height: 30)
-                    
-                    Picker("Fach", selection: $homework.subject) {
-                        Section {
-                            ForEach(subjects.value.sorted(by: { $0.title < $1.title })) { subject in
-                                Text(subject.title)
-                                    .tag(subject.title)
+                    HStack(spacing: 2) {
+                        Image(systemName:
+                            getSubject(from: homework.subject).icon
+                        )
+                        .foregroundStyle(.white)
+                        .background {
+                            Circle()
+                                .frame(width: 40, height: 40)
+                                .foregroundStyle(
+                                    Color(
+                                        rawValue: getSubject(
+                                            from: homework.subject
+                                        ).color
+                                    )
+                                )
+                        }
+                        .frame(width: 40, height: 40)
+                        .transition(.blurReplace())
+                        .animation(.bouncy, value: homework.subject)
+                        
+                        Picker("Fach", selection: $homework.subject) {
+                            Section {
+                                ForEach(
+                                    subjects.value.sorted(by: { $0.title < $1.title })
+                                ) { subject in
+                                    Text(subject.title)
+                                        .tag(subject.title)
+                                }
                             }
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(height: 30)
+                        .labelsHidden()
                     }
-                    .frame(height: 30)
                 }
                 
                 Section {
+                    TextField("Titel", text: $homework.title)
+                        .frame(height: 30)
+                    
                     DatePicker(
                         "Zu erledigen bis zum",
                         selection: $homework.date,
@@ -52,40 +79,32 @@ struct HomeworkAddView: View {
                         displayedComponents: .date
                     )
                     .frame(height: 30)
+                }
+                
+                Section {
+                    Toggle("Notiz verlinken", systemImage: "link", isOn: $linkNote.animation())
+                        .tint(Color.accentColor)
+                        .frame(height: 30)
                     
-                    HStack {
-                        Text(
-                            LocalizedStringKey(pickedNote.isEmpty ? "Notiz" : contentObjects.first(where: {
-                                $0.id.uuidString == pickedNote
-                            })?.title ?? "Fehler")
-                        )
-                        
-                        Spacer()
-                        
-                        Button(pickedNote.isEmpty ? "Auswählen" : "Entfernen") {
-                            if pickedNote.isEmpty {
-                                notePicker.toggle()
-                            } else {
-                                pickedNote = ""
-                            }
+                    if linkNote {
+                        Button(button, systemImage: icon) {
+                            showPicker.toggle()
                         }
-                        .buttonStyle(.bordered)
-                        .foregroundStyle(Color.primary)
-                    }
-                    .frame(height: 30)
-                    .sheet(isPresented: $notePicker) {
-                        ObjectPicker(
-                            objects: contentObjects,
-                            isPresented: $notePicker, id: UUID(),
-                            selectedObject: $pickedNote,
-                            type: .file
-                        )
+                        .frame(height: 30)
+                        .sheet(isPresented: $showPicker) {
+                            ObjectPicker(
+                                objects: contentObjects,
+                                isPresented: $showPicker, id: UUID(),
+                                selectedObject: $pickedNote,
+                                type: .file
+                            )
+                        }
                     }
                 }
                 
                 TextEditor(text: $homework.homeworkDescription)
                     .listRowInsets(edgeInsets())
-                    .frame(minHeight: 150)
+                    .frame(minHeight: 250)
             }
             .environment(\.defaultMinListRowHeight, 10)
             .toolbar {
@@ -124,4 +143,20 @@ struct HomeworkAddView: View {
         
         return tomorrow ... max
     }()
+    
+    var button: String {
+        pickedNote == "" ? "Notiz auswählen" : contentObjects.first(where: {
+            $0.id.uuidString == pickedNote
+        })?.title ?? "Fehler"
+    }
+    
+    var icon: String {
+        if contentObjects.first(where: {
+            $0.id.uuidString == pickedNote
+        })?.type == COType.vocabulary.rawValue {
+            return "laurel.leading"
+        } else {
+            return "doc.fill"
+        }
+    }
 }
