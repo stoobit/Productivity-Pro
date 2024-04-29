@@ -12,7 +12,7 @@ struct ScheduleColumn: View {
     var isUnlocked: Bool = false
     
     @AppStorage("ppsubjects")
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
     @State var addSubject: Bool = false
     @State var editSubject: Bool = false
@@ -20,7 +20,7 @@ struct ScheduleColumn: View {
     @Binding var isEditing: Bool
     @Binding var day: ScheduleDay
     
-    @State var oldSubject: ScheduleSubject = ScheduleSubject()
+    @State var oldSubject: ScheduleSubject = .init()
     
     var body: some View {
         LazyVStack(alignment: .leading) {
@@ -65,7 +65,6 @@ struct ScheduleColumn: View {
                 }
             }
             .padding(.bottom, 15)
-            
         }
         .animation(.spring, value: isEditing)
         .animation(.spring, value: day.subjects.count)
@@ -86,21 +85,16 @@ struct ScheduleColumn: View {
     
     @ViewBuilder func Icon(for scheduleSubject: ScheduleSubject) -> some View {
         HStack {
-            if isEditing == false {
-                Image(systemName: getSubject(from: scheduleSubject).icon)
-                    .foregroundStyle(.white)
-                    .background {
-                        Circle()
-                            .frame(width: 35, height: 35)
-                            .foregroundStyle(
-                                Color(rawValue: getSubject(from: scheduleSubject).color)
-                            )
-                    }
-                    .frame(width: 35, height: 35)
-                    .transition(
-                        .blurReplace().combined(with: .scale(0.4))
-                    )
-            }
+            Image(systemName: getSubject(from: scheduleSubject).icon)
+                .foregroundStyle(.white)
+                .background {
+                    Circle()
+                        .frame(width: 35, height: 35)
+                        .foregroundStyle(
+                            Color(rawValue: getSubject(from: scheduleSubject).color)
+                        )
+                }
+                .frame(width: 35, height: 35)
             
             VStack {
                 Text(getSubject(from: scheduleSubject).title)
@@ -140,7 +134,6 @@ struct ScheduleColumn: View {
                 }
                 .transition(.blurReplace())
                 .padding(.trailing, 10)
-                
             }
         }
         .frame(height: 35)
@@ -167,7 +160,6 @@ struct ScheduleColumn: View {
                 }
             }
         }
-        
     }
     
     @ViewBuilder func PlusButton() -> some View {
@@ -202,7 +194,7 @@ struct ScheduleColumn: View {
     }
     
     func getSubject(from scheduleSubject: ScheduleSubject) -> Subject {
-        var subject: Subject = Subject()
+        var subject = Subject()
         
         if let s = subjects.value.first(where: {
             $0.title == scheduleSubject.subject

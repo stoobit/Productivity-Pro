@@ -79,14 +79,15 @@ struct PPSettingsView: View {
                     sizeSetter = defaultFontSize
                 }
                 
-                Section("Aufgaben") {
-                    DatePicker(
-                        "Uhrzeit der Benachrichtigung",
-                        selection: $notificationTime,
-                        displayedComponents: .hourAndMinute
-                    )
-                    .frame(height: 30)
-                    .modifier(PremiumBadge(disabled: true))
+                if isUnlocked {
+                    Section("Aufgaben") {
+                        DatePicker(
+                            "Uhrzeit der Benachrichtigung",
+                            selection: $notificationTime,
+                            displayedComponents: .hourAndMinute
+                        )
+                        .frame(height: 30)
+                    }
                 }
             }
             .environment(\.defaultMinListRowHeight, 10)
@@ -101,7 +102,6 @@ struct PPSettingsView: View {
                         }
                     }) {
                         Image(systemName: "star.fill")
-                            .foregroundStyle(.yellow.opacity(1.0))
                     }
                 }
             }

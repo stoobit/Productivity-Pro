@@ -43,6 +43,7 @@ struct AppIconSettings: View {
     
     @ViewBuilder func Icon(_ image: String) -> some View {
         Image(image)
+            .interpolation(.high)
             .resizable()
             .frame(width: 100, height: 100)
             .shadow(radius: 1)
