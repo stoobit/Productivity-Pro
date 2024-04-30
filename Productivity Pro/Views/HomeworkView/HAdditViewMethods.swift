@@ -1,5 +1,5 @@
 //
-//  HomeworkEditViewMethods.swift
+//  HomeworkAddViewMethods.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 28.04.24.
@@ -7,30 +7,53 @@
 
 import SwiftUI
 
-extension HomeworkEditView {
-    func set() {
-        title = homework.title
-        date = homework.date
-        pickedNote = homework.note?.id.uuidString ?? ""
-        description = homework.homeworkDescription
+extension HAdditView {
+    func edit() {
+        Task { @MainActor in
+            
+            withAnimation(.bouncy) {
+                selected.subject = homework.subject
+                selected.title = homework.title
+                selected.homeworkDescription = homework.homeworkDescription
+                
+                selected.date = Calendar.current.date(
+                    bySettingHour: 5, minute: 00, second: 0,
+                    of: homework.date
+                )!
+                
+                if linkNote, pickedNote != "" {
+                    selected.note = contentObjects.first(where: {
+                        $0.id.uuidString == pickedNote
+                    })
+                }
+            }
+            
+            UNUserNotificationCenter.current()
+                .removePendingNotificationRequests(
+                    withIdentifiers: [selected.id.uuidString]
+                )
+            
+            pushNotification()
+            try? context.save()
+            dismiss()
+        }
     }
     
-    func edit() {
-        homework.title = title
-        homework.date = date
-        homework.note = contentObjects.first(where: {
-            $0.id.uuidString == pickedNote
-        })
+    func add() {
+        homework.date = Calendar.current.date(
+            bySettingHour: 5, minute: 00, second: 0, of: homework.date
+        )!
         
-        homework.homeworkDescription = description
-            
-        UNUserNotificationCenter.current()
-            .removePendingNotificationRequests(
-                withIdentifiers: [homework.id.uuidString]
-            )
-            
+        if linkNote, pickedNote != "" {
+            homework.note = contentObjects.first(where: {
+                $0.id.uuidString == pickedNote
+            })
+        }
+    
+        context.insert(homework)
         pushNotification()
-        try? context.save()
+        
+        dismiss()
     }
     
     func getSubject(from title: String) -> Subject {
@@ -51,8 +74,10 @@ extension HomeworkEditView {
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
         content.title = homework.title
-        content.body = String(localized: "Diese Aufgabe ist bis morgen in \(homework.subject) zu erledigen.")
-
+        content.body = String(localized:
+            "Diese Aufgabe ist bis morgen in \(homework.subject) zu erledigen."
+        )
+        
         let calendar = Calendar.current
         let date = Calendar.current.date(
             byAdding: .day, value: -1, to: homework.date

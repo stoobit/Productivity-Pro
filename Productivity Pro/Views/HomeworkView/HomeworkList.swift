@@ -26,7 +26,9 @@ struct HomeworkList: View {
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
     @Binding var presentAdd: Bool
-    @State var presentInfo: Bool = false
+    @State var presentEdit: Bool = false
+    
+    @State var selectedHomework: Homework = .init()
     
     var body: some View {
         List {
@@ -39,17 +41,10 @@ struct HomeworkList: View {
                     ForEach(filterTasks(by: date)) { homework in
                         HomeworkItem(
                             contentObjects: contentObjects,
-                            homework: homework
-                        ) {
-                            UNUserNotificationCenter.current()
-                                .removePendingNotificationRequests(
-                                    withIdentifiers: [
-                                        homework.id.uuidString
-                                    ]
-                                )
-                            
-                            context.delete(homework)
-                        }
+                            homework: homework,
+                            edit: { edit(homework) },
+                            delete: { delete(homework) }
+                        )
                         .disabled(isUnlocked == false)
                     }
                 }, header: {
@@ -64,27 +59,32 @@ struct HomeworkList: View {
         }
         .scrollContentBackground(.hidden)
         .sheet(isPresented: $presentAdd, content: {
-            HomeworkAddView(
-                contentObjects: contentObjects, isPresented: $presentAdd
+            HAdditView(
+                contentObjects: contentObjects, view: .add, 
+                selected: .constant(Homework())
             )
+            .interactiveDismissDisabled()
         })
-        .onAppear {
-            for homework in homeworkTasks {
-                if Calendar.current.isDateInYesterday(homework.date) {
-                    context.delete(homework)
-                }
-            }
-        }
-        .overlay {
-            if isUnlocked && homeworkTasks.isEmpty {
-                ContentUnavailableView(
-                    "Du hast alles erledigt.", systemImage: "checkmark.circle"
-                )
-                .foregroundStyle(Color.primary, .green)
-                .transition(
-                    .asymmetric(insertion: .opacity, removal: .identity)
-                )
-            }
+        .sheet(isPresented: $presentEdit, content: {
+            HAdditView(
+                contentObjects: contentObjects,
+                view: .edit, selected: $selectedHomework
+            )
+            .interactiveDismissDisabled()
+        })
+        .onAppear { check() }
+        .overlay { DoneView() }
+    }
+    
+    @ViewBuilder func DoneView() -> some View {
+        if isUnlocked && homeworkTasks.isEmpty {
+            ContentUnavailableView(
+                "Du hast alles erledigt.", systemImage: "checkmark.circle"
+            )
+            .foregroundStyle(Color.primary, .green)
+            .transition(
+                .asymmetric(insertion: .opacity, removal: .identity)
+            )
         }
     }
 }

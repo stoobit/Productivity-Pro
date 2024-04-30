@@ -8,9 +8,13 @@
 import SwiftData
 import SwiftUI
 
-struct HomeworkAddView: View {
+struct HAdditView: View {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
+    
     var contentObjects: [ContentObject]
+    let view: HAdditType
+    @Binding var selected: Homework
     
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())
@@ -20,13 +24,11 @@ struct HomeworkAddView: View {
         bySettingHour: 15, minute: 30, second: 00, of: Date()
     )!
     
-    @State var homework: Homework = .init()
-    @Binding var isPresented: Bool
+    @State var homework: Homework
     
     @State var linkNote: Bool = false
-    @State var pickedNote: String = ""
-    
     @State var showPicker: Bool = false
+    @State var pickedNote: String = ""
     
     var body: some View {
         NavigationStack {
@@ -108,23 +110,44 @@ struct HomeworkAddView: View {
             }
             .environment(\.defaultMinListRowHeight, 10)
             .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Hinzufügen") { add() }
-                        .disabled(homework.title == "")
-                }
-                
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") { isPresented.toggle() }
+                if view == .add {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Hinzufügen") { add() }
+                            .disabled(homework.title == "")
+                    }
+                    
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Abbrechen") { dismiss() }
+                    }
+                } else {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Fertig") { edit() }
+                            .disabled(homework.title == "")
+                    }
                 }
             }
         }
         .scrollIndicators(.never)
-        .onAppear {
+        .onAppear { setup() }
+    }
+    
+    func setup() {
+        if view == .add {
             homework.date = Calendar.current.date(
                 byAdding: .day, value: 1, to: homework.date
             )!
             
-            homework.subject = subjects.value.sorted(by: { $0.title < $1.title })[0].title
+            homework.subject = subjects.value.sorted(
+                by: { $0.title < $1.title }
+            )[0].title
+        } else {
+            homework.subject = selected.subject
+            homework.title = selected.title
+            homework.date = selected.date
+            homework.note = selected.note
+            
+            linkNote = selected.note != nil
+            pickedNote = selected.note?.id.uuidString ?? ""
         }
     }
     
@@ -159,4 +182,9 @@ struct HomeworkAddView: View {
             return "doc.fill"
         }
     }
+}
+
+enum HAdditType {
+    case add
+    case edit
 }

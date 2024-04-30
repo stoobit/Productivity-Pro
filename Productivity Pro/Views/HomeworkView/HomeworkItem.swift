@@ -17,9 +17,8 @@ struct HomeworkItem: View {
     var contentObjects: [ContentObject]
     var homework: Homework
     
+    let edit: () -> Void
     let delete: () -> Void
-    
-    @State var showDescription: Bool = false
     
     var body: some View {
         Group {
@@ -43,15 +42,7 @@ struct HomeworkItem: View {
                             VocabularyViewContainer(object: contentObject)
                         }
                     } else {
-                        ZStack {
-                            Color(UIColor.systemGroupedBackground)
-                                .ignoresSafeArea(.all)
-                            
-                            ContentUnavailableView(
-                                "Diese Notiz existiert nicht mehr.",
-                                systemImage: "doc"
-                            )
-                        }
+                        UnavailableView()
                     }
                 }) {
                     Item()
@@ -60,9 +51,7 @@ struct HomeworkItem: View {
         }
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
             if isUnlocked {
-                Button(action: {
-                    showDescription.toggle()
-                }) {
+                Button(action: edit) {
                     Image(systemName: "info.circle")
                 }
                 .tint(.accentColor)
@@ -76,18 +65,13 @@ struct HomeworkItem: View {
                 .tint(.green)
             }
         }
-        .sheet(isPresented: $showDescription) {
-            HomeworkEditView(
-                contentObjects: contentObjects,
-                isPresented: $showDescription,
-                homework: homework
-            )
-        }
-        .onAppear {
-            if let note = homework.note {
-                if contentObjects.contains(note) == false {
-                    homework.note = nil
-                }
+        .onAppear { check() }
+    }
+    
+    func check() {
+        if let note = homework.note {
+            if contentObjects.contains(note) == false {
+                homework.note = nil
             }
         }
     }
@@ -104,6 +88,18 @@ struct HomeworkItem: View {
         }
         
         return subject
+    }
+    
+    @ViewBuilder func UnavailableView() -> some View {
+        ZStack {
+            Color(UIColor.systemGroupedBackground)
+                .ignoresSafeArea(.all)
+            
+            ContentUnavailableView(
+                "Diese Notiz existiert nicht mehr.",
+                systemImage: "doc"
+            )
+        }
     }
     
     @ViewBuilder func Item() -> some View {

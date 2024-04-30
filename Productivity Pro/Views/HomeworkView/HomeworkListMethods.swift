@@ -8,6 +8,29 @@
 import SwiftUI
 
 extension HomeworkList {
+    func check() {
+        for homework in homeworkTasks {
+            if Calendar.current.isDateInYesterday(homework.date) {
+                context.delete(homework)
+            }
+        }
+    }
+    
+    func delete(_ homework: Homework) {
+        UNUserNotificationCenter.current()
+            .removePendingNotificationRequests(
+                withIdentifiers: [
+                    homework.id.uuidString
+                ]
+            )
+        
+        context.delete(homework)
+    }
+    
+    func edit(_ homework: Homework) {
+        selectedHomework = homework
+        presentEdit.toggle()
+    }
     
     func dates() -> [Date] {
         if isUnlocked {
@@ -22,7 +45,7 @@ extension HomeworkList {
     func formattedString(of date: Date) -> LocalizedStringKey {
         let calendar = Calendar.current
         
-        if calendar.numberOfDaysBetween(Date(), and: date) > 7  {
+        if calendar.numberOfDaysBetween(Date(), and: date) > 7 {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = String(localized: "d. MMMM")
             
