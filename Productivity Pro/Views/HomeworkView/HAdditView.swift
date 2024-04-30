@@ -177,12 +177,16 @@ struct HAdditView: View {
     }
     
     var icon: String {
-        if contentObjects.first(where: {
+        let type = contentObjects.first(where: {
             $0.id.uuidString == pickedNote
-        })?.type == COType.vocabulary.rawValue {
+        })?.type
+        
+        if type == COType.vocabulary.rawValue {
             return "laurel.leading"
-        } else {
+        } else if type == COType.file.rawValue {
             return "doc.fill"
+        } else {
+            return "book.closed.fill"
         }
     }
 }

@@ -52,13 +52,13 @@ struct ObjectView: View {
                     }
                     
                     ForEach(
-                        getObjects(typeSorting == true ? .book : .none, isPinned: true)
+                        getObjects(typeSorting == true ? .file : .none, isPinned: true)
                     ) { object in
                         ObjectLink(for: object)
                     }
                     
                     ForEach(
-                        getObjects(typeSorting == true ? .file : .none, isPinned: true)
+                        getObjects(typeSorting == true ? .book : .none, isPinned: true)
                     ) { object in
                         ObjectLink(for: object)
                     }
@@ -78,13 +78,13 @@ struct ObjectView: View {
                     }
                     
                     ForEach(
-                        getObjects(typeSorting == true ? .book : .none, isPinned: false)
+                        getObjects(typeSorting == true ? .file : .none, isPinned: false)
                     ) { object in
                         ObjectLink(for: object)
                     }
                     
                     ForEach(
-                        getObjects(typeSorting == true ? .file : .none, isPinned: false)
+                        getObjects(typeSorting == true ? .book : .none, isPinned: false)
                     ) { object in
                         ObjectLink(for: object)
                     }

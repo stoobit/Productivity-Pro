@@ -40,6 +40,8 @@ struct HomeworkItem: View {
                             )
                         } else if contentObject.type == COType.vocabulary.rawValue {
                             VocabularyViewContainer(object: contentObject)
+                        } else if contentObject.type == COType.book.rawValue {
+                            BookView(book: contentObject.book!)
                         }
                     } else {
                         UnavailableView()
