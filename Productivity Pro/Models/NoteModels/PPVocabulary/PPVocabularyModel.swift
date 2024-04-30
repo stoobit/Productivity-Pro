@@ -13,5 +13,7 @@ import SwiftData
         self.filename = filename
     }
     
+    init() {}
+    
     var filename: String = ""
 }

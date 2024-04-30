@@ -107,6 +107,10 @@ extension ObjectView {
             objects = objects.filter {
                 $0.type == COType.folder.rawValue
             }
+        } else if type == .book {
+            objects = objects.filter {
+                $0.type == COType.book.rawValue
+            }
         }
         
         if isReverse == false {

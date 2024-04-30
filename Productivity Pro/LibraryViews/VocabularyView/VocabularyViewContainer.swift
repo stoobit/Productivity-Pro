@@ -12,7 +12,7 @@ struct VocabularyViewContainer: View {
     var object: ContentObject
     
     var body: some View {
-        VocabularyList(model: object.vocabulary!)
+        VocabularyList(model: object.vocabulary ?? PPVocabularyModel())
             .navigationTitle(object.title)
             .toolbarRole(.browser)
             .navigationBarTitleDisplayMode(.inline)

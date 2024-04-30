@@ -116,6 +116,8 @@
 		BB61D9152BCDB84200CA1EDE /* UITFRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61D9142BCDB84200CA1EDE /* UITFRepresentable.swift */; };
 		BB624F8229E6A2D0000BEC05 /* FormSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */; };
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
+		BB62EDF82BE18E0100321E38 /* ObjectViewBookLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62EDF72BE18E0100321E38 /* ObjectViewBookLink.swift */; };
+		BB62EDFA2BE1929900321E38 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62EDF92BE1929900321E38 /* BookView.swift */; };
 		BB655B002AB772F100FB005A /* NoteViewModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AFF2AB772F100FB005A /* NoteViewModals.swift */; };
 		BB6701582AADEFA7001F468A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6701572AADEFA7001F468A /* ContentView.swift */; };
 		BB67015B2AADF2D5001F468A /* PPSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB67015A2AADF2D5001F468A /* PPSettingsView.swift */; };
@@ -436,6 +438,8 @@
 		BB61D9142BCDB84200CA1EDE /* UITFRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITFRepresentable.swift; sourceTree = "<group>"; };
 		BB624F8129E6A2D0000BEC05 /* FormSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSpacer.swift; sourceTree = "<group>"; };
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
+		BB62EDF72BE18E0100321E38 /* ObjectViewBookLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewBookLink.swift; sourceTree = "<group>"; };
+		BB62EDF92BE1929900321E38 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		BB655AFF2AB772F100FB005A /* NoteViewModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModals.swift; sourceTree = "<group>"; };
 		BB6701572AADEFA7001F468A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB67015A2AADF2D5001F468A /* PPSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSettingsView.swift; sourceTree = "<group>"; };
@@ -1010,6 +1014,7 @@
 				BB844FBD2AC2385F00EE9C93 /* ObjectViewFolderLink.swift */,
 				BB7984672AC37E1E00CF3D24 /* ObjectViewFileLink.swift */,
 				BBE4B6932BD51CDD006DFDD5 /* ObjectViewVocabularyLink.swift */,
+				BB62EDF72BE18E0100321E38 /* ObjectViewBookLink.swift */,
 				BBCDBFBB2AC8D76200EF825F /* RenameContentObject.swift */,
 				BB4CDF6F2B30DC8000E5D612 /* ObjectViewMethods */,
 			);
@@ -1220,6 +1225,7 @@
 		BB94F3562BD5BF02009B95CD /* BookView */ = {
 			isa = PBXGroup;
 			children = (
+				BB62EDF92BE1929900321E38 /* BookView.swift */,
 			);
 			path = BookView;
 			sourceTree = "<group>";
@@ -1850,6 +1856,7 @@
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
 				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
+				BB62EDF82BE18E0100321E38 /* ObjectViewBookLink.swift in Sources */,
 				BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */,
 				BB7332522A294FE00001FD6A /* PageBackgroundScan.swift in Sources */,
 				BBF663F92AC4E71C00FD9813 /* ObjectPicker.swift in Sources */,
@@ -1928,6 +1935,7 @@
 				BB9BFB6E2AC7819400255293 /* TrashView.swift in Sources */,
 				BB49841F2BC32FCD008D45B0 /* AIView.swift in Sources */,
 				BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */,
+				BB62EDFA2BE1929900321E38 /* BookView.swift in Sources */,
 				BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */,
 				BB93677D2AC9D3F40096F20E /* PPCanvasType.swift in Sources */,
 				BBEF06D62ABF6654007EDFF6 /* SubjectSettingsRow.swift in Sources */,

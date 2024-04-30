@@ -39,9 +39,7 @@ struct ObjectView: View {
     @State var libraryView: Bool = false
 
     var body: some View {
-        @Bindable var subviewValue = subviewManager
-        
-        return ZStack {
+        ZStack {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
             
@@ -49,6 +47,12 @@ struct ObjectView: View {
                 Section {
                     ForEach(
                         getObjects(typeSorting == true ? .vocabulary : .all, isPinned: true)
+                    ) { object in
+                        ObjectLink(for: object)
+                    }
+                    
+                    ForEach(
+                        getObjects(typeSorting == true ? .book : .none, isPinned: true)
                     ) { object in
                         ObjectLink(for: object)
                     }
@@ -69,6 +73,12 @@ struct ObjectView: View {
                 Section {
                     ForEach(
                         getObjects(typeSorting == true ? .vocabulary : .all, isPinned: false)
+                    ) { object in
+                        ObjectLink(for: object)
+                    }
+                    
+                    ForEach(
+                        getObjects(typeSorting == true ? .book : .none, isPinned: false)
                     ) { object in
                         ObjectLink(for: object)
                     }
@@ -144,6 +154,12 @@ struct ObjectView: View {
             }
         } else if object.type == COType.vocabulary.rawValue {
             ObjectViewVocabularyLink(
+                contentObjects: contentObjects, object: object
+            ) {
+                context.delete(object)
+            }
+        } else {
+            ObjectViewBookLink(
                 contentObjects: contentObjects, object: object
             ) {
                 context.delete(object)
