@@ -10,7 +10,7 @@ import SwiftUI
 
 extension LIAPView {
     @ViewBuilder
-    func BookCard(title: String, author: String, image: String, id: String) -> some View {
+    func BookCard(book: PPBookModel) -> some View {
         ZStack(alignment: .top) {
             ZStack(alignment: .bottom) {
                 ZStack {
@@ -27,11 +27,11 @@ extension LIAPView {
                     
                 Group {
                     VStack(alignment: .leading) {
-                        Text(title)
+                        Text(book.title)
                             .font(.headline)
                             .foregroundStyle(.white)
                             
-                        Text(author)
+                        Text(book.author)
                             .font(.callout)
                             .foregroundStyle(.white.secondary)
                     }
@@ -43,8 +43,9 @@ extension LIAPView {
                     .padding()
                         
                     Group {
-                        if unlockedBooks.value.contains(id) {
+                        if unlockedBooks.value.contains(book.iapID) {
                             Button(action: {
+                                addBook(book: book)
                                 dismiss()
                             }) {
                                 Image(systemName: "plus")
@@ -58,10 +59,12 @@ extension LIAPView {
                                     .padding(.bottom, 15)
                             }
                         } else {
-                            ProductView(id: id)
+                            ProductView(id: book.iapID)
                                 .onInAppPurchaseCompletion { _, result in
                                     if case .success(.success) = result {
-                                        unlockedBooks.value.append(id)
+                                        unlockedBooks.value.append(
+                                            book.iapID
+                                        )
                                     }
                                 }
                         }
@@ -79,7 +82,7 @@ extension LIAPView {
                 .frame(width: 320, height: 120)
             }
                 
-            Image(image)
+            Image(book.image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 320, height: 320)

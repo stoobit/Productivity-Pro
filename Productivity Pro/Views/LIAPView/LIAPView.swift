@@ -25,10 +25,7 @@ struct LIAPView: View {
                     ScrollView(.horizontal) {
                         LazyHStack {
                             ForEach(books) { book in
-                                BookCard(
-                                    title: book.title, author: book.author,
-                                    image: book.image, id: book.iapID
-                                )
+                                BookCard(book: book)
                             }
                         }
                         .scrollTargetLayout()
