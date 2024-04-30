@@ -14,6 +14,7 @@ struct HAdditView: View {
     
     var contentObjects: [ContentObject]
     let view: HAdditType
+    
     @Binding var selected: Homework
     
     @AppStorage("ppsubjects")
@@ -24,7 +25,10 @@ struct HAdditView: View {
         bySettingHour: 15, minute: 30, second: 00, of: Date()
     )!
     
-    @State var homework: Homework
+    @State var title: String = ""
+    @State var subject: String = ""
+    @State var description: String = ""
+    @State var date: Date = .init()
     
     @State var linkNote: Bool = false
     @State var showPicker: Bool = false
@@ -36,28 +40,28 @@ struct HAdditView: View {
                 Section {
                     HStack(spacing: 2) {
                         Image(systemName:
-                            getSubject(from: homework.subject).icon
+                            getSubject(from: subject).icon
                         )
                         .foregroundStyle(.white)
                         .background {
                             Circle()
                                 .frame(width: 40, height: 40)
-                                .foregroundStyle(
-                                    Color(
-                                        rawValue: getSubject(
-                                            from: homework.subject
-                                        ).color
-                                    )
-                                )
+                                .foregroundStyle(Color(
+                                    rawValue: getSubject(
+                                        from: subject
+                                    ).color
+                                ))
                         }
                         .frame(width: 40, height: 40)
                         .transition(.blurReplace())
-                        .animation(.bouncy, value: homework.subject)
+                        .animation(.bouncy, value: subject)
                         
-                        Picker("Fach", selection: $homework.subject) {
+                        Picker("Fach", selection: $subject) {
                             Section {
                                 ForEach(
-                                    subjects.value.sorted(by: { $0.title < $1.title })
+                                    subjects.value.sorted(by: {
+                                        $0.title < $1.title
+                                    })
                                 ) { subject in
                                     Text(subject.title)
                                         .tag(subject.title)
@@ -71,12 +75,12 @@ struct HAdditView: View {
                 }
                 
                 Section {
-                    TextField("Titel", text: $homework.title)
+                    TextField("Titel", text: $title)
                         .frame(height: 30)
                     
                     DatePicker(
                         "Zu erledigen bis zum",
-                        selection: $homework.date,
+                        selection: $date,
                         in: dateRange,
                         displayedComponents: .date
                     )
@@ -104,7 +108,7 @@ struct HAdditView: View {
                     }
                 }
                 
-                TextEditor(text: $homework.homeworkDescription)
+                TextEditor(text: $description)
                     .listRowInsets(edgeInsets())
                     .frame(minHeight: 220)
             }
@@ -113,7 +117,7 @@ struct HAdditView: View {
                 if view == .add {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Hinzufügen") { add() }
-                            .disabled(homework.title == "")
+                            .disabled(title == "")
                     }
                     
                     ToolbarItem(placement: .cancellationAction) {
@@ -122,7 +126,7 @@ struct HAdditView: View {
                 } else {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Fertig") { edit() }
-                            .disabled(homework.title == "")
+                            .disabled(title == "")
                     }
                 }
             }
@@ -133,18 +137,17 @@ struct HAdditView: View {
     
     func setup() {
         if view == .add {
-            homework.date = Calendar.current.date(
-                byAdding: .day, value: 1, to: homework.date
-            )!
-            
-            homework.subject = subjects.value.sorted(
-                by: { $0.title < $1.title }
-            )[0].title
+            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+            subject = subjects.value.sorted(by: {
+                $0.title < $1.title
+            })[0].title
         } else {
-            homework.subject = selected.subject
-            homework.title = selected.title
-            homework.date = selected.date
-            homework.note = selected.note
+            title = selected.title
+            subject = selected.subject
+            date = selected.date
+            
+            description = selected.homeworkDescription
+            pickedNote = selected.note?.id.uuidString ?? ""
             
             linkNote = selected.note != nil
             pickedNote = selected.note?.id.uuidString ?? ""

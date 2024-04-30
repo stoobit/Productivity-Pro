@@ -10,21 +10,22 @@ import SwiftUI
 extension HAdditView {
     func edit() {
         Task { @MainActor in
-            
             withAnimation(.bouncy) {
-                selected.subject = homework.subject
-                selected.title = homework.title
-                selected.homeworkDescription = homework.homeworkDescription
+                selected.title = title
+                selected.subject = subject
+                selected.homeworkDescription = description
                 
                 selected.date = Calendar.current.date(
                     bySettingHour: 5, minute: 00, second: 0,
-                    of: homework.date
+                    of: date
                 )!
                 
                 if linkNote, pickedNote != "" {
                     selected.note = contentObjects.first(where: {
                         $0.id.uuidString == pickedNote
                     })
+                } else {
+                    selected.note = nil
                 }
             }
             
@@ -33,15 +34,21 @@ extension HAdditView {
                     withIdentifiers: [selected.id.uuidString]
                 )
             
-            pushNotification()
+            pushNotification(homework: selected)
             try? context.save()
             dismiss()
         }
     }
     
     func add() {
+        let homework = Homework()
+        
+        homework.title = title
+        homework.subject = subject
+        homework.homeworkDescription = description
+        
         homework.date = Calendar.current.date(
-            bySettingHour: 5, minute: 00, second: 0, of: homework.date
+            bySettingHour: 5, minute: 00, second: 0, of: date
         )!
         
         if linkNote, pickedNote != "" {
@@ -51,7 +58,7 @@ extension HAdditView {
         }
     
         context.insert(homework)
-        pushNotification()
+        pushNotification(homework: homework)
         
         dismiss()
     }
@@ -70,7 +77,7 @@ extension HAdditView {
         return subject
     }
     
-    func pushNotification() {
+    func pushNotification(homework: Homework) {
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default
         content.title = homework.title
