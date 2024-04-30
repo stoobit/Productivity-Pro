@@ -23,7 +23,9 @@ struct HomeworkItem: View {
     
     var body: some View {
         Group {
-            if homework.note == nil {
+            if homework.note == nil || contentObjects.contains(where: {
+                $0 == homework.note
+            }) == false {
                 if isUnlocked {
                     Item()
                 } else {
@@ -32,12 +34,14 @@ struct HomeworkItem: View {
                 }
             } else {
                 NavigationLink(destination: {
-                    if homework.note?.type == COType.vocabulary.rawValue {
-                        VocabularyViewContainer(object: homework.note!)
-                    } else if let note = homework.note {
-                        NoteView(
-                            contentObjects: contentObjects, contentObject: note
-                        )
+                    if let contentObject = homework.note {
+                        if contentObject.type == COType.file.rawValue {
+                            NoteView(
+                                contentObjects: contentObjects, contentObject: contentObject
+                            )
+                        } else if contentObject.type == COType.vocabulary.rawValue {
+                            VocabularyViewContainer(object: contentObject)
+                        }
                     } else {
                         ZStack {
                             Color(UIColor.systemGroupedBackground)
