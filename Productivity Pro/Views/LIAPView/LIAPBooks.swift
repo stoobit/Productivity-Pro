@@ -20,55 +20,55 @@ let books: [PPBookModel] = [
         title: "Emilia Galotti",
         author: "Gotthold Ephraim Lessing",
         image: "galotti", 
-        filename: ""
+        filename: "emiliagalotti_lessing"
     ),
     Book(
         iapID: "com.stoobit.productivitypro.library.book.kabaleundliebe",
         title: "Kabale und Liebe",
         author: "Friedrich Schiller",
         image: "kabale",
-        filename: ""
+        filename: "kabaleundliebe_schiller"
     ),
     Book(
         iapID: "com.stoobit.productivitypro.library.book.werther",
         title: "Die Leiden des jungen Werther",
         author: "Johann Wolfgang von Goethe",
         image: "werther",
-        filename: ""
+        filename: "werther_goethe"
     ),
     Book(
         iapID: "com.stoobit.productivitypro.library.book.derprozess",
         title: "Der Prozeß",
         author: "Franz Kafka",
         image: "prozess",
-        filename: ""
+        filename: "prozess_kafka"
     ),
     Book(
         iapID: "com.stoobit.productivitypro.library.book.dereingebildetekranke",
         title: "Der eingebildete Kranke",
         author: "Molière",
         image: "kranke",
-        filename: ""
+        filename: "kranker_moliere"
     ),
     Book(
         iapID: "com.stoobit.productivitypro.library.book.derdrauumling",
         title: "Der Dräumling",
         author: "Wilhelm Karl Raabe",
         image: "draumling",
-        filename: ""
+        filename: "dräumling_raabe"
     ),
     Book(
         iapID: "com.stoobit.productivitypro.library.book.derschimmelreiter",
         title: "Der Schimmelreiter",
         author: "Theodor Storm",
         image: "reiter",
-        filename: ""
+        filename: "schimmelreiter_storm"
     ),
     Book(
         iapID: "com.stoobit.productivitypro.library.book.fruehlingserwachen",
         title: "Frühlings Erwachen",
         author: "Frank Wedekind",
         image: "erwachen",
-        filename: ""
+        filename: "fruehling_wedekind"
     ),
 ]

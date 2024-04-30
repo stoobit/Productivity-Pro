@@ -11,6 +11,8 @@ struct BookView: View {
     var book: PPBookModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { proxy in
+            PDFBookView(book: book, proxy: proxy)
+        }
     }
 }

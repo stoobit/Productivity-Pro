@@ -118,6 +118,15 @@
 		BB626D922B27704B004B4EEA /* FileTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB626D912B27704B004B4EEA /* FileTypes.swift */; };
 		BB62EDF82BE18E0100321E38 /* ObjectViewBookLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62EDF72BE18E0100321E38 /* ObjectViewBookLink.swift */; };
 		BB62EDFA2BE1929900321E38 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62EDF92BE1929900321E38 /* BookView.swift */; };
+		BB62EDFC2BE19CC200321E38 /* PDFBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62EDFB2BE19CC200321E38 /* PDFBookView.swift */; };
+		BB62EE052BE19FC000321E38 /* kranker_moliere.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB62EDFD2BE19FBF00321E38 /* kranker_moliere.pdf */; };
+		BB62EE062BE19FC000321E38 /* prozess_kafka.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB62EDFE2BE19FBF00321E38 /* prozess_kafka.pdf */; };
+		BB62EE072BE19FC000321E38 /* dräumling_raabe.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB62EDFF2BE19FC000321E38 /* dräumling_raabe.pdf */; };
+		BB62EE082BE19FC000321E38 /* fruehling_wedekind.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB62EE002BE19FC000321E38 /* fruehling_wedekind.pdf */; };
+		BB62EE092BE19FC000321E38 /* kabaleundliebe_schiller.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB62EE012BE19FC000321E38 /* kabaleundliebe_schiller.pdf */; };
+		BB62EE0A2BE19FC000321E38 /* werther_goethe.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB62EE022BE19FC000321E38 /* werther_goethe.pdf */; };
+		BB62EE0B2BE19FC000321E38 /* emiliagalotti_lessing.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB62EE032BE19FC000321E38 /* emiliagalotti_lessing.pdf */; };
+		BB62EE0C2BE19FC000321E38 /* schimmelreiter_storm.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BB62EE042BE19FC000321E38 /* schimmelreiter_storm.pdf */; };
 		BB655B002AB772F100FB005A /* NoteViewModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB655AFF2AB772F100FB005A /* NoteViewModals.swift */; };
 		BB6701582AADEFA7001F468A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6701572AADEFA7001F468A /* ContentView.swift */; };
 		BB67015B2AADF2D5001F468A /* PPSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB67015A2AADF2D5001F468A /* PPSettingsView.swift */; };
@@ -440,6 +449,15 @@
 		BB626D912B27704B004B4EEA /* FileTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTypes.swift; sourceTree = "<group>"; };
 		BB62EDF72BE18E0100321E38 /* ObjectViewBookLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewBookLink.swift; sourceTree = "<group>"; };
 		BB62EDF92BE1929900321E38 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		BB62EDFB2BE19CC200321E38 /* PDFBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFBookView.swift; sourceTree = "<group>"; };
+		BB62EDFD2BE19FBF00321E38 /* kranker_moliere.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = kranker_moliere.pdf; sourceTree = "<group>"; };
+		BB62EDFE2BE19FBF00321E38 /* prozess_kafka.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = prozess_kafka.pdf; sourceTree = "<group>"; };
+		BB62EDFF2BE19FC000321E38 /* dräumling_raabe.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "dräumling_raabe.pdf"; sourceTree = "<group>"; };
+		BB62EE002BE19FC000321E38 /* fruehling_wedekind.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = fruehling_wedekind.pdf; sourceTree = "<group>"; };
+		BB62EE012BE19FC000321E38 /* kabaleundliebe_schiller.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = kabaleundliebe_schiller.pdf; sourceTree = "<group>"; };
+		BB62EE022BE19FC000321E38 /* werther_goethe.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = werther_goethe.pdf; sourceTree = "<group>"; };
+		BB62EE032BE19FC000321E38 /* emiliagalotti_lessing.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = emiliagalotti_lessing.pdf; sourceTree = "<group>"; };
+		BB62EE042BE19FC000321E38 /* schimmelreiter_storm.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = schimmelreiter_storm.pdf; sourceTree = "<group>"; };
 		BB655AFF2AB772F100FB005A /* NoteViewModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModals.swift; sourceTree = "<group>"; };
 		BB6701572AADEFA7001F468A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BB67015A2AADF2D5001F468A /* PPSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPSettingsView.swift; sourceTree = "<group>"; };
@@ -678,6 +696,14 @@
 			isa = PBXGroup;
 			children = (
 				BB35A1B92B290A3B001A3F4C /* latinvocabulary.json */,
+				BB62EDFF2BE19FC000321E38 /* dräumling_raabe.pdf */,
+				BB62EE032BE19FC000321E38 /* emiliagalotti_lessing.pdf */,
+				BB62EE002BE19FC000321E38 /* fruehling_wedekind.pdf */,
+				BB62EE012BE19FC000321E38 /* kabaleundliebe_schiller.pdf */,
+				BB62EDFD2BE19FBF00321E38 /* kranker_moliere.pdf */,
+				BB62EDFE2BE19FBF00321E38 /* prozess_kafka.pdf */,
+				BB62EE042BE19FC000321E38 /* schimmelreiter_storm.pdf */,
+				BB62EE022BE19FC000321E38 /* werther_goethe.pdf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1226,6 +1252,7 @@
 			isa = PBXGroup;
 			children = (
 				BB62EDF92BE1929900321E38 /* BookView.swift */,
+				BB62EDFB2BE19CC200321E38 /* PDFBookView.swift */,
 			);
 			path = BookView;
 			sourceTree = "<group>";
@@ -1746,9 +1773,17 @@
 				BB9C63B62B5AFE2A0022AC4F /* README.md in Resources */,
 				BB341B0D2BCDDDBE00BF3A93 /* InfoPlist.xcstrings in Resources */,
 				BB3EE92D2ACBFB1D00FA0702 /* Localizable.xcstrings in Resources */,
+				BB62EE0B2BE19FC000321E38 /* emiliagalotti_lessing.pdf in Resources */,
+				BB62EE092BE19FC000321E38 /* kabaleundliebe_schiller.pdf in Resources */,
 				BB4CDD4A28D3C66A009A409F /* Preview Assets.xcassets in Resources */,
+				BB62EE062BE19FC000321E38 /* prozess_kafka.pdf in Resources */,
+				BB62EE082BE19FC000321E38 /* fruehling_wedekind.pdf in Resources */,
+				BB62EE0C2BE19FC000321E38 /* schimmelreiter_storm.pdf in Resources */,
+				BB62EE052BE19FC000321E38 /* kranker_moliere.pdf in Resources */,
 				BB33D52A2BBDC4AF000AE4EA /* PrivacyInfo.xcprivacy in Resources */,
 				BB4CDD4728D3C66A009A409F /* Assets.xcassets in Resources */,
+				BB62EE072BE19FC000321E38 /* dräumling_raabe.pdf in Resources */,
+				BB62EE0A2BE19FC000321E38 /* werther_goethe.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1986,6 +2021,7 @@
 				BB9A36472ABCCF5E00721C56 /* HomeworkList.swift in Sources */,
 				BBC2C90729C5CFB40044B201 /* SnapItemView.swift in Sources */,
 				BB3208AA2981E8E90014F602 /* ScannerHelper.swift in Sources */,
+				BB62EDFC2BE19CC200321E38 /* PDFBookView.swift in Sources */,
 				BBAF6D0A2BD492BB00FAA524 /* LIAPVocabularyCard.swift in Sources */,
 				BB49EE062BC5C4DA004CB803 /* PPScrollViewCoordinator.swift in Sources */,
 				BB4984182BC32FA7008D45B0 /* LlamaState.swift in Sources */,
