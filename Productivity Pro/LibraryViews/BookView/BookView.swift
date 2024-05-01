@@ -9,10 +9,13 @@ import PDFKit
 import SwiftUI
 
 struct BookView: View {
+    @Environment(\.scenePhase) var scenePhase
     @Environment(\.dismiss) var dismiss
     var book: PPBookModel
 
     @State var view = PDFView()
+    @State var toggle: Bool = false
+    @State var showCover: Bool = true
 
     var body: some View {
         GeometryReader { proxy in
@@ -22,9 +25,20 @@ struct BookView: View {
                 .toolbarRole(.browser)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden()
+                .onChange(of: scenePhase) {
+                    book.position = view.document?.index(
+                        for: view.currentPage!
+                    ) ?? book.position
+                }
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarLeading) {
-                        Button(action: { dismiss() }) {
+                        Button(action: {
+                            book.position = view.document?.index(
+                                for: view.currentPage!
+                            ) ?? book.position
+
+                            dismiss()
+                        }) {
                             Label("Zurück", systemImage: "chevron.left")
                         }
                     }
@@ -34,20 +48,30 @@ struct BookView: View {
                             highlight()
                         }
                     }
-                    
-//                    ToolbarItemGroup(placement: .secondaryAction) {
-//                        Button("Highlight", systemImage: "highlighter") {
-//                            highlight()
-//                        }
-//                    }
                 }
+                .modifier(OrientationUpdater(isPortrait: toggle))
+                .onChange(of: proxy.size) {
+                    toggle.toggle()
+                }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                        withAnimation(.bouncy) {
+                            showCover = false
+                        }
+                    }
+                }
+        }
+        .overlay {
+            if showCover {
+                
+            }
         }
     }
 
     func highlight() {
-        guard let selections = view.currentSelection?.selectionsByLine()
-        else { return }
-        
+        guard let selection = view.currentSelection else { return }
+        let selections = selection.selectionsByLine()
+
         selections.forEach { selection in
             selection.pages.forEach { page in
                 let highlight = PDFAnnotation(
@@ -55,21 +79,17 @@ struct BookView: View {
                     forType: .highlight,
                     withProperties: nil
                 )
-                
+
                 highlight.color = .yellow
-                
-                let point = CGPoint(
-                    x: selection.bounds(for: page).minX, y: selection.bounds(for: page).minY
-                )
-                
-                if (page.annotation(at: point) == nil) {
-                    page.addAnnotation(highlight)
-                } else {
-                    page.removeAnnotation(highlight)
-                }
+                page.addAnnotation(highlight)
+
+                book.annotations.append(highlight.encode())
             }
         }
-        
-        view.document?.write(to: PDFBookView.url(for: book))
+    }
+    
+    @ViewBuilder func Cover() -> some View {
+        Rectangle()
+            .foregroundStyle(.background)
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import PencilKit
 import SwiftData
+import PDFKit
 
 @Model class PPBookModel: Identifiable {
     let id = UUID()

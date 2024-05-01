@@ -33,12 +33,15 @@ struct PDFBookView: UIViewRepresentable {
             let rect = page.bounds(for: .mediaBox)
 
             view.autoScales = false
-            view.scaleFactor = proxy.size.width / rect.width
+            view.scaleFactor = (proxy.size.width / rect.width) * 0.95
             view.minScaleFactor = view.scaleFactor
             view.maxScaleFactor = view.scaleFactor
             view.pageShadowsEnabled = false
             view.backgroundColor = .white
             view.hideScrollViewIndicator()
+            view.go(to: pdf!.page(at: book.position) ?? PDFPage())
+            
+            loadAnnotations()
 
             // Return View
             return view
@@ -59,6 +62,17 @@ struct PDFBookView: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
+    
+    func loadAnnotations() {
+        for annotation in book.annotations {
+            for index in 0...(view.document?.pageCount ?? 1) {
+                let page = view.document?.page(at: index)
+                page?.addAnnotation(PDFAnnotation.decode(annotation))
+            }
+        }
+        
+        print(book.annotations.count)
+    }
 }
 
 extension PDFView {
@@ -67,7 +81,6 @@ extension PDFView {
             if let scrollView = subview as? UIScrollView {
                 scrollView.showsVerticalScrollIndicator = false
                 scrollView.showsHorizontalScrollIndicator = false
-                scrollView.setContentOffset(.zero, animated: false)
                 return
             }
         }
