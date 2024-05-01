@@ -20,8 +20,6 @@
 		BB1321F02985F547006AD59D /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1321EF2985F547006AD59D /* MediaType.swift */; };
 		BB15F2212A6968E400223C92 /* ColorPickerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB15F2202A6968E400223C92 /* ColorPickerHelper.swift */; };
 		BB16D3552BE2857B008B3E11 /* PDFAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB16D3542BE2857B008B3E11 /* PDFAnnotation.swift */; };
-		BB16D35A2BE2C2D9008B3E11 /* 320.png in Resources */ = {isa = PBXBuildFile; fileRef = BB16D3582BE2C2D9008B3E11 /* 320.png */; };
-		BB16D35B2BE2C2D9008B3E11 /* 64.png in Resources */ = {isa = PBXBuildFile; fileRef = BB16D3592BE2C2D9008B3E11 /* 64.png */; };
 		BB174F552A1051B400F753F6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB174F542A1051B400F753F6 /* Date.swift */; };
 		BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E693F2A71CE01008E0C5F /* TemplateView.swift */; };
 		BB1E69422A71DAC0008E0C5F /* TemplateViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */; };
@@ -352,8 +350,6 @@
 		BB1321EF2985F547006AD59D /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		BB15F2202A6968E400223C92 /* ColorPickerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerHelper.swift; sourceTree = "<group>"; };
 		BB16D3542BE2857B008B3E11 /* PDFAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFAnnotation.swift; sourceTree = "<group>"; };
-		BB16D3582BE2C2D9008B3E11 /* 320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 320.png; sourceTree = "<group>"; };
-		BB16D3592BE2C2D9008B3E11 /* 64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 64.png; sourceTree = "<group>"; };
 		BB174F542A1051B400F753F6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BB1E693F2A71CE01008E0C5F /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		BB1E69412A71DAC0008E0C5F /* TemplateViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewHelper.swift; sourceTree = "<group>"; };
@@ -991,8 +987,6 @@
 				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB33D5292BBDC3BE000AE4EA /* PrivacyInfo.xcprivacy */,
 				BBD930F82B20FA0000A37F95 /* Premium.storekit */,
-				BB16D3592BE2C2D9008B3E11 /* 64.png */,
-				BB16D3582BE2C2D9008B3E11 /* 320.png */,
 			);
 			path = "Productivity Pro";
 			sourceTree = "<group>";
@@ -1793,11 +1787,9 @@
 				BB62EE0C2BE19FC000321E38 /* schimmelreiter_storm.pdf in Resources */,
 				BB62EE052BE19FC000321E38 /* kranker_moliere.pdf in Resources */,
 				BB33D52A2BBDC4AF000AE4EA /* PrivacyInfo.xcprivacy in Resources */,
-				BB16D35B2BE2C2D9008B3E11 /* 64.png in Resources */,
 				BB4CDD4728D3C66A009A409F /* Assets.xcassets in Resources */,
 				BB62EE072BE19FC000321E38 /* dräumling_raabe.pdf in Resources */,
 				BB62EE0A2BE19FC000321E38 /* werther_goethe.pdf in Resources */,
-				BB16D35A2BE2C2D9008B3E11 /* 320.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,10 +27,7 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeIcons</key>
-			<array>
-				<string>320.png</string>
-				<string>64.png</string>
-			</array>
+			<array/>
 			<key>CFBundleTypeName</key>
 			<string>Pro Backup</string>
 			<key>LSHandlerRank</key>
