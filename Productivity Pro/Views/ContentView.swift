@@ -96,13 +96,6 @@ private struct ContentView: View {
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
-//
-//                AIView()
-//                    .toolbarBackground(.visible, for: .tabBar)
-//                    .tag(3)
-//                    .tabItem {
-//                        Label("AI", systemImage: "brain.fill")
-//                    }
                 
                 PPSettingsView()
                     .onAppear {
@@ -123,7 +116,9 @@ private struct ContentView: View {
                 OpenURL(
                     objects: contentObjects,
                     contentObjects: contentObjects
-                )
+                ) {
+                    selectedTab = 0
+                }
             )
             .scrollDisabled(toolManager.showProgress)
             .environment(toolManager)
@@ -138,9 +133,6 @@ private struct ContentView: View {
             }
             .animation(.bouncy, value: toolManager.showProgress)
         }
-        .onOpenURL(perform: { url in
-            handle(url: url)
-        })
         .onAppear {
             review()
         }
@@ -169,23 +161,5 @@ private struct ContentView: View {
                 isUnlocked = true
             }
         }
-    }
-    
-    func handle(url: URL) {
-        guard url.scheme == "productivitypro" else {
-            return
-        }
-        
-        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else {
-            print("Invalid URL")
-            return
-        }
-
-        guard let action = components.host, action == "tasks" else {
-            print("Unknown URL, we can't handle this one!")
-            return
-        }
-        
-        selectedTab = 3
     }
 }

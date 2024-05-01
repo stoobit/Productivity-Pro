@@ -22,11 +22,14 @@ struct OpenURL: ViewModifier {
     @State var showAlert: Bool = false
     
     var contentObjects: [ContentObject]
+    
+    let handle: () -> Void
 
     func body(content: Content) -> some View {
         content
             .onOpenURL(perform: { url in
                 if url.scheme == "productivitypro" {
+                    handle()
                     return
                 }
                 

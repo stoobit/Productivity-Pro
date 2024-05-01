@@ -39,9 +39,10 @@ struct BookView: View {
                             Label("Zurück", systemImage: "chevron.left")
                         }
                     }
-
-                    ToolbarItemGroup(placement: .secondaryAction) {
-                        Button("Highlight", systemImage: "highlighter") {
+                }
+                .toolbar(id: "tools") {
+                    ToolbarItem(id: "highlight", placement: .secondaryAction) {
+                        Button("Highlighter", systemImage: "highlighter") {
                             highlight()
                         }
                     }
