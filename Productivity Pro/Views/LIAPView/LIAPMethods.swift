@@ -34,12 +34,14 @@ extension LIAPView {
             guard let url = Bundle.main.url(
                 forResource: book.filename, withExtension: "pdf"
             ) else { return }
-                
-            PDFDocument(url: url)?.write(
-                to: .documentsDirectory.appending(
-                    component: "\(bookModel.filename).probook"
+               
+            Task(priority: .userInitiated) {
+                PDFDocument(url: url)?.write(
+                    to: .documentsDirectory.appending(
+                        component: "\(bookModel.filename).probook"
+                    )
                 )
-            )
+            }
         }
     }
     
