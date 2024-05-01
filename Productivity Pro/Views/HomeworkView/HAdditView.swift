@@ -183,10 +183,10 @@ struct HAdditView: View {
         
         if type == COType.vocabulary.rawValue {
             return "laurel.leading"
-        } else if type == COType.file.rawValue {
-            return "doc.fill"
-        } else {
+        } else if type == COType.book.rawValue {
             return "book.closed.fill"
+        } else {
+            return "doc.fill"
         }
     }
 }
