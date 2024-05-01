@@ -422,10 +422,24 @@
       }
     },
     "Blau" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blue"
+          }
+        }
+      }
     },
     "Braun" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brown"
+          }
+        }
+      }
     },
     "Breite" : {
       "localizations" : {
@@ -1018,7 +1032,14 @@
       }
     },
     "Gelb" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yellow"
+          }
+        }
+      }
     },
     "Geographie" : {
       "localizations" : {
@@ -1051,7 +1072,14 @@
       }
     },
     "Grün" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Green"
+          }
+        }
+      }
     },
     "Gruppieren" : {
       "localizations" : {
@@ -1274,7 +1302,14 @@
       }
     },
     "Lila" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purple"
+          }
+        }
+      }
     },
     "Liniert Groß" : {
       "localizations" : {
@@ -1347,7 +1382,14 @@
       }
     },
     "Mint" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mint"
+          }
+        }
+      }
     },
     "Mittwoch" : {
       "localizations" : {
@@ -1470,7 +1512,14 @@
       }
     },
     "Notiz verlinken" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Link Note"
+          }
+        }
+      }
     },
     "Notizen" : {
       "localizations" : {
@@ -1503,7 +1552,14 @@
       }
     },
     "Orange" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orange"
+          }
+        }
+      }
     },
     "Ordner erstellen" : {
       "localizations" : {
@@ -1586,7 +1642,14 @@
       }
     },
     "Pink" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pink"
+          }
+        }
+      }
     },
     "Position" : {
       "localizations" : {
@@ -1709,7 +1772,14 @@
       }
     },
     "Rot" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Red"
+          }
+        }
+      }
     },
     "Scanne diesen QR-Code, um direkt auf eine PDF Version dieser Notiz zugreifen zu können." : {
       "localizations" : {
@@ -1717,17 +1787,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scan this QR code to directly access a PDF version of this note."
-          }
-        }
-      }
-    },
-    "Schließen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Close"
           }
         }
       }
