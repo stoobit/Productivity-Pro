@@ -35,13 +35,11 @@ extension LIAPView {
                 forResource: book.filename, withExtension: "pdf"
             ) else { return }
                
-            Task(priority: .userInitiated) {
-                PDFDocument(url: url)?.write(
-                    to: .documentsDirectory.appending(
-                        component: "\(bookModel.filename).probook"
-                    )
+            PDFDocument(url: url)?.write(
+                to: .documentsDirectory.appending(
+                    component: "\(bookModel.filename).probook"
                 )
-            }
+            )
         }
     }
     
