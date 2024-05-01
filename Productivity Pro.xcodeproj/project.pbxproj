@@ -77,6 +77,7 @@
 		BB4705772B9391E8009A5FCD /* DKModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705722B9391E8009A5FCD /* DKModifier.swift */; };
 		BB4705782B9391E8009A5FCD /* DKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4705732B9391E8009A5FCD /* DKButton.swift */; };
 		BB47057C2B93923A009A5FCD /* PPAnglePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB47057A2B939239009A5FCD /* PPAnglePicker.swift */; };
+		BB4746422BE253BA00B08E6C /* PDFBookViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4746412BE253BA00B08E6C /* PDFBookViewClass.swift */; };
 		BB48220F2B814C1400B5F314 /* RenderedPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB48220E2B814C1400B5F314 /* RenderedPDF.swift */; };
 		BB4932F42B84EC310066E27B /* ImportTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4932F32B84EC310066E27B /* ImportTip.swift */; };
 		BB4984082BC32BC8008D45B0 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4984072BC32BC8008D45B0 /* Metal.framework */; };
@@ -406,6 +407,7 @@
 		BB4705722B9391E8009A5FCD /* DKModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKModifier.swift; sourceTree = "<group>"; };
 		BB4705732B9391E8009A5FCD /* DKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKButton.swift; sourceTree = "<group>"; };
 		BB47057A2B939239009A5FCD /* PPAnglePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAnglePicker.swift; sourceTree = "<group>"; };
+		BB4746412BE253BA00B08E6C /* PDFBookViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFBookViewClass.swift; sourceTree = "<group>"; };
 		BB48220E2B814C1400B5F314 /* RenderedPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderedPDF.swift; sourceTree = "<group>"; };
 		BB4932F32B84EC310066E27B /* ImportTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportTip.swift; sourceTree = "<group>"; };
 		BB4984072BC32BC8008D45B0 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -1253,6 +1255,7 @@
 			children = (
 				BB62EDF92BE1929900321E38 /* BookView.swift */,
 				BB62EDFB2BE19CC200321E38 /* PDFBookView.swift */,
+				BB4746412BE253BA00B08E6C /* PDFBookViewClass.swift */,
 			);
 			path = BookView;
 			sourceTree = "<group>";
@@ -1890,6 +1893,7 @@
 				BB4705782B9391E8009A5FCD /* DKButton.swift in Sources */,
 				BB93677B2AC9D3E30096F20E /* PPPageType.swift in Sources */,
 				BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */,
+				BB4746422BE253BA00B08E6C /* PDFBookViewClass.swift in Sources */,
 				BB3F75F82996D08300C0F140 /* MediaModel.swift in Sources */,
 				BB62EDF82BE18E0100321E38 /* ObjectViewBookLink.swift in Sources */,
 				BBD0DC9C2ACCA428004A2C56 /* TrashViewItem.swift in Sources */,

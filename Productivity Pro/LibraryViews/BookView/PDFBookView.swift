@@ -12,18 +12,20 @@ struct PDFBookView: UIViewRepresentable {
     var book: PPBookModel
     var proxy: GeometryProxy
 
+    @Binding var view: PDFView
+
+    static func url(for book: PPBookModel) -> URL {
+        Bundle.main.url(
+            forResource: book.filename, withExtension: "pdf"
+        ) ?? URL(fileURLWithPath: "")
+    }
+
     func makeUIView(context: Context) -> PDFView {
-        let view = PDFView()
         Task { @MainActor in
+            view.delegate = context.coordinator
 
             // Load Data
-            guard let url = Bundle.main.url(
-                forResource: book.filename, withExtension: "pdf"
-            ) else {
-                return view
-            }
-
-            let pdf = PDFDocument(url: url)
+            let pdf = PDFDocument(url: PDFBookView.url(for: book))
             view.document = pdf
 
             // Set Scale
@@ -48,10 +50,14 @@ struct PDFBookView: UIViewRepresentable {
     func updateUIView(_ uiView: PDFView, context: Context) {
         let page = uiView.document?.page(at: 0) ?? PDFPage()
         let rect = page.bounds(for: .mediaBox)
-        
+
         uiView.scaleFactor = proxy.size.width / rect.width
         uiView.minScaleFactor = uiView.scaleFactor
         uiView.maxScaleFactor = uiView.scaleFactor
+    }
+
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
     }
 }
 

@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import SwiftData
 import PencilKit
+import SwiftData
 
 @Model class PPBookModel: Identifiable {
     let id = UUID()
@@ -32,6 +32,7 @@ import PencilKit
     var image: String
     var filename: String
     
+    var annotations: [Data] = []
     var contentObject: ContentObject?
     
     var position: Int = 0
