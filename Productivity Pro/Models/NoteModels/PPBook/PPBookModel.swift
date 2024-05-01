@@ -32,6 +32,8 @@ import PencilKit
     var image: String
     var filename: String
     
+    var contentObject: ContentObject?
+    
     var position: Int = 0
     var canvas: Data = PKDrawing().dataRepresentation()
 }

@@ -16,4 +16,5 @@ import SwiftData
     init() {}
     
     var filename: String = ""
+    var contentObject: ContentObject?
 }

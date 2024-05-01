@@ -6,6 +6,7 @@
 //
 
 import Mixpanel
+import SwiftData
 import SwiftUI
 
 @main
@@ -16,25 +17,24 @@ struct Productivity_ProApp: App {
     var body: some Scene {
         WindowGroup(id: "main") {
             ContentViewContainer()
+                .onChange(of: scenePhase) {
+                    if scenePhase == .active {
+                        #if DEBUG
+                        #else
+                        Mixpanel.mainInstance()
+                            .track(event: "Opened App", properties: [:])
+                        #endif
+                    }
+                }
         }
         .modelContainer(
             for: [
                 Homework.self,
                 ContentObject.self,
-                PPBookModel.self,
             ],
             isAutosaveEnabled: true,
             isUndoEnabled: false
         )
-        .onChange(of: scenePhase) {
-            if scenePhase == .active {
-                #if DEBUG
-                #else
-                Mixpanel.mainInstance()
-                    .track(event: "Opened App", properties: [:])
-                #endif
-            }
-        }
     }
 }
 
