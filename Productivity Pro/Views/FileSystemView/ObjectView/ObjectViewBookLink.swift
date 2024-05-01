@@ -69,6 +69,14 @@ struct ObjectViewBookLink: View {
             Button(role: .destructive, action: {
                 withAnimation(.bouncy) {
                     delete()
+                    
+                    let url = PDFBookView.url(for: object.book!)
+                    _ = url.startAccessingSecurityScopedResource()
+                    try? FileManager.default.removeItem(
+                        at: PDFBookView.url(for: object.book!)
+                    )
+                    
+                    url.stopAccessingSecurityScopedResource()
                 }
             }) {
                 Label("Entfernen", systemImage: "trash")
