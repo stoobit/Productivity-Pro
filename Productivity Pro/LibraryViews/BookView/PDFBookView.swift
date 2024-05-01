@@ -21,28 +21,28 @@ struct PDFBookView: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> PDFView {
+        view.delegate = context.coordinator
+
+        // Load Data
+        let pdf = PDFDocument(url: PDFBookView.url(for: book))
+        view.document = pdf
+
+        // Set Scale
+        let page = pdf?.page(at: 0) ?? PDFPage()
+        let rect = page.bounds(for: .mediaBox)
+
         Task { @MainActor in
-            view.delegate = context.coordinator
-
-            // Load Data
-            let pdf = PDFDocument(url: PDFBookView.url(for: book))
-            view.document = pdf
-
-            // Set Scale
-            let page = pdf?.page(at: 0) ?? PDFPage()
-            let rect = page.bounds(for: .mediaBox)
-
+            view.hideScrollViewIndicator()
+            
             view.autoScales = false
+            view.displaysPageBreaks = true
             view.scaleFactor = (proxy.size.width / rect.width) * 0.95
             view.minScaleFactor = view.scaleFactor
             view.maxScaleFactor = view.scaleFactor
             view.pageShadowsEnabled = false
             view.backgroundColor = .white
-            view.hideScrollViewIndicator()
+            
             view.go(to: pdf?.page(at: book.position) ?? PDFPage())
-
-            // Return View
-            return view
         }
 
         return view
@@ -52,9 +52,9 @@ struct PDFBookView: UIViewRepresentable {
         let page = uiView.document?.page(at: 0) ?? PDFPage()
         let rect = page.bounds(for: .mediaBox)
 
-        uiView.scaleFactor = proxy.size.width / rect.width
-        uiView.minScaleFactor = uiView.scaleFactor
-        uiView.maxScaleFactor = uiView.scaleFactor
+        uiView.scaleFactor = (proxy.size.width / rect.width) * 0.95
+        uiView.minScaleFactor = view.scaleFactor
+        uiView.maxScaleFactor = view.scaleFactor
     }
 
     func makeCoordinator() -> Coordinator {

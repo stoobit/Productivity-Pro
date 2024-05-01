@@ -421,6 +421,12 @@
         }
       }
     },
+    "Blau" : {
+
+    },
+    "Braun" : {
+
+    },
     "Breite" : {
       "localizations" : {
         "en" : {
@@ -1011,6 +1017,9 @@
         }
       }
     },
+    "Gelb" : {
+
+    },
     "Geographie" : {
       "localizations" : {
         "en" : {
@@ -1041,6 +1050,9 @@
         }
       }
     },
+    "Grün" : {
+
+    },
     "Gruppieren" : {
       "localizations" : {
         "en" : {
@@ -1060,9 +1072,6 @@
           }
         }
       }
-    },
-    "Highlighter" : {
-
     },
     "Hinzufügen" : {
       "localizations" : {
@@ -1264,6 +1273,9 @@
         }
       }
     },
+    "Lila" : {
+
+    },
     "Liniert Groß" : {
       "localizations" : {
         "en" : {
@@ -1333,6 +1345,9 @@
           }
         }
       }
+    },
+    "Mint" : {
+
     },
     "Mittwoch" : {
       "localizations" : {
@@ -1487,6 +1502,9 @@
         }
       }
     },
+    "Orange" : {
+
+    },
     "Ordner erstellen" : {
       "localizations" : {
         "en" : {
@@ -1566,6 +1584,9 @@
           }
         }
       }
+    },
+    "Pink" : {
+
     },
     "Position" : {
       "localizations" : {
@@ -1686,6 +1707,9 @@
           }
         }
       }
+    },
+    "Rot" : {
+
     },
     "Scanne diesen QR-Code, um direkt auf eine PDF Version dieser Notiz zugreifen zu können." : {
       "localizations" : {
