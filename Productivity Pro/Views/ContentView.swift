@@ -138,7 +138,7 @@ private struct ContentView: View {
         }
     }
     
-    func review() {
+    @MainActor func review() {
         if contentObjects.count > 3 {
             #if DEBUG
             #else
