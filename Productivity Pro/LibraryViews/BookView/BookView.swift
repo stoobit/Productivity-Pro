@@ -26,17 +26,14 @@ struct BookView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationBarBackButtonHidden()
                 .onChange(of: scenePhase) {
-                    book.position = view.document?.index(
-                        for: view.currentPage!
-                    ) ?? book.position
+                    if scenePhase != .active {
+                        save(task: false)
+                    }
                 }
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarLeading) {
                         Button(action: {
-                            book.position = view.document?.index(
-                                for: view.currentPage!
-                            ) ?? book.position
-
+                            save()
                             dismiss()
                         }) {
                             Label("Zurück", systemImage: "chevron.left")
@@ -54,7 +51,7 @@ struct BookView: View {
                     toggle.toggle()
                 }
                 .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation(.bouncy) {
                             showCover = false
                         }
@@ -63,7 +60,8 @@ struct BookView: View {
         }
         .overlay {
             if showCover {
-                
+                Cover()
+                    .transition(.opacity)
             }
         }
     }
@@ -82,14 +80,34 @@ struct BookView: View {
 
                 highlight.color = .yellow
                 page.addAnnotation(highlight)
-
-                book.annotations.append(highlight.encode())
             }
         }
     }
-    
+
+    func save(task: Bool = true) {
+        book.position = view.document?.index(
+            for: view.currentPage!
+        ) ?? book.position
+
+        if task {
+            Task(priority: .userInitiated) {
+                await view.document?.write(to: PDFBookView.url(for: book))
+            }
+        } else {
+            view.document?.write(to: PDFBookView.url(for: book))
+        }
+    }
+
     @ViewBuilder func Cover() -> some View {
-        Rectangle()
-            .foregroundStyle(.background)
+        ZStack {
+            Rectangle()
+                .foregroundStyle(.ultraThinMaterial)
+
+            Image(book.image)
+                .interpolation(.high)
+                .resizable()
+                .frame(width: 240, height: 240)
+                .clipShape(.rect(cornerRadius: 16))
+        }
     }
 }

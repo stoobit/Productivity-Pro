@@ -27,6 +27,13 @@ extension UTType {
     }
 }
 
+extension UTType {
+    static var probook: UTType {
+        UTType(importedAs: "com.till-bruegmann.Productivity-Pro.probook")
+    }
+}
+
+
 struct BackupFile: FileDocument {
     static var readableContentTypes = [UTType.probackup]
     var data: Data = Data()

@@ -5,6 +5,7 @@
 //  Created by Till Brügmann on 21.04.24.
 //
 
+import PDFKit
 import SwiftUI
 
 extension LIAPView {
@@ -24,11 +25,21 @@ extension LIAPView {
                 title: book.title,
                 author: book.author,
                 image: book.image,
-                filename: book.filename
+                filename: "\(book.filename) \(Date())"
             )
             
             contentObject.book = bookModel
             context.insert(contentObject)
+            
+            guard let url = Bundle.main.url(
+                forResource: book.filename, withExtension: "pdf"
+            ) else { return }
+                
+            PDFDocument(url: url)?.write(
+                to: .documentsDirectory.appending(
+                    component: "\(bookModel.filename).probook"
+                )
+            )
         }
     }
     

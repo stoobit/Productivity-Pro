@@ -15,9 +15,9 @@ struct PDFBookView: UIViewRepresentable {
     @Binding var view: PDFView
 
     static func url(for book: PPBookModel) -> URL {
-        Bundle.main.url(
-            forResource: book.filename, withExtension: "pdf"
-        ) ?? URL(fileURLWithPath: "")
+        return .documentsDirectory.appending(
+            component: "\(book.filename).probook"
+        )
     }
 
     func makeUIView(context: Context) -> PDFView {
@@ -39,9 +39,7 @@ struct PDFBookView: UIViewRepresentable {
             view.pageShadowsEnabled = false
             view.backgroundColor = .white
             view.hideScrollViewIndicator()
-            view.go(to: pdf!.page(at: book.position) ?? PDFPage())
-            
-            loadAnnotations()
+            view.go(to: pdf?.page(at: book.position) ?? PDFPage())
 
             // Return View
             return view
@@ -61,17 +59,6 @@ struct PDFBookView: UIViewRepresentable {
 
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
-    }
-    
-    func loadAnnotations() {
-        for annotation in book.annotations {
-            for index in 0...(view.document?.pageCount ?? 1) {
-                let page = view.document?.page(at: index)
-                page?.addAnnotation(PDFAnnotation.decode(annotation))
-            }
-        }
-        
-        print(book.annotations.count)
     }
 }
 

@@ -33,7 +33,6 @@ import PDFKit
     var image: String
     var filename: String
     
-    var annotations: [Data] = []
     var contentObject: ContentObject?
     
     var position: Int = 0
