@@ -19,9 +19,7 @@ extension HomeworkList {
     func delete(_ homework: Homework) {
         UNUserNotificationCenter.current()
             .removePendingNotificationRequests(
-                withIdentifiers: [
-                    homework.id.uuidString
-                ]
+                withIdentifiers: [homework.id.uuidString]
             )
         
         context.delete(homework)

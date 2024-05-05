@@ -16,6 +16,12 @@
             "state" : "translated",
             "value" : "Productivity Pro"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Productivity Pro"
+          }
         }
       }
     },
@@ -33,6 +39,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "This app requires camera access to scan documents and add photos to your Productivity Pro notes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta aplicación requiere acceso a la cámara para escanear documentos y agregar fotos a sus notas de Productivity Pro."
           }
         }
       }
@@ -52,6 +64,12 @@
             "state" : "translated",
             "value" : "This app requires access to the Photo Library to import images into your Productivity Pro notes."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta aplicación requiere acceso a la biblioteca de fotos para importar imágenes a sus notas de Productivity Pro."
+          }
         }
       }
     },
@@ -64,6 +82,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro Backup"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pro Backup"
@@ -84,6 +108,12 @@
             "state" : "translated",
             "value" : "Pro Book"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro Libro"
+          }
         }
       }
     },
@@ -100,6 +130,12 @@
             "state" : "translated",
             "value" : "Pro File"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro Archivo"
+          }
         }
       }
     },
@@ -115,6 +151,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pro Note"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro Nota"
           }
         }
       }
