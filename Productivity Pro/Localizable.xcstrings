@@ -8,6 +8,12 @@
             "state" : "translated",
             "value" : ""
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
         }
       }
     },
@@ -28,6 +34,12 @@
             "state" : "translated",
             "value" : "%@"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
         }
       }
     },
@@ -37,6 +49,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edit %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ editar"
           }
         }
       }
@@ -74,6 +92,12 @@
             "state" : "translated",
             "value" : "%1lld of %2lld"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld de %lld"
+          }
         }
       }
     },
@@ -96,6 +120,12 @@
     "%lld%%" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld%%"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld%%"
@@ -140,6 +170,12 @@
             "state" : "translated",
             "value" : "Cancel"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
         }
       }
     },
@@ -160,6 +196,12 @@
             "state" : "translated",
             "value" : "AI"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AI"
+          }
         }
       }
     },
@@ -169,6 +211,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Download AI and use it offline."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descarga AI y úsala sin conexión."
           }
         }
       }
@@ -258,6 +306,12 @@
             "state" : "translated",
             "value" : "Apple Pencil"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Pencil"
+          }
         }
       }
     },
@@ -267,6 +321,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tasks"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tareas"
           }
         }
       }
@@ -386,6 +446,12 @@
             "state" : "translated",
             "value" : "Library"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biblioteca"
+          }
         }
       }
     },
@@ -448,6 +514,12 @@
             "state" : "translated",
             "value" : "To be done by tomorrow"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para hacerlo mañana"
+          }
         }
       }
     },
@@ -468,6 +540,12 @@
             "state" : "translated",
             "value" : "Please import the file via the import menu or the backup view."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importe el archivo a través del menú de importación o la vista de copia de seguridad."
+          }
         }
       }
     },
@@ -477,6 +555,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Blank"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blanco"
           }
         }
       }
@@ -524,6 +608,12 @@
             "state" : "translated",
             "value" : "book p. 92, 2+3"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libro pág. 92, tarea 2+3"
+          }
         }
       }
     },
@@ -553,6 +643,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chemistry"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Química"
           }
         }
       }
@@ -600,6 +696,12 @@
             "state" : "translated",
             "value" : "MMMM d"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "d/MM"
+          }
         }
       }
     },
@@ -639,6 +741,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Show Date"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar fecha"
           }
         }
       }
@@ -712,6 +820,12 @@
             "state" : "translated",
             "value" : "This task must be completed in %@ by tomorrow."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta tarea debe completarse en %@ mañana."
+          }
         }
       }
     },
@@ -761,6 +875,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Thursday"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jueves"
           }
         }
       }
@@ -860,6 +980,12 @@
             "state" : "translated",
             "value" : "You've done everything."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo has hecho todo."
+          }
         }
       }
     },
@@ -869,6 +995,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "You haven't bookmarked any pages."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No has marcado ninguna página."
           }
         }
       }
@@ -880,6 +1012,12 @@
             "state" : "translated",
             "value" : "You haven't created any subjects yet."
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no has creado ninguna asignatura."
+          }
         }
       }
     },
@@ -889,6 +1027,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "You haven't created any notes yet."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no has creado ninguna nota."
           }
         }
       }
@@ -919,6 +1063,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Insert"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Insertar"
           }
         }
       }
@@ -1054,6 +1204,12 @@
             "state" : "translated",
             "value" : "Add Subject"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir asignatura"
+          }
         }
       }
     },
@@ -1110,6 +1266,12 @@
             "state" : "translated",
             "value" : "Shape"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forma"
+          }
         }
       }
     },
@@ -1145,6 +1307,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Free Period"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Periodo libre"
           }
         }
       }
@@ -1198,6 +1366,12 @@
             "state" : "translated",
             "value" : "Geography"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geografía"
+          }
         }
       }
     },
@@ -1249,6 +1423,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Group"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agrupar"
           }
         }
       }
@@ -1315,6 +1495,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Import not possible"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importación no posible"
           }
         }
       }
@@ -1392,6 +1578,12 @@
             "state" : "translated",
             "value" : "Camera"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cámara"
+          }
         }
       }
     },
@@ -1448,6 +1640,12 @@
             "state" : "translated",
             "value" : "Latin"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latín"
+          }
         }
       }
     },
@@ -1458,6 +1656,12 @@
             "state" : "translated",
             "value" : "Latin Vocabulary"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vocabulario latino"
+          }
         }
       }
     },
@@ -1467,6 +1671,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reading"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lectura"
           }
         }
       }
@@ -1520,6 +1730,12 @@
             "state" : "translated",
             "value" : "Lined Small"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forrado Pequeño"
+          }
         }
       }
     },
@@ -1539,6 +1755,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar"
           }
         }
       }
@@ -1570,6 +1792,12 @@
             "state" : "translated",
             "value" : "translate Metamorphoses 1-4"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traducir Metamorfosis 1-4"
+          }
         }
       }
     },
@@ -1579,6 +1807,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mint"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menta"
           }
         }
       }
@@ -1678,6 +1912,12 @@
             "state" : "translated",
             "value" : "Send Message"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar mensaje"
+          }
         }
       }
     },
@@ -1748,12 +1988,24 @@
             "state" : "translated",
             "value" : "Open"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir"
+          }
         }
       }
     },
     "Ok" : {
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ok"
@@ -1767,6 +2019,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Orange"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naranja"
           }
         }
       }
@@ -2004,6 +2262,12 @@
             "state" : "translated",
             "value" : "Rectangle"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rectángulo"
+          }
         }
       }
     },
@@ -2060,6 +2324,12 @@
             "state" : "translated",
             "value" : "Font"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuente"
+          }
         }
       }
     },
@@ -2069,6 +2339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Font Color"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color de fuente"
           }
         }
       }
@@ -2156,6 +2432,12 @@
             "state" : "translated",
             "value" : "Shuffle"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barajar"
+          }
         }
       }
     },
@@ -2228,6 +2510,12 @@
             "state" : "translated",
             "value" : "stoobit"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "stoobit"
+          }
         }
       }
     },
@@ -2237,6 +2525,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "structural formula of D-Glucose"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Establecer la fórmula estructural de la D-glucosa."
           }
         }
       }
@@ -2248,6 +2542,12 @@
             "state" : "translated",
             "value" : "Schedule"
           }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horario"
+          }
         }
       }
     },
@@ -2257,6 +2557,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar"
           }
         }
       }
@@ -2333,6 +2639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Untitled"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin nombre"
           }
         }
       }
