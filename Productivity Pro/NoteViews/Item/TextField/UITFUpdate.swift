@@ -9,7 +9,6 @@ import SwiftUI
 
 extension UITFRepresentable {
     func updateUIView(_ uiView: UITextView, context: Context) {
-        scaleView(view: uiView, scale: scale * 2.5)
-        scaleLayer(layer: uiView.layer, scale: scale * 2.5)
+        adopt(view: uiView, to: scale * 2.5)
     }
 }

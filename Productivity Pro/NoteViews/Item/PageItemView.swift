@@ -45,8 +45,6 @@ struct PageItemView: View {
     func tap(item: PPItemModel) {
         if item.id != toolManager.activeItem?.id && subviewManager.showInspector == false {
             toolManager.activeItem = item
-        } else if toolManager.activeItem?.type == PPItemType.textField.rawValue && item.id == toolManager.activeItem?.id && subviewManager.showInspector == false {
-            subviewManager.rtfEditor.toggle()
         }
     }
     

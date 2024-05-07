@@ -10,15 +10,19 @@ import SwiftUI
 struct UITFRepresentable: UIViewRepresentable {
     var scale: CGFloat
     var textField: PPTextFieldModel
+    
+    @Bindable var toolManager: ToolManager
 
     func makeUIView(context: Context) -> UITextView {
         let view = UITextView()
         view.delegate = context.coordinator
         view.backgroundColor = .clear
+        
+        if let data = textField.attributedString {
+            view.attributedText = NSAttributedString(data: data)
+        }
 
-        scaleView(view: view, scale: scale * 2.5)
-        scaleLayer(layer: view.layer, scale: scale * 2.5)
-
+        adopt(view: view, to: scale * 2.5)
         return view
     }
 }

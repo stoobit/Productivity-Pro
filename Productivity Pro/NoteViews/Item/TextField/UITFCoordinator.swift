@@ -15,7 +15,18 @@ extension UITFRepresentable {
             self.parent = parent
         }
         
-        func textViewDidChange(_ textView: UITextView) {}
+        func textViewDidChange(_ textView: UITextView) {
+            self.parent.adopt(view: textView, to: self.parent.scale * 2.5)
+        }
+        
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            self.parent.toolManager.isEditingText = true
+        }
+        
+        func textViewDidEndEditing(_ textView: UITextView) {
+            self.parent.toolManager.isEditingText = false
+            self.parent.textField.attributedString = textView.attributedText.data()
+        }
     }
     
     func makeCoordinator() -> Coordinator {

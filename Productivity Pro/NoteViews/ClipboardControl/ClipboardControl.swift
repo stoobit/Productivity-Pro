@@ -61,7 +61,7 @@ struct ClipboardControl: View {
                 .disabled(subviewManager.showInspector)
                 .disabled(toolManager.activeItem == nil)
             }
-            .disabled(subviewManager.rtfEditor)
+            .disabled(toolManager.isEditingText)
             .padding(5)
             .background {
                 RoundedRectangle(cornerRadius: 14)

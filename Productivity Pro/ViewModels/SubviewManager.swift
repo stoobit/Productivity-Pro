@@ -27,8 +27,6 @@ import Observation
     var importFile: Bool = false
     var deletePage: Bool = false
     
-    var rtfEditor: Bool = false
-    
     var shareProView: Bool = false
     var sharePDFView: Bool = false
     var shareQRPDFView: Bool = false

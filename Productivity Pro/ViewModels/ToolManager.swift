@@ -24,6 +24,7 @@ import SwiftUI
     var showProgress: Bool = false
     
     var pencilKit: Bool = false
+    var isEditingText: Bool = false
     
     var scale: CGFloat = .zero
     var offset: CGPoint = .zero

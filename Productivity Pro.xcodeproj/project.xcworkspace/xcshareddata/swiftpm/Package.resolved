@@ -1,5 +1,5 @@
 {
-  "originHash" : "4f843de7d24b710c7e699bb0f885c588b2f724124461e9819cce9fc20f0b5486",
+  "originHash" : "c0b8046c6aadb6924b1dea38e534f5818b4d4c5a989bdb1c45fe14985b4eaccb",
   "pins" : [
     {
       "identity" : "llama.cpp",
@@ -20,21 +20,12 @@
       }
     },
     {
-      "identity" : "networkimage",
+      "identity" : "swiftymarkdown",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gonzalezreal/NetworkImage",
+      "location" : "https://github.com/SimonFairbairn/SwiftyMarkdown",
       "state" : {
-        "revision" : "7aff8d1b31148d32c5933d75557d42f6323ee3d1",
-        "version" : "6.0.0"
-      }
-    },
-    {
-      "identity" : "swift-markdown-ui",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/gonzalezreal/swift-markdown-ui",
-      "state" : {
-        "revision" : "ae799d015a5374708f7b4c85f3294c05f2a564e2",
-        "version" : "2.3.0"
+        "revision" : "dde451ab4ed9b77b328e21baa471fdfa0cf61369",
+        "version" : "1.2.4"
       }
     }
   ],

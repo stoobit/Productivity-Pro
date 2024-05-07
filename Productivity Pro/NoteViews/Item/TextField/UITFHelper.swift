@@ -8,14 +8,19 @@
 import SwiftUI
 
 extension UITFRepresentable {
-    func scaleView(view: UIView, scale: CGFloat) {
+    func adopt(view: UIView, to scale: CGFloat) {
+        scaleView(view: view, scale: scale)
+        scaleLayer(layer: view.layer, scale: scale)
+    }
+    
+    private func scaleView(view: UIView, scale: CGFloat) {
         view.contentScaleFactor = scale
         for vi in view.subviews {
             scaleView(view: vi, scale: scale)
         }
     }
 
-    func scaleLayer(layer: CALayer, scale: CGFloat) {
+    private func scaleLayer(layer: CALayer, scale: CGFloat) {
         layer.contentsScale = scale
         if layer.sublayers == nil {
             return

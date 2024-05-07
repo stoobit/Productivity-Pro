@@ -18,11 +18,11 @@ struct DragItemModifier: ViewModifier {
     @Binding var scale: CGFloat
     
     func body(content: Content) -> some View {
-        if item.id == toolManager.activeItem?.id && !item.isLocked {
-            content
-                .gesture(
-                    DragGesture()
-                        .onChanged { value in
+        content
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        if isActive {
                             toolManager.editorVisible = false
                             
                             var newLocation = startLocation ?? position
@@ -46,10 +46,12 @@ struct DragItemModifier: ViewModifier {
                                 toolManager.showSnapper[1] = false
                             }
                         }
-                        .updating($startLocation) { _, startLocation, _ in
-                            startLocation = startLocation ?? position
-                        }
-                        .onEnded { _ in
+                    }
+                    .updating($startLocation) { _, startLocation, _ in
+                        if isActive { startLocation = startLocation ?? position }
+                    }
+                    .onEnded { _ in
+                        if isActive {
                             page.store(item) {
                                 item.x = position.x
                                 item.y = position.y
@@ -62,11 +64,12 @@ struct DragItemModifier: ViewModifier {
                             toolManager.activeItem = item
                             toolManager.showSnapper = [false, false]
                         }
-                )
-            
-        } else {
-            content
-        }
+                    }
+            )
+    }
+    
+    var isActive: Bool {
+        item.id == toolManager.activeItem?.id && !item.isLocked
     }
     
     func getBorder() -> CGSize {

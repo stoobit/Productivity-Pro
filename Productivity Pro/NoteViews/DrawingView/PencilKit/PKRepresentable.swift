@@ -29,8 +29,12 @@ struct PKRepresentable: UIViewRepresentable {
             canvasView.showsVerticalScrollIndicator = false
             canvasView.showsHorizontalScrollIndicator = false
             
+            #if DEBUG
+//            canvasView.drawingPolicy = .anyInput
+            #else
             toolPicker.showsDrawingPolicyControls = false
             canvasView.drawingPolicy = .pencilOnly
+            #endif
             
             adoptScale()
             
@@ -80,10 +84,11 @@ struct PKRepresentable: UIViewRepresentable {
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
-        if page.color == "pagewhite" || 
+        if page.color == "pagewhite" ||
             page.color == "white" ||
             page.color == "pageyellow" ||
-            page.color == "yellow" {
+            page.color == "yellow"
+        {
             cs = .light
         }
         

@@ -5,7 +5,6 @@
 //  Created by Till Brügmann on 17.12.23.
 //
 
-import MarkdownUI
 import SwiftUI
 
 extension Theme {
