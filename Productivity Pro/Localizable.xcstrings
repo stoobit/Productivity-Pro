@@ -1135,6 +1135,9 @@
         }
       }
     },
+    "Entwickelt von Schülern für Schüler." : {
+
+    },
     "Erstellen" : {
       "localizations" : {
         "en" : {
@@ -1748,6 +1751,9 @@
           }
         }
       }
+    },
+    "Los geht's  %@" : {
+
     },
     "Löschen" : {
       "localizations" : {
@@ -2613,6 +2619,9 @@
           }
         }
       }
+    },
+    "Überspringen" : {
+
     },
     "Uhrzeit der Benachrichtigung" : {
       "localizations" : {

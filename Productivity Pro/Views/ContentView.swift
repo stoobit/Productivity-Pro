@@ -12,8 +12,13 @@ import SwiftUI
 import UserNotifications
 
 struct ContentViewContainer: View {
+    @AppStorage("introduction view") var showIntro: Bool = true
+    
     var body: some View {
         ContentView()
+            .fullScreenCover(isPresented: $showIntro, content: {
+                IntroductionView()
+            })
     }
 }
 
