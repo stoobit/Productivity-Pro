@@ -43,6 +43,10 @@ struct PageItemView: View {
     }
     
     func tap(item: PPItemModel) {
+        if toolManager.activeItem != item {
+            toolManager.isEditingText = false
+        }
+        
         if item.id != toolManager.activeItem?.id && subviewManager.showInspector == false {
             toolManager.activeItem = item
         }

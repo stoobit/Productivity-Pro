@@ -33,10 +33,12 @@ extension PageView {
     }
     
     func onBackgroundTap() {
-        if toolManager.dragType == .none, subviewManager.showInspector == false {
+        if toolManager.dragType == .none, subviewManager.showInspector == false && toolManager.isEditingText == false {
             toolManager.activeItem = nil
             toolManager.dragType = .none
             toolManager.editorVisible = true
+        } else if toolManager.isEditingText {
+            toolManager.isEditingText = false
         }
     }
     

@@ -1,5 +1,5 @@
 {
-  "originHash" : "c0b8046c6aadb6924b1dea38e534f5818b4d4c5a989bdb1c45fe14985b4eaccb",
+  "originHash" : "06d70f0a4788e9c06c67704a58c47b3d3da41a2847a4b787f90a003c5463d81e",
   "pins" : [
     {
       "identity" : "llama.cpp",
@@ -17,6 +17,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "1ae92448ec3b0841ae5ceaa151c98ae66776596a"
+      }
+    },
+    {
+      "identity" : "richtextkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/danielsaidi/RichTextKit",
+      "state" : {
+        "revision" : "f0ecceb71ff3cb12a3143eed13b8b62fea7c34e5",
+        "version" : "1.0.0"
       }
     },
     {

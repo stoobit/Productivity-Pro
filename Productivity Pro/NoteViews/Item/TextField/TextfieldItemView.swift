@@ -39,6 +39,7 @@ struct TextFieldItemView: View {
                 )
                 .frame(width: item.width, height: item.height)
                 .scaleEffect(scale)
+                .allowsHitTesting(toolManager.activeItem == item)
             }
         }
         .rotationEffect(Angle(degrees: item.textField?.rotation ?? 0))

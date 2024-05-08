@@ -12,6 +12,7 @@
 		BB05042B2928472D00DAECA6 /* BackgroundTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05042A2928472D00DAECA6 /* BackgroundTemplateView.swift */; };
 		BB067089293034840076F768 /* OrientationUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB067088293034840076F768 /* OrientationUpdater.swift */; };
 		BB0677142BB0E52D00BEA66F /* PagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0677132BB0E52D00BEA66F /* PagingViewController.swift */; };
+		BB06A2EB2BEBAD65007B118A /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = BB06A2EA2BEBAD65007B118A /* RichTextKit */; };
 		BB073A6F2AB8CA4800C80B59 /* SecondaryPageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */; };
 		BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
@@ -643,6 +644,7 @@
 				BB947C692BD809E400A46386 /* Mixpanel in Frameworks */,
 				BB30C2E22BCAE1CC009D69CA /* llama in Frameworks */,
 				BB49840A2BC32BCD008D45B0 /* Accelerate.framework in Frameworks */,
+				BB06A2EB2BEBAD65007B118A /* RichTextKit in Frameworks */,
 				BB4984082BC32BC8008D45B0 /* Metal.framework in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
 				BBB3CCA52BEADCB000BDB558 /* SwiftyMarkdown in Frameworks */,
@@ -1682,6 +1684,7 @@
 				BB30C2E12BCAE1CC009D69CA /* llama */,
 				BB947C682BD809E400A46386 /* Mixpanel */,
 				BBB3CCA42BEADCB000BDB558 /* SwiftyMarkdown */,
+				BB06A2EA2BEBAD65007B118A /* RichTextKit */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -1727,6 +1730,7 @@
 				BB30C2E02BCAE1CC009D69CA /* XCRemoteSwiftPackageReference "llama.cpp" */,
 				BB947C672BD809E400A46386 /* XCRemoteSwiftPackageReference "mixpanel-swift" */,
 				BBB3CCA32BEADCB000BDB558 /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
+				BB06A2E92BEBAD65007B118A /* XCRemoteSwiftPackageReference "RichTextKit" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
@@ -2423,6 +2427,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BB06A2E92BEBAD65007B118A /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielsaidi/RichTextKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		BB30C2E02BCAE1CC009D69CA /* XCRemoteSwiftPackageReference "llama.cpp" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ggerganov/llama.cpp.git";
@@ -2450,6 +2462,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB06A2EA2BEBAD65007B118A /* RichTextKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB06A2E92BEBAD65007B118A /* XCRemoteSwiftPackageReference "RichTextKit" */;
+			productName = RichTextKit;
+		};
 		BB30C2E12BCAE1CC009D69CA /* llama */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BB30C2E02BCAE1CC009D69CA /* XCRemoteSwiftPackageReference "llama.cpp" */;

@@ -6,9 +6,14 @@
 //
 
 import SwiftUI
+import RichTextKit
 
 extension UITFRepresentable {
-    func updateUIView(_ uiView: UITextView, context: Context) {
+    func updateUIView(_ uiView: RichTextView, context: Context) {
         adopt(view: uiView, to: scale * 2.5)
+        
+        if toolManager.isEditingText == false {
+            uiView.resignFirstResponder()
+        }
     }
 }
