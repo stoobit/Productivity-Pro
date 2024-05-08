@@ -18,7 +18,7 @@ struct IntroductionLabelView: View {
         ZStack {
             Image(memojis[memoji])
                 .resizable()
-                .frame(width: 280, height: 280)
+                .frame(width: 260, height: 260)
                 .scaledToFit()
                 .onReceive(timer) { _ in person() }
                 .transition(.asymmetric(
@@ -30,27 +30,27 @@ struct IntroductionLabelView: View {
             Group {
                 Item(icon: "checklist", color: .pink)
                     .rotationEffect(Angle(degrees: animate ? 0 : 360))
-                    .offset(y: 200)
+                    .offset(y: 180)
                     .rotationEffect(Angle(degrees: animate ? 360 : 0))
 
                 Item(icon: "doc.fill", color: .blue)
                     .rotationEffect(Angle(degrees: animate ? 0 + 72 : 360 + 72))
-                    .offset(y: 200)
+                    .offset(y: 180)
                     .rotationEffect(Angle(degrees: animate ? 360 - 72 : 0 - 72))
 
                 Item(icon: "ruler.fill", color: .orange)
                     .rotationEffect(Angle(degrees: animate ? 0 + 144 : 360 + 144))
-                    .offset(y: 200)
+                    .offset(y: 180)
                     .rotationEffect(Angle(degrees: animate ? 360 - 144 : 0 - 144))
 
                 Item(icon: "pencil.tip", color: .brown)
                     .rotationEffect(Angle(degrees: animate ? 0 + 216 : 360 + 216))
-                    .offset(y: 200)
+                    .offset(y: 180)
                     .rotationEffect(Angle(degrees: animate ? 360 - 216 : 0 - 216))
 
                 Item(icon: "calendar", color: .green)
                     .rotationEffect(Angle(degrees: animate ? 0 + 288 : 360 + 288))
-                    .offset(y: 200)
+                    .offset(y: 180)
                     .rotationEffect(Angle(degrees: animate ? 360 - 288 : 0 - 288))
             }
             .animation(
@@ -64,7 +64,7 @@ struct IntroductionLabelView: View {
         Image(systemName: icon)
             .foregroundStyle(Color.white)
             .font(.largeTitle)
-            .frame(width: 100, height: 100)
+            .frame(width: 80, height: 80)
             .background {
                 Circle()
                     .foregroundStyle(color.gradient)

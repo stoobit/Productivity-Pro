@@ -14,6 +14,7 @@ struct IntroductionView: View {
                 .ignoresSafeArea(.all)
 
             IntroductionFirstView()
+                .preferredColorScheme(.dark)
         }
     }
 }
