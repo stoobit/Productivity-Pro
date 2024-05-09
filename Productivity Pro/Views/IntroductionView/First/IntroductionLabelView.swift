@@ -18,7 +18,7 @@ struct IntroductionLabelView: View {
         ZStack {
             Image(memojis[memoji])
                 .resizable()
-                .frame(width: 260, height: 260)
+                .frame(width: 245, height: 245)
                 .scaledToFit()
                 .onReceive(timer) { _ in person() }
                 .transition(.asymmetric(
@@ -30,27 +30,27 @@ struct IntroductionLabelView: View {
             Group {
                 Item(icon: "checklist", color: .pink)
                     .rotationEffect(Angle(degrees: animate ? 0 : 360))
-                    .offset(y: 180)
+                    .offset(y: 170)
                     .rotationEffect(Angle(degrees: animate ? 360 : 0))
 
                 Item(icon: "doc.fill", color: .blue)
                     .rotationEffect(Angle(degrees: animate ? 0 + 72 : 360 + 72))
-                    .offset(y: 180)
+                    .offset(y: 170)
                     .rotationEffect(Angle(degrees: animate ? 360 - 72 : 0 - 72))
 
-                Item(icon: "ruler.fill", color: .orange)
+                Item(icon: "pencil.tip", color: .orange)
                     .rotationEffect(Angle(degrees: animate ? 0 + 144 : 360 + 144))
-                    .offset(y: 180)
+                    .offset(y: 170)
                     .rotationEffect(Angle(degrees: animate ? 360 - 144 : 0 - 144))
 
-                Item(icon: "pencil.tip", color: .brown)
+                Item(icon: "person.2.fill", color: .brown)
                     .rotationEffect(Angle(degrees: animate ? 0 + 216 : 360 + 216))
-                    .offset(y: 180)
+                    .offset(y: 170)
                     .rotationEffect(Angle(degrees: animate ? 360 - 216 : 0 - 216))
 
                 Item(icon: "calendar", color: .green)
                     .rotationEffect(Angle(degrees: animate ? 0 + 288 : 360 + 288))
-                    .offset(y: 180)
+                    .offset(y: 170)
                     .rotationEffect(Angle(degrees: animate ? 360 - 288 : 0 - 288))
             }
             .animation(
@@ -64,7 +64,7 @@ struct IntroductionLabelView: View {
         Image(systemName: icon)
             .foregroundStyle(Color.white)
             .font(.largeTitle)
-            .frame(width: 80, height: 80)
+            .frame(width: 77, height: 77)
             .background {
                 Circle()
                     .foregroundStyle(color.gradient)

@@ -219,6 +219,7 @@
 		BBA8085F2AC2056100F9DFCA /* ObjectViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */; };
 		BBADD1392A5102620075B825 /* TextfieldItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD1372A5102620075B825 /* TextfieldItemView.swift */; };
 		BBADD13B2A5106750075B825 /* OverviewRowMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */; };
+		BBAF01332BED914200002A36 /* IntroductionSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF01322BED914200002A36 /* IntroductionSecondView.swift */; };
 		BBAF6D0A2BD492BB00FAA524 /* LIAPVocabularyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */; };
 		BBAF6D0C2BD492F500FAA524 /* LIAPBookCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0B2BD492F500FAA524 /* LIAPBookCard.swift */; };
 		BBAF6D0E2BD4934000FAA524 /* PPBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAF6D0D2BD4934000FAA524 /* PPBookModel.swift */; };
@@ -552,6 +553,7 @@
 		BBA9A2492B2F0C96004AFAD0 /* UITFTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITFTheme.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
 		BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRowMethods.swift; sourceTree = "<group>"; };
+		BBAF01322BED914200002A36 /* IntroductionSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionSecondView.swift; sourceTree = "<group>"; };
 		BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPVocabularyCard.swift; sourceTree = "<group>"; };
 		BBAF6D0B2BD492F500FAA524 /* LIAPBookCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPBookCard.swift; sourceTree = "<group>"; };
 		BBAF6D0D2BD4934000FAA524 /* PPBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPBookModel.swift; sourceTree = "<group>"; };
@@ -702,6 +704,7 @@
 			children = (
 				BB06A2ED2BEBDAC4007B118A /* IntroductionView.swift */,
 				BB06A2F12BEC380D007B118A /* First */,
+				BBAF01312BED912700002A36 /* Second */,
 			);
 			path = IntroductionView;
 			sourceTree = "<group>";
@@ -1398,6 +1401,14 @@
 			path = NoteModels;
 			sourceTree = "<group>";
 		};
+		BBAF01312BED912700002A36 /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				BBAF01322BED914200002A36 /* IntroductionSecondView.swift */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
 		BBAF6D112BD5024A00FAA524 /* PPBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -1840,6 +1851,7 @@
 				BBBB7E082A2693FD00155C8A /* CalculatorButtonView.swift in Sources */,
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
+				BBAF01332BED914200002A36 /* IntroductionSecondView.swift in Sources */,
 				BB4932F42B84EC310066E27B /* ImportTip.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */,
 				BB5705252B35FD3800F84B45 /* VFlipModifier.swift in Sources */,

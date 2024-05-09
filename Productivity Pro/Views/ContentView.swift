@@ -12,7 +12,7 @@ import SwiftUI
 import UserNotifications
 
 struct ContentViewContainer: View {
-    @AppStorage("introduction view") var showIntro: Bool = true
+    @AppStorage("introduction view t1") var showIntro: Bool = true
     
     var body: some View {
         ContentView()

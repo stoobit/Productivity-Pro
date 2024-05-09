@@ -1135,9 +1135,6 @@
         }
       }
     },
-    "Entwickelt von Schülern für Schüler." : {
-
-    },
     "Erstellen" : {
       "localizations" : {
         "en" : {
@@ -1435,6 +1432,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "Help" : {
       "localizations" : {
@@ -1987,6 +1987,9 @@
           }
         }
       }
+    },
+    "Notizen, Stundenpläne und To-Dos" : {
+
     },
     "Öffnen" : {
       "localizations" : {

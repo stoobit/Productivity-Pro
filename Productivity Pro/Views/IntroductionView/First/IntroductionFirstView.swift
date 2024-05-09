@@ -9,6 +9,8 @@ import SwiftUI
 
 struct IntroductionFirstView: View {
     @Environment(\.dismiss) var dismiss
+    
+    @Binding var index: Int
 
     var body: some View {
         VStack {
@@ -19,11 +21,11 @@ struct IntroductionFirstView: View {
                     .font(.largeTitle)
                     .dynamicTypeSize(.xxLarge)
                     
-                Text("Entwickelt von Schülern für Schüler.")
+                Text("Notizen, Stundenpläne und To-Dos")
                     .foregroundStyle(Color.secondary)
                     .font(.title3)
             }
-            .padding(50)
+            .padding(.top, 40)
                 
             Spacer()
                 
@@ -43,7 +45,11 @@ struct IntroductionFirstView: View {
                 .buttonStyle(.bordered)
                 .foregroundStyle(Color.primary)
                     
-                Button(action: {}) {
+                Button(action: {
+                    withAnimation(.bouncy) {
+                        index += 1
+                    }
+                }) {
                     Text("Los geht's  \(Image(systemName: "arrow.right"))")
                         .font(.headline)
                         .padding(.vertical, 10)
@@ -52,17 +58,8 @@ struct IntroductionFirstView: View {
                 .buttonBorderShape(.capsule)
                 .buttonStyle(.borderedProminent)
             }
-            .padding()
+            .padding(.bottom)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background {
-            Rectangle()
-                .ignoresSafeArea(.all)
-                .foregroundStyle(Color.accentColor.opacity(0.2).gradient)
-        }
     }
-}
-
-#Preview {
-    IntroductionFirstView()
 }
