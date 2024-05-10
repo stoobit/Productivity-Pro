@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct IntroductionFirstView: View {
-    @Environment(\.dismiss) var dismiss
-    
-    @Binding var index: Int
+    @Binding var showIntro: Bool
+    @Binding var index: Int?
 
     var body: some View {
         VStack {
             VStack {
                 Text("Productivity Pro")
-                    .fontWidth(.expanded)
                     .fontWeight(.bold)
                     .font(.largeTitle)
                     .dynamicTypeSize(.xxLarge)
                     
-                Text("Notizen, Stundenpläne und To-Dos")
+                Text("Productivity. Redefined.")
                     .foregroundStyle(Color.secondary)
                     .font(.title3)
             }
@@ -34,22 +32,8 @@ struct IntroductionFirstView: View {
                 
             Spacer()
                 
-            HStack(spacing: 20) {
-                Button(action: { dismiss() }) {
-                    Text("Überspringen")
-                        .font(.headline)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal)
-                }
-                .buttonBorderShape(.capsule)
-                .buttonStyle(.bordered)
-                .foregroundStyle(Color.primary)
-                    
-                Button(action: {
-                    withAnimation(.bouncy) {
-                        index += 1
-                    }
-                }) {
+            HStack(spacing: 15) {
+                Button(action: { showIntro.toggle() }) {
                     Text("Los geht's  \(Image(systemName: "arrow.right"))")
                         .font(.headline)
                         .padding(.vertical, 10)

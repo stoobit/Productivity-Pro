@@ -1433,9 +1433,6 @@
         }
       }
     },
-    "Hello, World!" : {
-
-    },
     "Help" : {
       "localizations" : {
         "en" : {
@@ -1771,17 +1768,6 @@
         }
       }
     },
-    "M" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "M"
-          }
-        }
-      }
-    },
     "Mathe" : {
       "localizations" : {
         "en" : {
@@ -1987,9 +1973,6 @@
           }
         }
       }
-    },
-    "Notizen, Stundenpläne und To-Dos" : {
-
     },
     "Öffnen" : {
       "localizations" : {
@@ -2204,6 +2187,9 @@
           }
         }
       }
+    },
+    "Productivity. Redefined." : {
+
     },
     "pronote" : {
       "localizations" : {
@@ -2622,9 +2608,6 @@
           }
         }
       }
-    },
-    "Überspringen" : {
-
     },
     "Uhrzeit der Benachrichtigung" : {
       "localizations" : {

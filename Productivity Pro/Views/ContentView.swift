@@ -12,13 +12,17 @@ import SwiftUI
 import UserNotifications
 
 struct ContentViewContainer: View {
-    @AppStorage("introduction view t1") var showIntro: Bool = true
+    @AppStorage("PPIntroductionView") var showIntro: Bool = true
     
     var body: some View {
         ContentView()
-            .fullScreenCover(isPresented: $showIntro, content: {
-                IntroductionView()
-            })
+            .overlay {
+                if showIntro {
+                    IntroductionView(showIntro: $showIntro)
+                        .transition(.blurReplace(.upUp))
+                }
+            }
+            .animation(.default, value: showIntro)
     }
 }
 
@@ -140,6 +144,19 @@ private struct ContentView: View {
         }
         .onAppear {
             review()
+        }
+        .onChange(of: contentObjects.count) { old, new in
+            recordContentObjects(old, new)
+        }
+    }
+    
+    func recordContentObjects(_ old: Int, _ new: Int) {
+        if old < new {
+            #if DEBUG
+            #else
+            Mixpanel.mainInstance()
+                .track(event: "CO Created", properties: [:])
+            #endif
         }
     }
     

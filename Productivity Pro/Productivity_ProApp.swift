@@ -43,13 +43,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        #if DEBUG
-        #else
         Mixpanel.initialize(
             token: "a41902ce7adc3f661f894ea7bf893e47",
             trackAutomaticEvents: false
         )
-        #endif
 
         return true
     }
