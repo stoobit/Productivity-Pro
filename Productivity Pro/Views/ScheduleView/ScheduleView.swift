@@ -33,6 +33,7 @@ struct ScheduleView: View {
                 .foregroundStyle(
                     Color.primary, Color.accentColor, Color.secondary
                 )
+                .transition(.identity)
             } else {
                 if hsc == .regular {
                     StaticView()

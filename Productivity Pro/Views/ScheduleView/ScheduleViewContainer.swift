@@ -44,6 +44,7 @@ struct ScheduleViewContainer: View {
                             .foregroundStyle(
                                 Color.primary, Color.accentColor, Color.secondary
                             )
+                            .transition(.opacity)
                         }
                     }
 
@@ -60,7 +61,9 @@ struct ScheduleViewContainer: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
-                        isEditing.toggle()
+                        withAnimation(.bouncy) {
+                            isEditing.toggle()
+                        }
                     }
                     .disabled(subjects.value.isEmpty)
                     .disabled(isUnlocked == false)
@@ -70,10 +73,10 @@ struct ScheduleViewContainer: View {
     }
 
     func empty() -> Bool {
-        if subjects.value.isEmpty {
+        if subjects.value.isEmpty || isEditing {
             return false
         }
-        
+
         for row in schedule.value {
             if row.subjects.isEmpty == false {
                 return false

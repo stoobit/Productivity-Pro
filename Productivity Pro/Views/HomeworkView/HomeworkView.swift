@@ -31,6 +31,7 @@ struct HomeworkView: View {
                     .foregroundStyle(
                         Color.primary, Color.accentColor, Color.secondary
                     )
+                    .transition(.identity)
                 } else {
                     HomeworkList(presentAdd: $presentAdd)
                 }

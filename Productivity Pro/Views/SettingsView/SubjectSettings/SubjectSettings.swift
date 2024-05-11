@@ -5,11 +5,10 @@
 //  Created by Till Brügmann on 10.09.23.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct SubjectSettings: View {
-    
     @Environment(\.modelContext) var context
     @Query(
         FetchDescriptor(
@@ -17,11 +16,11 @@ struct SubjectSettings: View {
         )
     ) var homeworkTasks: [Homework]
     
-    @AppStorage("ppsubjects") 
-    var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
+    @AppStorage("ppsubjects")
+    var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
     @AppStorage("ppschedule")
-    var schedule: CodableWrapper<Array<ScheduleDay>> = .init(value: [
+    var schedule: CodableWrapper<[ScheduleDay]> = .init(value: [
         ScheduleDay(id: String(localized: "Montag")),
         ScheduleDay(id: String(localized: "Dienstag")),
         ScheduleDay(id: String(localized: "Mittwoch")),
@@ -45,9 +44,7 @@ struct SubjectSettings: View {
                         subject: subject,
                         homeworkTasks: homeworkTasks
                     )
-                    
                 }
-                .animation(.bouncy, value: subjects.value.count)
                 .scrollContentBackground(.hidden)
                 .navigationTitle("Fächer")
                 .sheet(isPresented: $addSubject) {
@@ -60,7 +57,22 @@ struct SubjectSettings: View {
                         }
                     }
                 }
-                
+                .overlay {
+                    if subjects.value.isEmpty {
+                        ContentUnavailableView(
+                            "Du hast noch keine Fächer erstellt.",
+                            systemImage: "calendar",
+                            description: Text("Tippe auf + um eine neues Fach hinzuzufügen.")
+                        )
+                        .foregroundStyle(
+                            Color.primary, Color.accentColor, Color.secondary
+                        )
+                        .transition(.asymmetric(
+                            insertion: .opacity, removal: .identity
+                        ))
+                    }
+                }
+                .animation(.bouncy, value: subjects.value.count)
             }
         }
     }

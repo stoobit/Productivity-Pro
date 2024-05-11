@@ -47,6 +47,7 @@ struct FileSystemView: View {
                     )
                     .foregroundStyle(Color.primary, Color.accentColor)
                     .accentColor(.accentColor)
+                    .transition(.opacity)
                 }
             }
         }
