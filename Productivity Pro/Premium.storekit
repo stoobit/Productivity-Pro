@@ -140,7 +140,7 @@
       "type" : "NonConsumable"
     },
     {
-      "displayPrice" : "2.99",
+      "displayPrice" : "3.99",
       "familyShareable" : true,
       "internalID" : "6496854860",
       "localizations" : [
@@ -164,7 +164,7 @@
     "_applicationInternalID" : "6449678571",
     "_developerTeamID" : "X8ZDMM9V4U",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 735356218.03506398,
+    "_lastSynchronizedDate" : 737152604.44516301,
     "_locale" : "de",
     "_storefront" : "DEU",
     "_storeKitErrors" : [
@@ -226,7 +226,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "7E8A794A",
+              "internalID" : "AA30EAEA",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivitypro.premium.monthlysub.offer",
               "paymentMode" : "free",
@@ -274,14 +274,14 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Spare Geld, ohne auf Features zu verzichten.",
-              "displayName" : "Jährliches Abonnement (ALT)",
-              "locale" : "de"
-            },
-            {
               "description" : "Subscribe yearly and save money.",
               "displayName" : "Yearly Subscription (OLD)",
               "locale" : "en_US"
+            },
+            {
+              "description" : "Spare Geld, ohne auf Features zu verzichten.",
+              "displayName" : "Jährliches Abonnement (ALT)",
+              "locale" : "de"
             }
           ],
           "productID" : "com.stoobit.productivity.premium",

@@ -12,13 +12,27 @@ import SwiftUI
 import UserNotifications
 
 struct ContentViewContainer: View {
-    @AppStorage("PPIntroductionView v.2.0.16") var showIntro: Bool = true
-    
+    @AppStorage("ppShowWelcome") var showWelcome: Bool = true
+    @AppStorage("ppShowWhatNew") var showWhatNew: Bool = false
+    @AppStorage("ppDateOpened") var date: Date = .init()
+
     var body: some View {
         ContentView()
-            .sheet(isPresented: $showIntro) {
-                IntroductionViewContainer(showIntro: $showIntro)
+            .sheet(isPresented: $showWhatNew, content: {})
+            .sheet(isPresented: $showWelcome) {
+                IntroductionViewContainer(showIntro: $showWelcome)
             }
+            .onAppear { onAppear() }
+    }
+    
+    func onAppear() {
+        #if DEBUG
+        date = Date()
+        #else
+        if showWelcome == true {
+            date = Date()
+        }
+        #endif
     }
 }
 

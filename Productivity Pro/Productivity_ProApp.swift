@@ -9,6 +9,16 @@ import Mixpanel
 import SwiftData
 import SwiftUI
 
+extension Date {
+    static func freeTrial(_ since: Date) -> Date {
+        #if DEBUG
+        Calendar.current.date(byAdding: .second, value: 20, to: since)!
+        #else
+        Calendar.current.date(byAdding: .day, value: 7, to: since)!
+        #endif
+    }
+}
+
 @main
 struct Productivity_ProApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate

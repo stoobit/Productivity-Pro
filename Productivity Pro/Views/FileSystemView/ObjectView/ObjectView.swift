@@ -30,7 +30,11 @@ struct ObjectView: View {
     @AppStorage("ppgrade")
     var grade: Int = 5
     
-    @AppStorage("pp show date") var showDate: Bool = false
+    @AppStorage("pp show date")
+    var showDate: Bool = false
+    
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
+    @AppStorage("ppFreeTrialAlert") var showAlert = true
     
     @State var addFolder: Bool = false
     @State var createNote: Bool = false
@@ -44,6 +48,10 @@ struct ObjectView: View {
                 .ignoresSafeArea(.all)
             
             List {
+                if alert {
+                    FreeTrialAlertView()
+                }
+                
                 Section {
                     ForEach(
                         getObjects(typeSorting == true ? .vocabulary : .all, isPinned: true)
@@ -165,5 +173,9 @@ struct ObjectView: View {
                 context.delete(object)
             }
         }
+    }
+    
+    var alert: Bool {
+        isUnlocked == false && parent == "root" && !contentObjects.isEmpty && showAlert
     }
 }

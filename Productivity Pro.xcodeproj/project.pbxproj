@@ -213,6 +213,7 @@
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
+		BBA6AF5C2BF0299400510EAC /* FreeTrialAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA6AF5B2BF0299400510EAC /* FreeTrialAlert.swift */; };
 		BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* MediaImport.swift */; };
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
@@ -545,6 +546,7 @@
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
+		BBA6AF5B2BF0299400510EAC /* FreeTrialAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeTrialAlert.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* MediaImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImport.swift; sourceTree = "<group>"; };
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewToolbar.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 			children = (
 				BB047CDD2AC0C1FF0027409F /* FileSystemView.swift */,
 				BBCDBFB62AC8A9EF00EF825F /* ContentObjectLink.swift */,
+				BBA6AF5B2BF0299400510EAC /* FreeTrialAlert.swift */,
 				BB4F66CE2AC4B9CE00C4B34E /* ObjectView */,
 				BB4F66CF2AC4BA1C00C4B34E /* FolderView */,
 				BB9BFB6C2AC780B500255293 /* ActionViews */,
@@ -1889,6 +1892,7 @@
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BB06A2F32BEC381A007B118A /* IntroductionView.swift in Sources */,
+				BBA6AF5C2BF0299400510EAC /* FreeTrialAlert.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
 				BB96F5AC2B61B4FB0044B200 /* ShareQRPDFMethods.swift in Sources */,
 				BB96F5AA2B608DF90044B200 /* OverviewContainerView.swift in Sources */,

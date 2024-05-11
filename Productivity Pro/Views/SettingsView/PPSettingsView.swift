@@ -37,7 +37,6 @@ struct PPSettingsView: View {
                         )
                     }
                     .frame(height: 30)
-                    .modifier(PremiumBadge(disabled: true))
                     
                     DatePicker(
                         selection: $notificationTime,
@@ -57,7 +56,16 @@ struct PPSettingsView: View {
                             UIApplication.shared.open(url)
                         }
                     }) {
-                        Label("Bewerte Productivity Pro im App Store", systemImage: "star.fill")
+                        Label(
+                            title: {
+                                Text("Bewerte Productivity Pro im App Store")
+                                    .foregroundStyle(Color.black)
+                            },
+                            icon: {
+                                Image(systemName: "star.fill")
+                                    .foregroundStyle(Color.yellow)
+                            }
+                        )
                     }
                     .frame(height: 30)
                 }
@@ -66,17 +74,36 @@ struct PPSettingsView: View {
                     Button(action: {
                         UIApplication.shared.open(mail)
                     }) {
-                        Label("Email Support", systemImage: "envelope")
+                        Label(
+                            title: {
+                                Text("Email Support")
+                                    .foregroundStyle(Color.black)
+                            },
+                            icon: {
+                                Image(systemName: "envelope.fill")
+                                    .foregroundStyle(Color.blue)
+                            }
+                        )
                     }
                     .frame(height: 30)
                     
                     Button(action: {
                         UIApplication.shared.open(message)
                     }) {
-                        Label("Messages Support", systemImage: "message")
+                        Label(
+                            title: {
+                                Text("Messages Support")
+                                    .foregroundStyle(Color.black)
+                            },
+                            icon: {
+                                Image(systemName: "message.fill")
+                                    .foregroundStyle(Color.green)
+                            }
+                        )
                     }
                     .frame(height: 30)
                 }
+                .listSectionSpacing(18)
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Einstellungen")
