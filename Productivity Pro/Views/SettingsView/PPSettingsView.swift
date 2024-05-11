@@ -13,7 +13,7 @@ struct PPSettingsView: View {
     
     let string = "https://apps.apple.com/app/id6449678571?action=write-review"
     let mail = URL(string: "mailto:support@stoobit.com")!
-    let message = URL(string: "messages://support@stoobit.com")!
+    let message = URL(string: "sms:support@stoobit.com")!
     
     @AppStorage("notificationTime")
     private var notificationTime: Date = Calendar.current.date(
