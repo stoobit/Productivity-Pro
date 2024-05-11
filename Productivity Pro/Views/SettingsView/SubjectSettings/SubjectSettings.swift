@@ -61,7 +61,7 @@ struct SubjectSettings: View {
                     if subjects.value.isEmpty {
                         ContentUnavailableView(
                             "Du hast noch keine Fächer erstellt.",
-                            systemImage: "calendar",
+                            systemImage: "tray.2",
                             description: Text("Tippe auf + um eine neues Fach hinzuzufügen.")
                         )
                         .foregroundStyle(
