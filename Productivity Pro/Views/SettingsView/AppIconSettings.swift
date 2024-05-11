@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppIconSettings: View {
-    
+    @Environment(\.dismiss) var dismiss
     @AppStorage("appicon selection") var selection: String = "AppDark"
     
     var body: some View {
@@ -35,6 +35,15 @@ struct AppIconSettings: View {
                 .labelsHidden()
             }
             .navigationTitle("App Icon")
+            .toolbarRole(.browser)
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button(action: { dismiss() }) {
+                        Label("Zurück", systemImage: "chevron.left")
+                    }
+                }
+            }
         }
         .onChange(of: selection, initial: false) {
             UIApplication.shared.setAlternateIconName(selection)

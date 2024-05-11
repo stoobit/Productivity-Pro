@@ -377,16 +377,6 @@
         }
       }
     },
-    "Backup exportieren" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Export Backup"
-          }
-        }
-      }
-    },
     "Backup importieren" : {
       "localizations" : {
         "en" : {
@@ -438,6 +428,12 @@
           }
         }
       }
+    },
+    "Bewerte Productivity Pro im App Store" : {
+
+    },
+    "Bewertungen und Kontakt" : {
+
     },
     "Bibliothek" : {
       "localizations" : {
@@ -715,7 +711,11 @@
         }
       }
     },
+    "Daten und Benachrichtigungen" : {
+
+    },
     "Daten und Synchronisation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1095,22 +1095,8 @@
         }
       }
     },
-    "Einstellungen %@ Fächer" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings %@ Subjects"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajustes %@ Asignaturas"
-          }
-        }
-      }
+    "Email Support" : {
+
     },
     "Englisch" : {
       "localizations" : {
@@ -1787,6 +1773,9 @@
           }
         }
       }
+    },
+    "Messages Support" : {
+
     },
     "Metamorphosen 1-4 übersetzen" : {
       "localizations" : {
@@ -2629,6 +2618,7 @@
       }
     },
     "Uhrzeit der Benachrichtigung" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2637,6 +2627,9 @@
           }
         }
       }
+    },
+    "Uhrzeit der Benachrichtigung bei Aufgaben" : {
+
     },
     "Umbenennen" : {
       "localizations" : {

@@ -9,7 +9,9 @@ import SwiftData
 import SwiftUI
 
 struct SubjectSettings: View {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
+    
     @Query(
         FetchDescriptor(
             sortBy: [SortDescriptor(\Homework.title, order: .forward)]
@@ -47,6 +49,15 @@ struct SubjectSettings: View {
                 }
                 .scrollContentBackground(.hidden)
                 .navigationTitle("Fächer")
+                .toolbarRole(.browser)
+                .navigationBarBackButtonHidden()
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarLeading) {
+                        Button(action: { dismiss() }) {
+                            Label("Zurück", systemImage: "chevron.left")
+                        }
+                    }
+                }
                 .sheet(isPresented: $addSubject) {
                     AddSubject(addSubject: $addSubject)
                 }

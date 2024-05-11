@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct BackupSettings: View {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     @Environment(ToolManager.self) var toolManager
     
@@ -41,6 +42,7 @@ struct BackupSettings: View {
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                     backingUp = false
+                                    showExporter = true
                                 }
                             }
                         }
@@ -70,20 +72,15 @@ struct BackupSettings: View {
                 NumberIndicator(type: .folder)
                     .frame(height: 30)
             }
+            .fileExporter(
+                isPresented: $showExporter,
+                document: BackupFile(data: backup ?? Data()),
+                contentType: .probackup,
+                defaultFilename: "Backup",
+                onCompletion: { _ in }
+            )
             
             Section {
-                Button(action: { showExporter.toggle() }) {
-                    Label("Backup exportieren", systemImage: "square.and.arrow.up")
-                }
-                .disabled(!(backup != nil && backingUp == false))
-                .fileExporter(
-                    isPresented: $showExporter,
-                    document: BackupFile(data: backup ?? Data()),
-                    contentType: .probackup,
-                    defaultFilename: "Backup",
-                    onCompletion: { _ in }
-                )
-                
                 Button(role: .destructive, action: { showAlert.toggle() }) {
                     Label("Backup importieren", systemImage: "square.and.arrow.down")
                         .foregroundStyle(.red)
@@ -115,6 +112,15 @@ struct BackupSettings: View {
         }
         .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Backup")
+        .toolbarRole(.browser)
+        .navigationBarBackButtonHidden()
+        .toolbar {
+            ToolbarItemGroup(placement: .topBarLeading) {
+                Button(action: { dismiss() }) {
+                    Label("Zurück", systemImage: "chevron.left")
+                }
+            }
+        }
     }
     
     @ViewBuilder

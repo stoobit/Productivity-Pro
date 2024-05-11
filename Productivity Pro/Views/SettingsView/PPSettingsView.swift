@@ -12,6 +12,8 @@ struct PPSettingsView: View {
     @State var settingsView: Bool = false
     
     let string = "https://apps.apple.com/app/id6449678571?action=write-review"
+    let mail = URL(string: "mailto:support@stoobit.com")!
+    let message = URL(string: "messages://support@stoobit.com")!
     
     @AppStorage("notificationTime")
     private var notificationTime: Date = Calendar.current.date(
@@ -26,7 +28,7 @@ struct PPSettingsView: View {
                 }
                 
                 Settings()
-                Section("Daten und Synchronisation") {
+                Section("Daten und Benachrichtigungen") {
                     NavigationLink(destination: {
                         BackupSettings()
                     }) {
@@ -36,34 +38,50 @@ struct PPSettingsView: View {
                     }
                     .frame(height: 30)
                     .modifier(PremiumBadge(disabled: true))
+                    
+                    DatePicker(
+                        selection: $notificationTime,
+                        displayedComponents: .hourAndMinute
+                    ) {
+                        Label(
+                            "Uhrzeit der Benachrichtigung bei Aufgaben",
+                            systemImage: "app.badge"
+                        )
+                    }
+                    .frame(height: 30)
                 }
                 
-                if isUnlocked {
-                    Section("Aufgaben") {
-                        DatePicker(
-                            "Uhrzeit der Benachrichtigung",
-                            selection: $notificationTime,
-                            displayedComponents: .hourAndMinute
-                        )
-                        .frame(height: 30)
+                Section("Bewertungen und Kontakt") {
+                    Button(action: {
+                        if let url = URL(string: string) {
+                            UIApplication.shared.open(url)
+                        }
+                    }) {
+                        Label("Bewerte Productivity Pro im App Store", systemImage: "star.fill")
                     }
+                    .frame(height: 30)
+                }
+                
+                Section {
+                    Button(action: {
+                        UIApplication.shared.open(mail)
+                    }) {
+                        Label("Email Support", systemImage: "envelope")
+                    }
+                    .frame(height: 30)
+                    
+                    Button(action: {
+                        UIApplication.shared.open(message)
+                    }) {
+                        Label("Messages Support", systemImage: "message")
+                    }
+                    .frame(height: 30)
                 }
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Einstellungen")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        if let url = URL(string: string) {
-                            UIApplication.shared.open(url)
-                        }
-                    }) {
-                        Image(systemName: "star.fill")
-                    }
-                }
-            }
         }
     }
 }

@@ -35,16 +35,23 @@ extension BackupSettings {
         
         if url.startAccessingSecurityScopedResource() {
             let encodedData = try Data(contentsOf: url)
-            let data = Data(base64Encoded: encodedData, options: .ignoreUnknownCharacters)
+            let data = Data(
+                base64Encoded: encodedData, options: .ignoreUnknownCharacters
+            )
            
             guard let data = data else { return }
             defer { url.stopAccessingSecurityScopedResource() }
             
-            let backup = try JSONDecoder().decode(ExportableBackupModel.self, from: data)
+            let backup = try JSONDecoder()
+                .decode(ExportableBackupModel.self, from: data)
+            
             let importer = ImportManager()
             
             for contentObject in backup.contentObjects {
-                let importable = importer.ppImport(contentObject: contentObject)
+                let importable = importer.ppImport(
+                    contentObject: contentObject
+                )
+                
                 context.insert(importable)
             }
         }
