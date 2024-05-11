@@ -79,7 +79,7 @@ struct HomeworkList: View {
     @ViewBuilder func DoneView() -> some View {
         if isUnlocked && homeworkTasks.isEmpty {
             ContentUnavailableView(
-                "Du hast alles erledigt.", systemImage: "checkmark.circle"
+                "Du hast alles erledigt.", systemImage: "checkmark.circle", description: Text("Tippe auf + um eine neue Aufgabe hinzuzufügen.")
             )
             .foregroundStyle(Color.primary, .green)
             .transition(

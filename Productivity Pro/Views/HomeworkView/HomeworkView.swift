@@ -26,7 +26,10 @@ struct HomeworkView: View {
                     ContentUnavailableView(
                         "Du hast noch keine Fächer erstellt.",
                         systemImage: "tray.2",
-                        description: Text("Einstellungen \(Image(systemName: "arrow.right")) Fächer")
+                        description: Text("Gehe in die Einstellungen und tippe anschließend auf \"Fächer\".")
+                    )
+                    .foregroundStyle(
+                        Color.primary, Color.accentColor, Color.secondary
                     )
                 } else {
                     HomeworkList(presentAdd: $presentAdd)

@@ -36,6 +36,18 @@ struct FileSystemView: View {
                     alignment: .bottomTrailing
                 )
                 .padding(10)
+
+                if contentObjects.filter({
+                    $0.grade == grade && $0.inTrash == false
+                }).isEmpty {
+                    ContentUnavailableView(
+                        "Du hast noch keine Notiz erstellet.",
+                        systemImage: "doc.text",
+                        description: Text("Wähle zuerst deine Jahrgangsstufe und tippe dann auf +, um eine neue Notiz zu erstellen.")
+                    )
+                    .foregroundStyle(Color.primary, Color.accentColor)
+                    .accentColor(.accentColor)
+                }
             }
         }
     }

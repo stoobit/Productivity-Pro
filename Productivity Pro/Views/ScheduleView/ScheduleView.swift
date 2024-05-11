@@ -25,13 +25,14 @@ struct ScheduleView: View {
                 .ignoresSafeArea(.all)
         
             if subjects.value.isEmpty && isUnlocked {
-                Group {
-                    ContentUnavailableView(
-                        "Du hast noch keine Fächer erstellt.",
-                        systemImage: "tray.2",
-                        description: Text("Einstellungen \(Image(systemName: "arrow.right")) Fächer")
-                    )
-                }
+                ContentUnavailableView(
+                    "Du hast noch keine Fächer erstellt.",
+                    systemImage: "tray.2",
+                    description: Text("Gehe in die Einstellungen und tippe anschließend auf \"Fächer\".")
+                )
+                .foregroundStyle(
+                    Color.primary, Color.accentColor, Color.secondary
+                )
             } else {
                 if hsc == .regular {
                     StaticView()

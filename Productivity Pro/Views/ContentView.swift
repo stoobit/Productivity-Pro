@@ -12,17 +12,13 @@ import SwiftUI
 import UserNotifications
 
 struct ContentViewContainer: View {
-    @AppStorage("PPIntroductionView") var showIntro: Bool = true
+    @AppStorage("PPIntroductionView v.2.0.7") var showIntro: Bool = true
     
     var body: some View {
         ContentView()
-            .overlay {
-                if showIntro {
-                    IntroductionView(showIntro: $showIntro)
-                        .transition(.blurReplace(.upUp))
-                }
+            .sheet(isPresented: $showIntro) {
+                IntroductionViewContainer(showIntro: $showIntro)
             }
-            .animation(.default, value: showIntro)
     }
 }
 

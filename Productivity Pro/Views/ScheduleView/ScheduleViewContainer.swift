@@ -34,6 +34,19 @@ struct ScheduleViewContainer: View {
                         isEditing: $isEditing, hsc: hsc,
                         schedule: $schedule
                     )
+                    .overlay {
+                        if empty() {
+                            ContentUnavailableView(
+                                "Du hast noch keinen Stundenplan erstellt.",
+                                systemImage: "calendar",
+                                description: Text("Tippe oben rechts auf \"Bearbeiten\", um deinen Stundenplan zu erstellen.")
+                            )
+                            .foregroundStyle(
+                                Color.primary, Color.accentColor, Color.secondary
+                            )
+                        }
+                    }
+
                 } else {
                     ScheduleView(
                         isEditing: $isEditing, hsc: hsc,
@@ -54,6 +67,20 @@ struct ScheduleViewContainer: View {
                 }
             }
         }
+    }
+
+    func empty() -> Bool {
+        if subjects.value.isEmpty {
+            return false
+        }
+        
+        for row in schedule.value {
+            if row.subjects.isEmpty == false {
+                return false
+            }
+        }
+
+        return true
     }
 }
 

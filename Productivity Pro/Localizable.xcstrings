@@ -1021,6 +1021,9 @@
         }
       }
     },
+    "Du hast noch keine Notiz erstellet." : {
+
+    },
     "Du hast noch keine Notizen erstellt." : {
       "localizations" : {
         "en" : {
@@ -1036,6 +1039,9 @@
           }
         }
       }
+    },
+    "Du hast noch keinen Stundenplan erstellt." : {
+
     },
     "Ecken" : {
       "localizations" : {
@@ -1090,6 +1096,7 @@
       }
     },
     "Einstellungen %@ Fächer" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1348,6 +1355,9 @@
           }
         }
       }
+    },
+    "Gehe in die Einstellungen und tippe anschließend auf \"Fächer\"." : {
+
     },
     "Gelb" : {
       "localizations" : {
@@ -2589,6 +2599,12 @@
         }
       }
     },
+    "Tippe auf + um eine neue Aufgabe hinzuzufügen." : {
+
+    },
+    "Tippe oben rechts auf \"Bearbeiten\", um deinen Stundenplan zu erstellen." : {
+
+    },
     "Titel" : {
       "localizations" : {
         "en" : {
@@ -2726,6 +2742,9 @@
           }
         }
       }
+    },
+    "Wähle zuerst deine Jahrgangsstufe und tippe dann auf +, um eine neue Notiz zu erstellen." : {
+
     },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht." : {
       "localizations" : {
