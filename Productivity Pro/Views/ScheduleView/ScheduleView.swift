@@ -14,9 +14,6 @@ struct ScheduleView: View {
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
-    @AppStorage("ppisunlocked")
-    var isUnlocked: Bool = false
-    
     @Binding var schedule: CodableWrapper<[ScheduleDay]>
     
     var body: some View {
@@ -24,7 +21,7 @@ struct ScheduleView: View {
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea(.all)
         
-            if subjects.value.isEmpty && isUnlocked {
+            if subjects.value.isEmpty {
                 ContentUnavailableView(
                     "Du hast noch keine Fächer erstellt.",
                     systemImage: "tray.2",
@@ -84,20 +81,6 @@ struct ScheduleView: View {
     
     @ViewBuilder func StaticView() -> some View {
         ScrollView(.vertical) {
-            if isUnlocked == false {
-                PremiumButton()
-                    .padding(.horizontal)
-                    .padding(.vertical, 11)
-                    .background {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundStyle(
-                                Color(UIColor.secondarySystemGroupedBackground)
-                            )
-                    }
-                    .padding(.bottom, 13)
-                    .padding(.top, 35)
-            }
-            
             HStack(alignment: .top) {
                 ScheduleColumn(
                     isEditing: $isEditing, day: $schedule.value[0]
@@ -119,7 +102,6 @@ struct ScheduleView: View {
                     isEditing: $isEditing, day: $schedule.value[4]
                 )
             }
-            .padding(.top, isUnlocked ? 5 : 0)
         }
         .padding(.horizontal)
         .scrollIndicators(.never)

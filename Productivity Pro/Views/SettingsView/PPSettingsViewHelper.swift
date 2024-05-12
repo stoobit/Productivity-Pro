@@ -16,7 +16,6 @@ extension PPSettingsView {
                 Label("Fächer", systemImage: "tray.2")
             }
             .frame(height: 30)
-            .modifier(PremiumBadge(disabled: true))
 
             NavigationLink(destination: {
                 AppIconSettings()
@@ -24,7 +23,6 @@ extension PPSettingsView {
                 Label("App Icon", systemImage: "app.gift")
             }
             .frame(height: 30)
-            .modifier(PremiumBadge(disabled: true))
         }
     }
 }

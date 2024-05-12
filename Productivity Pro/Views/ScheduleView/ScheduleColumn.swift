@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct ScheduleColumn: View {
-    @AppStorage("ppisunlocked")
-    var isUnlocked: Bool = false
-    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
@@ -24,7 +21,8 @@ struct ScheduleColumn: View {
     
     var body: some View {
         LazyVStack(alignment: .leading) {
-            if isUnlocked {
+            
+            if day.subjects.isEmpty == false || isEditing == true {
                 Text(String(localized: String.LocalizationValue(day.id)))
                     .font(.callout)
                     .foregroundStyle(Color.secondary)
@@ -32,24 +30,11 @@ struct ScheduleColumn: View {
                     .padding(.top, 10)
                     .padding(.bottom, 3)
                     .padding(.leading)
-            } else {
-                Text(String(localized: String.LocalizationValue(day.id)))
-                    .font(.callout)
-                    .foregroundStyle(Color.secondary)
-                    .lineLimit(1)
-                    .padding(.top, 10)
-                    .padding(.bottom, 3)
-                    .padding(.leading)
-                    .redacted(reason: .placeholder)
+                    .transition(.identity)
             }
             
             ForEach(day.subjects) { subject in
-                if isUnlocked {
-                    Icon(for: subject)
-                } else {
-                    Icon(for: subject)
-                        .redacted(reason: .placeholder)
-                }
+                Icon(for: subject)
             }
             
             ZStack {
@@ -200,10 +185,6 @@ struct ScheduleColumn: View {
             $0.title == scheduleSubject.subject
         }) {
             subject = s
-        } else {
-            subject = HomeworkList.subject(
-                title: scheduleSubject.subject
-            )
         }
         
         return subject

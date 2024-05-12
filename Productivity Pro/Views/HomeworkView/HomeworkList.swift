@@ -19,9 +19,6 @@ struct HomeworkList: View {
     
     @Query(animation: .bouncy) var contentObjects: [ContentObject]
     
-    @AppStorage("ppisunlocked")
-    var isUnlocked: Bool = false
-    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
@@ -32,10 +29,6 @@ struct HomeworkList: View {
     
     var body: some View {
         List {
-            if isUnlocked == false {
-                PremiumButton()
-            }
-            
             ForEach(dates(), id: \.self) { date in
                 Section(content: {
                     ForEach(filterTasks(by: date)) { homework in
@@ -45,15 +38,9 @@ struct HomeworkList: View {
                             edit: { edit(homework) },
                             delete: { delete(homework) }
                         )
-                        .disabled(isUnlocked == false)
                     }
                 }, header: {
-                    if isUnlocked {
-                        Text(formattedString(of: date))
-                    } else {
-                        Text(formattedString(of: date))
-                            .redacted(reason: .placeholder)
-                    }
+                    Text(formattedString(of: date))
                 })
             }
         }
@@ -77,7 +64,7 @@ struct HomeworkList: View {
     }
     
     @ViewBuilder func DoneView() -> some View {
-        if isUnlocked && homeworkTasks.isEmpty {
+        if homeworkTasks.isEmpty {
             ContentUnavailableView(
                 "Du hast alles erledigt.", systemImage: "checkmark.circle", description: Text("Tippe auf + um eine neue Aufgabe hinzuzufügen.")
             )

@@ -468,6 +468,7 @@
       }
     },
     "Biologie" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -598,6 +599,7 @@
       }
     },
     "Buch S. 92, Aufgabe 2+3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -624,6 +626,7 @@
       }
     },
     "Cäsar-Verschlüsselung in Java implementieren" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -634,6 +637,7 @@
       }
     },
     "Chemie" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -660,6 +664,7 @@
       }
     },
     "Comment fertig schreiben" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -778,6 +783,7 @@
       }
     },
     "Deutsch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1099,6 +1105,7 @@
 
     },
     "Englisch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1356,6 +1363,7 @@
       }
     },
     "Geographie" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1388,6 +1396,7 @@
       }
     },
     "Geschichte" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1428,6 +1437,9 @@
           }
         }
       }
+    },
+    "Hello, World!" : {
+
     },
     "Help" : {
       "localizations" : {
@@ -1522,6 +1534,7 @@
       }
     },
     "Informatik" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1610,6 +1623,7 @@
       }
     },
     "Kunst" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1630,6 +1644,7 @@
       }
     },
     "Latein" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1765,6 +1780,7 @@
       }
     },
     "Mathe" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1778,6 +1794,7 @@
 
     },
     "Metamorphosen 1-4 übersetzen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2100,6 +2117,7 @@
       }
     },
     "Physik" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2267,6 +2285,7 @@
       }
     },
     "Referat \"Kulturelle Evolution\"" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2453,6 +2472,7 @@
       }
     },
     "Sozialkunde" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2479,6 +2499,7 @@
       }
     },
     "Sport" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2515,6 +2536,7 @@
       }
     },
     "Strukturformel von D-Glucose aufstellen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2783,6 +2805,7 @@
       }
     },
     "Wirtschaft" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

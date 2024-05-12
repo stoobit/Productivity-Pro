@@ -14,6 +14,9 @@ struct CreateNoteView: View {
     var contentObjects: [ContentObject]
     let parent: String
     
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
+    @AppStorage("ppDateOpened") var date: Date = .init()
+    
     @AppStorage("savedBackgroundColor")
     var savedBackgroundColor: String = "pagewhite"
     
@@ -27,24 +30,35 @@ struct CreateNoteView: View {
     
     @State var selectTemplate: Bool = false
     @State var scanDocument: Bool = false
+    @State var purchaseView: Bool = false
+    
     @Binding var importFile: Bool
     
     var body: some View {
         VStack {
-            Menu("Notiz erstellen", systemImage: "plus") {
-                Button("Vorlage auswählen", systemImage: "grid") {
-                    selectTemplate.toggle()
+            if Date() < Date.freeTrial(date) && isUnlocked == false {
+                Menu("Notiz erstellen", systemImage: "plus") {
+                    Button("Vorlage auswählen", systemImage: "grid") {
+                        selectTemplate.toggle()
+                    }
+                    
+                    Button("Datei importieren", systemImage: "square.and.arrow.down") {
+                        importFile.toggle()
+                    }
+                    
+                    Button("Dokument scannen", systemImage: "doc.viewfinder") {
+                        scanDocument.toggle()
+                    }
                 }
-                
-                Button("Datei importieren", systemImage: "square.and.arrow.down") {
-                    importFile.toggle()
-                }
-                
-                Button("Dokument scannen", systemImage: "doc.viewfinder") {
-                    scanDocument.toggle()
+            } else {
+                Button("Notiz erstellen", systemImage: "plus") {
+                    purchaseView.toggle()
                 }
             }
         }
+        .sheet(isPresented: $purchaseView, content: {
+            PurchaseView()
+        })
         .sheet(isPresented: $selectTemplate) {
             TemplateView(
                 isPresented: $selectTemplate,

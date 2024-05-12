@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PPSettingsView: View {
-    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     @State var settingsView: Bool = false
     
     let string = "https://apps.apple.com/app/id6449678571?action=write-review"
@@ -23,10 +22,6 @@ struct PPSettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                if isUnlocked == false {
-                    PremiumButton()
-                }
-                
                 Settings()
                 Section("Daten und Benachrichtigungen") {
                     NavigationLink(destination: {

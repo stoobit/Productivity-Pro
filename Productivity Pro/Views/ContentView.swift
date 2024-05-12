@@ -11,44 +11,16 @@ import SwiftData
 import SwiftUI
 import UserNotifications
 
-struct ContentViewContainer: View {
-    @AppStorage("ppShowWelcome") var showWelcome: Bool = true
-    @AppStorage("ppShowWhatNew") var showWhatNew: Bool = false
-    @AppStorage("ppDateOpened") var date: Date = .init()
-
-    var body: some View {
-        ContentView()
-            .sheet(isPresented: $showWhatNew, content: {})
-            .sheet(isPresented: $showWelcome) {
-                IntroductionViewContainer(showIntro: $showWelcome)
-            }
-            .onAppear { onAppear() }
-    }
-    
-    func onAppear() {
-        #if DEBUG
-        date = Date()
-        #else
-        if showWelcome == true {
-            date = Date()
-        }
-        #endif
-    }
-}
-
-private struct ContentView: View {
+struct ContentView: View {
     @Environment(\.requestReview) var requestReview
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
     
-    @State var storeVM: StoreViewModel = .init()
-    let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
-    
-    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
-    
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()
+    @State var storeVM: StoreViewModel = .init()
     
     @State var selectedTab: Int = 0
     
@@ -63,52 +35,28 @@ private struct ContentView: View {
             
             TabView(selection: $selectedTab) {
                 FileSystemView(contentObjects: contentObjects)
-                    .onAppear {
-                        #if DEBUG
-                        #else
-                        Mixpanel.mainInstance()
-                            .track(event: "Note View", properties: [:])
-                        #endif
-                    }
                     .toolbarBackground(.visible, for: .tabBar)
+                    .onAppear {
+                        mixpanel("Note View")
+                    }
                     .tag(0)
                     .tabItem {
                         Label("Notizen", systemImage: "doc.fill")
                     }
-                    .sheet(isPresented: $subviewManager.sharePDFView) {
-                        SharePDFView()
-                    }
-                    .sheet(isPresented: $subviewManager.shareProView) {
-                        ShareProView()
-                    }
-                    .sheet(isPresented: $subviewManager.shareQRPDFView) {
-                        ShareQRPDFView()
-                    }
-                
+                   
                 ScheduleViewContainer()
-                    .onAppear {
-                        #if DEBUG
-                        #else
-                        Mixpanel.mainInstance()
-                            .track(event: "Schedule View", properties: [:])
-                        #endif
-                    }
                     .toolbarBackground(.visible, for: .tabBar)
+                    .onAppear { mixpanel("Schedule View") }
                     .tag(1)
                     .tabItem {
                         Label("Stundenplan", systemImage: "calendar")
                     }
                 
                 HomeworkView()
-                    .onAppear {
-                        #if DEBUG
-                        #else
-                        Mixpanel.mainInstance()
-                            .track(event: "Tasks View", properties: [:])
-                        #endif
-                    }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
+                        mixpanel("Tasks View")
+                        #warning("Notification Alert")
                         askNotificationPermission()
                     }
                     .tag(2)
@@ -117,14 +65,8 @@ private struct ContentView: View {
                     }
                 
                 PPSettingsView()
-                    .onAppear {
-                        #if DEBUG
-                        #else
-                        Mixpanel.mainInstance()
-                            .track(event: "Settings View", properties: [:])
-                        #endif
-                    }
                     .toolbarBackground(.visible, for: .tabBar)
+                    .onAppear { mixpanel("Settings View") }
                     .tag(4)
                     .tabItem {
                         Label("Einstellungen", systemImage: "gearshape.2.fill")
@@ -158,16 +100,19 @@ private struct ContentView: View {
         .onChange(of: contentObjects.count) { old, new in
             recordContentObjects(old, new)
         }
+        .sheet(isPresented: $subviewManager.sharePDFView) {
+            SharePDFView()
+        }
+        .sheet(isPresented: $subviewManager.shareProView) {
+            ShareProView()
+        }
+        .sheet(isPresented: $subviewManager.shareQRPDFView) {
+            ShareQRPDFView()
+        }
     }
     
     func recordContentObjects(_ old: Int, _ new: Int) {
-        if old < new {
-            #if DEBUG
-            #else
-            Mixpanel.mainInstance()
-                .track(event: "CO Created", properties: [:])
-            #endif
-        }
+        if old < new { mixpanel("CO Created") }
     }
     
     @MainActor func review() {
@@ -180,9 +125,10 @@ private struct ContentView: View {
     }
     
     func askNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: [.alert, .badge, .sound]
-        ) { _, _ in }
+        UNUserNotificationCenter.current()
+            .requestAuthorization(
+                options: [.alert, .badge, .sound]
+            ) { _, _ in }
     }
     
     func updateStatus() {
@@ -193,5 +139,13 @@ private struct ContentView: View {
                 isUnlocked = true
             }
         }
+    }
+    
+    func mixpanel(_ string: String) {
+        #if DEBUG
+        #else
+        Mixpanel.mainInstance()
+            .track(event: string, properties: [:])
+        #endif
     }
 }

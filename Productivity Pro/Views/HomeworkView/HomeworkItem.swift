@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct HomeworkItem: View {
-    @AppStorage("ppisunlocked")
-    var isUnlocked: Bool = false
-    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())
     
@@ -25,12 +22,7 @@ struct HomeworkItem: View {
             if homework.note == nil || contentObjects.contains(where: {
                 $0 == homework.note
             }) == false {
-                if isUnlocked {
-                    Item()
-                } else {
-                    Item()
-                        .redacted(reason: .placeholder)
-                }
+                Item()
             } else {
                 NavigationLink(destination: {
                     if let contentObject = homework.note {
@@ -52,20 +44,16 @@ struct HomeworkItem: View {
             }
         }
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
-            if isUnlocked {
-                Button(action: edit) {
-                    Image(systemName: "info.circle")
-                }
-                .tint(.accentColor)
+            Button(action: edit) {
+                Image(systemName: "info.circle")
             }
+            .tint(.accentColor)
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-            if isUnlocked {
-                Button(role: .destructive, action: delete) {
-                    Image(systemName: "checkmark.circle")
-                }
-                .tint(.green)
+            Button(role: .destructive, action: delete) {
+                Image(systemName: "checkmark.circle")
             }
+            .tint(.green)
         }
         .onAppear { check() }
     }
@@ -85,8 +73,6 @@ struct HomeworkItem: View {
             $0.title == title
         }) {
             subject = s
-        } else {
-            subject = HomeworkList.subject(title: title)
         }
         
         return subject

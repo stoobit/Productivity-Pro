@@ -26,14 +26,19 @@ struct FileSystemView: View {
                     }.labelsHidden()
                 }) {
                     Text("\(grade). Klasse")
-                        .foregroundStyle(.white)
+                        .foregroundStyle(Color.accentColor)
                 }
-                .frame(width: 110, height: 50)
-                .background(Color.accentColor)
-                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .frame(width: 110, height: 45)
+                .background(.background)
+                .clipShape(.rect(cornerRadius: 11.5))
+                .padding(5)
+                .background {
+                    RoundedRectangle(cornerRadius: 14)
+                        .foregroundStyle(.thinMaterial)
+                }
                 .frame(
                     maxWidth: .infinity, maxHeight: .infinity,
-                    alignment: .bottomTrailing
+                    alignment: .bottomLeading
                 )
                 .padding(10)
 

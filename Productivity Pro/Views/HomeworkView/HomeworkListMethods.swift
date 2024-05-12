@@ -31,13 +31,8 @@ extension HomeworkList {
     }
     
     func dates() -> [Date] {
-        if isUnlocked {
-            let dates = homeworkTasks.map { $0.date }
-            return Array(Set(dates)).sorted(by: { $0 < $1 })
-        } else {
-            let dates = preview.map { $0.date }
-            return Array(Set(dates)).sorted(by: { $0 < $1 })
-        }
+        let dates = homeworkTasks.map { $0.date }
+        return Array(Set(dates)).sorted(by: { $0 < $1 })
     }
     
     func formattedString(of date: Date) -> LocalizedStringKey {
@@ -64,16 +59,9 @@ extension HomeworkList {
     }
     
     func filterTasks(by date: Date) -> [Homework] {
-        if isUnlocked {
-            let filtered = homeworkTasks.filter { $0.date == date }
-            return filtered.sorted(by: {
-                $0.subject < $1.subject
-            })
-        } else {
-            let filtered = preview.filter { $0.date == date }
-            return filtered.sorted(by: {
-                $0.subject < $1.subject
-            })
-        }
+        let filtered = homeworkTasks.filter { $0.date == date }
+        return filtered.sorted(by: {
+            $0.subject < $1.subject
+        })
     }
 }

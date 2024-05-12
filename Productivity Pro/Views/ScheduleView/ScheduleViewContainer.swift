@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct ScheduleViewContainer: View {
-    @AppStorage("ppisunlocked")
-    var isUnlocked: Bool = false
-
     @Environment(\.horizontalSizeClass) var hsc
     @State var isEditing: Bool = false
 
@@ -28,33 +25,24 @@ struct ScheduleViewContainer: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if isUnlocked {
-                    ScheduleView(
-                        isEditing: $isEditing, hsc: hsc,
-                        schedule: $schedule
+            ScheduleView(
+                isEditing: $isEditing, hsc: hsc,
+                schedule: $schedule
+            )
+            .overlay {
+                if empty() {
+                    ContentUnavailableView(
+                        "Du hast noch keinen Stundenplan erstellt.",
+                        systemImage: "calendar",
+                        description: Text("Tippe oben rechts auf \"Bearbeiten\", um deinen Stundenplan zu erstellen.")
                     )
-                    .overlay {
-                        if empty() {
-                            ContentUnavailableView(
-                                "Du hast noch keinen Stundenplan erstellt.",
-                                systemImage: "calendar",
-                                description: Text("Tippe oben rechts auf \"Bearbeiten\", um deinen Stundenplan zu erstellen.")
-                            )
-                            .foregroundStyle(
-                                Color.primary, Color.accentColor, Color.secondary
-                            )
-                            .transition(.opacity)
-                        }
-                    }
-
-                } else {
-                    ScheduleView(
-                        isEditing: $isEditing, hsc: hsc,
-                        schedule: .constant(preview)
+                    .foregroundStyle(
+                        Color.primary, Color.accentColor, Color.secondary
                     )
+                    .transition(.opacity)
                 }
             }
+
             .navigationTitle("Stundenplan")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
@@ -66,7 +54,6 @@ struct ScheduleViewContainer: View {
                         }
                     }
                     .disabled(subjects.value.isEmpty)
-                    .disabled(isUnlocked == false)
                 }
             }
         }
