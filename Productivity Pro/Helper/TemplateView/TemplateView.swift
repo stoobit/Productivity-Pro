@@ -12,10 +12,10 @@ struct TemplateView: View {
     var savedIsPortrait: Bool = true
     
     @AppStorage("savedBackgroundTemplate")
-    var savedBackgroundTemplate: String = ""
+    var savedBackgroundTemplate: String = "blank"
     
     @AppStorage("savedBackgroundColor")
-    var savedBackgroundColor: String = ""
+    var savedBackgroundColor: String = "pagewhite"
     
     @Binding var isPresented: Bool
     

@@ -37,7 +37,7 @@ struct TextFieldItemView: View {
                     scale: scale, textField: textField,
                     toolManager: toolManager
                 )
-                .frame(width: item.width, height: item.height)
+                .frame(width: vuModel.size.width, height: vuModel.size.height)
                 .scaleEffect(scale)
                 .allowsHitTesting(toolManager.activeItem == item)
             }

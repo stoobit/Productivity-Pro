@@ -15,13 +15,13 @@ struct CreateNoteView: View {
     let parent: String
     
     @AppStorage("savedBackgroundColor")
-    var savedBackgroundColor: String = ""
+    var savedBackgroundColor: String = "pagewhite"
     
     @AppStorage("savedIsPortrait")
     var savedIsPortrait: Bool = true
     
     @AppStorage("savedBackgroundTemplate")
-    var savedBackgroundTemplate: String = ""
+    var savedBackgroundTemplate: String = "blank"
     
     @AppStorage("ppgrade") var grade: Int = 5
     

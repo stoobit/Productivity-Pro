@@ -10,7 +10,7 @@ import RichTextKit
 
 extension UITFRepresentable {
     func updateUIView(_ uiView: RichTextView, context: Context) {
-        adopt(view: uiView, to: scale * 2.5)
+//        adopt(view: uiView, to: scale * 2.5)
         
         if toolManager.isEditingText == false {
             uiView.resignFirstResponder()

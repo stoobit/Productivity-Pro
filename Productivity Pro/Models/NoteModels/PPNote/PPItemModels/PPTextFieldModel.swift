@@ -59,4 +59,20 @@ import SwiftUI
     
     @available(*, deprecated, message: "Productivity Pro does not support Markdown anymore. Please use NSAttributedString instead.")
     var fontSize: Double = 13
+    
+    func deprecatedString() -> String {
+        return string
+    }
+    
+    func deprecatedColor() -> Color {
+        return Color(data: textColor)
+    }
+    
+    func deprecatedSize() -> Double {
+        return fontSize
+    }
+    
+    func deprecatedFont() -> String {
+        return fontName
+    }
 }

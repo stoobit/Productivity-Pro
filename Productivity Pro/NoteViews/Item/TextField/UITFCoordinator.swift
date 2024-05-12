@@ -16,7 +16,7 @@ extension UITFRepresentable {
         }
         
         func textViewDidChange(_ textView: UITextView) {
-            self.parent.adopt(view: textView, to: self.parent.scale * 2.5)
+//            self.parent.adopt(view: textView, to: self.parent.scale * 2.5)
         }
         
         func textViewDidBeginEditing(_ textView: UITextView) {

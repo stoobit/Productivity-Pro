@@ -24,12 +24,12 @@ struct UITFRepresentable: UIViewRepresentable {
                 view.attributedText = NSAttributedString(data: data)
             }
             
-            view.selectedRange = view.richTextRange
-            view.setRichTextFontSize(30)
-            view.setRichTextColor(.foreground, to: .black, at: view.selectedRange)
+//            view.selectedRange = view.richTextRange
+//            view.setRichTextFontSize(30)
+//            view.setRichTextColor(.foreground, to: .black, at: view.selectedRange)
         }
         
-        adopt(view: view, to: scale * 2.5)
+//        adopt(view: view, to: scale * 2.5)
         return view
     }
 }
