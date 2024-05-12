@@ -104,6 +104,7 @@ struct ObjectView: View {
                     }
                 }
             }
+            .animation(.bouncy, value: alert)
             .animation(.bouncy, value: grade)
             .animation(.bouncy, value: sortType)
             .animation(.bouncy, value: typeSorting)
