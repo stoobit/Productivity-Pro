@@ -15,21 +15,20 @@ struct AppIconSettings: View {
         NavigationStack {
             Form {
                 Picker("App Icon", selection: $selection) {
+                    Icon("RoundedApp")
+                        .tag("AppIcon")
                     
-                    Icon("RoundedIcon")
-                        .tag("AppDark")
+                    Icon("RoundedOrange")
+                        .tag("OrangeIcon")
                     
-                    Icon("RoundedIconLight")
-                        .tag("AppLight")
-                    
-                    Icon("RoundedBeta")
-                        .tag("BetaDark")
-                    
-                    Icon("RoundedBetaLight")
-                        .tag("BetaLight")
+                    Icon("RoundedGreen")
+                        .tag("GreenIcon")
                     
                     Icon("RoundedMara")
-                        .tag("Mara")
+                        .tag("MaraIcon")
+                    
+                    Icon("RoundedOld")
+                        .tag("OldIcon")
                 }
                 .pickerStyle(.inline)
                 .labelsHidden()
@@ -46,7 +45,11 @@ struct AppIconSettings: View {
             }
         }
         .onChange(of: selection, initial: false) {
-            UIApplication.shared.setAlternateIconName(selection)
+            if selection == "AppIcon" {
+                UIApplication.shared.setAlternateIconName(nil)
+            } else {
+                UIApplication.shared.setAlternateIconName(selection)
+            }
         }
     }
     
@@ -57,7 +60,6 @@ struct AppIconSettings: View {
             .frame(width: 100, height: 100)
             .shadow(radius: 1)
     }
-    
 }
 
 #Preview {
