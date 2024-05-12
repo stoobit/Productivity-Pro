@@ -21,14 +21,17 @@ struct UITFRepresentable: UIViewRepresentable {
 
         Task { @MainActor in
             if let data = textField.attributedString {
-                view.attributedText = NSAttributedString(data: data)
+                view.attributedString = NSAttributedString(data: data)
+
+                // MARK: set default text attributes
+
+            } else {
+                view.attributedString = MDConverter.attributedString(
+                    field: textField
+                )
             }
-            
-//            view.selectedRange = view.richTextRange
-//            view.setRichTextFontSize(30)
-//            view.setRichTextColor(.foreground, to: .black, at: view.selectedRange)
         }
-        
+
 //        adopt(view: view, to: scale * 2.5)
         return view
     }

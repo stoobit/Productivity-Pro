@@ -551,7 +551,6 @@
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewToolbar.swift; sourceTree = "<group>"; };
 		BBA8085E2AC2056100F9DFCA /* ObjectViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewMethods.swift; sourceTree = "<group>"; };
-		BBA9A2492B2F0C96004AFAD0 /* UITFTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITFTheme.swift; sourceTree = "<group>"; };
 		BBADD1372A5102620075B825 /* TextfieldItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextfieldItemView.swift; sourceTree = "<group>"; };
 		BBADD13A2A5106750075B825 /* OverviewRowMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewRowMethods.swift; sourceTree = "<group>"; };
 		BBAF6D092BD492BB00FAA524 /* LIAPVocabularyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPVocabularyCard.swift; sourceTree = "<group>"; };
@@ -799,7 +798,6 @@
 				BB341B112BCF137300BF3A93 /* UITFUpdate.swift */,
 				BB341B152BCF13B400BF3A93 /* UITFHelper.swift */,
 				BB341B132BCF137B00BF3A93 /* UITFCoordinator.swift */,
-				BBA9A2492B2F0C96004AFAD0 /* UITFTheme.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
