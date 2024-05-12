@@ -48,10 +48,6 @@ struct ObjectView: View {
                 .ignoresSafeArea(.all)
             
             List {
-                if alert {
-                    FreeTrialAlertView()
-                }
-                
                 Section {
                     ForEach(
                         getObjects(typeSorting == true ? .vocabulary : .all, isPinned: true)
@@ -174,9 +170,5 @@ struct ObjectView: View {
                 context.delete(object)
             }
         }
-    }
-    
-    var alert: Bool {
-        isUnlocked == false && parent == "root" && !contentObjects.isEmpty && showAlert
     }
 }

@@ -152,6 +152,7 @@
 		BB7987072AD49BF7003469E6 /* TextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987062AD49BF7003469E6 /* TextFieldButton.swift */; };
 		BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987082AD49BFE003469E6 /* MediaButton.swift */; };
 		BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C2C7A2A3D258100C730D3 /* String.swift */; };
+		BB7E2FD92BF1477B002E5689 /* MDConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E2FD82BF1477B002E5689 /* MDConverter.swift */; };
 		BB8103E82BD42CC9005D08BD /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8103E72BD42CC9005D08BD /* AIChatView.swift */; };
 		BB8103EC2BD467FD005D08BD /* PremiumBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8103EB2BD467FD005D08BD /* PremiumBadge.swift */; };
 		BB8103EF2BD4782B005D08BD /* LIAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8103EE2BD4782B005D08BD /* LIAPView.swift */; };
@@ -213,7 +214,6 @@
 		BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5AD28E0664C00AC988D /* NoteView.swift */; };
 		BB9DF5B828E0682400AC988D /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9DF5B728E0682400AC988D /* PageModel.swift */; };
 		BBA1F02B2AC1C1AF0060B111 /* ContentObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */; };
-		BBA6AF5C2BF0299400510EAC /* FreeTrialAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA6AF5B2BF0299400510EAC /* FreeTrialAlert.swift */; };
 		BBA803D529BE9CB2005F4031 /* MediaImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA803D429BE9CB2005F4031 /* MediaImport.swift */; };
 		BBA808592AC1F74600F9DFCA /* FolderSortingValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */; };
 		BBA8085B2AC1F84E00F9DFCA /* ObjectViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */; };
@@ -486,6 +486,7 @@
 		BB7987062AD49BF7003469E6 /* TextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldButton.swift; sourceTree = "<group>"; };
 		BB7987082AD49BFE003469E6 /* MediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaButton.swift; sourceTree = "<group>"; };
 		BB7C2C7A2A3D258100C730D3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BB7E2FD82BF1477B002E5689 /* MDConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDConverter.swift; sourceTree = "<group>"; };
 		BB8103E72BD42CC9005D08BD /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
 		BB8103EB2BD467FD005D08BD /* PremiumBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBadge.swift; sourceTree = "<group>"; };
 		BB8103EE2BD4782B005D08BD /* LIAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPView.swift; sourceTree = "<group>"; };
@@ -546,7 +547,6 @@
 		BB9DF5AD28E0664C00AC988D /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		BB9DF5B728E0682400AC988D /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		BBA1F02A2AC1C1AF0060B111 /* ContentObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObject.swift; sourceTree = "<group>"; };
-		BBA6AF5B2BF0299400510EAC /* FreeTrialAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeTrialAlert.swift; sourceTree = "<group>"; };
 		BBA803D429BE9CB2005F4031 /* MediaImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImport.swift; sourceTree = "<group>"; };
 		BBA808582AC1F74500F9DFCA /* FolderSortingValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSortingValue.swift; sourceTree = "<group>"; };
 		BBA8085A2AC1F84D00F9DFCA /* ObjectViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewToolbar.swift; sourceTree = "<group>"; };
@@ -667,7 +667,6 @@
 			children = (
 				BB047CDD2AC0C1FF0027409F /* FileSystemView.swift */,
 				BBCDBFB62AC8A9EF00EF825F /* ContentObjectLink.swift */,
-				BBA6AF5B2BF0299400510EAC /* FreeTrialAlert.swift */,
 				BB4F66CE2AC4B9CE00C4B34E /* ObjectView */,
 				BB4F66CF2AC4BA1C00C4B34E /* FolderView */,
 				BB9BFB6C2AC780B500255293 /* ActionViews */,
@@ -1145,6 +1144,7 @@
 				BB30C2EF2BCB0DFA009D69CA /* StoreViewModel.swift */,
 				BB96F5B22B61C0460044B200 /* PDFManager.swift */,
 				BB49EE072BC752EC004CB803 /* PositionManager.swift */,
+				BB7E2FD82BF1477B002E5689 /* MDConverter.swift */,
 				BBBCACB22A25461900C23B2C /* CalculatorModel.swift */,
 			);
 			path = ViewModels;
@@ -1861,6 +1861,7 @@
 				BBBCF5CB291DA4FB00A7C43C /* CoreGraphics.swift in Sources */,
 				BB57051A2B34FDE300F84B45 /* ClipboardMethods.swift in Sources */,
 				BB84DD132B8E781E002C2A9A /* ShapeItemVContainer.swift in Sources */,
+				BB7E2FD92BF1477B002E5689 /* MDConverter.swift in Sources */,
 				BB84DD202B8E7DDD002C2A9A /* VUModifier.swift in Sources */,
 				BB929B8028E5076D00DA4538 /* NoteSecondaryToolbar.swift in Sources */,
 				BB8586972AE1E3B000C5875C /* ArrangeContainerView.swift in Sources */,
@@ -1892,7 +1893,6 @@
 				BBC7B9792A1988FA00D496CB /* DragAnchor.swift in Sources */,
 				BB4A93E12AAF559800C3AED6 /* ScheduleView.swift in Sources */,
 				BB06A2F32BEC381A007B118A /* IntroductionView.swift in Sources */,
-				BBA6AF5C2BF0299400510EAC /* FreeTrialAlert.swift in Sources */,
 				BBBB7E092A2693FD00155C8A /* CalculatorView.swift in Sources */,
 				BB96F5AC2B61B4FB0044B200 /* ShareQRPDFMethods.swift in Sources */,
 				BB96F5AA2B608DF90044B200 /* OverviewContainerView.swift in Sources */,
