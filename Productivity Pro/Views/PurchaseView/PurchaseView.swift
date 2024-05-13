@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct PurchaseView: View {
+    @Environment(\.dismiss) var dismiss
+    let onDismiss: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button("cancel") { 
+            onDismiss()
+            dismiss()
+        }
     }
 }
 
 #Preview {
-    PurchaseView()
+    PurchaseView() {}
 }

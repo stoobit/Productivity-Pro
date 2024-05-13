@@ -57,7 +57,7 @@ struct CreateNoteView: View {
             }
         }
         .sheet(isPresented: $purchaseView, content: {
-            PurchaseView()
+            PurchaseView() {}
         })
         .sheet(isPresented: $selectTemplate) {
             TemplateView(

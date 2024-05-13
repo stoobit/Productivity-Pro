@@ -17,6 +17,9 @@
         }
       }
     },
+    " und tippe dann auf " : {
+
+    },
     ", " : {
       "localizations" : {
         "en" : {
@@ -26,6 +29,18 @@
           }
         }
       }
+    },
+    ", um deinen Stundenplan zu bearbeiten." : {
+
+    },
+    ", um eine neue Aufgabe hinzuzufügen." : {
+
+    },
+    ", um eine neue Notiz zu erstellen." : {
+
+    },
+    ", um eine neues Fach hinzuzufügen." : {
+
     },
     "%@" : {
       "localizations" : {
@@ -615,6 +630,9 @@
         }
       }
     },
+    "cancel" : {
+
+    },
     "Cancel" : {
       "localizations" : {
         "en" : {
@@ -1027,7 +1045,7 @@
         }
       }
     },
-    "Du hast noch keine Notiz erstellet." : {
+    "Du hast noch keine Notiz erstellt." : {
 
     },
     "Du hast noch keine Notizen erstellt." : {
@@ -1438,9 +1456,6 @@
         }
       }
     },
-    "Hello, World!" : {
-
-    },
     "Help" : {
       "localizations" : {
         "en" : {
@@ -1611,6 +1626,9 @@
           }
         }
       }
+    },
+    "Klasse" : {
+
     },
     "Kreis" : {
       "localizations" : {
@@ -2610,13 +2628,7 @@
         }
       }
     },
-    "Tippe auf + um eine neue Aufgabe hinzuzufügen." : {
-
-    },
-    "Tippe auf + um eine neues Fach hinzuzufügen." : {
-
-    },
-    "Tippe oben rechts auf \"Bearbeiten\", um deinen Stundenplan zu erstellen." : {
+    "Tippe auf " : {
 
     },
     "Titel" : {
@@ -2761,7 +2773,7 @@
         }
       }
     },
-    "Wähle zuerst deine Jahrgangsstufe und tippe dann auf +, um eine neue Notiz zu erstellen." : {
+    "Wähle zuerst deine Klasse " : {
 
     },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht." : {

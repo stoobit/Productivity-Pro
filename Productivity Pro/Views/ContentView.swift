@@ -13,7 +13,9 @@ import UserNotifications
 
 struct ContentView: View {
     @Environment(\.requestReview) var requestReview
+    
     @AppStorage("ppisunlocked") var isUnlocked: Bool = false
+    @AppStorage("ppDateOpened") var date: Date = .init()
     
     @Query(animation: .bouncy)
     var contentObjects: [ContentObject]
@@ -22,6 +24,7 @@ struct ContentView: View {
     @State var subviewManager: SubviewManager = .init()
     @State var storeVM: StoreViewModel = .init()
     
+    @State var purchaseView: Bool = false
     @State var selectedTab: Int = 0
     
     var body: some View {
@@ -46,7 +49,10 @@ struct ContentView: View {
                    
                 ScheduleViewContainer()
                     .toolbarBackground(.visible, for: .tabBar)
-                    .onAppear { mixpanel("Schedule View") }
+                    .onAppear {
+                        mixpanel("Schedule View")
+                        showPurchase()
+                    }
                     .tag(1)
                     .tabItem {
                         Label("Stundenplan", systemImage: "calendar")
@@ -56,7 +62,8 @@ struct ContentView: View {
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         mixpanel("Tasks View")
-                        #warning("Notification Alert")
+                        showPurchase()
+                        
                         askNotificationPermission()
                     }
                     .tag(2)
@@ -109,6 +116,10 @@ struct ContentView: View {
         .sheet(isPresented: $subviewManager.shareQRPDFView) {
             ShareQRPDFView()
         }
+        .sheet(isPresented: $purchaseView) {
+            PurchaseView { dismiss() }
+                .interactiveDismissDisabled()
+        }
     }
     
     func recordContentObjects(_ old: Int, _ new: Int) {
@@ -121,6 +132,22 @@ struct ContentView: View {
             #else
             requestReview()
             #endif
+        }
+    }
+    
+    func dismiss() {
+        if isUnlocked == false {
+            withAnimation(.bouncy) {
+                selectedTab = 0
+            }
+        }
+    }
+    
+    func showPurchase() {
+        if Date() > Date.freeTrial(date) && isUnlocked == false {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                purchaseView = true
+            }
         }
     }
     

@@ -31,14 +31,21 @@ struct ScheduleViewContainer: View {
             )
             .overlay {
                 if empty() {
-                    ContentUnavailableView(
-                        "Du hast noch keinen Stundenplan erstellt.",
-                        systemImage: "calendar",
-                        description: Text("Tippe oben rechts auf \"Bearbeiten\", um deinen Stundenplan zu erstellen.")
-                    )
-                    .foregroundStyle(
-                        Color.primary, Color.accentColor, Color.secondary
-                    )
+                    ContentUnavailableView(label: {
+                        Label(
+                            "Du hast noch keinen Stundenplan erstellt.",
+                            systemImage: "calendar"
+                        )
+                        .foregroundStyle(Color.primary, Color.accentColor)
+                    }, description: {
+                        Group {
+                            Text("Tippe auf ") +
+                                Text(Image(systemName: "pencil"))
+                                .foregroundStyle(Color.accentColor) +
+                                Text(", um deinen Stundenplan zu bearbeiten.")
+                        }
+                        .foregroundStyle(Color.primary)
+                    })
                     .transition(.opacity)
                 }
             }

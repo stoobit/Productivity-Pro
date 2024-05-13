@@ -70,14 +70,21 @@ struct SubjectSettings: View {
                 }
                 .overlay {
                     if subjects.value.isEmpty {
-                        ContentUnavailableView(
-                            "Du hast noch keine Fächer erstellt.",
-                            systemImage: "tray.2",
-                            description: Text("Tippe auf + um eine neues Fach hinzuzufügen.")
-                        )
-                        .foregroundStyle(
-                            Color.primary, Color.accentColor, Color.secondary
-                        )
+                        ContentUnavailableView(label: {
+                            Label(
+                                "Du hast noch keine Fächer erstellt.",
+                                systemImage: "tray.2"
+                            )
+                            .foregroundStyle(Color.primary, Color.accentColor)
+                        }, description: {
+                            Group {
+                                Text("Tippe auf ") +
+                                    Text(Image(systemName: "plus"))
+                                    .foregroundStyle(Color.accentColor) +
+                                    Text(", um eine neues Fach hinzuzufügen.")
+                            }
+                            .foregroundStyle(Color.primary)
+                        })
                         .transition(.asymmetric(
                             insertion: .opacity, removal: .identity
                         ))

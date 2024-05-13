@@ -18,43 +18,33 @@ struct FileSystemView: View {
                 contentObjects: contentObjects
             )
             .overlay {
-                Menu(content: {
-                    Picker("", selection: $grade) {
-                        ForEach(5 ... 13, id: \.self) {
-                            Text("\($0). Klasse")
-                        }
-                    }.labelsHidden()
-                }) {
-                    Text("\(grade). Klasse")
-                        .foregroundStyle(Color.accentColor)
-                }
-                .frame(width: 110, height: 45)
-                .background(.background)
-                .clipShape(.rect(cornerRadius: 11.5))
-                .padding(5)
-                .background {
-                    RoundedRectangle(cornerRadius: 14)
-                        .foregroundStyle(.thinMaterial)
-                }
-                .frame(
-                    maxWidth: .infinity, maxHeight: .infinity,
-                    alignment: .bottomLeading
-                )
-                .padding(10)
-
                 if contentObjects.filter({
                     $0.grade == grade && $0.inTrash == false
                 }).isEmpty {
-                    ContentUnavailableView(
-                        "Du hast noch keine Notiz erstellet.",
-                        systemImage: "doc.text",
-                        description: Text("Wähle zuerst deine Jahrgangsstufe und tippe dann auf +, um eine neue Notiz zu erstellen.")
-                    )
-                    .foregroundStyle(Color.primary, Color.accentColor)
-                    .accentColor(.accentColor)
-                    .transition(.opacity)
+                    ContentUnavailableView(label: {
+                        Label(
+                            "Du hast noch keine Notiz erstellt.",
+                            systemImage: "doc.text"
+                        )
+                        .foregroundStyle(Color.primary, Color.accentColor)
+                    }, description: {
+                        Group {
+                            Text("Wähle zuerst deine Klasse ") +
+                                Text(Image(systemName: "list.bullet"))
+                                .foregroundStyle(Color.accentColor) +
+                                Text(" und tippe dann auf ") +
+                                Text(Image(systemName: "plus"))
+                                .foregroundStyle(Color.accentColor) +
+                                Text(", um eine neue Notiz zu erstellen.")
+                        }
+                        .foregroundStyle(Color.primary)
+                    })
+                    .transition(.asymmetric(
+                        insertion: .opacity, removal: .identity
+                    ))
                 }
             }
+            .animation(.bouncy, value: grade)
         }
     }
 }

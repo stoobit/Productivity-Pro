@@ -14,6 +14,8 @@ struct FolderViewToolbar: ToolbarContent {
     
     var parent: String
     
+    @AppStorage("ppgrade") var grade: Int = 5
+    
     @AppStorage("ppsorttype")
     var sortType: SortingValue = .title
     
@@ -76,22 +78,42 @@ struct FolderViewToolbar: ToolbarContent {
                     Text("Name").tag(SortingValue.title)
                     Text("Erstellt").tag(SortingValue.created)
                 }
-                
+                    
                 Button(action: { isReverse.toggle() }) {
                     Label(
                         isReverse ? "Absteigend" : "Aufsteigend",
                         systemImage: isReverse ? "chevron.down" : "chevron.up"
                     )
                 }
-                
+                    
                 Section {
                     Toggle("Gruppieren", isOn: $typeSorting)
                     Toggle("Datum anzeigen", isOn: $showDate)
                 }
-                
+                    
+                if parent == "root" {
+                    Menu("Klasse") {
+                        Section("Klasse") {
+                            Picker("", selection: $grade) {
+                                ForEach(5 ... 13, id: \.self) {
+                                    Text("\($0). Klasse")
+                                }
+                            }
+                            .labelsHidden()
+                        }
+                    }
+                }
             }) {
                 Label("Sortieren", systemImage: "list.bullet")
             }
+        }
+    }
+    
+    func image() -> String {
+        if grade < 10 {
+            return "0\(grade).circle"
+        } else {
+            return "\(grade).circle"
         }
     }
 }

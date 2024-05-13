@@ -47,7 +47,7 @@ struct HomeworkList: View {
         .scrollContentBackground(.hidden)
         .sheet(isPresented: $presentAdd, content: {
             HAdditView(
-                contentObjects: contentObjects, view: .add, 
+                contentObjects: contentObjects, view: .add,
                 selected: .constant(Homework())
             )
             .interactiveDismissDisabled()
@@ -65,10 +65,21 @@ struct HomeworkList: View {
     
     @ViewBuilder func DoneView() -> some View {
         if homeworkTasks.isEmpty {
-            ContentUnavailableView(
-                "Du hast alles erledigt.", systemImage: "checkmark.circle", description: Text("Tippe auf + um eine neue Aufgabe hinzuzufügen.")
-            )
-            .foregroundStyle(Color.primary, .green)
+            ContentUnavailableView(label: {
+                Label(
+                    "Du hast alles erledigt.",
+                    systemImage: "checkmark.circle"
+                )
+                .foregroundStyle(Color.primary, Color.green)
+            }, description: {
+                Group {
+                    Text("Tippe auf ") +
+                        Text(Image(systemName: "plus"))
+                        .foregroundStyle(Color.accentColor) +
+                        Text(", um eine neue Aufgabe hinzuzufügen.")
+                }
+                .foregroundStyle(Color.primary)
+            })
             .transition(
                 .asymmetric(insertion: .opacity, removal: .identity)
             )
