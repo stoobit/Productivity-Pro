@@ -13,6 +13,11 @@ struct BackupSettings: View {
     @Environment(\.modelContext) var context
     @Environment(ToolManager.self) var toolManager
     
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
+    @AppStorage("ppDateOpened") var date: Date = .init()
+    
+    @State var purchaseView: Bool = false
+    
     @Query(
         FetchDescriptor(
             predicate: #Predicate<ContentObject> {
@@ -120,6 +125,19 @@ struct BackupSettings: View {
                     Label("Zurück", systemImage: "chevron.left")
                 }
             }
+        }
+        .onAppear {
+            showPurchase()
+        }
+        .sheet(isPresented: $purchaseView) {
+            PurchaseView(onDismiss: { dismiss() })
+                .interactiveDismissDisabled()
+        }
+    }
+    
+    func showPurchase() {
+        if Date() > Date.freeTrial(date) && isUnlocked == false {
+            purchaseView = true
         }
     }
     

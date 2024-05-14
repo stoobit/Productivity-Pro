@@ -9,7 +9,12 @@ import SwiftUI
 
 struct AppIconSettings: View {
     @Environment(\.dismiss) var dismiss
-    @AppStorage("appicon selection") var selection: String = "AppDark"
+    @AppStorage("appicon selection") var selection: String = "AppIcon"
+    
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
+    @AppStorage("ppDateOpened") var date: Date = .init()
+    
+    @State var purchaseView: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -51,8 +56,21 @@ struct AppIconSettings: View {
                 UIApplication.shared.setAlternateIconName(selection)
             }
         }
+        .onAppear {
+            showPurchase()
+        }
+        .sheet(isPresented: $purchaseView) {
+            PurchaseView(onDismiss: { dismiss() })
+                .interactiveDismissDisabled()
+        }
     }
     
+    func showPurchase() {
+        if Date() > Date.freeTrial(date) && isUnlocked == false {
+            purchaseView = true
+        }
+    }
+
     @ViewBuilder func Icon(_ image: String) -> some View {
         Image(image)
             .interpolation(.high)

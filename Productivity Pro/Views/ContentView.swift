@@ -23,6 +23,7 @@ struct ContentView: View {
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()
     @State var storeVM: StoreViewModel = .init()
+    @State var badgeModel: BadgeModel = .init()
     
     @State var purchaseView: Bool = false
     @State var selectedTab: Int = 0
@@ -42,6 +43,7 @@ struct ContentView: View {
                     .onAppear {
                         mixpanel("Note View")
                     }
+                    .overlay { PremiumBadge(lockedBadge: true) }
                     .tag(0)
                     .tabItem {
                         Label("Notizen", systemImage: "doc.fill")
@@ -53,6 +55,7 @@ struct ContentView: View {
                         mixpanel("Schedule View")
                         showPurchase()
                     }
+                    .overlay { PremiumBadge() }
                     .tag(1)
                     .tabItem {
                         Label("Stundenplan", systemImage: "calendar")
@@ -66,6 +69,7 @@ struct ContentView: View {
                         
                         askNotificationPermission()
                     }
+                    .overlay { PremiumBadge() }
                     .tag(2)
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
@@ -74,6 +78,7 @@ struct ContentView: View {
                 PPSettingsView()
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear { mixpanel("Settings View") }
+                    .overlay { PremiumBadge() }
                     .tag(4)
                     .tabItem {
                         Label("Einstellungen", systemImage: "gearshape.2.fill")
@@ -101,6 +106,7 @@ struct ContentView: View {
             }
             .animation(.bouncy, value: toolManager.showProgress)
         }
+        .environment(badgeModel)
         .onAppear {
             review()
         }
@@ -145,9 +151,7 @@ struct ContentView: View {
     
     func showPurchase() {
         if Date() > Date.freeTrial(date) && isUnlocked == false {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                purchaseView = true
-            }
+            purchaseView = true
         }
     }
     

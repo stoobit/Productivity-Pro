@@ -17,6 +17,7 @@
 		BB06A2F02BEBDC42007B118A /* IntroductionLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06A2EF2BEBDC42007B118A /* IntroductionLabelView.swift */; };
 		BB06A2F32BEC381A007B118A /* IntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06A2F22BEC381A007B118A /* IntroductionView.swift */; };
 		BB073A6F2AB8CA4800C80B59 /* SecondaryPageActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */; };
+		BB07D04C2BF3D0D4006D5780 /* PremiumBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07D04B2BF3D0D4006D5780 /* PremiumBadge.swift */; };
 		BB07E7BA2A4E2F4600BA2DB4 /* DrawingViewMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */; };
 		BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */; };
 		BB0BE2072925A7C200F4004A /* BottomOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0BE2062925A7C200F4004A /* BottomOffset.swift */; };
@@ -154,7 +155,6 @@
 		BB7E2FDC2BF1760E002E5689 /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E2FDB2BF1760E002E5689 /* PurchaseView.swift */; };
 		BB7E2FDE2BF17BEC002E5689 /* ContentViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E2FDD2BF17BEC002E5689 /* ContentViewContainer.swift */; };
 		BB8103E82BD42CC9005D08BD /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8103E72BD42CC9005D08BD /* AIChatView.swift */; };
-		BB8103EC2BD467FD005D08BD /* PremiumBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8103EB2BD467FD005D08BD /* PremiumBadge.swift */; };
 		BB8103EF2BD4782B005D08BD /* LIAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8103EE2BD4782B005D08BD /* LIAPView.swift */; };
 		BB82B5AA2B2471130089D423 /* StackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5A92B2471130089D423 /* StackingManager.swift */; };
 		BB82B5AC2B247C420089D423 /* CopyPastePasser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */; };
@@ -347,6 +347,7 @@
 		BB06A2EF2BEBDC42007B118A /* IntroductionLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionLabelView.swift; sourceTree = "<group>"; };
 		BB06A2F22BEC381A007B118A /* IntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionView.swift; sourceTree = "<group>"; };
 		BB073A6E2AB8CA4800C80B59 /* SecondaryPageActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryPageActions.swift; sourceTree = "<group>"; };
+		BB07D04B2BF3D0D4006D5780 /* PremiumBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBadge.swift; sourceTree = "<group>"; };
 		BB07E7B92A4E2F4600BA2DB4 /* DrawingViewMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewMethods.swift; sourceTree = "<group>"; };
 		BB0BE2042925A64400F4004A /* ScrollViewOffset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		BB0BE2062925A7C200F4004A /* BottomOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomOffset.swift; sourceTree = "<group>"; };
@@ -488,7 +489,6 @@
 		BB7E2FDB2BF1760E002E5689 /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 		BB7E2FDD2BF17BEC002E5689 /* ContentViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewContainer.swift; sourceTree = "<group>"; };
 		BB8103E72BD42CC9005D08BD /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
-		BB8103EB2BD467FD005D08BD /* PremiumBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBadge.swift; sourceTree = "<group>"; };
 		BB8103EE2BD4782B005D08BD /* LIAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPView.swift; sourceTree = "<group>"; };
 		BB82B5A92B2471130089D423 /* StackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackingManager.swift; sourceTree = "<group>"; };
 		BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPastePasser.swift; sourceTree = "<group>"; };
@@ -1163,6 +1163,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7E2FDB2BF1760E002E5689 /* PurchaseView.swift */,
+				BB07D04B2BF3D0D4006D5780 /* PremiumBadge.swift */,
 			);
 			path = PurchaseView;
 			sourceTree = "<group>";
@@ -1507,7 +1508,6 @@
 				BB15F2202A6968E400223C92 /* ColorPickerHelper.swift */,
 				BBD3C4202A54DA46002BFFCF /* View.swift */,
 				BBDC62712905EED800364B57 /* IndicatorText.swift */,
-				BB8103EB2BD467FD005D08BD /* PremiumBadge.swift */,
 				BB0BE2062925A7C200F4004A /* BottomOffset.swift */,
 				BBCB2AEC294E800D00C68B72 /* DragHelper.swift */,
 				BBB02B582962537C001DCB04 /* Triangle.swift */,
@@ -1842,6 +1842,7 @@
 				BBDCF5DA299E9506004C99AE /* Hexagon.swift in Sources */,
 				BB3525B32908673800D35790 /* Array.swift in Sources */,
 				BB4932F42B84EC310066E27B /* ImportTip.swift in Sources */,
+				BB07D04C2BF3D0D4006D5780 /* PremiumBadge.swift in Sources */,
 				BB929B8228E5077800DA4538 /* NoteTitleMenu.swift in Sources */,
 				BB5705252B35FD3800F84B45 /* VFlipModifier.swift in Sources */,
 				BBF930732A67437900AD3958 /* Color.swift in Sources */,
@@ -2088,7 +2089,6 @@
 				BB0BE2052925A64400F4004A /* ScrollViewOffset.swift in Sources */,
 				BBCDFDE92947DB2D000C545D /* RuledLargeView.swift in Sources */,
 				BBF5FE052AAE66D30081C4FE /* AddSubject.swift in Sources */,
-				BB8103EC2BD467FD005D08BD /* PremiumBadge.swift in Sources */,
 				BB27FED828EA419300459334 /* OverviewView.swift in Sources */,
 				BB3F75FB2997F38100C0F140 /* BorderStrokeStyle.swift in Sources */,
 				BB4A93CB2AAEFEC600C3AED6 /* SFSymbol.swift in Sources */,
