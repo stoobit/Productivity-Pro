@@ -14,6 +14,8 @@ struct PremiumBadge: View {
     @AppStorage("ppDateOpened") var date: Date = .init()
 
     @State var purchaseView: Bool = false
+    @State var animate: Bool = true
+    
     var lockedBadge: Bool = false
 
     var body: some View {
@@ -26,7 +28,7 @@ struct PremiumBadge: View {
                         Text(".")
                 )
                 .transition(
-                    .push(from: .top)
+                    animate ? .push(from: .top) : .identity
                 )
             } else if isUnlocked == false && badge.isVisible && lockedBadge {
                 Badge(
@@ -34,7 +36,7 @@ struct PremiumBadge: View {
                     text: Text("Schalte Premium frei, um weiterhin alle Features nutzen zu können.")
                 )
                 .transition(
-                    .push(from: .top)
+                    animate ? .push(from: .top) : .identity
                 )
             }
         }
@@ -48,6 +50,8 @@ struct PremiumBadge: View {
         .sheet(isPresented: $purchaseView, content: {
             PurchaseView() {}
         })
+        .onAppear { animate = true }
+        .onDisappear { animate = false }
     }
 
     @ViewBuilder func Badge(title: Text, text: Text) -> some View {
