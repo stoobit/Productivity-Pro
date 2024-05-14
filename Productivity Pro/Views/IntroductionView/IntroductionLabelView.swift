@@ -72,7 +72,7 @@ struct IntroductionLabelView: View {
     }
 
     func person() {
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             if memoji < memojis.count - 1 {
                 memoji += 1
             } else {

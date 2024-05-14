@@ -55,7 +55,7 @@ struct TrashView: View {
             }
             
             Button("Entleeren", role: .destructive) {
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     for filteredObject in filteredObjects {
                         context.delete(filteredObject)
                     }

@@ -57,7 +57,7 @@ struct OverviewRow: View {
                     )
                     .padding(7)
                     .onTapGesture {
-                        withAnimation(.bouncy) {
+                        withAnimation(.smooth(duration: 0.2)) {
                             page.isBookmarked.toggle()
                             update()
                         }

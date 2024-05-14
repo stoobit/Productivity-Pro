@@ -24,7 +24,7 @@ struct PremiumButton: View {
             .productViewStyle(.compact)
             .onInAppPurchaseCompletion { _, result in
                 if case .success(.success) = result {
-                    withAnimation {
+                    withAnimation(.smooth(duration: 0.2)) {
                         isUnlocked = true
                     }
                 }

@@ -44,7 +44,7 @@ struct FileSystemView: View {
                     ))
                 }
             }
-            .animation(.bouncy, value: grade)
+            .animation(.smooth(duration: 0.2), value: grade)
         }
     }
 }

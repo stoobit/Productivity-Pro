@@ -54,7 +54,7 @@ struct HAdditView: View {
                         }
                         .frame(width: 40, height: 40)
                         .transition(.blurReplace())
-                        .animation(.bouncy, value: subject)
+                        .animation(.smooth(duration: 0.2), value: subject)
                         
                         Picker("Fach", selection: $subject) {
                             Section {

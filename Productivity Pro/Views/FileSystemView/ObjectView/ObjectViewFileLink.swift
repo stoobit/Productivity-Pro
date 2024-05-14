@@ -33,7 +33,7 @@ struct ObjectViewFileLink: View {
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             if swipeAction {
                 Button(role: .destructive, action: {
-                    withAnimation(.bouncy) {
+                    withAnimation(.smooth(duration: 0.2)) {
                         object.isPinned.toggle()
                     }
                 }) {
@@ -77,7 +77,7 @@ struct ObjectViewFileLink: View {
             }
             
             Button(role: .destructive, action: {
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     delete()
                 }
             }) {
@@ -119,7 +119,7 @@ struct ObjectViewFileLink: View {
                 index += 1
             }
             
-            withAnimation(.bouncy) {
+            withAnimation(.smooth(duration: 0.2)) {
                 object.parent = selectedObject
                 object.title = value
             }

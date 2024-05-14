@@ -17,7 +17,7 @@ struct ContentView: View {
     @AppStorage("ppisunlocked") var isUnlocked: Bool = false
     @AppStorage("ppDateOpened") var date: Date = .init()
     
-    @Query(animation: .bouncy)
+    @Query(animation: .smooth(duration: 0.2))
     var contentObjects: [ContentObject]
     
     @State var toolManager: ToolManager = .init()
@@ -104,7 +104,7 @@ struct ContentView: View {
                         .transition(.push(from: .bottom))
                 }
             }
-            .animation(.bouncy, value: toolManager.showProgress)
+            .animation(.smooth(duration: 0.2), value: toolManager.showProgress)
         }
         .environment(badgeModel)
         .onAppear {
@@ -143,7 +143,7 @@ struct ContentView: View {
     
     func dismiss() {
         if isUnlocked == false {
-            withAnimation(.bouncy) {
+            withAnimation(.smooth(duration: 0.2)) {
                 selectedTab = 0
             }
         }

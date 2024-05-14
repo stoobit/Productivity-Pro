@@ -41,12 +41,12 @@ struct OverviewView: View {
                     .ignoresSafeArea(.all)
             }
             .onChange(of: contentObject.note?.pages) {
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     sort()
                 }
             }
             .onChange(of: filter) {
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     sort()
                 }
             }

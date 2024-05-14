@@ -10,7 +10,7 @@ import SwiftUI
 
 extension LIAPView {
     func addBook(book: PPBookModel) {
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             let contentObject = ContentObject(
                 id: UUID(),
                 title: book.title,
@@ -44,7 +44,7 @@ extension LIAPView {
     }
     
     func addVocabulary() {
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             let contentObject = ContentObject(
                 id: UUID(),
                 title: "Latein Vokabeln",

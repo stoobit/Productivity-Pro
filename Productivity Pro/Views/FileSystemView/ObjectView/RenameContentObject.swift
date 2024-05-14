@@ -36,7 +36,7 @@ struct RenameContentObjectView: ViewModifier {
     }
     
     func editFolder() {
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             if title.trimmingCharacters(in: .whitespaces) != "" {
                 let const: String = title
                 var index: Int = 1

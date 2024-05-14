@@ -10,7 +10,7 @@ import VisionKit
 
 extension CreateNoteView {
     func lastTemplate() {
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             let object = ContentObject(
                 id: UUID(),
                 title: getTitle(),
@@ -37,7 +37,7 @@ extension CreateNoteView {
         _ isPortrait: Bool, _ template: String, _ color: String,
         _ title: String?
     ) {
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             let title = title == nil ? getTitle() : title!
             
             let object = ContentObject(
@@ -68,7 +68,7 @@ extension CreateNoteView {
     func scannedDocument(with result: Result<VNDocumentCameraScan, any Error>) {
         toolManager.showProgress = true
         
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             switch result {
             case .success(let scan):
                 DispatchQueue.global(qos: .userInitiated).sync {

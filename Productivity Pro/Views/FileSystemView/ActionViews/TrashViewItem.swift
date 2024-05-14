@@ -68,7 +68,7 @@ struct TrashViewItem: View {
                 index += 1
             }
             
-            withAnimation(.bouncy) {
+            withAnimation(.smooth(duration: 0.2)) {
                 object.inTrash = false
                 object.parent = selectedParent
                 object.title = value

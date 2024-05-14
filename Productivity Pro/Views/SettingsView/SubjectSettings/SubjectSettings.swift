@@ -94,7 +94,7 @@ struct SubjectSettings: View {
                         ))
                     }
                 }
-                .animation(.bouncy, value: subjects.value.count)
+                .animation(.easeInOut(duration: 0.1), value: subjects.value.count)
             }
         }
         .onAppear {

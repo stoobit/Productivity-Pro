@@ -25,7 +25,7 @@ struct SearchView: View {
             }
         }
         .scrollContentBackground(.hidden)
-        .animation(.bouncy, value: searchResults)
+        .animation(.smooth(duration: 0.2), value: searchResults)
         .environment(\.defaultMinListRowHeight, 30)
         .navigationTitle("Suchen")
         .navigationBarTitleDisplayMode(.large)

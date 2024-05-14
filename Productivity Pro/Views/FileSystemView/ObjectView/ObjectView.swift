@@ -100,11 +100,11 @@ struct ObjectView: View {
                     }
                 }
             }
-            .animation(.bouncy, value: grade)
-            .animation(.bouncy, value: sortType)
-            .animation(.bouncy, value: typeSorting)
-            .animation(.bouncy, value: showDate)
-            .animation(.bouncy, value: isReverse)
+            .animation(.smooth(duration: 0.2), value: grade)
+            .animation(.smooth(duration: 0.2), value: sortType)
+            .animation(.smooth(duration: 0.2), value: typeSorting)
+            .animation(.smooth(duration: 0.2), value: showDate)
+            .animation(.smooth(duration: 0.2), value: isReverse)
             .scrollContentBackground(.hidden)
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle(title)
@@ -134,7 +134,7 @@ struct ObjectView: View {
             allowedContentTypes: [.pro, .pronote, .pdf],
             allowsMultipleSelection: true
         ) { result in
-            withAnimation(.bouncy) {
+            withAnimation(.smooth(duration: 0.2)) {
                 importFile(result: result)
             }
         }

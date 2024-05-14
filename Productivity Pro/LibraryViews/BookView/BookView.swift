@@ -120,7 +120,7 @@ struct BookView: View {
                 }
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        withAnimation(.bouncy) {
+                        withAnimation(.smooth(duration: 0.2)) {
                             showCover = false
                         }
                     }

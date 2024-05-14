@@ -31,7 +31,7 @@ struct ObjectViewVocabularyLink: View {
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             if swipeAction {
                 Button(role: .destructive, action: {
-                    withAnimation(.bouncy) {
+                    withAnimation(.smooth(duration: 0.2)) {
                         object.isPinned.toggle()
                     }
                 }) {
@@ -64,7 +64,7 @@ struct ObjectViewVocabularyLink: View {
             }
             
             Button(role: .destructive, action: {
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     delete()
                 }
             }) {
@@ -107,7 +107,7 @@ struct ObjectViewVocabularyLink: View {
                 index += 1
             }
             
-            withAnimation(.bouncy) {
+            withAnimation(.smooth(duration: 0.2)) {
                 object.parent = selectedObject
                 object.title = value
             }

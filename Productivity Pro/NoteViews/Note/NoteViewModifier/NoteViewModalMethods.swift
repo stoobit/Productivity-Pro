@@ -22,7 +22,7 @@ extension NoteViewSheet {
         
         contentObject.note?.pages?.append(page)
         
-        withAnimation {
+        withAnimation(.smooth(duration: 0.2)) {
             toolManager.activePage = page
             pvModel.index += 1
         }
@@ -83,7 +83,7 @@ extension NoteViewSheet {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
                     toolManager.showProgress = false
                     
-                    withAnimation {
+                    withAnimation(.smooth(duration: 0.2)) {
                         if let selectedPage = selectedPage {
                             toolManager.activePage = selectedPage
                         }
@@ -157,7 +157,7 @@ extension NoteViewSheet {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
                     toolManager.showProgress = false
                     
-                    withAnimation {
+                    withAnimation(.smooth(duration: 0.2)) {
                         if let selectedPage = selectedPage {
                             toolManager.activePage = selectedPage
                         }

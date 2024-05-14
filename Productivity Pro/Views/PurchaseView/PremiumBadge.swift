@@ -50,7 +50,6 @@ struct PremiumBadge: View {
         .sheet(isPresented: $purchaseView, content: {
             PurchaseView() {}
         })
-        .onAppear { animate = true }
         .onDisappear { animate = false }
     }
 
@@ -78,7 +77,7 @@ struct PremiumBadge: View {
             }
 
             Button("Schließen", systemImage: "xmark") {
-                withAnimation(.bouncy) { badge.isVisible = false }
+                withAnimation(.smooth(duration: 0.2)) { badge.isVisible = false }
             }
             .labelStyle(.iconOnly)
             .foregroundStyle(Color.secondary)

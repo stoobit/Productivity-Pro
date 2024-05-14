@@ -30,7 +30,7 @@ struct ObjectViewFolderLink: View {
         }
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             Button(role: .destructive, action: {
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     object.isPinned.toggle()
                 }
             }) {
@@ -66,7 +66,7 @@ struct ObjectViewFolderLink: View {
             }
             
             Button(role: .destructive, action: {
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     delete()
                 }
             }) {
@@ -108,7 +108,7 @@ struct ObjectViewFolderLink: View {
                 index += 1
             }
             
-            withAnimation(.bouncy) {
+            withAnimation(.smooth(duration: 0.2)) {
                 object.parent = selectedObject
                 object.title = value
             }

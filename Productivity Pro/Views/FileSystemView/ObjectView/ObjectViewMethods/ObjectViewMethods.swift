@@ -137,7 +137,7 @@ extension ObjectView {
     func importPDF(with result: Result<[URL], any Error>) {
         toolManager.showProgress = true
         
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             switch result {
             case .success(let urls):
                 DispatchQueue.global(qos: .userInitiated).sync {

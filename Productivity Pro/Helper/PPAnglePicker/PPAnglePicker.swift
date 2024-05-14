@@ -97,7 +97,7 @@ struct PPAnglePickerView: View {
                         angleState = String(degrees)
                     }
                 
-                Button(action: { withAnimation(.bouncy) { buttons.toggle() } }) {
+                Button(action: { withAnimation(.smooth(duration: 0.2)) { buttons.toggle() } }) {
                     Image(systemName: "slider.horizontal.2.rectangle.and.arrow.triangle.2.circlepath")
                         .imageScale(.large)
                 }

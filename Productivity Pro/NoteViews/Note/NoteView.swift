@@ -124,7 +124,7 @@ struct NoteView: View {
                 pvModel.index = pages.last ?? 0
                 toolManager.activePage = self.pages[pvModel.index]
                 
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     pvModel.didAppear = true
                 }
             }

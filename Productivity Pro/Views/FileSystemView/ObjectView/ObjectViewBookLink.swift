@@ -34,7 +34,7 @@ struct ObjectViewBookLink: View {
         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
             if swipeAction {
                 Button(role: .destructive, action: {
-                    withAnimation(.bouncy) {
+                    withAnimation(.smooth(duration: 0.2)) {
                         object.isPinned.toggle()
                     }
                 }) {
@@ -67,7 +67,7 @@ struct ObjectViewBookLink: View {
             }
             
             Button(role: .destructive, action: {
-                withAnimation(.bouncy) {
+                withAnimation(.smooth(duration: 0.2)) {
                     delete()
                     
                     let url = PDFBookView.url(for: object.book!)
@@ -118,7 +118,7 @@ struct ObjectViewBookLink: View {
                 index += 1
             }
             
-            withAnimation(.bouncy) {
+            withAnimation(.smooth(duration: 0.2)) {
                 object.parent = selectedObject
                 object.title = value
             }

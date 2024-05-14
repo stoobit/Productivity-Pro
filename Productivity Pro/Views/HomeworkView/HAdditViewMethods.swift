@@ -10,7 +10,7 @@ import SwiftUI
 extension HAdditView {
     func edit() {
         Task { @MainActor in
-            withAnimation(.bouncy) {
+            withAnimation(.smooth(duration: 0.2)) {
                 selected.title = title
                 selected.subject = subject
                 selected.homeworkDescription = description

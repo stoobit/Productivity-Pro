@@ -14,10 +14,10 @@ struct HomeworkList: View {
     @Query(
         FetchDescriptor(
             sortBy: [SortDescriptor(\Homework.title, order: .forward)]
-        ), animation: .bouncy
+        ), animation: .smooth(duration: 0.2)
     ) var homeworkTasks: [Homework]
     
-    @Query(animation: .bouncy) var contentObjects: [ContentObject]
+    @Query(animation: .smooth(duration: 0.2)) var contentObjects: [ContentObject]
     
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<[Subject]> = .init(value: .init())

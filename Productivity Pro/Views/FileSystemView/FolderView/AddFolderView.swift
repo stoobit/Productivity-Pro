@@ -32,7 +32,7 @@ struct AddFolderView: ViewModifier {
     }
     
     func addFolder() {
-        withAnimation(.bouncy) {
+        withAnimation(.smooth(duration: 0.2)) {
             let folder = ContentObject(
                 id: UUID(),
                 title: "",

@@ -56,7 +56,7 @@ struct ScheduleViewContainer: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: !isEditing ? "pencil" : "pencil.slash") {
-                        withAnimation(.bouncy) {
+                        withAnimation(.smooth(duration: 0.2)) {
                             isEditing.toggle()
                         }
                     }

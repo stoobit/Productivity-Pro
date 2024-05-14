@@ -30,7 +30,7 @@ struct ScheduleColumn: View {
                     .padding(.top, 10)
                     .padding(.bottom, 3)
                     .padding(.leading)
-                    .transition(.identity)
+                    .transition(.opacity)
             }
             
             ForEach(day.subjects) { subject in
@@ -46,13 +46,13 @@ struct ScheduleColumn: View {
                     Button(action: { addSubject.toggle() }) {
                         PlusButton()
                     }
-                    .transition(.blurReplace.combined(with: .scale(0.9)))
+                    .transition(.opacity)
                 }
             }
             .padding(.bottom, 15)
         }
-        .animation(.spring, value: isEditing)
-        .animation(.spring, value: day.subjects.count)
+        .animation(.smooth(duration: 0.2), value: isEditing)
+        .animation(.smooth(duration: 0.2), value: day.subjects.count)
         .frame(maxWidth: .infinity)
         .sheet(isPresented: $addSubject) {
             ScheduleAddSubject(
@@ -136,7 +136,7 @@ struct ScheduleColumn: View {
                     }
                 }
             }
-            .animation(.bouncy(duration: 0.3), value: scheduleSubject.isMarked)
+            .animation(.smooth(duration: 0.2), value: scheduleSubject.isMarked)
         }
         .onTapGesture(count: 2) {
             if isEditing == false {

@@ -23,7 +23,7 @@ struct BackupSettings: View {
             predicate: #Predicate<ContentObject> {
                 $0.inTrash == false
             }
-        ), animation: .bouncy
+        ), animation: .smooth(duration: 0.2)
     ) var contentObjects: [ContentObject]
     
     @State var backingUp: Bool = false
@@ -93,7 +93,7 @@ struct BackupSettings: View {
                 .fileImporter(
                     isPresented: $showImporter, allowedContentTypes: [.probackup]
                 ) { result in
-                    withAnimation(.bouncy) {
+                    withAnimation(.smooth(duration: 0.2)) {
                         importBackup(result: result)
                     }
                 }
