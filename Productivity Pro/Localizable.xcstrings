@@ -42,9 +42,6 @@
     ", um eine neues Fach hinzuzufügen." : {
 
     },
-    "." : {
-
-    },
     "%@" : {
       "localizations" : {
         "en" : {
@@ -792,9 +789,6 @@
           }
         }
       }
-    },
-    "Deine Probezeit läuft bis zum " : {
-
     },
     "Der Papierkorb ist leer." : {
       "localizations" : {
@@ -2229,9 +2223,6 @@
         }
       }
     },
-    "Productivity Pro Premium" : {
-
-    },
     "Productivity. Redefined." : {
 
     },
@@ -2341,12 +2332,6 @@
           }
         }
       }
-    },
-    "Schalte Premium frei, um weiterhin alle Features nutzen zu können." : {
-
-    },
-    "Schließen" : {
-
     },
     "Schreibe Productivity Pro AI..." : {
       "localizations" : {
@@ -2789,9 +2774,6 @@
       }
     },
     "Wähle zuerst deine Klasse " : {
-
-    },
-    "Was ich will, willst du auch?" : {
 
     },
     "Wenn du dieses Fach löscht, werden auch die mit diesem Fach verknüpften Aufgaben und Stundenplaneinträge gelöscht." : {

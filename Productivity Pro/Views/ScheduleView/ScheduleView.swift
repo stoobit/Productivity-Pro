@@ -1,5 +1,5 @@
 //
-//  SchduleView.swift
+//  ScheduleView.swift
 //  Productivity Pro
 //
 //  Created by Till Brügmann on 11.09.23.

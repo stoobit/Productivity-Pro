@@ -21,7 +21,6 @@ struct ScheduleColumn: View {
     
     var body: some View {
         LazyVStack(alignment: .leading) {
-            
             if day.subjects.isEmpty == false || isEditing == true {
                 Text(String(localized: String.LocalizationValue(day.id)))
                     .font(.callout)
@@ -34,7 +33,13 @@ struct ScheduleColumn: View {
             }
             
             ForEach(day.subjects) { subject in
-                Icon(for: subject)
+                if subject.subject == "" {
+                    Icon(for: subject)
+                        .opacity(0)
+                        .allowsHitTesting(false)
+                } else {
+                    Icon(for: subject)
+                }
             }
             
             ZStack {
@@ -46,7 +51,7 @@ struct ScheduleColumn: View {
                     Button(action: { addSubject.toggle() }) {
                         PlusButton()
                     }
-                    .transition(.opacity)
+                    .transition(.blurReplace)
                 }
             }
             .padding(.bottom, 15)
@@ -136,7 +141,9 @@ struct ScheduleColumn: View {
                     }
                 }
             }
-            .animation(.smooth(duration: 0.2), value: scheduleSubject.isMarked)
+            .animation(
+                .smooth(duration: 0.2), value: scheduleSubject.isMarked
+            )
         }
         .onTapGesture(count: 2) {
             if isEditing == false {

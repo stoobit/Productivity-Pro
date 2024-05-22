@@ -12,7 +12,7 @@ import SwiftUI
 extension Date {
     static func freeTrial(_ since: Date) -> Date {
         #if DEBUG
-        Calendar.current.date(byAdding: .minute, value: 10, to: since)!
+        Calendar.current.date(byAdding: .second, value: 20, to: since)!
         #else
         // MARK: ✋ DO NOT TOUCH
         Calendar.current.date(byAdding: .day, value: 14, to: since)!

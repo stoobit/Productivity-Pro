@@ -23,7 +23,6 @@ struct ContentView: View {
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()
     @State var storeVM: StoreViewModel = .init()
-    @State var badgeModel: BadgeModel = .init()
     
     @State var purchaseView: Bool = false
     @State var selectedTab: Int = 0
@@ -39,29 +38,30 @@ struct ContentView: View {
             
             TabView(selection: $selectedTab) {
                 FileSystemView(contentObjects: contentObjects)
+                    .overlay { PremiumBadge() }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         mixpanel("Note View")
                     }
-                    .overlay { PremiumBadge(lockedBadge: true) }
                     .tag(0)
                     .tabItem {
                         Label("Notizen", systemImage: "doc.fill")
                     }
                    
                 ScheduleViewContainer()
+                    .overlay { PremiumBadge() }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         mixpanel("Schedule View")
                         showPurchase()
                     }
-                    .overlay { PremiumBadge() }
                     .tag(1)
                     .tabItem {
                         Label("Stundenplan", systemImage: "calendar")
                     }
                 
                 HomeworkView()
+                    .overlay { PremiumBadge() }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         mixpanel("Tasks View")
@@ -69,16 +69,15 @@ struct ContentView: View {
                         
                         askNotificationPermission()
                     }
-                    .overlay { PremiumBadge() }
                     .tag(2)
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
                 
                 PPSettingsView()
+                    .overlay { PremiumBadge() }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear { mixpanel("Settings View") }
-                    .overlay { PremiumBadge() }
                     .tag(4)
                     .tabItem {
                         Label("Einstellungen", systemImage: "gearshape.2.fill")
@@ -106,7 +105,6 @@ struct ContentView: View {
             }
             .animation(.smooth(duration: 0.2), value: toolManager.showProgress)
         }
-        .environment(badgeModel)
         .onAppear {
             review()
         }

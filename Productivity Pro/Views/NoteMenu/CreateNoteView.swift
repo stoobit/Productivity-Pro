@@ -14,6 +14,9 @@ struct CreateNoteView: View {
     var contentObjects: [ContentObject]
     let parent: String
     
+    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
+    @AppStorage("ppDateOpened") var date: Date = .init()
+    
     @AppStorage("savedBackgroundColor")
     var savedBackgroundColor: String = "pagewhite"
     
@@ -33,17 +36,23 @@ struct CreateNoteView: View {
     
     var body: some View {
         VStack {
-            Menu("Notiz erstellen", systemImage: "plus") {
-                Button("Vorlage auswählen", systemImage: "grid") {
-                    selectTemplate.toggle()
+            if isUnlocked == false && Date() > Date.freeTrial(date) {
+                Button("Notiz erstellen", systemImage: "plus") {
+                    purchaseView.toggle()
                 }
+            } else {
+                Menu("Notiz erstellen", systemImage: "plus") {
+                    Button("Vorlage auswählen", systemImage: "grid") {
+                        selectTemplate.toggle()
+                    }
                     
-                Button("Datei importieren", systemImage: "square.and.arrow.down") {
-                    importFile.toggle()
-                }
+                    Button("Datei importieren", systemImage: "square.and.arrow.down") {
+                        importFile.toggle()
+                    }
                     
-                Button("Dokument scannen", systemImage: "doc.viewfinder") {
-                    scanDocument.toggle()
+                    Button("Dokument scannen", systemImage: "doc.viewfinder") {
+                        scanDocument.toggle()
+                    }
                 }
             }
         }
