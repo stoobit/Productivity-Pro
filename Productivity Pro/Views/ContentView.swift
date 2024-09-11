@@ -38,7 +38,7 @@ struct ContentView: View {
             
             TabView(selection: $selectedTab) {
                 FileSystemView(contentObjects: contentObjects)
-                    .overlay { PremiumBadge() }
+//                    .overlay { PremiumBadge() }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         mixpanel("Note View")
@@ -49,7 +49,7 @@ struct ContentView: View {
                     }
                    
                 ScheduleViewContainer()
-                    .overlay { PremiumBadge() }
+//                    .overlay { PremiumBadge() }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         mixpanel("Schedule View")
@@ -61,7 +61,7 @@ struct ContentView: View {
                     }
                 
                 HomeworkView()
-                    .overlay { PremiumBadge() }
+//                    .overlay { PremiumBadge() }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear {
                         mixpanel("Tasks View")
@@ -75,7 +75,7 @@ struct ContentView: View {
                     }
                 
                 PPSettingsView()
-                    .overlay { PremiumBadge() }
+//                    .overlay { PremiumBadge() }
                     .toolbarBackground(.visible, for: .tabBar)
                     .onAppear { mixpanel("Settings View") }
                     .tag(4)

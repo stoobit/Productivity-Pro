@@ -35,8 +35,6 @@ struct ScheduleColumn: View {
             ForEach(day.subjects) { subject in
                 if subject.subject == "" {
                     Icon(for: subject)
-                        .opacity(0)
-                        .allowsHitTesting(false)
                 } else {
                     Icon(for: subject)
                 }
@@ -83,6 +81,7 @@ struct ScheduleColumn: View {
                         .foregroundStyle(
                             Color(rawValue: getSubject(from: scheduleSubject).color)
                         )
+                        .opacity(scheduleSubject.subject == "" ? 0 : 1)
                 }
                 .frame(width: 35, height: 35)
             
