@@ -17,6 +17,7 @@ struct ContentViewContainer: View {
             .sheet(isPresented: $showWhatNew, content: {})
             .sheet(isPresented: $showWelcome) {
                 IntroductionViewContainer(showIntro: $showWelcome)
+                    .presentationSizing(.page)
             }
             .onAppear { onAppear() }
     }

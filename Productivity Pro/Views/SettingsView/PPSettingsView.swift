@@ -54,7 +54,7 @@ struct PPSettingsView: View {
                         Label(
                             title: {
                                 Text("Bewerte Productivity Pro im App Store")
-                                    .foregroundStyle(Color.black)
+                                    .foregroundStyle(Color.primary)
                             },
                             icon: {
                                 Image(systemName: "star.fill")
@@ -72,7 +72,7 @@ struct PPSettingsView: View {
                         Label(
                             title: {
                                 Text("Email Support")
-                                    .foregroundStyle(Color.black)
+                                    .foregroundStyle(Color.primary)
                             },
                             icon: {
                                 Image(systemName: "envelope.fill")
@@ -88,7 +88,7 @@ struct PPSettingsView: View {
                         Label(
                             title: {
                                 Text("Messages Support")
-                                    .foregroundStyle(Color.black)
+                                    .foregroundStyle(Color.primary)
                             },
                             icon: {
                                 Image(systemName: "message.fill")
