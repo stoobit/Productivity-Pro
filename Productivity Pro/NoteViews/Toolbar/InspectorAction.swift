@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension NoteSecondaryToolbar {
+extension NoteToolbar {
     @ViewBuilder func InspectorAction() -> some View {
         @Bindable var subviewValue = subviewManager
         

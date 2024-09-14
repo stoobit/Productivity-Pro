@@ -17,14 +17,8 @@ struct NoteViewToolbar: ViewModifier {
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
-            .toolbarTitleMenu {
-                NoteTitleMenu(contentObject: contentObject)
-            }
             .toolbar {
-                NoteSecondaryToolbar(contentObject: contentObject)
-            }
-            .toolbar(id: "customizable") {
-                NoteMainToolbar(contentObject: contentObject, size: size)
+                NoteToolbar(contentObject: contentObject, size: size)
             }
     }
 }

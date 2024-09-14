@@ -7,14 +7,18 @@
 
 import SwiftUI
 
-struct NoteSecondaryToolbar: ToolbarContent {
+struct NoteToolbar: ToolbarContent {
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var hsc
-    
     @Environment(ToolManager.self) var toolManager
     @Environment(SubviewManager.self) var subviewManager
     
+    @AppStorage("defaultFont") var defaultFont: String = "Avenir Next"
+    @AppStorage("defaultFontSize") var defaultFontSize: Double = 12
+    @AppStorage("createdNotes") var createdNotes: Int = 0
+    
     @Bindable var contentObject: ContentObject
+    var size: CGSize
     
     var body: some ToolbarContent {
         @Bindable var subviewValue = subviewManager
@@ -50,12 +54,21 @@ struct NoteSecondaryToolbar: ToolbarContent {
             }) {
                 Label("Teilen", systemImage: "square.and.arrow.up")
             }
+            
+            PageActions()
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
+            PencilAction()
+            InsertAction()
             InspectorAction()
             UndoActions()
-            PageActions()
+            
+            Menu(content: {
+                NoteTitleMenu(contentObject: contentObject)
+            }) {
+                Image(systemName: "ellipsis.circle")
+            }
         }
     }
 }

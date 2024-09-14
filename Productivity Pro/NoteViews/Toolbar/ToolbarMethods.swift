@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension NoteSecondaryToolbar {
+extension NoteToolbar {
     func toggleInspector() {
         let item = toolManager.activeItem
         toolManager.activeItem = nil

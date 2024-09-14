@@ -73,15 +73,6 @@ struct ContentView: View {
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
-                
-                PPSettingsView()
-//                    .overlay { PremiumBadge() }
-                    .toolbarBackground(.visible, for: .tabBar)
-                    .onAppear { mixpanel("Settings View") }
-                    .tag(4)
-                    .tabItem {
-                        Label("Einstellungen", systemImage: "gearshape.2.fill")
-                    }
             }
             .disabled(toolManager.showProgress)
             .modifier(

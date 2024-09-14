@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension NoteSecondaryToolbar {
+extension NoteToolbar {
     @ViewBuilder func UndoActions() -> some View {
         Group {
             if (undoDisabled && redoDisabled) || toolManager.pencilKit {

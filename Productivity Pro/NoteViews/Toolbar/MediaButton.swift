@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension NoteMainToolbar {
+extension NoteToolbar {
     @ViewBuilder func MediaButton() -> some View {
         Menu(content: {
             Section {
