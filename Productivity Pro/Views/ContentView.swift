@@ -73,6 +73,13 @@ struct ContentView: View {
                     .tabItem {
                         Label("Aufgaben", systemImage: "checklist")
                     }
+                
+                PPSettingsView()
+//                    .overlay { PremiumBadge() }
+                    .tag(3)
+                    .tabItem {
+                        Image(systemName: "gearshape.fill")
+                    }
             }
             .disabled(toolManager.showProgress)
             .modifier(
