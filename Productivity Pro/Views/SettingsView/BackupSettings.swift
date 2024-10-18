@@ -30,23 +30,19 @@ struct BackupSettings: View {
     
     var body: some View {
         Form {
-            Section(content: {
+            Section {
                 HStack {
-                    Button(
-                        "Backup erstellen",
-                        systemImage: "externaldrive.badge.timemachine",
-                        action: {
-                            backingUp = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                createBackup()
-                                
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                    backingUp = false
-                                    showExporter = true
-                                }
-                            }
+                    Button(action: export) {
+                        if contentObjects.isEmpty {
+                            Label("Du hast noch keine Notizen erstellt.",
+                                  systemImage: "doc.text"
+                            )
+                        } else {
+                            Label("Backup erstellen",
+                                  systemImage: "externaldrive.badge.timemachine"
+                            )
                         }
-                    )
+                    }
                     .frame(height: 30)
                     .disabled(contentObjects.isEmpty)
                     .disabled(backingUp)
@@ -57,14 +53,16 @@ struct BackupSettings: View {
                         ProgressView()
                     }
                 }
-            }, footer: {
+            } header: {
+                Text("Exportieren & Speichern")
+            }footer: {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundStyle(Color.yellow)
                     
                     Text("Dies kann einige Minuten dauern.")
                 }
-            })
+            }
             
             Section {
                 NumberIndicator(type: .file)
@@ -111,7 +109,6 @@ struct BackupSettings: View {
                 }
             }
         }
-        .disabled(contentObjects.isEmpty)
         .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Backup")
         .toolbarRole(.browser)
@@ -151,6 +148,18 @@ struct BackupSettings: View {
         }
         
         self.backup = try? JSONEncoder().encode(backup)
+    }
+    
+    func export() {
+        backingUp = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            createBackup()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                backingUp = false
+                showExporter = true
+            }
+        }
     }
 }
 
