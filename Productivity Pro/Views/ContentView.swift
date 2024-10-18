@@ -13,8 +13,7 @@ struct ContentView: View {
     @Environment(\.horizontalSizeClass) var hsc
     @Environment(\.requestReview) var requestReview
     
-    @Query(animation: .smooth(duration: 0.2))
-    var contentObjects: [ContentObject]
+    @Query var contentObjects: [ContentObject]
     
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()

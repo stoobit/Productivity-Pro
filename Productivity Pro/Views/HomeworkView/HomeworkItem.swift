@@ -22,7 +22,9 @@ struct HomeworkItem: View {
             if homework.note == nil || contentObjects.contains(where: {
                 $0 == homework.note
             }) == false {
-                Item()
+                Button(action: edit) {
+                    Item()
+                }
             } else {
                 NavigationLink(destination: {
                     if let contentObject = homework.note {

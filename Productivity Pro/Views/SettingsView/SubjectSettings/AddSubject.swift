@@ -35,7 +35,9 @@ struct AddSubject: View {
                 Section("Fach hinzufügen") {
                     TextField("Titel", text: $subject.title)
                         .frame(height: 30)
+                }
                     
+                Section {
                     ColorPicker(
                         "Farbe",
                         selection: $color,

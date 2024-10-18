@@ -18,7 +18,7 @@ struct BackupSettings: View {
             predicate: #Predicate<ContentObject> {
                 $0.inTrash == false
             }
-        ), animation: .smooth(duration: 0.2)
+        )
     ) var contentObjects: [ContentObject]
     
     @State var backingUp: Bool = false
