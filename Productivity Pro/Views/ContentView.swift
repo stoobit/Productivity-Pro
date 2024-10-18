@@ -39,16 +39,16 @@ struct ContentView: View {
                 Label("Aufgaben", systemImage: "checklist")
             }
             
-            Tab() {
-                Text("Search")
-            } label: {
-                if hsc == .compact {
-                    Label("Suchen", systemImage: "magnifyingglass")
-                        .labelStyle(.titleAndIcon)
-                } else {
-                    Image(systemName: "magnifyingglass")
-                }
-            }
+//            Tab() {
+//                Text("Search")
+//            } label: {
+//                if hsc == .compact {
+//                    Label("Suchen", systemImage: "magnifyingglass")
+//                        .labelStyle(.titleAndIcon)
+//                } else {
+//                    Image(systemName: "magnifyingglass")
+//                }
+//            }
           
             Tab {
                 PPSettingsView()

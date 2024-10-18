@@ -25,11 +25,6 @@ struct VocabularyViewContainer: View {
                     .tint(Color.red)
                     .disabled(true)
                     
-                    NavigationLink(destination: {}) {
-                        Label("Suchen", systemImage: "magnifyingglass")
-                    }
-                    .disabled(true)
-                    
                     Button(action: { dismiss() }) {
                         Label("Zurück", systemImage: "chevron.left")
                     }

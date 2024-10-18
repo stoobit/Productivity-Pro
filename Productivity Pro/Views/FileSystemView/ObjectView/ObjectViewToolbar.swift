@@ -59,10 +59,6 @@ struct FolderViewToolbar: ToolbarContent {
             }) { Label("Papierkorb", systemImage: "trash") }
                 .tint(Color.red)
             
-            NavigationLink(destination: {
-                SearchView(contentObjects: contentObjects)
-            }) { Label("Suchen", systemImage: "magnifyingglass") }
-            
             Button(action: { dismiss() }) {
                 Label("Zurück", systemImage: "chevron.left")
             }
