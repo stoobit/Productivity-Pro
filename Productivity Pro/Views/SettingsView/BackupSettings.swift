@@ -61,6 +61,7 @@ struct BackupSettings: View {
                 HStack {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundStyle(Color.yellow)
+                    
                     Text("Dies kann einige Minuten dauern.")
                 }
             })
@@ -110,6 +111,7 @@ struct BackupSettings: View {
                 }
             }
         }
+        .disabled(contentObjects.isEmpty)
         .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Backup")
         .toolbarRole(.browser)

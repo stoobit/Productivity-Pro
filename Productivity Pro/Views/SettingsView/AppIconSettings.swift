@@ -14,24 +14,26 @@ struct AppIconSettings: View {
     var body: some View {
         NavigationStack {
             Form {
-                Picker("App Icon", selection: $selection) {
-                    Icon("RoundedApp")
-                        .tag("AppIcon")
-                    
-                    Icon("RoundedOrange")
-                        .tag("OrangeIcon")
-                    
-                    Icon("RoundedGreen")
-                        .tag("GreenIcon")
-                    
-                    Icon("RoundedMara")
-                        .tag("MaraIcon")
-                    
-                    Icon("RoundedOld")
-                        .tag("OldIcon")
+                Section("Verfügbare Icons") {
+                    Picker("App Icon", selection: $selection) {
+                        Icon("RoundedApp")
+                            .tag("AppIcon")
+                        
+                        Icon("RoundedOrange")
+                            .tag("OrangeIcon")
+                        
+                        Icon("RoundedGreen")
+                            .tag("GreenIcon")
+                        
+                        Icon("RoundedMara")
+                            .tag("MaraIcon")
+                        
+                        Icon("RoundedOld")
+                            .tag("OldIcon")
+                    }
+                    .pickerStyle(.inline)
+                    .labelsHidden()
                 }
-                .pickerStyle(.inline)
-                .labelsHidden()
             }
             .navigationTitle("App Icon")
             .toolbarRole(.browser)
