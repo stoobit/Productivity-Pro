@@ -143,7 +143,6 @@
 		BB7987092AD49BFE003469E6 /* MediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7987082AD49BFE003469E6 /* MediaButton.swift */; };
 		BB7C2C7B2A3D258100C730D3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C2C7A2A3D258100C730D3 /* String.swift */; };
 		BB7E2FD92BF1477B002E5689 /* MDConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E2FD82BF1477B002E5689 /* MDConverter.swift */; };
-		BB7E2FDE2BF17BEC002E5689 /* ContentViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E2FDD2BF17BEC002E5689 /* ContentViewContainer.swift */; };
 		BB8103EF2BD4782B005D08BD /* LIAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8103EE2BD4782B005D08BD /* LIAPView.swift */; };
 		BB82B5AA2B2471130089D423 /* StackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5A92B2471130089D423 /* StackingManager.swift */; };
 		BB82B5AC2B247C420089D423 /* CopyPastePasser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */; };
@@ -464,7 +463,6 @@
 		BB7987082AD49BFE003469E6 /* MediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaButton.swift; sourceTree = "<group>"; };
 		BB7C2C7A2A3D258100C730D3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BB7E2FD82BF1477B002E5689 /* MDConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDConverter.swift; sourceTree = "<group>"; };
-		BB7E2FDD2BF17BEC002E5689 /* ContentViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewContainer.swift; sourceTree = "<group>"; };
 		BB8103EE2BD4782B005D08BD /* LIAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAPView.swift; sourceTree = "<group>"; };
 		BB82B5A92B2471130089D423 /* StackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackingManager.swift; sourceTree = "<group>"; };
 		BB82B5AB2B247C420089D423 /* CopyPastePasser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyPastePasser.swift; sourceTree = "<group>"; };
@@ -572,7 +570,6 @@
 		BBD095DD2AEEF06500E7C928 /* SidebarPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarPosition.swift; sourceTree = "<group>"; };
 		BBD0DC9B2ACCA428004A2C56 /* TrashViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashViewItem.swift; sourceTree = "<group>"; };
 		BBD3C4202A54DA46002BFFCF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		BBD930F82B20FA0000A37F95 /* Premium.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Premium.storekit; sourceTree = "<group>"; };
 		BBD930F92B21132F00A37F95 /* ShareProView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareProView.swift; sourceTree = "<group>"; };
 		BBD930FB2B21133600A37F95 /* SharePDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePDFView.swift; sourceTree = "<group>"; };
 		BBD94119299195260085151B /* NoteSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteSize.swift; sourceTree = "<group>"; };
@@ -921,7 +918,6 @@
 				BB341B0C2BCDDDBE00BF3A93 /* InfoPlist.xcstrings */,
 				BB4CDD5128D3C67D009A409F /* Productivity Pro.entitlements */,
 				BB33D5292BBDC3BE000AE4EA /* PrivacyInfo.xcprivacy */,
-				BBD930F82B20FA0000A37F95 /* Premium.storekit */,
 			);
 			path = "Productivity Pro";
 			sourceTree = "<group>";
@@ -937,7 +933,6 @@
 		BB4CDD5228D3D4D0009A409F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BB7E2FDD2BF17BEC002E5689 /* ContentViewContainer.swift */,
 				BB6701572AADEFA7001F468A /* ContentView.swift */,
 				BB06A2EC2BEBD954007B118A /* IntroductionView */,
 				BB4A93DE2AAF556900C3AED6 /* ScheduleView */,
@@ -1803,7 +1798,6 @@
 				BB9DF5AE28E0664C00AC988D /* NoteView.swift in Sources */,
 				BB6ABB7F29CD0882008B58E3 /* MediaItemView.swift in Sources */,
 				BBDF2E302BC07AE000F627B8 /* PagingViewModel.swift in Sources */,
-				BB7E2FDE2BF17BEC002E5689 /* ContentViewContainer.swift in Sources */,
 				BBB538952B40BE4700C874EA /* ExportManager.swift in Sources */,
 				BB1E69402A71CE01008E0C5F /* TemplateView.swift in Sources */,
 				BB9A364C2ABCD5D700721C56 /* HAdditView.swift in Sources */,

@@ -12,7 +12,7 @@ import SwiftUI
 struct Productivity_ProApp: App {
     var body: some Scene {
         WindowGroup(id: "main") {
-            ContentViewContainer()
+            ContentView()
         }
         .modelContainer(
             for: [

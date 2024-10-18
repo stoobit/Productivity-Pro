@@ -132,45 +132,6 @@
         }
       }
     },
-    "%lld%%" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld%%"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld%%"
-          }
-        }
-      }
-    },
-    "1. Make sure the model is in GGUF Format" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1. Make sure the model is in GGUF Format"
-          }
-        }
-      }
-    },
-    "2. Copy the download link of the quantized model" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2. Copy the download link of the quantized model."
-          }
-        }
-      }
-    },
     "104 Wortschätze mit 1854 Vokabeln" : {
       "localizations" : {
         "en" : {
@@ -203,40 +164,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descending"
-          }
-        }
-      }
-    },
-    "AI" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AI"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AI"
-          }
-        }
-      }
-    },
-    "AI herunterladen und offline nutzen." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download AI and use it offline."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descarga AI y úsala sin conexión."
           }
         }
       }
@@ -423,23 +350,6 @@
         }
       }
     },
-    "Bench" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bench"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bench"
-          }
-        }
-      }
-    },
     "Bewegen" : {
       "localizations" : {
         "en" : {
@@ -484,17 +394,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imagen"
-          }
-        }
-      }
-    },
-    "Biologie" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Biology"
           }
         }
       }
@@ -619,101 +518,6 @@
         }
       }
     },
-    "Buch S. 92, Aufgabe 2+3" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "book p. 92, 2+3"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Libro pág. 92, tarea 2+3"
-          }
-        }
-      }
-    },
-    "Cancel" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancel"
-          }
-        }
-      }
-    },
-    "Cäsar-Verschlüsselung in Java implementieren" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "implement Caesar-Encryption in Java"
-          }
-        }
-      }
-    },
-    "Chemie" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chemistry"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Química"
-          }
-        }
-      }
-    },
-    "Clear" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clear"
-          }
-        }
-      }
-    },
-    "Comment fertig schreiben" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "write comment"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Termina de escribir el comentario."
-          }
-        }
-      }
-    },
-    "Copy" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copy"
-          }
-        }
-      }
-    },
     "d. MMMM" : {
       "localizations" : {
         "en" : {
@@ -743,17 +547,6 @@
     "Daten und Benachrichtigungen" : {
 
     },
-    "Daten und Synchronisation" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data and Synchronization"
-          }
-        }
-      }
-    },
     "Daten werden verarbeitet..." : {
       "localizations" : {
         "en" : {
@@ -780,40 +573,12 @@
         }
       }
     },
-    "Default Models" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default Models"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default Models"
-          }
-        }
-      }
-    },
     "Der Papierkorb ist leer." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "The trash is empty."
-          }
-        }
-      }
-    },
-    "Deutsch" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "English"
           }
         }
       }
@@ -912,62 +677,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jueves"
-          }
-        }
-      }
-    },
-    "Download Custom Model" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download Custom Model"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download Custom Model"
-          }
-        }
-      }
-    },
-    "Download Models From Hugging Face" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download Models From Hugging Face"
-          }
-        }
-      }
-    },
-    "Downloaded Models" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Downloaded Models"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Downloaded Models"
-          }
-        }
-      }
-    },
-    "Downloading %lld%%" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Downloading %lld%%"
           }
         }
       }
@@ -1132,17 +841,6 @@
     },
     "Email Support" : {
 
-    },
-    "Englisch" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "German"
-          }
-        }
-      }
     },
     "Entfernen" : {
       "localizations" : {
@@ -1391,23 +1089,6 @@
         }
       }
     },
-    "Geographie" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geography"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geografía"
-          }
-        }
-      }
-    },
     "Gepunktet" : {
       "localizations" : {
         "en" : {
@@ -1420,23 +1101,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Punteado"
-          }
-        }
-      }
-    },
-    "Geschichte" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "History"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Historia"
           }
         }
       }
@@ -1463,17 +1127,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agrupar"
-          }
-        }
-      }
-    },
-    "Help" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Help"
           }
         }
       }
@@ -1560,40 +1213,12 @@
         }
       }
     },
-    "Informatik" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "IT"
-          }
-        }
-      }
-    },
     "Inspektor" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inspector"
-          }
-        }
-      }
-    },
-    "Je nach Leistung und Sprache der AI kann die Download-Größe variieren." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Depending on the performance and language of the AI, the download size may vary."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dependiendo del rendimiento y el idioma de la IA, el tamaño de la descarga puede variar."
           }
         }
       }
@@ -1649,45 +1274,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Circle"
-          }
-        }
-      }
-    },
-    "Kunst" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Art"
-          }
-        }
-      }
-    },
-    "Lade Productivity Pro AI auf dein iPad herunter und nutze künstliche Intelligenz offline. So bleiben deine Daten sicher & privat." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download Productivity Pro AI on your iPad and use artificial intelligence offline. This keeps your data safe & private."
-          }
-        }
-      }
-    },
-    "Latein" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Latin"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Latín"
           }
         }
       }
@@ -1782,17 +1368,6 @@
         }
       }
     },
-    "Load Custom Model" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Load Custom Model"
-          }
-        }
-      }
-    },
     "Los geht's  %@" : {
 
     },
@@ -1812,36 +1387,8 @@
         }
       }
     },
-    "Mathe" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maths"
-          }
-        }
-      }
-    },
     "Messages Support" : {
 
-    },
-    "Metamorphosen 1-4 übersetzen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "translate Metamorphoses 1-4"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Traducir Metamorfosis 1-4"
-          }
-        }
-      }
     },
     "Mint" : {
       "localizations" : {
@@ -1927,40 +1474,12 @@
         }
       }
     },
-    "Model Settings" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Model Settings"
-          }
-        }
-      }
-    },
     "Montag" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Monday"
-          }
-        }
-      }
-    },
-    "Nachricht abschicken" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send Message"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enviar mensaje"
           }
         }
       }
@@ -2109,23 +1628,6 @@
         }
       }
     },
-    "Paste Quantized Download Link" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paste Quantized Download Link"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paste Quantized Download Link"
-          }
-        }
-      }
-    },
     "pdf" : {
       "localizations" : {
         "en" : {
@@ -2148,23 +1650,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "PDF"
-          }
-        }
-      }
-    },
-    "Physik" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Physics"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Física"
           }
         }
       }
@@ -2199,46 +1684,12 @@
         }
       }
     },
-    "Premium" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium"
-          }
-        }
-      }
-    },
     "Productivity Pro" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Productivity Pro"
-          }
-        }
-      }
-    },
-    "Productivity Pro AI" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Productivity Pro AI"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Productivity Pro AI"
           }
         }
       }
@@ -2322,17 +1773,6 @@
         }
       }
     },
-    "Referat \"Kulturelle Evolution\"" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "presentation \"Cultural Evolution\""
-          }
-        }
-      }
-    },
     "Rot" : {
       "localizations" : {
         "en" : {
@@ -2349,23 +1789,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scan this QR code to directly access a PDF version of this note."
-          }
-        }
-      }
-    },
-    "Schreibe Productivity Pro AI..." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Message Productivity Pro AI..."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mensaje Productividad Pro AI..."
           }
         }
       }
@@ -2468,17 +1891,6 @@
         }
       }
     },
-    "Send" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send"
-          }
-        }
-      }
-    },
     "Shuffle" : {
       "localizations" : {
         "en" : {
@@ -2511,40 +1923,12 @@
         }
       }
     },
-    "Sozialkunde" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Politics"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sozialkunde"
-          }
-        }
-      }
-    },
     "Sperre" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lock"
-          }
-        }
-      }
-    },
-    "Sport" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PE"
           }
         }
       }
@@ -2571,23 +1955,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "stoobit"
-          }
-        }
-      }
-    },
-    "Strukturformel von D-Glucose aufstellen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "structural formula of D-Glucose"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Establecer la fórmula estructural de la D-glucosa."
           }
         }
       }
@@ -2673,17 +2040,6 @@
         }
       }
     },
-    "Uhrzeit der Benachrichtigung" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Time of Notification"
-          }
-        }
-      }
-    },
     "Uhrzeit der Benachrichtigung bei Aufgaben" : {
 
     },
@@ -2719,51 +2075,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Untitled %lld"
-          }
-        }
-      }
-    },
-    "Unknown status" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unknown Status"
-          }
-        }
-      }
-    },
-    "Verlauf löschen" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete History"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Borrar historial"
-          }
-        }
-      }
-    },
-    "View Models" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "View Models"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "View Models"
           }
         }
       }
@@ -2837,23 +2148,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Redo"
-          }
-        }
-      }
-    },
-    "Wirtschaft" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Economy"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Negocio"
           }
         }
       }
