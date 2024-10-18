@@ -56,7 +56,6 @@ struct AddSubject: View {
                         ForEach(symbols, id: \.self) { thisSymbol in
                             Button(action: { subject.icon = thisSymbol }) {
                                 Image(systemName: thisSymbol)
-                                    .font(.headline)
                                     .frame(maxWidth: .infinity, minHeight: gridDimension)
                                     .background(
                                         thisSymbol == subject.icon ? .accentColor : bgcolor

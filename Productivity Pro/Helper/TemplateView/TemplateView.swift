@@ -75,7 +75,6 @@ struct TemplateView: View {
             }
         }
         .onAppear { viewDidAppear() }
-        .presentationSizing(.page)
     }
     
     func viewDidAppear() {
