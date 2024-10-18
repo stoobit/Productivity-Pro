@@ -40,7 +40,9 @@ struct HomeworkList: View {
                         )
                     }
                 }, header: {
-                    Text(formattedString(of: date))
+                    let string = formattedString(of: date)
+                    Text(string)
+                        .foregroundStyle(textColor(from: string))
                 })
             }
         }
@@ -59,7 +61,6 @@ struct HomeworkList: View {
             )
             .interactiveDismissDisabled()
         })
-        .onAppear { check() }
         .overlay { DoneView() }
     }
     

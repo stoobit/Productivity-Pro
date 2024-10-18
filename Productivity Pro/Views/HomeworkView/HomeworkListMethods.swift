@@ -8,14 +8,6 @@
 import SwiftUI
 
 extension HomeworkList {
-    func check() {
-        for homework in homeworkTasks {
-            if Calendar.current.isDateInYesterday(homework.date) {
-                context.delete(homework)
-            }
-        }
-    }
-    
     func delete(_ homework: Homework) {
         UNUserNotificationCenter.current()
             .removePendingNotificationRequests(
@@ -48,14 +40,20 @@ extension HomeworkList {
             return "Bis heute zu erledigen"
         } else if calendar.numberOfDaysBetween(Date(), and: date) == 1 {
             return "Bis morgen zu erledigen"
-        } else {
+        } else if calendar.numberOfDaysBetween(Date(), and: date) > 1 {
             let formatter = DateFormatter()
             let day = formatter.weekdaySymbols[
                 Calendar.current.component(.weekday, from: date) - 1
             ]
             
             return "Bis \(day) zu erledigen"
+        } else {
+            return "Überfällig"
         }
+    }
+    
+    func textColor(from string: LocalizedStringKey) -> Color {
+        return string == LocalizedStringKey(stringLiteral: "Überfällig") ? Color.red : Color.secondary
     }
     
     func filterTasks(by date: Date) -> [Homework] {
