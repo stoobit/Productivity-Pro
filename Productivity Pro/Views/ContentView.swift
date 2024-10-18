@@ -10,6 +10,7 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
+    @Environment(\.horizontalSizeClass) var hsc
     @Environment(\.requestReview) var requestReview
     
     @Query(animation: .smooth(duration: 0.2))
@@ -18,45 +19,56 @@ struct ContentView: View {
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()
     
-    @State var selectedTab: Int = 0
-    
     var body: some View {
-        TabView(selection: $selectedTab) {
-            FileSystemView(contentObjects: contentObjects)
-                .toolbarBackground(.visible, for: .tabBar)
-                .tag(0)
-                .tabItem {
-                    Label("Notizen", systemImage: "doc.fill")
-                }
+        TabView {
+            Tab {
+                FileSystemView(contentObjects: contentObjects)
+            } label: {
+                Label("Notizen", systemImage: "doc.fill")
+            }
             
-            ScheduleViewContainer()
-                .toolbarBackground(.visible, for: .tabBar)
-                .tag(1)
-                .tabItem {
-                    Label("Stundenplan", systemImage: "calendar")
-                }
+            Tab {
+                ScheduleViewContainer()
+            } label: {
+                Label("Stundenplan", systemImage: "calendar")
+            }
+              
+            Tab {
+                HomeworkView()
+                    .onAppear { askNotificationPermission() }
+            } label: {
+                Label("Aufgaben", systemImage: "checklist")
+            }
             
-            HomeworkView()
-                .toolbarBackground(.visible, for: .tabBar)
-                .onAppear { askNotificationPermission() }
-                .tag(2)
-                .tabItem {
-                    Label("Aufgaben", systemImage: "checklist")
+            Tab() {
+                Text("Search")
+            } label: {
+                if hsc == .compact {
+                    Label("Suchen", systemImage: "magnifyingglass")
+                        .labelStyle(.titleAndIcon)
+                } else {
+                    Image(systemName: "magnifyingglass")
                 }
-            
-            PPSettingsView()
-                .tag(3)
-                .tabItem {
+            }
+          
+            Tab {
+                PPSettingsView()
+            } label: {
+                if hsc == .compact {
+                    Label("Einstellungen", systemImage: "gearshape.fill")
+                        .labelStyle(.titleAndIcon)
+                } else {
                     Image(systemName: "gearshape.fill")
                 }
+            }
         }
         .disabled(toolManager.showProgress)
-        .modifier(
-            OpenURL(
-                objects: contentObjects,
-                contentObjects: contentObjects
-            ) { selectedTab = 0 }
-        )
+//        .modifier(
+//            OpenURL(
+//                objects: contentObjects,
+//                contentObjects: contentObjects
+//            ) { selectedTab = 0 }
+//        )
         .scrollDisabled(toolManager.showProgress)
         .environment(toolManager)
         .environment(subviewManager)

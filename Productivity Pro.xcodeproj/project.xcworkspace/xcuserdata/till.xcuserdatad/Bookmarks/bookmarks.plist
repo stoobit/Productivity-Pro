@@ -3,6 +3,54 @@
 <plist version="1.0">
 <dict>
 	<key>top-level-items</key>
-	<array/>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>69</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>68</string>
+					<key>Timestamp</key>
+					<string>750986300.443967</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>Productivity Pro/Views/ContentView.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>//            OpenURL(
+</string>
+				<key>leading</key>
+				<string>        .disabled(toolManager.showProgress)
+//        .modifier(
+</string>
+				<key>trailing</key>
+				<string>//                objects: contentObjects,
+//                contentObjects: contentObjects
+//            ) { selectedTab = 0 }
+</string>
+			</dict>
+			<key>title</key>
+			<string>OpenURL without Tab Selection</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -135,25 +135,6 @@ struct HAdditView: View {
         .onAppear { setup() }
     }
     
-    func setup() {
-        if view == .add {
-            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
-            subject = subjects.value.sorted(by: {
-                $0.title < $1.title
-            })[0].title
-        } else {
-            title = selected.title
-            subject = selected.subject
-            date = selected.date
-            
-            description = selected.homeworkDescription
-            pickedNote = selected.note?.id.uuidString ?? ""
-            
-            linkNote = selected.note != nil
-            pickedNote = selected.note?.id.uuidString ?? ""
-        }
-    }
-    
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         

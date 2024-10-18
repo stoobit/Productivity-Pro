@@ -8,36 +8,53 @@
 import SwiftUI
 
 extension HAdditView {
-    func edit() {
-        Task { @MainActor in
-            withAnimation(.smooth(duration: 0.2)) {
-                selected.title = title
-                selected.subject = subject
-                selected.homeworkDescription = description
-                
-                selected.date = Calendar.current.date(
-                    bySettingHour: 5, minute: 00, second: 0,
-                    of: date
-                )!
-                
-                if linkNote, pickedNote != "" {
-                    selected.note = contentObjects.first(where: {
-                        $0.id.uuidString == pickedNote
-                    })
-                } else {
-                    selected.note = nil
-                }
-            }
+    func setup() {
+        if view == .add {
+            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+            subject = subjects.value.sorted(by: {
+                $0.title < $1.title
+            })[0].title
+        } else {
+            title = selected.title
+            subject = selected.subject
+            date = selected.date
             
-            UNUserNotificationCenter.current()
-                .removePendingNotificationRequests(
-                    withIdentifiers: [selected.id.uuidString]
-                )
+            description = selected.homeworkDescription
+            pickedNote = selected.note?.id.uuidString ?? ""
             
-            pushNotification(homework: selected)
-            try? context.save()
-            dismiss()
+            linkNote = selected.note != nil
+            pickedNote = selected.note?.id.uuidString ?? ""
         }
+    }
+    
+    func edit() {
+        withAnimation(.smooth(duration: 0.2)) {
+            selected.title = title
+            selected.subject = subject
+            selected.homeworkDescription = description
+            
+            selected.date = Calendar.current.date(
+                bySettingHour: 5, minute: 00, second: 0,
+                of: date
+            )!
+            
+            if linkNote, pickedNote != "" {
+                selected.note = contentObjects.first(where: {
+                    $0.id.uuidString == pickedNote
+                })
+            } else {
+                selected.note = nil
+            }
+        }
+        
+        UNUserNotificationCenter.current()
+            .removePendingNotificationRequests(
+                withIdentifiers: [selected.id.uuidString]
+            )
+        
+        pushNotification(homework: selected)
+        try? context.save()
+        dismiss()
     }
     
     func add() {
