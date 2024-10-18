@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AddSubject: View {
-    
     @AppStorage("ppsubjects")
     var subjects: CodableWrapper<Array<Subject>> = .init(value: .init())
     
@@ -19,6 +18,8 @@ struct AddSubject: View {
     @State var color: Color = .blue
     
     let columns = [GridItem(.adaptive(minimum: 80))]
+    let gridDimension: CGFloat = 50
+    let selectedItemBackgroundColor: Color = .accentColor
     
     var bgcolor: Color {
         if cs == .light {
@@ -28,85 +29,67 @@ struct AddSubject: View {
         }
     }
     
-    let gridDimension: CGFloat = 64
-    let symbolSize: CGFloat = 24
-    let symbolCornerRadius: CGFloat = 8
-    
-    let selectedItemBackgroundColor: Color = .accentColor
-    
     var body: some View {
         NavigationStack {
-            GeometryReader { proxy in
-                Form {
-                    Section {
-                        TextField("Titel", text: $subject.title)
-                            .frame(height: 30)
-                        
-                        ColorPicker(
-                            "Farbe",
-                            selection: $color,
-                            supportsOpacity: false
-                        )
+            Form {
+                Section("Fach hinzufügen") {
+                    TextField("Titel", text: $subject.title)
                         .frame(height: 30)
-                        .onChange(of: color, initial: true) {
-                            subject.color = color.rawValue
-                        }
-                    }
                     
-                    let gridItem = GridItem(
-                        .adaptive(minimum: gridDimension, maximum: gridDimension)
+                    ColorPicker(
+                        "Farbe",
+                        selection: $color,
+                        supportsOpacity: false
                     )
-                    
-                    Section {
-                        LazyVGrid(columns: [gridItem]) {
-                            ForEach(symbols, id: \.self) { thisSymbol in
-                                Button(action: { subject.icon = thisSymbol }) {
-                                    
-                                    Image(systemName: thisSymbol)
-                                        .font(.system(size: symbolSize))
-                                        .frame(maxWidth: .infinity, minHeight: gridDimension)
-                                        .background(
-                                            thisSymbol == subject.icon ? .accentColor : bgcolor
-                                        )
-                                        .cornerRadius(symbolCornerRadius)
-                                        .foregroundColor(
-                                            thisSymbol == subject.icon ? .white : .primary
-                                        )
-                                    
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        }
-                        .padding(.vertical, 5)
+                    .frame(height: 30)
+                    .onChange(of: color, initial: true) {
+                        subject.color = color.rawValue
                     }
-                    
                 }
-                .scrollIndicators(.hidden)
                 
-                .environment(\.defaultMinListRowHeight, 10)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button("Abbrechen") {
-                            addSubject.toggle()
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button("Hinzufügen") {
-                            add()
-                        }
-                        .disabled(
-                            subject.title.trimmingCharacters(
-                                in: .whitespaces
-                            ) == "" || exists()
-                        )
-                    }
-                }
-                .position(
-                    x: proxy.size.width / 2,
-                    y: proxy.size.height / 2
+                let gridItem = GridItem(
+                    .adaptive(minimum: gridDimension, maximum: gridDimension)
                 )
+                
+                Section {
+                    LazyVGrid(columns: [gridItem]) {
+                        ForEach(symbols, id: \.self) { thisSymbol in
+                            Button(action: { subject.icon = thisSymbol }) {
+                                Image(systemName: thisSymbol)
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity, minHeight: gridDimension)
+                                    .background(
+                                        thisSymbol == subject.icon ? .accentColor : bgcolor
+                                    )
+                                    .clipShape(.circle)
+                                    .foregroundColor(
+                                        thisSymbol == subject.icon ? .white : .primary
+                                    )
+                                
+                            }
+                            .buttonStyle(.plain)
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .padding(.vertical)
+                    .listRowInsets(EdgeInsets())
+                }
+                
+            }
+            .environment(\.defaultMinListRowHeight, 10)
+            .navigationBarTitleDisplayMode(.inline)
+            .scrollIndicators(.hidden)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Abbrechen", action: { addSubject.toggle() })
+                }
+                
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Hinzufügen", action: add)
+                        .disabled(subject.title
+                            .trimmingCharacters(in: .whitespaces) == "" || exists()
+                        )
+                }
             }
         }
     }
@@ -120,11 +103,4 @@ struct AddSubject: View {
         let titles = subjects.value.map { $0.title }
         return titles.contains(subject.title.trimmingCharacters(in: .whitespaces))
     }
-}
-
-#Preview {
-    Text("")
-        .sheet(isPresented: .constant(true)) {
-            AddSubject(addSubject: .constant(true))
-        }
 }
