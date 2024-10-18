@@ -1708,7 +1708,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					BB26C0BA2BB3177500A2C68C = {
@@ -2305,7 +2305,6 @@
 		BB4CDD4F28D3C66A009A409F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "OldIcon GreenIcon OrangeIcon MaraIcon";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2354,7 +2353,6 @@
 		BB4CDD5028D3C66A009A409F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "OldIcon GreenIcon OrangeIcon MaraIcon";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
