@@ -133,6 +133,7 @@
       }
     },
     "%lld%%" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -149,6 +150,7 @@
       }
     },
     "1. Make sure the model is in GGUF Format" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -159,6 +161,7 @@
       }
     },
     "2. Copy the download link of the quantized model" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -205,6 +208,7 @@
       }
     },
     "AI" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -221,6 +225,7 @@
       }
     },
     "AI herunterladen und offline nutzen." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -419,6 +424,7 @@
       }
     },
     "Bench" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -630,10 +636,8 @@
         }
       }
     },
-    "cancel" : {
-
-    },
     "Cancel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -672,6 +676,7 @@
       }
     },
     "Clear" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -699,6 +704,7 @@
       }
     },
     "Copy" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -775,6 +781,7 @@
       }
     },
     "Default Models" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -910,6 +917,7 @@
       }
     },
     "Download Custom Model" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -926,6 +934,7 @@
       }
     },
     "Download Models From Hugging Face" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -936,6 +945,7 @@
       }
     },
     "Downloaded Models" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -952,6 +962,7 @@
       }
     },
     "Downloading %lld%%" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1457,6 +1468,7 @@
       }
     },
     "Help" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1570,6 +1582,7 @@
       }
     },
     "Je nach Leistung und Sprache der AI kann die Download-Größe variieren." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1652,6 +1665,7 @@
       }
     },
     "Lade Productivity Pro AI auf dein iPad herunter und nutze künstliche Intelligenz offline. So bleiben deine Daten sicher & privat." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1769,6 +1783,7 @@
       }
     },
     "Load Custom Model" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1913,6 +1928,7 @@
       }
     },
     "Model Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1933,6 +1949,7 @@
       }
     },
     "Nachricht abschicken" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2093,6 +2110,7 @@
       }
     },
     "Paste Quantized Download Link" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2182,6 +2200,7 @@
       }
     },
     "Premium" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2208,6 +2227,7 @@
       }
     },
     "Productivity Pro AI" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2334,6 +2354,7 @@
       }
     },
     "Schreibe Productivity Pro AI..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2448,6 +2469,7 @@
       }
     },
     "Send" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2702,6 +2724,7 @@
       }
     },
     "Unknown status" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2712,6 +2735,7 @@
       }
     },
     "Verlauf löschen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2728,6 +2752,7 @@
       }
     },
     "View Models" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

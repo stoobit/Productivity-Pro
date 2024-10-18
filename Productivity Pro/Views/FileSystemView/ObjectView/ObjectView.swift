@@ -33,9 +33,6 @@ struct ObjectView: View {
     @AppStorage("pp show date")
     var showDate: Bool = false
     
-    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
-    @AppStorage("ppFreeTrialAlert") var showAlert = true
-    
     @State var addFolder: Bool = false
     @State var createNote: Bool = false
     @State var importFile: Bool = false

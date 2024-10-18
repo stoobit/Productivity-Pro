@@ -12,9 +12,6 @@ struct SubjectSettings: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     
-    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
-    @AppStorage("ppDateOpened") var date: Date = .init()
-    
     @Query(
         FetchDescriptor(
             sortBy: [SortDescriptor(\Homework.title, order: .forward)]
@@ -96,19 +93,6 @@ struct SubjectSettings: View {
                 }
                 .animation(.easeInOut(duration: 0.1), value: subjects.value.count)
             }
-        }
-        .onAppear {
-            showPurchase()
-        }
-        .sheet(isPresented: $purchaseView) {
-            PurchaseView(onDismiss: { dismiss() })
-                .interactiveDismissDisabled()
-        }
-    }
-    
-    func showPurchase() {
-        if Date() > Date.freeTrial(date) && isUnlocked == false {
-            purchaseView = true
         }
     }
 }

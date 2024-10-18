@@ -11,11 +11,6 @@ struct AppIconSettings: View {
     @Environment(\.dismiss) var dismiss
     @AppStorage("appicon selection") var selection: String = "AppIcon"
     
-    @AppStorage("ppisunlocked") var isUnlocked: Bool = false
-    @AppStorage("ppDateOpened") var date: Date = .init()
-    
-    @State var purchaseView: Bool = false
-    
     var body: some View {
         NavigationStack {
             Form {
@@ -55,19 +50,6 @@ struct AppIconSettings: View {
             } else {
                 UIApplication.shared.setAlternateIconName(selection)
             }
-        }
-        .onAppear {
-            showPurchase()
-        }
-        .sheet(isPresented: $purchaseView) {
-            PurchaseView(onDismiss: { dismiss() })
-                .interactiveDismissDisabled()
-        }
-    }
-    
-    func showPurchase() {
-        if Date() > Date.freeTrial(date) && isUnlocked == false {
-            purchaseView = true
         }
     }
 

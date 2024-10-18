@@ -5,7 +5,6 @@
 //  Created by Till Brügmann on 25.09.23.
 //
 
-import Mixpanel
 import SwiftUI
 
 struct FolderViewToolbar: ToolbarContent {
@@ -41,12 +40,6 @@ struct FolderViewToolbar: ToolbarContent {
             if locale == "Deutsch" {
                 Button("Bibliothek", systemImage: "books.vertical") {
                     libraryView.toggle()
-                        
-                    #if DEBUG
-                    #else
-                    Mixpanel.mainInstance()
-                        .track(event: "LIAP View", properties: [:])
-                    #endif
                 }
             }
             
