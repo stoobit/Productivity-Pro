@@ -32,7 +32,7 @@ struct AddSubject: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Fach hinzufügen") {
+                Section {
                     TextField("Titel", text: $subject.title)
                         .frame(height: 30)
                 }

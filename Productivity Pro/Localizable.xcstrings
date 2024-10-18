@@ -893,6 +893,7 @@
       }
     },
     "Es wurden keine Notizen gefunden." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1371,9 +1372,6 @@
         }
       }
     },
-    "Los geht's  %@" : {
-
-    },
     "Löschen" : {
       "localizations" : {
         "en" : {
@@ -1697,9 +1695,6 @@
         }
       }
     },
-    "Productivity. Redefined." : {
-
-    },
     "pronote" : {
       "localizations" : {
         "en" : {
@@ -1837,9 +1832,6 @@
           }
         }
       }
-    },
-    "Search" : {
-
     },
     "Sechseck" : {
       "localizations" : {
@@ -1982,6 +1974,7 @@
       }
     },
     "Suchen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
