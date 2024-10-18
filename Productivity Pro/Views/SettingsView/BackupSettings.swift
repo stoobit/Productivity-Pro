@@ -33,10 +33,11 @@ struct BackupSettings: View {
             Section {
                 HStack {
                     Button(action: export) {
-                        if contentObjects.isEmpty {
-                            Label("Du hast noch keine Notizen erstellt.",
-                                  systemImage: "doc.text"
+                        if contentObjects.isEmpty || backingUp {
+                            Label("Backup erstellen",
+                                  systemImage: "externaldrive.badge.timemachine"
                             )
+                            .foregroundStyle(Color.secondary)
                         } else {
                             Label("Backup erstellen",
                                   systemImage: "externaldrive.badge.timemachine"
