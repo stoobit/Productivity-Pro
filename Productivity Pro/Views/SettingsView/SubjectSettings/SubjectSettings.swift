@@ -39,14 +39,17 @@ struct SubjectSettings: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
                 
-                List(
-                    subjects.value.sorted(by: { $0.title < $1.title })
-                ) { subject in
-                    
-                    SubjectSettingsRow(
-                        subject: subject,
-                        homeworkTasks: homeworkTasks
-                    )
+                List {
+                    Section(subjects.rawValue.isEmpty ? "" : "Meine Fächer") {
+                        ForEach(
+                            subjects.value.sorted(by: { $0.title < $1.title })
+                        ) { subject in
+                            SubjectSettingsRow(
+                                subject: subject,
+                                homeworkTasks: homeworkTasks
+                            )
+                        }
+                    }
                 }
                 .scrollContentBackground(.hidden)
                 .navigationTitle("Fächer")
