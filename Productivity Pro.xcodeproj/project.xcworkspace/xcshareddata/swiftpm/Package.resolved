@@ -1,24 +1,6 @@
 {
-  "originHash" : "06d70f0a4788e9c06c67704a58c47b3d3da41a2847a4b787f90a003c5463d81e",
+  "originHash" : "8d4f875dadc1fa8c68406cd083be0093d02afabbed26bfe9adf1d934e7be4da2",
   "pins" : [
-    {
-      "identity" : "llama.cpp",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ggerganov/llama.cpp.git",
-      "state" : {
-        "branch" : "master",
-        "revision" : "855f54402e866ed19d8d675b56a81c844c64b325"
-      }
-    },
-    {
-      "identity" : "mixpanel-swift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mixpanel/mixpanel-swift",
-      "state" : {
-        "branch" : "master",
-        "revision" : "1ae92448ec3b0841ae5ceaa151c98ae66776596a"
-      }
-    },
     {
       "identity" : "richtextkit",
       "kind" : "remoteSourceControl",
