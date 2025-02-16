@@ -8,4 +8,4 @@ Productivity Pro is available on the [App Store](https://apps.apple.com/us/app/p
 ## Contact 
 If you have any questions, suggestions or anything similar, just let me know via [email](mailto:support@stoobit.com).
 
-> Copyright © Till Brügmann 2024
+> Copyright © Till Brügmann 2025
