@@ -1,10 +1,3 @@
-//
-//  TemplateViewHelper.swift
-//  Productivity Pro
-//
-//  Created by Till Brügmann on 27.07.23.
-//
-
 import SwiftUI
 
 extension TemplateView {
@@ -14,9 +7,10 @@ extension TemplateView {
             Text("Hochformat")
                 .frame(width: 100)
                 .tag(true)
-            Text("Querformat").tag(false)
+            
+            Text("Querformat")
                 .frame(width: 100)
-                .tag(true)
+                .tag(false)
         }
         .frame(height: 30)
     }
@@ -95,7 +89,7 @@ extension TemplateView {
                     .frame(width: 250, height: 225)
                 Spacer()
             }
-            .frame(width: 250, height: 350)
+            .frame(width: 250, height: 300)
             
             VStack {
                 Spacer()
@@ -115,16 +109,10 @@ extension TemplateView {
                             .foregroundStyle(Color.secondary)
                             .textCase(.uppercase)
                         
-                        Text("Hoch- & Querformat")
+                        Text("Vertical & Horizontal")
                             .textCase(.uppercase)
                             .foregroundStyle(Color.secondary)
                             .font(.caption2)
-                        
-                        Spacer()
-                        
-                        Text("Productivity Pro")
-                            .foregroundStyle(Color.accentColor.secondary)
-                            .font(.caption)
                     }
                     .frame(
                         maxWidth: .infinity,
@@ -146,14 +134,14 @@ extension TemplateView {
                         .padding(10)
                         .imageScale(.medium)
                 }
-                .frame(width: 250, height: 125, alignment: .bottom)
+                .frame(width: 250, height: 80, alignment: .bottom)
             }
         }
-        .frame(width: 250, height: 350)
+        .frame(width: 250, height: 300)
         .overlay {
             RoundedRectangle(cornerRadius: 9)
                 .stroke(Color.accentColor, lineWidth: 2)
-                .frame(width: 251, height: 350)
+                .frame(width: 251, height: 300)
         }
         .onTapGesture {
             selectedTemplate = value

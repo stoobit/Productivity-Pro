@@ -1,9 +1,4 @@
-//
-//  MediaButton.swift
-//  Productivity Pro
-//
-//  Created by Till Brügmann on 09.10.23.
-//
+
 
 import SwiftUI
 
@@ -15,18 +10,20 @@ extension NoteToolbar {
                     toolManager.pencilKit = false
                     subviewManager.takeMedia.toggle()
                 }) {
-                    Label("Kamera", systemImage: "camera")
+                    Label("Take Photo", systemImage: "camera")
                 }
 
                 Button(action: {
                     toolManager.pencilKit = false
                     subviewManager.pickMedia.toggle()
                 }) {
-                    Label("Fotos", systemImage: "photo.on.rectangle.angled")
+                    Label(
+                        "Photo Library", systemImage: "photo.on.rectangle.angled"
+                    )
                 }
             }
         }) {
-            Label("Bild", systemImage: "photo")
+            Label("Image", systemImage: "photo")
         }
     }
 }

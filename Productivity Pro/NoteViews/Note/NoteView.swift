@@ -29,8 +29,8 @@ struct NoteView: View {
             
             GeometryReader { proxy in
                 ZStack {
-                    Text("stoobit")
-                        .foregroundStyle(.clear)
+                    Color(UIColor.secondarySystemBackground)
+                        .ignoresSafeArea(.all, edges: .all)
                     
                     PagingViewController(
                         pages: pages.map {
@@ -46,6 +46,7 @@ struct NoteView: View {
                     )
                     .id(pages.count)
                     .id(proxy.size.width)
+                    .id(pages[pvModel.index].isPortrait)
                 }
                 .noteViewModifier(with: contentObject, size: proxy.size)
                 .onChange(of: pvModel.index) { updateIndex() }
@@ -58,6 +59,7 @@ struct NoteView: View {
                     PrinterViewContainer(contentObject: contentObject)
                 }
             }
+            .ignoresSafeArea(.all, edges: .bottom)
             .background {
                 Button("Widerrufen") {
                     toolManager.activePage?.undo(

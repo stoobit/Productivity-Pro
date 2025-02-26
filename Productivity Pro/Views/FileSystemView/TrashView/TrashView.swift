@@ -9,20 +9,13 @@ import SwiftUI
 import SwiftData
 
 struct TrashView: View {
+    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
+    
     @State var emptyTrash: Bool = false
     
     var contentObjects: [ContentObject]
-    var filteredObjects: [ContentObject] {
-        contentObjects
-            .filter { $0.inTrash }
-            .sorted(by: {
-                $0.title < $1.title
-            })
-            .sorted(by: {
-                $0.grade < $1.grade
-            })
-    }
+    var filteredObjects: [ContentObject]
     
     var body: some View {
         NavigationStack {
@@ -41,6 +34,9 @@ struct TrashView: View {
             .scrollDisabled(filteredObjects.isEmpty)
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Papierkorb")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarBackButtonHidden()
+            .toolbarRole(.browser)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Entleeren", role: .destructive) {
@@ -48,6 +44,12 @@ struct TrashView: View {
                     }
                     .tint(Color.red)
                     .disabled(filteredObjects.isEmpty)
+                }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: { dismiss() }) {
+                        Label("Zurück", systemImage: "chevron.left")
+                    }
                 }
             }
             .alert("Papierkorb entleeren", isPresented: $emptyTrash, actions: {
@@ -67,12 +69,8 @@ struct TrashView: View {
             }) {
                 Text("Möchtest du den Papierkorb wirklich entleeren?")
             }
-            .overlay {
-                if filteredObjects.isEmpty {
-                    ContentUnavailableView(
-                        "Der Papierkorb ist leer.", systemImage: "trash"
-                    )
-                }
+            .onChange(of: filteredObjects.count) {
+                if filteredObjects.count == 0 { dismiss() }
             }
         }
     }

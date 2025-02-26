@@ -1,10 +1,3 @@
-//
-//  BackgroundViews.swift
-//  Productivity Pro
-//
-//  Created by Till Brügmann on 27.07.23.
-//
-
 import SwiftUI
 
 struct BackgroundViews: View {

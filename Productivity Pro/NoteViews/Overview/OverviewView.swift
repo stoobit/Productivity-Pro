@@ -10,8 +10,6 @@ import SwiftUI
 struct OverviewView: View {
     @Environment(ToolManager.self) var toolManager
     @Environment(PagingViewModel.self) var pvModel
-    
-    @State var pages: [PPPageModel] = .init()
 
     var contentObject: ContentObject
     var filter: Bool
@@ -19,20 +17,15 @@ struct OverviewView: View {
     var body: some View {
         ScrollViewReader { reader in
             List {
-                ForEach(pages) { page in
-                    OverviewRow(contentObject: contentObject, page: page) {
-                        if filter {
-                            sort()
-                        }
+                Section(pages.isEmpty ? "" : "Pages") {
+                    ForEach(pages) { page in
+                        OverviewRow(contentObject: contentObject, page: page)
+                            .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
+                            .deleteDisabled(contentObject.note?.pages?.count == 1)
+                            .id(page.id)
                     }
-                    .alignmentGuide(.listRowSeparatorLeading) { _ in 0 }
-                    .moveDisabled(contentObject.note?.pages?.count == 1)
-                    .deleteDisabled(contentObject.note?.pages?.count == 1)
-                    .id(page.id)
+                    .onDelete(perform: delete)
                 }
-                .onMove(perform: move)
-                .onDelete(perform: delete)
-                .moveDisabled(filter)
             }
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
@@ -40,35 +33,29 @@ struct OverviewView: View {
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea(.all)
             }
-            .onChange(of: contentObject.note?.pages) {
-                withAnimation(.smooth(duration: 0.2)) {
-                    sort()
-                }
-            }
-            .onChange(of: filter) {
-                withAnimation(.smooth(duration: 0.2)) {
-                    sort()
-                }
-            }
             .onAppear {
-                sort()
-                reader.scrollTo(toolManager.activePage)
+                reader.scrollTo(toolManager.activePage?.id)
             }
             .overlay {
                 if pages.isEmpty {
                     ContentUnavailableView(
-                        "Du hast keiner Seite ein Lesezeichen hinzugefügt.", systemImage: "bookmark.slash.fill")
+                        "You haven't added any bookmarks yet.", systemImage: "bookmark.slash.fill"
+                    )
+                    .transition(
+                        .asymmetric(insertion: .opacity, removal: .identity)
+                    )
                 }
             }
         }
     }
 
-    func sort() {
+    
+    var pages: [PPPageModel] {
         if filter == false {
-            pages = contentObject.note!.pages!
+            return contentObject.note!.pages!
                 .sorted(using: SortDescriptor(\.index))
         } else {
-            pages = contentObject.note!.pages!
+            return contentObject.note!.pages!
                 .filter(\.isBookmarked)
                 .sorted(using: SortDescriptor(\.index))
         }

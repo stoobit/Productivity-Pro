@@ -55,9 +55,13 @@ struct FolderViewToolbar: ToolbarContent {
         
         ToolbarItemGroup(placement: .topBarLeading) {
             NavigationLink(destination: {
-                TrashView(contentObjects: contentObjects)
+                TrashView(
+                    contentObjects: contentObjects,
+                    filteredObjects: filteredObjects
+                )
             }) { Label("Papierkorb", systemImage: "trash") }
                 .tint(Color.red)
+                .disabled(filteredObjects.isEmpty)
             
             Button(action: { dismiss() }) {
                 Label("Zurück", systemImage: "chevron.left")
@@ -106,5 +110,16 @@ struct FolderViewToolbar: ToolbarContent {
         } else {
             return "\(grade).circle"
         }
+    }
+    
+    var filteredObjects: [ContentObject] {
+        contentObjects
+            .filter { $0.inTrash }
+            .sorted(by: {
+                $0.title < $1.title
+            })
+            .sorted(by: {
+                $0.grade < $1.grade
+            })
     }
 }

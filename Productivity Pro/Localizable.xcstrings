@@ -168,6 +168,9 @@
         }
       }
     },
+    "Add Page" : {
+
+    },
     "Alle bestehenden Notizen werden durch das Backup ersetzt. Diese Aktion kann nicht rückgängig gemacht werden!" : {
       "localizations" : {
         "en" : {
@@ -227,6 +230,7 @@
       }
     },
     "Anpinnen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -300,6 +304,9 @@
           }
         }
       }
+    },
+    "Back" : {
+
     },
     "Backup" : {
       "localizations" : {
@@ -386,6 +393,7 @@
       }
     },
     "Bild" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -501,6 +509,9 @@
         }
       }
     },
+    "Bookmark" : {
+
+    },
     "Braun" : {
       "localizations" : {
         "en" : {
@@ -520,6 +531,12 @@
           }
         }
       }
+    },
+    "Change Template" : {
+
+    },
+    "Circle" : {
+
     },
     "d. MMMM" : {
       "localizations" : {
@@ -576,7 +593,11 @@
         }
       }
     },
+    "Delete Page" : {
+
+    },
     "Der Papierkorb ist leer." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -671,6 +692,9 @@
         }
       }
     },
+    "Done" : {
+
+    },
     "Donnerstag" : {
       "localizations" : {
         "en" : {
@@ -704,6 +728,7 @@
       }
     },
     "Dreieck" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -714,6 +739,7 @@
       }
     },
     "Drucken" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -740,6 +766,7 @@
       }
     },
     "Du hast keiner Seite ein Lesezeichen hinzugefügt." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1006,6 +1033,7 @@
       }
     },
     "Form" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1038,6 +1066,7 @@
       }
     },
     "Fotos" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1150,6 +1179,9 @@
         }
       }
     },
+    "Hexagon" : {
+
+    },
     "Hinzufügen" : {
       "localizations" : {
         "en" : {
@@ -1167,6 +1199,7 @@
       }
     },
     "Hoch- & Querformat" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1196,6 +1229,9 @@
         }
       }
     },
+    "Image" : {
+
+    },
     "Import nicht möglich" : {
       "localizations" : {
         "en" : {
@@ -1211,6 +1247,9 @@
           }
         }
       }
+    },
+    "Import PDF" : {
+
     },
     "Importiere deine Notizen, die du mit Productivity Pro 1 erstellt hast." : {
       "localizations" : {
@@ -1253,6 +1292,7 @@
       }
     },
     "Kamera" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1288,6 +1328,7 @@
 
     },
     "Kreis" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1330,6 +1371,7 @@
       }
     },
     "Lesezeichen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1624,6 +1666,18 @@
         }
       }
     },
+    "Overview" : {
+
+    },
+    "Page" : {
+
+    },
+    "Page %lld" : {
+
+    },
+    "Pages" : {
+
+    },
     "Papierkorb" : {
       "localizations" : {
         "en" : {
@@ -1676,7 +1730,11 @@
         }
       }
     },
+    "Photo Library" : {
+
+    },
     "Pin entfernen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1707,6 +1765,7 @@
       }
     },
     "Productivity Pro" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1777,6 +1836,7 @@
       }
     },
     "Rechteck" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1792,6 +1852,12 @@
         }
       }
     },
+    "Rectangle" : {
+
+    },
+    "Redo" : {
+
+    },
     "Rot" : {
       "localizations" : {
         "en" : {
@@ -1801,6 +1867,9 @@
           }
         }
       }
+    },
+    "Scan Document" : {
+
     },
     "Scanne diesen QR-Code, um direkt auf eine PDF Version dieser Notiz zugreifen zu können." : {
       "localizations" : {
@@ -1855,6 +1924,7 @@
       }
     },
     "Sechseck" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1865,6 +1935,7 @@
       }
     },
     "Seite" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1875,6 +1946,7 @@
       }
     },
     "Seite %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1885,6 +1957,7 @@
       }
     },
     "Seite hinzufügen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1901,6 +1974,7 @@
       }
     },
     "Seite löschen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1909,6 +1983,12 @@
           }
         }
       }
+    },
+    "Shape" : {
+
+    },
+    "Share" : {
+
     },
     "Shuffle" : {
       "localizations" : {
@@ -1963,6 +2043,7 @@
       }
     },
     "stoobit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2011,6 +2092,9 @@
         }
       }
     },
+    "Take Photo" : {
+
+    },
     "Teilen" : {
       "localizations" : {
         "en" : {
@@ -2037,6 +2121,9 @@
         }
       }
     },
+    "Text Box" : {
+
+    },
     "Tippe auf " : {
 
     },
@@ -2050,10 +2137,14 @@
         }
       }
     },
+    "Triangle" : {
+
+    },
     "Überfällig" : {
 
     },
     "Übersicht" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2102,7 +2193,13 @@
         }
       }
     },
+    "Undo" : {
+
+    },
     "Verfügbare Icons" : {
+
+    },
+    "Vertical & Horizontal" : {
 
     },
     "Vokabeln" : {
@@ -2116,6 +2213,7 @@
       }
     },
     "Vorlage ändern" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2169,6 +2267,7 @@
       }
     },
     "Wiederholen" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2213,6 +2312,9 @@
           }
         }
       }
+    },
+    "You haven't added any bookmarks yet." : {
+
     },
     "Zentrieren" : {
       "localizations" : {

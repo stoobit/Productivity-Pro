@@ -1,16 +1,9 @@
-//
-//  TextFieldButton.swift
-//  Productivity Pro
-//
-//  Created by Till Brügmann on 09.10.23.
-//
-
 import SwiftUI
 
 extension NoteToolbar {
     @ViewBuilder func TextFieldButton() -> some View {
         Button(action: { addTextField() }) {
-            Label("Text", systemImage: "character.textbox")
+            Label("Text Box", systemImage: "character.textbox")
         }
     }
     

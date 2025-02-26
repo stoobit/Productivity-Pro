@@ -8,17 +8,8 @@
 import SwiftUI
 
 extension OverviewView {
-    func move(from source: IndexSet, to destination: Int) {
-        pages.move(fromOffsets: source, toOffset: destination)
-        
-        for index in 0 ... pages.count - 1 {
-            pages[index].index = index
-        }
-    }
-    
     func delete(at offsets: IndexSet) {
         Task { @MainActor in
-        
             if contentObject.note!.pages!.count - 1 == pages[offsets.first!].index {
                 contentObject.note?.pages?.removeAll(where: {
                     $0.index == contentObject.note!.pages!.count - 1

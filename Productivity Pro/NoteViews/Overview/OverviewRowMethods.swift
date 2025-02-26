@@ -5,12 +5,11 @@
 //  Created by Till Brügmann on 02.07.23.
 //
 
-import PDFKit
 import SwiftUI
 
 extension OverviewRow {
     func pageNumber() -> LocalizedStringKey {
-        return "Seite \(page.index + 1)"
+        return "Page \(page.index + 1)"
     }
     
     func compactPageNumber() -> LocalizedStringKey {

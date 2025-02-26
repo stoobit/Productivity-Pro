@@ -17,6 +17,7 @@ struct FileSystemView: View {
                 parent: "root", title: String(localized: "Notizen"),
                 contentObjects: contentObjects
             )
+            .ignoresSafeArea(.all, edges: .bottom)
             .overlay {
                 if contentObjects.filter({
                     $0.grade == grade && $0.inTrash == false

@@ -31,12 +31,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         scrollView.showsHorizontalScrollIndicator = false
         
         scrollView.minimumZoomScale = minimumScale
-        
-        #if DEBUG
-        scrollView.maximumZoomScale = 5
-        #else
-        scrollView.maximumZoomScale = 2.3
-        #endif
+        scrollView.maximumZoomScale = 2.0
         
         let hostedView = context.coordinator.hostingController.view!
         hostedView.backgroundColor = .secondarySystemBackground
@@ -67,7 +62,7 @@ struct PPScrollView<Content: View>: UIViewRepresentable {
         scrollView.subviews.last?.addGestureRecognizer(doubleTap)
         
         Task { @MainActor in
-            try await Task.sleep(nanoseconds: 50000)
+            try await Task.sleep(nanoseconds: 500_000_000)
             toolManager.scale = scrollView.zoomScale
             toolManager.offset = scrollView.contentOffset
             

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct PageBackgroundView: View {
     @Environment(ToolManager.self) var toolManager
     @Binding var scale: CGFloat

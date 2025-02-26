@@ -98,7 +98,7 @@ struct ShareQRPDFView: View {
             
             let maskFilter = CIFilter.blendWithMask()
             maskFilter.maskImage = outputImage.applyingFilter("CIColorInvert")
-            maskFilter.inputImage = CIImage(color: CIColor(color: .systemBlue))
+            maskFilter.inputImage = CIImage(color: CIColor(color: .label))
             let coloredImage = maskFilter.outputImage!
             
             if let cgimg = context.createCGImage(coloredImage, from: coloredImage.extent) {

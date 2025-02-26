@@ -22,11 +22,10 @@ struct OverviewContainerView: View {
 
             NavigationStack {
                 OverviewView(contentObject: contentObject, filter: filter)
-                    .navigationTitle("Übersicht")
-                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle("Overview")
                     .toolbar {
                         ToolbarItem(placement: .confirmationAction) {
-                            Button("Fertig") {
+                            Button("Done") {
                                 subviewManager.overview.toggle()
                             }
                             .keyboardShortcut(.return, modifiers: [])
@@ -34,7 +33,9 @@ struct OverviewContainerView: View {
 
                         ToolbarItem(placement: .topBarLeading) {
                             Button(action: {
-                                filter.toggle()
+                                withAnimation(.default) {
+                                    filter.toggle()
+                                }
                             }) {
                                 Label("Filter", systemImage: filter ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
                             }
