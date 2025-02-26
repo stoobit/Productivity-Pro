@@ -97,11 +97,12 @@ struct ObjectView: View {
                     }
                 }
             }
-            .animation(.smooth(duration: 0.2), value: grade)
-            .animation(.smooth(duration: 0.2), value: sortType)
-            .animation(.smooth(duration: 0.2), value: typeSorting)
-            .animation(.smooth(duration: 0.2), value: showDate)
-            .animation(.smooth(duration: 0.2), value: isReverse)
+            .animation(.default, value: grade)
+            .animation(.default, value: sortType)
+            .animation(.default, value: typeSorting)
+            .animation(.default, value: showDate)
+            .animation(.default, value: isReverse)
+            .animation(.default, value: contentObjects.count)
             .scrollContentBackground(.hidden)
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle(title)
@@ -131,9 +132,7 @@ struct ObjectView: View {
             allowedContentTypes: [.pro, .pronote, .pdf],
             allowsMultipleSelection: true
         ) { result in
-            withAnimation(.smooth(duration: 0.2)) {
-                importFile(result: result)
-            }
+            importFile(result: result)
         }
         .sheet(isPresented: $libraryView) {
             LIAPView(parent: parent)

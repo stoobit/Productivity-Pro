@@ -10,13 +10,10 @@ import SwiftUI
 import UserNotifications
 
 struct ContentView: View {
-    @Environment(\.horizontalSizeClass) var hsc
-    @Environment(\.requestReview) var requestReview
-    
-    @Query var contentObjects: [ContentObject]
+    @Query(animation: .default) var contentObjects: [ContentObject]
     @Query(FetchDescriptor(sortBy: [
-        SortDescriptor(\Homework.title, order: .forward)
-    ])) var tasks: [Homework]
+        SortDescriptor(\Homework.title, order: .forward),
+    ]), animation: .default) var tasks: [Homework]
     
     @State var toolManager: ToolManager = .init()
     @State var subviewManager: SubviewManager = .init()
@@ -25,6 +22,7 @@ struct ContentView: View {
         TabView() {
             Tab {
                 FileSystemView(contentObjects: contentObjects)
+                    .ignoresSafeArea(.all, edges: .bottom)
             } label: {
                 Image(systemName: "doc.fill")
             }
@@ -73,19 +71,7 @@ struct ContentView: View {
         .sheet(isPresented: $subviewManager.shareQRPDFView) {
             ShareQRPDFView()
         }
-        .onAppear {
-            review()
-        }
         .environment(toolManager)
         .environment(subviewManager)
-    }
-    
-    @MainActor func review() {
-#if DEBUG
-#else
-        if contentObjects.count > 3 {
-            requestReview()
-        }
-#endif
     }
 }
