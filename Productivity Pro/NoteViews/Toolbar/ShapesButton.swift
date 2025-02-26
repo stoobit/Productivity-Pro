@@ -1,9 +1,4 @@
-//
-//  NoteMainToolbarHelper.swift
-//  Productivity Pro
-//
-//  Created by Till Brügmann on 09.10.23.
-//
+
 
 import SwiftUI
 
@@ -12,24 +7,24 @@ extension NoteToolbar {
         Menu(content: {
             Section {
                 Button(action: { addShape(type: .rectangle) }) {
-                    Label("Rechteck", systemImage: "rectangle")
+                    Label("Rectangle", systemImage: "rectangle")
                 }
                 
                 Button(action: { addShape(type: .circle) }) {
-                    Label("Kreis", systemImage: "circle")
+                    Label("Circle", systemImage: "circle")
                 }
                 
                 Button(action: { addShape(type: .triangle) }) {
-                    Label("Dreieck", systemImage: "triangle")
+                    Label("Triangle", systemImage: "triangle")
                 }
                 
                 Button(action: { addShape(type: .hexagon) }) {
-                    Label("Sechseck", systemImage: "hexagon")
+                    Label("Hexagon", systemImage: "hexagon")
                 }
             }
             
         }) {
-            Label("Form", systemImage: "square.on.circle")
+            Label("Shape", systemImage: "square.on.circle")
         }
     }
     

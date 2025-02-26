@@ -1,45 +1,38 @@
-//
-//  NoteSideActionDrawingModeDisabled.swift
-//  Productivity Pro
-//
-//  Created by Till Brügmann on 19.06.23.
-//
-
 import SwiftUI
 
 extension NoteToolbar {
     @ViewBuilder func UndoActions() -> some View {
         Group {
             if (undoDisabled && redoDisabled) || toolManager.pencilKit {
-                Button("Widerrufen", systemImage: "arrow.uturn.backward") {}
+                Button("Undo", systemImage: "arrow.uturn.backward") {}
                     .disabled(true)
             } else if undoDisabled && redoDisabled == false {
                 Menu {
-                    Button("Widerrufen", systemImage: "arrow.uturn.backward") {
+                    Button("Undo", systemImage: "arrow.uturn.backward") {
                         undo()
                     }
                     .disabled(undoDisabled)
 
-                    Button("Wiederholen", systemImage: "arrow.uturn.forward") {
+                    Button("Redo", systemImage: "arrow.uturn.forward") {
                         redo()
                     }
                     .disabled(redoDisabled)
                 } label: {
-                    Label("Bearbeiten", systemImage: "arrow.uturn.backward")
+                    Label("Edit", systemImage: "arrow.uturn.backward")
                 }
             } else {
                 Menu {
-                    Button("Widerrufen", systemImage: "arrow.uturn.backward") {
+                    Button("Undo", systemImage: "arrow.uturn.backward") {
                         undo()
                     }
                     .disabled(undoDisabled)
 
-                    Button("Wiederholen", systemImage: "arrow.uturn.forward") {
+                    Button("Redo", systemImage: "arrow.uturn.forward") {
                         redo()
                     }
                     .disabled(redoDisabled)
                 } label: {
-                    Label("Bearbeiten", systemImage: "arrow.uturn.backward")
+                    Label("Edit", systemImage: "arrow.uturn.backward")
                 } primaryAction: {
                     undo()
                 }

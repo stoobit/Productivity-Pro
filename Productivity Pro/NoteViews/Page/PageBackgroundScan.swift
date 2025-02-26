@@ -22,9 +22,7 @@ struct PageBackgroundScan: View {
             ImageView(image: renderedBackground)
                 .onAppear {
                     if renderedBackground == nil {
-                        DispatchQueue.global(qos: .userInteractive).async {
-                            render()
-                        }
+                        Task { render() }
                     }
                 }
         }

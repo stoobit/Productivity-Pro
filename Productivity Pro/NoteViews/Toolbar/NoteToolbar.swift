@@ -1,10 +1,3 @@
-//
-//  TopToolbar.swift
-//  Productivity Pro
-//
-//  Created by Till Brügmann on 29.09.22.
-//
-
 import SwiftUI
 
 struct NoteToolbar: ToolbarContent {
@@ -24,7 +17,7 @@ struct NoteToolbar: ToolbarContent {
         @Bindable var subviewValue = subviewManager
         
         ToolbarItemGroup(placement: .topBarLeading) {
-            Button("Zurück", systemImage: "chevron.left") {
+            Button("Back", systemImage: "chevron.left") {
                 contentObject.note?.recent = toolManager.activePage
                 
                 toolManager.activeItem = nil
@@ -37,12 +30,12 @@ struct NoteToolbar: ToolbarContent {
                 dismiss()
             }
             
-            Button("Lesezeichen", systemImage: toolManager.activePage?.isBookmarked == true ? "bookmark.fill" : "bookmark") {
+            Button("Bookmark", systemImage: toolManager.activePage?.isBookmarked == true ? "bookmark.fill" : "bookmark") {
                 toolManager.activePage?.isBookmarked.toggle()
             }
             .tint(Color.red)
             
-            Button("Übersicht", systemImage: "square.grid.2x2") {
+            Button("Overview", systemImage: "square.grid.2x2") {
                 toolManager.pencilKit = false
                 toolManager.activeItem = nil
                 
@@ -52,10 +45,8 @@ struct NoteToolbar: ToolbarContent {
             Menu(content: {
                 ShareMenu(object: contentObject)
             }) {
-                Label("Teilen", systemImage: "square.and.arrow.up")
+                Label("Share", systemImage: "square.and.arrow.up")
             }
-            
-            PageActions()
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
@@ -63,12 +54,7 @@ struct NoteToolbar: ToolbarContent {
             InsertAction()
             InspectorAction()
             UndoActions()
-            
-            Menu(content: {
-                NoteTitleMenu(contentObject: contentObject)
-            }) {
-                Image(systemName: "ellipsis.circle")
-            }
+            PageActions()
         }
     }
 }

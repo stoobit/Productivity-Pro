@@ -10,6 +10,16 @@ import PencilKit
 import SwiftUI
 
 extension PageView {
+    func render() async {
+        if renderCanvas {
+            self.rendered = try? PKDrawing(data: page.canvas)
+                .image(
+                    from: CGRect(origin: .zero, size: getFrame()),
+                    scale: 0.3
+                )
+        }
+    }
+    
     func colorScheme() -> UIUserInterfaceStyle {
         var cs: UIUserInterfaceStyle = .dark
         
@@ -33,12 +43,10 @@ extension PageView {
     }
     
     func onBackgroundTap() {
-        if toolManager.dragType == .none, subviewManager.showInspector == false && toolManager.isEditingText == false {
+        if toolManager.dragType == .none, subviewManager.showInspector == false {
             toolManager.activeItem = nil
             toolManager.dragType = .none
             toolManager.editorVisible = true
-        } else if toolManager.isEditingText {
-            toolManager.isEditingText = false
         }
     }
     

@@ -24,7 +24,7 @@ struct TrashViewItem: View {
         }
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
             Button(
-                "Wiederherstellen",
+                "Redo",
                 systemImage: "arrowshape.turn.up.left.fill"
             ) {
                 putBack.toggle()
@@ -42,7 +42,7 @@ struct TrashViewItem: View {
         .sheet(isPresented: $putBack, onDismiss: putObjectBack) {
             ObjectPicker(
                 objects: contentObjects,
-                isPresented: $putBack, id: object.id, 
+                isPresented: $putBack, id: object.id,
                 selectedObject: $selectedParent, type: .folder
             )
         }

@@ -61,7 +61,7 @@ extension PagingViewController {
             if let visibleViewController = pageViewController.viewControllers?.first,
                let index = controllers.firstIndex(of: visibleViewController)
             {
-                parent.currentPage = index
+                Task { @MainActor in parent.currentPage = index }
             }
         }
     }

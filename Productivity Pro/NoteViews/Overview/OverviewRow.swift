@@ -15,8 +15,6 @@ struct OverviewRow: View {
     var contentObject: ContentObject
     @Bindable var page: PPPageModel
     
-    var update: () -> Void
-    
     var body: some View {
         ViewThatFits(in: .horizontal) {
             LargeView()
@@ -57,10 +55,7 @@ struct OverviewRow: View {
                     )
                     .padding(7)
                     .onTapGesture {
-                        withAnimation(.smooth(duration: 0.2)) {
-                            page.isBookmarked.toggle()
-                            update()
-                        }
+                        withAnimation(.default) { page.isBookmarked.toggle() }
                     }
             }
             .frame(width: 150, height: 150)
@@ -96,10 +91,9 @@ struct OverviewRow: View {
     @ViewBuilder func PageOverview() -> some View {
         ZStack {
             PageView(
-                note: contentObject.note!,
-                page: page,
-                scale: .constant(0.01),
-                offset: .constant(.zero)
+                note: contentObject.note!, page: page,
+                scale: .constant(0.01), offset: .constant(.zero),
+                renderCanvas: true
             )
             .scaleEffect(150 / getFrame().width)
             .frame(

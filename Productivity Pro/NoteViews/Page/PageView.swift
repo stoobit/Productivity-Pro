@@ -24,14 +24,18 @@ struct PageView: View {
     @Binding var offset: CGPoint
     
     var size: CGSize = .zero
+    
     var preloadModels: Bool = false
     var realrenderText: Bool = false
+    var renderCanvas: Bool = false
+    
+    @State var rendered: UIImage?
 
     var body: some View {
         ZStack {
             ZStack {
                 PageBackgroundView(scale: $scale, page: page)
-                    .shadow(color: Color.shadow.opacity(0.5), radius: 2)
+                    .shadow(color: Color("shadow").opacity(0.5), radius: 2)
                 
                 if preloadModels == false {
                     BackgroundTemplateView(page: page, scale: $scale)
@@ -54,12 +58,14 @@ struct PageView: View {
             
             PageItemView(
                 note: note, page: page, scale: $scale,
-                realrenderText: realrenderText, 
+                realrenderText: realrenderText,
                 preloadModels: preloadModels
             )
             .allowsHitTesting(toolManager.pencilKit == false)
             
-            if preloadModels == false {
+            if renderCanvas, let rendered = rendered {
+                Image(uiImage: rendered)
+            } else if preloadModels == false {
                 DrawingView(page: page, scale: $scale)
                     .allowsHitTesting(toolManager.pencilKit)
             }
@@ -85,5 +91,6 @@ struct PageView: View {
             width: getFrame().width * scale,
             height: getFrame().height * scale
         )
+        .task { await render() }
     }
 }

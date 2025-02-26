@@ -1,10 +1,3 @@
-//
-//  TemplateView.swift
-//  Productivity Pro
-//
-//  Created by Till Brügmann on 26.07.23.
-//
-
 import SwiftUI
 
 struct TemplateView: View {
@@ -50,7 +43,7 @@ struct TemplateView: View {
             }
             .environment(\.defaultMinListRowHeight, 10)
             .scrollIndicators(.hidden)
-            
+            .listSectionSpacing(21)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.navigationStack)
             .toolbar {
