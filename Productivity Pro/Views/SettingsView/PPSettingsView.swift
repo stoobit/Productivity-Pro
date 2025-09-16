@@ -20,7 +20,6 @@ struct PPSettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Settings()
                 DataAndNotifications()
                 
                 Section("Bewertungen und Kontakt") {

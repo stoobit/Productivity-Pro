@@ -19,27 +19,16 @@ struct IndicatorText: View {
         let total = pages.count
         let number = (toolManager.activePage?.index ?? 0) + 1
         
-        ZStack {
-            UnevenRoundedRectangle(
-                topLeadingRadius: 0,
-                bottomLeadingRadius: 8,
-                bottomTrailingRadius: 8,
-                topTrailingRadius: 0,
-                style: .circular
-            )
-            .foregroundStyle(Color.accentColor)
-            .frame(width: 70, height: 30)
-            
-            Text("\(number) von \(total)")
-                .fontWeight(.semibold)
-                .font(.caption)
-                .foregroundStyle(Color.white)
-        }
-        .frame(
-            maxWidth: .infinity,
-            maxHeight: .infinity,
-            alignment: .topTrailing
-        )
-        .padding(.trailing, 10)
+        Text("\(number) von \(total)")
+            .lineLimit(1)
+            .fontWeight(.semibold)
+            .font(.caption)
+    }
+    
+    func page() -> String {
+        let total = pages.count
+        let number = (toolManager.activePage?.index ?? 0) + 1
+        
+        return "\(number) von \(total)"
     }
 }

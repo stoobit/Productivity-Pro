@@ -108,7 +108,7 @@ struct ScheduleAddSubject: View {
                 }
                 
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") {
+                    Button("Abbrechen", systemImage: "xmark") {
                         isPresented.toggle()
                     }
                 }

@@ -16,45 +16,74 @@ struct NoteToolbar: ToolbarContent {
     var body: some ToolbarContent {
         @Bindable var subviewValue = subviewManager
         
-        ToolbarItemGroup(placement: .topBarLeading) {
+        ToolbarItem(placement: .topBarLeading) {
             Button("Back", systemImage: "chevron.left") {
-                contentObject.note?.recent = toolManager.activePage
-                
-                toolManager.activeItem = nil
-                toolManager.pencilKit = false
-                
-                for page in contentObject.note!.pages! {
-                    page.store = []
-                }
-                
-                dismiss()
+                dismissNote()
             }
+        }
+        
+        ToolbarSpacer(placement: .topBarLeading)
             
-            Button("Bookmark", systemImage: toolManager.activePage?.isBookmarked == true ? "bookmark.fill" : "bookmark") {
+        ToolbarItemGroup(placement: .topBarLeading) {
+            Button("Bookmark", systemImage: bookmarkIcon) {
                 toolManager.activePage?.isBookmarked.toggle()
             }
             .tint(Color.red)
             
             Button("Overview", systemImage: "square.grid.2x2") {
-                toolManager.pencilKit = false
-                toolManager.activeItem = nil
-                
-                subviewManager.overview.toggle()
+               openOverview()
             }
-            
-            Menu(content: {
+        }
+        
+        ToolbarSpacer(placement: .topBarLeading)
+        
+        ToolbarItem(placement: .topBarLeading) {
+            Menu("Share", systemImage: "square.and.arrow.up") {
                 ShareMenu(object: contentObject)
-            }) {
-                Label("Share", systemImage: "square.and.arrow.up")
             }
         }
         
         ToolbarItemGroup(placement: .primaryAction) {
             PencilAction()
             InsertAction()
+        }
+        
+        ToolbarSpacer(placement: .primaryAction)
+        
+        ToolbarItemGroup(placement: .primaryAction) {
             InspectorAction()
             UndoActions()
+        }
+        
+        ToolbarSpacer(placement: .primaryAction)
+        
+        ToolbarItemGroup(placement: .primaryAction) {
             PageActions()
         }
+    }
+    
+    func dismissNote() {
+        contentObject.note?.recent = toolManager.activePage
+        
+        toolManager.activeItem = nil
+        toolManager.pencilKit = false
+        
+        for page in contentObject.note!.pages! {
+            page.store = []
+        }
+        
+        dismiss()
+    }
+    
+    func openOverview() {
+        toolManager.pencilKit = false
+        toolManager.activeItem = nil
+        
+        subviewManager.overview.toggle()
+    }
+    
+    var bookmarkIcon: String {
+        let isBookmarked = toolManager.activePage?.isBookmarked
+        return isBookmarked == true ? "bookmark.fill" : "bookmark"
     }
 }

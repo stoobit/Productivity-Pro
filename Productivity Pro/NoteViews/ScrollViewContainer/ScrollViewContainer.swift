@@ -31,7 +31,7 @@ struct ScrollViewContainer: View {
                 scale: $scale, offset: $offset, size: proxy.size
             )
         }
-        .ignoresSafeArea(.all, edges: .bottom)
+        .ignoresSafeArea(.all, edges: .all)
         .modifier(OrientationUpdater(isPortrait: page.isPortrait))
         .onChange(of: pvModel.index) {
             if pvModel.index == page.index {

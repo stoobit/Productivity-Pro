@@ -52,14 +52,17 @@ struct NoteView: View {
                 .onChange(of: pvModel.index) { updateIndex() }
                 .onAppear { onAppear() }
                 .overlay {
-                    ClipboardControl(size: proxy.size)
-                        .padding(10)
-                    
-                    IndicatorText(contentObject: contentObject)
                     PrinterViewContainer(contentObject: contentObject)
                 }
+                .toolbar {
+                    ClipboardControl(size: proxy.size)
+                    ToolbarSpacer(.flexible, placement: .bottomBar)
+                }
             }
-            .ignoresSafeArea(.all, edges: .bottom)
+            .ignoresSafeArea(.all, edges: .all)
+            .navigationTitle(contentObject.title)
+            .navigationSubtitle(page())
+            .scrollEdgeEffectHidden()
             .background {
                 Button("Widerrufen") {
                     toolManager.activePage?.undo(
@@ -144,6 +147,13 @@ struct NoteView: View {
         }
         
         toolManager.activeItem = nil
+    }
+    
+    func page() -> String {
+        let total = pages.count
+        let number = (toolManager.activePage?.index ?? 0) + 1
+        
+        return "\(number) von \(total)"
     }
     
     @ViewBuilder func LoadingView() -> some View {

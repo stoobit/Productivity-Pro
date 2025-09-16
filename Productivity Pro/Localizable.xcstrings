@@ -241,6 +241,7 @@
       }
     },
     "App Icon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -294,6 +295,9 @@
           }
         }
       }
+    },
+    "Ausschneiden" : {
+
     },
     "Auswählen" : {
       "localizations" : {
@@ -554,6 +558,9 @@
         }
       }
     },
+    "Darstellung" : {
+
+    },
     "Datei importieren" : {
       "localizations" : {
         "en" : {
@@ -606,9 +613,6 @@
           }
         }
       }
-    },
-    "Design" : {
-
     },
     "Dienstag" : {
       "localizations" : {
@@ -818,6 +822,9 @@
       }
     },
     "Du hast noch keinen Stundenplan erstellt." : {
+
+    },
+    "Duplizieren" : {
 
     },
     "Ecken" : {
@@ -1324,7 +1331,10 @@
         }
       }
     },
-    "Klasse" : {
+    "Klasse %lld" : {
+
+    },
+    "Kopieren" : {
 
     },
     "Kreis" : {
@@ -1640,6 +1650,9 @@
         }
       }
     },
+    "Optionen" : {
+
+    },
     "Orange" : {
       "localizations" : {
         "en" : {
@@ -1667,9 +1680,6 @@
       }
     },
     "Overview" : {
-
-    },
-    "Page" : {
 
     },
     "Page %lld" : {
@@ -1984,6 +1994,9 @@
         }
       }
     },
+    "Seitenaktionen" : {
+
+    },
     "Shape" : {
 
     },
@@ -2021,6 +2034,9 @@
           }
         }
       }
+    },
+    "Sortieren nach" : {
+
     },
     "Sperre" : {
       "localizations" : {
@@ -2194,9 +2210,6 @@
       }
     },
     "Undo" : {
-
-    },
-    "Verfügbare Icons" : {
 
     },
     "Vertical & Horizontal" : {

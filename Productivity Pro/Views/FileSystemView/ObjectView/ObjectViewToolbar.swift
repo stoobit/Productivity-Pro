@@ -36,13 +36,72 @@ struct FolderViewToolbar: ToolbarContent {
     let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
     
     var body: some ToolbarContent {
-        ToolbarItemGroup(placement: .topBarTrailing) {
-            if locale == "Deutsch" {
+        // MARK: - Top Bar Leading
+        ToolbarItemGroup(placement: .topBarLeading) {
+            Button(action: { dismiss() }) {
+                Label("Zurück", systemImage: "chevron.left")
+            }
+            .disabled(parent == "root")
+            
+            Menu("Optionen", systemImage: "line.3.horizontal.decrease") {
+                Section("Anordnung") {
+                    Picker("Sortieren nach", systemImage: "list.bullet", selection: $sortType) {
+                        Text("Name").tag(SortingValue.title)
+                        Text("Erstellt").tag(SortingValue.created)
+                    }
+                    .pickerStyle(.menu)
+                    
+                    Button(action: { isReverse.toggle() }) {
+                        Label(
+                            isReverse ? "Absteigend" : "Aufsteigend",
+                            systemImage: isReverse ? "chevron.down" : "chevron.up"
+                        )
+                    }
+                }
+                
+                Section("Darstellung") {
+                    Toggle("Gruppieren", isOn: $typeSorting)
+                    Toggle("Datum anzeigen", isOn: $showDate)
+                }
+                
+                if parent == "root" {
+                    Picker("Klasse \(grade)", selection: $grade) {
+                        ForEach(5 ... 13, id: \.self) {
+                            Text("\($0). Klasse")
+                        }
+                    }
+                    .pickerStyle(.menu)
+                }
+            }
+        }
+        
+        ToolbarSpacer(placement: .topBarLeading)
+        
+        ToolbarItem(placement: .topBarLeading) {
+            NavigationLink(destination: {
+                TrashView(
+                    contentObjects: contentObjects,
+                    filteredObjects: filteredObjects
+                )
+            }) {
+                Label("Papierkorb", systemImage: "trash")
+            }
+            .tint(Color.red)
+            .disabled(filteredObjects.isEmpty)
+        }
+        
+        
+        // MARK: - Primary Action
+        if locale == "Deutsch" {
+            ToolbarItemGroup(placement: .primaryAction) {
                 Button("Bibliothek", systemImage: "books.vertical") {
                     libraryView.toggle()
                 }
             }
-            
+        }
+        
+        ToolbarSpacer(placement: .primaryAction)
+        ToolbarItemGroup(placement: .primaryAction) {
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 addFolder = true
             }
@@ -51,64 +110,6 @@ struct FolderViewToolbar: ToolbarContent {
                 contentObjects: contentObjects,
                 parent: parent, importFile: $importFile
             )
-        }
-        
-        ToolbarItemGroup(placement: .topBarLeading) {
-            NavigationLink(destination: {
-                TrashView(
-                    contentObjects: contentObjects,
-                    filteredObjects: filteredObjects
-                )
-            }) { Label("Papierkorb", systemImage: "trash") }
-                .tint(Color.red)
-                .disabled(filteredObjects.isEmpty)
-            
-            Button(action: { dismiss() }) {
-                Label("Zurück", systemImage: "chevron.left")
-            }
-            .disabled(parent == "root")
-            
-            Menu(content: {
-                Picker("", selection: $sortType) {
-                    Text("Name").tag(SortingValue.title)
-                    Text("Erstellt").tag(SortingValue.created)
-                }
-                    
-                Button(action: { isReverse.toggle() }) {
-                    Label(
-                        isReverse ? "Absteigend" : "Aufsteigend",
-                        systemImage: isReverse ? "chevron.down" : "chevron.up"
-                    )
-                }
-                    
-                Section {
-                    Toggle("Gruppieren", isOn: $typeSorting)
-                    Toggle("Datum anzeigen", isOn: $showDate)
-                }
-                    
-                if parent == "root" {
-                    Menu("Klasse") {
-                        Section("Klasse") {
-                            Picker("", selection: $grade) {
-                                ForEach(5 ... 13, id: \.self) {
-                                    Text("\($0). Klasse")
-                                }
-                            }
-                            .labelsHidden()
-                        }
-                    }
-                }
-            }) {
-                Label("Sortieren", systemImage: "list.bullet")
-            }
-        }
-    }
-    
-    func image() -> String {
-        if grade < 10 {
-            return "0\(grade).circle"
-        } else {
-            return "\(grade).circle"
         }
     }
     

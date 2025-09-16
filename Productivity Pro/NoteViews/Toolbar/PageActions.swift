@@ -44,7 +44,7 @@ extension NoteToolbar {
                 .disabled(contentObject.note?.pages?.count == 1)
             }
         }) {
-            Label("Page", systemImage: "doc.badge.ellipsis")
+            Label("Seitenaktionen", systemImage: "doc.badge.ellipsis")
         }
     }
 }

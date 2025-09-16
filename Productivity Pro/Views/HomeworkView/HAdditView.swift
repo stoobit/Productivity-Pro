@@ -125,7 +125,7 @@ struct HAdditView: View {
                     }
                     
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Abbrechen") { dismiss() }
+                        Button("Abbrechen", systemImage: "xmark") { dismiss() }
                     }
                 } else {
                     ToolbarItem(placement: .confirmationAction) {

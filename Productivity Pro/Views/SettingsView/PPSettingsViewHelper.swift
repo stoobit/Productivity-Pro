@@ -8,17 +8,6 @@
 import SwiftUI
 
 extension PPSettingsView {
-    @ViewBuilder func Settings() -> some View {
-        Section("Design") {
-            NavigationLink(destination: {
-                AppIconSettings()
-            }) {
-                Label("App Icon", systemImage: "app.gift")
-            }
-            .frame(height: 30)
-        }
-    }
-    
     @ViewBuilder func DataAndNotifications() -> some View {
         Section("Daten und Benachrichtigungen") {
             NavigationLink(destination: {

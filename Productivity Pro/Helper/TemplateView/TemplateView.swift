@@ -48,7 +48,7 @@ struct TemplateView: View {
             .toolbarRole(.navigationStack)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") { isPresented = false }
+                    Button("Abbrechen", systemImage: "xmark") { isPresented = false }
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {

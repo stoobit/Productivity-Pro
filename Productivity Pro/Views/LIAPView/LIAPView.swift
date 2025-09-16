@@ -43,7 +43,7 @@ struct LIAPView: View {
             .scrollIndicators(.hidden)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Abbrechen") {
+                    Button("Abbrechen", systemImage: "xmark") {
                         dismiss()
                     }
                     .foregroundStyle(.primary)

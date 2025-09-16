@@ -14,7 +14,6 @@ struct NoteViewToolbar: ViewModifier {
     func body(content: Content) -> some View {
         content
             .navigationBarBackButtonHidden()
-            .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarRole(.editor)
             .toolbar {
