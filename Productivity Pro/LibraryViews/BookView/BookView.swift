@@ -176,7 +176,7 @@ struct BookView: View {
 
         if task {
             Task(priority: .userInitiated) {
-                await view.document?.write(to: PDFBookView.url(for: book))
+                view.document?.write(to: PDFBookView.url(for: book))
             }
         } else {
             view.document?.write(to: PDFBookView.url(for: book))
