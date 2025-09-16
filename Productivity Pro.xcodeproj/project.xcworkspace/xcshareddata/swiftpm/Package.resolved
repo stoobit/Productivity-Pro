@@ -1,5 +1,5 @@
 {
-  "originHash" : "220f2a516e353353d39c5ea475982c3fbfcc26d90588b083e92f9f727cb314d7",
+  "originHash" : "97d1244289cb5a34c4cbadb185d9b22237b526b3df6b8a7c663d3b0dd75879ab",
   "pins" : [
     {
       "identity" : "inputbaraccessoryview",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "f0ecceb71ff3cb12a3143eed13b8b62fea7c34e5",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "stoobit-analytics-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stoobit-analytics/stoobit-analytics-swift",
+      "state" : {
+        "revision" : "febe2f7726789919ee00fb3429aecbdccd1578ab",
+        "version" : "2.0.7"
       }
     },
     {

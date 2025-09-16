@@ -7,13 +7,22 @@
 
 import SwiftData
 import SwiftUI
+import Analytics
 
 @main
-struct Productivity_ProApp: App {
+struct Application: App {
+    @Environment(\.scenePhase) private var scenePhase
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    
+    @State private var analytics = Analytics(key: Analytics.key())
+    
     var body: some Scene {
         WindowGroup(id: "main") {
             ContentView()
-                .ignoresSafeArea(.all, edges: .bottom)
+                .environment(analytics)
+                .onChange(of: scenePhase) {
+                    analytics.flush()
+                }
         }
         .modelContainer(
             for: [
