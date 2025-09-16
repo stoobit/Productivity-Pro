@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClipboardControl: ToolbarContent {
+struct ClipboardControl: View {
     @Environment(\.modelContext) var context
     
     @Environment(SubviewManager.self) var subviewManager
@@ -19,20 +19,11 @@ struct ClipboardControl: ToolbarContent {
     @State var alert: Bool = false
     var size: CGSize
 
-    var body: some ToolbarContent {
-        ToolbarItemGroup(placement: .bottomBar) {
-            Button("Einfügen", systemImage: "doc.on.clipboard") {
-                paste()
-            }
-            .padding()
-            .keyboardShortcut(KeyEquivalent("v"), modifiers: .command)
-            .disabled(subviewManager.showInspector)
-            .alert(
-                "Es konnte kein Objekt eingefügt werden.", isPresented: $alert
-            ) {
-                Button("Ok") { alert.toggle() }
-            }
-            
+    var body: some View {
+        Menu("Bearbeitungsoptionen", systemImage: "clipboard") {
+            Button("Einfügen", systemImage: "doc.on.clipboard", action: paste)
+                .keyboardShortcut(KeyEquivalent("v"), modifiers: .command)
+                .disabled(subviewManager.showInspector)
             
             Button("Kopieren", systemImage: "document.on.document") {
                 copy()
@@ -47,15 +38,10 @@ struct ClipboardControl: ToolbarContent {
             .keyboardShortcut(KeyEquivalent("d"), modifiers: .command)
             .disabled(subviewManager.showInspector)
             .disabled(toolManager.activeItem == nil)
-        }
         
-        ToolbarSpacer(.fixed, placement: .bottomBar)
-        
-        ToolbarItemGroup(placement: .bottomBar) {
             Button(role: .destructive, action: { cut() }) {
                 Label("Ausschneiden", systemImage: "scissors")
             }
-            .tint(Color.red)
             .keyboardShortcut(KeyEquivalent("x"), modifiers: .command)
             .disabled(subviewManager.showInspector)
             .disabled(toolManager.activeItem == nil)
@@ -63,10 +49,14 @@ struct ClipboardControl: ToolbarContent {
             Button(role: .destructive, action: { delete() }) {
                 Label("Löschen", systemImage: "trash")
             }
-            .tint(Color.red)
             .keyboardShortcut(.delete, modifiers: [])
             .disabled(subviewManager.showInspector)
             .disabled(toolManager.activeItem == nil)
+        }
+        .alert(
+            "Es konnte kein Objekt eingefügt werden.", isPresented: $alert
+        ) {
+            Button("Ok") { alert.toggle() }
         }
     }
 }

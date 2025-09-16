@@ -53,6 +53,7 @@ struct NoteToolbar: ToolbarContent {
         ToolbarItemGroup(placement: .primaryAction) {
             InspectorAction()
             UndoActions()
+            ClipboardControl(size: size)
         }
         
         ToolbarSpacer(placement: .primaryAction)

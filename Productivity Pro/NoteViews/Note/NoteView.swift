@@ -54,10 +54,6 @@ struct NoteView: View {
                 .overlay {
                     PrinterViewContainer(contentObject: contentObject)
                 }
-                .toolbar {
-                    ClipboardControl(size: proxy.size)
-                    ToolbarSpacer(.flexible, placement: .bottomBar)
-                }
             }
             .ignoresSafeArea(.all, edges: .all)
             .navigationTitle(contentObject.title)
