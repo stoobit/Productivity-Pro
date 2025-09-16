@@ -41,12 +41,12 @@ struct NoteView: View {
                             .environment(toolManager)
                             .environment(subviewManager)
                             .environment(pvModel)
+                            .id(pages[pvModel.index].isPortrait)
                             
                         }, currentPage: $pvModel.index
                     )
                     .id(pages.count)
                     .id(proxy.size.width)
-                    .id(pages[pvModel.index].isPortrait)
                 }
                 .noteViewModifier(with: contentObject, size: proxy.size)
                 .onChange(of: pvModel.index) { updateIndex() }
