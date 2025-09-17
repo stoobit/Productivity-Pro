@@ -149,7 +149,7 @@ struct NoteView: View {
         let total = pages.count
         let number = (toolManager.activePage?.index ?? 0) + 1
         
-        return "\(number) von \(total)"
+        return "Seite \(number) von \(total)"
     }
     
     @ViewBuilder func LoadingView() -> some View {

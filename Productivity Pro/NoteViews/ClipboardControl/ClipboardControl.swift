@@ -20,7 +20,7 @@ struct ClipboardControl: View {
     var size: CGSize
 
     var body: some View {
-        Menu("Bearbeitungsoptionen", systemImage: "clipboard") {
+        Menu("Bearbeitungsoptionen", systemImage: "document.on.trash") {
             Button("Einfügen", systemImage: "doc.on.clipboard", action: paste)
                 .keyboardShortcut(KeyEquivalent("v"), modifiers: .command)
                 .disabled(subviewManager.showInspector)

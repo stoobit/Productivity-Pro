@@ -46,12 +46,12 @@ struct NoteToolbar: ToolbarContent {
         ToolbarItemGroup(placement: .primaryAction) {
             PencilAction()
             InsertAction()
+            InspectorAction()
         }
         
         ToolbarSpacer(placement: .primaryAction)
         
         ToolbarItemGroup(placement: .primaryAction) {
-            InspectorAction()
             UndoActions()
             ClipboardControl(size: size)
         }
