@@ -172,58 +172,55 @@
   ],
   "settings" : {
     "_applicationInternalID" : "6449678571",
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
     "_developerTeamID" : "X8ZDMM9V4U",
+    "_disableDialogs" : false,
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 737152604.44516301,
+    "_lastSynchronizedDate" : 793462546.57957697,
     "_locale" : "de",
+    "_renewalBillingIssuesEnabled" : false,
     "_storefront" : "DEU",
     "_storeKitErrors" : [
       {
-        "current" : null,
         "enabled" : false,
         "name" : "Load Products"
       },
       {
-        "current" : null,
         "enabled" : false,
         "name" : "Purchase"
       },
       {
-        "current" : null,
         "enabled" : false,
         "name" : "Verification"
       },
       {
-        "current" : null,
         "enabled" : false,
         "name" : "App Store Sync"
       },
       {
-        "current" : null,
         "enabled" : false,
         "name" : "Subscription Status"
       },
       {
-        "current" : null,
         "enabled" : false,
         "name" : "App Transaction"
       },
       {
-        "current" : null,
         "enabled" : false,
         "name" : "Manage Subscriptions Sheet"
       },
       {
-        "current" : null,
         "enabled" : false,
         "name" : "Refund Request Sheet"
       },
       {
-        "current" : null,
         "enabled" : false,
         "name" : "Offer Code Redeem Sheet"
       }
-    ]
+    ],
+    "_timeRate" : 0
   },
   "subscriptionGroups" : [
     {
@@ -236,7 +233,7 @@
         {
           "adHocOffers" : [
             {
-              "internalID" : "AA30EAEA",
+              "internalID" : "001BBF23",
               "numberOfPeriods" : 1,
               "offerID" : "com.stoobit.productivitypro.premium.monthlysub.offer",
               "paymentMode" : "free",

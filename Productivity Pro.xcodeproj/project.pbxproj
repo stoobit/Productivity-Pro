@@ -12,27 +12,12 @@
 		BB4984082BC32BC8008D45B0 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4984072BC32BC8008D45B0 /* Metal.framework */; };
 		BB49840A2BC32BCD008D45B0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4984092BC32BCD008D45B0 /* Accelerate.framework */; };
 		BB9C63B62B5AFE2A0022AC4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB9C63B52B5AFE290022AC4F /* README.md */; };
+		BBAA6FA42F4B4EC7005FE982 /* View in Frameworks */ = {isa = PBXBuildFile; productRef = BBAA6FA32F4B4EC7005FE982 /* View */; };
+		BBAA6FA72F4B5754005FE982 /* Codable in Frameworks */ = {isa = PBXBuildFile; productRef = BBAA6FA62F4B5754005FE982 /* Codable */; };
 		BBB3CCA52BEADCB000BDB558 /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = BBB3CCA42BEADCB000BDB558 /* SwiftyMarkdown */; };
 		BBB569172CFB0C1400B23479 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = BBB569162CFB0C1400B23479 /* MessageKit */; };
 		BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4BE892AED7BBE00D87B60 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BB26C0C12BB3177500A2C68C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB4CDD3528D3C668009A409F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB4CDD3C28D3C668009A409F;
-			remoteInfo = "Productivity Pro";
-		};
-		BB26C0CE2BB3178E00A2C68C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB4CDD3528D3C668009A409F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB4CDD3C28D3C668009A409F;
-			remoteInfo = "Productivity Pro";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		BB5A232C2B476DA000F1D1B6 /* Embed App Clips */ = {
@@ -58,8 +43,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BB26C0BB2BB3177500A2C68C /* PPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB26C0CA2BB3178E00A2C68C /* PPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4984072BC32BC8008D45B0 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		BB4984092BC32BCD008D45B0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BB4CDD3D28D3C668009A409F /* Productivity Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Productivity Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,26 +61,10 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		BB4052BA2E7974FC00450C43 /* PPTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PPTests; sourceTree = "<group>"; };
-		BB4052BE2E7974FE00450C43 /* PPUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PPUITests; sourceTree = "<group>"; };
 		BB40570B2E79791300450C43 /* Productivity Pro */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (BB4058172E797B9D00450C43 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Productivity Pro"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BB26C0B82BB3177500A2C68C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BB26C0C72BB3178E00A2C68C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BB4CDD3A28D3C668009A409F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,7 +75,9 @@
 				BB4055B82E79778100450C43 /* Analytics in Frameworks */,
 				BBB569172CFB0C1400B23479 /* MessageKit in Frameworks */,
 				BBC4BE952AED8F0A00D87B60 /* StoreKit.framework in Frameworks */,
+				BBAA6FA72F4B5754005FE982 /* Codable in Frameworks */,
 				BBB3CCA52BEADCB000BDB558 /* SwiftyMarkdown in Frameworks */,
+				BBAA6FA42F4B4EC7005FE982 /* View in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,8 +89,6 @@
 			children = (
 				BB9C63B52B5AFE290022AC4F /* README.md */,
 				BB40570B2E79791300450C43 /* Productivity Pro */,
-				BB4052BA2E7974FC00450C43 /* PPTests */,
-				BB4052BE2E7974FE00450C43 /* PPUITests */,
 				BB4CDD3E28D3C668009A409F /* Products */,
 				BBC4BE882AED7BBE00D87B60 /* Frameworks */,
 			);
@@ -131,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				BB4CDD3D28D3C668009A409F /* Productivity Pro.app */,
-				BB26C0BB2BB3177500A2C68C /* PPUITests.xctest */,
-				BB26C0CA2BB3178E00A2C68C /* PPTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,48 +115,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB26C0BA2BB3177500A2C68C /* PPUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BB26C0C52BB3177500A2C68C /* Build configuration list for PBXNativeTarget "PPUITests" */;
-			buildPhases = (
-				BB26C0B72BB3177500A2C68C /* Sources */,
-				BB26C0B82BB3177500A2C68C /* Frameworks */,
-				BB26C0B92BB3177500A2C68C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BB26C0C22BB3177500A2C68C /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				BB4052BE2E7974FE00450C43 /* PPUITests */,
-			);
-			name = PPUITests;
-			productName = PPUITests;
-			productReference = BB26C0BB2BB3177500A2C68C /* PPUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		BB26C0C92BB3178E00A2C68C /* PPTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BB26C0D02BB3178E00A2C68C /* Build configuration list for PBXNativeTarget "PPTests" */;
-			buildPhases = (
-				BB26C0C62BB3178E00A2C68C /* Sources */,
-				BB26C0C72BB3178E00A2C68C /* Frameworks */,
-				BB26C0C82BB3178E00A2C68C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BB26C0CF2BB3178E00A2C68C /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				BB4052BA2E7974FC00450C43 /* PPTests */,
-			);
-			name = PPTests;
-			productName = PPTests;
-			productReference = BB26C0CA2BB3178E00A2C68C /* PPTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		BB4CDD3C28D3C668009A409F /* Productivity Pro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB4CDD4E28D3C66A009A409F /* Build configuration list for PBXNativeTarget "Productivity Pro" */;
@@ -215,6 +138,8 @@
 				BB06A2EA2BEBAD65007B118A /* RichTextKit */,
 				BBB569162CFB0C1400B23479 /* MessageKit */,
 				BB4055B72E79778100450C43 /* Analytics */,
+				BBAA6FA32F4B4EC7005FE982 /* View */,
+				BBAA6FA62F4B5754005FE982 /* Codable */,
 			);
 			productName = "Productivity Pro";
 			productReference = BB4CDD3D28D3C668009A409F /* Productivity Pro.app */;
@@ -228,17 +153,9 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 2630;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
-					BB26C0BA2BB3177500A2C68C = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = BB4CDD3C28D3C668009A409F;
-					};
-					BB26C0C92BB3178E00A2C68C = {
-						CreatedOnToolsVersion = 15.2;
-						TestTargetID = BB4CDD3C28D3C668009A409F;
-					};
 					BB4CDD3C28D3C668009A409F = {
 						CreatedOnToolsVersion = 14.0;
 						LastSwiftMigration = 1430;
@@ -261,33 +178,19 @@
 				BB06A2E92BEBAD65007B118A /* XCRemoteSwiftPackageReference "RichTextKit" */,
 				BBB569152CFB0C1400B23479 /* XCRemoteSwiftPackageReference "MessageKit" */,
 				BB4055B62E79778100450C43 /* XCRemoteSwiftPackageReference "stoobit-analytics-swift" */,
+				BBAA6FA22F4B4EC7005FE982 /* XCRemoteSwiftPackageReference "View" */,
+				BBAA6FA52F4B5754005FE982 /* XCRemoteSwiftPackageReference "Codable" */,
 			);
 			productRefGroup = BB4CDD3E28D3C668009A409F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				BB4CDD3C28D3C668009A409F /* Productivity Pro */,
-				BB26C0BA2BB3177500A2C68C /* PPUITests */,
-				BB26C0C92BB3178E00A2C68C /* PPTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BB26C0B92BB3177500A2C68C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BB26C0C82BB3178E00A2C68C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BB4CDD3B28D3C668009A409F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,20 +202,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BB26C0B72BB3177500A2C68C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BB26C0C62BB3178E00A2C68C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BB4CDD3928D3C668009A409F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,104 +211,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		BB26C0C22BB3177500A2C68C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB4CDD3C28D3C668009A409F /* Productivity Pro */;
-			targetProxy = BB26C0C12BB3177500A2C68C /* PBXContainerItemProxy */;
-		};
-		BB26C0CF2BB3178E00A2C68C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB4CDD3C28D3C668009A409F /* Productivity Pro */;
-			targetProxy = BB26C0CE2BB3178E00A2C68C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		BB26C0C32BB3177500A2C68C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X8ZDMM9V4U;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.PPUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Productivity Pro";
-			};
-			name = Debug;
-		};
-		BB26C0C42BB3177500A2C68C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X8ZDMM9V4U;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.PPUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Productivity Pro";
-			};
-			name = Release;
-		};
-		BB26C0D12BB3178E00A2C68C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X8ZDMM9V4U;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.PPTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Productivity Pro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Productivity Pro";
-			};
-			name = Debug;
-		};
-		BB26C0D22BB3178E00A2C68C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X8ZDMM9V4U;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.stoobit.PPTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Productivity Pro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Productivity Pro";
-			};
-			name = Release;
-		};
 		BB4CDD4C28D3C66A009A409F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -456,6 +248,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X8ZDMM9V4U;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -479,6 +272,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -520,6 +314,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = X8ZDMM9V4U;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -536,6 +331,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -554,12 +350,18 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Productivity Pro/Preview Content\"";
-				DEVELOPMENT_TEAM = X8ZDMM9V4U;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_FILE_ACCESS_DOWNLOADS_FOLDER = readwrite;
+				ENABLE_FILE_ACCESS_PICTURE_FOLDER = readwrite;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_CAMERA = YES;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = YES;
+				ENABLE_RESOURCE_ACCESS_PRINTING = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Productivity Pro/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "stoobit notes";
+				INFOPLIST_KEY_CFBundleDisplayName = "Productivity Pro";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Diese App benötigt Kamerazugriff, um Dokumente zu scannen und Fotos zu deinen Productivity Pro Notizen hinzuzufügen.";
@@ -603,12 +405,18 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Productivity Pro/Preview Content\"";
-				DEVELOPMENT_TEAM = X8ZDMM9V4U;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_FILE_ACCESS_DOWNLOADS_FOLDER = readwrite;
+				ENABLE_FILE_ACCESS_PICTURE_FOLDER = readwrite;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_CAMERA = YES;
+				ENABLE_RESOURCE_ACCESS_PHOTO_LIBRARY = YES;
+				ENABLE_RESOURCE_ACCESS_PRINTING = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Productivity Pro/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "stoobit notes";
+				INFOPLIST_KEY_CFBundleDisplayName = "Productivity Pro";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Diese App benötigt Kamerazugriff, um Dokumente zu scannen und Fotos zu deinen Productivity Pro Notizen hinzuzufügen.";
@@ -642,24 +450,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB26C0C52BB3177500A2C68C /* Build configuration list for PBXNativeTarget "PPUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB26C0C32BB3177500A2C68C /* Debug */,
-				BB26C0C42BB3177500A2C68C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BB26C0D02BB3178E00A2C68C /* Build configuration list for PBXNativeTarget "PPTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB26C0D12BB3178E00A2C68C /* Debug */,
-				BB26C0D22BB3178E00A2C68C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		BB4CDD3828D3C668009A409F /* Build configuration list for PBXProject "Productivity Pro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -697,6 +487,22 @@
 				minimumVersion = 2.0.7;
 			};
 		};
+		BBAA6FA22F4B4EC7005FE982 /* XCRemoteSwiftPackageReference "View" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stoobit/View";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		BBAA6FA52F4B5754005FE982 /* XCRemoteSwiftPackageReference "Codable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stoobit/Codable";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		BBB3CCA32BEADCB000BDB558 /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SimonFairbairn/SwiftyMarkdown";
@@ -725,6 +531,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB4055B62E79778100450C43 /* XCRemoteSwiftPackageReference "stoobit-analytics-swift" */;
 			productName = Analytics;
+		};
+		BBAA6FA32F4B4EC7005FE982 /* View */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBAA6FA22F4B4EC7005FE982 /* XCRemoteSwiftPackageReference "View" */;
+			productName = View;
+		};
+		BBAA6FA62F4B5754005FE982 /* Codable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBAA6FA52F4B5754005FE982 /* XCRemoteSwiftPackageReference "Codable" */;
+			productName = Codable;
 		};
 		BBB3CCA42BEADCB000BDB558 /* SwiftyMarkdown */ = {
 			isa = XCSwiftPackageProductDependency;

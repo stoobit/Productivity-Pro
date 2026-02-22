@@ -19,31 +19,22 @@ struct ContentView: View {
     @State var subviewManager: SubviewManager = .init()
     
     var body: some View {
-        TabView() {
-            Tab {
+        TabView {
+            Tab("Notes", systemImage: "doc.fill") {
                 FileSystemView(contentObjects: contentObjects)
                     .ignoresSafeArea(.all, edges: .bottom)
-            } label: {
-                Image(systemName: "doc.fill")
             }
             
-            Tab {
+            Tab("Tasks", systemImage: "checklist") {
                 HomeworkView(tasks: tasks)
-            } label: {
-                Image(systemName: "checklist")
-            }
-            .badge(tasks.count)
-
-            Tab {
-                ScheduleViewContainer()
-            } label: {
-                Image(systemName: "calendar")
             }
             
-            Tab {
+            Tab("Schedule", systemImage: "calendar") {
+                ScheduleViewContainer()
+            }
+            
+            Tab("Settings", systemImage: "gearshape") {
                 PPSettingsView()
-            } label: {
-                Image(systemName: "gearshape")
             }
         }
         .disabled(toolManager.showProgress)

@@ -23,7 +23,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
            return true
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    func application(
+        _ application: UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
      
         let analytics = Analytics(key: Analytics.key())
         analytics.registerForPushNotifications(with: deviceToken)

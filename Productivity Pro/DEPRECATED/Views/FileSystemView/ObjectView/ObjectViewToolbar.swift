@@ -35,6 +35,8 @@ struct FolderViewToolbar: ToolbarContent {
     var contentObjects: [ContentObject]
     let locale = Locale.current.localizedString(forIdentifier: "DE") ?? ""
     
+    @State private var showMachineLearningDemo: Bool = false
+    
     var body: some ToolbarContent {
         // MARK: - Top Bar Leading
         ToolbarItemGroup(placement: .topBarLeading) {
@@ -102,6 +104,17 @@ struct FolderViewToolbar: ToolbarContent {
         
         ToolbarSpacer(placement: .primaryAction)
         ToolbarItemGroup(placement: .primaryAction) {
+//            #if DEBUG
+            if parent == "root" {
+                Button("Machine Learning Demo", systemImage: "circle.on.square") {
+                    showMachineLearningDemo = true
+                }
+                .navigationDestination(isPresented: $showMachineLearningDemo) {
+                    MLDView()
+                }
+            }
+//            #endif
+            
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 addFolder = true
             }

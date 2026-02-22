@@ -1,6 +1,15 @@
 {
-  "originHash" : "97d1244289cb5a34c4cbadb185d9b22237b526b3df6b8a7c663d3b0dd75879ab",
+  "originHash" : "68aaf80980ea91b207d506ff0e5c10f791b0a91e529c982368d614fd52c4e373",
   "pins" : [
+    {
+      "identity" : "codable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stoobit/Codable",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fcd9fe64e74684ef6027b5f10072f33ab93fc948"
+      }
+    },
     {
       "identity" : "inputbaraccessoryview",
       "kind" : "remoteSourceControl",
@@ -38,12 +47,30 @@
       }
     },
     {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax.git",
+      "state" : {
+        "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
+        "version" : "602.0.0"
+      }
+    },
+    {
       "identity" : "swiftymarkdown",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SimonFairbairn/SwiftyMarkdown",
       "state" : {
         "revision" : "dde451ab4ed9b77b328e21baa471fdfa0cf61369",
         "version" : "1.2.4"
+      }
+    },
+    {
+      "identity" : "view",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stoobit/View",
+      "state" : {
+        "branch" : "main",
+        "revision" : "25d8cbf03035b80060c8619a86f3363f450f7f69"
       }
     }
   ],

@@ -36,7 +36,7 @@ struct ShareMenu: View {
             
             subviewManager.shareQRPDFView.toggle()
         }) {
-            Label("QRShare", systemImage: "qrcode")
+            Label("QR Share", systemImage: "qrcode")
         }
     }
 }

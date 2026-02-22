@@ -168,6 +168,9 @@
         }
       }
     },
+    "Add" : {
+
+    },
     "Add Page" : {
 
     },
@@ -347,6 +350,9 @@
           }
         }
       }
+    },
+    "Backups" : {
+
     },
     "Bearbeiten" : {
       "localizations" : {
@@ -539,10 +545,19 @@
         }
       }
     },
+    "Buy for 3.99€" : {
+
+    },
+    "Cancel" : {
+
+    },
     "Change Template" : {
 
     },
     "Circle" : {
+
+    },
+    "Close" : {
 
     },
     "d. MMMM" : {
@@ -884,9 +899,6 @@
           }
         }
       }
-    },
-    "Email Support" : {
-
     },
     "Entfernen" : {
       "localizations" : {
@@ -1458,10 +1470,10 @@
         }
       }
     },
-    "Meine Fächer" : {
+    "Machine Learning Demo" : {
 
     },
-    "Messages Support" : {
+    "Meine Fächer" : {
 
     },
     "Mint" : {
@@ -1581,6 +1593,9 @@
         }
       }
     },
+    "Notes" : {
+
+    },
     "Notiz" : {
       "localizations" : {
         "en" : {
@@ -1688,6 +1703,9 @@
     "Page %lld" : {
 
     },
+    "Page Actions" : {
+
+    },
     "Pages" : {
 
     },
@@ -1716,6 +1734,9 @@
           }
         }
       }
+    },
+    "Pay once. Use forever." : {
+
     },
     "pdf" : {
       "localizations" : {
@@ -1788,6 +1809,9 @@
         }
       }
     },
+    "Productivity Pro\nPremium" : {
+
+    },
     "pronote" : {
       "localizations" : {
         "en" : {
@@ -1797,6 +1821,9 @@
           }
         }
       }
+    },
+    "QR Share" : {
+
     },
     "QRShare" : {
       "localizations" : {
@@ -1871,6 +1898,9 @@
     "Redo" : {
 
     },
+    "Reset" : {
+
+    },
     "Rot" : {
       "localizations" : {
         "en" : {
@@ -1893,6 +1923,9 @@
           }
         }
       }
+    },
+    "Schedule" : {
+
     },
     "Schriftart" : {
       "localizations" : {
@@ -1969,6 +2002,9 @@
         }
       }
     },
+    "Seite 1 von 1" : {
+
+    },
     "Seite hinzufügen" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1998,6 +2034,9 @@
       }
     },
     "Seitenaktionen" : {
+
+    },
+    "Settings" : {
 
     },
     "Shape" : {
@@ -2114,6 +2153,9 @@
     "Take Photo" : {
 
     },
+    "Tasks" : {
+
+    },
     "Teilen" : {
       "localizations" : {
         "en" : {
@@ -2141,6 +2183,9 @@
       }
     },
     "Text Box" : {
+
+    },
+    "This app is crafted by hand. No AI was used in the development." : {
 
     },
     "Tippe auf " : {

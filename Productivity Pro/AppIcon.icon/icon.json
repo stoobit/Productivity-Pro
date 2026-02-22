@@ -6,9 +6,11 @@
     {
       "layers" : [
         {
+          "blend-mode" : "darken",
           "fill" : {
             "automatic-gradient" : "extended-gray:1.00000,1.00000"
           },
+          "glass" : true,
           "image-name" : "graduationcap.fill@2x.png",
           "name" : "graduationcap.fill@2x",
           "position" : {
