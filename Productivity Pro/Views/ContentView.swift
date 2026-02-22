@@ -15,26 +15,26 @@ struct ContentView: View {
         SortDescriptor(\Homework.title, order: .forward),
     ]), animation: .default) var tasks: [Homework]
     
-    @State var toolManager: ToolManager = .init()
-    @State var subviewManager: SubviewManager = .init()
+    @State private var toolManager: ToolManager = .init()
+    @State private var subviewManager: SubviewManager = .init()
+    
+    @State private var tab: TabType = .notes
     
     var body: some View {
-        TabView {
-            Tab("Notes", systemImage: "doc.fill") {
+        TabView(selection: $tab) {
+            Tab("Notes", systemImage: "doc.fill", value: .notes) {
                 FileSystemView(contentObjects: contentObjects)
                     .ignoresSafeArea(.all, edges: .bottom)
             }
             
-            Tab("Tasks", systemImage: "checklist") {
+            Tab("Tasks", systemImage: "checklist", value: .tasks) {
                 HomeworkView(tasks: tasks)
+                    .premiumFeature(tab: $tab)
             }
             
-            Tab("Schedule", systemImage: "calendar") {
+            Tab("Schedule", systemImage: "calendar", value: .schedule) {
                 ScheduleViewContainer()
-            }
-            
-            Tab("Settings", systemImage: "gearshape") {
-                PPSettingsView()
+                    .premiumFeature(tab: $tab)
             }
         }
         .disabled(toolManager.showProgress)

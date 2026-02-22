@@ -1826,6 +1826,7 @@
 
     },
     "QRShare" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2034,9 +2035,6 @@
       }
     },
     "Seitenaktionen" : {
-
-    },
-    "Settings" : {
 
     },
     "Shape" : {
