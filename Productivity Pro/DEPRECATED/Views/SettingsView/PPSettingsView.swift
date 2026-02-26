@@ -22,6 +22,13 @@ struct PPSettingsView: View {
             Form {
                 DataAndNotifications()
                 
+                Section {
+                    NavigationLink(destination: { SubjectSettings() }) {
+                        Label("Subjects", systemImage: "tray.2.fill")
+                    }
+                    .frame(height: 30)
+                }
+                
                 Section("Bewertungen und Kontakt") {
                     Button(action: {
                         if let url = URL(string: string) {
