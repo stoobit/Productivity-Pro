@@ -1583,6 +1583,9 @@
     "Neues Fach" : {
 
     },
+    "No purchases found." : {
+
+    },
     "Notentlinien" : {
       "localizations" : {
         "en" : {
@@ -1899,7 +1902,7 @@
     "Reset" : {
 
     },
-    "Restore" : {
+    "Restore Purchase" : {
 
     },
     "Rot" : {

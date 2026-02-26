@@ -9,7 +9,11 @@ import SwiftUI
 import StoreKit
 
 struct PurchaseView: View {
-    @AppStorage("isPurchased") var isPurchased: Bool = false
+    @State private var showAlert: Bool = false
+    
+    @AppStorage("isPurchased")
+    private var isPurchased: Bool = false
+    
     var onDismiss: (_ reset: Bool) -> Void
     
     var body: some View {
@@ -55,20 +59,18 @@ struct PurchaseView: View {
                 .scenePadding()
             }
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", systemImage: "xmark") {
-                        onDismiss(true)
-                    }
-                }
-                
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Restore", systemImage: "xmark") {
-                        onDismiss(true)
-                    }
-                }
+                PurchaseToolbar(
+                    onDismiss: onDismiss,
+                    restore: restore
+                )
             }
         }
         .interactiveDismissDisabled()
+        .alert("No purchases found.", isPresented: $showAlert) {
+            Button("Close", role: .close) {
+                showAlert = false
+            }
+        }
     }
     
     func onPurchase(with result: Result<Product.PurchaseResult, any Error>) {
@@ -83,6 +85,21 @@ struct PurchaseView: View {
             }
         case .failure(_):
             return
+        }
+    }
+    
+    func restore() {
+        Task { @MainActor in
+            let id = "com.stoobit.productivitypro.premium.unlock"
+            for await status in Transaction.currentEntitlements {
+                if case let .verified(transaction) = status, id == (transaction.productID) {
+                    isPurchased = true
+                    onDismiss(false)
+                    return
+                }
+            }
+            
+            showAlert = true
         }
     }
 }
