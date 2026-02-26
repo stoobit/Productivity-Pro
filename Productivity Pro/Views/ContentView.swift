@@ -36,6 +36,10 @@ struct ContentView: View {
                 ScheduleViewContainer()
                     .premiumFeature(tab: $tab)
             }
+            
+            Tab("Settings", systemImage: "gearshape.fill", value: .settings) {
+                PPSettingsView()
+            }
         }
         .disabled(toolManager.showProgress)
         .modifier(

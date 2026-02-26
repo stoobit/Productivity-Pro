@@ -545,9 +545,6 @@
         }
       }
     },
-    "Buy for 3.99€" : {
-
-    },
     "Cancel" : {
 
     },
@@ -899,6 +896,9 @@
           }
         }
       }
+    },
+    "Email Support" : {
+
     },
     "Entfernen" : {
       "localizations" : {
@@ -1470,10 +1470,10 @@
         }
       }
     },
-    "Machine Learning Demo" : {
+    "Meine Fächer" : {
 
     },
-    "Meine Fächer" : {
+    "Messages Support" : {
 
     },
     "Mint" : {
@@ -1809,9 +1809,6 @@
         }
       }
     },
-    "Productivity Pro\nPremium" : {
-
-    },
     "pronote" : {
       "localizations" : {
         "en" : {
@@ -1900,6 +1897,9 @@
 
     },
     "Reset" : {
+
+    },
+    "Restore" : {
 
     },
     "Rot" : {
@@ -2035,6 +2035,9 @@
       }
     },
     "Seitenaktionen" : {
+
+    },
+    "Settings" : {
 
     },
     "Shape" : {

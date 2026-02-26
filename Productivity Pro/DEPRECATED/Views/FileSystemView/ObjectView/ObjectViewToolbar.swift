@@ -79,7 +79,7 @@ struct FolderViewToolbar: ToolbarContent {
         
         ToolbarSpacer(placement: .topBarLeading)
         
-        ToolbarItem(placement: .topBarLeading) {
+        ToolbarItemGroup(placement: .topBarLeading) {
             NavigationLink(destination: {
                 TrashView(
                     contentObjects: contentObjects,
@@ -104,17 +104,6 @@ struct FolderViewToolbar: ToolbarContent {
         
         ToolbarSpacer(placement: .primaryAction)
         ToolbarItemGroup(placement: .primaryAction) {
-//            #if DEBUG
-            if parent == "root" {
-                Button("Machine Learning Demo", systemImage: "circle.on.square") {
-                    showMachineLearningDemo = true
-                }
-                .navigationDestination(isPresented: $showMachineLearningDemo) {
-                    MLDView()
-                }
-            }
-//            #endif
-            
             Button("Ordner erstellen", systemImage: "folder.badge.plus") {
                 addFolder = true
             }

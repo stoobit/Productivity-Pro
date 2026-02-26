@@ -11,4 +11,5 @@ enum TabType {
     case notes
     case tasks
     case schedule
+    case settings
 }

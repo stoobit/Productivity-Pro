@@ -50,7 +50,7 @@ struct VocabularyList: View {
         ) {
             do {
                 let fileUrl = URL(fileURLWithPath: filePath)
-                let string = try String(contentsOf: fileUrl)
+                let string = try String(contentsOf: fileUrl, encoding: .utf8)
                     .trimmingCharacters(in: .whitespacesAndNewlines)
                 
                 let jsonData = Data(string.utf8)

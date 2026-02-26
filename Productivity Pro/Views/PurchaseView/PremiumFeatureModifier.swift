@@ -11,24 +11,30 @@ struct PremiumFeatureModifier: ViewModifier {
     @Binding var selectedTab: TabType
     @State private var isPresented: Bool = false
     
+    @AppStorage("isPurchased")
+    private var isPurchased: Bool = false
+    
     func body(content: Content) -> some View {
         content
             .onAppear(perform: premiumCheck)
             .sheet(isPresented: $isPresented) {
-                PurchaseView {
+                PurchaseView { reset in
                     Task { @MainActor in
                         isPresented = false
-                        try await Task.sleep(for: .seconds(0.1))
-                        selectedTab = .notes
+                        
+                        if reset {
+                            try await Task.sleep(for: .seconds(0.1))
+                            selectedTab = .notes
+                        }
                     }
                 }
             }
     }
     
     private func premiumCheck() {
-        if true { // TODO: perform premium check
+        if isPurchased == false {
             Task { @MainActor in
-                try await Task.sleep(for: .seconds(0.1))
+                try await Task.sleep(for: .seconds(0.15))
                 isPresented = true
             }
         }

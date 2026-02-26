@@ -52,7 +52,7 @@ struct TemplateView: View {
                 }
                 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(buttonTitle) {
+                    Button(buttonTitle, systemImage: "checkmark") {
                         action(
                             isPortrait,
                             selectedTemplate,
@@ -64,6 +64,7 @@ struct TemplateView: View {
                         savedBackgroundColor = selectedColor
                         savedBackgroundTemplate = selectedTemplate
                     }
+                    .buttonStyle(.borderedProminent)
                 }
             }
         }

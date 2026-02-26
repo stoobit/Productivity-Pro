@@ -9,42 +9,27 @@ import SwiftUI
 import StoreKit
 
 struct PurchaseView: View {
-    var onDismiss: () -> Void
+    @AppStorage("isPurchased") var isPurchased: Bool = false
+    var onDismiss: (_ reset: Bool) -> Void
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 30) {
+            VStack(spacing: 35) {
                 VStack(spacing: 20) {
                     Image(systemName: "crown.fill")
                         .foregroundStyle(Color.accentColor)
                         .font(.system(size: 60))
                     
-                    Text("Productivity Pro\nPremium")
+                    Text("Pay once. Use forever.")
                         .multilineTextAlignment(.center)
-                        .font(.largeTitle.bold())
+                        .font(.title.bold())
                 }
                 
                 VStack {
-                    Text("Pay once. Use forever.")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity)
-                        .padding(14)
-                        .background(Color(.secondarySystemGroupedBackground))
-                        .clipShape(.rect(cornerRadius: 21))
-                    
                     HStack {
-                        FeatureCard(
-                            title: "Tasks",
-                            image: "checklist"
-                        )
-                        FeatureCard(
-                            title: "Schedule",
-                            image: "calendar"
-                        )
-                        FeatureCard(
-                            title: "Backups",
-                            image: "square.and.arrow.down.on.square"
-                        )
+                        FeatureCard(title: "Tasks", image: "checklist")
+                        FeatureCard(title: "Schedule", image: "calendar")
+                        FeatureCard(title: "Backups", image: "square.and.arrow.down.on.square")
                     }
                 }
                 .containerRelativeFrame(.horizontal) { width, _ in
@@ -54,17 +39,14 @@ struct PurchaseView: View {
                 Spacer()
                 
                 VStack(spacing: 12) {
-                    Button(action: {}) {
-                        Text("Buy for 3.99€")
-                            .font(.headline)
-                            .padding(7)
-                    }
-                    .buttonSizing(.flexible)
-                    .buttonBorderShape(.capsule)
-                    .buttonStyle(.glassProminent)
-                    .containerRelativeFrame(.horizontal) { width, _ in
-                        return min(350, width)
-                    }
+                    ProductView(id: "com.stoobit.productivitypro.premium.unlock")
+                        .purchaseButtonStyle()
+                        .onInAppPurchaseCompletion(perform: { _, result in
+                           onPurchase(with: result)
+                        })
+                        .containerRelativeFrame(.horizontal) { width, _ in
+                            return min(350, width)
+                        }
                     
                     Text("This app is crafted by hand. No AI was used in the development.")
                         .foregroundStyle(Color.secondary)
@@ -74,22 +56,33 @@ struct PurchaseView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel", systemImage: "xmark", action: onDismiss)
+                    Button("Cancel", systemImage: "xmark") {
+                        onDismiss(true)
+                    }
+                }
+                
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Restore", systemImage: "xmark") {
+                        onDismiss(true)
+                    }
                 }
             }
         }
         .interactiveDismissDisabled()
     }
-}
-
-#Preview {
-    @Previewable
-    @State var isPresented: Bool = true
     
-    Text("Hello, World")
-        .sheet(isPresented: $isPresented) {
-            PurchaseView {
-                isPresented = false
+    func onPurchase(with result: Result<Product.PurchaseResult, any Error>) {
+        switch result {
+        case .success(let success):
+            switch success {
+            case .success(_):
+                isPurchased = true
+                onDismiss(false)
+            default:
+                return
             }
+        case .failure(_):
+            return
         }
+    }
 }

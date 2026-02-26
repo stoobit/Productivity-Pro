@@ -42,40 +42,40 @@ struct PPSettingsView: View {
                     .frame(height: 30)
                 }
                 
-//                Section {
-//                    Button(action: {
-//                        UIApplication.shared.open(mail)
-//                    }) {
-//                        Label(
-//                            title: {
-//                                Text("Email Support")
-//                                    .foregroundStyle(Color.primary)
-//                            },
-//                            icon: {
-//                                Image(systemName: "envelope.fill")
-//                                    .foregroundStyle(Color.blue)
-//                            }
-//                        )
-//                    }
-//                    .frame(height: 30)
-//                    
-//                    Button(action: {
-//                        UIApplication.shared.open(message)
-//                    }) {
-//                        Label(
-//                            title: {
-//                                Text("Messages Support")
-//                                    .foregroundStyle(Color.primary)
-//                            },
-//                            icon: {
-//                                Image(systemName: "message.fill")
-//                                    .foregroundStyle(Color.green)
-//                            }
-//                        )
-//                    }
-//                    .frame(height: 30)
-//                }
-//                .listSectionSpacing(18)
+                Section {
+                    Button(action: {
+                        UIApplication.shared.open(mail)
+                    }) {
+                        Label(
+                            title: {
+                                Text("Email Support")
+                                    .foregroundStyle(Color.primary)
+                            },
+                            icon: {
+                                Image(systemName: "envelope.fill")
+                                    .foregroundStyle(Color.blue)
+                            }
+                        )
+                    }
+                    .frame(height: 30)
+                    
+                    Button(action: {
+                        UIApplication.shared.open(message)
+                    }) {
+                        Label(
+                            title: {
+                                Text("Messages Support")
+                                    .foregroundStyle(Color.primary)
+                            },
+                            icon: {
+                                Image(systemName: "message.fill")
+                                    .foregroundStyle(Color.green)
+                            }
+                        )
+                    }
+                    .frame(height: 30)
+                }
+                .listSectionSpacing(18)
             }
             .environment(\.defaultMinListRowHeight, 10)
             .navigationTitle("Einstellungen")
