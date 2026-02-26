@@ -22,22 +22,22 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $tab) {
-            Tab("Notes", systemImage: "doc.fill", value: .notes) {
+            Tab("Notizen", systemImage: "doc.fill", value: .notes) {
                 FileSystemView(contentObjects: contentObjects)
                     .ignoresSafeArea(.all, edges: .bottom)
             }
             
-            Tab("Tasks", systemImage: "checklist", value: .tasks) {
+            Tab("Aufgaben", systemImage: "checklist", value: .tasks) {
                 HomeworkView(tasks: tasks)
                     .premiumFeature(tab: $tab)
             }
             
-            Tab("Schedule", systemImage: "calendar", value: .schedule) {
+            Tab("Stundenplan", systemImage: "calendar", value: .schedule) {
                 ScheduleViewContainer()
                     .premiumFeature(tab: $tab)
             }
             
-            Tab("Settings", systemImage: "gearshape.fill", value: .settings) {
+            Tab("Einstellungen", systemImage: "gearshape.fill", value: .settings) {
                 PPSettingsView()
             }
         }

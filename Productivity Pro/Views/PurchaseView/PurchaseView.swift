@@ -31,8 +31,8 @@ struct PurchaseView: View {
                 
                 VStack {
                     HStack {
-                        FeatureCard(title: "Tasks", image: "checklist")
-                        FeatureCard(title: "Schedule", image: "calendar")
+                        FeatureCard(title: "Aufgaben", image: "checklist")
+                        FeatureCard(title: "Stundenplan", image: "calendar")
                         FeatureCard(title: "Backups", image: "square.and.arrow.down.on.square")
                     }
                 }
@@ -52,7 +52,7 @@ struct PurchaseView: View {
                             return min(350, width)
                         }
                     
-                    Text("This app is crafted by hand. No AI was used in the development.")
+                    Text("Diese App ist „handgemacht“ und wurde ohne den Einsatz von KI entwickelt.")
                         .foregroundStyle(Color.secondary)
                         .font(.footnote)
                 }
@@ -66,8 +66,8 @@ struct PurchaseView: View {
             }
         }
         .interactiveDismissDisabled()
-        .alert("No purchases found.", isPresented: $showAlert) {
-            Button("Close", role: .close) {
+        .alert("Keine Käufe gefunden.", isPresented: $showAlert) {
+            Button("Schließen", role: .close) {
                 showAlert = false
             }
         }

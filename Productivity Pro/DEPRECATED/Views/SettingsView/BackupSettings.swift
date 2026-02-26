@@ -113,14 +113,6 @@ struct BackupSettings: View {
         .environment(\.defaultMinListRowHeight, 10)
         .navigationTitle("Backup")
         .toolbarRole(.browser)
-        .navigationBarBackButtonHidden()
-        .toolbar {
-            ToolbarItemGroup(placement: .topBarLeading) {
-                Button(action: { dismiss() }) {
-                    Label("Zurück", systemImage: "chevron.left")
-                }
-            }
-        }
     }
     
     @ViewBuilder

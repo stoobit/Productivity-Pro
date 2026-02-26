@@ -655,6 +655,9 @@
         }
       }
     },
+    "Diese App ist „handgemacht“ und wurde ohne den Einsatz von KI entwickelt." : {
+
+    },
     "Diese Aufgabe ist bis morgen in %@ zu erledigen." : {
       "localizations" : {
         "en" : {
@@ -1346,6 +1349,9 @@
         }
       }
     },
+    "Keine Käufe gefunden." : {
+
+    },
     "Klasse %lld" : {
 
     },
@@ -1583,9 +1589,6 @@
     "Neues Fach" : {
 
     },
-    "No purchases found." : {
-
-    },
     "Notentlinien" : {
       "localizations" : {
         "en" : {
@@ -1595,9 +1598,6 @@
           }
         }
       }
-    },
-    "Notes" : {
-
     },
     "Notiz" : {
       "localizations" : {
@@ -1928,7 +1928,7 @@
         }
       }
     },
-    "Schedule" : {
+    "Schließen" : {
 
     },
     "Schriftart" : {
@@ -2040,9 +2040,6 @@
     "Seitenaktionen" : {
 
     },
-    "Settings" : {
-
-    },
     "Shape" : {
 
     },
@@ -2137,9 +2134,6 @@
         }
       }
     },
-    "Subjects" : {
-
-    },
     "Suchen" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2158,9 +2152,6 @@
       }
     },
     "Take Photo" : {
-
-    },
-    "Tasks" : {
 
     },
     "Teilen" : {
@@ -2190,9 +2181,6 @@
       }
     },
     "Text Box" : {
-
-    },
-    "This app is crafted by hand. No AI was used in the development." : {
 
     },
     "Tippe auf " : {
