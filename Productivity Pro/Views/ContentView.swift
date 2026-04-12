@@ -37,9 +37,9 @@ struct ContentView: View {
                     .premiumFeature(tab: $tab)
             }
             
-            Tab("Einstellungen", systemImage: "gearshape.fill", value: .settings) {
-                PPSettingsView()
-            }
+//            Tab("Einstellungen", systemImage: "gearshape.fill", value: .settings) {
+//                PPSettingsView()
+//            }
         }
         .disabled(toolManager.showProgress)
         .modifier(
