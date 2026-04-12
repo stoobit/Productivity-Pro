@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct ObjectViewFolderLink: View {
     var contentObjects: [ContentObject]
@@ -18,6 +19,9 @@ struct ObjectViewFolderLink: View {
     @State var isMove: Bool = false
     @State var isRename: Bool = false
     @State var selectedObject: String = ""
+    
+    @State private var isExportingPDFs = false
+    @State private var pdfFolderDocument: PDFFolderDocument?
     
     var body: some View {
         NavigationLink(destination: {
@@ -56,6 +60,16 @@ struct ObjectViewFolderLink: View {
             }
             
             Section {
+                Button("Export All as PDFs", systemImage: "square.and.arrow.up") {
+                    Task {
+                        let tempURL = await generateAllPDFs(for: object)
+                        pdfFolderDocument = PDFFolderDocument(folderURL: tempURL)
+                        isExportingPDFs = true
+                    }
+                }
+            }
+            
+            Section {
                 Button("Umbenennen", systemImage: "pencil") {
                     isRename = true
                 }
@@ -87,6 +101,62 @@ struct ObjectViewFolderLink: View {
                 selectedObject: $selectedObject, type: .folder
             )
         }
+        .fileExporter(
+            isPresented: $isExportingPDFs,
+            document: pdfFolderDocument,
+            contentType: .folder,
+            defaultFilename: "\(object.title) PDFs"
+        ) { result in
+            switch result {
+            case .success(let url):
+                print("Exported to \(url)")
+            case .failure(let error):
+                print("Export failed: \(error)")
+            }
+        }
+    }
+    
+    @MainActor
+    func generateAllPDFs(for folder: ContentObject) async -> URL {
+        let tempUUID = UUID().uuidString
+        let tempFolder = FileManager.default.temporaryDirectory
+            .appendingPathComponent(tempUUID)
+            .appendingPathComponent("\(sanitize(folder.title)) PDFs")
+            
+        try? FileManager.default.createDirectory(at: tempFolder, withIntermediateDirectories: true, attributes: nil)
+        
+        await processFolder(folder: folder, currentPath: sanitize(folder.title), tempFolder: tempFolder)
+        
+        return tempFolder
+    }
+    
+    @MainActor
+    func processFolder(folder: ContentObject, currentPath: String, tempFolder: URL) async {
+        let children = contentObjects.filter { $0.parent == folder.id.uuidString && !$0.inTrash }
+        
+        for child in children {
+            let childName = sanitize(child.title)
+            
+            if child.type == COType.folder.rawValue {
+                let nextPath = currentPath.isEmpty ? childName : "\(currentPath)-\(childName)"
+                await processFolder(folder: child, currentPath: nextPath, tempFolder: tempFolder)
+            } else if child.type == COType.file.rawValue {
+                let pdfName = currentPath.isEmpty ? "\(childName).pdf" : "\(currentPath)-\(childName).pdf"
+                let targetURL = tempFolder.appendingPathComponent(pdfName)
+                
+                if let generatedURL = try? PDFManager().exportPDF(from: child) {
+                    try? FileManager.default.moveItem(at: generatedURL, to: targetURL)
+                }
+                
+                // Allow the runloop to clear autoreleasepools and view memory between large renderings
+                await Task.yield()
+                try? await Task.sleep(nanoseconds: 100_000_000)
+            }
+        }
+    }
+
+    func sanitize(_ filename: String) -> String {
+        return filename.replacingOccurrences(of: "/", with: "-").replacingOccurrences(of: "\\", with: "-")
     }
     
     func move() {
@@ -115,5 +185,23 @@ struct ObjectViewFolderLink: View {
             
             selectedObject = ""
         }
+    }
+}
+
+struct PDFFolderDocument: FileDocument {
+    static var readableContentTypes: [UTType] { [.folder] }
+    
+    var folderURL: URL
+    
+    init(folderURL: URL) {
+        self.folderURL = folderURL
+    }
+    
+    init(configuration: ReadConfiguration) throws {
+        self.folderURL = FileManager.default.temporaryDirectory
+    }
+    
+    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+        return try FileWrapper(url: folderURL, options: [])
     }
 }
